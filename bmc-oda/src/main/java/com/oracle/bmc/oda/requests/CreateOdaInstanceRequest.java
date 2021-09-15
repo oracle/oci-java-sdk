@@ -18,12 +18,13 @@ import com.oracle.bmc.oda.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class CreateOdaInstanceRequest
-        extends com.oracle.bmc.requests.BmcRequest<CreateOdaInstanceDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.oda.model.CreateOdaInstanceDetails> {
 
     /**
      * Details for the new Digital Assistant instance.
      */
-    private CreateOdaInstanceDetails createOdaInstanceDetails;
+    private com.oracle.bmc.oda.model.CreateOdaInstanceDetails createOdaInstanceDetails;
 
     /**
      * The client request ID for tracing. This value is included in the opc-request-id response header.
@@ -47,13 +48,13 @@ public class CreateOdaInstanceRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreateOdaInstanceDetails getBody$() {
+    public com.oracle.bmc.oda.model.CreateOdaInstanceDetails getBody$() {
         return createOdaInstanceDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CreateOdaInstanceRequest, CreateOdaInstanceDetails> {
+                    CreateOdaInstanceRequest, com.oracle.bmc.oda.model.CreateOdaInstanceDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -117,7 +118,7 @@ public class CreateOdaInstanceRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreateOdaInstanceDetails body) {
+        public Builder body$(com.oracle.bmc.oda.model.CreateOdaInstanceDetails body) {
             createOdaInstanceDetails(body);
             return this;
         }

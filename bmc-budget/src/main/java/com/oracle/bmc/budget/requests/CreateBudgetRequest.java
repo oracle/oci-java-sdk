@@ -17,12 +17,14 @@ import com.oracle.bmc.budget.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
-public class CreateBudgetRequest extends com.oracle.bmc.requests.BmcRequest<CreateBudgetDetails> {
+public class CreateBudgetRequest
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.budget.model.CreateBudgetDetails> {
 
     /**
      * Details for the new Budget.
      */
-    private CreateBudgetDetails createBudgetDetails;
+    private com.oracle.bmc.budget.model.CreateBudgetDetails createBudgetDetails;
 
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -45,13 +47,13 @@ public class CreateBudgetRequest extends com.oracle.bmc.requests.BmcRequest<Crea
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreateBudgetDetails getBody$() {
+    public com.oracle.bmc.budget.model.CreateBudgetDetails getBody$() {
         return createBudgetDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CreateBudgetRequest, CreateBudgetDetails> {
+                    CreateBudgetRequest, com.oracle.bmc.budget.model.CreateBudgetDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -115,7 +117,7 @@ public class CreateBudgetRequest extends com.oracle.bmc.requests.BmcRequest<Crea
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreateBudgetDetails body) {
+        public Builder body$(com.oracle.bmc.budget.model.CreateBudgetDetails body) {
             createBudgetDetails(body);
             return this;
         }

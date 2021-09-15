@@ -18,12 +18,13 @@ import com.oracle.bmc.loadbalancer.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class CreateRoutingPolicyRequest
-        extends com.oracle.bmc.requests.BmcRequest<CreateRoutingPolicyDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.loadbalancer.model.CreateRoutingPolicyDetails> {
 
     /**
      * The details of the routing policy rules to add.
      */
-    private CreateRoutingPolicyDetails createRoutingPolicyDetails;
+    private com.oracle.bmc.loadbalancer.model.CreateRoutingPolicyDetails createRoutingPolicyDetails;
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the load balancer to add the routing policy rule list to.
@@ -53,13 +54,14 @@ public class CreateRoutingPolicyRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreateRoutingPolicyDetails getBody$() {
+    public com.oracle.bmc.loadbalancer.model.CreateRoutingPolicyDetails getBody$() {
         return createRoutingPolicyDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CreateRoutingPolicyRequest, CreateRoutingPolicyDetails> {
+                    CreateRoutingPolicyRequest,
+                    com.oracle.bmc.loadbalancer.model.CreateRoutingPolicyDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -124,7 +126,7 @@ public class CreateRoutingPolicyRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreateRoutingPolicyDetails body) {
+        public Builder body$(com.oracle.bmc.loadbalancer.model.CreateRoutingPolicyDetails body) {
             createRoutingPolicyDetails(body);
             return this;
         }

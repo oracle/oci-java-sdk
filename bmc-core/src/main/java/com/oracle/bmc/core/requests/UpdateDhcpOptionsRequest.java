@@ -18,7 +18,7 @@ import com.oracle.bmc.core.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class UpdateDhcpOptionsRequest
-        extends com.oracle.bmc.requests.BmcRequest<UpdateDhcpDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<com.oracle.bmc.core.model.UpdateDhcpDetails> {
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) for the set of DHCP options.
@@ -28,7 +28,7 @@ public class UpdateDhcpOptionsRequest
     /**
      * Request object for updating a set of DHCP options.
      */
-    private UpdateDhcpDetails updateDhcpDetails;
+    private com.oracle.bmc.core.model.UpdateDhcpDetails updateDhcpDetails;
 
     /**
      * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
@@ -44,13 +44,13 @@ public class UpdateDhcpOptionsRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateDhcpDetails getBody$() {
+    public com.oracle.bmc.core.model.UpdateDhcpDetails getBody$() {
         return updateDhcpDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateDhcpOptionsRequest, UpdateDhcpDetails> {
+                    UpdateDhcpOptionsRequest, com.oracle.bmc.core.model.UpdateDhcpDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -114,7 +114,7 @@ public class UpdateDhcpOptionsRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateDhcpDetails body) {
+        public Builder body$(com.oracle.bmc.core.model.UpdateDhcpDetails body) {
             updateDhcpDetails(body);
             return this;
         }

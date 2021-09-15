@@ -18,7 +18,8 @@ import com.oracle.bmc.loganalytics.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class UpsertAssociationsRequest
-        extends com.oracle.bmc.requests.BmcRequest<UpsertLogAnalyticsAssociationDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.loganalytics.model.UpsertLogAnalyticsAssociationDetails> {
 
     /**
      * The Logging Analytics namespace used for the request.
@@ -29,7 +30,8 @@ public class UpsertAssociationsRequest
     /**
      * list of association details
      */
-    private UpsertLogAnalyticsAssociationDetails upsertLogAnalyticsAssociationDetails;
+    private com.oracle.bmc.loganalytics.model.UpsertLogAnalyticsAssociationDetails
+            upsertLogAnalyticsAssociationDetails;
 
     /**
      * isFromRepublish
@@ -57,7 +59,7 @@ public class UpsertAssociationsRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpsertLogAnalyticsAssociationDetails getBody$() {
+    public com.oracle.bmc.loganalytics.model.UpsertLogAnalyticsAssociationDetails getBody$() {
         return upsertLogAnalyticsAssociationDetails;
     }
 
@@ -68,7 +70,8 @@ public class UpsertAssociationsRequest
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpsertAssociationsRequest, UpsertLogAnalyticsAssociationDetails> {
+                    UpsertAssociationsRequest,
+                    com.oracle.bmc.loganalytics.model.UpsertLogAnalyticsAssociationDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -134,7 +137,8 @@ public class UpsertAssociationsRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpsertLogAnalyticsAssociationDetails body) {
+        public Builder body$(
+                com.oracle.bmc.loganalytics.model.UpsertLogAnalyticsAssociationDetails body) {
             upsertLogAnalyticsAssociationDetails(body);
             return this;
         }

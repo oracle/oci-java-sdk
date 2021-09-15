@@ -38,7 +38,8 @@ public class ListAutonomousContainerDatabasesRequest
     /**
      * A filter to return only resources that match the given Infrastructure Type.
      */
-    private AutonomousContainerDatabaseSummary.InfrastructureType infrastructureType;
+    private com.oracle.bmc.database.model.AutonomousContainerDatabaseSummary.InfrastructureType
+            infrastructureType;
 
     /**
      * The maximum number of items to return per page.
@@ -139,7 +140,8 @@ public class ListAutonomousContainerDatabasesRequest
     /**
      * A filter to return only resources that match the given lifecycle state exactly.
      */
-    private AutonomousContainerDatabaseSummary.LifecycleState lifecycleState;
+    private com.oracle.bmc.database.model.AutonomousContainerDatabaseSummary.LifecycleState
+            lifecycleState;
 
     /**
      * A filter to return only resources that match the given availability domain exactly.

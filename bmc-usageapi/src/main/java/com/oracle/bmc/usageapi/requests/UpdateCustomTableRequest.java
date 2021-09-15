@@ -18,12 +18,13 @@ import com.oracle.bmc.usageapi.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class UpdateCustomTableRequest
-        extends com.oracle.bmc.requests.BmcRequest<UpdateCustomTableDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.usageapi.model.UpdateCustomTableDetails> {
 
     /**
      * The information to be updated.
      */
-    private UpdateCustomTableDetails updateCustomTableDetails;
+    private com.oracle.bmc.usageapi.model.UpdateCustomTableDetails updateCustomTableDetails;
 
     /**
      * The custom table unique OCID.
@@ -53,13 +54,14 @@ public class UpdateCustomTableRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateCustomTableDetails getBody$() {
+    public com.oracle.bmc.usageapi.model.UpdateCustomTableDetails getBody$() {
         return updateCustomTableDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateCustomTableRequest, UpdateCustomTableDetails> {
+                    UpdateCustomTableRequest,
+                    com.oracle.bmc.usageapi.model.UpdateCustomTableDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -124,7 +126,7 @@ public class UpdateCustomTableRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateCustomTableDetails body) {
+        public Builder body$(com.oracle.bmc.usageapi.model.UpdateCustomTableDetails body) {
             updateCustomTableDetails(body);
             return this;
         }

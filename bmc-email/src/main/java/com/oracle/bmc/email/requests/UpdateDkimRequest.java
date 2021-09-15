@@ -17,7 +17,8 @@ import com.oracle.bmc.email.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
-public class UpdateDkimRequest extends com.oracle.bmc.requests.BmcRequest<UpdateDkimDetails> {
+public class UpdateDkimRequest
+        extends com.oracle.bmc.requests.BmcRequest<com.oracle.bmc.email.model.UpdateDkimDetails> {
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this DKIM.
@@ -27,7 +28,7 @@ public class UpdateDkimRequest extends com.oracle.bmc.requests.BmcRequest<Update
     /**
      * The new DKIM attributes to apply.
      */
-    private UpdateDkimDetails updateDkimDetails;
+    private com.oracle.bmc.email.model.UpdateDkimDetails updateDkimDetails;
 
     /**
      * Used for optimistic concurrency control. In the update or delete call for a resource, set the {@code if-match}
@@ -48,13 +49,13 @@ public class UpdateDkimRequest extends com.oracle.bmc.requests.BmcRequest<Update
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateDkimDetails getBody$() {
+    public com.oracle.bmc.email.model.UpdateDkimDetails getBody$() {
         return updateDkimDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateDkimRequest, UpdateDkimDetails> {
+                    UpdateDkimRequest, com.oracle.bmc.email.model.UpdateDkimDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -119,7 +120,7 @@ public class UpdateDkimRequest extends com.oracle.bmc.requests.BmcRequest<Update
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateDkimDetails body) {
+        public Builder body$(com.oracle.bmc.email.model.UpdateDkimDetails body) {
             updateDkimDetails(body);
             return this;
         }

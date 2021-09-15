@@ -18,12 +18,14 @@ import com.oracle.bmc.apmcontrolplane.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class GenerateDataKeysRequest
-        extends com.oracle.bmc.requests.BmcRequest<java.util.List<GenerateDataKeyDetails>> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                java.util.List<com.oracle.bmc.apmcontrolplane.model.GenerateDataKeyDetails>> {
 
     /**
      * List of new Data Keys to be generated.
      */
-    private java.util.List<GenerateDataKeyDetails> generateDataKeysListDetails;
+    private java.util.List<com.oracle.bmc.apmcontrolplane.model.GenerateDataKeyDetails>
+            generateDataKeysListDetails;
 
     /**
      * OCID of the APM Domain
@@ -51,25 +53,28 @@ public class GenerateDataKeysRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public java.util.List<GenerateDataKeyDetails> getBody$() {
+    public java.util.List<com.oracle.bmc.apmcontrolplane.model.GenerateDataKeyDetails> getBody$() {
         return generateDataKeysListDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    GenerateDataKeysRequest, java.util.List<GenerateDataKeyDetails>> {
+                    GenerateDataKeysRequest,
+                    java.util.List<com.oracle.bmc.apmcontrolplane.model.GenerateDataKeyDetails>> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        private java.util.List<GenerateDataKeyDetails> generateDataKeysListDetails = null;
+        private java.util.List<com.oracle.bmc.apmcontrolplane.model.GenerateDataKeyDetails>
+                generateDataKeysListDetails = null;
 
         /**
          * List of new Data Keys to be generated.
          * @return this builder instance
          */
         public Builder generateDataKeysListDetails(
-                java.util.List<GenerateDataKeyDetails> generateDataKeysListDetails) {
+                java.util.List<com.oracle.bmc.apmcontrolplane.model.GenerateDataKeyDetails>
+                        generateDataKeysListDetails) {
             this.generateDataKeysListDetails = generateDataKeysListDetails;
             return this;
         }
@@ -78,7 +83,8 @@ public class GenerateDataKeysRequest
          * Singular setter. List of new Data Keys to be generated.
          * @return this builder instance
          */
-        public Builder generateDataKeysListDetails(GenerateDataKeyDetails singularValue) {
+        public Builder generateDataKeysListDetails(
+                com.oracle.bmc.apmcontrolplane.model.GenerateDataKeyDetails singularValue) {
             return this.generateDataKeysListDetails(java.util.Arrays.asList(singularValue));
         }
 
@@ -142,7 +148,8 @@ public class GenerateDataKeysRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(java.util.List<GenerateDataKeyDetails> body) {
+        public Builder body$(
+                java.util.List<com.oracle.bmc.apmcontrolplane.model.GenerateDataKeyDetails> body) {
             generateDataKeysListDetails(body);
             return this;
         }

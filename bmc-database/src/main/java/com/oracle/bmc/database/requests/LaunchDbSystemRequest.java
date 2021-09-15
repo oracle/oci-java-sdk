@@ -17,7 +17,9 @@ import com.oracle.bmc.database.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
-public class LaunchDbSystemRequest extends com.oracle.bmc.requests.BmcRequest<LaunchDbSystemBase> {
+public class LaunchDbSystemRequest
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.database.model.LaunchDbSystemBase> {
 
     /**
      * Request to launch a DB system.
@@ -27,7 +29,7 @@ public class LaunchDbSystemRequest extends com.oracle.bmc.requests.BmcRequest<La
      * For Exadata Cloud Service instances, support for this API will end on May 15th, 2021. See [Switching an Exadata DB System to the New Resource Model and APIs](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaflexsystem_topic-resource_model_conversion.htm) for details on converting existing Exadata DB systems to the new resource model.
      *
      */
-    private LaunchDbSystemBase launchDbSystemDetails;
+    private com.oracle.bmc.database.model.LaunchDbSystemBase launchDbSystemDetails;
 
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -45,13 +47,13 @@ public class LaunchDbSystemRequest extends com.oracle.bmc.requests.BmcRequest<La
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public LaunchDbSystemBase getBody$() {
+    public com.oracle.bmc.database.model.LaunchDbSystemBase getBody$() {
         return launchDbSystemDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    LaunchDbSystemRequest, LaunchDbSystemBase> {
+                    LaunchDbSystemRequest, com.oracle.bmc.database.model.LaunchDbSystemBase> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -114,7 +116,7 @@ public class LaunchDbSystemRequest extends com.oracle.bmc.requests.BmcRequest<La
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(LaunchDbSystemBase body) {
+        public Builder body$(com.oracle.bmc.database.model.LaunchDbSystemBase body) {
             launchDbSystemDetails(body);
             return this;
         }

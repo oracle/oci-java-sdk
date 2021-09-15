@@ -17,7 +17,9 @@ import com.oracle.bmc.datacatalog.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
-public class UpdateJobRequest extends com.oracle.bmc.requests.BmcRequest<UpdateJobDetails> {
+public class UpdateJobRequest
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.datacatalog.model.UpdateJobDetails> {
 
     /**
      * Unique catalog identifier.
@@ -32,7 +34,7 @@ public class UpdateJobRequest extends com.oracle.bmc.requests.BmcRequest<UpdateJ
     /**
      * The information to be updated in the job.
      */
-    private UpdateJobDetails updateJobDetails;
+    private com.oracle.bmc.datacatalog.model.UpdateJobDetails updateJobDetails;
 
     /**
      * For optimistic concurrency control. In the PUT or DELETE call
@@ -55,13 +57,13 @@ public class UpdateJobRequest extends com.oracle.bmc.requests.BmcRequest<UpdateJ
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateJobDetails getBody$() {
+    public com.oracle.bmc.datacatalog.model.UpdateJobDetails getBody$() {
         return updateJobDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateJobRequest, UpdateJobDetails> {
+                    UpdateJobRequest, com.oracle.bmc.datacatalog.model.UpdateJobDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -127,7 +129,7 @@ public class UpdateJobRequest extends com.oracle.bmc.requests.BmcRequest<UpdateJ
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateJobDetails body) {
+        public Builder body$(com.oracle.bmc.datacatalog.model.UpdateJobDetails body) {
             updateJobDetails(body);
             return this;
         }

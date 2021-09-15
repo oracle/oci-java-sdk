@@ -18,12 +18,13 @@ import com.oracle.bmc.core.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class CreateNatGatewayRequest
-        extends com.oracle.bmc.requests.BmcRequest<CreateNatGatewayDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.core.model.CreateNatGatewayDetails> {
 
     /**
      * Details for creating a NAT gateway.
      */
-    private CreateNatGatewayDetails createNatGatewayDetails;
+    private com.oracle.bmc.core.model.CreateNatGatewayDetails createNatGatewayDetails;
 
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -41,13 +42,13 @@ public class CreateNatGatewayRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreateNatGatewayDetails getBody$() {
+    public com.oracle.bmc.core.model.CreateNatGatewayDetails getBody$() {
         return createNatGatewayDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CreateNatGatewayRequest, CreateNatGatewayDetails> {
+                    CreateNatGatewayRequest, com.oracle.bmc.core.model.CreateNatGatewayDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -110,7 +111,7 @@ public class CreateNatGatewayRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreateNatGatewayDetails body) {
+        public Builder body$(com.oracle.bmc.core.model.CreateNatGatewayDetails body) {
             createNatGatewayDetails(body);
             return this;
         }

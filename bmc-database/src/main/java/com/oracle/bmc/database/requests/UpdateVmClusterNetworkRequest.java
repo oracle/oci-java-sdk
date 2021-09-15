@@ -18,7 +18,8 @@ import com.oracle.bmc.database.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class UpdateVmClusterNetworkRequest
-        extends com.oracle.bmc.requests.BmcRequest<UpdateVmClusterNetworkDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.database.model.UpdateVmClusterNetworkDetails> {
 
     /**
      * The Exadata infrastructure [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
@@ -33,7 +34,8 @@ public class UpdateVmClusterNetworkRequest
     /**
      * Request to update the properties of a VM cluster network.
      */
-    private UpdateVmClusterNetworkDetails updateVmClusterNetworkDetails;
+    private com.oracle.bmc.database.model.UpdateVmClusterNetworkDetails
+            updateVmClusterNetworkDetails;
 
     /**
      * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
@@ -55,13 +57,14 @@ public class UpdateVmClusterNetworkRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateVmClusterNetworkDetails getBody$() {
+    public com.oracle.bmc.database.model.UpdateVmClusterNetworkDetails getBody$() {
         return updateVmClusterNetworkDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateVmClusterNetworkRequest, UpdateVmClusterNetworkDetails> {
+                    UpdateVmClusterNetworkRequest,
+                    com.oracle.bmc.database.model.UpdateVmClusterNetworkDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -127,7 +130,7 @@ public class UpdateVmClusterNetworkRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateVmClusterNetworkDetails body) {
+        public Builder body$(com.oracle.bmc.database.model.UpdateVmClusterNetworkDetails body) {
             updateVmClusterNetworkDetails(body);
             return this;
         }

@@ -18,7 +18,8 @@ import com.oracle.bmc.loganalytics.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class DisableSourceEventTypesRequest
-        extends com.oracle.bmc.requests.BmcRequest<EventTypeDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.loganalytics.model.EventTypeDetails> {
 
     /**
      * The Logging Analytics namespace used for the request.
@@ -34,7 +35,7 @@ public class DisableSourceEventTypesRequest
     /**
      * Details of event types to be disabled in the source.
      */
-    private EventTypeDetails disableEventTypeDetails;
+    private com.oracle.bmc.loganalytics.model.EventTypeDetails disableEventTypeDetails;
 
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -57,7 +58,7 @@ public class DisableSourceEventTypesRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public EventTypeDetails getBody$() {
+    public com.oracle.bmc.loganalytics.model.EventTypeDetails getBody$() {
         return disableEventTypeDetails;
     }
 
@@ -68,7 +69,8 @@ public class DisableSourceEventTypesRequest
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    DisableSourceEventTypesRequest, EventTypeDetails> {
+                    DisableSourceEventTypesRequest,
+                    com.oracle.bmc.loganalytics.model.EventTypeDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -134,7 +136,7 @@ public class DisableSourceEventTypesRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(EventTypeDetails body) {
+        public Builder body$(com.oracle.bmc.loganalytics.model.EventTypeDetails body) {
             disableEventTypeDetails(body);
             return this;
         }

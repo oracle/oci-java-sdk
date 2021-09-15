@@ -19,7 +19,8 @@ import com.oracle.bmc.loganalytics.model.*;
 @lombok.Getter
 public class ChangeLogAnalyticsObjectCollectionRuleCompartmentRequest
         extends com.oracle.bmc.requests.BmcRequest<
-                ChangeLogAnalyticsObjectCollectionRuleCompartmentDetails> {
+                com.oracle.bmc.loganalytics.model
+                        .ChangeLogAnalyticsObjectCollectionRuleCompartmentDetails> {
 
     /**
      * The Logging Analytics namespace used for the request.
@@ -35,7 +36,8 @@ public class ChangeLogAnalyticsObjectCollectionRuleCompartmentRequest
     /**
      * The new compartment this Object Collection Rule will be moved to.
      */
-    private ChangeLogAnalyticsObjectCollectionRuleCompartmentDetails
+    private com.oracle.bmc.loganalytics.model
+                    .ChangeLogAnalyticsObjectCollectionRuleCompartmentDetails
             changeLogAnalyticsObjectCollectionRuleCompartmentDetails;
 
     /**
@@ -59,7 +61,9 @@ public class ChangeLogAnalyticsObjectCollectionRuleCompartmentRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public ChangeLogAnalyticsObjectCollectionRuleCompartmentDetails getBody$() {
+    public com.oracle.bmc.loganalytics.model
+                    .ChangeLogAnalyticsObjectCollectionRuleCompartmentDetails
+            getBody$() {
         return changeLogAnalyticsObjectCollectionRuleCompartmentDetails;
     }
 
@@ -71,7 +75,8 @@ public class ChangeLogAnalyticsObjectCollectionRuleCompartmentRequest
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ChangeLogAnalyticsObjectCollectionRuleCompartmentRequest,
-                    ChangeLogAnalyticsObjectCollectionRuleCompartmentDetails> {
+                    com.oracle.bmc.loganalytics.model
+                            .ChangeLogAnalyticsObjectCollectionRuleCompartmentDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -139,7 +144,10 @@ public class ChangeLogAnalyticsObjectCollectionRuleCompartmentRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(ChangeLogAnalyticsObjectCollectionRuleCompartmentDetails body) {
+        public Builder body$(
+                com.oracle.bmc.loganalytics.model
+                                .ChangeLogAnalyticsObjectCollectionRuleCompartmentDetails
+                        body) {
             changeLogAnalyticsObjectCollectionRuleCompartmentDetails(body);
             return this;
         }

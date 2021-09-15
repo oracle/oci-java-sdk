@@ -18,7 +18,8 @@ import com.oracle.bmc.keymanagement.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class DeleteVaultReplicaRequest
-        extends com.oracle.bmc.requests.BmcRequest<DeleteVaultReplicaDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.keymanagement.model.DeleteVaultReplicaDetails> {
 
     /**
      * The OCID of the vault.
@@ -28,7 +29,7 @@ public class DeleteVaultReplicaRequest
     /**
      * DeleteVaultReplicaDetails
      */
-    private DeleteVaultReplicaDetails deleteVaultReplicaDetails;
+    private com.oracle.bmc.keymanagement.model.DeleteVaultReplicaDetails deleteVaultReplicaDetails;
 
     /**
      * For optimistic concurrency control. In the PUT or DELETE call for a
@@ -65,13 +66,14 @@ public class DeleteVaultReplicaRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public DeleteVaultReplicaDetails getBody$() {
+    public com.oracle.bmc.keymanagement.model.DeleteVaultReplicaDetails getBody$() {
         return deleteVaultReplicaDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    DeleteVaultReplicaRequest, DeleteVaultReplicaDetails> {
+                    DeleteVaultReplicaRequest,
+                    com.oracle.bmc.keymanagement.model.DeleteVaultReplicaDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -137,7 +139,7 @@ public class DeleteVaultReplicaRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(DeleteVaultReplicaDetails body) {
+        public Builder body$(com.oracle.bmc.keymanagement.model.DeleteVaultReplicaDetails body) {
             deleteVaultReplicaDetails(body);
             return this;
         }

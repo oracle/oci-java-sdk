@@ -18,7 +18,8 @@ import com.oracle.bmc.apmcontrolplane.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class RemoveDataKeysRequest
-        extends com.oracle.bmc.requests.BmcRequest<java.util.List<RemoveDataKeyDetails>> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                java.util.List<com.oracle.bmc.apmcontrolplane.model.RemoveDataKeyDetails>> {
 
     /**
      * OCID of the APM Domain
@@ -28,7 +29,8 @@ public class RemoveDataKeysRequest
     /**
      * List of Data Keys to be removed.
      */
-    private java.util.List<RemoveDataKeyDetails> removeDataKeysListDetails;
+    private java.util.List<com.oracle.bmc.apmcontrolplane.model.RemoveDataKeyDetails>
+            removeDataKeysListDetails;
 
     /**
      * For optimistic concurrency control. In the PUT or DELETE call
@@ -51,25 +53,28 @@ public class RemoveDataKeysRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public java.util.List<RemoveDataKeyDetails> getBody$() {
+    public java.util.List<com.oracle.bmc.apmcontrolplane.model.RemoveDataKeyDetails> getBody$() {
         return removeDataKeysListDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    RemoveDataKeysRequest, java.util.List<RemoveDataKeyDetails>> {
+                    RemoveDataKeysRequest,
+                    java.util.List<com.oracle.bmc.apmcontrolplane.model.RemoveDataKeyDetails>> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        private java.util.List<RemoveDataKeyDetails> removeDataKeysListDetails = null;
+        private java.util.List<com.oracle.bmc.apmcontrolplane.model.RemoveDataKeyDetails>
+                removeDataKeysListDetails = null;
 
         /**
          * List of Data Keys to be removed.
          * @return this builder instance
          */
         public Builder removeDataKeysListDetails(
-                java.util.List<RemoveDataKeyDetails> removeDataKeysListDetails) {
+                java.util.List<com.oracle.bmc.apmcontrolplane.model.RemoveDataKeyDetails>
+                        removeDataKeysListDetails) {
             this.removeDataKeysListDetails = removeDataKeysListDetails;
             return this;
         }
@@ -78,7 +83,8 @@ public class RemoveDataKeysRequest
          * Singular setter. List of Data Keys to be removed.
          * @return this builder instance
          */
-        public Builder removeDataKeysListDetails(RemoveDataKeyDetails singularValue) {
+        public Builder removeDataKeysListDetails(
+                com.oracle.bmc.apmcontrolplane.model.RemoveDataKeyDetails singularValue) {
             return this.removeDataKeysListDetails(java.util.Arrays.asList(singularValue));
         }
 
@@ -142,7 +148,8 @@ public class RemoveDataKeysRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(java.util.List<RemoveDataKeyDetails> body) {
+        public Builder body$(
+                java.util.List<com.oracle.bmc.apmcontrolplane.model.RemoveDataKeyDetails> body) {
             removeDataKeysListDetails(body);
             return this;
         }

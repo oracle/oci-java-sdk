@@ -18,7 +18,8 @@ import com.oracle.bmc.networkloadbalancer.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class UpdateNetworkSecurityGroupsRequest
-        extends com.oracle.bmc.requests.BmcRequest<UpdateNetworkSecurityGroupsDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.networkloadbalancer.model.UpdateNetworkSecurityGroupsDetails> {
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the network load balancer to update.
@@ -28,7 +29,8 @@ public class UpdateNetworkSecurityGroupsRequest
     /**
      * The details for updating the network security groups associated with the specified network load balancer.
      */
-    private UpdateNetworkSecurityGroupsDetails updateNetworkSecurityGroupsDetails;
+    private com.oracle.bmc.networkloadbalancer.model.UpdateNetworkSecurityGroupsDetails
+            updateNetworkSecurityGroupsDetails;
 
     /**
      * The unique Oracle-assigned identifier for the request. If you must contact Oracle about a
@@ -63,13 +65,14 @@ public class UpdateNetworkSecurityGroupsRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateNetworkSecurityGroupsDetails getBody$() {
+    public com.oracle.bmc.networkloadbalancer.model.UpdateNetworkSecurityGroupsDetails getBody$() {
         return updateNetworkSecurityGroupsDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateNetworkSecurityGroupsRequest, UpdateNetworkSecurityGroupsDetails> {
+                    UpdateNetworkSecurityGroupsRequest,
+                    com.oracle.bmc.networkloadbalancer.model.UpdateNetworkSecurityGroupsDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -135,7 +138,8 @@ public class UpdateNetworkSecurityGroupsRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateNetworkSecurityGroupsDetails body) {
+        public Builder body$(
+                com.oracle.bmc.networkloadbalancer.model.UpdateNetworkSecurityGroupsDetails body) {
             updateNetworkSecurityGroupsDetails(body);
             return this;
         }

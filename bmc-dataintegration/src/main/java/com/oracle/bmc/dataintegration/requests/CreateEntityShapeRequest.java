@@ -18,7 +18,8 @@ import com.oracle.bmc.dataintegration.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class CreateEntityShapeRequest
-        extends com.oracle.bmc.requests.BmcRequest<CreateEntityShapeDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.dataintegration.model.CreateEntityShapeDetails> {
 
     /**
      * The workspace ID.
@@ -38,7 +39,7 @@ public class CreateEntityShapeRequest
     /**
      * The details needed to create the data entity shape.
      */
-    private CreateEntityShapeDetails createEntityShapeDetails;
+    private com.oracle.bmc.dataintegration.model.CreateEntityShapeDetails createEntityShapeDetails;
 
     /**
      * Unique Oracle-assigned identifier for the request. If
@@ -68,13 +69,14 @@ public class CreateEntityShapeRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreateEntityShapeDetails getBody$() {
+    public com.oracle.bmc.dataintegration.model.CreateEntityShapeDetails getBody$() {
         return createEntityShapeDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CreateEntityShapeRequest, CreateEntityShapeDetails> {
+                    CreateEntityShapeRequest,
+                    com.oracle.bmc.dataintegration.model.CreateEntityShapeDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -142,7 +144,7 @@ public class CreateEntityShapeRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreateEntityShapeDetails body) {
+        public Builder body$(com.oracle.bmc.dataintegration.model.CreateEntityShapeDetails body) {
             createEntityShapeDetails(body);
             return this;
         }

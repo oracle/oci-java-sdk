@@ -17,7 +17,8 @@ import com.oracle.bmc.identity.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
-public class UpdateTagRequest extends com.oracle.bmc.requests.BmcRequest<UpdateTagDetails> {
+public class UpdateTagRequest
+        extends com.oracle.bmc.requests.BmcRequest<com.oracle.bmc.identity.model.UpdateTagDetails> {
 
     /**
      * The OCID of the tag namespace.
@@ -34,7 +35,7 @@ public class UpdateTagRequest extends com.oracle.bmc.requests.BmcRequest<UpdateT
     /**
      * Request object for updating a tag.
      */
-    private UpdateTagDetails updateTagDetails;
+    private com.oracle.bmc.identity.model.UpdateTagDetails updateTagDetails;
 
     /**
      * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
@@ -50,13 +51,13 @@ public class UpdateTagRequest extends com.oracle.bmc.requests.BmcRequest<UpdateT
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateTagDetails getBody$() {
+    public com.oracle.bmc.identity.model.UpdateTagDetails getBody$() {
         return updateTagDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateTagRequest, UpdateTagDetails> {
+                    UpdateTagRequest, com.oracle.bmc.identity.model.UpdateTagDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -121,7 +122,7 @@ public class UpdateTagRequest extends com.oracle.bmc.requests.BmcRequest<UpdateT
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateTagDetails body) {
+        public Builder body$(com.oracle.bmc.identity.model.UpdateTagDetails body) {
             updateTagDetails(body);
             return this;
         }

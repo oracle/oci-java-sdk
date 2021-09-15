@@ -18,12 +18,13 @@ import com.oracle.bmc.core.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class AttachBootVolumeRequest
-        extends com.oracle.bmc.requests.BmcRequest<AttachBootVolumeDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.core.model.AttachBootVolumeDetails> {
 
     /**
      * Attach boot volume request
      */
-    private AttachBootVolumeDetails attachBootVolumeDetails;
+    private com.oracle.bmc.core.model.AttachBootVolumeDetails attachBootVolumeDetails;
 
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -41,13 +42,13 @@ public class AttachBootVolumeRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public AttachBootVolumeDetails getBody$() {
+    public com.oracle.bmc.core.model.AttachBootVolumeDetails getBody$() {
         return attachBootVolumeDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    AttachBootVolumeRequest, AttachBootVolumeDetails> {
+                    AttachBootVolumeRequest, com.oracle.bmc.core.model.AttachBootVolumeDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -110,7 +111,7 @@ public class AttachBootVolumeRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(AttachBootVolumeDetails body) {
+        public Builder body$(com.oracle.bmc.core.model.AttachBootVolumeDetails body) {
             attachBootVolumeDetails(body);
             return this;
         }

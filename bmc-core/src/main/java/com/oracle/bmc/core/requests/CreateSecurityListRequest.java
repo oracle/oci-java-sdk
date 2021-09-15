@@ -18,12 +18,13 @@ import com.oracle.bmc.core.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class CreateSecurityListRequest
-        extends com.oracle.bmc.requests.BmcRequest<CreateSecurityListDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.core.model.CreateSecurityListDetails> {
 
     /**
      * Details regarding the security list to create.
      */
-    private CreateSecurityListDetails createSecurityListDetails;
+    private com.oracle.bmc.core.model.CreateSecurityListDetails createSecurityListDetails;
 
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -41,13 +42,14 @@ public class CreateSecurityListRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreateSecurityListDetails getBody$() {
+    public com.oracle.bmc.core.model.CreateSecurityListDetails getBody$() {
         return createSecurityListDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CreateSecurityListRequest, CreateSecurityListDetails> {
+                    CreateSecurityListRequest,
+                    com.oracle.bmc.core.model.CreateSecurityListDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -110,7 +112,7 @@ public class CreateSecurityListRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreateSecurityListDetails body) {
+        public Builder body$(com.oracle.bmc.core.model.CreateSecurityListDetails body) {
             createSecurityListDetails(body);
             return this;
         }

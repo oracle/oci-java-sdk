@@ -18,7 +18,8 @@ import com.oracle.bmc.loganalytics.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class AddSourceEventTypesRequest
-        extends com.oracle.bmc.requests.BmcRequest<EventTypeDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.loganalytics.model.EventTypeDetails> {
 
     /**
      * The Logging Analytics namespace used for the request.
@@ -35,7 +36,7 @@ public class AddSourceEventTypesRequest
      * Details of event types to be added to the source. The specified event type string could be the fully qualified name or a prefix that matches the event type.
      *
      */
-    private EventTypeDetails addEventTypeDetails;
+    private com.oracle.bmc.loganalytics.model.EventTypeDetails addEventTypeDetails;
 
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -58,7 +59,7 @@ public class AddSourceEventTypesRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public EventTypeDetails getBody$() {
+    public com.oracle.bmc.loganalytics.model.EventTypeDetails getBody$() {
         return addEventTypeDetails;
     }
 
@@ -69,7 +70,8 @@ public class AddSourceEventTypesRequest
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    AddSourceEventTypesRequest, EventTypeDetails> {
+                    AddSourceEventTypesRequest,
+                    com.oracle.bmc.loganalytics.model.EventTypeDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -135,7 +137,7 @@ public class AddSourceEventTypesRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(EventTypeDetails body) {
+        public Builder body$(com.oracle.bmc.loganalytics.model.EventTypeDetails body) {
             addEventTypeDetails(body);
             return this;
         }

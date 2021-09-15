@@ -17,7 +17,9 @@ import com.oracle.bmc.bastion.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
-public class UpdateBastionRequest extends com.oracle.bmc.requests.BmcRequest<UpdateBastionDetails> {
+public class UpdateBastionRequest
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.bastion.model.UpdateBastionDetails> {
 
     /**
      * The unique identifier (OCID) of the bastion.
@@ -27,7 +29,7 @@ public class UpdateBastionRequest extends com.oracle.bmc.requests.BmcRequest<Upd
     /**
      * The bastion information to be updated.
      */
-    private UpdateBastionDetails updateBastionDetails;
+    private com.oracle.bmc.bastion.model.UpdateBastionDetails updateBastionDetails;
 
     /**
      * For optimistic concurrency control. In the PUT or DELETE call
@@ -50,13 +52,13 @@ public class UpdateBastionRequest extends com.oracle.bmc.requests.BmcRequest<Upd
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateBastionDetails getBody$() {
+    public com.oracle.bmc.bastion.model.UpdateBastionDetails getBody$() {
         return updateBastionDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateBastionRequest, UpdateBastionDetails> {
+                    UpdateBastionRequest, com.oracle.bmc.bastion.model.UpdateBastionDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -121,7 +123,7 @@ public class UpdateBastionRequest extends com.oracle.bmc.requests.BmcRequest<Upd
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateBastionDetails body) {
+        public Builder body$(com.oracle.bmc.bastion.model.UpdateBastionDetails body) {
             updateBastionDetails(body);
             return this;
         }

@@ -18,7 +18,8 @@ import com.oracle.bmc.database.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class ActivateExadataInfrastructureRequest
-        extends com.oracle.bmc.requests.BmcRequest<ActivateExadataInfrastructureDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.database.model.ActivateExadataInfrastructureDetails> {
 
     /**
      * The Exadata infrastructure [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
@@ -28,7 +29,8 @@ public class ActivateExadataInfrastructureRequest
     /**
      * The activation details for the Exadata infrastructure and the additional storage servers requested.
      */
-    private ActivateExadataInfrastructureDetails activateExadataInfrastructureDetails;
+    private com.oracle.bmc.database.model.ActivateExadataInfrastructureDetails
+            activateExadataInfrastructureDetails;
 
     /**
      * Unique identifier for the request.
@@ -52,13 +54,14 @@ public class ActivateExadataInfrastructureRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public ActivateExadataInfrastructureDetails getBody$() {
+    public com.oracle.bmc.database.model.ActivateExadataInfrastructureDetails getBody$() {
         return activateExadataInfrastructureDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    ActivateExadataInfrastructureRequest, ActivateExadataInfrastructureDetails> {
+                    ActivateExadataInfrastructureRequest,
+                    com.oracle.bmc.database.model.ActivateExadataInfrastructureDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -123,7 +126,8 @@ public class ActivateExadataInfrastructureRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(ActivateExadataInfrastructureDetails body) {
+        public Builder body$(
+                com.oracle.bmc.database.model.ActivateExadataInfrastructureDetails body) {
             activateExadataInfrastructureDetails(body);
             return this;
         }

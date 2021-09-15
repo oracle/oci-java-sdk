@@ -95,7 +95,7 @@ public class ListAutoScalingConfigurationsRequest
     /**
      * The state of the autoscale configuration.
      */
-    private AutoScalingConfiguration.LifecycleState lifecycleState;
+    private com.oracle.bmc.bds.model.AutoScalingConfiguration.LifecycleState lifecycleState;
 
     /**
      * The client request ID for tracing.

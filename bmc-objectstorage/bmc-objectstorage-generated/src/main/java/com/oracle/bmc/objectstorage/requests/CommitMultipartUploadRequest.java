@@ -18,7 +18,8 @@ import com.oracle.bmc.objectstorage.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class CommitMultipartUploadRequest
-        extends com.oracle.bmc.requests.BmcRequest<CommitMultipartUploadDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.objectstorage.model.CommitMultipartUploadDetails> {
 
     /**
      * The Object Storage namespace used for the request.
@@ -47,7 +48,8 @@ public class CommitMultipartUploadRequest
     /**
      * The part numbers and entity tags (ETags) for the parts you want to commit.
      */
-    private CommitMultipartUploadDetails commitMultipartUploadDetails;
+    private com.oracle.bmc.objectstorage.model.CommitMultipartUploadDetails
+            commitMultipartUploadDetails;
 
     /**
      * The entity tag (ETag) to match with the ETag of an existing resource. If the specified ETag matches the ETag of
@@ -75,13 +77,14 @@ public class CommitMultipartUploadRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CommitMultipartUploadDetails getBody$() {
+    public com.oracle.bmc.objectstorage.model.CommitMultipartUploadDetails getBody$() {
         return commitMultipartUploadDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CommitMultipartUploadRequest, CommitMultipartUploadDetails> {
+                    CommitMultipartUploadRequest,
+                    com.oracle.bmc.objectstorage.model.CommitMultipartUploadDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -150,7 +153,7 @@ public class CommitMultipartUploadRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CommitMultipartUploadDetails body) {
+        public Builder body$(com.oracle.bmc.objectstorage.model.CommitMultipartUploadDetails body) {
             commitMultipartUploadDetails(body);
             return this;
         }

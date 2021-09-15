@@ -18,12 +18,13 @@ import com.oracle.bmc.mysql.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class CreateDbSystemRequest
-        extends com.oracle.bmc.requests.BmcRequest<CreateDbSystemDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.mysql.model.CreateDbSystemDetails> {
 
     /**
      * Request to create a DB System.
      */
-    private CreateDbSystemDetails createDbSystemDetails;
+    private com.oracle.bmc.mysql.model.CreateDbSystemDetails createDbSystemDetails;
 
     /**
      * Customer-defined unique identifier for the request. If you need to
@@ -50,13 +51,13 @@ public class CreateDbSystemRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreateDbSystemDetails getBody$() {
+    public com.oracle.bmc.mysql.model.CreateDbSystemDetails getBody$() {
         return createDbSystemDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CreateDbSystemRequest, CreateDbSystemDetails> {
+                    CreateDbSystemRequest, com.oracle.bmc.mysql.model.CreateDbSystemDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -120,7 +121,7 @@ public class CreateDbSystemRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreateDbSystemDetails body) {
+        public Builder body$(com.oracle.bmc.mysql.model.CreateDbSystemDetails body) {
             createDbSystemDetails(body);
             return this;
         }

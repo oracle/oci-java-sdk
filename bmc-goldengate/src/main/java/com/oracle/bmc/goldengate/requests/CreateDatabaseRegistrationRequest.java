@@ -18,13 +18,15 @@ import com.oracle.bmc.goldengate.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class CreateDatabaseRegistrationRequest
-        extends com.oracle.bmc.requests.BmcRequest<CreateDatabaseRegistrationDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.goldengate.model.CreateDatabaseRegistrationDetails> {
 
     /**
      * Specification of the DatabaseRegistration to create.
      *
      */
-    private CreateDatabaseRegistrationDetails createDatabaseRegistrationDetails;
+    private com.oracle.bmc.goldengate.model.CreateDatabaseRegistrationDetails
+            createDatabaseRegistrationDetails;
 
     /**
      * A token that uniquely identifies a request so it can be retried, in case of a timeout or server error, without risk of executing that same action again. Retry tokens expire after 24 hours, but can be invalidated before then due to conflicting operations. For example, if a resource has been deleted and purged from the system, then a retry of the original creation request is rejected.
@@ -44,13 +46,14 @@ public class CreateDatabaseRegistrationRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreateDatabaseRegistrationDetails getBody$() {
+    public com.oracle.bmc.goldengate.model.CreateDatabaseRegistrationDetails getBody$() {
         return createDatabaseRegistrationDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CreateDatabaseRegistrationRequest, CreateDatabaseRegistrationDetails> {
+                    CreateDatabaseRegistrationRequest,
+                    com.oracle.bmc.goldengate.model.CreateDatabaseRegistrationDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -114,7 +117,8 @@ public class CreateDatabaseRegistrationRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreateDatabaseRegistrationDetails body) {
+        public Builder body$(
+                com.oracle.bmc.goldengate.model.CreateDatabaseRegistrationDetails body) {
             createDatabaseRegistrationDetails(body);
             return this;
         }

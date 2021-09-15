@@ -18,12 +18,14 @@ import com.oracle.bmc.managementdashboard.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class CreateManagementDashboardRequest
-        extends com.oracle.bmc.requests.BmcRequest<CreateManagementDashboardDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.managementdashboard.model.CreateManagementDashboardDetails> {
 
     /**
      * JSON metadata for creating a new dashboard.
      */
-    private CreateManagementDashboardDetails createManagementDashboardDetails;
+    private com.oracle.bmc.managementdashboard.model.CreateManagementDashboardDetails
+            createManagementDashboardDetails;
 
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -46,13 +48,14 @@ public class CreateManagementDashboardRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreateManagementDashboardDetails getBody$() {
+    public com.oracle.bmc.managementdashboard.model.CreateManagementDashboardDetails getBody$() {
         return createManagementDashboardDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CreateManagementDashboardRequest, CreateManagementDashboardDetails> {
+                    CreateManagementDashboardRequest,
+                    com.oracle.bmc.managementdashboard.model.CreateManagementDashboardDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -116,7 +119,8 @@ public class CreateManagementDashboardRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreateManagementDashboardDetails body) {
+        public Builder body$(
+                com.oracle.bmc.managementdashboard.model.CreateManagementDashboardDetails body) {
             createManagementDashboardDetails(body);
             return this;
         }

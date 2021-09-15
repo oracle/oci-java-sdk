@@ -164,7 +164,7 @@ public class ListVolumeBackupsRequest extends com.oracle.bmc.requests.BmcRequest
      * value is case-insensitive.
      *
      */
-    private VolumeBackup.LifecycleState lifecycleState;
+    private com.oracle.bmc.core.model.VolumeBackup.LifecycleState lifecycleState;
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<

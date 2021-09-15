@@ -18,12 +18,13 @@ import com.oracle.bmc.core.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class CreateDedicatedVmHostRequest
-        extends com.oracle.bmc.requests.BmcRequest<CreateDedicatedVmHostDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.core.model.CreateDedicatedVmHostDetails> {
 
     /**
      * The details for creating a new dedicated virtual machine host.
      */
-    private CreateDedicatedVmHostDetails createDedicatedVmHostDetails;
+    private com.oracle.bmc.core.model.CreateDedicatedVmHostDetails createDedicatedVmHostDetails;
 
     /**
      * Unique identifier for the request.
@@ -48,13 +49,14 @@ public class CreateDedicatedVmHostRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreateDedicatedVmHostDetails getBody$() {
+    public com.oracle.bmc.core.model.CreateDedicatedVmHostDetails getBody$() {
         return createDedicatedVmHostDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CreateDedicatedVmHostRequest, CreateDedicatedVmHostDetails> {
+                    CreateDedicatedVmHostRequest,
+                    com.oracle.bmc.core.model.CreateDedicatedVmHostDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -118,7 +120,7 @@ public class CreateDedicatedVmHostRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreateDedicatedVmHostDetails body) {
+        public Builder body$(com.oracle.bmc.core.model.CreateDedicatedVmHostDetails body) {
             createDedicatedVmHostDetails(body);
             return this;
         }

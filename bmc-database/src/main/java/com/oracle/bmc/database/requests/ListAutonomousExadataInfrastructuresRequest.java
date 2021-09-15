@@ -124,7 +124,8 @@ public class ListAutonomousExadataInfrastructuresRequest
     /**
      * A filter to return only resources that match the given lifecycle state exactly.
      */
-    private AutonomousExadataInfrastructureSummary.LifecycleState lifecycleState;
+    private com.oracle.bmc.database.model.AutonomousExadataInfrastructureSummary.LifecycleState
+            lifecycleState;
 
     /**
      * A filter to return only resources that match the given availability domain exactly.

@@ -18,7 +18,8 @@ import com.oracle.bmc.managementagent.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class UpdateManagementAgentInstallKeyRequest
-        extends com.oracle.bmc.requests.BmcRequest<UpdateManagementAgentInstallKeyDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.managementagent.model.UpdateManagementAgentInstallKeyDetails> {
 
     /**
      * Unique Management Agent Install Key identifier
@@ -28,7 +29,8 @@ public class UpdateManagementAgentInstallKeyRequest
     /**
      * Details required for changing the modifiable properties of the Management Agent install key.
      */
-    private UpdateManagementAgentInstallKeyDetails updateManagementAgentInstallKeyDetails;
+    private com.oracle.bmc.managementagent.model.UpdateManagementAgentInstallKeyDetails
+            updateManagementAgentInstallKeyDetails;
 
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -61,14 +63,14 @@ public class UpdateManagementAgentInstallKeyRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateManagementAgentInstallKeyDetails getBody$() {
+    public com.oracle.bmc.managementagent.model.UpdateManagementAgentInstallKeyDetails getBody$() {
         return updateManagementAgentInstallKeyDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     UpdateManagementAgentInstallKeyRequest,
-                    UpdateManagementAgentInstallKeyDetails> {
+                    com.oracle.bmc.managementagent.model.UpdateManagementAgentInstallKeyDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -134,7 +136,8 @@ public class UpdateManagementAgentInstallKeyRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateManagementAgentInstallKeyDetails body) {
+        public Builder body$(
+                com.oracle.bmc.managementagent.model.UpdateManagementAgentInstallKeyDetails body) {
             updateManagementAgentInstallKeyDetails(body);
             return this;
         }

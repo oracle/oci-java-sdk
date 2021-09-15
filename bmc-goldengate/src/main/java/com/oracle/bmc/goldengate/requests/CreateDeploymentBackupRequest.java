@@ -18,12 +18,14 @@ import com.oracle.bmc.goldengate.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class CreateDeploymentBackupRequest
-        extends com.oracle.bmc.requests.BmcRequest<CreateDeploymentBackupDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.goldengate.model.CreateDeploymentBackupDetails> {
 
     /**
      * Specification of the DeploymentBackup to create.
      */
-    private CreateDeploymentBackupDetails createDeploymentBackupDetails;
+    private com.oracle.bmc.goldengate.model.CreateDeploymentBackupDetails
+            createDeploymentBackupDetails;
 
     /**
      * A token that uniquely identifies a request so it can be retried, in case of a timeout or server error, without risk of executing that same action again. Retry tokens expire after 24 hours, but can be invalidated before then due to conflicting operations. For example, if a resource has been deleted and purged from the system, then a retry of the original creation request is rejected.
@@ -43,13 +45,14 @@ public class CreateDeploymentBackupRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreateDeploymentBackupDetails getBody$() {
+    public com.oracle.bmc.goldengate.model.CreateDeploymentBackupDetails getBody$() {
         return createDeploymentBackupDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CreateDeploymentBackupRequest, CreateDeploymentBackupDetails> {
+                    CreateDeploymentBackupRequest,
+                    com.oracle.bmc.goldengate.model.CreateDeploymentBackupDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -113,7 +116,7 @@ public class CreateDeploymentBackupRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreateDeploymentBackupDetails body) {
+        public Builder body$(com.oracle.bmc.goldengate.model.CreateDeploymentBackupDetails body) {
             createDeploymentBackupDetails(body);
             return this;
         }

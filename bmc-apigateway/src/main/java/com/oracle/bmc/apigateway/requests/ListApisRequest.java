@@ -38,7 +38,7 @@ public class ListApisRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
      * Example: {@code ACTIVE}
      *
      */
-    private ApiSummary.LifecycleState lifecycleState;
+    private com.oracle.bmc.apigateway.model.ApiSummary.LifecycleState lifecycleState;
 
     /**
      * The maximum number of items to return.

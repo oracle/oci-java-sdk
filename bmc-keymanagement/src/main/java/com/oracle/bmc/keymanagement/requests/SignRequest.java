@@ -17,12 +17,14 @@ import com.oracle.bmc.keymanagement.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
-public class SignRequest extends com.oracle.bmc.requests.BmcRequest<SignDataDetails> {
+public class SignRequest
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.keymanagement.model.SignDataDetails> {
 
     /**
      * SignDataDetails
      */
-    private SignDataDetails signDataDetails;
+    private com.oracle.bmc.keymanagement.model.SignDataDetails signDataDetails;
 
     /**
      * Unique identifier for the request. If provided, the returned request ID
@@ -38,12 +40,13 @@ public class SignRequest extends com.oracle.bmc.requests.BmcRequest<SignDataDeta
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public SignDataDetails getBody$() {
+    public com.oracle.bmc.keymanagement.model.SignDataDetails getBody$() {
         return signDataDetails;
     }
 
     public static class Builder
-            implements com.oracle.bmc.requests.BmcRequest.Builder<SignRequest, SignDataDetails> {
+            implements com.oracle.bmc.requests.BmcRequest.Builder<
+                    SignRequest, com.oracle.bmc.keymanagement.model.SignDataDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -106,7 +109,7 @@ public class SignRequest extends com.oracle.bmc.requests.BmcRequest<SignDataDeta
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(SignDataDetails body) {
+        public Builder body$(com.oracle.bmc.keymanagement.model.SignDataDetails body) {
             signDataDetails(body);
             return this;
         }

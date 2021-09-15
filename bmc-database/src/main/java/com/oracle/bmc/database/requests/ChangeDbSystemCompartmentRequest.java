@@ -18,7 +18,8 @@ import com.oracle.bmc.database.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class ChangeDbSystemCompartmentRequest
-        extends com.oracle.bmc.requests.BmcRequest<ChangeCompartmentDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.database.model.ChangeCompartmentDetails> {
 
     /**
      * Request to move the DB system to a different compartment.
@@ -28,7 +29,7 @@ public class ChangeDbSystemCompartmentRequest
      * For Exadata Cloud Service instances, support for this API will end on May 15th, 2021. See [Switching an Exadata DB System to the New Resource Model and APIs](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaflexsystem_topic-resource_model_conversion.htm) for details on converting existing Exadata DB systems to the new resource model.
      *
      */
-    private ChangeCompartmentDetails changeCompartmentDetails;
+    private com.oracle.bmc.database.model.ChangeCompartmentDetails changeCompartmentDetails;
 
     /**
      * The DB system [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
@@ -65,13 +66,14 @@ public class ChangeDbSystemCompartmentRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public ChangeCompartmentDetails getBody$() {
+    public com.oracle.bmc.database.model.ChangeCompartmentDetails getBody$() {
         return changeCompartmentDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    ChangeDbSystemCompartmentRequest, ChangeCompartmentDetails> {
+                    ChangeDbSystemCompartmentRequest,
+                    com.oracle.bmc.database.model.ChangeCompartmentDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -137,7 +139,7 @@ public class ChangeDbSystemCompartmentRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(ChangeCompartmentDetails body) {
+        public Builder body$(com.oracle.bmc.database.model.ChangeCompartmentDetails body) {
             changeCompartmentDetails(body);
             return this;
         }

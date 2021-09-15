@@ -18,12 +18,13 @@ import com.oracle.bmc.email.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class CreateEmailDomainRequest
-        extends com.oracle.bmc.requests.BmcRequest<CreateEmailDomainDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.email.model.CreateEmailDomainDetails> {
 
     /**
      * The email domain to create.
      */
-    private CreateEmailDomainDetails createEmailDomainDetails;
+    private com.oracle.bmc.email.model.CreateEmailDomainDetails createEmailDomainDetails;
 
     /**
      * The request ID for tracing from the system
@@ -46,13 +47,13 @@ public class CreateEmailDomainRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreateEmailDomainDetails getBody$() {
+    public com.oracle.bmc.email.model.CreateEmailDomainDetails getBody$() {
         return createEmailDomainDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CreateEmailDomainRequest, CreateEmailDomainDetails> {
+                    CreateEmailDomainRequest, com.oracle.bmc.email.model.CreateEmailDomainDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -116,7 +117,7 @@ public class CreateEmailDomainRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreateEmailDomainDetails body) {
+        public Builder body$(com.oracle.bmc.email.model.CreateEmailDomainDetails body) {
             createEmailDomainDetails(body);
             return this;
         }

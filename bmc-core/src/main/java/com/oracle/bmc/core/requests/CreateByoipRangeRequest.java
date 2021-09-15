@@ -18,12 +18,13 @@ import com.oracle.bmc.core.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class CreateByoipRangeRequest
-        extends com.oracle.bmc.requests.BmcRequest<CreateByoipRangeDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.core.model.CreateByoipRangeDetails> {
 
     /**
      * Details needed to create a BYOIP CIDR block subrange.
      */
-    private CreateByoipRangeDetails createByoipRangeDetails;
+    private com.oracle.bmc.core.model.CreateByoipRangeDetails createByoipRangeDetails;
 
     /**
      * Unique identifier for the request.
@@ -48,13 +49,13 @@ public class CreateByoipRangeRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreateByoipRangeDetails getBody$() {
+    public com.oracle.bmc.core.model.CreateByoipRangeDetails getBody$() {
         return createByoipRangeDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CreateByoipRangeRequest, CreateByoipRangeDetails> {
+                    CreateByoipRangeRequest, com.oracle.bmc.core.model.CreateByoipRangeDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -118,7 +119,7 @@ public class CreateByoipRangeRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreateByoipRangeDetails body) {
+        public Builder body$(com.oracle.bmc.core.model.CreateByoipRangeDetails body) {
             createByoipRangeDetails(body);
             return this;
         }

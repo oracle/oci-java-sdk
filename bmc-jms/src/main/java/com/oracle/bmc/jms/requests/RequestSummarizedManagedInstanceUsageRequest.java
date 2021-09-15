@@ -18,7 +18,8 @@ import com.oracle.bmc.jms.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class RequestSummarizedManagedInstanceUsageRequest
-        extends com.oracle.bmc.requests.BmcRequest<RequestSummarizedManagedInstanceUsageDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.jms.model.RequestSummarizedManagedInstanceUsageDetails> {
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Fleet.
@@ -28,7 +29,7 @@ public class RequestSummarizedManagedInstanceUsageRequest
     /**
      * Parameters for filtering managed instance usage.
      */
-    private RequestSummarizedManagedInstanceUsageDetails
+    private com.oracle.bmc.jms.model.RequestSummarizedManagedInstanceUsageDetails
             requestSummarizedManagedInstanceUsageDetails;
 
     /**
@@ -52,14 +53,14 @@ public class RequestSummarizedManagedInstanceUsageRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public RequestSummarizedManagedInstanceUsageDetails getBody$() {
+    public com.oracle.bmc.jms.model.RequestSummarizedManagedInstanceUsageDetails getBody$() {
         return requestSummarizedManagedInstanceUsageDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     RequestSummarizedManagedInstanceUsageRequest,
-                    RequestSummarizedManagedInstanceUsageDetails> {
+                    com.oracle.bmc.jms.model.RequestSummarizedManagedInstanceUsageDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -126,7 +127,8 @@ public class RequestSummarizedManagedInstanceUsageRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(RequestSummarizedManagedInstanceUsageDetails body) {
+        public Builder body$(
+                com.oracle.bmc.jms.model.RequestSummarizedManagedInstanceUsageDetails body) {
             requestSummarizedManagedInstanceUsageDetails(body);
             return this;
         }

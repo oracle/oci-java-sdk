@@ -17,7 +17,9 @@ import com.oracle.bmc.database.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
-public class UpdateDbHomeRequest extends com.oracle.bmc.requests.BmcRequest<UpdateDbHomeDetails> {
+public class UpdateDbHomeRequest
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.database.model.UpdateDbHomeDetails> {
 
     /**
      * The Database Home [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
@@ -27,7 +29,7 @@ public class UpdateDbHomeRequest extends com.oracle.bmc.requests.BmcRequest<Upda
     /**
      * Request to update the properties of a Database Home.
      */
-    private UpdateDbHomeDetails updateDbHomeDetails;
+    private com.oracle.bmc.database.model.UpdateDbHomeDetails updateDbHomeDetails;
 
     /**
      * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
@@ -43,13 +45,13 @@ public class UpdateDbHomeRequest extends com.oracle.bmc.requests.BmcRequest<Upda
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateDbHomeDetails getBody$() {
+    public com.oracle.bmc.database.model.UpdateDbHomeDetails getBody$() {
         return updateDbHomeDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateDbHomeRequest, UpdateDbHomeDetails> {
+                    UpdateDbHomeRequest, com.oracle.bmc.database.model.UpdateDbHomeDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -113,7 +115,7 @@ public class UpdateDbHomeRequest extends com.oracle.bmc.requests.BmcRequest<Upda
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateDbHomeDetails body) {
+        public Builder body$(com.oracle.bmc.database.model.UpdateDbHomeDetails body) {
             updateDbHomeDetails(body);
             return this;
         }

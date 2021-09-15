@@ -18,7 +18,8 @@ import com.oracle.bmc.databasemigration.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class UpdateConnectionRequest
-        extends com.oracle.bmc.requests.BmcRequest<UpdateConnectionDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.databasemigration.model.UpdateConnectionDetails> {
 
     /**
      * The OCID of the database connection
@@ -30,7 +31,7 @@ public class UpdateConnectionRequest
      * Database Connection properties.
      *
      */
-    private UpdateConnectionDetails updateConnectionDetails;
+    private com.oracle.bmc.databasemigration.model.UpdateConnectionDetails updateConnectionDetails;
 
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
@@ -55,13 +56,14 @@ public class UpdateConnectionRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateConnectionDetails getBody$() {
+    public com.oracle.bmc.databasemigration.model.UpdateConnectionDetails getBody$() {
         return updateConnectionDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateConnectionRequest, UpdateConnectionDetails> {
+                    UpdateConnectionRequest,
+                    com.oracle.bmc.databasemigration.model.UpdateConnectionDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -126,7 +128,7 @@ public class UpdateConnectionRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateConnectionDetails body) {
+        public Builder body$(com.oracle.bmc.databasemigration.model.UpdateConnectionDetails body) {
             updateConnectionDetails(body);
             return this;
         }

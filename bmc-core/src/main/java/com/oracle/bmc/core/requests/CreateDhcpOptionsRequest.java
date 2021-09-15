@@ -18,12 +18,12 @@ import com.oracle.bmc.core.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class CreateDhcpOptionsRequest
-        extends com.oracle.bmc.requests.BmcRequest<CreateDhcpDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<com.oracle.bmc.core.model.CreateDhcpDetails> {
 
     /**
      * Request object for creating a new set of DHCP options.
      */
-    private CreateDhcpDetails createDhcpDetails;
+    private com.oracle.bmc.core.model.CreateDhcpDetails createDhcpDetails;
 
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -41,13 +41,13 @@ public class CreateDhcpOptionsRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreateDhcpDetails getBody$() {
+    public com.oracle.bmc.core.model.CreateDhcpDetails getBody$() {
         return createDhcpDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CreateDhcpOptionsRequest, CreateDhcpDetails> {
+                    CreateDhcpOptionsRequest, com.oracle.bmc.core.model.CreateDhcpDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -110,7 +110,7 @@ public class CreateDhcpOptionsRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreateDhcpDetails body) {
+        public Builder body$(com.oracle.bmc.core.model.CreateDhcpDetails body) {
             createDhcpDetails(body);
             return this;
         }

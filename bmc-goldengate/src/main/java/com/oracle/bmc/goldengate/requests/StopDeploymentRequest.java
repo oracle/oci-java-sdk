@@ -18,7 +18,8 @@ import com.oracle.bmc.goldengate.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class StopDeploymentRequest
-        extends com.oracle.bmc.requests.BmcRequest<StopDeploymentDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.goldengate.model.StopDeploymentDetails> {
 
     /**
      * A unique Deployment identifier.
@@ -30,7 +31,7 @@ public class StopDeploymentRequest
      * A placeholder for any additional metadata to describe the deployment stop.
      *
      */
-    private StopDeploymentDetails stopDeploymentDetails;
+    private com.oracle.bmc.goldengate.model.StopDeploymentDetails stopDeploymentDetails;
 
     /**
      * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match} parameter to the value of the etag from a previous GET or POST response for that resource.  The resource is updated or deleted only if the etag you provide matches the resource's current etag value.
@@ -56,13 +57,13 @@ public class StopDeploymentRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public StopDeploymentDetails getBody$() {
+    public com.oracle.bmc.goldengate.model.StopDeploymentDetails getBody$() {
         return stopDeploymentDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    StopDeploymentRequest, StopDeploymentDetails> {
+                    StopDeploymentRequest, com.oracle.bmc.goldengate.model.StopDeploymentDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -128,7 +129,7 @@ public class StopDeploymentRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(StopDeploymentDetails body) {
+        public Builder body$(com.oracle.bmc.goldengate.model.StopDeploymentDetails body) {
             stopDeploymentDetails(body);
             return this;
         }

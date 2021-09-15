@@ -161,7 +161,7 @@ public class ListVolumeGroupsRequest extends com.oracle.bmc.requests.BmcRequest<
      * state. The state value is case-insensitive.
      *
      */
-    private VolumeGroup.LifecycleState lifecycleState;
+    private com.oracle.bmc.core.model.VolumeGroup.LifecycleState lifecycleState;
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<

@@ -18,7 +18,8 @@ import com.oracle.bmc.tenantmanagercontrolplane.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class UpdateDomainGovernanceRequest
-        extends com.oracle.bmc.requests.BmcRequest<UpdateDomainGovernanceDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.tenantmanagercontrolplane.model.UpdateDomainGovernanceDetails> {
 
     /**
      * The domain governance OCID.
@@ -28,7 +29,8 @@ public class UpdateDomainGovernanceRequest
     /**
      * The information to be updated.
      */
-    private UpdateDomainGovernanceDetails updateDomainGovernanceDetails;
+    private com.oracle.bmc.tenantmanagercontrolplane.model.UpdateDomainGovernanceDetails
+            updateDomainGovernanceDetails;
 
     /**
      * For optimistic concurrency control. In the PUT or DELETE call
@@ -51,13 +53,14 @@ public class UpdateDomainGovernanceRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateDomainGovernanceDetails getBody$() {
+    public com.oracle.bmc.tenantmanagercontrolplane.model.UpdateDomainGovernanceDetails getBody$() {
         return updateDomainGovernanceDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateDomainGovernanceRequest, UpdateDomainGovernanceDetails> {
+                    UpdateDomainGovernanceRequest,
+                    com.oracle.bmc.tenantmanagercontrolplane.model.UpdateDomainGovernanceDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -122,7 +125,8 @@ public class UpdateDomainGovernanceRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateDomainGovernanceDetails body) {
+        public Builder body$(
+                com.oracle.bmc.tenantmanagercontrolplane.model.UpdateDomainGovernanceDetails body) {
             updateDomainGovernanceDetails(body);
             return this;
         }

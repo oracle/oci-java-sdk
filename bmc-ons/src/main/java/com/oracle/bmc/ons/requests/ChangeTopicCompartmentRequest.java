@@ -18,7 +18,8 @@ import com.oracle.bmc.ons.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class ChangeTopicCompartmentRequest
-        extends com.oracle.bmc.requests.BmcRequest<ChangeCompartmentDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.ons.model.ChangeCompartmentDetails> {
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the topic to move.
@@ -29,7 +30,7 @@ public class ChangeTopicCompartmentRequest
     /**
      * The configuration details for the move operation.
      */
-    private ChangeCompartmentDetails changeTopicCompartmentDetails;
+    private com.oracle.bmc.ons.model.ChangeCompartmentDetails changeTopicCompartmentDetails;
 
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -62,13 +63,14 @@ public class ChangeTopicCompartmentRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public ChangeCompartmentDetails getBody$() {
+    public com.oracle.bmc.ons.model.ChangeCompartmentDetails getBody$() {
         return changeTopicCompartmentDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    ChangeTopicCompartmentRequest, ChangeCompartmentDetails> {
+                    ChangeTopicCompartmentRequest,
+                    com.oracle.bmc.ons.model.ChangeCompartmentDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -134,7 +136,7 @@ public class ChangeTopicCompartmentRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(ChangeCompartmentDetails body) {
+        public Builder body$(com.oracle.bmc.ons.model.ChangeCompartmentDetails body) {
             changeTopicCompartmentDetails(body);
             return this;
         }

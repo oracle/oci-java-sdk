@@ -18,14 +18,15 @@ import com.oracle.bmc.database.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class CreateVmClusterRequest
-        extends com.oracle.bmc.requests.BmcRequest<CreateVmClusterDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.database.model.CreateVmClusterDetails> {
 
     /**
      * Request to create a VM cluster. Applies to Exadata Cloud@Customer instances only.
      * See {@link #createCloudVmClusterDetails(CreateCloudVmClusterDetailsRequest) createCloudVmClusterDetails} for details on creating a cloud VM cluster in an Exadata Cloud Service instance.
      *
      */
-    private CreateVmClusterDetails createVmClusterDetails;
+    private com.oracle.bmc.database.model.CreateVmClusterDetails createVmClusterDetails;
 
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -49,13 +50,13 @@ public class CreateVmClusterRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreateVmClusterDetails getBody$() {
+    public com.oracle.bmc.database.model.CreateVmClusterDetails getBody$() {
         return createVmClusterDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CreateVmClusterRequest, CreateVmClusterDetails> {
+                    CreateVmClusterRequest, com.oracle.bmc.database.model.CreateVmClusterDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -119,7 +120,7 @@ public class CreateVmClusterRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreateVmClusterDetails body) {
+        public Builder body$(com.oracle.bmc.database.model.CreateVmClusterDetails body) {
             createVmClusterDetails(body);
             return this;
         }

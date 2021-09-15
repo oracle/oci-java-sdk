@@ -39,19 +39,59 @@ package com.oracle.bmc.core.model;
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = InstanceConfigurationAmdMilanBmLaunchInstancePlatformConfig.class,
         name = "AMD_MILAN_BM"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = InstanceConfigurationIntelVmLaunchInstancePlatformConfig.class,
+        name = "INTEL_VM"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = InstanceConfigurationAmdRomeBmLaunchInstancePlatformConfig.class,
+        name = "AMD_ROME_BM"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = InstanceConfigurationIntelSkylakeBmLaunchInstancePlatformConfig.class,
+        name = "INTEL_SKYLAKE_BM"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = InstanceConfigurationAmdVmLaunchInstancePlatformConfig.class,
+        name = "AMD_VM"
     )
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public class InstanceConfigurationLaunchInstancePlatformConfig {
 
     /**
-     * The type of platform being configured. The only supported
-     * {@code type} is {@code AMD_MILAN_BM}.
+     * Whether Secure Boot is enabled on the instance.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isSecureBootEnabled")
+    Boolean isSecureBootEnabled;
+
+    /**
+     * Whether the Trusted Platform Module (TPM) is enabled on the instance.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isTrustedPlatformModuleEnabled")
+    Boolean isTrustedPlatformModuleEnabled;
+
+    /**
+     * Whether the Measured Boot feature is enabled on the instance.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isMeasuredBootEnabled")
+    Boolean isMeasuredBootEnabled;
+
+    /**
+     * The type of platform being configured.
      *
      **/
     @lombok.extern.slf4j.Slf4j
     public enum Type {
         AmdMilanBm("AMD_MILAN_BM"),
+        AmdRomeBm("AMD_ROME_BM"),
+        IntelSkylakeBm("INTEL_SKYLAKE_BM"),
+        AmdVm("AMD_VM"),
+        IntelVm("INTEL_VM"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this

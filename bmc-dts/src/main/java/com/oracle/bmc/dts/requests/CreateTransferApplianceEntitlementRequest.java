@@ -18,12 +18,14 @@ import com.oracle.bmc.dts.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class CreateTransferApplianceEntitlementRequest
-        extends com.oracle.bmc.requests.BmcRequest<CreateTransferApplianceEntitlementDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.dts.model.CreateTransferApplianceEntitlementDetails> {
 
     /**
      * Creates a Transfer Appliance Entitlement
      */
-    private CreateTransferApplianceEntitlementDetails createTransferApplianceEntitlementDetails;
+    private com.oracle.bmc.dts.model.CreateTransferApplianceEntitlementDetails
+            createTransferApplianceEntitlementDetails;
 
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -48,14 +50,14 @@ public class CreateTransferApplianceEntitlementRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreateTransferApplianceEntitlementDetails getBody$() {
+    public com.oracle.bmc.dts.model.CreateTransferApplianceEntitlementDetails getBody$() {
         return createTransferApplianceEntitlementDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     CreateTransferApplianceEntitlementRequest,
-                    CreateTransferApplianceEntitlementDetails> {
+                    com.oracle.bmc.dts.model.CreateTransferApplianceEntitlementDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -120,7 +122,8 @@ public class CreateTransferApplianceEntitlementRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreateTransferApplianceEntitlementDetails body) {
+        public Builder body$(
+                com.oracle.bmc.dts.model.CreateTransferApplianceEntitlementDetails body) {
             createTransferApplianceEntitlementDetails(body);
             return this;
         }

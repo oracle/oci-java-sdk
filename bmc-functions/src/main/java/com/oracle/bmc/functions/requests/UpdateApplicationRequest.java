@@ -18,7 +18,8 @@ import com.oracle.bmc.functions.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class UpdateApplicationRequest
-        extends com.oracle.bmc.requests.BmcRequest<UpdateApplicationDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.functions.model.UpdateApplicationDetails> {
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this application.
@@ -29,7 +30,7 @@ public class UpdateApplicationRequest
     /**
      * The new application spec to apply
      */
-    private UpdateApplicationDetails updateApplicationDetails;
+    private com.oracle.bmc.functions.model.UpdateApplicationDetails updateApplicationDetails;
 
     /**
      * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
@@ -52,13 +53,14 @@ public class UpdateApplicationRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateApplicationDetails getBody$() {
+    public com.oracle.bmc.functions.model.UpdateApplicationDetails getBody$() {
         return updateApplicationDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateApplicationRequest, UpdateApplicationDetails> {
+                    UpdateApplicationRequest,
+                    com.oracle.bmc.functions.model.UpdateApplicationDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -123,7 +125,7 @@ public class UpdateApplicationRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateApplicationDetails body) {
+        public Builder body$(com.oracle.bmc.functions.model.UpdateApplicationDetails body) {
             updateApplicationDetails(body);
             return this;
         }

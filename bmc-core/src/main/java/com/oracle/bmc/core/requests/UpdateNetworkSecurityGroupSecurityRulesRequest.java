@@ -18,7 +18,8 @@ import com.oracle.bmc.core.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class UpdateNetworkSecurityGroupSecurityRulesRequest
-        extends com.oracle.bmc.requests.BmcRequest<UpdateNetworkSecurityGroupSecurityRulesDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.core.model.UpdateNetworkSecurityGroupSecurityRulesDetails> {
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security group.
@@ -30,7 +31,7 @@ public class UpdateNetworkSecurityGroupSecurityRulesRequest
      * will be updated.
      *
      */
-    private UpdateNetworkSecurityGroupSecurityRulesDetails
+    private com.oracle.bmc.core.model.UpdateNetworkSecurityGroupSecurityRulesDetails
             updateNetworkSecurityGroupSecurityRulesDetails;
 
     /**
@@ -39,14 +40,14 @@ public class UpdateNetworkSecurityGroupSecurityRulesRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateNetworkSecurityGroupSecurityRulesDetails getBody$() {
+    public com.oracle.bmc.core.model.UpdateNetworkSecurityGroupSecurityRulesDetails getBody$() {
         return updateNetworkSecurityGroupSecurityRulesDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     UpdateNetworkSecurityGroupSecurityRulesRequest,
-                    UpdateNetworkSecurityGroupSecurityRulesDetails> {
+                    com.oracle.bmc.core.model.UpdateNetworkSecurityGroupSecurityRulesDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -111,7 +112,8 @@ public class UpdateNetworkSecurityGroupSecurityRulesRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateNetworkSecurityGroupSecurityRulesDetails body) {
+        public Builder body$(
+                com.oracle.bmc.core.model.UpdateNetworkSecurityGroupSecurityRulesDetails body) {
             updateNetworkSecurityGroupSecurityRulesDetails(body);
             return this;
         }

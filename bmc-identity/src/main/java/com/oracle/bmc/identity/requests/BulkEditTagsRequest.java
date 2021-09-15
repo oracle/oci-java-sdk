@@ -17,7 +17,9 @@ import com.oracle.bmc.identity.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
-public class BulkEditTagsRequest extends com.oracle.bmc.requests.BmcRequest<BulkEditTagsDetails> {
+public class BulkEditTagsRequest
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.identity.model.BulkEditTagsDetails> {
 
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
@@ -39,7 +41,7 @@ public class BulkEditTagsRequest extends com.oracle.bmc.requests.BmcRequest<Bulk
     /**
      * The request object for bulk editing tags on resources in the compartment.
      */
-    private BulkEditTagsDetails bulkEditTagsDetails;
+    private com.oracle.bmc.identity.model.BulkEditTagsDetails bulkEditTagsDetails;
 
     /**
      * Alternative accessor for the body parameter.
@@ -47,13 +49,13 @@ public class BulkEditTagsRequest extends com.oracle.bmc.requests.BmcRequest<Bulk
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public BulkEditTagsDetails getBody$() {
+    public com.oracle.bmc.identity.model.BulkEditTagsDetails getBody$() {
         return bulkEditTagsDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    BulkEditTagsRequest, BulkEditTagsDetails> {
+                    BulkEditTagsRequest, com.oracle.bmc.identity.model.BulkEditTagsDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -117,7 +119,7 @@ public class BulkEditTagsRequest extends com.oracle.bmc.requests.BmcRequest<Bulk
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(BulkEditTagsDetails body) {
+        public Builder body$(com.oracle.bmc.identity.model.BulkEditTagsDetails body) {
             bulkEditTagsDetails(body);
             return this;
         }

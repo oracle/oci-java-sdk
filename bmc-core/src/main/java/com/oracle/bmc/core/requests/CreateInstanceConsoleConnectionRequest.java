@@ -18,12 +18,14 @@ import com.oracle.bmc.core.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class CreateInstanceConsoleConnectionRequest
-        extends com.oracle.bmc.requests.BmcRequest<CreateInstanceConsoleConnectionDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.core.model.CreateInstanceConsoleConnectionDetails> {
 
     /**
      * Request object for creating an InstanceConsoleConnection
      */
-    private CreateInstanceConsoleConnectionDetails createInstanceConsoleConnectionDetails;
+    private com.oracle.bmc.core.model.CreateInstanceConsoleConnectionDetails
+            createInstanceConsoleConnectionDetails;
 
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -41,14 +43,14 @@ public class CreateInstanceConsoleConnectionRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreateInstanceConsoleConnectionDetails getBody$() {
+    public com.oracle.bmc.core.model.CreateInstanceConsoleConnectionDetails getBody$() {
         return createInstanceConsoleConnectionDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     CreateInstanceConsoleConnectionRequest,
-                    CreateInstanceConsoleConnectionDetails> {
+                    com.oracle.bmc.core.model.CreateInstanceConsoleConnectionDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -111,7 +113,8 @@ public class CreateInstanceConsoleConnectionRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreateInstanceConsoleConnectionDetails body) {
+        public Builder body$(
+                com.oracle.bmc.core.model.CreateInstanceConsoleConnectionDetails body) {
             createInstanceConsoleConnectionDetails(body);
             return this;
         }

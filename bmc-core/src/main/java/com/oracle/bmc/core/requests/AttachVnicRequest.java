@@ -17,12 +17,13 @@ import com.oracle.bmc.core.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
-public class AttachVnicRequest extends com.oracle.bmc.requests.BmcRequest<AttachVnicDetails> {
+public class AttachVnicRequest
+        extends com.oracle.bmc.requests.BmcRequest<com.oracle.bmc.core.model.AttachVnicDetails> {
 
     /**
      * Attach VNIC details.
      */
-    private AttachVnicDetails attachVnicDetails;
+    private com.oracle.bmc.core.model.AttachVnicDetails attachVnicDetails;
 
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -40,13 +41,13 @@ public class AttachVnicRequest extends com.oracle.bmc.requests.BmcRequest<Attach
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public AttachVnicDetails getBody$() {
+    public com.oracle.bmc.core.model.AttachVnicDetails getBody$() {
         return attachVnicDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    AttachVnicRequest, AttachVnicDetails> {
+                    AttachVnicRequest, com.oracle.bmc.core.model.AttachVnicDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -109,7 +110,7 @@ public class AttachVnicRequest extends com.oracle.bmc.requests.BmcRequest<Attach
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(AttachVnicDetails body) {
+        public Builder body$(com.oracle.bmc.core.model.AttachVnicDetails body) {
             attachVnicDetails(body);
             return this;
         }

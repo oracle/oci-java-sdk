@@ -18,7 +18,8 @@ import com.oracle.bmc.databasemanagement.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class ChangeJobCompartmentRequest
-        extends com.oracle.bmc.requests.BmcRequest<ChangeJobCompartmentDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.databasemanagement.model.ChangeJobCompartmentDetails> {
 
     /**
      * The identifier of the job.
@@ -28,7 +29,8 @@ public class ChangeJobCompartmentRequest
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment to move the job to.
      */
-    private ChangeJobCompartmentDetails changeJobCompartmentDetails;
+    private com.oracle.bmc.databasemanagement.model.ChangeJobCompartmentDetails
+            changeJobCompartmentDetails;
 
     /**
      * The client request ID for tracing.
@@ -61,13 +63,14 @@ public class ChangeJobCompartmentRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public ChangeJobCompartmentDetails getBody$() {
+    public com.oracle.bmc.databasemanagement.model.ChangeJobCompartmentDetails getBody$() {
         return changeJobCompartmentDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    ChangeJobCompartmentRequest, ChangeJobCompartmentDetails> {
+                    ChangeJobCompartmentRequest,
+                    com.oracle.bmc.databasemanagement.model.ChangeJobCompartmentDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -133,7 +136,8 @@ public class ChangeJobCompartmentRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(ChangeJobCompartmentDetails body) {
+        public Builder body$(
+                com.oracle.bmc.databasemanagement.model.ChangeJobCompartmentDetails body) {
             changeJobCompartmentDetails(body);
             return this;
         }

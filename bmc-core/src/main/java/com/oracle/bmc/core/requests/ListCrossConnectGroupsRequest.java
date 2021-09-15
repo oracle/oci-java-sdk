@@ -154,7 +154,7 @@ public class ListCrossConnectGroupsRequest
      * state. The value is case insensitive.
      *
      */
-    private CrossConnectGroup.LifecycleState lifecycleState;
+    private com.oracle.bmc.core.model.CrossConnectGroup.LifecycleState lifecycleState;
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<

@@ -18,12 +18,14 @@ import com.oracle.bmc.managementdashboard.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class ImportDashboardRequest
-        extends com.oracle.bmc.requests.BmcRequest<ManagementDashboardImportDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.managementdashboard.model.ManagementDashboardImportDetails> {
 
     /**
      * JSON metadata for importing dashboards and their saved searches.
      */
-    private ManagementDashboardImportDetails managementDashboardImportDetails;
+    private com.oracle.bmc.managementdashboard.model.ManagementDashboardImportDetails
+            managementDashboardImportDetails;
 
     /**
      * For optimistic concurrency control. In the PUT or DELETE call
@@ -56,13 +58,14 @@ public class ImportDashboardRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public ManagementDashboardImportDetails getBody$() {
+    public com.oracle.bmc.managementdashboard.model.ManagementDashboardImportDetails getBody$() {
         return managementDashboardImportDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    ImportDashboardRequest, ManagementDashboardImportDetails> {
+                    ImportDashboardRequest,
+                    com.oracle.bmc.managementdashboard.model.ManagementDashboardImportDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -127,7 +130,8 @@ public class ImportDashboardRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(ManagementDashboardImportDetails body) {
+        public Builder body$(
+                com.oracle.bmc.managementdashboard.model.ManagementDashboardImportDetails body) {
             managementDashboardImportDetails(body);
             return this;
         }

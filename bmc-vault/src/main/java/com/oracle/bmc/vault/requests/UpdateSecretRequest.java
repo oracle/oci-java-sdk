@@ -17,7 +17,8 @@ import com.oracle.bmc.vault.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
-public class UpdateSecretRequest extends com.oracle.bmc.requests.BmcRequest<UpdateSecretDetails> {
+public class UpdateSecretRequest
+        extends com.oracle.bmc.requests.BmcRequest<com.oracle.bmc.vault.model.UpdateSecretDetails> {
 
     /**
      * The OCID of the secret.
@@ -27,7 +28,7 @@ public class UpdateSecretRequest extends com.oracle.bmc.requests.BmcRequest<Upda
     /**
      * Request to update a secret.
      */
-    private UpdateSecretDetails updateSecretDetails;
+    private com.oracle.bmc.vault.model.UpdateSecretDetails updateSecretDetails;
 
     /**
      * For optimistic concurrency control. In the PUT or DELETE call for a
@@ -53,13 +54,13 @@ public class UpdateSecretRequest extends com.oracle.bmc.requests.BmcRequest<Upda
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateSecretDetails getBody$() {
+    public com.oracle.bmc.vault.model.UpdateSecretDetails getBody$() {
         return updateSecretDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateSecretRequest, UpdateSecretDetails> {
+                    UpdateSecretRequest, com.oracle.bmc.vault.model.UpdateSecretDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -124,7 +125,7 @@ public class UpdateSecretRequest extends com.oracle.bmc.requests.BmcRequest<Upda
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateSecretDetails body) {
+        public Builder body$(com.oracle.bmc.vault.model.UpdateSecretDetails body) {
             updateSecretDetails(body);
             return this;
         }

@@ -18,7 +18,8 @@ import com.oracle.bmc.core.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class UpdateDrgRouteTableRequest
-        extends com.oracle.bmc.requests.BmcRequest<UpdateDrgRouteTableDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.core.model.UpdateDrgRouteTableDetails> {
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG route table.
@@ -28,7 +29,7 @@ public class UpdateDrgRouteTableRequest
     /**
      * Details object used to updating a DRG route table.
      */
-    private UpdateDrgRouteTableDetails updateDrgRouteTableDetails;
+    private com.oracle.bmc.core.model.UpdateDrgRouteTableDetails updateDrgRouteTableDetails;
 
     /**
      * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
@@ -44,13 +45,14 @@ public class UpdateDrgRouteTableRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateDrgRouteTableDetails getBody$() {
+    public com.oracle.bmc.core.model.UpdateDrgRouteTableDetails getBody$() {
         return updateDrgRouteTableDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateDrgRouteTableRequest, UpdateDrgRouteTableDetails> {
+                    UpdateDrgRouteTableRequest,
+                    com.oracle.bmc.core.model.UpdateDrgRouteTableDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -114,7 +116,7 @@ public class UpdateDrgRouteTableRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateDrgRouteTableDetails body) {
+        public Builder body$(com.oracle.bmc.core.model.UpdateDrgRouteTableDetails body) {
             updateDrgRouteTableDetails(body);
             return this;
         }

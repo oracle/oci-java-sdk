@@ -18,7 +18,8 @@ import com.oracle.bmc.streaming.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class UpdateConnectHarnessRequest
-        extends com.oracle.bmc.requests.BmcRequest<UpdateConnectHarnessDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.streaming.model.UpdateConnectHarnessDetails> {
 
     /**
      * The OCID of the connect harness.
@@ -29,7 +30,7 @@ public class UpdateConnectHarnessRequest
     /**
      * The connect harness is updated with the tags provided.
      */
-    private UpdateConnectHarnessDetails updateConnectHarnessDetails;
+    private com.oracle.bmc.streaming.model.UpdateConnectHarnessDetails updateConnectHarnessDetails;
 
     /**
      * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
@@ -49,13 +50,14 @@ public class UpdateConnectHarnessRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateConnectHarnessDetails getBody$() {
+    public com.oracle.bmc.streaming.model.UpdateConnectHarnessDetails getBody$() {
         return updateConnectHarnessDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateConnectHarnessRequest, UpdateConnectHarnessDetails> {
+                    UpdateConnectHarnessRequest,
+                    com.oracle.bmc.streaming.model.UpdateConnectHarnessDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -120,7 +122,7 @@ public class UpdateConnectHarnessRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateConnectHarnessDetails body) {
+        public Builder body$(com.oracle.bmc.streaming.model.UpdateConnectHarnessDetails body) {
             updateConnectHarnessDetails(body);
             return this;
         }

@@ -40,7 +40,7 @@ public class ListBackupsRequest extends com.oracle.bmc.requests.BmcRequest<java.
     /**
      * Backup Lifecycle State
      */
-    private Backup.LifecycleState lifecycleState;
+    private com.oracle.bmc.mysql.model.Backup.LifecycleState lifecycleState;
 
     /**
      * The DB System [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
@@ -55,7 +55,7 @@ public class ListBackupsRequest extends com.oracle.bmc.requests.BmcRequest<java.
     /**
      * Backup creationType
      */
-    private Backup.CreationType creationType;
+    private com.oracle.bmc.mysql.model.Backup.CreationType creationType;
 
     /**
      * The field to sort by. Only one sort order may be provided. Time fields are default ordered as descending.

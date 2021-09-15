@@ -18,12 +18,14 @@ import com.oracle.bmc.database.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class ChangeAutonomousVmClusterCompartmentRequest
-        extends com.oracle.bmc.requests.BmcRequest<ChangeAutonomousVmClusterCompartmentDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.database.model.ChangeAutonomousVmClusterCompartmentDetails> {
 
     /**
      * Request to move Autonomous VM cluster to a different compartment
      */
-    private ChangeAutonomousVmClusterCompartmentDetails changeAutonomousVmClusterCompartmentDetails;
+    private com.oracle.bmc.database.model.ChangeAutonomousVmClusterCompartmentDetails
+            changeAutonomousVmClusterCompartmentDetails;
 
     /**
      * The autonomous VM cluster [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
@@ -60,14 +62,14 @@ public class ChangeAutonomousVmClusterCompartmentRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public ChangeAutonomousVmClusterCompartmentDetails getBody$() {
+    public com.oracle.bmc.database.model.ChangeAutonomousVmClusterCompartmentDetails getBody$() {
         return changeAutonomousVmClusterCompartmentDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ChangeAutonomousVmClusterCompartmentRequest,
-                    ChangeAutonomousVmClusterCompartmentDetails> {
+                    com.oracle.bmc.database.model.ChangeAutonomousVmClusterCompartmentDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -134,7 +136,8 @@ public class ChangeAutonomousVmClusterCompartmentRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(ChangeAutonomousVmClusterCompartmentDetails body) {
+        public Builder body$(
+                com.oracle.bmc.database.model.ChangeAutonomousVmClusterCompartmentDetails body) {
             changeAutonomousVmClusterCompartmentDetails(body);
             return this;
         }

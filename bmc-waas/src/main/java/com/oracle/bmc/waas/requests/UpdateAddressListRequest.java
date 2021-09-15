@@ -18,7 +18,8 @@ import com.oracle.bmc.waas.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class UpdateAddressListRequest
-        extends com.oracle.bmc.requests.BmcRequest<UpdateAddressListDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.waas.model.UpdateAddressListDetails> {
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the address list. This number is generated when the address list is added to the compartment.
@@ -38,7 +39,7 @@ public class UpdateAddressListRequest
     /**
      * The details of the address list to update.
      */
-    private UpdateAddressListDetails updateAddressListDetails;
+    private com.oracle.bmc.waas.model.UpdateAddressListDetails updateAddressListDetails;
 
     /**
      * Alternative accessor for the body parameter.
@@ -46,13 +47,13 @@ public class UpdateAddressListRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateAddressListDetails getBody$() {
+    public com.oracle.bmc.waas.model.UpdateAddressListDetails getBody$() {
         return updateAddressListDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateAddressListRequest, UpdateAddressListDetails> {
+                    UpdateAddressListRequest, com.oracle.bmc.waas.model.UpdateAddressListDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -117,7 +118,7 @@ public class UpdateAddressListRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateAddressListDetails body) {
+        public Builder body$(com.oracle.bmc.waas.model.UpdateAddressListDetails body) {
             updateAddressListDetails(body);
             return this;
         }

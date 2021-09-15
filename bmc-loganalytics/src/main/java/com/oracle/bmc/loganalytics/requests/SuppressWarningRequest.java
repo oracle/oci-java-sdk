@@ -18,7 +18,8 @@ import com.oracle.bmc.loganalytics.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class SuppressWarningRequest
-        extends com.oracle.bmc.requests.BmcRequest<WarningReferenceDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.loganalytics.model.WarningReferenceDetails> {
 
     /**
      * The Logging Analytics namespace used for the request.
@@ -29,7 +30,7 @@ public class SuppressWarningRequest
     /**
      * list of agent warning references to suppress
      */
-    private WarningReferenceDetails warningReferenceDetails;
+    private com.oracle.bmc.loganalytics.model.WarningReferenceDetails warningReferenceDetails;
 
     /**
      * The ID of the compartment in which to list resources.
@@ -57,7 +58,7 @@ public class SuppressWarningRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public WarningReferenceDetails getBody$() {
+    public com.oracle.bmc.loganalytics.model.WarningReferenceDetails getBody$() {
         return warningReferenceDetails;
     }
 
@@ -68,7 +69,8 @@ public class SuppressWarningRequest
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    SuppressWarningRequest, WarningReferenceDetails> {
+                    SuppressWarningRequest,
+                    com.oracle.bmc.loganalytics.model.WarningReferenceDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -134,7 +136,7 @@ public class SuppressWarningRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(WarningReferenceDetails body) {
+        public Builder body$(com.oracle.bmc.loganalytics.model.WarningReferenceDetails body) {
             warningReferenceDetails(body);
             return this;
         }

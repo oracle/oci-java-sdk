@@ -18,12 +18,14 @@ import com.oracle.bmc.datasafe.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class UpdateOnPremConnectorWalletRequest
-        extends com.oracle.bmc.requests.BmcRequest<UpdateOnPremConnectorWalletDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.datasafe.model.UpdateOnPremConnectorWalletDetails> {
 
     /**
      * The details used to update an on-premises connector's wallet.
      */
-    private UpdateOnPremConnectorWalletDetails updateOnPremConnectorWalletDetails;
+    private com.oracle.bmc.datasafe.model.UpdateOnPremConnectorWalletDetails
+            updateOnPremConnectorWalletDetails;
 
     /**
      * The OCID of the on-premises connector.
@@ -60,13 +62,14 @@ public class UpdateOnPremConnectorWalletRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateOnPremConnectorWalletDetails getBody$() {
+    public com.oracle.bmc.datasafe.model.UpdateOnPremConnectorWalletDetails getBody$() {
         return updateOnPremConnectorWalletDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateOnPremConnectorWalletRequest, UpdateOnPremConnectorWalletDetails> {
+                    UpdateOnPremConnectorWalletRequest,
+                    com.oracle.bmc.datasafe.model.UpdateOnPremConnectorWalletDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -132,7 +135,8 @@ public class UpdateOnPremConnectorWalletRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateOnPremConnectorWalletDetails body) {
+        public Builder body$(
+                com.oracle.bmc.datasafe.model.UpdateOnPremConnectorWalletDetails body) {
             updateOnPremConnectorWalletDetails(body);
             return this;
         }

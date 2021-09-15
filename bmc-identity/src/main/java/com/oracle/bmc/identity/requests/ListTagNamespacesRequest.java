@@ -48,7 +48,7 @@ public class ListTagNamespacesRequest extends com.oracle.bmc.requests.BmcRequest
      * A filter to only return resources that match the given lifecycle state.  The state value is case-insensitive.
      *
      */
-    private TagNamespace.LifecycleState lifecycleState;
+    private com.oracle.bmc.identity.model.TagNamespace.LifecycleState lifecycleState;
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<

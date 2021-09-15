@@ -18,7 +18,8 @@ import com.oracle.bmc.core.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class ChangeVlanCompartmentRequest
-        extends com.oracle.bmc.requests.BmcRequest<ChangeVlanCompartmentDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.core.model.ChangeVlanCompartmentDetails> {
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN.
@@ -28,7 +29,7 @@ public class ChangeVlanCompartmentRequest
     /**
      * Request to change the compartment of a given VLAN.
      */
-    private ChangeVlanCompartmentDetails changeVlanCompartmentDetails;
+    private com.oracle.bmc.core.model.ChangeVlanCompartmentDetails changeVlanCompartmentDetails;
 
     /**
      * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
@@ -61,13 +62,14 @@ public class ChangeVlanCompartmentRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public ChangeVlanCompartmentDetails getBody$() {
+    public com.oracle.bmc.core.model.ChangeVlanCompartmentDetails getBody$() {
         return changeVlanCompartmentDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    ChangeVlanCompartmentRequest, ChangeVlanCompartmentDetails> {
+                    ChangeVlanCompartmentRequest,
+                    com.oracle.bmc.core.model.ChangeVlanCompartmentDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -133,7 +135,7 @@ public class ChangeVlanCompartmentRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(ChangeVlanCompartmentDetails body) {
+        public Builder body$(com.oracle.bmc.core.model.ChangeVlanCompartmentDetails body) {
             changeVlanCompartmentDetails(body);
             return this;
         }

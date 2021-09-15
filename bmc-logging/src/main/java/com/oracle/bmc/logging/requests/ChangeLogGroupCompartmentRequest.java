@@ -18,7 +18,8 @@ import com.oracle.bmc.logging.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class ChangeLogGroupCompartmentRequest
-        extends com.oracle.bmc.requests.BmcRequest<ChangeLogGroupCompartmentDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.logging.model.ChangeLogGroupCompartmentDetails> {
 
     /**
      * OCID of a log group to work with.
@@ -28,7 +29,8 @@ public class ChangeLogGroupCompartmentRequest
     /**
      * Request to change the compartment of a given resource.
      */
-    private ChangeLogGroupCompartmentDetails changeLogGroupCompartmentDetails;
+    private com.oracle.bmc.logging.model.ChangeLogGroupCompartmentDetails
+            changeLogGroupCompartmentDetails;
 
     /**
      * For optimistic concurrency control. In the PUT or DELETE call for a
@@ -53,13 +55,14 @@ public class ChangeLogGroupCompartmentRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public ChangeLogGroupCompartmentDetails getBody$() {
+    public com.oracle.bmc.logging.model.ChangeLogGroupCompartmentDetails getBody$() {
         return changeLogGroupCompartmentDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    ChangeLogGroupCompartmentRequest, ChangeLogGroupCompartmentDetails> {
+                    ChangeLogGroupCompartmentRequest,
+                    com.oracle.bmc.logging.model.ChangeLogGroupCompartmentDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -124,7 +127,7 @@ public class ChangeLogGroupCompartmentRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(ChangeLogGroupCompartmentDetails body) {
+        public Builder body$(com.oracle.bmc.logging.model.ChangeLogGroupCompartmentDetails body) {
             changeLogGroupCompartmentDetails(body);
             return this;
         }

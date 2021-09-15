@@ -18,7 +18,8 @@ import com.oracle.bmc.dts.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class CreateTransferApplianceRequest
-        extends com.oracle.bmc.requests.BmcRequest<CreateTransferApplianceDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.dts.model.CreateTransferApplianceDetails> {
 
     /**
      * ID of the Transfer Job
@@ -33,7 +34,7 @@ public class CreateTransferApplianceRequest
     /**
      * Creates a New Transfer Appliance
      */
-    private CreateTransferApplianceDetails createTransferApplianceDetails;
+    private com.oracle.bmc.dts.model.CreateTransferApplianceDetails createTransferApplianceDetails;
 
     /**
      * Alternative accessor for the body parameter.
@@ -41,13 +42,14 @@ public class CreateTransferApplianceRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreateTransferApplianceDetails getBody$() {
+    public com.oracle.bmc.dts.model.CreateTransferApplianceDetails getBody$() {
         return createTransferApplianceDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CreateTransferApplianceRequest, CreateTransferApplianceDetails> {
+                    CreateTransferApplianceRequest,
+                    com.oracle.bmc.dts.model.CreateTransferApplianceDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -111,7 +113,7 @@ public class CreateTransferApplianceRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreateTransferApplianceDetails body) {
+        public Builder body$(com.oracle.bmc.dts.model.CreateTransferApplianceDetails body) {
             createTransferApplianceDetails(body);
             return this;
         }

@@ -18,7 +18,8 @@ import com.oracle.bmc.waas.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class ChangeCustomProtectionRuleCompartmentRequest
-        extends com.oracle.bmc.requests.BmcRequest<ChangeCustomProtectionRuleCompartmentDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.waas.model.ChangeCustomProtectionRuleCompartmentDetails> {
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the custom protection rule. This number is generated when the custom protection rule is added to the compartment.
@@ -28,7 +29,7 @@ public class ChangeCustomProtectionRuleCompartmentRequest
     /**
      *
      */
-    private ChangeCustomProtectionRuleCompartmentDetails
+    private com.oracle.bmc.waas.model.ChangeCustomProtectionRuleCompartmentDetails
             changeCustomProtectionRuleCompartmentDetails;
 
     /**
@@ -53,14 +54,14 @@ public class ChangeCustomProtectionRuleCompartmentRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public ChangeCustomProtectionRuleCompartmentDetails getBody$() {
+    public com.oracle.bmc.waas.model.ChangeCustomProtectionRuleCompartmentDetails getBody$() {
         return changeCustomProtectionRuleCompartmentDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ChangeCustomProtectionRuleCompartmentRequest,
-                    ChangeCustomProtectionRuleCompartmentDetails> {
+                    com.oracle.bmc.waas.model.ChangeCustomProtectionRuleCompartmentDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -127,7 +128,8 @@ public class ChangeCustomProtectionRuleCompartmentRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(ChangeCustomProtectionRuleCompartmentDetails body) {
+        public Builder body$(
+                com.oracle.bmc.waas.model.ChangeCustomProtectionRuleCompartmentDetails body) {
             changeCustomProtectionRuleCompartmentDetails(body);
             return this;
         }

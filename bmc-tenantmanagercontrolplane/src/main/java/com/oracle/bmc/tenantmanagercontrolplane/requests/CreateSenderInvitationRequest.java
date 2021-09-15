@@ -18,12 +18,14 @@ import com.oracle.bmc.tenantmanagercontrolplane.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class CreateSenderInvitationRequest
-        extends com.oracle.bmc.requests.BmcRequest<CreateSenderInvitationDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.tenantmanagercontrolplane.model.CreateSenderInvitationDetails> {
 
     /**
      * Parameters for sender invitation creation.
      */
-    private CreateSenderInvitationDetails createSenderInvitationDetails;
+    private com.oracle.bmc.tenantmanagercontrolplane.model.CreateSenderInvitationDetails
+            createSenderInvitationDetails;
 
     /**
      * A token that uniquely identifies a request, so it can be retried in case of a timeout or
@@ -46,13 +48,14 @@ public class CreateSenderInvitationRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreateSenderInvitationDetails getBody$() {
+    public com.oracle.bmc.tenantmanagercontrolplane.model.CreateSenderInvitationDetails getBody$() {
         return createSenderInvitationDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CreateSenderInvitationRequest, CreateSenderInvitationDetails> {
+                    CreateSenderInvitationRequest,
+                    com.oracle.bmc.tenantmanagercontrolplane.model.CreateSenderInvitationDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -116,7 +119,8 @@ public class CreateSenderInvitationRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreateSenderInvitationDetails body) {
+        public Builder body$(
+                com.oracle.bmc.tenantmanagercontrolplane.model.CreateSenderInvitationDetails body) {
             createSenderInvitationDetails(body);
             return this;
         }

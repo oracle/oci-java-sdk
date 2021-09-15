@@ -12,6 +12,9 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.lang.reflect.Field;
 import java.lang.reflect.Modifier;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -23,6 +26,7 @@ import java.util.Set;
 
 import com.google.common.base.Optional;
 import com.oracle.bmc.model.RegionSchema;
+import com.oracle.bmc.model.internal.JsonConverter;
 import com.oracle.bmc.util.internal.FileUtils;
 import com.oracle.bmc.util.internal.NameUtils;
 import java.util.concurrent.ConcurrentHashMap;
@@ -100,6 +104,42 @@ public class RegionTest {
                         .property(ClientProperties.READ_TIMEOUT, 60000));
         Region.hasUsedInstanceMetadataService = false;
         Region.skipInstanceMetadataService();
+    }
+
+    @Test
+    public void testAllRegions() {
+        try {
+            File file = new File("src/test/resources/regions.json");
+            assertTrue("File regions.json not found.", file.isFile());
+
+            String content =
+                    new String(
+                            Files.readAllBytes(Paths.get("src/test/resources/regions.json")),
+                            StandardCharsets.UTF_8);
+            assertFalse("Failed to read contents from regions.json.", content.isEmpty());
+
+            RegionSchema[] regionSchemas =
+                    JsonConverter.jsonBlobToObject(content, RegionSchema[].class);
+            assertTrue(
+                    "Failed to read regionSchemas.",
+                    regionSchemas != null && regionSchemas.length != 0);
+
+            ArrayList<String> regionIds = new ArrayList<String>();
+            for (Region r : Region.values()) {
+                regionIds.add(r.getRegionId());
+            }
+            for (RegionSchema regionSchema : regionSchemas) {
+                assertTrue(
+                        "Found invalid region schema.",
+                        regionSchema != null && RegionSchema.isValid(regionSchema));
+                assertTrue(
+                        String.format(
+                                "Region %s not registered.", regionSchema.getRegionIdentifier()),
+                        regionIds.contains(regionSchema.getRegionIdentifier()));
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     @Test

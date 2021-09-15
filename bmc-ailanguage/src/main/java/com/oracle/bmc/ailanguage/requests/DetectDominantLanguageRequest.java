@@ -18,7 +18,8 @@ import com.oracle.bmc.ailanguage.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class DetectDominantLanguageRequest
-        extends com.oracle.bmc.requests.BmcRequest<DetectDominantLanguageDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.ailanguage.model.DetectDominantLanguageDetails> {
 
     /**
      * The details to make a language detection detect call.
@@ -26,7 +27,8 @@ public class DetectDominantLanguageRequest
      *             to use the extended transition period for complying"}}
      *
      */
-    private DetectDominantLanguageDetails detectDominantLanguageDetails;
+    private com.oracle.bmc.ailanguage.model.DetectDominantLanguageDetails
+            detectDominantLanguageDetails;
 
     /**
      * The client request ID for tracing.
@@ -39,13 +41,14 @@ public class DetectDominantLanguageRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public DetectDominantLanguageDetails getBody$() {
+    public com.oracle.bmc.ailanguage.model.DetectDominantLanguageDetails getBody$() {
         return detectDominantLanguageDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    DetectDominantLanguageRequest, DetectDominantLanguageDetails> {
+                    DetectDominantLanguageRequest,
+                    com.oracle.bmc.ailanguage.model.DetectDominantLanguageDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -108,7 +111,7 @@ public class DetectDominantLanguageRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(DetectDominantLanguageDetails body) {
+        public Builder body$(com.oracle.bmc.ailanguage.model.DetectDominantLanguageDetails body) {
             detectDominantLanguageDetails(body);
             return this;
         }

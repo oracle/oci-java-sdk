@@ -17,12 +17,13 @@ import com.oracle.bmc.mysql.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
-public class CreateBackupRequest extends com.oracle.bmc.requests.BmcRequest<CreateBackupDetails> {
+public class CreateBackupRequest
+        extends com.oracle.bmc.requests.BmcRequest<com.oracle.bmc.mysql.model.CreateBackupDetails> {
 
     /**
      * Create a Backup of a DB System.
      */
-    private CreateBackupDetails createBackupDetails;
+    private com.oracle.bmc.mysql.model.CreateBackupDetails createBackupDetails;
 
     /**
      * Customer-defined unique identifier for the request. If you need to
@@ -49,13 +50,13 @@ public class CreateBackupRequest extends com.oracle.bmc.requests.BmcRequest<Crea
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreateBackupDetails getBody$() {
+    public com.oracle.bmc.mysql.model.CreateBackupDetails getBody$() {
         return createBackupDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CreateBackupRequest, CreateBackupDetails> {
+                    CreateBackupRequest, com.oracle.bmc.mysql.model.CreateBackupDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -119,7 +120,7 @@ public class CreateBackupRequest extends com.oracle.bmc.requests.BmcRequest<Crea
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreateBackupDetails body) {
+        public Builder body$(com.oracle.bmc.mysql.model.CreateBackupDetails body) {
             createBackupDetails(body);
             return this;
         }

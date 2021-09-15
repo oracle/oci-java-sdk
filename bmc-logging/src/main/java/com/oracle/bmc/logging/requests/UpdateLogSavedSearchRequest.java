@@ -18,7 +18,8 @@ import com.oracle.bmc.logging.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class UpdateLogSavedSearchRequest
-        extends com.oracle.bmc.requests.BmcRequest<UpdateLogSavedSearchDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.logging.model.UpdateLogSavedSearchDetails> {
 
     /**
      * OCID of the logSavedSearch
@@ -29,7 +30,7 @@ public class UpdateLogSavedSearchRequest
     /**
      * Updates to the saved search.
      */
-    private UpdateLogSavedSearchDetails updateLogSavedSearchDetails;
+    private com.oracle.bmc.logging.model.UpdateLogSavedSearchDetails updateLogSavedSearchDetails;
 
     /**
      * For optimistic concurrency control. In the PUT or DELETE call for a
@@ -54,13 +55,14 @@ public class UpdateLogSavedSearchRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateLogSavedSearchDetails getBody$() {
+    public com.oracle.bmc.logging.model.UpdateLogSavedSearchDetails getBody$() {
         return updateLogSavedSearchDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateLogSavedSearchRequest, UpdateLogSavedSearchDetails> {
+                    UpdateLogSavedSearchRequest,
+                    com.oracle.bmc.logging.model.UpdateLogSavedSearchDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -125,7 +127,7 @@ public class UpdateLogSavedSearchRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateLogSavedSearchDetails body) {
+        public Builder body$(com.oracle.bmc.logging.model.UpdateLogSavedSearchDetails body) {
             updateLogSavedSearchDetails(body);
             return this;
         }

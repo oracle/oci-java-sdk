@@ -17,12 +17,14 @@ import com.oracle.bmc.datascience.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
-public class CreateProjectRequest extends com.oracle.bmc.requests.BmcRequest<CreateProjectDetails> {
+public class CreateProjectRequest
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.datascience.model.CreateProjectDetails> {
 
     /**
      * Details for creating a new project.
      */
-    private CreateProjectDetails createProjectDetails;
+    private com.oracle.bmc.datascience.model.CreateProjectDetails createProjectDetails;
 
     /**
      * Unique Oracle assigned identifier for the request. If you need to contact Oracle about a particular request, then provide the request ID.
@@ -42,13 +44,13 @@ public class CreateProjectRequest extends com.oracle.bmc.requests.BmcRequest<Cre
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreateProjectDetails getBody$() {
+    public com.oracle.bmc.datascience.model.CreateProjectDetails getBody$() {
         return createProjectDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CreateProjectRequest, CreateProjectDetails> {
+                    CreateProjectRequest, com.oracle.bmc.datascience.model.CreateProjectDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -112,7 +114,7 @@ public class CreateProjectRequest extends com.oracle.bmc.requests.BmcRequest<Cre
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreateProjectDetails body) {
+        public Builder body$(com.oracle.bmc.datascience.model.CreateProjectDetails body) {
             createProjectDetails(body);
             return this;
         }

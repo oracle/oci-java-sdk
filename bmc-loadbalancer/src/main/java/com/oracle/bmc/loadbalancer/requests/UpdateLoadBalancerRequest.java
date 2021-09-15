@@ -18,12 +18,13 @@ import com.oracle.bmc.loadbalancer.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class UpdateLoadBalancerRequest
-        extends com.oracle.bmc.requests.BmcRequest<UpdateLoadBalancerDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.loadbalancer.model.UpdateLoadBalancerDetails> {
 
     /**
      * The details for updating a load balancer's configuration.
      */
-    private UpdateLoadBalancerDetails updateLoadBalancerDetails;
+    private com.oracle.bmc.loadbalancer.model.UpdateLoadBalancerDetails updateLoadBalancerDetails;
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the load balancer to update.
@@ -53,13 +54,14 @@ public class UpdateLoadBalancerRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateLoadBalancerDetails getBody$() {
+    public com.oracle.bmc.loadbalancer.model.UpdateLoadBalancerDetails getBody$() {
         return updateLoadBalancerDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateLoadBalancerRequest, UpdateLoadBalancerDetails> {
+                    UpdateLoadBalancerRequest,
+                    com.oracle.bmc.loadbalancer.model.UpdateLoadBalancerDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -124,7 +126,7 @@ public class UpdateLoadBalancerRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateLoadBalancerDetails body) {
+        public Builder body$(com.oracle.bmc.loadbalancer.model.UpdateLoadBalancerDetails body) {
             updateLoadBalancerDetails(body);
             return this;
         }

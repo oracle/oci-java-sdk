@@ -18,7 +18,8 @@ import com.oracle.bmc.dns.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class ChangeZoneCompartmentRequest
-        extends com.oracle.bmc.requests.BmcRequest<ChangeZoneCompartmentDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.dns.model.ChangeZoneCompartmentDetails> {
 
     /**
      * The OCID of the target zone.
@@ -28,7 +29,7 @@ public class ChangeZoneCompartmentRequest
     /**
      * Details for moving a zone into a different compartment.
      */
-    private ChangeZoneCompartmentDetails changeZoneCompartmentDetails;
+    private com.oracle.bmc.dns.model.ChangeZoneCompartmentDetails changeZoneCompartmentDetails;
 
     /**
      * The {@code If-Match} header field makes the request method conditional on the
@@ -71,13 +72,14 @@ public class ChangeZoneCompartmentRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public ChangeZoneCompartmentDetails getBody$() {
+    public com.oracle.bmc.dns.model.ChangeZoneCompartmentDetails getBody$() {
         return changeZoneCompartmentDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    ChangeZoneCompartmentRequest, ChangeZoneCompartmentDetails> {
+                    ChangeZoneCompartmentRequest,
+                    com.oracle.bmc.dns.model.ChangeZoneCompartmentDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -144,7 +146,7 @@ public class ChangeZoneCompartmentRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(ChangeZoneCompartmentDetails body) {
+        public Builder body$(com.oracle.bmc.dns.model.ChangeZoneCompartmentDetails body) {
             changeZoneCompartmentDetails(body);
             return this;
         }

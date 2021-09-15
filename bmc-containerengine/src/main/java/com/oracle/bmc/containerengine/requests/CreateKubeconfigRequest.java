@@ -18,7 +18,8 @@ import com.oracle.bmc.containerengine.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class CreateKubeconfigRequest
-        extends com.oracle.bmc.requests.BmcRequest<CreateClusterKubeconfigContentDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.containerengine.model.CreateClusterKubeconfigContentDetails> {
 
     /**
      * The OCID of the cluster.
@@ -35,7 +36,8 @@ public class CreateKubeconfigRequest
     /**
      * The details of the cluster kubeconfig to create.
      */
-    private CreateClusterKubeconfigContentDetails createClusterKubeconfigContentDetails;
+    private com.oracle.bmc.containerengine.model.CreateClusterKubeconfigContentDetails
+            createClusterKubeconfigContentDetails;
 
     /**
      * Alternative accessor for the body parameter.
@@ -43,13 +45,14 @@ public class CreateKubeconfigRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreateClusterKubeconfigContentDetails getBody$() {
+    public com.oracle.bmc.containerengine.model.CreateClusterKubeconfigContentDetails getBody$() {
         return createClusterKubeconfigContentDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CreateKubeconfigRequest, CreateClusterKubeconfigContentDetails> {
+                    CreateKubeconfigRequest,
+                    com.oracle.bmc.containerengine.model.CreateClusterKubeconfigContentDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -113,7 +116,8 @@ public class CreateKubeconfigRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreateClusterKubeconfigContentDetails body) {
+        public Builder body$(
+                com.oracle.bmc.containerengine.model.CreateClusterKubeconfigContentDetails body) {
             createClusterKubeconfigContentDetails(body);
             return this;
         }

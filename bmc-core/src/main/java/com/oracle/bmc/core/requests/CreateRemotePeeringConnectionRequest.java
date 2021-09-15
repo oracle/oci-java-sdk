@@ -18,12 +18,14 @@ import com.oracle.bmc.core.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class CreateRemotePeeringConnectionRequest
-        extends com.oracle.bmc.requests.BmcRequest<CreateRemotePeeringConnectionDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.core.model.CreateRemotePeeringConnectionDetails> {
 
     /**
      * Request to create peering connection to remote region
      */
-    private CreateRemotePeeringConnectionDetails createRemotePeeringConnectionDetails;
+    private com.oracle.bmc.core.model.CreateRemotePeeringConnectionDetails
+            createRemotePeeringConnectionDetails;
 
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -41,13 +43,14 @@ public class CreateRemotePeeringConnectionRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreateRemotePeeringConnectionDetails getBody$() {
+    public com.oracle.bmc.core.model.CreateRemotePeeringConnectionDetails getBody$() {
         return createRemotePeeringConnectionDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CreateRemotePeeringConnectionRequest, CreateRemotePeeringConnectionDetails> {
+                    CreateRemotePeeringConnectionRequest,
+                    com.oracle.bmc.core.model.CreateRemotePeeringConnectionDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -110,7 +113,7 @@ public class CreateRemotePeeringConnectionRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreateRemotePeeringConnectionDetails body) {
+        public Builder body$(com.oracle.bmc.core.model.CreateRemotePeeringConnectionDetails body) {
             createRemotePeeringConnectionDetails(body);
             return this;
         }

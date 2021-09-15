@@ -17,7 +17,8 @@ import com.oracle.bmc.dns.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
-public class UpdateRRSetRequest extends com.oracle.bmc.requests.BmcRequest<UpdateRRSetDetails> {
+public class UpdateRRSetRequest
+        extends com.oracle.bmc.requests.BmcRequest<com.oracle.bmc.dns.model.UpdateRRSetDetails> {
 
     /**
      * The name or OCID of the target zone.
@@ -37,7 +38,7 @@ public class UpdateRRSetRequest extends com.oracle.bmc.requests.BmcRequest<Updat
     /**
      * A full list of records for the RRSet.
      */
-    private UpdateRRSetDetails updateRRSetDetails;
+    private com.oracle.bmc.dns.model.UpdateRRSetDetails updateRRSetDetails;
 
     /**
      * The {@code If-Match} header field makes the request method conditional on the
@@ -89,13 +90,13 @@ public class UpdateRRSetRequest extends com.oracle.bmc.requests.BmcRequest<Updat
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateRRSetDetails getBody$() {
+    public com.oracle.bmc.dns.model.UpdateRRSetDetails getBody$() {
         return updateRRSetDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateRRSetRequest, UpdateRRSetDetails> {
+                    UpdateRRSetRequest, com.oracle.bmc.dns.model.UpdateRRSetDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -166,7 +167,7 @@ public class UpdateRRSetRequest extends com.oracle.bmc.requests.BmcRequest<Updat
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateRRSetDetails body) {
+        public Builder body$(com.oracle.bmc.dns.model.UpdateRRSetDetails body) {
             updateRRSetDetails(body);
             return this;
         }

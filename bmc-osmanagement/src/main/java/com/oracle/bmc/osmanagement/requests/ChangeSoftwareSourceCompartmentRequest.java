@@ -18,7 +18,8 @@ import com.oracle.bmc.osmanagement.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class ChangeSoftwareSourceCompartmentRequest
-        extends com.oracle.bmc.requests.BmcRequest<ChangeSoftwareSourceCompartmentDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.osmanagement.model.ChangeSoftwareSourceCompartmentDetails> {
 
     /**
      * The OCID of the software source.
@@ -28,7 +29,8 @@ public class ChangeSoftwareSourceCompartmentRequest
     /**
      * OCID for the compartment to which the resource will be moved.
      */
-    private ChangeSoftwareSourceCompartmentDetails changeSoftwareSourceCompartmentDetails;
+    private com.oracle.bmc.osmanagement.model.ChangeSoftwareSourceCompartmentDetails
+            changeSoftwareSourceCompartmentDetails;
 
     /**
      * The client request ID for tracing.
@@ -61,14 +63,14 @@ public class ChangeSoftwareSourceCompartmentRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public ChangeSoftwareSourceCompartmentDetails getBody$() {
+    public com.oracle.bmc.osmanagement.model.ChangeSoftwareSourceCompartmentDetails getBody$() {
         return changeSoftwareSourceCompartmentDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ChangeSoftwareSourceCompartmentRequest,
-                    ChangeSoftwareSourceCompartmentDetails> {
+                    com.oracle.bmc.osmanagement.model.ChangeSoftwareSourceCompartmentDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -134,7 +136,8 @@ public class ChangeSoftwareSourceCompartmentRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(ChangeSoftwareSourceCompartmentDetails body) {
+        public Builder body$(
+                com.oracle.bmc.osmanagement.model.ChangeSoftwareSourceCompartmentDetails body) {
             changeSoftwareSourceCompartmentDetails(body);
             return this;
         }

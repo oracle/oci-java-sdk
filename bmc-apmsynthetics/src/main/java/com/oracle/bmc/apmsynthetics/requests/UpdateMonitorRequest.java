@@ -17,7 +17,9 @@ import com.oracle.bmc.apmsynthetics.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
-public class UpdateMonitorRequest extends com.oracle.bmc.requests.BmcRequest<UpdateMonitorDetails> {
+public class UpdateMonitorRequest
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.apmsynthetics.model.UpdateMonitorDetails> {
 
     /**
      * The APM domain ID the request is intended for.
@@ -33,7 +35,7 @@ public class UpdateMonitorRequest extends com.oracle.bmc.requests.BmcRequest<Upd
     /**
      * The information to be updated.
      */
-    private UpdateMonitorDetails updateMonitorDetails;
+    private com.oracle.bmc.apmsynthetics.model.UpdateMonitorDetails updateMonitorDetails;
 
     /**
      * For optimistic concurrency control. In the PUT or DELETE call
@@ -58,13 +60,13 @@ public class UpdateMonitorRequest extends com.oracle.bmc.requests.BmcRequest<Upd
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateMonitorDetails getBody$() {
+    public com.oracle.bmc.apmsynthetics.model.UpdateMonitorDetails getBody$() {
         return updateMonitorDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateMonitorRequest, UpdateMonitorDetails> {
+                    UpdateMonitorRequest, com.oracle.bmc.apmsynthetics.model.UpdateMonitorDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -130,7 +132,7 @@ public class UpdateMonitorRequest extends com.oracle.bmc.requests.BmcRequest<Upd
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateMonitorDetails body) {
+        public Builder body$(com.oracle.bmc.apmsynthetics.model.UpdateMonitorDetails body) {
             updateMonitorDetails(body);
             return this;
         }

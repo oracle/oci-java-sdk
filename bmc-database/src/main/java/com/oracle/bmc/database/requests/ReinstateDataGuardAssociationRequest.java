@@ -18,7 +18,8 @@ import com.oracle.bmc.database.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class ReinstateDataGuardAssociationRequest
-        extends com.oracle.bmc.requests.BmcRequest<ReinstateDataGuardAssociationDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.database.model.ReinstateDataGuardAssociationDetails> {
 
     /**
      * The database [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
@@ -33,7 +34,8 @@ public class ReinstateDataGuardAssociationRequest
     /**
      * A request to reinstate a database in a standby role.
      */
-    private ReinstateDataGuardAssociationDetails reinstateDataGuardAssociationDetails;
+    private com.oracle.bmc.database.model.ReinstateDataGuardAssociationDetails
+            reinstateDataGuardAssociationDetails;
 
     /**
      * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
@@ -49,13 +51,14 @@ public class ReinstateDataGuardAssociationRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public ReinstateDataGuardAssociationDetails getBody$() {
+    public com.oracle.bmc.database.model.ReinstateDataGuardAssociationDetails getBody$() {
         return reinstateDataGuardAssociationDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    ReinstateDataGuardAssociationRequest, ReinstateDataGuardAssociationDetails> {
+                    ReinstateDataGuardAssociationRequest,
+                    com.oracle.bmc.database.model.ReinstateDataGuardAssociationDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -120,7 +123,8 @@ public class ReinstateDataGuardAssociationRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(ReinstateDataGuardAssociationDetails body) {
+        public Builder body$(
+                com.oracle.bmc.database.model.ReinstateDataGuardAssociationDetails body) {
             reinstateDataGuardAssociationDetails(body);
             return this;
         }

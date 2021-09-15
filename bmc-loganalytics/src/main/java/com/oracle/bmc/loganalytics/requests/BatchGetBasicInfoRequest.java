@@ -17,7 +17,8 @@ import com.oracle.bmc.loganalytics.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
-public class BatchGetBasicInfoRequest extends com.oracle.bmc.requests.BmcRequest<LabelNames> {
+public class BatchGetBasicInfoRequest
+        extends com.oracle.bmc.requests.BmcRequest<com.oracle.bmc.loganalytics.model.LabelNames> {
 
     /**
      * The Logging Analytics namespace used for the request.
@@ -28,7 +29,7 @@ public class BatchGetBasicInfoRequest extends com.oracle.bmc.requests.BmcRequest
     /**
      * List of label names to get information on
      */
-    private LabelNames basicDetails;
+    private com.oracle.bmc.loganalytics.model.LabelNames basicDetails;
 
     /**
      * A flag specifying whether or not to include information on deleted labels.
@@ -139,7 +140,7 @@ public class BatchGetBasicInfoRequest extends com.oracle.bmc.requests.BmcRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public LabelNames getBody$() {
+    public com.oracle.bmc.loganalytics.model.LabelNames getBody$() {
         return basicDetails;
     }
 
@@ -150,7 +151,7 @@ public class BatchGetBasicInfoRequest extends com.oracle.bmc.requests.BmcRequest
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    BatchGetBasicInfoRequest, LabelNames> {
+                    BatchGetBasicInfoRequest, com.oracle.bmc.loganalytics.model.LabelNames> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -219,7 +220,7 @@ public class BatchGetBasicInfoRequest extends com.oracle.bmc.requests.BmcRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(LabelNames body) {
+        public Builder body$(com.oracle.bmc.loganalytics.model.LabelNames body) {
             basicDetails(body);
             return this;
         }

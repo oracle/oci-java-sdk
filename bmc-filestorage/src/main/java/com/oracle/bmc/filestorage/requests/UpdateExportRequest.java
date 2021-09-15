@@ -17,7 +17,9 @@ import com.oracle.bmc.filestorage.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
-public class UpdateExportRequest extends com.oracle.bmc.requests.BmcRequest<UpdateExportDetails> {
+public class UpdateExportRequest
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.filestorage.model.UpdateExportDetails> {
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the export.
@@ -27,7 +29,7 @@ public class UpdateExportRequest extends com.oracle.bmc.requests.BmcRequest<Upda
     /**
      * Details object for updating an export.
      */
-    private UpdateExportDetails updateExportDetails;
+    private com.oracle.bmc.filestorage.model.UpdateExportDetails updateExportDetails;
 
     /**
      * For optimistic concurrency control. In the PUT or DELETE call
@@ -52,13 +54,13 @@ public class UpdateExportRequest extends com.oracle.bmc.requests.BmcRequest<Upda
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateExportDetails getBody$() {
+    public com.oracle.bmc.filestorage.model.UpdateExportDetails getBody$() {
         return updateExportDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateExportRequest, UpdateExportDetails> {
+                    UpdateExportRequest, com.oracle.bmc.filestorage.model.UpdateExportDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -123,7 +125,7 @@ public class UpdateExportRequest extends com.oracle.bmc.requests.BmcRequest<Upda
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateExportDetails body) {
+        public Builder body$(com.oracle.bmc.filestorage.model.UpdateExportDetails body) {
             updateExportDetails(body);
             return this;
         }

@@ -18,7 +18,8 @@ import com.oracle.bmc.database.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class UpdateAutonomousDatabaseWalletRequest
-        extends com.oracle.bmc.requests.BmcRequest<UpdateAutonomousDatabaseWalletDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.database.model.UpdateAutonomousDatabaseWalletDetails> {
 
     /**
      * The database [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
@@ -28,7 +29,8 @@ public class UpdateAutonomousDatabaseWalletRequest
     /**
      * Request to update the properties of an Autonomous Database wallet.
      */
-    private UpdateAutonomousDatabaseWalletDetails updateAutonomousDatabaseWalletDetails;
+    private com.oracle.bmc.database.model.UpdateAutonomousDatabaseWalletDetails
+            updateAutonomousDatabaseWalletDetails;
 
     /**
      * Unique identifier for the request.
@@ -42,13 +44,14 @@ public class UpdateAutonomousDatabaseWalletRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateAutonomousDatabaseWalletDetails getBody$() {
+    public com.oracle.bmc.database.model.UpdateAutonomousDatabaseWalletDetails getBody$() {
         return updateAutonomousDatabaseWalletDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateAutonomousDatabaseWalletRequest, UpdateAutonomousDatabaseWalletDetails> {
+                    UpdateAutonomousDatabaseWalletRequest,
+                    com.oracle.bmc.database.model.UpdateAutonomousDatabaseWalletDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -112,7 +115,8 @@ public class UpdateAutonomousDatabaseWalletRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateAutonomousDatabaseWalletDetails body) {
+        public Builder body$(
+                com.oracle.bmc.database.model.UpdateAutonomousDatabaseWalletDetails body) {
             updateAutonomousDatabaseWalletDetails(body);
             return this;
         }

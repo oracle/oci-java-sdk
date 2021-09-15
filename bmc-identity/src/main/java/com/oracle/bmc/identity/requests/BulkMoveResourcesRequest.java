@@ -18,7 +18,8 @@ import com.oracle.bmc.identity.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class BulkMoveResourcesRequest
-        extends com.oracle.bmc.requests.BmcRequest<BulkMoveResourcesDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.identity.model.BulkMoveResourcesDetails> {
 
     /**
      * The OCID of the compartment.
@@ -28,7 +29,7 @@ public class BulkMoveResourcesRequest
     /**
      * Request object for bulk move resources in the compartment.
      */
-    private BulkMoveResourcesDetails bulkMoveResourcesDetails;
+    private com.oracle.bmc.identity.model.BulkMoveResourcesDetails bulkMoveResourcesDetails;
 
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
@@ -53,13 +54,14 @@ public class BulkMoveResourcesRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public BulkMoveResourcesDetails getBody$() {
+    public com.oracle.bmc.identity.model.BulkMoveResourcesDetails getBody$() {
         return bulkMoveResourcesDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    BulkMoveResourcesRequest, BulkMoveResourcesDetails> {
+                    BulkMoveResourcesRequest,
+                    com.oracle.bmc.identity.model.BulkMoveResourcesDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -124,7 +126,7 @@ public class BulkMoveResourcesRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(BulkMoveResourcesDetails body) {
+        public Builder body$(com.oracle.bmc.identity.model.BulkMoveResourcesDetails body) {
             bulkMoveResourcesDetails(body);
             return this;
         }

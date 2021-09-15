@@ -18,7 +18,8 @@ import com.oracle.bmc.sch.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class UpdateServiceConnectorRequest
-        extends com.oracle.bmc.requests.BmcRequest<UpdateServiceConnectorDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.sch.model.UpdateServiceConnectorDetails> {
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the service connector.
@@ -30,7 +31,7 @@ public class UpdateServiceConnectorRequest
      * The information to be updated.
      *
      */
-    private UpdateServiceConnectorDetails updateServiceConnectorDetails;
+    private com.oracle.bmc.sch.model.UpdateServiceConnectorDetails updateServiceConnectorDetails;
 
     /**
      * For optimistic concurrency control. In the PUT or DELETE call
@@ -55,13 +56,14 @@ public class UpdateServiceConnectorRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateServiceConnectorDetails getBody$() {
+    public com.oracle.bmc.sch.model.UpdateServiceConnectorDetails getBody$() {
         return updateServiceConnectorDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateServiceConnectorRequest, UpdateServiceConnectorDetails> {
+                    UpdateServiceConnectorRequest,
+                    com.oracle.bmc.sch.model.UpdateServiceConnectorDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -126,7 +128,7 @@ public class UpdateServiceConnectorRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateServiceConnectorDetails body) {
+        public Builder body$(com.oracle.bmc.sch.model.UpdateServiceConnectorDetails body) {
             updateServiceConnectorDetails(body);
             return this;
         }

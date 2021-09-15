@@ -19,7 +19,7 @@ import com.oracle.bmc.core.model.*;
 @lombok.Getter
 public class ChangeComputeCapacityReservationCompartmentRequest
         extends com.oracle.bmc.requests.BmcRequest<
-                ChangeComputeCapacityReservationCompartmentDetails> {
+                com.oracle.bmc.core.model.ChangeComputeCapacityReservationCompartmentDetails> {
 
     /**
      * The OCID of the compute capacity reservation.
@@ -29,7 +29,7 @@ public class ChangeComputeCapacityReservationCompartmentRequest
     /**
      * The configuration details for the move operation.
      */
-    private ChangeComputeCapacityReservationCompartmentDetails
+    private com.oracle.bmc.core.model.ChangeComputeCapacityReservationCompartmentDetails
             changeComputeCapacityReservationCompartmentDetails;
 
     /**
@@ -63,14 +63,14 @@ public class ChangeComputeCapacityReservationCompartmentRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public ChangeComputeCapacityReservationCompartmentDetails getBody$() {
+    public com.oracle.bmc.core.model.ChangeComputeCapacityReservationCompartmentDetails getBody$() {
         return changeComputeCapacityReservationCompartmentDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ChangeComputeCapacityReservationCompartmentRequest,
-                    ChangeComputeCapacityReservationCompartmentDetails> {
+                    com.oracle.bmc.core.model.ChangeComputeCapacityReservationCompartmentDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -138,7 +138,8 @@ public class ChangeComputeCapacityReservationCompartmentRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(ChangeComputeCapacityReservationCompartmentDetails body) {
+        public Builder body$(
+                com.oracle.bmc.core.model.ChangeComputeCapacityReservationCompartmentDetails body) {
             changeComputeCapacityReservationCompartmentDetails(body);
             return this;
         }

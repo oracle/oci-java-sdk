@@ -18,7 +18,8 @@ import com.oracle.bmc.operatoraccesscontrol.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class ApproveAccessRequestRequest
-        extends com.oracle.bmc.requests.BmcRequest<ApproveAccessRequestDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.operatoraccesscontrol.model.ApproveAccessRequestDetails> {
 
     /**
      * unique AccessRequest identifier
@@ -28,7 +29,8 @@ public class ApproveAccessRequestRequest
     /**
      * Details regarding the approval of an access request created by the operator.
      */
-    private ApproveAccessRequestDetails approveAccessRequestDetails;
+    private com.oracle.bmc.operatoraccesscontrol.model.ApproveAccessRequestDetails
+            approveAccessRequestDetails;
 
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -61,13 +63,14 @@ public class ApproveAccessRequestRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public ApproveAccessRequestDetails getBody$() {
+    public com.oracle.bmc.operatoraccesscontrol.model.ApproveAccessRequestDetails getBody$() {
         return approveAccessRequestDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    ApproveAccessRequestRequest, ApproveAccessRequestDetails> {
+                    ApproveAccessRequestRequest,
+                    com.oracle.bmc.operatoraccesscontrol.model.ApproveAccessRequestDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -133,7 +136,8 @@ public class ApproveAccessRequestRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(ApproveAccessRequestDetails body) {
+        public Builder body$(
+                com.oracle.bmc.operatoraccesscontrol.model.ApproveAccessRequestDetails body) {
             approveAccessRequestDetails(body);
             return this;
         }

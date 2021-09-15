@@ -18,7 +18,8 @@ import com.oracle.bmc.core.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class UpdateBootVolumeRequest
-        extends com.oracle.bmc.requests.BmcRequest<UpdateBootVolumeDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.core.model.UpdateBootVolumeDetails> {
 
     /**
      * The OCID of the boot volume.
@@ -28,7 +29,7 @@ public class UpdateBootVolumeRequest
     /**
      * Update boot volume's display name.
      */
-    private UpdateBootVolumeDetails updateBootVolumeDetails;
+    private com.oracle.bmc.core.model.UpdateBootVolumeDetails updateBootVolumeDetails;
 
     /**
      * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
@@ -44,13 +45,13 @@ public class UpdateBootVolumeRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateBootVolumeDetails getBody$() {
+    public com.oracle.bmc.core.model.UpdateBootVolumeDetails getBody$() {
         return updateBootVolumeDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateBootVolumeRequest, UpdateBootVolumeDetails> {
+                    UpdateBootVolumeRequest, com.oracle.bmc.core.model.UpdateBootVolumeDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -114,7 +115,7 @@ public class UpdateBootVolumeRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateBootVolumeDetails body) {
+        public Builder body$(com.oracle.bmc.core.model.UpdateBootVolumeDetails body) {
             updateBootVolumeDetails(body);
             return this;
         }

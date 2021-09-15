@@ -18,13 +18,15 @@ import com.oracle.bmc.database.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class CreateCloudExadataInfrastructureRequest
-        extends com.oracle.bmc.requests.BmcRequest<CreateCloudExadataInfrastructureDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.database.model.CreateCloudExadataInfrastructureDetails> {
 
     /**
      * Request to create a cloud Exadata infrastructure resource in an [Exadata Cloud Service](https://docs.cloud.oracle.com/Content/Database/Concepts/exaoverview.htm) instance.
      *
      */
-    private CreateCloudExadataInfrastructureDetails createCloudExadataInfrastructureDetails;
+    private com.oracle.bmc.database.model.CreateCloudExadataInfrastructureDetails
+            createCloudExadataInfrastructureDetails;
 
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -48,14 +50,14 @@ public class CreateCloudExadataInfrastructureRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreateCloudExadataInfrastructureDetails getBody$() {
+    public com.oracle.bmc.database.model.CreateCloudExadataInfrastructureDetails getBody$() {
         return createCloudExadataInfrastructureDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     CreateCloudExadataInfrastructureRequest,
-                    CreateCloudExadataInfrastructureDetails> {
+                    com.oracle.bmc.database.model.CreateCloudExadataInfrastructureDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -119,7 +121,8 @@ public class CreateCloudExadataInfrastructureRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreateCloudExadataInfrastructureDetails body) {
+        public Builder body$(
+                com.oracle.bmc.database.model.CreateCloudExadataInfrastructureDetails body) {
             createCloudExadataInfrastructureDetails(body);
             return this;
         }

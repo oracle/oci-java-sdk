@@ -18,7 +18,8 @@ import com.oracle.bmc.dataintegration.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class ChangeCompartmentRequest
-        extends com.oracle.bmc.requests.BmcRequest<ChangeCompartmentDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.dataintegration.model.ChangeCompartmentDetails> {
 
     /**
      * The workspace ID.
@@ -28,7 +29,7 @@ public class ChangeCompartmentRequest
     /**
      * The information needed to move a workspace to a specified compartment.
      */
-    private ChangeCompartmentDetails changeCompartmentDetails;
+    private com.oracle.bmc.dataintegration.model.ChangeCompartmentDetails changeCompartmentDetails;
 
     /**
      * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match} parameter to the value of the {@code etag} from a previous GET or POST response for that resource.
@@ -58,13 +59,14 @@ public class ChangeCompartmentRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public ChangeCompartmentDetails getBody$() {
+    public com.oracle.bmc.dataintegration.model.ChangeCompartmentDetails getBody$() {
         return changeCompartmentDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    ChangeCompartmentRequest, ChangeCompartmentDetails> {
+                    ChangeCompartmentRequest,
+                    com.oracle.bmc.dataintegration.model.ChangeCompartmentDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -130,7 +132,7 @@ public class ChangeCompartmentRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(ChangeCompartmentDetails body) {
+        public Builder body$(com.oracle.bmc.dataintegration.model.ChangeCompartmentDetails body) {
             changeCompartmentDetails(body);
             return this;
         }

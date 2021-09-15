@@ -18,7 +18,8 @@ import com.oracle.bmc.resourcemanager.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class ChangeTemplateCompartmentRequest
-        extends com.oracle.bmc.requests.BmcRequest<ChangeTemplateCompartmentDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.resourcemanager.model.ChangeTemplateCompartmentDetails> {
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the template.
@@ -28,7 +29,8 @@ public class ChangeTemplateCompartmentRequest
     /**
      * The details for moving a template to a different compartment.
      */
-    private ChangeTemplateCompartmentDetails changeTemplateCompartmentDetails;
+    private com.oracle.bmc.resourcemanager.model.ChangeTemplateCompartmentDetails
+            changeTemplateCompartmentDetails;
 
     /**
      * For optimistic concurrency control. In the {@code PUT} or {@code DELETE} call for a resource, set the {@code if-match}
@@ -61,13 +63,14 @@ public class ChangeTemplateCompartmentRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public ChangeTemplateCompartmentDetails getBody$() {
+    public com.oracle.bmc.resourcemanager.model.ChangeTemplateCompartmentDetails getBody$() {
         return changeTemplateCompartmentDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    ChangeTemplateCompartmentRequest, ChangeTemplateCompartmentDetails> {
+                    ChangeTemplateCompartmentRequest,
+                    com.oracle.bmc.resourcemanager.model.ChangeTemplateCompartmentDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -133,7 +136,8 @@ public class ChangeTemplateCompartmentRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(ChangeTemplateCompartmentDetails body) {
+        public Builder body$(
+                com.oracle.bmc.resourcemanager.model.ChangeTemplateCompartmentDetails body) {
             changeTemplateCompartmentDetails(body);
             return this;
         }

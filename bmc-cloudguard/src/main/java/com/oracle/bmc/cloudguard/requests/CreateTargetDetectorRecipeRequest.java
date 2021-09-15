@@ -18,7 +18,8 @@ import com.oracle.bmc.cloudguard.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class CreateTargetDetectorRecipeRequest
-        extends com.oracle.bmc.requests.BmcRequest<AttachTargetDetectorRecipeDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.cloudguard.model.AttachTargetDetectorRecipeDetails> {
 
     /**
      * OCID of target
@@ -28,7 +29,8 @@ public class CreateTargetDetectorRecipeRequest
     /**
      * Details for associating DetectorRecipe to Target
      */
-    private AttachTargetDetectorRecipeDetails attachTargetDetectorRecipeDetails;
+    private com.oracle.bmc.cloudguard.model.AttachTargetDetectorRecipeDetails
+            attachTargetDetectorRecipeDetails;
 
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -51,13 +53,14 @@ public class CreateTargetDetectorRecipeRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public AttachTargetDetectorRecipeDetails getBody$() {
+    public com.oracle.bmc.cloudguard.model.AttachTargetDetectorRecipeDetails getBody$() {
         return attachTargetDetectorRecipeDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CreateTargetDetectorRecipeRequest, AttachTargetDetectorRecipeDetails> {
+                    CreateTargetDetectorRecipeRequest,
+                    com.oracle.bmc.cloudguard.model.AttachTargetDetectorRecipeDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -122,7 +125,8 @@ public class CreateTargetDetectorRecipeRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(AttachTargetDetectorRecipeDetails body) {
+        public Builder body$(
+                com.oracle.bmc.cloudguard.model.AttachTargetDetectorRecipeDetails body) {
             attachTargetDetectorRecipeDetails(body);
             return this;
         }

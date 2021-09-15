@@ -18,12 +18,14 @@ import com.oracle.bmc.healthchecks.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class CreateOnDemandPingProbeRequest
-        extends com.oracle.bmc.requests.BmcRequest<CreateOnDemandPingProbeDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.healthchecks.model.CreateOnDemandPingProbeDetails> {
 
     /**
      * Configuration details for creating an on-demand ping probe.
      */
-    private CreateOnDemandPingProbeDetails createOnDemandPingProbeDetails;
+    private com.oracle.bmc.healthchecks.model.CreateOnDemandPingProbeDetails
+            createOnDemandPingProbeDetails;
 
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
@@ -38,13 +40,14 @@ public class CreateOnDemandPingProbeRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreateOnDemandPingProbeDetails getBody$() {
+    public com.oracle.bmc.healthchecks.model.CreateOnDemandPingProbeDetails getBody$() {
         return createOnDemandPingProbeDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CreateOnDemandPingProbeRequest, CreateOnDemandPingProbeDetails> {
+                    CreateOnDemandPingProbeRequest,
+                    com.oracle.bmc.healthchecks.model.CreateOnDemandPingProbeDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -107,7 +110,8 @@ public class CreateOnDemandPingProbeRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreateOnDemandPingProbeDetails body) {
+        public Builder body$(
+                com.oracle.bmc.healthchecks.model.CreateOnDemandPingProbeDetails body) {
             createOnDemandPingProbeDetails(body);
             return this;
         }

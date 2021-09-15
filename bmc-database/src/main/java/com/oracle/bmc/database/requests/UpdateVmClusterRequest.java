@@ -18,7 +18,8 @@ import com.oracle.bmc.database.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class UpdateVmClusterRequest
-        extends com.oracle.bmc.requests.BmcRequest<UpdateVmClusterDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.database.model.UpdateVmClusterDetails> {
 
     /**
      * The VM cluster [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
@@ -28,7 +29,7 @@ public class UpdateVmClusterRequest
     /**
      * Request to update the attributes of a VM cluster.
      */
-    private UpdateVmClusterDetails updateVmClusterDetails;
+    private com.oracle.bmc.database.model.UpdateVmClusterDetails updateVmClusterDetails;
 
     /**
      * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
@@ -50,13 +51,13 @@ public class UpdateVmClusterRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateVmClusterDetails getBody$() {
+    public com.oracle.bmc.database.model.UpdateVmClusterDetails getBody$() {
         return updateVmClusterDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateVmClusterRequest, UpdateVmClusterDetails> {
+                    UpdateVmClusterRequest, com.oracle.bmc.database.model.UpdateVmClusterDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -121,7 +122,7 @@ public class UpdateVmClusterRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateVmClusterDetails body) {
+        public Builder body$(com.oracle.bmc.database.model.UpdateVmClusterDetails body) {
             updateVmClusterDetails(body);
             return this;
         }

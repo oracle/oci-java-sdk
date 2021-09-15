@@ -18,7 +18,8 @@ import com.oracle.bmc.core.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class UpdateDrgAttachmentRequest
-        extends com.oracle.bmc.requests.BmcRequest<UpdateDrgAttachmentDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.core.model.UpdateDrgAttachmentDetails> {
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG attachment.
@@ -28,7 +29,7 @@ public class UpdateDrgAttachmentRequest
     /**
      * Details object for updating a {@code DrgAttachment}.
      */
-    private UpdateDrgAttachmentDetails updateDrgAttachmentDetails;
+    private com.oracle.bmc.core.model.UpdateDrgAttachmentDetails updateDrgAttachmentDetails;
 
     /**
      * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
@@ -44,13 +45,14 @@ public class UpdateDrgAttachmentRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateDrgAttachmentDetails getBody$() {
+    public com.oracle.bmc.core.model.UpdateDrgAttachmentDetails getBody$() {
         return updateDrgAttachmentDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateDrgAttachmentRequest, UpdateDrgAttachmentDetails> {
+                    UpdateDrgAttachmentRequest,
+                    com.oracle.bmc.core.model.UpdateDrgAttachmentDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -114,7 +116,7 @@ public class UpdateDrgAttachmentRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateDrgAttachmentDetails body) {
+        public Builder body$(com.oracle.bmc.core.model.UpdateDrgAttachmentDetails body) {
             updateDrgAttachmentDetails(body);
             return this;
         }

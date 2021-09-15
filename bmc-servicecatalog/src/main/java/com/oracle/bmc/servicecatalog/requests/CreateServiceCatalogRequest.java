@@ -18,12 +18,14 @@ import com.oracle.bmc.servicecatalog.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class CreateServiceCatalogRequest
-        extends com.oracle.bmc.requests.BmcRequest<CreateServiceCatalogDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.servicecatalog.model.CreateServiceCatalogDetails> {
 
     /**
      * The details for creating a service catalog.
      */
-    private CreateServiceCatalogDetails createServiceCatalogDetails;
+    private com.oracle.bmc.servicecatalog.model.CreateServiceCatalogDetails
+            createServiceCatalogDetails;
 
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without
@@ -47,13 +49,14 @@ public class CreateServiceCatalogRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreateServiceCatalogDetails getBody$() {
+    public com.oracle.bmc.servicecatalog.model.CreateServiceCatalogDetails getBody$() {
         return createServiceCatalogDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CreateServiceCatalogRequest, CreateServiceCatalogDetails> {
+                    CreateServiceCatalogRequest,
+                    com.oracle.bmc.servicecatalog.model.CreateServiceCatalogDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -117,7 +120,7 @@ public class CreateServiceCatalogRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreateServiceCatalogDetails body) {
+        public Builder body$(com.oracle.bmc.servicecatalog.model.CreateServiceCatalogDetails body) {
             createServiceCatalogDetails(body);
             return this;
         }

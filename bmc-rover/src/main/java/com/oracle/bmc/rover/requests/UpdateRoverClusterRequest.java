@@ -18,7 +18,8 @@ import com.oracle.bmc.rover.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class UpdateRoverClusterRequest
-        extends com.oracle.bmc.requests.BmcRequest<UpdateRoverClusterDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.rover.model.UpdateRoverClusterDetails> {
 
     /**
      * Unique RoverCluster identifier
@@ -28,7 +29,7 @@ public class UpdateRoverClusterRequest
     /**
      * The information to be updated.
      */
-    private UpdateRoverClusterDetails updateRoverClusterDetails;
+    private com.oracle.bmc.rover.model.UpdateRoverClusterDetails updateRoverClusterDetails;
 
     /**
      * For optimistic concurrency control. In the PUT or DELETE call
@@ -51,13 +52,14 @@ public class UpdateRoverClusterRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateRoverClusterDetails getBody$() {
+    public com.oracle.bmc.rover.model.UpdateRoverClusterDetails getBody$() {
         return updateRoverClusterDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateRoverClusterRequest, UpdateRoverClusterDetails> {
+                    UpdateRoverClusterRequest,
+                    com.oracle.bmc.rover.model.UpdateRoverClusterDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -122,7 +124,7 @@ public class UpdateRoverClusterRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateRoverClusterDetails body) {
+        public Builder body$(com.oracle.bmc.rover.model.UpdateRoverClusterDetails body) {
             updateRoverClusterDetails(body);
             return this;
         }

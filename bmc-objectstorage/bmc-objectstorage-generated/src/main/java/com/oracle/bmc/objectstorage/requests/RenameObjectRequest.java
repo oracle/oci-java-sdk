@@ -17,7 +17,9 @@ import com.oracle.bmc.objectstorage.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
-public class RenameObjectRequest extends com.oracle.bmc.requests.BmcRequest<RenameObjectDetails> {
+public class RenameObjectRequest
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.objectstorage.model.RenameObjectDetails> {
 
     /**
      * The Object Storage namespace used for the request.
@@ -34,7 +36,7 @@ public class RenameObjectRequest extends com.oracle.bmc.requests.BmcRequest<Rena
     /**
      * The sourceName and newName of rename operation. Avoid entering confidential information.
      */
-    private RenameObjectDetails renameObjectDetails;
+    private com.oracle.bmc.objectstorage.model.RenameObjectDetails renameObjectDetails;
 
     /**
      * The client request ID for tracing.
@@ -47,13 +49,13 @@ public class RenameObjectRequest extends com.oracle.bmc.requests.BmcRequest<Rena
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public RenameObjectDetails getBody$() {
+    public com.oracle.bmc.objectstorage.model.RenameObjectDetails getBody$() {
         return renameObjectDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    RenameObjectRequest, RenameObjectDetails> {
+                    RenameObjectRequest, com.oracle.bmc.objectstorage.model.RenameObjectDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -118,7 +120,7 @@ public class RenameObjectRequest extends com.oracle.bmc.requests.BmcRequest<Rena
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(RenameObjectDetails body) {
+        public Builder body$(com.oracle.bmc.objectstorage.model.RenameObjectDetails body) {
             renameObjectDetails(body);
             return this;
         }

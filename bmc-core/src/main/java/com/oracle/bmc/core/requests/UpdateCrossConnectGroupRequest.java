@@ -18,7 +18,8 @@ import com.oracle.bmc.core.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class UpdateCrossConnectGroupRequest
-        extends com.oracle.bmc.requests.BmcRequest<UpdateCrossConnectGroupDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.core.model.UpdateCrossConnectGroupDetails> {
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the cross-connect group.
@@ -28,7 +29,7 @@ public class UpdateCrossConnectGroupRequest
     /**
      * Update CrossConnectGroup fields
      */
-    private UpdateCrossConnectGroupDetails updateCrossConnectGroupDetails;
+    private com.oracle.bmc.core.model.UpdateCrossConnectGroupDetails updateCrossConnectGroupDetails;
 
     /**
      * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
@@ -44,13 +45,14 @@ public class UpdateCrossConnectGroupRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateCrossConnectGroupDetails getBody$() {
+    public com.oracle.bmc.core.model.UpdateCrossConnectGroupDetails getBody$() {
         return updateCrossConnectGroupDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateCrossConnectGroupRequest, UpdateCrossConnectGroupDetails> {
+                    UpdateCrossConnectGroupRequest,
+                    com.oracle.bmc.core.model.UpdateCrossConnectGroupDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -114,7 +116,7 @@ public class UpdateCrossConnectGroupRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateCrossConnectGroupDetails body) {
+        public Builder body$(com.oracle.bmc.core.model.UpdateCrossConnectGroupDetails body) {
             updateCrossConnectGroupDetails(body);
             return this;
         }

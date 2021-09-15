@@ -18,7 +18,8 @@ import com.oracle.bmc.loganalytics.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class UpdateLogAnalyticsEmBridgeRequest
-        extends com.oracle.bmc.requests.BmcRequest<UpdateLogAnalyticsEmBridgeDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.loganalytics.model.UpdateLogAnalyticsEmBridgeDetails> {
 
     /**
      * The Logging Analytics namespace used for the request.
@@ -35,7 +36,8 @@ public class UpdateLogAnalyticsEmBridgeRequest
     /**
      * Log analytics enterprise manager information to be updated.
      */
-    private UpdateLogAnalyticsEmBridgeDetails updateLogAnalyticsEmBridgeDetails;
+    private com.oracle.bmc.loganalytics.model.UpdateLogAnalyticsEmBridgeDetails
+            updateLogAnalyticsEmBridgeDetails;
 
     /**
      * For optimistic concurrency control. In the PUT or DELETE call
@@ -58,7 +60,7 @@ public class UpdateLogAnalyticsEmBridgeRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateLogAnalyticsEmBridgeDetails getBody$() {
+    public com.oracle.bmc.loganalytics.model.UpdateLogAnalyticsEmBridgeDetails getBody$() {
         return updateLogAnalyticsEmBridgeDetails;
     }
 
@@ -69,7 +71,8 @@ public class UpdateLogAnalyticsEmBridgeRequest
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateLogAnalyticsEmBridgeRequest, UpdateLogAnalyticsEmBridgeDetails> {
+                    UpdateLogAnalyticsEmBridgeRequest,
+                    com.oracle.bmc.loganalytics.model.UpdateLogAnalyticsEmBridgeDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -135,7 +138,8 @@ public class UpdateLogAnalyticsEmBridgeRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateLogAnalyticsEmBridgeDetails body) {
+        public Builder body$(
+                com.oracle.bmc.loganalytics.model.UpdateLogAnalyticsEmBridgeDetails body) {
             updateLogAnalyticsEmBridgeDetails(body);
             return this;
         }

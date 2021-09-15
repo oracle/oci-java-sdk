@@ -18,7 +18,8 @@ import com.oracle.bmc.core.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class ChangeVolumeGroupCompartmentRequest
-        extends com.oracle.bmc.requests.BmcRequest<ChangeVolumeGroupCompartmentDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.core.model.ChangeVolumeGroupCompartmentDetails> {
 
     /**
      * The Oracle Cloud ID (OCID) that uniquely identifies the volume group.
@@ -28,7 +29,8 @@ public class ChangeVolumeGroupCompartmentRequest
     /**
      * Request to change the compartment of given volume group.
      */
-    private ChangeVolumeGroupCompartmentDetails changeVolumeGroupCompartmentDetails;
+    private com.oracle.bmc.core.model.ChangeVolumeGroupCompartmentDetails
+            changeVolumeGroupCompartmentDetails;
 
     /**
      * Unique identifier for the request.
@@ -43,13 +45,14 @@ public class ChangeVolumeGroupCompartmentRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public ChangeVolumeGroupCompartmentDetails getBody$() {
+    public com.oracle.bmc.core.model.ChangeVolumeGroupCompartmentDetails getBody$() {
         return changeVolumeGroupCompartmentDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    ChangeVolumeGroupCompartmentRequest, ChangeVolumeGroupCompartmentDetails> {
+                    ChangeVolumeGroupCompartmentRequest,
+                    com.oracle.bmc.core.model.ChangeVolumeGroupCompartmentDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -113,7 +116,7 @@ public class ChangeVolumeGroupCompartmentRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(ChangeVolumeGroupCompartmentDetails body) {
+        public Builder body$(com.oracle.bmc.core.model.ChangeVolumeGroupCompartmentDetails body) {
             changeVolumeGroupCompartmentDetails(body);
             return this;
         }

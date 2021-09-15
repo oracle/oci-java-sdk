@@ -18,7 +18,8 @@ import com.oracle.bmc.dataintegration.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class UpdateDataFlowRequest
-        extends com.oracle.bmc.requests.BmcRequest<UpdateDataFlowDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.dataintegration.model.UpdateDataFlowDetails> {
 
     /**
      * The workspace ID.
@@ -33,7 +34,7 @@ public class UpdateDataFlowRequest
     /**
      * The details needed to updated a data flow.
      */
-    private UpdateDataFlowDetails updateDataFlowDetails;
+    private com.oracle.bmc.dataintegration.model.UpdateDataFlowDetails updateDataFlowDetails;
 
     /**
      * Unique Oracle-assigned identifier for the request. If
@@ -57,13 +58,14 @@ public class UpdateDataFlowRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateDataFlowDetails getBody$() {
+    public com.oracle.bmc.dataintegration.model.UpdateDataFlowDetails getBody$() {
         return updateDataFlowDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateDataFlowRequest, UpdateDataFlowDetails> {
+                    UpdateDataFlowRequest,
+                    com.oracle.bmc.dataintegration.model.UpdateDataFlowDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -129,7 +131,7 @@ public class UpdateDataFlowRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateDataFlowDetails body) {
+        public Builder body$(com.oracle.bmc.dataintegration.model.UpdateDataFlowDetails body) {
             updateDataFlowDetails(body);
             return this;
         }

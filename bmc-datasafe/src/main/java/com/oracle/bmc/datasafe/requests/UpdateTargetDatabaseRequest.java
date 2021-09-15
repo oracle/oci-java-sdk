@@ -18,7 +18,8 @@ import com.oracle.bmc.datasafe.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class UpdateTargetDatabaseRequest
-        extends com.oracle.bmc.requests.BmcRequest<UpdateTargetDatabaseDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.datasafe.model.UpdateTargetDatabaseDetails> {
 
     /**
      * The OCID of the Data Safe target database.
@@ -28,7 +29,7 @@ public class UpdateTargetDatabaseRequest
     /**
      * Details used to update the target database in Data Safe.
      */
-    private UpdateTargetDatabaseDetails updateTargetDatabaseDetails;
+    private com.oracle.bmc.datasafe.model.UpdateTargetDatabaseDetails updateTargetDatabaseDetails;
 
     /**
      * Unique identifier for the request.
@@ -60,13 +61,14 @@ public class UpdateTargetDatabaseRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateTargetDatabaseDetails getBody$() {
+    public com.oracle.bmc.datasafe.model.UpdateTargetDatabaseDetails getBody$() {
         return updateTargetDatabaseDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateTargetDatabaseRequest, UpdateTargetDatabaseDetails> {
+                    UpdateTargetDatabaseRequest,
+                    com.oracle.bmc.datasafe.model.UpdateTargetDatabaseDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -132,7 +134,7 @@ public class UpdateTargetDatabaseRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateTargetDatabaseDetails body) {
+        public Builder body$(com.oracle.bmc.datasafe.model.UpdateTargetDatabaseDetails body) {
             updateTargetDatabaseDetails(body);
             return this;
         }

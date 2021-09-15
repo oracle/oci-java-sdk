@@ -41,7 +41,7 @@ public class GetJobLogsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
      * A filter that returns only log entries that match a given severity level or greater.
      *
      */
-    private LogEntry.Level levelGreaterThanOrEqualTo;
+    private com.oracle.bmc.resourcemanager.model.LogEntry.Level levelGreaterThanOrEqualTo;
 
     /**
      * The sort order to use when sorting returned resources. Ascending ({@code ASC}) or descending ({@code DESC}).

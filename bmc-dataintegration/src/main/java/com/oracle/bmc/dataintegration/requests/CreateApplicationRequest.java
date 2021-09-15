@@ -18,7 +18,8 @@ import com.oracle.bmc.dataintegration.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class CreateApplicationRequest
-        extends com.oracle.bmc.requests.BmcRequest<CreateApplicationDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.dataintegration.model.CreateApplicationDetails> {
 
     /**
      * The workspace ID.
@@ -28,7 +29,7 @@ public class CreateApplicationRequest
     /**
      * The details needed to create an application.
      */
-    private CreateApplicationDetails createApplicationDetails;
+    private com.oracle.bmc.dataintegration.model.CreateApplicationDetails createApplicationDetails;
 
     /**
      * Unique Oracle-assigned identifier for the request. If
@@ -50,13 +51,14 @@ public class CreateApplicationRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreateApplicationDetails getBody$() {
+    public com.oracle.bmc.dataintegration.model.CreateApplicationDetails getBody$() {
         return createApplicationDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CreateApplicationRequest, CreateApplicationDetails> {
+                    CreateApplicationRequest,
+                    com.oracle.bmc.dataintegration.model.CreateApplicationDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -121,7 +123,7 @@ public class CreateApplicationRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreateApplicationDetails body) {
+        public Builder body$(com.oracle.bmc.dataintegration.model.CreateApplicationDetails body) {
             createApplicationDetails(body);
             return this;
         }

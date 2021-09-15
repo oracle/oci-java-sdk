@@ -18,7 +18,8 @@ import com.oracle.bmc.goldengate.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class UpdateDeploymentBackupRequest
-        extends com.oracle.bmc.requests.BmcRequest<UpdateDeploymentBackupDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.goldengate.model.UpdateDeploymentBackupDetails> {
 
     /**
      * A unique DeploymentBackup identifier.
@@ -30,7 +31,8 @@ public class UpdateDeploymentBackupRequest
      * The information to be updated.
      *
      */
-    private UpdateDeploymentBackupDetails updateDeploymentBackupDetails;
+    private com.oracle.bmc.goldengate.model.UpdateDeploymentBackupDetails
+            updateDeploymentBackupDetails;
 
     /**
      * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match} parameter to the value of the etag from a previous GET or POST response for that resource.  The resource is updated or deleted only if the etag you provide matches the resource's current etag value.
@@ -50,13 +52,14 @@ public class UpdateDeploymentBackupRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateDeploymentBackupDetails getBody$() {
+    public com.oracle.bmc.goldengate.model.UpdateDeploymentBackupDetails getBody$() {
         return updateDeploymentBackupDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateDeploymentBackupRequest, UpdateDeploymentBackupDetails> {
+                    UpdateDeploymentBackupRequest,
+                    com.oracle.bmc.goldengate.model.UpdateDeploymentBackupDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -121,7 +124,7 @@ public class UpdateDeploymentBackupRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateDeploymentBackupDetails body) {
+        public Builder body$(com.oracle.bmc.goldengate.model.UpdateDeploymentBackupDetails body) {
             updateDeploymentBackupDetails(body);
             return this;
         }

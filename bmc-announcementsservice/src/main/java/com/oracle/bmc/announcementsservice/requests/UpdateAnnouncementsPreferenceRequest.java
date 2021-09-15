@@ -18,7 +18,8 @@ import com.oracle.bmc.announcementsservice.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class UpdateAnnouncementsPreferenceRequest
-        extends com.oracle.bmc.requests.BmcRequest<UpdateAnnouncementsPreferencesDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.announcementsservice.model.UpdateAnnouncementsPreferencesDetails> {
 
     /**
      * The ID of the preference.
@@ -28,7 +29,8 @@ public class UpdateAnnouncementsPreferenceRequest
     /**
      * The object that contains details about tenancy preferences for receiving announcements by email.
      */
-    private UpdateAnnouncementsPreferencesDetails announcementsPreferenceDetails;
+    private com.oracle.bmc.announcementsservice.model.UpdateAnnouncementsPreferencesDetails
+            announcementsPreferenceDetails;
 
     /**
      * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about
@@ -48,13 +50,16 @@ public class UpdateAnnouncementsPreferenceRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateAnnouncementsPreferencesDetails getBody$() {
+    public com.oracle.bmc.announcementsservice.model.UpdateAnnouncementsPreferencesDetails
+            getBody$() {
         return announcementsPreferenceDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateAnnouncementsPreferenceRequest, UpdateAnnouncementsPreferencesDetails> {
+                    UpdateAnnouncementsPreferenceRequest,
+                    com.oracle.bmc.announcementsservice.model
+                            .UpdateAnnouncementsPreferencesDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -119,7 +124,9 @@ public class UpdateAnnouncementsPreferenceRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateAnnouncementsPreferencesDetails body) {
+        public Builder body$(
+                com.oracle.bmc.announcementsservice.model.UpdateAnnouncementsPreferencesDetails
+                        body) {
             announcementsPreferenceDetails(body);
             return this;
         }

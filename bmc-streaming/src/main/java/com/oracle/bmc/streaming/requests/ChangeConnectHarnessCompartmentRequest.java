@@ -18,7 +18,8 @@ import com.oracle.bmc.streaming.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class ChangeConnectHarnessCompartmentRequest
-        extends com.oracle.bmc.requests.BmcRequest<ChangeConnectHarnessCompartmentDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.streaming.model.ChangeConnectHarnessCompartmentDetails> {
 
     /**
      * The OCID of the connect harness.
@@ -29,7 +30,8 @@ public class ChangeConnectHarnessCompartmentRequest
     /**
      * The connect harness will be moved into the compartment specified within this entity.
      */
-    private ChangeConnectHarnessCompartmentDetails changeConnectHarnessCompartmentDetails;
+    private com.oracle.bmc.streaming.model.ChangeConnectHarnessCompartmentDetails
+            changeConnectHarnessCompartmentDetails;
 
     /**
      * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the if-match parameter to the value of the etag from a previous GET or POST response for that resource. The resource will be updated or deleted only if the etag you provide matches the resource's current etag value.
@@ -49,14 +51,14 @@ public class ChangeConnectHarnessCompartmentRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public ChangeConnectHarnessCompartmentDetails getBody$() {
+    public com.oracle.bmc.streaming.model.ChangeConnectHarnessCompartmentDetails getBody$() {
         return changeConnectHarnessCompartmentDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ChangeConnectHarnessCompartmentRequest,
-                    ChangeConnectHarnessCompartmentDetails> {
+                    com.oracle.bmc.streaming.model.ChangeConnectHarnessCompartmentDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -121,7 +123,8 @@ public class ChangeConnectHarnessCompartmentRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(ChangeConnectHarnessCompartmentDetails body) {
+        public Builder body$(
+                com.oracle.bmc.streaming.model.ChangeConnectHarnessCompartmentDetails body) {
             changeConnectHarnessCompartmentDetails(body);
             return this;
         }

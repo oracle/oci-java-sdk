@@ -17,7 +17,9 @@ import com.oracle.bmc.objectstorage.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
-public class UpdateBucketRequest extends com.oracle.bmc.requests.BmcRequest<UpdateBucketDetails> {
+public class UpdateBucketRequest
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.objectstorage.model.UpdateBucketDetails> {
 
     /**
      * The Object Storage namespace used for the request.
@@ -34,7 +36,7 @@ public class UpdateBucketRequest extends com.oracle.bmc.requests.BmcRequest<Upda
     /**
      * Request object for updating a bucket.
      */
-    private UpdateBucketDetails updateBucketDetails;
+    private com.oracle.bmc.objectstorage.model.UpdateBucketDetails updateBucketDetails;
 
     /**
      * The entity tag (ETag) to match with the ETag of an existing resource. If the specified ETag matches the ETag of
@@ -55,13 +57,13 @@ public class UpdateBucketRequest extends com.oracle.bmc.requests.BmcRequest<Upda
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateBucketDetails getBody$() {
+    public com.oracle.bmc.objectstorage.model.UpdateBucketDetails getBody$() {
         return updateBucketDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateBucketRequest, UpdateBucketDetails> {
+                    UpdateBucketRequest, com.oracle.bmc.objectstorage.model.UpdateBucketDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -127,7 +129,7 @@ public class UpdateBucketRequest extends com.oracle.bmc.requests.BmcRequest<Upda
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateBucketDetails body) {
+        public Builder body$(com.oracle.bmc.objectstorage.model.UpdateBucketDetails body) {
             updateBucketDetails(body);
             return this;
         }

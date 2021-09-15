@@ -18,7 +18,8 @@ import com.oracle.bmc.dts.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class ChangeTransferJobCompartmentRequest
-        extends com.oracle.bmc.requests.BmcRequest<ChangeTransferJobCompartmentDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.dts.model.ChangeTransferJobCompartmentDetails> {
 
     /**
      * ID of the Transfer Job
@@ -28,7 +29,8 @@ public class ChangeTransferJobCompartmentRequest
     /**
      * CompartmentId of the destination compartment
      */
-    private ChangeTransferJobCompartmentDetails changeTransferJobCompartmentDetails;
+    private com.oracle.bmc.dts.model.ChangeTransferJobCompartmentDetails
+            changeTransferJobCompartmentDetails;
 
     /**
      * The entity tag to match. Optional, if set, the update will be successful only if the
@@ -60,13 +62,14 @@ public class ChangeTransferJobCompartmentRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public ChangeTransferJobCompartmentDetails getBody$() {
+    public com.oracle.bmc.dts.model.ChangeTransferJobCompartmentDetails getBody$() {
         return changeTransferJobCompartmentDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    ChangeTransferJobCompartmentRequest, ChangeTransferJobCompartmentDetails> {
+                    ChangeTransferJobCompartmentRequest,
+                    com.oracle.bmc.dts.model.ChangeTransferJobCompartmentDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -132,7 +135,7 @@ public class ChangeTransferJobCompartmentRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(ChangeTransferJobCompartmentDetails body) {
+        public Builder body$(com.oracle.bmc.dts.model.ChangeTransferJobCompartmentDetails body) {
             changeTransferJobCompartmentDetails(body);
             return this;
         }

@@ -18,7 +18,8 @@ import com.oracle.bmc.events.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class ChangeRuleCompartmentRequest
-        extends com.oracle.bmc.requests.BmcRequest<ChangeRuleCompartmentDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.events.model.ChangeRuleCompartmentDetails> {
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this rule.
@@ -29,7 +30,7 @@ public class ChangeRuleCompartmentRequest
     /**
      *
      */
-    private ChangeRuleCompartmentDetails changeRuleCompartmentDetails;
+    private com.oracle.bmc.events.model.ChangeRuleCompartmentDetails changeRuleCompartmentDetails;
 
     /**
      * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the if-match
@@ -62,13 +63,14 @@ public class ChangeRuleCompartmentRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public ChangeRuleCompartmentDetails getBody$() {
+    public com.oracle.bmc.events.model.ChangeRuleCompartmentDetails getBody$() {
         return changeRuleCompartmentDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    ChangeRuleCompartmentRequest, ChangeRuleCompartmentDetails> {
+                    ChangeRuleCompartmentRequest,
+                    com.oracle.bmc.events.model.ChangeRuleCompartmentDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -134,7 +136,7 @@ public class ChangeRuleCompartmentRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(ChangeRuleCompartmentDetails body) {
+        public Builder body$(com.oracle.bmc.events.model.ChangeRuleCompartmentDetails body) {
             changeRuleCompartmentDetails(body);
             return this;
         }

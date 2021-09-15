@@ -377,6 +377,51 @@ public class ComputeAsyncClient implements ComputeAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<AcceptShieldedIntegrityPolicyResponse>
+            acceptShieldedIntegrityPolicy(
+                    AcceptShieldedIntegrityPolicyRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    AcceptShieldedIntegrityPolicyRequest,
+                                    AcceptShieldedIntegrityPolicyResponse>
+                            handler) {
+        LOG.trace("Called async acceptShieldedIntegrityPolicy");
+        final AcceptShieldedIntegrityPolicyRequest interceptedRequest =
+                AcceptShieldedIntegrityPolicyConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                AcceptShieldedIntegrityPolicyConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, AcceptShieldedIntegrityPolicyResponse>
+                transformer = AcceptShieldedIntegrityPolicyConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        AcceptShieldedIntegrityPolicyRequest, AcceptShieldedIntegrityPolicyResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                AcceptShieldedIntegrityPolicyRequest,
+                                AcceptShieldedIntegrityPolicyResponse>,
+                        java.util.concurrent.Future<AcceptShieldedIntegrityPolicyResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    AcceptShieldedIntegrityPolicyRequest, AcceptShieldedIntegrityPolicyResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<AddImageShapeCompatibilityEntryResponse>
             addImageShapeCompatibilityEntry(
                     AddImageShapeCompatibilityEntryRequest request,
@@ -2253,6 +2298,47 @@ public class ComputeAsyncClient implements ComputeAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     GetInstanceConsoleConnectionRequest, GetInstanceConsoleConnectionResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetMeasuredBootReportResponse> getMeasuredBootReport(
+            GetMeasuredBootReportRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetMeasuredBootReportRequest, GetMeasuredBootReportResponse>
+                    handler) {
+        LOG.trace("Called async getMeasuredBootReport");
+        final GetMeasuredBootReportRequest interceptedRequest =
+                GetMeasuredBootReportConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetMeasuredBootReportConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, GetMeasuredBootReportResponse>
+                transformer = GetMeasuredBootReportConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        GetMeasuredBootReportRequest, GetMeasuredBootReportResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetMeasuredBootReportRequest, GetMeasuredBootReportResponse>,
+                        java.util.concurrent.Future<GetMeasuredBootReportResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetMeasuredBootReportRequest, GetMeasuredBootReportResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,

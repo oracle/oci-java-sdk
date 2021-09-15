@@ -18,7 +18,7 @@ import com.oracle.bmc.waas.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class UpdateWafAddressRateLimitingRequest
-        extends com.oracle.bmc.requests.BmcRequest<AddressRateLimiting> {
+        extends com.oracle.bmc.requests.BmcRequest<com.oracle.bmc.waas.model.AddressRateLimiting> {
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the WAAS policy.
@@ -28,7 +28,7 @@ public class UpdateWafAddressRateLimitingRequest
     /**
      * The address rate limiting settings.
      */
-    private AddressRateLimiting updateWafAddressRateLimitingDetails;
+    private com.oracle.bmc.waas.model.AddressRateLimiting updateWafAddressRateLimitingDetails;
 
     /**
      * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
@@ -52,13 +52,14 @@ public class UpdateWafAddressRateLimitingRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public AddressRateLimiting getBody$() {
+    public com.oracle.bmc.waas.model.AddressRateLimiting getBody$() {
         return updateWafAddressRateLimitingDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateWafAddressRateLimitingRequest, AddressRateLimiting> {
+                    UpdateWafAddressRateLimitingRequest,
+                    com.oracle.bmc.waas.model.AddressRateLimiting> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -124,7 +125,7 @@ public class UpdateWafAddressRateLimitingRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(AddressRateLimiting body) {
+        public Builder body$(com.oracle.bmc.waas.model.AddressRateLimiting body) {
             updateWafAddressRateLimitingDetails(body);
             return this;
         }

@@ -18,7 +18,8 @@ import com.oracle.bmc.datacatalog.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class ValidatePatternRequest
-        extends com.oracle.bmc.requests.BmcRequest<ValidatePatternDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.datacatalog.model.ValidatePatternDetails> {
 
     /**
      * Unique catalog identifier.
@@ -33,7 +34,7 @@ public class ValidatePatternRequest
     /**
      * The information used to validate the pattern.
      */
-    private ValidatePatternDetails validatePatternDetails;
+    private com.oracle.bmc.datacatalog.model.ValidatePatternDetails validatePatternDetails;
 
     /**
      * The client request ID for tracing.
@@ -56,13 +57,14 @@ public class ValidatePatternRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public ValidatePatternDetails getBody$() {
+    public com.oracle.bmc.datacatalog.model.ValidatePatternDetails getBody$() {
         return validatePatternDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    ValidatePatternRequest, ValidatePatternDetails> {
+                    ValidatePatternRequest,
+                    com.oracle.bmc.datacatalog.model.ValidatePatternDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -128,7 +130,7 @@ public class ValidatePatternRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(ValidatePatternDetails body) {
+        public Builder body$(com.oracle.bmc.datacatalog.model.ValidatePatternDetails body) {
             validatePatternDetails(body);
             return this;
         }

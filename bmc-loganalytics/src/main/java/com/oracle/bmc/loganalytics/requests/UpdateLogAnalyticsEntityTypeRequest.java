@@ -18,7 +18,8 @@ import com.oracle.bmc.loganalytics.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class UpdateLogAnalyticsEntityTypeRequest
-        extends com.oracle.bmc.requests.BmcRequest<UpdateLogAnalyticsEntityTypeDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.loganalytics.model.UpdateLogAnalyticsEntityTypeDetails> {
 
     /**
      * The Logging Analytics namespace used for the request.
@@ -29,7 +30,8 @@ public class UpdateLogAnalyticsEntityTypeRequest
     /**
      * Log analytics entity type update details.
      */
-    private UpdateLogAnalyticsEntityTypeDetails updateLogAnalyticsEntityTypeDetails;
+    private com.oracle.bmc.loganalytics.model.UpdateLogAnalyticsEntityTypeDetails
+            updateLogAnalyticsEntityTypeDetails;
 
     /**
      * Log analytics entity type name.
@@ -58,7 +60,7 @@ public class UpdateLogAnalyticsEntityTypeRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateLogAnalyticsEntityTypeDetails getBody$() {
+    public com.oracle.bmc.loganalytics.model.UpdateLogAnalyticsEntityTypeDetails getBody$() {
         return updateLogAnalyticsEntityTypeDetails;
     }
 
@@ -69,7 +71,8 @@ public class UpdateLogAnalyticsEntityTypeRequest
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateLogAnalyticsEntityTypeRequest, UpdateLogAnalyticsEntityTypeDetails> {
+                    UpdateLogAnalyticsEntityTypeRequest,
+                    com.oracle.bmc.loganalytics.model.UpdateLogAnalyticsEntityTypeDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -135,7 +138,8 @@ public class UpdateLogAnalyticsEntityTypeRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateLogAnalyticsEntityTypeDetails body) {
+        public Builder body$(
+                com.oracle.bmc.loganalytics.model.UpdateLogAnalyticsEntityTypeDetails body) {
             updateLogAnalyticsEntityTypeDetails(body);
             return this;
         }

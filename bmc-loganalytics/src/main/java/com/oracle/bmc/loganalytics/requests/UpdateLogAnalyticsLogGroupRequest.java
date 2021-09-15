@@ -18,7 +18,8 @@ import com.oracle.bmc.loganalytics.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class UpdateLogAnalyticsLogGroupRequest
-        extends com.oracle.bmc.requests.BmcRequest<UpdateLogAnalyticsLogGroupDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.loganalytics.model.UpdateLogAnalyticsLogGroupDetails> {
 
     /**
      * The Logging Analytics namespace used for the request.
@@ -34,7 +35,8 @@ public class UpdateLogAnalyticsLogGroupRequest
     /**
      * The information to be updated.
      */
-    private UpdateLogAnalyticsLogGroupDetails updateLogAnalyticsLogGroupDetails;
+    private com.oracle.bmc.loganalytics.model.UpdateLogAnalyticsLogGroupDetails
+            updateLogAnalyticsLogGroupDetails;
 
     /**
      * For optimistic concurrency control. In the PUT or DELETE call
@@ -57,7 +59,7 @@ public class UpdateLogAnalyticsLogGroupRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateLogAnalyticsLogGroupDetails getBody$() {
+    public com.oracle.bmc.loganalytics.model.UpdateLogAnalyticsLogGroupDetails getBody$() {
         return updateLogAnalyticsLogGroupDetails;
     }
 
@@ -68,7 +70,8 @@ public class UpdateLogAnalyticsLogGroupRequest
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateLogAnalyticsLogGroupRequest, UpdateLogAnalyticsLogGroupDetails> {
+                    UpdateLogAnalyticsLogGroupRequest,
+                    com.oracle.bmc.loganalytics.model.UpdateLogAnalyticsLogGroupDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -134,7 +137,8 @@ public class UpdateLogAnalyticsLogGroupRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateLogAnalyticsLogGroupDetails body) {
+        public Builder body$(
+                com.oracle.bmc.loganalytics.model.UpdateLogAnalyticsLogGroupDetails body) {
             updateLogAnalyticsLogGroupDetails(body);
             return this;
         }

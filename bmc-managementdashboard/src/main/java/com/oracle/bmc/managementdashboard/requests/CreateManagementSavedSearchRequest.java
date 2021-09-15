@@ -18,12 +18,14 @@ import com.oracle.bmc.managementdashboard.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class CreateManagementSavedSearchRequest
-        extends com.oracle.bmc.requests.BmcRequest<CreateManagementSavedSearchDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.managementdashboard.model.CreateManagementSavedSearchDetails> {
 
     /**
      * JSON metadata for the saved search.
      */
-    private CreateManagementSavedSearchDetails createManagementSavedSearchDetails;
+    private com.oracle.bmc.managementdashboard.model.CreateManagementSavedSearchDetails
+            createManagementSavedSearchDetails;
 
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -46,13 +48,14 @@ public class CreateManagementSavedSearchRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreateManagementSavedSearchDetails getBody$() {
+    public com.oracle.bmc.managementdashboard.model.CreateManagementSavedSearchDetails getBody$() {
         return createManagementSavedSearchDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CreateManagementSavedSearchRequest, CreateManagementSavedSearchDetails> {
+                    CreateManagementSavedSearchRequest,
+                    com.oracle.bmc.managementdashboard.model.CreateManagementSavedSearchDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -116,7 +119,8 @@ public class CreateManagementSavedSearchRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreateManagementSavedSearchDetails body) {
+        public Builder body$(
+                com.oracle.bmc.managementdashboard.model.CreateManagementSavedSearchDetails body) {
             createManagementSavedSearchDetails(body);
             return this;
         }

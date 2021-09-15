@@ -19,7 +19,8 @@ import com.oracle.bmc.database.model.*;
 @lombok.Getter
 public class EnableExternalNonContainerDatabaseDatabaseManagementRequest
         extends com.oracle.bmc.requests.BmcRequest<
-                EnableExternalNonContainerDatabaseDatabaseManagementDetails> {
+                com.oracle.bmc.database.model
+                        .EnableExternalNonContainerDatabaseDatabaseManagementDetails> {
 
     /**
      * The external non-container database [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
@@ -29,7 +30,8 @@ public class EnableExternalNonContainerDatabaseDatabaseManagementRequest
     /**
      * Request to enable the Database Management Service for an external non-container database.
      */
-    private EnableExternalNonContainerDatabaseDatabaseManagementDetails
+    private com.oracle.bmc.database.model
+                    .EnableExternalNonContainerDatabaseDatabaseManagementDetails
             enableExternalNonContainerDatabaseDatabaseManagementDetails;
 
     /**
@@ -62,14 +64,16 @@ public class EnableExternalNonContainerDatabaseDatabaseManagementRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public EnableExternalNonContainerDatabaseDatabaseManagementDetails getBody$() {
+    public com.oracle.bmc.database.model.EnableExternalNonContainerDatabaseDatabaseManagementDetails
+            getBody$() {
         return enableExternalNonContainerDatabaseDatabaseManagementDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     EnableExternalNonContainerDatabaseDatabaseManagementRequest,
-                    EnableExternalNonContainerDatabaseDatabaseManagementDetails> {
+                    com.oracle.bmc.database.model
+                            .EnableExternalNonContainerDatabaseDatabaseManagementDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -137,7 +141,10 @@ public class EnableExternalNonContainerDatabaseDatabaseManagementRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(EnableExternalNonContainerDatabaseDatabaseManagementDetails body) {
+        public Builder body$(
+                com.oracle.bmc.database.model
+                                .EnableExternalNonContainerDatabaseDatabaseManagementDetails
+                        body) {
             enableExternalNonContainerDatabaseDatabaseManagementDetails(body);
             return this;
         }

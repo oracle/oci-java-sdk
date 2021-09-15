@@ -18,13 +18,14 @@ import com.oracle.bmc.monitoring.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class PostMetricDataRequest
-        extends com.oracle.bmc.requests.BmcRequest<PostMetricDataDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.monitoring.model.PostMetricDataDetails> {
 
     /**
      * An array of metric objects containing raw metric data points to be posted to the Monitoring service.
      *
      */
-    private PostMetricDataDetails postMetricDataDetails;
+    private com.oracle.bmc.monitoring.model.PostMetricDataDetails postMetricDataDetails;
 
     /**
      * Customer part of the request identifier token. If you need to contact Oracle about a particular
@@ -39,13 +40,13 @@ public class PostMetricDataRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public PostMetricDataDetails getBody$() {
+    public com.oracle.bmc.monitoring.model.PostMetricDataDetails getBody$() {
         return postMetricDataDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    PostMetricDataRequest, PostMetricDataDetails> {
+                    PostMetricDataRequest, com.oracle.bmc.monitoring.model.PostMetricDataDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -108,7 +109,7 @@ public class PostMetricDataRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(PostMetricDataDetails body) {
+        public Builder body$(com.oracle.bmc.monitoring.model.PostMetricDataDetails body) {
             postMetricDataDetails(body);
             return this;
         }

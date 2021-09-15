@@ -17,7 +17,9 @@ import com.oracle.bmc.dataintegration.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
-public class UpdateTaskRunRequest extends com.oracle.bmc.requests.BmcRequest<UpdateTaskRunDetails> {
+public class UpdateTaskRunRequest
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.dataintegration.model.UpdateTaskRunDetails> {
 
     /**
      * The workspace ID.
@@ -37,7 +39,7 @@ public class UpdateTaskRunRequest extends com.oracle.bmc.requests.BmcRequest<Upd
     /**
      * The details needed to update the status of a task run.
      */
-    private UpdateTaskRunDetails updateTaskRunDetails;
+    private com.oracle.bmc.dataintegration.model.UpdateTaskRunDetails updateTaskRunDetails;
 
     /**
      * Unique Oracle-assigned identifier for the request. If
@@ -61,13 +63,14 @@ public class UpdateTaskRunRequest extends com.oracle.bmc.requests.BmcRequest<Upd
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateTaskRunDetails getBody$() {
+    public com.oracle.bmc.dataintegration.model.UpdateTaskRunDetails getBody$() {
         return updateTaskRunDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateTaskRunRequest, UpdateTaskRunDetails> {
+                    UpdateTaskRunRequest,
+                    com.oracle.bmc.dataintegration.model.UpdateTaskRunDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -134,7 +137,7 @@ public class UpdateTaskRunRequest extends com.oracle.bmc.requests.BmcRequest<Upd
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateTaskRunDetails body) {
+        public Builder body$(com.oracle.bmc.dataintegration.model.UpdateTaskRunDetails body) {
             updateTaskRunDetails(body);
             return this;
         }

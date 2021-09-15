@@ -18,7 +18,8 @@ import com.oracle.bmc.loganalytics.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class EstimateRecallDataSizeRequest
-        extends com.oracle.bmc.requests.BmcRequest<EstimateRecallDataSizeDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.loganalytics.model.EstimateRecallDataSizeDetails> {
 
     /**
      * The Logging Analytics namespace used for the request.
@@ -29,7 +30,8 @@ public class EstimateRecallDataSizeRequest
     /**
      * This is the input to estimate the size of data to be recalled.
      */
-    private EstimateRecallDataSizeDetails estimateRecallDataSizeDetails;
+    private com.oracle.bmc.loganalytics.model.EstimateRecallDataSizeDetails
+            estimateRecallDataSizeDetails;
 
     /**
      * The client request ID for tracing.
@@ -42,7 +44,7 @@ public class EstimateRecallDataSizeRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public EstimateRecallDataSizeDetails getBody$() {
+    public com.oracle.bmc.loganalytics.model.EstimateRecallDataSizeDetails getBody$() {
         return estimateRecallDataSizeDetails;
     }
 
@@ -53,7 +55,8 @@ public class EstimateRecallDataSizeRequest
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    EstimateRecallDataSizeRequest, EstimateRecallDataSizeDetails> {
+                    EstimateRecallDataSizeRequest,
+                    com.oracle.bmc.loganalytics.model.EstimateRecallDataSizeDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -117,7 +120,7 @@ public class EstimateRecallDataSizeRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(EstimateRecallDataSizeDetails body) {
+        public Builder body$(com.oracle.bmc.loganalytics.model.EstimateRecallDataSizeDetails body) {
             estimateRecallDataSizeDetails(body);
             return this;
         }

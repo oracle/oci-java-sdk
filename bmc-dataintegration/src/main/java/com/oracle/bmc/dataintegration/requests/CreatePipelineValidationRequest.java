@@ -18,7 +18,8 @@ import com.oracle.bmc.dataintegration.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class CreatePipelineValidationRequest
-        extends com.oracle.bmc.requests.BmcRequest<CreatePipelineValidationDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.dataintegration.model.CreatePipelineValidationDetails> {
 
     /**
      * The workspace ID.
@@ -28,7 +29,8 @@ public class CreatePipelineValidationRequest
     /**
      * The information needed to create the data flow validation for the pipeline object.
      */
-    private CreatePipelineValidationDetails createPipelineValidationDetails;
+    private com.oracle.bmc.dataintegration.model.CreatePipelineValidationDetails
+            createPipelineValidationDetails;
 
     /**
      * Unique Oracle-assigned identifier for the request. If
@@ -50,13 +52,14 @@ public class CreatePipelineValidationRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreatePipelineValidationDetails getBody$() {
+    public com.oracle.bmc.dataintegration.model.CreatePipelineValidationDetails getBody$() {
         return createPipelineValidationDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CreatePipelineValidationRequest, CreatePipelineValidationDetails> {
+                    CreatePipelineValidationRequest,
+                    com.oracle.bmc.dataintegration.model.CreatePipelineValidationDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -121,7 +124,8 @@ public class CreatePipelineValidationRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreatePipelineValidationDetails body) {
+        public Builder body$(
+                com.oracle.bmc.dataintegration.model.CreatePipelineValidationDetails body) {
             createPipelineValidationDetails(body);
             return this;
         }

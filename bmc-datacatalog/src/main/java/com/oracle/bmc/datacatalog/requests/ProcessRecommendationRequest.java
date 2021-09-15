@@ -18,7 +18,8 @@ import com.oracle.bmc.datacatalog.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class ProcessRecommendationRequest
-        extends com.oracle.bmc.requests.BmcRequest<ProcessRecommendationDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.datacatalog.model.ProcessRecommendationDetails> {
 
     /**
      * Unique catalog identifier.
@@ -28,7 +29,8 @@ public class ProcessRecommendationRequest
     /**
      * Recommendation to be processed.
      */
-    private ProcessRecommendationDetails processRecommendationDetails;
+    private com.oracle.bmc.datacatalog.model.ProcessRecommendationDetails
+            processRecommendationDetails;
 
     /**
      * For optimistic concurrency control. In the PUT or DELETE call
@@ -51,13 +53,14 @@ public class ProcessRecommendationRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public ProcessRecommendationDetails getBody$() {
+    public com.oracle.bmc.datacatalog.model.ProcessRecommendationDetails getBody$() {
         return processRecommendationDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    ProcessRecommendationRequest, ProcessRecommendationDetails> {
+                    ProcessRecommendationRequest,
+                    com.oracle.bmc.datacatalog.model.ProcessRecommendationDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -122,7 +125,7 @@ public class ProcessRecommendationRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(ProcessRecommendationDetails body) {
+        public Builder body$(com.oracle.bmc.datacatalog.model.ProcessRecommendationDetails body) {
             processRecommendationDetails(body);
             return this;
         }

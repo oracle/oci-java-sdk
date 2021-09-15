@@ -18,7 +18,8 @@ import com.oracle.bmc.database.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class UpdateKeyStoreRequest
-        extends com.oracle.bmc.requests.BmcRequest<UpdateKeyStoreDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.database.model.UpdateKeyStoreDetails> {
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the key store.
@@ -29,7 +30,7 @@ public class UpdateKeyStoreRequest
      * Request to update the attributes of a key store.
      *
      */
-    private UpdateKeyStoreDetails updateKeyStoreDetails;
+    private com.oracle.bmc.database.model.UpdateKeyStoreDetails updateKeyStoreDetails;
 
     /**
      * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
@@ -51,13 +52,13 @@ public class UpdateKeyStoreRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateKeyStoreDetails getBody$() {
+    public com.oracle.bmc.database.model.UpdateKeyStoreDetails getBody$() {
         return updateKeyStoreDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateKeyStoreRequest, UpdateKeyStoreDetails> {
+                    UpdateKeyStoreRequest, com.oracle.bmc.database.model.UpdateKeyStoreDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -122,7 +123,7 @@ public class UpdateKeyStoreRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateKeyStoreDetails body) {
+        public Builder body$(com.oracle.bmc.database.model.UpdateKeyStoreDetails body) {
             updateKeyStoreDetails(body);
             return this;
         }

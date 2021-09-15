@@ -18,13 +18,14 @@ import com.oracle.bmc.databasemigration.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class CreateMigrationRequest
-        extends com.oracle.bmc.requests.BmcRequest<CreateMigrationDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.databasemigration.model.CreateMigrationDetails> {
 
     /**
      * Migration properties.
      *
      */
-    private CreateMigrationDetails createMigrationDetails;
+    private com.oracle.bmc.databasemigration.model.CreateMigrationDetails createMigrationDetails;
 
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -49,13 +50,14 @@ public class CreateMigrationRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreateMigrationDetails getBody$() {
+    public com.oracle.bmc.databasemigration.model.CreateMigrationDetails getBody$() {
         return createMigrationDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CreateMigrationRequest, CreateMigrationDetails> {
+                    CreateMigrationRequest,
+                    com.oracle.bmc.databasemigration.model.CreateMigrationDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -119,7 +121,7 @@ public class CreateMigrationRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreateMigrationDetails body) {
+        public Builder body$(com.oracle.bmc.databasemigration.model.CreateMigrationDetails body) {
             createMigrationDetails(body);
             return this;
         }

@@ -18,12 +18,13 @@ import com.oracle.bmc.devops.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class CreateDeployArtifactRequest
-        extends com.oracle.bmc.requests.BmcRequest<CreateDeployArtifactDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.devops.model.CreateDeployArtifactDetails> {
 
     /**
      * Details for the new deployment artifact.
      */
-    private CreateDeployArtifactDetails createDeployArtifactDetails;
+    private com.oracle.bmc.devops.model.CreateDeployArtifactDetails createDeployArtifactDetails;
 
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again. Retry tokens expire after 24 hours, but can be invalidated earlier due to conflicting operations. For example, if a resource has been deleted and purged from the system, then a retry of the original creation request might be rejected.
@@ -41,13 +42,14 @@ public class CreateDeployArtifactRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreateDeployArtifactDetails getBody$() {
+    public com.oracle.bmc.devops.model.CreateDeployArtifactDetails getBody$() {
         return createDeployArtifactDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CreateDeployArtifactRequest, CreateDeployArtifactDetails> {
+                    CreateDeployArtifactRequest,
+                    com.oracle.bmc.devops.model.CreateDeployArtifactDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -111,7 +113,7 @@ public class CreateDeployArtifactRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreateDeployArtifactDetails body) {
+        public Builder body$(com.oracle.bmc.devops.model.CreateDeployArtifactDetails body) {
             createDeployArtifactDetails(body);
             return this;
         }

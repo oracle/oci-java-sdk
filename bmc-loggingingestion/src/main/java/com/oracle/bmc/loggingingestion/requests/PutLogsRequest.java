@@ -17,7 +17,9 @@ import com.oracle.bmc.loggingingestion.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
-public class PutLogsRequest extends com.oracle.bmc.requests.BmcRequest<PutLogsDetails> {
+public class PutLogsRequest
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.loggingingestion.model.PutLogsDetails> {
 
     /**
      * OCID of a log to work with.
@@ -27,7 +29,7 @@ public class PutLogsRequest extends com.oracle.bmc.requests.BmcRequest<PutLogsDe
     /**
      * The logs to emit.
      */
-    private PutLogsDetails putLogsDetails;
+    private com.oracle.bmc.loggingingestion.model.PutLogsDetails putLogsDetails;
 
     /**
      * Effective timestamp, for when the agent started processing the log
@@ -54,12 +56,13 @@ public class PutLogsRequest extends com.oracle.bmc.requests.BmcRequest<PutLogsDe
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public PutLogsDetails getBody$() {
+    public com.oracle.bmc.loggingingestion.model.PutLogsDetails getBody$() {
         return putLogsDetails;
     }
 
     public static class Builder
-            implements com.oracle.bmc.requests.BmcRequest.Builder<PutLogsRequest, PutLogsDetails> {
+            implements com.oracle.bmc.requests.BmcRequest.Builder<
+                    PutLogsRequest, com.oracle.bmc.loggingingestion.model.PutLogsDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -125,7 +128,7 @@ public class PutLogsRequest extends com.oracle.bmc.requests.BmcRequest<PutLogsDe
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(PutLogsDetails body) {
+        public Builder body$(com.oracle.bmc.loggingingestion.model.PutLogsDetails body) {
             putLogsDetails(body);
             return this;
         }

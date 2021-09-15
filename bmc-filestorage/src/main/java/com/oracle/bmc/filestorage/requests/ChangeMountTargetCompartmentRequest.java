@@ -18,7 +18,8 @@ import com.oracle.bmc.filestorage.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class ChangeMountTargetCompartmentRequest
-        extends com.oracle.bmc.requests.BmcRequest<ChangeMountTargetCompartmentDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.filestorage.model.ChangeMountTargetCompartmentDetails> {
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the mount target.
@@ -28,7 +29,8 @@ public class ChangeMountTargetCompartmentRequest
     /**
      * Details for changing the compartment.
      */
-    private ChangeMountTargetCompartmentDetails changeMountTargetCompartmentDetails;
+    private com.oracle.bmc.filestorage.model.ChangeMountTargetCompartmentDetails
+            changeMountTargetCompartmentDetails;
 
     /**
      * For optimistic concurrency control. In the PUT or DELETE call
@@ -53,13 +55,14 @@ public class ChangeMountTargetCompartmentRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public ChangeMountTargetCompartmentDetails getBody$() {
+    public com.oracle.bmc.filestorage.model.ChangeMountTargetCompartmentDetails getBody$() {
         return changeMountTargetCompartmentDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    ChangeMountTargetCompartmentRequest, ChangeMountTargetCompartmentDetails> {
+                    ChangeMountTargetCompartmentRequest,
+                    com.oracle.bmc.filestorage.model.ChangeMountTargetCompartmentDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -124,7 +127,8 @@ public class ChangeMountTargetCompartmentRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(ChangeMountTargetCompartmentDetails body) {
+        public Builder body$(
+                com.oracle.bmc.filestorage.model.ChangeMountTargetCompartmentDetails body) {
             changeMountTargetCompartmentDetails(body);
             return this;
         }

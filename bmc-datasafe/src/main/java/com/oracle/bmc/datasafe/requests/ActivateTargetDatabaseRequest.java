@@ -18,12 +18,14 @@ import com.oracle.bmc.datasafe.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class ActivateTargetDatabaseRequest
-        extends com.oracle.bmc.requests.BmcRequest<ActivateTargetDatabaseDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.datasafe.model.ActivateTargetDatabaseDetails> {
 
     /**
      * The details used to reactivate a target database in Data Safe.
      */
-    private ActivateTargetDatabaseDetails activateTargetDatabaseDetails;
+    private com.oracle.bmc.datasafe.model.ActivateTargetDatabaseDetails
+            activateTargetDatabaseDetails;
 
     /**
      * The OCID of the Data Safe target database.
@@ -60,13 +62,14 @@ public class ActivateTargetDatabaseRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public ActivateTargetDatabaseDetails getBody$() {
+    public com.oracle.bmc.datasafe.model.ActivateTargetDatabaseDetails getBody$() {
         return activateTargetDatabaseDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    ActivateTargetDatabaseRequest, ActivateTargetDatabaseDetails> {
+                    ActivateTargetDatabaseRequest,
+                    com.oracle.bmc.datasafe.model.ActivateTargetDatabaseDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -132,7 +135,7 @@ public class ActivateTargetDatabaseRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(ActivateTargetDatabaseDetails body) {
+        public Builder body$(com.oracle.bmc.datasafe.model.ActivateTargetDatabaseDetails body) {
             activateTargetDatabaseDetails(body);
             return this;
         }

@@ -18,12 +18,14 @@ import com.oracle.bmc.database.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class CreateExternalBackupJobRequest
-        extends com.oracle.bmc.requests.BmcRequest<CreateExternalBackupJobDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.database.model.CreateExternalBackupJobDetails> {
 
     /**
      * Request to create a cloud backup resource for a database running outside the cloud.
      */
-    private CreateExternalBackupJobDetails createExternalBackupJobDetails;
+    private com.oracle.bmc.database.model.CreateExternalBackupJobDetails
+            createExternalBackupJobDetails;
 
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -41,13 +43,14 @@ public class CreateExternalBackupJobRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreateExternalBackupJobDetails getBody$() {
+    public com.oracle.bmc.database.model.CreateExternalBackupJobDetails getBody$() {
         return createExternalBackupJobDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CreateExternalBackupJobRequest, CreateExternalBackupJobDetails> {
+                    CreateExternalBackupJobRequest,
+                    com.oracle.bmc.database.model.CreateExternalBackupJobDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -110,7 +113,7 @@ public class CreateExternalBackupJobRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreateExternalBackupJobDetails body) {
+        public Builder body$(com.oracle.bmc.database.model.CreateExternalBackupJobDetails body) {
             createExternalBackupJobDetails(body);
             return this;
         }

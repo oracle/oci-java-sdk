@@ -17,12 +17,14 @@ import com.oracle.bmc.keymanagement.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
-public class ExportKeyRequest extends com.oracle.bmc.requests.BmcRequest<ExportKeyDetails> {
+public class ExportKeyRequest
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.keymanagement.model.ExportKeyDetails> {
 
     /**
      * ExportKeyDetails
      */
-    private ExportKeyDetails exportKeyDetails;
+    private com.oracle.bmc.keymanagement.model.ExportKeyDetails exportKeyDetails;
 
     /**
      * Alternative accessor for the body parameter.
@@ -30,13 +32,13 @@ public class ExportKeyRequest extends com.oracle.bmc.requests.BmcRequest<ExportK
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public ExportKeyDetails getBody$() {
+    public com.oracle.bmc.keymanagement.model.ExportKeyDetails getBody$() {
         return exportKeyDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    ExportKeyRequest, ExportKeyDetails> {
+                    ExportKeyRequest, com.oracle.bmc.keymanagement.model.ExportKeyDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -98,7 +100,7 @@ public class ExportKeyRequest extends com.oracle.bmc.requests.BmcRequest<ExportK
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(ExportKeyDetails body) {
+        public Builder body$(com.oracle.bmc.keymanagement.model.ExportKeyDetails body) {
             exportKeyDetails(body);
             return this;
         }

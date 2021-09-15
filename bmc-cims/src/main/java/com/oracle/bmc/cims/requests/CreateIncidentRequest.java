@@ -17,12 +17,13 @@ import com.oracle.bmc.cims.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
-public class CreateIncidentRequest extends com.oracle.bmc.requests.BmcRequest<CreateIncident> {
+public class CreateIncidentRequest
+        extends com.oracle.bmc.requests.BmcRequest<com.oracle.bmc.cims.model.CreateIncident> {
 
     /**
      * Incident information
      */
-    private CreateIncident createIncidentDetails;
+    private com.oracle.bmc.cims.model.CreateIncident createIncidentDetails;
 
     /**
      * User OCID for Oracle Identity Cloud Service (IDCS) users who also have a federated Oracle Cloud Infrastructure account.
@@ -45,13 +46,13 @@ public class CreateIncidentRequest extends com.oracle.bmc.requests.BmcRequest<Cr
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreateIncident getBody$() {
+    public com.oracle.bmc.cims.model.CreateIncident getBody$() {
         return createIncidentDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CreateIncidentRequest, CreateIncident> {
+                    CreateIncidentRequest, com.oracle.bmc.cims.model.CreateIncident> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -116,7 +117,7 @@ public class CreateIncidentRequest extends com.oracle.bmc.requests.BmcRequest<Cr
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreateIncident body) {
+        public Builder body$(com.oracle.bmc.cims.model.CreateIncident body) {
             createIncidentDetails(body);
             return this;
         }

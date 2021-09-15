@@ -18,7 +18,8 @@ import com.oracle.bmc.waas.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class UpdateCaptchasRequest
-        extends com.oracle.bmc.requests.BmcRequest<java.util.List<Captcha>> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                java.util.List<com.oracle.bmc.waas.model.Captcha>> {
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the WAAS policy.
@@ -28,7 +29,7 @@ public class UpdateCaptchasRequest
     /**
      * A list of CAPTCHA details.
      */
-    private java.util.List<Captcha> captchas;
+    private java.util.List<com.oracle.bmc.waas.model.Captcha> captchas;
 
     /**
      * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
@@ -52,24 +53,24 @@ public class UpdateCaptchasRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public java.util.List<Captcha> getBody$() {
+    public java.util.List<com.oracle.bmc.waas.model.Captcha> getBody$() {
         return captchas;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateCaptchasRequest, java.util.List<Captcha>> {
+                    UpdateCaptchasRequest, java.util.List<com.oracle.bmc.waas.model.Captcha>> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        private java.util.List<Captcha> captchas = null;
+        private java.util.List<com.oracle.bmc.waas.model.Captcha> captchas = null;
 
         /**
          * A list of CAPTCHA details.
          * @return this builder instance
          */
-        public Builder captchas(java.util.List<Captcha> captchas) {
+        public Builder captchas(java.util.List<com.oracle.bmc.waas.model.Captcha> captchas) {
             this.captchas = captchas;
             return this;
         }
@@ -78,7 +79,7 @@ public class UpdateCaptchasRequest
          * Singular setter. A list of CAPTCHA details.
          * @return this builder instance
          */
-        public Builder captchas(Captcha singularValue) {
+        public Builder captchas(com.oracle.bmc.waas.model.Captcha singularValue) {
             return this.captchas(java.util.Arrays.asList(singularValue));
         }
 
@@ -143,7 +144,7 @@ public class UpdateCaptchasRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(java.util.List<Captcha> body) {
+        public Builder body$(java.util.List<com.oracle.bmc.waas.model.Captcha> body) {
             captchas(body);
             return this;
         }

@@ -17,7 +17,8 @@ import com.oracle.bmc.bds.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
-public class AddCloudSqlRequest extends com.oracle.bmc.requests.BmcRequest<AddCloudSqlDetails> {
+public class AddCloudSqlRequest
+        extends com.oracle.bmc.requests.BmcRequest<com.oracle.bmc.bds.model.AddCloudSqlDetails> {
 
     /**
      * The OCID of the cluster.
@@ -27,7 +28,7 @@ public class AddCloudSqlRequest extends com.oracle.bmc.requests.BmcRequest<AddCl
     /**
      * Details for the Cloud SQL capability
      */
-    private AddCloudSqlDetails addCloudSqlDetails;
+    private com.oracle.bmc.bds.model.AddCloudSqlDetails addCloudSqlDetails;
 
     /**
      * The client request ID for tracing.
@@ -60,13 +61,13 @@ public class AddCloudSqlRequest extends com.oracle.bmc.requests.BmcRequest<AddCl
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public AddCloudSqlDetails getBody$() {
+    public com.oracle.bmc.bds.model.AddCloudSqlDetails getBody$() {
         return addCloudSqlDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    AddCloudSqlRequest, AddCloudSqlDetails> {
+                    AddCloudSqlRequest, com.oracle.bmc.bds.model.AddCloudSqlDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -132,7 +133,7 @@ public class AddCloudSqlRequest extends com.oracle.bmc.requests.BmcRequest<AddCl
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(AddCloudSqlDetails body) {
+        public Builder body$(com.oracle.bmc.bds.model.AddCloudSqlDetails body) {
             addCloudSqlDetails(body);
             return this;
         }

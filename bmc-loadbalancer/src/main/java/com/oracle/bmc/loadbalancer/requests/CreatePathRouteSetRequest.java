@@ -18,12 +18,13 @@ import com.oracle.bmc.loadbalancer.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class CreatePathRouteSetRequest
-        extends com.oracle.bmc.requests.BmcRequest<CreatePathRouteSetDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.loadbalancer.model.CreatePathRouteSetDetails> {
 
     /**
      * The details of the path route set to add.
      */
-    private CreatePathRouteSetDetails createPathRouteSetDetails;
+    private com.oracle.bmc.loadbalancer.model.CreatePathRouteSetDetails createPathRouteSetDetails;
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the load balancer to add the path route set to.
@@ -53,13 +54,14 @@ public class CreatePathRouteSetRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreatePathRouteSetDetails getBody$() {
+    public com.oracle.bmc.loadbalancer.model.CreatePathRouteSetDetails getBody$() {
         return createPathRouteSetDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CreatePathRouteSetRequest, CreatePathRouteSetDetails> {
+                    CreatePathRouteSetRequest,
+                    com.oracle.bmc.loadbalancer.model.CreatePathRouteSetDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -124,7 +126,7 @@ public class CreatePathRouteSetRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreatePathRouteSetDetails body) {
+        public Builder body$(com.oracle.bmc.loadbalancer.model.CreatePathRouteSetDetails body) {
             createPathRouteSetDetails(body);
             return this;
         }

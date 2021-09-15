@@ -18,12 +18,14 @@ import com.oracle.bmc.database.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class RemoteClonePluggableDatabaseRequest
-        extends com.oracle.bmc.requests.BmcRequest<RemoteClonePluggableDatabaseDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.database.model.RemoteClonePluggableDatabaseDetails> {
 
     /**
      * Request to clone a pluggable database (PDB) to a different database (CDB) from the source PDB.
      */
-    private RemoteClonePluggableDatabaseDetails remoteClonePluggableDatabaseDetails;
+    private com.oracle.bmc.database.model.RemoteClonePluggableDatabaseDetails
+            remoteClonePluggableDatabaseDetails;
 
     /**
      * The database [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
@@ -60,13 +62,14 @@ public class RemoteClonePluggableDatabaseRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public RemoteClonePluggableDatabaseDetails getBody$() {
+    public com.oracle.bmc.database.model.RemoteClonePluggableDatabaseDetails getBody$() {
         return remoteClonePluggableDatabaseDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    RemoteClonePluggableDatabaseRequest, RemoteClonePluggableDatabaseDetails> {
+                    RemoteClonePluggableDatabaseRequest,
+                    com.oracle.bmc.database.model.RemoteClonePluggableDatabaseDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -132,7 +135,8 @@ public class RemoteClonePluggableDatabaseRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(RemoteClonePluggableDatabaseDetails body) {
+        public Builder body$(
+                com.oracle.bmc.database.model.RemoteClonePluggableDatabaseDetails body) {
             remoteClonePluggableDatabaseDetails(body);
             return this;
         }

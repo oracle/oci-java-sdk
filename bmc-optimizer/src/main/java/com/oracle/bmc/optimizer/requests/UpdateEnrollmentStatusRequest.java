@@ -18,7 +18,8 @@ import com.oracle.bmc.optimizer.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class UpdateEnrollmentStatusRequest
-        extends com.oracle.bmc.requests.BmcRequest<UpdateEnrollmentStatusDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.optimizer.model.UpdateEnrollmentStatusDetails> {
 
     /**
      * The unique OCID associated with the enrollment status.
@@ -28,7 +29,8 @@ public class UpdateEnrollmentStatusRequest
     /**
      * The request object for updating the enrollment status.
      */
-    private UpdateEnrollmentStatusDetails updateEnrollmentStatusDetails;
+    private com.oracle.bmc.optimizer.model.UpdateEnrollmentStatusDetails
+            updateEnrollmentStatusDetails;
 
     /**
      * Unique Oracle-assigned identifier for the request.
@@ -53,13 +55,14 @@ public class UpdateEnrollmentStatusRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateEnrollmentStatusDetails getBody$() {
+    public com.oracle.bmc.optimizer.model.UpdateEnrollmentStatusDetails getBody$() {
         return updateEnrollmentStatusDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateEnrollmentStatusRequest, UpdateEnrollmentStatusDetails> {
+                    UpdateEnrollmentStatusRequest,
+                    com.oracle.bmc.optimizer.model.UpdateEnrollmentStatusDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -124,7 +127,7 @@ public class UpdateEnrollmentStatusRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateEnrollmentStatusDetails body) {
+        public Builder body$(com.oracle.bmc.optimizer.model.UpdateEnrollmentStatusDetails body) {
             updateEnrollmentStatusDetails(body);
             return this;
         }

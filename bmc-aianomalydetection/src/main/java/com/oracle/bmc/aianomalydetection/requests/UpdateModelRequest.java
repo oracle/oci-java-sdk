@@ -17,7 +17,9 @@ import com.oracle.bmc.aianomalydetection.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
-public class UpdateModelRequest extends com.oracle.bmc.requests.BmcRequest<UpdateModelDetails> {
+public class UpdateModelRequest
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.aianomalydetection.model.UpdateModelDetails> {
 
     /**
      * The OCID of the Model.
@@ -27,7 +29,7 @@ public class UpdateModelRequest extends com.oracle.bmc.requests.BmcRequest<Updat
     /**
      * The information to be updated.
      */
-    private UpdateModelDetails updateModelDetails;
+    private com.oracle.bmc.aianomalydetection.model.UpdateModelDetails updateModelDetails;
 
     /**
      * For optimistic concurrency control. In the PUT or DELETE call
@@ -50,13 +52,14 @@ public class UpdateModelRequest extends com.oracle.bmc.requests.BmcRequest<Updat
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateModelDetails getBody$() {
+    public com.oracle.bmc.aianomalydetection.model.UpdateModelDetails getBody$() {
         return updateModelDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateModelRequest, UpdateModelDetails> {
+                    UpdateModelRequest,
+                    com.oracle.bmc.aianomalydetection.model.UpdateModelDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -121,7 +124,7 @@ public class UpdateModelRequest extends com.oracle.bmc.requests.BmcRequest<Updat
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateModelDetails body) {
+        public Builder body$(com.oracle.bmc.aianomalydetection.model.UpdateModelDetails body) {
             updateModelDetails(body);
             return this;
         }

@@ -17,12 +17,14 @@ import com.oracle.bmc.mysql.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
-public class CreateChannelRequest extends com.oracle.bmc.requests.BmcRequest<CreateChannelDetails> {
+public class CreateChannelRequest
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.mysql.model.CreateChannelDetails> {
 
     /**
      * The parameters of the request to create the Channel.
      */
-    private CreateChannelDetails createChannelDetails;
+    private com.oracle.bmc.mysql.model.CreateChannelDetails createChannelDetails;
 
     /**
      * Customer-defined unique identifier for the request. If you need to
@@ -49,13 +51,13 @@ public class CreateChannelRequest extends com.oracle.bmc.requests.BmcRequest<Cre
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreateChannelDetails getBody$() {
+    public com.oracle.bmc.mysql.model.CreateChannelDetails getBody$() {
         return createChannelDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CreateChannelRequest, CreateChannelDetails> {
+                    CreateChannelRequest, com.oracle.bmc.mysql.model.CreateChannelDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -119,7 +121,7 @@ public class CreateChannelRequest extends com.oracle.bmc.requests.BmcRequest<Cre
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreateChannelDetails body) {
+        public Builder body$(com.oracle.bmc.mysql.model.CreateChannelDetails body) {
             createChannelDetails(body);
             return this;
         }

@@ -18,7 +18,8 @@ import com.oracle.bmc.cloudguard.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class ExecuteResponderExecutionRequest
-        extends com.oracle.bmc.requests.BmcRequest<ExecuteResponderExecutionDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.cloudguard.model.ExecuteResponderExecutionDetails> {
 
     /**
      * The identifier of the responder execution.
@@ -58,7 +59,8 @@ public class ExecuteResponderExecutionRequest
     /**
      * Details for Responder Configuration
      */
-    private ExecuteResponderExecutionDetails executeResponderExecutionDetails;
+    private com.oracle.bmc.cloudguard.model.ExecuteResponderExecutionDetails
+            executeResponderExecutionDetails;
 
     /**
      * Alternative accessor for the body parameter.
@@ -66,13 +68,14 @@ public class ExecuteResponderExecutionRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public ExecuteResponderExecutionDetails getBody$() {
+    public com.oracle.bmc.cloudguard.model.ExecuteResponderExecutionDetails getBody$() {
         return executeResponderExecutionDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    ExecuteResponderExecutionRequest, ExecuteResponderExecutionDetails> {
+                    ExecuteResponderExecutionRequest,
+                    com.oracle.bmc.cloudguard.model.ExecuteResponderExecutionDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -139,7 +142,8 @@ public class ExecuteResponderExecutionRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(ExecuteResponderExecutionDetails body) {
+        public Builder body$(
+                com.oracle.bmc.cloudguard.model.ExecuteResponderExecutionDetails body) {
             executeResponderExecutionDetails(body);
             return this;
         }

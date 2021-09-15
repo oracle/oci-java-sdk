@@ -18,7 +18,8 @@ import com.oracle.bmc.operatoraccesscontrol.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class RevokeAccessRequestRequest
-        extends com.oracle.bmc.requests.BmcRequest<RevokeAccessRequestDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.operatoraccesscontrol.model.RevokeAccessRequestDetails> {
 
     /**
      * unique AccessRequest identifier
@@ -28,7 +29,8 @@ public class RevokeAccessRequestRequest
     /**
      * Details regarding the revocation of an access request created by the operator.
      */
-    private RevokeAccessRequestDetails revokeAccessRequestDetails;
+    private com.oracle.bmc.operatoraccesscontrol.model.RevokeAccessRequestDetails
+            revokeAccessRequestDetails;
 
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -61,13 +63,14 @@ public class RevokeAccessRequestRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public RevokeAccessRequestDetails getBody$() {
+    public com.oracle.bmc.operatoraccesscontrol.model.RevokeAccessRequestDetails getBody$() {
         return revokeAccessRequestDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    RevokeAccessRequestRequest, RevokeAccessRequestDetails> {
+                    RevokeAccessRequestRequest,
+                    com.oracle.bmc.operatoraccesscontrol.model.RevokeAccessRequestDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -133,7 +136,8 @@ public class RevokeAccessRequestRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(RevokeAccessRequestDetails body) {
+        public Builder body$(
+                com.oracle.bmc.operatoraccesscontrol.model.RevokeAccessRequestDetails body) {
             revokeAccessRequestDetails(body);
             return this;
         }

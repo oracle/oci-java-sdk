@@ -18,12 +18,14 @@ import com.oracle.bmc.resourcemanager.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class CreateConfigurationSourceProviderRequest
-        extends com.oracle.bmc.requests.BmcRequest<CreateConfigurationSourceProviderDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.resourcemanager.model.CreateConfigurationSourceProviderDetails> {
 
     /**
      * The properties for creating a ConfigurationSourceProvider.
      */
-    private CreateConfigurationSourceProviderDetails createConfigurationSourceProviderDetails;
+    private com.oracle.bmc.resourcemanager.model.CreateConfigurationSourceProviderDetails
+            createConfigurationSourceProviderDetails;
 
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
@@ -48,14 +50,15 @@ public class CreateConfigurationSourceProviderRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreateConfigurationSourceProviderDetails getBody$() {
+    public com.oracle.bmc.resourcemanager.model.CreateConfigurationSourceProviderDetails
+            getBody$() {
         return createConfigurationSourceProviderDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     CreateConfigurationSourceProviderRequest,
-                    CreateConfigurationSourceProviderDetails> {
+                    com.oracle.bmc.resourcemanager.model.CreateConfigurationSourceProviderDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -120,7 +123,9 @@ public class CreateConfigurationSourceProviderRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreateConfigurationSourceProviderDetails body) {
+        public Builder body$(
+                com.oracle.bmc.resourcemanager.model.CreateConfigurationSourceProviderDetails
+                        body) {
             createConfigurationSourceProviderDetails(body);
             return this;
         }

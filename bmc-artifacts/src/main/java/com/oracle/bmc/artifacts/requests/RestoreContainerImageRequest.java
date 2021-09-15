@@ -18,7 +18,8 @@ import com.oracle.bmc.artifacts.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class RestoreContainerImageRequest
-        extends com.oracle.bmc.requests.BmcRequest<RestoreContainerImageDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.artifacts.model.RestoreContainerImageDetails> {
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the container image.
@@ -31,7 +32,8 @@ public class RestoreContainerImageRequest
     /**
      * Restore container image details.
      */
-    private RestoreContainerImageDetails restoreContainerImageDetails;
+    private com.oracle.bmc.artifacts.model.RestoreContainerImageDetails
+            restoreContainerImageDetails;
 
     /**
      * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
@@ -64,13 +66,14 @@ public class RestoreContainerImageRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public RestoreContainerImageDetails getBody$() {
+    public com.oracle.bmc.artifacts.model.RestoreContainerImageDetails getBody$() {
         return restoreContainerImageDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    RestoreContainerImageRequest, RestoreContainerImageDetails> {
+                    RestoreContainerImageRequest,
+                    com.oracle.bmc.artifacts.model.RestoreContainerImageDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -136,7 +139,7 @@ public class RestoreContainerImageRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(RestoreContainerImageDetails body) {
+        public Builder body$(com.oracle.bmc.artifacts.model.RestoreContainerImageDetails body) {
             restoreContainerImageDetails(body);
             return this;
         }

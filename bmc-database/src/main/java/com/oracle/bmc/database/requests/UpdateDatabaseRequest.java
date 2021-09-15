@@ -18,7 +18,8 @@ import com.oracle.bmc.database.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class UpdateDatabaseRequest
-        extends com.oracle.bmc.requests.BmcRequest<UpdateDatabaseDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.database.model.UpdateDatabaseDetails> {
 
     /**
      * The database [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
@@ -28,7 +29,7 @@ public class UpdateDatabaseRequest
     /**
      * Request to perform database update.
      */
-    private UpdateDatabaseDetails updateDatabaseDetails;
+    private com.oracle.bmc.database.model.UpdateDatabaseDetails updateDatabaseDetails;
 
     /**
      * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
@@ -44,13 +45,13 @@ public class UpdateDatabaseRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateDatabaseDetails getBody$() {
+    public com.oracle.bmc.database.model.UpdateDatabaseDetails getBody$() {
         return updateDatabaseDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateDatabaseRequest, UpdateDatabaseDetails> {
+                    UpdateDatabaseRequest, com.oracle.bmc.database.model.UpdateDatabaseDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -114,7 +115,7 @@ public class UpdateDatabaseRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateDatabaseDetails body) {
+        public Builder body$(com.oracle.bmc.database.model.UpdateDatabaseDetails body) {
             updateDatabaseDetails(body);
             return this;
         }

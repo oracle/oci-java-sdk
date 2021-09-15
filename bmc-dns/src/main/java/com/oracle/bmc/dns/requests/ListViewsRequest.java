@@ -103,7 +103,7 @@ public class ListViewsRequest extends com.oracle.bmc.requests.BmcRequest<java.la
     /**
      * The state of a resource.
      */
-    private ViewSummary.LifecycleState lifecycleState;
+    private com.oracle.bmc.dns.model.ViewSummary.LifecycleState lifecycleState;
 
     /**
      * Specifies to operate only on resources that have a matching DNS scope.

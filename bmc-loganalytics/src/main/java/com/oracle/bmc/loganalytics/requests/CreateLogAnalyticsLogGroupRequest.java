@@ -18,7 +18,8 @@ import com.oracle.bmc.loganalytics.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class CreateLogAnalyticsLogGroupRequest
-        extends com.oracle.bmc.requests.BmcRequest<CreateLogAnalyticsLogGroupDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.loganalytics.model.CreateLogAnalyticsLogGroupDetails> {
 
     /**
      * The Logging Analytics namespace used for the request.
@@ -29,7 +30,8 @@ public class CreateLogAnalyticsLogGroupRequest
     /**
      * Details for the new Log-Analytics group.
      */
-    private CreateLogAnalyticsLogGroupDetails createLogAnalyticsLogGroupDetails;
+    private com.oracle.bmc.loganalytics.model.CreateLogAnalyticsLogGroupDetails
+            createLogAnalyticsLogGroupDetails;
 
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -52,7 +54,7 @@ public class CreateLogAnalyticsLogGroupRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreateLogAnalyticsLogGroupDetails getBody$() {
+    public com.oracle.bmc.loganalytics.model.CreateLogAnalyticsLogGroupDetails getBody$() {
         return createLogAnalyticsLogGroupDetails;
     }
 
@@ -63,7 +65,8 @@ public class CreateLogAnalyticsLogGroupRequest
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CreateLogAnalyticsLogGroupRequest, CreateLogAnalyticsLogGroupDetails> {
+                    CreateLogAnalyticsLogGroupRequest,
+                    com.oracle.bmc.loganalytics.model.CreateLogAnalyticsLogGroupDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -128,7 +131,8 @@ public class CreateLogAnalyticsLogGroupRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreateLogAnalyticsLogGroupDetails body) {
+        public Builder body$(
+                com.oracle.bmc.loganalytics.model.CreateLogAnalyticsLogGroupDetails body) {
             createLogAnalyticsLogGroupDetails(body);
             return this;
         }

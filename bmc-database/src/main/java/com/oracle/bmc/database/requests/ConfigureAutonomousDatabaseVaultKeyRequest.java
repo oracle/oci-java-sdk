@@ -18,7 +18,8 @@ import com.oracle.bmc.database.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class ConfigureAutonomousDatabaseVaultKeyRequest
-        extends com.oracle.bmc.requests.BmcRequest<ConfigureAutonomousDatabaseVaultKeyDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.database.model.ConfigureAutonomousDatabaseVaultKeyDetails> {
 
     /**
      * The database [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
@@ -28,7 +29,8 @@ public class ConfigureAutonomousDatabaseVaultKeyRequest
     /**
      * Configuration details for the Autonomous Database Vault service [key](https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
      */
-    private ConfigureAutonomousDatabaseVaultKeyDetails configureAutonomousDatabaseVaultKeyDetails;
+    private com.oracle.bmc.database.model.ConfigureAutonomousDatabaseVaultKeyDetails
+            configureAutonomousDatabaseVaultKeyDetails;
 
     /**
      * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
@@ -60,14 +62,14 @@ public class ConfigureAutonomousDatabaseVaultKeyRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public ConfigureAutonomousDatabaseVaultKeyDetails getBody$() {
+    public com.oracle.bmc.database.model.ConfigureAutonomousDatabaseVaultKeyDetails getBody$() {
         return configureAutonomousDatabaseVaultKeyDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ConfigureAutonomousDatabaseVaultKeyRequest,
-                    ConfigureAutonomousDatabaseVaultKeyDetails> {
+                    com.oracle.bmc.database.model.ConfigureAutonomousDatabaseVaultKeyDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -134,7 +136,8 @@ public class ConfigureAutonomousDatabaseVaultKeyRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(ConfigureAutonomousDatabaseVaultKeyDetails body) {
+        public Builder body$(
+                com.oracle.bmc.database.model.ConfigureAutonomousDatabaseVaultKeyDetails body) {
             configureAutonomousDatabaseVaultKeyDetails(body);
             return this;
         }

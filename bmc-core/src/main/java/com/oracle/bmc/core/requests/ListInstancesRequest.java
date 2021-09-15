@@ -166,7 +166,7 @@ public class ListInstancesRequest extends com.oracle.bmc.requests.BmcRequest<jav
      * value is case-insensitive.
      *
      */
-    private Instance.LifecycleState lifecycleState;
+    private com.oracle.bmc.core.model.Instance.LifecycleState lifecycleState;
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<

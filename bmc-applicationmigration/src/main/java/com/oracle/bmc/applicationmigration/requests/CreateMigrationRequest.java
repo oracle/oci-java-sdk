@@ -18,12 +18,13 @@ import com.oracle.bmc.applicationmigration.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class CreateMigrationRequest
-        extends com.oracle.bmc.requests.BmcRequest<CreateMigrationDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.applicationmigration.model.CreateMigrationDetails> {
 
     /**
      * The properties for creating a migration.
      */
-    private CreateMigrationDetails createMigrationDetails;
+    private com.oracle.bmc.applicationmigration.model.CreateMigrationDetails createMigrationDetails;
 
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
@@ -48,13 +49,14 @@ public class CreateMigrationRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreateMigrationDetails getBody$() {
+    public com.oracle.bmc.applicationmigration.model.CreateMigrationDetails getBody$() {
         return createMigrationDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CreateMigrationRequest, CreateMigrationDetails> {
+                    CreateMigrationRequest,
+                    com.oracle.bmc.applicationmigration.model.CreateMigrationDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -118,7 +120,8 @@ public class CreateMigrationRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreateMigrationDetails body) {
+        public Builder body$(
+                com.oracle.bmc.applicationmigration.model.CreateMigrationDetails body) {
             createMigrationDetails(body);
             return this;
         }

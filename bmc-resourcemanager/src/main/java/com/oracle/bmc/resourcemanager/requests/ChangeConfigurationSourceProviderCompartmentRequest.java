@@ -19,7 +19,8 @@ import com.oracle.bmc.resourcemanager.model.*;
 @lombok.Getter
 public class ChangeConfigurationSourceProviderCompartmentRequest
         extends com.oracle.bmc.requests.BmcRequest<
-                ChangeConfigurationSourceProviderCompartmentDetails> {
+                com.oracle.bmc.resourcemanager.model
+                        .ChangeConfigurationSourceProviderCompartmentDetails> {
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration source provider.
@@ -30,7 +31,7 @@ public class ChangeConfigurationSourceProviderCompartmentRequest
     /**
      * Defines the properties of changeConfigurationSourceProviderCompartment operation.
      */
-    private ChangeConfigurationSourceProviderCompartmentDetails
+    private com.oracle.bmc.resourcemanager.model.ChangeConfigurationSourceProviderCompartmentDetails
             changeConfigurationSourceProviderCompartmentDetails;
 
     /**
@@ -64,14 +65,16 @@ public class ChangeConfigurationSourceProviderCompartmentRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public ChangeConfigurationSourceProviderCompartmentDetails getBody$() {
+    public com.oracle.bmc.resourcemanager.model.ChangeConfigurationSourceProviderCompartmentDetails
+            getBody$() {
         return changeConfigurationSourceProviderCompartmentDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ChangeConfigurationSourceProviderCompartmentRequest,
-                    ChangeConfigurationSourceProviderCompartmentDetails> {
+                    com.oracle.bmc.resourcemanager.model
+                            .ChangeConfigurationSourceProviderCompartmentDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -139,7 +142,10 @@ public class ChangeConfigurationSourceProviderCompartmentRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(ChangeConfigurationSourceProviderCompartmentDetails body) {
+        public Builder body$(
+                com.oracle.bmc.resourcemanager.model
+                                .ChangeConfigurationSourceProviderCompartmentDetails
+                        body) {
             changeConfigurationSourceProviderCompartmentDetails(body);
             return this;
         }

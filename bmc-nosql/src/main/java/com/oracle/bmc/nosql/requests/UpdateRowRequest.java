@@ -17,7 +17,8 @@ import com.oracle.bmc.nosql.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
-public class UpdateRowRequest extends com.oracle.bmc.requests.BmcRequest<UpdateRowDetails> {
+public class UpdateRowRequest
+        extends com.oracle.bmc.requests.BmcRequest<com.oracle.bmc.nosql.model.UpdateRowDetails> {
 
     /**
      * A table name within the compartment, or a table OCID.
@@ -27,7 +28,7 @@ public class UpdateRowRequest extends com.oracle.bmc.requests.BmcRequest<UpdateR
     /**
      * Specifications for the putting of a table row.
      */
-    private UpdateRowDetails updateRowDetails;
+    private com.oracle.bmc.nosql.model.UpdateRowDetails updateRowDetails;
 
     /**
      * For optimistic concurrency control. In the PUT or DELETE call
@@ -50,13 +51,13 @@ public class UpdateRowRequest extends com.oracle.bmc.requests.BmcRequest<UpdateR
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateRowDetails getBody$() {
+    public com.oracle.bmc.nosql.model.UpdateRowDetails getBody$() {
         return updateRowDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateRowRequest, UpdateRowDetails> {
+                    UpdateRowRequest, com.oracle.bmc.nosql.model.UpdateRowDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -121,7 +122,7 @@ public class UpdateRowRequest extends com.oracle.bmc.requests.BmcRequest<UpdateR
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateRowDetails body) {
+        public Builder body$(com.oracle.bmc.nosql.model.UpdateRowDetails body) {
             updateRowDetails(body);
             return this;
         }

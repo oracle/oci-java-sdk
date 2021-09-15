@@ -18,7 +18,8 @@ import com.oracle.bmc.loganalytics.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class CreateLogAnalyticsEmBridgeRequest
-        extends com.oracle.bmc.requests.BmcRequest<CreateLogAnalyticsEmBridgeDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.loganalytics.model.CreateLogAnalyticsEmBridgeDetails> {
 
     /**
      * The Logging Analytics namespace used for the request.
@@ -29,7 +30,8 @@ public class CreateLogAnalyticsEmBridgeRequest
     /**
      * Details for the enterprise manager bridge.
      */
-    private CreateLogAnalyticsEmBridgeDetails createLogAnalyticsEmBridgeDetails;
+    private com.oracle.bmc.loganalytics.model.CreateLogAnalyticsEmBridgeDetails
+            createLogAnalyticsEmBridgeDetails;
 
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -52,7 +54,7 @@ public class CreateLogAnalyticsEmBridgeRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreateLogAnalyticsEmBridgeDetails getBody$() {
+    public com.oracle.bmc.loganalytics.model.CreateLogAnalyticsEmBridgeDetails getBody$() {
         return createLogAnalyticsEmBridgeDetails;
     }
 
@@ -63,7 +65,8 @@ public class CreateLogAnalyticsEmBridgeRequest
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CreateLogAnalyticsEmBridgeRequest, CreateLogAnalyticsEmBridgeDetails> {
+                    CreateLogAnalyticsEmBridgeRequest,
+                    com.oracle.bmc.loganalytics.model.CreateLogAnalyticsEmBridgeDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -128,7 +131,8 @@ public class CreateLogAnalyticsEmBridgeRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreateLogAnalyticsEmBridgeDetails body) {
+        public Builder body$(
+                com.oracle.bmc.loganalytics.model.CreateLogAnalyticsEmBridgeDetails body) {
             createLogAnalyticsEmBridgeDetails(body);
             return this;
         }

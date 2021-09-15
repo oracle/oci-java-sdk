@@ -17,12 +17,13 @@ import com.oracle.bmc.core.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
-public class CreateSubnetRequest extends com.oracle.bmc.requests.BmcRequest<CreateSubnetDetails> {
+public class CreateSubnetRequest
+        extends com.oracle.bmc.requests.BmcRequest<com.oracle.bmc.core.model.CreateSubnetDetails> {
 
     /**
      * Details for creating a subnet.
      */
-    private CreateSubnetDetails createSubnetDetails;
+    private com.oracle.bmc.core.model.CreateSubnetDetails createSubnetDetails;
 
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -40,13 +41,13 @@ public class CreateSubnetRequest extends com.oracle.bmc.requests.BmcRequest<Crea
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreateSubnetDetails getBody$() {
+    public com.oracle.bmc.core.model.CreateSubnetDetails getBody$() {
         return createSubnetDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CreateSubnetRequest, CreateSubnetDetails> {
+                    CreateSubnetRequest, com.oracle.bmc.core.model.CreateSubnetDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -109,7 +110,7 @@ public class CreateSubnetRequest extends com.oracle.bmc.requests.BmcRequest<Crea
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreateSubnetDetails body) {
+        public Builder body$(com.oracle.bmc.core.model.CreateSubnetDetails body) {
             createSubnetDetails(body);
             return this;
         }

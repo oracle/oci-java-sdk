@@ -17,7 +17,8 @@ import com.oracle.bmc.core.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
-public class AddVcnCidrRequest extends com.oracle.bmc.requests.BmcRequest<AddVcnCidrDetails> {
+public class AddVcnCidrRequest
+        extends com.oracle.bmc.requests.BmcRequest<com.oracle.bmc.core.model.AddVcnCidrDetails> {
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
@@ -27,7 +28,7 @@ public class AddVcnCidrRequest extends com.oracle.bmc.requests.BmcRequest<AddVcn
     /**
      * Details object for deleting a VCN CIDR.
      */
-    private AddVcnCidrDetails addVcnCidrDetails;
+    private com.oracle.bmc.core.model.AddVcnCidrDetails addVcnCidrDetails;
 
     /**
      * Unique identifier for the request.
@@ -60,13 +61,13 @@ public class AddVcnCidrRequest extends com.oracle.bmc.requests.BmcRequest<AddVcn
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public AddVcnCidrDetails getBody$() {
+    public com.oracle.bmc.core.model.AddVcnCidrDetails getBody$() {
         return addVcnCidrDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    AddVcnCidrRequest, AddVcnCidrDetails> {
+                    AddVcnCidrRequest, com.oracle.bmc.core.model.AddVcnCidrDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -132,7 +133,7 @@ public class AddVcnCidrRequest extends com.oracle.bmc.requests.BmcRequest<AddVcn
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(AddVcnCidrDetails body) {
+        public Builder body$(com.oracle.bmc.core.model.AddVcnCidrDetails body) {
             addVcnCidrDetails(body);
             return this;
         }

@@ -18,7 +18,8 @@ import com.oracle.bmc.osmanagement.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class ChangeScheduledJobCompartmentRequest
-        extends com.oracle.bmc.requests.BmcRequest<ChangeScheduledJobCompartmentDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.osmanagement.model.ChangeScheduledJobCompartmentDetails> {
 
     /**
      * The ID of the scheduled job.
@@ -28,7 +29,8 @@ public class ChangeScheduledJobCompartmentRequest
     /**
      * OCID for the compartment to which the resource will be moved.
      */
-    private ChangeScheduledJobCompartmentDetails changeScheduledJobCompartmentDetails;
+    private com.oracle.bmc.osmanagement.model.ChangeScheduledJobCompartmentDetails
+            changeScheduledJobCompartmentDetails;
 
     /**
      * The client request ID for tracing.
@@ -61,13 +63,14 @@ public class ChangeScheduledJobCompartmentRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public ChangeScheduledJobCompartmentDetails getBody$() {
+    public com.oracle.bmc.osmanagement.model.ChangeScheduledJobCompartmentDetails getBody$() {
         return changeScheduledJobCompartmentDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    ChangeScheduledJobCompartmentRequest, ChangeScheduledJobCompartmentDetails> {
+                    ChangeScheduledJobCompartmentRequest,
+                    com.oracle.bmc.osmanagement.model.ChangeScheduledJobCompartmentDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -133,7 +136,8 @@ public class ChangeScheduledJobCompartmentRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(ChangeScheduledJobCompartmentDetails body) {
+        public Builder body$(
+                com.oracle.bmc.osmanagement.model.ChangeScheduledJobCompartmentDetails body) {
             changeScheduledJobCompartmentDetails(body);
             return this;
         }

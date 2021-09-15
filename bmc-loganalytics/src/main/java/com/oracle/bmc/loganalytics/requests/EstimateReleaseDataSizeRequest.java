@@ -18,7 +18,8 @@ import com.oracle.bmc.loganalytics.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class EstimateReleaseDataSizeRequest
-        extends com.oracle.bmc.requests.BmcRequest<EstimateReleaseDataSizeDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.loganalytics.model.EstimateReleaseDataSizeDetails> {
 
     /**
      * The Logging Analytics namespace used for the request.
@@ -29,7 +30,8 @@ public class EstimateReleaseDataSizeRequest
     /**
      * This is the input to estimate the size of recalled data to be released.
      */
-    private EstimateReleaseDataSizeDetails estimateReleaseDataSizeDetails;
+    private com.oracle.bmc.loganalytics.model.EstimateReleaseDataSizeDetails
+            estimateReleaseDataSizeDetails;
 
     /**
      * The client request ID for tracing.
@@ -42,7 +44,7 @@ public class EstimateReleaseDataSizeRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public EstimateReleaseDataSizeDetails getBody$() {
+    public com.oracle.bmc.loganalytics.model.EstimateReleaseDataSizeDetails getBody$() {
         return estimateReleaseDataSizeDetails;
     }
 
@@ -53,7 +55,8 @@ public class EstimateReleaseDataSizeRequest
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    EstimateReleaseDataSizeRequest, EstimateReleaseDataSizeDetails> {
+                    EstimateReleaseDataSizeRequest,
+                    com.oracle.bmc.loganalytics.model.EstimateReleaseDataSizeDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -117,7 +120,8 @@ public class EstimateReleaseDataSizeRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(EstimateReleaseDataSizeDetails body) {
+        public Builder body$(
+                com.oracle.bmc.loganalytics.model.EstimateReleaseDataSizeDetails body) {
             estimateReleaseDataSizeDetails(body);
             return this;
         }

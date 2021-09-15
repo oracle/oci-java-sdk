@@ -18,7 +18,8 @@ import com.oracle.bmc.datascience.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class ChangeNotebookSessionCompartmentRequest
-        extends com.oracle.bmc.requests.BmcRequest<ChangeNotebookSessionCompartmentDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.datascience.model.ChangeNotebookSessionCompartmentDetails> {
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the notebook session.
@@ -28,7 +29,8 @@ public class ChangeNotebookSessionCompartmentRequest
     /**
      * Details for changing the compartment of a notebook session.
      */
-    private ChangeNotebookSessionCompartmentDetails changeNotebookSessionCompartmentDetails;
+    private com.oracle.bmc.datascience.model.ChangeNotebookSessionCompartmentDetails
+            changeNotebookSessionCompartmentDetails;
 
     /**
      * For optimistic concurrency control. In the PUT or DELETE call
@@ -58,14 +60,14 @@ public class ChangeNotebookSessionCompartmentRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public ChangeNotebookSessionCompartmentDetails getBody$() {
+    public com.oracle.bmc.datascience.model.ChangeNotebookSessionCompartmentDetails getBody$() {
         return changeNotebookSessionCompartmentDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ChangeNotebookSessionCompartmentRequest,
-                    ChangeNotebookSessionCompartmentDetails> {
+                    com.oracle.bmc.datascience.model.ChangeNotebookSessionCompartmentDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -131,7 +133,8 @@ public class ChangeNotebookSessionCompartmentRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(ChangeNotebookSessionCompartmentDetails body) {
+        public Builder body$(
+                com.oracle.bmc.datascience.model.ChangeNotebookSessionCompartmentDetails body) {
             changeNotebookSessionCompartmentDetails(body);
             return this;
         }

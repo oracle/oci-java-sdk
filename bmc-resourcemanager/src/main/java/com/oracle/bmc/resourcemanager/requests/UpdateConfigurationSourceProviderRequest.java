@@ -18,7 +18,8 @@ import com.oracle.bmc.resourcemanager.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class UpdateConfigurationSourceProviderRequest
-        extends com.oracle.bmc.requests.BmcRequest<UpdateConfigurationSourceProviderDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.resourcemanager.model.UpdateConfigurationSourceProviderDetails> {
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration source provider.
@@ -30,7 +31,8 @@ public class UpdateConfigurationSourceProviderRequest
      * Updated information provided for the ConfigurationSourceProvider.
      *
      */
-    private UpdateConfigurationSourceProviderDetails updateConfigurationSourceProviderDetails;
+    private com.oracle.bmc.resourcemanager.model.UpdateConfigurationSourceProviderDetails
+            updateConfigurationSourceProviderDetails;
 
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
@@ -53,14 +55,15 @@ public class UpdateConfigurationSourceProviderRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateConfigurationSourceProviderDetails getBody$() {
+    public com.oracle.bmc.resourcemanager.model.UpdateConfigurationSourceProviderDetails
+            getBody$() {
         return updateConfigurationSourceProviderDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     UpdateConfigurationSourceProviderRequest,
-                    UpdateConfigurationSourceProviderDetails> {
+                    com.oracle.bmc.resourcemanager.model.UpdateConfigurationSourceProviderDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -126,7 +129,9 @@ public class UpdateConfigurationSourceProviderRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateConfigurationSourceProviderDetails body) {
+        public Builder body$(
+                com.oracle.bmc.resourcemanager.model.UpdateConfigurationSourceProviderDetails
+                        body) {
             updateConfigurationSourceProviderDetails(body);
             return this;
         }

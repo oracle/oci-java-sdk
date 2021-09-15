@@ -18,7 +18,8 @@ import com.oracle.bmc.keymanagement.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class ScheduleKeyVersionDeletionRequest
-        extends com.oracle.bmc.requests.BmcRequest<ScheduleKeyVersionDeletionDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.keymanagement.model.ScheduleKeyVersionDeletionDetails> {
 
     /**
      * The OCID of the key.
@@ -33,7 +34,8 @@ public class ScheduleKeyVersionDeletionRequest
     /**
      * ScheduleKeyVersionDeletionDetails
      */
-    private ScheduleKeyVersionDeletionDetails scheduleKeyVersionDeletionDetails;
+    private com.oracle.bmc.keymanagement.model.ScheduleKeyVersionDeletionDetails
+            scheduleKeyVersionDeletionDetails;
 
     /**
      * For optimistic concurrency control. In the PUT or DELETE call for a
@@ -70,13 +72,14 @@ public class ScheduleKeyVersionDeletionRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public ScheduleKeyVersionDeletionDetails getBody$() {
+    public com.oracle.bmc.keymanagement.model.ScheduleKeyVersionDeletionDetails getBody$() {
         return scheduleKeyVersionDeletionDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    ScheduleKeyVersionDeletionRequest, ScheduleKeyVersionDeletionDetails> {
+                    ScheduleKeyVersionDeletionRequest,
+                    com.oracle.bmc.keymanagement.model.ScheduleKeyVersionDeletionDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -143,7 +146,8 @@ public class ScheduleKeyVersionDeletionRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(ScheduleKeyVersionDeletionDetails body) {
+        public Builder body$(
+                com.oracle.bmc.keymanagement.model.ScheduleKeyVersionDeletionDetails body) {
             scheduleKeyVersionDeletionDetails(body);
             return this;
         }

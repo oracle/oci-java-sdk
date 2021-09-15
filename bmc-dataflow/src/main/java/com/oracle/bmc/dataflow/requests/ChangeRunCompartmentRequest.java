@@ -18,7 +18,8 @@ import com.oracle.bmc.dataflow.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class ChangeRunCompartmentRequest
-        extends com.oracle.bmc.requests.BmcRequest<ChangeRunCompartmentDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.dataflow.model.ChangeRunCompartmentDetails> {
 
     /**
      * The unique ID for the run
@@ -30,7 +31,7 @@ public class ChangeRunCompartmentRequest
      * Details for changing a run's compartment.
      *
      */
-    private ChangeRunCompartmentDetails changeRunCompartmentDetails;
+    private com.oracle.bmc.dataflow.model.ChangeRunCompartmentDetails changeRunCompartmentDetails;
 
     /**
      * Unique identifier for the request. If provided, the returned request ID will include this value.
@@ -62,13 +63,14 @@ public class ChangeRunCompartmentRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public ChangeRunCompartmentDetails getBody$() {
+    public com.oracle.bmc.dataflow.model.ChangeRunCompartmentDetails getBody$() {
         return changeRunCompartmentDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    ChangeRunCompartmentRequest, ChangeRunCompartmentDetails> {
+                    ChangeRunCompartmentRequest,
+                    com.oracle.bmc.dataflow.model.ChangeRunCompartmentDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -134,7 +136,7 @@ public class ChangeRunCompartmentRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(ChangeRunCompartmentDetails body) {
+        public Builder body$(com.oracle.bmc.dataflow.model.ChangeRunCompartmentDetails body) {
             changeRunCompartmentDetails(body);
             return this;
         }

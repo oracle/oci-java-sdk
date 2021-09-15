@@ -21,6 +21,7 @@ public enum WorkRequestOperationType {
     ModelDeploymentUpdate("MODEL_DEPLOYMENT_UPDATE"),
     ProjectDelete("PROJECT_DELETE"),
     WorkrequestCancel("WORKREQUEST_CANCEL"),
+    JobDelete("JOB_DELETE"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this

@@ -18,7 +18,8 @@ import com.oracle.bmc.keymanagement.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class ChangeVaultCompartmentRequest
-        extends com.oracle.bmc.requests.BmcRequest<ChangeVaultCompartmentDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.keymanagement.model.ChangeVaultCompartmentDetails> {
 
     /**
      * The OCID of the vault.
@@ -28,7 +29,8 @@ public class ChangeVaultCompartmentRequest
     /**
      *
      */
-    private ChangeVaultCompartmentDetails changeVaultCompartmentDetails;
+    private com.oracle.bmc.keymanagement.model.ChangeVaultCompartmentDetails
+            changeVaultCompartmentDetails;
 
     /**
      * For optimistic concurrency control. In the PUT or DELETE call for a
@@ -65,13 +67,14 @@ public class ChangeVaultCompartmentRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public ChangeVaultCompartmentDetails getBody$() {
+    public com.oracle.bmc.keymanagement.model.ChangeVaultCompartmentDetails getBody$() {
         return changeVaultCompartmentDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    ChangeVaultCompartmentRequest, ChangeVaultCompartmentDetails> {
+                    ChangeVaultCompartmentRequest,
+                    com.oracle.bmc.keymanagement.model.ChangeVaultCompartmentDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -137,7 +140,8 @@ public class ChangeVaultCompartmentRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(ChangeVaultCompartmentDetails body) {
+        public Builder body$(
+                com.oracle.bmc.keymanagement.model.ChangeVaultCompartmentDetails body) {
             changeVaultCompartmentDetails(body);
             return this;
         }

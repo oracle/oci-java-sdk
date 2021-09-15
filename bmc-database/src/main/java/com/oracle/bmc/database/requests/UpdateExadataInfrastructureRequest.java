@@ -18,7 +18,8 @@ import com.oracle.bmc.database.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class UpdateExadataInfrastructureRequest
-        extends com.oracle.bmc.requests.BmcRequest<UpdateExadataInfrastructureDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.database.model.UpdateExadataInfrastructureDetails> {
 
     /**
      * The Exadata infrastructure [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
@@ -28,7 +29,8 @@ public class UpdateExadataInfrastructureRequest
     /**
      * Request to update the properties of an Exadata Cloud@Customer infrastructure.
      */
-    private UpdateExadataInfrastructureDetails updateExadataInfrastructureDetails;
+    private com.oracle.bmc.database.model.UpdateExadataInfrastructureDetails
+            updateExadataInfrastructureDetails;
 
     /**
      * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
@@ -50,13 +52,14 @@ public class UpdateExadataInfrastructureRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateExadataInfrastructureDetails getBody$() {
+    public com.oracle.bmc.database.model.UpdateExadataInfrastructureDetails getBody$() {
         return updateExadataInfrastructureDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateExadataInfrastructureRequest, UpdateExadataInfrastructureDetails> {
+                    UpdateExadataInfrastructureRequest,
+                    com.oracle.bmc.database.model.UpdateExadataInfrastructureDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -121,7 +124,8 @@ public class UpdateExadataInfrastructureRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateExadataInfrastructureDetails body) {
+        public Builder body$(
+                com.oracle.bmc.database.model.UpdateExadataInfrastructureDetails body) {
             updateExadataInfrastructureDetails(body);
             return this;
         }

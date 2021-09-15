@@ -18,12 +18,13 @@ import com.oracle.bmc.identity.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class CreateNetworkSourceRequest
-        extends com.oracle.bmc.requests.BmcRequest<CreateNetworkSourceDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.identity.model.CreateNetworkSourceDetails> {
 
     /**
      * Request object for creating a new network source.
      */
-    private CreateNetworkSourceDetails createNetworkSourceDetails;
+    private com.oracle.bmc.identity.model.CreateNetworkSourceDetails createNetworkSourceDetails;
 
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -41,13 +42,14 @@ public class CreateNetworkSourceRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreateNetworkSourceDetails getBody$() {
+    public com.oracle.bmc.identity.model.CreateNetworkSourceDetails getBody$() {
         return createNetworkSourceDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CreateNetworkSourceRequest, CreateNetworkSourceDetails> {
+                    CreateNetworkSourceRequest,
+                    com.oracle.bmc.identity.model.CreateNetworkSourceDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -110,7 +112,7 @@ public class CreateNetworkSourceRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreateNetworkSourceDetails body) {
+        public Builder body$(com.oracle.bmc.identity.model.CreateNetworkSourceDetails body) {
             createNetworkSourceDetails(body);
             return this;
         }

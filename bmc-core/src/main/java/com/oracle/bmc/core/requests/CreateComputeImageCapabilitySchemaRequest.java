@@ -18,12 +18,14 @@ import com.oracle.bmc.core.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class CreateComputeImageCapabilitySchemaRequest
-        extends com.oracle.bmc.requests.BmcRequest<CreateComputeImageCapabilitySchemaDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.core.model.CreateComputeImageCapabilitySchemaDetails> {
 
     /**
      * Compute Image Capability Schema creation details
      */
-    private CreateComputeImageCapabilitySchemaDetails createComputeImageCapabilitySchemaDetails;
+    private com.oracle.bmc.core.model.CreateComputeImageCapabilitySchemaDetails
+            createComputeImageCapabilitySchemaDetails;
 
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -41,14 +43,14 @@ public class CreateComputeImageCapabilitySchemaRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreateComputeImageCapabilitySchemaDetails getBody$() {
+    public com.oracle.bmc.core.model.CreateComputeImageCapabilitySchemaDetails getBody$() {
         return createComputeImageCapabilitySchemaDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     CreateComputeImageCapabilitySchemaRequest,
-                    CreateComputeImageCapabilitySchemaDetails> {
+                    com.oracle.bmc.core.model.CreateComputeImageCapabilitySchemaDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -112,7 +114,8 @@ public class CreateComputeImageCapabilitySchemaRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreateComputeImageCapabilitySchemaDetails body) {
+        public Builder body$(
+                com.oracle.bmc.core.model.CreateComputeImageCapabilitySchemaDetails body) {
             createComputeImageCapabilitySchemaDetails(body);
             return this;
         }

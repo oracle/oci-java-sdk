@@ -18,12 +18,14 @@ import com.oracle.bmc.integration.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class CreateIntegrationInstanceRequest
-        extends com.oracle.bmc.requests.BmcRequest<CreateIntegrationInstanceDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.integration.model.CreateIntegrationInstanceDetails> {
 
     /**
      * Details for the new Integration Instance.
      */
-    private CreateIntegrationInstanceDetails createIntegrationInstanceDetails;
+    private com.oracle.bmc.integration.model.CreateIntegrationInstanceDetails
+            createIntegrationInstanceDetails;
 
     /**
      * A token that uniquely identifies a request so it can be retried in case
@@ -47,13 +49,14 @@ public class CreateIntegrationInstanceRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreateIntegrationInstanceDetails getBody$() {
+    public com.oracle.bmc.integration.model.CreateIntegrationInstanceDetails getBody$() {
         return createIntegrationInstanceDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CreateIntegrationInstanceRequest, CreateIntegrationInstanceDetails> {
+                    CreateIntegrationInstanceRequest,
+                    com.oracle.bmc.integration.model.CreateIntegrationInstanceDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -117,7 +120,8 @@ public class CreateIntegrationInstanceRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreateIntegrationInstanceDetails body) {
+        public Builder body$(
+                com.oracle.bmc.integration.model.CreateIntegrationInstanceDetails body) {
             createIntegrationInstanceDetails(body);
             return this;
         }

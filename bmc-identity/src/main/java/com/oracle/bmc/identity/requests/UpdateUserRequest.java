@@ -17,7 +17,9 @@ import com.oracle.bmc.identity.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
-public class UpdateUserRequest extends com.oracle.bmc.requests.BmcRequest<UpdateUserDetails> {
+public class UpdateUserRequest
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.identity.model.UpdateUserDetails> {
 
     /**
      * The OCID of the user.
@@ -27,7 +29,7 @@ public class UpdateUserRequest extends com.oracle.bmc.requests.BmcRequest<Update
     /**
      * Request object for updating a user.
      */
-    private UpdateUserDetails updateUserDetails;
+    private com.oracle.bmc.identity.model.UpdateUserDetails updateUserDetails;
 
     /**
      * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
@@ -43,13 +45,13 @@ public class UpdateUserRequest extends com.oracle.bmc.requests.BmcRequest<Update
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateUserDetails getBody$() {
+    public com.oracle.bmc.identity.model.UpdateUserDetails getBody$() {
         return updateUserDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateUserRequest, UpdateUserDetails> {
+                    UpdateUserRequest, com.oracle.bmc.identity.model.UpdateUserDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -113,7 +115,7 @@ public class UpdateUserRequest extends com.oracle.bmc.requests.BmcRequest<Update
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateUserDetails body) {
+        public Builder body$(com.oracle.bmc.identity.model.UpdateUserDetails body) {
             updateUserDetails(body);
             return this;
         }

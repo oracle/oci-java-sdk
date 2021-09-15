@@ -153,7 +153,7 @@ public class ListVcnsRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
      * state. The state value is case-insensitive.
      *
      */
-    private Vcn.LifecycleState lifecycleState;
+    private com.oracle.bmc.core.model.Vcn.LifecycleState lifecycleState;
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<ListVcnsRequest, java.lang.Void> {

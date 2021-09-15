@@ -18,12 +18,13 @@ import com.oracle.bmc.core.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class CreateClusterNetworkRequest
-        extends com.oracle.bmc.requests.BmcRequest<CreateClusterNetworkDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.core.model.CreateClusterNetworkDetails> {
 
     /**
      * Cluster network creation details
      */
-    private CreateClusterNetworkDetails createClusterNetworkDetails;
+    private com.oracle.bmc.core.model.CreateClusterNetworkDetails createClusterNetworkDetails;
 
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -41,13 +42,14 @@ public class CreateClusterNetworkRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreateClusterNetworkDetails getBody$() {
+    public com.oracle.bmc.core.model.CreateClusterNetworkDetails getBody$() {
         return createClusterNetworkDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CreateClusterNetworkRequest, CreateClusterNetworkDetails> {
+                    CreateClusterNetworkRequest,
+                    com.oracle.bmc.core.model.CreateClusterNetworkDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -110,7 +112,7 @@ public class CreateClusterNetworkRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreateClusterNetworkDetails body) {
+        public Builder body$(com.oracle.bmc.core.model.CreateClusterNetworkDetails body) {
             createClusterNetworkDetails(body);
             return this;
         }

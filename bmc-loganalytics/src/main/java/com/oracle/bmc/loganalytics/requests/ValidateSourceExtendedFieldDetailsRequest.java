@@ -18,7 +18,8 @@ import com.oracle.bmc.loganalytics.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class ValidateSourceExtendedFieldDetailsRequest
-        extends com.oracle.bmc.requests.BmcRequest<LogAnalyticsSource> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.loganalytics.model.LogAnalyticsSource> {
 
     /**
      * The Logging Analytics namespace used for the request.
@@ -29,7 +30,7 @@ public class ValidateSourceExtendedFieldDetailsRequest
     /**
      * Details for the new LogAnalyticsSource.
      */
-    private LogAnalyticsSource logAnalyticsSource;
+    private com.oracle.bmc.loganalytics.model.LogAnalyticsSource logAnalyticsSource;
 
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -52,7 +53,7 @@ public class ValidateSourceExtendedFieldDetailsRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public LogAnalyticsSource getBody$() {
+    public com.oracle.bmc.loganalytics.model.LogAnalyticsSource getBody$() {
         return logAnalyticsSource;
     }
 
@@ -63,7 +64,8 @@ public class ValidateSourceExtendedFieldDetailsRequest
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    ValidateSourceExtendedFieldDetailsRequest, LogAnalyticsSource> {
+                    ValidateSourceExtendedFieldDetailsRequest,
+                    com.oracle.bmc.loganalytics.model.LogAnalyticsSource> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -128,7 +130,7 @@ public class ValidateSourceExtendedFieldDetailsRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(LogAnalyticsSource body) {
+        public Builder body$(com.oracle.bmc.loganalytics.model.LogAnalyticsSource body) {
             logAnalyticsSource(body);
             return this;
         }

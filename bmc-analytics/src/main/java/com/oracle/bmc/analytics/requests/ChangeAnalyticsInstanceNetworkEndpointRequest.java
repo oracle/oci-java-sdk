@@ -18,7 +18,8 @@ import com.oracle.bmc.analytics.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class ChangeAnalyticsInstanceNetworkEndpointRequest
-        extends com.oracle.bmc.requests.BmcRequest<ChangeAnalyticsInstanceNetworkEndpointDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.analytics.model.ChangeAnalyticsInstanceNetworkEndpointDetails> {
 
     /**
      * The OCID of the AnalyticsInstance.
@@ -30,7 +31,7 @@ public class ChangeAnalyticsInstanceNetworkEndpointRequest
      * Input payload for changing an Analytics instance network endpoint.
      *
      */
-    private ChangeAnalyticsInstanceNetworkEndpointDetails
+    private com.oracle.bmc.analytics.model.ChangeAnalyticsInstanceNetworkEndpointDetails
             changeAnalyticsInstanceNetworkEndpointDetails;
 
     /**
@@ -64,14 +65,14 @@ public class ChangeAnalyticsInstanceNetworkEndpointRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public ChangeAnalyticsInstanceNetworkEndpointDetails getBody$() {
+    public com.oracle.bmc.analytics.model.ChangeAnalyticsInstanceNetworkEndpointDetails getBody$() {
         return changeAnalyticsInstanceNetworkEndpointDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ChangeAnalyticsInstanceNetworkEndpointRequest,
-                    ChangeAnalyticsInstanceNetworkEndpointDetails> {
+                    com.oracle.bmc.analytics.model.ChangeAnalyticsInstanceNetworkEndpointDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -139,7 +140,8 @@ public class ChangeAnalyticsInstanceNetworkEndpointRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(ChangeAnalyticsInstanceNetworkEndpointDetails body) {
+        public Builder body$(
+                com.oracle.bmc.analytics.model.ChangeAnalyticsInstanceNetworkEndpointDetails body) {
             changeAnalyticsInstanceNetworkEndpointDetails(body);
             return this;
         }

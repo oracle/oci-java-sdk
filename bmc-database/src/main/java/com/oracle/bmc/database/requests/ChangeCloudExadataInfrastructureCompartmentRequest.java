@@ -19,12 +19,12 @@ import com.oracle.bmc.database.model.*;
 @lombok.Getter
 public class ChangeCloudExadataInfrastructureCompartmentRequest
         extends com.oracle.bmc.requests.BmcRequest<
-                ChangeCloudExadataInfrastructureCompartmentDetails> {
+                com.oracle.bmc.database.model.ChangeCloudExadataInfrastructureCompartmentDetails> {
 
     /**
      * Request to move cloud Exadata infrastructure resource to a different compartment.
      */
-    private ChangeCloudExadataInfrastructureCompartmentDetails
+    private com.oracle.bmc.database.model.ChangeCloudExadataInfrastructureCompartmentDetails
             changeCloudExadataInfrastructureCompartmentDetails;
 
     /**
@@ -62,14 +62,16 @@ public class ChangeCloudExadataInfrastructureCompartmentRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public ChangeCloudExadataInfrastructureCompartmentDetails getBody$() {
+    public com.oracle.bmc.database.model.ChangeCloudExadataInfrastructureCompartmentDetails
+            getBody$() {
         return changeCloudExadataInfrastructureCompartmentDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ChangeCloudExadataInfrastructureCompartmentRequest,
-                    ChangeCloudExadataInfrastructureCompartmentDetails> {
+                    com.oracle.bmc.database.model
+                            .ChangeCloudExadataInfrastructureCompartmentDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -137,7 +139,9 @@ public class ChangeCloudExadataInfrastructureCompartmentRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(ChangeCloudExadataInfrastructureCompartmentDetails body) {
+        public Builder body$(
+                com.oracle.bmc.database.model.ChangeCloudExadataInfrastructureCompartmentDetails
+                        body) {
             changeCloudExadataInfrastructureCompartmentDetails(body);
             return this;
         }

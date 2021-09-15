@@ -159,7 +159,7 @@ public class ListInternetGatewaysRequest
      * state. The state value is case-insensitive.
      *
      */
-    private InternetGateway.LifecycleState lifecycleState;
+    private com.oracle.bmc.core.model.InternetGateway.LifecycleState lifecycleState;
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<

@@ -18,7 +18,8 @@ import com.oracle.bmc.database.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class UpdateExternalPluggableDatabaseRequest
-        extends com.oracle.bmc.requests.BmcRequest<UpdateExternalPluggableDatabaseDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.database.model.UpdateExternalPluggableDatabaseDetails> {
 
     /**
      * The ExternalPluggableDatabaseId [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
@@ -28,7 +29,8 @@ public class UpdateExternalPluggableDatabaseRequest
     /**
      * Request to update the properties of an external pluggable database resource.
      */
-    private UpdateExternalPluggableDatabaseDetails updateExternalPluggableDatabaseDetails;
+    private com.oracle.bmc.database.model.UpdateExternalPluggableDatabaseDetails
+            updateExternalPluggableDatabaseDetails;
 
     /**
      * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
@@ -50,14 +52,14 @@ public class UpdateExternalPluggableDatabaseRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateExternalPluggableDatabaseDetails getBody$() {
+    public com.oracle.bmc.database.model.UpdateExternalPluggableDatabaseDetails getBody$() {
         return updateExternalPluggableDatabaseDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     UpdateExternalPluggableDatabaseRequest,
-                    UpdateExternalPluggableDatabaseDetails> {
+                    com.oracle.bmc.database.model.UpdateExternalPluggableDatabaseDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -122,7 +124,8 @@ public class UpdateExternalPluggableDatabaseRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateExternalPluggableDatabaseDetails body) {
+        public Builder body$(
+                com.oracle.bmc.database.model.UpdateExternalPluggableDatabaseDetails body) {
             updateExternalPluggableDatabaseDetails(body);
             return this;
         }

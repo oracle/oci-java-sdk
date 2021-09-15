@@ -17,7 +17,9 @@ import com.oracle.bmc.datacatalog.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
-public class CreatePatternRequest extends com.oracle.bmc.requests.BmcRequest<CreatePatternDetails> {
+public class CreatePatternRequest
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.datacatalog.model.CreatePatternDetails> {
 
     /**
      * Unique catalog identifier.
@@ -27,7 +29,7 @@ public class CreatePatternRequest extends com.oracle.bmc.requests.BmcRequest<Cre
     /**
      * The information used to create the pattern.
      */
-    private CreatePatternDetails createPatternDetails;
+    private com.oracle.bmc.datacatalog.model.CreatePatternDetails createPatternDetails;
 
     /**
      * The client request ID for tracing.
@@ -50,13 +52,13 @@ public class CreatePatternRequest extends com.oracle.bmc.requests.BmcRequest<Cre
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreatePatternDetails getBody$() {
+    public com.oracle.bmc.datacatalog.model.CreatePatternDetails getBody$() {
         return createPatternDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CreatePatternRequest, CreatePatternDetails> {
+                    CreatePatternRequest, com.oracle.bmc.datacatalog.model.CreatePatternDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -121,7 +123,7 @@ public class CreatePatternRequest extends com.oracle.bmc.requests.BmcRequest<Cre
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreatePatternDetails body) {
+        public Builder body$(com.oracle.bmc.datacatalog.model.CreatePatternDetails body) {
             createPatternDetails(body);
             return this;
         }

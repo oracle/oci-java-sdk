@@ -147,7 +147,7 @@ public class ListPoliciesRequest extends com.oracle.bmc.requests.BmcRequest<java
      * A filter to only return resources that match the given lifecycle state.  The state value is case-insensitive.
      *
      */
-    private Policy.LifecycleState lifecycleState;
+    private com.oracle.bmc.identity.model.Policy.LifecycleState lifecycleState;
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<

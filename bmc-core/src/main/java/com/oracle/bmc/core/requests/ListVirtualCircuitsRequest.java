@@ -153,7 +153,7 @@ public class ListVirtualCircuitsRequest extends com.oracle.bmc.requests.BmcReque
      * state. The value is case insensitive.
      *
      */
-    private VirtualCircuit.LifecycleState lifecycleState;
+    private com.oracle.bmc.core.model.VirtualCircuit.LifecycleState lifecycleState;
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<

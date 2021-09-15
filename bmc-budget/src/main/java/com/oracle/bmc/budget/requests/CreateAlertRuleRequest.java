@@ -18,7 +18,8 @@ import com.oracle.bmc.budget.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class CreateAlertRuleRequest
-        extends com.oracle.bmc.requests.BmcRequest<CreateAlertRuleDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.budget.model.CreateAlertRuleDetails> {
 
     /**
      * The unique Budget OCID
@@ -28,7 +29,7 @@ public class CreateAlertRuleRequest
     /**
      * Details for the new Alert Rule.
      */
-    private CreateAlertRuleDetails createAlertRuleDetails;
+    private com.oracle.bmc.budget.model.CreateAlertRuleDetails createAlertRuleDetails;
 
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -51,13 +52,13 @@ public class CreateAlertRuleRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreateAlertRuleDetails getBody$() {
+    public com.oracle.bmc.budget.model.CreateAlertRuleDetails getBody$() {
         return createAlertRuleDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CreateAlertRuleRequest, CreateAlertRuleDetails> {
+                    CreateAlertRuleRequest, com.oracle.bmc.budget.model.CreateAlertRuleDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -122,7 +123,7 @@ public class CreateAlertRuleRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreateAlertRuleDetails body) {
+        public Builder body$(com.oracle.bmc.budget.model.CreateAlertRuleDetails body) {
             createAlertRuleDetails(body);
             return this;
         }

@@ -17,7 +17,8 @@ import com.oracle.bmc.logging.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
-public class UpdateLogRequest extends com.oracle.bmc.requests.BmcRequest<UpdateLogDetails> {
+public class UpdateLogRequest
+        extends com.oracle.bmc.requests.BmcRequest<com.oracle.bmc.logging.model.UpdateLogDetails> {
 
     /**
      * OCID of a log group to work with.
@@ -32,7 +33,7 @@ public class UpdateLogRequest extends com.oracle.bmc.requests.BmcRequest<UpdateL
     /**
      * Log config parameters to update.
      */
-    private UpdateLogDetails updateLogDetails;
+    private com.oracle.bmc.logging.model.UpdateLogDetails updateLogDetails;
 
     /**
      * For optimistic concurrency control. In the PUT or DELETE call for a
@@ -57,13 +58,13 @@ public class UpdateLogRequest extends com.oracle.bmc.requests.BmcRequest<UpdateL
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateLogDetails getBody$() {
+    public com.oracle.bmc.logging.model.UpdateLogDetails getBody$() {
         return updateLogDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateLogRequest, UpdateLogDetails> {
+                    UpdateLogRequest, com.oracle.bmc.logging.model.UpdateLogDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -129,7 +130,7 @@ public class UpdateLogRequest extends com.oracle.bmc.requests.BmcRequest<UpdateL
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateLogDetails body) {
+        public Builder body$(com.oracle.bmc.logging.model.UpdateLogDetails body) {
             updateLogDetails(body);
             return this;
         }

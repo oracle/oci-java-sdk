@@ -50,7 +50,7 @@ public class ListChannelsRequest extends com.oracle.bmc.requests.BmcRequest<java
     /**
      * The LifecycleState of the Channel.
      */
-    private Channel.LifecycleState lifecycleState;
+    private com.oracle.bmc.mysql.model.Channel.LifecycleState lifecycleState;
 
     /**
      * If true, returns only Channels that are enabled. If false, returns only

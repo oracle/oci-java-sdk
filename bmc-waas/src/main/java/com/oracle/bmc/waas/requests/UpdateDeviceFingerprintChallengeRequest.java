@@ -18,7 +18,8 @@ import com.oracle.bmc.waas.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class UpdateDeviceFingerprintChallengeRequest
-        extends com.oracle.bmc.requests.BmcRequest<DeviceFingerprintChallenge> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.waas.model.DeviceFingerprintChallenge> {
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the WAAS policy.
@@ -28,7 +29,8 @@ public class UpdateDeviceFingerprintChallengeRequest
     /**
      * The device fingerprint challenge settings to be updated.
      */
-    private DeviceFingerprintChallenge updateDeviceFingerprintChallengeDetails;
+    private com.oracle.bmc.waas.model.DeviceFingerprintChallenge
+            updateDeviceFingerprintChallengeDetails;
 
     /**
      * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
@@ -52,13 +54,14 @@ public class UpdateDeviceFingerprintChallengeRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public DeviceFingerprintChallenge getBody$() {
+    public com.oracle.bmc.waas.model.DeviceFingerprintChallenge getBody$() {
         return updateDeviceFingerprintChallengeDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateDeviceFingerprintChallengeRequest, DeviceFingerprintChallenge> {
+                    UpdateDeviceFingerprintChallengeRequest,
+                    com.oracle.bmc.waas.model.DeviceFingerprintChallenge> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -124,7 +127,7 @@ public class UpdateDeviceFingerprintChallengeRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(DeviceFingerprintChallenge body) {
+        public Builder body$(com.oracle.bmc.waas.model.DeviceFingerprintChallenge body) {
             updateDeviceFingerprintChallengeDetails(body);
             return this;
         }

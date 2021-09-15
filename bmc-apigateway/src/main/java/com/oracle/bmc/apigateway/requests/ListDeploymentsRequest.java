@@ -43,7 +43,7 @@ public class ListDeploymentsRequest extends com.oracle.bmc.requests.BmcRequest<j
      * Example: {@code SUCCEEDED}
      *
      */
-    private Deployment.LifecycleState lifecycleState;
+    private com.oracle.bmc.apigateway.model.Deployment.LifecycleState lifecycleState;
 
     /**
      * The maximum number of items to return.

@@ -18,12 +18,14 @@ import com.oracle.bmc.databasemanagement.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class CreateDbManagementPrivateEndpointRequest
-        extends com.oracle.bmc.requests.BmcRequest<CreateDbManagementPrivateEndpointDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.databasemanagement.model.CreateDbManagementPrivateEndpointDetails> {
 
     /**
      * Details to create a new private endpoint.
      */
-    private CreateDbManagementPrivateEndpointDetails createDbManagementPrivateEndpointDetails;
+    private com.oracle.bmc.databasemanagement.model.CreateDbManagementPrivateEndpointDetails
+            createDbManagementPrivateEndpointDetails;
 
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -46,14 +48,16 @@ public class CreateDbManagementPrivateEndpointRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreateDbManagementPrivateEndpointDetails getBody$() {
+    public com.oracle.bmc.databasemanagement.model.CreateDbManagementPrivateEndpointDetails
+            getBody$() {
         return createDbManagementPrivateEndpointDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     CreateDbManagementPrivateEndpointRequest,
-                    CreateDbManagementPrivateEndpointDetails> {
+                    com.oracle.bmc.databasemanagement.model
+                            .CreateDbManagementPrivateEndpointDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -118,7 +122,9 @@ public class CreateDbManagementPrivateEndpointRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreateDbManagementPrivateEndpointDetails body) {
+        public Builder body$(
+                com.oracle.bmc.databasemanagement.model.CreateDbManagementPrivateEndpointDetails
+                        body) {
             createDbManagementPrivateEndpointDetails(body);
             return this;
         }

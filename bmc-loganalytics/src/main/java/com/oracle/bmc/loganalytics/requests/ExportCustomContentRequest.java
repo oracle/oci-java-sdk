@@ -17,7 +17,9 @@ import com.oracle.bmc.loganalytics.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
-public class ExportCustomContentRequest extends com.oracle.bmc.requests.BmcRequest<ExportContent> {
+public class ExportCustomContentRequest
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.loganalytics.model.ExportContent> {
 
     /**
      * The Logging Analytics namespace used for the request.
@@ -28,7 +30,7 @@ public class ExportCustomContentRequest extends com.oracle.bmc.requests.BmcReque
     /**
      * content to export
      */
-    private ExportContent exportCustomContentDetails;
+    private com.oracle.bmc.loganalytics.model.ExportContent exportCustomContentDetails;
 
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -51,7 +53,7 @@ public class ExportCustomContentRequest extends com.oracle.bmc.requests.BmcReque
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public ExportContent getBody$() {
+    public com.oracle.bmc.loganalytics.model.ExportContent getBody$() {
         return exportCustomContentDetails;
     }
 
@@ -62,7 +64,7 @@ public class ExportCustomContentRequest extends com.oracle.bmc.requests.BmcReque
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    ExportCustomContentRequest, ExportContent> {
+                    ExportCustomContentRequest, com.oracle.bmc.loganalytics.model.ExportContent> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -127,7 +129,7 @@ public class ExportCustomContentRequest extends com.oracle.bmc.requests.BmcReque
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(ExportContent body) {
+        public Builder body$(com.oracle.bmc.loganalytics.model.ExportContent body) {
             exportCustomContentDetails(body);
             return this;
         }

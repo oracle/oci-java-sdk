@@ -18,7 +18,8 @@ import com.oracle.bmc.datacatalog.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class UpdateCatalogPrivateEndpointRequest
-        extends com.oracle.bmc.requests.BmcRequest<UpdateCatalogPrivateEndpointDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.datacatalog.model.UpdateCatalogPrivateEndpointDetails> {
 
     /**
      * Unique private reverse connection identifier.
@@ -28,7 +29,8 @@ public class UpdateCatalogPrivateEndpointRequest
     /**
      * The information to be updated in private reverse connection
      */
-    private UpdateCatalogPrivateEndpointDetails updateCatalogPrivateEndpointDetails;
+    private com.oracle.bmc.datacatalog.model.UpdateCatalogPrivateEndpointDetails
+            updateCatalogPrivateEndpointDetails;
 
     /**
      * For optimistic concurrency control. In the PUT or DELETE call
@@ -51,13 +53,14 @@ public class UpdateCatalogPrivateEndpointRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateCatalogPrivateEndpointDetails getBody$() {
+    public com.oracle.bmc.datacatalog.model.UpdateCatalogPrivateEndpointDetails getBody$() {
         return updateCatalogPrivateEndpointDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateCatalogPrivateEndpointRequest, UpdateCatalogPrivateEndpointDetails> {
+                    UpdateCatalogPrivateEndpointRequest,
+                    com.oracle.bmc.datacatalog.model.UpdateCatalogPrivateEndpointDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -122,7 +125,8 @@ public class UpdateCatalogPrivateEndpointRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateCatalogPrivateEndpointDetails body) {
+        public Builder body$(
+                com.oracle.bmc.datacatalog.model.UpdateCatalogPrivateEndpointDetails body) {
             updateCatalogPrivateEndpointDetails(body);
             return this;
         }

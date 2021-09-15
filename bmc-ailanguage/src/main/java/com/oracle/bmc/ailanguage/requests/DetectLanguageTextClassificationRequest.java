@@ -18,14 +18,16 @@ import com.oracle.bmc.ailanguage.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class DetectLanguageTextClassificationRequest
-        extends com.oracle.bmc.requests.BmcRequest<DetectLanguageTextClassificationDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.ailanguage.model.DetectLanguageTextClassificationDetails> {
 
     /**
      * The details to make text classification detect call.
      * Example: {@code {"text": "If an emerging growth company, indicate by check mark if the registrant has elected not to use the extended transition period for complying"}}
      *
      */
-    private DetectLanguageTextClassificationDetails detectLanguageTextClassificationDetails;
+    private com.oracle.bmc.ailanguage.model.DetectLanguageTextClassificationDetails
+            detectLanguageTextClassificationDetails;
 
     /**
      * The client request ID for tracing.
@@ -38,14 +40,14 @@ public class DetectLanguageTextClassificationRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public DetectLanguageTextClassificationDetails getBody$() {
+    public com.oracle.bmc.ailanguage.model.DetectLanguageTextClassificationDetails getBody$() {
         return detectLanguageTextClassificationDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     DetectLanguageTextClassificationRequest,
-                    DetectLanguageTextClassificationDetails> {
+                    com.oracle.bmc.ailanguage.model.DetectLanguageTextClassificationDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -108,7 +110,8 @@ public class DetectLanguageTextClassificationRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(DetectLanguageTextClassificationDetails body) {
+        public Builder body$(
+                com.oracle.bmc.ailanguage.model.DetectLanguageTextClassificationDetails body) {
             detectLanguageTextClassificationDetails(body);
             return this;
         }

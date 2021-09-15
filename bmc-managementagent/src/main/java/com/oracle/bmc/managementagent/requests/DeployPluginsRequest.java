@@ -17,12 +17,14 @@ import com.oracle.bmc.managementagent.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
-public class DeployPluginsRequest extends com.oracle.bmc.requests.BmcRequest<DeployPluginsDetails> {
+public class DeployPluginsRequest
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.managementagent.model.DeployPluginsDetails> {
 
     /**
      * Details of Plugins to be deployed for a given list of Management Agents.
      */
-    private DeployPluginsDetails deployPluginsDetails;
+    private com.oracle.bmc.managementagent.model.DeployPluginsDetails deployPluginsDetails;
 
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -45,13 +47,14 @@ public class DeployPluginsRequest extends com.oracle.bmc.requests.BmcRequest<Dep
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public DeployPluginsDetails getBody$() {
+    public com.oracle.bmc.managementagent.model.DeployPluginsDetails getBody$() {
         return deployPluginsDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    DeployPluginsRequest, DeployPluginsDetails> {
+                    DeployPluginsRequest,
+                    com.oracle.bmc.managementagent.model.DeployPluginsDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -115,7 +118,7 @@ public class DeployPluginsRequest extends com.oracle.bmc.requests.BmcRequest<Dep
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(DeployPluginsDetails body) {
+        public Builder body$(com.oracle.bmc.managementagent.model.DeployPluginsDetails body) {
             deployPluginsDetails(body);
             return this;
         }

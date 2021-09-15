@@ -18,7 +18,8 @@ import com.oracle.bmc.core.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class CopyVolumeBackupRequest
-        extends com.oracle.bmc.requests.BmcRequest<CopyVolumeBackupDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.core.model.CopyVolumeBackupDetails> {
 
     /**
      * The OCID of the volume backup.
@@ -28,7 +29,7 @@ public class CopyVolumeBackupRequest
     /**
      * Request to create a cross-region copy of given backup.
      */
-    private CopyVolumeBackupDetails copyVolumeBackupDetails;
+    private com.oracle.bmc.core.model.CopyVolumeBackupDetails copyVolumeBackupDetails;
 
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -53,13 +54,13 @@ public class CopyVolumeBackupRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CopyVolumeBackupDetails getBody$() {
+    public com.oracle.bmc.core.model.CopyVolumeBackupDetails getBody$() {
         return copyVolumeBackupDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CopyVolumeBackupRequest, CopyVolumeBackupDetails> {
+                    CopyVolumeBackupRequest, com.oracle.bmc.core.model.CopyVolumeBackupDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -124,7 +125,7 @@ public class CopyVolumeBackupRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CopyVolumeBackupDetails body) {
+        public Builder body$(com.oracle.bmc.core.model.CopyVolumeBackupDetails body) {
             copyVolumeBackupDetails(body);
             return this;
         }

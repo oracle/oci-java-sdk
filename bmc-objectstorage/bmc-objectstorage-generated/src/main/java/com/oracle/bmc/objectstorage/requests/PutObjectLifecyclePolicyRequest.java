@@ -18,7 +18,8 @@ import com.oracle.bmc.objectstorage.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class PutObjectLifecyclePolicyRequest
-        extends com.oracle.bmc.requests.BmcRequest<PutObjectLifecyclePolicyDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.objectstorage.model.PutObjectLifecyclePolicyDetails> {
 
     /**
      * The Object Storage namespace used for the request.
@@ -35,7 +36,8 @@ public class PutObjectLifecyclePolicyRequest
     /**
      * The lifecycle policy to apply to the bucket.
      */
-    private PutObjectLifecyclePolicyDetails putObjectLifecyclePolicyDetails;
+    private com.oracle.bmc.objectstorage.model.PutObjectLifecyclePolicyDetails
+            putObjectLifecyclePolicyDetails;
 
     /**
      * The client request ID for tracing.
@@ -63,13 +65,14 @@ public class PutObjectLifecyclePolicyRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public PutObjectLifecyclePolicyDetails getBody$() {
+    public com.oracle.bmc.objectstorage.model.PutObjectLifecyclePolicyDetails getBody$() {
         return putObjectLifecyclePolicyDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    PutObjectLifecyclePolicyRequest, PutObjectLifecyclePolicyDetails> {
+                    PutObjectLifecyclePolicyRequest,
+                    com.oracle.bmc.objectstorage.model.PutObjectLifecyclePolicyDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -136,7 +139,8 @@ public class PutObjectLifecyclePolicyRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(PutObjectLifecyclePolicyDetails body) {
+        public Builder body$(
+                com.oracle.bmc.objectstorage.model.PutObjectLifecyclePolicyDetails body) {
             putObjectLifecyclePolicyDetails(body);
             return this;
         }

@@ -18,7 +18,8 @@ import com.oracle.bmc.database.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class GenerateAutonomousDatabaseWalletRequest
-        extends com.oracle.bmc.requests.BmcRequest<GenerateAutonomousDatabaseWalletDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.database.model.GenerateAutonomousDatabaseWalletDetails> {
 
     /**
      * The database [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
@@ -28,7 +29,8 @@ public class GenerateAutonomousDatabaseWalletRequest
     /**
      * Request to create a new Autonomous Database wallet.
      */
-    private GenerateAutonomousDatabaseWalletDetails generateAutonomousDatabaseWalletDetails;
+    private com.oracle.bmc.database.model.GenerateAutonomousDatabaseWalletDetails
+            generateAutonomousDatabaseWalletDetails;
 
     /**
      * Unique identifier for the request.
@@ -52,14 +54,14 @@ public class GenerateAutonomousDatabaseWalletRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public GenerateAutonomousDatabaseWalletDetails getBody$() {
+    public com.oracle.bmc.database.model.GenerateAutonomousDatabaseWalletDetails getBody$() {
         return generateAutonomousDatabaseWalletDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     GenerateAutonomousDatabaseWalletRequest,
-                    GenerateAutonomousDatabaseWalletDetails> {
+                    com.oracle.bmc.database.model.GenerateAutonomousDatabaseWalletDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -124,7 +126,8 @@ public class GenerateAutonomousDatabaseWalletRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(GenerateAutonomousDatabaseWalletDetails body) {
+        public Builder body$(
+                com.oracle.bmc.database.model.GenerateAutonomousDatabaseWalletDetails body) {
             generateAutonomousDatabaseWalletDetails(body);
             return this;
         }

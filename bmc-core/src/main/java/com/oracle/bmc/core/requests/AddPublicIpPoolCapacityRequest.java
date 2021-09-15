@@ -18,7 +18,8 @@ import com.oracle.bmc.core.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class AddPublicIpPoolCapacityRequest
-        extends com.oracle.bmc.requests.BmcRequest<AddPublicIpPoolCapacityDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.core.model.AddPublicIpPoolCapacityDetails> {
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the public IP pool.
@@ -28,7 +29,7 @@ public class AddPublicIpPoolCapacityRequest
     /**
      * Byoip Range prefix and a cidr from it
      */
-    private AddPublicIpPoolCapacityDetails addPublicIpPoolCapacityDetails;
+    private com.oracle.bmc.core.model.AddPublicIpPoolCapacityDetails addPublicIpPoolCapacityDetails;
 
     /**
      * Unique identifier for the request.
@@ -53,13 +54,14 @@ public class AddPublicIpPoolCapacityRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public AddPublicIpPoolCapacityDetails getBody$() {
+    public com.oracle.bmc.core.model.AddPublicIpPoolCapacityDetails getBody$() {
         return addPublicIpPoolCapacityDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    AddPublicIpPoolCapacityRequest, AddPublicIpPoolCapacityDetails> {
+                    AddPublicIpPoolCapacityRequest,
+                    com.oracle.bmc.core.model.AddPublicIpPoolCapacityDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -124,7 +126,7 @@ public class AddPublicIpPoolCapacityRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(AddPublicIpPoolCapacityDetails body) {
+        public Builder body$(com.oracle.bmc.core.model.AddPublicIpPoolCapacityDetails body) {
             addPublicIpPoolCapacityDetails(body);
             return this;
         }

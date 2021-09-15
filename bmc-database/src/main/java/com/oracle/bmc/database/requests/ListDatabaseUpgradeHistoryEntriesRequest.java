@@ -28,12 +28,13 @@ public class ListDatabaseUpgradeHistoryEntriesRequest
     /**
      * A filter to return only upgradeHistoryEntries that match the specified Upgrade Action.
      */
-    private DatabaseUpgradeHistoryEntrySummary.Action upgradeAction;
+    private com.oracle.bmc.database.model.DatabaseUpgradeHistoryEntrySummary.Action upgradeAction;
 
     /**
      * A filter to return only upgradeHistoryEntries that match the given lifecycle state exactly.
      */
-    private DatabaseUpgradeHistoryEntrySummary.LifecycleState lifecycleState;
+    private com.oracle.bmc.database.model.DatabaseUpgradeHistoryEntrySummary.LifecycleState
+            lifecycleState;
 
     /**
      * The field to sort by.  You can provide one sort order ({@code sortOrder}).  Default order for TIMECREATED is ascending.

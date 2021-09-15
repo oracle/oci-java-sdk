@@ -18,7 +18,8 @@ import com.oracle.bmc.oce.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class UpdateOceInstanceRequest
-        extends com.oracle.bmc.requests.BmcRequest<UpdateOceInstanceDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.oce.model.UpdateOceInstanceDetails> {
 
     /**
      * unique OceInstance identifier
@@ -28,7 +29,7 @@ public class UpdateOceInstanceRequest
     /**
      * The information to be updated.
      */
-    private UpdateOceInstanceDetails updateOceInstanceDetails;
+    private com.oracle.bmc.oce.model.UpdateOceInstanceDetails updateOceInstanceDetails;
 
     /**
      * For optimistic concurrency control. In the PUT or DELETE call
@@ -51,13 +52,13 @@ public class UpdateOceInstanceRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateOceInstanceDetails getBody$() {
+    public com.oracle.bmc.oce.model.UpdateOceInstanceDetails getBody$() {
         return updateOceInstanceDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateOceInstanceRequest, UpdateOceInstanceDetails> {
+                    UpdateOceInstanceRequest, com.oracle.bmc.oce.model.UpdateOceInstanceDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -122,7 +123,7 @@ public class UpdateOceInstanceRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateOceInstanceDetails body) {
+        public Builder body$(com.oracle.bmc.oce.model.UpdateOceInstanceDetails body) {
             updateOceInstanceDetails(body);
             return this;
         }

@@ -17,7 +17,8 @@ import com.oracle.bmc.ocvp.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
-public class UpdateSddcRequest extends com.oracle.bmc.requests.BmcRequest<UpdateSddcDetails> {
+public class UpdateSddcRequest
+        extends com.oracle.bmc.requests.BmcRequest<com.oracle.bmc.ocvp.model.UpdateSddcDetails> {
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the SDDC.
@@ -28,7 +29,7 @@ public class UpdateSddcRequest extends com.oracle.bmc.requests.BmcRequest<Update
     /**
      * The information to be updated.
      */
-    private UpdateSddcDetails updateSddcDetails;
+    private com.oracle.bmc.ocvp.model.UpdateSddcDetails updateSddcDetails;
 
     /**
      * For optimistic concurrency control. In the PUT or DELETE call
@@ -53,13 +54,13 @@ public class UpdateSddcRequest extends com.oracle.bmc.requests.BmcRequest<Update
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateSddcDetails getBody$() {
+    public com.oracle.bmc.ocvp.model.UpdateSddcDetails getBody$() {
         return updateSddcDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateSddcRequest, UpdateSddcDetails> {
+                    UpdateSddcRequest, com.oracle.bmc.ocvp.model.UpdateSddcDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -124,7 +125,7 @@ public class UpdateSddcRequest extends com.oracle.bmc.requests.BmcRequest<Update
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateSddcDetails body) {
+        public Builder body$(com.oracle.bmc.ocvp.model.UpdateSddcDetails body) {
             updateSddcDetails(body);
             return this;
         }

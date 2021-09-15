@@ -17,12 +17,14 @@ import com.oracle.bmc.filestorage.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
-public class CreateExportRequest extends com.oracle.bmc.requests.BmcRequest<CreateExportDetails> {
+public class CreateExportRequest
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.filestorage.model.CreateExportDetails> {
 
     /**
      * Details for creating a new export.
      */
-    private CreateExportDetails createExportDetails;
+    private com.oracle.bmc.filestorage.model.CreateExportDetails createExportDetails;
 
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -47,13 +49,13 @@ public class CreateExportRequest extends com.oracle.bmc.requests.BmcRequest<Crea
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreateExportDetails getBody$() {
+    public com.oracle.bmc.filestorage.model.CreateExportDetails getBody$() {
         return createExportDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CreateExportRequest, CreateExportDetails> {
+                    CreateExportRequest, com.oracle.bmc.filestorage.model.CreateExportDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -117,7 +119,7 @@ public class CreateExportRequest extends com.oracle.bmc.requests.BmcRequest<Crea
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreateExportDetails body) {
+        public Builder body$(com.oracle.bmc.filestorage.model.CreateExportDetails body) {
             createExportDetails(body);
             return this;
         }

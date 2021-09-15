@@ -185,13 +185,16 @@ public class RetryingStream extends InputStream {
         // Compute the new range
         final Range currentRange = this.request.getRange();
         final Range newRange;
-        if (null == currentRange) {
+        if (null == currentRange
+                || (currentRange.getStartByte() == null && currentRange.getEndByte() == null)) {
             // No current range
             newRange = new Range(this.bytesReadFromResponse, null);
         } else if (currentRange.getStartByte() == null) {
-            // Current range implicitly started at 0
-            newRange = new Range(this.bytesReadFromResponse, currentRange.getEndByte());
+            // start byte is not set, but end byte is: this is an end-only range, e.g. "-99" for the last 99 bytes
+            // keep the start byte as null, but decrease end byte (e.g. if we have read 10 bytes, "-89").
+            newRange = new Range(null, currentRange.getEndByte() - this.bytesReadFromResponse);
         } else {
+            // both start byte and end byte are set
             newRange =
                     new Range(
                             currentRange.getStartByte() + this.bytesReadFromResponse,

@@ -18,7 +18,8 @@ import com.oracle.bmc.jms.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class RequestSummarizedApplicationUsageRequest
-        extends com.oracle.bmc.requests.BmcRequest<RequestSummarizedApplicationUsageDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.jms.model.RequestSummarizedApplicationUsageDetails> {
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Fleet.
@@ -28,7 +29,8 @@ public class RequestSummarizedApplicationUsageRequest
     /**
      * Parameters for filtering application usage.
      */
-    private RequestSummarizedApplicationUsageDetails requestSummarizedApplicationUsageDetails;
+    private com.oracle.bmc.jms.model.RequestSummarizedApplicationUsageDetails
+            requestSummarizedApplicationUsageDetails;
 
     /**
      * The maximum number of items to return.
@@ -51,14 +53,14 @@ public class RequestSummarizedApplicationUsageRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public RequestSummarizedApplicationUsageDetails getBody$() {
+    public com.oracle.bmc.jms.model.RequestSummarizedApplicationUsageDetails getBody$() {
         return requestSummarizedApplicationUsageDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     RequestSummarizedApplicationUsageRequest,
-                    RequestSummarizedApplicationUsageDetails> {
+                    com.oracle.bmc.jms.model.RequestSummarizedApplicationUsageDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -125,7 +127,8 @@ public class RequestSummarizedApplicationUsageRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(RequestSummarizedApplicationUsageDetails body) {
+        public Builder body$(
+                com.oracle.bmc.jms.model.RequestSummarizedApplicationUsageDetails body) {
             requestSummarizedApplicationUsageDetails(body);
             return this;
         }

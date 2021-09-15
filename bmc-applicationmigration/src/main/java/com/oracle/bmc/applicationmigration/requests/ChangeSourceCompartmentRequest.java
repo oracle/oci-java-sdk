@@ -18,7 +18,8 @@ import com.oracle.bmc.applicationmigration.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class ChangeSourceCompartmentRequest
-        extends com.oracle.bmc.requests.BmcRequest<ChangeCompartmentDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.applicationmigration.model.ChangeCompartmentDetails> {
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source.
@@ -28,7 +29,8 @@ public class ChangeSourceCompartmentRequest
     /**
      * The updated compartment details
      */
-    private ChangeCompartmentDetails changeSourceCompartmentDetails;
+    private com.oracle.bmc.applicationmigration.model.ChangeCompartmentDetails
+            changeSourceCompartmentDetails;
 
     /**
      * For optimistic concurrency control. In the {@code PUT} or {@code DELETE} call for a resource, set the {@code if-match}
@@ -61,13 +63,14 @@ public class ChangeSourceCompartmentRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public ChangeCompartmentDetails getBody$() {
+    public com.oracle.bmc.applicationmigration.model.ChangeCompartmentDetails getBody$() {
         return changeSourceCompartmentDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    ChangeSourceCompartmentRequest, ChangeCompartmentDetails> {
+                    ChangeSourceCompartmentRequest,
+                    com.oracle.bmc.applicationmigration.model.ChangeCompartmentDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -133,7 +136,8 @@ public class ChangeSourceCompartmentRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(ChangeCompartmentDetails body) {
+        public Builder body$(
+                com.oracle.bmc.applicationmigration.model.ChangeCompartmentDetails body) {
             changeSourceCompartmentDetails(body);
             return this;
         }

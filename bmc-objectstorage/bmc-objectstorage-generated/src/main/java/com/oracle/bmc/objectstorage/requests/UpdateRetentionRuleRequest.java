@@ -18,7 +18,8 @@ import com.oracle.bmc.objectstorage.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class UpdateRetentionRuleRequest
-        extends com.oracle.bmc.requests.BmcRequest<UpdateRetentionRuleDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.objectstorage.model.UpdateRetentionRuleDetails> {
 
     /**
      * The Object Storage namespace used for the request.
@@ -40,7 +41,8 @@ public class UpdateRetentionRuleRequest
     /**
      * Request object for updating the retention rule.
      */
-    private UpdateRetentionRuleDetails updateRetentionRuleDetails;
+    private com.oracle.bmc.objectstorage.model.UpdateRetentionRuleDetails
+            updateRetentionRuleDetails;
 
     /**
      * The entity tag (ETag) to match with the ETag of an existing resource. If the specified ETag matches the ETag of
@@ -61,13 +63,14 @@ public class UpdateRetentionRuleRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateRetentionRuleDetails getBody$() {
+    public com.oracle.bmc.objectstorage.model.UpdateRetentionRuleDetails getBody$() {
         return updateRetentionRuleDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateRetentionRuleRequest, UpdateRetentionRuleDetails> {
+                    UpdateRetentionRuleRequest,
+                    com.oracle.bmc.objectstorage.model.UpdateRetentionRuleDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -134,7 +137,7 @@ public class UpdateRetentionRuleRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateRetentionRuleDetails body) {
+        public Builder body$(com.oracle.bmc.objectstorage.model.UpdateRetentionRuleDetails body) {
             updateRetentionRuleDetails(body);
             return this;
         }

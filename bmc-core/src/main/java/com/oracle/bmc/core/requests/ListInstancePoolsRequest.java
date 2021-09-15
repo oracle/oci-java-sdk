@@ -153,7 +153,7 @@ public class ListInstancePoolsRequest extends com.oracle.bmc.requests.BmcRequest
      * value is case-insensitive.
      *
      */
-    private InstancePoolSummary.LifecycleState lifecycleState;
+    private com.oracle.bmc.core.model.InstancePoolSummary.LifecycleState lifecycleState;
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<

@@ -18,7 +18,8 @@ import com.oracle.bmc.core.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class UpdateNatGatewayRequest
-        extends com.oracle.bmc.requests.BmcRequest<UpdateNatGatewayDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.core.model.UpdateNatGatewayDetails> {
 
     /**
      * The NAT gateway's [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -28,7 +29,7 @@ public class UpdateNatGatewayRequest
     /**
      * Details object for updating a NAT gateway.
      */
-    private UpdateNatGatewayDetails updateNatGatewayDetails;
+    private com.oracle.bmc.core.model.UpdateNatGatewayDetails updateNatGatewayDetails;
 
     /**
      * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
@@ -44,13 +45,13 @@ public class UpdateNatGatewayRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateNatGatewayDetails getBody$() {
+    public com.oracle.bmc.core.model.UpdateNatGatewayDetails getBody$() {
         return updateNatGatewayDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateNatGatewayRequest, UpdateNatGatewayDetails> {
+                    UpdateNatGatewayRequest, com.oracle.bmc.core.model.UpdateNatGatewayDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -114,7 +115,7 @@ public class UpdateNatGatewayRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateNatGatewayDetails body) {
+        public Builder body$(com.oracle.bmc.core.model.UpdateNatGatewayDetails body) {
             updateNatGatewayDetails(body);
             return this;
         }

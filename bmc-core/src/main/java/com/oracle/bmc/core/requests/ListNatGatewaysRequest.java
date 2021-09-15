@@ -158,7 +158,7 @@ public class ListNatGatewaysRequest extends com.oracle.bmc.requests.BmcRequest<j
      * state. The value is case insensitive.
      *
      */
-    private NatGateway.LifecycleState lifecycleState;
+    private com.oracle.bmc.core.model.NatGateway.LifecycleState lifecycleState;
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<

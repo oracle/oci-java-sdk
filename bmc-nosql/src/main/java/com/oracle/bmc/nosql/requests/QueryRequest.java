@@ -17,12 +17,13 @@ import com.oracle.bmc.nosql.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
-public class QueryRequest extends com.oracle.bmc.requests.BmcRequest<QueryDetails> {
+public class QueryRequest
+        extends com.oracle.bmc.requests.BmcRequest<com.oracle.bmc.nosql.model.QueryDetails> {
 
     /**
      * SQL query statement and ancillary information.
      */
-    private QueryDetails queryDetails;
+    private com.oracle.bmc.nosql.model.QueryDetails queryDetails;
 
     /**
      * The maximum number of items to return.
@@ -48,12 +49,13 @@ public class QueryRequest extends com.oracle.bmc.requests.BmcRequest<QueryDetail
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public QueryDetails getBody$() {
+    public com.oracle.bmc.nosql.model.QueryDetails getBody$() {
         return queryDetails;
     }
 
     public static class Builder
-            implements com.oracle.bmc.requests.BmcRequest.Builder<QueryRequest, QueryDetails> {
+            implements com.oracle.bmc.requests.BmcRequest.Builder<
+                    QueryRequest, com.oracle.bmc.nosql.model.QueryDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -118,7 +120,7 @@ public class QueryRequest extends com.oracle.bmc.requests.BmcRequest<QueryDetail
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(QueryDetails body) {
+        public Builder body$(com.oracle.bmc.nosql.model.QueryDetails body) {
             queryDetails(body);
             return this;
         }

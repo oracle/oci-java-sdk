@@ -18,7 +18,8 @@ import com.oracle.bmc.core.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class ChangeBootVolumeCompartmentRequest
-        extends com.oracle.bmc.requests.BmcRequest<ChangeBootVolumeCompartmentDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.core.model.ChangeBootVolumeCompartmentDetails> {
 
     /**
      * The OCID of the boot volume.
@@ -28,7 +29,8 @@ public class ChangeBootVolumeCompartmentRequest
     /**
      * Request to change the compartment of given boot volume.
      */
-    private ChangeBootVolumeCompartmentDetails changeBootVolumeCompartmentDetails;
+    private com.oracle.bmc.core.model.ChangeBootVolumeCompartmentDetails
+            changeBootVolumeCompartmentDetails;
 
     /**
      * Unique identifier for the request.
@@ -43,13 +45,14 @@ public class ChangeBootVolumeCompartmentRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public ChangeBootVolumeCompartmentDetails getBody$() {
+    public com.oracle.bmc.core.model.ChangeBootVolumeCompartmentDetails getBody$() {
         return changeBootVolumeCompartmentDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    ChangeBootVolumeCompartmentRequest, ChangeBootVolumeCompartmentDetails> {
+                    ChangeBootVolumeCompartmentRequest,
+                    com.oracle.bmc.core.model.ChangeBootVolumeCompartmentDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -113,7 +116,7 @@ public class ChangeBootVolumeCompartmentRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(ChangeBootVolumeCompartmentDetails body) {
+        public Builder body$(com.oracle.bmc.core.model.ChangeBootVolumeCompartmentDetails body) {
             changeBootVolumeCompartmentDetails(body);
             return this;
         }

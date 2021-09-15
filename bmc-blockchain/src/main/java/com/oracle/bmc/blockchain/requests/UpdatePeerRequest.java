@@ -17,7 +17,9 @@ import com.oracle.bmc.blockchain.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
-public class UpdatePeerRequest extends com.oracle.bmc.requests.BmcRequest<UpdatePeerDetails> {
+public class UpdatePeerRequest
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.blockchain.model.UpdatePeerDetails> {
 
     /**
      * Unique service identifier.
@@ -33,7 +35,7 @@ public class UpdatePeerRequest extends com.oracle.bmc.requests.BmcRequest<Update
      * Input payload to update a blockchain platform peer. The payload cannot be empty.
      *
      */
-    private UpdatePeerDetails updatePeerDetails;
+    private com.oracle.bmc.blockchain.model.UpdatePeerDetails updatePeerDetails;
 
     /**
      * For optimistic concurrency control. In the PUT or DELETE call
@@ -66,13 +68,13 @@ public class UpdatePeerRequest extends com.oracle.bmc.requests.BmcRequest<Update
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdatePeerDetails getBody$() {
+    public com.oracle.bmc.blockchain.model.UpdatePeerDetails getBody$() {
         return updatePeerDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdatePeerRequest, UpdatePeerDetails> {
+                    UpdatePeerRequest, com.oracle.bmc.blockchain.model.UpdatePeerDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -139,7 +141,7 @@ public class UpdatePeerRequest extends com.oracle.bmc.requests.BmcRequest<Update
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdatePeerDetails body) {
+        public Builder body$(com.oracle.bmc.blockchain.model.UpdatePeerDetails body) {
             updatePeerDetails(body);
             return this;
         }

@@ -18,7 +18,8 @@ import com.oracle.bmc.core.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class UpdateVolumeAttachmentRequest
-        extends com.oracle.bmc.requests.BmcRequest<UpdateVolumeAttachmentDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.core.model.UpdateVolumeAttachmentDetails> {
 
     /**
      * The OCID of the volume attachment.
@@ -28,7 +29,7 @@ public class UpdateVolumeAttachmentRequest
     /**
      * Update information about the specified volume attachment.
      */
-    private UpdateVolumeAttachmentDetails updateVolumeAttachmentDetails;
+    private com.oracle.bmc.core.model.UpdateVolumeAttachmentDetails updateVolumeAttachmentDetails;
 
     /**
      * Unique identifier for the request.
@@ -51,13 +52,14 @@ public class UpdateVolumeAttachmentRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateVolumeAttachmentDetails getBody$() {
+    public com.oracle.bmc.core.model.UpdateVolumeAttachmentDetails getBody$() {
         return updateVolumeAttachmentDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateVolumeAttachmentRequest, UpdateVolumeAttachmentDetails> {
+                    UpdateVolumeAttachmentRequest,
+                    com.oracle.bmc.core.model.UpdateVolumeAttachmentDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -122,7 +124,7 @@ public class UpdateVolumeAttachmentRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateVolumeAttachmentDetails body) {
+        public Builder body$(com.oracle.bmc.core.model.UpdateVolumeAttachmentDetails body) {
             updateVolumeAttachmentDetails(body);
             return this;
         }

@@ -18,7 +18,8 @@ import com.oracle.bmc.core.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class RemoveDrgRouteRulesRequest
-        extends com.oracle.bmc.requests.BmcRequest<RemoveDrgRouteRulesDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.core.model.RemoveDrgRouteRulesDetails> {
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG route table.
@@ -29,7 +30,7 @@ public class RemoveDrgRouteRulesRequest
      * Request to remove one or more route rules in the DRG route table.
      *
      */
-    private RemoveDrgRouteRulesDetails removeDrgRouteRulesDetails;
+    private com.oracle.bmc.core.model.RemoveDrgRouteRulesDetails removeDrgRouteRulesDetails;
 
     /**
      * Alternative accessor for the body parameter.
@@ -37,13 +38,14 @@ public class RemoveDrgRouteRulesRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public RemoveDrgRouteRulesDetails getBody$() {
+    public com.oracle.bmc.core.model.RemoveDrgRouteRulesDetails getBody$() {
         return removeDrgRouteRulesDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    RemoveDrgRouteRulesRequest, RemoveDrgRouteRulesDetails> {
+                    RemoveDrgRouteRulesRequest,
+                    com.oracle.bmc.core.model.RemoveDrgRouteRulesDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -106,7 +108,7 @@ public class RemoveDrgRouteRulesRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(RemoveDrgRouteRulesDetails body) {
+        public Builder body$(com.oracle.bmc.core.model.RemoveDrgRouteRulesDetails body) {
             removeDrgRouteRulesDetails(body);
             return this;
         }

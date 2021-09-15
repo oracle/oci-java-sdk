@@ -18,7 +18,8 @@ import com.oracle.bmc.databasemanagement.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class UpdateManagedDatabaseGroupRequest
-        extends com.oracle.bmc.requests.BmcRequest<UpdateManagedDatabaseGroupDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.databasemanagement.model.UpdateManagedDatabaseGroupDetails> {
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Managed Database Group.
@@ -28,7 +29,8 @@ public class UpdateManagedDatabaseGroupRequest
     /**
      * The details required to update a Managed Database Group.
      */
-    private UpdateManagedDatabaseGroupDetails updateManagedDatabaseGroupDetails;
+    private com.oracle.bmc.databasemanagement.model.UpdateManagedDatabaseGroupDetails
+            updateManagedDatabaseGroupDetails;
 
     /**
      * For optimistic concurrency control. In the PUT or DELETE call
@@ -51,13 +53,14 @@ public class UpdateManagedDatabaseGroupRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateManagedDatabaseGroupDetails getBody$() {
+    public com.oracle.bmc.databasemanagement.model.UpdateManagedDatabaseGroupDetails getBody$() {
         return updateManagedDatabaseGroupDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateManagedDatabaseGroupRequest, UpdateManagedDatabaseGroupDetails> {
+                    UpdateManagedDatabaseGroupRequest,
+                    com.oracle.bmc.databasemanagement.model.UpdateManagedDatabaseGroupDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -122,7 +125,8 @@ public class UpdateManagedDatabaseGroupRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateManagedDatabaseGroupDetails body) {
+        public Builder body$(
+                com.oracle.bmc.databasemanagement.model.UpdateManagedDatabaseGroupDetails body) {
             updateManagedDatabaseGroupDetails(body);
             return this;
         }

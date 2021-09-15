@@ -17,7 +17,9 @@ import com.oracle.bmc.blockchain.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
-public class UpdateOsnRequest extends com.oracle.bmc.requests.BmcRequest<UpdateOsnDetails> {
+public class UpdateOsnRequest
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.blockchain.model.UpdateOsnDetails> {
 
     /**
      * Unique service identifier.
@@ -33,7 +35,7 @@ public class UpdateOsnRequest extends com.oracle.bmc.requests.BmcRequest<UpdateO
      * Input payload to update a blockchain platform OSN. The payload cannot be empty.
      *
      */
-    private UpdateOsnDetails updateOsnDetails;
+    private com.oracle.bmc.blockchain.model.UpdateOsnDetails updateOsnDetails;
 
     /**
      * For optimistic concurrency control. In the PUT or DELETE call
@@ -66,13 +68,13 @@ public class UpdateOsnRequest extends com.oracle.bmc.requests.BmcRequest<UpdateO
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateOsnDetails getBody$() {
+    public com.oracle.bmc.blockchain.model.UpdateOsnDetails getBody$() {
         return updateOsnDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateOsnRequest, UpdateOsnDetails> {
+                    UpdateOsnRequest, com.oracle.bmc.blockchain.model.UpdateOsnDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -139,7 +141,7 @@ public class UpdateOsnRequest extends com.oracle.bmc.requests.BmcRequest<UpdateO
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateOsnDetails body) {
+        public Builder body$(com.oracle.bmc.blockchain.model.UpdateOsnDetails body) {
             updateOsnDetails(body);
             return this;
         }

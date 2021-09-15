@@ -18,12 +18,13 @@ import com.oracle.bmc.core.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class CreateServiceGatewayRequest
-        extends com.oracle.bmc.requests.BmcRequest<CreateServiceGatewayDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.core.model.CreateServiceGatewayDetails> {
 
     /**
      * Details for creating a service gateway.
      */
-    private CreateServiceGatewayDetails createServiceGatewayDetails;
+    private com.oracle.bmc.core.model.CreateServiceGatewayDetails createServiceGatewayDetails;
 
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -41,13 +42,14 @@ public class CreateServiceGatewayRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreateServiceGatewayDetails getBody$() {
+    public com.oracle.bmc.core.model.CreateServiceGatewayDetails getBody$() {
         return createServiceGatewayDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CreateServiceGatewayRequest, CreateServiceGatewayDetails> {
+                    CreateServiceGatewayRequest,
+                    com.oracle.bmc.core.model.CreateServiceGatewayDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -110,7 +112,7 @@ public class CreateServiceGatewayRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreateServiceGatewayDetails body) {
+        public Builder body$(com.oracle.bmc.core.model.CreateServiceGatewayDetails body) {
             createServiceGatewayDetails(body);
             return this;
         }

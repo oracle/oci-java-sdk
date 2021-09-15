@@ -18,12 +18,14 @@ import com.oracle.bmc.dts.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class CreateApplianceExportJobRequest
-        extends com.oracle.bmc.requests.BmcRequest<CreateApplianceExportJobDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.dts.model.CreateApplianceExportJobDetails> {
 
     /**
      * Creates a new Appliance Export Job
      */
-    private CreateApplianceExportJobDetails createApplianceExportJobDetails;
+    private com.oracle.bmc.dts.model.CreateApplianceExportJobDetails
+            createApplianceExportJobDetails;
 
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -48,13 +50,14 @@ public class CreateApplianceExportJobRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreateApplianceExportJobDetails getBody$() {
+    public com.oracle.bmc.dts.model.CreateApplianceExportJobDetails getBody$() {
         return createApplianceExportJobDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CreateApplianceExportJobRequest, CreateApplianceExportJobDetails> {
+                    CreateApplianceExportJobRequest,
+                    com.oracle.bmc.dts.model.CreateApplianceExportJobDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -118,7 +121,7 @@ public class CreateApplianceExportJobRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreateApplianceExportJobDetails body) {
+        public Builder body$(com.oracle.bmc.dts.model.CreateApplianceExportJobDetails body) {
             createApplianceExportJobDetails(body);
             return this;
         }

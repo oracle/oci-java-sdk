@@ -18,7 +18,8 @@ import com.oracle.bmc.identity.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class UpdateIdentityProviderRequest
-        extends com.oracle.bmc.requests.BmcRequest<UpdateIdentityProviderDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.identity.model.UpdateIdentityProviderDetails> {
 
     /**
      * The OCID of the identity provider.
@@ -28,7 +29,8 @@ public class UpdateIdentityProviderRequest
     /**
      * Request object for updating a identity provider.
      */
-    private UpdateIdentityProviderDetails updateIdentityProviderDetails;
+    private com.oracle.bmc.identity.model.UpdateIdentityProviderDetails
+            updateIdentityProviderDetails;
 
     /**
      * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
@@ -44,13 +46,14 @@ public class UpdateIdentityProviderRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateIdentityProviderDetails getBody$() {
+    public com.oracle.bmc.identity.model.UpdateIdentityProviderDetails getBody$() {
         return updateIdentityProviderDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateIdentityProviderRequest, UpdateIdentityProviderDetails> {
+                    UpdateIdentityProviderRequest,
+                    com.oracle.bmc.identity.model.UpdateIdentityProviderDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -114,7 +117,7 @@ public class UpdateIdentityProviderRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateIdentityProviderDetails body) {
+        public Builder body$(com.oracle.bmc.identity.model.UpdateIdentityProviderDetails body) {
             updateIdentityProviderDetails(body);
             return this;
         }

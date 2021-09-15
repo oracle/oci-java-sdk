@@ -18,12 +18,14 @@ import com.oracle.bmc.cloudguard.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class SkipBulkResponderExecutionRequest
-        extends com.oracle.bmc.requests.BmcRequest<SkipBulkResponderExecutionDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.cloudguard.model.SkipBulkResponderExecutionDetails> {
 
     /**
      * A list of responder execution ids to skip the execution
      */
-    private SkipBulkResponderExecutionDetails skipBulkResponderExecutionDetails;
+    private com.oracle.bmc.cloudguard.model.SkipBulkResponderExecutionDetails
+            skipBulkResponderExecutionDetails;
 
     /**
      * The client request ID for tracing.
@@ -36,13 +38,14 @@ public class SkipBulkResponderExecutionRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public SkipBulkResponderExecutionDetails getBody$() {
+    public com.oracle.bmc.cloudguard.model.SkipBulkResponderExecutionDetails getBody$() {
         return skipBulkResponderExecutionDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    SkipBulkResponderExecutionRequest, SkipBulkResponderExecutionDetails> {
+                    SkipBulkResponderExecutionRequest,
+                    com.oracle.bmc.cloudguard.model.SkipBulkResponderExecutionDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -105,7 +108,8 @@ public class SkipBulkResponderExecutionRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(SkipBulkResponderExecutionDetails body) {
+        public Builder body$(
+                com.oracle.bmc.cloudguard.model.SkipBulkResponderExecutionDetails body) {
             skipBulkResponderExecutionDetails(body);
             return this;
         }

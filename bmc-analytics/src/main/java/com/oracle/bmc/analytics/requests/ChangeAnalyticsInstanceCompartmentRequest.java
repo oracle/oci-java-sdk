@@ -18,7 +18,8 @@ import com.oracle.bmc.analytics.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class ChangeAnalyticsInstanceCompartmentRequest
-        extends com.oracle.bmc.requests.BmcRequest<ChangeCompartmentDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.analytics.model.ChangeCompartmentDetails> {
 
     /**
      * The OCID of the AnalyticsInstance.
@@ -30,7 +31,7 @@ public class ChangeAnalyticsInstanceCompartmentRequest
      * Input payload to move the resource to a different compartment.
      *
      */
-    private ChangeCompartmentDetails changeCompartmentDetails;
+    private com.oracle.bmc.analytics.model.ChangeCompartmentDetails changeCompartmentDetails;
 
     /**
      * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
@@ -63,13 +64,14 @@ public class ChangeAnalyticsInstanceCompartmentRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public ChangeCompartmentDetails getBody$() {
+    public com.oracle.bmc.analytics.model.ChangeCompartmentDetails getBody$() {
         return changeCompartmentDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    ChangeAnalyticsInstanceCompartmentRequest, ChangeCompartmentDetails> {
+                    ChangeAnalyticsInstanceCompartmentRequest,
+                    com.oracle.bmc.analytics.model.ChangeCompartmentDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -135,7 +137,7 @@ public class ChangeAnalyticsInstanceCompartmentRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(ChangeCompartmentDetails body) {
+        public Builder body$(com.oracle.bmc.analytics.model.ChangeCompartmentDetails body) {
             changeCompartmentDetails(body);
             return this;
         }

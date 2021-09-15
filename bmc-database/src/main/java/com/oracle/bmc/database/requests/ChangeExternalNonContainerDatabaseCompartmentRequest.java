@@ -18,12 +18,13 @@ import com.oracle.bmc.database.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class ChangeExternalNonContainerDatabaseCompartmentRequest
-        extends com.oracle.bmc.requests.BmcRequest<ChangeCompartmentDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.database.model.ChangeCompartmentDetails> {
 
     /**
      * Request to move the external non-container database to a different compartment.
      */
-    private ChangeCompartmentDetails changeCompartmentDetails;
+    private com.oracle.bmc.database.model.ChangeCompartmentDetails changeCompartmentDetails;
 
     /**
      * The external non-container database [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
@@ -60,14 +61,14 @@ public class ChangeExternalNonContainerDatabaseCompartmentRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public ChangeCompartmentDetails getBody$() {
+    public com.oracle.bmc.database.model.ChangeCompartmentDetails getBody$() {
         return changeCompartmentDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ChangeExternalNonContainerDatabaseCompartmentRequest,
-                    ChangeCompartmentDetails> {
+                    com.oracle.bmc.database.model.ChangeCompartmentDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -134,7 +135,7 @@ public class ChangeExternalNonContainerDatabaseCompartmentRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(ChangeCompartmentDetails body) {
+        public Builder body$(com.oracle.bmc.database.model.ChangeCompartmentDetails body) {
             changeCompartmentDetails(body);
             return this;
         }

@@ -17,7 +17,9 @@ import com.oracle.bmc.apmsynthetics.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
-public class CreateMonitorRequest extends com.oracle.bmc.requests.BmcRequest<CreateMonitorDetails> {
+public class CreateMonitorRequest
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.apmsynthetics.model.CreateMonitorDetails> {
 
     /**
      * The APM domain ID the request is intended for.
@@ -28,7 +30,7 @@ public class CreateMonitorRequest extends com.oracle.bmc.requests.BmcRequest<Cre
     /**
      * The configuration details for creating a monitor.
      */
-    private CreateMonitorDetails createMonitorDetails;
+    private com.oracle.bmc.apmsynthetics.model.CreateMonitorDetails createMonitorDetails;
 
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -53,13 +55,13 @@ public class CreateMonitorRequest extends com.oracle.bmc.requests.BmcRequest<Cre
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreateMonitorDetails getBody$() {
+    public com.oracle.bmc.apmsynthetics.model.CreateMonitorDetails getBody$() {
         return createMonitorDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CreateMonitorRequest, CreateMonitorDetails> {
+                    CreateMonitorRequest, com.oracle.bmc.apmsynthetics.model.CreateMonitorDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -124,7 +126,7 @@ public class CreateMonitorRequest extends com.oracle.bmc.requests.BmcRequest<Cre
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreateMonitorDetails body) {
+        public Builder body$(com.oracle.bmc.apmsynthetics.model.CreateMonitorDetails body) {
             createMonitorDetails(body);
             return this;
         }

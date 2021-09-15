@@ -18,12 +18,13 @@ import com.oracle.bmc.core.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class CreatePrivateIpRequest
-        extends com.oracle.bmc.requests.BmcRequest<CreatePrivateIpDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.core.model.CreatePrivateIpDetails> {
 
     /**
      * Create private IP details.
      */
-    private CreatePrivateIpDetails createPrivateIpDetails;
+    private com.oracle.bmc.core.model.CreatePrivateIpDetails createPrivateIpDetails;
 
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -41,13 +42,13 @@ public class CreatePrivateIpRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreatePrivateIpDetails getBody$() {
+    public com.oracle.bmc.core.model.CreatePrivateIpDetails getBody$() {
         return createPrivateIpDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CreatePrivateIpRequest, CreatePrivateIpDetails> {
+                    CreatePrivateIpRequest, com.oracle.bmc.core.model.CreatePrivateIpDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -110,7 +111,7 @@ public class CreatePrivateIpRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreatePrivateIpDetails body) {
+        public Builder body$(com.oracle.bmc.core.model.CreatePrivateIpDetails body) {
             createPrivateIpDetails(body);
             return this;
         }

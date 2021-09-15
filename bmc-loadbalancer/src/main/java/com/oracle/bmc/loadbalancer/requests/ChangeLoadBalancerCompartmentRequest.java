@@ -18,7 +18,8 @@ import com.oracle.bmc.loadbalancer.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class ChangeLoadBalancerCompartmentRequest
-        extends com.oracle.bmc.requests.BmcRequest<ChangeLoadBalancerCompartmentDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.loadbalancer.model.ChangeLoadBalancerCompartmentDetails> {
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer to move.
@@ -28,7 +29,8 @@ public class ChangeLoadBalancerCompartmentRequest
     /**
      * The configuration details for moving a load balancer to a different compartment.
      */
-    private ChangeLoadBalancerCompartmentDetails changeLoadBalancerCompartmentDetails;
+    private com.oracle.bmc.loadbalancer.model.ChangeLoadBalancerCompartmentDetails
+            changeLoadBalancerCompartmentDetails;
 
     /**
      * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
@@ -63,13 +65,14 @@ public class ChangeLoadBalancerCompartmentRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public ChangeLoadBalancerCompartmentDetails getBody$() {
+    public com.oracle.bmc.loadbalancer.model.ChangeLoadBalancerCompartmentDetails getBody$() {
         return changeLoadBalancerCompartmentDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    ChangeLoadBalancerCompartmentRequest, ChangeLoadBalancerCompartmentDetails> {
+                    ChangeLoadBalancerCompartmentRequest,
+                    com.oracle.bmc.loadbalancer.model.ChangeLoadBalancerCompartmentDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -135,7 +138,8 @@ public class ChangeLoadBalancerCompartmentRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(ChangeLoadBalancerCompartmentDetails body) {
+        public Builder body$(
+                com.oracle.bmc.loadbalancer.model.ChangeLoadBalancerCompartmentDetails body) {
             changeLoadBalancerCompartmentDetails(body);
             return this;
         }

@@ -18,7 +18,8 @@ import com.oracle.bmc.datacatalog.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class CreateNamespaceRequest
-        extends com.oracle.bmc.requests.BmcRequest<CreateNamespaceDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.datacatalog.model.CreateNamespaceDetails> {
 
     /**
      * Unique catalog identifier.
@@ -29,7 +30,7 @@ public class CreateNamespaceRequest
      * The information used to create the Namespace.
      *
      */
-    private CreateNamespaceDetails createNamespaceDetails;
+    private com.oracle.bmc.datacatalog.model.CreateNamespaceDetails createNamespaceDetails;
 
     /**
      * The client request ID for tracing.
@@ -52,13 +53,14 @@ public class CreateNamespaceRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreateNamespaceDetails getBody$() {
+    public com.oracle.bmc.datacatalog.model.CreateNamespaceDetails getBody$() {
         return createNamespaceDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CreateNamespaceRequest, CreateNamespaceDetails> {
+                    CreateNamespaceRequest,
+                    com.oracle.bmc.datacatalog.model.CreateNamespaceDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -123,7 +125,7 @@ public class CreateNamespaceRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreateNamespaceDetails body) {
+        public Builder body$(com.oracle.bmc.datacatalog.model.CreateNamespaceDetails body) {
             createNamespaceDetails(body);
             return this;
         }

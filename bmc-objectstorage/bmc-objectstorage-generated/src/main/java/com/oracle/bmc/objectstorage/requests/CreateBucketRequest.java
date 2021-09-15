@@ -17,7 +17,9 @@ import com.oracle.bmc.objectstorage.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
-public class CreateBucketRequest extends com.oracle.bmc.requests.BmcRequest<CreateBucketDetails> {
+public class CreateBucketRequest
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.objectstorage.model.CreateBucketDetails> {
 
     /**
      * The Object Storage namespace used for the request.
@@ -27,7 +29,7 @@ public class CreateBucketRequest extends com.oracle.bmc.requests.BmcRequest<Crea
     /**
      * Request object for creating a bucket.
      */
-    private CreateBucketDetails createBucketDetails;
+    private com.oracle.bmc.objectstorage.model.CreateBucketDetails createBucketDetails;
 
     /**
      * The client request ID for tracing.
@@ -40,13 +42,13 @@ public class CreateBucketRequest extends com.oracle.bmc.requests.BmcRequest<Crea
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreateBucketDetails getBody$() {
+    public com.oracle.bmc.objectstorage.model.CreateBucketDetails getBody$() {
         return createBucketDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CreateBucketRequest, CreateBucketDetails> {
+                    CreateBucketRequest, com.oracle.bmc.objectstorage.model.CreateBucketDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -110,7 +112,7 @@ public class CreateBucketRequest extends com.oracle.bmc.requests.BmcRequest<Crea
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreateBucketDetails body) {
+        public Builder body$(com.oracle.bmc.objectstorage.model.CreateBucketDetails body) {
             createBucketDetails(body);
             return this;
         }

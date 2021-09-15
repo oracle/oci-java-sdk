@@ -17,7 +17,9 @@ import com.oracle.bmc.objectstorage.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
-public class CopyObjectRequest extends com.oracle.bmc.requests.BmcRequest<CopyObjectDetails> {
+public class CopyObjectRequest
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.objectstorage.model.CopyObjectDetails> {
 
     /**
      * The Object Storage namespace used for the request.
@@ -34,7 +36,7 @@ public class CopyObjectRequest extends com.oracle.bmc.requests.BmcRequest<CopyOb
     /**
      * The source and destination of the object to be copied.
      */
-    private CopyObjectDetails copyObjectDetails;
+    private com.oracle.bmc.objectstorage.model.CopyObjectDetails copyObjectDetails;
 
     /**
      * The client request ID for tracing.
@@ -95,13 +97,13 @@ public class CopyObjectRequest extends com.oracle.bmc.requests.BmcRequest<CopyOb
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CopyObjectDetails getBody$() {
+    public com.oracle.bmc.objectstorage.model.CopyObjectDetails getBody$() {
         return copyObjectDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CopyObjectRequest, CopyObjectDetails> {
+                    CopyObjectRequest, com.oracle.bmc.objectstorage.model.CopyObjectDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -172,7 +174,7 @@ public class CopyObjectRequest extends com.oracle.bmc.requests.BmcRequest<CopyOb
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CopyObjectDetails body) {
+        public Builder body$(com.oracle.bmc.objectstorage.model.CopyObjectDetails body) {
             copyObjectDetails(body);
             return this;
         }

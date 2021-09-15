@@ -37,7 +37,7 @@ public class ListDeployStagesRequest extends com.oracle.bmc.requests.BmcRequest<
     /**
      * A filter to return only deployment stages that matches the given lifecycle state.
      */
-    private DeployStage.LifecycleState lifecycleState;
+    private com.oracle.bmc.devops.model.DeployStage.LifecycleState lifecycleState;
 
     /**
      * A filter to return only resources that match the entire display name given.

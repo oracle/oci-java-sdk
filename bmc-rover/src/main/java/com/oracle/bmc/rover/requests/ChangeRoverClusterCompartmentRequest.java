@@ -18,7 +18,8 @@ import com.oracle.bmc.rover.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class ChangeRoverClusterCompartmentRequest
-        extends com.oracle.bmc.requests.BmcRequest<ChangeRoverClusterCompartmentDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.rover.model.ChangeRoverClusterCompartmentDetails> {
 
     /**
      * Unique RoverCluster identifier
@@ -28,7 +29,8 @@ public class ChangeRoverClusterCompartmentRequest
     /**
      * CompartmentId of the destination compartment
      */
-    private ChangeRoverClusterCompartmentDetails changeRoverClusterCompartmentDetails;
+    private com.oracle.bmc.rover.model.ChangeRoverClusterCompartmentDetails
+            changeRoverClusterCompartmentDetails;
 
     /**
      * For optimistic concurrency control. In the PUT or DELETE call
@@ -61,13 +63,14 @@ public class ChangeRoverClusterCompartmentRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public ChangeRoverClusterCompartmentDetails getBody$() {
+    public com.oracle.bmc.rover.model.ChangeRoverClusterCompartmentDetails getBody$() {
         return changeRoverClusterCompartmentDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    ChangeRoverClusterCompartmentRequest, ChangeRoverClusterCompartmentDetails> {
+                    ChangeRoverClusterCompartmentRequest,
+                    com.oracle.bmc.rover.model.ChangeRoverClusterCompartmentDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -133,7 +136,7 @@ public class ChangeRoverClusterCompartmentRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(ChangeRoverClusterCompartmentDetails body) {
+        public Builder body$(com.oracle.bmc.rover.model.ChangeRoverClusterCompartmentDetails body) {
             changeRoverClusterCompartmentDetails(body);
             return this;
         }

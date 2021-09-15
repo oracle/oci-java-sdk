@@ -18,7 +18,8 @@ import com.oracle.bmc.core.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class ChangePublicIpCompartmentRequest
-        extends com.oracle.bmc.requests.BmcRequest<ChangePublicIpCompartmentDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.core.model.ChangePublicIpCompartmentDetails> {
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the public IP.
@@ -28,7 +29,8 @@ public class ChangePublicIpCompartmentRequest
     /**
      * Request to change the compartment of a Public IP.
      */
-    private ChangePublicIpCompartmentDetails changePublicIpCompartmentDetails;
+    private com.oracle.bmc.core.model.ChangePublicIpCompartmentDetails
+            changePublicIpCompartmentDetails;
 
     /**
      * Unique identifier for the request.
@@ -53,13 +55,14 @@ public class ChangePublicIpCompartmentRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public ChangePublicIpCompartmentDetails getBody$() {
+    public com.oracle.bmc.core.model.ChangePublicIpCompartmentDetails getBody$() {
         return changePublicIpCompartmentDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    ChangePublicIpCompartmentRequest, ChangePublicIpCompartmentDetails> {
+                    ChangePublicIpCompartmentRequest,
+                    com.oracle.bmc.core.model.ChangePublicIpCompartmentDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -124,7 +127,7 @@ public class ChangePublicIpCompartmentRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(ChangePublicIpCompartmentDetails body) {
+        public Builder body$(com.oracle.bmc.core.model.ChangePublicIpCompartmentDetails body) {
             changePublicIpCompartmentDetails(body);
             return this;
         }

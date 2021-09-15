@@ -18,7 +18,8 @@ import com.oracle.bmc.bastion.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class ChangeBastionCompartmentRequest
-        extends com.oracle.bmc.requests.BmcRequest<ChangeBastionCompartmentDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.bastion.model.ChangeBastionCompartmentDetails> {
 
     /**
      * The unique identifier (OCID) of the bastion.
@@ -28,7 +29,8 @@ public class ChangeBastionCompartmentRequest
     /**
      * The compartment information to be updated.
      */
-    private ChangeBastionCompartmentDetails changeBastionCompartmentDetails;
+    private com.oracle.bmc.bastion.model.ChangeBastionCompartmentDetails
+            changeBastionCompartmentDetails;
 
     /**
      * For optimistic concurrency control. In the PUT or DELETE call
@@ -51,13 +53,14 @@ public class ChangeBastionCompartmentRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public ChangeBastionCompartmentDetails getBody$() {
+    public com.oracle.bmc.bastion.model.ChangeBastionCompartmentDetails getBody$() {
         return changeBastionCompartmentDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    ChangeBastionCompartmentRequest, ChangeBastionCompartmentDetails> {
+                    ChangeBastionCompartmentRequest,
+                    com.oracle.bmc.bastion.model.ChangeBastionCompartmentDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -122,7 +125,7 @@ public class ChangeBastionCompartmentRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(ChangeBastionCompartmentDetails body) {
+        public Builder body$(com.oracle.bmc.bastion.model.ChangeBastionCompartmentDetails body) {
             changeBastionCompartmentDetails(body);
             return this;
         }

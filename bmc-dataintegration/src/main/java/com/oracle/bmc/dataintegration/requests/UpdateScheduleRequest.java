@@ -18,7 +18,8 @@ import com.oracle.bmc.dataintegration.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class UpdateScheduleRequest
-        extends com.oracle.bmc.requests.BmcRequest<UpdateScheduleDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.dataintegration.model.UpdateScheduleDetails> {
 
     /**
      * The workspace ID.
@@ -38,7 +39,7 @@ public class UpdateScheduleRequest
     /**
      * Request body parameter for Schedule details
      */
-    private UpdateScheduleDetails updateScheduleDetails;
+    private com.oracle.bmc.dataintegration.model.UpdateScheduleDetails updateScheduleDetails;
 
     /**
      * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match} parameter to the value of the {@code etag} from a previous GET or POST response for that resource.
@@ -62,13 +63,14 @@ public class UpdateScheduleRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateScheduleDetails getBody$() {
+    public com.oracle.bmc.dataintegration.model.UpdateScheduleDetails getBody$() {
         return updateScheduleDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateScheduleRequest, UpdateScheduleDetails> {
+                    UpdateScheduleRequest,
+                    com.oracle.bmc.dataintegration.model.UpdateScheduleDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -135,7 +137,7 @@ public class UpdateScheduleRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateScheduleDetails body) {
+        public Builder body$(com.oracle.bmc.dataintegration.model.UpdateScheduleDetails body) {
             updateScheduleDetails(body);
             return this;
         }

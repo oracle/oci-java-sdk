@@ -18,7 +18,8 @@ import com.oracle.bmc.opsi.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class ChangeHostInsightCompartmentRequest
-        extends com.oracle.bmc.requests.BmcRequest<ChangeHostInsightCompartmentDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.opsi.model.ChangeHostInsightCompartmentDetails> {
 
     /**
      * Unique host insight identifier
@@ -28,7 +29,8 @@ public class ChangeHostInsightCompartmentRequest
     /**
      * The information to be updated.
      */
-    private ChangeHostInsightCompartmentDetails changeHostInsightCompartmentDetails;
+    private com.oracle.bmc.opsi.model.ChangeHostInsightCompartmentDetails
+            changeHostInsightCompartmentDetails;
 
     /**
      * Used for optimistic concurrency control. In the update or delete call for a resource, set the {@code if-match}
@@ -62,13 +64,14 @@ public class ChangeHostInsightCompartmentRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public ChangeHostInsightCompartmentDetails getBody$() {
+    public com.oracle.bmc.opsi.model.ChangeHostInsightCompartmentDetails getBody$() {
         return changeHostInsightCompartmentDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    ChangeHostInsightCompartmentRequest, ChangeHostInsightCompartmentDetails> {
+                    ChangeHostInsightCompartmentRequest,
+                    com.oracle.bmc.opsi.model.ChangeHostInsightCompartmentDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -134,7 +137,7 @@ public class ChangeHostInsightCompartmentRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(ChangeHostInsightCompartmentDetails body) {
+        public Builder body$(com.oracle.bmc.opsi.model.ChangeHostInsightCompartmentDetails body) {
             changeHostInsightCompartmentDetails(body);
             return this;
         }

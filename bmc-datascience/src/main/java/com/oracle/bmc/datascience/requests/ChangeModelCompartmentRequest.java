@@ -18,7 +18,8 @@ import com.oracle.bmc.datascience.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class ChangeModelCompartmentRequest
-        extends com.oracle.bmc.requests.BmcRequest<ChangeModelCompartmentDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.datascience.model.ChangeModelCompartmentDetails> {
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model.
@@ -28,7 +29,8 @@ public class ChangeModelCompartmentRequest
     /**
      * Details for changing the compartment of a model.
      */
-    private ChangeModelCompartmentDetails changeModelCompartmentDetails;
+    private com.oracle.bmc.datascience.model.ChangeModelCompartmentDetails
+            changeModelCompartmentDetails;
 
     /**
      * For optimistic concurrency control. In the PUT or DELETE call
@@ -58,13 +60,14 @@ public class ChangeModelCompartmentRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public ChangeModelCompartmentDetails getBody$() {
+    public com.oracle.bmc.datascience.model.ChangeModelCompartmentDetails getBody$() {
         return changeModelCompartmentDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    ChangeModelCompartmentRequest, ChangeModelCompartmentDetails> {
+                    ChangeModelCompartmentRequest,
+                    com.oracle.bmc.datascience.model.ChangeModelCompartmentDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -130,7 +133,7 @@ public class ChangeModelCompartmentRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(ChangeModelCompartmentDetails body) {
+        public Builder body$(com.oracle.bmc.datascience.model.ChangeModelCompartmentDetails body) {
             changeModelCompartmentDetails(body);
             return this;
         }

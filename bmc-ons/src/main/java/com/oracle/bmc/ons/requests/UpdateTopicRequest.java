@@ -17,7 +17,9 @@ import com.oracle.bmc.ons.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
-public class UpdateTopicRequest extends com.oracle.bmc.requests.BmcRequest<TopicAttributesDetails> {
+public class UpdateTopicRequest
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.ons.model.TopicAttributesDetails> {
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the topic to update.
@@ -28,7 +30,7 @@ public class UpdateTopicRequest extends com.oracle.bmc.requests.BmcRequest<Topic
     /**
      * TopicAttributes
      */
-    private TopicAttributesDetails topicAttributesDetails;
+    private com.oracle.bmc.ons.model.TopicAttributesDetails topicAttributesDetails;
 
     /**
      * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
@@ -51,13 +53,13 @@ public class UpdateTopicRequest extends com.oracle.bmc.requests.BmcRequest<Topic
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public TopicAttributesDetails getBody$() {
+    public com.oracle.bmc.ons.model.TopicAttributesDetails getBody$() {
         return topicAttributesDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateTopicRequest, TopicAttributesDetails> {
+                    UpdateTopicRequest, com.oracle.bmc.ons.model.TopicAttributesDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -122,7 +124,7 @@ public class UpdateTopicRequest extends com.oracle.bmc.requests.BmcRequest<Topic
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(TopicAttributesDetails body) {
+        public Builder body$(com.oracle.bmc.ons.model.TopicAttributesDetails body) {
             topicAttributesDetails(body);
             return this;
         }

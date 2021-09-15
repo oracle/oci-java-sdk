@@ -18,7 +18,8 @@ import com.oracle.bmc.database.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class ModifyDatabaseManagementRequest
-        extends com.oracle.bmc.requests.BmcRequest<ModifyDatabaseManagementDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.database.model.ModifyDatabaseManagementDetails> {
 
     /**
      * The database [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
@@ -28,7 +29,8 @@ public class ModifyDatabaseManagementRequest
     /**
      * The data to update one or more attributes of the Database Management Service for the database.
      */
-    private ModifyDatabaseManagementDetails modifyDatabaseManagementDetails;
+    private com.oracle.bmc.database.model.ModifyDatabaseManagementDetails
+            modifyDatabaseManagementDetails;
 
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -60,13 +62,14 @@ public class ModifyDatabaseManagementRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public ModifyDatabaseManagementDetails getBody$() {
+    public com.oracle.bmc.database.model.ModifyDatabaseManagementDetails getBody$() {
         return modifyDatabaseManagementDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    ModifyDatabaseManagementRequest, ModifyDatabaseManagementDetails> {
+                    ModifyDatabaseManagementRequest,
+                    com.oracle.bmc.database.model.ModifyDatabaseManagementDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -132,7 +135,7 @@ public class ModifyDatabaseManagementRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(ModifyDatabaseManagementDetails body) {
+        public Builder body$(com.oracle.bmc.database.model.ModifyDatabaseManagementDetails body) {
             modifyDatabaseManagementDetails(body);
             return this;
         }

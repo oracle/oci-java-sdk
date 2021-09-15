@@ -18,7 +18,8 @@ import com.oracle.bmc.dns.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class PatchZoneRecordsRequest
-        extends com.oracle.bmc.requests.BmcRequest<PatchZoneRecordsDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.dns.model.PatchZoneRecordsDetails> {
 
     /**
      * The name or OCID of the target zone.
@@ -29,7 +30,7 @@ public class PatchZoneRecordsRequest
      * The operations describing how to modify the collection of records.
      *
      */
-    private PatchZoneRecordsDetails patchZoneRecordsDetails;
+    private com.oracle.bmc.dns.model.PatchZoneRecordsDetails patchZoneRecordsDetails;
 
     /**
      * The {@code If-Match} header field makes the request method conditional on the
@@ -81,13 +82,13 @@ public class PatchZoneRecordsRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public PatchZoneRecordsDetails getBody$() {
+    public com.oracle.bmc.dns.model.PatchZoneRecordsDetails getBody$() {
         return patchZoneRecordsDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    PatchZoneRecordsRequest, PatchZoneRecordsDetails> {
+                    PatchZoneRecordsRequest, com.oracle.bmc.dns.model.PatchZoneRecordsDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -156,7 +157,7 @@ public class PatchZoneRecordsRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(PatchZoneRecordsDetails body) {
+        public Builder body$(com.oracle.bmc.dns.model.PatchZoneRecordsDetails body) {
             patchZoneRecordsDetails(body);
             return this;
         }

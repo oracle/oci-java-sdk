@@ -18,12 +18,14 @@ import com.oracle.bmc.networkloadbalancer.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class CreateNetworkLoadBalancerRequest
-        extends com.oracle.bmc.requests.BmcRequest<CreateNetworkLoadBalancerDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.networkloadbalancer.model.CreateNetworkLoadBalancerDetails> {
 
     /**
      * Details for the new network load balancer.
      */
-    private CreateNetworkLoadBalancerDetails createNetworkLoadBalancerDetails;
+    private com.oracle.bmc.networkloadbalancer.model.CreateNetworkLoadBalancerDetails
+            createNetworkLoadBalancerDetails;
 
     /**
      * A token that uniquely identifies a request so that it can be retried in case of a timeout or
@@ -48,13 +50,14 @@ public class CreateNetworkLoadBalancerRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreateNetworkLoadBalancerDetails getBody$() {
+    public com.oracle.bmc.networkloadbalancer.model.CreateNetworkLoadBalancerDetails getBody$() {
         return createNetworkLoadBalancerDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CreateNetworkLoadBalancerRequest, CreateNetworkLoadBalancerDetails> {
+                    CreateNetworkLoadBalancerRequest,
+                    com.oracle.bmc.networkloadbalancer.model.CreateNetworkLoadBalancerDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -118,7 +121,8 @@ public class CreateNetworkLoadBalancerRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreateNetworkLoadBalancerDetails body) {
+        public Builder body$(
+                com.oracle.bmc.networkloadbalancer.model.CreateNetworkLoadBalancerDetails body) {
             createNetworkLoadBalancerDetails(body);
             return this;
         }

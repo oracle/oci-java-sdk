@@ -18,7 +18,8 @@ import com.oracle.bmc.optimizer.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class UpdateRecommendationRequest
-        extends com.oracle.bmc.requests.BmcRequest<UpdateRecommendationDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.optimizer.model.UpdateRecommendationDetails> {
 
     /**
      * The unique OCID associated with the recommendation.
@@ -28,7 +29,7 @@ public class UpdateRecommendationRequest
     /**
      * The request object for udpating the recommendation details.
      */
-    private UpdateRecommendationDetails updateRecommendationDetails;
+    private com.oracle.bmc.optimizer.model.UpdateRecommendationDetails updateRecommendationDetails;
 
     /**
      * Unique Oracle-assigned identifier for the request.
@@ -53,13 +54,14 @@ public class UpdateRecommendationRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateRecommendationDetails getBody$() {
+    public com.oracle.bmc.optimizer.model.UpdateRecommendationDetails getBody$() {
         return updateRecommendationDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateRecommendationRequest, UpdateRecommendationDetails> {
+                    UpdateRecommendationRequest,
+                    com.oracle.bmc.optimizer.model.UpdateRecommendationDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -124,7 +126,7 @@ public class UpdateRecommendationRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateRecommendationDetails body) {
+        public Builder body$(com.oracle.bmc.optimizer.model.UpdateRecommendationDetails body) {
             updateRecommendationDetails(body);
             return this;
         }

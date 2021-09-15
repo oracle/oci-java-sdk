@@ -18,12 +18,13 @@ import com.oracle.bmc.keymanagement.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class GenerateDataEncryptionKeyRequest
-        extends com.oracle.bmc.requests.BmcRequest<GenerateKeyDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.keymanagement.model.GenerateKeyDetails> {
 
     /**
      * GenerateKeyDetails
      */
-    private GenerateKeyDetails generateKeyDetails;
+    private com.oracle.bmc.keymanagement.model.GenerateKeyDetails generateKeyDetails;
 
     /**
      * Unique identifier for the request. If provided, the returned request ID
@@ -39,13 +40,14 @@ public class GenerateDataEncryptionKeyRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public GenerateKeyDetails getBody$() {
+    public com.oracle.bmc.keymanagement.model.GenerateKeyDetails getBody$() {
         return generateKeyDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    GenerateDataEncryptionKeyRequest, GenerateKeyDetails> {
+                    GenerateDataEncryptionKeyRequest,
+                    com.oracle.bmc.keymanagement.model.GenerateKeyDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -108,7 +110,7 @@ public class GenerateDataEncryptionKeyRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(GenerateKeyDetails body) {
+        public Builder body$(com.oracle.bmc.keymanagement.model.GenerateKeyDetails body) {
             generateKeyDetails(body);
             return this;
         }

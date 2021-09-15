@@ -100,7 +100,7 @@ public class ListSteeringPolicyAttachmentsRequest
     /**
      * The state of a resource.
      */
-    private SteeringPolicyAttachmentSummary.LifecycleState lifecycleState;
+    private com.oracle.bmc.dns.model.SteeringPolicyAttachmentSummary.LifecycleState lifecycleState;
 
     /**
      * The field by which to sort steering policy attachments. If unspecified, defaults to {@code timeCreated}.

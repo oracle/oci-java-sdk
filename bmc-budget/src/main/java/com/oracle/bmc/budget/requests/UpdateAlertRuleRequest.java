@@ -18,7 +18,8 @@ import com.oracle.bmc.budget.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class UpdateAlertRuleRequest
-        extends com.oracle.bmc.requests.BmcRequest<UpdateAlertRuleDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.budget.model.UpdateAlertRuleDetails> {
 
     /**
      * The unique Budget OCID
@@ -33,7 +34,7 @@ public class UpdateAlertRuleRequest
     /**
      * The information to be updated.
      */
-    private UpdateAlertRuleDetails updateAlertRuleDetails;
+    private com.oracle.bmc.budget.model.UpdateAlertRuleDetails updateAlertRuleDetails;
 
     /**
      * For optimistic concurrency control. In the PUT or DELETE call
@@ -56,13 +57,13 @@ public class UpdateAlertRuleRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateAlertRuleDetails getBody$() {
+    public com.oracle.bmc.budget.model.UpdateAlertRuleDetails getBody$() {
         return updateAlertRuleDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateAlertRuleRequest, UpdateAlertRuleDetails> {
+                    UpdateAlertRuleRequest, com.oracle.bmc.budget.model.UpdateAlertRuleDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -128,7 +129,7 @@ public class UpdateAlertRuleRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateAlertRuleDetails body) {
+        public Builder body$(com.oracle.bmc.budget.model.UpdateAlertRuleDetails body) {
             updateAlertRuleDetails(body);
             return this;
         }

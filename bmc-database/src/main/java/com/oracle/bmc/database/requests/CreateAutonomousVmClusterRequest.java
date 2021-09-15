@@ -18,12 +18,14 @@ import com.oracle.bmc.database.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class CreateAutonomousVmClusterRequest
-        extends com.oracle.bmc.requests.BmcRequest<CreateAutonomousVmClusterDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.database.model.CreateAutonomousVmClusterDetails> {
 
     /**
      * Request to create an Autonomous VM cluster.
      */
-    private CreateAutonomousVmClusterDetails createAutonomousVmClusterDetails;
+    private com.oracle.bmc.database.model.CreateAutonomousVmClusterDetails
+            createAutonomousVmClusterDetails;
 
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -47,13 +49,14 @@ public class CreateAutonomousVmClusterRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreateAutonomousVmClusterDetails getBody$() {
+    public com.oracle.bmc.database.model.CreateAutonomousVmClusterDetails getBody$() {
         return createAutonomousVmClusterDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CreateAutonomousVmClusterRequest, CreateAutonomousVmClusterDetails> {
+                    CreateAutonomousVmClusterRequest,
+                    com.oracle.bmc.database.model.CreateAutonomousVmClusterDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -117,7 +120,7 @@ public class CreateAutonomousVmClusterRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreateAutonomousVmClusterDetails body) {
+        public Builder body$(com.oracle.bmc.database.model.CreateAutonomousVmClusterDetails body) {
             createAutonomousVmClusterDetails(body);
             return this;
         }

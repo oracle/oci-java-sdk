@@ -17,12 +17,14 @@ import com.oracle.bmc.keymanagement.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
-public class CreateKeyRequest extends com.oracle.bmc.requests.BmcRequest<CreateKeyDetails> {
+public class CreateKeyRequest
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.keymanagement.model.CreateKeyDetails> {
 
     /**
      * CreateKeyDetails
      */
-    private CreateKeyDetails createKeyDetails;
+    private com.oracle.bmc.keymanagement.model.CreateKeyDetails createKeyDetails;
 
     /**
      * Unique identifier for the request. If provided, the returned request ID
@@ -49,13 +51,13 @@ public class CreateKeyRequest extends com.oracle.bmc.requests.BmcRequest<CreateK
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreateKeyDetails getBody$() {
+    public com.oracle.bmc.keymanagement.model.CreateKeyDetails getBody$() {
         return createKeyDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CreateKeyRequest, CreateKeyDetails> {
+                    CreateKeyRequest, com.oracle.bmc.keymanagement.model.CreateKeyDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -119,7 +121,7 @@ public class CreateKeyRequest extends com.oracle.bmc.requests.BmcRequest<CreateK
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreateKeyDetails body) {
+        public Builder body$(com.oracle.bmc.keymanagement.model.CreateKeyDetails body) {
             createKeyDetails(body);
             return this;
         }

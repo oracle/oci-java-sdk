@@ -18,7 +18,8 @@ import com.oracle.bmc.database.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class UpdateAutonomousDatabaseRequest
-        extends com.oracle.bmc.requests.BmcRequest<UpdateAutonomousDatabaseDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.database.model.UpdateAutonomousDatabaseDetails> {
 
     /**
      * The database [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
@@ -28,7 +29,8 @@ public class UpdateAutonomousDatabaseRequest
     /**
      * Request to update the properties of an Autonomous Database.
      */
-    private UpdateAutonomousDatabaseDetails updateAutonomousDatabaseDetails;
+    private com.oracle.bmc.database.model.UpdateAutonomousDatabaseDetails
+            updateAutonomousDatabaseDetails;
 
     /**
      * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
@@ -50,13 +52,14 @@ public class UpdateAutonomousDatabaseRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateAutonomousDatabaseDetails getBody$() {
+    public com.oracle.bmc.database.model.UpdateAutonomousDatabaseDetails getBody$() {
         return updateAutonomousDatabaseDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateAutonomousDatabaseRequest, UpdateAutonomousDatabaseDetails> {
+                    UpdateAutonomousDatabaseRequest,
+                    com.oracle.bmc.database.model.UpdateAutonomousDatabaseDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -121,7 +124,7 @@ public class UpdateAutonomousDatabaseRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateAutonomousDatabaseDetails body) {
+        public Builder body$(com.oracle.bmc.database.model.UpdateAutonomousDatabaseDetails body) {
             updateAutonomousDatabaseDetails(body);
             return this;
         }

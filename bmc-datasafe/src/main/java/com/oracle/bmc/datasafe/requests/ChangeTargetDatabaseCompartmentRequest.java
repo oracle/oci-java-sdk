@@ -18,7 +18,8 @@ import com.oracle.bmc.datasafe.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class ChangeTargetDatabaseCompartmentRequest
-        extends com.oracle.bmc.requests.BmcRequest<ChangeTargetDatabaseCompartmentDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.datasafe.model.ChangeTargetDatabaseCompartmentDetails> {
 
     /**
      * The OCID of the Data Safe target database.
@@ -28,7 +29,8 @@ public class ChangeTargetDatabaseCompartmentRequest
     /**
      * Details of the move compartment request.
      */
-    private ChangeTargetDatabaseCompartmentDetails changeTargetDatabaseCompartmentDetails;
+    private com.oracle.bmc.datasafe.model.ChangeTargetDatabaseCompartmentDetails
+            changeTargetDatabaseCompartmentDetails;
 
     /**
      * For optimistic concurrency control. In the PUT or DELETE call
@@ -60,14 +62,14 @@ public class ChangeTargetDatabaseCompartmentRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public ChangeTargetDatabaseCompartmentDetails getBody$() {
+    public com.oracle.bmc.datasafe.model.ChangeTargetDatabaseCompartmentDetails getBody$() {
         return changeTargetDatabaseCompartmentDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ChangeTargetDatabaseCompartmentRequest,
-                    ChangeTargetDatabaseCompartmentDetails> {
+                    com.oracle.bmc.datasafe.model.ChangeTargetDatabaseCompartmentDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -133,7 +135,8 @@ public class ChangeTargetDatabaseCompartmentRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(ChangeTargetDatabaseCompartmentDetails body) {
+        public Builder body$(
+                com.oracle.bmc.datasafe.model.ChangeTargetDatabaseCompartmentDetails body) {
             changeTargetDatabaseCompartmentDetails(body);
             return this;
         }

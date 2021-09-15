@@ -193,6 +193,15 @@ public class Shape {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("platformConfigOptions")
+        private ShapePlatformConfigOptions platformConfigOptions;
+
+        public Builder platformConfigOptions(ShapePlatformConfigOptions platformConfigOptions) {
+            this.platformConfigOptions = platformConfigOptions;
+            this.__explicitlySet__.add("platformConfigOptions");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -216,7 +225,8 @@ public class Shape {
                             ocpuOptions,
                             memoryOptions,
                             networkingBandwidthOptions,
-                            maxVnicAttachmentOptions);
+                            maxVnicAttachmentOptions,
+                            platformConfigOptions);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -241,7 +251,8 @@ public class Shape {
                             .ocpuOptions(o.getOcpuOptions())
                             .memoryOptions(o.getMemoryOptions())
                             .networkingBandwidthOptions(o.getNetworkingBandwidthOptions())
-                            .maxVnicAttachmentOptions(o.getMaxVnicAttachmentOptions());
+                            .maxVnicAttachmentOptions(o.getMaxVnicAttachmentOptions())
+                            .platformConfigOptions(o.getPlatformConfigOptions());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -418,6 +429,9 @@ public class Shape {
 
     @com.fasterxml.jackson.annotation.JsonProperty("maxVnicAttachmentOptions")
     ShapeMaxVnicAttachmentOptions maxVnicAttachmentOptions;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("platformConfigOptions")
+    ShapePlatformConfigOptions platformConfigOptions;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

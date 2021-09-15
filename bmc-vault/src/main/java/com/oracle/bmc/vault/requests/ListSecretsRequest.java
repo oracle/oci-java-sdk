@@ -145,7 +145,7 @@ public class ListSecretsRequest extends com.oracle.bmc.requests.BmcRequest<java.
      * A filter that returns only resources that match the specified lifecycle state. The state value is case-insensitive.
      *
      */
-    private SecretSummary.LifecycleState lifecycleState;
+    private com.oracle.bmc.vault.model.SecretSummary.LifecycleState lifecycleState;
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<

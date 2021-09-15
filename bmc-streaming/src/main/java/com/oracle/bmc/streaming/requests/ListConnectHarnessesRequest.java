@@ -135,7 +135,7 @@ public class ListConnectHarnessesRequest
      * A filter to only return resources that match the given lifecycle state. The state value is case-insensitive.
      *
      */
-    private ConnectHarnessSummary.LifecycleState lifecycleState;
+    private com.oracle.bmc.streaming.model.ConnectHarnessSummary.LifecycleState lifecycleState;
 
     /**
      * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a

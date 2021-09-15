@@ -18,7 +18,8 @@ import com.oracle.bmc.database.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class UpdateAutonomousContainerDatabaseRequest
-        extends com.oracle.bmc.requests.BmcRequest<UpdateAutonomousContainerDatabaseDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.database.model.UpdateAutonomousContainerDatabaseDetails> {
 
     /**
      * The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
@@ -28,7 +29,8 @@ public class UpdateAutonomousContainerDatabaseRequest
     /**
      * Request to update the properties of an Autonomous Container Database.
      */
-    private UpdateAutonomousContainerDatabaseDetails updateAutonomousContainerDatabaseDetails;
+    private com.oracle.bmc.database.model.UpdateAutonomousContainerDatabaseDetails
+            updateAutonomousContainerDatabaseDetails;
 
     /**
      * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
@@ -44,14 +46,14 @@ public class UpdateAutonomousContainerDatabaseRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateAutonomousContainerDatabaseDetails getBody$() {
+    public com.oracle.bmc.database.model.UpdateAutonomousContainerDatabaseDetails getBody$() {
         return updateAutonomousContainerDatabaseDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     UpdateAutonomousContainerDatabaseRequest,
-                    UpdateAutonomousContainerDatabaseDetails> {
+                    com.oracle.bmc.database.model.UpdateAutonomousContainerDatabaseDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -116,7 +118,8 @@ public class UpdateAutonomousContainerDatabaseRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateAutonomousContainerDatabaseDetails body) {
+        public Builder body$(
+                com.oracle.bmc.database.model.UpdateAutonomousContainerDatabaseDetails body) {
             updateAutonomousContainerDatabaseDetails(body);
             return this;
         }

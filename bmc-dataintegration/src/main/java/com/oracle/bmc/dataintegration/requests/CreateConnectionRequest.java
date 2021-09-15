@@ -18,7 +18,8 @@ import com.oracle.bmc.dataintegration.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class CreateConnectionRequest
-        extends com.oracle.bmc.requests.BmcRequest<CreateConnectionDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.dataintegration.model.CreateConnectionDetails> {
 
     /**
      * The workspace ID.
@@ -28,7 +29,7 @@ public class CreateConnectionRequest
     /**
      * The information needed to create a connection.
      */
-    private CreateConnectionDetails createConnectionDetails;
+    private com.oracle.bmc.dataintegration.model.CreateConnectionDetails createConnectionDetails;
 
     /**
      * Unique Oracle-assigned identifier for the request. If
@@ -50,13 +51,14 @@ public class CreateConnectionRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreateConnectionDetails getBody$() {
+    public com.oracle.bmc.dataintegration.model.CreateConnectionDetails getBody$() {
         return createConnectionDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CreateConnectionRequest, CreateConnectionDetails> {
+                    CreateConnectionRequest,
+                    com.oracle.bmc.dataintegration.model.CreateConnectionDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -121,7 +123,7 @@ public class CreateConnectionRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreateConnectionDetails body) {
+        public Builder body$(com.oracle.bmc.dataintegration.model.CreateConnectionDetails body) {
             createConnectionDetails(body);
             return this;
         }

@@ -18,7 +18,8 @@ import com.oracle.bmc.streaming.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class CreateGroupCursorRequest
-        extends com.oracle.bmc.requests.BmcRequest<CreateGroupCursorDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.streaming.model.CreateGroupCursorDetails> {
 
     /**
      * The OCID of the stream.
@@ -29,7 +30,7 @@ public class CreateGroupCursorRequest
     /**
      * The information used to create the cursor.
      */
-    private CreateGroupCursorDetails createGroupCursorDetails;
+    private com.oracle.bmc.streaming.model.CreateGroupCursorDetails createGroupCursorDetails;
 
     /**
      * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
@@ -44,13 +45,14 @@ public class CreateGroupCursorRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreateGroupCursorDetails getBody$() {
+    public com.oracle.bmc.streaming.model.CreateGroupCursorDetails getBody$() {
         return createGroupCursorDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CreateGroupCursorRequest, CreateGroupCursorDetails> {
+                    CreateGroupCursorRequest,
+                    com.oracle.bmc.streaming.model.CreateGroupCursorDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -114,7 +116,7 @@ public class CreateGroupCursorRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreateGroupCursorDetails body) {
+        public Builder body$(com.oracle.bmc.streaming.model.CreateGroupCursorDetails body) {
             createGroupCursorDetails(body);
             return this;
         }

@@ -17,7 +17,9 @@ import com.oracle.bmc.loganalytics.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
-public class FilterRequest extends com.oracle.bmc.requests.BmcRequest<FilterDetails> {
+public class FilterRequest
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.loganalytics.model.FilterDetails> {
 
     /**
      * The Logging Analytics namespace used for the request.
@@ -28,7 +30,7 @@ public class FilterRequest extends com.oracle.bmc.requests.BmcRequest<FilterDeta
     /**
      * Query string and filters to add or remove
      */
-    private FilterDetails filterDetails;
+    private com.oracle.bmc.loganalytics.model.FilterDetails filterDetails;
 
     /**
      * The client request ID for tracing.
@@ -41,7 +43,7 @@ public class FilterRequest extends com.oracle.bmc.requests.BmcRequest<FilterDeta
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public FilterDetails getBody$() {
+    public com.oracle.bmc.loganalytics.model.FilterDetails getBody$() {
         return filterDetails;
     }
 
@@ -51,7 +53,8 @@ public class FilterRequest extends com.oracle.bmc.requests.BmcRequest<FilterDeta
     }
 
     public static class Builder
-            implements com.oracle.bmc.requests.BmcRequest.Builder<FilterRequest, FilterDetails> {
+            implements com.oracle.bmc.requests.BmcRequest.Builder<
+                    FilterRequest, com.oracle.bmc.loganalytics.model.FilterDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -115,7 +118,7 @@ public class FilterRequest extends com.oracle.bmc.requests.BmcRequest<FilterDeta
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(FilterDetails body) {
+        public Builder body$(com.oracle.bmc.loganalytics.model.FilterDetails body) {
             filterDetails(body);
             return this;
         }

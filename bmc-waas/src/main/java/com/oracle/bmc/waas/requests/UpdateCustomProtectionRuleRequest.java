@@ -18,7 +18,8 @@ import com.oracle.bmc.waas.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class UpdateCustomProtectionRuleRequest
-        extends com.oracle.bmc.requests.BmcRequest<UpdateCustomProtectionRuleDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.waas.model.UpdateCustomProtectionRuleDetails> {
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the custom protection rule. This number is generated when the custom protection rule is added to the compartment.
@@ -28,7 +29,8 @@ public class UpdateCustomProtectionRuleRequest
     /**
      * The details of the custom protection rule to update.
      */
-    private UpdateCustomProtectionRuleDetails updateCustomProtectionRuleDetails;
+    private com.oracle.bmc.waas.model.UpdateCustomProtectionRuleDetails
+            updateCustomProtectionRuleDetails;
 
     /**
      * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
@@ -52,13 +54,14 @@ public class UpdateCustomProtectionRuleRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateCustomProtectionRuleDetails getBody$() {
+    public com.oracle.bmc.waas.model.UpdateCustomProtectionRuleDetails getBody$() {
         return updateCustomProtectionRuleDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateCustomProtectionRuleRequest, UpdateCustomProtectionRuleDetails> {
+                    UpdateCustomProtectionRuleRequest,
+                    com.oracle.bmc.waas.model.UpdateCustomProtectionRuleDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -124,7 +127,7 @@ public class UpdateCustomProtectionRuleRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateCustomProtectionRuleDetails body) {
+        public Builder body$(com.oracle.bmc.waas.model.UpdateCustomProtectionRuleDetails body) {
             updateCustomProtectionRuleDetails(body);
             return this;
         }

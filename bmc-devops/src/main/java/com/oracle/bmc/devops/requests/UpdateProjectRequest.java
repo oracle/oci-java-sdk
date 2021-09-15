@@ -17,7 +17,9 @@ import com.oracle.bmc.devops.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
-public class UpdateProjectRequest extends com.oracle.bmc.requests.BmcRequest<UpdateProjectDetails> {
+public class UpdateProjectRequest
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.devops.model.UpdateProjectDetails> {
 
     /**
      * Unique project identifier.
@@ -27,7 +29,7 @@ public class UpdateProjectRequest extends com.oracle.bmc.requests.BmcRequest<Upd
     /**
      * The information to be updated.
      */
-    private UpdateProjectDetails updateProjectDetails;
+    private com.oracle.bmc.devops.model.UpdateProjectDetails updateProjectDetails;
 
     /**
      * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match} parameter to the value of the etag from a previous GET or POST response for that resource. The resource will be updated or deleted only if the etag you provide matches the resource's current etag value.
@@ -45,13 +47,13 @@ public class UpdateProjectRequest extends com.oracle.bmc.requests.BmcRequest<Upd
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateProjectDetails getBody$() {
+    public com.oracle.bmc.devops.model.UpdateProjectDetails getBody$() {
         return updateProjectDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateProjectRequest, UpdateProjectDetails> {
+                    UpdateProjectRequest, com.oracle.bmc.devops.model.UpdateProjectDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -116,7 +118,7 @@ public class UpdateProjectRequest extends com.oracle.bmc.requests.BmcRequest<Upd
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateProjectDetails body) {
+        public Builder body$(com.oracle.bmc.devops.model.UpdateProjectDetails body) {
             updateProjectDetails(body);
             return this;
         }

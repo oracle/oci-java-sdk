@@ -18,12 +18,13 @@ import com.oracle.bmc.opsi.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class CreateDatabaseInsightRequest
-        extends com.oracle.bmc.requests.BmcRequest<CreateDatabaseInsightDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.opsi.model.CreateDatabaseInsightDetails> {
 
     /**
      * Details for the database for which a Database Insight resource will be created in Operations Insights.
      */
-    private CreateDatabaseInsightDetails createDatabaseInsightDetails;
+    private com.oracle.bmc.opsi.model.CreateDatabaseInsightDetails createDatabaseInsightDetails;
 
     /**
      * A token that uniquely identifies a request that can be retried in case of a timeout or
@@ -49,13 +50,14 @@ public class CreateDatabaseInsightRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreateDatabaseInsightDetails getBody$() {
+    public com.oracle.bmc.opsi.model.CreateDatabaseInsightDetails getBody$() {
         return createDatabaseInsightDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CreateDatabaseInsightRequest, CreateDatabaseInsightDetails> {
+                    CreateDatabaseInsightRequest,
+                    com.oracle.bmc.opsi.model.CreateDatabaseInsightDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -119,7 +121,7 @@ public class CreateDatabaseInsightRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreateDatabaseInsightDetails body) {
+        public Builder body$(com.oracle.bmc.opsi.model.CreateDatabaseInsightDetails body) {
             createDatabaseInsightDetails(body);
             return this;
         }

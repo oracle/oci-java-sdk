@@ -17,12 +17,14 @@ import com.oracle.bmc.tenantmanagercontrolplane.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
-public class CreateDomainRequest extends com.oracle.bmc.requests.BmcRequest<CreateDomainDetails> {
+public class CreateDomainRequest
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.tenantmanagercontrolplane.model.CreateDomainDetails> {
 
     /**
      * Parameters for domain creation.
      */
-    private CreateDomainDetails createDomainDetails;
+    private com.oracle.bmc.tenantmanagercontrolplane.model.CreateDomainDetails createDomainDetails;
 
     /**
      * A token that uniquely identifies a request, so it can be retried in case of a timeout or
@@ -45,13 +47,14 @@ public class CreateDomainRequest extends com.oracle.bmc.requests.BmcRequest<Crea
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreateDomainDetails getBody$() {
+    public com.oracle.bmc.tenantmanagercontrolplane.model.CreateDomainDetails getBody$() {
         return createDomainDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CreateDomainRequest, CreateDomainDetails> {
+                    CreateDomainRequest,
+                    com.oracle.bmc.tenantmanagercontrolplane.model.CreateDomainDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -115,7 +118,8 @@ public class CreateDomainRequest extends com.oracle.bmc.requests.BmcRequest<Crea
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreateDomainDetails body) {
+        public Builder body$(
+                com.oracle.bmc.tenantmanagercontrolplane.model.CreateDomainDetails body) {
             createDomainDetails(body);
             return this;
         }

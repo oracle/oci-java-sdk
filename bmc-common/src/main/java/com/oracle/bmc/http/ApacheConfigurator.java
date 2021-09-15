@@ -194,10 +194,18 @@ public class ApacheConfigurator
             return;
         }
         if (request.getBody$() != null) {
-            LOG.trace(
-                    "Adding Expect: 100-Continue, request {} has a body",
-                    request.getClass().getName());
-            ib.header(HTTP.EXPECT_DIRECTIVE, HTTP.EXPECT_CONTINUE);
+            if (ib.getHeaders().get(HTTP.EXPECT_DIRECTIVE) == null) {
+                LOG.trace(
+                        "Adding Expect: 100-Continue, request {} has a body",
+                        request.getClass().getName());
+                ib.header(HTTP.EXPECT_DIRECTIVE, HTTP.EXPECT_CONTINUE);
+            } else {
+                LOG.trace(
+                        "Not adding Expect: 100-Continue, request {} has header {} set to {}",
+                        request.getClass().getName(),
+                        HTTP.EXPECT_DIRECTIVE,
+                        ib.getHeaders().get(HTTP.EXPECT_DIRECTIVE));
+            }
         } else {
             LOG.trace(
                     "Not adding Expect: 100-Continue, request {} has no body",

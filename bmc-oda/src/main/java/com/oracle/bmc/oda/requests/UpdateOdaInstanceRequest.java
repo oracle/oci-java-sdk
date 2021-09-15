@@ -18,7 +18,8 @@ import com.oracle.bmc.oda.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class UpdateOdaInstanceRequest
-        extends com.oracle.bmc.requests.BmcRequest<UpdateOdaInstanceDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.oda.model.UpdateOdaInstanceDetails> {
 
     /**
      * Unique Digital Assistant instance identifier.
@@ -28,7 +29,7 @@ public class UpdateOdaInstanceRequest
     /**
      * The information to update.
      */
-    private UpdateOdaInstanceDetails updateOdaInstanceDetails;
+    private com.oracle.bmc.oda.model.UpdateOdaInstanceDetails updateOdaInstanceDetails;
 
     /**
      * For optimistic concurrency control in a PUT or DELETE call for
@@ -52,13 +53,13 @@ public class UpdateOdaInstanceRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateOdaInstanceDetails getBody$() {
+    public com.oracle.bmc.oda.model.UpdateOdaInstanceDetails getBody$() {
         return updateOdaInstanceDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateOdaInstanceRequest, UpdateOdaInstanceDetails> {
+                    UpdateOdaInstanceRequest, com.oracle.bmc.oda.model.UpdateOdaInstanceDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -123,7 +124,7 @@ public class UpdateOdaInstanceRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateOdaInstanceDetails body) {
+        public Builder body$(com.oracle.bmc.oda.model.UpdateOdaInstanceDetails body) {
             updateOdaInstanceDetails(body);
             return this;
         }

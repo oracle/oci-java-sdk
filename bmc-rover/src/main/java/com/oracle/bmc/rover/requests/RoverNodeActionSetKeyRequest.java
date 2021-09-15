@@ -18,7 +18,8 @@ import com.oracle.bmc.rover.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class RoverNodeActionSetKeyRequest
-        extends com.oracle.bmc.requests.BmcRequest<RoverNodeActionSetKeyDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.rover.model.RoverNodeActionSetKeyDetails> {
 
     /**
      * Unique RoverNode identifier
@@ -35,7 +36,7 @@ public class RoverNodeActionSetKeyRequest
     /**
      * The information to be updated.
      */
-    private RoverNodeActionSetKeyDetails roverNodeActionSetKeyDetails;
+    private com.oracle.bmc.rover.model.RoverNodeActionSetKeyDetails roverNodeActionSetKeyDetails;
 
     /**
      * For optimistic concurrency control. In the PUT or DELETE call
@@ -68,13 +69,14 @@ public class RoverNodeActionSetKeyRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public RoverNodeActionSetKeyDetails getBody$() {
+    public com.oracle.bmc.rover.model.RoverNodeActionSetKeyDetails getBody$() {
         return roverNodeActionSetKeyDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    RoverNodeActionSetKeyRequest, RoverNodeActionSetKeyDetails> {
+                    RoverNodeActionSetKeyRequest,
+                    com.oracle.bmc.rover.model.RoverNodeActionSetKeyDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -141,7 +143,7 @@ public class RoverNodeActionSetKeyRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(RoverNodeActionSetKeyDetails body) {
+        public Builder body$(com.oracle.bmc.rover.model.RoverNodeActionSetKeyDetails body) {
             roverNodeActionSetKeyDetails(body);
             return this;
         }

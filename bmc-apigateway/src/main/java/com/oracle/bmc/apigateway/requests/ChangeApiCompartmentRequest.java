@@ -18,7 +18,8 @@ import com.oracle.bmc.apigateway.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class ChangeApiCompartmentRequest
-        extends com.oracle.bmc.requests.BmcRequest<ChangeApiCompartmentDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.apigateway.model.ChangeApiCompartmentDetails> {
 
     /**
      * The ocid of the API.
@@ -28,7 +29,7 @@ public class ChangeApiCompartmentRequest
     /**
      * Details of the target compartment.
      */
-    private ChangeApiCompartmentDetails changeApiCompartmentDetails;
+    private com.oracle.bmc.apigateway.model.ChangeApiCompartmentDetails changeApiCompartmentDetails;
 
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -61,13 +62,14 @@ public class ChangeApiCompartmentRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public ChangeApiCompartmentDetails getBody$() {
+    public com.oracle.bmc.apigateway.model.ChangeApiCompartmentDetails getBody$() {
         return changeApiCompartmentDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    ChangeApiCompartmentRequest, ChangeApiCompartmentDetails> {
+                    ChangeApiCompartmentRequest,
+                    com.oracle.bmc.apigateway.model.ChangeApiCompartmentDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -133,7 +135,7 @@ public class ChangeApiCompartmentRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(ChangeApiCompartmentDetails body) {
+        public Builder body$(com.oracle.bmc.apigateway.model.ChangeApiCompartmentDetails body) {
             changeApiCompartmentDetails(body);
             return this;
         }

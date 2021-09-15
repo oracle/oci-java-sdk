@@ -18,7 +18,8 @@ import com.oracle.bmc.logging.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class UpdateUnifiedAgentConfigurationRequest
-        extends com.oracle.bmc.requests.BmcRequest<UpdateUnifiedAgentConfigurationDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.logging.model.UpdateUnifiedAgentConfigurationDetails> {
 
     /**
      * The OCID of the Unified Agent configuration.
@@ -29,7 +30,8 @@ public class UpdateUnifiedAgentConfigurationRequest
      * Unified agent configuration to update. Empty group associations list doesn't modify the list, null value for group association clears all the previous associations.
      *
      */
-    private UpdateUnifiedAgentConfigurationDetails updateUnifiedAgentConfigurationDetails;
+    private com.oracle.bmc.logging.model.UpdateUnifiedAgentConfigurationDetails
+            updateUnifiedAgentConfigurationDetails;
 
     /**
      * For optimistic concurrency control. In the PUT or DELETE call for a
@@ -54,14 +56,14 @@ public class UpdateUnifiedAgentConfigurationRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateUnifiedAgentConfigurationDetails getBody$() {
+    public com.oracle.bmc.logging.model.UpdateUnifiedAgentConfigurationDetails getBody$() {
         return updateUnifiedAgentConfigurationDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     UpdateUnifiedAgentConfigurationRequest,
-                    UpdateUnifiedAgentConfigurationDetails> {
+                    com.oracle.bmc.logging.model.UpdateUnifiedAgentConfigurationDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -126,7 +128,8 @@ public class UpdateUnifiedAgentConfigurationRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateUnifiedAgentConfigurationDetails body) {
+        public Builder body$(
+                com.oracle.bmc.logging.model.UpdateUnifiedAgentConfigurationDetails body) {
             updateUnifiedAgentConfigurationDetails(body);
             return this;
         }

@@ -18,7 +18,8 @@ import com.oracle.bmc.database.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class EnableDatabaseManagementRequest
-        extends com.oracle.bmc.requests.BmcRequest<EnableDatabaseManagementDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.database.model.EnableDatabaseManagementDetails> {
 
     /**
      * The database [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
@@ -28,7 +29,8 @@ public class EnableDatabaseManagementRequest
     /**
      * Request to enable the Database Management service for an Oracle Database located in Oracle Cloud Infrastructure.
      */
-    private EnableDatabaseManagementDetails enableDatabaseManagementDetails;
+    private com.oracle.bmc.database.model.EnableDatabaseManagementDetails
+            enableDatabaseManagementDetails;
 
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -60,13 +62,14 @@ public class EnableDatabaseManagementRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public EnableDatabaseManagementDetails getBody$() {
+    public com.oracle.bmc.database.model.EnableDatabaseManagementDetails getBody$() {
         return enableDatabaseManagementDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    EnableDatabaseManagementRequest, EnableDatabaseManagementDetails> {
+                    EnableDatabaseManagementRequest,
+                    com.oracle.bmc.database.model.EnableDatabaseManagementDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -132,7 +135,7 @@ public class EnableDatabaseManagementRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(EnableDatabaseManagementDetails body) {
+        public Builder body$(com.oracle.bmc.database.model.EnableDatabaseManagementDetails body) {
             enableDatabaseManagementDetails(body);
             return this;
         }

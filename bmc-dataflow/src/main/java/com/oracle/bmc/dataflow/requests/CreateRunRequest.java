@@ -17,13 +17,14 @@ import com.oracle.bmc.dataflow.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
-public class CreateRunRequest extends com.oracle.bmc.requests.BmcRequest<CreateRunDetails> {
+public class CreateRunRequest
+        extends com.oracle.bmc.requests.BmcRequest<com.oracle.bmc.dataflow.model.CreateRunDetails> {
 
     /**
      * Details for creating a run of an application.
      *
      */
-    private CreateRunDetails createRunDetails;
+    private com.oracle.bmc.dataflow.model.CreateRunDetails createRunDetails;
 
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or server error
@@ -47,13 +48,13 @@ public class CreateRunRequest extends com.oracle.bmc.requests.BmcRequest<CreateR
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreateRunDetails getBody$() {
+    public com.oracle.bmc.dataflow.model.CreateRunDetails getBody$() {
         return createRunDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CreateRunRequest, CreateRunDetails> {
+                    CreateRunRequest, com.oracle.bmc.dataflow.model.CreateRunDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -117,7 +118,7 @@ public class CreateRunRequest extends com.oracle.bmc.requests.BmcRequest<CreateR
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreateRunDetails body) {
+        public Builder body$(com.oracle.bmc.dataflow.model.CreateRunDetails body) {
             createRunDetails(body);
             return this;
         }

@@ -41,7 +41,8 @@ public class ListOAuthClientCredentialsRequest
      * A filter to only return resources that match the given lifecycle state.  The state value is case-insensitive.
      *
      */
-    private OAuth2ClientCredentialSummary.LifecycleState lifecycleState;
+    private com.oracle.bmc.identity.model.OAuth2ClientCredentialSummary.LifecycleState
+            lifecycleState;
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<

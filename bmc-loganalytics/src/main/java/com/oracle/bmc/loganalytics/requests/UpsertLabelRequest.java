@@ -18,7 +18,8 @@ import com.oracle.bmc.loganalytics.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class UpsertLabelRequest
-        extends com.oracle.bmc.requests.BmcRequest<UpsertLogAnalyticsLabelDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.loganalytics.model.UpsertLogAnalyticsLabelDetails> {
 
     /**
      * The Logging Analytics namespace used for the request.
@@ -29,7 +30,8 @@ public class UpsertLabelRequest
     /**
      * Details for the new LogAnalyticsTagDetails.
      */
-    private UpsertLogAnalyticsLabelDetails upsertLogAnalyticsLabelDetails;
+    private com.oracle.bmc.loganalytics.model.UpsertLogAnalyticsLabelDetails
+            upsertLogAnalyticsLabelDetails;
 
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -62,7 +64,7 @@ public class UpsertLabelRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpsertLogAnalyticsLabelDetails getBody$() {
+    public com.oracle.bmc.loganalytics.model.UpsertLogAnalyticsLabelDetails getBody$() {
         return upsertLogAnalyticsLabelDetails;
     }
 
@@ -73,7 +75,8 @@ public class UpsertLabelRequest
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpsertLabelRequest, UpsertLogAnalyticsLabelDetails> {
+                    UpsertLabelRequest,
+                    com.oracle.bmc.loganalytics.model.UpsertLogAnalyticsLabelDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -139,7 +142,8 @@ public class UpsertLabelRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpsertLogAnalyticsLabelDetails body) {
+        public Builder body$(
+                com.oracle.bmc.loganalytics.model.UpsertLogAnalyticsLabelDetails body) {
             upsertLogAnalyticsLabelDetails(body);
             return this;
         }

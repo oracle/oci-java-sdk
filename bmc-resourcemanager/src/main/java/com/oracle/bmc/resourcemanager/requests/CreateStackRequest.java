@@ -17,12 +17,14 @@ import com.oracle.bmc.resourcemanager.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
-public class CreateStackRequest extends com.oracle.bmc.requests.BmcRequest<CreateStackDetails> {
+public class CreateStackRequest
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.resourcemanager.model.CreateStackDetails> {
 
     /**
      * The properties for creating a stack.
      */
-    private CreateStackDetails createStackDetails;
+    private com.oracle.bmc.resourcemanager.model.CreateStackDetails createStackDetails;
 
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
@@ -47,13 +49,13 @@ public class CreateStackRequest extends com.oracle.bmc.requests.BmcRequest<Creat
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreateStackDetails getBody$() {
+    public com.oracle.bmc.resourcemanager.model.CreateStackDetails getBody$() {
         return createStackDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CreateStackRequest, CreateStackDetails> {
+                    CreateStackRequest, com.oracle.bmc.resourcemanager.model.CreateStackDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -117,7 +119,7 @@ public class CreateStackRequest extends com.oracle.bmc.requests.BmcRequest<Creat
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreateStackDetails body) {
+        public Builder body$(com.oracle.bmc.resourcemanager.model.CreateStackDetails body) {
             createStackDetails(body);
             return this;
         }

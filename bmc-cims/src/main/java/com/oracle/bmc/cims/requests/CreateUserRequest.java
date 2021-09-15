@@ -17,12 +17,13 @@ import com.oracle.bmc.cims.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
-public class CreateUserRequest extends com.oracle.bmc.requests.BmcRequest<CreateUserDetails> {
+public class CreateUserRequest
+        extends com.oracle.bmc.requests.BmcRequest<com.oracle.bmc.cims.model.CreateUserDetails> {
 
     /**
      * User information
      */
-    private CreateUserDetails createUserDetails;
+    private com.oracle.bmc.cims.model.CreateUserDetails createUserDetails;
 
     /**
      * User OCID for Oracle Identity Cloud Service (IDCS) users who also have a federated Oracle Cloud Infrastructure account.
@@ -45,13 +46,13 @@ public class CreateUserRequest extends com.oracle.bmc.requests.BmcRequest<Create
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreateUserDetails getBody$() {
+    public com.oracle.bmc.cims.model.CreateUserDetails getBody$() {
         return createUserDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CreateUserRequest, CreateUserDetails> {
+                    CreateUserRequest, com.oracle.bmc.cims.model.CreateUserDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -116,7 +117,7 @@ public class CreateUserRequest extends com.oracle.bmc.requests.BmcRequest<Create
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreateUserDetails body) {
+        public Builder body$(com.oracle.bmc.cims.model.CreateUserDetails body) {
             createUserDetails(body);
             return this;
         }

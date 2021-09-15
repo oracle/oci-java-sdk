@@ -18,7 +18,8 @@ import com.oracle.bmc.opsi.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class UpdateEnterpriseManagerBridgeRequest
-        extends com.oracle.bmc.requests.BmcRequest<UpdateEnterpriseManagerBridgeDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.opsi.model.UpdateEnterpriseManagerBridgeDetails> {
 
     /**
      * Unique Enterprise Manager bridge identifier
@@ -28,7 +29,8 @@ public class UpdateEnterpriseManagerBridgeRequest
     /**
      * The configuration to be updated.
      */
-    private UpdateEnterpriseManagerBridgeDetails updateEnterpriseManagerBridgeDetails;
+    private com.oracle.bmc.opsi.model.UpdateEnterpriseManagerBridgeDetails
+            updateEnterpriseManagerBridgeDetails;
 
     /**
      * Used for optimistic concurrency control. In the update or delete call for a resource, set the {@code if-match}
@@ -51,13 +53,14 @@ public class UpdateEnterpriseManagerBridgeRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateEnterpriseManagerBridgeDetails getBody$() {
+    public com.oracle.bmc.opsi.model.UpdateEnterpriseManagerBridgeDetails getBody$() {
         return updateEnterpriseManagerBridgeDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateEnterpriseManagerBridgeRequest, UpdateEnterpriseManagerBridgeDetails> {
+                    UpdateEnterpriseManagerBridgeRequest,
+                    com.oracle.bmc.opsi.model.UpdateEnterpriseManagerBridgeDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -122,7 +125,7 @@ public class UpdateEnterpriseManagerBridgeRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateEnterpriseManagerBridgeDetails body) {
+        public Builder body$(com.oracle.bmc.opsi.model.UpdateEnterpriseManagerBridgeDetails body) {
             updateEnterpriseManagerBridgeDetails(body);
             return this;
         }

@@ -18,7 +18,8 @@ import com.oracle.bmc.email.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class UpdateEmailDomainRequest
-        extends com.oracle.bmc.requests.BmcRequest<UpdateEmailDomainDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.email.model.UpdateEmailDomainDetails> {
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this email domain.
@@ -28,7 +29,7 @@ public class UpdateEmailDomainRequest
     /**
      * The new email domain attributes to apply.
      */
-    private UpdateEmailDomainDetails updateEmailDomainDetails;
+    private com.oracle.bmc.email.model.UpdateEmailDomainDetails updateEmailDomainDetails;
 
     /**
      * Used for optimistic concurrency control. In the update or delete call for a resource, set the {@code if-match}
@@ -49,13 +50,13 @@ public class UpdateEmailDomainRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateEmailDomainDetails getBody$() {
+    public com.oracle.bmc.email.model.UpdateEmailDomainDetails getBody$() {
         return updateEmailDomainDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateEmailDomainRequest, UpdateEmailDomainDetails> {
+                    UpdateEmailDomainRequest, com.oracle.bmc.email.model.UpdateEmailDomainDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -120,7 +121,7 @@ public class UpdateEmailDomainRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateEmailDomainDetails body) {
+        public Builder body$(com.oracle.bmc.email.model.UpdateEmailDomainDetails body) {
             updateEmailDomainDetails(body);
             return this;
         }

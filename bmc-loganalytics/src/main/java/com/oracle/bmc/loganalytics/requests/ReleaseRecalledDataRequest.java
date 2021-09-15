@@ -18,7 +18,8 @@ import com.oracle.bmc.loganalytics.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class ReleaseRecalledDataRequest
-        extends com.oracle.bmc.requests.BmcRequest<ReleaseRecalledDataDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.loganalytics.model.ReleaseRecalledDataDetails> {
 
     /**
      * The Logging Analytics namespace used for the request.
@@ -29,7 +30,7 @@ public class ReleaseRecalledDataRequest
     /**
      * This is the input to release recalled data
      */
-    private ReleaseRecalledDataDetails releaseRecalledDataDetails;
+    private com.oracle.bmc.loganalytics.model.ReleaseRecalledDataDetails releaseRecalledDataDetails;
 
     /**
      * The client request ID for tracing.
@@ -62,7 +63,7 @@ public class ReleaseRecalledDataRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public ReleaseRecalledDataDetails getBody$() {
+    public com.oracle.bmc.loganalytics.model.ReleaseRecalledDataDetails getBody$() {
         return releaseRecalledDataDetails;
     }
 
@@ -73,7 +74,8 @@ public class ReleaseRecalledDataRequest
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    ReleaseRecalledDataRequest, ReleaseRecalledDataDetails> {
+                    ReleaseRecalledDataRequest,
+                    com.oracle.bmc.loganalytics.model.ReleaseRecalledDataDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -139,7 +141,7 @@ public class ReleaseRecalledDataRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(ReleaseRecalledDataDetails body) {
+        public Builder body$(com.oracle.bmc.loganalytics.model.ReleaseRecalledDataDetails body) {
             releaseRecalledDataDetails(body);
             return this;
         }

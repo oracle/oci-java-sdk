@@ -18,7 +18,8 @@ import com.oracle.bmc.networkloadbalancer.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class CreateBackendSetRequest
-        extends com.oracle.bmc.requests.BmcRequest<CreateBackendSetDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.networkloadbalancer.model.CreateBackendSetDetails> {
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the network load balancer to update.
@@ -28,7 +29,8 @@ public class CreateBackendSetRequest
     /**
      * The details for adding a backend set.
      */
-    private CreateBackendSetDetails createBackendSetDetails;
+    private com.oracle.bmc.networkloadbalancer.model.CreateBackendSetDetails
+            createBackendSetDetails;
 
     /**
      * The unique Oracle-assigned identifier for the request. If you must contact Oracle about a
@@ -63,13 +65,14 @@ public class CreateBackendSetRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreateBackendSetDetails getBody$() {
+    public com.oracle.bmc.networkloadbalancer.model.CreateBackendSetDetails getBody$() {
         return createBackendSetDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CreateBackendSetRequest, CreateBackendSetDetails> {
+                    CreateBackendSetRequest,
+                    com.oracle.bmc.networkloadbalancer.model.CreateBackendSetDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -135,7 +138,8 @@ public class CreateBackendSetRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreateBackendSetDetails body) {
+        public Builder body$(
+                com.oracle.bmc.networkloadbalancer.model.CreateBackendSetDetails body) {
             createBackendSetDetails(body);
             return this;
         }

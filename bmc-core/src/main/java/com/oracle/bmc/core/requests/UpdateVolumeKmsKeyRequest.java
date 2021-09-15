@@ -18,7 +18,8 @@ import com.oracle.bmc.core.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class UpdateVolumeKmsKeyRequest
-        extends com.oracle.bmc.requests.BmcRequest<UpdateVolumeKmsKeyDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.core.model.UpdateVolumeKmsKeyDetails> {
 
     /**
      * The OCID of the volume.
@@ -28,7 +29,7 @@ public class UpdateVolumeKmsKeyRequest
     /**
      * Updates the Key Management master encryption key assigned to the specified volume.
      */
-    private UpdateVolumeKmsKeyDetails updateVolumeKmsKeyDetails;
+    private com.oracle.bmc.core.model.UpdateVolumeKmsKeyDetails updateVolumeKmsKeyDetails;
 
     /**
      * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
@@ -44,13 +45,14 @@ public class UpdateVolumeKmsKeyRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateVolumeKmsKeyDetails getBody$() {
+    public com.oracle.bmc.core.model.UpdateVolumeKmsKeyDetails getBody$() {
         return updateVolumeKmsKeyDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateVolumeKmsKeyRequest, UpdateVolumeKmsKeyDetails> {
+                    UpdateVolumeKmsKeyRequest,
+                    com.oracle.bmc.core.model.UpdateVolumeKmsKeyDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -114,7 +116,7 @@ public class UpdateVolumeKmsKeyRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateVolumeKmsKeyDetails body) {
+        public Builder body$(com.oracle.bmc.core.model.UpdateVolumeKmsKeyDetails body) {
             updateVolumeKmsKeyDetails(body);
             return this;
         }

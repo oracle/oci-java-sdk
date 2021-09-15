@@ -126,7 +126,7 @@ public class ListDbNodesRequest extends com.oracle.bmc.requests.BmcRequest<java.
     /**
      * A filter to return only resources that match the given lifecycle state exactly.
      */
-    private DbNodeSummary.LifecycleState lifecycleState;
+    private com.oracle.bmc.database.model.DbNodeSummary.LifecycleState lifecycleState;
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<

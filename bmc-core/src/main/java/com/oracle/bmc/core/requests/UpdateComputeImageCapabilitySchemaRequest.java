@@ -18,7 +18,8 @@ import com.oracle.bmc.core.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class UpdateComputeImageCapabilitySchemaRequest
-        extends com.oracle.bmc.requests.BmcRequest<UpdateComputeImageCapabilitySchemaDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.core.model.UpdateComputeImageCapabilitySchemaDetails> {
 
     /**
      * The id of the compute image capability schema or the image ocid
@@ -28,7 +29,8 @@ public class UpdateComputeImageCapabilitySchemaRequest
     /**
      * Updates the freeFormTags, definedTags, and display name of the image capability schema
      */
-    private UpdateComputeImageCapabilitySchemaDetails updateComputeImageCapabilitySchemaDetails;
+    private com.oracle.bmc.core.model.UpdateComputeImageCapabilitySchemaDetails
+            updateComputeImageCapabilitySchemaDetails;
 
     /**
      * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
@@ -44,14 +46,14 @@ public class UpdateComputeImageCapabilitySchemaRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateComputeImageCapabilitySchemaDetails getBody$() {
+    public com.oracle.bmc.core.model.UpdateComputeImageCapabilitySchemaDetails getBody$() {
         return updateComputeImageCapabilitySchemaDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     UpdateComputeImageCapabilitySchemaRequest,
-                    UpdateComputeImageCapabilitySchemaDetails> {
+                    com.oracle.bmc.core.model.UpdateComputeImageCapabilitySchemaDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -116,7 +118,8 @@ public class UpdateComputeImageCapabilitySchemaRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateComputeImageCapabilitySchemaDetails body) {
+        public Builder body$(
+                com.oracle.bmc.core.model.UpdateComputeImageCapabilitySchemaDetails body) {
             updateComputeImageCapabilitySchemaDetails(body);
             return this;
         }

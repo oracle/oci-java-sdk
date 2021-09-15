@@ -17,7 +17,9 @@ import com.oracle.bmc.keymanagement.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
-public class BackupVaultRequest extends com.oracle.bmc.requests.BmcRequest<BackupVaultDetails> {
+public class BackupVaultRequest
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.keymanagement.model.BackupVaultDetails> {
 
     /**
      * The OCID of the vault.
@@ -56,7 +58,7 @@ public class BackupVaultRequest extends com.oracle.bmc.requests.BmcRequest<Backu
     /**
      * BackupVaultDetails
      */
-    private BackupVaultDetails backupVaultDetails;
+    private com.oracle.bmc.keymanagement.model.BackupVaultDetails backupVaultDetails;
 
     /**
      * Alternative accessor for the body parameter.
@@ -64,13 +66,13 @@ public class BackupVaultRequest extends com.oracle.bmc.requests.BmcRequest<Backu
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public BackupVaultDetails getBody$() {
+    public com.oracle.bmc.keymanagement.model.BackupVaultDetails getBody$() {
         return backupVaultDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    BackupVaultRequest, BackupVaultDetails> {
+                    BackupVaultRequest, com.oracle.bmc.keymanagement.model.BackupVaultDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -136,7 +138,7 @@ public class BackupVaultRequest extends com.oracle.bmc.requests.BmcRequest<Backu
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(BackupVaultDetails body) {
+        public Builder body$(com.oracle.bmc.keymanagement.model.BackupVaultDetails body) {
             backupVaultDetails(body);
             return this;
         }

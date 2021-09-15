@@ -18,12 +18,14 @@ import com.oracle.bmc.datacatalog.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class AttachCatalogPrivateEndpointRequest
-        extends com.oracle.bmc.requests.BmcRequest<AttachCatalogPrivateEndpointDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.datacatalog.model.AttachCatalogPrivateEndpointDetails> {
 
     /**
      * Details for private reverse connection endpoint to be used for attachment.
      */
-    private AttachCatalogPrivateEndpointDetails attachCatalogPrivateEndpointDetails;
+    private com.oracle.bmc.datacatalog.model.AttachCatalogPrivateEndpointDetails
+            attachCatalogPrivateEndpointDetails;
 
     /**
      * Unique catalog identifier.
@@ -61,13 +63,14 @@ public class AttachCatalogPrivateEndpointRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public AttachCatalogPrivateEndpointDetails getBody$() {
+    public com.oracle.bmc.datacatalog.model.AttachCatalogPrivateEndpointDetails getBody$() {
         return attachCatalogPrivateEndpointDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    AttachCatalogPrivateEndpointRequest, AttachCatalogPrivateEndpointDetails> {
+                    AttachCatalogPrivateEndpointRequest,
+                    com.oracle.bmc.datacatalog.model.AttachCatalogPrivateEndpointDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -133,7 +136,8 @@ public class AttachCatalogPrivateEndpointRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(AttachCatalogPrivateEndpointDetails body) {
+        public Builder body$(
+                com.oracle.bmc.datacatalog.model.AttachCatalogPrivateEndpointDetails body) {
             attachCatalogPrivateEndpointDetails(body);
             return this;
         }

@@ -18,12 +18,14 @@ import com.oracle.bmc.devops.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class CreateDeployEnvironmentRequest
-        extends com.oracle.bmc.requests.BmcRequest<CreateDeployEnvironmentDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.devops.model.CreateDeployEnvironmentDetails> {
 
     /**
      * Details for the new deployment environment.
      */
-    private CreateDeployEnvironmentDetails createDeployEnvironmentDetails;
+    private com.oracle.bmc.devops.model.CreateDeployEnvironmentDetails
+            createDeployEnvironmentDetails;
 
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again. Retry tokens expire after 24 hours, but can be invalidated earlier due to conflicting operations. For example, if a resource has been deleted and purged from the system, then a retry of the original creation request might be rejected.
@@ -41,13 +43,14 @@ public class CreateDeployEnvironmentRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreateDeployEnvironmentDetails getBody$() {
+    public com.oracle.bmc.devops.model.CreateDeployEnvironmentDetails getBody$() {
         return createDeployEnvironmentDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CreateDeployEnvironmentRequest, CreateDeployEnvironmentDetails> {
+                    CreateDeployEnvironmentRequest,
+                    com.oracle.bmc.devops.model.CreateDeployEnvironmentDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -111,7 +114,7 @@ public class CreateDeployEnvironmentRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreateDeployEnvironmentDetails body) {
+        public Builder body$(com.oracle.bmc.devops.model.CreateDeployEnvironmentDetails body) {
             createDeployEnvironmentDetails(body);
             return this;
         }

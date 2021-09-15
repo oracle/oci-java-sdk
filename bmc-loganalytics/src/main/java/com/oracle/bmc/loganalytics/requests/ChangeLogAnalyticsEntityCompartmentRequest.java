@@ -18,7 +18,8 @@ import com.oracle.bmc.loganalytics.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class ChangeLogAnalyticsEntityCompartmentRequest
-        extends com.oracle.bmc.requests.BmcRequest<ChangeLogAnalyticsEntityCompartmentDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.loganalytics.model.ChangeLogAnalyticsEntityCompartmentDetails> {
 
     /**
      * The Logging Analytics namespace used for the request.
@@ -35,7 +36,8 @@ public class ChangeLogAnalyticsEntityCompartmentRequest
     /**
      * Log analytics entity compartment Id to be updated.
      */
-    private ChangeLogAnalyticsEntityCompartmentDetails changeLogAnalyticsEntityCompartmentDetails;
+    private com.oracle.bmc.loganalytics.model.ChangeLogAnalyticsEntityCompartmentDetails
+            changeLogAnalyticsEntityCompartmentDetails;
 
     /**
      * For optimistic concurrency control. In the PUT or DELETE call
@@ -68,7 +70,7 @@ public class ChangeLogAnalyticsEntityCompartmentRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public ChangeLogAnalyticsEntityCompartmentDetails getBody$() {
+    public com.oracle.bmc.loganalytics.model.ChangeLogAnalyticsEntityCompartmentDetails getBody$() {
         return changeLogAnalyticsEntityCompartmentDetails;
     }
 
@@ -80,7 +82,7 @@ public class ChangeLogAnalyticsEntityCompartmentRequest
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ChangeLogAnalyticsEntityCompartmentRequest,
-                    ChangeLogAnalyticsEntityCompartmentDetails> {
+                    com.oracle.bmc.loganalytics.model.ChangeLogAnalyticsEntityCompartmentDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -148,7 +150,8 @@ public class ChangeLogAnalyticsEntityCompartmentRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(ChangeLogAnalyticsEntityCompartmentDetails body) {
+        public Builder body$(
+                com.oracle.bmc.loganalytics.model.ChangeLogAnalyticsEntityCompartmentDetails body) {
             changeLogAnalyticsEntityCompartmentDetails(body);
             return this;
         }

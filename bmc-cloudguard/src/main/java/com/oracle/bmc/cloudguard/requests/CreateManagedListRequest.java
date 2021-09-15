@@ -18,12 +18,13 @@ import com.oracle.bmc.cloudguard.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class CreateManagedListRequest
-        extends com.oracle.bmc.requests.BmcRequest<CreateManagedListDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.cloudguard.model.CreateManagedListDetails> {
 
     /**
      * Details for the new ManagedList.
      */
-    private CreateManagedListDetails createManagedListDetails;
+    private com.oracle.bmc.cloudguard.model.CreateManagedListDetails createManagedListDetails;
 
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -46,13 +47,14 @@ public class CreateManagedListRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreateManagedListDetails getBody$() {
+    public com.oracle.bmc.cloudguard.model.CreateManagedListDetails getBody$() {
         return createManagedListDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CreateManagedListRequest, CreateManagedListDetails> {
+                    CreateManagedListRequest,
+                    com.oracle.bmc.cloudguard.model.CreateManagedListDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -116,7 +118,7 @@ public class CreateManagedListRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreateManagedListDetails body) {
+        public Builder body$(com.oracle.bmc.cloudguard.model.CreateManagedListDetails body) {
             createManagedListDetails(body);
             return this;
         }

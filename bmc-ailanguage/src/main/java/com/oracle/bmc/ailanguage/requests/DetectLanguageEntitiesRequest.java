@@ -18,7 +18,8 @@ import com.oracle.bmc.ailanguage.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class DetectLanguageEntitiesRequest
-        extends com.oracle.bmc.requests.BmcRequest<DetectLanguageEntitiesDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.ailanguage.model.DetectLanguageEntitiesDetails> {
 
     /**
      * The details to make a Entity detect call.
@@ -26,7 +27,8 @@ public class DetectLanguageEntitiesRequest
      *            to use the extended transition period for complying"}}
      *
      */
-    private DetectLanguageEntitiesDetails detectLanguageEntitiesDetails;
+    private com.oracle.bmc.ailanguage.model.DetectLanguageEntitiesDetails
+            detectLanguageEntitiesDetails;
 
     /**
      * The client request ID for tracing.
@@ -51,13 +53,14 @@ public class DetectLanguageEntitiesRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public DetectLanguageEntitiesDetails getBody$() {
+    public com.oracle.bmc.ailanguage.model.DetectLanguageEntitiesDetails getBody$() {
         return detectLanguageEntitiesDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    DetectLanguageEntitiesRequest, DetectLanguageEntitiesDetails> {
+                    DetectLanguageEntitiesRequest,
+                    com.oracle.bmc.ailanguage.model.DetectLanguageEntitiesDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -122,7 +125,7 @@ public class DetectLanguageEntitiesRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(DetectLanguageEntitiesDetails body) {
+        public Builder body$(com.oracle.bmc.ailanguage.model.DetectLanguageEntitiesDetails body) {
             detectLanguageEntitiesDetails(body);
             return this;
         }

@@ -18,7 +18,8 @@ import com.oracle.bmc.core.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class ChangeDedicatedVmHostCompartmentRequest
-        extends com.oracle.bmc.requests.BmcRequest<ChangeDedicatedVmHostCompartmentDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.core.model.ChangeDedicatedVmHostCompartmentDetails> {
 
     /**
      * The OCID of the dedicated VM host.
@@ -28,7 +29,8 @@ public class ChangeDedicatedVmHostCompartmentRequest
     /**
      * The request to move the dedicated virtual machine host to a different compartment.
      */
-    private ChangeDedicatedVmHostCompartmentDetails changeDedicatedVmHostCompartmentDetails;
+    private com.oracle.bmc.core.model.ChangeDedicatedVmHostCompartmentDetails
+            changeDedicatedVmHostCompartmentDetails;
 
     /**
      * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
@@ -61,14 +63,14 @@ public class ChangeDedicatedVmHostCompartmentRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public ChangeDedicatedVmHostCompartmentDetails getBody$() {
+    public com.oracle.bmc.core.model.ChangeDedicatedVmHostCompartmentDetails getBody$() {
         return changeDedicatedVmHostCompartmentDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ChangeDedicatedVmHostCompartmentRequest,
-                    ChangeDedicatedVmHostCompartmentDetails> {
+                    com.oracle.bmc.core.model.ChangeDedicatedVmHostCompartmentDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -134,7 +136,8 @@ public class ChangeDedicatedVmHostCompartmentRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(ChangeDedicatedVmHostCompartmentDetails body) {
+        public Builder body$(
+                com.oracle.bmc.core.model.ChangeDedicatedVmHostCompartmentDetails body) {
             changeDedicatedVmHostCompartmentDetails(body);
             return this;
         }

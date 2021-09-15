@@ -18,7 +18,8 @@ import com.oracle.bmc.database.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class UpdateDatabaseSoftwareImageRequest
-        extends com.oracle.bmc.requests.BmcRequest<UpdateDatabaseSoftwareImageDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.database.model.UpdateDatabaseSoftwareImageDetails> {
 
     /**
      * The DB system [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
@@ -28,7 +29,8 @@ public class UpdateDatabaseSoftwareImageRequest
     /**
      * Request to update the properties of a DB system.
      */
-    private UpdateDatabaseSoftwareImageDetails updateDatabaseSoftwareImageDetails;
+    private com.oracle.bmc.database.model.UpdateDatabaseSoftwareImageDetails
+            updateDatabaseSoftwareImageDetails;
 
     /**
      * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
@@ -44,13 +46,14 @@ public class UpdateDatabaseSoftwareImageRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateDatabaseSoftwareImageDetails getBody$() {
+    public com.oracle.bmc.database.model.UpdateDatabaseSoftwareImageDetails getBody$() {
         return updateDatabaseSoftwareImageDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateDatabaseSoftwareImageRequest, UpdateDatabaseSoftwareImageDetails> {
+                    UpdateDatabaseSoftwareImageRequest,
+                    com.oracle.bmc.database.model.UpdateDatabaseSoftwareImageDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -114,7 +117,8 @@ public class UpdateDatabaseSoftwareImageRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateDatabaseSoftwareImageDetails body) {
+        public Builder body$(
+                com.oracle.bmc.database.model.UpdateDatabaseSoftwareImageDetails body) {
             updateDatabaseSoftwareImageDetails(body);
             return this;
         }

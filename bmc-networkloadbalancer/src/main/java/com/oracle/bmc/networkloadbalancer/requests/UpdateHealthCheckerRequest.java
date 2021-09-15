@@ -18,7 +18,8 @@ import com.oracle.bmc.networkloadbalancer.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class UpdateHealthCheckerRequest
-        extends com.oracle.bmc.requests.BmcRequest<UpdateHealthCheckerDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.networkloadbalancer.model.UpdateHealthCheckerDetails> {
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the network load balancer to update.
@@ -28,7 +29,8 @@ public class UpdateHealthCheckerRequest
     /**
      * The health check policy configuration details.
      */
-    private UpdateHealthCheckerDetails updateHealthCheckerDetails;
+    private com.oracle.bmc.networkloadbalancer.model.UpdateHealthCheckerDetails
+            updateHealthCheckerDetails;
 
     /**
      * The name of the backend set associated with the health check policy to be retrieved.
@@ -71,13 +73,14 @@ public class UpdateHealthCheckerRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateHealthCheckerDetails getBody$() {
+    public com.oracle.bmc.networkloadbalancer.model.UpdateHealthCheckerDetails getBody$() {
         return updateHealthCheckerDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateHealthCheckerRequest, UpdateHealthCheckerDetails> {
+                    UpdateHealthCheckerRequest,
+                    com.oracle.bmc.networkloadbalancer.model.UpdateHealthCheckerDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -144,7 +147,8 @@ public class UpdateHealthCheckerRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateHealthCheckerDetails body) {
+        public Builder body$(
+                com.oracle.bmc.networkloadbalancer.model.UpdateHealthCheckerDetails body) {
             updateHealthCheckerDetails(body);
             return this;
         }

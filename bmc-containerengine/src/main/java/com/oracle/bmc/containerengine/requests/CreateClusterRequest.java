@@ -17,12 +17,14 @@ import com.oracle.bmc.containerengine.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
-public class CreateClusterRequest extends com.oracle.bmc.requests.BmcRequest<CreateClusterDetails> {
+public class CreateClusterRequest
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.containerengine.model.CreateClusterDetails> {
 
     /**
      * The details of the cluster to create.
      */
-    private CreateClusterDetails createClusterDetails;
+    private com.oracle.bmc.containerengine.model.CreateClusterDetails createClusterDetails;
 
     /**
      * A token you supply to uniquely identify the request and provide idempotency if
@@ -44,13 +46,14 @@ public class CreateClusterRequest extends com.oracle.bmc.requests.BmcRequest<Cre
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreateClusterDetails getBody$() {
+    public com.oracle.bmc.containerengine.model.CreateClusterDetails getBody$() {
         return createClusterDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CreateClusterRequest, CreateClusterDetails> {
+                    CreateClusterRequest,
+                    com.oracle.bmc.containerengine.model.CreateClusterDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -114,7 +117,7 @@ public class CreateClusterRequest extends com.oracle.bmc.requests.BmcRequest<Cre
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreateClusterDetails body) {
+        public Builder body$(com.oracle.bmc.containerengine.model.CreateClusterDetails body) {
             createClusterDetails(body);
             return this;
         }

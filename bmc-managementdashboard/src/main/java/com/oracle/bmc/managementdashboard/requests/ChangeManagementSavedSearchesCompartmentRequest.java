@@ -19,7 +19,8 @@ import com.oracle.bmc.managementdashboard.model.*;
 @lombok.Getter
 public class ChangeManagementSavedSearchesCompartmentRequest
         extends com.oracle.bmc.requests.BmcRequest<
-                ChangeManagementSavedSearchesCompartmentDetails> {
+                com.oracle.bmc.managementdashboard.model
+                        .ChangeManagementSavedSearchesCompartmentDetails> {
 
     /**
      * A unique saved search identifier.
@@ -29,7 +30,7 @@ public class ChangeManagementSavedSearchesCompartmentRequest
     /**
      * ID of the saved search that is being moved.
      */
-    private ChangeManagementSavedSearchesCompartmentDetails
+    private com.oracle.bmc.managementdashboard.model.ChangeManagementSavedSearchesCompartmentDetails
             changeManagementSavedSearchesCompartmentDetails;
 
     /**
@@ -63,14 +64,16 @@ public class ChangeManagementSavedSearchesCompartmentRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public ChangeManagementSavedSearchesCompartmentDetails getBody$() {
+    public com.oracle.bmc.managementdashboard.model.ChangeManagementSavedSearchesCompartmentDetails
+            getBody$() {
         return changeManagementSavedSearchesCompartmentDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ChangeManagementSavedSearchesCompartmentRequest,
-                    ChangeManagementSavedSearchesCompartmentDetails> {
+                    com.oracle.bmc.managementdashboard.model
+                            .ChangeManagementSavedSearchesCompartmentDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -138,7 +141,10 @@ public class ChangeManagementSavedSearchesCompartmentRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(ChangeManagementSavedSearchesCompartmentDetails body) {
+        public Builder body$(
+                com.oracle.bmc.managementdashboard.model
+                                .ChangeManagementSavedSearchesCompartmentDetails
+                        body) {
             changeManagementSavedSearchesCompartmentDetails(body);
             return this;
         }

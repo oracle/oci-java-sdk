@@ -19,7 +19,7 @@ import com.oracle.bmc.cloudguard.model.*;
 @lombok.Getter
 public class UpdateTargetResponderRecipeResponderRuleRequest
         extends com.oracle.bmc.requests.BmcRequest<
-                UpdateTargetResponderRecipeResponderRuleDetails> {
+                com.oracle.bmc.cloudguard.model.UpdateTargetResponderRecipeResponderRuleDetails> {
 
     /**
      * OCID of target
@@ -39,7 +39,7 @@ public class UpdateTargetResponderRecipeResponderRuleRequest
     /**
      * The details to be updated for ResponderRule.
      */
-    private UpdateTargetResponderRecipeResponderRuleDetails
+    private com.oracle.bmc.cloudguard.model.UpdateTargetResponderRecipeResponderRuleDetails
             updateTargetResponderRecipeResponderRuleDetails;
 
     /**
@@ -63,14 +63,16 @@ public class UpdateTargetResponderRecipeResponderRuleRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateTargetResponderRecipeResponderRuleDetails getBody$() {
+    public com.oracle.bmc.cloudguard.model.UpdateTargetResponderRecipeResponderRuleDetails
+            getBody$() {
         return updateTargetResponderRecipeResponderRuleDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     UpdateTargetResponderRecipeResponderRuleRequest,
-                    UpdateTargetResponderRecipeResponderRuleDetails> {
+                    com.oracle.bmc.cloudguard.model
+                            .UpdateTargetResponderRecipeResponderRuleDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -139,7 +141,9 @@ public class UpdateTargetResponderRecipeResponderRuleRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateTargetResponderRecipeResponderRuleDetails body) {
+        public Builder body$(
+                com.oracle.bmc.cloudguard.model.UpdateTargetResponderRecipeResponderRuleDetails
+                        body) {
             updateTargetResponderRecipeResponderRuleDetails(body);
             return this;
         }

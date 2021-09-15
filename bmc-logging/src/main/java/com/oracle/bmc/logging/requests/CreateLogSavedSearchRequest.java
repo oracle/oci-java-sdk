@@ -18,12 +18,13 @@ import com.oracle.bmc.logging.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class CreateLogSavedSearchRequest
-        extends com.oracle.bmc.requests.BmcRequest<CreateLogSavedSearchDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.logging.model.CreateLogSavedSearchDetails> {
 
     /**
      * Specification of the Saved Search to create
      */
-    private CreateLogSavedSearchDetails createLogSavedSearchDetails;
+    private com.oracle.bmc.logging.model.CreateLogSavedSearchDetails createLogSavedSearchDetails;
 
     /**
      * A token that uniquely identifies a request so it can be retried in case
@@ -49,13 +50,14 @@ public class CreateLogSavedSearchRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreateLogSavedSearchDetails getBody$() {
+    public com.oracle.bmc.logging.model.CreateLogSavedSearchDetails getBody$() {
         return createLogSavedSearchDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CreateLogSavedSearchRequest, CreateLogSavedSearchDetails> {
+                    CreateLogSavedSearchRequest,
+                    com.oracle.bmc.logging.model.CreateLogSavedSearchDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -119,7 +121,7 @@ public class CreateLogSavedSearchRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreateLogSavedSearchDetails body) {
+        public Builder body$(com.oracle.bmc.logging.model.CreateLogSavedSearchDetails body) {
             createLogSavedSearchDetails(body);
             return this;
         }

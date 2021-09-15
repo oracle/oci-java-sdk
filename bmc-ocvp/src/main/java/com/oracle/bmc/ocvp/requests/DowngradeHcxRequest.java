@@ -17,12 +17,13 @@ import com.oracle.bmc.ocvp.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
-public class DowngradeHcxRequest extends com.oracle.bmc.requests.BmcRequest<DowngradeHcxDetails> {
+public class DowngradeHcxRequest
+        extends com.oracle.bmc.requests.BmcRequest<com.oracle.bmc.ocvp.model.DowngradeHcxDetails> {
 
     /**
      * The HCX on-premise license keys to be reserved when downgrade from HCX Enterprise to HCX Advanced.
      */
-    private DowngradeHcxDetails downgradeHcxDetails;
+    private com.oracle.bmc.ocvp.model.DowngradeHcxDetails downgradeHcxDetails;
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the SDDC.
@@ -63,13 +64,13 @@ public class DowngradeHcxRequest extends com.oracle.bmc.requests.BmcRequest<Down
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public DowngradeHcxDetails getBody$() {
+    public com.oracle.bmc.ocvp.model.DowngradeHcxDetails getBody$() {
         return downgradeHcxDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    DowngradeHcxRequest, DowngradeHcxDetails> {
+                    DowngradeHcxRequest, com.oracle.bmc.ocvp.model.DowngradeHcxDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -135,7 +136,7 @@ public class DowngradeHcxRequest extends com.oracle.bmc.requests.BmcRequest<Down
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(DowngradeHcxDetails body) {
+        public Builder body$(com.oracle.bmc.ocvp.model.DowngradeHcxDetails body) {
             downgradeHcxDetails(body);
             return this;
         }

@@ -18,7 +18,8 @@ import com.oracle.bmc.artifacts.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class UpdateContainerConfigurationRequest
-        extends com.oracle.bmc.requests.BmcRequest<UpdateContainerConfigurationDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.artifacts.model.UpdateContainerConfigurationDetails> {
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -28,7 +29,8 @@ public class UpdateContainerConfigurationRequest
     /**
      * Update container configuration details.
      */
-    private UpdateContainerConfigurationDetails updateContainerConfigurationDetails;
+    private com.oracle.bmc.artifacts.model.UpdateContainerConfigurationDetails
+            updateContainerConfigurationDetails;
 
     /**
      * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
@@ -51,13 +53,14 @@ public class UpdateContainerConfigurationRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateContainerConfigurationDetails getBody$() {
+    public com.oracle.bmc.artifacts.model.UpdateContainerConfigurationDetails getBody$() {
         return updateContainerConfigurationDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateContainerConfigurationRequest, UpdateContainerConfigurationDetails> {
+                    UpdateContainerConfigurationRequest,
+                    com.oracle.bmc.artifacts.model.UpdateContainerConfigurationDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -122,7 +125,8 @@ public class UpdateContainerConfigurationRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateContainerConfigurationDetails body) {
+        public Builder body$(
+                com.oracle.bmc.artifacts.model.UpdateContainerConfigurationDetails body) {
             updateContainerConfigurationDetails(body);
             return this;
         }

@@ -18,7 +18,8 @@ import com.oracle.bmc.networkloadbalancer.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class UpdateNetworkLoadBalancerRequest
-        extends com.oracle.bmc.requests.BmcRequest<UpdateNetworkLoadBalancerDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.networkloadbalancer.model.UpdateNetworkLoadBalancerDetails> {
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the network load balancer to update.
@@ -28,7 +29,8 @@ public class UpdateNetworkLoadBalancerRequest
     /**
      * The information to be updated.
      */
-    private UpdateNetworkLoadBalancerDetails updateNetworkLoadBalancerDetails;
+    private com.oracle.bmc.networkloadbalancer.model.UpdateNetworkLoadBalancerDetails
+            updateNetworkLoadBalancerDetails;
 
     /**
      * For optimistic concurrency control. In the PUT or DELETE call
@@ -53,13 +55,14 @@ public class UpdateNetworkLoadBalancerRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateNetworkLoadBalancerDetails getBody$() {
+    public com.oracle.bmc.networkloadbalancer.model.UpdateNetworkLoadBalancerDetails getBody$() {
         return updateNetworkLoadBalancerDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateNetworkLoadBalancerRequest, UpdateNetworkLoadBalancerDetails> {
+                    UpdateNetworkLoadBalancerRequest,
+                    com.oracle.bmc.networkloadbalancer.model.UpdateNetworkLoadBalancerDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -124,7 +127,8 @@ public class UpdateNetworkLoadBalancerRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateNetworkLoadBalancerDetails body) {
+        public Builder body$(
+                com.oracle.bmc.networkloadbalancer.model.UpdateNetworkLoadBalancerDetails body) {
             updateNetworkLoadBalancerDetails(body);
             return this;
         }

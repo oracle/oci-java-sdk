@@ -158,7 +158,7 @@ public class ListRouteTablesRequest extends com.oracle.bmc.requests.BmcRequest<j
      * state. The state value is case-insensitive.
      *
      */
-    private RouteTable.LifecycleState lifecycleState;
+    private com.oracle.bmc.core.model.RouteTable.LifecycleState lifecycleState;
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<

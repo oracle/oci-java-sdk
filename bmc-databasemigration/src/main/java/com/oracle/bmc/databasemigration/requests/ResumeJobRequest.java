@@ -17,7 +17,9 @@ import com.oracle.bmc.databasemigration.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
-public class ResumeJobRequest extends com.oracle.bmc.requests.BmcRequest<ResumeJobDetails> {
+public class ResumeJobRequest
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.databasemigration.model.ResumeJobDetails> {
 
     /**
      * The OCID of the job
@@ -56,7 +58,7 @@ public class ResumeJobRequest extends com.oracle.bmc.requests.BmcRequest<ResumeJ
      * Resume Job options.
      *
      */
-    private ResumeJobDetails resumeJobDetails;
+    private com.oracle.bmc.databasemigration.model.ResumeJobDetails resumeJobDetails;
 
     /**
      * Alternative accessor for the body parameter.
@@ -64,13 +66,13 @@ public class ResumeJobRequest extends com.oracle.bmc.requests.BmcRequest<ResumeJ
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public ResumeJobDetails getBody$() {
+    public com.oracle.bmc.databasemigration.model.ResumeJobDetails getBody$() {
         return resumeJobDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    ResumeJobRequest, ResumeJobDetails> {
+                    ResumeJobRequest, com.oracle.bmc.databasemigration.model.ResumeJobDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -136,7 +138,7 @@ public class ResumeJobRequest extends com.oracle.bmc.requests.BmcRequest<ResumeJ
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(ResumeJobDetails body) {
+        public Builder body$(com.oracle.bmc.databasemigration.model.ResumeJobDetails body) {
             resumeJobDetails(body);
             return this;
         }

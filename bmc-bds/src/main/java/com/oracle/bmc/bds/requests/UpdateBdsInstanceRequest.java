@@ -18,7 +18,8 @@ import com.oracle.bmc.bds.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class UpdateBdsInstanceRequest
-        extends com.oracle.bmc.requests.BmcRequest<UpdateBdsInstanceDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.bds.model.UpdateBdsInstanceDetails> {
 
     /**
      * The OCID of the cluster.
@@ -28,7 +29,7 @@ public class UpdateBdsInstanceRequest
     /**
      * Details for the cluster to be updated.
      */
-    private UpdateBdsInstanceDetails updateBdsInstanceDetails;
+    private com.oracle.bmc.bds.model.UpdateBdsInstanceDetails updateBdsInstanceDetails;
 
     /**
      * For optimistic concurrency control. In the PUT or DELETE call
@@ -51,13 +52,13 @@ public class UpdateBdsInstanceRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateBdsInstanceDetails getBody$() {
+    public com.oracle.bmc.bds.model.UpdateBdsInstanceDetails getBody$() {
         return updateBdsInstanceDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateBdsInstanceRequest, UpdateBdsInstanceDetails> {
+                    UpdateBdsInstanceRequest, com.oracle.bmc.bds.model.UpdateBdsInstanceDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -122,7 +123,7 @@ public class UpdateBdsInstanceRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateBdsInstanceDetails body) {
+        public Builder body$(com.oracle.bmc.bds.model.UpdateBdsInstanceDetails body) {
             updateBdsInstanceDetails(body);
             return this;
         }

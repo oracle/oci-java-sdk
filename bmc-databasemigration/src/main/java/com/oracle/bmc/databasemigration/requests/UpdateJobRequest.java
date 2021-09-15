@@ -17,7 +17,9 @@ import com.oracle.bmc.databasemigration.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
-public class UpdateJobRequest extends com.oracle.bmc.requests.BmcRequest<UpdateJobDetails> {
+public class UpdateJobRequest
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.databasemigration.model.UpdateJobDetails> {
 
     /**
      * The OCID of the job
@@ -29,7 +31,7 @@ public class UpdateJobRequest extends com.oracle.bmc.requests.BmcRequest<UpdateJ
      * Migration Job properties.
      *
      */
-    private UpdateJobDetails updateJobDetails;
+    private com.oracle.bmc.databasemigration.model.UpdateJobDetails updateJobDetails;
 
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
@@ -54,13 +56,13 @@ public class UpdateJobRequest extends com.oracle.bmc.requests.BmcRequest<UpdateJ
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateJobDetails getBody$() {
+    public com.oracle.bmc.databasemigration.model.UpdateJobDetails getBody$() {
         return updateJobDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateJobRequest, UpdateJobDetails> {
+                    UpdateJobRequest, com.oracle.bmc.databasemigration.model.UpdateJobDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -125,7 +127,7 @@ public class UpdateJobRequest extends com.oracle.bmc.requests.BmcRequest<UpdateJ
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateJobDetails body) {
+        public Builder body$(com.oracle.bmc.databasemigration.model.UpdateJobDetails body) {
             updateJobDetails(body);
             return this;
         }

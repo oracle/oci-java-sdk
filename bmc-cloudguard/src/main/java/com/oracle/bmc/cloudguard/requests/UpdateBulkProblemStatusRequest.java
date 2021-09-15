@@ -18,12 +18,14 @@ import com.oracle.bmc.cloudguard.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class UpdateBulkProblemStatusRequest
-        extends com.oracle.bmc.requests.BmcRequest<UpdateBulkProblemStatusDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.cloudguard.model.UpdateBulkProblemStatusDetails> {
 
     /**
      * A list of problem ids to be passed in to update the Problem status
      */
-    private UpdateBulkProblemStatusDetails updateBulkProblemStatusDetails;
+    private com.oracle.bmc.cloudguard.model.UpdateBulkProblemStatusDetails
+            updateBulkProblemStatusDetails;
 
     /**
      * The client request ID for tracing.
@@ -36,13 +38,14 @@ public class UpdateBulkProblemStatusRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateBulkProblemStatusDetails getBody$() {
+    public com.oracle.bmc.cloudguard.model.UpdateBulkProblemStatusDetails getBody$() {
         return updateBulkProblemStatusDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateBulkProblemStatusRequest, UpdateBulkProblemStatusDetails> {
+                    UpdateBulkProblemStatusRequest,
+                    com.oracle.bmc.cloudguard.model.UpdateBulkProblemStatusDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -105,7 +108,7 @@ public class UpdateBulkProblemStatusRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateBulkProblemStatusDetails body) {
+        public Builder body$(com.oracle.bmc.cloudguard.model.UpdateBulkProblemStatusDetails body) {
             updateBulkProblemStatusDetails(body);
             return this;
         }

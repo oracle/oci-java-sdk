@@ -37,7 +37,7 @@ public class ListDeployArtifactsRequest extends com.oracle.bmc.requests.BmcReque
     /**
      * A filter to return only DeployArtifacts that matches the given lifecycleState.
      */
-    private DeployArtifact.LifecycleState lifecycleState;
+    private com.oracle.bmc.devops.model.DeployArtifact.LifecycleState lifecycleState;
 
     /**
      * A filter to return only resources that match the entire display name given.

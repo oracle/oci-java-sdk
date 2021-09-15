@@ -17,12 +17,14 @@ import com.oracle.bmc.apigateway.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
-public class CreateSdkRequest extends com.oracle.bmc.requests.BmcRequest<CreateSdkDetails> {
+public class CreateSdkRequest
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.apigateway.model.CreateSdkDetails> {
 
     /**
      * Details for the new SDK.
      */
-    private CreateSdkDetails createSdkDetails;
+    private com.oracle.bmc.apigateway.model.CreateSdkDetails createSdkDetails;
 
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -45,13 +47,13 @@ public class CreateSdkRequest extends com.oracle.bmc.requests.BmcRequest<CreateS
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreateSdkDetails getBody$() {
+    public com.oracle.bmc.apigateway.model.CreateSdkDetails getBody$() {
         return createSdkDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CreateSdkRequest, CreateSdkDetails> {
+                    CreateSdkRequest, com.oracle.bmc.apigateway.model.CreateSdkDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -115,7 +117,7 @@ public class CreateSdkRequest extends com.oracle.bmc.requests.BmcRequest<CreateS
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreateSdkDetails body) {
+        public Builder body$(com.oracle.bmc.apigateway.model.CreateSdkDetails body) {
             createSdkDetails(body);
             return this;
         }

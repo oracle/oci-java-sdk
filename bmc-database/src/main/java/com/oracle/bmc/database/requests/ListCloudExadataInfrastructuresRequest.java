@@ -126,7 +126,8 @@ public class ListCloudExadataInfrastructuresRequest
     /**
      * A filter to return only resources that match the given lifecycle state exactly.
      */
-    private CloudExadataInfrastructureSummary.LifecycleState lifecycleState;
+    private com.oracle.bmc.database.model.CloudExadataInfrastructureSummary.LifecycleState
+            lifecycleState;
 
     /**
      * A filter to return only resources that match the entire display name given. The match is not case sensitive.

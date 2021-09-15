@@ -154,7 +154,9 @@ public class ListInstanceAgentCommandExecutionsRequest
     /**
      * A filter to only return resources that match the given lifecycle state. The state value is case-insensitive.
      */
-    private InstanceAgentCommandExecutionSummary.LifecycleState lifecycleState;
+    private com.oracle.bmc.computeinstanceagent.model.InstanceAgentCommandExecutionSummary
+                    .LifecycleState
+            lifecycleState;
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<

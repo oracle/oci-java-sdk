@@ -44,7 +44,7 @@ public class ListAutonomousDbVersionsRequest
     /**
      * A filter to return only autonomous database resources that match the specified workload type.
      */
-    private AutonomousDatabaseSummary.DbWorkload dbWorkload;
+    private com.oracle.bmc.database.model.AutonomousDatabaseSummary.DbWorkload dbWorkload;
 
     /**
      * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).

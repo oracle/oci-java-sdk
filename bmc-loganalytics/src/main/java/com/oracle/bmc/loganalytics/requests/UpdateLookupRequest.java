@@ -18,7 +18,8 @@ import com.oracle.bmc.loganalytics.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class UpdateLookupRequest
-        extends com.oracle.bmc.requests.BmcRequest<UpdateLookupMetadataDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.loganalytics.model.UpdateLookupMetadataDetails> {
 
     /**
      * The Logging Analytics namespace used for the request.
@@ -34,7 +35,8 @@ public class UpdateLookupRequest
     /**
      * The information required to update a lookup.
      */
-    private UpdateLookupMetadataDetails updateLookupMetadataDetails;
+    private com.oracle.bmc.loganalytics.model.UpdateLookupMetadataDetails
+            updateLookupMetadataDetails;
 
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -67,7 +69,7 @@ public class UpdateLookupRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateLookupMetadataDetails getBody$() {
+    public com.oracle.bmc.loganalytics.model.UpdateLookupMetadataDetails getBody$() {
         return updateLookupMetadataDetails;
     }
 
@@ -78,7 +80,8 @@ public class UpdateLookupRequest
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateLookupRequest, UpdateLookupMetadataDetails> {
+                    UpdateLookupRequest,
+                    com.oracle.bmc.loganalytics.model.UpdateLookupMetadataDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -145,7 +148,7 @@ public class UpdateLookupRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateLookupMetadataDetails body) {
+        public Builder body$(com.oracle.bmc.loganalytics.model.UpdateLookupMetadataDetails body) {
             updateLookupMetadataDetails(body);
             return this;
         }

@@ -17,12 +17,13 @@ import com.oracle.bmc.events.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
-public class CreateRuleRequest extends com.oracle.bmc.requests.BmcRequest<CreateRuleDetails> {
+public class CreateRuleRequest
+        extends com.oracle.bmc.requests.BmcRequest<com.oracle.bmc.events.model.CreateRuleDetails> {
 
     /**
      * Specification of the rule to create
      */
-    private CreateRuleDetails createRuleDetails;
+    private com.oracle.bmc.events.model.CreateRuleDetails createRuleDetails;
 
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -47,13 +48,13 @@ public class CreateRuleRequest extends com.oracle.bmc.requests.BmcRequest<Create
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreateRuleDetails getBody$() {
+    public com.oracle.bmc.events.model.CreateRuleDetails getBody$() {
         return createRuleDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CreateRuleRequest, CreateRuleDetails> {
+                    CreateRuleRequest, com.oracle.bmc.events.model.CreateRuleDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -117,7 +118,7 @@ public class CreateRuleRequest extends com.oracle.bmc.requests.BmcRequest<Create
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreateRuleDetails body) {
+        public Builder body$(com.oracle.bmc.events.model.CreateRuleDetails body) {
             createRuleDetails(body);
             return this;
         }

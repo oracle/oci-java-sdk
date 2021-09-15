@@ -18,7 +18,8 @@ import com.oracle.bmc.servicecatalog.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class UpdateServiceCatalogRequest
-        extends com.oracle.bmc.requests.BmcRequest<UpdateServiceCatalogDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.servicecatalog.model.UpdateServiceCatalogDetails> {
 
     /**
      * The unique identifier for the service catalog.
@@ -28,7 +29,8 @@ public class UpdateServiceCatalogRequest
     /**
      * Details to update for a service catalog.
      */
-    private UpdateServiceCatalogDetails updateServiceCatalogDetails;
+    private com.oracle.bmc.servicecatalog.model.UpdateServiceCatalogDetails
+            updateServiceCatalogDetails;
 
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request,
@@ -51,13 +53,14 @@ public class UpdateServiceCatalogRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateServiceCatalogDetails getBody$() {
+    public com.oracle.bmc.servicecatalog.model.UpdateServiceCatalogDetails getBody$() {
         return updateServiceCatalogDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateServiceCatalogRequest, UpdateServiceCatalogDetails> {
+                    UpdateServiceCatalogRequest,
+                    com.oracle.bmc.servicecatalog.model.UpdateServiceCatalogDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -122,7 +125,7 @@ public class UpdateServiceCatalogRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateServiceCatalogDetails body) {
+        public Builder body$(com.oracle.bmc.servicecatalog.model.UpdateServiceCatalogDetails body) {
             updateServiceCatalogDetails(body);
             return this;
         }

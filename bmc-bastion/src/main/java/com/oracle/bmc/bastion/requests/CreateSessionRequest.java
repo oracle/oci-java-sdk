@@ -17,12 +17,14 @@ import com.oracle.bmc.bastion.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
-public class CreateSessionRequest extends com.oracle.bmc.requests.BmcRequest<CreateSessionDetails> {
+public class CreateSessionRequest
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.bastion.model.CreateSessionDetails> {
 
     /**
      * Details for the new session.
      */
-    private CreateSessionDetails createSessionDetails;
+    private com.oracle.bmc.bastion.model.CreateSessionDetails createSessionDetails;
 
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -45,13 +47,13 @@ public class CreateSessionRequest extends com.oracle.bmc.requests.BmcRequest<Cre
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreateSessionDetails getBody$() {
+    public com.oracle.bmc.bastion.model.CreateSessionDetails getBody$() {
         return createSessionDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CreateSessionRequest, CreateSessionDetails> {
+                    CreateSessionRequest, com.oracle.bmc.bastion.model.CreateSessionDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -115,7 +117,7 @@ public class CreateSessionRequest extends com.oracle.bmc.requests.BmcRequest<Cre
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreateSessionDetails body) {
+        public Builder body$(com.oracle.bmc.bastion.model.CreateSessionDetails body) {
             createSessionDetails(body);
             return this;
         }

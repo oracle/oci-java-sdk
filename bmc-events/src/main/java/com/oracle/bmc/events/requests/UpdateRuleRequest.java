@@ -17,7 +17,8 @@ import com.oracle.bmc.events.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
-public class UpdateRuleRequest extends com.oracle.bmc.requests.BmcRequest<UpdateRuleDetails> {
+public class UpdateRuleRequest
+        extends com.oracle.bmc.requests.BmcRequest<com.oracle.bmc.events.model.UpdateRuleDetails> {
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this rule.
@@ -28,7 +29,7 @@ public class UpdateRuleRequest extends com.oracle.bmc.requests.BmcRequest<Update
     /**
      * The new rule spec to apply
      */
-    private UpdateRuleDetails updateRuleDetails;
+    private com.oracle.bmc.events.model.UpdateRuleDetails updateRuleDetails;
 
     /**
      * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the if-match
@@ -51,13 +52,13 @@ public class UpdateRuleRequest extends com.oracle.bmc.requests.BmcRequest<Update
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateRuleDetails getBody$() {
+    public com.oracle.bmc.events.model.UpdateRuleDetails getBody$() {
         return updateRuleDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateRuleRequest, UpdateRuleDetails> {
+                    UpdateRuleRequest, com.oracle.bmc.events.model.UpdateRuleDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -122,7 +123,7 @@ public class UpdateRuleRequest extends com.oracle.bmc.requests.BmcRequest<Update
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateRuleDetails body) {
+        public Builder body$(com.oracle.bmc.events.model.UpdateRuleDetails body) {
             updateRuleDetails(body);
             return this;
         }

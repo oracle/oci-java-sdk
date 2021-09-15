@@ -18,12 +18,13 @@ import com.oracle.bmc.mysql.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class CreateConfigurationRequest
-        extends com.oracle.bmc.requests.BmcRequest<CreateConfigurationDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.mysql.model.CreateConfigurationDetails> {
 
     /**
      * Request to create a Configuration.
      */
-    private CreateConfigurationDetails createConfigurationDetails;
+    private com.oracle.bmc.mysql.model.CreateConfigurationDetails createConfigurationDetails;
 
     /**
      * Customer-defined unique identifier for the request. If you need to
@@ -50,13 +51,14 @@ public class CreateConfigurationRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreateConfigurationDetails getBody$() {
+    public com.oracle.bmc.mysql.model.CreateConfigurationDetails getBody$() {
         return createConfigurationDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CreateConfigurationRequest, CreateConfigurationDetails> {
+                    CreateConfigurationRequest,
+                    com.oracle.bmc.mysql.model.CreateConfigurationDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -120,7 +122,7 @@ public class CreateConfigurationRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreateConfigurationDetails body) {
+        public Builder body$(com.oracle.bmc.mysql.model.CreateConfigurationDetails body) {
             createConfigurationDetails(body);
             return this;
         }

@@ -18,7 +18,8 @@ import com.oracle.bmc.core.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class UpdateTunnelCpeDeviceConfigRequest
-        extends com.oracle.bmc.requests.BmcRequest<UpdateTunnelCpeDeviceConfigDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.core.model.UpdateTunnelCpeDeviceConfigDetails> {
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the IPSec connection.
@@ -33,7 +34,8 @@ public class UpdateTunnelCpeDeviceConfigRequest
     /**
      * Request to input the tunnel's cpe configuration parameters
      */
-    private UpdateTunnelCpeDeviceConfigDetails updateTunnelCpeDeviceConfigDetails;
+    private com.oracle.bmc.core.model.UpdateTunnelCpeDeviceConfigDetails
+            updateTunnelCpeDeviceConfigDetails;
 
     /**
      * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
@@ -66,13 +68,14 @@ public class UpdateTunnelCpeDeviceConfigRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateTunnelCpeDeviceConfigDetails getBody$() {
+    public com.oracle.bmc.core.model.UpdateTunnelCpeDeviceConfigDetails getBody$() {
         return updateTunnelCpeDeviceConfigDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateTunnelCpeDeviceConfigRequest, UpdateTunnelCpeDeviceConfigDetails> {
+                    UpdateTunnelCpeDeviceConfigRequest,
+                    com.oracle.bmc.core.model.UpdateTunnelCpeDeviceConfigDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -139,7 +142,7 @@ public class UpdateTunnelCpeDeviceConfigRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateTunnelCpeDeviceConfigDetails body) {
+        public Builder body$(com.oracle.bmc.core.model.UpdateTunnelCpeDeviceConfigDetails body) {
             updateTunnelCpeDeviceConfigDetails(body);
             return this;
         }

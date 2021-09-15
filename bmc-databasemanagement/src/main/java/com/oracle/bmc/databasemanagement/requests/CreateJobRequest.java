@@ -17,12 +17,14 @@ import com.oracle.bmc.databasemanagement.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
-public class CreateJobRequest extends com.oracle.bmc.requests.BmcRequest<CreateJobDetails> {
+public class CreateJobRequest
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.databasemanagement.model.CreateJobDetails> {
 
     /**
      * The details required to create a job.
      */
-    private CreateJobDetails createJobDetails;
+    private com.oracle.bmc.databasemanagement.model.CreateJobDetails createJobDetails;
 
     /**
      * The client request ID for tracing.
@@ -45,13 +47,13 @@ public class CreateJobRequest extends com.oracle.bmc.requests.BmcRequest<CreateJ
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreateJobDetails getBody$() {
+    public com.oracle.bmc.databasemanagement.model.CreateJobDetails getBody$() {
         return createJobDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CreateJobRequest, CreateJobDetails> {
+                    CreateJobRequest, com.oracle.bmc.databasemanagement.model.CreateJobDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -115,7 +117,7 @@ public class CreateJobRequest extends com.oracle.bmc.requests.BmcRequest<CreateJ
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreateJobDetails body) {
+        public Builder body$(com.oracle.bmc.databasemanagement.model.CreateJobDetails body) {
             createJobDetails(body);
             return this;
         }

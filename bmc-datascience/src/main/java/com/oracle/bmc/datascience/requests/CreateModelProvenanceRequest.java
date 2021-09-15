@@ -18,7 +18,8 @@ import com.oracle.bmc.datascience.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class CreateModelProvenanceRequest
-        extends com.oracle.bmc.requests.BmcRequest<CreateModelProvenanceDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.datascience.model.CreateModelProvenanceDetails> {
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model.
@@ -28,7 +29,8 @@ public class CreateModelProvenanceRequest
     /**
      * Provenance information for specified model.
      */
-    private CreateModelProvenanceDetails createModelProvenanceDetails;
+    private com.oracle.bmc.datascience.model.CreateModelProvenanceDetails
+            createModelProvenanceDetails;
 
     /**
      * Unique Oracle assigned identifier for the request. If you need to contact Oracle about a particular request, then provide the request ID.
@@ -48,13 +50,14 @@ public class CreateModelProvenanceRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreateModelProvenanceDetails getBody$() {
+    public com.oracle.bmc.datascience.model.CreateModelProvenanceDetails getBody$() {
         return createModelProvenanceDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CreateModelProvenanceRequest, CreateModelProvenanceDetails> {
+                    CreateModelProvenanceRequest,
+                    com.oracle.bmc.datascience.model.CreateModelProvenanceDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -119,7 +122,7 @@ public class CreateModelProvenanceRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreateModelProvenanceDetails body) {
+        public Builder body$(com.oracle.bmc.datascience.model.CreateModelProvenanceDetails body) {
             createModelProvenanceDetails(body);
             return this;
         }

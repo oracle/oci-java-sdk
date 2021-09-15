@@ -18,7 +18,8 @@ import com.oracle.bmc.core.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class ChangeCpeCompartmentRequest
-        extends com.oracle.bmc.requests.BmcRequest<ChangeCpeCompartmentDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.core.model.ChangeCpeCompartmentDetails> {
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the CPE.
@@ -28,7 +29,7 @@ public class ChangeCpeCompartmentRequest
     /**
      * Request to change the compartment of a CPE.
      */
-    private ChangeCpeCompartmentDetails changeCpeCompartmentDetails;
+    private com.oracle.bmc.core.model.ChangeCpeCompartmentDetails changeCpeCompartmentDetails;
 
     /**
      * Unique identifier for the request.
@@ -53,13 +54,14 @@ public class ChangeCpeCompartmentRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public ChangeCpeCompartmentDetails getBody$() {
+    public com.oracle.bmc.core.model.ChangeCpeCompartmentDetails getBody$() {
         return changeCpeCompartmentDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    ChangeCpeCompartmentRequest, ChangeCpeCompartmentDetails> {
+                    ChangeCpeCompartmentRequest,
+                    com.oracle.bmc.core.model.ChangeCpeCompartmentDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -124,7 +126,7 @@ public class ChangeCpeCompartmentRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(ChangeCpeCompartmentDetails body) {
+        public Builder body$(com.oracle.bmc.core.model.ChangeCpeCompartmentDetails body) {
             changeCpeCompartmentDetails(body);
             return this;
         }

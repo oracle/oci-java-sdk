@@ -18,7 +18,8 @@ import com.oracle.bmc.loganalytics.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class ValidateSourceRequest
-        extends com.oracle.bmc.requests.BmcRequest<UpsertLogAnalyticsSourceDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.loganalytics.model.UpsertLogAnalyticsSourceDetails> {
 
     /**
      * The Logging Analytics namespace used for the request.
@@ -29,7 +30,8 @@ public class ValidateSourceRequest
     /**
      * Details for the new LoganSourceDetails.
      */
-    private UpsertLogAnalyticsSourceDetails upsertLogAnalyticsSourceDetails;
+    private com.oracle.bmc.loganalytics.model.UpsertLogAnalyticsSourceDetails
+            upsertLogAnalyticsSourceDetails;
 
     /**
      * The unique identifier of the source to use as the reference for a create like
@@ -71,7 +73,7 @@ public class ValidateSourceRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpsertLogAnalyticsSourceDetails getBody$() {
+    public com.oracle.bmc.loganalytics.model.UpsertLogAnalyticsSourceDetails getBody$() {
         return upsertLogAnalyticsSourceDetails;
     }
 
@@ -82,7 +84,8 @@ public class ValidateSourceRequest
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    ValidateSourceRequest, UpsertLogAnalyticsSourceDetails> {
+                    ValidateSourceRequest,
+                    com.oracle.bmc.loganalytics.model.UpsertLogAnalyticsSourceDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -150,7 +153,8 @@ public class ValidateSourceRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpsertLogAnalyticsSourceDetails body) {
+        public Builder body$(
+                com.oracle.bmc.loganalytics.model.UpsertLogAnalyticsSourceDetails body) {
             upsertLogAnalyticsSourceDetails(body);
             return this;
         }

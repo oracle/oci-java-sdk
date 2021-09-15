@@ -18,7 +18,8 @@ import com.oracle.bmc.marketplace.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class ChangePublicationCompartmentRequest
-        extends com.oracle.bmc.requests.BmcRequest<ChangePublicationCompartmentDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.marketplace.model.ChangePublicationCompartmentDetails> {
 
     /**
      * The unique identifier for the publication.
@@ -28,7 +29,8 @@ public class ChangePublicationCompartmentRequest
     /**
      * The details of the request to change the compartment of a given publication.
      */
-    private ChangePublicationCompartmentDetails changePublicationCompartmentDetails;
+    private com.oracle.bmc.marketplace.model.ChangePublicationCompartmentDetails
+            changePublicationCompartmentDetails;
 
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without
@@ -60,13 +62,14 @@ public class ChangePublicationCompartmentRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public ChangePublicationCompartmentDetails getBody$() {
+    public com.oracle.bmc.marketplace.model.ChangePublicationCompartmentDetails getBody$() {
         return changePublicationCompartmentDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    ChangePublicationCompartmentRequest, ChangePublicationCompartmentDetails> {
+                    ChangePublicationCompartmentRequest,
+                    com.oracle.bmc.marketplace.model.ChangePublicationCompartmentDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -132,7 +135,8 @@ public class ChangePublicationCompartmentRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(ChangePublicationCompartmentDetails body) {
+        public Builder body$(
+                com.oracle.bmc.marketplace.model.ChangePublicationCompartmentDetails body) {
             changePublicationCompartmentDetails(body);
             return this;
         }

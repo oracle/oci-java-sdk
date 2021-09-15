@@ -18,7 +18,8 @@ import com.oracle.bmc.loganalytics.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class EstimatePurgeDataSizeRequest
-        extends com.oracle.bmc.requests.BmcRequest<EstimatePurgeDataSizeDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.loganalytics.model.EstimatePurgeDataSizeDetails> {
 
     /**
      * The Logging Analytics namespace used for the request.
@@ -29,7 +30,8 @@ public class EstimatePurgeDataSizeRequest
     /**
      * This is the input to estimate the size of data to be purged.
      */
-    private EstimatePurgeDataSizeDetails estimatePurgeDataSizeDetails;
+    private com.oracle.bmc.loganalytics.model.EstimatePurgeDataSizeDetails
+            estimatePurgeDataSizeDetails;
 
     /**
      * The client request ID for tracing.
@@ -62,7 +64,7 @@ public class EstimatePurgeDataSizeRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public EstimatePurgeDataSizeDetails getBody$() {
+    public com.oracle.bmc.loganalytics.model.EstimatePurgeDataSizeDetails getBody$() {
         return estimatePurgeDataSizeDetails;
     }
 
@@ -73,7 +75,8 @@ public class EstimatePurgeDataSizeRequest
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    EstimatePurgeDataSizeRequest, EstimatePurgeDataSizeDetails> {
+                    EstimatePurgeDataSizeRequest,
+                    com.oracle.bmc.loganalytics.model.EstimatePurgeDataSizeDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -139,7 +142,7 @@ public class EstimatePurgeDataSizeRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(EstimatePurgeDataSizeDetails body) {
+        public Builder body$(com.oracle.bmc.loganalytics.model.EstimatePurgeDataSizeDetails body) {
             estimatePurgeDataSizeDetails(body);
             return this;
         }

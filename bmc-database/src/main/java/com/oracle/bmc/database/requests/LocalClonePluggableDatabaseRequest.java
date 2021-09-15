@@ -18,12 +18,14 @@ import com.oracle.bmc.database.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class LocalClonePluggableDatabaseRequest
-        extends com.oracle.bmc.requests.BmcRequest<LocalClonePluggableDatabaseDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.database.model.LocalClonePluggableDatabaseDetails> {
 
     /**
      * Request to clone a pluggable database locally.
      */
-    private LocalClonePluggableDatabaseDetails localClonePluggableDatabaseDetails;
+    private com.oracle.bmc.database.model.LocalClonePluggableDatabaseDetails
+            localClonePluggableDatabaseDetails;
 
     /**
      * The database [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
@@ -60,13 +62,14 @@ public class LocalClonePluggableDatabaseRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public LocalClonePluggableDatabaseDetails getBody$() {
+    public com.oracle.bmc.database.model.LocalClonePluggableDatabaseDetails getBody$() {
         return localClonePluggableDatabaseDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    LocalClonePluggableDatabaseRequest, LocalClonePluggableDatabaseDetails> {
+                    LocalClonePluggableDatabaseRequest,
+                    com.oracle.bmc.database.model.LocalClonePluggableDatabaseDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -132,7 +135,8 @@ public class LocalClonePluggableDatabaseRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(LocalClonePluggableDatabaseDetails body) {
+        public Builder body$(
+                com.oracle.bmc.database.model.LocalClonePluggableDatabaseDetails body) {
             localClonePluggableDatabaseDetails(body);
             return this;
         }

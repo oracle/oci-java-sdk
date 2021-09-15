@@ -18,12 +18,13 @@ import com.oracle.bmc.filestorage.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class CreateFileSystemRequest
-        extends com.oracle.bmc.requests.BmcRequest<CreateFileSystemDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.filestorage.model.CreateFileSystemDetails> {
 
     /**
      * Details for creating a new file system.
      */
-    private CreateFileSystemDetails createFileSystemDetails;
+    private com.oracle.bmc.filestorage.model.CreateFileSystemDetails createFileSystemDetails;
 
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -48,13 +49,14 @@ public class CreateFileSystemRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreateFileSystemDetails getBody$() {
+    public com.oracle.bmc.filestorage.model.CreateFileSystemDetails getBody$() {
         return createFileSystemDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CreateFileSystemRequest, CreateFileSystemDetails> {
+                    CreateFileSystemRequest,
+                    com.oracle.bmc.filestorage.model.CreateFileSystemDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -118,7 +120,7 @@ public class CreateFileSystemRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreateFileSystemDetails body) {
+        public Builder body$(com.oracle.bmc.filestorage.model.CreateFileSystemDetails body) {
             createFileSystemDetails(body);
             return this;
         }

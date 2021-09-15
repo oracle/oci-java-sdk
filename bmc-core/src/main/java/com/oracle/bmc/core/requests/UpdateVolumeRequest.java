@@ -17,7 +17,8 @@ import com.oracle.bmc.core.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
-public class UpdateVolumeRequest extends com.oracle.bmc.requests.BmcRequest<UpdateVolumeDetails> {
+public class UpdateVolumeRequest
+        extends com.oracle.bmc.requests.BmcRequest<com.oracle.bmc.core.model.UpdateVolumeDetails> {
 
     /**
      * The OCID of the volume.
@@ -27,7 +28,7 @@ public class UpdateVolumeRequest extends com.oracle.bmc.requests.BmcRequest<Upda
     /**
      * Update volume's display name. Avoid entering confidential information.
      */
-    private UpdateVolumeDetails updateVolumeDetails;
+    private com.oracle.bmc.core.model.UpdateVolumeDetails updateVolumeDetails;
 
     /**
      * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
@@ -43,13 +44,13 @@ public class UpdateVolumeRequest extends com.oracle.bmc.requests.BmcRequest<Upda
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateVolumeDetails getBody$() {
+    public com.oracle.bmc.core.model.UpdateVolumeDetails getBody$() {
         return updateVolumeDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateVolumeRequest, UpdateVolumeDetails> {
+                    UpdateVolumeRequest, com.oracle.bmc.core.model.UpdateVolumeDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -113,7 +114,7 @@ public class UpdateVolumeRequest extends com.oracle.bmc.requests.BmcRequest<Upda
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateVolumeDetails body) {
+        public Builder body$(com.oracle.bmc.core.model.UpdateVolumeDetails body) {
             updateVolumeDetails(body);
             return this;
         }

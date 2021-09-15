@@ -18,7 +18,8 @@ import com.oracle.bmc.core.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class UpdateNetworkSecurityGroupRequest
-        extends com.oracle.bmc.requests.BmcRequest<UpdateNetworkSecurityGroupDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.core.model.UpdateNetworkSecurityGroupDetails> {
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security group.
@@ -28,7 +29,8 @@ public class UpdateNetworkSecurityGroupRequest
     /**
      * Details object for updating a network security group.
      */
-    private UpdateNetworkSecurityGroupDetails updateNetworkSecurityGroupDetails;
+    private com.oracle.bmc.core.model.UpdateNetworkSecurityGroupDetails
+            updateNetworkSecurityGroupDetails;
 
     /**
      * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
@@ -44,13 +46,14 @@ public class UpdateNetworkSecurityGroupRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateNetworkSecurityGroupDetails getBody$() {
+    public com.oracle.bmc.core.model.UpdateNetworkSecurityGroupDetails getBody$() {
         return updateNetworkSecurityGroupDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateNetworkSecurityGroupRequest, UpdateNetworkSecurityGroupDetails> {
+                    UpdateNetworkSecurityGroupRequest,
+                    com.oracle.bmc.core.model.UpdateNetworkSecurityGroupDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -114,7 +117,7 @@ public class UpdateNetworkSecurityGroupRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateNetworkSecurityGroupDetails body) {
+        public Builder body$(com.oracle.bmc.core.model.UpdateNetworkSecurityGroupDetails body) {
             updateNetworkSecurityGroupDetails(body);
             return this;
         }

@@ -17,7 +17,8 @@ import com.oracle.bmc.bds.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
-public class ChangeShapeRequest extends com.oracle.bmc.requests.BmcRequest<ChangeShapeDetails> {
+public class ChangeShapeRequest
+        extends com.oracle.bmc.requests.BmcRequest<com.oracle.bmc.bds.model.ChangeShapeDetails> {
 
     /**
      * The OCID of the cluster.
@@ -27,7 +28,7 @@ public class ChangeShapeRequest extends com.oracle.bmc.requests.BmcRequest<Chang
     /**
      * Individual change shape settings per node type. You can change the shape of master, worker, utility and Cloud SQL nodes.
      */
-    private ChangeShapeDetails changeShapeDetails;
+    private com.oracle.bmc.bds.model.ChangeShapeDetails changeShapeDetails;
 
     /**
      * The client request ID for tracing.
@@ -60,13 +61,13 @@ public class ChangeShapeRequest extends com.oracle.bmc.requests.BmcRequest<Chang
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public ChangeShapeDetails getBody$() {
+    public com.oracle.bmc.bds.model.ChangeShapeDetails getBody$() {
         return changeShapeDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    ChangeShapeRequest, ChangeShapeDetails> {
+                    ChangeShapeRequest, com.oracle.bmc.bds.model.ChangeShapeDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -132,7 +133,7 @@ public class ChangeShapeRequest extends com.oracle.bmc.requests.BmcRequest<Chang
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(ChangeShapeDetails body) {
+        public Builder body$(com.oracle.bmc.bds.model.ChangeShapeDetails body) {
             changeShapeDetails(body);
             return this;
         }

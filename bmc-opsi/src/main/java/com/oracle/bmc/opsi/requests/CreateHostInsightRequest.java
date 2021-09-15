@@ -18,12 +18,13 @@ import com.oracle.bmc.opsi.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class CreateHostInsightRequest
-        extends com.oracle.bmc.requests.BmcRequest<CreateHostInsightDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.opsi.model.CreateHostInsightDetails> {
 
     /**
      * Details for the host for which a Host Insight resource will be created in Operations Insights.
      */
-    private CreateHostInsightDetails createHostInsightDetails;
+    private com.oracle.bmc.opsi.model.CreateHostInsightDetails createHostInsightDetails;
 
     /**
      * A token that uniquely identifies a request that can be retried in case of a timeout or
@@ -49,13 +50,13 @@ public class CreateHostInsightRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreateHostInsightDetails getBody$() {
+    public com.oracle.bmc.opsi.model.CreateHostInsightDetails getBody$() {
         return createHostInsightDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CreateHostInsightRequest, CreateHostInsightDetails> {
+                    CreateHostInsightRequest, com.oracle.bmc.opsi.model.CreateHostInsightDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -119,7 +120,7 @@ public class CreateHostInsightRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreateHostInsightDetails body) {
+        public Builder body$(com.oracle.bmc.opsi.model.CreateHostInsightDetails body) {
             createHostInsightDetails(body);
             return this;
         }

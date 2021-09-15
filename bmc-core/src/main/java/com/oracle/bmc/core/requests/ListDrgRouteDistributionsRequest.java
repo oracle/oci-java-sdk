@@ -154,7 +154,7 @@ public class ListDrgRouteDistributionsRequest
      * state. The value is case insensitive.
      *
      */
-    private DrgRouteDistribution.LifecycleState lifecycleState;
+    private com.oracle.bmc.core.model.DrgRouteDistribution.LifecycleState lifecycleState;
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<

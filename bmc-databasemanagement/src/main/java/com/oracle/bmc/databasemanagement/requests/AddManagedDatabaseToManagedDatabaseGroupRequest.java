@@ -19,7 +19,8 @@ import com.oracle.bmc.databasemanagement.model.*;
 @lombok.Getter
 public class AddManagedDatabaseToManagedDatabaseGroupRequest
         extends com.oracle.bmc.requests.BmcRequest<
-                AddManagedDatabaseToManagedDatabaseGroupDetails> {
+                com.oracle.bmc.databasemanagement.model
+                        .AddManagedDatabaseToManagedDatabaseGroupDetails> {
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Managed Database Group.
@@ -29,7 +30,7 @@ public class AddManagedDatabaseToManagedDatabaseGroupRequest
     /**
      * The Managed Database details required to add the Managed Database to a Managed Database Group.
      */
-    private AddManagedDatabaseToManagedDatabaseGroupDetails
+    private com.oracle.bmc.databasemanagement.model.AddManagedDatabaseToManagedDatabaseGroupDetails
             addManagedDatabaseToManagedDatabaseGroupDetails;
 
     /**
@@ -53,14 +54,16 @@ public class AddManagedDatabaseToManagedDatabaseGroupRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public AddManagedDatabaseToManagedDatabaseGroupDetails getBody$() {
+    public com.oracle.bmc.databasemanagement.model.AddManagedDatabaseToManagedDatabaseGroupDetails
+            getBody$() {
         return addManagedDatabaseToManagedDatabaseGroupDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     AddManagedDatabaseToManagedDatabaseGroupRequest,
-                    AddManagedDatabaseToManagedDatabaseGroupDetails> {
+                    com.oracle.bmc.databasemanagement.model
+                            .AddManagedDatabaseToManagedDatabaseGroupDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -127,7 +130,10 @@ public class AddManagedDatabaseToManagedDatabaseGroupRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(AddManagedDatabaseToManagedDatabaseGroupDetails body) {
+        public Builder body$(
+                com.oracle.bmc.databasemanagement.model
+                                .AddManagedDatabaseToManagedDatabaseGroupDetails
+                        body) {
             addManagedDatabaseToManagedDatabaseGroupDetails(body);
             return this;
         }

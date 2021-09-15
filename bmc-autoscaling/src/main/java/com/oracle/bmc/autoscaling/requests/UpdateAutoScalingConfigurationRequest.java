@@ -18,7 +18,8 @@ import com.oracle.bmc.autoscaling.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class UpdateAutoScalingConfigurationRequest
-        extends com.oracle.bmc.requests.BmcRequest<UpdateAutoScalingConfigurationDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.autoscaling.model.UpdateAutoScalingConfigurationDetails> {
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the autoscaling configuration.
@@ -28,7 +29,8 @@ public class UpdateAutoScalingConfigurationRequest
     /**
      * Update details for an autoscaling configuration.
      */
-    private UpdateAutoScalingConfigurationDetails updateAutoScalingConfigurationDetails;
+    private com.oracle.bmc.autoscaling.model.UpdateAutoScalingConfigurationDetails
+            updateAutoScalingConfigurationDetails;
 
     /**
      * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
@@ -59,13 +61,14 @@ public class UpdateAutoScalingConfigurationRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateAutoScalingConfigurationDetails getBody$() {
+    public com.oracle.bmc.autoscaling.model.UpdateAutoScalingConfigurationDetails getBody$() {
         return updateAutoScalingConfigurationDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateAutoScalingConfigurationRequest, UpdateAutoScalingConfigurationDetails> {
+                    UpdateAutoScalingConfigurationRequest,
+                    com.oracle.bmc.autoscaling.model.UpdateAutoScalingConfigurationDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -131,7 +134,8 @@ public class UpdateAutoScalingConfigurationRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateAutoScalingConfigurationDetails body) {
+        public Builder body$(
+                com.oracle.bmc.autoscaling.model.UpdateAutoScalingConfigurationDetails body) {
             updateAutoScalingConfigurationDetails(body);
             return this;
         }

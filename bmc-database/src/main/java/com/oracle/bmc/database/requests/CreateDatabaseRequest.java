@@ -17,12 +17,14 @@ import com.oracle.bmc.database.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
-public class CreateDatabaseRequest extends com.oracle.bmc.requests.BmcRequest<CreateDatabaseBase> {
+public class CreateDatabaseRequest
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.database.model.CreateDatabaseBase> {
 
     /**
      * Request to create a new database.
      */
-    private CreateDatabaseBase createNewDatabaseDetails;
+    private com.oracle.bmc.database.model.CreateDatabaseBase createNewDatabaseDetails;
 
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -46,13 +48,13 @@ public class CreateDatabaseRequest extends com.oracle.bmc.requests.BmcRequest<Cr
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreateDatabaseBase getBody$() {
+    public com.oracle.bmc.database.model.CreateDatabaseBase getBody$() {
         return createNewDatabaseDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CreateDatabaseRequest, CreateDatabaseBase> {
+                    CreateDatabaseRequest, com.oracle.bmc.database.model.CreateDatabaseBase> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -116,7 +118,7 @@ public class CreateDatabaseRequest extends com.oracle.bmc.requests.BmcRequest<Cr
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreateDatabaseBase body) {
+        public Builder body$(com.oracle.bmc.database.model.CreateDatabaseBase body) {
             createNewDatabaseDetails(body);
             return this;
         }

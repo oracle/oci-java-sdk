@@ -18,12 +18,14 @@ import com.oracle.bmc.opsi.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class CreateEnterpriseManagerBridgeRequest
-        extends com.oracle.bmc.requests.BmcRequest<CreateEnterpriseManagerBridgeDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.opsi.model.CreateEnterpriseManagerBridgeDetails> {
 
     /**
      * Details for the Enterprise Manager bridge to be created in Operations Insights.
      */
-    private CreateEnterpriseManagerBridgeDetails createEnterpriseManagerBridgeDetails;
+    private com.oracle.bmc.opsi.model.CreateEnterpriseManagerBridgeDetails
+            createEnterpriseManagerBridgeDetails;
 
     /**
      * A token that uniquely identifies a request that can be retried in case of a timeout or
@@ -49,13 +51,14 @@ public class CreateEnterpriseManagerBridgeRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreateEnterpriseManagerBridgeDetails getBody$() {
+    public com.oracle.bmc.opsi.model.CreateEnterpriseManagerBridgeDetails getBody$() {
         return createEnterpriseManagerBridgeDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CreateEnterpriseManagerBridgeRequest, CreateEnterpriseManagerBridgeDetails> {
+                    CreateEnterpriseManagerBridgeRequest,
+                    com.oracle.bmc.opsi.model.CreateEnterpriseManagerBridgeDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -119,7 +122,7 @@ public class CreateEnterpriseManagerBridgeRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreateEnterpriseManagerBridgeDetails body) {
+        public Builder body$(com.oracle.bmc.opsi.model.CreateEnterpriseManagerBridgeDetails body) {
             createEnterpriseManagerBridgeDetails(body);
             return this;
         }

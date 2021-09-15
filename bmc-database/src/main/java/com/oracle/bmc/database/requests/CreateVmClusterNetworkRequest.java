@@ -18,7 +18,8 @@ import com.oracle.bmc.database.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class CreateVmClusterNetworkRequest
-        extends com.oracle.bmc.requests.BmcRequest<VmClusterNetworkDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.database.model.VmClusterNetworkDetails> {
 
     /**
      * The Exadata infrastructure [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
@@ -28,7 +29,7 @@ public class CreateVmClusterNetworkRequest
     /**
      * Request to create the Cloud@Customer VM cluster network.
      */
-    private VmClusterNetworkDetails vmClusterNetworkDetails;
+    private com.oracle.bmc.database.model.VmClusterNetworkDetails vmClusterNetworkDetails;
 
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -52,13 +53,14 @@ public class CreateVmClusterNetworkRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public VmClusterNetworkDetails getBody$() {
+    public com.oracle.bmc.database.model.VmClusterNetworkDetails getBody$() {
         return vmClusterNetworkDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CreateVmClusterNetworkRequest, VmClusterNetworkDetails> {
+                    CreateVmClusterNetworkRequest,
+                    com.oracle.bmc.database.model.VmClusterNetworkDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -123,7 +125,7 @@ public class CreateVmClusterNetworkRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(VmClusterNetworkDetails body) {
+        public Builder body$(com.oracle.bmc.database.model.VmClusterNetworkDetails body) {
             vmClusterNetworkDetails(body);
             return this;
         }

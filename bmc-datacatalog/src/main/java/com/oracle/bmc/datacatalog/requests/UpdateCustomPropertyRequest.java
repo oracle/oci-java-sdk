@@ -18,7 +18,8 @@ import com.oracle.bmc.datacatalog.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class UpdateCustomPropertyRequest
-        extends com.oracle.bmc.requests.BmcRequest<UpdateCustomPropertyDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.datacatalog.model.UpdateCustomPropertyDetails> {
 
     /**
      * Unique catalog identifier.
@@ -38,7 +39,8 @@ public class UpdateCustomPropertyRequest
     /**
      * The information to be updated in the custom property.
      */
-    private UpdateCustomPropertyDetails updateCustomPropertyDetails;
+    private com.oracle.bmc.datacatalog.model.UpdateCustomPropertyDetails
+            updateCustomPropertyDetails;
 
     /**
      * For optimistic concurrency control. In the PUT or DELETE call
@@ -61,13 +63,14 @@ public class UpdateCustomPropertyRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateCustomPropertyDetails getBody$() {
+    public com.oracle.bmc.datacatalog.model.UpdateCustomPropertyDetails getBody$() {
         return updateCustomPropertyDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateCustomPropertyRequest, UpdateCustomPropertyDetails> {
+                    UpdateCustomPropertyRequest,
+                    com.oracle.bmc.datacatalog.model.UpdateCustomPropertyDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -134,7 +137,7 @@ public class UpdateCustomPropertyRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateCustomPropertyDetails body) {
+        public Builder body$(com.oracle.bmc.datacatalog.model.UpdateCustomPropertyDetails body) {
             updateCustomPropertyDetails(body);
             return this;
         }

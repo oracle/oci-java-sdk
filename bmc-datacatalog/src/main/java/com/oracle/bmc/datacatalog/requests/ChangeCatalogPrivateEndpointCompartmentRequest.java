@@ -18,12 +18,13 @@ import com.oracle.bmc.datacatalog.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class ChangeCatalogPrivateEndpointCompartmentRequest
-        extends com.oracle.bmc.requests.BmcRequest<ChangeCatalogPrivateEndpointCompartmentDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.datacatalog.model.ChangeCatalogPrivateEndpointCompartmentDetails> {
 
     /**
      * Details for the target compartment.
      */
-    private ChangeCatalogPrivateEndpointCompartmentDetails
+    private com.oracle.bmc.datacatalog.model.ChangeCatalogPrivateEndpointCompartmentDetails
             changeCatalogPrivateEndpointCompartmentDetails;
 
     /**
@@ -52,14 +53,16 @@ public class ChangeCatalogPrivateEndpointCompartmentRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public ChangeCatalogPrivateEndpointCompartmentDetails getBody$() {
+    public com.oracle.bmc.datacatalog.model.ChangeCatalogPrivateEndpointCompartmentDetails
+            getBody$() {
         return changeCatalogPrivateEndpointCompartmentDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ChangeCatalogPrivateEndpointCompartmentRequest,
-                    ChangeCatalogPrivateEndpointCompartmentDetails> {
+                    com.oracle.bmc.datacatalog.model
+                            .ChangeCatalogPrivateEndpointCompartmentDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -126,7 +129,9 @@ public class ChangeCatalogPrivateEndpointCompartmentRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(ChangeCatalogPrivateEndpointCompartmentDetails body) {
+        public Builder body$(
+                com.oracle.bmc.datacatalog.model.ChangeCatalogPrivateEndpointCompartmentDetails
+                        body) {
             changeCatalogPrivateEndpointCompartmentDetails(body);
             return this;
         }

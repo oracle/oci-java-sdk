@@ -18,12 +18,14 @@ import com.oracle.bmc.datacatalog.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class ChangeCatalogCompartmentRequest
-        extends com.oracle.bmc.requests.BmcRequest<ChangeCatalogCompartmentDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.datacatalog.model.ChangeCatalogCompartmentDetails> {
 
     /**
      * Details for the target compartment.
      */
-    private ChangeCatalogCompartmentDetails changeCatalogCompartmentDetails;
+    private com.oracle.bmc.datacatalog.model.ChangeCatalogCompartmentDetails
+            changeCatalogCompartmentDetails;
 
     /**
      * Unique catalog identifier.
@@ -51,13 +53,14 @@ public class ChangeCatalogCompartmentRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public ChangeCatalogCompartmentDetails getBody$() {
+    public com.oracle.bmc.datacatalog.model.ChangeCatalogCompartmentDetails getBody$() {
         return changeCatalogCompartmentDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    ChangeCatalogCompartmentRequest, ChangeCatalogCompartmentDetails> {
+                    ChangeCatalogCompartmentRequest,
+                    com.oracle.bmc.datacatalog.model.ChangeCatalogCompartmentDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -122,7 +125,8 @@ public class ChangeCatalogCompartmentRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(ChangeCatalogCompartmentDetails body) {
+        public Builder body$(
+                com.oracle.bmc.datacatalog.model.ChangeCatalogCompartmentDetails body) {
             changeCatalogCompartmentDetails(body);
             return this;
         }

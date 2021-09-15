@@ -18,12 +18,13 @@ import com.oracle.bmc.database.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class LaunchAutonomousExadataInfrastructureRequest
-        extends com.oracle.bmc.requests.BmcRequest<LaunchAutonomousExadataInfrastructureDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.database.model.LaunchAutonomousExadataInfrastructureDetails> {
 
     /**
      * Request to create an Autonomous Exadata Infrastructure resource.
      */
-    private LaunchAutonomousExadataInfrastructureDetails
+    private com.oracle.bmc.database.model.LaunchAutonomousExadataInfrastructureDetails
             launchAutonomousExadataInfrastructureDetails;
 
     /**
@@ -42,14 +43,14 @@ public class LaunchAutonomousExadataInfrastructureRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public LaunchAutonomousExadataInfrastructureDetails getBody$() {
+    public com.oracle.bmc.database.model.LaunchAutonomousExadataInfrastructureDetails getBody$() {
         return launchAutonomousExadataInfrastructureDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     LaunchAutonomousExadataInfrastructureRequest,
-                    LaunchAutonomousExadataInfrastructureDetails> {
+                    com.oracle.bmc.database.model.LaunchAutonomousExadataInfrastructureDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -113,7 +114,8 @@ public class LaunchAutonomousExadataInfrastructureRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(LaunchAutonomousExadataInfrastructureDetails body) {
+        public Builder body$(
+                com.oracle.bmc.database.model.LaunchAutonomousExadataInfrastructureDetails body) {
             launchAutonomousExadataInfrastructureDetails(body);
             return this;
         }

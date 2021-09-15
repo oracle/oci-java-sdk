@@ -18,7 +18,8 @@ import com.oracle.bmc.core.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class LaunchInstanceConfigurationRequest
-        extends com.oracle.bmc.requests.BmcRequest<InstanceConfigurationInstanceDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.core.model.InstanceConfigurationInstanceDetails> {
 
     /**
      * The OCID of the instance configuration.
@@ -28,7 +29,7 @@ public class LaunchInstanceConfigurationRequest
     /**
      * Instance configuration Instance Details
      */
-    private InstanceConfigurationInstanceDetails instanceConfiguration;
+    private com.oracle.bmc.core.model.InstanceConfigurationInstanceDetails instanceConfiguration;
 
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -46,13 +47,14 @@ public class LaunchInstanceConfigurationRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public InstanceConfigurationInstanceDetails getBody$() {
+    public com.oracle.bmc.core.model.InstanceConfigurationInstanceDetails getBody$() {
         return instanceConfiguration;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    LaunchInstanceConfigurationRequest, InstanceConfigurationInstanceDetails> {
+                    LaunchInstanceConfigurationRequest,
+                    com.oracle.bmc.core.model.InstanceConfigurationInstanceDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -116,7 +118,7 @@ public class LaunchInstanceConfigurationRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(InstanceConfigurationInstanceDetails body) {
+        public Builder body$(com.oracle.bmc.core.model.InstanceConfigurationInstanceDetails body) {
             instanceConfiguration(body);
             return this;
         }

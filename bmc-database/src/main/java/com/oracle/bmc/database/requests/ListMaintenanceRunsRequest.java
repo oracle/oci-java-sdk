@@ -32,12 +32,13 @@ public class ListMaintenanceRunsRequest extends com.oracle.bmc.requests.BmcReque
     /**
      * The type of the target resource.
      */
-    private MaintenanceRunSummary.TargetResourceType targetResourceType;
+    private com.oracle.bmc.database.model.MaintenanceRunSummary.TargetResourceType
+            targetResourceType;
 
     /**
      * The maintenance type.
      */
-    private MaintenanceRunSummary.MaintenanceType maintenanceType;
+    private com.oracle.bmc.database.model.MaintenanceRunSummary.MaintenanceType maintenanceType;
 
     /**
      * The maximum number of items to return per page.
@@ -139,7 +140,7 @@ public class ListMaintenanceRunsRequest extends com.oracle.bmc.requests.BmcReque
     /**
      * A filter to return only resources that match the given lifecycle state exactly.
      */
-    private MaintenanceRunSummary.LifecycleState lifecycleState;
+    private com.oracle.bmc.database.model.MaintenanceRunSummary.LifecycleState lifecycleState;
 
     /**
      * A filter to return only resources that match the given availability domain exactly.

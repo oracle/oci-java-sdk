@@ -18,7 +18,8 @@ import com.oracle.bmc.core.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class DetachServiceIdRequest
-        extends com.oracle.bmc.requests.BmcRequest<ServiceIdRequestDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.core.model.ServiceIdRequestDetails> {
 
     /**
      * The service gateway's [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -28,7 +29,7 @@ public class DetachServiceIdRequest
     /**
      * ServiceId of Service to be detached from a service gateway.
      */
-    private ServiceIdRequestDetails detachServiceDetails;
+    private com.oracle.bmc.core.model.ServiceIdRequestDetails detachServiceDetails;
 
     /**
      * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
@@ -44,13 +45,13 @@ public class DetachServiceIdRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public ServiceIdRequestDetails getBody$() {
+    public com.oracle.bmc.core.model.ServiceIdRequestDetails getBody$() {
         return detachServiceDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    DetachServiceIdRequest, ServiceIdRequestDetails> {
+                    DetachServiceIdRequest, com.oracle.bmc.core.model.ServiceIdRequestDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -114,7 +115,7 @@ public class DetachServiceIdRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(ServiceIdRequestDetails body) {
+        public Builder body$(com.oracle.bmc.core.model.ServiceIdRequestDetails body) {
             detachServiceDetails(body);
             return this;
         }

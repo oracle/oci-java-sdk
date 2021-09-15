@@ -18,7 +18,8 @@ import com.oracle.bmc.analytics.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class UpdateAnalyticsInstanceRequest
-        extends com.oracle.bmc.requests.BmcRequest<UpdateAnalyticsInstanceDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.analytics.model.UpdateAnalyticsInstanceDetails> {
 
     /**
      * The OCID of the AnalyticsInstance.
@@ -31,7 +32,8 @@ public class UpdateAnalyticsInstanceRequest
      * will not be updated.
      *
      */
-    private UpdateAnalyticsInstanceDetails updateAnalyticsInstanceDetails;
+    private com.oracle.bmc.analytics.model.UpdateAnalyticsInstanceDetails
+            updateAnalyticsInstanceDetails;
 
     /**
      * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
@@ -54,13 +56,14 @@ public class UpdateAnalyticsInstanceRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateAnalyticsInstanceDetails getBody$() {
+    public com.oracle.bmc.analytics.model.UpdateAnalyticsInstanceDetails getBody$() {
         return updateAnalyticsInstanceDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateAnalyticsInstanceRequest, UpdateAnalyticsInstanceDetails> {
+                    UpdateAnalyticsInstanceRequest,
+                    com.oracle.bmc.analytics.model.UpdateAnalyticsInstanceDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -125,7 +128,7 @@ public class UpdateAnalyticsInstanceRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateAnalyticsInstanceDetails body) {
+        public Builder body$(com.oracle.bmc.analytics.model.UpdateAnalyticsInstanceDetails body) {
             updateAnalyticsInstanceDetails(body);
             return this;
         }

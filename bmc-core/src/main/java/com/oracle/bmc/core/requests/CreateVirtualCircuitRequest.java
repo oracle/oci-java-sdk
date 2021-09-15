@@ -18,12 +18,13 @@ import com.oracle.bmc.core.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class CreateVirtualCircuitRequest
-        extends com.oracle.bmc.requests.BmcRequest<CreateVirtualCircuitDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.core.model.CreateVirtualCircuitDetails> {
 
     /**
      * Details to create a VirtualCircuit.
      */
-    private CreateVirtualCircuitDetails createVirtualCircuitDetails;
+    private com.oracle.bmc.core.model.CreateVirtualCircuitDetails createVirtualCircuitDetails;
 
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -41,13 +42,14 @@ public class CreateVirtualCircuitRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreateVirtualCircuitDetails getBody$() {
+    public com.oracle.bmc.core.model.CreateVirtualCircuitDetails getBody$() {
         return createVirtualCircuitDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CreateVirtualCircuitRequest, CreateVirtualCircuitDetails> {
+                    CreateVirtualCircuitRequest,
+                    com.oracle.bmc.core.model.CreateVirtualCircuitDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -110,7 +112,7 @@ public class CreateVirtualCircuitRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreateVirtualCircuitDetails body) {
+        public Builder body$(com.oracle.bmc.core.model.CreateVirtualCircuitDetails body) {
             createVirtualCircuitDetails(body);
             return this;
         }

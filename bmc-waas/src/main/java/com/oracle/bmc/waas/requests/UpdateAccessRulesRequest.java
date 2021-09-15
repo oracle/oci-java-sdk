@@ -18,7 +18,8 @@ import com.oracle.bmc.waas.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class UpdateAccessRulesRequest
-        extends com.oracle.bmc.requests.BmcRequest<java.util.List<AccessRule>> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                java.util.List<com.oracle.bmc.waas.model.AccessRule>> {
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the WAAS policy.
@@ -28,7 +29,7 @@ public class UpdateAccessRulesRequest
     /**
      *
      */
-    private java.util.List<AccessRule> accessRules;
+    private java.util.List<com.oracle.bmc.waas.model.AccessRule> accessRules;
 
     /**
      * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
@@ -52,24 +53,26 @@ public class UpdateAccessRulesRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public java.util.List<AccessRule> getBody$() {
+    public java.util.List<com.oracle.bmc.waas.model.AccessRule> getBody$() {
         return accessRules;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateAccessRulesRequest, java.util.List<AccessRule>> {
+                    UpdateAccessRulesRequest,
+                    java.util.List<com.oracle.bmc.waas.model.AccessRule>> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        private java.util.List<AccessRule> accessRules = null;
+        private java.util.List<com.oracle.bmc.waas.model.AccessRule> accessRules = null;
 
         /**
          *
          * @return this builder instance
          */
-        public Builder accessRules(java.util.List<AccessRule> accessRules) {
+        public Builder accessRules(
+                java.util.List<com.oracle.bmc.waas.model.AccessRule> accessRules) {
             this.accessRules = accessRules;
             return this;
         }
@@ -78,7 +81,7 @@ public class UpdateAccessRulesRequest
          * Singular setter.
          * @return this builder instance
          */
-        public Builder accessRules(AccessRule singularValue) {
+        public Builder accessRules(com.oracle.bmc.waas.model.AccessRule singularValue) {
             return this.accessRules(java.util.Arrays.asList(singularValue));
         }
 
@@ -143,7 +146,7 @@ public class UpdateAccessRulesRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(java.util.List<AccessRule> body) {
+        public Builder body$(java.util.List<com.oracle.bmc.waas.model.AccessRule> body) {
             accessRules(body);
             return this;
         }

@@ -18,7 +18,8 @@ import com.oracle.bmc.datacatalog.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class CreateTermRelationshipRequest
-        extends com.oracle.bmc.requests.BmcRequest<CreateTermRelationshipDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.datacatalog.model.CreateTermRelationshipDetails> {
 
     /**
      * Unique catalog identifier.
@@ -38,7 +39,8 @@ public class CreateTermRelationshipRequest
     /**
      * The information used to create the term relationship.
      */
-    private CreateTermRelationshipDetails createTermRelationshipDetails;
+    private com.oracle.bmc.datacatalog.model.CreateTermRelationshipDetails
+            createTermRelationshipDetails;
 
     /**
      * The client request ID for tracing.
@@ -61,13 +63,14 @@ public class CreateTermRelationshipRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreateTermRelationshipDetails getBody$() {
+    public com.oracle.bmc.datacatalog.model.CreateTermRelationshipDetails getBody$() {
         return createTermRelationshipDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CreateTermRelationshipRequest, CreateTermRelationshipDetails> {
+                    CreateTermRelationshipRequest,
+                    com.oracle.bmc.datacatalog.model.CreateTermRelationshipDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -134,7 +137,7 @@ public class CreateTermRelationshipRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreateTermRelationshipDetails body) {
+        public Builder body$(com.oracle.bmc.datacatalog.model.CreateTermRelationshipDetails body) {
             createTermRelationshipDetails(body);
             return this;
         }

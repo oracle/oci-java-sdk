@@ -18,7 +18,8 @@ import com.oracle.bmc.datacatalog.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class CreateJobExecutionRequest
-        extends com.oracle.bmc.requests.BmcRequest<CreateJobExecutionDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.datacatalog.model.CreateJobExecutionDetails> {
 
     /**
      * Unique catalog identifier.
@@ -33,7 +34,7 @@ public class CreateJobExecutionRequest
     /**
      * The information used to create the job execution.
      */
-    private CreateJobExecutionDetails createJobExecutionDetails;
+    private com.oracle.bmc.datacatalog.model.CreateJobExecutionDetails createJobExecutionDetails;
 
     /**
      * The client request ID for tracing.
@@ -56,13 +57,14 @@ public class CreateJobExecutionRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreateJobExecutionDetails getBody$() {
+    public com.oracle.bmc.datacatalog.model.CreateJobExecutionDetails getBody$() {
         return createJobExecutionDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CreateJobExecutionRequest, CreateJobExecutionDetails> {
+                    CreateJobExecutionRequest,
+                    com.oracle.bmc.datacatalog.model.CreateJobExecutionDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -128,7 +130,7 @@ public class CreateJobExecutionRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreateJobExecutionDetails body) {
+        public Builder body$(com.oracle.bmc.datacatalog.model.CreateJobExecutionDetails body) {
             createJobExecutionDetails(body);
             return this;
         }

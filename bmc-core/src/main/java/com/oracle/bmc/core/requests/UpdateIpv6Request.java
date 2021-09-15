@@ -17,7 +17,8 @@ import com.oracle.bmc.core.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
-public class UpdateIpv6Request extends com.oracle.bmc.requests.BmcRequest<UpdateIpv6Details> {
+public class UpdateIpv6Request
+        extends com.oracle.bmc.requests.BmcRequest<com.oracle.bmc.core.model.UpdateIpv6Details> {
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IPv6.
@@ -27,7 +28,7 @@ public class UpdateIpv6Request extends com.oracle.bmc.requests.BmcRequest<Update
     /**
      * IPv6 details to be updated.
      */
-    private UpdateIpv6Details updateIpv6Details;
+    private com.oracle.bmc.core.model.UpdateIpv6Details updateIpv6Details;
 
     /**
      * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
@@ -50,13 +51,13 @@ public class UpdateIpv6Request extends com.oracle.bmc.requests.BmcRequest<Update
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateIpv6Details getBody$() {
+    public com.oracle.bmc.core.model.UpdateIpv6Details getBody$() {
         return updateIpv6Details;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateIpv6Request, UpdateIpv6Details> {
+                    UpdateIpv6Request, com.oracle.bmc.core.model.UpdateIpv6Details> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -121,7 +122,7 @@ public class UpdateIpv6Request extends com.oracle.bmc.requests.BmcRequest<Update
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateIpv6Details body) {
+        public Builder body$(com.oracle.bmc.core.model.UpdateIpv6Details body) {
             updateIpv6Details(body);
             return this;
         }

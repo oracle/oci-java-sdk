@@ -18,12 +18,13 @@ import com.oracle.bmc.opsi.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class IngestSqlBucketRequest
-        extends com.oracle.bmc.requests.BmcRequest<IngestSqlBucketDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.opsi.model.IngestSqlBucketDetails> {
 
     /**
      * Collection of SQL bucket objects for a particular database.
      */
-    private IngestSqlBucketDetails ingestSqlBucketDetails;
+    private com.oracle.bmc.opsi.model.IngestSqlBucketDetails ingestSqlBucketDetails;
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -74,13 +75,13 @@ public class IngestSqlBucketRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public IngestSqlBucketDetails getBody$() {
+    public com.oracle.bmc.opsi.model.IngestSqlBucketDetails getBody$() {
         return ingestSqlBucketDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    IngestSqlBucketRequest, IngestSqlBucketDetails> {
+                    IngestSqlBucketRequest, com.oracle.bmc.opsi.model.IngestSqlBucketDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -148,7 +149,7 @@ public class IngestSqlBucketRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(IngestSqlBucketDetails body) {
+        public Builder body$(com.oracle.bmc.opsi.model.IngestSqlBucketDetails body) {
             ingestSqlBucketDetails(body);
             return this;
         }

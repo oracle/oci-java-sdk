@@ -18,13 +18,15 @@ import com.oracle.bmc.database.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class ChangeKeyStoreCompartmentRequest
-        extends com.oracle.bmc.requests.BmcRequest<ChangeKeyStoreCompartmentDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.database.model.ChangeKeyStoreCompartmentDetails> {
 
     /**
      * Request to move key store to a different compartment
      *
      */
-    private ChangeKeyStoreCompartmentDetails changeKeyStoreCompartmentDetails;
+    private com.oracle.bmc.database.model.ChangeKeyStoreCompartmentDetails
+            changeKeyStoreCompartmentDetails;
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the key store.
@@ -61,13 +63,14 @@ public class ChangeKeyStoreCompartmentRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public ChangeKeyStoreCompartmentDetails getBody$() {
+    public com.oracle.bmc.database.model.ChangeKeyStoreCompartmentDetails getBody$() {
         return changeKeyStoreCompartmentDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    ChangeKeyStoreCompartmentRequest, ChangeKeyStoreCompartmentDetails> {
+                    ChangeKeyStoreCompartmentRequest,
+                    com.oracle.bmc.database.model.ChangeKeyStoreCompartmentDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -133,7 +136,7 @@ public class ChangeKeyStoreCompartmentRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(ChangeKeyStoreCompartmentDetails body) {
+        public Builder body$(com.oracle.bmc.database.model.ChangeKeyStoreCompartmentDetails body) {
             changeKeyStoreCompartmentDetails(body);
             return this;
         }

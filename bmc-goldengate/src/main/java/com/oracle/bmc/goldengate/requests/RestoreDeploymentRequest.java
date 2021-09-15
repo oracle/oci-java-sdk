@@ -18,7 +18,8 @@ import com.oracle.bmc.goldengate.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class RestoreDeploymentRequest
-        extends com.oracle.bmc.requests.BmcRequest<RestoreDeploymentDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.goldengate.model.RestoreDeploymentDetails> {
 
     /**
      * A unique DeploymentBackup identifier.
@@ -30,7 +31,7 @@ public class RestoreDeploymentRequest
      * A placeholder for any additional metadata to describe the deployment restore.
      *
      */
-    private RestoreDeploymentDetails restoreDeploymentDetails;
+    private com.oracle.bmc.goldengate.model.RestoreDeploymentDetails restoreDeploymentDetails;
 
     /**
      * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match} parameter to the value of the etag from a previous GET or POST response for that resource.  The resource is updated or deleted only if the etag you provide matches the resource's current etag value.
@@ -56,13 +57,14 @@ public class RestoreDeploymentRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public RestoreDeploymentDetails getBody$() {
+    public com.oracle.bmc.goldengate.model.RestoreDeploymentDetails getBody$() {
         return restoreDeploymentDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    RestoreDeploymentRequest, RestoreDeploymentDetails> {
+                    RestoreDeploymentRequest,
+                    com.oracle.bmc.goldengate.model.RestoreDeploymentDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -128,7 +130,7 @@ public class RestoreDeploymentRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(RestoreDeploymentDetails body) {
+        public Builder body$(com.oracle.bmc.goldengate.model.RestoreDeploymentDetails body) {
             restoreDeploymentDetails(body);
             return this;
         }

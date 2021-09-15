@@ -18,7 +18,8 @@ import com.oracle.bmc.databasemigration.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class CloneMigrationRequest
-        extends com.oracle.bmc.requests.BmcRequest<CloneMigrationDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.databasemigration.model.CloneMigrationDetails> {
 
     /**
      * The OCID of the migration
@@ -30,7 +31,7 @@ public class CloneMigrationRequest
      * Clone Migration properties.
      *
      */
-    private CloneMigrationDetails cloneMigrationDetails;
+    private com.oracle.bmc.databasemigration.model.CloneMigrationDetails cloneMigrationDetails;
 
     /**
      * For optimistic concurrency control. In the PUT or DELETE call
@@ -65,13 +66,14 @@ public class CloneMigrationRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CloneMigrationDetails getBody$() {
+    public com.oracle.bmc.databasemigration.model.CloneMigrationDetails getBody$() {
         return cloneMigrationDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CloneMigrationRequest, CloneMigrationDetails> {
+                    CloneMigrationRequest,
+                    com.oracle.bmc.databasemigration.model.CloneMigrationDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -137,7 +139,7 @@ public class CloneMigrationRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CloneMigrationDetails body) {
+        public Builder body$(com.oracle.bmc.databasemigration.model.CloneMigrationDetails body) {
             cloneMigrationDetails(body);
             return this;
         }

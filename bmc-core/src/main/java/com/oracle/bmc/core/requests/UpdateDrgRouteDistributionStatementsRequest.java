@@ -18,7 +18,8 @@ import com.oracle.bmc.core.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class UpdateDrgRouteDistributionStatementsRequest
-        extends com.oracle.bmc.requests.BmcRequest<UpdateDrgRouteDistributionStatementsDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.core.model.UpdateDrgRouteDistributionStatementsDetails> {
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route distribution.
@@ -29,7 +30,8 @@ public class UpdateDrgRouteDistributionStatementsRequest
      * Request to update one or more route distribution statements in the route distribution.
      *
      */
-    private UpdateDrgRouteDistributionStatementsDetails updateDrgRouteDistributionStatementsDetails;
+    private com.oracle.bmc.core.model.UpdateDrgRouteDistributionStatementsDetails
+            updateDrgRouteDistributionStatementsDetails;
 
     /**
      * Alternative accessor for the body parameter.
@@ -37,14 +39,14 @@ public class UpdateDrgRouteDistributionStatementsRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateDrgRouteDistributionStatementsDetails getBody$() {
+    public com.oracle.bmc.core.model.UpdateDrgRouteDistributionStatementsDetails getBody$() {
         return updateDrgRouteDistributionStatementsDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     UpdateDrgRouteDistributionStatementsRequest,
-                    UpdateDrgRouteDistributionStatementsDetails> {
+                    com.oracle.bmc.core.model.UpdateDrgRouteDistributionStatementsDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -108,7 +110,8 @@ public class UpdateDrgRouteDistributionStatementsRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateDrgRouteDistributionStatementsDetails body) {
+        public Builder body$(
+                com.oracle.bmc.core.model.UpdateDrgRouteDistributionStatementsDetails body) {
             updateDrgRouteDistributionStatementsDetails(body);
             return this;
         }

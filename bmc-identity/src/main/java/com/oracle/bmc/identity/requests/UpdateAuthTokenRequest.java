@@ -18,7 +18,8 @@ import com.oracle.bmc.identity.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class UpdateAuthTokenRequest
-        extends com.oracle.bmc.requests.BmcRequest<UpdateAuthTokenDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.identity.model.UpdateAuthTokenDetails> {
 
     /**
      * The OCID of the user.
@@ -33,7 +34,7 @@ public class UpdateAuthTokenRequest
     /**
      * Request object for updating an auth token.
      */
-    private UpdateAuthTokenDetails updateAuthTokenDetails;
+    private com.oracle.bmc.identity.model.UpdateAuthTokenDetails updateAuthTokenDetails;
 
     /**
      * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
@@ -49,13 +50,13 @@ public class UpdateAuthTokenRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateAuthTokenDetails getBody$() {
+    public com.oracle.bmc.identity.model.UpdateAuthTokenDetails getBody$() {
         return updateAuthTokenDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateAuthTokenRequest, UpdateAuthTokenDetails> {
+                    UpdateAuthTokenRequest, com.oracle.bmc.identity.model.UpdateAuthTokenDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -120,7 +121,7 @@ public class UpdateAuthTokenRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateAuthTokenDetails body) {
+        public Builder body$(com.oracle.bmc.identity.model.UpdateAuthTokenDetails body) {
             updateAuthTokenDetails(body);
             return this;
         }

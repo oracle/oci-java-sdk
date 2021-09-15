@@ -18,7 +18,8 @@ import com.oracle.bmc.functions.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class ChangeApplicationCompartmentRequest
-        extends com.oracle.bmc.requests.BmcRequest<ChangeApplicationCompartmentDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.functions.model.ChangeApplicationCompartmentDetails> {
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this application.
@@ -29,7 +30,8 @@ public class ChangeApplicationCompartmentRequest
     /**
      * Properties to change the compartment of an application.
      */
-    private ChangeApplicationCompartmentDetails changeApplicationCompartmentDetails;
+    private com.oracle.bmc.functions.model.ChangeApplicationCompartmentDetails
+            changeApplicationCompartmentDetails;
 
     /**
      * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
@@ -52,13 +54,14 @@ public class ChangeApplicationCompartmentRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public ChangeApplicationCompartmentDetails getBody$() {
+    public com.oracle.bmc.functions.model.ChangeApplicationCompartmentDetails getBody$() {
         return changeApplicationCompartmentDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    ChangeApplicationCompartmentRequest, ChangeApplicationCompartmentDetails> {
+                    ChangeApplicationCompartmentRequest,
+                    com.oracle.bmc.functions.model.ChangeApplicationCompartmentDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -123,7 +126,8 @@ public class ChangeApplicationCompartmentRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(ChangeApplicationCompartmentDetails body) {
+        public Builder body$(
+                com.oracle.bmc.functions.model.ChangeApplicationCompartmentDetails body) {
             changeApplicationCompartmentDetails(body);
             return this;
         }

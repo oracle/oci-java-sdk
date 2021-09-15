@@ -18,7 +18,8 @@ import com.oracle.bmc.core.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class ChangeSubnetCompartmentRequest
-        extends com.oracle.bmc.requests.BmcRequest<ChangeSubnetCompartmentDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.core.model.ChangeSubnetCompartmentDetails> {
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the subnet.
@@ -28,7 +29,7 @@ public class ChangeSubnetCompartmentRequest
     /**
      * Request to change the compartment of a given subnet.
      */
-    private ChangeSubnetCompartmentDetails changeSubnetCompartmentDetails;
+    private com.oracle.bmc.core.model.ChangeSubnetCompartmentDetails changeSubnetCompartmentDetails;
 
     /**
      * Unique identifier for the request.
@@ -53,13 +54,14 @@ public class ChangeSubnetCompartmentRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public ChangeSubnetCompartmentDetails getBody$() {
+    public com.oracle.bmc.core.model.ChangeSubnetCompartmentDetails getBody$() {
         return changeSubnetCompartmentDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    ChangeSubnetCompartmentRequest, ChangeSubnetCompartmentDetails> {
+                    ChangeSubnetCompartmentRequest,
+                    com.oracle.bmc.core.model.ChangeSubnetCompartmentDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -124,7 +126,7 @@ public class ChangeSubnetCompartmentRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(ChangeSubnetCompartmentDetails body) {
+        public Builder body$(com.oracle.bmc.core.model.ChangeSubnetCompartmentDetails body) {
             changeSubnetCompartmentDetails(body);
             return this;
         }

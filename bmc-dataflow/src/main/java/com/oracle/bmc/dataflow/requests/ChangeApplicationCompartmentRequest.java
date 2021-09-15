@@ -18,7 +18,8 @@ import com.oracle.bmc.dataflow.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class ChangeApplicationCompartmentRequest
-        extends com.oracle.bmc.requests.BmcRequest<ChangeApplicationCompartmentDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.dataflow.model.ChangeApplicationCompartmentDetails> {
 
     /**
      * The unique ID for an application.
@@ -30,7 +31,8 @@ public class ChangeApplicationCompartmentRequest
      * Details for changing an application's compartment.
      *
      */
-    private ChangeApplicationCompartmentDetails changeApplicationCompartmentDetails;
+    private com.oracle.bmc.dataflow.model.ChangeApplicationCompartmentDetails
+            changeApplicationCompartmentDetails;
 
     /**
      * Unique identifier for the request. If provided, the returned request ID will include this value.
@@ -62,13 +64,14 @@ public class ChangeApplicationCompartmentRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public ChangeApplicationCompartmentDetails getBody$() {
+    public com.oracle.bmc.dataflow.model.ChangeApplicationCompartmentDetails getBody$() {
         return changeApplicationCompartmentDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    ChangeApplicationCompartmentRequest, ChangeApplicationCompartmentDetails> {
+                    ChangeApplicationCompartmentRequest,
+                    com.oracle.bmc.dataflow.model.ChangeApplicationCompartmentDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -134,7 +137,8 @@ public class ChangeApplicationCompartmentRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(ChangeApplicationCompartmentDetails body) {
+        public Builder body$(
+                com.oracle.bmc.dataflow.model.ChangeApplicationCompartmentDetails body) {
             changeApplicationCompartmentDetails(body);
             return this;
         }

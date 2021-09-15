@@ -17,7 +17,9 @@ import com.oracle.bmc.dataintegration.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
-public class UpdateProjectRequest extends com.oracle.bmc.requests.BmcRequest<UpdateProjectDetails> {
+public class UpdateProjectRequest
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.dataintegration.model.UpdateProjectDetails> {
 
     /**
      * The workspace ID.
@@ -32,7 +34,7 @@ public class UpdateProjectRequest extends com.oracle.bmc.requests.BmcRequest<Upd
     /**
      * The details needed to update a project.
      */
-    private UpdateProjectDetails updateProjectDetails;
+    private com.oracle.bmc.dataintegration.model.UpdateProjectDetails updateProjectDetails;
 
     /**
      * Unique Oracle-assigned identifier for the request. If
@@ -56,13 +58,14 @@ public class UpdateProjectRequest extends com.oracle.bmc.requests.BmcRequest<Upd
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateProjectDetails getBody$() {
+    public com.oracle.bmc.dataintegration.model.UpdateProjectDetails getBody$() {
         return updateProjectDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateProjectRequest, UpdateProjectDetails> {
+                    UpdateProjectRequest,
+                    com.oracle.bmc.dataintegration.model.UpdateProjectDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -128,7 +131,7 @@ public class UpdateProjectRequest extends com.oracle.bmc.requests.BmcRequest<Upd
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateProjectDetails body) {
+        public Builder body$(com.oracle.bmc.dataintegration.model.UpdateProjectDetails body) {
             updateProjectDetails(body);
             return this;
         }

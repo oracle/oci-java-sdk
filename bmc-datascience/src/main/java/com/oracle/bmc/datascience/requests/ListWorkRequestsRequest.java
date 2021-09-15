@@ -50,6 +50,7 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
         ModelDeploymentUpdate("MODEL_DEPLOYMENT_UPDATE"),
         ProjectDelete("PROJECT_DELETE"),
         WorkrequestCancel("WORKREQUEST_CANCEL"),
+        JobDelete("JOB_DELETE"),
         ;
 
         private final String value;

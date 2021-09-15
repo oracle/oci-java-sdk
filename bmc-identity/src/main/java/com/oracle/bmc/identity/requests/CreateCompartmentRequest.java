@@ -18,12 +18,13 @@ import com.oracle.bmc.identity.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class CreateCompartmentRequest
-        extends com.oracle.bmc.requests.BmcRequest<CreateCompartmentDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.identity.model.CreateCompartmentDetails> {
 
     /**
      * Request object for creating a new compartment.
      */
-    private CreateCompartmentDetails createCompartmentDetails;
+    private com.oracle.bmc.identity.model.CreateCompartmentDetails createCompartmentDetails;
 
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -41,13 +42,14 @@ public class CreateCompartmentRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreateCompartmentDetails getBody$() {
+    public com.oracle.bmc.identity.model.CreateCompartmentDetails getBody$() {
         return createCompartmentDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CreateCompartmentRequest, CreateCompartmentDetails> {
+                    CreateCompartmentRequest,
+                    com.oracle.bmc.identity.model.CreateCompartmentDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -110,7 +112,7 @@ public class CreateCompartmentRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreateCompartmentDetails body) {
+        public Builder body$(com.oracle.bmc.identity.model.CreateCompartmentDetails body) {
             createCompartmentDetails(body);
             return this;
         }

@@ -18,7 +18,8 @@ import com.oracle.bmc.waas.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class UpdateWaasPolicyCustomProtectionRulesRequest
-        extends com.oracle.bmc.requests.BmcRequest<java.util.List<CustomProtectionRuleSetting>> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                java.util.List<com.oracle.bmc.waas.model.CustomProtectionRuleSetting>> {
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the WAAS policy.
@@ -28,7 +29,8 @@ public class UpdateWaasPolicyCustomProtectionRulesRequest
     /**
      *
      */
-    private java.util.List<CustomProtectionRuleSetting> updateCustomProtectionRulesDetails;
+    private java.util.List<com.oracle.bmc.waas.model.CustomProtectionRuleSetting>
+            updateCustomProtectionRulesDetails;
 
     /**
      * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
@@ -52,27 +54,28 @@ public class UpdateWaasPolicyCustomProtectionRulesRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public java.util.List<CustomProtectionRuleSetting> getBody$() {
+    public java.util.List<com.oracle.bmc.waas.model.CustomProtectionRuleSetting> getBody$() {
         return updateCustomProtectionRulesDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     UpdateWaasPolicyCustomProtectionRulesRequest,
-                    java.util.List<CustomProtectionRuleSetting>> {
+                    java.util.List<com.oracle.bmc.waas.model.CustomProtectionRuleSetting>> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        private java.util.List<CustomProtectionRuleSetting> updateCustomProtectionRulesDetails =
-                null;
+        private java.util.List<com.oracle.bmc.waas.model.CustomProtectionRuleSetting>
+                updateCustomProtectionRulesDetails = null;
 
         /**
          *
          * @return this builder instance
          */
         public Builder updateCustomProtectionRulesDetails(
-                java.util.List<CustomProtectionRuleSetting> updateCustomProtectionRulesDetails) {
+                java.util.List<com.oracle.bmc.waas.model.CustomProtectionRuleSetting>
+                        updateCustomProtectionRulesDetails) {
             this.updateCustomProtectionRulesDetails = updateCustomProtectionRulesDetails;
             return this;
         }
@@ -82,7 +85,7 @@ public class UpdateWaasPolicyCustomProtectionRulesRequest
          * @return this builder instance
          */
         public Builder updateCustomProtectionRulesDetails(
-                CustomProtectionRuleSetting singularValue) {
+                com.oracle.bmc.waas.model.CustomProtectionRuleSetting singularValue) {
             return this.updateCustomProtectionRulesDetails(java.util.Arrays.asList(singularValue));
         }
 
@@ -147,7 +150,8 @@ public class UpdateWaasPolicyCustomProtectionRulesRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(java.util.List<CustomProtectionRuleSetting> body) {
+        public Builder body$(
+                java.util.List<com.oracle.bmc.waas.model.CustomProtectionRuleSetting> body) {
             updateCustomProtectionRulesDetails(body);
             return this;
         }

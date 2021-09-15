@@ -32,7 +32,7 @@ public class ListProjectsRequest extends com.oracle.bmc.requests.BmcRequest<java
     /**
      * A filter to return only Projects that matches the given lifecycleState.
      */
-    private Project.LifecycleState lifecycleState;
+    private com.oracle.bmc.devops.model.Project.LifecycleState lifecycleState;
 
     /**
      * A filter to return only resources that match the entire name given.

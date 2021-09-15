@@ -17,7 +17,9 @@ import com.oracle.bmc.monitoring.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
-public class UpdateAlarmRequest extends com.oracle.bmc.requests.BmcRequest<UpdateAlarmDetails> {
+public class UpdateAlarmRequest
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.monitoring.model.UpdateAlarmDetails> {
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of an alarm.
@@ -28,7 +30,7 @@ public class UpdateAlarmRequest extends com.oracle.bmc.requests.BmcRequest<Updat
     /**
      * Document for updating an alarm.
      */
-    private UpdateAlarmDetails updateAlarmDetails;
+    private com.oracle.bmc.monitoring.model.UpdateAlarmDetails updateAlarmDetails;
 
     /**
      * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
@@ -51,13 +53,13 @@ public class UpdateAlarmRequest extends com.oracle.bmc.requests.BmcRequest<Updat
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateAlarmDetails getBody$() {
+    public com.oracle.bmc.monitoring.model.UpdateAlarmDetails getBody$() {
         return updateAlarmDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateAlarmRequest, UpdateAlarmDetails> {
+                    UpdateAlarmRequest, com.oracle.bmc.monitoring.model.UpdateAlarmDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -122,7 +124,7 @@ public class UpdateAlarmRequest extends com.oracle.bmc.requests.BmcRequest<Updat
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateAlarmDetails body) {
+        public Builder body$(com.oracle.bmc.monitoring.model.UpdateAlarmDetails body) {
             updateAlarmDetails(body);
             return this;
         }

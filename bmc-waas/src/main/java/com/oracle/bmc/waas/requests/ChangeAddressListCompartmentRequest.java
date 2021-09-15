@@ -18,7 +18,8 @@ import com.oracle.bmc.waas.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class ChangeAddressListCompartmentRequest
-        extends com.oracle.bmc.requests.BmcRequest<ChangeAddressListCompartmentDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.waas.model.ChangeAddressListCompartmentDetails> {
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the address list. This number is generated when the address list is added to the compartment.
@@ -28,7 +29,8 @@ public class ChangeAddressListCompartmentRequest
     /**
      *
      */
-    private ChangeAddressListCompartmentDetails changeAddressListCompartmentDetails;
+    private com.oracle.bmc.waas.model.ChangeAddressListCompartmentDetails
+            changeAddressListCompartmentDetails;
 
     /**
      * For optimistic concurrency control. In the {@code PUT} or {@code DELETE} call for a resource, set the {@code if-match} parameter to the value of the etag from a previous {@code GET} or {@code POST} response for that resource. The resource will be updated or deleted only if the etag provided matches the resource's current etag value.
@@ -52,13 +54,14 @@ public class ChangeAddressListCompartmentRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public ChangeAddressListCompartmentDetails getBody$() {
+    public com.oracle.bmc.waas.model.ChangeAddressListCompartmentDetails getBody$() {
         return changeAddressListCompartmentDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    ChangeAddressListCompartmentRequest, ChangeAddressListCompartmentDetails> {
+                    ChangeAddressListCompartmentRequest,
+                    com.oracle.bmc.waas.model.ChangeAddressListCompartmentDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -124,7 +127,7 @@ public class ChangeAddressListCompartmentRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(ChangeAddressListCompartmentDetails body) {
+        public Builder body$(com.oracle.bmc.waas.model.ChangeAddressListCompartmentDetails body) {
             changeAddressListCompartmentDetails(body);
             return this;
         }

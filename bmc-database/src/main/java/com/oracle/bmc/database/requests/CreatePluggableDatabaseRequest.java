@@ -18,12 +18,14 @@ import com.oracle.bmc.database.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class CreatePluggableDatabaseRequest
-        extends com.oracle.bmc.requests.BmcRequest<CreatePluggableDatabaseDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.database.model.CreatePluggableDatabaseDetails> {
 
     /**
      * Request to create pluggable database.
      */
-    private CreatePluggableDatabaseDetails createPluggableDatabaseDetails;
+    private com.oracle.bmc.database.model.CreatePluggableDatabaseDetails
+            createPluggableDatabaseDetails;
 
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -47,13 +49,14 @@ public class CreatePluggableDatabaseRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreatePluggableDatabaseDetails getBody$() {
+    public com.oracle.bmc.database.model.CreatePluggableDatabaseDetails getBody$() {
         return createPluggableDatabaseDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CreatePluggableDatabaseRequest, CreatePluggableDatabaseDetails> {
+                    CreatePluggableDatabaseRequest,
+                    com.oracle.bmc.database.model.CreatePluggableDatabaseDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -117,7 +120,7 @@ public class CreatePluggableDatabaseRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreatePluggableDatabaseDetails body) {
+        public Builder body$(com.oracle.bmc.database.model.CreatePluggableDatabaseDetails body) {
             createPluggableDatabaseDetails(body);
             return this;
         }

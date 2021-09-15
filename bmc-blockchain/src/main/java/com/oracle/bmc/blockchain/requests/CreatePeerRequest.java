@@ -17,7 +17,9 @@ import com.oracle.bmc.blockchain.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
-public class CreatePeerRequest extends com.oracle.bmc.requests.BmcRequest<CreatePeerDetails> {
+public class CreatePeerRequest
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.blockchain.model.CreatePeerDetails> {
 
     /**
      * Unique service identifier.
@@ -28,7 +30,7 @@ public class CreatePeerRequest extends com.oracle.bmc.requests.BmcRequest<Create
      * Input payload to create a blockchain platform peer. The payload cannot be empty.
      *
      */
-    private CreatePeerDetails createPeerDetails;
+    private com.oracle.bmc.blockchain.model.CreatePeerDetails createPeerDetails;
 
     /**
      * The client request ID for tracing.
@@ -51,13 +53,13 @@ public class CreatePeerRequest extends com.oracle.bmc.requests.BmcRequest<Create
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreatePeerDetails getBody$() {
+    public com.oracle.bmc.blockchain.model.CreatePeerDetails getBody$() {
         return createPeerDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CreatePeerRequest, CreatePeerDetails> {
+                    CreatePeerRequest, com.oracle.bmc.blockchain.model.CreatePeerDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -122,7 +124,7 @@ public class CreatePeerRequest extends com.oracle.bmc.requests.BmcRequest<Create
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreatePeerDetails body) {
+        public Builder body$(com.oracle.bmc.blockchain.model.CreatePeerDetails body) {
             createPeerDetails(body);
             return this;
         }

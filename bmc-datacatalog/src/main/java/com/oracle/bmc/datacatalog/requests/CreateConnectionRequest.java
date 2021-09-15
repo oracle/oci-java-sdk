@@ -18,7 +18,8 @@ import com.oracle.bmc.datacatalog.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class CreateConnectionRequest
-        extends com.oracle.bmc.requests.BmcRequest<CreateConnectionDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.datacatalog.model.CreateConnectionDetails> {
 
     /**
      * Unique catalog identifier.
@@ -33,7 +34,7 @@ public class CreateConnectionRequest
     /**
      * The information used to create the connection.
      */
-    private CreateConnectionDetails createConnectionDetails;
+    private com.oracle.bmc.datacatalog.model.CreateConnectionDetails createConnectionDetails;
 
     /**
      * The client request ID for tracing.
@@ -56,13 +57,14 @@ public class CreateConnectionRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreateConnectionDetails getBody$() {
+    public com.oracle.bmc.datacatalog.model.CreateConnectionDetails getBody$() {
         return createConnectionDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CreateConnectionRequest, CreateConnectionDetails> {
+                    CreateConnectionRequest,
+                    com.oracle.bmc.datacatalog.model.CreateConnectionDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -128,7 +130,7 @@ public class CreateConnectionRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreateConnectionDetails body) {
+        public Builder body$(com.oracle.bmc.datacatalog.model.CreateConnectionDetails body) {
             createConnectionDetails(body);
             return this;
         }

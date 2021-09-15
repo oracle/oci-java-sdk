@@ -174,7 +174,7 @@ public class ListImagesRequest extends com.oracle.bmc.requests.BmcRequest<java.l
      * value is case-insensitive.
      *
      */
-    private Image.LifecycleState lifecycleState;
+    private com.oracle.bmc.core.model.Image.LifecycleState lifecycleState;
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<

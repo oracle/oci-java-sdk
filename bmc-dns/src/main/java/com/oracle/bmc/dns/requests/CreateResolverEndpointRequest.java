@@ -18,7 +18,8 @@ import com.oracle.bmc.dns.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class CreateResolverEndpointRequest
-        extends com.oracle.bmc.requests.BmcRequest<CreateResolverEndpointDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.dns.model.CreateResolverEndpointDetails> {
 
     /**
      * The OCID of the target resolver.
@@ -28,7 +29,7 @@ public class CreateResolverEndpointRequest
     /**
      * Details for creating a new resolver endpoint.
      */
-    private CreateResolverEndpointDetails createResolverEndpointDetails;
+    private com.oracle.bmc.dns.model.CreateResolverEndpointDetails createResolverEndpointDetails;
 
     /**
      * A token that uniquely identifies a request so it can be retried in case
@@ -61,13 +62,14 @@ public class CreateResolverEndpointRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreateResolverEndpointDetails getBody$() {
+    public com.oracle.bmc.dns.model.CreateResolverEndpointDetails getBody$() {
         return createResolverEndpointDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CreateResolverEndpointRequest, CreateResolverEndpointDetails> {
+                    CreateResolverEndpointRequest,
+                    com.oracle.bmc.dns.model.CreateResolverEndpointDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -133,7 +135,7 @@ public class CreateResolverEndpointRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreateResolverEndpointDetails body) {
+        public Builder body$(com.oracle.bmc.dns.model.CreateResolverEndpointDetails body) {
             createResolverEndpointDetails(body);
             return this;
         }

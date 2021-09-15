@@ -18,7 +18,8 @@ import com.oracle.bmc.core.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class ChangeDrgCompartmentRequest
-        extends com.oracle.bmc.requests.BmcRequest<ChangeDrgCompartmentDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.core.model.ChangeDrgCompartmentDetails> {
 
     /**
      * The [[OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)](/iaas/Content/General/Concepts/identifiers.htm) of the DRG.
@@ -28,7 +29,7 @@ public class ChangeDrgCompartmentRequest
     /**
      * Request to change the compartment of a DRG.
      */
-    private ChangeDrgCompartmentDetails changeDrgCompartmentDetails;
+    private com.oracle.bmc.core.model.ChangeDrgCompartmentDetails changeDrgCompartmentDetails;
 
     /**
      * Unique identifier for the request.
@@ -53,13 +54,14 @@ public class ChangeDrgCompartmentRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public ChangeDrgCompartmentDetails getBody$() {
+    public com.oracle.bmc.core.model.ChangeDrgCompartmentDetails getBody$() {
         return changeDrgCompartmentDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    ChangeDrgCompartmentRequest, ChangeDrgCompartmentDetails> {
+                    ChangeDrgCompartmentRequest,
+                    com.oracle.bmc.core.model.ChangeDrgCompartmentDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -124,7 +126,7 @@ public class ChangeDrgCompartmentRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(ChangeDrgCompartmentDetails body) {
+        public Builder body$(com.oracle.bmc.core.model.ChangeDrgCompartmentDetails body) {
             changeDrgCompartmentDetails(body);
             return this;
         }

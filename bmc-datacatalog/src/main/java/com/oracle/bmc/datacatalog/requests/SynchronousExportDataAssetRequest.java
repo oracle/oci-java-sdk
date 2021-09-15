@@ -18,7 +18,8 @@ import com.oracle.bmc.datacatalog.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class SynchronousExportDataAssetRequest
-        extends com.oracle.bmc.requests.BmcRequest<ExportDataAssetDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.datacatalog.model.ExportDataAssetDetails> {
 
     /**
      * Unique catalog identifier.
@@ -33,7 +34,8 @@ public class SynchronousExportDataAssetRequest
     /**
      * The details of what needs to be exported.
      */
-    private ExportDataAssetDetails synchronousExportDataAssetDetails;
+    private com.oracle.bmc.datacatalog.model.ExportDataAssetDetails
+            synchronousExportDataAssetDetails;
 
     /**
      * Type of export.
@@ -62,13 +64,14 @@ public class SynchronousExportDataAssetRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public ExportDataAssetDetails getBody$() {
+    public com.oracle.bmc.datacatalog.model.ExportDataAssetDetails getBody$() {
         return synchronousExportDataAssetDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    SynchronousExportDataAssetRequest, ExportDataAssetDetails> {
+                    SynchronousExportDataAssetRequest,
+                    com.oracle.bmc.datacatalog.model.ExportDataAssetDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -157,7 +160,7 @@ public class SynchronousExportDataAssetRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(ExportDataAssetDetails body) {
+        public Builder body$(com.oracle.bmc.datacatalog.model.ExportDataAssetDetails body) {
             synchronousExportDataAssetDetails(body);
             return this;
         }

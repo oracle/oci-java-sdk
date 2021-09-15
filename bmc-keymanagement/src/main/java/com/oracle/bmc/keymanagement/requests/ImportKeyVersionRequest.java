@@ -18,7 +18,8 @@ import com.oracle.bmc.keymanagement.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class ImportKeyVersionRequest
-        extends com.oracle.bmc.requests.BmcRequest<ImportKeyVersionDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.keymanagement.model.ImportKeyVersionDetails> {
 
     /**
      * The OCID of the key.
@@ -28,7 +29,7 @@ public class ImportKeyVersionRequest
     /**
      * ImportKeyVersionDetails
      */
-    private ImportKeyVersionDetails importKeyVersionDetails;
+    private com.oracle.bmc.keymanagement.model.ImportKeyVersionDetails importKeyVersionDetails;
 
     /**
      * Unique identifier for the request. If provided, the returned request ID
@@ -55,13 +56,14 @@ public class ImportKeyVersionRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public ImportKeyVersionDetails getBody$() {
+    public com.oracle.bmc.keymanagement.model.ImportKeyVersionDetails getBody$() {
         return importKeyVersionDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    ImportKeyVersionRequest, ImportKeyVersionDetails> {
+                    ImportKeyVersionRequest,
+                    com.oracle.bmc.keymanagement.model.ImportKeyVersionDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -126,7 +128,7 @@ public class ImportKeyVersionRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(ImportKeyVersionDetails body) {
+        public Builder body$(com.oracle.bmc.keymanagement.model.ImportKeyVersionDetails body) {
             importKeyVersionDetails(body);
             return this;
         }

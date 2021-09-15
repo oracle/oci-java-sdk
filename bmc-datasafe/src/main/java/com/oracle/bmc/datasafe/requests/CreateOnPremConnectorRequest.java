@@ -18,12 +18,13 @@ import com.oracle.bmc.datasafe.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class CreateOnPremConnectorRequest
-        extends com.oracle.bmc.requests.BmcRequest<CreateOnPremConnectorDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.datasafe.model.CreateOnPremConnectorDetails> {
 
     /**
      * The details used to create a new on-premises connector.
      */
-    private CreateOnPremConnectorDetails createOnPremConnectorDetails;
+    private com.oracle.bmc.datasafe.model.CreateOnPremConnectorDetails createOnPremConnectorDetails;
 
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -45,13 +46,14 @@ public class CreateOnPremConnectorRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreateOnPremConnectorDetails getBody$() {
+    public com.oracle.bmc.datasafe.model.CreateOnPremConnectorDetails getBody$() {
         return createOnPremConnectorDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CreateOnPremConnectorRequest, CreateOnPremConnectorDetails> {
+                    CreateOnPremConnectorRequest,
+                    com.oracle.bmc.datasafe.model.CreateOnPremConnectorDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -115,7 +117,7 @@ public class CreateOnPremConnectorRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreateOnPremConnectorDetails body) {
+        public Builder body$(com.oracle.bmc.datasafe.model.CreateOnPremConnectorDetails body) {
             createOnPremConnectorDetails(body);
             return this;
         }

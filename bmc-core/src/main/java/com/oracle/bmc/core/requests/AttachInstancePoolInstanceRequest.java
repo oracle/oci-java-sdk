@@ -18,7 +18,8 @@ import com.oracle.bmc.core.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class AttachInstancePoolInstanceRequest
-        extends com.oracle.bmc.requests.BmcRequest<AttachInstancePoolInstanceDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.core.model.AttachInstancePoolInstanceDetails> {
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance pool.
@@ -28,7 +29,8 @@ public class AttachInstancePoolInstanceRequest
     /**
      * Attach an instance to a pool
      */
-    private AttachInstancePoolInstanceDetails attachInstancePoolInstanceDetails;
+    private com.oracle.bmc.core.model.AttachInstancePoolInstanceDetails
+            attachInstancePoolInstanceDetails;
 
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -46,13 +48,14 @@ public class AttachInstancePoolInstanceRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public AttachInstancePoolInstanceDetails getBody$() {
+    public com.oracle.bmc.core.model.AttachInstancePoolInstanceDetails getBody$() {
         return attachInstancePoolInstanceDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    AttachInstancePoolInstanceRequest, AttachInstancePoolInstanceDetails> {
+                    AttachInstancePoolInstanceRequest,
+                    com.oracle.bmc.core.model.AttachInstancePoolInstanceDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -116,7 +119,7 @@ public class AttachInstancePoolInstanceRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(AttachInstancePoolInstanceDetails body) {
+        public Builder body$(com.oracle.bmc.core.model.AttachInstancePoolInstanceDetails body) {
             attachInstancePoolInstanceDetails(body);
             return this;
         }

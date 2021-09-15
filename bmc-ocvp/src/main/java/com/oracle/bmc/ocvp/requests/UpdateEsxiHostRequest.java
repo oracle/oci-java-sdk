@@ -18,7 +18,8 @@ import com.oracle.bmc.ocvp.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class UpdateEsxiHostRequest
-        extends com.oracle.bmc.requests.BmcRequest<UpdateEsxiHostDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.ocvp.model.UpdateEsxiHostDetails> {
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the ESXi host.
@@ -29,7 +30,7 @@ public class UpdateEsxiHostRequest
     /**
      * The information to be updated.
      */
-    private UpdateEsxiHostDetails updateEsxiHostDetails;
+    private com.oracle.bmc.ocvp.model.UpdateEsxiHostDetails updateEsxiHostDetails;
 
     /**
      * For optimistic concurrency control. In the PUT or DELETE call
@@ -54,13 +55,13 @@ public class UpdateEsxiHostRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateEsxiHostDetails getBody$() {
+    public com.oracle.bmc.ocvp.model.UpdateEsxiHostDetails getBody$() {
         return updateEsxiHostDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateEsxiHostRequest, UpdateEsxiHostDetails> {
+                    UpdateEsxiHostRequest, com.oracle.bmc.ocvp.model.UpdateEsxiHostDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -125,7 +126,7 @@ public class UpdateEsxiHostRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateEsxiHostDetails body) {
+        public Builder body$(com.oracle.bmc.ocvp.model.UpdateEsxiHostDetails body) {
             updateEsxiHostDetails(body);
             return this;
         }

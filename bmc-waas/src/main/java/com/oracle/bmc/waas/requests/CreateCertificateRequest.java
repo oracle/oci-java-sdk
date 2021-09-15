@@ -18,12 +18,13 @@ import com.oracle.bmc.waas.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class CreateCertificateRequest
-        extends com.oracle.bmc.requests.BmcRequest<CreateCertificateDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.waas.model.CreateCertificateDetails> {
 
     /**
      * The details of the SSL certificate resource to create.
      */
-    private CreateCertificateDetails createCertificateDetails;
+    private com.oracle.bmc.waas.model.CreateCertificateDetails createCertificateDetails;
 
     /**
      * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
@@ -42,13 +43,13 @@ public class CreateCertificateRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreateCertificateDetails getBody$() {
+    public com.oracle.bmc.waas.model.CreateCertificateDetails getBody$() {
         return createCertificateDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CreateCertificateRequest, CreateCertificateDetails> {
+                    CreateCertificateRequest, com.oracle.bmc.waas.model.CreateCertificateDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -112,7 +113,7 @@ public class CreateCertificateRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreateCertificateDetails body) {
+        public Builder body$(com.oracle.bmc.waas.model.CreateCertificateDetails body) {
             createCertificateDetails(body);
             return this;
         }

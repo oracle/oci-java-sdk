@@ -18,7 +18,8 @@ import com.oracle.bmc.core.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class ChangeBootVolumeBackupCompartmentRequest
-        extends com.oracle.bmc.requests.BmcRequest<ChangeBootVolumeBackupCompartmentDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.core.model.ChangeBootVolumeBackupCompartmentDetails> {
 
     /**
      * The OCID of the boot volume backup.
@@ -28,7 +29,8 @@ public class ChangeBootVolumeBackupCompartmentRequest
     /**
      * Request to change the compartment of given boot volume backup.
      */
-    private ChangeBootVolumeBackupCompartmentDetails changeBootVolumeBackupCompartmentDetails;
+    private com.oracle.bmc.core.model.ChangeBootVolumeBackupCompartmentDetails
+            changeBootVolumeBackupCompartmentDetails;
 
     /**
      * Unique identifier for the request.
@@ -43,14 +45,14 @@ public class ChangeBootVolumeBackupCompartmentRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public ChangeBootVolumeBackupCompartmentDetails getBody$() {
+    public com.oracle.bmc.core.model.ChangeBootVolumeBackupCompartmentDetails getBody$() {
         return changeBootVolumeBackupCompartmentDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ChangeBootVolumeBackupCompartmentRequest,
-                    ChangeBootVolumeBackupCompartmentDetails> {
+                    com.oracle.bmc.core.model.ChangeBootVolumeBackupCompartmentDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -115,7 +117,8 @@ public class ChangeBootVolumeBackupCompartmentRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(ChangeBootVolumeBackupCompartmentDetails body) {
+        public Builder body$(
+                com.oracle.bmc.core.model.ChangeBootVolumeBackupCompartmentDetails body) {
             changeBootVolumeBackupCompartmentDetails(body);
             return this;
         }

@@ -18,12 +18,13 @@ import com.oracle.bmc.osmanagement.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class CreateScheduledJobRequest
-        extends com.oracle.bmc.requests.BmcRequest<CreateScheduledJobDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.osmanagement.model.CreateScheduledJobDetails> {
 
     /**
      * Details about a Scheduled Job to create
      */
-    private CreateScheduledJobDetails createScheduledJobDetails;
+    private com.oracle.bmc.osmanagement.model.CreateScheduledJobDetails createScheduledJobDetails;
 
     /**
      * The client request ID for tracing.
@@ -46,13 +47,14 @@ public class CreateScheduledJobRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreateScheduledJobDetails getBody$() {
+    public com.oracle.bmc.osmanagement.model.CreateScheduledJobDetails getBody$() {
         return createScheduledJobDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CreateScheduledJobRequest, CreateScheduledJobDetails> {
+                    CreateScheduledJobRequest,
+                    com.oracle.bmc.osmanagement.model.CreateScheduledJobDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -116,7 +118,7 @@ public class CreateScheduledJobRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreateScheduledJobDetails body) {
+        public Builder body$(com.oracle.bmc.osmanagement.model.CreateScheduledJobDetails body) {
             createScheduledJobDetails(body);
             return this;
         }

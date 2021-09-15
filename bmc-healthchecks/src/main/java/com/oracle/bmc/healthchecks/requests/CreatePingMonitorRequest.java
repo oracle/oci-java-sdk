@@ -18,12 +18,13 @@ import com.oracle.bmc.healthchecks.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class CreatePingMonitorRequest
-        extends com.oracle.bmc.requests.BmcRequest<CreatePingMonitorDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.healthchecks.model.CreatePingMonitorDetails> {
 
     /**
      * The configuration details for creating a ping monitor.
      */
-    private CreatePingMonitorDetails createPingMonitorDetails;
+    private com.oracle.bmc.healthchecks.model.CreatePingMonitorDetails createPingMonitorDetails;
 
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
@@ -49,13 +50,14 @@ public class CreatePingMonitorRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreatePingMonitorDetails getBody$() {
+    public com.oracle.bmc.healthchecks.model.CreatePingMonitorDetails getBody$() {
         return createPingMonitorDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CreatePingMonitorRequest, CreatePingMonitorDetails> {
+                    CreatePingMonitorRequest,
+                    com.oracle.bmc.healthchecks.model.CreatePingMonitorDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -119,7 +121,7 @@ public class CreatePingMonitorRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreatePingMonitorDetails body) {
+        public Builder body$(com.oracle.bmc.healthchecks.model.CreatePingMonitorDetails body) {
             createPingMonitorDetails(body);
             return this;
         }

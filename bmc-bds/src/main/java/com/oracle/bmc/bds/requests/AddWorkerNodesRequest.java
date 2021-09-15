@@ -18,7 +18,7 @@ import com.oracle.bmc.bds.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class AddWorkerNodesRequest
-        extends com.oracle.bmc.requests.BmcRequest<AddWorkerNodesDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<com.oracle.bmc.bds.model.AddWorkerNodesDetails> {
 
     /**
      * The OCID of the cluster.
@@ -28,7 +28,7 @@ public class AddWorkerNodesRequest
     /**
      * Details for the newly added nodes.
      */
-    private AddWorkerNodesDetails addWorkerNodesDetails;
+    private com.oracle.bmc.bds.model.AddWorkerNodesDetails addWorkerNodesDetails;
 
     /**
      * The client request ID for tracing.
@@ -61,13 +61,13 @@ public class AddWorkerNodesRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public AddWorkerNodesDetails getBody$() {
+    public com.oracle.bmc.bds.model.AddWorkerNodesDetails getBody$() {
         return addWorkerNodesDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    AddWorkerNodesRequest, AddWorkerNodesDetails> {
+                    AddWorkerNodesRequest, com.oracle.bmc.bds.model.AddWorkerNodesDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -133,7 +133,7 @@ public class AddWorkerNodesRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(AddWorkerNodesDetails body) {
+        public Builder body$(com.oracle.bmc.bds.model.AddWorkerNodesDetails body) {
             addWorkerNodesDetails(body);
             return this;
         }

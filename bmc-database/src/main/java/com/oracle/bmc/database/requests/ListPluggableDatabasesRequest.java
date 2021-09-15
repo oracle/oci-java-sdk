@@ -123,7 +123,7 @@ public class ListPluggableDatabasesRequest
     /**
      * A filter to return only resources that match the given lifecycle state exactly.
      */
-    private PluggableDatabaseSummary.LifecycleState lifecycleState;
+    private com.oracle.bmc.database.model.PluggableDatabaseSummary.LifecycleState lifecycleState;
 
     /**
      * A filter to return only pluggable databases that match the entire name given. The match is not case sensitive.

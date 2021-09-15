@@ -18,7 +18,8 @@ import com.oracle.bmc.dataintegration.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class UpdateExternalPublicationRequest
-        extends com.oracle.bmc.requests.BmcRequest<UpdateExternalPublicationDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.dataintegration.model.UpdateExternalPublicationDetails> {
 
     /**
      * The workspace ID.
@@ -38,7 +39,8 @@ public class UpdateExternalPublicationRequest
     /**
      * The information to be updated.
      */
-    private UpdateExternalPublicationDetails updateExternalPublicationDetails;
+    private com.oracle.bmc.dataintegration.model.UpdateExternalPublicationDetails
+            updateExternalPublicationDetails;
 
     /**
      * Unique Oracle-assigned identifier for the request. If
@@ -62,13 +64,14 @@ public class UpdateExternalPublicationRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateExternalPublicationDetails getBody$() {
+    public com.oracle.bmc.dataintegration.model.UpdateExternalPublicationDetails getBody$() {
         return updateExternalPublicationDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateExternalPublicationRequest, UpdateExternalPublicationDetails> {
+                    UpdateExternalPublicationRequest,
+                    com.oracle.bmc.dataintegration.model.UpdateExternalPublicationDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -135,7 +138,8 @@ public class UpdateExternalPublicationRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateExternalPublicationDetails body) {
+        public Builder body$(
+                com.oracle.bmc.dataintegration.model.UpdateExternalPublicationDetails body) {
             updateExternalPublicationDetails(body);
             return this;
         }

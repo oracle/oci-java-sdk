@@ -18,7 +18,8 @@ import com.oracle.bmc.resourcemanager.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class ChangeStackCompartmentRequest
-        extends com.oracle.bmc.requests.BmcRequest<ChangeStackCompartmentDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.resourcemanager.model.ChangeStackCompartmentDetails> {
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stack.
@@ -28,7 +29,8 @@ public class ChangeStackCompartmentRequest
     /**
      * Defines the properties of changeStackCompartment operation.
      */
-    private ChangeStackCompartmentDetails changeStackCompartmentDetails;
+    private com.oracle.bmc.resourcemanager.model.ChangeStackCompartmentDetails
+            changeStackCompartmentDetails;
 
     /**
      * For optimistic concurrency control. In the {@code PUT} or {@code DELETE} call for a resource, set the {@code if-match}
@@ -61,13 +63,14 @@ public class ChangeStackCompartmentRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public ChangeStackCompartmentDetails getBody$() {
+    public com.oracle.bmc.resourcemanager.model.ChangeStackCompartmentDetails getBody$() {
         return changeStackCompartmentDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    ChangeStackCompartmentRequest, ChangeStackCompartmentDetails> {
+                    ChangeStackCompartmentRequest,
+                    com.oracle.bmc.resourcemanager.model.ChangeStackCompartmentDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -133,7 +136,8 @@ public class ChangeStackCompartmentRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(ChangeStackCompartmentDetails body) {
+        public Builder body$(
+                com.oracle.bmc.resourcemanager.model.ChangeStackCompartmentDetails body) {
             changeStackCompartmentDetails(body);
             return this;
         }

@@ -17,7 +17,9 @@ import com.oracle.bmc.budget.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
-public class UpdateBudgetRequest extends com.oracle.bmc.requests.BmcRequest<UpdateBudgetDetails> {
+public class UpdateBudgetRequest
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.budget.model.UpdateBudgetDetails> {
 
     /**
      * The unique Budget OCID
@@ -27,7 +29,7 @@ public class UpdateBudgetRequest extends com.oracle.bmc.requests.BmcRequest<Upda
     /**
      * The information to be updated.
      */
-    private UpdateBudgetDetails updateBudgetDetails;
+    private com.oracle.bmc.budget.model.UpdateBudgetDetails updateBudgetDetails;
 
     /**
      * For optimistic concurrency control. In the PUT or DELETE call
@@ -50,13 +52,13 @@ public class UpdateBudgetRequest extends com.oracle.bmc.requests.BmcRequest<Upda
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateBudgetDetails getBody$() {
+    public com.oracle.bmc.budget.model.UpdateBudgetDetails getBody$() {
         return updateBudgetDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateBudgetRequest, UpdateBudgetDetails> {
+                    UpdateBudgetRequest, com.oracle.bmc.budget.model.UpdateBudgetDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -121,7 +123,7 @@ public class UpdateBudgetRequest extends com.oracle.bmc.requests.BmcRequest<Upda
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateBudgetDetails body) {
+        public Builder body$(com.oracle.bmc.budget.model.UpdateBudgetDetails body) {
             updateBudgetDetails(body);
             return this;
         }

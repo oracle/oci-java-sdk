@@ -18,12 +18,13 @@ import com.oracle.bmc.core.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class CreateInternetGatewayRequest
-        extends com.oracle.bmc.requests.BmcRequest<CreateInternetGatewayDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.core.model.CreateInternetGatewayDetails> {
 
     /**
      * Details for creating a new internet gateway.
      */
-    private CreateInternetGatewayDetails createInternetGatewayDetails;
+    private com.oracle.bmc.core.model.CreateInternetGatewayDetails createInternetGatewayDetails;
 
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -41,13 +42,14 @@ public class CreateInternetGatewayRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreateInternetGatewayDetails getBody$() {
+    public com.oracle.bmc.core.model.CreateInternetGatewayDetails getBody$() {
         return createInternetGatewayDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CreateInternetGatewayRequest, CreateInternetGatewayDetails> {
+                    CreateInternetGatewayRequest,
+                    com.oracle.bmc.core.model.CreateInternetGatewayDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -110,7 +112,7 @@ public class CreateInternetGatewayRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreateInternetGatewayDetails body) {
+        public Builder body$(com.oracle.bmc.core.model.CreateInternetGatewayDetails body) {
             createInternetGatewayDetails(body);
             return this;
         }

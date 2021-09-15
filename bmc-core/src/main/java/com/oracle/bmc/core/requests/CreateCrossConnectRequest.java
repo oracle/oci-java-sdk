@@ -18,12 +18,13 @@ import com.oracle.bmc.core.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class CreateCrossConnectRequest
-        extends com.oracle.bmc.requests.BmcRequest<CreateCrossConnectDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.core.model.CreateCrossConnectDetails> {
 
     /**
      * Details to create a CrossConnect
      */
-    private CreateCrossConnectDetails createCrossConnectDetails;
+    private com.oracle.bmc.core.model.CreateCrossConnectDetails createCrossConnectDetails;
 
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -41,13 +42,14 @@ public class CreateCrossConnectRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreateCrossConnectDetails getBody$() {
+    public com.oracle.bmc.core.model.CreateCrossConnectDetails getBody$() {
         return createCrossConnectDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CreateCrossConnectRequest, CreateCrossConnectDetails> {
+                    CreateCrossConnectRequest,
+                    com.oracle.bmc.core.model.CreateCrossConnectDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -110,7 +112,7 @@ public class CreateCrossConnectRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreateCrossConnectDetails body) {
+        public Builder body$(com.oracle.bmc.core.model.CreateCrossConnectDetails body) {
             createCrossConnectDetails(body);
             return this;
         }

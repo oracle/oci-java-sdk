@@ -18,12 +18,13 @@ import com.oracle.bmc.identity.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class BulkDeleteTagsRequest
-        extends com.oracle.bmc.requests.BmcRequest<BulkDeleteTagsDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.identity.model.BulkDeleteTagsDetails> {
 
     /**
      * Request object for deleting tags in bulk.
      */
-    private BulkDeleteTagsDetails bulkDeleteTagsDetails;
+    private com.oracle.bmc.identity.model.BulkDeleteTagsDetails bulkDeleteTagsDetails;
 
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
@@ -48,13 +49,13 @@ public class BulkDeleteTagsRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public BulkDeleteTagsDetails getBody$() {
+    public com.oracle.bmc.identity.model.BulkDeleteTagsDetails getBody$() {
         return bulkDeleteTagsDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    BulkDeleteTagsRequest, BulkDeleteTagsDetails> {
+                    BulkDeleteTagsRequest, com.oracle.bmc.identity.model.BulkDeleteTagsDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -118,7 +119,7 @@ public class BulkDeleteTagsRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(BulkDeleteTagsDetails body) {
+        public Builder body$(com.oracle.bmc.identity.model.BulkDeleteTagsDetails body) {
             bulkDeleteTagsDetails(body);
             return this;
         }

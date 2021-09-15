@@ -18,7 +18,8 @@ import com.oracle.bmc.core.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class DetachLoadBalancerRequest
-        extends com.oracle.bmc.requests.BmcRequest<DetachLoadBalancerDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.core.model.DetachLoadBalancerDetails> {
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance pool.
@@ -28,7 +29,7 @@ public class DetachLoadBalancerRequest
     /**
      * Load balancer being detached
      */
-    private DetachLoadBalancerDetails detachLoadBalancerDetails;
+    private com.oracle.bmc.core.model.DetachLoadBalancerDetails detachLoadBalancerDetails;
 
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -54,13 +55,14 @@ public class DetachLoadBalancerRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public DetachLoadBalancerDetails getBody$() {
+    public com.oracle.bmc.core.model.DetachLoadBalancerDetails getBody$() {
         return detachLoadBalancerDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    DetachLoadBalancerRequest, DetachLoadBalancerDetails> {
+                    DetachLoadBalancerRequest,
+                    com.oracle.bmc.core.model.DetachLoadBalancerDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -125,7 +127,7 @@ public class DetachLoadBalancerRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(DetachLoadBalancerDetails body) {
+        public Builder body$(com.oracle.bmc.core.model.DetachLoadBalancerDetails body) {
             detachLoadBalancerDetails(body);
             return this;
         }

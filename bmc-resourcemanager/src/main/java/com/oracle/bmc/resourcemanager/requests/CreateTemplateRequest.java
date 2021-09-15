@@ -18,12 +18,13 @@ import com.oracle.bmc.resourcemanager.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class CreateTemplateRequest
-        extends com.oracle.bmc.requests.BmcRequest<CreateTemplateDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.resourcemanager.model.CreateTemplateDetails> {
 
     /**
      * The configuration details for creating a template.
      */
-    private CreateTemplateDetails createTemplateDetails;
+    private com.oracle.bmc.resourcemanager.model.CreateTemplateDetails createTemplateDetails;
 
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
@@ -48,13 +49,14 @@ public class CreateTemplateRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreateTemplateDetails getBody$() {
+    public com.oracle.bmc.resourcemanager.model.CreateTemplateDetails getBody$() {
         return createTemplateDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CreateTemplateRequest, CreateTemplateDetails> {
+                    CreateTemplateRequest,
+                    com.oracle.bmc.resourcemanager.model.CreateTemplateDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -118,7 +120,7 @@ public class CreateTemplateRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreateTemplateDetails body) {
+        public Builder body$(com.oracle.bmc.resourcemanager.model.CreateTemplateDetails body) {
             createTemplateDetails(body);
             return this;
         }

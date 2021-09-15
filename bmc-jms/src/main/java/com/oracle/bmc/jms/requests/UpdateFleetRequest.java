@@ -17,7 +17,8 @@ import com.oracle.bmc.jms.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
-public class UpdateFleetRequest extends com.oracle.bmc.requests.BmcRequest<UpdateFleetDetails> {
+public class UpdateFleetRequest
+        extends com.oracle.bmc.requests.BmcRequest<com.oracle.bmc.jms.model.UpdateFleetDetails> {
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Fleet.
@@ -27,7 +28,7 @@ public class UpdateFleetRequest extends com.oracle.bmc.requests.BmcRequest<Updat
     /**
      * The new details for the Fleet.
      */
-    private UpdateFleetDetails updateFleetDetails;
+    private com.oracle.bmc.jms.model.UpdateFleetDetails updateFleetDetails;
 
     /**
      * For optimistic concurrency control. In the PUT or DELETE call
@@ -50,13 +51,13 @@ public class UpdateFleetRequest extends com.oracle.bmc.requests.BmcRequest<Updat
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateFleetDetails getBody$() {
+    public com.oracle.bmc.jms.model.UpdateFleetDetails getBody$() {
         return updateFleetDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateFleetRequest, UpdateFleetDetails> {
+                    UpdateFleetRequest, com.oracle.bmc.jms.model.UpdateFleetDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -121,7 +122,7 @@ public class UpdateFleetRequest extends com.oracle.bmc.requests.BmcRequest<Updat
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateFleetDetails body) {
+        public Builder body$(com.oracle.bmc.jms.model.UpdateFleetDetails body) {
             updateFleetDetails(body);
             return this;
         }

@@ -18,7 +18,8 @@ import com.oracle.bmc.waas.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class UpdateThreatFeedsRequest
-        extends com.oracle.bmc.requests.BmcRequest<java.util.List<ThreatFeedAction>> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                java.util.List<com.oracle.bmc.waas.model.ThreatFeedAction>> {
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the WAAS policy.
@@ -28,7 +29,7 @@ public class UpdateThreatFeedsRequest
     /**
      * A list of threat feeds for which to update the actions.
      */
-    private java.util.List<ThreatFeedAction> threatFeeds;
+    private java.util.List<com.oracle.bmc.waas.model.ThreatFeedAction> threatFeeds;
 
     /**
      * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
@@ -46,24 +47,26 @@ public class UpdateThreatFeedsRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public java.util.List<ThreatFeedAction> getBody$() {
+    public java.util.List<com.oracle.bmc.waas.model.ThreatFeedAction> getBody$() {
         return threatFeeds;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateThreatFeedsRequest, java.util.List<ThreatFeedAction>> {
+                    UpdateThreatFeedsRequest,
+                    java.util.List<com.oracle.bmc.waas.model.ThreatFeedAction>> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        private java.util.List<ThreatFeedAction> threatFeeds = null;
+        private java.util.List<com.oracle.bmc.waas.model.ThreatFeedAction> threatFeeds = null;
 
         /**
          * A list of threat feeds for which to update the actions.
          * @return this builder instance
          */
-        public Builder threatFeeds(java.util.List<ThreatFeedAction> threatFeeds) {
+        public Builder threatFeeds(
+                java.util.List<com.oracle.bmc.waas.model.ThreatFeedAction> threatFeeds) {
             this.threatFeeds = threatFeeds;
             return this;
         }
@@ -72,7 +75,7 @@ public class UpdateThreatFeedsRequest
          * Singular setter. A list of threat feeds for which to update the actions.
          * @return this builder instance
          */
-        public Builder threatFeeds(ThreatFeedAction singularValue) {
+        public Builder threatFeeds(com.oracle.bmc.waas.model.ThreatFeedAction singularValue) {
             return this.threatFeeds(java.util.Arrays.asList(singularValue));
         }
 
@@ -136,7 +139,7 @@ public class UpdateThreatFeedsRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(java.util.List<ThreatFeedAction> body) {
+        public Builder body$(java.util.List<com.oracle.bmc.waas.model.ThreatFeedAction> body) {
             threatFeeds(body);
             return this;
         }

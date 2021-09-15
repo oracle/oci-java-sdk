@@ -18,13 +18,14 @@ import com.oracle.bmc.dataflow.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class UpdatePrivateEndpointRequest
-        extends com.oracle.bmc.requests.BmcRequest<UpdatePrivateEndpointDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.dataflow.model.UpdatePrivateEndpointDetails> {
 
     /**
      * Details for updating a private endpoint.
      *
      */
-    private UpdatePrivateEndpointDetails updatePrivateEndpointDetails;
+    private com.oracle.bmc.dataflow.model.UpdatePrivateEndpointDetails updatePrivateEndpointDetails;
 
     /**
      * The unique ID for a private endpoint.
@@ -53,13 +54,14 @@ public class UpdatePrivateEndpointRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdatePrivateEndpointDetails getBody$() {
+    public com.oracle.bmc.dataflow.model.UpdatePrivateEndpointDetails getBody$() {
         return updatePrivateEndpointDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdatePrivateEndpointRequest, UpdatePrivateEndpointDetails> {
+                    UpdatePrivateEndpointRequest,
+                    com.oracle.bmc.dataflow.model.UpdatePrivateEndpointDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -124,7 +126,7 @@ public class UpdatePrivateEndpointRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdatePrivateEndpointDetails body) {
+        public Builder body$(com.oracle.bmc.dataflow.model.UpdatePrivateEndpointDetails body) {
             updatePrivateEndpointDetails(body);
             return this;
         }

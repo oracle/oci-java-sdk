@@ -18,7 +18,8 @@ import com.oracle.bmc.core.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class ChangeDhcpOptionsCompartmentRequest
-        extends com.oracle.bmc.requests.BmcRequest<ChangeDhcpOptionsCompartmentDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.core.model.ChangeDhcpOptionsCompartmentDetails> {
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) for the set of DHCP options.
@@ -28,7 +29,8 @@ public class ChangeDhcpOptionsCompartmentRequest
     /**
      * Request to change the compartment of a set of DHCP Options.
      */
-    private ChangeDhcpOptionsCompartmentDetails changeDhcpOptionsCompartmentDetails;
+    private com.oracle.bmc.core.model.ChangeDhcpOptionsCompartmentDetails
+            changeDhcpOptionsCompartmentDetails;
 
     /**
      * Unique identifier for the request.
@@ -53,13 +55,14 @@ public class ChangeDhcpOptionsCompartmentRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public ChangeDhcpOptionsCompartmentDetails getBody$() {
+    public com.oracle.bmc.core.model.ChangeDhcpOptionsCompartmentDetails getBody$() {
         return changeDhcpOptionsCompartmentDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    ChangeDhcpOptionsCompartmentRequest, ChangeDhcpOptionsCompartmentDetails> {
+                    ChangeDhcpOptionsCompartmentRequest,
+                    com.oracle.bmc.core.model.ChangeDhcpOptionsCompartmentDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -124,7 +127,7 @@ public class ChangeDhcpOptionsCompartmentRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(ChangeDhcpOptionsCompartmentDetails body) {
+        public Builder body$(com.oracle.bmc.core.model.ChangeDhcpOptionsCompartmentDetails body) {
             changeDhcpOptionsCompartmentDetails(body);
             return this;
         }

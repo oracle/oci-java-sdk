@@ -18,7 +18,8 @@ import com.oracle.bmc.cloudguard.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class TriggerResponderRequest
-        extends com.oracle.bmc.requests.BmcRequest<TriggerResponderDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.cloudguard.model.TriggerResponderDetails> {
 
     /**
      * OCId of the problem.
@@ -28,7 +29,7 @@ public class TriggerResponderRequest
     /**
      * The responder may update the problem.
      */
-    private TriggerResponderDetails triggerResponderDetails;
+    private com.oracle.bmc.cloudguard.model.TriggerResponderDetails triggerResponderDetails;
 
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -61,13 +62,14 @@ public class TriggerResponderRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public TriggerResponderDetails getBody$() {
+    public com.oracle.bmc.cloudguard.model.TriggerResponderDetails getBody$() {
         return triggerResponderDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    TriggerResponderRequest, TriggerResponderDetails> {
+                    TriggerResponderRequest,
+                    com.oracle.bmc.cloudguard.model.TriggerResponderDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -133,7 +135,7 @@ public class TriggerResponderRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(TriggerResponderDetails body) {
+        public Builder body$(com.oracle.bmc.cloudguard.model.TriggerResponderDetails body) {
             triggerResponderDetails(body);
             return this;
         }

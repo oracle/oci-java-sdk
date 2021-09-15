@@ -18,7 +18,8 @@ import com.oracle.bmc.loganalytics.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class ChangeScheduledTaskCompartmentRequest
-        extends com.oracle.bmc.requests.BmcRequest<ChangeScheduledTaskCompartmentDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.loganalytics.model.ChangeScheduledTaskCompartmentDetails> {
 
     /**
      * The Logging Analytics namespace used for the request.
@@ -36,7 +37,8 @@ public class ChangeScheduledTaskCompartmentRequest
     /**
      * The destination compartment identifier.
      */
-    private ChangeScheduledTaskCompartmentDetails changeScheduledTaskCompartmentDetails;
+    private com.oracle.bmc.loganalytics.model.ChangeScheduledTaskCompartmentDetails
+            changeScheduledTaskCompartmentDetails;
 
     /**
      * For optimistic concurrency control. In the PUT or DELETE call
@@ -69,7 +71,7 @@ public class ChangeScheduledTaskCompartmentRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public ChangeScheduledTaskCompartmentDetails getBody$() {
+    public com.oracle.bmc.loganalytics.model.ChangeScheduledTaskCompartmentDetails getBody$() {
         return changeScheduledTaskCompartmentDetails;
     }
 
@@ -80,7 +82,8 @@ public class ChangeScheduledTaskCompartmentRequest
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    ChangeScheduledTaskCompartmentRequest, ChangeScheduledTaskCompartmentDetails> {
+                    ChangeScheduledTaskCompartmentRequest,
+                    com.oracle.bmc.loganalytics.model.ChangeScheduledTaskCompartmentDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -147,7 +150,8 @@ public class ChangeScheduledTaskCompartmentRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(ChangeScheduledTaskCompartmentDetails body) {
+        public Builder body$(
+                com.oracle.bmc.loganalytics.model.ChangeScheduledTaskCompartmentDetails body) {
             changeScheduledTaskCompartmentDetails(body);
             return this;
         }

@@ -18,12 +18,13 @@ import com.oracle.bmc.dns.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class CreateSteeringPolicyRequest
-        extends com.oracle.bmc.requests.BmcRequest<CreateSteeringPolicyDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.dns.model.CreateSteeringPolicyDetails> {
 
     /**
      * Details for creating a new steering policy.
      */
-    private CreateSteeringPolicyDetails createSteeringPolicyDetails;
+    private com.oracle.bmc.dns.model.CreateSteeringPolicyDetails createSteeringPolicyDetails;
 
     /**
      * A token that uniquely identifies a request so it can be retried in case
@@ -56,13 +57,14 @@ public class CreateSteeringPolicyRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreateSteeringPolicyDetails getBody$() {
+    public com.oracle.bmc.dns.model.CreateSteeringPolicyDetails getBody$() {
         return createSteeringPolicyDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CreateSteeringPolicyRequest, CreateSteeringPolicyDetails> {
+                    CreateSteeringPolicyRequest,
+                    com.oracle.bmc.dns.model.CreateSteeringPolicyDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -127,7 +129,7 @@ public class CreateSteeringPolicyRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreateSteeringPolicyDetails body) {
+        public Builder body$(com.oracle.bmc.dns.model.CreateSteeringPolicyDetails body) {
             createSteeringPolicyDetails(body);
             return this;
         }

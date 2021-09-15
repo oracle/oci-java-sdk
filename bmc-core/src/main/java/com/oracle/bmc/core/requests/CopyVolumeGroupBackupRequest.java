@@ -18,7 +18,8 @@ import com.oracle.bmc.core.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class CopyVolumeGroupBackupRequest
-        extends com.oracle.bmc.requests.BmcRequest<CopyVolumeGroupBackupDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.core.model.CopyVolumeGroupBackupDetails> {
 
     /**
      * The Oracle Cloud ID (OCID) that uniquely identifies the volume group backup.
@@ -29,7 +30,7 @@ public class CopyVolumeGroupBackupRequest
     /**
      * Request to create a cross-region copy of given volume group backup.
      */
-    private CopyVolumeGroupBackupDetails copyVolumeGroupBackupDetails;
+    private com.oracle.bmc.core.model.CopyVolumeGroupBackupDetails copyVolumeGroupBackupDetails;
 
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -54,13 +55,14 @@ public class CopyVolumeGroupBackupRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CopyVolumeGroupBackupDetails getBody$() {
+    public com.oracle.bmc.core.model.CopyVolumeGroupBackupDetails getBody$() {
         return copyVolumeGroupBackupDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CopyVolumeGroupBackupRequest, CopyVolumeGroupBackupDetails> {
+                    CopyVolumeGroupBackupRequest,
+                    com.oracle.bmc.core.model.CopyVolumeGroupBackupDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -125,7 +127,7 @@ public class CopyVolumeGroupBackupRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CopyVolumeGroupBackupDetails body) {
+        public Builder body$(com.oracle.bmc.core.model.CopyVolumeGroupBackupDetails body) {
             copyVolumeGroupBackupDetails(body);
             return this;
         }

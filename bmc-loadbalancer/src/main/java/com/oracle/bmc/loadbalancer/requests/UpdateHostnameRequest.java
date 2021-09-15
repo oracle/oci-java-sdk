@@ -18,12 +18,13 @@ import com.oracle.bmc.loadbalancer.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class UpdateHostnameRequest
-        extends com.oracle.bmc.requests.BmcRequest<UpdateHostnameDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.loadbalancer.model.UpdateHostnameDetails> {
 
     /**
      * The configuration details to update a virtual hostname.
      */
-    private UpdateHostnameDetails updateHostnameDetails;
+    private com.oracle.bmc.loadbalancer.model.UpdateHostnameDetails updateHostnameDetails;
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the load balancer associated with the virtual hostname
@@ -53,13 +54,14 @@ public class UpdateHostnameRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateHostnameDetails getBody$() {
+    public com.oracle.bmc.loadbalancer.model.UpdateHostnameDetails getBody$() {
         return updateHostnameDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateHostnameRequest, UpdateHostnameDetails> {
+                    UpdateHostnameRequest,
+                    com.oracle.bmc.loadbalancer.model.UpdateHostnameDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -124,7 +126,7 @@ public class UpdateHostnameRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateHostnameDetails body) {
+        public Builder body$(com.oracle.bmc.loadbalancer.model.UpdateHostnameDetails body) {
             updateHostnameDetails(body);
             return this;
         }

@@ -18,7 +18,8 @@ import com.oracle.bmc.database.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class RegisterAutonomousDatabaseDataSafeRequest
-        extends com.oracle.bmc.requests.BmcRequest<RegisterAutonomousDatabaseDataSafeDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.database.model.RegisterAutonomousDatabaseDataSafeDetails> {
 
     /**
      * The database [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
@@ -34,7 +35,8 @@ public class RegisterAutonomousDatabaseDataSafeRequest
     /**
      * Request to register an Autonomous Database with Data Safe.
      */
-    private RegisterAutonomousDatabaseDataSafeDetails registerAutonomousDatabaseDataSafeDetails;
+    private com.oracle.bmc.database.model.RegisterAutonomousDatabaseDataSafeDetails
+            registerAutonomousDatabaseDataSafeDetails;
 
     /**
      * Alternative accessor for the body parameter.
@@ -42,14 +44,14 @@ public class RegisterAutonomousDatabaseDataSafeRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public RegisterAutonomousDatabaseDataSafeDetails getBody$() {
+    public com.oracle.bmc.database.model.RegisterAutonomousDatabaseDataSafeDetails getBody$() {
         return registerAutonomousDatabaseDataSafeDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     RegisterAutonomousDatabaseDataSafeRequest,
-                    RegisterAutonomousDatabaseDataSafeDetails> {
+                    com.oracle.bmc.database.model.RegisterAutonomousDatabaseDataSafeDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -114,7 +116,8 @@ public class RegisterAutonomousDatabaseDataSafeRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(RegisterAutonomousDatabaseDataSafeDetails body) {
+        public Builder body$(
+                com.oracle.bmc.database.model.RegisterAutonomousDatabaseDataSafeDetails body) {
             registerAutonomousDatabaseDataSafeDetails(body);
             return this;
         }

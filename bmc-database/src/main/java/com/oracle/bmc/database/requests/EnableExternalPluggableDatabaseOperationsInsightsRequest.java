@@ -19,7 +19,8 @@ import com.oracle.bmc.database.model.*;
 @lombok.Getter
 public class EnableExternalPluggableDatabaseOperationsInsightsRequest
         extends com.oracle.bmc.requests.BmcRequest<
-                EnableExternalPluggableDatabaseOperationsInsightsDetails> {
+                com.oracle.bmc.database.model
+                        .EnableExternalPluggableDatabaseOperationsInsightsDetails> {
 
     /**
      * The ExternalPluggableDatabaseId [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
@@ -30,7 +31,7 @@ public class EnableExternalPluggableDatabaseOperationsInsightsRequest
      * Details to enable Operations Insights on the external pluggable database
      *
      */
-    private EnableExternalPluggableDatabaseOperationsInsightsDetails
+    private com.oracle.bmc.database.model.EnableExternalPluggableDatabaseOperationsInsightsDetails
             enableExternalPluggableDatabaseOperationsInsightsDetails;
 
     /**
@@ -63,14 +64,16 @@ public class EnableExternalPluggableDatabaseOperationsInsightsRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public EnableExternalPluggableDatabaseOperationsInsightsDetails getBody$() {
+    public com.oracle.bmc.database.model.EnableExternalPluggableDatabaseOperationsInsightsDetails
+            getBody$() {
         return enableExternalPluggableDatabaseOperationsInsightsDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     EnableExternalPluggableDatabaseOperationsInsightsRequest,
-                    EnableExternalPluggableDatabaseOperationsInsightsDetails> {
+                    com.oracle.bmc.database.model
+                            .EnableExternalPluggableDatabaseOperationsInsightsDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -138,7 +141,10 @@ public class EnableExternalPluggableDatabaseOperationsInsightsRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(EnableExternalPluggableDatabaseOperationsInsightsDetails body) {
+        public Builder body$(
+                com.oracle.bmc.database.model
+                                .EnableExternalPluggableDatabaseOperationsInsightsDetails
+                        body) {
             enableExternalPluggableDatabaseOperationsInsightsDetails(body);
             return this;
         }

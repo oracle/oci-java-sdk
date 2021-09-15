@@ -18,7 +18,8 @@ import com.oracle.bmc.rover.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class UpdateRoverNodeRequest
-        extends com.oracle.bmc.requests.BmcRequest<UpdateRoverNodeDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.rover.model.UpdateRoverNodeDetails> {
 
     /**
      * Unique RoverNode identifier
@@ -28,7 +29,7 @@ public class UpdateRoverNodeRequest
     /**
      * The information to be updated.
      */
-    private UpdateRoverNodeDetails updateRoverNodeDetails;
+    private com.oracle.bmc.rover.model.UpdateRoverNodeDetails updateRoverNodeDetails;
 
     /**
      * For optimistic concurrency control. In the PUT or DELETE call
@@ -51,13 +52,13 @@ public class UpdateRoverNodeRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateRoverNodeDetails getBody$() {
+    public com.oracle.bmc.rover.model.UpdateRoverNodeDetails getBody$() {
         return updateRoverNodeDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateRoverNodeRequest, UpdateRoverNodeDetails> {
+                    UpdateRoverNodeRequest, com.oracle.bmc.rover.model.UpdateRoverNodeDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -122,7 +123,7 @@ public class UpdateRoverNodeRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateRoverNodeDetails body) {
+        public Builder body$(com.oracle.bmc.rover.model.UpdateRoverNodeDetails body) {
             updateRoverNodeDetails(body);
             return this;
         }

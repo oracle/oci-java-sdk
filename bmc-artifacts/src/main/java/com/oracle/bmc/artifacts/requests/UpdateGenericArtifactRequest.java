@@ -18,7 +18,8 @@ import com.oracle.bmc.artifacts.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class UpdateGenericArtifactRequest
-        extends com.oracle.bmc.requests.BmcRequest<UpdateGenericArtifactDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.artifacts.model.UpdateGenericArtifactDetails> {
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the artifact.
@@ -31,7 +32,8 @@ public class UpdateGenericArtifactRequest
     /**
      * Updates the artifact with the specified [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). You can only update the tags of an artifact.
      */
-    private UpdateGenericArtifactDetails updateGenericArtifactDetails;
+    private com.oracle.bmc.artifacts.model.UpdateGenericArtifactDetails
+            updateGenericArtifactDetails;
 
     /**
      * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
@@ -54,13 +56,14 @@ public class UpdateGenericArtifactRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateGenericArtifactDetails getBody$() {
+    public com.oracle.bmc.artifacts.model.UpdateGenericArtifactDetails getBody$() {
         return updateGenericArtifactDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateGenericArtifactRequest, UpdateGenericArtifactDetails> {
+                    UpdateGenericArtifactRequest,
+                    com.oracle.bmc.artifacts.model.UpdateGenericArtifactDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -125,7 +128,7 @@ public class UpdateGenericArtifactRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateGenericArtifactDetails body) {
+        public Builder body$(com.oracle.bmc.artifacts.model.UpdateGenericArtifactDetails body) {
             updateGenericArtifactDetails(body);
             return this;
         }

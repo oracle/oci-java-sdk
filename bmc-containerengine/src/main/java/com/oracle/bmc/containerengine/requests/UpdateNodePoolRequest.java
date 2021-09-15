@@ -18,7 +18,8 @@ import com.oracle.bmc.containerengine.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class UpdateNodePoolRequest
-        extends com.oracle.bmc.requests.BmcRequest<UpdateNodePoolDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.containerengine.model.UpdateNodePoolDetails> {
 
     /**
      * The OCID of the node pool.
@@ -28,7 +29,7 @@ public class UpdateNodePoolRequest
     /**
      * The fields to update in a node pool.
      */
-    private UpdateNodePoolDetails updateNodePoolDetails;
+    private com.oracle.bmc.containerengine.model.UpdateNodePoolDetails updateNodePoolDetails;
 
     /**
      * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
@@ -51,13 +52,14 @@ public class UpdateNodePoolRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateNodePoolDetails getBody$() {
+    public com.oracle.bmc.containerengine.model.UpdateNodePoolDetails getBody$() {
         return updateNodePoolDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateNodePoolRequest, UpdateNodePoolDetails> {
+                    UpdateNodePoolRequest,
+                    com.oracle.bmc.containerengine.model.UpdateNodePoolDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -122,7 +124,7 @@ public class UpdateNodePoolRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateNodePoolDetails body) {
+        public Builder body$(com.oracle.bmc.containerengine.model.UpdateNodePoolDetails body) {
             updateNodePoolDetails(body);
             return this;
         }

@@ -51,6 +51,17 @@ public interface Compute extends AutoCloseable {
     void setRegion(String regionId);
 
     /**
+     * Accept the changes to the PCR values in the Measured Boot Report.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/AcceptShieldedIntegrityPolicyExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use AcceptShieldedIntegrityPolicy API.
+     */
+    AcceptShieldedIntegrityPolicyResponse acceptShieldedIntegrityPolicy(
+            AcceptShieldedIntegrityPolicyRequest request);
+
+    /**
      * Adds a shape to the compatible shapes list for the image.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -610,6 +621,16 @@ public interface Compute extends AutoCloseable {
      */
     GetInstanceConsoleConnectionResponse getInstanceConsoleConnection(
             GetInstanceConsoleConnectionRequest request);
+
+    /**
+     * Gets the measured boot report for this Shielded Instance.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetMeasuredBootReportExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetMeasuredBootReport API.
+     */
+    GetMeasuredBootReportResponse getMeasuredBootReport(GetMeasuredBootReportRequest request);
 
     /**
      * Gets the information for the specified VNIC attachment.

@@ -19,7 +19,7 @@ import com.oracle.bmc.logging.model.*;
 @lombok.Getter
 public class ChangeUnifiedAgentConfigurationCompartmentRequest
         extends com.oracle.bmc.requests.BmcRequest<
-                ChangeUnifiedAgentConfigurationCompartmentDetails> {
+                com.oracle.bmc.logging.model.ChangeUnifiedAgentConfigurationCompartmentDetails> {
 
     /**
      * The OCID of the Unified Agent configuration.
@@ -29,7 +29,7 @@ public class ChangeUnifiedAgentConfigurationCompartmentRequest
     /**
      * Request to change the compartment of a given resource.
      */
-    private ChangeUnifiedAgentConfigurationCompartmentDetails
+    private com.oracle.bmc.logging.model.ChangeUnifiedAgentConfigurationCompartmentDetails
             changeUnifiedAgentConfigurationCompartmentDetails;
 
     /**
@@ -66,14 +66,16 @@ public class ChangeUnifiedAgentConfigurationCompartmentRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public ChangeUnifiedAgentConfigurationCompartmentDetails getBody$() {
+    public com.oracle.bmc.logging.model.ChangeUnifiedAgentConfigurationCompartmentDetails
+            getBody$() {
         return changeUnifiedAgentConfigurationCompartmentDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ChangeUnifiedAgentConfigurationCompartmentRequest,
-                    ChangeUnifiedAgentConfigurationCompartmentDetails> {
+                    com.oracle.bmc.logging.model
+                            .ChangeUnifiedAgentConfigurationCompartmentDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -141,7 +143,9 @@ public class ChangeUnifiedAgentConfigurationCompartmentRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(ChangeUnifiedAgentConfigurationCompartmentDetails body) {
+        public Builder body$(
+                com.oracle.bmc.logging.model.ChangeUnifiedAgentConfigurationCompartmentDetails
+                        body) {
             changeUnifiedAgentConfigurationCompartmentDetails(body);
             return this;
         }

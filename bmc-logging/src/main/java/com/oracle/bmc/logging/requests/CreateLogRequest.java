@@ -17,7 +17,8 @@ import com.oracle.bmc.logging.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
-public class CreateLogRequest extends com.oracle.bmc.requests.BmcRequest<CreateLogDetails> {
+public class CreateLogRequest
+        extends com.oracle.bmc.requests.BmcRequest<com.oracle.bmc.logging.model.CreateLogDetails> {
 
     /**
      * OCID of a log group to work with.
@@ -27,7 +28,7 @@ public class CreateLogRequest extends com.oracle.bmc.requests.BmcRequest<CreateL
     /**
      * Log object configuration details.
      */
-    private CreateLogDetails createLogDetails;
+    private com.oracle.bmc.logging.model.CreateLogDetails createLogDetails;
 
     /**
      * A token that uniquely identifies a request so it can be retried in case
@@ -53,13 +54,13 @@ public class CreateLogRequest extends com.oracle.bmc.requests.BmcRequest<CreateL
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreateLogDetails getBody$() {
+    public com.oracle.bmc.logging.model.CreateLogDetails getBody$() {
         return createLogDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CreateLogRequest, CreateLogDetails> {
+                    CreateLogRequest, com.oracle.bmc.logging.model.CreateLogDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -124,7 +125,7 @@ public class CreateLogRequest extends com.oracle.bmc.requests.BmcRequest<CreateL
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreateLogDetails body) {
+        public Builder body$(com.oracle.bmc.logging.model.CreateLogDetails body) {
             createLogDetails(body);
             return this;
         }

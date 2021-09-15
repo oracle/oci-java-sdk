@@ -18,12 +18,13 @@ import com.oracle.bmc.rover.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class CreateRoverClusterRequest
-        extends com.oracle.bmc.requests.BmcRequest<CreateRoverClusterDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.rover.model.CreateRoverClusterDetails> {
 
     /**
      * Details for the new RoverCluster.
      */
-    private CreateRoverClusterDetails createRoverClusterDetails;
+    private com.oracle.bmc.rover.model.CreateRoverClusterDetails createRoverClusterDetails;
 
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -46,13 +47,14 @@ public class CreateRoverClusterRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreateRoverClusterDetails getBody$() {
+    public com.oracle.bmc.rover.model.CreateRoverClusterDetails getBody$() {
         return createRoverClusterDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CreateRoverClusterRequest, CreateRoverClusterDetails> {
+                    CreateRoverClusterRequest,
+                    com.oracle.bmc.rover.model.CreateRoverClusterDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -116,7 +118,7 @@ public class CreateRoverClusterRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreateRoverClusterDetails body) {
+        public Builder body$(com.oracle.bmc.rover.model.CreateRoverClusterDetails body) {
             createRoverClusterDetails(body);
             return this;
         }

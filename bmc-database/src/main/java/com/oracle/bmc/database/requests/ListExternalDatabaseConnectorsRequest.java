@@ -138,7 +138,7 @@ public class ListExternalDatabaseConnectorsRequest
     /**
      * A filter to return only resources that match the specified lifecycle state.
      */
-    private ExternalDatabaseConnector.LifecycleState lifecycleState;
+    private com.oracle.bmc.database.model.ExternalDatabaseConnector.LifecycleState lifecycleState;
 
     /**
      * A filter to return only resources that match the entire display name given. The match is not case sensitive.

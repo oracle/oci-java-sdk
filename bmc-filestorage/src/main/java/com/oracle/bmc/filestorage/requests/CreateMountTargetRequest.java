@@ -18,12 +18,13 @@ import com.oracle.bmc.filestorage.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class CreateMountTargetRequest
-        extends com.oracle.bmc.requests.BmcRequest<CreateMountTargetDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.filestorage.model.CreateMountTargetDetails> {
 
     /**
      * Details for creating a new mount target.
      */
-    private CreateMountTargetDetails createMountTargetDetails;
+    private com.oracle.bmc.filestorage.model.CreateMountTargetDetails createMountTargetDetails;
 
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -48,13 +49,14 @@ public class CreateMountTargetRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreateMountTargetDetails getBody$() {
+    public com.oracle.bmc.filestorage.model.CreateMountTargetDetails getBody$() {
         return createMountTargetDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CreateMountTargetRequest, CreateMountTargetDetails> {
+                    CreateMountTargetRequest,
+                    com.oracle.bmc.filestorage.model.CreateMountTargetDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -118,7 +120,7 @@ public class CreateMountTargetRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreateMountTargetDetails body) {
+        public Builder body$(com.oracle.bmc.filestorage.model.CreateMountTargetDetails body) {
             createMountTargetDetails(body);
             return this;
         }

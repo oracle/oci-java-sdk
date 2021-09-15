@@ -18,7 +18,8 @@ import com.oracle.bmc.blockchain.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class ChangeBlockchainPlatformCompartmentRequest
-        extends com.oracle.bmc.requests.BmcRequest<ChangeBlockchainPlatformCompartmentDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.blockchain.model.ChangeBlockchainPlatformCompartmentDetails> {
 
     /**
      * Unique service identifier.
@@ -29,7 +30,8 @@ public class ChangeBlockchainPlatformCompartmentRequest
      * Input payload to move the resource to a different compartment.
      *
      */
-    private ChangeBlockchainPlatformCompartmentDetails changeBlockchainPlatformCompartmentDetails;
+    private com.oracle.bmc.blockchain.model.ChangeBlockchainPlatformCompartmentDetails
+            changeBlockchainPlatformCompartmentDetails;
 
     /**
      * For optimistic concurrency control. In the PUT or DELETE call
@@ -62,14 +64,14 @@ public class ChangeBlockchainPlatformCompartmentRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public ChangeBlockchainPlatformCompartmentDetails getBody$() {
+    public com.oracle.bmc.blockchain.model.ChangeBlockchainPlatformCompartmentDetails getBody$() {
         return changeBlockchainPlatformCompartmentDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ChangeBlockchainPlatformCompartmentRequest,
-                    ChangeBlockchainPlatformCompartmentDetails> {
+                    com.oracle.bmc.blockchain.model.ChangeBlockchainPlatformCompartmentDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -136,7 +138,8 @@ public class ChangeBlockchainPlatformCompartmentRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(ChangeBlockchainPlatformCompartmentDetails body) {
+        public Builder body$(
+                com.oracle.bmc.blockchain.model.ChangeBlockchainPlatformCompartmentDetails body) {
             changeBlockchainPlatformCompartmentDetails(body);
             return this;
         }

@@ -17,7 +17,9 @@ import com.oracle.bmc.keymanagement.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
-public class UpdateVaultRequest extends com.oracle.bmc.requests.BmcRequest<UpdateVaultDetails> {
+public class UpdateVaultRequest
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.keymanagement.model.UpdateVaultDetails> {
 
     /**
      * The OCID of the vault.
@@ -27,7 +29,7 @@ public class UpdateVaultRequest extends com.oracle.bmc.requests.BmcRequest<Updat
     /**
      * UpdateVaultDetails
      */
-    private UpdateVaultDetails updateVaultDetails;
+    private com.oracle.bmc.keymanagement.model.UpdateVaultDetails updateVaultDetails;
 
     /**
      * For optimistic concurrency control. In the PUT or DELETE call for a
@@ -53,13 +55,13 @@ public class UpdateVaultRequest extends com.oracle.bmc.requests.BmcRequest<Updat
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateVaultDetails getBody$() {
+    public com.oracle.bmc.keymanagement.model.UpdateVaultDetails getBody$() {
         return updateVaultDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateVaultRequest, UpdateVaultDetails> {
+                    UpdateVaultRequest, com.oracle.bmc.keymanagement.model.UpdateVaultDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -124,7 +126,7 @@ public class UpdateVaultRequest extends com.oracle.bmc.requests.BmcRequest<Updat
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateVaultDetails body) {
+        public Builder body$(com.oracle.bmc.keymanagement.model.UpdateVaultDetails body) {
             updateVaultDetails(body);
             return this;
         }

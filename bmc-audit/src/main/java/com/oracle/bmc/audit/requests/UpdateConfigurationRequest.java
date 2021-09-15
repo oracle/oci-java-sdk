@@ -18,7 +18,8 @@ import com.oracle.bmc.audit.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class UpdateConfigurationRequest
-        extends com.oracle.bmc.requests.BmcRequest<UpdateConfigurationDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.audit.model.UpdateConfigurationDetails> {
 
     /**
      * ID of the root compartment (tenancy)
@@ -28,7 +29,7 @@ public class UpdateConfigurationRequest
     /**
      * The configuration properties
      */
-    private UpdateConfigurationDetails updateConfigurationDetails;
+    private com.oracle.bmc.audit.model.UpdateConfigurationDetails updateConfigurationDetails;
 
     /**
      * Alternative accessor for the body parameter.
@@ -36,13 +37,14 @@ public class UpdateConfigurationRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateConfigurationDetails getBody$() {
+    public com.oracle.bmc.audit.model.UpdateConfigurationDetails getBody$() {
         return updateConfigurationDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateConfigurationRequest, UpdateConfigurationDetails> {
+                    UpdateConfigurationRequest,
+                    com.oracle.bmc.audit.model.UpdateConfigurationDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -105,7 +107,7 @@ public class UpdateConfigurationRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateConfigurationDetails body) {
+        public Builder body$(com.oracle.bmc.audit.model.UpdateConfigurationDetails body) {
             updateConfigurationDetails(body);
             return this;
         }

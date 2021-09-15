@@ -18,12 +18,14 @@ import com.oracle.bmc.artifacts.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class CreateContainerImageSignatureRequest
-        extends com.oracle.bmc.requests.BmcRequest<CreateContainerImageSignatureDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.artifacts.model.CreateContainerImageSignatureDetails> {
 
     /**
      * Upload container image signature details
      */
-    private CreateContainerImageSignatureDetails createContainerImageSignatureDetails;
+    private com.oracle.bmc.artifacts.model.CreateContainerImageSignatureDetails
+            createContainerImageSignatureDetails;
 
     /**
      * Unique identifier for the request.
@@ -56,13 +58,14 @@ public class CreateContainerImageSignatureRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreateContainerImageSignatureDetails getBody$() {
+    public com.oracle.bmc.artifacts.model.CreateContainerImageSignatureDetails getBody$() {
         return createContainerImageSignatureDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CreateContainerImageSignatureRequest, CreateContainerImageSignatureDetails> {
+                    CreateContainerImageSignatureRequest,
+                    com.oracle.bmc.artifacts.model.CreateContainerImageSignatureDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -127,7 +130,8 @@ public class CreateContainerImageSignatureRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreateContainerImageSignatureDetails body) {
+        public Builder body$(
+                com.oracle.bmc.artifacts.model.CreateContainerImageSignatureDetails body) {
             createContainerImageSignatureDetails(body);
             return this;
         }

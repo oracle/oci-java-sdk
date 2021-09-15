@@ -18,7 +18,8 @@ import com.oracle.bmc.objectstorage.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class CreateRetentionRuleRequest
-        extends com.oracle.bmc.requests.BmcRequest<CreateRetentionRuleDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.objectstorage.model.CreateRetentionRuleDetails> {
 
     /**
      * The Object Storage namespace used for the request.
@@ -35,7 +36,8 @@ public class CreateRetentionRuleRequest
     /**
      * The retention rule to create for the bucket.
      */
-    private CreateRetentionRuleDetails createRetentionRuleDetails;
+    private com.oracle.bmc.objectstorage.model.CreateRetentionRuleDetails
+            createRetentionRuleDetails;
 
     /**
      * The client request ID for tracing.
@@ -48,13 +50,14 @@ public class CreateRetentionRuleRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreateRetentionRuleDetails getBody$() {
+    public com.oracle.bmc.objectstorage.model.CreateRetentionRuleDetails getBody$() {
         return createRetentionRuleDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CreateRetentionRuleRequest, CreateRetentionRuleDetails> {
+                    CreateRetentionRuleRequest,
+                    com.oracle.bmc.objectstorage.model.CreateRetentionRuleDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -119,7 +122,7 @@ public class CreateRetentionRuleRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreateRetentionRuleDetails body) {
+        public Builder body$(com.oracle.bmc.objectstorage.model.CreateRetentionRuleDetails body) {
             createRetentionRuleDetails(body);
             return this;
         }

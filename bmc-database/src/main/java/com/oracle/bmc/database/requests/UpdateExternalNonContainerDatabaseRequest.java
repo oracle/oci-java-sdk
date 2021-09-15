@@ -18,7 +18,8 @@ import com.oracle.bmc.database.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class UpdateExternalNonContainerDatabaseRequest
-        extends com.oracle.bmc.requests.BmcRequest<UpdateExternalNonContainerDatabaseDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.database.model.UpdateExternalNonContainerDatabaseDetails> {
 
     /**
      * The external non-container database [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
@@ -28,7 +29,8 @@ public class UpdateExternalNonContainerDatabaseRequest
     /**
      * Request to update the properties of an external non-container database.
      */
-    private UpdateExternalNonContainerDatabaseDetails updateExternalNonContainerDatabaseDetails;
+    private com.oracle.bmc.database.model.UpdateExternalNonContainerDatabaseDetails
+            updateExternalNonContainerDatabaseDetails;
 
     /**
      * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
@@ -50,14 +52,14 @@ public class UpdateExternalNonContainerDatabaseRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateExternalNonContainerDatabaseDetails getBody$() {
+    public com.oracle.bmc.database.model.UpdateExternalNonContainerDatabaseDetails getBody$() {
         return updateExternalNonContainerDatabaseDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     UpdateExternalNonContainerDatabaseRequest,
-                    UpdateExternalNonContainerDatabaseDetails> {
+                    com.oracle.bmc.database.model.UpdateExternalNonContainerDatabaseDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -123,7 +125,8 @@ public class UpdateExternalNonContainerDatabaseRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateExternalNonContainerDatabaseDetails body) {
+        public Builder body$(
+                com.oracle.bmc.database.model.UpdateExternalNonContainerDatabaseDetails body) {
             updateExternalNonContainerDatabaseDetails(body);
             return this;
         }

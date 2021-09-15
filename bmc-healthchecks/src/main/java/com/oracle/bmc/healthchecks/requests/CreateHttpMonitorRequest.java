@@ -18,12 +18,13 @@ import com.oracle.bmc.healthchecks.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class CreateHttpMonitorRequest
-        extends com.oracle.bmc.requests.BmcRequest<CreateHttpMonitorDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.healthchecks.model.CreateHttpMonitorDetails> {
 
     /**
      * The configuration details for creating an HTTP monitor.
      */
-    private CreateHttpMonitorDetails createHttpMonitorDetails;
+    private com.oracle.bmc.healthchecks.model.CreateHttpMonitorDetails createHttpMonitorDetails;
 
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
@@ -49,13 +50,14 @@ public class CreateHttpMonitorRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreateHttpMonitorDetails getBody$() {
+    public com.oracle.bmc.healthchecks.model.CreateHttpMonitorDetails getBody$() {
         return createHttpMonitorDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CreateHttpMonitorRequest, CreateHttpMonitorDetails> {
+                    CreateHttpMonitorRequest,
+                    com.oracle.bmc.healthchecks.model.CreateHttpMonitorDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -119,7 +121,7 @@ public class CreateHttpMonitorRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreateHttpMonitorDetails body) {
+        public Builder body$(com.oracle.bmc.healthchecks.model.CreateHttpMonitorDetails body) {
             createHttpMonitorDetails(body);
             return this;
         }

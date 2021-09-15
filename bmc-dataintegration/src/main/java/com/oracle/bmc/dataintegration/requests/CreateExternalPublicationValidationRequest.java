@@ -18,7 +18,8 @@ import com.oracle.bmc.dataintegration.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class CreateExternalPublicationValidationRequest
-        extends com.oracle.bmc.requests.BmcRequest<CreateExternalPublicationValidationDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.dataintegration.model.CreateExternalPublicationValidationDetails> {
 
     /**
      * The workspace ID.
@@ -33,7 +34,8 @@ public class CreateExternalPublicationValidationRequest
     /**
      * The information needed to create a task validation.
      */
-    private CreateExternalPublicationValidationDetails createExternalPublicationValidationDetails;
+    private com.oracle.bmc.dataintegration.model.CreateExternalPublicationValidationDetails
+            createExternalPublicationValidationDetails;
 
     /**
      * Unique Oracle-assigned identifier for the request. If
@@ -55,14 +57,16 @@ public class CreateExternalPublicationValidationRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreateExternalPublicationValidationDetails getBody$() {
+    public com.oracle.bmc.dataintegration.model.CreateExternalPublicationValidationDetails
+            getBody$() {
         return createExternalPublicationValidationDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     CreateExternalPublicationValidationRequest,
-                    CreateExternalPublicationValidationDetails> {
+                    com.oracle.bmc.dataintegration.model
+                            .CreateExternalPublicationValidationDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -129,7 +133,9 @@ public class CreateExternalPublicationValidationRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreateExternalPublicationValidationDetails body) {
+        public Builder body$(
+                com.oracle.bmc.dataintegration.model.CreateExternalPublicationValidationDetails
+                        body) {
             createExternalPublicationValidationDetails(body);
             return this;
         }

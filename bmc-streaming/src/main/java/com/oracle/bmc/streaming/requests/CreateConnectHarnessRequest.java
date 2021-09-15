@@ -18,12 +18,13 @@ import com.oracle.bmc.streaming.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class CreateConnectHarnessRequest
-        extends com.oracle.bmc.requests.BmcRequest<CreateConnectHarnessDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.streaming.model.CreateConnectHarnessDetails> {
 
     /**
      * The connect harness to create.
      */
-    private CreateConnectHarnessDetails createConnectHarnessDetails;
+    private com.oracle.bmc.streaming.model.CreateConnectHarnessDetails createConnectHarnessDetails;
 
     /**
      * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
@@ -43,13 +44,14 @@ public class CreateConnectHarnessRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreateConnectHarnessDetails getBody$() {
+    public com.oracle.bmc.streaming.model.CreateConnectHarnessDetails getBody$() {
         return createConnectHarnessDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CreateConnectHarnessRequest, CreateConnectHarnessDetails> {
+                    CreateConnectHarnessRequest,
+                    com.oracle.bmc.streaming.model.CreateConnectHarnessDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -113,7 +115,7 @@ public class CreateConnectHarnessRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreateConnectHarnessDetails body) {
+        public Builder body$(com.oracle.bmc.streaming.model.CreateConnectHarnessDetails body) {
             createConnectHarnessDetails(body);
             return this;
         }

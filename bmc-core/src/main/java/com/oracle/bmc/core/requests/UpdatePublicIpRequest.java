@@ -18,7 +18,8 @@ import com.oracle.bmc.core.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class UpdatePublicIpRequest
-        extends com.oracle.bmc.requests.BmcRequest<UpdatePublicIpDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.core.model.UpdatePublicIpDetails> {
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the public IP.
@@ -28,7 +29,7 @@ public class UpdatePublicIpRequest
     /**
      * Public IP details.
      */
-    private UpdatePublicIpDetails updatePublicIpDetails;
+    private com.oracle.bmc.core.model.UpdatePublicIpDetails updatePublicIpDetails;
 
     /**
      * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
@@ -44,13 +45,13 @@ public class UpdatePublicIpRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdatePublicIpDetails getBody$() {
+    public com.oracle.bmc.core.model.UpdatePublicIpDetails getBody$() {
         return updatePublicIpDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdatePublicIpRequest, UpdatePublicIpDetails> {
+                    UpdatePublicIpRequest, com.oracle.bmc.core.model.UpdatePublicIpDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -114,7 +115,7 @@ public class UpdatePublicIpRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdatePublicIpDetails body) {
+        public Builder body$(com.oracle.bmc.core.model.UpdatePublicIpDetails body) {
             updatePublicIpDetails(body);
             return this;
         }

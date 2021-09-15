@@ -454,6 +454,38 @@ public class ComputeClient implements Compute {
     }
 
     @Override
+    public AcceptShieldedIntegrityPolicyResponse acceptShieldedIntegrityPolicy(
+            AcceptShieldedIntegrityPolicyRequest request) {
+        LOG.trace("Called acceptShieldedIntegrityPolicy");
+        final AcceptShieldedIntegrityPolicyRequest interceptedRequest =
+                AcceptShieldedIntegrityPolicyConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                AcceptShieldedIntegrityPolicyConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, AcceptShieldedIntegrityPolicyResponse>
+                transformer = AcceptShieldedIntegrityPolicyConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public AddImageShapeCompatibilityEntryResponse addImageShapeCompatibilityEntry(
             AddImageShapeCompatibilityEntryRequest request) {
         LOG.trace("Called addImageShapeCompatibilityEntry");
@@ -1769,6 +1801,35 @@ public class ComputeClient implements Compute {
         com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetInstanceConsoleConnectionResponse>
                 transformer = GetInstanceConsoleConnectionConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public GetMeasuredBootReportResponse getMeasuredBootReport(
+            GetMeasuredBootReportRequest request) {
+        LOG.trace("Called getMeasuredBootReport");
+        final GetMeasuredBootReportRequest interceptedRequest =
+                GetMeasuredBootReportConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetMeasuredBootReportConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, GetMeasuredBootReportResponse>
+                transformer = GetMeasuredBootReportConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(

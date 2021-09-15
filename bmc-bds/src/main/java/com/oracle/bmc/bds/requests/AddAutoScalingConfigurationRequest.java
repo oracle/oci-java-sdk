@@ -18,7 +18,8 @@ import com.oracle.bmc.bds.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class AddAutoScalingConfigurationRequest
-        extends com.oracle.bmc.requests.BmcRequest<AddAutoScalingConfigurationDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.bds.model.AddAutoScalingConfigurationDetails> {
 
     /**
      * The OCID of the cluster.
@@ -28,7 +29,8 @@ public class AddAutoScalingConfigurationRequest
     /**
      * Details for creating an autoscale configuration.
      */
-    private AddAutoScalingConfigurationDetails addAutoScalingConfigurationDetails;
+    private com.oracle.bmc.bds.model.AddAutoScalingConfigurationDetails
+            addAutoScalingConfigurationDetails;
 
     /**
      * The client request ID for tracing.
@@ -61,13 +63,14 @@ public class AddAutoScalingConfigurationRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public AddAutoScalingConfigurationDetails getBody$() {
+    public com.oracle.bmc.bds.model.AddAutoScalingConfigurationDetails getBody$() {
         return addAutoScalingConfigurationDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    AddAutoScalingConfigurationRequest, AddAutoScalingConfigurationDetails> {
+                    AddAutoScalingConfigurationRequest,
+                    com.oracle.bmc.bds.model.AddAutoScalingConfigurationDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -133,7 +136,7 @@ public class AddAutoScalingConfigurationRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(AddAutoScalingConfigurationDetails body) {
+        public Builder body$(com.oracle.bmc.bds.model.AddAutoScalingConfigurationDetails body) {
             addAutoScalingConfigurationDetails(body);
             return this;
         }

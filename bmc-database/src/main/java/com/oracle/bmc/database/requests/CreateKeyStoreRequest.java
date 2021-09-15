@@ -18,13 +18,14 @@ import com.oracle.bmc.database.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class CreateKeyStoreRequest
-        extends com.oracle.bmc.requests.BmcRequest<CreateKeyStoreDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.database.model.CreateKeyStoreDetails> {
 
     /**
      * Request to create a new key store.
      *
      */
-    private CreateKeyStoreDetails createKeyStoreDetails;
+    private com.oracle.bmc.database.model.CreateKeyStoreDetails createKeyStoreDetails;
 
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -48,13 +49,13 @@ public class CreateKeyStoreRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreateKeyStoreDetails getBody$() {
+    public com.oracle.bmc.database.model.CreateKeyStoreDetails getBody$() {
         return createKeyStoreDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CreateKeyStoreRequest, CreateKeyStoreDetails> {
+                    CreateKeyStoreRequest, com.oracle.bmc.database.model.CreateKeyStoreDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -118,7 +119,7 @@ public class CreateKeyStoreRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreateKeyStoreDetails body) {
+        public Builder body$(com.oracle.bmc.database.model.CreateKeyStoreDetails body) {
             createKeyStoreDetails(body);
             return this;
         }

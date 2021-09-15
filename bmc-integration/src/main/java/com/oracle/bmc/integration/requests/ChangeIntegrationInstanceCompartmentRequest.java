@@ -18,7 +18,8 @@ import com.oracle.bmc.integration.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class ChangeIntegrationInstanceCompartmentRequest
-        extends com.oracle.bmc.requests.BmcRequest<ChangeIntegrationInstanceCompartmentDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.integration.model.ChangeIntegrationInstanceCompartmentDetails> {
 
     /**
      * Unique Integration Instance identifier.
@@ -28,7 +29,8 @@ public class ChangeIntegrationInstanceCompartmentRequest
     /**
      * Details for the update integration instance
      */
-    private ChangeIntegrationInstanceCompartmentDetails changeIntegrationInstanceCompartmentDetails;
+    private com.oracle.bmc.integration.model.ChangeIntegrationInstanceCompartmentDetails
+            changeIntegrationInstanceCompartmentDetails;
 
     /**
      * For optimistic concurrency control. In the PUT or DELETE call
@@ -62,14 +64,14 @@ public class ChangeIntegrationInstanceCompartmentRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public ChangeIntegrationInstanceCompartmentDetails getBody$() {
+    public com.oracle.bmc.integration.model.ChangeIntegrationInstanceCompartmentDetails getBody$() {
         return changeIntegrationInstanceCompartmentDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ChangeIntegrationInstanceCompartmentRequest,
-                    ChangeIntegrationInstanceCompartmentDetails> {
+                    com.oracle.bmc.integration.model.ChangeIntegrationInstanceCompartmentDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -136,7 +138,8 @@ public class ChangeIntegrationInstanceCompartmentRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(ChangeIntegrationInstanceCompartmentDetails body) {
+        public Builder body$(
+                com.oracle.bmc.integration.model.ChangeIntegrationInstanceCompartmentDetails body) {
             changeIntegrationInstanceCompartmentDetails(body);
             return this;
         }

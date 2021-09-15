@@ -18,12 +18,14 @@ import com.oracle.bmc.tenantmanagercontrolplane.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class CreateDomainGovernanceRequest
-        extends com.oracle.bmc.requests.BmcRequest<CreateDomainGovernanceDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.tenantmanagercontrolplane.model.CreateDomainGovernanceDetails> {
 
     /**
      * Parameters for adding domain governance to a claimed domain.
      */
-    private CreateDomainGovernanceDetails createDomainGovernanceDetails;
+    private com.oracle.bmc.tenantmanagercontrolplane.model.CreateDomainGovernanceDetails
+            createDomainGovernanceDetails;
 
     /**
      * A token that uniquely identifies a request, so it can be retried in case of a timeout or
@@ -46,13 +48,14 @@ public class CreateDomainGovernanceRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreateDomainGovernanceDetails getBody$() {
+    public com.oracle.bmc.tenantmanagercontrolplane.model.CreateDomainGovernanceDetails getBody$() {
         return createDomainGovernanceDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CreateDomainGovernanceRequest, CreateDomainGovernanceDetails> {
+                    CreateDomainGovernanceRequest,
+                    com.oracle.bmc.tenantmanagercontrolplane.model.CreateDomainGovernanceDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -116,7 +119,8 @@ public class CreateDomainGovernanceRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreateDomainGovernanceDetails body) {
+        public Builder body$(
+                com.oracle.bmc.tenantmanagercontrolplane.model.CreateDomainGovernanceDetails body) {
             createDomainGovernanceDetails(body);
             return this;
         }

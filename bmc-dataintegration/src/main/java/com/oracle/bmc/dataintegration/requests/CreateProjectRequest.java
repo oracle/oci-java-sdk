@@ -17,7 +17,9 @@ import com.oracle.bmc.dataintegration.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
-public class CreateProjectRequest extends com.oracle.bmc.requests.BmcRequest<CreateProjectDetails> {
+public class CreateProjectRequest
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.dataintegration.model.CreateProjectDetails> {
 
     /**
      * The workspace ID.
@@ -27,7 +29,7 @@ public class CreateProjectRequest extends com.oracle.bmc.requests.BmcRequest<Cre
     /**
      * The details needed to create a project in a workspace.
      */
-    private CreateProjectDetails createProjectDetails;
+    private com.oracle.bmc.dataintegration.model.CreateProjectDetails createProjectDetails;
 
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again.
@@ -49,13 +51,14 @@ public class CreateProjectRequest extends com.oracle.bmc.requests.BmcRequest<Cre
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreateProjectDetails getBody$() {
+    public com.oracle.bmc.dataintegration.model.CreateProjectDetails getBody$() {
         return createProjectDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CreateProjectRequest, CreateProjectDetails> {
+                    CreateProjectRequest,
+                    com.oracle.bmc.dataintegration.model.CreateProjectDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -120,7 +123,7 @@ public class CreateProjectRequest extends com.oracle.bmc.requests.BmcRequest<Cre
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreateProjectDetails body) {
+        public Builder body$(com.oracle.bmc.dataintegration.model.CreateProjectDetails body) {
             createProjectDetails(body);
             return this;
         }

@@ -42,7 +42,7 @@ public class ListWorkspacesRequest extends com.oracle.bmc.requests.BmcRequest<ja
     /**
      * The lifecycle state of a resource. When specified, the operation only returns resources that match the given lifecycle state. When not specified, all lifecycle states are processed as a match.
      */
-    private Workspace.LifecycleState lifecycleState;
+    private com.oracle.bmc.dataintegration.model.Workspace.LifecycleState lifecycleState;
 
     /**
      * Specifies sort order to use, either {@code ASC} (ascending) or {@code DESC} (descending).

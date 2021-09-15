@@ -17,12 +17,13 @@ import com.oracle.bmc.ocvp.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
-public class CreateSddcRequest extends com.oracle.bmc.requests.BmcRequest<CreateSddcDetails> {
+public class CreateSddcRequest
+        extends com.oracle.bmc.requests.BmcRequest<com.oracle.bmc.ocvp.model.CreateSddcDetails> {
 
     /**
      * Details for the SDDC.
      */
-    private CreateSddcDetails createSddcDetails;
+    private com.oracle.bmc.ocvp.model.CreateSddcDetails createSddcDetails;
 
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -47,13 +48,13 @@ public class CreateSddcRequest extends com.oracle.bmc.requests.BmcRequest<Create
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreateSddcDetails getBody$() {
+    public com.oracle.bmc.ocvp.model.CreateSddcDetails getBody$() {
         return createSddcDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CreateSddcRequest, CreateSddcDetails> {
+                    CreateSddcRequest, com.oracle.bmc.ocvp.model.CreateSddcDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -117,7 +118,7 @@ public class CreateSddcRequest extends com.oracle.bmc.requests.BmcRequest<Create
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreateSddcDetails body) {
+        public Builder body$(com.oracle.bmc.ocvp.model.CreateSddcDetails body) {
             createSddcDetails(body);
             return this;
         }

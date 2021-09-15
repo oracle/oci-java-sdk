@@ -18,13 +18,14 @@ import com.oracle.bmc.email.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class CreateSuppressionRequest
-        extends com.oracle.bmc.requests.BmcRequest<CreateSuppressionDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.email.model.CreateSuppressionDetails> {
 
     /**
      * Adds a single email address to the suppression list for a compartment's tenancy.
      *
      */
-    private CreateSuppressionDetails createSuppressionDetails;
+    private com.oracle.bmc.email.model.CreateSuppressionDetails createSuppressionDetails;
 
     /**
      * The request ID for tracing from the system
@@ -37,13 +38,13 @@ public class CreateSuppressionRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreateSuppressionDetails getBody$() {
+    public com.oracle.bmc.email.model.CreateSuppressionDetails getBody$() {
         return createSuppressionDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CreateSuppressionRequest, CreateSuppressionDetails> {
+                    CreateSuppressionRequest, com.oracle.bmc.email.model.CreateSuppressionDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -106,7 +107,7 @@ public class CreateSuppressionRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreateSuppressionDetails body) {
+        public Builder body$(com.oracle.bmc.email.model.CreateSuppressionDetails body) {
             createSuppressionDetails(body);
             return this;
         }

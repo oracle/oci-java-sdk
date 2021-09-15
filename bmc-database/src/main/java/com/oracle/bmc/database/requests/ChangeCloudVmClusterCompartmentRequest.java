@@ -18,12 +18,14 @@ import com.oracle.bmc.database.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class ChangeCloudVmClusterCompartmentRequest
-        extends com.oracle.bmc.requests.BmcRequest<ChangeCloudVmClusterCompartmentDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.database.model.ChangeCloudVmClusterCompartmentDetails> {
 
     /**
      * Request to move cloud VM cluster to a different compartment
      */
-    private ChangeCloudVmClusterCompartmentDetails changeCloudVmClusterCompartmentDetails;
+    private com.oracle.bmc.database.model.ChangeCloudVmClusterCompartmentDetails
+            changeCloudVmClusterCompartmentDetails;
 
     /**
      * The cloud VM cluster [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
@@ -60,14 +62,14 @@ public class ChangeCloudVmClusterCompartmentRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public ChangeCloudVmClusterCompartmentDetails getBody$() {
+    public com.oracle.bmc.database.model.ChangeCloudVmClusterCompartmentDetails getBody$() {
         return changeCloudVmClusterCompartmentDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ChangeCloudVmClusterCompartmentRequest,
-                    ChangeCloudVmClusterCompartmentDetails> {
+                    com.oracle.bmc.database.model.ChangeCloudVmClusterCompartmentDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -133,7 +135,8 @@ public class ChangeCloudVmClusterCompartmentRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(ChangeCloudVmClusterCompartmentDetails body) {
+        public Builder body$(
+                com.oracle.bmc.database.model.ChangeCloudVmClusterCompartmentDetails body) {
             changeCloudVmClusterCompartmentDetails(body);
             return this;
         }

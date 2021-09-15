@@ -17,12 +17,14 @@ import com.oracle.bmc.keymanagement.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
-public class ImportKeyRequest extends com.oracle.bmc.requests.BmcRequest<ImportKeyDetails> {
+public class ImportKeyRequest
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.keymanagement.model.ImportKeyDetails> {
 
     /**
      * ImportKeyDetails
      */
-    private ImportKeyDetails importKeyDetails;
+    private com.oracle.bmc.keymanagement.model.ImportKeyDetails importKeyDetails;
 
     /**
      * Unique identifier for the request. If provided, the returned request ID
@@ -49,13 +51,13 @@ public class ImportKeyRequest extends com.oracle.bmc.requests.BmcRequest<ImportK
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public ImportKeyDetails getBody$() {
+    public com.oracle.bmc.keymanagement.model.ImportKeyDetails getBody$() {
         return importKeyDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    ImportKeyRequest, ImportKeyDetails> {
+                    ImportKeyRequest, com.oracle.bmc.keymanagement.model.ImportKeyDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -119,7 +121,7 @@ public class ImportKeyRequest extends com.oracle.bmc.requests.BmcRequest<ImportK
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(ImportKeyDetails body) {
+        public Builder body$(com.oracle.bmc.keymanagement.model.ImportKeyDetails body) {
             importKeyDetails(body);
             return this;
         }

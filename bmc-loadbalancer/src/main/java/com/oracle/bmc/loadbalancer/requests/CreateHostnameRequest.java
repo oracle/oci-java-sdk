@@ -18,12 +18,13 @@ import com.oracle.bmc.loadbalancer.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class CreateHostnameRequest
-        extends com.oracle.bmc.requests.BmcRequest<CreateHostnameDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.loadbalancer.model.CreateHostnameDetails> {
 
     /**
      * The details of the hostname resource to add to the specified load balancer.
      */
-    private CreateHostnameDetails createHostnameDetails;
+    private com.oracle.bmc.loadbalancer.model.CreateHostnameDetails createHostnameDetails;
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the load balancer to add the hostname to.
@@ -53,13 +54,14 @@ public class CreateHostnameRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreateHostnameDetails getBody$() {
+    public com.oracle.bmc.loadbalancer.model.CreateHostnameDetails getBody$() {
         return createHostnameDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CreateHostnameRequest, CreateHostnameDetails> {
+                    CreateHostnameRequest,
+                    com.oracle.bmc.loadbalancer.model.CreateHostnameDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -124,7 +126,7 @@ public class CreateHostnameRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreateHostnameDetails body) {
+        public Builder body$(com.oracle.bmc.loadbalancer.model.CreateHostnameDetails body) {
             createHostnameDetails(body);
             return this;
         }

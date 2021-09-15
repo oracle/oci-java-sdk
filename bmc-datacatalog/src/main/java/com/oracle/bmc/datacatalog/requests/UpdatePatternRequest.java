@@ -17,7 +17,9 @@ import com.oracle.bmc.datacatalog.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
-public class UpdatePatternRequest extends com.oracle.bmc.requests.BmcRequest<UpdatePatternDetails> {
+public class UpdatePatternRequest
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.datacatalog.model.UpdatePatternDetails> {
 
     /**
      * Unique catalog identifier.
@@ -32,7 +34,7 @@ public class UpdatePatternRequest extends com.oracle.bmc.requests.BmcRequest<Upd
     /**
      * The information to be updated in the pattern.
      */
-    private UpdatePatternDetails updatePatternDetails;
+    private com.oracle.bmc.datacatalog.model.UpdatePatternDetails updatePatternDetails;
 
     /**
      * For optimistic concurrency control. In the PUT or DELETE call
@@ -55,13 +57,13 @@ public class UpdatePatternRequest extends com.oracle.bmc.requests.BmcRequest<Upd
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdatePatternDetails getBody$() {
+    public com.oracle.bmc.datacatalog.model.UpdatePatternDetails getBody$() {
         return updatePatternDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdatePatternRequest, UpdatePatternDetails> {
+                    UpdatePatternRequest, com.oracle.bmc.datacatalog.model.UpdatePatternDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -127,7 +129,7 @@ public class UpdatePatternRequest extends com.oracle.bmc.requests.BmcRequest<Upd
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdatePatternDetails body) {
+        public Builder body$(com.oracle.bmc.datacatalog.model.UpdatePatternDetails body) {
             updatePatternDetails(body);
             return this;
         }

@@ -18,12 +18,13 @@ import com.oracle.bmc.opsi.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class EnableHostInsightRequest
-        extends com.oracle.bmc.requests.BmcRequest<EnableHostInsightDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.opsi.model.EnableHostInsightDetails> {
 
     /**
      * Details for the host to be enabled in Operations Insights.
      */
-    private EnableHostInsightDetails enableHostInsightDetails;
+    private com.oracle.bmc.opsi.model.EnableHostInsightDetails enableHostInsightDetails;
 
     /**
      * Unique host insight identifier
@@ -62,13 +63,13 @@ public class EnableHostInsightRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public EnableHostInsightDetails getBody$() {
+    public com.oracle.bmc.opsi.model.EnableHostInsightDetails getBody$() {
         return enableHostInsightDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    EnableHostInsightRequest, EnableHostInsightDetails> {
+                    EnableHostInsightRequest, com.oracle.bmc.opsi.model.EnableHostInsightDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -134,7 +135,7 @@ public class EnableHostInsightRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(EnableHostInsightDetails body) {
+        public Builder body$(com.oracle.bmc.opsi.model.EnableHostInsightDetails body) {
             enableHostInsightDetails(body);
             return this;
         }

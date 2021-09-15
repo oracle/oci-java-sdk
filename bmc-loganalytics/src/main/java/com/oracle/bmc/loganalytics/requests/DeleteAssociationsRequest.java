@@ -18,7 +18,8 @@ import com.oracle.bmc.loganalytics.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class DeleteAssociationsRequest
-        extends com.oracle.bmc.requests.BmcRequest<DeleteLogAnalyticsAssociationDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.loganalytics.model.DeleteLogAnalyticsAssociationDetails> {
 
     /**
      * The Logging Analytics namespace used for the request.
@@ -29,7 +30,8 @@ public class DeleteAssociationsRequest
     /**
      * details for association
      */
-    private DeleteLogAnalyticsAssociationDetails deleteLogAnalyticsAssociationDetails;
+    private com.oracle.bmc.loganalytics.model.DeleteLogAnalyticsAssociationDetails
+            deleteLogAnalyticsAssociationDetails;
 
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -52,7 +54,7 @@ public class DeleteAssociationsRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public DeleteLogAnalyticsAssociationDetails getBody$() {
+    public com.oracle.bmc.loganalytics.model.DeleteLogAnalyticsAssociationDetails getBody$() {
         return deleteLogAnalyticsAssociationDetails;
     }
 
@@ -63,7 +65,8 @@ public class DeleteAssociationsRequest
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    DeleteAssociationsRequest, DeleteLogAnalyticsAssociationDetails> {
+                    DeleteAssociationsRequest,
+                    com.oracle.bmc.loganalytics.model.DeleteLogAnalyticsAssociationDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -128,7 +131,8 @@ public class DeleteAssociationsRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(DeleteLogAnalyticsAssociationDetails body) {
+        public Builder body$(
+                com.oracle.bmc.loganalytics.model.DeleteLogAnalyticsAssociationDetails body) {
             deleteLogAnalyticsAssociationDetails(body);
             return this;
         }

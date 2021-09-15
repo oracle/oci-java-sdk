@@ -17,7 +17,8 @@ import com.oracle.bmc.dns.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
-public class UpdateTsigKeyRequest extends com.oracle.bmc.requests.BmcRequest<UpdateTsigKeyDetails> {
+public class UpdateTsigKeyRequest
+        extends com.oracle.bmc.requests.BmcRequest<com.oracle.bmc.dns.model.UpdateTsigKeyDetails> {
 
     /**
      * The OCID of the target TSIG key.
@@ -27,7 +28,7 @@ public class UpdateTsigKeyRequest extends com.oracle.bmc.requests.BmcRequest<Upd
     /**
      * New data for the TSIG key.
      */
-    private UpdateTsigKeyDetails updateTsigKeyDetails;
+    private com.oracle.bmc.dns.model.UpdateTsigKeyDetails updateTsigKeyDetails;
 
     /**
      * The {@code If-Match} header field makes the request method conditional on the
@@ -69,13 +70,13 @@ public class UpdateTsigKeyRequest extends com.oracle.bmc.requests.BmcRequest<Upd
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateTsigKeyDetails getBody$() {
+    public com.oracle.bmc.dns.model.UpdateTsigKeyDetails getBody$() {
         return updateTsigKeyDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateTsigKeyRequest, UpdateTsigKeyDetails> {
+                    UpdateTsigKeyRequest, com.oracle.bmc.dns.model.UpdateTsigKeyDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -142,7 +143,7 @@ public class UpdateTsigKeyRequest extends com.oracle.bmc.requests.BmcRequest<Upd
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateTsigKeyDetails body) {
+        public Builder body$(com.oracle.bmc.dns.model.UpdateTsigKeyDetails body) {
             updateTsigKeyDetails(body);
             return this;
         }

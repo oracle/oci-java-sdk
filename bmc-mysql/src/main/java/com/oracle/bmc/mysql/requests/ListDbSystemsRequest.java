@@ -62,7 +62,7 @@ public class ListDbSystemsRequest extends com.oracle.bmc.requests.BmcRequest<jav
     /**
      * DbSystem Lifecycle State
      */
-    private DbSystem.LifecycleState lifecycleState;
+    private com.oracle.bmc.mysql.model.DbSystem.LifecycleState lifecycleState;
 
     /**
      * The requested Configuration instance.

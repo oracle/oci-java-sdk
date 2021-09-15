@@ -17,12 +17,14 @@ import com.oracle.bmc.optimizer.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
-public class CreateProfileRequest extends com.oracle.bmc.requests.BmcRequest<CreateProfileDetails> {
+public class CreateProfileRequest
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.optimizer.model.CreateProfileDetails> {
 
     /**
      * Details for creating the profile.
      */
-    private CreateProfileDetails createProfileDetails;
+    private com.oracle.bmc.optimizer.model.CreateProfileDetails createProfileDetails;
 
     /**
      * Unique Oracle-assigned identifier for the request.
@@ -47,13 +49,13 @@ public class CreateProfileRequest extends com.oracle.bmc.requests.BmcRequest<Cre
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreateProfileDetails getBody$() {
+    public com.oracle.bmc.optimizer.model.CreateProfileDetails getBody$() {
         return createProfileDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CreateProfileRequest, CreateProfileDetails> {
+                    CreateProfileRequest, com.oracle.bmc.optimizer.model.CreateProfileDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -117,7 +119,7 @@ public class CreateProfileRequest extends com.oracle.bmc.requests.BmcRequest<Cre
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreateProfileDetails body) {
+        public Builder body$(com.oracle.bmc.optimizer.model.CreateProfileDetails body) {
             createProfileDetails(body);
             return this;
         }

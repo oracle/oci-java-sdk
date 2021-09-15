@@ -18,7 +18,8 @@ import com.oracle.bmc.datacatalog.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class UpdateGlossaryRequest
-        extends com.oracle.bmc.requests.BmcRequest<UpdateGlossaryDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.datacatalog.model.UpdateGlossaryDetails> {
 
     /**
      * Unique catalog identifier.
@@ -33,7 +34,7 @@ public class UpdateGlossaryRequest
     /**
      * The information to be updated in the glossary.
      */
-    private UpdateGlossaryDetails updateGlossaryDetails;
+    private com.oracle.bmc.datacatalog.model.UpdateGlossaryDetails updateGlossaryDetails;
 
     /**
      * For optimistic concurrency control. In the PUT or DELETE call
@@ -56,13 +57,13 @@ public class UpdateGlossaryRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateGlossaryDetails getBody$() {
+    public com.oracle.bmc.datacatalog.model.UpdateGlossaryDetails getBody$() {
         return updateGlossaryDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateGlossaryRequest, UpdateGlossaryDetails> {
+                    UpdateGlossaryRequest, com.oracle.bmc.datacatalog.model.UpdateGlossaryDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -128,7 +129,7 @@ public class UpdateGlossaryRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateGlossaryDetails body) {
+        public Builder body$(com.oracle.bmc.datacatalog.model.UpdateGlossaryDetails body) {
             updateGlossaryDetails(body);
             return this;
         }

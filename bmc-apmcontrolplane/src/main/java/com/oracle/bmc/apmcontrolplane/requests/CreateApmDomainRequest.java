@@ -18,12 +18,13 @@ import com.oracle.bmc.apmcontrolplane.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class CreateApmDomainRequest
-        extends com.oracle.bmc.requests.BmcRequest<CreateApmDomainDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.apmcontrolplane.model.CreateApmDomainDetails> {
 
     /**
      * Details for the new APM Domain.
      */
-    private CreateApmDomainDetails createApmDomainDetails;
+    private com.oracle.bmc.apmcontrolplane.model.CreateApmDomainDetails createApmDomainDetails;
 
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -46,13 +47,14 @@ public class CreateApmDomainRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreateApmDomainDetails getBody$() {
+    public com.oracle.bmc.apmcontrolplane.model.CreateApmDomainDetails getBody$() {
         return createApmDomainDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CreateApmDomainRequest, CreateApmDomainDetails> {
+                    CreateApmDomainRequest,
+                    com.oracle.bmc.apmcontrolplane.model.CreateApmDomainDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -116,7 +118,7 @@ public class CreateApmDomainRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreateApmDomainDetails body) {
+        public Builder body$(com.oracle.bmc.apmcontrolplane.model.CreateApmDomainDetails body) {
             createApmDomainDetails(body);
             return this;
         }

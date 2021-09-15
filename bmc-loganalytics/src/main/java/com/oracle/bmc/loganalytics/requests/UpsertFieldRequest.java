@@ -18,7 +18,8 @@ import com.oracle.bmc.loganalytics.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class UpsertFieldRequest
-        extends com.oracle.bmc.requests.BmcRequest<UpsertLogAnalyticsFieldDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.loganalytics.model.UpsertLogAnalyticsFieldDetails> {
 
     /**
      * The Logging Analytics namespace used for the request.
@@ -29,7 +30,8 @@ public class UpsertFieldRequest
     /**
      * Details for the new LogAnalyticsFieldDetails.
      */
-    private UpsertLogAnalyticsFieldDetails upsertLogAnalyticsFieldDetails;
+    private com.oracle.bmc.loganalytics.model.UpsertLogAnalyticsFieldDetails
+            upsertLogAnalyticsFieldDetails;
 
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -62,7 +64,7 @@ public class UpsertFieldRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpsertLogAnalyticsFieldDetails getBody$() {
+    public com.oracle.bmc.loganalytics.model.UpsertLogAnalyticsFieldDetails getBody$() {
         return upsertLogAnalyticsFieldDetails;
     }
 
@@ -73,7 +75,8 @@ public class UpsertFieldRequest
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpsertFieldRequest, UpsertLogAnalyticsFieldDetails> {
+                    UpsertFieldRequest,
+                    com.oracle.bmc.loganalytics.model.UpsertLogAnalyticsFieldDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -139,7 +142,8 @@ public class UpsertFieldRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpsertLogAnalyticsFieldDetails body) {
+        public Builder body$(
+                com.oracle.bmc.loganalytics.model.UpsertLogAnalyticsFieldDetails body) {
             upsertLogAnalyticsFieldDetails(body);
             return this;
         }

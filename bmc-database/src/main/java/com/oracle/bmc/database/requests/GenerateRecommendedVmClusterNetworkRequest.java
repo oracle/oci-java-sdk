@@ -18,7 +18,8 @@ import com.oracle.bmc.database.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class GenerateRecommendedVmClusterNetworkRequest
-        extends com.oracle.bmc.requests.BmcRequest<GenerateRecommendedNetworkDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.database.model.GenerateRecommendedNetworkDetails> {
 
     /**
      * The Exadata infrastructure [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
@@ -28,7 +29,8 @@ public class GenerateRecommendedVmClusterNetworkRequest
     /**
      * Request to generate a recommended Cloud@Customer VM cluster network configuration.
      */
-    private GenerateRecommendedNetworkDetails generateRecommendedNetworkDetails;
+    private com.oracle.bmc.database.model.GenerateRecommendedNetworkDetails
+            generateRecommendedNetworkDetails;
 
     /**
      * Unique identifier for the request.
@@ -52,13 +54,14 @@ public class GenerateRecommendedVmClusterNetworkRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public GenerateRecommendedNetworkDetails getBody$() {
+    public com.oracle.bmc.database.model.GenerateRecommendedNetworkDetails getBody$() {
         return generateRecommendedNetworkDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    GenerateRecommendedVmClusterNetworkRequest, GenerateRecommendedNetworkDetails> {
+                    GenerateRecommendedVmClusterNetworkRequest,
+                    com.oracle.bmc.database.model.GenerateRecommendedNetworkDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -123,7 +126,7 @@ public class GenerateRecommendedVmClusterNetworkRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(GenerateRecommendedNetworkDetails body) {
+        public Builder body$(com.oracle.bmc.database.model.GenerateRecommendedNetworkDetails body) {
             generateRecommendedNetworkDetails(body);
             return this;
         }

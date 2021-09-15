@@ -6,9 +6,13 @@ package com.oracle.bmc;
 
 import static org.junit.Assert.*;
 
+import java.io.File;
 import java.util.Arrays;
 import java.lang.reflect.Field;
 import java.lang.reflect.Modifier;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Map;
@@ -17,6 +21,8 @@ import java.util.List;
 import java.util.Set;
 
 import com.google.common.collect.ImmutableMap;
+import com.oracle.bmc.model.RegionSchema;
+import com.oracle.bmc.model.internal.JsonConverter;
 import com.oracle.bmc.util.internal.NameUtils;
 import org.junit.Test;
 
@@ -28,6 +34,41 @@ public class RealmTest {
                     .put("OC3", "oc3")
                     .build();
     private static final String NEW_SECOND_LEVEL_DOMAIN = "oracle-foo-cloud.com";
+
+    @Test
+    public void testAllRealms() {
+        try {
+            File file = new File("src/test/resources/regions.json");
+            assertTrue("File regions.json not found.", file.isFile());
+
+            String content =
+                    new String(
+                            Files.readAllBytes(Paths.get("src/test/resources/regions.json")),
+                            StandardCharsets.UTF_8);
+            assertFalse("Failed to read contents from regions.json.", content.isEmpty());
+
+            RegionSchema[] regionSchemas =
+                    JsonConverter.jsonBlobToObject(content, RegionSchema[].class);
+            assertTrue(
+                    "Failed to read regionSchemas.",
+                    regionSchemas != null && regionSchemas.length != 0);
+
+            ArrayList<String> realmIds = new ArrayList<String>();
+            for (Realm r : Realm.values()) {
+                realmIds.add(r.getRealmId().toLowerCase());
+            }
+            for (RegionSchema regionSchema : regionSchemas) {
+                assertTrue(
+                        "Found invalid region schema.",
+                        regionSchema != null && RegionSchema.isValid(regionSchema));
+                assertTrue(
+                        String.format("Realm %s not registered.", regionSchema.getRealmKey()),
+                        realmIds.contains(regionSchema.getRealmKey().toLowerCase()));
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 
     @Test
     public void withExpectedRealms_shouldContainAllValues() {

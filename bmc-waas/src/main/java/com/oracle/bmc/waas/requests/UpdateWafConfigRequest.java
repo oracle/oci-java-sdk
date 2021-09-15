@@ -17,7 +17,8 @@ import com.oracle.bmc.waas.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
-public class UpdateWafConfigRequest extends com.oracle.bmc.requests.BmcRequest<WafConfig> {
+public class UpdateWafConfigRequest
+        extends com.oracle.bmc.requests.BmcRequest<com.oracle.bmc.waas.model.WafConfig> {
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the WAAS policy.
@@ -27,7 +28,7 @@ public class UpdateWafConfigRequest extends com.oracle.bmc.requests.BmcRequest<W
     /**
      * The new Web Application Firewall configuration to apply to a WAAS policy.
      */
-    private WafConfig updateWafConfigDetails;
+    private com.oracle.bmc.waas.model.WafConfig updateWafConfigDetails;
 
     /**
      * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
@@ -51,13 +52,13 @@ public class UpdateWafConfigRequest extends com.oracle.bmc.requests.BmcRequest<W
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public WafConfig getBody$() {
+    public com.oracle.bmc.waas.model.WafConfig getBody$() {
         return updateWafConfigDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateWafConfigRequest, WafConfig> {
+                    UpdateWafConfigRequest, com.oracle.bmc.waas.model.WafConfig> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -123,7 +124,7 @@ public class UpdateWafConfigRequest extends com.oracle.bmc.requests.BmcRequest<W
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(WafConfig body) {
+        public Builder body$(com.oracle.bmc.waas.model.WafConfig body) {
             updateWafConfigDetails(body);
             return this;
         }

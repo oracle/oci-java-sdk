@@ -18,7 +18,8 @@ import com.oracle.bmc.cloudguard.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class UpdateTargetDetectorRecipeRequest
-        extends com.oracle.bmc.requests.BmcRequest<UpdateTargetDetectorRecipeDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.cloudguard.model.UpdateTargetDetectorRecipeDetails> {
 
     /**
      * OCID of target
@@ -33,7 +34,8 @@ public class UpdateTargetDetectorRecipeRequest
     /**
      * The details to be updated.
      */
-    private UpdateTargetDetectorRecipeDetails updateTargetDetectorRecipeDetails;
+    private com.oracle.bmc.cloudguard.model.UpdateTargetDetectorRecipeDetails
+            updateTargetDetectorRecipeDetails;
 
     /**
      * For optimistic concurrency control. In the PUT or DELETE call
@@ -56,13 +58,14 @@ public class UpdateTargetDetectorRecipeRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateTargetDetectorRecipeDetails getBody$() {
+    public com.oracle.bmc.cloudguard.model.UpdateTargetDetectorRecipeDetails getBody$() {
         return updateTargetDetectorRecipeDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateTargetDetectorRecipeRequest, UpdateTargetDetectorRecipeDetails> {
+                    UpdateTargetDetectorRecipeRequest,
+                    com.oracle.bmc.cloudguard.model.UpdateTargetDetectorRecipeDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -128,7 +131,8 @@ public class UpdateTargetDetectorRecipeRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateTargetDetectorRecipeDetails body) {
+        public Builder body$(
+                com.oracle.bmc.cloudguard.model.UpdateTargetDetectorRecipeDetails body) {
             updateTargetDetectorRecipeDetails(body);
             return this;
         }

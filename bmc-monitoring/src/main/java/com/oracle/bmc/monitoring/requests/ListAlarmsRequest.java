@@ -65,7 +65,7 @@ public class ListAlarmsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
      * A filter to return only alarms that match the given lifecycle state exactly. When not specified, only alarms in the ACTIVE lifecycle state are listed.
      *
      */
-    private Alarm.LifecycleState lifecycleState;
+    private com.oracle.bmc.monitoring.model.Alarm.LifecycleState lifecycleState;
 
     /**
      * The field to use when sorting returned alarm definitions. Only one sorting level is provided.

@@ -18,7 +18,8 @@ import com.oracle.bmc.mysql.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class UpdateAnalyticsClusterRequest
-        extends com.oracle.bmc.requests.BmcRequest<UpdateAnalyticsClusterDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.mysql.model.UpdateAnalyticsClusterDetails> {
 
     /**
      * The DB System [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
@@ -28,7 +29,7 @@ public class UpdateAnalyticsClusterRequest
     /**
      * Request to update an Analytics Cluster.
      */
-    private UpdateAnalyticsClusterDetails updateAnalyticsClusterDetails;
+    private com.oracle.bmc.mysql.model.UpdateAnalyticsClusterDetails updateAnalyticsClusterDetails;
 
     /**
      * For optimistic concurrency control. In the PUT or DELETE call for a
@@ -54,13 +55,14 @@ public class UpdateAnalyticsClusterRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateAnalyticsClusterDetails getBody$() {
+    public com.oracle.bmc.mysql.model.UpdateAnalyticsClusterDetails getBody$() {
         return updateAnalyticsClusterDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateAnalyticsClusterRequest, UpdateAnalyticsClusterDetails> {
+                    UpdateAnalyticsClusterRequest,
+                    com.oracle.bmc.mysql.model.UpdateAnalyticsClusterDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -125,7 +127,7 @@ public class UpdateAnalyticsClusterRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateAnalyticsClusterDetails body) {
+        public Builder body$(com.oracle.bmc.mysql.model.UpdateAnalyticsClusterDetails body) {
             updateAnalyticsClusterDetails(body);
             return this;
         }

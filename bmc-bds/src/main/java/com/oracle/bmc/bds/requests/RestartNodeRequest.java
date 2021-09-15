@@ -17,7 +17,8 @@ import com.oracle.bmc.bds.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
-public class RestartNodeRequest extends com.oracle.bmc.requests.BmcRequest<RestartNodeDetails> {
+public class RestartNodeRequest
+        extends com.oracle.bmc.requests.BmcRequest<com.oracle.bmc.bds.model.RestartNodeDetails> {
 
     /**
      * The OCID of the cluster.
@@ -27,7 +28,7 @@ public class RestartNodeRequest extends com.oracle.bmc.requests.BmcRequest<Resta
     /**
      * Details for restarting the node.
      */
-    private RestartNodeDetails restartNodeDetails;
+    private com.oracle.bmc.bds.model.RestartNodeDetails restartNodeDetails;
 
     /**
      * The client request ID for tracing.
@@ -60,13 +61,13 @@ public class RestartNodeRequest extends com.oracle.bmc.requests.BmcRequest<Resta
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public RestartNodeDetails getBody$() {
+    public com.oracle.bmc.bds.model.RestartNodeDetails getBody$() {
         return restartNodeDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    RestartNodeRequest, RestartNodeDetails> {
+                    RestartNodeRequest, com.oracle.bmc.bds.model.RestartNodeDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -132,7 +133,7 @@ public class RestartNodeRequest extends com.oracle.bmc.requests.BmcRequest<Resta
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(RestartNodeDetails body) {
+        public Builder body$(com.oracle.bmc.bds.model.RestartNodeDetails body) {
             restartNodeDetails(body);
             return this;
         }

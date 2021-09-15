@@ -18,7 +18,8 @@ import com.oracle.bmc.optimizer.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class BulkApplyRecommendationsRequest
-        extends com.oracle.bmc.requests.BmcRequest<BulkApplyRecommendationsDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.optimizer.model.BulkApplyRecommendationsDetails> {
 
     /**
      * The unique OCID associated with the recommendation.
@@ -28,7 +29,8 @@ public class BulkApplyRecommendationsRequest
     /**
      * Details about bulk recommendation actions.
      */
-    private BulkApplyRecommendationsDetails bulkApplyRecommendationsDetails;
+    private com.oracle.bmc.optimizer.model.BulkApplyRecommendationsDetails
+            bulkApplyRecommendationsDetails;
 
     /**
      * Unique Oracle-assigned identifier for the request.
@@ -53,13 +55,14 @@ public class BulkApplyRecommendationsRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public BulkApplyRecommendationsDetails getBody$() {
+    public com.oracle.bmc.optimizer.model.BulkApplyRecommendationsDetails getBody$() {
         return bulkApplyRecommendationsDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    BulkApplyRecommendationsRequest, BulkApplyRecommendationsDetails> {
+                    BulkApplyRecommendationsRequest,
+                    com.oracle.bmc.optimizer.model.BulkApplyRecommendationsDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -124,7 +127,7 @@ public class BulkApplyRecommendationsRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(BulkApplyRecommendationsDetails body) {
+        public Builder body$(com.oracle.bmc.optimizer.model.BulkApplyRecommendationsDetails body) {
             bulkApplyRecommendationsDetails(body);
             return this;
         }

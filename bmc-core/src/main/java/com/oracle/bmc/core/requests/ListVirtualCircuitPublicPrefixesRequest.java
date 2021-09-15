@@ -32,7 +32,8 @@ public class ListVirtualCircuitPublicPrefixesRequest
      * The state value is case-insensitive.
      *
      */
-    private VirtualCircuitPublicPrefix.VerificationState verificationState;
+    private com.oracle.bmc.core.model.VirtualCircuitPublicPrefix.VerificationState
+            verificationState;
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<

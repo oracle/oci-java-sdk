@@ -17,7 +17,9 @@ import com.oracle.bmc.dataintegration.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
-public class CreateTaskRunRequest extends com.oracle.bmc.requests.BmcRequest<CreateTaskRunDetails> {
+public class CreateTaskRunRequest
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.dataintegration.model.CreateTaskRunDetails> {
 
     /**
      * The workspace ID.
@@ -32,7 +34,7 @@ public class CreateTaskRunRequest extends com.oracle.bmc.requests.BmcRequest<Cre
     /**
      * The details needed to create a task run.
      */
-    private CreateTaskRunDetails createTaskRunDetails;
+    private com.oracle.bmc.dataintegration.model.CreateTaskRunDetails createTaskRunDetails;
 
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again.
@@ -54,13 +56,14 @@ public class CreateTaskRunRequest extends com.oracle.bmc.requests.BmcRequest<Cre
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreateTaskRunDetails getBody$() {
+    public com.oracle.bmc.dataintegration.model.CreateTaskRunDetails getBody$() {
         return createTaskRunDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CreateTaskRunRequest, CreateTaskRunDetails> {
+                    CreateTaskRunRequest,
+                    com.oracle.bmc.dataintegration.model.CreateTaskRunDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -126,7 +129,7 @@ public class CreateTaskRunRequest extends com.oracle.bmc.requests.BmcRequest<Cre
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreateTaskRunDetails body) {
+        public Builder body$(com.oracle.bmc.dataintegration.model.CreateTaskRunDetails body) {
             createTaskRunDetails(body);
             return this;
         }

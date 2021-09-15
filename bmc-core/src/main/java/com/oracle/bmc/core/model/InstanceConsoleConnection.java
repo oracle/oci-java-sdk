@@ -103,6 +103,15 @@ public class InstanceConsoleConnection {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("serviceHostKeyFingerprint")
+        private String serviceHostKeyFingerprint;
+
+        public Builder serviceHostKeyFingerprint(String serviceHostKeyFingerprint) {
+            this.serviceHostKeyFingerprint = serviceHostKeyFingerprint;
+            this.__explicitlySet__.add("serviceHostKeyFingerprint");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("vncConnectionString")
         private String vncConnectionString;
 
@@ -126,6 +135,7 @@ public class InstanceConsoleConnection {
                             id,
                             instanceId,
                             lifecycleState,
+                            serviceHostKeyFingerprint,
                             vncConnectionString);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
@@ -142,6 +152,7 @@ public class InstanceConsoleConnection {
                             .id(o.getId())
                             .instanceId(o.getInstanceId())
                             .lifecycleState(o.getLifecycleState())
+                            .serviceHostKeyFingerprint(o.getServiceHostKeyFingerprint())
                             .vncConnectionString(o.getVncConnectionString());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
@@ -179,7 +190,7 @@ public class InstanceConsoleConnection {
     java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * The SSH public key fingerprint for the console connection.
+     * The SSH public key's fingerprint for client authentication to the console connection.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("fingerprint")
     String fingerprint;
@@ -259,6 +270,12 @@ public class InstanceConsoleConnection {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     LifecycleState lifecycleState;
+
+    /**
+     * The SSH public key's fingerprint for the console connection service host.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("serviceHostKeyFingerprint")
+    String serviceHostKeyFingerprint;
 
     /**
      * The SSH connection string for the SSH tunnel used to

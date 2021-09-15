@@ -18,7 +18,8 @@ import com.oracle.bmc.filestorage.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class UpdateMountTargetRequest
-        extends com.oracle.bmc.requests.BmcRequest<UpdateMountTargetDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.filestorage.model.UpdateMountTargetDetails> {
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the mount target.
@@ -28,7 +29,7 @@ public class UpdateMountTargetRequest
     /**
      * Details object for updating a mount target.
      */
-    private UpdateMountTargetDetails updateMountTargetDetails;
+    private com.oracle.bmc.filestorage.model.UpdateMountTargetDetails updateMountTargetDetails;
 
     /**
      * For optimistic concurrency control. In the PUT or DELETE call
@@ -53,13 +54,14 @@ public class UpdateMountTargetRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateMountTargetDetails getBody$() {
+    public com.oracle.bmc.filestorage.model.UpdateMountTargetDetails getBody$() {
         return updateMountTargetDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateMountTargetRequest, UpdateMountTargetDetails> {
+                    UpdateMountTargetRequest,
+                    com.oracle.bmc.filestorage.model.UpdateMountTargetDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -124,7 +126,7 @@ public class UpdateMountTargetRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateMountTargetDetails body) {
+        public Builder body$(com.oracle.bmc.filestorage.model.UpdateMountTargetDetails body) {
             updateMountTargetDetails(body);
             return this;
         }

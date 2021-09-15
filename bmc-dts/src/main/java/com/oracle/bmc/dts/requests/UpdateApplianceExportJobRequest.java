@@ -18,7 +18,8 @@ import com.oracle.bmc.dts.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class UpdateApplianceExportJobRequest
-        extends com.oracle.bmc.requests.BmcRequest<UpdateApplianceExportJobDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.dts.model.UpdateApplianceExportJobDetails> {
 
     /**
      * ID of the Appliance Export Job
@@ -28,7 +29,8 @@ public class UpdateApplianceExportJobRequest
     /**
      * fields to update
      */
-    private UpdateApplianceExportJobDetails updateApplianceExportJobDetails;
+    private com.oracle.bmc.dts.model.UpdateApplianceExportJobDetails
+            updateApplianceExportJobDetails;
 
     /**
      * The entity tag to match. Optional, if set, the update will be successful only if the
@@ -50,13 +52,14 @@ public class UpdateApplianceExportJobRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateApplianceExportJobDetails getBody$() {
+    public com.oracle.bmc.dts.model.UpdateApplianceExportJobDetails getBody$() {
         return updateApplianceExportJobDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateApplianceExportJobRequest, UpdateApplianceExportJobDetails> {
+                    UpdateApplianceExportJobRequest,
+                    com.oracle.bmc.dts.model.UpdateApplianceExportJobDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -121,7 +124,7 @@ public class UpdateApplianceExportJobRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateApplianceExportJobDetails body) {
+        public Builder body$(com.oracle.bmc.dts.model.UpdateApplianceExportJobDetails body) {
             updateApplianceExportJobDetails(body);
             return this;
         }

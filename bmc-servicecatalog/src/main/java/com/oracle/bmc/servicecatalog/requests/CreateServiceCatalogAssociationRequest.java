@@ -18,12 +18,14 @@ import com.oracle.bmc.servicecatalog.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class CreateServiceCatalogAssociationRequest
-        extends com.oracle.bmc.requests.BmcRequest<CreateServiceCatalogAssociationDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.servicecatalog.model.CreateServiceCatalogAssociationDetails> {
 
     /**
      * The details for creating the association between resource and service catalog.
      */
-    private CreateServiceCatalogAssociationDetails createServiceCatalogAssociationDetails;
+    private com.oracle.bmc.servicecatalog.model.CreateServiceCatalogAssociationDetails
+            createServiceCatalogAssociationDetails;
 
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without
@@ -47,14 +49,14 @@ public class CreateServiceCatalogAssociationRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreateServiceCatalogAssociationDetails getBody$() {
+    public com.oracle.bmc.servicecatalog.model.CreateServiceCatalogAssociationDetails getBody$() {
         return createServiceCatalogAssociationDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     CreateServiceCatalogAssociationRequest,
-                    CreateServiceCatalogAssociationDetails> {
+                    com.oracle.bmc.servicecatalog.model.CreateServiceCatalogAssociationDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -118,7 +120,8 @@ public class CreateServiceCatalogAssociationRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreateServiceCatalogAssociationDetails body) {
+        public Builder body$(
+                com.oracle.bmc.servicecatalog.model.CreateServiceCatalogAssociationDetails body) {
             createServiceCatalogAssociationDetails(body);
             return this;
         }

@@ -18,12 +18,14 @@ import com.oracle.bmc.database.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class CreateAutonomousContainerDatabaseRequest
-        extends com.oracle.bmc.requests.BmcRequest<CreateAutonomousContainerDatabaseDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.database.model.CreateAutonomousContainerDatabaseDetails> {
 
     /**
      * Request to create an Autonomous Container Database in a specified Autonomous Exadata Infrastructure.
      */
-    private CreateAutonomousContainerDatabaseDetails createAutonomousContainerDatabaseDetails;
+    private com.oracle.bmc.database.model.CreateAutonomousContainerDatabaseDetails
+            createAutonomousContainerDatabaseDetails;
 
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -41,14 +43,14 @@ public class CreateAutonomousContainerDatabaseRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreateAutonomousContainerDatabaseDetails getBody$() {
+    public com.oracle.bmc.database.model.CreateAutonomousContainerDatabaseDetails getBody$() {
         return createAutonomousContainerDatabaseDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     CreateAutonomousContainerDatabaseRequest,
-                    CreateAutonomousContainerDatabaseDetails> {
+                    com.oracle.bmc.database.model.CreateAutonomousContainerDatabaseDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -112,7 +114,8 @@ public class CreateAutonomousContainerDatabaseRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreateAutonomousContainerDatabaseDetails body) {
+        public Builder body$(
+                com.oracle.bmc.database.model.CreateAutonomousContainerDatabaseDetails body) {
             createAutonomousContainerDatabaseDetails(body);
             return this;
         }

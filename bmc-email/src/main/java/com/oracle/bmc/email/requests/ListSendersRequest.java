@@ -32,7 +32,7 @@ public class ListSendersRequest extends com.oracle.bmc.requests.BmcRequest<java.
     /**
      * The current state of a sender.
      */
-    private Sender.LifecycleState lifecycleState;
+    private com.oracle.bmc.email.model.Sender.LifecycleState lifecycleState;
 
     /**
      * A filter to only return resources that match the given domain exactly.

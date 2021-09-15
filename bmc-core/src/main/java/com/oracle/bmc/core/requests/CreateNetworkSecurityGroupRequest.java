@@ -18,12 +18,14 @@ import com.oracle.bmc.core.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class CreateNetworkSecurityGroupRequest
-        extends com.oracle.bmc.requests.BmcRequest<CreateNetworkSecurityGroupDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.core.model.CreateNetworkSecurityGroupDetails> {
 
     /**
      * Details for creating a network security group.
      */
-    private CreateNetworkSecurityGroupDetails createNetworkSecurityGroupDetails;
+    private com.oracle.bmc.core.model.CreateNetworkSecurityGroupDetails
+            createNetworkSecurityGroupDetails;
 
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -41,13 +43,14 @@ public class CreateNetworkSecurityGroupRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreateNetworkSecurityGroupDetails getBody$() {
+    public com.oracle.bmc.core.model.CreateNetworkSecurityGroupDetails getBody$() {
         return createNetworkSecurityGroupDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CreateNetworkSecurityGroupRequest, CreateNetworkSecurityGroupDetails> {
+                    CreateNetworkSecurityGroupRequest,
+                    com.oracle.bmc.core.model.CreateNetworkSecurityGroupDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -110,7 +113,7 @@ public class CreateNetworkSecurityGroupRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreateNetworkSecurityGroupDetails body) {
+        public Builder body$(com.oracle.bmc.core.model.CreateNetworkSecurityGroupDetails body) {
             createNetworkSecurityGroupDetails(body);
             return this;
         }

@@ -17,12 +17,14 @@ import com.oracle.bmc.keymanagement.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
-public class VerifyRequest extends com.oracle.bmc.requests.BmcRequest<VerifyDataDetails> {
+public class VerifyRequest
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.keymanagement.model.VerifyDataDetails> {
 
     /**
      * VerifyDataDetails
      */
-    private VerifyDataDetails verifyDataDetails;
+    private com.oracle.bmc.keymanagement.model.VerifyDataDetails verifyDataDetails;
 
     /**
      * Unique identifier for the request. If provided, the returned request ID
@@ -38,13 +40,13 @@ public class VerifyRequest extends com.oracle.bmc.requests.BmcRequest<VerifyData
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public VerifyDataDetails getBody$() {
+    public com.oracle.bmc.keymanagement.model.VerifyDataDetails getBody$() {
         return verifyDataDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    VerifyRequest, VerifyDataDetails> {
+                    VerifyRequest, com.oracle.bmc.keymanagement.model.VerifyDataDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -107,7 +109,7 @@ public class VerifyRequest extends com.oracle.bmc.requests.BmcRequest<VerifyData
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(VerifyDataDetails body) {
+        public Builder body$(com.oracle.bmc.keymanagement.model.VerifyDataDetails body) {
             verifyDataDetails(body);
             return this;
         }

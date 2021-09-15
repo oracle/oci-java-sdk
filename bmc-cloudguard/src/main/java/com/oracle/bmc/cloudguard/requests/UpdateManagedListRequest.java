@@ -18,7 +18,8 @@ import com.oracle.bmc.cloudguard.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class UpdateManagedListRequest
-        extends com.oracle.bmc.requests.BmcRequest<UpdateManagedListDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.cloudguard.model.UpdateManagedListDetails> {
 
     /**
      * The cloudguard list OCID to be passed in the request.
@@ -28,7 +29,7 @@ public class UpdateManagedListRequest
     /**
      * Details for the ManagedList to be updated
      */
-    private UpdateManagedListDetails updateManagedListDetails;
+    private com.oracle.bmc.cloudguard.model.UpdateManagedListDetails updateManagedListDetails;
 
     /**
      * For optimistic concurrency control. In the PUT or DELETE call
@@ -61,13 +62,14 @@ public class UpdateManagedListRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateManagedListDetails getBody$() {
+    public com.oracle.bmc.cloudguard.model.UpdateManagedListDetails getBody$() {
         return updateManagedListDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateManagedListRequest, UpdateManagedListDetails> {
+                    UpdateManagedListRequest,
+                    com.oracle.bmc.cloudguard.model.UpdateManagedListDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -133,7 +135,7 @@ public class UpdateManagedListRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateManagedListDetails body) {
+        public Builder body$(com.oracle.bmc.cloudguard.model.UpdateManagedListDetails body) {
             updateManagedListDetails(body);
             return this;
         }

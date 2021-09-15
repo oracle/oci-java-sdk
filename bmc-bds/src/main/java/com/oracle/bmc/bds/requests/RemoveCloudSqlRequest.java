@@ -18,7 +18,7 @@ import com.oracle.bmc.bds.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class RemoveCloudSqlRequest
-        extends com.oracle.bmc.requests.BmcRequest<RemoveCloudSqlDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<com.oracle.bmc.bds.model.RemoveCloudSqlDetails> {
 
     /**
      * The OCID of the cluster.
@@ -28,7 +28,7 @@ public class RemoveCloudSqlRequest
     /**
      * Details for the Cloud SQL capability
      */
-    private RemoveCloudSqlDetails removeCloudSqlDetails;
+    private com.oracle.bmc.bds.model.RemoveCloudSqlDetails removeCloudSqlDetails;
 
     /**
      * The client request ID for tracing.
@@ -61,13 +61,13 @@ public class RemoveCloudSqlRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public RemoveCloudSqlDetails getBody$() {
+    public com.oracle.bmc.bds.model.RemoveCloudSqlDetails getBody$() {
         return removeCloudSqlDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    RemoveCloudSqlRequest, RemoveCloudSqlDetails> {
+                    RemoveCloudSqlRequest, com.oracle.bmc.bds.model.RemoveCloudSqlDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -133,7 +133,7 @@ public class RemoveCloudSqlRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(RemoveCloudSqlDetails body) {
+        public Builder body$(com.oracle.bmc.bds.model.RemoveCloudSqlDetails body) {
             removeCloudSqlDetails(body);
             return this;
         }

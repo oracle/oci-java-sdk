@@ -18,13 +18,14 @@ import com.oracle.bmc.dataflow.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class UpdateApplicationRequest
-        extends com.oracle.bmc.requests.BmcRequest<UpdateApplicationDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.dataflow.model.UpdateApplicationDetails> {
 
     /**
      * Details for updating an application.
      *
      */
-    private UpdateApplicationDetails updateApplicationDetails;
+    private com.oracle.bmc.dataflow.model.UpdateApplicationDetails updateApplicationDetails;
 
     /**
      * The unique ID for an application.
@@ -53,13 +54,14 @@ public class UpdateApplicationRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateApplicationDetails getBody$() {
+    public com.oracle.bmc.dataflow.model.UpdateApplicationDetails getBody$() {
         return updateApplicationDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateApplicationRequest, UpdateApplicationDetails> {
+                    UpdateApplicationRequest,
+                    com.oracle.bmc.dataflow.model.UpdateApplicationDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -124,7 +126,7 @@ public class UpdateApplicationRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateApplicationDetails body) {
+        public Builder body$(com.oracle.bmc.dataflow.model.UpdateApplicationDetails body) {
             updateApplicationDetails(body);
             return this;
         }

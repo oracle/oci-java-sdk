@@ -18,12 +18,13 @@ import com.oracle.bmc.loadbalancer.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class UpdateHealthCheckerRequest
-        extends com.oracle.bmc.requests.BmcRequest<UpdateHealthCheckerDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.loadbalancer.model.UpdateHealthCheckerDetails> {
 
     /**
      * The health check policy configuration details.
      */
-    private UpdateHealthCheckerDetails healthChecker;
+    private com.oracle.bmc.loadbalancer.model.UpdateHealthCheckerDetails healthChecker;
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the load balancer associated with the health check policy to be updated.
@@ -61,13 +62,14 @@ public class UpdateHealthCheckerRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateHealthCheckerDetails getBody$() {
+    public com.oracle.bmc.loadbalancer.model.UpdateHealthCheckerDetails getBody$() {
         return healthChecker;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateHealthCheckerRequest, UpdateHealthCheckerDetails> {
+                    UpdateHealthCheckerRequest,
+                    com.oracle.bmc.loadbalancer.model.UpdateHealthCheckerDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -133,7 +135,7 @@ public class UpdateHealthCheckerRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateHealthCheckerDetails body) {
+        public Builder body$(com.oracle.bmc.loadbalancer.model.UpdateHealthCheckerDetails body) {
             healthChecker(body);
             return this;
         }

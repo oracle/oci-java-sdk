@@ -18,12 +18,13 @@ import com.oracle.bmc.identity.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class CreateIdpGroupMappingRequest
-        extends com.oracle.bmc.requests.BmcRequest<CreateIdpGroupMappingDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.identity.model.CreateIdpGroupMappingDetails> {
 
     /**
      * Add a mapping from an SAML2.0 identity provider group to a BMC group.
      */
-    private CreateIdpGroupMappingDetails createIdpGroupMappingDetails;
+    private com.oracle.bmc.identity.model.CreateIdpGroupMappingDetails createIdpGroupMappingDetails;
 
     /**
      * The OCID of the identity provider.
@@ -46,13 +47,14 @@ public class CreateIdpGroupMappingRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreateIdpGroupMappingDetails getBody$() {
+    public com.oracle.bmc.identity.model.CreateIdpGroupMappingDetails getBody$() {
         return createIdpGroupMappingDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CreateIdpGroupMappingRequest, CreateIdpGroupMappingDetails> {
+                    CreateIdpGroupMappingRequest,
+                    com.oracle.bmc.identity.model.CreateIdpGroupMappingDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -116,7 +118,7 @@ public class CreateIdpGroupMappingRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreateIdpGroupMappingDetails body) {
+        public Builder body$(com.oracle.bmc.identity.model.CreateIdpGroupMappingDetails body) {
             createIdpGroupMappingDetails(body);
             return this;
         }

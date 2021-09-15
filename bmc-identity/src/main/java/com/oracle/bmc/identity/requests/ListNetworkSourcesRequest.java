@@ -147,7 +147,7 @@ public class ListNetworkSourcesRequest extends com.oracle.bmc.requests.BmcReques
      * A filter to only return resources that match the given lifecycle state.  The state value is case-insensitive.
      *
      */
-    private NetworkSources.LifecycleState lifecycleState;
+    private com.oracle.bmc.identity.model.NetworkSources.LifecycleState lifecycleState;
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<

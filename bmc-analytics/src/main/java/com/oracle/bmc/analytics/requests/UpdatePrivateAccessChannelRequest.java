@@ -18,7 +18,8 @@ import com.oracle.bmc.analytics.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class UpdatePrivateAccessChannelRequest
-        extends com.oracle.bmc.requests.BmcRequest<UpdatePrivateAccessChannelDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.analytics.model.UpdatePrivateAccessChannelDetails> {
 
     /**
      * The unique identifier key of the Private Access Channel.
@@ -36,7 +37,8 @@ public class UpdatePrivateAccessChannelRequest
      * Update the Private Access Channel with the given unique identifier key in the specified Analytics Instance.
      *
      */
-    private UpdatePrivateAccessChannelDetails updatePrivateAccessChannelDetails;
+    private com.oracle.bmc.analytics.model.UpdatePrivateAccessChannelDetails
+            updatePrivateAccessChannelDetails;
 
     /**
      * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
@@ -69,13 +71,14 @@ public class UpdatePrivateAccessChannelRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdatePrivateAccessChannelDetails getBody$() {
+    public com.oracle.bmc.analytics.model.UpdatePrivateAccessChannelDetails getBody$() {
         return updatePrivateAccessChannelDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdatePrivateAccessChannelRequest, UpdatePrivateAccessChannelDetails> {
+                    UpdatePrivateAccessChannelRequest,
+                    com.oracle.bmc.analytics.model.UpdatePrivateAccessChannelDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -142,7 +145,8 @@ public class UpdatePrivateAccessChannelRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdatePrivateAccessChannelDetails body) {
+        public Builder body$(
+                com.oracle.bmc.analytics.model.UpdatePrivateAccessChannelDetails body) {
             updatePrivateAccessChannelDetails(body);
             return this;
         }

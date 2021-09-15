@@ -18,12 +18,14 @@ import com.oracle.bmc.aianomalydetection.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class CreateAiPrivateEndpointRequest
-        extends com.oracle.bmc.requests.BmcRequest<CreateAiPrivateEndpointDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.aianomalydetection.model.CreateAiPrivateEndpointDetails> {
 
     /**
      * The information used to create the private reverse connection.
      */
-    private CreateAiPrivateEndpointDetails createAiPrivateEndpointDetails;
+    private com.oracle.bmc.aianomalydetection.model.CreateAiPrivateEndpointDetails
+            createAiPrivateEndpointDetails;
 
     /**
      * The client request ID for tracing.
@@ -46,13 +48,14 @@ public class CreateAiPrivateEndpointRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreateAiPrivateEndpointDetails getBody$() {
+    public com.oracle.bmc.aianomalydetection.model.CreateAiPrivateEndpointDetails getBody$() {
         return createAiPrivateEndpointDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CreateAiPrivateEndpointRequest, CreateAiPrivateEndpointDetails> {
+                    CreateAiPrivateEndpointRequest,
+                    com.oracle.bmc.aianomalydetection.model.CreateAiPrivateEndpointDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -116,7 +119,8 @@ public class CreateAiPrivateEndpointRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreateAiPrivateEndpointDetails body) {
+        public Builder body$(
+                com.oracle.bmc.aianomalydetection.model.CreateAiPrivateEndpointDetails body) {
             createAiPrivateEndpointDetails(body);
             return this;
         }

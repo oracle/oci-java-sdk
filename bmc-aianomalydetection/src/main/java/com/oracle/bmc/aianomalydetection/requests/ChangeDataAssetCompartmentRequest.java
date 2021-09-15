@@ -18,7 +18,8 @@ import com.oracle.bmc.aianomalydetection.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class ChangeDataAssetCompartmentRequest
-        extends com.oracle.bmc.requests.BmcRequest<ChangeDataAssetCompartmentDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.aianomalydetection.model.ChangeDataAssetCompartmentDetails> {
 
     /**
      * The OCID of the Data Asset.
@@ -28,7 +29,8 @@ public class ChangeDataAssetCompartmentRequest
     /**
      * The information to be updated.
      */
-    private ChangeDataAssetCompartmentDetails changeDataAssetCompartmentDetails;
+    private com.oracle.bmc.aianomalydetection.model.ChangeDataAssetCompartmentDetails
+            changeDataAssetCompartmentDetails;
 
     /**
      * For optimistic concurrency control. In the PUT or DELETE call
@@ -61,13 +63,14 @@ public class ChangeDataAssetCompartmentRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public ChangeDataAssetCompartmentDetails getBody$() {
+    public com.oracle.bmc.aianomalydetection.model.ChangeDataAssetCompartmentDetails getBody$() {
         return changeDataAssetCompartmentDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    ChangeDataAssetCompartmentRequest, ChangeDataAssetCompartmentDetails> {
+                    ChangeDataAssetCompartmentRequest,
+                    com.oracle.bmc.aianomalydetection.model.ChangeDataAssetCompartmentDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -133,7 +136,8 @@ public class ChangeDataAssetCompartmentRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(ChangeDataAssetCompartmentDetails body) {
+        public Builder body$(
+                com.oracle.bmc.aianomalydetection.model.ChangeDataAssetCompartmentDetails body) {
             changeDataAssetCompartmentDetails(body);
             return this;
         }

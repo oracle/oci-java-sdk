@@ -18,12 +18,14 @@ import com.oracle.bmc.osmanagement.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class CreateManagedInstanceGroupRequest
-        extends com.oracle.bmc.requests.BmcRequest<CreateManagedInstanceGroupDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.osmanagement.model.CreateManagedInstanceGroupDetails> {
 
     /**
      * Details about a Managed Instance Group to create
      */
-    private CreateManagedInstanceGroupDetails createManagedInstanceGroupDetails;
+    private com.oracle.bmc.osmanagement.model.CreateManagedInstanceGroupDetails
+            createManagedInstanceGroupDetails;
 
     /**
      * The client request ID for tracing.
@@ -46,13 +48,14 @@ public class CreateManagedInstanceGroupRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreateManagedInstanceGroupDetails getBody$() {
+    public com.oracle.bmc.osmanagement.model.CreateManagedInstanceGroupDetails getBody$() {
         return createManagedInstanceGroupDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CreateManagedInstanceGroupRequest, CreateManagedInstanceGroupDetails> {
+                    CreateManagedInstanceGroupRequest,
+                    com.oracle.bmc.osmanagement.model.CreateManagedInstanceGroupDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -116,7 +119,8 @@ public class CreateManagedInstanceGroupRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreateManagedInstanceGroupDetails body) {
+        public Builder body$(
+                com.oracle.bmc.osmanagement.model.CreateManagedInstanceGroupDetails body) {
             createManagedInstanceGroupDetails(body);
             return this;
         }

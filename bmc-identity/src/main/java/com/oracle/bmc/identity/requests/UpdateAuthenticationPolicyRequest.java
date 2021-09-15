@@ -18,7 +18,8 @@ import com.oracle.bmc.identity.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class UpdateAuthenticationPolicyRequest
-        extends com.oracle.bmc.requests.BmcRequest<UpdateAuthenticationPolicyDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.identity.model.UpdateAuthenticationPolicyDetails> {
 
     /**
      * The OCID of the compartment.
@@ -28,7 +29,8 @@ public class UpdateAuthenticationPolicyRequest
     /**
      * Request object for updating the authentication policy.
      */
-    private UpdateAuthenticationPolicyDetails updateAuthenticationPolicyDetails;
+    private com.oracle.bmc.identity.model.UpdateAuthenticationPolicyDetails
+            updateAuthenticationPolicyDetails;
 
     /**
      * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
@@ -44,13 +46,14 @@ public class UpdateAuthenticationPolicyRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateAuthenticationPolicyDetails getBody$() {
+    public com.oracle.bmc.identity.model.UpdateAuthenticationPolicyDetails getBody$() {
         return updateAuthenticationPolicyDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateAuthenticationPolicyRequest, UpdateAuthenticationPolicyDetails> {
+                    UpdateAuthenticationPolicyRequest,
+                    com.oracle.bmc.identity.model.UpdateAuthenticationPolicyDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -114,7 +117,7 @@ public class UpdateAuthenticationPolicyRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateAuthenticationPolicyDetails body) {
+        public Builder body$(com.oracle.bmc.identity.model.UpdateAuthenticationPolicyDetails body) {
             updateAuthenticationPolicyDetails(body);
             return this;
         }

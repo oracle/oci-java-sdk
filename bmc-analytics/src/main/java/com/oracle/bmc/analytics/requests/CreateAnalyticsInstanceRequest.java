@@ -18,13 +18,15 @@ import com.oracle.bmc.analytics.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class CreateAnalyticsInstanceRequest
-        extends com.oracle.bmc.requests.BmcRequest<CreateAnalyticsInstanceDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.analytics.model.CreateAnalyticsInstanceDetails> {
 
     /**
      * Analytics Instance details.
      *
      */
-    private CreateAnalyticsInstanceDetails createAnalyticsInstanceDetails;
+    private com.oracle.bmc.analytics.model.CreateAnalyticsInstanceDetails
+            createAnalyticsInstanceDetails;
 
     /**
      * Unique identifier for the request.
@@ -49,13 +51,14 @@ public class CreateAnalyticsInstanceRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreateAnalyticsInstanceDetails getBody$() {
+    public com.oracle.bmc.analytics.model.CreateAnalyticsInstanceDetails getBody$() {
         return createAnalyticsInstanceDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CreateAnalyticsInstanceRequest, CreateAnalyticsInstanceDetails> {
+                    CreateAnalyticsInstanceRequest,
+                    com.oracle.bmc.analytics.model.CreateAnalyticsInstanceDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -119,7 +122,7 @@ public class CreateAnalyticsInstanceRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreateAnalyticsInstanceDetails body) {
+        public Builder body$(com.oracle.bmc.analytics.model.CreateAnalyticsInstanceDetails body) {
             createAnalyticsInstanceDetails(body);
             return this;
         }

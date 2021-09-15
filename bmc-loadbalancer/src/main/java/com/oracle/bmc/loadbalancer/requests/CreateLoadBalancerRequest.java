@@ -18,12 +18,13 @@ import com.oracle.bmc.loadbalancer.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class CreateLoadBalancerRequest
-        extends com.oracle.bmc.requests.BmcRequest<CreateLoadBalancerDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.loadbalancer.model.CreateLoadBalancerDetails> {
 
     /**
      * The configuration details for creating a load balancer.
      */
-    private CreateLoadBalancerDetails createLoadBalancerDetails;
+    private com.oracle.bmc.loadbalancer.model.CreateLoadBalancerDetails createLoadBalancerDetails;
 
     /**
      * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
@@ -48,13 +49,14 @@ public class CreateLoadBalancerRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public CreateLoadBalancerDetails getBody$() {
+    public com.oracle.bmc.loadbalancer.model.CreateLoadBalancerDetails getBody$() {
         return createLoadBalancerDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    CreateLoadBalancerRequest, CreateLoadBalancerDetails> {
+                    CreateLoadBalancerRequest,
+                    com.oracle.bmc.loadbalancer.model.CreateLoadBalancerDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -118,7 +120,7 @@ public class CreateLoadBalancerRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(CreateLoadBalancerDetails body) {
+        public Builder body$(com.oracle.bmc.loadbalancer.model.CreateLoadBalancerDetails body) {
             createLoadBalancerDetails(body);
             return this;
         }

@@ -18,7 +18,8 @@ import com.oracle.bmc.waas.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class UpdateCachingRulesRequest
-        extends com.oracle.bmc.requests.BmcRequest<java.util.List<CachingRule>> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                java.util.List<com.oracle.bmc.waas.model.CachingRule>> {
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the WAAS policy.
@@ -28,7 +29,7 @@ public class UpdateCachingRulesRequest
     /**
      *
      */
-    private java.util.List<CachingRule> cachingRulesDetails;
+    private java.util.List<com.oracle.bmc.waas.model.CachingRule> cachingRulesDetails;
 
     /**
      * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
@@ -52,24 +53,26 @@ public class UpdateCachingRulesRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public java.util.List<CachingRule> getBody$() {
+    public java.util.List<com.oracle.bmc.waas.model.CachingRule> getBody$() {
         return cachingRulesDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateCachingRulesRequest, java.util.List<CachingRule>> {
+                    UpdateCachingRulesRequest,
+                    java.util.List<com.oracle.bmc.waas.model.CachingRule>> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        private java.util.List<CachingRule> cachingRulesDetails = null;
+        private java.util.List<com.oracle.bmc.waas.model.CachingRule> cachingRulesDetails = null;
 
         /**
          *
          * @return this builder instance
          */
-        public Builder cachingRulesDetails(java.util.List<CachingRule> cachingRulesDetails) {
+        public Builder cachingRulesDetails(
+                java.util.List<com.oracle.bmc.waas.model.CachingRule> cachingRulesDetails) {
             this.cachingRulesDetails = cachingRulesDetails;
             return this;
         }
@@ -78,7 +81,7 @@ public class UpdateCachingRulesRequest
          * Singular setter.
          * @return this builder instance
          */
-        public Builder cachingRulesDetails(CachingRule singularValue) {
+        public Builder cachingRulesDetails(com.oracle.bmc.waas.model.CachingRule singularValue) {
             return this.cachingRulesDetails(java.util.Arrays.asList(singularValue));
         }
 
@@ -143,7 +146,7 @@ public class UpdateCachingRulesRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(java.util.List<CachingRule> body) {
+        public Builder body$(java.util.List<com.oracle.bmc.waas.model.CachingRule> body) {
             cachingRulesDetails(body);
             return this;
         }

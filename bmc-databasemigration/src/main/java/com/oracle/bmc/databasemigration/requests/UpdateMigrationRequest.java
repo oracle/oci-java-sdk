@@ -18,7 +18,8 @@ import com.oracle.bmc.databasemigration.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class UpdateMigrationRequest
-        extends com.oracle.bmc.requests.BmcRequest<UpdateMigrationDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.databasemigration.model.UpdateMigrationDetails> {
 
     /**
      * The OCID of the migration
@@ -30,7 +31,7 @@ public class UpdateMigrationRequest
      * Migration properties.
      *
      */
-    private UpdateMigrationDetails updateMigrationDetails;
+    private com.oracle.bmc.databasemigration.model.UpdateMigrationDetails updateMigrationDetails;
 
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
@@ -55,13 +56,14 @@ public class UpdateMigrationRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateMigrationDetails getBody$() {
+    public com.oracle.bmc.databasemigration.model.UpdateMigrationDetails getBody$() {
         return updateMigrationDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateMigrationRequest, UpdateMigrationDetails> {
+                    UpdateMigrationRequest,
+                    com.oracle.bmc.databasemigration.model.UpdateMigrationDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -126,7 +128,7 @@ public class UpdateMigrationRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateMigrationDetails body) {
+        public Builder body$(com.oracle.bmc.databasemigration.model.UpdateMigrationDetails body) {
             updateMigrationDetails(body);
             return this;
         }

@@ -18,7 +18,8 @@ import com.oracle.bmc.filestorage.model.*;
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class UpdateSnapshotRequest
-        extends com.oracle.bmc.requests.BmcRequest<UpdateSnapshotDetails> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.filestorage.model.UpdateSnapshotDetails> {
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the snapshot.
@@ -28,7 +29,7 @@ public class UpdateSnapshotRequest
     /**
      * Details object for updating a snapshot.
      */
-    private UpdateSnapshotDetails updateSnapshotDetails;
+    private com.oracle.bmc.filestorage.model.UpdateSnapshotDetails updateSnapshotDetails;
 
     /**
      * For optimistic concurrency control. In the PUT or DELETE call
@@ -53,13 +54,13 @@ public class UpdateSnapshotRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public UpdateSnapshotDetails getBody$() {
+    public com.oracle.bmc.filestorage.model.UpdateSnapshotDetails getBody$() {
         return updateSnapshotDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdateSnapshotRequest, UpdateSnapshotDetails> {
+                    UpdateSnapshotRequest, com.oracle.bmc.filestorage.model.UpdateSnapshotDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -124,7 +125,7 @@ public class UpdateSnapshotRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(UpdateSnapshotDetails body) {
+        public Builder body$(com.oracle.bmc.filestorage.model.UpdateSnapshotDetails body) {
             updateSnapshotDetails(body);
             return this;
         }
