@@ -5,6 +5,7 @@
 package com.oracle.bmc.databasemigration.model;
 
 /**
+ * Note: Deprecated. Use the new resource model APIs instead.
  * OCI Vault details to store migration and connection credentials secrets
  *
  * <br/>

@@ -5,6 +5,7 @@
 package com.oracle.bmc.databasemigration.model;
 
 /**
+ * Note: Deprecated. Use the new resource model APIs instead.
  * Summary of the progress of a Migration Job.
  *
  * <br/>

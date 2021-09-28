@@ -17,6 +17,7 @@ public enum InstallationSortBy {
     TimeLastSeen("timeLastSeen"),
     ApproximateApplicationCount("approximateApplicationCount"),
     ApproximateManagedInstanceCount("approximateManagedInstanceCount"),
+    OsName("osName"),
     ;
 
     private final String value;

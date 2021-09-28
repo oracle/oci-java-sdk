@@ -57,6 +57,15 @@ public class ManagedInstanceUsage {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("operatingSystem")
+        private OperatingSystem operatingSystem;
+
+        public Builder operatingSystem(OperatingSystem operatingSystem) {
+            this.operatingSystem = operatingSystem;
+            this.__explicitlySet__.add("operatingSystem");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("approximateApplicationCount")
         private Integer approximateApplicationCount;
 
@@ -129,6 +138,7 @@ public class ManagedInstanceUsage {
                             managedInstanceId,
                             managedInstanceType,
                             hostname,
+                            operatingSystem,
                             approximateApplicationCount,
                             approximateInstallationCount,
                             approximateJreCount,
@@ -146,6 +156,7 @@ public class ManagedInstanceUsage {
                     managedInstanceId(o.getManagedInstanceId())
                             .managedInstanceType(o.getManagedInstanceType())
                             .hostname(o.getHostname())
+                            .operatingSystem(o.getOperatingSystem())
                             .approximateApplicationCount(o.getApproximateApplicationCount())
                             .approximateInstallationCount(o.getApproximateInstallationCount())
                             .approximateJreCount(o.getApproximateJreCount())
@@ -184,6 +195,9 @@ public class ManagedInstanceUsage {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("hostname")
     String hostname;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("operatingSystem")
+    OperatingSystem operatingSystem;
 
     /**
      * The approximate count of applications reported by this managed instance.

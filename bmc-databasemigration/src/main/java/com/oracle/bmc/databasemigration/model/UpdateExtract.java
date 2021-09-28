@@ -5,6 +5,7 @@
 package com.oracle.bmc.databasemigration.model;
 
 /**
+ * Note: Deprecated. Use the new resource model APIs instead.
  * Parameters for Extract processes.
  * If an empty object is specified, the stored Extract details will be removed.
  *

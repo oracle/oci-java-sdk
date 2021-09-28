@@ -71,6 +71,15 @@ public class Gateway {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("networkSecurityGroupIds")
+        private java.util.List<String> networkSecurityGroupIds;
+
+        public Builder networkSecurityGroupIds(java.util.List<String> networkSecurityGroupIds) {
+            this.networkSecurityGroupIds = networkSecurityGroupIds;
+            this.__explicitlySet__.add("networkSecurityGroupIds");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
@@ -173,6 +182,7 @@ public class Gateway {
                             compartmentId,
                             endpointType,
                             subnetId,
+                            networkSecurityGroupIds,
                             timeCreated,
                             timeUpdated,
                             lifecycleState,
@@ -195,6 +205,7 @@ public class Gateway {
                             .compartmentId(o.getCompartmentId())
                             .endpointType(o.getEndpointType())
                             .subnetId(o.getSubnetId())
+                            .networkSecurityGroupIds(o.getNetworkSecurityGroupIds())
                             .timeCreated(o.getTimeCreated())
                             .timeUpdated(o.getTimeUpdated())
                             .lifecycleState(o.getLifecycleState())
@@ -309,6 +320,13 @@ public class Gateway {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
     String subnetId;
+
+    /**
+     * An array of Network Security Groups OCIDs associated with this API Gateway.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("networkSecurityGroupIds")
+    java.util.List<String> networkSecurityGroupIds;
 
     /**
      * The time this resource was created. An RFC3339 formatted datetime string.

@@ -14,6 +14,7 @@ public enum ManagedInstanceSortBy {
     ApproximateJreCount("approximateJreCount"),
     ApproximateInstallationCount("approximateInstallationCount"),
     ApproximateApplicationCount("approximateApplicationCount"),
+    OsName("osName"),
     ;
 
     private final String value;

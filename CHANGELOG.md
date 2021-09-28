@@ -3,6 +3,35 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
+## 2.6.0 - 2021-09-28
+### Added
+- Support for autonomous databases and clones on shared infrastructure not requiring mTLS in the Database service
+- Support for server-side encryption using object-specific KMS keys in the Object Storage service
+- Support for Windows in the Java Management service
+- Support for using network security groups in the API Gateway service
+- Support for network security groups in the Functions service
+- Support for signed container images in the Functions service
+- Support for setting message format when creating and updating alarms in the Monitoring service
+- Support for user and security assessment features in the Data Safe service
+
+### Breaking Changes
+- Method `public com.oracle.bmc.jms.responses.RequestSummarizedApplicationUsageResponse requestSummarizedApplicationUsage(com.oracle.bmc.jms.requests.RequestSummarizedApplicationUsageRequest)` has been removed from `com.oracle.bmc.jms.JavaManagementService` in the Java Management service
+- Method `public com.oracle.bmc.jms.responses.RequestSummarizedInstallationUsageResponse requestSummarizedInstallationUsage(com.oracle.bmc.jms.requests.RequestSummarizedInstallationUsageRequest)` has been removed from `com.oracle.bmc.jms.JavaManagementService` in the Java Management service
+- Method `public com.oracle.bmc.jms.responses.RequestSummarizedJreUsageResponse requestSummarizedJreUsage(com.oracle.bmc.jms.requests.RequestSummarizedJreUsageRequest)` has been removed has been removed from `com.oracle.bmc.jms.JavaManagementService` in the Java Management service
+- Method `public com.oracle.bmc.jms.responses.RequestSummarizedManagedInstanceUsageResponse requestSummarizedManagedInstanceUsage(com.oracle.bmc.jms.requests.RequestSummarizedManagedInstanceUsageRequest)` has been removed from `com.oracle.bmc.jms.JavaManagementService` in the Java Management service
+- Class `com.oracle.bmc.jms.model.RequestSummarizedApplicationUsageDetails` has been removed in the Java Management service
+- Class `com.oracle.bmc.jms.model.RequestSummarizedInstallationUsageDetails` has been removed in the Java Management service
+- Class `com.oracle.bmc.jms.model.RequestSummarizedJreUsageDetails` has been removed in the Java Management service
+- Class `com.oracle.bmc.jms.model.RequestSummarizedManagedInstanceUsageDetails` has been removed in the Java Management service
+- Class `com.oracle.bmc.jms.requests.RequestSummarizedApplicationUsageRequest` has been removed in the Java Management service
+- Class `com.oracle.bmc.jms.requests.RequestSummarizedInstallationUsageRequest` has been removed in the Java Management service
+- Class `com.oracle.bmc.jms.requests.RequestSummarizedJreUsageRequest` has been removed in the Java Management service
+- Class `com.oracle.bmc.jms.requests.RequestSummarizedManagedInstanceUsageRequest` has been removed in the Java Management service
+- Class `com.oracle.bmc.jms.responses.RequestSummarizedApplicationUsageResponse` has been removed in the Java Management service
+- Class `com.oracle.bmc.jms.responses.RequestSummarizedInstallationUsageResponse` has been removed in the Java Management service
+- Class `com.oracle.bmc.jms.responses.RequestSummarizedJreUsageResponse` has been removed in the Java Management service
+- Class `com.oracle.bmc.jms.responses.RequestSummarizedManagedInstanceUsageResponse` has been removed in the Java Management service
+
 ## 2.5.1 - 2021-09-14
 ### Added
 - Support for serviceHostKeyFingerprint property for InstanceConsoleConnection in the Core service

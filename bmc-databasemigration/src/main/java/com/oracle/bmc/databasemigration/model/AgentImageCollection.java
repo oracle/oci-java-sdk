@@ -5,6 +5,7 @@
 package com.oracle.bmc.databasemigration.model;
 
 /**
+ * Note: Deprecated. Use the new resource model APIs instead.
  * Results of an ODMS Agent Image search. Contains AgentImageSummary items.
  *
  * <br/>

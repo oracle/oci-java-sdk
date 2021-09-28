@@ -78,8 +78,8 @@ public class WorkRequestError {
     }
 
     /**
-     * A machine-usable code for the error that occured. Error codes are listed on
-     * (https://docs.cloud.oracle.com/Content/API/References/apierrors.htm)
+     * A machine-usable code for the error that occured. Error codes are listed at
+     * [API Errors](https://docs.cloud.oracle.com/Content/API/References/apierrors.htm).
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("code")
@@ -92,7 +92,7 @@ public class WorkRequestError {
     String message;
 
     /**
-     * The date and time the error occured (formatted according to RFC3339).
+     * The date and time the error occured (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timestamp")
     java.util.Date timestamp;

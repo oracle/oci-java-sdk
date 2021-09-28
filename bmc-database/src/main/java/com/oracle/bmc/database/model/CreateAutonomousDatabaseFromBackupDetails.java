@@ -297,6 +297,15 @@ public class CreateAutonomousDatabaseFromBackupDetails extends CreateAutonomousD
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("isMtlsConnectionRequired")
+        private Boolean isMtlsConnectionRequired;
+
+        public Builder isMtlsConnectionRequired(Boolean isMtlsConnectionRequired) {
+            this.isMtlsConnectionRequired = isMtlsConnectionRequired;
+            this.__explicitlySet__.add("isMtlsConnectionRequired");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("autonomousMaintenanceScheduleType")
         private AutonomousMaintenanceScheduleType autonomousMaintenanceScheduleType;
 
@@ -360,6 +369,7 @@ public class CreateAutonomousDatabaseFromBackupDetails extends CreateAutonomousD
                             definedTags,
                             dbVersion,
                             customerContacts,
+                            isMtlsConnectionRequired,
                             autonomousMaintenanceScheduleType,
                             autonomousDatabaseBackupId,
                             cloneType);
@@ -400,6 +410,7 @@ public class CreateAutonomousDatabaseFromBackupDetails extends CreateAutonomousD
                             .definedTags(o.getDefinedTags())
                             .dbVersion(o.getDbVersion())
                             .customerContacts(o.getCustomerContacts())
+                            .isMtlsConnectionRequired(o.getIsMtlsConnectionRequired())
                             .autonomousMaintenanceScheduleType(
                                     o.getAutonomousMaintenanceScheduleType())
                             .autonomousDatabaseBackupId(o.getAutonomousDatabaseBackupId())
@@ -448,6 +459,7 @@ public class CreateAutonomousDatabaseFromBackupDetails extends CreateAutonomousD
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             String dbVersion,
             java.util.List<CustomerContact> customerContacts,
+            Boolean isMtlsConnectionRequired,
             AutonomousMaintenanceScheduleType autonomousMaintenanceScheduleType,
             String autonomousDatabaseBackupId,
             CloneType cloneType) {
@@ -481,6 +493,7 @@ public class CreateAutonomousDatabaseFromBackupDetails extends CreateAutonomousD
                 definedTags,
                 dbVersion,
                 customerContacts,
+                isMtlsConnectionRequired,
                 autonomousMaintenanceScheduleType);
         this.autonomousDatabaseBackupId = autonomousDatabaseBackupId;
         this.cloneType = cloneType;

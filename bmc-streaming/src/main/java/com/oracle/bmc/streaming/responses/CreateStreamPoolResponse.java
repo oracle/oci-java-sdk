@@ -9,7 +9,7 @@ import com.oracle.bmc.streaming.model.*;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180418")
 @lombok.Builder(builderClassName = "Builder")
 @lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode
+@lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class CreateStreamPoolResponse extends com.oracle.bmc.responses.BmcResponse {
     /**

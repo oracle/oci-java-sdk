@@ -5,6 +5,7 @@
 package com.oracle.bmc.databasemigration.model;
 
 /**
+ * Note: Deprecated. Use the new resource model APIs instead.
  * Directory object details, used to define either import or export directory objects in Data Pump Settings.
  *
  * <br/>

@@ -9,7 +9,7 @@ import com.oracle.bmc.bastion.model.*;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210331")
 @lombok.Builder(builderClassName = "Builder")
 @lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode
+@lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class GetSessionResponse extends com.oracle.bmc.responses.BmcResponse {
     /**

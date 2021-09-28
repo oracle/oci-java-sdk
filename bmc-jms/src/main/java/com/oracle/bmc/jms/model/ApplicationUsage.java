@@ -54,6 +54,15 @@ public class ApplicationUsage {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("operatingSystems")
+        private java.util.List<OperatingSystem> operatingSystems;
+
+        public Builder operatingSystems(java.util.List<OperatingSystem> operatingSystems) {
+            this.operatingSystems = operatingSystems;
+            this.__explicitlySet__.add("operatingSystems");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("approximateInstallationCount")
         private Integer approximateInstallationCount;
 
@@ -126,6 +135,7 @@ public class ApplicationUsage {
                             applicationId,
                             displayName,
                             applicationType,
+                            operatingSystems,
                             approximateInstallationCount,
                             approximateJreCount,
                             approximateManagedInstanceCount,
@@ -143,6 +153,7 @@ public class ApplicationUsage {
                     applicationId(o.getApplicationId())
                             .displayName(o.getDisplayName())
                             .applicationType(o.getApplicationType())
+                            .operatingSystems(o.getOperatingSystems())
                             .approximateInstallationCount(o.getApproximateInstallationCount())
                             .approximateJreCount(o.getApproximateJreCount())
                             .approximateManagedInstanceCount(o.getApproximateManagedInstanceCount())
@@ -181,6 +192,12 @@ public class ApplicationUsage {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("applicationType")
     String applicationType;
+
+    /**
+     * The operating systems running this application.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("operatingSystems")
+    java.util.List<OperatingSystem> operatingSystems;
 
     /**
      * The approximate count of installations running this application.

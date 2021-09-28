@@ -9,7 +9,7 @@ import com.oracle.bmc.databasemanagement.model.*;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
 @lombok.Builder(builderClassName = "Builder")
 @lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode
+@lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class SummarizeAwrDbSnapshotRangesResponse extends com.oracle.bmc.responses.BmcResponse {
     /**

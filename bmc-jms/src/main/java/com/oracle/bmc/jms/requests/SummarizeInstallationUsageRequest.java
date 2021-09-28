@@ -64,12 +64,12 @@ public class SummarizeInstallationUsageRequest
     private java.util.List<com.oracle.bmc.jms.model.SummarizeInstallationUsageFields> fields;
 
     /**
-     * The start of the time period during which resources are searched (formatted according to RFC3339).
+     * The start of the time period during which resources are searched (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
      */
     private java.util.Date timeStart;
 
     /**
-     * The end of the time period during which resources are searched (formatted according to RFC3339).
+     * The end of the time period during which resources are searched (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
      */
     private java.util.Date timeEnd;
 
@@ -101,6 +101,11 @@ public class SummarizeInstallationUsageRequest
      * The client request ID for tracing.
      */
     private String opcRequestId;
+
+    /**
+     * The operating system type.
+     */
+    private java.util.List<com.oracle.bmc.jms.model.OsFamily> osFamily;
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -134,6 +139,25 @@ public class SummarizeInstallationUsageRequest
          */
         public Builder fields(SummarizeInstallationUsageFields singularValue) {
             return this.fields(java.util.Arrays.asList(singularValue));
+        }
+
+        private java.util.List<com.oracle.bmc.jms.model.OsFamily> osFamily = null;
+
+        /**
+         * The operating system type.
+         * @return this builder instance
+         */
+        public Builder osFamily(java.util.List<com.oracle.bmc.jms.model.OsFamily> osFamily) {
+            this.osFamily = osFamily;
+            return this;
+        }
+
+        /**
+         * Singular setter. The operating system type.
+         * @return this builder instance
+         */
+        public Builder osFamily(OsFamily singularValue) {
+            return this.osFamily(java.util.Arrays.asList(singularValue));
         }
 
         /**
@@ -179,6 +203,7 @@ public class SummarizeInstallationUsageRequest
             sortOrder(o.getSortOrder());
             sortBy(o.getSortBy());
             opcRequestId(o.getOpcRequestId());
+            osFamily(o.getOsFamily());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;

@@ -8,7 +8,7 @@ import com.oracle.bmc.jms.requests.*;
 import com.oracle.bmc.jms.responses.*;
 
 /**
- * API for the Java Management Service. Use this API to view and manage Fleets.
+ * API for the Java Management Service. Use this API to view, create, and manage Fleets.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210610")
 public interface JavaManagementServiceAsync extends AutoCloseable {
@@ -200,76 +200,6 @@ public interface JavaManagementServiceAsync extends AutoCloseable {
             ListWorkRequestsRequest request,
             com.oracle.bmc.responses.AsyncHandler<ListWorkRequestsRequest, ListWorkRequestsResponse>
                     handler);
-
-    /**
-     * List application usage in a specified Fleet filtered by form parameters.
-     *
-     * @param request The request object containing the details to send
-     * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
-     */
-    java.util.concurrent.Future<RequestSummarizedApplicationUsageResponse>
-            requestSummarizedApplicationUsage(
-                    RequestSummarizedApplicationUsageRequest request,
-                    com.oracle.bmc.responses.AsyncHandler<
-                                    RequestSummarizedApplicationUsageRequest,
-                                    RequestSummarizedApplicationUsageResponse>
-                            handler);
-
-    /**
-     * List Java installation usage in a specified Fleet filtered by form parameters.
-     *
-     * @param request The request object containing the details to send
-     * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
-     */
-    java.util.concurrent.Future<RequestSummarizedInstallationUsageResponse>
-            requestSummarizedInstallationUsage(
-                    RequestSummarizedInstallationUsageRequest request,
-                    com.oracle.bmc.responses.AsyncHandler<
-                                    RequestSummarizedInstallationUsageRequest,
-                                    RequestSummarizedInstallationUsageResponse>
-                            handler);
-
-    /**
-     * List Java Runtime usage in a specified Fleet filtered by form parameters.
-     *
-     * @param request The request object containing the details to send
-     * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
-     */
-    java.util.concurrent.Future<RequestSummarizedJreUsageResponse> requestSummarizedJreUsage(
-            RequestSummarizedJreUsageRequest request,
-            com.oracle.bmc.responses.AsyncHandler<
-                            RequestSummarizedJreUsageRequest, RequestSummarizedJreUsageResponse>
-                    handler);
-
-    /**
-     * List managed instance usage in a specified Fleet filtered by form parameters.
-     *
-     * @param request The request object containing the details to send
-     * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
-     */
-    java.util.concurrent.Future<RequestSummarizedManagedInstanceUsageResponse>
-            requestSummarizedManagedInstanceUsage(
-                    RequestSummarizedManagedInstanceUsageRequest request,
-                    com.oracle.bmc.responses.AsyncHandler<
-                                    RequestSummarizedManagedInstanceUsageRequest,
-                                    RequestSummarizedManagedInstanceUsageResponse>
-                            handler);
 
     /**
      * List application usage in a Fleet filtered by query parameters.

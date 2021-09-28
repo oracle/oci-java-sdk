@@ -142,6 +142,15 @@ public class Alarm {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("messageFormat")
+        private MessageFormat messageFormat;
+
+        public Builder messageFormat(MessageFormat messageFormat) {
+            this.messageFormat = messageFormat;
+            this.__explicitlySet__.add("messageFormat");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("destinations")
         private java.util.List<String> destinations;
 
@@ -242,6 +251,7 @@ public class Alarm {
                             pendingDuration,
                             severity,
                             body,
+                            messageFormat,
                             destinations,
                             repeatNotificationDuration,
                             suppression,
@@ -270,6 +280,7 @@ public class Alarm {
                             .pendingDuration(o.getPendingDuration())
                             .severity(o.getSeverity())
                             .body(o.getBody())
+                            .messageFormat(o.getMessageFormat())
                             .destinations(o.getDestinations())
                             .repeatNotificationDuration(o.getRepeatNotificationDuration())
                             .suppression(o.getSuppression())
@@ -301,7 +312,6 @@ public class Alarm {
 
     /**
      * A user-friendly name for the alarm. It does not have to be unique, and it's changeable.
-     * Avoid entering confidential information.
      * <p>
      * This name is sent as the title for notifications related to this alarm.
      * <p>
@@ -349,9 +359,8 @@ public class Alarm {
     String namespace;
 
     /**
-     * Resource group specified as a filter for metric data retrieved by the alarm. A resource group is a custom string that can be used as a filter. Only one resource group can be applied per metric.
+     * Resource group to match for metric data retrieved by the alarm. A resource group is a custom string that you can match when retrieving custom metrics. Only one resource group can be applied per metric.
      * A valid resourceGroup value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).
-     * Avoid entering confidential information.
      * <p>
      * Example: {@code frontend-fleet}
      *
@@ -364,7 +373,8 @@ public class Alarm {
      * the Monitoring service interprets results for each returned time series as Boolean values,
      * where zero represents false and a non-zero value represents true. A true value means that the trigger
      * rule condition has been met. The query must specify a metric, statistic, interval, and trigger
-     * rule (threshold or absence). Supported values for interval: {@code 1m}-{@code 60m} (also {@code 1h}). You can optionally
+     * rule (threshold or absence). Supported values for interval depend on the specified time range. More
+     * interval values are supported for smaller time ranges. You can optionally
      * specify dimensions and grouping functions. Supported grouping functions: {@code grouping()}, {@code groupBy()}.
      * For details about Monitoring Query Language (MQL), see [Monitoring Query Language (MQL) Reference](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Reference/mql.htm).
      * For available dimensions, review the metric definition for the supported service.
@@ -480,13 +490,73 @@ public class Alarm {
     /**
      * The human-readable content of the notification delivered. Oracle recommends providing guidance
      * to operators for resolving the alarm condition. Consider adding links to standard runbook
-     * practices. Avoid entering confidential information.
+     * practices.
      * <p>
      * Example: {@code High CPU usage alert. Follow runbook instructions for resolution.}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("body")
     String body;
+    /**
+     * The format to use for notification messages sent from this alarm. The formats are:
+     * * {@code RAW} - Raw JSON blob. Default value.
+     * * {@code PRETTY_JSON}: JSON with new lines and indents.
+     * * {@code ONS_OPTIMIZED}: Simplified, user-friendly layout. Applies only to messages sent through the Notifications service to the following subscription types: Email.
+     *
+     **/
+    @lombok.extern.slf4j.Slf4j
+    public enum MessageFormat {
+        Raw("RAW"),
+        PrettyJson("PRETTY_JSON"),
+        OnsOptimized("ONS_OPTIMIZED"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private final String value;
+        private static java.util.Map<String, MessageFormat> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (MessageFormat v : MessageFormat.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        MessageFormat(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static MessageFormat create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'MessageFormat', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * The format to use for notification messages sent from this alarm. The formats are:
+     * * {@code RAW} - Raw JSON blob. Default value.
+     * * {@code PRETTY_JSON}: JSON with new lines and indents.
+     * * {@code ONS_OPTIMIZED}: Simplified, user-friendly layout. Applies only to messages sent through the Notifications service to the following subscription types: Email.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("messageFormat")
+    MessageFormat messageFormat;
 
     /**
      * A list of destinations to which the notifications for this alarm will be delivered.

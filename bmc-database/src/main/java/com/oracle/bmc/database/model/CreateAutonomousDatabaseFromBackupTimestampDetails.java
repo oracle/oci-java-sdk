@@ -298,6 +298,15 @@ public class CreateAutonomousDatabaseFromBackupTimestampDetails
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("isMtlsConnectionRequired")
+        private Boolean isMtlsConnectionRequired;
+
+        public Builder isMtlsConnectionRequired(Boolean isMtlsConnectionRequired) {
+            this.isMtlsConnectionRequired = isMtlsConnectionRequired;
+            this.__explicitlySet__.add("isMtlsConnectionRequired");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("autonomousMaintenanceScheduleType")
         private AutonomousMaintenanceScheduleType autonomousMaintenanceScheduleType;
 
@@ -370,6 +379,7 @@ public class CreateAutonomousDatabaseFromBackupTimestampDetails
                             definedTags,
                             dbVersion,
                             customerContacts,
+                            isMtlsConnectionRequired,
                             autonomousMaintenanceScheduleType,
                             autonomousDatabaseId,
                             timestamp,
@@ -411,6 +421,7 @@ public class CreateAutonomousDatabaseFromBackupTimestampDetails
                             .definedTags(o.getDefinedTags())
                             .dbVersion(o.getDbVersion())
                             .customerContacts(o.getCustomerContacts())
+                            .isMtlsConnectionRequired(o.getIsMtlsConnectionRequired())
                             .autonomousMaintenanceScheduleType(
                                     o.getAutonomousMaintenanceScheduleType())
                             .autonomousDatabaseId(o.getAutonomousDatabaseId())
@@ -460,6 +471,7 @@ public class CreateAutonomousDatabaseFromBackupTimestampDetails
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             String dbVersion,
             java.util.List<CustomerContact> customerContacts,
+            Boolean isMtlsConnectionRequired,
             AutonomousMaintenanceScheduleType autonomousMaintenanceScheduleType,
             String autonomousDatabaseId,
             java.util.Date timestamp,
@@ -494,6 +506,7 @@ public class CreateAutonomousDatabaseFromBackupTimestampDetails
                 definedTags,
                 dbVersion,
                 customerContacts,
+                isMtlsConnectionRequired,
                 autonomousMaintenanceScheduleType);
         this.autonomousDatabaseId = autonomousDatabaseId;
         this.timestamp = timestamp;

@@ -9,7 +9,7 @@ import com.oracle.bmc.ocvp.model.*;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200501")
 @lombok.Builder(builderClassName = "Builder")
 @lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode
+@lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class DeleteEsxiHostResponse extends com.oracle.bmc.responses.BmcResponse {
     /**

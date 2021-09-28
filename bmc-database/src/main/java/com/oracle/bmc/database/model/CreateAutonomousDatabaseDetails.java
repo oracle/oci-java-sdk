@@ -297,6 +297,15 @@ public class CreateAutonomousDatabaseDetails extends CreateAutonomousDatabaseBas
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("isMtlsConnectionRequired")
+        private Boolean isMtlsConnectionRequired;
+
+        public Builder isMtlsConnectionRequired(Boolean isMtlsConnectionRequired) {
+            this.isMtlsConnectionRequired = isMtlsConnectionRequired;
+            this.__explicitlySet__.add("isMtlsConnectionRequired");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("autonomousMaintenanceScheduleType")
         private AutonomousMaintenanceScheduleType autonomousMaintenanceScheduleType;
 
@@ -342,6 +351,7 @@ public class CreateAutonomousDatabaseDetails extends CreateAutonomousDatabaseBas
                             definedTags,
                             dbVersion,
                             customerContacts,
+                            isMtlsConnectionRequired,
                             autonomousMaintenanceScheduleType);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
@@ -380,6 +390,7 @@ public class CreateAutonomousDatabaseDetails extends CreateAutonomousDatabaseBas
                             .definedTags(o.getDefinedTags())
                             .dbVersion(o.getDbVersion())
                             .customerContacts(o.getCustomerContacts())
+                            .isMtlsConnectionRequired(o.getIsMtlsConnectionRequired())
                             .autonomousMaintenanceScheduleType(
                                     o.getAutonomousMaintenanceScheduleType());
 
@@ -426,6 +437,7 @@ public class CreateAutonomousDatabaseDetails extends CreateAutonomousDatabaseBas
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             String dbVersion,
             java.util.List<CustomerContact> customerContacts,
+            Boolean isMtlsConnectionRequired,
             AutonomousMaintenanceScheduleType autonomousMaintenanceScheduleType) {
         super(
                 compartmentId,
@@ -457,6 +469,7 @@ public class CreateAutonomousDatabaseDetails extends CreateAutonomousDatabaseBas
                 definedTags,
                 dbVersion,
                 customerContacts,
+                isMtlsConnectionRequired,
                 autonomousMaintenanceScheduleType);
     }
 

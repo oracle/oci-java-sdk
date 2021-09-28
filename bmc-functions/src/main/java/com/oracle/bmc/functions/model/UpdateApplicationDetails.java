@@ -36,6 +36,15 @@ public class UpdateApplicationDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("networkSecurityGroupIds")
+        private java.util.List<String> networkSecurityGroupIds;
+
+        public Builder networkSecurityGroupIds(java.util.List<String> networkSecurityGroupIds) {
+            this.networkSecurityGroupIds = networkSecurityGroupIds;
+            this.__explicitlySet__.add("networkSecurityGroupIds");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("syslogUrl")
         private String syslogUrl;
 
@@ -73,13 +82,28 @@ public class UpdateApplicationDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("imagePolicyConfig")
+        private ImagePolicyConfig imagePolicyConfig;
+
+        public Builder imagePolicyConfig(ImagePolicyConfig imagePolicyConfig) {
+            this.imagePolicyConfig = imagePolicyConfig;
+            this.__explicitlySet__.add("imagePolicyConfig");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public UpdateApplicationDetails build() {
             UpdateApplicationDetails __instance__ =
                     new UpdateApplicationDetails(
-                            config, syslogUrl, traceConfig, freeformTags, definedTags);
+                            config,
+                            networkSecurityGroupIds,
+                            syslogUrl,
+                            traceConfig,
+                            freeformTags,
+                            definedTags,
+                            imagePolicyConfig);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -88,10 +112,12 @@ public class UpdateApplicationDetails {
         public Builder copy(UpdateApplicationDetails o) {
             Builder copiedBuilder =
                     config(o.getConfig())
+                            .networkSecurityGroupIds(o.getNetworkSecurityGroupIds())
                             .syslogUrl(o.getSyslogUrl())
                             .traceConfig(o.getTraceConfig())
                             .freeformTags(o.getFreeformTags())
-                            .definedTags(o.getDefinedTags());
+                            .definedTags(o.getDefinedTags())
+                            .imagePolicyConfig(o.getImagePolicyConfig());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -116,6 +142,13 @@ public class UpdateApplicationDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("config")
     java.util.Map<String, String> config;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of the Network Security Groups to add the application to.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("networkSecurityGroupIds")
+    java.util.List<String> networkSecurityGroupIds;
 
     /**
      * A syslog URL to which to send all function logs. Supports tcp, udp, and tcp+tls.
@@ -149,6 +182,9 @@ public class UpdateApplicationDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("imagePolicyConfig")
+    ImagePolicyConfig imagePolicyConfig;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

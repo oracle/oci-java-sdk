@@ -6,8 +6,6 @@ package com.oracle.bmc.monitoring.model;
 
 /**
  * The configuration details for updating an alarm.
- * <p>
- **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -128,6 +126,15 @@ public class UpdateAlarmDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("messageFormat")
+        private MessageFormat messageFormat;
+
+        public Builder messageFormat(MessageFormat messageFormat) {
+            this.messageFormat = messageFormat;
+            this.__explicitlySet__.add("messageFormat");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("destinations")
         private java.util.List<String> destinations;
 
@@ -200,6 +207,7 @@ public class UpdateAlarmDetails {
                             pendingDuration,
                             severity,
                             body,
+                            messageFormat,
                             destinations,
                             repeatNotificationDuration,
                             suppression,
@@ -224,6 +232,7 @@ public class UpdateAlarmDetails {
                             .pendingDuration(o.getPendingDuration())
                             .severity(o.getSeverity())
                             .body(o.getBody())
+                            .messageFormat(o.getMessageFormat())
                             .destinations(o.getDestinations())
                             .repeatNotificationDuration(o.getRepeatNotificationDuration())
                             .suppression(o.getSuppression())
@@ -293,7 +302,7 @@ public class UpdateAlarmDetails {
     String namespace;
 
     /**
-     * Resource group that you want to use as a filter. The alarm retrieves metric data associated with the specified resource group only. Only one resource group can be applied per metric.
+     * Resource group that you want to match. A null value returns only metric data that has no resource groups. The alarm retrieves metric data associated with the specified resource group only. Only one resource group can be applied per metric.
      * A valid resourceGroup value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).
      * Avoid entering confidential information.
      * <p>
@@ -308,7 +317,8 @@ public class UpdateAlarmDetails {
      * the Monitoring service interprets results for each returned time series as Boolean values,
      * where zero represents false and a non-zero value represents true. A true value means that the trigger
      * rule condition has been met. The query must specify a metric, statistic, interval, and trigger
-     * rule (threshold or absence). Supported values for interval: {@code 1m}-{@code 60m} (also {@code 1h}). You can optionally
+     * rule (threshold or absence). Supported values for interval depend on the specified time range. More
+     * interval values are supported for smaller time ranges. You can optionally
      * specify dimensions and grouping functions. Supported grouping functions: {@code grouping()}, {@code groupBy()}.
      * For details about Monitoring Query Language (MQL), see [Monitoring Query Language (MQL) Reference](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Reference/mql.htm).
      * For available dimensions, review the metric definition for the supported service.
@@ -381,6 +391,55 @@ public class UpdateAlarmDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("body")
     String body;
+    /**
+     * The format to use for notification messages sent from this alarm. The formats are:
+     * * {@code RAW} - Raw JSON blob. Default value.
+     * * {@code PRETTY_JSON}: JSON with new lines and indents.
+     * * {@code ONS_OPTIMIZED}: Simplified, user-friendly layout. Applies only to messages sent through the Notifications service to the following subscription types: Email.
+     *
+     **/
+    public enum MessageFormat {
+        Raw("RAW"),
+        PrettyJson("PRETTY_JSON"),
+        OnsOptimized("ONS_OPTIMIZED"),
+        ;
+
+        private final String value;
+        private static java.util.Map<String, MessageFormat> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (MessageFormat v : MessageFormat.values()) {
+                map.put(v.getValue(), v);
+            }
+        }
+
+        MessageFormat(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static MessageFormat create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            throw new IllegalArgumentException("Invalid MessageFormat: " + key);
+        }
+    };
+    /**
+     * The format to use for notification messages sent from this alarm. The formats are:
+     * * {@code RAW} - Raw JSON blob. Default value.
+     * * {@code PRETTY_JSON}: JSON with new lines and indents.
+     * * {@code ONS_OPTIMIZED}: Simplified, user-friendly layout. Applies only to messages sent through the Notifications service to the following subscription types: Email.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("messageFormat")
+    MessageFormat messageFormat;
 
     /**
      * A list of destinations to which the notifications for this alarm will be delivered.

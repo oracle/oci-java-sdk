@@ -155,6 +155,13 @@ public class PutObjectRequest extends com.oracle.bmc.requests.BmcRequest<java.io
     private String opcSseCustomerKeySha256;
 
     /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of a master encryption key used to call the Key
+     * Management service to generate a data encryption key or to encrypt or decrypt a data encryption key.
+     *
+     */
+    private String opcSseKmsKeyId;
+
+    /**
      * The storage tier that the object should be stored in. If not specified, the object will be stored in
      * the same storage tier as the bucket.
      *
@@ -234,6 +241,7 @@ public class PutObjectRequest extends com.oracle.bmc.requests.BmcRequest<java.io
             opcSseCustomerAlgorithm(o.getOpcSseCustomerAlgorithm());
             opcSseCustomerKey(o.getOpcSseCustomerKey());
             opcSseCustomerKeySha256(o.getOpcSseCustomerKeySha256());
+            opcSseKmsKeyId(o.getOpcSseKmsKeyId());
             storageTier(o.getStorageTier());
             opcMeta(o.getOpcMeta());
             invocationCallback(o.getInvocationCallback());

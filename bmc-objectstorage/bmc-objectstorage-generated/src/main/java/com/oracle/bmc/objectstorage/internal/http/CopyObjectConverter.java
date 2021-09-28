@@ -81,6 +81,10 @@ public class CopyObjectConverter {
                     request.getOpcSourceSseCustomerKeySha256());
         }
 
+        if (request.getOpcSseKmsKeyId() != null) {
+            ib.header("opc-sse-kms-key-id", request.getOpcSseKmsKeyId());
+        }
+
         if (client.getClientConfigurator() != null) {
             client.getClientConfigurator().customizeRequest(request, ib);
         }

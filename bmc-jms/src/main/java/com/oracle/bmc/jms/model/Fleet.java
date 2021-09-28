@@ -253,7 +253,7 @@ public class Fleet {
     Integer approximateManagedInstanceCount;
 
     /**
-     * The creation date and time of the Fleet (formatted according to RFC3339).
+     * The creation date and time of the Fleet (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")

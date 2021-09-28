@@ -133,7 +133,7 @@ public class FleetAgentConfiguration {
     FleetAgentOsConfiguration windowsConfiguration;
 
     /**
-     * The date and time of the last modification to the Fleet Agent Configuration (formatted according to RFC3339).
+     * The date and time of the last modification to the Fleet Agent Configuration (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeLastModified")

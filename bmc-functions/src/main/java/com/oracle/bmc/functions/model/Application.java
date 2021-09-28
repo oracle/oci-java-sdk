@@ -79,6 +79,15 @@ public class Application {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("networkSecurityGroupIds")
+        private java.util.List<String> networkSecurityGroupIds;
+
+        public Builder networkSecurityGroupIds(java.util.List<String> networkSecurityGroupIds) {
+            this.networkSecurityGroupIds = networkSecurityGroupIds;
+            this.__explicitlySet__.add("networkSecurityGroupIds");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("syslogUrl")
         private String syslogUrl;
 
@@ -134,6 +143,15 @@ public class Application {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("imagePolicyConfig")
+        private ImagePolicyConfig imagePolicyConfig;
+
+        public Builder imagePolicyConfig(ImagePolicyConfig imagePolicyConfig) {
+            this.imagePolicyConfig = imagePolicyConfig;
+            this.__explicitlySet__.add("imagePolicyConfig");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -146,12 +164,14 @@ public class Application {
                             lifecycleState,
                             config,
                             subnetIds,
+                            networkSecurityGroupIds,
                             syslogUrl,
                             traceConfig,
                             freeformTags,
                             definedTags,
                             timeCreated,
-                            timeUpdated);
+                            timeUpdated,
+                            imagePolicyConfig);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -165,12 +185,14 @@ public class Application {
                             .lifecycleState(o.getLifecycleState())
                             .config(o.getConfig())
                             .subnetIds(o.getSubnetIds())
+                            .networkSecurityGroupIds(o.getNetworkSecurityGroupIds())
                             .syslogUrl(o.getSyslogUrl())
                             .traceConfig(o.getTraceConfig())
                             .freeformTags(o.getFreeformTags())
                             .definedTags(o.getDefinedTags())
                             .timeCreated(o.getTimeCreated())
-                            .timeUpdated(o.getTimeUpdated());
+                            .timeUpdated(o.getTimeUpdated())
+                            .imagePolicyConfig(o.getImagePolicyConfig());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -283,6 +305,13 @@ public class Application {
     java.util.List<String> subnetIds;
 
     /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of the Network Security Groups to add the application to.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("networkSecurityGroupIds")
+    java.util.List<String> networkSecurityGroupIds;
+
+    /**
      * A syslog URL to which to send all function logs. Supports tcp, udp, and tcp+tls.
      * The syslog URL must be reachable from all of the subnets configured for the application.
      * Note: If you enable the OCI Logging service for this application, the syslogUrl value is ignored. Function logs are sent to the OCI Logging service, and not to the syslog URL.
@@ -333,6 +362,9 @@ public class Application {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     java.util.Date timeUpdated;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("imagePolicyConfig")
+    ImagePolicyConfig imagePolicyConfig;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

@@ -49,6 +49,10 @@ public class GetApiContentConverter {
             ib.header("if-match", request.getIfMatch());
         }
 
+        if (request.getRange() != null) {
+            ib.header("range", request.getRange());
+        }
+
         if (client.getClientConfigurator() != null) {
             client.getClientConfigurator().customizeRequest(request, ib);
         }

@@ -35,6 +35,15 @@ public class UpdateGatewayDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("networkSecurityGroupIds")
+        private java.util.List<String> networkSecurityGroupIds;
+
+        public Builder networkSecurityGroupIds(java.util.List<String> networkSecurityGroupIds) {
+            this.networkSecurityGroupIds = networkSecurityGroupIds;
+            this.__explicitlySet__.add("networkSecurityGroupIds");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("certificateId")
         private String certificateId;
 
@@ -79,6 +88,7 @@ public class UpdateGatewayDetails {
             UpdateGatewayDetails __instance__ =
                     new UpdateGatewayDetails(
                             displayName,
+                            networkSecurityGroupIds,
                             certificateId,
                             responseCacheDetails,
                             freeformTags,
@@ -91,6 +101,7 @@ public class UpdateGatewayDetails {
         public Builder copy(UpdateGatewayDetails o) {
             Builder copiedBuilder =
                     displayName(o.getDisplayName())
+                            .networkSecurityGroupIds(o.getNetworkSecurityGroupIds())
                             .certificateId(o.getCertificateId())
                             .responseCacheDetails(o.getResponseCacheDetails())
                             .freeformTags(o.getFreeformTags())
@@ -117,6 +128,13 @@ public class UpdateGatewayDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     String displayName;
+
+    /**
+     * An array of Network Security Groups OCIDs associated with this API Gateway.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("networkSecurityGroupIds")
+    java.util.List<String> networkSecurityGroupIds;
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the resource.

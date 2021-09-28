@@ -82,6 +82,15 @@ public class InstallationUsage {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("operatingSystem")
+        private OperatingSystem operatingSystem;
+
+        public Builder operatingSystem(OperatingSystem operatingSystem) {
+            this.operatingSystem = operatingSystem;
+            this.__explicitlySet__.add("operatingSystem");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("approximateApplicationCount")
         private Integer approximateApplicationCount;
 
@@ -148,6 +157,7 @@ public class InstallationUsage {
                             path,
                             os,
                             architecture,
+                            operatingSystem,
                             approximateApplicationCount,
                             approximateManagedInstanceCount,
                             timeStart,
@@ -167,6 +177,7 @@ public class InstallationUsage {
                             .path(o.getPath())
                             .os(o.getOs())
                             .architecture(o.getArchitecture())
+                            .operatingSystem(o.getOperatingSystem())
                             .approximateApplicationCount(o.getApproximateApplicationCount())
                             .approximateManagedInstanceCount(o.getApproximateManagedInstanceCount())
                             .timeStart(o.getTimeStart())
@@ -211,16 +222,19 @@ public class InstallationUsage {
     String path;
 
     /**
-     * The Operating System for the installation.
+     * The Operating System for the installation. Deprecated, use {@code operatingSystem} instead.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("os")
     String os;
 
     /**
-     * The architecture of the operating system for the installation.
+     * The architecture of the operating system for the installation. Deprecated, use {@code operatingSystem} instead.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("architecture")
     String architecture;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("operatingSystem")
+    OperatingSystem operatingSystem;
 
     /**
      * The approximate count of applications running on this installation

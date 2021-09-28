@@ -17,6 +17,7 @@ public enum JreSortBy {
     ApproximateInstallationCount("approximateInstallationCount"),
     ApproximateApplicationCount("approximateApplicationCount"),
     ApproximateManagedInstanceCount("approximateManagedInstanceCount"),
+    OsName("osName"),
     ;
 
     private final String value;

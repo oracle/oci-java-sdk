@@ -72,13 +72,22 @@ public class AutonomousDatabaseConnectionStrings {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("profiles")
+        private java.util.List<DatabaseConnectionStringProfile> profiles;
+
+        public Builder profiles(java.util.List<DatabaseConnectionStringProfile> profiles) {
+            this.profiles = profiles;
+            this.__explicitlySet__.add("profiles");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public AutonomousDatabaseConnectionStrings build() {
             AutonomousDatabaseConnectionStrings __instance__ =
                     new AutonomousDatabaseConnectionStrings(
-                            high, medium, low, dedicated, allConnectionStrings);
+                            high, medium, low, dedicated, allConnectionStrings, profiles);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -90,7 +99,8 @@ public class AutonomousDatabaseConnectionStrings {
                             .medium(o.getMedium())
                             .low(o.getLow())
                             .dedicated(o.getDedicated())
-                            .allConnectionStrings(o.getAllConnectionStrings());
+                            .allConnectionStrings(o.getAllConnectionStrings())
+                            .profiles(o.getProfiles());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -135,6 +145,13 @@ public class AutonomousDatabaseConnectionStrings {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("allConnectionStrings")
     java.util.Map<String, String> allConnectionStrings;
+
+    /**
+     * A list of connection string profiles to allow clients to group, filter and select connection string values based on structured metadata.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("profiles")
+    java.util.List<DatabaseConnectionStringProfile> profiles;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

@@ -5,6 +5,7 @@
 package com.oracle.bmc.databasemigration.model;
 
 /**
+ * Note: Deprecated. Use the new resource model APIs instead.
  * Database Administrator Credentials details. An empty object would result in the removal of the stored details.
  *
  * <br/>

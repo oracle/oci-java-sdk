@@ -62,6 +62,15 @@ public class CreateGatewayDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("networkSecurityGroupIds")
+        private java.util.List<String> networkSecurityGroupIds;
+
+        public Builder networkSecurityGroupIds(java.util.List<String> networkSecurityGroupIds) {
+            this.networkSecurityGroupIds = networkSecurityGroupIds;
+            this.__explicitlySet__.add("networkSecurityGroupIds");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("certificateId")
         private String certificateId;
 
@@ -109,6 +118,7 @@ public class CreateGatewayDetails {
                             compartmentId,
                             endpointType,
                             subnetId,
+                            networkSecurityGroupIds,
                             certificateId,
                             responseCacheDetails,
                             freeformTags,
@@ -124,6 +134,7 @@ public class CreateGatewayDetails {
                             .compartmentId(o.getCompartmentId())
                             .endpointType(o.getEndpointType())
                             .subnetId(o.getSubnetId())
+                            .networkSecurityGroupIds(o.getNetworkSecurityGroupIds())
                             .certificateId(o.getCertificateId())
                             .responseCacheDetails(o.getResponseCacheDetails())
                             .freeformTags(o.getFreeformTags())
@@ -176,6 +187,13 @@ public class CreateGatewayDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
     String subnetId;
+
+    /**
+     * An array of Network Security Groups OCIDs associated with this API Gateway.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("networkSecurityGroupIds")
+    java.util.List<String> networkSecurityGroupIds;
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the resource.

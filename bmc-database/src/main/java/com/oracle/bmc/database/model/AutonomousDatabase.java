@@ -679,6 +679,15 @@ public class AutonomousDatabase {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("isMtlsConnectionRequired")
+        private Boolean isMtlsConnectionRequired;
+
+        public Builder isMtlsConnectionRequired(Boolean isMtlsConnectionRequired) {
+            this.isMtlsConnectionRequired = isMtlsConnectionRequired;
+            this.__explicitlySet__.add("isMtlsConnectionRequired");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("autonomousMaintenanceScheduleType")
         private AutonomousMaintenanceScheduleType autonomousMaintenanceScheduleType;
 
@@ -767,6 +776,7 @@ public class AutonomousDatabase {
                             dataguardRegionType,
                             timeDataGuardRoleChanged,
                             peerDbIds,
+                            isMtlsConnectionRequired,
                             autonomousMaintenanceScheduleType);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
@@ -849,6 +859,7 @@ public class AutonomousDatabase {
                             .dataguardRegionType(o.getDataguardRegionType())
                             .timeDataGuardRoleChanged(o.getTimeDataGuardRoleChanged())
                             .peerDbIds(o.getPeerDbIds())
+                            .isMtlsConnectionRequired(o.getIsMtlsConnectionRequired())
                             .autonomousMaintenanceScheduleType(
                                     o.getAutonomousMaintenanceScheduleType());
 
@@ -1943,6 +1954,12 @@ public class AutonomousDatabase {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("peerDbIds")
     java.util.List<String> peerDbIds;
+
+    /**
+     * Indicates whether the Autonomous Database requires mTLS connections.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isMtlsConnectionRequired")
+    Boolean isMtlsConnectionRequired;
     /**
      * The maintenance schedule type of the Autonomous Database on shared Exadata infrastructure. The EARLY maintenance schedule of this Autonomous Database
      * follows a schedule that applies patches prior to the REGULAR schedule.The REGULAR maintenance schedule of this Autonomous Database follows the normal cycle.

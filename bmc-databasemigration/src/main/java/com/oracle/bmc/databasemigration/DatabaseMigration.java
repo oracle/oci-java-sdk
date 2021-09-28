@@ -46,6 +46,7 @@ public interface DatabaseMigration extends AutoCloseable {
     void setRegion(String regionId);
 
     /**
+     * Note: Deprecated. Use the new resource model APIs instead.
      * Aborts a Migration Job (either Evaluation or Migration).
      *
      * @param request The request object containing the details to send
@@ -57,6 +58,7 @@ public interface DatabaseMigration extends AutoCloseable {
     AbortJobResponse abortJob(AbortJobRequest request);
 
     /**
+     * Note: Deprecated. Use the new resource model APIs instead.
      * Used to configure an ODMS Agent Compartment ID.
      *
      * @param request The request object containing the details to send
@@ -68,6 +70,7 @@ public interface DatabaseMigration extends AutoCloseable {
     ChangeAgentCompartmentResponse changeAgentCompartment(ChangeAgentCompartmentRequest request);
 
     /**
+     * Note: Deprecated. Use the new resource model APIs instead.
      * Used to change the Database Connection compartment.
      *
      * @param request The request object containing the details to send
@@ -80,6 +83,7 @@ public interface DatabaseMigration extends AutoCloseable {
             ChangeConnectionCompartmentRequest request);
 
     /**
+     * Note: Deprecated. Use the new resource model APIs instead.
      * Used to change the Migration compartment.
      *
      * @param request The request object containing the details to send
@@ -92,6 +96,7 @@ public interface DatabaseMigration extends AutoCloseable {
             ChangeMigrationCompartmentRequest request);
 
     /**
+     * Note: Deprecated. Use the new resource model APIs instead.
      * Clone a configuration from an existing Migration.
      *
      * @param request The request object containing the details to send
@@ -103,6 +108,7 @@ public interface DatabaseMigration extends AutoCloseable {
     CloneMigrationResponse cloneMigration(CloneMigrationRequest request);
 
     /**
+     * Note: Deprecated. Use the new resource model APIs instead.
      * Create a Database Connection resource that contains the details to connect to either a Source or Target Database
      * in the migration.
      *
@@ -115,6 +121,7 @@ public interface DatabaseMigration extends AutoCloseable {
     CreateConnectionResponse createConnection(CreateConnectionRequest request);
 
     /**
+     * Note: Deprecated. Use the new resource model APIs instead.
      * Create a Migration resource that contains all the details to perform the
      * database migration operation, such as source and destination database
      * details, credentials, etc.
@@ -128,6 +135,7 @@ public interface DatabaseMigration extends AutoCloseable {
     CreateMigrationResponse createMigration(CreateMigrationRequest request);
 
     /**
+     * Note: Deprecated. Use the new resource model APIs instead.
      * Delete the ODMS Agent represented by the specified ODMS Agent ID.
      *
      * @param request The request object containing the details to send
@@ -139,6 +147,7 @@ public interface DatabaseMigration extends AutoCloseable {
     DeleteAgentResponse deleteAgent(DeleteAgentRequest request);
 
     /**
+     * Note: Deprecated. Use the new resource model APIs instead.
      * Deletes the Database Connection represented by the specified connection ID.
      *
      * @param request The request object containing the details to send
@@ -150,6 +159,7 @@ public interface DatabaseMigration extends AutoCloseable {
     DeleteConnectionResponse deleteConnection(DeleteConnectionRequest request);
 
     /**
+     * Note: Deprecated. Use the new resource model APIs instead.
      * Deletes the migration job represented by the given job ID.
      *
      * @param request The request object containing the details to send
@@ -161,6 +171,7 @@ public interface DatabaseMigration extends AutoCloseable {
     DeleteJobResponse deleteJob(DeleteJobRequest request);
 
     /**
+     * Note: Deprecated. Use the new resource model APIs instead.
      * Deletes the Migration represented by the specified migration ID.
      *
      * @param request The request object containing the details to send
@@ -172,6 +183,7 @@ public interface DatabaseMigration extends AutoCloseable {
     DeleteMigrationResponse deleteMigration(DeleteMigrationRequest request);
 
     /**
+     * Note: Deprecated. Use the new resource model APIs instead.
      * Start Validate Migration job.
      *
      * @param request The request object containing the details to send
@@ -183,6 +195,7 @@ public interface DatabaseMigration extends AutoCloseable {
     EvaluateMigrationResponse evaluateMigration(EvaluateMigrationRequest request);
 
     /**
+     * Note: Deprecated. Use the new resource model APIs instead.
      * Display the ODMS Agent configuration.
      *
      * @param request The request object containing the details to send
@@ -194,6 +207,7 @@ public interface DatabaseMigration extends AutoCloseable {
     GetAgentResponse getAgent(GetAgentRequest request);
 
     /**
+     * Note: Deprecated. Use the new resource model APIs instead.
      * Display Database Connection details.
      *
      * @param request The request object containing the details to send
@@ -205,6 +219,7 @@ public interface DatabaseMigration extends AutoCloseable {
     GetConnectionResponse getConnection(GetConnectionRequest request);
 
     /**
+     * Note: Deprecated. Use the new resource model APIs instead.
      * Get a migration job.
      *
      * @param request The request object containing the details to send
@@ -216,6 +231,7 @@ public interface DatabaseMigration extends AutoCloseable {
     GetJobResponse getJob(GetJobRequest request);
 
     /**
+     * Note: Deprecated. Use the new resource model APIs instead.
      * Get the migration Job Output content as a String.
      *
      * @param request The request object containing the details to send
@@ -227,6 +243,7 @@ public interface DatabaseMigration extends AutoCloseable {
     GetJobOutputContentResponse getJobOutputContent(GetJobOutputContentRequest request);
 
     /**
+     * Note: Deprecated. Use the new resource model APIs instead.
      * Display Migration details.
      *
      * @param request The request object containing the details to send
@@ -238,6 +255,7 @@ public interface DatabaseMigration extends AutoCloseable {
     GetMigrationResponse getMigration(GetMigrationRequest request);
 
     /**
+     * Note: Deprecated. Use the new resource model APIs instead.
      * Gets the details of a work request.
      *
      * @param request The request object containing the details to send
@@ -249,6 +267,7 @@ public interface DatabaseMigration extends AutoCloseable {
     GetWorkRequestResponse getWorkRequest(GetWorkRequestRequest request);
 
     /**
+     * Note: Deprecated. Use the new resource model APIs instead.
      * Get details of the ODMS Agent Images available to install on-premises.
      *
      * @param request The request object containing the details to send
@@ -260,6 +279,7 @@ public interface DatabaseMigration extends AutoCloseable {
     ListAgentImagesResponse listAgentImages(ListAgentImagesRequest request);
 
     /**
+     * Note: Deprecated. Use the new resource model APIs instead.
      * Display the name of all the existing ODMS Agents in the server.
      *
      * @param request The request object containing the details to send
@@ -271,6 +291,7 @@ public interface DatabaseMigration extends AutoCloseable {
     ListAgentsResponse listAgents(ListAgentsRequest request);
 
     /**
+     * Note: Deprecated. Use the new resource model APIs instead.
      * List all Database Connections.
      *
      * @param request The request object containing the details to send
@@ -282,6 +303,7 @@ public interface DatabaseMigration extends AutoCloseable {
     ListConnectionsResponse listConnections(ListConnectionsRequest request);
 
     /**
+     * Note: Deprecated. Use the new resource model APIs instead.
      * List the Job Outputs
      *
      * @param request The request object containing the details to send
@@ -293,6 +315,7 @@ public interface DatabaseMigration extends AutoCloseable {
     ListJobOutputsResponse listJobOutputs(ListJobOutputsRequest request);
 
     /**
+     * Note: Deprecated. Use the new resource model APIs instead.
      * List all the names of the Migration jobs associated to the specified
      * migration site.
      *
@@ -305,6 +328,7 @@ public interface DatabaseMigration extends AutoCloseable {
     ListJobsResponse listJobs(ListJobsRequest request);
 
     /**
+     * Note: Deprecated. Use the new resource model APIs instead.
      * List all Migrations.
      *
      * @param request The request object containing the details to send
@@ -316,6 +340,7 @@ public interface DatabaseMigration extends AutoCloseable {
     ListMigrationsResponse listMigrations(ListMigrationsRequest request);
 
     /**
+     * Note: Deprecated. Use the new resource model APIs instead.
      * Gets the errors for a work request.
      *
      * @param request The request object containing the details to send
@@ -327,6 +352,7 @@ public interface DatabaseMigration extends AutoCloseable {
     ListWorkRequestErrorsResponse listWorkRequestErrors(ListWorkRequestErrorsRequest request);
 
     /**
+     * Note: Deprecated. Use the new resource model APIs instead.
      * Gets the logs for a work request.
      *
      * @param request The request object containing the details to send
@@ -338,6 +364,7 @@ public interface DatabaseMigration extends AutoCloseable {
     ListWorkRequestLogsResponse listWorkRequestLogs(ListWorkRequestLogsRequest request);
 
     /**
+     * Note: Deprecated. Use the new resource model APIs instead.
      * Lists the work requests in a compartment or for a specified resource.
      *
      * @param request The request object containing the details to send
@@ -349,6 +376,7 @@ public interface DatabaseMigration extends AutoCloseable {
     ListWorkRequestsResponse listWorkRequests(ListWorkRequestsRequest request);
 
     /**
+     * Note: Deprecated. Use the new resource model APIs instead.
      * Resume a migration Job.
      *
      * @param request The request object containing the details to send
@@ -360,6 +388,7 @@ public interface DatabaseMigration extends AutoCloseable {
     ResumeJobResponse resumeJob(ResumeJobRequest request);
 
     /**
+     * Note: Deprecated. Use the new resource model APIs instead.
      * Display Migration Phases for a specified migration.
      *
      * @param request The request object containing the details to send
@@ -371,6 +400,7 @@ public interface DatabaseMigration extends AutoCloseable {
     RetrieveSupportedPhasesResponse retrieveSupportedPhases(RetrieveSupportedPhasesRequest request);
 
     /**
+     * Note: Deprecated. Use the new resource model APIs instead.
      * Start Migration job.
      *
      * @param request The request object containing the details to send
@@ -382,6 +412,7 @@ public interface DatabaseMigration extends AutoCloseable {
     StartMigrationResponse startMigration(StartMigrationRequest request);
 
     /**
+     * Note: Deprecated. Use the new resource model APIs instead.
      * Modifies the ODMS Agent represented by the given ODMS Agent ID.
      *
      * @param request The request object containing the details to send
@@ -393,6 +424,7 @@ public interface DatabaseMigration extends AutoCloseable {
     UpdateAgentResponse updateAgent(UpdateAgentRequest request);
 
     /**
+     * Note: Deprecated. Use the new resource model APIs instead.
      * Update Database Connection resource details.
      *
      * @param request The request object containing the details to send
@@ -404,6 +436,7 @@ public interface DatabaseMigration extends AutoCloseable {
     UpdateConnectionResponse updateConnection(UpdateConnectionRequest request);
 
     /**
+     * Note: Deprecated. Use the new resource model APIs instead.
      * Update Migration Job resource details.
      *
      * @param request The request object containing the details to send
@@ -415,6 +448,7 @@ public interface DatabaseMigration extends AutoCloseable {
     UpdateJobResponse updateJob(UpdateJobRequest request);
 
     /**
+     * Note: Deprecated. Use the new resource model APIs instead.
      * Update Migration resource details.
      *
      * @param request The request object containing the details to send
