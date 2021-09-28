@@ -9,7 +9,7 @@ import com.oracle.bmc.keymanagement.model.*;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: release")
 @lombok.Builder(builderClassName = "Builder")
 @lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode
+@lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class EncryptResponse extends com.oracle.bmc.responses.BmcResponse {
     /**

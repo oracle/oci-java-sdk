@@ -9,7 +9,7 @@ import com.oracle.bmc.email.model.*;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20170907")
 @lombok.Builder(builderClassName = "Builder")
 @lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode
+@lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class DeleteSuppressionResponse extends com.oracle.bmc.responses.BmcResponse {
     /**

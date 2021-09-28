@@ -39,6 +39,14 @@ public class GetApiContentRequest extends com.oracle.bmc.requests.BmcRequest<jav
      */
     private String ifMatch;
 
+    /**
+     * The Range HTTP request header indicates the part of a document that the
+     * server should return. [RFC 7233](https://tools.ietf.org/html/rfc7233#section-3.1).
+     * Note that only a single range of bytes is supported.
+     *
+     */
+    private com.oracle.bmc.model.Range range;
+
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     GetApiContentRequest, java.lang.Void> {
@@ -77,6 +85,7 @@ public class GetApiContentRequest extends com.oracle.bmc.requests.BmcRequest<jav
             apiId(o.getApiId());
             opcRequestId(o.getOpcRequestId());
             ifMatch(o.getIfMatch());
+            range(o.getRange());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;

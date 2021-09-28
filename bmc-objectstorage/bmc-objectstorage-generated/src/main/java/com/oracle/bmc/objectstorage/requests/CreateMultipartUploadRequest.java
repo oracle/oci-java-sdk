@@ -83,6 +83,13 @@ public class CreateMultipartUploadRequest
     private String opcSseCustomerKeySha256;
 
     /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of a master encryption key used to call the Key
+     * Management service to generate a data encryption key or to encrypt or decrypt a data encryption key.
+     *
+     */
+    private String opcSseKmsKeyId;
+
+    /**
      * Alternative accessor for the body parameter.
      * @return body parameter
      */
@@ -137,6 +144,7 @@ public class CreateMultipartUploadRequest
             opcSseCustomerAlgorithm(o.getOpcSseCustomerAlgorithm());
             opcSseCustomerKey(o.getOpcSseCustomerKey());
             opcSseCustomerKeySha256(o.getOpcSseCustomerKeySha256());
+            opcSseKmsKeyId(o.getOpcSseKmsKeyId());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;

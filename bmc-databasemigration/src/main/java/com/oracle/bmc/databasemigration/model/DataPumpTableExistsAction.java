@@ -5,6 +5,7 @@
 package com.oracle.bmc.databasemigration.model;
 
 /**
+ * Note: Deprecated. Use the new resource model APIs instead.
  * IMPORT: Specifies the action to be performed when data is loaded into a preexisting table.
  *
  **/

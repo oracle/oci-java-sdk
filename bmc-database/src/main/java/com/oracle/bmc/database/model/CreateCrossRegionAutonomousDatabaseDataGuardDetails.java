@@ -298,6 +298,15 @@ public class CreateCrossRegionAutonomousDatabaseDataGuardDetails
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("isMtlsConnectionRequired")
+        private Boolean isMtlsConnectionRequired;
+
+        public Builder isMtlsConnectionRequired(Boolean isMtlsConnectionRequired) {
+            this.isMtlsConnectionRequired = isMtlsConnectionRequired;
+            this.__explicitlySet__.add("isMtlsConnectionRequired");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("autonomousMaintenanceScheduleType")
         private AutonomousMaintenanceScheduleType autonomousMaintenanceScheduleType;
 
@@ -352,6 +361,7 @@ public class CreateCrossRegionAutonomousDatabaseDataGuardDetails
                             definedTags,
                             dbVersion,
                             customerContacts,
+                            isMtlsConnectionRequired,
                             autonomousMaintenanceScheduleType,
                             sourceId);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
@@ -391,6 +401,7 @@ public class CreateCrossRegionAutonomousDatabaseDataGuardDetails
                             .definedTags(o.getDefinedTags())
                             .dbVersion(o.getDbVersion())
                             .customerContacts(o.getCustomerContacts())
+                            .isMtlsConnectionRequired(o.getIsMtlsConnectionRequired())
                             .autonomousMaintenanceScheduleType(
                                     o.getAutonomousMaintenanceScheduleType())
                             .sourceId(o.getSourceId());
@@ -438,6 +449,7 @@ public class CreateCrossRegionAutonomousDatabaseDataGuardDetails
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             String dbVersion,
             java.util.List<CustomerContact> customerContacts,
+            Boolean isMtlsConnectionRequired,
             AutonomousMaintenanceScheduleType autonomousMaintenanceScheduleType,
             String sourceId) {
         super(
@@ -470,6 +482,7 @@ public class CreateCrossRegionAutonomousDatabaseDataGuardDetails
                 definedTags,
                 dbVersion,
                 customerContacts,
+                isMtlsConnectionRequired,
                 autonomousMaintenanceScheduleType);
         this.sourceId = sourceId;
     }

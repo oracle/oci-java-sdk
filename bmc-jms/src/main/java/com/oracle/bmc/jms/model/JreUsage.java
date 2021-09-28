@@ -51,6 +51,15 @@ public class JreUsage {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("operatingSystems")
+        private java.util.List<OperatingSystem> operatingSystems;
+
+        public Builder operatingSystems(java.util.List<OperatingSystem> operatingSystems) {
+            this.operatingSystems = operatingSystems;
+            this.__explicitlySet__.add("operatingSystems");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("approximateInstallationCount")
         private Integer approximateInstallationCount;
 
@@ -123,6 +132,7 @@ public class JreUsage {
                             vendor,
                             distribution,
                             version,
+                            operatingSystems,
                             approximateInstallationCount,
                             approximateApplicationCount,
                             approximateManagedInstanceCount,
@@ -140,6 +150,7 @@ public class JreUsage {
                     vendor(o.getVendor())
                             .distribution(o.getDistribution())
                             .version(o.getVersion())
+                            .operatingSystems(o.getOperatingSystems())
                             .approximateInstallationCount(o.getApproximateInstallationCount())
                             .approximateApplicationCount(o.getApproximateApplicationCount())
                             .approximateManagedInstanceCount(o.getApproximateManagedInstanceCount())
@@ -177,6 +188,12 @@ public class JreUsage {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("version")
     String version;
+
+    /**
+     * The operating systems that have this Java Runtime installed.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("operatingSystems")
+    java.util.List<OperatingSystem> operatingSystems;
 
     /**
      * The approximate count of installations that are installations of this Java Runtime.

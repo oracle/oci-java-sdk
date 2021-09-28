@@ -108,6 +108,10 @@ public class PutObjectConverter {
             ib.header("opc-sse-customer-key-sha256", request.getOpcSseCustomerKeySha256());
         }
 
+        if (request.getOpcSseKmsKeyId() != null) {
+            ib.header("opc-sse-kms-key-id", request.getOpcSseKmsKeyId());
+        }
+
         if (request.getStorageTier() != null) {
             ib.header("storage-tier", request.getStorageTier().getValue());
         }

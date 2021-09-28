@@ -135,7 +135,9 @@ public class RenameObjectDetails {
     String newObjIfMatchETag;
 
     /**
-     * The if-none-match entity tag (ETag) of the new object.
+     * The if-none-match entity tag (ETag) of the new object. The only valid value is '*', which indicates
+     * request should fail if the new object already exists.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("newObjIfNoneMatchETag")
     String newObjIfNoneMatchETag;

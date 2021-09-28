@@ -40,8 +40,9 @@ public class HeadBucketRequest extends com.oracle.bmc.requests.BmcRequest<java.l
     private String ifMatch;
 
     /**
-     * The entity tag (ETag) to avoid matching. The only valid value is '*', which indicates that the request should
-     * fail if the resource already exists.
+     * The entity tag (ETag) to avoid matching. Wildcards ('*') are not allowed. If the specified ETag does not
+     * match the ETag of the existing resource, the request returns the expected response. If the ETag matches
+     * the ETag of the existing resource, the request returns an HTTP 304 status without a response body.
      *
      */
     private String ifNoneMatch;

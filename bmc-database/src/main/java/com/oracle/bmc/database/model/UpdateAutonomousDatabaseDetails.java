@@ -286,6 +286,15 @@ public class UpdateAutonomousDatabaseDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("isMtlsConnectionRequired")
+        private Boolean isMtlsConnectionRequired;
+
+        public Builder isMtlsConnectionRequired(Boolean isMtlsConnectionRequired) {
+            this.isMtlsConnectionRequired = isMtlsConnectionRequired;
+            this.__explicitlySet__.add("isMtlsConnectionRequired");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -319,7 +328,8 @@ public class UpdateAutonomousDatabaseDetails {
                             subnetId,
                             privateEndpointLabel,
                             nsgIds,
-                            customerContacts);
+                            customerContacts,
+                            isMtlsConnectionRequired);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -354,7 +364,8 @@ public class UpdateAutonomousDatabaseDetails {
                             .subnetId(o.getSubnetId())
                             .privateEndpointLabel(o.getPrivateEndpointLabel())
                             .nsgIds(o.getNsgIds())
-                            .customerContacts(o.getCustomerContacts());
+                            .customerContacts(o.getCustomerContacts())
+                            .isMtlsConnectionRequired(o.getIsMtlsConnectionRequired());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -798,6 +809,12 @@ public class UpdateAutonomousDatabaseDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("customerContacts")
     java.util.List<CustomerContact> customerContacts;
+
+    /**
+     * Indicates whether the Autonomous Database requires mTLS connections.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isMtlsConnectionRequired")
+    Boolean isMtlsConnectionRequired;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

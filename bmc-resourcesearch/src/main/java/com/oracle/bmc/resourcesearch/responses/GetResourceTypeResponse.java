@@ -9,7 +9,7 @@ import com.oracle.bmc.resourcesearch.model.*;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180409")
 @lombok.Builder(builderClassName = "Builder")
 @lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode
+@lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class GetResourceTypeResponse extends com.oracle.bmc.responses.BmcResponse {
     /**

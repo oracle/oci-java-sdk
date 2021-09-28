@@ -297,6 +297,15 @@ public class CreateRefreshableAutonomousDatabaseCloneDetails extends CreateAuton
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("isMtlsConnectionRequired")
+        private Boolean isMtlsConnectionRequired;
+
+        public Builder isMtlsConnectionRequired(Boolean isMtlsConnectionRequired) {
+            this.isMtlsConnectionRequired = isMtlsConnectionRequired;
+            this.__explicitlySet__.add("isMtlsConnectionRequired");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("autonomousMaintenanceScheduleType")
         private AutonomousMaintenanceScheduleType autonomousMaintenanceScheduleType;
 
@@ -360,6 +369,7 @@ public class CreateRefreshableAutonomousDatabaseCloneDetails extends CreateAuton
                             definedTags,
                             dbVersion,
                             customerContacts,
+                            isMtlsConnectionRequired,
                             autonomousMaintenanceScheduleType,
                             sourceId,
                             refreshableMode);
@@ -400,6 +410,7 @@ public class CreateRefreshableAutonomousDatabaseCloneDetails extends CreateAuton
                             .definedTags(o.getDefinedTags())
                             .dbVersion(o.getDbVersion())
                             .customerContacts(o.getCustomerContacts())
+                            .isMtlsConnectionRequired(o.getIsMtlsConnectionRequired())
                             .autonomousMaintenanceScheduleType(
                                     o.getAutonomousMaintenanceScheduleType())
                             .sourceId(o.getSourceId())
@@ -448,6 +459,7 @@ public class CreateRefreshableAutonomousDatabaseCloneDetails extends CreateAuton
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             String dbVersion,
             java.util.List<CustomerContact> customerContacts,
+            Boolean isMtlsConnectionRequired,
             AutonomousMaintenanceScheduleType autonomousMaintenanceScheduleType,
             String sourceId,
             RefreshableMode refreshableMode) {
@@ -481,6 +493,7 @@ public class CreateRefreshableAutonomousDatabaseCloneDetails extends CreateAuton
                 definedTags,
                 dbVersion,
                 customerContacts,
+                isMtlsConnectionRequired,
                 autonomousMaintenanceScheduleType);
         this.sourceId = sourceId;
         this.refreshableMode = refreshableMode;

@@ -79,6 +79,22 @@ public interface DataSafe extends AutoCloseable {
             ChangeOnPremConnectorCompartmentRequest request);
 
     /**
+     * Moves the specified saved security assessment or future scheduled assessments into a different compartment.
+     * <p>
+     * To start, call first the operation ListSecurityAssessments with filters \"type = save_schedule\". This returns the scheduleAssessmentId. Then, call this changeCompartment with the scheduleAssessmentId.
+     * <p>
+     * The existing saved security assessments created due to the schedule are not moved. However, all new saves will be associated with the new compartment.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/ChangeSecurityAssessmentCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeSecurityAssessmentCompartment API.
+     */
+    ChangeSecurityAssessmentCompartmentResponse changeSecurityAssessmentCompartment(
+            ChangeSecurityAssessmentCompartmentRequest request);
+
+    /**
      * Moves the Data Safe target database to the specified compartment.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -88,6 +104,47 @@ public interface DataSafe extends AutoCloseable {
      */
     ChangeTargetDatabaseCompartmentResponse changeTargetDatabaseCompartment(
             ChangeTargetDatabaseCompartmentRequest request);
+
+    /**
+     * Moves the specified saved user assessment or future scheduled assessments into a different compartment.
+     * To start storing scheduled user assessments on a different compartment, first call the operation ListUserAssessments with
+     * the filters \"type = save_schedule\". That call returns the scheduleAssessmentId. Then call
+     * ChangeUserAssessmentCompartment with the scheduleAssessmentId. The existing saved user assessments created per the schedule
+     * are not be moved. However, all new saves will be associated with the new compartment.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/ChangeUserAssessmentCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeUserAssessmentCompartment API.
+     */
+    ChangeUserAssessmentCompartmentResponse changeUserAssessmentCompartment(
+            ChangeUserAssessmentCompartmentRequest request);
+
+    /**
+     * Compares two security assessments. For this comparison, a security assessment can be a saved assessment, a latest assessment, or a baseline assessment.
+     * For example, you can compare saved assessment or a latest assessment against a baseline.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/CompareSecurityAssessmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CompareSecurityAssessment API.
+     */
+    CompareSecurityAssessmentResponse compareSecurityAssessment(
+            CompareSecurityAssessmentRequest request);
+
+    /**
+     * Compares two user assessments. For this comparison, a user assessment can be a saved, a latest assessment, or a baseline.
+     * As an example, it can be used to compare a user assessment saved or a latest assessment with a baseline.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/CompareUserAssessmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CompareUserAssessment API.
+     */
+    CompareUserAssessmentResponse compareUserAssessment(CompareUserAssessmentRequest request);
 
     /**
      * Creates a new Data Safe private endpoint.
@@ -113,6 +170,20 @@ public interface DataSafe extends AutoCloseable {
     CreateOnPremConnectorResponse createOnPremConnector(CreateOnPremConnectorRequest request);
 
     /**
+     * Creates a new saved security assessment for one or multiple targets in a compartment. When this operation is performed,
+     * it will save the latest assessments in the specified compartment. If a schedule is passed, it will persist the latest assessments,
+     * at the defined date and time, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/CreateSecurityAssessmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateSecurityAssessment API.
+     */
+    CreateSecurityAssessmentResponse createSecurityAssessment(
+            CreateSecurityAssessmentRequest request);
+
+    /**
      * Registers the specified database with Data Safe and creates a Data Safe target database in the Data Safe Console.
      *
      * @param request The request object containing the details to send
@@ -122,6 +193,19 @@ public interface DataSafe extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/CreateTargetDatabaseExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateTargetDatabase API.
      */
     CreateTargetDatabaseResponse createTargetDatabase(CreateTargetDatabaseRequest request);
+
+    /**
+     * Creates a new saved user assessment for one or multiple targets in a compartment. It saves the latest assessments in the
+     * specified compartment. If a scheduled is passed in, this operation persists the latest assessments that exist at the defined
+     * date and time, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/CreateUserAssessmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateUserAssessment API.
+     */
+    CreateUserAssessmentResponse createUserAssessment(CreateUserAssessmentRequest request);
 
     /**
      * Deactivates a target database in Data Safe.
@@ -157,6 +241,21 @@ public interface DataSafe extends AutoCloseable {
     DeleteOnPremConnectorResponse deleteOnPremConnector(DeleteOnPremConnectorRequest request);
 
     /**
+     * Deletes the specified saved security assessment or schedule. To delete a security assessment schedule,
+     * first call the operation ListSecurityAssessments with filters \"type = save_schedule\".
+     * That operation returns the scheduleAssessmentId. Then, call DeleteSecurityAssessment with the scheduleAssessmentId.
+     * If the assessment being deleted is the baseline for that compartment, then it will impact all baselines in the compartment.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/DeleteSecurityAssessmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteSecurityAssessment API.
+     */
+    DeleteSecurityAssessmentResponse deleteSecurityAssessment(
+            DeleteSecurityAssessmentRequest request);
+
+    /**
      * Deregisters the specified database from Data Safe and removes the target database from the Data Safe Console.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -165,6 +264,20 @@ public interface DataSafe extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/DeleteTargetDatabaseExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteTargetDatabase API.
      */
     DeleteTargetDatabaseResponse deleteTargetDatabase(DeleteTargetDatabaseRequest request);
+
+    /**
+     * Deletes the specified saved user assessment or schedule. To delete a user assessment schedule, first call the operation
+     * ListUserAssessments with filters \"type = save_schedule\".
+     * That call returns the scheduleAssessmentId. Then call DeleteUserAssessment with the scheduleAssessmentId.
+     * If the assessment being deleted is the baseline for that compartment, then it will impact all baselines in the compartment.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/DeleteUserAssessmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteUserAssessment API.
+     */
+    DeleteUserAssessmentResponse deleteUserAssessment(DeleteUserAssessmentRequest request);
 
     /**
      * Downloads the privilege script to grant/revoke required roles from the Data Safe account on the target database.
@@ -176,6 +289,32 @@ public interface DataSafe extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/DownloadPrivilegeScriptExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DownloadPrivilegeScript API.
      */
     DownloadPrivilegeScriptResponse downloadPrivilegeScript(DownloadPrivilegeScriptRequest request);
+
+    /**
+     * Downloads the report of the specified security assessment. To download the security assessment report, it needs to be generated first.
+     * Please use GenerateSecurityAssessmentReport to generate a downloadable report in the preferred format (PDF, XLS).
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/DownloadSecurityAssessmentReportExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DownloadSecurityAssessmentReport API.
+     */
+    DownloadSecurityAssessmentReportResponse downloadSecurityAssessmentReport(
+            DownloadSecurityAssessmentReportRequest request);
+
+    /**
+     * Downloads the report of the specified user assessment. To download the user assessment report, it needs to be generated first.
+     * Please use GenerateUserAssessmentReport to generate a downloadable report in the preferred format (PDF, XLS).
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/DownloadUserAssessmentReportExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DownloadUserAssessmentReport API.
+     */
+    DownloadUserAssessmentReportResponse downloadUserAssessmentReport(
+            DownloadUserAssessmentReportRequest request);
 
     /**
      * Enables Data Safe in the tenancy and region.
@@ -200,6 +339,32 @@ public interface DataSafe extends AutoCloseable {
      */
     GenerateOnPremConnectorConfigurationResponse generateOnPremConnectorConfiguration(
             GenerateOnPremConnectorConfigurationRequest request);
+
+    /**
+     * Generates the report of the specified security assessment. You can get the report in PDF or XLS format.
+     * After generating the report, use DownloadSecurityAssessmentReport to download it in the preferred format.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/GenerateSecurityAssessmentReportExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GenerateSecurityAssessmentReport API.
+     */
+    GenerateSecurityAssessmentReportResponse generateSecurityAssessmentReport(
+            GenerateSecurityAssessmentReportRequest request);
+
+    /**
+     * Generates the report of the specified user assessment. The report is available in PDF or XLS format.
+     * After generating the report, use DownloadUserAssessmentReport to download it in the preferred format.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/GenerateUserAssessmentReportExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GenerateUserAssessmentReport API.
+     */
+    GenerateUserAssessmentReportResponse generateUserAssessmentReport(
+            GenerateUserAssessmentReportRequest request);
 
     /**
      * Gets the details of the Data Safe configuration.
@@ -234,6 +399,27 @@ public interface DataSafe extends AutoCloseable {
     GetOnPremConnectorResponse getOnPremConnector(GetOnPremConnectorRequest request);
 
     /**
+     * Gets the details of the specified security assessment.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/GetSecurityAssessmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetSecurityAssessment API.
+     */
+    GetSecurityAssessmentResponse getSecurityAssessment(GetSecurityAssessmentRequest request);
+
+    /**
+     * Gets the details of the comparison report on the security assessments submitted for comparison.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/GetSecurityAssessmentComparisonExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetSecurityAssessmentComparison API.
+     */
+    GetSecurityAssessmentComparisonResponse getSecurityAssessmentComparison(
+            GetSecurityAssessmentComparisonRequest request);
+
+    /**
      * Returns the details of the specified Data Safe target database.
      *
      * @param request The request object containing the details to send
@@ -243,6 +429,27 @@ public interface DataSafe extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/GetTargetDatabaseExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetTargetDatabase API.
      */
     GetTargetDatabaseResponse getTargetDatabase(GetTargetDatabaseRequest request);
+
+    /**
+     * Gets a user assessment by identifier.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/GetUserAssessmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetUserAssessment API.
+     */
+    GetUserAssessmentResponse getUserAssessment(GetUserAssessmentRequest request);
+
+    /**
+     * Gets the details of the comparison report for the user assessments provided.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/GetUserAssessmentComparisonExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetUserAssessmentComparison API.
+     */
+    GetUserAssessmentComparisonResponse getUserAssessmentComparison(
+            GetUserAssessmentComparisonRequest request);
 
     /**
      * Gets the details of the specified work request.
@@ -267,6 +474,31 @@ public interface DataSafe extends AutoCloseable {
             ListDataSafePrivateEndpointsRequest request);
 
     /**
+     * List all the findings from all the targets in the specified assessment.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/ListFindingsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListFindings API.
+     */
+    ListFindingsResponse listFindings(ListFindingsRequest request);
+
+    /**
+     * Gets a list of grants for a particular user in the specified user assessment. A user grant contains details such as the
+     * privilege name, type, category, and depth level. The depth level indicates how deep in the hierarchy of roles granted to
+     * roles a privilege grant is. The userKey in this operation is a system-generated identifier. Perform the operation ListUsers
+     * to get the userKey for a particular user.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/ListGrantsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListGrants API.
+     */
+    ListGrantsResponse listGrants(ListGrantsRequest request);
+
+    /**
      * Gets a list of on-premises connectors.
      *
      * @param request The request object containing the details to send
@@ -278,6 +510,31 @@ public interface DataSafe extends AutoCloseable {
     ListOnPremConnectorsResponse listOnPremConnectors(ListOnPremConnectorsRequest request);
 
     /**
+     * Gets a list of security assessments.
+     * <p>
+     * The ListSecurityAssessments operation returns only the assessments in the specified `compartmentId`.
+     * The list does not include any subcompartments of the compartmentId passed.
+     * <p>
+     * The parameter `accessLevel` specifies whether to return only those compartments for which the
+     * requestor has INSPECT permissions on at least one resource directly
+     * or indirectly (ACCESSIBLE) (the resource can be in a subcompartment) or to return Not Authorized if
+     * Principal doesn't have access to even one of the child compartments. This is valid only when
+     * `compartmentIdInSubtree` is set to `true`.
+     * <p>
+     * The parameter `compartmentIdInSubtree` applies when you perform ListSecurityAssessments on the
+     * `compartmentId` passed and when it is set to true, the entire hierarchy of compartments can be returned.
+     * To get a full list of all compartments and subcompartments in the tenancy (root compartment),
+     * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/ListSecurityAssessmentsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListSecurityAssessments API.
+     */
+    ListSecurityAssessmentsResponse listSecurityAssessments(ListSecurityAssessmentsRequest request);
+
+    /**
      * Returns the list of registered target databases in Data Safe.
      *
      * @param request The request object containing the details to send
@@ -287,6 +544,70 @@ public interface DataSafe extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/ListTargetDatabasesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListTargetDatabases API.
      */
     ListTargetDatabasesResponse listTargetDatabases(ListTargetDatabasesRequest request);
+
+    /**
+     * Gets a list of aggregated user details from the specified user assessment. This provides information about the overall state
+     * of database user security.  For example, the user details include how many users have the DBA role and how many users are in
+     * the critical category. This data is especially useful content for dashboards or to support analytics.
+     * <p>
+     * When you perform the ListUserAnalytics operation, if the parameter compartmentIdInSubtree is set to \"true,\" and if the
+     * parameter accessLevel is set to ACCESSIBLE, then the operation returns compartments in which the requestor has INSPECT
+     * permissions on at least one resource, directly or indirectly (in subcompartments). If the operation is performed at the
+     * root compartment. If the requestor does not have access to at least one subcompartment of the compartment specified by
+     * compartmentId, then \"Not Authorized\" is returned.
+     * <p>
+     * The parameter compartmentIdInSubtree applies when you perform ListUserAnalytics on the compartmentId passed and when it is
+     * set to true, the entire hierarchy of compartments can be returned.
+     * <p>
+     * To use ListUserAnalytics to get a full list of all compartments and subcompartments in the tenancy from the root compartment,
+     * set the parameter compartmentIdInSubtree to true and accessLevel to ACCESSIBLE.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/ListUserAnalyticsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListUserAnalytics API.
+     */
+    ListUserAnalyticsResponse listUserAnalytics(ListUserAnalyticsRequest request);
+
+    /**
+     * Gets a list of user assessments.
+     * <p>
+     * The ListUserAssessments operation returns only the assessments in the specified `compartmentId`.
+     * The list does not include any subcompartments of the compartmentId passed.
+     * <p>
+     * The parameter `accessLevel` specifies whether to return only those compartments for which the
+     * requestor has INSPECT permissions on at least one resource directly
+     * or indirectly (ACCESSIBLE) (the resource can be in a subcompartment) or to return Not Authorized if
+     * Principal doesn't have access to even one of the child compartments. This is valid only when
+     * `compartmentIdInSubtree` is set to `true`.
+     * <p>
+     * The parameter `compartmentIdInSubtree` applies when you perform ListUserAssessments on the
+     * `compartmentId` passed and when it is set to true, the entire hierarchy of compartments can be returned.
+     * To get a full list of all compartments and subcompartments in the tenancy (root compartment),
+     * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/ListUserAssessmentsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListUserAssessments API.
+     */
+    ListUserAssessmentsResponse listUserAssessments(ListUserAssessmentsRequest request);
+
+    /**
+     * Gets a list of users of the specified user assessment. The result contains the database user details for each user, such
+     * as user type, account status, last login time, user creation time, authentication type, user profile, and the date and time
+     * of the latest password change. It also contains the user category derived from these user details as well as privileges
+     * granted to each user.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/ListUsersExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListUsers API.
+     */
+    ListUsersResponse listUsers(ListUsersRequest request);
 
     /**
      * Gets a list of errors for the specified work request.
@@ -322,6 +643,80 @@ public interface DataSafe extends AutoCloseable {
     ListWorkRequestsResponse listWorkRequests(ListWorkRequestsRequest request);
 
     /**
+     * Runs a security assessment, refreshes the latest assessment, and saves it for future reference.
+     * The assessment runs with a securityAssessmentId of type LATEST. Before you start, first call the ListSecurityAssessments operation with filter \"type = latest\" to get the security assessment id for the target's latest assessment.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/RefreshSecurityAssessmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RefreshSecurityAssessment API.
+     */
+    RefreshSecurityAssessmentResponse refreshSecurityAssessment(
+            RefreshSecurityAssessmentRequest request);
+
+    /**
+     * Refreshes the latest assessment and saves it for future reference. This operation runs with a userAssessmentId of type LATEST.
+     * Before you start, first call the ListUserAssessments operation with filter \"type = latest\" to get the user assessment ID for
+     * the target's latest assessment.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/RefreshUserAssessmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RefreshUserAssessment API.
+     */
+    RefreshUserAssessmentResponse refreshUserAssessment(RefreshUserAssessmentRequest request);
+
+    /**
+     * Sets the saved security assessment as the baseline in the compartment where the the specified assessment resides. The security assessment needs to be of type 'SAVED'.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/SetSecurityAssessmentBaselineExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use SetSecurityAssessmentBaseline API.
+     */
+    SetSecurityAssessmentBaselineResponse setSecurityAssessmentBaseline(
+            SetSecurityAssessmentBaselineRequest request);
+
+    /**
+     * Sets the saved user assessment as the baseline in the compartment where the specified assessment resides. The user assessment needs to be of type 'SAVED'.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/SetUserAssessmentBaselineExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use SetUserAssessmentBaseline API.
+     */
+    SetUserAssessmentBaselineResponse setUserAssessmentBaseline(
+            SetUserAssessmentBaselineRequest request);
+
+    /**
+     * Removes the baseline setting for the saved security assessment. The saved security assessment is no longer considered a baseline.
+     * Sets the if-match parameter to the value of the etag from a previous GET or POST response for that resource.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/UnsetSecurityAssessmentBaselineExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UnsetSecurityAssessmentBaseline API.
+     */
+    UnsetSecurityAssessmentBaselineResponse unsetSecurityAssessmentBaseline(
+            UnsetSecurityAssessmentBaselineRequest request);
+
+    /**
+     * Removes the baseline setting for the saved user assessment. The saved user assessment is no longer considered a baseline.
+     * Sets the if-match parameter to the value of the etag from a previous GET or POST response for that resource.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/UnsetUserAssessmentBaselineExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UnsetUserAssessmentBaseline API.
+     */
+    UnsetUserAssessmentBaselineResponse unsetUserAssessmentBaseline(
+            UnsetUserAssessmentBaselineRequest request);
+
+    /**
      * Updates one or more attributes of the specified Data Safe private endpoint.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -355,6 +750,18 @@ public interface DataSafe extends AutoCloseable {
             UpdateOnPremConnectorWalletRequest request);
 
     /**
+     * Updates one or more attributes of the specified security assessment. This operation allows to update the security assessment displayName, description, or schedule.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/UpdateSecurityAssessmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateSecurityAssessment API.
+     */
+    UpdateSecurityAssessmentResponse updateSecurityAssessment(
+            UpdateSecurityAssessmentRequest request);
+
+    /**
      * Updates one or more attributes of the specified Data Safe target database.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -363,6 +770,17 @@ public interface DataSafe extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/UpdateTargetDatabaseExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateTargetDatabase API.
      */
     UpdateTargetDatabaseResponse updateTargetDatabase(UpdateTargetDatabaseRequest request);
+
+    /**
+     * Updates one or more attributes of the specified user assessment. This operation allows to update the user assessment displayName, description, or schedule.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/UpdateUserAssessmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateUserAssessment API.
+     */
+    UpdateUserAssessmentResponse updateUserAssessment(UpdateUserAssessmentRequest request);
 
     /**
      * Gets the pre-configured waiters available for resources for this service.

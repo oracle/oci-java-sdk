@@ -93,7 +93,7 @@ public class SummarizeInstallationUsageConverter {
                             target,
                             "fields",
                             request.getFields(),
-                            com.oracle.bmc.util.internal.CollectionFormatType.CommaSeparated);
+                            com.oracle.bmc.util.internal.CollectionFormatType.Multi);
         }
 
         if (request.getTimeStart() != null) {
@@ -142,6 +142,15 @@ public class SummarizeInstallationUsageConverter {
                             "sortBy",
                             com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
                                     request.getSortBy().getValue()));
+        }
+
+        if (request.getOsFamily() != null) {
+            target =
+                    com.oracle.bmc.util.internal.HttpUtils.encodeCollectionFormatQueryParam(
+                            target,
+                            "osFamily",
+                            request.getOsFamily(),
+                            com.oracle.bmc.util.internal.CollectionFormatType.Multi);
         }
 
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib = target.request();

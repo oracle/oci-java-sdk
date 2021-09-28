@@ -85,7 +85,7 @@ public class AlarmHistoryEntry {
     }
 
     /**
-     * Description for this alarm history entry. Avoid entering confidential information.
+     * Description for this alarm history entry.
      * <p>
      * Example 1 - alarm state history entry: {@code The alarm state is FIRING}
      * <p>

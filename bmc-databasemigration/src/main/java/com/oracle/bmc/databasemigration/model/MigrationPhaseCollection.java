@@ -5,6 +5,7 @@
 package com.oracle.bmc.databasemigration.model;
 
 /**
+ * Note: Deprecated. Use the new resource model APIs instead.
  * Results of a Migration Phase search. Contains a collection of valid ODMS Job Phases.
  *
  * <br/>

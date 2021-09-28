@@ -9,7 +9,7 @@ import com.oracle.bmc.vault.model.*;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180608")
 @lombok.Builder(builderClassName = "Builder")
 @lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode
+@lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class UpdateSecretResponse extends com.oracle.bmc.responses.BmcResponse {
     /**

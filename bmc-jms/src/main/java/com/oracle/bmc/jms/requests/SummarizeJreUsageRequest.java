@@ -58,12 +58,12 @@ public class SummarizeJreUsageRequest extends com.oracle.bmc.requests.BmcRequest
     private java.util.List<com.oracle.bmc.jms.model.SummarizeJreUsageFields> fields;
 
     /**
-     * The start of the time period during which resources are searched (formatted according to RFC3339).
+     * The start of the time period during which resources are searched (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
      */
     private java.util.Date timeStart;
 
     /**
-     * The end of the time period during which resources are searched (formatted according to RFC3339).
+     * The end of the time period during which resources are searched (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
      */
     private java.util.Date timeEnd;
 
@@ -87,7 +87,8 @@ public class SummarizeJreUsageRequest extends com.oracle.bmc.requests.BmcRequest
      * Default order for _timeFirstSeen_, _timeLastSeen_, and _version_ is **descending**.
      * Default order for _timeFirstSeen_, _timeLastSeen_, _version_, _approximateInstallationCount_,
      * _approximateApplicationCount_ and _approximateManagedInstanceCount_  is **descending**.
-     * Default order for _distribution_ and _vendor_ is **ascending**. If no value is specified _timeLastSeen_ is default.
+     * Default order for _distribution_, _vendor_, and _osName_ is **ascending**.
+     * If no value is specified _timeLastSeen_ is default.
      *
      */
     private com.oracle.bmc.jms.model.JreSortBy sortBy;
@@ -96,6 +97,11 @@ public class SummarizeJreUsageRequest extends com.oracle.bmc.requests.BmcRequest
      * The client request ID for tracing.
      */
     private String opcRequestId;
+
+    /**
+     * The operating system type.
+     */
+    private java.util.List<com.oracle.bmc.jms.model.OsFamily> osFamily;
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -128,6 +134,25 @@ public class SummarizeJreUsageRequest extends com.oracle.bmc.requests.BmcRequest
          */
         public Builder fields(SummarizeJreUsageFields singularValue) {
             return this.fields(java.util.Arrays.asList(singularValue));
+        }
+
+        private java.util.List<com.oracle.bmc.jms.model.OsFamily> osFamily = null;
+
+        /**
+         * The operating system type.
+         * @return this builder instance
+         */
+        public Builder osFamily(java.util.List<com.oracle.bmc.jms.model.OsFamily> osFamily) {
+            this.osFamily = osFamily;
+            return this;
+        }
+
+        /**
+         * Singular setter. The operating system type.
+         * @return this builder instance
+         */
+        public Builder osFamily(OsFamily singularValue) {
+            return this.osFamily(java.util.Arrays.asList(singularValue));
         }
 
         /**
@@ -172,6 +197,7 @@ public class SummarizeJreUsageRequest extends com.oracle.bmc.requests.BmcRequest
             sortOrder(o.getSortOrder());
             sortBy(o.getSortBy());
             opcRequestId(o.getOpcRequestId());
+            osFamily(o.getOsFamily());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;

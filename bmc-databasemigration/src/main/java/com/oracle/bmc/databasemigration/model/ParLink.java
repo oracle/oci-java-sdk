@@ -5,6 +5,7 @@
 package com.oracle.bmc.databasemigration.model;
 
 /**
+ * Note: Deprecated. Use the new resource model APIs instead.
  * Pre-Authenticated Request Link for ODMS Agent log use.
  *
  * <br/>

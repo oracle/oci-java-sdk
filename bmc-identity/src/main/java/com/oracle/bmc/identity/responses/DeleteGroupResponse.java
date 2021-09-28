@@ -9,7 +9,7 @@ import com.oracle.bmc.identity.model.*;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @lombok.Builder(builderClassName = "Builder")
 @lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode
+@lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class DeleteGroupResponse extends com.oracle.bmc.responses.BmcResponse {
     /**

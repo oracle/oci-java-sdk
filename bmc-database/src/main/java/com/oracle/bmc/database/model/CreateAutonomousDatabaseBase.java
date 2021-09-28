@@ -400,6 +400,12 @@ public class CreateAutonomousDatabaseBase {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("customerContacts")
     java.util.List<CustomerContact> customerContacts;
+
+    /**
+     * Indicates whether the Autonomous Database requires mTLS connections.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isMtlsConnectionRequired")
+    Boolean isMtlsConnectionRequired;
     /**
      * The maintenance schedule type of the Autonomous Database on shared Exadata infrastructure. The EARLY maintenance schedule of this Autonomous Database
      * follows a schedule that applies patches prior to the REGULAR schedule.The REGULAR maintenance schedule of this Autonomous Database follows the normal cycle.

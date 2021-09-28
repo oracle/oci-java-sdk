@@ -22,7 +22,7 @@ public class CreateAutonomousContainerDatabaseRequest
                 com.oracle.bmc.database.model.CreateAutonomousContainerDatabaseDetails> {
 
     /**
-     * Request to create an Autonomous Container Database in a specified Autonomous Exadata Infrastructure.
+     * Request to create an Autonomous Container Database in a specified Autonomous Exadata Infrastructure or in Autonomous VM Cluster.
      */
     private com.oracle.bmc.database.model.CreateAutonomousContainerDatabaseDetails
             createAutonomousContainerDatabaseDetails;

@@ -9,7 +9,7 @@ import com.oracle.bmc.logging.model.*;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200531")
 @lombok.Builder(builderClassName = "Builder")
 @lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode
+@lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class GetLogGroupResponse extends com.oracle.bmc.responses.BmcResponse {
     /**

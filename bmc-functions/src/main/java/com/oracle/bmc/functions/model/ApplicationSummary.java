@@ -72,6 +72,15 @@ public class ApplicationSummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("networkSecurityGroupIds")
+        private java.util.List<String> networkSecurityGroupIds;
+
+        public Builder networkSecurityGroupIds(java.util.List<String> networkSecurityGroupIds) {
+            this.networkSecurityGroupIds = networkSecurityGroupIds;
+            this.__explicitlySet__.add("networkSecurityGroupIds");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("traceConfig")
         private ApplicationTraceConfig traceConfig;
 
@@ -118,6 +127,15 @@ public class ApplicationSummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("imagePolicyConfig")
+        private ImagePolicyConfig imagePolicyConfig;
+
+        public Builder imagePolicyConfig(ImagePolicyConfig imagePolicyConfig) {
+            this.imagePolicyConfig = imagePolicyConfig;
+            this.__explicitlySet__.add("imagePolicyConfig");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -129,11 +147,13 @@ public class ApplicationSummary {
                             displayName,
                             lifecycleState,
                             subnetIds,
+                            networkSecurityGroupIds,
                             traceConfig,
                             freeformTags,
                             definedTags,
                             timeCreated,
-                            timeUpdated);
+                            timeUpdated,
+                            imagePolicyConfig);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -146,11 +166,13 @@ public class ApplicationSummary {
                             .displayName(o.getDisplayName())
                             .lifecycleState(o.getLifecycleState())
                             .subnetIds(o.getSubnetIds())
+                            .networkSecurityGroupIds(o.getNetworkSecurityGroupIds())
                             .traceConfig(o.getTraceConfig())
                             .freeformTags(o.getFreeformTags())
                             .definedTags(o.getDefinedTags())
                             .timeCreated(o.getTimeCreated())
-                            .timeUpdated(o.getTimeUpdated());
+                            .timeUpdated(o.getTimeUpdated())
+                            .imagePolicyConfig(o.getImagePolicyConfig());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -199,6 +221,13 @@ public class ApplicationSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("subnetIds")
     java.util.List<String> subnetIds;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of the Network Security Groups to add the application to.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("networkSecurityGroupIds")
+    java.util.List<String> networkSecurityGroupIds;
+
     @com.fasterxml.jackson.annotation.JsonProperty("traceConfig")
     ApplicationTraceConfig traceConfig;
 
@@ -239,6 +268,9 @@ public class ApplicationSummary {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     java.util.Date timeUpdated;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("imagePolicyConfig")
+    ImagePolicyConfig imagePolicyConfig;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

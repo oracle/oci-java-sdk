@@ -9,7 +9,7 @@ import com.oracle.bmc.announcementsservice.model.*;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 0.0.1")
 @lombok.Builder(builderClassName = "Builder")
 @lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode
+@lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class ListAnnouncementsPreferencesResponse extends com.oracle.bmc.responses.BmcResponse {
     /**

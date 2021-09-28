@@ -9,7 +9,7 @@ import com.oracle.bmc.monitoring.model.*;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180401")
 @lombok.Builder(builderClassName = "Builder")
 @lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode
+@lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class ListMetricsResponse extends com.oracle.bmc.responses.BmcResponse {
     /**

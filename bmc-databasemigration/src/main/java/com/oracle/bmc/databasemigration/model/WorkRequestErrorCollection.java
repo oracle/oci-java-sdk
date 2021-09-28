@@ -5,6 +5,7 @@
 package com.oracle.bmc.databasemigration.model;
 
 /**
+ * Note: Deprecated. Use the new resource model APIs instead.
  * Results of a Work Request search. Contains WorkRequestError items.
  *
  * <br/>

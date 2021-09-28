@@ -530,6 +530,59 @@ public class DataSafeAsyncClient implements DataSafeAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<ChangeSecurityAssessmentCompartmentResponse>
+            changeSecurityAssessmentCompartment(
+                    ChangeSecurityAssessmentCompartmentRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeSecurityAssessmentCompartmentRequest,
+                                    ChangeSecurityAssessmentCompartmentResponse>
+                            handler) {
+        LOG.trace("Called async changeSecurityAssessmentCompartment");
+        final ChangeSecurityAssessmentCompartmentRequest interceptedRequest =
+                ChangeSecurityAssessmentCompartmentConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangeSecurityAssessmentCompartmentConverter.fromRequest(
+                        client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ChangeSecurityAssessmentCompartmentResponse>
+                transformer = ChangeSecurityAssessmentCompartmentConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        ChangeSecurityAssessmentCompartmentRequest,
+                        ChangeSecurityAssessmentCompartmentResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ChangeSecurityAssessmentCompartmentRequest,
+                                ChangeSecurityAssessmentCompartmentResponse>,
+                        java.util.concurrent.Future<ChangeSecurityAssessmentCompartmentResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getChangeSecurityAssessmentCompartmentDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ChangeSecurityAssessmentCompartmentRequest,
+                    ChangeSecurityAssessmentCompartmentResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<ChangeTargetDatabaseCompartmentResponse>
             changeTargetDatabaseCompartment(
                     ChangeTargetDatabaseCompartmentRequest request,
@@ -569,6 +622,153 @@ public class DataSafeAsyncClient implements DataSafeAsync {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     ChangeTargetDatabaseCompartmentRequest,
                     ChangeTargetDatabaseCompartmentResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ChangeUserAssessmentCompartmentResponse>
+            changeUserAssessmentCompartment(
+                    ChangeUserAssessmentCompartmentRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeUserAssessmentCompartmentRequest,
+                                    ChangeUserAssessmentCompartmentResponse>
+                            handler) {
+        LOG.trace("Called async changeUserAssessmentCompartment");
+        final ChangeUserAssessmentCompartmentRequest interceptedRequest =
+                ChangeUserAssessmentCompartmentConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangeUserAssessmentCompartmentConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ChangeUserAssessmentCompartmentResponse>
+                transformer = ChangeUserAssessmentCompartmentConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        ChangeUserAssessmentCompartmentRequest,
+                        ChangeUserAssessmentCompartmentResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ChangeUserAssessmentCompartmentRequest,
+                                ChangeUserAssessmentCompartmentResponse>,
+                        java.util.concurrent.Future<ChangeUserAssessmentCompartmentResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getChangeUserAssessmentCompartmentDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ChangeUserAssessmentCompartmentRequest,
+                    ChangeUserAssessmentCompartmentResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<CompareSecurityAssessmentResponse> compareSecurityAssessment(
+            CompareSecurityAssessmentRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            CompareSecurityAssessmentRequest, CompareSecurityAssessmentResponse>
+                    handler) {
+        LOG.trace("Called async compareSecurityAssessment");
+        final CompareSecurityAssessmentRequest interceptedRequest =
+                CompareSecurityAssessmentConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CompareSecurityAssessmentConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, CompareSecurityAssessmentResponse>
+                transformer = CompareSecurityAssessmentConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        CompareSecurityAssessmentRequest, CompareSecurityAssessmentResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CompareSecurityAssessmentRequest,
+                                CompareSecurityAssessmentResponse>,
+                        java.util.concurrent.Future<CompareSecurityAssessmentResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCompareSecurityAssessmentDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CompareSecurityAssessmentRequest, CompareSecurityAssessmentResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<CompareUserAssessmentResponse> compareUserAssessment(
+            CompareUserAssessmentRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            CompareUserAssessmentRequest, CompareUserAssessmentResponse>
+                    handler) {
+        LOG.trace("Called async compareUserAssessment");
+        final CompareUserAssessmentRequest interceptedRequest =
+                CompareUserAssessmentConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CompareUserAssessmentConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, CompareUserAssessmentResponse>
+                transformer = CompareUserAssessmentConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        CompareUserAssessmentRequest, CompareUserAssessmentResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CompareUserAssessmentRequest, CompareUserAssessmentResponse>,
+                        java.util.concurrent.Future<CompareUserAssessmentResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCompareUserAssessmentDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CompareUserAssessmentRequest, CompareUserAssessmentResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -679,6 +879,53 @@ public class DataSafeAsyncClient implements DataSafeAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<CreateSecurityAssessmentResponse> createSecurityAssessment(
+            CreateSecurityAssessmentRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            CreateSecurityAssessmentRequest, CreateSecurityAssessmentResponse>
+                    handler) {
+        LOG.trace("Called async createSecurityAssessment");
+        final CreateSecurityAssessmentRequest interceptedRequest =
+                CreateSecurityAssessmentConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateSecurityAssessmentConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, CreateSecurityAssessmentResponse>
+                transformer = CreateSecurityAssessmentConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        CreateSecurityAssessmentRequest, CreateSecurityAssessmentResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CreateSecurityAssessmentRequest, CreateSecurityAssessmentResponse>,
+                        java.util.concurrent.Future<CreateSecurityAssessmentResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateSecurityAssessmentDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CreateSecurityAssessmentRequest, CreateSecurityAssessmentResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateTargetDatabaseResponse> createTargetDatabase(
             CreateTargetDatabaseRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -713,6 +960,53 @@ public class DataSafeAsyncClient implements DataSafeAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     CreateTargetDatabaseRequest, CreateTargetDatabaseResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateUserAssessmentResponse> createUserAssessment(
+            CreateUserAssessmentRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            CreateUserAssessmentRequest, CreateUserAssessmentResponse>
+                    handler) {
+        LOG.trace("Called async createUserAssessment");
+        final CreateUserAssessmentRequest interceptedRequest =
+                CreateUserAssessmentConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateUserAssessmentConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, CreateUserAssessmentResponse>
+                transformer = CreateUserAssessmentConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        CreateUserAssessmentRequest, CreateUserAssessmentResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CreateUserAssessmentRequest, CreateUserAssessmentResponse>,
+                        java.util.concurrent.Future<CreateUserAssessmentResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateUserAssessmentDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CreateUserAssessmentRequest, CreateUserAssessmentResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -853,6 +1147,47 @@ public class DataSafeAsyncClient implements DataSafeAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteSecurityAssessmentResponse> deleteSecurityAssessment(
+            DeleteSecurityAssessmentRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            DeleteSecurityAssessmentRequest, DeleteSecurityAssessmentResponse>
+                    handler) {
+        LOG.trace("Called async deleteSecurityAssessment");
+        final DeleteSecurityAssessmentRequest interceptedRequest =
+                DeleteSecurityAssessmentConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteSecurityAssessmentConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, DeleteSecurityAssessmentResponse>
+                transformer = DeleteSecurityAssessmentConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        DeleteSecurityAssessmentRequest, DeleteSecurityAssessmentResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DeleteSecurityAssessmentRequest, DeleteSecurityAssessmentResponse>,
+                        java.util.concurrent.Future<DeleteSecurityAssessmentResponse>>
+                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DeleteSecurityAssessmentRequest, DeleteSecurityAssessmentResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteTargetDatabaseResponse> deleteTargetDatabase(
             DeleteTargetDatabaseRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -881,6 +1216,47 @@ public class DataSafeAsyncClient implements DataSafeAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     DeleteTargetDatabaseRequest, DeleteTargetDatabaseResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteUserAssessmentResponse> deleteUserAssessment(
+            DeleteUserAssessmentRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            DeleteUserAssessmentRequest, DeleteUserAssessmentResponse>
+                    handler) {
+        LOG.trace("Called async deleteUserAssessment");
+        final DeleteUserAssessmentRequest interceptedRequest =
+                DeleteUserAssessmentConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteUserAssessmentConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, DeleteUserAssessmentResponse>
+                transformer = DeleteUserAssessmentConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        DeleteUserAssessmentRequest, DeleteUserAssessmentResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DeleteUserAssessmentRequest, DeleteUserAssessmentResponse>,
+                        java.util.concurrent.Future<DeleteUserAssessmentResponse>>
+                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DeleteUserAssessmentRequest, DeleteUserAssessmentResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -929,6 +1305,120 @@ public class DataSafeAsyncClient implements DataSafeAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     DownloadPrivilegeScriptRequest, DownloadPrivilegeScriptResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<DownloadSecurityAssessmentReportResponse>
+            downloadSecurityAssessmentReport(
+                    DownloadSecurityAssessmentReportRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    DownloadSecurityAssessmentReportRequest,
+                                    DownloadSecurityAssessmentReportResponse>
+                            handler) {
+        LOG.trace("Called async downloadSecurityAssessmentReport");
+        if (this.apacheConnectionClosingStrategy != null) {
+            LOG.warn(
+                    "ApacheConnectionClosingStrategy set to {}. For large streams with partial reads of stream, please use ImmediateClosingStrategy. "
+                            + "For small streams with partial reads of stream, please use GracefulClosingStrategy. More info in ApacheConnectorProperties",
+                    this.apacheConnectionClosingStrategy);
+        }
+        final DownloadSecurityAssessmentReportRequest interceptedRequest =
+                DownloadSecurityAssessmentReportConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DownloadSecurityAssessmentReportConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, DownloadSecurityAssessmentReportResponse>
+                transformer = DownloadSecurityAssessmentReportConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        DownloadSecurityAssessmentReportRequest,
+                        DownloadSecurityAssessmentReportResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DownloadSecurityAssessmentReportRequest,
+                                DownloadSecurityAssessmentReportResponse>,
+                        java.util.concurrent.Future<DownloadSecurityAssessmentReportResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getDownloadSecurityAssessmentReportDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DownloadSecurityAssessmentReportRequest,
+                    DownloadSecurityAssessmentReportResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<DownloadUserAssessmentReportResponse>
+            downloadUserAssessmentReport(
+                    DownloadUserAssessmentReportRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    DownloadUserAssessmentReportRequest,
+                                    DownloadUserAssessmentReportResponse>
+                            handler) {
+        LOG.trace("Called async downloadUserAssessmentReport");
+        if (this.apacheConnectionClosingStrategy != null) {
+            LOG.warn(
+                    "ApacheConnectionClosingStrategy set to {}. For large streams with partial reads of stream, please use ImmediateClosingStrategy. "
+                            + "For small streams with partial reads of stream, please use GracefulClosingStrategy. More info in ApacheConnectorProperties",
+                    this.apacheConnectionClosingStrategy);
+        }
+        final DownloadUserAssessmentReportRequest interceptedRequest =
+                DownloadUserAssessmentReportConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DownloadUserAssessmentReportConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, DownloadUserAssessmentReportResponse>
+                transformer = DownloadUserAssessmentReportConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        DownloadUserAssessmentReportRequest, DownloadUserAssessmentReportResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DownloadUserAssessmentReportRequest,
+                                DownloadUserAssessmentReportResponse>,
+                        java.util.concurrent.Future<DownloadUserAssessmentReportResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getDownloadUserAssessmentReportDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DownloadUserAssessmentReportRequest, DownloadUserAssessmentReportResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -1037,6 +1527,108 @@ public class DataSafeAsyncClient implements DataSafeAsync {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     GenerateOnPremConnectorConfigurationRequest,
                     GenerateOnPremConnectorConfigurationResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GenerateSecurityAssessmentReportResponse>
+            generateSecurityAssessmentReport(
+                    GenerateSecurityAssessmentReportRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    GenerateSecurityAssessmentReportRequest,
+                                    GenerateSecurityAssessmentReportResponse>
+                            handler) {
+        LOG.trace("Called async generateSecurityAssessmentReport");
+        final GenerateSecurityAssessmentReportRequest interceptedRequest =
+                GenerateSecurityAssessmentReportConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GenerateSecurityAssessmentReportConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, GenerateSecurityAssessmentReportResponse>
+                transformer = GenerateSecurityAssessmentReportConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        GenerateSecurityAssessmentReportRequest,
+                        GenerateSecurityAssessmentReportResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GenerateSecurityAssessmentReportRequest,
+                                GenerateSecurityAssessmentReportResponse>,
+                        java.util.concurrent.Future<GenerateSecurityAssessmentReportResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getGenerateSecurityAssessmentReportDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GenerateSecurityAssessmentReportRequest,
+                    GenerateSecurityAssessmentReportResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GenerateUserAssessmentReportResponse>
+            generateUserAssessmentReport(
+                    GenerateUserAssessmentReportRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    GenerateUserAssessmentReportRequest,
+                                    GenerateUserAssessmentReportResponse>
+                            handler) {
+        LOG.trace("Called async generateUserAssessmentReport");
+        final GenerateUserAssessmentReportRequest interceptedRequest =
+                GenerateUserAssessmentReportConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GenerateUserAssessmentReportConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, GenerateUserAssessmentReportResponse>
+                transformer = GenerateUserAssessmentReportConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        GenerateUserAssessmentReportRequest, GenerateUserAssessmentReportResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GenerateUserAssessmentReportRequest,
+                                GenerateUserAssessmentReportResponse>,
+                        java.util.concurrent.Future<GenerateUserAssessmentReportResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getGenerateUserAssessmentReportDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GenerateUserAssessmentReportRequest, GenerateUserAssessmentReportResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -1174,6 +1766,93 @@ public class DataSafeAsyncClient implements DataSafeAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<GetSecurityAssessmentResponse> getSecurityAssessment(
+            GetSecurityAssessmentRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetSecurityAssessmentRequest, GetSecurityAssessmentResponse>
+                    handler) {
+        LOG.trace("Called async getSecurityAssessment");
+        final GetSecurityAssessmentRequest interceptedRequest =
+                GetSecurityAssessmentConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetSecurityAssessmentConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, GetSecurityAssessmentResponse>
+                transformer = GetSecurityAssessmentConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        GetSecurityAssessmentRequest, GetSecurityAssessmentResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetSecurityAssessmentRequest, GetSecurityAssessmentResponse>,
+                        java.util.concurrent.Future<GetSecurityAssessmentResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetSecurityAssessmentRequest, GetSecurityAssessmentResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetSecurityAssessmentComparisonResponse>
+            getSecurityAssessmentComparison(
+                    GetSecurityAssessmentComparisonRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    GetSecurityAssessmentComparisonRequest,
+                                    GetSecurityAssessmentComparisonResponse>
+                            handler) {
+        LOG.trace("Called async getSecurityAssessmentComparison");
+        final GetSecurityAssessmentComparisonRequest interceptedRequest =
+                GetSecurityAssessmentComparisonConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetSecurityAssessmentComparisonConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, GetSecurityAssessmentComparisonResponse>
+                transformer = GetSecurityAssessmentComparisonConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        GetSecurityAssessmentComparisonRequest,
+                        GetSecurityAssessmentComparisonResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetSecurityAssessmentComparisonRequest,
+                                GetSecurityAssessmentComparisonResponse>,
+                        java.util.concurrent.Future<GetSecurityAssessmentComparisonResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetSecurityAssessmentComparisonRequest,
+                    GetSecurityAssessmentComparisonResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<GetTargetDatabaseResponse> getTargetDatabase(
             GetTargetDatabaseRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -1200,6 +1879,89 @@ public class DataSafeAsyncClient implements DataSafeAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     GetTargetDatabaseRequest, GetTargetDatabaseResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetUserAssessmentResponse> getUserAssessment(
+            GetUserAssessmentRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetUserAssessmentRequest, GetUserAssessmentResponse>
+                    handler) {
+        LOG.trace("Called async getUserAssessment");
+        final GetUserAssessmentRequest interceptedRequest =
+                GetUserAssessmentConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetUserAssessmentConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<javax.ws.rs.core.Response, GetUserAssessmentResponse>
+                transformer = GetUserAssessmentConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<GetUserAssessmentRequest, GetUserAssessmentResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetUserAssessmentRequest, GetUserAssessmentResponse>,
+                        java.util.concurrent.Future<GetUserAssessmentResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetUserAssessmentRequest, GetUserAssessmentResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetUserAssessmentComparisonResponse>
+            getUserAssessmentComparison(
+                    GetUserAssessmentComparisonRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    GetUserAssessmentComparisonRequest,
+                                    GetUserAssessmentComparisonResponse>
+                            handler) {
+        LOG.trace("Called async getUserAssessmentComparison");
+        final GetUserAssessmentComparisonRequest interceptedRequest =
+                GetUserAssessmentComparisonConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetUserAssessmentComparisonConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, GetUserAssessmentComparisonResponse>
+                transformer = GetUserAssessmentComparisonConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        GetUserAssessmentComparisonRequest, GetUserAssessmentComparisonResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetUserAssessmentComparisonRequest,
+                                GetUserAssessmentComparisonResponse>,
+                        java.util.concurrent.Future<GetUserAssessmentComparisonResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetUserAssessmentComparisonRequest, GetUserAssessmentComparisonResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -1296,6 +2058,81 @@ public class DataSafeAsyncClient implements DataSafeAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<ListFindingsResponse> listFindings(
+            ListFindingsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<ListFindingsRequest, ListFindingsResponse>
+                    handler) {
+        LOG.trace("Called async listFindings");
+        final ListFindingsRequest interceptedRequest =
+                ListFindingsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListFindingsConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<javax.ws.rs.core.Response, ListFindingsResponse>
+                transformer = ListFindingsConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<ListFindingsRequest, ListFindingsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListFindingsRequest, ListFindingsResponse>,
+                        java.util.concurrent.Future<ListFindingsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListFindingsRequest, ListFindingsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListGrantsResponse> listGrants(
+            ListGrantsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<ListGrantsRequest, ListGrantsResponse>
+                    handler) {
+        LOG.trace("Called async listGrants");
+        final ListGrantsRequest interceptedRequest = ListGrantsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListGrantsConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<javax.ws.rs.core.Response, ListGrantsResponse>
+                transformer = ListGrantsConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<ListGrantsRequest, ListGrantsResponse> handlerToUse =
+                handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListGrantsRequest, ListGrantsResponse>,
+                        java.util.concurrent.Future<ListGrantsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListGrantsRequest, ListGrantsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<ListOnPremConnectorsResponse> listOnPremConnectors(
             ListOnPremConnectorsRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -1337,6 +2174,47 @@ public class DataSafeAsyncClient implements DataSafeAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<ListSecurityAssessmentsResponse> listSecurityAssessments(
+            ListSecurityAssessmentsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListSecurityAssessmentsRequest, ListSecurityAssessmentsResponse>
+                    handler) {
+        LOG.trace("Called async listSecurityAssessments");
+        final ListSecurityAssessmentsRequest interceptedRequest =
+                ListSecurityAssessmentsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListSecurityAssessmentsConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ListSecurityAssessmentsResponse>
+                transformer = ListSecurityAssessmentsConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListSecurityAssessmentsRequest, ListSecurityAssessmentsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListSecurityAssessmentsRequest, ListSecurityAssessmentsResponse>,
+                        java.util.concurrent.Future<ListSecurityAssessmentsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListSecurityAssessmentsRequest, ListSecurityAssessmentsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<ListTargetDatabasesResponse> listTargetDatabases(
             ListTargetDatabasesRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -1365,6 +2243,122 @@ public class DataSafeAsyncClient implements DataSafeAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     ListTargetDatabasesRequest, ListTargetDatabasesResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListUserAnalyticsResponse> listUserAnalytics(
+            ListUserAnalyticsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListUserAnalyticsRequest, ListUserAnalyticsResponse>
+                    handler) {
+        LOG.trace("Called async listUserAnalytics");
+        final ListUserAnalyticsRequest interceptedRequest =
+                ListUserAnalyticsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListUserAnalyticsConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<javax.ws.rs.core.Response, ListUserAnalyticsResponse>
+                transformer = ListUserAnalyticsConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<ListUserAnalyticsRequest, ListUserAnalyticsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListUserAnalyticsRequest, ListUserAnalyticsResponse>,
+                        java.util.concurrent.Future<ListUserAnalyticsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListUserAnalyticsRequest, ListUserAnalyticsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListUserAssessmentsResponse> listUserAssessments(
+            ListUserAssessmentsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListUserAssessmentsRequest, ListUserAssessmentsResponse>
+                    handler) {
+        LOG.trace("Called async listUserAssessments");
+        final ListUserAssessmentsRequest interceptedRequest =
+                ListUserAssessmentsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListUserAssessmentsConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ListUserAssessmentsResponse>
+                transformer = ListUserAssessmentsConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListUserAssessmentsRequest, ListUserAssessmentsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListUserAssessmentsRequest, ListUserAssessmentsResponse>,
+                        java.util.concurrent.Future<ListUserAssessmentsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListUserAssessmentsRequest, ListUserAssessmentsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListUsersResponse> listUsers(
+            ListUsersRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<ListUsersRequest, ListUsersResponse>
+                    handler) {
+        LOG.trace("Called async listUsers");
+        final ListUsersRequest interceptedRequest = ListUsersConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListUsersConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<javax.ws.rs.core.Response, ListUsersResponse>
+                transformer = ListUsersConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<ListUsersRequest, ListUsersResponse> handlerToUse =
+                handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<ListUsersRequest, ListUsersResponse>,
+                        java.util.concurrent.Future<ListUsersResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListUsersRequest, ListUsersResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -1486,6 +2480,291 @@ public class DataSafeAsyncClient implements DataSafeAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     ListWorkRequestsRequest, ListWorkRequestsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<RefreshSecurityAssessmentResponse> refreshSecurityAssessment(
+            RefreshSecurityAssessmentRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            RefreshSecurityAssessmentRequest, RefreshSecurityAssessmentResponse>
+                    handler) {
+        LOG.trace("Called async refreshSecurityAssessment");
+        final RefreshSecurityAssessmentRequest interceptedRequest =
+                RefreshSecurityAssessmentConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                RefreshSecurityAssessmentConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, RefreshSecurityAssessmentResponse>
+                transformer = RefreshSecurityAssessmentConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        RefreshSecurityAssessmentRequest, RefreshSecurityAssessmentResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                RefreshSecurityAssessmentRequest,
+                                RefreshSecurityAssessmentResponse>,
+                        java.util.concurrent.Future<RefreshSecurityAssessmentResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getRunSecurityAssessmentDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    RefreshSecurityAssessmentRequest, RefreshSecurityAssessmentResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<RefreshUserAssessmentResponse> refreshUserAssessment(
+            RefreshUserAssessmentRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            RefreshUserAssessmentRequest, RefreshUserAssessmentResponse>
+                    handler) {
+        LOG.trace("Called async refreshUserAssessment");
+        final RefreshUserAssessmentRequest interceptedRequest =
+                RefreshUserAssessmentConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                RefreshUserAssessmentConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, RefreshUserAssessmentResponse>
+                transformer = RefreshUserAssessmentConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        RefreshUserAssessmentRequest, RefreshUserAssessmentResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                RefreshUserAssessmentRequest, RefreshUserAssessmentResponse>,
+                        java.util.concurrent.Future<RefreshUserAssessmentResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getRunUserAssessmentDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    RefreshUserAssessmentRequest, RefreshUserAssessmentResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<SetSecurityAssessmentBaselineResponse>
+            setSecurityAssessmentBaseline(
+                    SetSecurityAssessmentBaselineRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    SetSecurityAssessmentBaselineRequest,
+                                    SetSecurityAssessmentBaselineResponse>
+                            handler) {
+        LOG.trace("Called async setSecurityAssessmentBaseline");
+        final SetSecurityAssessmentBaselineRequest interceptedRequest =
+                SetSecurityAssessmentBaselineConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                SetSecurityAssessmentBaselineConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, SetSecurityAssessmentBaselineResponse>
+                transformer = SetSecurityAssessmentBaselineConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        SetSecurityAssessmentBaselineRequest, SetSecurityAssessmentBaselineResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                SetSecurityAssessmentBaselineRequest,
+                                SetSecurityAssessmentBaselineResponse>,
+                        java.util.concurrent.Future<SetSecurityAssessmentBaselineResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getBaseLineDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    SetSecurityAssessmentBaselineRequest, SetSecurityAssessmentBaselineResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<SetUserAssessmentBaselineResponse> setUserAssessmentBaseline(
+            SetUserAssessmentBaselineRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            SetUserAssessmentBaselineRequest, SetUserAssessmentBaselineResponse>
+                    handler) {
+        LOG.trace("Called async setUserAssessmentBaseline");
+        final SetUserAssessmentBaselineRequest interceptedRequest =
+                SetUserAssessmentBaselineConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                SetUserAssessmentBaselineConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, SetUserAssessmentBaselineResponse>
+                transformer = SetUserAssessmentBaselineConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        SetUserAssessmentBaselineRequest, SetUserAssessmentBaselineResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                SetUserAssessmentBaselineRequest,
+                                SetUserAssessmentBaselineResponse>,
+                        java.util.concurrent.Future<SetUserAssessmentBaselineResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getBaseLineDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    SetUserAssessmentBaselineRequest, SetUserAssessmentBaselineResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UnsetSecurityAssessmentBaselineResponse>
+            unsetSecurityAssessmentBaseline(
+                    UnsetSecurityAssessmentBaselineRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    UnsetSecurityAssessmentBaselineRequest,
+                                    UnsetSecurityAssessmentBaselineResponse>
+                            handler) {
+        LOG.trace("Called async unsetSecurityAssessmentBaseline");
+        final UnsetSecurityAssessmentBaselineRequest interceptedRequest =
+                UnsetSecurityAssessmentBaselineConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UnsetSecurityAssessmentBaselineConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, UnsetSecurityAssessmentBaselineResponse>
+                transformer = UnsetSecurityAssessmentBaselineConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        UnsetSecurityAssessmentBaselineRequest,
+                        UnsetSecurityAssessmentBaselineResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UnsetSecurityAssessmentBaselineRequest,
+                                UnsetSecurityAssessmentBaselineResponse>,
+                        java.util.concurrent.Future<UnsetSecurityAssessmentBaselineResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UnsetSecurityAssessmentBaselineRequest,
+                    UnsetSecurityAssessmentBaselineResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UnsetUserAssessmentBaselineResponse>
+            unsetUserAssessmentBaseline(
+                    UnsetUserAssessmentBaselineRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    UnsetUserAssessmentBaselineRequest,
+                                    UnsetUserAssessmentBaselineResponse>
+                            handler) {
+        LOG.trace("Called async unsetUserAssessmentBaseline");
+        final UnsetUserAssessmentBaselineRequest interceptedRequest =
+                UnsetUserAssessmentBaselineConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UnsetUserAssessmentBaselineConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, UnsetUserAssessmentBaselineResponse>
+                transformer = UnsetUserAssessmentBaselineConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        UnsetUserAssessmentBaselineRequest, UnsetUserAssessmentBaselineResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UnsetUserAssessmentBaselineRequest,
+                                UnsetUserAssessmentBaselineResponse>,
+                        java.util.concurrent.Future<UnsetUserAssessmentBaselineResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UnsetUserAssessmentBaselineRequest, UnsetUserAssessmentBaselineResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -1644,6 +2923,52 @@ public class DataSafeAsyncClient implements DataSafeAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<UpdateSecurityAssessmentResponse> updateSecurityAssessment(
+            UpdateSecurityAssessmentRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            UpdateSecurityAssessmentRequest, UpdateSecurityAssessmentResponse>
+                    handler) {
+        LOG.trace("Called async updateSecurityAssessment");
+        final UpdateSecurityAssessmentRequest interceptedRequest =
+                UpdateSecurityAssessmentConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateSecurityAssessmentConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, UpdateSecurityAssessmentResponse>
+                transformer = UpdateSecurityAssessmentConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        UpdateSecurityAssessmentRequest, UpdateSecurityAssessmentResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpdateSecurityAssessmentRequest, UpdateSecurityAssessmentResponse>,
+                        java.util.concurrent.Future<UpdateSecurityAssessmentResponse>>
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateSecurityAssessmentDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpdateSecurityAssessmentRequest, UpdateSecurityAssessmentResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<UpdateTargetDatabaseResponse> updateTargetDatabase(
             UpdateTargetDatabaseRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -1678,6 +3003,52 @@ public class DataSafeAsyncClient implements DataSafeAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     UpdateTargetDatabaseRequest, UpdateTargetDatabaseResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateUserAssessmentResponse> updateUserAssessment(
+            UpdateUserAssessmentRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            UpdateUserAssessmentRequest, UpdateUserAssessmentResponse>
+                    handler) {
+        LOG.trace("Called async updateUserAssessment");
+        final UpdateUserAssessmentRequest interceptedRequest =
+                UpdateUserAssessmentConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateUserAssessmentConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, UpdateUserAssessmentResponse>
+                transformer = UpdateUserAssessmentConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        UpdateUserAssessmentRequest, UpdateUserAssessmentResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpdateUserAssessmentRequest, UpdateUserAssessmentResponse>,
+                        java.util.concurrent.Future<UpdateUserAssessmentResponse>>
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateUserAssessmentDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpdateUserAssessmentRequest, UpdateUserAssessmentResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,

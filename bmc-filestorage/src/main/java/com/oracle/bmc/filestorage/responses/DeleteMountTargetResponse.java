@@ -9,7 +9,7 @@ import com.oracle.bmc.filestorage.model.*;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20171215")
 @lombok.Builder(builderClassName = "Builder")
 @lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode
+@lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
 public class DeleteMountTargetResponse extends com.oracle.bmc.responses.BmcResponse {
     /**

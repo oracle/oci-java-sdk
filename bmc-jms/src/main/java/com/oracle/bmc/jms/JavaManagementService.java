@@ -8,7 +8,7 @@ import com.oracle.bmc.jms.requests.*;
 import com.oracle.bmc.jms.responses.*;
 
 /**
- * API for the Java Management Service. Use this API to view and manage Fleets.
+ * API for the Java Management Service. Use this API to view, create, and manage Fleets.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210610")
 public interface JavaManagementService extends AutoCloseable {
@@ -151,50 +151,6 @@ public interface JavaManagementService extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/ListWorkRequestsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWorkRequests API.
      */
     ListWorkRequestsResponse listWorkRequests(ListWorkRequestsRequest request);
-
-    /**
-     * List application usage in a specified Fleet filtered by form parameters.
-     * @param request The request object containing the details to send
-     * @return A response object containing details about the completed operation
-     * @throws BmcException when an error occurs.
-     *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/RequestSummarizedApplicationUsageExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RequestSummarizedApplicationUsage API.
-     */
-    RequestSummarizedApplicationUsageResponse requestSummarizedApplicationUsage(
-            RequestSummarizedApplicationUsageRequest request);
-
-    /**
-     * List Java installation usage in a specified Fleet filtered by form parameters.
-     * @param request The request object containing the details to send
-     * @return A response object containing details about the completed operation
-     * @throws BmcException when an error occurs.
-     *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/RequestSummarizedInstallationUsageExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RequestSummarizedInstallationUsage API.
-     */
-    RequestSummarizedInstallationUsageResponse requestSummarizedInstallationUsage(
-            RequestSummarizedInstallationUsageRequest request);
-
-    /**
-     * List Java Runtime usage in a specified Fleet filtered by form parameters.
-     * @param request The request object containing the details to send
-     * @return A response object containing details about the completed operation
-     * @throws BmcException when an error occurs.
-     *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/RequestSummarizedJreUsageExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RequestSummarizedJreUsage API.
-     */
-    RequestSummarizedJreUsageResponse requestSummarizedJreUsage(
-            RequestSummarizedJreUsageRequest request);
-
-    /**
-     * List managed instance usage in a specified Fleet filtered by form parameters.
-     * @param request The request object containing the details to send
-     * @return A response object containing details about the completed operation
-     * @throws BmcException when an error occurs.
-     *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/RequestSummarizedManagedInstanceUsageExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RequestSummarizedManagedInstanceUsage API.
-     */
-    RequestSummarizedManagedInstanceUsageResponse requestSummarizedManagedInstanceUsage(
-            RequestSummarizedManagedInstanceUsageRequest request);
 
     /**
      * List application usage in a Fleet filtered by query parameters.

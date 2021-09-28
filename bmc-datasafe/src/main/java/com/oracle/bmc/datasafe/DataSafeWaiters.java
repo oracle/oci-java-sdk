@@ -342,6 +342,225 @@ public class DataSafeWaiters {
      * @param targetState the desired states to wait for. If multiple states are provided then the waiter will return once the resource reaches any of the provided states
      * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
      */
+    public com.oracle.bmc.waiter.Waiter<GetSecurityAssessmentRequest, GetSecurityAssessmentResponse>
+            forSecurityAssessment(
+                    GetSecurityAssessmentRequest request,
+                    com.oracle.bmc.datasafe.model.SecurityAssessmentLifecycleState...
+                            targetStates) {
+        org.apache.commons.lang3.Validate.notEmpty(
+                targetStates, "At least one targetState must be provided");
+        org.apache.commons.lang3.Validate.noNullElements(
+                targetStates, "Null targetState values are not permitted");
+
+        return forSecurityAssessment(
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_WAITER, request, targetStates);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param targetState the desired state to wait for
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<GetSecurityAssessmentRequest, GetSecurityAssessmentResponse>
+            forSecurityAssessment(
+                    GetSecurityAssessmentRequest request,
+                    com.oracle.bmc.datasafe.model.SecurityAssessmentLifecycleState targetState,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
+        org.apache.commons.lang3.Validate.notNull(targetState, "The targetState cannot be null");
+
+        return forSecurityAssessment(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetState);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @param targetStates the desired states to wait for. The waiter will return once the resource reaches any of the provided states
+     * @return a new {@code Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<GetSecurityAssessmentRequest, GetSecurityAssessmentResponse>
+            forSecurityAssessment(
+                    GetSecurityAssessmentRequest request,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy,
+                    com.oracle.bmc.datasafe.model.SecurityAssessmentLifecycleState...
+                            targetStates) {
+        org.apache.commons.lang3.Validate.notEmpty(
+                targetStates, "At least one targetState must be provided");
+        org.apache.commons.lang3.Validate.noNullElements(
+                targetStates, "Null targetState values are not permitted");
+
+        return forSecurityAssessment(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetStates);
+    }
+
+    // Helper method to create a new Waiter for SecurityAssessment.
+    private com.oracle.bmc.waiter.Waiter<
+                    GetSecurityAssessmentRequest, GetSecurityAssessmentResponse>
+            forSecurityAssessment(
+                    com.oracle.bmc.waiter.BmcGenericWaiter waiter,
+                    final GetSecurityAssessmentRequest request,
+                    final com.oracle.bmc.datasafe.model.SecurityAssessmentLifecycleState...
+                            targetStates) {
+        final java.util.Set<com.oracle.bmc.datasafe.model.SecurityAssessmentLifecycleState>
+                targetStatesSet = new java.util.HashSet<>(java.util.Arrays.asList(targetStates));
+
+        return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
+                executorService,
+                waiter.toCallable(
+                        com.google.common.base.Suppliers.ofInstance(request),
+                        new com.google.common.base.Function<
+                                GetSecurityAssessmentRequest, GetSecurityAssessmentResponse>() {
+                            @Override
+                            public GetSecurityAssessmentResponse apply(
+                                    GetSecurityAssessmentRequest request) {
+                                return client.getSecurityAssessment(request);
+                            }
+                        },
+                        new com.google.common.base.Predicate<GetSecurityAssessmentResponse>() {
+                            @Override
+                            public boolean apply(GetSecurityAssessmentResponse response) {
+                                return targetStatesSet.contains(
+                                        response.getSecurityAssessment().getLifecycleState());
+                            }
+                        },
+                        false),
+                request);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
+     *
+     * @param request the request to send
+     * @param targetStates the desired states to wait for. If multiple states are provided then the waiter will return once the resource reaches any of the provided states
+     * @return a new {@code Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<
+                    GetSecurityAssessmentComparisonRequest, GetSecurityAssessmentComparisonResponse>
+            forSecurityAssessmentComparison(
+                    GetSecurityAssessmentComparisonRequest request,
+                    com.oracle.bmc.datasafe.model.SecurityAssessmentComparison.LifecycleState...
+                            targetStates) {
+        org.apache.commons.lang3.Validate.notEmpty(
+                targetStates, "At least one targetState must be provided");
+        org.apache.commons.lang3.Validate.noNullElements(
+                targetStates, "Null targetState values are not permitted");
+
+        return forSecurityAssessmentComparison(
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_WAITER, request, targetStates);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param targetState the desired state to wait for
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<
+                    GetSecurityAssessmentComparisonRequest, GetSecurityAssessmentComparisonResponse>
+            forSecurityAssessmentComparison(
+                    GetSecurityAssessmentComparisonRequest request,
+                    com.oracle.bmc.datasafe.model.SecurityAssessmentComparison.LifecycleState
+                            targetState,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
+        org.apache.commons.lang3.Validate.notNull(targetState, "The targetState cannot be null");
+
+        return forSecurityAssessmentComparison(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetState);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @param targetStates the desired states to wait for. The waiter will return once the resource reaches any of the provided states
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<
+                    GetSecurityAssessmentComparisonRequest, GetSecurityAssessmentComparisonResponse>
+            forSecurityAssessmentComparison(
+                    GetSecurityAssessmentComparisonRequest request,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy,
+                    com.oracle.bmc.datasafe.model.SecurityAssessmentComparison.LifecycleState...
+                            targetStates) {
+        org.apache.commons.lang3.Validate.notEmpty(
+                targetStates, "At least one target state must be provided");
+        org.apache.commons.lang3.Validate.noNullElements(
+                targetStates, "Null target states are not permitted");
+
+        return forSecurityAssessmentComparison(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetStates);
+    }
+
+    // Helper method to create a new Waiter for SecurityAssessmentComparison.
+    private com.oracle.bmc.waiter.Waiter<
+                    GetSecurityAssessmentComparisonRequest, GetSecurityAssessmentComparisonResponse>
+            forSecurityAssessmentComparison(
+                    com.oracle.bmc.waiter.BmcGenericWaiter waiter,
+                    final GetSecurityAssessmentComparisonRequest request,
+                    final com.oracle.bmc.datasafe.model.SecurityAssessmentComparison
+                                    .LifecycleState...
+                            targetStates) {
+        final java.util.Set<
+                        com.oracle.bmc.datasafe.model.SecurityAssessmentComparison.LifecycleState>
+                targetStatesSet = new java.util.HashSet<>(java.util.Arrays.asList(targetStates));
+
+        return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
+                executorService,
+                waiter.toCallable(
+                        com.google.common.base.Suppliers.ofInstance(request),
+                        new com.google.common.base.Function<
+                                GetSecurityAssessmentComparisonRequest,
+                                GetSecurityAssessmentComparisonResponse>() {
+                            @Override
+                            public GetSecurityAssessmentComparisonResponse apply(
+                                    GetSecurityAssessmentComparisonRequest request) {
+                                return client.getSecurityAssessmentComparison(request);
+                            }
+                        },
+                        new com.google.common.base.Predicate<
+                                GetSecurityAssessmentComparisonResponse>() {
+                            @Override
+                            public boolean apply(GetSecurityAssessmentComparisonResponse response) {
+                                return targetStatesSet.contains(
+                                        response.getSecurityAssessmentComparison()
+                                                .getLifecycleState());
+                            }
+                        },
+                        false),
+                request);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
+     *
+     * @param request the request to send
+     * @param targetState the desired states to wait for. If multiple states are provided then the waiter will return once the resource reaches any of the provided states
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
+     */
     public com.oracle.bmc.waiter.Waiter<GetTargetDatabaseRequest, GetTargetDatabaseResponse>
             forTargetDatabase(
                     GetTargetDatabaseRequest request,
@@ -434,6 +653,219 @@ public class DataSafeWaiters {
                         },
                         targetStatesSet.contains(
                                 com.oracle.bmc.datasafe.model.LifecycleState.Deleted)),
+                request);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
+     *
+     * @param request the request to send
+     * @param targetState the desired states to wait for. If multiple states are provided then the waiter will return once the resource reaches any of the provided states
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<GetUserAssessmentRequest, GetUserAssessmentResponse>
+            forUserAssessment(
+                    GetUserAssessmentRequest request,
+                    com.oracle.bmc.datasafe.model.UserAssessmentLifecycleState... targetStates) {
+        org.apache.commons.lang3.Validate.notEmpty(
+                targetStates, "At least one targetState must be provided");
+        org.apache.commons.lang3.Validate.noNullElements(
+                targetStates, "Null targetState values are not permitted");
+
+        return forUserAssessment(
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_WAITER, request, targetStates);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param targetState the desired state to wait for
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<GetUserAssessmentRequest, GetUserAssessmentResponse>
+            forUserAssessment(
+                    GetUserAssessmentRequest request,
+                    com.oracle.bmc.datasafe.model.UserAssessmentLifecycleState targetState,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
+        org.apache.commons.lang3.Validate.notNull(targetState, "The targetState cannot be null");
+
+        return forUserAssessment(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetState);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @param targetStates the desired states to wait for. The waiter will return once the resource reaches any of the provided states
+     * @return a new {@code Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<GetUserAssessmentRequest, GetUserAssessmentResponse>
+            forUserAssessment(
+                    GetUserAssessmentRequest request,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy,
+                    com.oracle.bmc.datasafe.model.UserAssessmentLifecycleState... targetStates) {
+        org.apache.commons.lang3.Validate.notEmpty(
+                targetStates, "At least one targetState must be provided");
+        org.apache.commons.lang3.Validate.noNullElements(
+                targetStates, "Null targetState values are not permitted");
+
+        return forUserAssessment(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetStates);
+    }
+
+    // Helper method to create a new Waiter for UserAssessment.
+    private com.oracle.bmc.waiter.Waiter<GetUserAssessmentRequest, GetUserAssessmentResponse>
+            forUserAssessment(
+                    com.oracle.bmc.waiter.BmcGenericWaiter waiter,
+                    final GetUserAssessmentRequest request,
+                    final com.oracle.bmc.datasafe.model.UserAssessmentLifecycleState...
+                            targetStates) {
+        final java.util.Set<com.oracle.bmc.datasafe.model.UserAssessmentLifecycleState>
+                targetStatesSet = new java.util.HashSet<>(java.util.Arrays.asList(targetStates));
+
+        return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
+                executorService,
+                waiter.toCallable(
+                        com.google.common.base.Suppliers.ofInstance(request),
+                        new com.google.common.base.Function<
+                                GetUserAssessmentRequest, GetUserAssessmentResponse>() {
+                            @Override
+                            public GetUserAssessmentResponse apply(
+                                    GetUserAssessmentRequest request) {
+                                return client.getUserAssessment(request);
+                            }
+                        },
+                        new com.google.common.base.Predicate<GetUserAssessmentResponse>() {
+                            @Override
+                            public boolean apply(GetUserAssessmentResponse response) {
+                                return targetStatesSet.contains(
+                                        response.getUserAssessment().getLifecycleState());
+                            }
+                        },
+                        false),
+                request);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
+     *
+     * @param request the request to send
+     * @param targetStates the desired states to wait for. If multiple states are provided then the waiter will return once the resource reaches any of the provided states
+     * @return a new {@code Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<
+                    GetUserAssessmentComparisonRequest, GetUserAssessmentComparisonResponse>
+            forUserAssessmentComparison(
+                    GetUserAssessmentComparisonRequest request,
+                    com.oracle.bmc.datasafe.model.UserAssessmentComparison.LifecycleState...
+                            targetStates) {
+        org.apache.commons.lang3.Validate.notEmpty(
+                targetStates, "At least one targetState must be provided");
+        org.apache.commons.lang3.Validate.noNullElements(
+                targetStates, "Null targetState values are not permitted");
+
+        return forUserAssessmentComparison(
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_WAITER, request, targetStates);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param targetState the desired state to wait for
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<
+                    GetUserAssessmentComparisonRequest, GetUserAssessmentComparisonResponse>
+            forUserAssessmentComparison(
+                    GetUserAssessmentComparisonRequest request,
+                    com.oracle.bmc.datasafe.model.UserAssessmentComparison.LifecycleState
+                            targetState,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
+        org.apache.commons.lang3.Validate.notNull(targetState, "The targetState cannot be null");
+
+        return forUserAssessmentComparison(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetState);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @param targetStates the desired states to wait for. The waiter will return once the resource reaches any of the provided states
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<
+                    GetUserAssessmentComparisonRequest, GetUserAssessmentComparisonResponse>
+            forUserAssessmentComparison(
+                    GetUserAssessmentComparisonRequest request,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy,
+                    com.oracle.bmc.datasafe.model.UserAssessmentComparison.LifecycleState...
+                            targetStates) {
+        org.apache.commons.lang3.Validate.notEmpty(
+                targetStates, "At least one target state must be provided");
+        org.apache.commons.lang3.Validate.noNullElements(
+                targetStates, "Null target states are not permitted");
+
+        return forUserAssessmentComparison(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetStates);
+    }
+
+    // Helper method to create a new Waiter for UserAssessmentComparison.
+    private com.oracle.bmc.waiter.Waiter<
+                    GetUserAssessmentComparisonRequest, GetUserAssessmentComparisonResponse>
+            forUserAssessmentComparison(
+                    com.oracle.bmc.waiter.BmcGenericWaiter waiter,
+                    final GetUserAssessmentComparisonRequest request,
+                    final com.oracle.bmc.datasafe.model.UserAssessmentComparison.LifecycleState...
+                            targetStates) {
+        final java.util.Set<com.oracle.bmc.datasafe.model.UserAssessmentComparison.LifecycleState>
+                targetStatesSet = new java.util.HashSet<>(java.util.Arrays.asList(targetStates));
+
+        return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
+                executorService,
+                waiter.toCallable(
+                        com.google.common.base.Suppliers.ofInstance(request),
+                        new com.google.common.base.Function<
+                                GetUserAssessmentComparisonRequest,
+                                GetUserAssessmentComparisonResponse>() {
+                            @Override
+                            public GetUserAssessmentComparisonResponse apply(
+                                    GetUserAssessmentComparisonRequest request) {
+                                return client.getUserAssessmentComparison(request);
+                            }
+                        },
+                        new com.google.common.base.Predicate<
+                                GetUserAssessmentComparisonResponse>() {
+                            @Override
+                            public boolean apply(GetUserAssessmentComparisonResponse response) {
+                                return targetStatesSet.contains(
+                                        response.getUserAssessmentComparison().getLifecycleState());
+                            }
+                        },
+                        false),
                 request);
     }
 
