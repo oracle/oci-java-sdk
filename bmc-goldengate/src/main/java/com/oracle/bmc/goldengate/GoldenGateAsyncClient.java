@@ -377,6 +377,53 @@ public class GoldenGateAsyncClient implements GoldenGateAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<CancelDeploymentBackupResponse> cancelDeploymentBackup(
+            CancelDeploymentBackupRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            CancelDeploymentBackupRequest, CancelDeploymentBackupResponse>
+                    handler) {
+        LOG.trace("Called async cancelDeploymentBackup");
+        final CancelDeploymentBackupRequest interceptedRequest =
+                CancelDeploymentBackupConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CancelDeploymentBackupConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, CancelDeploymentBackupResponse>
+                transformer = CancelDeploymentBackupConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        CancelDeploymentBackupRequest, CancelDeploymentBackupResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CancelDeploymentBackupRequest, CancelDeploymentBackupResponse>,
+                        java.util.concurrent.Future<CancelDeploymentBackupResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCancelDeploymentBackupDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CancelDeploymentBackupRequest, CancelDeploymentBackupResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<ChangeDatabaseRegistrationCompartmentResponse>
             changeDatabaseRegistrationCompartment(
                     ChangeDatabaseRegistrationCompartmentRequest request,
@@ -919,6 +966,47 @@ public class GoldenGateAsyncClient implements GoldenGateAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<GetDeploymentUpgradeResponse> getDeploymentUpgrade(
+            GetDeploymentUpgradeRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetDeploymentUpgradeRequest, GetDeploymentUpgradeResponse>
+                    handler) {
+        LOG.trace("Called async getDeploymentUpgrade");
+        final GetDeploymentUpgradeRequest interceptedRequest =
+                GetDeploymentUpgradeConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetDeploymentUpgradeConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, GetDeploymentUpgradeResponse>
+                transformer = GetDeploymentUpgradeConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        GetDeploymentUpgradeRequest, GetDeploymentUpgradeResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetDeploymentUpgradeRequest, GetDeploymentUpgradeResponse>,
+                        java.util.concurrent.Future<GetDeploymentUpgradeResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetDeploymentUpgradeRequest, GetDeploymentUpgradeResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<GetWorkRequestResponse> getWorkRequest(
             GetWorkRequestRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -1028,6 +1116,47 @@ public class GoldenGateAsyncClient implements GoldenGateAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     ListDeploymentBackupsRequest, ListDeploymentBackupsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListDeploymentUpgradesResponse> listDeploymentUpgrades(
+            ListDeploymentUpgradesRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListDeploymentUpgradesRequest, ListDeploymentUpgradesResponse>
+                    handler) {
+        LOG.trace("Called async listDeploymentUpgrades");
+        final ListDeploymentUpgradesRequest interceptedRequest =
+                ListDeploymentUpgradesConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListDeploymentUpgradesConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ListDeploymentUpgradesResponse>
+                transformer = ListDeploymentUpgradesConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListDeploymentUpgradesRequest, ListDeploymentUpgradesResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListDeploymentUpgradesRequest, ListDeploymentUpgradesResponse>,
+                        java.util.concurrent.Future<ListDeploymentUpgradesResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListDeploymentUpgradesRequest, ListDeploymentUpgradesResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,

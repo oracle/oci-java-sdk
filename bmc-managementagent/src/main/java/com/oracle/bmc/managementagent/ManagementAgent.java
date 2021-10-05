@@ -100,6 +100,18 @@ public interface ManagementAgent extends AutoCloseable {
     DeployPluginsResponse deployPlugins(DeployPluginsRequest request);
 
     /**
+     * Get the AutoUpgradable configuration for all agents in a tenancy.
+     * The supplied compartmentId must be a tenancy root.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/managementagent/GetAutoUpgradableConfigExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetAutoUpgradableConfig API.
+     */
+    GetAutoUpgradableConfigResponse getAutoUpgradableConfig(GetAutoUpgradableConfigRequest request);
+
+    /**
      * Gets complete details of the inventory of a given agent id
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -232,6 +244,18 @@ public interface ManagementAgent extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/managementagent/ListWorkRequestsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWorkRequests API.
      */
     ListWorkRequestsResponse listWorkRequests(ListWorkRequestsRequest request);
+
+    /**
+     * Sets the AutoUpgradable configuration for all agents in a tenancy.
+     * The supplied compartmentId must be a tenancy root.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/managementagent/SetAutoUpgradableConfigExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use SetAutoUpgradableConfig API.
+     */
+    SetAutoUpgradableConfigResponse setAutoUpgradableConfig(SetAutoUpgradableConfigRequest request);
 
     /**
      * Gets count of the inventory of agents for a given compartment id, group by, and isPluginDeployed parameters.

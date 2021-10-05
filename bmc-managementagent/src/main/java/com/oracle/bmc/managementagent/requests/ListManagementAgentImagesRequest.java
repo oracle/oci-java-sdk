@@ -142,6 +142,11 @@ public class ListManagementAgentImagesRequest
      */
     private com.oracle.bmc.managementagent.model.LifecycleStates lifecycleState;
 
+    /**
+     * A filter to return either agents or gateway types depending upon install type selected by user. By default both install type will be returned.
+     */
+    private com.oracle.bmc.managementagent.model.InstallTypes installType;
+
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListManagementAgentImagesRequest, java.lang.Void> {
@@ -186,6 +191,7 @@ public class ListManagementAgentImagesRequest
             sortBy(o.getSortBy());
             name(o.getName());
             lifecycleState(o.getLifecycleState());
+            installType(o.getInstallType());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;

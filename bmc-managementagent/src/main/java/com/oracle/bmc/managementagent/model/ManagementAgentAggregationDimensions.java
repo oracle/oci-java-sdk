@@ -62,13 +62,22 @@ public class ManagementAgentAggregationDimensions {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("installType")
+        private InstallTypes installType;
+
+        public Builder installType(InstallTypes installType) {
+            this.installType = installType;
+            this.__explicitlySet__.add("installType");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ManagementAgentAggregationDimensions build() {
             ManagementAgentAggregationDimensions __instance__ =
                     new ManagementAgentAggregationDimensions(
-                            availabilityStatus, platformType, version, hasPlugins);
+                            availabilityStatus, platformType, version, hasPlugins, installType);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -79,7 +88,8 @@ public class ManagementAgentAggregationDimensions {
                     availabilityStatus(o.getAvailabilityStatus())
                             .platformType(o.getPlatformType())
                             .version(o.getVersion())
-                            .hasPlugins(o.getHasPlugins());
+                            .hasPlugins(o.getHasPlugins())
+                            .installType(o.getInstallType());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -116,6 +126,12 @@ public class ManagementAgentAggregationDimensions {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("hasPlugins")
     Boolean hasPlugins;
+
+    /**
+     * The install type, either AGENT or GATEWAY
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("installType")
+    InstallTypes installType;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

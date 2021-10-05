@@ -56,6 +56,14 @@ public class SummarizeManagementAgentCountsConverter {
                                     request.getHasPlugins()));
         }
 
+        if (request.getInstallType() != null) {
+            target =
+                    target.queryParam(
+                            "installType",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getInstallType().getValue()));
+        }
+
         if (request.getPage() != null) {
             target =
                     target.queryParam(

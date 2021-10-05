@@ -266,6 +266,123 @@ public class GoldenGatePaginators {
     }
 
     /**
+     * Creates a new iterable which will iterate over the responses received from the listDeploymentUpgrades operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListDeploymentUpgradesResponse> listDeploymentUpgradesResponseIterator(
+            final ListDeploymentUpgradesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListDeploymentUpgradesRequest.Builder, ListDeploymentUpgradesRequest,
+                ListDeploymentUpgradesResponse>(
+                new com.google.common.base.Supplier<ListDeploymentUpgradesRequest.Builder>() {
+                    @Override
+                    public ListDeploymentUpgradesRequest.Builder get() {
+                        return ListDeploymentUpgradesRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListDeploymentUpgradesResponse, String>() {
+                    @Override
+                    public String apply(ListDeploymentUpgradesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListDeploymentUpgradesRequest.Builder>,
+                        ListDeploymentUpgradesRequest>() {
+                    @Override
+                    public ListDeploymentUpgradesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListDeploymentUpgradesRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListDeploymentUpgradesRequest, ListDeploymentUpgradesResponse>() {
+                    @Override
+                    public ListDeploymentUpgradesResponse apply(
+                            ListDeploymentUpgradesRequest request) {
+                        return client.listDeploymentUpgrades(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.goldengate.model.DeploymentUpgradeSummary} objects
+     * contained in responses from the listDeploymentUpgrades operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.goldengate.model.DeploymentUpgradeSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.goldengate.model.DeploymentUpgradeSummary>
+            listDeploymentUpgradesRecordIterator(final ListDeploymentUpgradesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListDeploymentUpgradesRequest.Builder, ListDeploymentUpgradesRequest,
+                ListDeploymentUpgradesResponse,
+                com.oracle.bmc.goldengate.model.DeploymentUpgradeSummary>(
+                new com.google.common.base.Supplier<ListDeploymentUpgradesRequest.Builder>() {
+                    @Override
+                    public ListDeploymentUpgradesRequest.Builder get() {
+                        return ListDeploymentUpgradesRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListDeploymentUpgradesResponse, String>() {
+                    @Override
+                    public String apply(ListDeploymentUpgradesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListDeploymentUpgradesRequest.Builder>,
+                        ListDeploymentUpgradesRequest>() {
+                    @Override
+                    public ListDeploymentUpgradesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListDeploymentUpgradesRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListDeploymentUpgradesRequest, ListDeploymentUpgradesResponse>() {
+                    @Override
+                    public ListDeploymentUpgradesResponse apply(
+                            ListDeploymentUpgradesRequest request) {
+                        return client.listDeploymentUpgrades(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListDeploymentUpgradesResponse,
+                        java.util.List<
+                                com.oracle.bmc.goldengate.model.DeploymentUpgradeSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.goldengate.model.DeploymentUpgradeSummary>
+                            apply(ListDeploymentUpgradesResponse response) {
+                        return response.getDeploymentUpgradeCollection().getItems();
+                    }
+                });
+    }
+
+    /**
      * Creates a new iterable which will iterate over the responses received from the listDeployments operation. This iterable
      * will fetch more data from the server as needed.
      *

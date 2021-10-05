@@ -97,6 +97,15 @@ public class Deployment {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("lifecycleSubState")
+        private LifecycleSubState lifecycleSubState;
+
+        public Builder lifecycleSubState(LifecycleSubState lifecycleSubState) {
+            this.lifecycleSubState = lifecycleSubState;
+            this.__explicitlySet__.add("lifecycleSubState");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
         private String lifecycleDetails;
 
@@ -242,6 +251,15 @@ public class Deployment {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("timeUpgradeRequired")
+        private java.util.Date timeUpgradeRequired;
+
+        public Builder timeUpgradeRequired(java.util.Date timeUpgradeRequired) {
+            this.timeUpgradeRequired = timeUpgradeRequired;
+            this.__explicitlySet__.add("timeUpgradeRequired");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("deploymentType")
         private DeploymentType deploymentType;
 
@@ -274,6 +292,7 @@ public class Deployment {
                             timeCreated,
                             timeUpdated,
                             lifecycleState,
+                            lifecycleSubState,
                             lifecycleDetails,
                             freeformTags,
                             definedTags,
@@ -290,6 +309,7 @@ public class Deployment {
                             deploymentUrl,
                             systemTags,
                             isLatestVersion,
+                            timeUpgradeRequired,
                             deploymentType,
                             oggData);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
@@ -307,6 +327,7 @@ public class Deployment {
                             .timeCreated(o.getTimeCreated())
                             .timeUpdated(o.getTimeUpdated())
                             .lifecycleState(o.getLifecycleState())
+                            .lifecycleSubState(o.getLifecycleSubState())
                             .lifecycleDetails(o.getLifecycleDetails())
                             .freeformTags(o.getFreeformTags())
                             .definedTags(o.getDefinedTags())
@@ -323,6 +344,7 @@ public class Deployment {
                             .deploymentUrl(o.getDeploymentUrl())
                             .systemTags(o.getSystemTags())
                             .isLatestVersion(o.getIsLatestVersion())
+                            .timeUpgradeRequired(o.getTimeUpgradeRequired())
                             .deploymentType(o.getDeploymentType())
                             .oggData(o.getOggData());
 
@@ -393,6 +415,13 @@ public class Deployment {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     LifecycleState lifecycleState;
+
+    /**
+     * Possible GGS lifecycle sub-states.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("lifecycleSubState")
+    LifecycleSubState lifecycleSubState;
 
     /**
      * Describes the object's current state in detail. For example, it can be used to provide actionable information for a resource in a Failed state.
@@ -508,6 +537,13 @@ public class Deployment {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isLatestVersion")
     Boolean isLatestVersion;
+
+    /**
+     * The date the existing version in use will no longer be considered as usable and an upgrade will be required.  This date is typically 6 months after the version was released for use by GGS.  The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("timeUpgradeRequired")
+    java.util.Date timeUpgradeRequired;
 
     /**
      * The deployment type.

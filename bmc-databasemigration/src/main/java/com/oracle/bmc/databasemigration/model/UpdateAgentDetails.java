@@ -5,7 +5,6 @@
 package com.oracle.bmc.databasemigration.model;
 
 /**
- * Note: Deprecated. Use the new resource model APIs instead.
  * ODMS Agent Details
  *
  * <br/>
@@ -16,7 +15,7 @@ package com.oracle.bmc.databasemigration.model;
  * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200720")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210929")
 @lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
 @lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
@@ -28,15 +27,6 @@ public class UpdateAgentDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
-        @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-        private String compartmentId;
-
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = compartmentId;
-            this.__explicitlySet__.add("compartmentId");
-            return this;
-        }
-
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
@@ -98,13 +88,7 @@ public class UpdateAgentDetails {
         public UpdateAgentDetails build() {
             UpdateAgentDetails __instance__ =
                     new UpdateAgentDetails(
-                            compartmentId,
-                            displayName,
-                            streamId,
-                            publicKey,
-                            version,
-                            freeformTags,
-                            definedTags);
+                            displayName, streamId, publicKey, version, freeformTags, definedTags);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -112,8 +96,7 @@ public class UpdateAgentDetails {
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(UpdateAgentDetails o) {
             Builder copiedBuilder =
-                    compartmentId(o.getCompartmentId())
-                            .displayName(o.getDisplayName())
+                    displayName(o.getDisplayName())
                             .streamId(o.getStreamId())
                             .publicKey(o.getPublicKey())
                             .version(o.getVersion())
@@ -131,13 +114,6 @@ public class UpdateAgentDetails {
     public static Builder builder() {
         return new Builder();
     }
-
-    /**
-     * The OCID of the compartment.
-     *
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    String compartmentId;
 
     /**
      * ODMS Agent name

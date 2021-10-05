@@ -13,7 +13,7 @@ import com.oracle.bmc.databasemigration.responses.*;
  * <p>
  * The default configuration used is defined by {@link com.oracle.bmc.waiter.Waiters.Waiters#DEFAULT_POLLING_WAITER}.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200720")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210929")
 @lombok.RequiredArgsConstructor
 public class DatabaseMigrationWaiters {
     private final java.util.concurrent.ExecutorService executorService;
@@ -317,7 +317,7 @@ public class DatabaseMigrationWaiters {
      */
     public com.oracle.bmc.waiter.Waiter<GetMigrationRequest, GetMigrationResponse> forMigration(
             GetMigrationRequest request,
-            com.oracle.bmc.databasemigration.model.LifecycleStates... targetStates) {
+            com.oracle.bmc.databasemigration.model.MigrationLifecycleStates... targetStates) {
         org.apache.commons.lang3.Validate.notEmpty(
                 targetStates, "At least one targetState must be provided");
         org.apache.commons.lang3.Validate.noNullElements(
@@ -338,7 +338,7 @@ public class DatabaseMigrationWaiters {
      */
     public com.oracle.bmc.waiter.Waiter<GetMigrationRequest, GetMigrationResponse> forMigration(
             GetMigrationRequest request,
-            com.oracle.bmc.databasemigration.model.LifecycleStates targetState,
+            com.oracle.bmc.databasemigration.model.MigrationLifecycleStates targetState,
             com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
             com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
         org.apache.commons.lang3.Validate.notNull(targetState, "The targetState cannot be null");
@@ -362,7 +362,7 @@ public class DatabaseMigrationWaiters {
             GetMigrationRequest request,
             com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
             com.oracle.bmc.waiter.DelayStrategy delayStrategy,
-            com.oracle.bmc.databasemigration.model.LifecycleStates... targetStates) {
+            com.oracle.bmc.databasemigration.model.MigrationLifecycleStates... targetStates) {
         org.apache.commons.lang3.Validate.notEmpty(
                 targetStates, "At least one targetState must be provided");
         org.apache.commons.lang3.Validate.noNullElements(
@@ -378,8 +378,8 @@ public class DatabaseMigrationWaiters {
     private com.oracle.bmc.waiter.Waiter<GetMigrationRequest, GetMigrationResponse> forMigration(
             com.oracle.bmc.waiter.BmcGenericWaiter waiter,
             final GetMigrationRequest request,
-            final com.oracle.bmc.databasemigration.model.LifecycleStates... targetStates) {
-        final java.util.Set<com.oracle.bmc.databasemigration.model.LifecycleStates>
+            final com.oracle.bmc.databasemigration.model.MigrationLifecycleStates... targetStates) {
+        final java.util.Set<com.oracle.bmc.databasemigration.model.MigrationLifecycleStates>
                 targetStatesSet = new java.util.HashSet<>(java.util.Arrays.asList(targetStates));
 
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
@@ -401,7 +401,8 @@ public class DatabaseMigrationWaiters {
                             }
                         },
                         targetStatesSet.contains(
-                                com.oracle.bmc.databasemigration.model.LifecycleStates.Deleted)),
+                                com.oracle.bmc.databasemigration.model.MigrationLifecycleStates
+                                        .Deleted)),
                 request);
     }
 

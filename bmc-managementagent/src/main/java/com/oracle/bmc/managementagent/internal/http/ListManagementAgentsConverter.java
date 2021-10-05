@@ -106,6 +106,14 @@ public class ListManagementAgentsConverter {
                                     request.getIsCustomerDeployed()));
         }
 
+        if (request.getInstallType() != null) {
+            target =
+                    target.queryParam(
+                            "installType",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getInstallType().getValue()));
+        }
+
         if (request.getLimit() != null) {
             target =
                     target.queryParam(

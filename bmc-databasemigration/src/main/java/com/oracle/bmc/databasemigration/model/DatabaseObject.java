@@ -5,8 +5,7 @@
 package com.oracle.bmc.databasemigration.model;
 
 /**
- * Note: Deprecated. Use the new resource model APIs instead.
- * Database objects to exclude from migration
+ * Database objects to include or exclude from migration
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -16,7 +15,7 @@ package com.oracle.bmc.databasemigration.model;
  * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200720")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210929")
 @lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
 @lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = DatabaseObject.Builder.class)
@@ -44,18 +43,28 @@ public class DatabaseObject {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("type")
+        private String type;
+
+        public Builder type(String type) {
+            this.type = type;
+            this.__explicitlySet__.add("type");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public DatabaseObject build() {
-            DatabaseObject __instance__ = new DatabaseObject(owner, objectName);
+            DatabaseObject __instance__ = new DatabaseObject(owner, objectName, type);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(DatabaseObject o) {
-            Builder copiedBuilder = owner(o.getOwner()).objectName(o.getObjectName());
+            Builder copiedBuilder =
+                    owner(o.getOwner()).objectName(o.getObjectName()).type(o.getType());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -82,6 +91,14 @@ public class DatabaseObject {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("objectName")
     String objectName;
+
+    /**
+     * Type of object to exclude.
+     * If not specified, matching owners and object names of type TABLE would be excluded.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("type")
+    String type;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

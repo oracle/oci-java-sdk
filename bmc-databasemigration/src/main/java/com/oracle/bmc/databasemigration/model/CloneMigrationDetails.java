@@ -5,7 +5,6 @@
 package com.oracle.bmc.databasemigration.model;
 
 /**
- * Note: Deprecated. Use the new resource model APIs instead.
  * Details that will override an existing Migration configuration that will be cloned.
  *
  * <br/>
@@ -16,7 +15,7 @@ package com.oracle.bmc.databasemigration.model;
  * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200720")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210929")
 @lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
 @lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
@@ -92,6 +91,15 @@ public class CloneMigrationDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("includeObjects")
+        private java.util.List<DatabaseObject> includeObjects;
+
+        public Builder includeObjects(java.util.List<DatabaseObject> includeObjects) {
+            this.includeObjects = includeObjects;
+            this.__explicitlySet__.add("includeObjects");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("vaultDetails")
         private CreateVaultDetails vaultDetails;
 
@@ -133,6 +141,7 @@ public class CloneMigrationDetails {
                             sourceContainerDatabaseConnectionId,
                             targetDatabaseConnectionId,
                             excludeObjects,
+                            includeObjects,
                             vaultDetails,
                             freeformTags,
                             definedTags);
@@ -151,6 +160,7 @@ public class CloneMigrationDetails {
                                     o.getSourceContainerDatabaseConnectionId())
                             .targetDatabaseConnectionId(o.getTargetDatabaseConnectionId())
                             .excludeObjects(o.getExcludeObjects())
+                            .includeObjects(o.getIncludeObjects())
                             .vaultDetails(o.getVaultDetails())
                             .freeformTags(o.getFreeformTags())
                             .definedTags(o.getDefinedTags());
@@ -211,11 +221,18 @@ public class CloneMigrationDetails {
     String targetDatabaseConnectionId;
 
     /**
-     * Database objects to exclude from migration.
+     * Database objects to exclude from migration, cannot be specified alongside 'includeObjects'
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("excludeObjects")
     java.util.List<DatabaseObject> excludeObjects;
+
+    /**
+     * Database objects to include from migration, cannot be specified alongside 'excludeObjects'
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("includeObjects")
+    java.util.List<DatabaseObject> includeObjects;
 
     @com.fasterxml.jackson.annotation.JsonProperty("vaultDetails")
     CreateVaultDetails vaultDetails;

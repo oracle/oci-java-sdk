@@ -46,12 +46,28 @@ public class ListDeploymentsConverter {
                                     request.getLifecycleState().getValue()));
         }
 
+        if (request.getLifecycleSubState() != null) {
+            target =
+                    target.queryParam(
+                            "lifecycleSubState",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getLifecycleSubState().getValue()));
+        }
+
         if (request.getDisplayName() != null) {
             target =
                     target.queryParam(
                             "displayName",
                             com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
                                     request.getDisplayName()));
+        }
+
+        if (request.getFqdn() != null) {
+            target =
+                    target.queryParam(
+                            "fqdn",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getFqdn()));
         }
 
         if (request.getLimit() != null) {

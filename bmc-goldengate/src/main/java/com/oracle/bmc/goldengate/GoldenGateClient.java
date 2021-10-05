@@ -452,6 +452,40 @@ public class GoldenGateClient implements GoldenGate {
     }
 
     @Override
+    public CancelDeploymentBackupResponse cancelDeploymentBackup(
+            CancelDeploymentBackupRequest request) {
+        LOG.trace("Called cancelDeploymentBackup");
+        final CancelDeploymentBackupRequest interceptedRequest =
+                CancelDeploymentBackupConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CancelDeploymentBackupConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, CancelDeploymentBackupResponse>
+                transformer = CancelDeploymentBackupConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getCancelDeploymentBackupDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public ChangeDatabaseRegistrationCompartmentResponse changeDatabaseRegistrationCompartment(
             ChangeDatabaseRegistrationCompartmentRequest request) {
         LOG.trace("Called changeDatabaseRegistrationCompartment");
@@ -839,6 +873,34 @@ public class GoldenGateClient implements GoldenGate {
     }
 
     @Override
+    public GetDeploymentUpgradeResponse getDeploymentUpgrade(GetDeploymentUpgradeRequest request) {
+        LOG.trace("Called getDeploymentUpgrade");
+        final GetDeploymentUpgradeRequest interceptedRequest =
+                GetDeploymentUpgradeConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetDeploymentUpgradeConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, GetDeploymentUpgradeResponse>
+                transformer = GetDeploymentUpgradeConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public GetWorkRequestResponse getWorkRequest(GetWorkRequestRequest request) {
         LOG.trace("Called getWorkRequest");
         final GetWorkRequestRequest interceptedRequest =
@@ -906,6 +968,35 @@ public class GoldenGateClient implements GoldenGate {
                 ListDeploymentBackupsConverter.fromRequest(client, interceptedRequest);
         com.google.common.base.Function<javax.ws.rs.core.Response, ListDeploymentBackupsResponse>
                 transformer = ListDeploymentBackupsConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ListDeploymentUpgradesResponse listDeploymentUpgrades(
+            ListDeploymentUpgradesRequest request) {
+        LOG.trace("Called listDeploymentUpgrades");
+        final ListDeploymentUpgradesRequest interceptedRequest =
+                ListDeploymentUpgradesConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListDeploymentUpgradesConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, ListDeploymentUpgradesResponse>
+                transformer = ListDeploymentUpgradesConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(

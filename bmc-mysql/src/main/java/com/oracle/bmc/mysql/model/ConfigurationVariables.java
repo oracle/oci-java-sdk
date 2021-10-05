@@ -163,6 +163,33 @@ public class ConfigurationVariables {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("binlogRowMetadata")
+        private BinlogRowMetadata binlogRowMetadata;
+
+        public Builder binlogRowMetadata(BinlogRowMetadata binlogRowMetadata) {
+            this.binlogRowMetadata = binlogRowMetadata;
+            this.__explicitlySet__.add("binlogRowMetadata");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("binlogRowValueOptions")
+        private String binlogRowValueOptions;
+
+        public Builder binlogRowValueOptions(String binlogRowValueOptions) {
+            this.binlogRowValueOptions = binlogRowValueOptions;
+            this.__explicitlySet__.add("binlogRowValueOptions");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("binlogTransactionCompression")
+        private Boolean binlogTransactionCompression;
+
+        public Builder binlogTransactionCompression(Boolean binlogTransactionCompression) {
+            this.binlogTransactionCompression = binlogTransactionCompression;
+            this.__explicitlySet__.add("binlogTransactionCompression");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("innodbBufferPoolSize")
         private Long innodbBufferPoolSize;
 
@@ -513,6 +540,9 @@ public class ConfigurationVariables {
                             sqlRequirePrimaryKey,
                             sqlWarnings,
                             binlogExpireLogsSeconds,
+                            binlogRowMetadata,
+                            binlogRowValueOptions,
+                            binlogTransactionCompression,
                             innodbBufferPoolSize,
                             innodbFtResultCacheLimit,
                             maxConnections,
@@ -571,6 +601,9 @@ public class ConfigurationVariables {
                             .sqlRequirePrimaryKey(o.getSqlRequirePrimaryKey())
                             .sqlWarnings(o.getSqlWarnings())
                             .binlogExpireLogsSeconds(o.getBinlogExpireLogsSeconds())
+                            .binlogRowMetadata(o.getBinlogRowMetadata())
+                            .binlogRowValueOptions(o.getBinlogRowValueOptions())
+                            .binlogTransactionCompression(o.getBinlogTransactionCompression())
                             .innodbBufferPoolSize(o.getInnodbBufferPoolSize())
                             .innodbFtResultCacheLimit(o.getInnodbFtResultCacheLimit())
                             .maxConnections(o.getMaxConnections())
@@ -959,10 +992,83 @@ public class ConfigurationVariables {
     Boolean sqlWarnings;
 
     /**
-     * ("binlog_expire_logs_seconds") DEPRECATED -- variable should not be settable and will be ignored
+     * Sets the binary log expiration period in seconds.
+     * binlogExpireLogsSeconds corresponds to the MySQL binary logging system variable [binlog_expire_logs_seconds](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_binlog_expire_logs_seconds).
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("binlogExpireLogsSeconds")
     Integer binlogExpireLogsSeconds;
+    /**
+     * Configures the amount of table metadata added to the binary log when using row-based logging.
+     * binlogRowMetadata corresponds to the MySQL binary logging system variable [binlog_row_metadata](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_binlog_row_metadata).
+     *
+     **/
+    @lombok.extern.slf4j.Slf4j
+    public enum BinlogRowMetadata {
+        Full("FULL"),
+        Minimal("MINIMAL"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private final String value;
+        private static java.util.Map<String, BinlogRowMetadata> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (BinlogRowMetadata v : BinlogRowMetadata.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        BinlogRowMetadata(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static BinlogRowMetadata create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'BinlogRowMetadata', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * Configures the amount of table metadata added to the binary log when using row-based logging.
+     * binlogRowMetadata corresponds to the MySQL binary logging system variable [binlog_row_metadata](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_binlog_row_metadata).
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("binlogRowMetadata")
+    BinlogRowMetadata binlogRowMetadata;
+
+    /**
+     * When set to PARTIAL_JSON, this enables use of a space-efficient binary log format for updates that modify only a small portion of a JSON document.
+     * binlogRowValueOptions corresponds to the MySQL binary logging system variable [binlog_row_value_options](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_binlog_row_value_options).
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("binlogRowValueOptions")
+    String binlogRowValueOptions;
+
+    /**
+     * Enables compression for transactions that are written to binary log files on this server.
+     * binlogTransactionCompression corresponds to the MySQL binary logging system variable [binlog_transaction_compression](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_binlog_transaction_compression).
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("binlogTransactionCompression")
+    Boolean binlogTransactionCompression;
 
     /**
      * ("innodb_buffer_pool_size")

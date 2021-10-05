@@ -417,12 +417,14 @@ public class Backup {
     @com.fasterxml.jackson.annotation.JsonProperty("backupType")
     BackupType backupType;
     /**
-     * If the backup was created automatically, or by a manual request.
+     * Indicates how the backup was created: manually, automatic, or by an Operator.
+     *
      **/
     @lombok.extern.slf4j.Slf4j
     public enum CreationType {
         Manual("MANUAL"),
         Automatic("AUTOMATIC"),
+        Operator("OPERATOR"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this
@@ -463,7 +465,8 @@ public class Backup {
         }
     };
     /**
-     * If the backup was created automatically, or by a manual request.
+     * Indicates how the backup was created: manually, automatic, or by an Operator.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("creationType")
     CreationType creationType;

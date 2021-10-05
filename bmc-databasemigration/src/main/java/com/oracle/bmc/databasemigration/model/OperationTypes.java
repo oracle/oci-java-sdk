@@ -5,11 +5,10 @@
 package com.oracle.bmc.databasemigration.model;
 
 /**
- * Note: Deprecated. Use the new resource model APIs instead.
  * Possible operation types.
  *
  **/
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200720")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210929")
 @lombok.extern.slf4j.Slf4j
 public enum OperationTypes {
     CreateAgent("CREATE_AGENT"),

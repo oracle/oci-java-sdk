@@ -26,6 +26,12 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
     private String compartmentId;
 
     /**
+     * The ID of the resource in which to list resources.
+     *
+     */
+    private String resourceId;
+
+    /**
      * The client request ID for tracing.
      *
      */
@@ -79,6 +85,7 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
          */
         public Builder copy(ListWorkRequestsRequest o) {
             compartmentId(o.getCompartmentId());
+            resourceId(o.getResourceId());
             opcRequestId(o.getOpcRequestId());
             page(o.getPage());
             limit(o.getLimit());

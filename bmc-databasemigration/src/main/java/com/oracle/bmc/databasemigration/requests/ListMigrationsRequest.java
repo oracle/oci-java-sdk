@@ -8,7 +8,7 @@ import com.oracle.bmc.databasemigration.model.*;
 /**
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemigration/ListMigrationsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListMigrationsRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200720")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210929")
 @lombok.Builder(
     builderClassName = "Builder",
     buildMethodName = "buildWithoutInvocationCallback",
@@ -101,10 +101,10 @@ public class ListMigrationsRequest extends com.oracle.bmc.requests.BmcRequest<ja
     private com.oracle.bmc.databasemigration.model.SortOrders sortOrder;
 
     /**
-     * The current state of the Database Migration Deployment.
+     * The lifecycle state of the Migration.
      *
      */
-    private com.oracle.bmc.databasemigration.model.LifecycleStates lifecycleState;
+    private com.oracle.bmc.databasemigration.model.MigrationLifecycleStates lifecycleState;
 
     /**
      * The lifecycle detailed status of the Migration.

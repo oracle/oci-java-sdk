@@ -5,11 +5,10 @@
 package com.oracle.bmc.databasemigration.model;
 
 /**
- * Note: Deprecated. Use the new resource model APIs instead.
  * Sort orders.
  *
  **/
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200720")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210929")
 public enum SortOrders {
     Asc("ASC"),
     Desc("DESC"),

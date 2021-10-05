@@ -5,7 +5,6 @@
 package com.oracle.bmc.databasemigration.model;
 
 /**
- * Note: Deprecated. Use the new resource model APIs instead.
  * Migration resource
  *
  * <br/>
@@ -16,7 +15,7 @@ package com.oracle.bmc.databasemigration.model;
  * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200720")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210929")
 @lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
 @lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = MigrationSummary.Builder.class)
@@ -145,9 +144,9 @@ public class MigrationSummary {
         }
 
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-        private LifecycleStates lifecycleState;
+        private MigrationLifecycleStates lifecycleState;
 
-        public Builder lifecycleState(LifecycleStates lifecycleState) {
+        public Builder lifecycleState(MigrationLifecycleStates lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
@@ -345,7 +344,7 @@ public class MigrationSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-    LifecycleStates lifecycleState;
+    MigrationLifecycleStates lifecycleState;
 
     /**
      * Additional status related to the execution and current state of the Migration.

@@ -35,19 +35,29 @@ public class ManagementAgentPluginAggregationDimensions {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("pluginDisplayName")
+        private String pluginDisplayName;
+
+        public Builder pluginDisplayName(String pluginDisplayName) {
+            this.pluginDisplayName = pluginDisplayName;
+            this.__explicitlySet__.add("pluginDisplayName");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ManagementAgentPluginAggregationDimensions build() {
             ManagementAgentPluginAggregationDimensions __instance__ =
-                    new ManagementAgentPluginAggregationDimensions(pluginName);
+                    new ManagementAgentPluginAggregationDimensions(pluginName, pluginDisplayName);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(ManagementAgentPluginAggregationDimensions o) {
-            Builder copiedBuilder = pluginName(o.getPluginName());
+            Builder copiedBuilder =
+                    pluginName(o.getPluginName()).pluginDisplayName(o.getPluginDisplayName());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -66,6 +76,12 @@ public class ManagementAgentPluginAggregationDimensions {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("pluginName")
     String pluginName;
+
+    /**
+     * Management Agent Plugin Display Name
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("pluginDisplayName")
+    String pluginDisplayName;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

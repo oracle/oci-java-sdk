@@ -115,6 +115,7 @@ public final class Region implements Serializable, Comparable<Region> {
 
     // OC8
     public static final Region AP_CHIYODA_1 = register("ap-chiyoda-1", Realm.OC8, "nja");
+    public static final Region AP_IBARAKI_1 = register("ap-ibaraki-1", Realm.OC8, "ukb");
 
     private static final Map<String, Map<Region, String>> SERVICE_TO_REGION_ENDPOINTS =
             new HashMap<>();

@@ -8,7 +8,7 @@ import com.oracle.bmc.databasemigration.model.*;
 /**
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemigration/ListWorkRequestErrorsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListWorkRequestErrorsRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200720")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210929")
 @lombok.Builder(
     builderClassName = "Builder",
     buildMethodName = "buildWithoutInvocationCallback",
@@ -39,20 +39,17 @@ public class ListWorkRequestErrorsRequest
     private String page;
 
     /**
-     * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending.
-     * Default order for displayName is ascending. If no value is specified timeCreated is default.
+     * The field to sort by. Only one sort order may be provided. Default order for timestamp is descending.
      *
      */
     private SortBy sortBy;
 
     /**
-     * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending.
-     * Default order for displayName is ascending. If no value is specified timeCreated is default.
+     * The field to sort by. Only one sort order may be provided. Default order for timestamp is descending.
      *
      **/
     public enum SortBy {
-        TimeCreated("timeCreated"),
-        DisplayName("displayName"),
+        Timestamp("timestamp"),
         ;
 
         private final String value;
@@ -87,12 +84,6 @@ public class ListWorkRequestErrorsRequest
      *
      */
     private com.oracle.bmc.databasemigration.model.SortOrders sortOrder;
-
-    /**
-     * A filter to return only resources that match the entire display name given.
-     *
-     */
-    private String displayName;
 
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
@@ -141,7 +132,6 @@ public class ListWorkRequestErrorsRequest
             page(o.getPage());
             sortBy(o.getSortBy());
             sortOrder(o.getSortOrder());
-            displayName(o.getDisplayName());
             opcRequestId(o.getOpcRequestId());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());

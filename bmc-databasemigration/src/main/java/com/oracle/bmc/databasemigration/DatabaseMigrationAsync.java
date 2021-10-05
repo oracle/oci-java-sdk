@@ -10,7 +10,7 @@ import com.oracle.bmc.databasemigration.responses.*;
 /**
  * Use the Oracle Cloud Infrastructure Database Migration APIs to perform database migration operations.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200720")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210929")
 public interface DatabaseMigrationAsync extends AutoCloseable {
 
     /**
@@ -46,7 +46,6 @@ public interface DatabaseMigrationAsync extends AutoCloseable {
     void setRegion(String regionId);
 
     /**
-     * Note: Deprecated. Use the new resource model APIs instead.
      * Aborts a Migration Job (either Evaluation or Migration).
      *
      *
@@ -62,7 +61,6 @@ public interface DatabaseMigrationAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<AbortJobRequest, AbortJobResponse> handler);
 
     /**
-     * Note: Deprecated. Use the new resource model APIs instead.
      * Used to configure an ODMS Agent Compartment ID.
      *
      *
@@ -80,7 +78,6 @@ public interface DatabaseMigrationAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Note: Deprecated. Use the new resource model APIs instead.
      * Used to change the Database Connection compartment.
      *
      *
@@ -98,7 +95,6 @@ public interface DatabaseMigrationAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Note: Deprecated. Use the new resource model APIs instead.
      * Used to change the Migration compartment.
      *
      *
@@ -116,7 +112,6 @@ public interface DatabaseMigrationAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Note: Deprecated. Use the new resource model APIs instead.
      * Clone a configuration from an existing Migration.
      *
      *
@@ -133,7 +128,6 @@ public interface DatabaseMigrationAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Note: Deprecated. Use the new resource model APIs instead.
      * Create a Database Connection resource that contains the details to connect to either a Source or Target Database
      * in the migration.
      *
@@ -151,7 +145,6 @@ public interface DatabaseMigrationAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Note: Deprecated. Use the new resource model APIs instead.
      * Create a Migration resource that contains all the details to perform the
      * database migration operation, such as source and destination database
      * details, credentials, etc.
@@ -170,7 +163,6 @@ public interface DatabaseMigrationAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Note: Deprecated. Use the new resource model APIs instead.
      * Delete the ODMS Agent represented by the specified ODMS Agent ID.
      *
      *
@@ -186,7 +178,6 @@ public interface DatabaseMigrationAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<DeleteAgentRequest, DeleteAgentResponse> handler);
 
     /**
-     * Note: Deprecated. Use the new resource model APIs instead.
      * Deletes the Database Connection represented by the specified connection ID.
      *
      *
@@ -203,7 +194,6 @@ public interface DatabaseMigrationAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Note: Deprecated. Use the new resource model APIs instead.
      * Deletes the migration job represented by the given job ID.
      *
      *
@@ -219,7 +209,6 @@ public interface DatabaseMigrationAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<DeleteJobRequest, DeleteJobResponse> handler);
 
     /**
-     * Note: Deprecated. Use the new resource model APIs instead.
      * Deletes the Migration represented by the specified migration ID.
      *
      *
@@ -236,7 +225,6 @@ public interface DatabaseMigrationAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Note: Deprecated. Use the new resource model APIs instead.
      * Start Validate Migration job.
      *
      *
@@ -254,7 +242,22 @@ public interface DatabaseMigrationAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Note: Deprecated. Use the new resource model APIs instead.
+     * Get the Pre-Migration Advisor report details
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetAdvisorReportResponse> getAdvisorReport(
+            GetAdvisorReportRequest request,
+            com.oracle.bmc.responses.AsyncHandler<GetAdvisorReportRequest, GetAdvisorReportResponse>
+                    handler);
+
+    /**
      * Display the ODMS Agent configuration.
      *
      *
@@ -270,7 +273,6 @@ public interface DatabaseMigrationAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<GetAgentRequest, GetAgentResponse> handler);
 
     /**
-     * Note: Deprecated. Use the new resource model APIs instead.
      * Display Database Connection details.
      *
      *
@@ -287,7 +289,6 @@ public interface DatabaseMigrationAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Note: Deprecated. Use the new resource model APIs instead.
      * Get a migration job.
      *
      *
@@ -303,7 +304,6 @@ public interface DatabaseMigrationAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<GetJobRequest, GetJobResponse> handler);
 
     /**
-     * Note: Deprecated. Use the new resource model APIs instead.
      * Get the migration Job Output content as a String.
      *
      *
@@ -321,7 +321,6 @@ public interface DatabaseMigrationAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Note: Deprecated. Use the new resource model APIs instead.
      * Display Migration details.
      *
      *
@@ -338,7 +337,6 @@ public interface DatabaseMigrationAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Note: Deprecated. Use the new resource model APIs instead.
      * Gets the details of a work request.
      *
      *
@@ -355,7 +353,6 @@ public interface DatabaseMigrationAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Note: Deprecated. Use the new resource model APIs instead.
      * Get details of the ODMS Agent Images available to install on-premises.
      *
      *
@@ -372,7 +369,6 @@ public interface DatabaseMigrationAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Note: Deprecated. Use the new resource model APIs instead.
      * Display the name of all the existing ODMS Agents in the server.
      *
      *
@@ -388,7 +384,6 @@ public interface DatabaseMigrationAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<ListAgentsRequest, ListAgentsResponse> handler);
 
     /**
-     * Note: Deprecated. Use the new resource model APIs instead.
      * List all Database Connections.
      *
      *
@@ -405,7 +400,6 @@ public interface DatabaseMigrationAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Note: Deprecated. Use the new resource model APIs instead.
      * List the Job Outputs
      *
      *
@@ -422,7 +416,6 @@ public interface DatabaseMigrationAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Note: Deprecated. Use the new resource model APIs instead.
      * List all the names of the Migration jobs associated to the specified
      * migration site.
      *
@@ -439,7 +432,23 @@ public interface DatabaseMigrationAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<ListJobsRequest, ListJobsResponse> handler);
 
     /**
-     * Note: Deprecated. Use the new resource model APIs instead.
+     * Display sample object types to exclude or include for a Migration.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListMigrationObjectTypesResponse> listMigrationObjectTypes(
+            ListMigrationObjectTypesRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListMigrationObjectTypesRequest, ListMigrationObjectTypesResponse>
+                    handler);
+
+    /**
      * List all Migrations.
      *
      *
@@ -456,7 +465,6 @@ public interface DatabaseMigrationAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Note: Deprecated. Use the new resource model APIs instead.
      * Gets the errors for a work request.
      *
      *
@@ -474,7 +482,6 @@ public interface DatabaseMigrationAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Note: Deprecated. Use the new resource model APIs instead.
      * Gets the logs for a work request.
      *
      *
@@ -492,7 +499,6 @@ public interface DatabaseMigrationAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Note: Deprecated. Use the new resource model APIs instead.
      * Lists the work requests in a compartment or for a specified resource.
      *
      *
@@ -509,7 +515,6 @@ public interface DatabaseMigrationAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Note: Deprecated. Use the new resource model APIs instead.
      * Resume a migration Job.
      *
      *
@@ -525,7 +530,6 @@ public interface DatabaseMigrationAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<ResumeJobRequest, ResumeJobResponse> handler);
 
     /**
-     * Note: Deprecated. Use the new resource model APIs instead.
      * Display Migration Phases for a specified migration.
      *
      *
@@ -543,7 +547,6 @@ public interface DatabaseMigrationAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Note: Deprecated. Use the new resource model APIs instead.
      * Start Migration job.
      *
      *
@@ -560,7 +563,6 @@ public interface DatabaseMigrationAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Note: Deprecated. Use the new resource model APIs instead.
      * Modifies the ODMS Agent represented by the given ODMS Agent ID.
      *
      *
@@ -576,7 +578,6 @@ public interface DatabaseMigrationAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<UpdateAgentRequest, UpdateAgentResponse> handler);
 
     /**
-     * Note: Deprecated. Use the new resource model APIs instead.
      * Update Database Connection resource details.
      *
      *
@@ -593,7 +594,6 @@ public interface DatabaseMigrationAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Note: Deprecated. Use the new resource model APIs instead.
      * Update Migration Job resource details.
      *
      *
@@ -609,7 +609,6 @@ public interface DatabaseMigrationAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<UpdateJobRequest, UpdateJobResponse> handler);
 
     /**
-     * Note: Deprecated. Use the new resource model APIs instead.
      * Update Migration resource details.
      *
      *

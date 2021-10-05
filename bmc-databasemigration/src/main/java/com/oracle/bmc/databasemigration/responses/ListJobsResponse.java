@@ -6,7 +6,7 @@ package com.oracle.bmc.databasemigration.responses;
 
 import com.oracle.bmc.databasemigration.model.*;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200720")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210929")
 @lombok.Builder(builderClassName = "Builder")
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode(callSuper = true)

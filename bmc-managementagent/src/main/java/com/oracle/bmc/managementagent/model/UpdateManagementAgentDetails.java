@@ -26,15 +26,6 @@ public class UpdateManagementAgentDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
-        @com.fasterxml.jackson.annotation.JsonProperty("isAgentAutoUpgradable")
-        private Boolean isAgentAutoUpgradable;
-
-        public Builder isAgentAutoUpgradable(Boolean isAgentAutoUpgradable) {
-            this.isAgentAutoUpgradable = isAgentAutoUpgradable;
-            this.__explicitlySet__.add("isAgentAutoUpgradable");
-            return this;
-        }
-
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
@@ -68,8 +59,7 @@ public class UpdateManagementAgentDetails {
 
         public UpdateManagementAgentDetails build() {
             UpdateManagementAgentDetails __instance__ =
-                    new UpdateManagementAgentDetails(
-                            isAgentAutoUpgradable, displayName, freeformTags, definedTags);
+                    new UpdateManagementAgentDetails(displayName, freeformTags, definedTags);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -77,8 +67,7 @@ public class UpdateManagementAgentDetails {
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(UpdateManagementAgentDetails o) {
             Builder copiedBuilder =
-                    isAgentAutoUpgradable(o.getIsAgentAutoUpgradable())
-                            .displayName(o.getDisplayName())
+                    displayName(o.getDisplayName())
                             .freeformTags(o.getFreeformTags())
                             .definedTags(o.getDefinedTags());
 
@@ -93,12 +82,6 @@ public class UpdateManagementAgentDetails {
     public static Builder builder() {
         return new Builder();
     }
-
-    /**
-     * Setting of this flag is no longer supported.
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("isAgentAutoUpgradable")
-    Boolean isAgentAutoUpgradable;
 
     /**
      * New displayName of Agent.

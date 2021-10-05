@@ -21,7 +21,7 @@ import com.oracle.bmc.databasemigration.responses.*;
  * Future.isDone/isCancelled.<br/>
  * Please refer to https://github.com/oracle/oci-java-sdk/blob/master/bmc-examples/src/main/java/ResteasyClientWithObjectStorageExample.java
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200720")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210929")
 @lombok.extern.slf4j.Slf4j
 public class DatabaseMigrationAsyncClient implements DatabaseMigrationAsync {
     /**
@@ -889,6 +889,45 @@ public class DatabaseMigrationAsyncClient implements DatabaseMigrationAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<GetAdvisorReportResponse> getAdvisorReport(
+            GetAdvisorReportRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetAdvisorReportRequest, GetAdvisorReportResponse>
+                    handler) {
+        LOG.trace("Called async getAdvisorReport");
+        final GetAdvisorReportRequest interceptedRequest =
+                GetAdvisorReportConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetAdvisorReportConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<javax.ws.rs.core.Response, GetAdvisorReportResponse>
+                transformer = GetAdvisorReportConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<GetAdvisorReportRequest, GetAdvisorReportResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetAdvisorReportRequest, GetAdvisorReportResponse>,
+                        java.util.concurrent.Future<GetAdvisorReportResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetAdvisorReportRequest, GetAdvisorReportResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<GetAgentResponse> getAgent(
             GetAgentRequest request,
             final com.oracle.bmc.responses.AsyncHandler<GetAgentRequest, GetAgentResponse>
@@ -1298,6 +1337,47 @@ public class DatabaseMigrationAsyncClient implements DatabaseMigrationAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     ListJobsRequest, ListJobsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListMigrationObjectTypesResponse> listMigrationObjectTypes(
+            ListMigrationObjectTypesRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListMigrationObjectTypesRequest, ListMigrationObjectTypesResponse>
+                    handler) {
+        LOG.trace("Called async listMigrationObjectTypes");
+        final ListMigrationObjectTypesRequest interceptedRequest =
+                ListMigrationObjectTypesConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListMigrationObjectTypesConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ListMigrationObjectTypesResponse>
+                transformer = ListMigrationObjectTypesConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListMigrationObjectTypesRequest, ListMigrationObjectTypesResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListMigrationObjectTypesRequest, ListMigrationObjectTypesResponse>,
+                        java.util.concurrent.Future<ListMigrationObjectTypesResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListMigrationObjectTypesRequest, ListMigrationObjectTypesResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,

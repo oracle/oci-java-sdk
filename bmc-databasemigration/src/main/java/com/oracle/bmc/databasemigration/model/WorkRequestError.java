@@ -5,7 +5,6 @@
 package com.oracle.bmc.databasemigration.model;
 
 /**
- * Note: Deprecated. Use the new resource model APIs instead.
  * An error encountered while executing an operation that is tracked by a work request.
  *
  * <br/>
@@ -16,7 +15,7 @@ package com.oracle.bmc.databasemigration.model;
  * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200720")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210929")
 @lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
 @lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = WorkRequestError.Builder.class)
@@ -44,12 +43,12 @@ public class WorkRequestError {
             return this;
         }
 
-        @com.fasterxml.jackson.annotation.JsonProperty("timeStamp")
-        private java.util.Date timeStamp;
+        @com.fasterxml.jackson.annotation.JsonProperty("timestamp")
+        private java.util.Date timestamp;
 
-        public Builder timeStamp(java.util.Date timeStamp) {
-            this.timeStamp = timeStamp;
-            this.__explicitlySet__.add("timeStamp");
+        public Builder timestamp(java.util.Date timestamp) {
+            this.timestamp = timestamp;
+            this.__explicitlySet__.add("timestamp");
             return this;
         }
 
@@ -57,7 +56,7 @@ public class WorkRequestError {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public WorkRequestError build() {
-            WorkRequestError __instance__ = new WorkRequestError(code, message, timeStamp);
+            WorkRequestError __instance__ = new WorkRequestError(code, message, timestamp);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -65,7 +64,7 @@ public class WorkRequestError {
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(WorkRequestError o) {
             Builder copiedBuilder =
-                    code(o.getCode()).message(o.getMessage()).timeStamp(o.getTimeStamp());
+                    code(o.getCode()).message(o.getMessage()).timestamp(o.getTimestamp());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -98,8 +97,8 @@ public class WorkRequestError {
      * The time the error occured. An RFC3339 formatted datetime string.
      *
      **/
-    @com.fasterxml.jackson.annotation.JsonProperty("timeStamp")
-    java.util.Date timeStamp;
+    @com.fasterxml.jackson.annotation.JsonProperty("timestamp")
+    java.util.Date timestamp;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

@@ -47,6 +47,16 @@ public interface GoldenGate extends AutoCloseable {
     void setRegion(String regionId);
 
     /**
+     * Cancels a Deployment Backup creation process.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/goldengate/CancelDeploymentBackupExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CancelDeploymentBackup API.
+     */
+    CancelDeploymentBackupResponse cancelDeploymentBackup(CancelDeploymentBackupRequest request);
+
+    /**
      * Moves the DatabaseRegistration into a different compartment within the same tenancy. When provided, If-Match is checked against ETag values of the resource.  For information about moving resources between compartments, see [Moving Resources Between Compartments](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
      *
      * @param request The request object containing the details to send
@@ -183,6 +193,17 @@ public interface GoldenGate extends AutoCloseable {
     GetDeploymentBackupResponse getDeploymentBackup(GetDeploymentBackupRequest request);
 
     /**
+     * Retrieves a deployment upgrade.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/goldengate/GetDeploymentUpgradeExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetDeploymentUpgrade API.
+     */
+    GetDeploymentUpgradeResponse getDeploymentUpgrade(GetDeploymentUpgradeRequest request);
+
+    /**
      * Retrieve the WorkRequest identified by the given OCID.
      *
      * @param request The request object containing the details to send
@@ -215,6 +236,17 @@ public interface GoldenGate extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/goldengate/ListDeploymentBackupsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListDeploymentBackups API.
      */
     ListDeploymentBackupsResponse listDeploymentBackups(ListDeploymentBackupsRequest request);
+
+    /**
+     * Lists the Deployment Upgrades in a compartment.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/goldengate/ListDeploymentUpgradesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListDeploymentUpgrades API.
+     */
+    ListDeploymentUpgradesResponse listDeploymentUpgrades(ListDeploymentUpgradesRequest request);
 
     /**
      * Lists the Deployments in a compartment.

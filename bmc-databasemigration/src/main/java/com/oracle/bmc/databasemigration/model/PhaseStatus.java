@@ -5,7 +5,6 @@
 package com.oracle.bmc.databasemigration.model;
 
 /**
- * Note: Deprecated. Use the new resource model APIs instead.
  * Job phase status details.
  *
  * <br/>
@@ -16,7 +15,7 @@ package com.oracle.bmc.databasemigration.model;
  * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200720")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210929")
 @lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
 @lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = PhaseStatus.Builder.class)
@@ -53,6 +52,33 @@ public class PhaseStatus {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("isAdvisorReportAvailable")
+        private Boolean isAdvisorReportAvailable;
+
+        public Builder isAdvisorReportAvailable(Boolean isAdvisorReportAvailable) {
+            this.isAdvisorReportAvailable = isAdvisorReportAvailable;
+            this.__explicitlySet__.add("isAdvisorReportAvailable");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("extract")
+        private java.util.List<PhaseExtractEntry> extract;
+
+        public Builder extract(java.util.List<PhaseExtractEntry> extract) {
+            this.extract = extract;
+            this.__explicitlySet__.add("extract");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("logLocation")
+        private LogLocationBucketDetails logLocation;
+
+        public Builder logLocation(LogLocationBucketDetails logLocation) {
+            this.logLocation = logLocation;
+            this.__explicitlySet__.add("logLocation");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("progress")
         private Integer progress;
 
@@ -66,7 +92,15 @@ public class PhaseStatus {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public PhaseStatus build() {
-            PhaseStatus __instance__ = new PhaseStatus(name, status, durationInMs, progress);
+            PhaseStatus __instance__ =
+                    new PhaseStatus(
+                            name,
+                            status,
+                            durationInMs,
+                            isAdvisorReportAvailable,
+                            extract,
+                            logLocation,
+                            progress);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -77,6 +111,9 @@ public class PhaseStatus {
                     name(o.getName())
                             .status(o.getStatus())
                             .durationInMs(o.getDurationInMs())
+                            .isAdvisorReportAvailable(o.getIsAdvisorReportAvailable())
+                            .extract(o.getExtract())
+                            .logLocation(o.getLogLocation())
                             .progress(o.getProgress());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
@@ -111,6 +148,23 @@ public class PhaseStatus {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("durationInMs")
     Integer durationInMs;
+
+    /**
+     * True if a Pre-Migration Advisor report is available for this phase. False or null if no report is available.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isAdvisorReportAvailable")
+    Boolean isAdvisorReportAvailable;
+
+    /**
+     * Summary of phase status results.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("extract")
+    java.util.List<PhaseExtractEntry> extract;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("logLocation")
+    LogLocationBucketDetails logLocation;
 
     /**
      * Percent progress of job phase.
