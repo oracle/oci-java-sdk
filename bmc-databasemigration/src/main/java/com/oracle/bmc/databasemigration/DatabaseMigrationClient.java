@@ -8,7 +8,7 @@ import com.oracle.bmc.databasemigration.internal.http.*;
 import com.oracle.bmc.databasemigration.requests.*;
 import com.oracle.bmc.databasemigration.responses.*;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200720")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210929")
 @lombok.extern.slf4j.Slf4j
 public class DatabaseMigrationClient implements DatabaseMigration {
     /**
@@ -831,6 +831,34 @@ public class DatabaseMigrationClient implements DatabaseMigration {
     }
 
     @Override
+    public GetAdvisorReportResponse getAdvisorReport(GetAdvisorReportRequest request) {
+        LOG.trace("Called getAdvisorReport");
+        final GetAdvisorReportRequest interceptedRequest =
+                GetAdvisorReportConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetAdvisorReportConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, GetAdvisorReportResponse>
+                transformer = GetAdvisorReportConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public GetAgentResponse getAgent(GetAgentRequest request) {
         LOG.trace("Called getAgent");
         final GetAgentRequest interceptedRequest = GetAgentConverter.interceptRequest(request);
@@ -1123,6 +1151,35 @@ public class DatabaseMigrationClient implements DatabaseMigration {
                 ListJobsConverter.fromRequest(client, interceptedRequest);
         com.google.common.base.Function<javax.ws.rs.core.Response, ListJobsResponse> transformer =
                 ListJobsConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ListMigrationObjectTypesResponse listMigrationObjectTypes(
+            ListMigrationObjectTypesRequest request) {
+        LOG.trace("Called listMigrationObjectTypes");
+        final ListMigrationObjectTypesRequest interceptedRequest =
+                ListMigrationObjectTypesConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListMigrationObjectTypesConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, ListMigrationObjectTypesResponse>
+                transformer = ListMigrationObjectTypesConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(

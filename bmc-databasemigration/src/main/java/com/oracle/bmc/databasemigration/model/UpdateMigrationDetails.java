@@ -5,7 +5,6 @@
 package com.oracle.bmc.databasemigration.model;
 
 /**
- * Note: Deprecated. Use the new resource model APIs instead.
  * Update Migration resource parameters.
  *
  * <br/>
@@ -16,7 +15,7 @@ package com.oracle.bmc.databasemigration.model;
  * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200720")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210929")
 @lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
 @lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
@@ -93,6 +92,15 @@ public class UpdateMigrationDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("dumpTransferDetails")
+        private UpdateDumpTransferDetails dumpTransferDetails;
+
+        public Builder dumpTransferDetails(UpdateDumpTransferDetails dumpTransferDetails) {
+            this.dumpTransferDetails = dumpTransferDetails;
+            this.__explicitlySet__.add("dumpTransferDetails");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("datapumpSettings")
         private UpdateDataPumpSettings datapumpSettings;
 
@@ -102,12 +110,30 @@ public class UpdateMigrationDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("advisorSettings")
+        private UpdateAdvisorSettings advisorSettings;
+
+        public Builder advisorSettings(UpdateAdvisorSettings advisorSettings) {
+            this.advisorSettings = advisorSettings;
+            this.__explicitlySet__.add("advisorSettings");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("excludeObjects")
         private java.util.List<DatabaseObject> excludeObjects;
 
         public Builder excludeObjects(java.util.List<DatabaseObject> excludeObjects) {
             this.excludeObjects = excludeObjects;
             this.__explicitlySet__.add("excludeObjects");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("includeObjects")
+        private java.util.List<DatabaseObject> includeObjects;
+
+        public Builder includeObjects(java.util.List<DatabaseObject> includeObjects) {
+            this.includeObjects = includeObjects;
+            this.__explicitlySet__.add("includeObjects");
             return this;
         }
 
@@ -161,8 +187,11 @@ public class UpdateMigrationDetails {
                             sourceContainerDatabaseConnectionId,
                             targetDatabaseConnectionId,
                             dataTransferMediumDetails,
+                            dumpTransferDetails,
                             datapumpSettings,
+                            advisorSettings,
                             excludeObjects,
+                            includeObjects,
                             goldenGateDetails,
                             vaultDetails,
                             freeformTags,
@@ -182,8 +211,11 @@ public class UpdateMigrationDetails {
                                     o.getSourceContainerDatabaseConnectionId())
                             .targetDatabaseConnectionId(o.getTargetDatabaseConnectionId())
                             .dataTransferMediumDetails(o.getDataTransferMediumDetails())
+                            .dumpTransferDetails(o.getDumpTransferDetails())
                             .datapumpSettings(o.getDatapumpSettings())
+                            .advisorSettings(o.getAdvisorSettings())
                             .excludeObjects(o.getExcludeObjects())
+                            .includeObjects(o.getIncludeObjects())
                             .goldenGateDetails(o.getGoldenGateDetails())
                             .vaultDetails(o.getVaultDetails())
                             .freeformTags(o.getFreeformTags())
@@ -248,16 +280,30 @@ public class UpdateMigrationDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("dataTransferMediumDetails")
     UpdateDataTransferMediumDetails dataTransferMediumDetails;
 
+    @com.fasterxml.jackson.annotation.JsonProperty("dumpTransferDetails")
+    UpdateDumpTransferDetails dumpTransferDetails;
+
     @com.fasterxml.jackson.annotation.JsonProperty("datapumpSettings")
     UpdateDataPumpSettings datapumpSettings;
 
+    @com.fasterxml.jackson.annotation.JsonProperty("advisorSettings")
+    UpdateAdvisorSettings advisorSettings;
+
     /**
-     * Database objects to exclude from migration.
+     * Database objects to exclude from migration, cannot be specified alongside 'includeObjects'.
      * If specified, the list will be replaced entirely. Empty list will remove stored excludeObjects details.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("excludeObjects")
     java.util.List<DatabaseObject> excludeObjects;
+
+    /**
+     * Database objects to include from migration, cannot be specified alongside 'excludeObjects'.
+     * If specified, the list will be replaced entirely. Empty list will remove stored includeObjects details.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("includeObjects")
+    java.util.List<DatabaseObject> includeObjects;
 
     @com.fasterxml.jackson.annotation.JsonProperty("goldenGateDetails")
     UpdateGoldenGateDetails goldenGateDetails;

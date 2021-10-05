@@ -601,6 +601,47 @@ public class ManagementAgentAsyncClient implements ManagementAgentAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<GetAutoUpgradableConfigResponse> getAutoUpgradableConfig(
+            GetAutoUpgradableConfigRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetAutoUpgradableConfigRequest, GetAutoUpgradableConfigResponse>
+                    handler) {
+        LOG.trace("Called async getAutoUpgradableConfig");
+        final GetAutoUpgradableConfigRequest interceptedRequest =
+                GetAutoUpgradableConfigConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetAutoUpgradableConfigConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, GetAutoUpgradableConfigResponse>
+                transformer = GetAutoUpgradableConfigConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        GetAutoUpgradableConfigRequest, GetAutoUpgradableConfigResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetAutoUpgradableConfigRequest, GetAutoUpgradableConfigResponse>,
+                        java.util.concurrent.Future<GetAutoUpgradableConfigResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetAutoUpgradableConfigRequest, GetAutoUpgradableConfigResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<GetManagementAgentResponse> getManagementAgent(
             GetManagementAgentRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -1099,6 +1140,53 @@ public class ManagementAgentAsyncClient implements ManagementAgentAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     ListWorkRequestsRequest, ListWorkRequestsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<SetAutoUpgradableConfigResponse> setAutoUpgradableConfig(
+            SetAutoUpgradableConfigRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            SetAutoUpgradableConfigRequest, SetAutoUpgradableConfigResponse>
+                    handler) {
+        LOG.trace("Called async setAutoUpgradableConfig");
+        final SetAutoUpgradableConfigRequest interceptedRequest =
+                SetAutoUpgradableConfigConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                SetAutoUpgradableConfigConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, SetAutoUpgradableConfigResponse>
+                transformer = SetAutoUpgradableConfigConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        SetAutoUpgradableConfigRequest, SetAutoUpgradableConfigResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                SetAutoUpgradableConfigRequest, SetAutoUpgradableConfigResponse>,
+                        java.util.concurrent.Future<SetAutoUpgradableConfigResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getSetAutoUpgradableConfigDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    SetAutoUpgradableConfigRequest, SetAutoUpgradableConfigResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,

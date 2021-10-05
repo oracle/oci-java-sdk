@@ -10,7 +10,7 @@ import com.oracle.bmc.databasemigration.requests.*;
 import com.oracle.bmc.databasemigration.responses.*;
 import org.apache.commons.lang3.Validate;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200720")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210929")
 @lombok.extern.slf4j.Slf4j
 public class AbortJobConverter {
     private static final com.oracle.bmc.http.internal.ResponseConversionFunctionFactory
@@ -31,7 +31,7 @@ public class AbortJobConverter {
 
         com.oracle.bmc.http.internal.WrappedWebTarget target =
                 client.getBaseTarget()
-                        .path("/20200720")
+                        .path("/20210929")
                         .path("jobs")
                         .path(
                                 com.oracle.bmc.util.internal.HttpUtils.encodePathSegment(

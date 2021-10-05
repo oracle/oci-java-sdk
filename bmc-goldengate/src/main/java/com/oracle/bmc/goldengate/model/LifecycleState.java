@@ -18,6 +18,11 @@ public enum LifecycleState {
     Deleting("DELETING"),
     Deleted("DELETED"),
     Failed("FAILED"),
+    NeedsAttention("NEEDS_ATTENTION"),
+    InProgress("IN_PROGRESS"),
+    Canceling("CANCELING"),
+    Canceled("CANCELED"),
+    Succeeded("SUCCEEDED"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this

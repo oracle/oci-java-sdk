@@ -88,6 +88,14 @@ public class ListManagementAgentImagesConverter {
                                     request.getLifecycleState().getValue()));
         }
 
+        if (request.getInstallType() != null) {
+            target =
+                    target.queryParam(
+                            "installType",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getInstallType().getValue()));
+        }
+
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib = target.request();
 
         ib.accept(javax.ws.rs.core.MediaType.APPLICATION_JSON);

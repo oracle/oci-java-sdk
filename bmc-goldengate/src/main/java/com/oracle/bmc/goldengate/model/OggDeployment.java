@@ -43,6 +43,15 @@ public class OggDeployment {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("oggVersion")
+        private String oggVersion;
+
+        public Builder oggVersion(String oggVersion) {
+            this.oggVersion = oggVersion;
+            this.__explicitlySet__.add("oggVersion");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("certificate")
         private String certificate;
 
@@ -57,7 +66,7 @@ public class OggDeployment {
 
         public OggDeployment build() {
             OggDeployment __instance__ =
-                    new OggDeployment(deploymentName, adminUsername, certificate);
+                    new OggDeployment(deploymentName, adminUsername, oggVersion, certificate);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -67,6 +76,7 @@ public class OggDeployment {
             Builder copiedBuilder =
                     deploymentName(o.getDeploymentName())
                             .adminUsername(o.getAdminUsername())
+                            .oggVersion(o.getOggVersion())
                             .certificate(o.getCertificate());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
@@ -94,6 +104,13 @@ public class OggDeployment {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("adminUsername")
     String adminUsername;
+
+    /**
+     * Version of OGG
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("oggVersion")
+    String oggVersion;
 
     /**
      * A PEM-encoded SSL certificate.

@@ -10,7 +10,7 @@ import com.oracle.bmc.databasemigration.requests.*;
 import com.oracle.bmc.databasemigration.responses.*;
 import org.apache.commons.lang3.Validate;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200720")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210929")
 @lombok.extern.slf4j.Slf4j
 public class ListAgentImagesConverter {
     private static final com.oracle.bmc.http.internal.ResponseConversionFunctionFactory
@@ -29,7 +29,7 @@ public class ListAgentImagesConverter {
         Validate.notNull(request, "request instance is required");
 
         com.oracle.bmc.http.internal.WrappedWebTarget target =
-                client.getBaseTarget().path("/20200720").path("agentImages");
+                client.getBaseTarget().path("/20210929").path("agentImages");
 
         if (request.getLimit() != null) {
             target =

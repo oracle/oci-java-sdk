@@ -89,6 +89,15 @@ public class ManagementAgentSummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("resourceArtifactVersion")
+        private String resourceArtifactVersion;
+
+        public Builder resourceArtifactVersion(String resourceArtifactVersion) {
+            this.resourceArtifactVersion = resourceArtifactVersion;
+            this.__explicitlySet__.add("resourceArtifactVersion");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("isAgentAutoUpgradable")
         private Boolean isAgentAutoUpgradable;
 
@@ -197,6 +206,15 @@ public class ManagementAgentSummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("installType")
+        private InstallTypes installType;
+
+        public Builder installType(InstallTypes installType) {
+            this.installType = installType;
+            this.__explicitlySet__.add("installType");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
@@ -229,6 +247,7 @@ public class ManagementAgentSummary {
                             platformName,
                             platformVersion,
                             version,
+                            resourceArtifactVersion,
                             isAgentAutoUpgradable,
                             timeCreated,
                             timeUpdated,
@@ -241,6 +260,7 @@ public class ManagementAgentSummary {
                             lifecycleState,
                             lifecycleDetails,
                             isCustomerDeployed,
+                            installType,
                             freeformTags,
                             definedTags);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
@@ -257,6 +277,7 @@ public class ManagementAgentSummary {
                             .platformName(o.getPlatformName())
                             .platformVersion(o.getPlatformVersion())
                             .version(o.getVersion())
+                            .resourceArtifactVersion(o.getResourceArtifactVersion())
                             .isAgentAutoUpgradable(o.getIsAgentAutoUpgradable())
                             .timeCreated(o.getTimeCreated())
                             .timeUpdated(o.getTimeUpdated())
@@ -269,6 +290,7 @@ public class ManagementAgentSummary {
                             .lifecycleState(o.getLifecycleState())
                             .lifecycleDetails(o.getLifecycleDetails())
                             .isCustomerDeployed(o.getIsCustomerDeployed())
+                            .installType(o.getInstallType())
                             .freeformTags(o.getFreeformTags())
                             .definedTags(o.getDefinedTags());
 
@@ -327,7 +349,18 @@ public class ManagementAgentSummary {
     String version;
 
     /**
-     * true if the agent can be upgraded automatically; false if it must be upgraded manually.
+     * Version of the deployment artifact instantiated by this Management Agent.
+     * The format for Standalone resourceMode is YYMMDD.HHMM, and the format for other modes
+     * (whose artifacts are based upon Standalone but can advance independently)
+     * is YYMMDD.HHMM.VVVVVVVVVVVV.
+     * VVVVVVVVVVVV is always a numeric value between 000000000000 and 999999999999
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("resourceArtifactVersion")
+    String resourceArtifactVersion;
+
+    /**
+     * true if the agent can be upgraded automatically; false if it must be upgraded manually. This flag is derived from the tenancy level auto upgrade preference.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isAgentAutoUpgradable")
     Boolean isAgentAutoUpgradable;
@@ -397,6 +430,12 @@ public class ManagementAgentSummary {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isCustomerDeployed")
     Boolean isCustomerDeployed;
+
+    /**
+     * The install type, either AGENT or GATEWAY
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("installType")
+    InstallTypes installType;
 
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.

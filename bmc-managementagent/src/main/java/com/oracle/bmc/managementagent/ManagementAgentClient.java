@@ -612,6 +612,35 @@ public class ManagementAgentClient implements ManagementAgent {
     }
 
     @Override
+    public GetAutoUpgradableConfigResponse getAutoUpgradableConfig(
+            GetAutoUpgradableConfigRequest request) {
+        LOG.trace("Called getAutoUpgradableConfig");
+        final GetAutoUpgradableConfigRequest interceptedRequest =
+                GetAutoUpgradableConfigConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetAutoUpgradableConfigConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, GetAutoUpgradableConfigResponse>
+                transformer = GetAutoUpgradableConfigConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public GetManagementAgentResponse getManagementAgent(GetManagementAgentRequest request) {
         LOG.trace("Called getManagementAgent");
         final GetManagementAgentRequest interceptedRequest =
@@ -965,6 +994,40 @@ public class ManagementAgentClient implements ManagementAgent {
                             retryRequest,
                             retriedRequest -> {
                                 javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public SetAutoUpgradableConfigResponse setAutoUpgradableConfig(
+            SetAutoUpgradableConfigRequest request) {
+        LOG.trace("Called setAutoUpgradableConfig");
+        final SetAutoUpgradableConfigRequest interceptedRequest =
+                SetAutoUpgradableConfigConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                SetAutoUpgradableConfigConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, SetAutoUpgradableConfigResponse>
+                transformer = SetAutoUpgradableConfigConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getSetAutoUpgradableConfigDetails(),
+                                                retriedRequest);
                                 return transformer.apply(response);
                             });
                 });

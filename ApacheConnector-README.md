@@ -173,9 +173,9 @@ An example of configuring a proxy can be found [here](https://github.com/oracle/
 
 `ApacheConfigurator` by default configures a connection pool with `defaultMaxConnectionsPerRoute` and
 `maximumOpenConnections`. Please make sure to close all `InputStreams` obtained from the response object by
-calling close on the stream object if doing partial read. If the stream is read completely, then the SDK will try to
+calling close on the stream object if doing partial read or if not reading at all. If the stream is read completely, then the SDK will try to
 auto-close the stream to release the connection from the connection pool. 
-To manually close the stream in case of partial read of stream. Please call close on the stream.
+To manually close the stream in case of partial read of stream/no read. Please call close on the stream.
 For example - `GetObjectReponse.getInputStream().close()` or
 use try-with-resources. Otherwise, a partial read without closing will lead to the connection not being released from 
 the pool and results in hanging for an indefinite time.
@@ -189,10 +189,10 @@ Use `ApacheConnectionClosingStrategy.ImmediateClosingStrategy` for large files w
 
 Note : If both the above Apache Connection closing strategies do not give you optimal results for your use-cases, please consider switching back to Jersey Default `HttpUrlConnectorProvider` using the method stated in the above section.
 
-An example can be found [here](http://https://github.com/oracle/oci-java-sdk/tree/master/bmc-examples/src/main/java/ApacheConnectorPropertiesExample.java  "here")
+An example can be found [here](https://github.com/oracle/oci-java-sdk/tree/master/bmc-examples/src/main/java/ApacheConnectorPropertiesExample.java  "here")
 
 ## More info
-More examples related to customizing Apache Connector can be found [here](http://https://github.com/oracle/oci-java-sdk/tree/master/bmc-examples/src/main/java/ApacheConnectorPropertiesExample.java  "here") 
+More examples related to customizing Apache Connector can be found [here](https://github.com/oracle/oci-java-sdk/tree/master/bmc-examples/src/main/java/ApacheConnectorPropertiesExample.java  "here") 
 
 ## License
 Copyright (c) 2016, 2020, Oracle and/or its affiliates.  All rights reserved.

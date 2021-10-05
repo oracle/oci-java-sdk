@@ -5,19 +5,21 @@
 package com.oracle.bmc.databasemigration.model;
 
 /**
- * Note: Deprecated. Use the new resource model APIs instead.
  * Possible ODMS Job Phases.
  *
  **/
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200720")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210929")
 @lombok.extern.slf4j.Slf4j
 public enum OdmsJobPhases {
     OdmsValidateTgt("ODMS_VALIDATE_TGT"),
     OdmsValidateSrc("ODMS_VALIDATE_SRC"),
+    OdmsValidatePremigrationAdvisor("ODMS_VALIDATE_PREMIGRATION_ADVISOR"),
     OdmsValidateGgHub("ODMS_VALIDATE_GG_HUB"),
     OdmsValidateDatapumpSettings("ODMS_VALIDATE_DATAPUMP_SETTINGS"),
     OdmsValidateDatapumpSettingsSrc("ODMS_VALIDATE_DATAPUMP_SETTINGS_SRC"),
     OdmsValidateDatapumpSettingsTgt("ODMS_VALIDATE_DATAPUMP_SETTINGS_TGT"),
+    OdmsValidateDatapumpSrc("ODMS_VALIDATE_DATAPUMP_SRC"),
+    OdmsValidateDatapumpEstimateSrc("ODMS_VALIDATE_DATAPUMP_ESTIMATE_SRC"),
     OdmsValidate("ODMS_VALIDATE"),
     OdmsPrepare("ODMS_PREPARE"),
     OdmsInitialLoadExport("ODMS_INITIAL_LOAD_EXPORT"),

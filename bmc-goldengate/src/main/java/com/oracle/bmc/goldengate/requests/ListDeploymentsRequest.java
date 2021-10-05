@@ -32,10 +32,22 @@ public class ListDeploymentsRequest extends com.oracle.bmc.requests.BmcRequest<j
     private com.oracle.bmc.goldengate.model.LifecycleState lifecycleState;
 
     /**
+     * A filter to return only the resources that match the 'lifecycleSubState' given.
+     *
+     */
+    private com.oracle.bmc.goldengate.model.LifecycleSubState lifecycleSubState;
+
+    /**
      * A filter to return only the resources that match the entire 'displayName' given.
      *
      */
     private String displayName;
+
+    /**
+     * A filter to return only the resources that match the 'fqdn' given.
+     *
+     */
+    private String fqdn;
 
     /**
      * The maximum number of items to return.
@@ -140,7 +152,9 @@ public class ListDeploymentsRequest extends com.oracle.bmc.requests.BmcRequest<j
         public Builder copy(ListDeploymentsRequest o) {
             compartmentId(o.getCompartmentId());
             lifecycleState(o.getLifecycleState());
+            lifecycleSubState(o.getLifecycleSubState());
             displayName(o.getDisplayName());
+            fqdn(o.getFqdn());
             limit(o.getLimit());
             page(o.getPage());
             sortOrder(o.getSortOrder());

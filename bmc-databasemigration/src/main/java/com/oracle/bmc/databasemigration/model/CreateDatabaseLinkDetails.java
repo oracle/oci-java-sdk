@@ -5,7 +5,6 @@
 package com.oracle.bmc.databasemigration.model;
 
 /**
- * Note: Deprecated. Use the new resource model APIs instead.
  * Optional details for creating a network database link from OCI database to on-premise database.
  *
  * <br/>
@@ -16,7 +15,7 @@ package com.oracle.bmc.databasemigration.model;
  * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200720")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210929")
 @lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
 @lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
@@ -37,18 +36,28 @@ public class CreateDatabaseLinkDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("walletBucket")
+        private CreateObjectStoreBucket walletBucket;
+
+        public Builder walletBucket(CreateObjectStoreBucket walletBucket) {
+            this.walletBucket = walletBucket;
+            this.__explicitlySet__.add("walletBucket");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CreateDatabaseLinkDetails build() {
-            CreateDatabaseLinkDetails __instance__ = new CreateDatabaseLinkDetails(name);
+            CreateDatabaseLinkDetails __instance__ =
+                    new CreateDatabaseLinkDetails(name, walletBucket);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(CreateDatabaseLinkDetails o) {
-            Builder copiedBuilder = name(o.getName());
+            Builder copiedBuilder = name(o.getName()).walletBucket(o.getWalletBucket());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -68,6 +77,9 @@ public class CreateDatabaseLinkDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     String name;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("walletBucket")
+    CreateObjectStoreBucket walletBucket;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

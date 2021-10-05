@@ -36,6 +36,11 @@ public class SummarizeManagementAgentCountsRequest
     private Boolean hasPlugins;
 
     /**
+     * A filter to return either agents or gateway types depending upon install type selected by user. By default both install type will be returned.
+     */
+    private com.oracle.bmc.managementagent.model.InstallTypes installType;
+
+    /**
      * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
      */
     private String page;
@@ -105,6 +110,7 @@ public class SummarizeManagementAgentCountsRequest
             compartmentId(o.getCompartmentId());
             groupBy(o.getGroupBy());
             hasPlugins(o.getHasPlugins());
+            installType(o.getInstallType());
             page(o.getPage());
             opcRequestId(o.getOpcRequestId());
             invocationCallback(o.getInvocationCallback());

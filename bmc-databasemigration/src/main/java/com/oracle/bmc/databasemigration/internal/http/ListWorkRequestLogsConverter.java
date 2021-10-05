@@ -10,7 +10,7 @@ import com.oracle.bmc.databasemigration.requests.*;
 import com.oracle.bmc.databasemigration.responses.*;
 import org.apache.commons.lang3.Validate;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200720")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210929")
 @lombok.extern.slf4j.Slf4j
 public class ListWorkRequestLogsConverter {
     private static final com.oracle.bmc.http.internal.ResponseConversionFunctionFactory
@@ -32,7 +32,7 @@ public class ListWorkRequestLogsConverter {
 
         com.oracle.bmc.http.internal.WrappedWebTarget target =
                 client.getBaseTarget()
-                        .path("/20200720")
+                        .path("/20210929")
                         .path("workRequests")
                         .path(
                                 com.oracle.bmc.util.internal.HttpUtils.encodePathSegment(
@@ -69,14 +69,6 @@ public class ListWorkRequestLogsConverter {
                             "sortOrder",
                             com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
                                     request.getSortOrder().getValue()));
-        }
-
-        if (request.getDisplayName() != null) {
-            target =
-                    target.queryParam(
-                            "displayName",
-                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
-                                    request.getDisplayName()));
         }
 
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib = target.request();

@@ -66,6 +66,11 @@ public class ListManagementAgentsRequest
     private Boolean isCustomerDeployed;
 
     /**
+     * A filter to return either agents or gateway types depending upon install type selected by user. By default both install type will be returned.
+     */
+    private com.oracle.bmc.managementagent.model.InstallTypes installType;
+
+    /**
      * The maximum number of items to return.
      */
     private Integer limit;
@@ -270,6 +275,7 @@ public class ListManagementAgentsRequest
             hostId(o.getHostId());
             platformType(o.getPlatformType());
             isCustomerDeployed(o.getIsCustomerDeployed());
+            installType(o.getInstallType());
             limit(o.getLimit());
             page(o.getPage());
             sortOrder(o.getSortOrder());

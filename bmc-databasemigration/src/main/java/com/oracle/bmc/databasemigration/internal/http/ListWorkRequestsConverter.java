@@ -10,7 +10,7 @@ import com.oracle.bmc.databasemigration.requests.*;
 import com.oracle.bmc.databasemigration.responses.*;
 import org.apache.commons.lang3.Validate;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200720")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210929")
 @lombok.extern.slf4j.Slf4j
 public class ListWorkRequestsConverter {
     private static final com.oracle.bmc.http.internal.ResponseConversionFunctionFactory
@@ -31,7 +31,7 @@ public class ListWorkRequestsConverter {
         Validate.notNull(request.getCompartmentId(), "compartmentId is required");
 
         com.oracle.bmc.http.internal.WrappedWebTarget target =
-                client.getBaseTarget().path("/20200720").path("workRequests");
+                client.getBaseTarget().path("/20210929").path("workRequests");
 
         target =
                 target.queryParam(
@@ -45,6 +45,14 @@ public class ListWorkRequestsConverter {
                             "resourceId",
                             com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
                                     request.getResourceId()));
+        }
+
+        if (request.getStatus() != null) {
+            target =
+                    target.queryParam(
+                            "status",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getStatus().getValue()));
         }
 
         if (request.getLimit() != null) {
@@ -77,14 +85,6 @@ public class ListWorkRequestsConverter {
                             "sortOrder",
                             com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
                                     request.getSortOrder().getValue()));
-        }
-
-        if (request.getDisplayName() != null) {
-            target =
-                    target.queryParam(
-                            "displayName",
-                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
-                                    request.getDisplayName()));
         }
 
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib = target.request();

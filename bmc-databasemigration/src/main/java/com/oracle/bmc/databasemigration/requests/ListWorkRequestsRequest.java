@@ -8,7 +8,7 @@ import com.oracle.bmc.databasemigration.model.*;
 /**
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemigration/ListWorkRequestsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListWorkRequestsRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200720")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210929")
 @lombok.Builder(
     builderClassName = "Builder",
     buildMethodName = "buildWithoutInvocationCallback",
@@ -32,6 +32,12 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
     private String resourceId;
 
     /**
+     * A filter to return only resources their lifecycleState matches the given OperationStatus.
+     *
+     */
+    private com.oracle.bmc.databasemigration.model.OperationStatus status;
+
+    /**
      * The maximum number of items to return.
      *
      */
@@ -44,20 +50,17 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
     private String page;
 
     /**
-     * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending.
-     * Default order for displayName is ascending. If no value is specified timeCreated is default.
+     * The field to sort by. Only one sort order may be provided. Default order for timeAccepted is descending.
      *
      */
     private SortBy sortBy;
 
     /**
-     * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending.
-     * Default order for displayName is ascending. If no value is specified timeCreated is default.
+     * The field to sort by. Only one sort order may be provided. Default order for timeAccepted is descending.
      *
      **/
     public enum SortBy {
-        TimeCreated("timeCreated"),
-        DisplayName("displayName"),
+        TimeAccepted("timeAccepted"),
         ;
 
         private final String value;
@@ -92,12 +95,6 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
      *
      */
     private com.oracle.bmc.databasemigration.model.SortOrders sortOrder;
-
-    /**
-     * A filter to return only resources that match the entire display name given.
-     *
-     */
-    private String displayName;
 
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
@@ -143,11 +140,11 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
         public Builder copy(ListWorkRequestsRequest o) {
             compartmentId(o.getCompartmentId());
             resourceId(o.getResourceId());
+            status(o.getStatus());
             limit(o.getLimit());
             page(o.getPage());
             sortBy(o.getSortBy());
             sortOrder(o.getSortOrder());
-            displayName(o.getDisplayName());
             opcRequestId(o.getOpcRequestId());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
