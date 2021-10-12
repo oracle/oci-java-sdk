@@ -59,13 +59,25 @@ public class BrowserMonitorConfiguration extends MonitorConfiguration {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("networkConfiguration")
+        private NetworkConfiguration networkConfiguration;
+
+        public Builder networkConfiguration(NetworkConfiguration networkConfiguration) {
+            this.networkConfiguration = networkConfiguration;
+            this.__explicitlySet__.add("networkConfiguration");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public BrowserMonitorConfiguration build() {
             BrowserMonitorConfiguration __instance__ =
                     new BrowserMonitorConfiguration(
-                            isFailureRetried, isCertificateValidationEnabled, verifyTexts);
+                            isFailureRetried,
+                            isCertificateValidationEnabled,
+                            verifyTexts,
+                            networkConfiguration);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -75,7 +87,8 @@ public class BrowserMonitorConfiguration extends MonitorConfiguration {
             Builder copiedBuilder =
                     isFailureRetried(o.getIsFailureRetried())
                             .isCertificateValidationEnabled(o.getIsCertificateValidationEnabled())
-                            .verifyTexts(o.getVerifyTexts());
+                            .verifyTexts(o.getVerifyTexts())
+                            .networkConfiguration(o.getNetworkConfiguration());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -93,10 +106,12 @@ public class BrowserMonitorConfiguration extends MonitorConfiguration {
     public BrowserMonitorConfiguration(
             Boolean isFailureRetried,
             Boolean isCertificateValidationEnabled,
-            java.util.List<VerifyText> verifyTexts) {
+            java.util.List<VerifyText> verifyTexts,
+            NetworkConfiguration networkConfiguration) {
         super(isFailureRetried);
         this.isCertificateValidationEnabled = isCertificateValidationEnabled;
         this.verifyTexts = verifyTexts;
+        this.networkConfiguration = networkConfiguration;
     }
 
     /**
@@ -112,6 +127,9 @@ public class BrowserMonitorConfiguration extends MonitorConfiguration {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("verifyTexts")
     java.util.List<VerifyText> verifyTexts;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("networkConfiguration")
+    NetworkConfiguration networkConfiguration;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

@@ -138,9 +138,7 @@ public class CreateEsxiHostDetails {
     String displayName;
 
     /**
-     * Billing option selected during SDDC creation.
-     * Oracle Cloud Infrastructure VMware Solution supports the following billing interval SKUs:
-     * HOUR, MONTH, ONE_YEAR, and THREE_YEARS.
+     * The billing option currently used by the ESXi host.
      * {@link #listSupportedSkus(ListSupportedSkusRequest) listSupportedSkus}.
      *
      **/
@@ -148,8 +146,8 @@ public class CreateEsxiHostDetails {
     Sku currentSku;
 
     /**
-     * Billing option to switch to once existing billing cycle ends.
-     * If nextSku is null or empty, currentSku will be used to continue with next billing term.
+     * The billing option to switch to after the existing billing cycle ends.
+     * If {@code nextSku} is null or empty, {@code currentSku} continues to the next billing cycle.
      * {@link #listSupportedSkus(ListSupportedSkusRequest) listSupportedSkus}.
      *
      **/

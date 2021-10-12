@@ -259,9 +259,7 @@ public class EsxiHostSummary {
     LifecycleStates lifecycleState;
 
     /**
-     * Billing option selected during SDDC creation.
-     * Oracle Cloud Infrastructure VMware Solution supports the following billing interval SKUs:
-     * HOUR, MONTH, ONE_YEAR, and THREE_YEARS.
+     * The billing option currently used by the ESXi host.
      * {@link #listSupportedSkus(ListSupportedSkusRequest) listSupportedSkus}.
      *
      **/
@@ -269,7 +267,8 @@ public class EsxiHostSummary {
     Sku currentSku;
 
     /**
-     * Billing option to switch to once existing billing cycle ends.
+     * The billing option to switch to after the current billing cycle ends.
+     * If {@code nextSku} is null or empty, {@code currentSku} continues to the next billing cycle.
      * {@link #listSupportedSkus(ListSupportedSkusRequest) listSupportedSkus}.
      *
      **/
@@ -277,8 +276,8 @@ public class EsxiHostSummary {
     Sku nextSku;
 
     /**
-     * Current billing cycle end date. If nextSku is different from existing SKU, then we switch to newSKu
-     * after this contractEndDate
+     * Current billing cycle end date. If the value in {@code currentSku} and {@code nextSku} are different, the value specified in {@code nextSku}
+     * becomes the new {@code currentSKU} when the {@code contractEndDate} is reached.
      * Example: {@code 2016-08-25T21:10:29.600Z}
      *
      **/

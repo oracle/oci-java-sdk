@@ -47,7 +47,7 @@ public interface Sddc extends AutoCloseable {
     void setRegion(String regionId);
 
     /**
-     * Cancel the pending SDDC downgrade from HCX Enterprise to HCX Advanced
+     * Cancel the pending SDDC downgrade from HCX Enterprise to HCX Advanced.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -103,7 +103,10 @@ public interface Sddc extends AutoCloseable {
     DeleteSddcResponse deleteSddc(DeleteSddcRequest request);
 
     /**
-     * Downgrade the specified SDDC from HCX Enterprise to HCX Advanced
+     * Downgrade the specified SDDC from HCX Enterprise to HCX Advanced.
+     * Downgrading from HCX Enterprise to HCX Advanced reduces the number of provided license keys from 10 to 3.
+     * Downgrade remains in a `PENDING` state until the end of the current billing cycle. You can use {@link #cancelDowngradeHcx(CancelDowngradeHcxRequest) cancelDowngradeHcx}
+     * to cancel the downgrade while it's still in a `PENDING` state.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -136,8 +139,7 @@ public interface Sddc extends AutoCloseable {
     ListSddcsResponse listSddcs(ListSddcsRequest request);
 
     /**
-     * Lists supported SKUs. Oracle Cloud Infrastructure VMware Solution supports the following billing interval SKUs:
-     * HOUR, MONTH, ONE_YEAR, and THREE_YEARS.
+     * Lists supported SKUs.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation

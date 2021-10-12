@@ -84,13 +84,13 @@ public class HcxLicenseSummary {
     }
 
     /**
-     * HCX on-premise license key value
+     * HCX on-premise license key value.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("activationKey")
     String activationKey;
 
     /**
-     * status of HCX on-premise license
+     * status of HCX on-premise license.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     HcxLicenseStatus status;

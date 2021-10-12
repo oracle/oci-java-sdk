@@ -5,7 +5,9 @@
 package com.oracle.bmc.ocvp.model;
 
 /**
- * The HCX on-premise licenses to be reserved when downgrade from HCX Enterprise to HCX Advanced.
+ * The HCX on-premise license keys to be reserved when downgrading from HCX Enterprise to HCX Advanced.
+ * Downgrading from HCX Enterprise to HCX Advanced reduces the number of provided license keys from 10 to 3.
+ *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -64,7 +66,8 @@ public class DowngradeHcxDetails {
     }
 
     /**
-     * The HCX on-premise licenses keys to be reserved when downgrade from HCX Enterprise to HCX Advanced.
+     * The HCX on-premise license keys to be reserved when downgrading from HCX Enterprise to HCX Advanced.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("reservingHcxOnPremiseLicenseKeys")
     java.util.List<String> reservingHcxOnPremiseLicenseKeys;

@@ -281,7 +281,7 @@ public class SddcSummary {
     String hcxFqdn;
 
     /**
-     * HCX enabled or not
+     * Indicates whether HCX is enabled.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isHcxEnabled")
     Boolean isHcxEnabled;

@@ -41,19 +41,30 @@ public class ScriptedRestMonitorConfiguration extends MonitorConfiguration {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("networkConfiguration")
+        private NetworkConfiguration networkConfiguration;
+
+        public Builder networkConfiguration(NetworkConfiguration networkConfiguration) {
+            this.networkConfiguration = networkConfiguration;
+            this.__explicitlySet__.add("networkConfiguration");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ScriptedRestMonitorConfiguration build() {
             ScriptedRestMonitorConfiguration __instance__ =
-                    new ScriptedRestMonitorConfiguration(isFailureRetried);
+                    new ScriptedRestMonitorConfiguration(isFailureRetried, networkConfiguration);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(ScriptedRestMonitorConfiguration o) {
-            Builder copiedBuilder = isFailureRetried(o.getIsFailureRetried());
+            Builder copiedBuilder =
+                    isFailureRetried(o.getIsFailureRetried())
+                            .networkConfiguration(o.getNetworkConfiguration());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -68,9 +79,14 @@ public class ScriptedRestMonitorConfiguration extends MonitorConfiguration {
     }
 
     @Deprecated
-    public ScriptedRestMonitorConfiguration(Boolean isFailureRetried) {
+    public ScriptedRestMonitorConfiguration(
+            Boolean isFailureRetried, NetworkConfiguration networkConfiguration) {
         super(isFailureRetried);
+        this.networkConfiguration = networkConfiguration;
     }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("networkConfiguration")
+    NetworkConfiguration networkConfiguration;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
