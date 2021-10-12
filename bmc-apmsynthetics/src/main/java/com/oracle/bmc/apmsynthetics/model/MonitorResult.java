@@ -118,7 +118,7 @@ public class MonitorResult {
 
     /**
      * Type of result.
-     * Example: HAR, Screenshot or Log.
+     * Example: HAR, Screenshot, Log or Network.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("resultType")

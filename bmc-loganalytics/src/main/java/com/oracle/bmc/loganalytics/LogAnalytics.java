@@ -754,6 +754,17 @@ public interface LogAnalytics extends AutoCloseable {
             GetLogAnalyticsObjectCollectionRuleRequest request);
 
     /**
+     * This API returns the count of distinct log sets.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/GetLogSetsCountExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetLogSetsCount API.
+     */
+    GetLogSetsCountResponse getLogSetsCount(GetLogSetsCountRequest request);
+
+    /**
      * Gets detailed information about the lookup with the specified name.
      *
      * @param request The request object containing the details to send

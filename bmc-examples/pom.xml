@@ -4,7 +4,7 @@
   <parent>
     <groupId>com.oracle.oci.sdk</groupId>
     <artifactId>oci-java-sdk</artifactId>
-    <version>2.7.0</version>
+    <version>2.7.1</version>
     <relativePath>../pom.xml</relativePath>
   </parent>
   <properties>
@@ -31,7 +31,7 @@
       <dependency>
         <groupId>com.oracle.oci.sdk</groupId>
         <artifactId>oci-java-sdk-bom</artifactId>
-        <version>2.7.0</version>
+        <version>2.7.1</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
@@ -373,6 +373,22 @@
     <dependency>
       <groupId>com.oracle.oci.sdk</groupId>
       <artifactId>oci-java-sdk-aianomalydetection</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.oracle.oci.sdk</groupId>
+      <artifactId>oci-java-sdk-datalabelingservice</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.oracle.oci.sdk</groupId>
+      <artifactId>oci-java-sdk-datalabelingservicedataplane</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.oracle.oci.sdk</groupId>
+      <artifactId>oci-java-sdk-apmconfig</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.oracle.oci.sdk</groupId>
+      <artifactId>oci-java-sdk-waf</artifactId>
     </dependency>
   </dependencies>
 </project>

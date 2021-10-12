@@ -3104,6 +3104,45 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<GetLogSetsCountResponse> getLogSetsCount(
+            GetLogSetsCountRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetLogSetsCountRequest, GetLogSetsCountResponse>
+                    handler) {
+        LOG.trace("Called async getLogSetsCount");
+        final GetLogSetsCountRequest interceptedRequest =
+                GetLogSetsCountConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetLogSetsCountConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<javax.ws.rs.core.Response, GetLogSetsCountResponse>
+                transformer = GetLogSetsCountConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<GetLogSetsCountRequest, GetLogSetsCountResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetLogSetsCountRequest, GetLogSetsCountResponse>,
+                        java.util.concurrent.Future<GetLogSetsCountResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetLogSetsCountRequest, GetLogSetsCountResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<GetLookupResponse> getLookup(
             GetLookupRequest request,
             final com.oracle.bmc.responses.AsyncHandler<GetLookupRequest, GetLookupResponse>

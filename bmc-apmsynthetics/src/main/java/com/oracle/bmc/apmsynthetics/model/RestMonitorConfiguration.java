@@ -133,6 +133,15 @@ public class RestMonitorConfiguration extends MonitorConfiguration {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("networkConfiguration")
+        private NetworkConfiguration networkConfiguration;
+
+        public Builder networkConfiguration(NetworkConfiguration networkConfiguration) {
+            this.networkConfiguration = networkConfiguration;
+            this.__explicitlySet__.add("networkConfiguration");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -149,7 +158,8 @@ public class RestMonitorConfiguration extends MonitorConfiguration {
                             requestQueryParams,
                             requestPostBody,
                             verifyResponseContent,
-                            verifyResponseCodes);
+                            verifyResponseCodes,
+                            networkConfiguration);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -167,7 +177,8 @@ public class RestMonitorConfiguration extends MonitorConfiguration {
                             .requestQueryParams(o.getRequestQueryParams())
                             .requestPostBody(o.getRequestPostBody())
                             .verifyResponseContent(o.getVerifyResponseContent())
-                            .verifyResponseCodes(o.getVerifyResponseCodes());
+                            .verifyResponseCodes(o.getVerifyResponseCodes())
+                            .networkConfiguration(o.getNetworkConfiguration());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -193,7 +204,8 @@ public class RestMonitorConfiguration extends MonitorConfiguration {
             java.util.List<RequestQueryParam> requestQueryParams,
             String requestPostBody,
             String verifyResponseContent,
-            java.util.List<String> verifyResponseCodes) {
+            java.util.List<String> verifyResponseCodes,
+            NetworkConfiguration networkConfiguration) {
         super(isFailureRetried);
         this.isRedirectionEnabled = isRedirectionEnabled;
         this.isCertificateValidationEnabled = isCertificateValidationEnabled;
@@ -205,6 +217,7 @@ public class RestMonitorConfiguration extends MonitorConfiguration {
         this.requestPostBody = requestPostBody;
         this.verifyResponseContent = verifyResponseContent;
         this.verifyResponseCodes = verifyResponseCodes;
+        this.networkConfiguration = networkConfiguration;
     }
 
     /**
@@ -268,6 +281,9 @@ public class RestMonitorConfiguration extends MonitorConfiguration {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("verifyResponseCodes")
     java.util.List<String> verifyResponseCodes;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("networkConfiguration")
+    NetworkConfiguration networkConfiguration;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

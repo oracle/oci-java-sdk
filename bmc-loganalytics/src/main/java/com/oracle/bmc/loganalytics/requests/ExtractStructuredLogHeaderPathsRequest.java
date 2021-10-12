@@ -33,12 +33,12 @@ public class ExtractStructuredLogHeaderPathsRequest
     private com.oracle.bmc.loganalytics.model.LogAnalyticsParser loganParserDetails;
 
     /**
-     * The parser type - possible values are XML or JSON.
+     * The parser type - possible values are XML, JSON or DELIMITED.
      */
     private ParserType parserType;
 
     /**
-     * The parser type - possible values are XML or JSON.
+     * The parser type - possible values are XML, JSON or DELIMITED.
      **/
     public enum ParserType {
         Xml("XML"),

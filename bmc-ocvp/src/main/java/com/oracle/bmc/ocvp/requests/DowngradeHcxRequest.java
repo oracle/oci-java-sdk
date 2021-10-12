@@ -21,7 +21,7 @@ public class DowngradeHcxRequest
         extends com.oracle.bmc.requests.BmcRequest<com.oracle.bmc.ocvp.model.DowngradeHcxDetails> {
 
     /**
-     * The HCX on-premise license keys to be reserved when downgrade from HCX Enterprise to HCX Advanced.
+     * The HCX on-premise license keys to be reserved when downgrading from HCX Enterprise to HCX Advanced.
      */
     private com.oracle.bmc.ocvp.model.DowngradeHcxDetails downgradeHcxDetails;
 

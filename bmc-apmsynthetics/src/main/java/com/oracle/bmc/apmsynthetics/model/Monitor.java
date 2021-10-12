@@ -105,6 +105,15 @@ public class Monitor {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("isRunOnce")
+        private Boolean isRunOnce;
+
+        public Builder isRunOnce(Boolean isRunOnce) {
+            this.isRunOnce = isRunOnce;
+            this.__explicitlySet__.add("isRunOnce");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("timeoutInSeconds")
         private Integer timeoutInSeconds;
 
@@ -194,6 +203,7 @@ public class Monitor {
                             scriptName,
                             status,
                             repeatIntervalInSeconds,
+                            isRunOnce,
                             timeoutInSeconds,
                             target,
                             scriptParameters,
@@ -218,6 +228,7 @@ public class Monitor {
                             .scriptName(o.getScriptName())
                             .status(o.getStatus())
                             .repeatIntervalInSeconds(o.getRepeatIntervalInSeconds())
+                            .isRunOnce(o.getIsRunOnce())
                             .timeoutInSeconds(o.getTimeoutInSeconds())
                             .target(o.getTarget())
                             .scriptParameters(o.getScriptParameters())
@@ -296,6 +307,12 @@ public class Monitor {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("repeatIntervalInSeconds")
     Integer repeatIntervalInSeconds;
+
+    /**
+     * If runOnce is enabled, then the monitor will run once.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isRunOnce")
+    Boolean isRunOnce;
 
     /**
      * Timeout in seconds. Timeout cannot be more than 30% of repeatIntervalInSeconds time for monitors.

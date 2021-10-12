@@ -5,7 +5,7 @@
 package com.oracle.bmc.ocvp.model;
 
 /**
- * HCX on-premise license status
+ * HCX on-premise license status.
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200501")
 @lombok.extern.slf4j.Slf4j

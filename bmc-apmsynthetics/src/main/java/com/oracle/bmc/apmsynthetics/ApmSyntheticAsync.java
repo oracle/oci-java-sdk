@@ -122,7 +122,7 @@ public interface ApmSyntheticAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<GetMonitorRequest, GetMonitorResponse> handler);
 
     /**
-     * Gets the results for a specific execution of a monitor identified by OCID. The results are in a HAR file, Screenshot, or Console Log.
+     * Gets the results for a specific execution of a monitor identified by OCID. The results are in a HAR file, Screenshot, Console Log or Network details.
      *
      *
      * @param request The request object containing the details to send

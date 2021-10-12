@@ -82,6 +82,11 @@ public class ListLogSetsRequest extends com.oracle.bmc.requests.BmcRequest<java.
             throw new IllegalArgumentException("Invalid SortOrder: " + key);
         }
     };
+    /**
+     * If this filter is present, each of the logsets returned must contain the value of this filter.
+     *
+     */
+    private java.util.List<String> logSetNameContains;
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -89,6 +94,27 @@ public class ListLogSetsRequest extends com.oracle.bmc.requests.BmcRequest<java.
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private java.util.List<String> logSetNameContains = null;
+
+        /**
+         * If this filter is present, each of the logsets returned must contain the value of this filter.
+         *
+         * @return this builder instance
+         */
+        public Builder logSetNameContains(java.util.List<String> logSetNameContains) {
+            this.logSetNameContains = logSetNameContains;
+            return this;
+        }
+
+        /**
+         * Singular setter. If this filter is present, each of the logsets returned must contain the value of this filter.
+         *
+         * @return this builder instance
+         */
+        public Builder logSetNameContains(String singularValue) {
+            return this.logSetNameContains(java.util.Arrays.asList(singularValue));
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -123,6 +149,7 @@ public class ListLogSetsRequest extends com.oracle.bmc.requests.BmcRequest<java.
             limit(o.getLimit());
             page(o.getPage());
             sortOrder(o.getSortOrder());
+            logSetNameContains(o.getLogSetNameContains());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;

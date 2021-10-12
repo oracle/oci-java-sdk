@@ -98,7 +98,7 @@ public interface ApmSynthetic extends AutoCloseable {
     GetMonitorResponse getMonitor(GetMonitorRequest request);
 
     /**
-     * Gets the results for a specific execution of a monitor identified by OCID. The results are in a HAR file, Screenshot, or Console Log.
+     * Gets the results for a specific execution of a monitor identified by OCID. The results are in a HAR file, Screenshot, Console Log or Network details.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
