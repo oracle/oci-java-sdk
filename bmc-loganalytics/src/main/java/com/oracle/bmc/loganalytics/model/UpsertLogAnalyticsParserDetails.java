@@ -242,6 +242,15 @@ public class UpsertLogAnalyticsParserDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("isNamespaceAware")
+        private Boolean isNamespaceAware;
+
+        public Builder isNamespaceAware(Boolean isNamespaceAware) {
+            this.isNamespaceAware = isNamespaceAware;
+            this.__explicitlySet__.add("isNamespaceAware");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -271,7 +280,8 @@ public class UpsertLogAnalyticsParserDetails {
                             shouldTokenizeOriginalText,
                             fieldDelimiter,
                             fieldQualifier,
-                            type);
+                            type,
+                            isNamespaceAware);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -302,7 +312,8 @@ public class UpsertLogAnalyticsParserDetails {
                             .shouldTokenizeOriginalText(o.getShouldTokenizeOriginalText())
                             .fieldDelimiter(o.getFieldDelimiter())
                             .fieldQualifier(o.getFieldQualifier())
-                            .type(o.getType());
+                            .type(o.getType())
+                            .isNamespaceAware(o.getIsNamespaceAware());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -502,6 +513,13 @@ public class UpsertLogAnalyticsParserDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     Type type;
+
+    /**
+     * A flag indicating whether the XML parser should consider the namespace(s) while processing the log data.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isNamespaceAware")
+    Boolean isNamespaceAware;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

@@ -177,6 +177,42 @@ public class DbNode {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("cpuCoreCount")
+        private Integer cpuCoreCount;
+
+        public Builder cpuCoreCount(Integer cpuCoreCount) {
+            this.cpuCoreCount = cpuCoreCount;
+            this.__explicitlySet__.add("cpuCoreCount");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("memorySizeInGBs")
+        private Integer memorySizeInGBs;
+
+        public Builder memorySizeInGBs(Integer memorySizeInGBs) {
+            this.memorySizeInGBs = memorySizeInGBs;
+            this.__explicitlySet__.add("memorySizeInGBs");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("dbNodeStorageSizeInGBs")
+        private Integer dbNodeStorageSizeInGBs;
+
+        public Builder dbNodeStorageSizeInGBs(Integer dbNodeStorageSizeInGBs) {
+            this.dbNodeStorageSizeInGBs = dbNodeStorageSizeInGBs;
+            this.__explicitlySet__.add("dbNodeStorageSizeInGBs");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("dbServerId")
+        private String dbServerId;
+
+        public Builder dbServerId(String dbServerId) {
+            this.dbServerId = dbServerId;
+            this.__explicitlySet__.add("dbServerId");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -199,7 +235,11 @@ public class DbNode {
                             maintenanceType,
                             timeMaintenanceWindowStart,
                             timeMaintenanceWindowEnd,
-                            additionalDetails);
+                            additionalDetails,
+                            cpuCoreCount,
+                            memorySizeInGBs,
+                            dbNodeStorageSizeInGBs,
+                            dbServerId);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -223,7 +263,11 @@ public class DbNode {
                             .maintenanceType(o.getMaintenanceType())
                             .timeMaintenanceWindowStart(o.getTimeMaintenanceWindowStart())
                             .timeMaintenanceWindowEnd(o.getTimeMaintenanceWindowEnd())
-                            .additionalDetails(o.getAdditionalDetails());
+                            .additionalDetails(o.getAdditionalDetails())
+                            .cpuCoreCount(o.getCpuCoreCount())
+                            .memorySizeInGBs(o.getMemorySizeInGBs())
+                            .dbNodeStorageSizeInGBs(o.getDbNodeStorageSizeInGBs())
+                            .dbServerId(o.getDbServerId());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -447,6 +491,30 @@ public class DbNode {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("additionalDetails")
     String additionalDetails;
+
+    /**
+     * The number of CPU cores enabled on the Db node.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("cpuCoreCount")
+    Integer cpuCoreCount;
+
+    /**
+     * The allocated memory in GBs on the Db node.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("memorySizeInGBs")
+    Integer memorySizeInGBs;
+
+    /**
+     * The allocated local node storage in GBs on the Db node.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("dbNodeStorageSizeInGBs")
+    Integer dbNodeStorageSizeInGBs;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Exacc Db server associated with the database node.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("dbServerId")
+    String dbServerId;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

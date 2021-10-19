@@ -185,4 +185,18 @@ public class CreateDataGuardAssociationDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("transportType")
     TransportType transportType;
+
+    /**
+     * Specifies the {@code DB_UNIQUE_NAME} of the peer database to be created.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("peerDbUniqueName")
+    String peerDbUniqueName;
+
+    /**
+     * Specifies a prefix for the {@code Oracle SID} of the database to be created.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("peerSidPrefix")
+    String peerSidPrefix;
 }

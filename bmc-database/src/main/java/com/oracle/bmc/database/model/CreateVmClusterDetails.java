@@ -154,6 +154,15 @@ public class CreateVmClusterDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("dbServers")
+        private java.util.List<String> dbServers;
+
+        public Builder dbServers(java.util.List<String> dbServers) {
+            this.dbServers = dbServers;
+            this.__explicitlySet__.add("dbServers");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
@@ -193,6 +202,7 @@ public class CreateVmClusterDetails {
                             isLocalBackupEnabled,
                             timeZone,
                             giVersion,
+                            dbServers,
                             freeformTags,
                             definedTags);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
@@ -216,6 +226,7 @@ public class CreateVmClusterDetails {
                             .isLocalBackupEnabled(o.getIsLocalBackupEnabled())
                             .timeZone(o.getTimeZone())
                             .giVersion(o.getGiVersion())
+                            .dbServers(o.getDbServers())
                             .freeformTags(o.getFreeformTags())
                             .definedTags(o.getDefinedTags());
 
@@ -352,6 +363,12 @@ public class CreateVmClusterDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("giVersion")
     String giVersion;
+
+    /**
+     * The list of Db server.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("dbServers")
+    java.util.List<String> dbServers;
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.

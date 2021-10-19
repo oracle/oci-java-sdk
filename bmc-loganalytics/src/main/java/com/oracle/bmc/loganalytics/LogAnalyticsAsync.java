@@ -1168,6 +1168,22 @@ public interface LogAnalyticsAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Lists the preferences of the tenant. Currently, only \"DEFAULT_HOMEPAGE\" is supported.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetPreferencesResponse> getPreferences(
+            GetPreferencesRequest request,
+            com.oracle.bmc.responses.AsyncHandler<GetPreferencesRequest, GetPreferencesResponse>
+                    handler);
+
+    /**
      * Returns the intermediate results for a query that was specified to run asynchronously if the query has not completed,
      * otherwise the final query results identified by a queryWorkRequestId returned when submitting the query execute asynchronously.
      *
@@ -1294,6 +1310,23 @@ public interface LogAnalyticsAsync extends AutoCloseable {
             GetStorageWorkRequestRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             GetStorageWorkRequestRequest, GetStorageWorkRequestResponse>
+                    handler);
+
+    /**
+     * This API retrieves details of the configured bucket that stores unprocessed payloads.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetUnprocessedDataBucketResponse> getUnprocessedDataBucket(
+            GetUnprocessedDataBucketRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetUnprocessedDataBucketRequest, GetUnprocessedDataBucketResponse>
                     handler);
 
     /**
@@ -2230,6 +2263,23 @@ public interface LogAnalyticsAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Removes the tenant preferences. Currently, only \"DEFAULT_HOMEPAGE\" is supported.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<RemovePreferencesResponse> removePreferences(
+            RemovePreferencesRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            RemovePreferencesRequest, RemovePreferencesResponse>
+                    handler);
+
+    /**
      * Remove one or more event types from a source.
      *
      *
@@ -2279,6 +2329,25 @@ public interface LogAnalyticsAsync extends AutoCloseable {
     java.util.concurrent.Future<RunResponse> run(
             RunRequest request,
             com.oracle.bmc.responses.AsyncHandler<RunRequest, RunResponse> handler);
+
+    /**
+     * This API configures a bucket to store unprocessed payloads.
+     * While processing there could be reasons a payload cannot be processed (mismatched structure, corrupted archive format, etc),
+     * if configured the payload would be uploaded to the bucket for verification.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<SetUnprocessedDataBucketResponse> setUnprocessedDataBucket(
+            SetUnprocessedDataBucketRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            SetUnprocessedDataBucketRequest, SetUnprocessedDataBucketResponse>
+                    handler);
 
     /**
      * Returns a context specific list of either commands, fields, or values to append to the end of the specified query string if applicable.
@@ -2456,6 +2525,23 @@ public interface LogAnalyticsAsync extends AutoCloseable {
     java.util.concurrent.Future<UpdateLookupDataResponse> updateLookupData(
             UpdateLookupDataRequest request,
             com.oracle.bmc.responses.AsyncHandler<UpdateLookupDataRequest, UpdateLookupDataResponse>
+                    handler);
+
+    /**
+     * Updates the tenant preferences. Currently, only \"DEFAULT_HOMEPAGE\" is supported.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdatePreferencesResponse> updatePreferences(
+            UpdatePreferencesRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            UpdatePreferencesRequest, UpdatePreferencesResponse>
                     handler);
 
     /**

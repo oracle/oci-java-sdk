@@ -128,6 +128,11 @@ public class ListDbNodesRequest extends com.oracle.bmc.requests.BmcRequest<java.
      */
     private com.oracle.bmc.database.model.DbNodeSummary.LifecycleState lifecycleState;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Exacc Db server.
+     */
+    private String dbServerId;
+
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListDbNodesRequest, java.lang.Void> {
@@ -171,6 +176,7 @@ public class ListDbNodesRequest extends com.oracle.bmc.requests.BmcRequest<java.
             sortBy(o.getSortBy());
             sortOrder(o.getSortOrder());
             lifecycleState(o.getLifecycleState());
+            dbServerId(o.getDbServerId());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;

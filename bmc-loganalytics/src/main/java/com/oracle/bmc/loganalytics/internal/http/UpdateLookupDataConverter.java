@@ -77,6 +77,10 @@ public class UpdateLookupDataConverter {
             ib.header("if-match", request.getIfMatch());
         }
 
+        if (request.getExpect() != null) {
+            ib.header("expect", request.getExpect());
+        }
+
         if (client.getClientConfigurator() != null) {
             client.getClientConfigurator().customizeRequest(request, ib);
         }

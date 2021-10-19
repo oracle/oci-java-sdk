@@ -3331,6 +3331,45 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<GetPreferencesResponse> getPreferences(
+            GetPreferencesRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetPreferencesRequest, GetPreferencesResponse>
+                    handler) {
+        LOG.trace("Called async getPreferences");
+        final GetPreferencesRequest interceptedRequest =
+                GetPreferencesConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetPreferencesConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<javax.ws.rs.core.Response, GetPreferencesResponse>
+                transformer = GetPreferencesConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<GetPreferencesRequest, GetPreferencesResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetPreferencesRequest, GetPreferencesResponse>,
+                        java.util.concurrent.Future<GetPreferencesResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetPreferencesRequest, GetPreferencesResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<GetQueryResultResponse> getQueryResult(
             GetQueryResultRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -3629,6 +3668,47 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     GetStorageWorkRequestRequest, GetStorageWorkRequestResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetUnprocessedDataBucketResponse> getUnprocessedDataBucket(
+            GetUnprocessedDataBucketRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetUnprocessedDataBucketRequest, GetUnprocessedDataBucketResponse>
+                    handler) {
+        LOG.trace("Called async getUnprocessedDataBucket");
+        final GetUnprocessedDataBucketRequest interceptedRequest =
+                GetUnprocessedDataBucketConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetUnprocessedDataBucketConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, GetUnprocessedDataBucketResponse>
+                transformer = GetUnprocessedDataBucketConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        GetUnprocessedDataBucketRequest, GetUnprocessedDataBucketResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetUnprocessedDataBucketRequest, GetUnprocessedDataBucketResponse>,
+                        java.util.concurrent.Future<GetUnprocessedDataBucketResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetUnprocessedDataBucketRequest, GetUnprocessedDataBucketResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -6009,6 +6089,51 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<RemovePreferencesResponse> removePreferences(
+            RemovePreferencesRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            RemovePreferencesRequest, RemovePreferencesResponse>
+                    handler) {
+        LOG.trace("Called async removePreferences");
+        final RemovePreferencesRequest interceptedRequest =
+                RemovePreferencesConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                RemovePreferencesConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<javax.ws.rs.core.Response, RemovePreferencesResponse>
+                transformer = RemovePreferencesConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+
+        com.oracle.bmc.responses.AsyncHandler<RemovePreferencesRequest, RemovePreferencesResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                RemovePreferencesRequest, RemovePreferencesResponse>,
+                        java.util.concurrent.Future<RemovePreferencesResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getRemovePreferencesDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    RemovePreferencesRequest, RemovePreferencesResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<RemoveSourceEventTypesResponse> removeSourceEventTypes(
             RemoveSourceEventTypesRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -6119,6 +6244,47 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     RunRequest, RunResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<SetUnprocessedDataBucketResponse> setUnprocessedDataBucket(
+            SetUnprocessedDataBucketRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            SetUnprocessedDataBucketRequest, SetUnprocessedDataBucketResponse>
+                    handler) {
+        LOG.trace("Called async setUnprocessedDataBucket");
+        final SetUnprocessedDataBucketRequest interceptedRequest =
+                SetUnprocessedDataBucketConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                SetUnprocessedDataBucketConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, SetUnprocessedDataBucketResponse>
+                transformer = SetUnprocessedDataBucketConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        SetUnprocessedDataBucketRequest, SetUnprocessedDataBucketResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                SetUnprocessedDataBucketRequest, SetUnprocessedDataBucketResponse>,
+                        java.util.concurrent.Future<SetUnprocessedDataBucketResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    SetUnprocessedDataBucketRequest, SetUnprocessedDataBucketResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -6645,6 +6811,51 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
                     com.oracle.bmc.retrier.Retriers.tryResetStreamForRetry(
                             interceptedRequest.getUpdateLookupFileBody(), true);
                 }
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdatePreferencesResponse> updatePreferences(
+            UpdatePreferencesRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            UpdatePreferencesRequest, UpdatePreferencesResponse>
+                    handler) {
+        LOG.trace("Called async updatePreferences");
+        final UpdatePreferencesRequest interceptedRequest =
+                UpdatePreferencesConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdatePreferencesConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<javax.ws.rs.core.Response, UpdatePreferencesResponse>
+                transformer = UpdatePreferencesConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+
+        com.oracle.bmc.responses.AsyncHandler<UpdatePreferencesRequest, UpdatePreferencesResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpdatePreferencesRequest, UpdatePreferencesResponse>,
+                        java.util.concurrent.Future<UpdatePreferencesResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdatePreferencesDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpdatePreferencesRequest, UpdatePreferencesResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
             };
         } else {
             return futureSupplier.apply(handlerToUse);

@@ -96,6 +96,15 @@ public class HighlightGroupsCommandDescriptor extends AbstractCommandDescriptor 
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("matchOnly")
+        private java.util.List<String> matchOnly;
+
+        public Builder matchOnly(java.util.List<String> matchOnly) {
+            this.matchOnly = matchOnly;
+            this.__explicitlySet__.add("matchOnly");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("fields")
         private java.util.List<String> fields;
 
@@ -136,6 +145,7 @@ public class HighlightGroupsCommandDescriptor extends AbstractCommandDescriptor 
                             declaredFields,
                             color,
                             priority,
+                            matchOnly,
                             fields,
                             keywords,
                             subQueries);
@@ -153,6 +163,7 @@ public class HighlightGroupsCommandDescriptor extends AbstractCommandDescriptor 
                             .declaredFields(o.getDeclaredFields())
                             .color(o.getColor())
                             .priority(o.getPriority())
+                            .matchOnly(o.getMatchOnly())
                             .fields(o.getFields())
                             .keywords(o.getKeywords())
                             .subQueries(o.getSubQueries());
@@ -178,12 +189,14 @@ public class HighlightGroupsCommandDescriptor extends AbstractCommandDescriptor 
             java.util.List<AbstractField> declaredFields,
             String color,
             String priority,
+            java.util.List<String> matchOnly,
             java.util.List<String> fields,
             java.util.List<String> keywords,
             java.util.List<ParseQueryOutput> subQueries) {
         super(displayQueryString, internalQueryString, category, referencedFields, declaredFields);
         this.color = color;
         this.priority = priority;
+        this.matchOnly = matchOnly;
         this.fields = fields;
         this.keywords = keywords;
         this.subQueries = subQueries;
@@ -202,6 +215,13 @@ public class HighlightGroupsCommandDescriptor extends AbstractCommandDescriptor 
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("priority")
     String priority;
+
+    /**
+     * List of fields to search for terms or phrases to highlight.  If not specified all string fields are scanned.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("matchOnly")
+    java.util.List<String> matchOnly;
 
     /**
      * List of fields to search for terms or phrases to highlight.

@@ -154,6 +154,15 @@ public class CreateLogAnalyticsObjectCollectionRuleDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("objectNameFilters")
+        private java.util.List<String> objectNameFilters;
+
+        public Builder objectNameFilters(java.util.List<String> objectNameFilters) {
+            this.objectNameFilters = objectNameFilters;
+            this.__explicitlySet__.add("objectNameFilters");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
@@ -193,6 +202,7 @@ public class CreateLogAnalyticsObjectCollectionRuleDetails {
                             charEncoding,
                             isEnabled,
                             overrides,
+                            objectNameFilters,
                             definedTags,
                             freeformTags);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
@@ -216,6 +226,7 @@ public class CreateLogAnalyticsObjectCollectionRuleDetails {
                             .charEncoding(o.getCharEncoding())
                             .isEnabled(o.getIsEnabled())
                             .overrides(o.getOverrides())
+                            .objectNameFilters(o.getObjectNameFilters())
                             .definedTags(o.getDefinedTags())
                             .freeformTags(o.getFreeformTags());
 
@@ -331,6 +342,15 @@ public class CreateLogAnalyticsObjectCollectionRuleDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("overrides")
     java.util.Map<String, java.util.List<PropertyOverride>> overrides;
+
+    /**
+     * When the filters are provided, only the objects matching the filters are picked up for processing.
+     * The matchType supported is exact match and accommodates wildcard "*".
+     * For more information on filters, see [Event Filters](https://docs.oracle.com/en-us/iaas/Content/Events/Concepts/filterevents.htm).
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("objectNameFilters")
+    java.util.List<String> objectNameFilters;
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.

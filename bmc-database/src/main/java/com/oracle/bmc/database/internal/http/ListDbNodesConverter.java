@@ -94,6 +94,14 @@ public class ListDbNodesConverter {
                                     request.getLifecycleState().getValue()));
         }
 
+        if (request.getDbServerId() != null) {
+            target =
+                    target.queryParam(
+                            "dbServerId",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getDbServerId()));
+        }
+
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib = target.request();
 
         ib.accept(javax.ws.rs.core.MediaType.APPLICATION_JSON);

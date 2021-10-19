@@ -72,6 +72,24 @@ public class CreateDataGuardAssociationWithNewDbSystemDetails
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("peerDbUniqueName")
+        private String peerDbUniqueName;
+
+        public Builder peerDbUniqueName(String peerDbUniqueName) {
+            this.peerDbUniqueName = peerDbUniqueName;
+            this.__explicitlySet__.add("peerDbUniqueName");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("peerSidPrefix")
+        private String peerSidPrefix;
+
+        public Builder peerSidPrefix(String peerSidPrefix) {
+            this.peerSidPrefix = peerSidPrefix;
+            this.__explicitlySet__.add("peerSidPrefix");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
@@ -145,6 +163,8 @@ public class CreateDataGuardAssociationWithNewDbSystemDetails
                             databaseAdminPassword,
                             protectionMode,
                             transportType,
+                            peerDbUniqueName,
+                            peerSidPrefix,
                             displayName,
                             availabilityDomain,
                             shape,
@@ -163,6 +183,8 @@ public class CreateDataGuardAssociationWithNewDbSystemDetails
                             .databaseAdminPassword(o.getDatabaseAdminPassword())
                             .protectionMode(o.getProtectionMode())
                             .transportType(o.getTransportType())
+                            .peerDbUniqueName(o.getPeerDbUniqueName())
+                            .peerSidPrefix(o.getPeerSidPrefix())
                             .displayName(o.getDisplayName())
                             .availabilityDomain(o.getAvailabilityDomain())
                             .shape(o.getShape())
@@ -189,6 +211,8 @@ public class CreateDataGuardAssociationWithNewDbSystemDetails
             String databaseAdminPassword,
             ProtectionMode protectionMode,
             TransportType transportType,
+            String peerDbUniqueName,
+            String peerSidPrefix,
             String displayName,
             String availabilityDomain,
             String shape,
@@ -196,7 +220,13 @@ public class CreateDataGuardAssociationWithNewDbSystemDetails
             java.util.List<String> nsgIds,
             java.util.List<String> backupNetworkNsgIds,
             String hostname) {
-        super(databaseSoftwareImageId, databaseAdminPassword, protectionMode, transportType);
+        super(
+                databaseSoftwareImageId,
+                databaseAdminPassword,
+                protectionMode,
+                transportType,
+                peerDbUniqueName,
+                peerSidPrefix);
         this.displayName = displayName;
         this.availabilityDomain = availabilityDomain;
         this.shape = shape;

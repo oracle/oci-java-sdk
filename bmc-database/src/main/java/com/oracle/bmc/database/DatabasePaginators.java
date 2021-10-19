@@ -3193,6 +3193,116 @@ public class DatabasePaginators {
     }
 
     /**
+     * Creates a new iterable which will iterate over the responses received from the listDbServers operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListDbServersResponse> listDbServersResponseIterator(
+            final ListDbServersRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListDbServersRequest.Builder, ListDbServersRequest, ListDbServersResponse>(
+                new com.google.common.base.Supplier<ListDbServersRequest.Builder>() {
+                    @Override
+                    public ListDbServersRequest.Builder get() {
+                        return ListDbServersRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListDbServersResponse, String>() {
+                    @Override
+                    public String apply(ListDbServersResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListDbServersRequest.Builder>,
+                        ListDbServersRequest>() {
+                    @Override
+                    public ListDbServersRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListDbServersRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<ListDbServersRequest, ListDbServersResponse>() {
+                    @Override
+                    public ListDbServersResponse apply(ListDbServersRequest request) {
+                        return client.listDbServers(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.database.model.DbServerSummary} objects
+     * contained in responses from the listDbServers operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.database.model.DbServerSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.database.model.DbServerSummary> listDbServersRecordIterator(
+            final ListDbServersRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListDbServersRequest.Builder, ListDbServersRequest, ListDbServersResponse,
+                com.oracle.bmc.database.model.DbServerSummary>(
+                new com.google.common.base.Supplier<ListDbServersRequest.Builder>() {
+                    @Override
+                    public ListDbServersRequest.Builder get() {
+                        return ListDbServersRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListDbServersResponse, String>() {
+                    @Override
+                    public String apply(ListDbServersResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListDbServersRequest.Builder>,
+                        ListDbServersRequest>() {
+                    @Override
+                    public ListDbServersRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListDbServersRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<ListDbServersRequest, ListDbServersResponse>() {
+                    @Override
+                    public ListDbServersResponse apply(ListDbServersRequest request) {
+                        return client.listDbServers(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListDbServersResponse,
+                        java.util.List<com.oracle.bmc.database.model.DbServerSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.database.model.DbServerSummary> apply(
+                            ListDbServersResponse response) {
+                        return response.getItems();
+                    }
+                });
+    }
+
+    /**
      * Creates a new iterable which will iterate over the responses received from the listDbSystemPatchHistoryEntries operation. This iterable
      * will fetch more data from the server as needed.
      *
@@ -4833,6 +4943,132 @@ public class DatabasePaginators {
                     @Override
                     public java.util.List<com.oracle.bmc.database.model.MaintenanceRunSummary>
                             apply(ListMaintenanceRunsResponse response) {
+                        return response.getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the listPdbConversionHistoryEntries operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListPdbConversionHistoryEntriesResponse>
+            listPdbConversionHistoryEntriesResponseIterator(
+                    final ListPdbConversionHistoryEntriesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListPdbConversionHistoryEntriesRequest.Builder,
+                ListPdbConversionHistoryEntriesRequest, ListPdbConversionHistoryEntriesResponse>(
+                new com.google.common.base.Supplier<
+                        ListPdbConversionHistoryEntriesRequest.Builder>() {
+                    @Override
+                    public ListPdbConversionHistoryEntriesRequest.Builder get() {
+                        return ListPdbConversionHistoryEntriesRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListPdbConversionHistoryEntriesResponse, String>() {
+                    @Override
+                    public String apply(ListPdbConversionHistoryEntriesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListPdbConversionHistoryEntriesRequest.Builder>,
+                        ListPdbConversionHistoryEntriesRequest>() {
+                    @Override
+                    public ListPdbConversionHistoryEntriesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListPdbConversionHistoryEntriesRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListPdbConversionHistoryEntriesRequest,
+                        ListPdbConversionHistoryEntriesResponse>() {
+                    @Override
+                    public ListPdbConversionHistoryEntriesResponse apply(
+                            ListPdbConversionHistoryEntriesRequest request) {
+                        return client.listPdbConversionHistoryEntries(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.database.model.PdbConversionHistoryEntrySummary} objects
+     * contained in responses from the listPdbConversionHistoryEntries operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.database.model.PdbConversionHistoryEntrySummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.database.model.PdbConversionHistoryEntrySummary>
+            listPdbConversionHistoryEntriesRecordIterator(
+                    final ListPdbConversionHistoryEntriesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListPdbConversionHistoryEntriesRequest.Builder,
+                ListPdbConversionHistoryEntriesRequest, ListPdbConversionHistoryEntriesResponse,
+                com.oracle.bmc.database.model.PdbConversionHistoryEntrySummary>(
+                new com.google.common.base.Supplier<
+                        ListPdbConversionHistoryEntriesRequest.Builder>() {
+                    @Override
+                    public ListPdbConversionHistoryEntriesRequest.Builder get() {
+                        return ListPdbConversionHistoryEntriesRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListPdbConversionHistoryEntriesResponse, String>() {
+                    @Override
+                    public String apply(ListPdbConversionHistoryEntriesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListPdbConversionHistoryEntriesRequest.Builder>,
+                        ListPdbConversionHistoryEntriesRequest>() {
+                    @Override
+                    public ListPdbConversionHistoryEntriesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListPdbConversionHistoryEntriesRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListPdbConversionHistoryEntriesRequest,
+                        ListPdbConversionHistoryEntriesResponse>() {
+                    @Override
+                    public ListPdbConversionHistoryEntriesResponse apply(
+                            ListPdbConversionHistoryEntriesRequest request) {
+                        return client.listPdbConversionHistoryEntries(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListPdbConversionHistoryEntriesResponse,
+                        java.util.List<
+                                com.oracle.bmc.database.model.PdbConversionHistoryEntrySummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.database.model.PdbConversionHistoryEntrySummary>
+                            apply(ListPdbConversionHistoryEntriesResponse response) {
                         return response.getItems();
                     }
                 });

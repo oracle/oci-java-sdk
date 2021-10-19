@@ -78,6 +78,10 @@ package com.oracle.bmc.loganalytics.model;
         name = "FIELD_SUMMARY"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = GeoStatsCommandDescriptor.class,
+        name = "GEO_STATS"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = MapCommandDescriptor.class,
         name = "MAP"
     ),
@@ -245,6 +249,7 @@ public class AbstractCommandDescriptor {
         Command("COMMAND"),
         Search("SEARCH"),
         Stats("STATS"),
+        GeoStats("GEO_STATS"),
         TimeStats("TIME_STATS"),
         Sort("SORT"),
         Fields("FIELDS"),

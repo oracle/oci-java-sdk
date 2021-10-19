@@ -38,6 +38,15 @@ public class CreateDbHomeFromBackupDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("databaseSoftwareImageId")
+        private String databaseSoftwareImageId;
+
+        public Builder databaseSoftwareImageId(String databaseSoftwareImageId) {
+            this.databaseSoftwareImageId = databaseSoftwareImageId;
+            this.__explicitlySet__.add("databaseSoftwareImageId");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("database")
         private CreateDatabaseFromBackupDetails database;
 
@@ -72,7 +81,11 @@ public class CreateDbHomeFromBackupDetails {
         public CreateDbHomeFromBackupDetails build() {
             CreateDbHomeFromBackupDetails __instance__ =
                     new CreateDbHomeFromBackupDetails(
-                            displayName, database, freeformTags, definedTags);
+                            displayName,
+                            databaseSoftwareImageId,
+                            database,
+                            freeformTags,
+                            definedTags);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -81,6 +94,7 @@ public class CreateDbHomeFromBackupDetails {
         public Builder copy(CreateDbHomeFromBackupDetails o) {
             Builder copiedBuilder =
                     displayName(o.getDisplayName())
+                            .databaseSoftwareImageId(o.getDatabaseSoftwareImageId())
                             .database(o.getDatabase())
                             .freeformTags(o.getFreeformTags())
                             .definedTags(o.getDefinedTags());
@@ -102,6 +116,12 @@ public class CreateDbHomeFromBackupDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     String displayName;
+
+    /**
+     * The database software image [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the image to be used to restore a database.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("databaseSoftwareImageId")
+    String databaseSoftwareImageId;
 
     @com.fasterxml.jackson.annotation.JsonProperty("database")
     CreateDatabaseFromBackupDetails database;

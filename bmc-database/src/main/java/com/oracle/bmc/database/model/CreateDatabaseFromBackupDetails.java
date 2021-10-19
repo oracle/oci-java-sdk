@@ -71,13 +71,27 @@ public class CreateDatabaseFromBackupDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("sidPrefix")
+        private String sidPrefix;
+
+        public Builder sidPrefix(String sidPrefix) {
+            this.sidPrefix = sidPrefix;
+            this.__explicitlySet__.add("sidPrefix");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CreateDatabaseFromBackupDetails build() {
             CreateDatabaseFromBackupDetails __instance__ =
                     new CreateDatabaseFromBackupDetails(
-                            backupId, backupTDEPassword, adminPassword, dbUniqueName, dbName);
+                            backupId,
+                            backupTDEPassword,
+                            adminPassword,
+                            dbUniqueName,
+                            dbName,
+                            sidPrefix);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -89,7 +103,8 @@ public class CreateDatabaseFromBackupDetails {
                             .backupTDEPassword(o.getBackupTDEPassword())
                             .adminPassword(o.getAdminPassword())
                             .dbUniqueName(o.getDbUniqueName())
-                            .dbName(o.getDbName());
+                            .dbName(o.getDbName())
+                            .sidPrefix(o.getSidPrefix());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -132,6 +147,13 @@ public class CreateDatabaseFromBackupDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dbName")
     String dbName;
+
+    /**
+     * Specifies a prefix for the {@code Oracle SID} of the database to be created.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("sidPrefix")
+    String sidPrefix;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

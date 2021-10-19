@@ -2602,6 +2602,34 @@ public class LogAnalyticsClient implements LogAnalytics {
     }
 
     @Override
+    public GetPreferencesResponse getPreferences(GetPreferencesRequest request) {
+        LOG.trace("Called getPreferences");
+        final GetPreferencesRequest interceptedRequest =
+                GetPreferencesConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetPreferencesConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, GetPreferencesResponse>
+                transformer = GetPreferencesConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public GetQueryResultResponse getQueryResult(GetQueryResultRequest request) {
         LOG.trace("Called getQueryResult");
         final GetQueryResultRequest interceptedRequest =
@@ -2805,6 +2833,35 @@ public class LogAnalyticsClient implements LogAnalytics {
                 GetStorageWorkRequestConverter.fromRequest(client, interceptedRequest);
         com.google.common.base.Function<javax.ws.rs.core.Response, GetStorageWorkRequestResponse>
                 transformer = GetStorageWorkRequestConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public GetUnprocessedDataBucketResponse getUnprocessedDataBucket(
+            GetUnprocessedDataBucketRequest request) {
+        LOG.trace("Called getUnprocessedDataBucket");
+        final GetUnprocessedDataBucketRequest interceptedRequest =
+                GetUnprocessedDataBucketConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetUnprocessedDataBucketConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, GetUnprocessedDataBucketResponse>
+                transformer = GetUnprocessedDataBucketConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
@@ -4557,6 +4614,39 @@ public class LogAnalyticsClient implements LogAnalytics {
     }
 
     @Override
+    public RemovePreferencesResponse removePreferences(RemovePreferencesRequest request) {
+        LOG.trace("Called removePreferences");
+        final RemovePreferencesRequest interceptedRequest =
+                RemovePreferencesConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                RemovePreferencesConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, RemovePreferencesResponse>
+                transformer = RemovePreferencesConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getRemovePreferencesDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public RemoveSourceEventTypesResponse removeSourceEventTypes(
             RemoveSourceEventTypesRequest request) {
         LOG.trace("Called removeSourceEventTypes");
@@ -4632,6 +4722,36 @@ public class LogAnalyticsClient implements LogAnalytics {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public SetUnprocessedDataBucketResponse setUnprocessedDataBucket(
+            SetUnprocessedDataBucketRequest request) {
+        LOG.trace("Called setUnprocessedDataBucket");
+        final SetUnprocessedDataBucketRequest interceptedRequest =
+                SetUnprocessedDataBucketConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                SetUnprocessedDataBucketConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, SetUnprocessedDataBucketResponse>
+                transformer = SetUnprocessedDataBucketConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -5045,6 +5165,39 @@ public class LogAnalyticsClient implements LogAnalytics {
             com.oracle.bmc.io.internal.KeepOpenInputStream.closeStream(
                     request.getUpdateLookupFileBody());
         }
+    }
+
+    @Override
+    public UpdatePreferencesResponse updatePreferences(UpdatePreferencesRequest request) {
+        LOG.trace("Called updatePreferences");
+        final UpdatePreferencesRequest interceptedRequest =
+                UpdatePreferencesConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdatePreferencesConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, UpdatePreferencesResponse>
+                transformer = UpdatePreferencesConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getUpdatePreferencesDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override

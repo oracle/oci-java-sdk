@@ -70,6 +70,24 @@ public class CreateDataGuardAssociationToExistingVmClusterDetails
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("peerDbUniqueName")
+        private String peerDbUniqueName;
+
+        public Builder peerDbUniqueName(String peerDbUniqueName) {
+            this.peerDbUniqueName = peerDbUniqueName;
+            this.__explicitlySet__.add("peerDbUniqueName");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("peerSidPrefix")
+        private String peerSidPrefix;
+
+        public Builder peerSidPrefix(String peerSidPrefix) {
+            this.peerSidPrefix = peerSidPrefix;
+            this.__explicitlySet__.add("peerSidPrefix");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("peerVmClusterId")
         private String peerVmClusterId;
 
@@ -98,6 +116,8 @@ public class CreateDataGuardAssociationToExistingVmClusterDetails
                             databaseAdminPassword,
                             protectionMode,
                             transportType,
+                            peerDbUniqueName,
+                            peerSidPrefix,
                             peerVmClusterId,
                             peerDbHomeId);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
@@ -111,6 +131,8 @@ public class CreateDataGuardAssociationToExistingVmClusterDetails
                             .databaseAdminPassword(o.getDatabaseAdminPassword())
                             .protectionMode(o.getProtectionMode())
                             .transportType(o.getTransportType())
+                            .peerDbUniqueName(o.getPeerDbUniqueName())
+                            .peerSidPrefix(o.getPeerSidPrefix())
                             .peerVmClusterId(o.getPeerVmClusterId())
                             .peerDbHomeId(o.getPeerDbHomeId());
 
@@ -132,9 +154,17 @@ public class CreateDataGuardAssociationToExistingVmClusterDetails
             String databaseAdminPassword,
             ProtectionMode protectionMode,
             TransportType transportType,
+            String peerDbUniqueName,
+            String peerSidPrefix,
             String peerVmClusterId,
             String peerDbHomeId) {
-        super(databaseSoftwareImageId, databaseAdminPassword, protectionMode, transportType);
+        super(
+                databaseSoftwareImageId,
+                databaseAdminPassword,
+                protectionMode,
+                transportType,
+                peerDbUniqueName,
+                peerSidPrefix);
         this.peerVmClusterId = peerVmClusterId;
         this.peerDbHomeId = peerDbHomeId;
     }

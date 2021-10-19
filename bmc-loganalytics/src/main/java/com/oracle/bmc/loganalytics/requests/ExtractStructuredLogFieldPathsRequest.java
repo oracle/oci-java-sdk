@@ -43,6 +43,7 @@ public class ExtractStructuredLogFieldPathsRequest
     public enum ParserType {
         Xml("XML"),
         Json("JSON"),
+        Delimited("DELIMITED"),
         ;
 
         private final String value;

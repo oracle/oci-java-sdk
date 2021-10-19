@@ -75,6 +75,14 @@ public class UploadLogEventsFileRequest
     private String opcRetryToken;
 
     /**
+     * A value of {@code 100-continue} requests preliminary verification of the request method, path, and headers before the request body is sent.
+     * If no error results from such verification, the server will send a 100 (Continue) interim response to indicate readiness for the request body.
+     * The only allowed value for this parameter is "100-Continue" (case-insensitive).
+     *
+     */
+    private String expect;
+
+    /**
      * Alternative accessor for the body parameter.
      * @return body parameter
      */
@@ -132,6 +140,7 @@ public class UploadLogEventsFileRequest
             payloadType(o.getPayloadType());
             contentType(o.getContentType());
             opcRetryToken(o.getOpcRetryToken());
+            expect(o.getExpect());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
