@@ -214,6 +214,15 @@ public class VmClusterSummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("dbServers")
+        private java.util.List<String> dbServers;
+
+        public Builder dbServers(java.util.List<String> dbServers) {
+            this.dbServers = dbServers;
+            this.__explicitlySet__.add("dbServers");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
@@ -260,6 +269,7 @@ public class VmClusterSummary {
                             systemVersion,
                             sshPublicKeys,
                             licenseModel,
+                            dbServers,
                             freeformTags,
                             definedTags);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
@@ -290,6 +300,7 @@ public class VmClusterSummary {
                             .systemVersion(o.getSystemVersion())
                             .sshPublicKeys(o.getSshPublicKeys())
                             .licenseModel(o.getLicenseModel())
+                            .dbServers(o.getDbServers())
                             .freeformTags(o.getFreeformTags())
                             .definedTags(o.getDefinedTags());
 
@@ -530,6 +541,12 @@ public class VmClusterSummary {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("licenseModel")
     LicenseModel licenseModel;
+
+    /**
+     * The list of Db server.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("dbServers")
+    java.util.List<String> dbServers;
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.

@@ -71,6 +71,18 @@ public interface Database extends AutoCloseable {
             AddStorageCapacityExadataInfrastructureRequest request);
 
     /**
+     * Add Virtual Machines to the VM cluster. Applies to Exadata Cloud@Customer instances only.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/AddVirtualMachineToVmClusterExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use AddVirtualMachineToVmCluster API.
+     */
+    AddVirtualMachineToVmClusterResponse addVirtualMachineToVmCluster(
+            AddVirtualMachineToVmClusterRequest request);
+
+    /**
      * Initiates a data refresh for an Autonomous Database refreshable clone. Data is refreshed from the source database to the point of a specified timestamp.
      *
      * @param request The request object containing the details to send
@@ -329,6 +341,17 @@ public interface Database extends AutoCloseable {
      */
     ConfigureAutonomousDatabaseVaultKeyResponse configureAutonomousDatabaseVaultKey(
             ConfigureAutonomousDatabaseVaultKeyRequest request);
+
+    /**
+     * Converts a non-container database to a pluggable database.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ConvertToPdbExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ConvertToPdb API.
+     */
+    ConvertToPdbResponse convertToPdb(ConvertToPdbRequest request);
 
     /**
      * Creates an Autonomous Container Database in the specified Autonomous Exadata Infrastructure.
@@ -1448,6 +1471,17 @@ public interface Database extends AutoCloseable {
     GetDbNodeResponse getDbNode(GetDbNodeRequest request);
 
     /**
+     * Gets information about the Exadata Db server.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetDbServerExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetDbServer API.
+     */
+    GetDbServerResponse getDbServer(GetDbServerRequest request);
+
+    /**
      * Gets information about the specified DB system.
      * <p>
      **Note:** Deprecated for Exadata Cloud Service systems. Use the [new resource model APIs](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaflexsystem.htm#exaflexsystem_topic-resource_model) instead.
@@ -1608,6 +1642,18 @@ public interface Database extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetMaintenanceRunExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetMaintenanceRun API.
      */
     GetMaintenanceRunResponse getMaintenanceRun(GetMaintenanceRunRequest request);
+
+    /**
+     * Gets the details of operations performed to convert the specified database from non-container (non-CDB) to pluggable (PDB).
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetPdbConversionHistoryEntryExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetPdbConversionHistoryEntry API.
+     */
+    GetPdbConversionHistoryEntryResponse getPdbConversionHistoryEntry(
+            GetPdbConversionHistoryEntryRequest request);
 
     /**
      * Gets information about the specified pluggable database.
@@ -2037,6 +2083,17 @@ public interface Database extends AutoCloseable {
     ListDbNodesResponse listDbNodes(ListDbNodesRequest request);
 
     /**
+     * Lists the Exadata DB servers in the ExadataInfrastructureId and specified compartment.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListDbServersExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListDbServers API.
+     */
+    ListDbServersResponse listDbServers(ListDbServersRequest request);
+
+    /**
      * Gets the history of the patch actions performed on the specified DB system.
      *
      * @param request The request object containing the details to send
@@ -2197,6 +2254,18 @@ public interface Database extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListMaintenanceRunsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListMaintenanceRuns API.
      */
     ListMaintenanceRunsResponse listMaintenanceRuns(ListMaintenanceRunsRequest request);
+
+    /**
+     * Gets the pluggable database conversion history for a specified database in a bare metal or virtual machine DB system.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListPdbConversionHistoryEntriesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListPdbConversionHistoryEntries API.
+     */
+    ListPdbConversionHistoryEntriesResponse listPdbConversionHistoryEntries(
+            ListPdbConversionHistoryEntriesRequest request);
 
     /**
      * Gets a list of the pluggable databases in a database or compartment. You must provide either a `databaseId` or `compartmentId` value.
@@ -2372,6 +2441,18 @@ public interface Database extends AutoCloseable {
      */
     RemoteClonePluggableDatabaseResponse remoteClonePluggableDatabase(
             RemoteClonePluggableDatabaseRequest request);
+
+    /**
+     * Remove Virtual Machines from the VM cluster. Applies to Exadata Cloud@Customer instances only.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/RemoveVirtualMachineFromVmClusterExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RemoveVirtualMachineFromVmCluster API.
+     */
+    RemoveVirtualMachineFromVmClusterResponse removeVirtualMachineFromVmCluster(
+            RemoveVirtualMachineFromVmClusterRequest request);
 
     /**
      * Rolling restarts the specified Autonomous Container Database.

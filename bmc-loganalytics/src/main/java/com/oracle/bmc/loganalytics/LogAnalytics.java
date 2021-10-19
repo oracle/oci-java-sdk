@@ -819,6 +819,17 @@ public interface LogAnalytics extends AutoCloseable {
     GetParserSummaryResponse getParserSummary(GetParserSummaryRequest request);
 
     /**
+     * Lists the preferences of the tenant. Currently, only \"DEFAULT_HOMEPAGE\" is supported.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/GetPreferencesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetPreferences API.
+     */
+    GetPreferencesResponse getPreferences(GetPreferencesRequest request);
+
+    /**
      * Returns the intermediate results for a query that was specified to run asynchronously if the query has not completed,
      * otherwise the final query results identified by a queryWorkRequestId returned when submitting the query execute asynchronously.
      *
@@ -906,6 +917,18 @@ public interface LogAnalytics extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/GetStorageWorkRequestExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetStorageWorkRequest API.
      */
     GetStorageWorkRequestResponse getStorageWorkRequest(GetStorageWorkRequestRequest request);
+
+    /**
+     * This API retrieves details of the configured bucket that stores unprocessed payloads.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/GetUnprocessedDataBucketExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetUnprocessedDataBucket API.
+     */
+    GetUnprocessedDataBucketResponse getUnprocessedDataBucket(
+            GetUnprocessedDataBucketRequest request);
 
     /**
      * Gets an On-Demand Upload info by reference.
@@ -1586,6 +1609,17 @@ public interface LogAnalytics extends AutoCloseable {
             RemoveEntityAssociationsRequest request);
 
     /**
+     * Removes the tenant preferences. Currently, only \"DEFAULT_HOMEPAGE\" is supported.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/RemovePreferencesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RemovePreferences API.
+     */
+    RemovePreferencesResponse removePreferences(RemovePreferencesRequest request);
+
+    /**
      * Remove one or more event types from a source.
      *
      * @param request The request object containing the details to send
@@ -1619,6 +1653,20 @@ public interface LogAnalytics extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/RunExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use Run API.
      */
     RunResponse run(RunRequest request);
+
+    /**
+     * This API configures a bucket to store unprocessed payloads.
+     * While processing there could be reasons a payload cannot be processed (mismatched structure, corrupted archive format, etc),
+     * if configured the payload would be uploaded to the bucket for verification.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/SetUnprocessedDataBucketExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use SetUnprocessedDataBucket API.
+     */
+    SetUnprocessedDataBucketResponse setUnprocessedDataBucket(
+            SetUnprocessedDataBucketRequest request);
 
     /**
      * Returns a context specific list of either commands, fields, or values to append to the end of the specified query string if applicable.
@@ -1767,6 +1815,17 @@ public interface LogAnalytics extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/UpdateLookupDataExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateLookupData API.
      */
     UpdateLookupDataResponse updateLookupData(UpdateLookupDataRequest request);
+
+    /**
+     * Updates the tenant preferences. Currently, only \"DEFAULT_HOMEPAGE\" is supported.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/UpdatePreferencesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdatePreferences API.
+     */
+    UpdatePreferencesResponse updatePreferences(UpdatePreferencesRequest request);
 
     /**
      * Update the scheduled task. Schedules may be updated only for taskType SAVED_SEARCH and PURGE.

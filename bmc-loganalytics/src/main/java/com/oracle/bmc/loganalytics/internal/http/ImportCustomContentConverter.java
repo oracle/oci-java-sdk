@@ -63,6 +63,10 @@ public class ImportCustomContentConverter {
             ib.header("opc-request-id", request.getOpcRequestId());
         }
 
+        if (request.getExpect() != null) {
+            ib.header("expect", request.getExpect());
+        }
+
         if (client.getClientConfigurator() != null) {
             client.getClientConfigurator().customizeRequest(request, ib);
         }

@@ -44,18 +44,31 @@ public class ExtractLogHeaderResults {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("headerPaths")
+        private java.util.List<String> headerPaths;
+
+        public Builder headerPaths(java.util.List<String> headerPaths) {
+            this.headerPaths = headerPaths;
+            this.__explicitlySet__.add("headerPaths");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ExtractLogHeaderResults build() {
-            ExtractLogHeaderResults __instance__ = new ExtractLogHeaderResults(jsonPaths, xmlPaths);
+            ExtractLogHeaderResults __instance__ =
+                    new ExtractLogHeaderResults(jsonPaths, xmlPaths, headerPaths);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(ExtractLogHeaderResults o) {
-            Builder copiedBuilder = jsonPaths(o.getJsonPaths()).xmlPaths(o.getXmlPaths());
+            Builder copiedBuilder =
+                    jsonPaths(o.getJsonPaths())
+                            .xmlPaths(o.getXmlPaths())
+                            .headerPaths(o.getHeaderPaths());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -80,6 +93,12 @@ public class ExtractLogHeaderResults {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("xmlPaths")
     java.util.List<String> xmlPaths;
+
+    /**
+     * The log header values.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("headerPaths")
+    java.util.List<String> headerPaths;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

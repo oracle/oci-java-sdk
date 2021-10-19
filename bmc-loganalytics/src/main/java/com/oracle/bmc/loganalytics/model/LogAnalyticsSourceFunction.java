@@ -80,6 +80,15 @@ public class LogAnalyticsSourceFunction {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("features")
+        private java.util.List<String> features;
+
+        public Builder features(java.util.List<String> features) {
+            this.features = features;
+            this.__explicitlySet__.add("features");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("functionId")
         private Long functionId;
 
@@ -173,6 +182,7 @@ public class LogAnalyticsSourceFunction {
                             functionName,
                             functionReference,
                             sourceReference,
+                            features,
                             functionId,
                             order,
                             isSystem,
@@ -195,6 +205,7 @@ public class LogAnalyticsSourceFunction {
                             .functionName(o.getFunctionName())
                             .functionReference(o.getFunctionReference())
                             .sourceReference(o.getSourceReference())
+                            .features(o.getFeatures())
                             .functionId(o.getFunctionId())
                             .order(o.getOrder())
                             .isSystem(o.getIsSystem())
@@ -295,6 +306,12 @@ public class LogAnalyticsSourceFunction {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sourceReference")
     String sourceReference;
+
+    /**
+     * Features of the source function to use for enrichment.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("features")
+    java.util.List<String> features;
 
     /**
      * The source function unique identifier.

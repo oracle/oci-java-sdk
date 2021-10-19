@@ -76,6 +76,15 @@ public class Column extends AbstractColumn {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("isCaseSensitive")
+        private Boolean isCaseSensitive;
+
+        public Builder isCaseSensitive(Boolean isCaseSensitive) {
+            this.isCaseSensitive = isCaseSensitive;
+            this.__explicitlySet__.add("isCaseSensitive");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("isGroupable")
         private Boolean isGroupable;
 
@@ -132,6 +141,7 @@ public class Column extends AbstractColumn {
                             values,
                             isListOfValues,
                             isMultiValued,
+                            isCaseSensitive,
                             isGroupable,
                             isEvaluable,
                             valueType,
@@ -149,6 +159,7 @@ public class Column extends AbstractColumn {
                             .values(o.getValues())
                             .isListOfValues(o.getIsListOfValues())
                             .isMultiValued(o.getIsMultiValued())
+                            .isCaseSensitive(o.getIsCaseSensitive())
                             .isGroupable(o.getIsGroupable())
                             .isEvaluable(o.getIsEvaluable())
                             .valueType(o.getValueType())
@@ -174,6 +185,7 @@ public class Column extends AbstractColumn {
             java.util.List<FieldValue> values,
             Boolean isListOfValues,
             Boolean isMultiValued,
+            Boolean isCaseSensitive,
             Boolean isGroupable,
             Boolean isEvaluable,
             ValueType valueType,
@@ -185,6 +197,7 @@ public class Column extends AbstractColumn {
                 values,
                 isListOfValues,
                 isMultiValued,
+                isCaseSensitive,
                 isGroupable,
                 isEvaluable,
                 valueType,

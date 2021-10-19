@@ -90,6 +90,13 @@ public class AbstractColumn {
     Boolean isMultiValued;
 
     /**
+     * A flag indicating whether or not the field is a case sensitive field.  Only applies to string fields.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isCaseSensitive")
+    Boolean isCaseSensitive;
+
+    /**
      * Identifies if this column can be used as a grouping field in any grouping command.
      *
      **/

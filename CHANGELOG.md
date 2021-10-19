@@ -3,10 +3,17 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
+## 2.7.2 - 2021-10-19
+### Added
+- Support for creating database systems from backups with database software images in the Database service
+- Support for optionally providing a SID prefix during Exadata database creation in the Database service
+- Support for node subsetting on VM clusters in the Database service
+- Support for non-CDB to PDB conversion in the Database service
+- Support for default homepages, unprocessed data buckets, and parsing geostats in the Logging Analytics service
+
 ## 2.7.1 - 2021-10-12
 ### Added
 - Support for the Data Labeling Service
-- Support for the Web Application Firewall service
 - Support for querying and setting Application Performance Monitoring configurations in the Application Performance Monitoring service
 - Support for the run-once monitor feature and network data collection in the Application Performance Monitoring service
 - Support for Oracle Enterprise Manager bridges, source auto-association, source event types mapping, and partitioning and searching data by LogSet in the Logging Analytics service
