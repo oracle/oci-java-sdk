@@ -98,6 +98,33 @@ public class CreateTaskRunDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("refTaskRunId")
+        private String refTaskRunId;
+
+        public Builder refTaskRunId(String refTaskRunId) {
+            this.refTaskRunId = refTaskRunId;
+            this.__explicitlySet__.add("refTaskRunId");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("reRunType")
+        private ReRunType reRunType;
+
+        public Builder reRunType(ReRunType reRunType) {
+            this.reRunType = reRunType;
+            this.__explicitlySet__.add("reRunType");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("stepId")
+        private String stepId;
+
+        public Builder stepId(String stepId) {
+            this.stepId = stepId;
+            this.__explicitlySet__.add("stepId");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("registryMetadata")
         private RegistryMetadata registryMetadata;
 
@@ -121,6 +148,9 @@ public class CreateTaskRunDetails {
                             configProvider,
                             identifier,
                             taskScheduleKey,
+                            refTaskRunId,
+                            reRunType,
+                            stepId,
                             registryMetadata);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
@@ -137,6 +167,9 @@ public class CreateTaskRunDetails {
                             .configProvider(o.getConfigProvider())
                             .identifier(o.getIdentifier())
                             .taskScheduleKey(o.getTaskScheduleKey())
+                            .refTaskRunId(o.getRefTaskRunId())
+                            .reRunType(o.getReRunType())
+                            .stepId(o.getStepId())
                             .registryMetadata(o.getRegistryMetadata());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
@@ -195,6 +228,59 @@ public class CreateTaskRunDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("taskScheduleKey")
     String taskScheduleKey;
+
+    /**
+     * Reference Task Run Id to be used for re-run
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("refTaskRunId")
+    String refTaskRunId;
+    /**
+     * Supported re-run types
+     **/
+    public enum ReRunType {
+        Beginning("BEGINNING"),
+        Failed("FAILED"),
+        Step("STEP"),
+        ;
+
+        private final String value;
+        private static java.util.Map<String, ReRunType> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (ReRunType v : ReRunType.values()) {
+                map.put(v.getValue(), v);
+            }
+        }
+
+        ReRunType(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static ReRunType create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            throw new IllegalArgumentException("Invalid ReRunType: " + key);
+        }
+    };
+    /**
+     * Supported re-run types
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("reRunType")
+    ReRunType reRunType;
+
+    /**
+     * Step Id for running from a certain step.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("stepId")
+    String stepId;
 
     @com.fasterxml.jackson.annotation.JsonProperty("registryMetadata")
     RegistryMetadata registryMetadata;

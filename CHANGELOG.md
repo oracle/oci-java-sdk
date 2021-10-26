@@ -3,6 +3,26 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
+## 2.8.0 - 2021-10-26
+### Added
+- Support for the Source Code Management service
+- Support for the Build service
+- Support for the Certificates service
+- Support to create child tenancies in an organization and manage subscriptions in the Organizations service
+- Support for Certificates service integration in the Load Balancing service
+- Support for creating hosts in specific availability domains in the VMWare Solution service
+- Support for user-defined functions and libraries, as well as scheduling and orchestration, in the Data Integration service
+- Support for EM-managed Exadatas and EM-managed hosts in the Operations Insights service
+
+### Breaking Changes
+- Class `com.oracle.bmc.devops.model.ComputeInstanceGroupBlueGreenDeployStageExecutionProgress` has been removed in the DevOps service
+- Class `com.oracle.bmc.devops.model.ComputeInstanceGroupBlueGreenTrafficShiftDeployStageExecutionProgress` has been removed in the DevOps service
+- Class `com.oracle.bmc.devops.model.ComputeInstanceGroupCanaryApprovalDeployStageExecutionProgress` has been removed in the DevOps service
+- Class `com.oracle.bmc.devops.model.ComputeInstanceGroupCanaryDeployStageExecutionProgress` has been removed in the DevOps service
+- Class `com.oracle.bmc.devops.model.ComputeInstanceGroupCanaryTrafficShiftDeployStageExecutionProgress` has been removed in the DevOps service
+- Class `com.oracle.bmc.devops.model.RunPipelineDeployStageExecutionProgress` has been removed in the DevOps service
+- Class `com.oracle.bmc.devops.model.RunValidationTestOnComputeInstanceDeployStageExecutionProgress` has been removed in the DevOps service
+
 ## 2.7.2 - 2021-10-19
 ### Added
 - Support for creating database systems from backups with database software images in the Database service

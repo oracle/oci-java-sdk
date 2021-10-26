@@ -27,16 +27,9 @@ public class ListWorkRequestsConverter {
             com.oracle.bmc.http.internal.RestClient client,
             com.oracle.bmc.opsi.requests.ListWorkRequestsRequest request) {
         Validate.notNull(request, "request instance is required");
-        Validate.notNull(request.getCompartmentId(), "compartmentId is required");
 
         com.oracle.bmc.http.internal.WrappedWebTarget target =
                 client.getBaseTarget().path("/20200630").path("workRequests");
-
-        target =
-                target.queryParam(
-                        "compartmentId",
-                        com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
-                                request.getCompartmentId()));
 
         if (request.getPage() != null) {
             target =
@@ -52,6 +45,62 @@ public class ListWorkRequestsConverter {
                             "limit",
                             com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
                                     request.getLimit()));
+        }
+
+        if (request.getCompartmentId() != null) {
+            target =
+                    target.queryParam(
+                            "compartmentId",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getCompartmentId()));
+        }
+
+        if (request.getId() != null) {
+            target =
+                    target.queryParam(
+                            "id",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getId()));
+        }
+
+        if (request.getStatus() != null) {
+            target =
+                    target.queryParam(
+                            "status",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getStatus().getValue()));
+        }
+
+        if (request.getResourceId() != null) {
+            target =
+                    target.queryParam(
+                            "resourceId",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getResourceId()));
+        }
+
+        if (request.getRelatedResourceId() != null) {
+            target =
+                    target.queryParam(
+                            "relatedResourceId",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getRelatedResourceId()));
+        }
+
+        if (request.getSortOrder() != null) {
+            target =
+                    target.queryParam(
+                            "sortOrder",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getSortOrder().getValue()));
+        }
+
+        if (request.getSortBy() != null) {
+            target =
+                    target.queryParam(
+                            "sortBy",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getSortBy().getValue()));
         }
 
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib = target.request();

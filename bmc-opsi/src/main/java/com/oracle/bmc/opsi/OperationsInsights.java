@@ -49,6 +49,17 @@ public interface OperationsInsights extends AutoCloseable {
     void setRegion(String regionId);
 
     /**
+     * Add new members (e.g. databases and hosts) to an Exadata system in Operations Insights. Exadata-related metric collection and analysis will be started.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/AddExadataInsightMembersExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use AddExadataInsightMembers API.
+     */
+    AddExadataInsightMembersResponse addExadataInsightMembers(
+            AddExadataInsightMembersRequest request);
+
+    /**
      * Moves a DatabaseInsight resource from one compartment identifier to another. When provided, If-Match is checked against ETag values of the resource.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -69,6 +80,17 @@ public interface OperationsInsights extends AutoCloseable {
      */
     ChangeEnterpriseManagerBridgeCompartmentResponse changeEnterpriseManagerBridgeCompartment(
             ChangeEnterpriseManagerBridgeCompartmentRequest request);
+
+    /**
+     * Moves an Exadata insight resource from one compartment identifier to another. When provided, If-Match is checked against ETag values of the resource.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/ChangeExadataInsightCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeExadataInsightCompartment API.
+     */
+    ChangeExadataInsightCompartmentResponse changeExadataInsightCompartment(
+            ChangeExadataInsightCompartmentRequest request);
 
     /**
      * Moves a HostInsight resource from one compartment identifier to another. When provided, If-Match is checked against ETag values of the resource.
@@ -105,6 +127,17 @@ public interface OperationsInsights extends AutoCloseable {
             CreateEnterpriseManagerBridgeRequest request);
 
     /**
+     * Create an Exadata insight resource for an Exadata system in Operations Insights. The Exadata system will be enabled in Operations Insights. Exadata-related metric collection and analysis will be started.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/CreateExadataInsightExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateExadataInsight API.
+     */
+    CreateExadataInsightResponse createExadataInsight(CreateExadataInsightRequest request);
+
+    /**
      * Create a Host Insight resource for a host in Operations Insights. The host will be enabled in Operations Insights. Host metric collection and analysis will be started.
      *
      * @param request The request object containing the details to send
@@ -137,6 +170,16 @@ public interface OperationsInsights extends AutoCloseable {
             DeleteEnterpriseManagerBridgeRequest request);
 
     /**
+     * Deletes an Exadata insight. The Exadata insight will be deleted and cannot be enabled again.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/DeleteExadataInsightExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteExadataInsight API.
+     */
+    DeleteExadataInsightResponse deleteExadataInsight(DeleteExadataInsightRequest request);
+
+    /**
      * Deletes a host insight. The host insight will be deleted and cannot be enabled again.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -157,6 +200,16 @@ public interface OperationsInsights extends AutoCloseable {
     DisableDatabaseInsightResponse disableDatabaseInsight(DisableDatabaseInsightRequest request);
 
     /**
+     * Disables an Exadata system in Operations Insights. Exadata-related metric collection and analysis will be stopped.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/DisableExadataInsightExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DisableExadataInsight API.
+     */
+    DisableExadataInsightResponse disableExadataInsight(DisableExadataInsightRequest request);
+
+    /**
      * Disables a host in Operations Insights. Host metric collection and analysis will be stopped.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -175,6 +228,16 @@ public interface OperationsInsights extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/EnableDatabaseInsightExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use EnableDatabaseInsight API.
      */
     EnableDatabaseInsightResponse enableDatabaseInsight(EnableDatabaseInsightRequest request);
+
+    /**
+     * Enables an Exadata system in Operations Insights. Exadata-related metric collection and analysis will be started.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/EnableExadataInsightExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use EnableExadataInsight API.
+     */
+    EnableExadataInsightResponse enableExadataInsight(EnableExadataInsightRequest request);
 
     /**
      * Enables a host in Operations Insights. Host metric collection and analysis will be started.
@@ -206,6 +269,16 @@ public interface OperationsInsights extends AutoCloseable {
      */
     GetEnterpriseManagerBridgeResponse getEnterpriseManagerBridge(
             GetEnterpriseManagerBridgeRequest request);
+
+    /**
+     * Gets details of an Exadata insight.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/GetExadataInsightExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetExadataInsight API.
+     */
+    GetExadataInsightResponse getExadataInsight(GetExadataInsightRequest request);
 
     /**
      * Gets details of a host insight.
@@ -297,6 +370,7 @@ public interface OperationsInsights extends AutoCloseable {
 
     /**
      * Gets a list of database insight configurations based on the query parameters specified. Either compartmentId or databaseInsightId query parameter must be specified.
+     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -308,6 +382,7 @@ public interface OperationsInsights extends AutoCloseable {
 
     /**
      * Gets a list of database insights based on the query parameters specified. Either compartmentId or id query parameter must be specified.
+     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -329,7 +404,42 @@ public interface OperationsInsights extends AutoCloseable {
             ListEnterpriseManagerBridgesRequest request);
 
     /**
+     * Gets a list of exadata insight configurations. Either compartmentId or exadataInsightsId query parameter must be specified.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/ListExadataConfigurationsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListExadataConfigurations API.
+     */
+    ListExadataConfigurationsResponse listExadataConfigurations(
+            ListExadataConfigurationsRequest request);
+
+    /**
+     * Gets a list of Exadata insights based on the query parameters specified. Either compartmentId or id query parameter must be specified.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/ListExadataInsightsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListExadataInsights API.
+     */
+    ListExadataInsightsResponse listExadataInsights(ListExadataInsightsRequest request);
+
+    /**
+     * Gets a list of host insight configurations based on the query parameters specified. Either compartmentId or hostInsightId query parameter must be specified.
+     * When both compartmentId and compartmentIdInSubtree are specified, a list of host insight configurations in that compartment and in all sub-compartments will be returned.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/ListHostConfigurationsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListHostConfigurations API.
+     */
+    ListHostConfigurationsResponse listHostConfigurations(ListHostConfigurationsRequest request);
+
+    /**
      * Gets a list of host insights based on the query parameters specified. Either compartmentId or id query parameter must be specified.
+     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -391,6 +501,7 @@ public interface OperationsInsights extends AutoCloseable {
 
     /**
      * Search SQL by SQL Identifier across databases and get the SQL Text and the details of the databases executing the SQL for a given time period.
+     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -401,6 +512,7 @@ public interface OperationsInsights extends AutoCloseable {
 
     /**
      * Query SQL Warehouse to get the full SQL Text for a SQL.
+     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -432,7 +544,7 @@ public interface OperationsInsights extends AutoCloseable {
     ListWorkRequestLogsResponse listWorkRequestLogs(ListWorkRequestLogsRequest request);
 
     /**
-     * Lists the work requests in a compartment.
+     * Lists the work requests in a compartment. Either compartmentId or id must be specified. Only one of id, resourceId or relatedResourceId can be specified optionally.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -470,7 +582,9 @@ public interface OperationsInsights extends AutoCloseable {
                     SummarizeDatabaseInsightResourceForecastTrendRequest request);
 
     /**
-     * Lists the Resource statistics (usage,capacity, usage change percent, utilization percent, base capacity, isAutoScalingEnabled) for each database filtered by utilization level
+     * Lists the Resource statistics (usage,capacity, usage change percent, utilization percent, base capacity, isAutoScalingEnabled)
+     * for each database filtered by utilization level.
+     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -509,6 +623,7 @@ public interface OperationsInsights extends AutoCloseable {
 
     /**
      * Gets resources with current utilization (high and low) and projected utilization (high and low) for a resource type over specified time period.
+     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -533,6 +648,152 @@ public interface OperationsInsights extends AutoCloseable {
     SummarizeDatabaseInsightTablespaceUsageTrendResponse
             summarizeDatabaseInsightTablespaceUsageTrend(
                     SummarizeDatabaseInsightTablespaceUsageTrendRequest request);
+
+    /**
+     * Returns response with time series data (endTimestamp, capacity) for the time period specified for an exadata system for a resource metric.
+     * Additionally resources can be filtered using databaseInsightId, hostInsightId or storageServerName query parameters.
+     * Top five resources are returned if total exceeds the limit specified.
+     * Valid values for ResourceType DATABASE are CPU,MEMORY,IO and STORAGE. Database name is returned in name field. DatabaseInsightId, cdbName and hostName query parameter applies to ResourceType DATABASE.
+     * Valid values for ResourceType HOST are CPU and MEMORY. HostName is returned in name field. HostInsightId and hostName query parameter applies to ResourceType HOST.
+     * Valid values for ResourceType STORAGE_SERVER are STORAGE, IOPS and THROUGHPUT. Storage server name is returned in name field for resourceMetric IOPS and THROUGHPUT
+     * and asmName is returned in name field for resourceMetric STORAGE. StorageServerName query parameter applies to ResourceType STORAGE_SERVER.
+     * Valid values for ResourceType DISKGROUP is STORAGE. Comma delimited (asmName,diskgroupName) is returned in name field.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/SummarizeExadataInsightResourceCapacityTrendExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use SummarizeExadataInsightResourceCapacityTrend API.
+     */
+    SummarizeExadataInsightResourceCapacityTrendResponse
+            summarizeExadataInsightResourceCapacityTrend(
+                    SummarizeExadataInsightResourceCapacityTrendRequest request);
+
+    /**
+     * Returns response with time series data (endTimestamp, capacity) for the time period specified for an exadata system or fleet aggregation for a resource metric.
+     * The maximum time range for analysis is 2 years, hence this is intentionally not paginated.
+     * Valid values for ResourceType DATABASE are CPU,MEMORY,IO and STORAGE.
+     * Valid values for ResourceType HOST are CPU and MEMORY.
+     * Valid values for ResourceType STORAGE_SERVER are STORAGE, IOPS and THROUGHPUT.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/SummarizeExadataInsightResourceCapacityTrendAggregatedExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use SummarizeExadataInsightResourceCapacityTrendAggregated API.
+     */
+    SummarizeExadataInsightResourceCapacityTrendAggregatedResponse
+            summarizeExadataInsightResourceCapacityTrendAggregated(
+                    SummarizeExadataInsightResourceCapacityTrendAggregatedRequest request);
+
+    /**
+     * Get historical usage and forecast predictions for an exadata system with breakdown by databases, hosts or storage servers.
+     * Additionally resources can be filtered using databaseInsightId, hostInsightId or storageServerName query parameters.
+     * Top five resources are returned if total exceeds the limit specified.
+     * Valid values for ResourceType DATABASE are CPU,MEMORY,IO and STORAGE. Database name is returned in name field. DatabaseInsightId , cdbName and hostName query parameter applies to ResourceType DATABASE.
+     * Valid values for ResourceType HOST are CPU and MEMORY. HostName s returned in name field. HostInsightId and hostName query parameter applies to ResourceType HOST.
+     * Valid values for ResourceType STORAGE_SERVER are STORAGE, IOPS and THROUGHPUT. Storage server name is returned in name field for resourceMetric IOPS and THROUGHPUT
+     * and asmName is returned in name field for resourceMetric STORAGE. StorageServerName query parameter applies to ResourceType STORAGE_SERVER.
+     * Valid value for ResourceType DISKGROUP is STORAGE. Comma delimited (asmName,diskgroupName) is returned in name field.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/SummarizeExadataInsightResourceForecastTrendExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use SummarizeExadataInsightResourceForecastTrend API.
+     */
+    SummarizeExadataInsightResourceForecastTrendResponse
+            summarizeExadataInsightResourceForecastTrend(
+                    SummarizeExadataInsightResourceForecastTrendRequest request);
+
+    /**
+     * Get aggregated historical usage and forecast predictions for resources. Either compartmentId or exadataInsightsId query parameter must be specified.
+     * Valid values for ResourceType DATABASE are CPU,MEMORY,IO and STORAGE.
+     * Valid values for ResourceType HOST are CPU and MEMORY.
+     * Valid values for ResourceType STORAGE_SERVER are STORAGE, IOPS and THROUGHPUT.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/SummarizeExadataInsightResourceForecastTrendAggregatedExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use SummarizeExadataInsightResourceForecastTrendAggregated API.
+     */
+    SummarizeExadataInsightResourceForecastTrendAggregatedResponse
+            summarizeExadataInsightResourceForecastTrendAggregated(
+                    SummarizeExadataInsightResourceForecastTrendAggregatedRequest request);
+
+    /**
+     * Lists the Resource statistics (usage, capacity, usage change percent, utilization percent) for each resource based on resourceMetric filtered by utilization level.
+     * Valid values for ResourceType DATABASE are CPU,MEMORY,IO and STORAGE.
+     * Valid values for ResourceType HOST are CPU and MEMORY.
+     * Valid values for ResourceType STORAGE_SERVER are STORAGE, IOPS, THROUGHPUT.
+     * Valid value for ResourceType DISKGROUP is STORAGE.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/SummarizeExadataInsightResourceStatisticsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use SummarizeExadataInsightResourceStatistics API.
+     */
+    SummarizeExadataInsightResourceStatisticsResponse summarizeExadataInsightResourceStatistics(
+            SummarizeExadataInsightResourceStatisticsRequest request);
+
+    /**
+     * A cumulative distribution function is used to rank the usage data points per resource within the specified time period.
+     * For each resource, the minimum data point with a ranking > the percentile value is included in the summation.
+     * Linear regression functions are used to calculate the usage change percentage.
+     * Valid values for ResourceType DATABASE are CPU,MEMORY,IO and STORAGE.
+     * Valid values for ResourceType HOST are CPU and MEMORY.
+     * Valid values for ResourceType STORAGE_SERVER are STORAGE, IOPS and THROUGHPUT.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/SummarizeExadataInsightResourceUsageExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use SummarizeExadataInsightResourceUsage API.
+     */
+    SummarizeExadataInsightResourceUsageResponse summarizeExadataInsightResourceUsage(
+            SummarizeExadataInsightResourceUsageRequest request);
+
+    /**
+     * A cumulative distribution function is used to rank the usage data points per database within the specified time period.
+     * For each database, the minimum data point with a ranking > the percentile value is included in the summation.
+     * Linear regression functions are used to calculate the usage change percentage.
+     * Valid values for ResourceType DATABASE are CPU,MEMORY,IO and STORAGE.
+     * Valid values for ResourceType HOST are CPU and MEMORY.
+     * Valid values for ResourceType STORAGE_SERVER are STORAGE, IOPS and THROUGHPUT.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/SummarizeExadataInsightResourceUsageAggregatedExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use SummarizeExadataInsightResourceUsageAggregated API.
+     */
+    SummarizeExadataInsightResourceUsageAggregatedResponse
+            summarizeExadataInsightResourceUsageAggregated(
+                    SummarizeExadataInsightResourceUsageAggregatedRequest request);
+
+    /**
+     * Gets current utilization, projected utilization and days to reach projectedUtilization for an exadata system over specified time period. Valid values for ResourceType DATABASE are CPU,MEMORY,IO and STORAGE. Valid values for ResourceType HOST are CPU and MEMORY. Valid values for ResourceType STORAGE_SERVER are STORAGE, IOPS and THROUGHPUT.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/SummarizeExadataInsightResourceUtilizationInsightExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use SummarizeExadataInsightResourceUtilizationInsight API.
+     */
+    SummarizeExadataInsightResourceUtilizationInsightResponse
+            summarizeExadataInsightResourceUtilizationInsight(
+                    SummarizeExadataInsightResourceUtilizationInsightRequest request);
+
+    /**
+     * Lists the software and hardware inventory of the Exadata System.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/SummarizeExadataMembersExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use SummarizeExadataMembers API.
+     */
+    SummarizeExadataMembersResponse summarizeExadataMembers(SummarizeExadataMembersRequest request);
 
     /**
      * Returns response with time series data (endTimestamp, capacity) for the time period specified.
@@ -601,6 +862,7 @@ public interface OperationsInsights extends AutoCloseable {
 
     /**
      * Gets resources with current utilization (high and low) and projected utilization (high and low) for a resource type over specified time period.
+     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -612,7 +874,9 @@ public interface OperationsInsights extends AutoCloseable {
                     SummarizeHostInsightResourceUtilizationInsightRequest request);
 
     /**
-     * Query SQL Warehouse to get the performance insights for SQLs taking greater than X% database time for a given time period across the given databases or database types.
+     * Query SQL Warehouse to get the performance insights for SQLs taking greater than X% database time for a given
+     * time period across the given databases or database types.
+     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -648,7 +912,9 @@ public interface OperationsInsights extends AutoCloseable {
             SummarizeSqlResponseTimeDistributionsRequest request);
 
     /**
-     * Query SQL Warehouse to get the performance statistics for SQLs taking greater than X% database time for a given time period across the given databases or database types.
+     * Query SQL Warehouse to get the performance statistics for SQLs taking greater than X% database time for a given
+     * time period across the given databases or database types.
+     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -702,6 +968,16 @@ public interface OperationsInsights extends AutoCloseable {
      */
     UpdateEnterpriseManagerBridgeResponse updateEnterpriseManagerBridge(
             UpdateEnterpriseManagerBridgeRequest request);
+
+    /**
+     * Updates configuration of an Exadata insight.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/UpdateExadataInsightExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateExadataInsight API.
+     */
+    UpdateExadataInsightResponse updateExadataInsight(UpdateExadataInsightRequest request);
 
     /**
      * Updates configuration of a host insight.

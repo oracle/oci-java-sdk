@@ -140,7 +140,7 @@ public class Link {
     String parentTenancyId;
 
     /**
-     * OCID of the child tenancy
+     * OCID of the child tenancy.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("childTenancyId")
     String childTenancyId;

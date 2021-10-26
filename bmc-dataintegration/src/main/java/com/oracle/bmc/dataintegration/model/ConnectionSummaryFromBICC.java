@@ -5,7 +5,7 @@
 package com.oracle.bmc.dataintegration.model;
 
 /**
- * The connection summary details for an Oracle Database data asset.
+ * The connection summary details for a FUSION_APP BICC connection.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in

@@ -4,6 +4,8 @@
  */
 package com.oracle.bmc.http;
 
+import lombok.Getter;
+import org.apache.commons.lang3.StringUtils;
 import org.glassfish.jersey.apache.connector.ApacheConnectionClosingStrategy;
 
 import java.util.Optional;
@@ -156,6 +158,27 @@ public final class ApacheUtils {
             }
         }
         return property;
+    }
+
+    /**
+     * The boolean value indicating if extra logs related to operations that return streams are enabled/disabled.
+     * Disabling this will disable warnings to close the streams, logs about wrapping response stream in
+     * an auto-closeble stream. Default is true.
+     */
+    @Getter
+    private static final boolean isExtraStreamLogsEnabled =
+            isExtraStreamLogsEnabledViaSystemProperty();
+
+    private static boolean isExtraStreamLogsEnabledViaSystemProperty() {
+        String streamLogsEnabledString =
+                System.getProperty("oci.javasdk.extra.stream.logs.enabled");
+        if (streamLogsEnabledString != null && !streamLogsEnabledString.isEmpty()) {
+            String trimmedValue = streamLogsEnabledString.trim();
+            if (StringUtils.equalsIgnoreCase("false", trimmedValue)) {
+                return false;
+            }
+        }
+        return true;
     }
 
     private static Optional<ClientConfigurator> filterOutEffectiveCompositeConfigurator(

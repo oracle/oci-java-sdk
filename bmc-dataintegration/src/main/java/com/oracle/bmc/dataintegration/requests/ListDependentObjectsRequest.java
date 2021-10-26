@@ -41,6 +41,11 @@ public class ListDependentObjectsRequest
     private String name;
 
     /**
+     * This parameter can be used to filter objects by the names that match partially or fully with the given value.
+     */
+    private String nameContains;
+
+    /**
      * Used to filter by the identifier of the published object.
      *
      */
@@ -264,6 +269,7 @@ public class ListDependentObjectsRequest
             applicationKey(o.getApplicationKey());
             fields(o.getFields());
             name(o.getName());
+            nameContains(o.getNameContains());
             identifier(o.getIdentifier());
             type(o.getType());
             typeInSubtree(o.getTypeInSubtree());

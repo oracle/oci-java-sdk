@@ -384,6 +384,351 @@ public class OperationsInsightsPaginators {
     }
 
     /**
+     * Creates a new iterable which will iterate over the responses received from the listExadataConfigurations operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListExadataConfigurationsResponse> listExadataConfigurationsResponseIterator(
+            final ListExadataConfigurationsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListExadataConfigurationsRequest.Builder, ListExadataConfigurationsRequest,
+                ListExadataConfigurationsResponse>(
+                new com.google.common.base.Supplier<ListExadataConfigurationsRequest.Builder>() {
+                    @Override
+                    public ListExadataConfigurationsRequest.Builder get() {
+                        return ListExadataConfigurationsRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListExadataConfigurationsResponse, String>() {
+                    @Override
+                    public String apply(ListExadataConfigurationsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListExadataConfigurationsRequest.Builder>,
+                        ListExadataConfigurationsRequest>() {
+                    @Override
+                    public ListExadataConfigurationsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListExadataConfigurationsRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListExadataConfigurationsRequest, ListExadataConfigurationsResponse>() {
+                    @Override
+                    public ListExadataConfigurationsResponse apply(
+                            ListExadataConfigurationsRequest request) {
+                        return client.listExadataConfigurations(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.opsi.model.ExadataConfigurationSummary} objects
+     * contained in responses from the listExadataConfigurations operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.opsi.model.ExadataConfigurationSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.opsi.model.ExadataConfigurationSummary>
+            listExadataConfigurationsRecordIterator(
+                    final ListExadataConfigurationsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListExadataConfigurationsRequest.Builder, ListExadataConfigurationsRequest,
+                ListExadataConfigurationsResponse,
+                com.oracle.bmc.opsi.model.ExadataConfigurationSummary>(
+                new com.google.common.base.Supplier<ListExadataConfigurationsRequest.Builder>() {
+                    @Override
+                    public ListExadataConfigurationsRequest.Builder get() {
+                        return ListExadataConfigurationsRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListExadataConfigurationsResponse, String>() {
+                    @Override
+                    public String apply(ListExadataConfigurationsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListExadataConfigurationsRequest.Builder>,
+                        ListExadataConfigurationsRequest>() {
+                    @Override
+                    public ListExadataConfigurationsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListExadataConfigurationsRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListExadataConfigurationsRequest, ListExadataConfigurationsResponse>() {
+                    @Override
+                    public ListExadataConfigurationsResponse apply(
+                            ListExadataConfigurationsRequest request) {
+                        return client.listExadataConfigurations(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListExadataConfigurationsResponse,
+                        java.util.List<com.oracle.bmc.opsi.model.ExadataConfigurationSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.opsi.model.ExadataConfigurationSummary>
+                            apply(ListExadataConfigurationsResponse response) {
+                        return response.getExadataConfigurationCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the listExadataInsights operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListExadataInsightsResponse> listExadataInsightsResponseIterator(
+            final ListExadataInsightsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListExadataInsightsRequest.Builder, ListExadataInsightsRequest,
+                ListExadataInsightsResponse>(
+                new com.google.common.base.Supplier<ListExadataInsightsRequest.Builder>() {
+                    @Override
+                    public ListExadataInsightsRequest.Builder get() {
+                        return ListExadataInsightsRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListExadataInsightsResponse, String>() {
+                    @Override
+                    public String apply(ListExadataInsightsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListExadataInsightsRequest.Builder>,
+                        ListExadataInsightsRequest>() {
+                    @Override
+                    public ListExadataInsightsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListExadataInsightsRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListExadataInsightsRequest, ListExadataInsightsResponse>() {
+                    @Override
+                    public ListExadataInsightsResponse apply(ListExadataInsightsRequest request) {
+                        return client.listExadataInsights(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.opsi.model.ExadataInsightSummary} objects
+     * contained in responses from the listExadataInsights operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.opsi.model.ExadataInsightSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.opsi.model.ExadataInsightSummary>
+            listExadataInsightsRecordIterator(final ListExadataInsightsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListExadataInsightsRequest.Builder, ListExadataInsightsRequest,
+                ListExadataInsightsResponse, com.oracle.bmc.opsi.model.ExadataInsightSummary>(
+                new com.google.common.base.Supplier<ListExadataInsightsRequest.Builder>() {
+                    @Override
+                    public ListExadataInsightsRequest.Builder get() {
+                        return ListExadataInsightsRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListExadataInsightsResponse, String>() {
+                    @Override
+                    public String apply(ListExadataInsightsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListExadataInsightsRequest.Builder>,
+                        ListExadataInsightsRequest>() {
+                    @Override
+                    public ListExadataInsightsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListExadataInsightsRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListExadataInsightsRequest, ListExadataInsightsResponse>() {
+                    @Override
+                    public ListExadataInsightsResponse apply(ListExadataInsightsRequest request) {
+                        return client.listExadataInsights(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListExadataInsightsResponse,
+                        java.util.List<com.oracle.bmc.opsi.model.ExadataInsightSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.opsi.model.ExadataInsightSummary> apply(
+                            ListExadataInsightsResponse response) {
+                        return response.getExadataInsightSummaryCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the listHostConfigurations operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListHostConfigurationsResponse> listHostConfigurationsResponseIterator(
+            final ListHostConfigurationsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListHostConfigurationsRequest.Builder, ListHostConfigurationsRequest,
+                ListHostConfigurationsResponse>(
+                new com.google.common.base.Supplier<ListHostConfigurationsRequest.Builder>() {
+                    @Override
+                    public ListHostConfigurationsRequest.Builder get() {
+                        return ListHostConfigurationsRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListHostConfigurationsResponse, String>() {
+                    @Override
+                    public String apply(ListHostConfigurationsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListHostConfigurationsRequest.Builder>,
+                        ListHostConfigurationsRequest>() {
+                    @Override
+                    public ListHostConfigurationsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListHostConfigurationsRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListHostConfigurationsRequest, ListHostConfigurationsResponse>() {
+                    @Override
+                    public ListHostConfigurationsResponse apply(
+                            ListHostConfigurationsRequest request) {
+                        return client.listHostConfigurations(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.opsi.model.HostConfigurationSummary} objects
+     * contained in responses from the listHostConfigurations operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.opsi.model.HostConfigurationSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.opsi.model.HostConfigurationSummary>
+            listHostConfigurationsRecordIterator(final ListHostConfigurationsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListHostConfigurationsRequest.Builder, ListHostConfigurationsRequest,
+                ListHostConfigurationsResponse, com.oracle.bmc.opsi.model.HostConfigurationSummary>(
+                new com.google.common.base.Supplier<ListHostConfigurationsRequest.Builder>() {
+                    @Override
+                    public ListHostConfigurationsRequest.Builder get() {
+                        return ListHostConfigurationsRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListHostConfigurationsResponse, String>() {
+                    @Override
+                    public String apply(ListHostConfigurationsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListHostConfigurationsRequest.Builder>,
+                        ListHostConfigurationsRequest>() {
+                    @Override
+                    public ListHostConfigurationsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListHostConfigurationsRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListHostConfigurationsRequest, ListHostConfigurationsResponse>() {
+                    @Override
+                    public ListHostConfigurationsResponse apply(
+                            ListHostConfigurationsRequest request) {
+                        return client.listHostConfigurations(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListHostConfigurationsResponse,
+                        java.util.List<com.oracle.bmc.opsi.model.HostConfigurationSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.opsi.model.HostConfigurationSummary> apply(
+                            ListHostConfigurationsResponse response) {
+                        return response.getHostConfigurationCollection().getItems();
+                    }
+                });
+    }
+
+    /**
      * Creates a new iterable which will iterate over the responses received from the listHostInsights operation. This iterable
      * will fetch more data from the server as needed.
      *

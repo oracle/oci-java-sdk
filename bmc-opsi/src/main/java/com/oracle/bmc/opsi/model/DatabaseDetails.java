@@ -87,6 +87,15 @@ public class DatabaseDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("cdbName")
+        private String cdbName;
+
+        public Builder cdbName(String cdbName) {
+            this.cdbName = cdbName;
+            this.__explicitlySet__.add("cdbName");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -99,7 +108,8 @@ public class DatabaseDetails {
                             databaseDisplayName,
                             databaseType,
                             databaseVersion,
-                            instances);
+                            instances,
+                            cdbName);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -113,7 +123,8 @@ public class DatabaseDetails {
                             .databaseDisplayName(o.getDatabaseDisplayName())
                             .databaseType(o.getDatabaseType())
                             .databaseVersion(o.getDatabaseVersion())
-                            .instances(o.getInstances());
+                            .instances(o.getInstances())
+                            .cdbName(o.getCdbName());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -168,6 +179,12 @@ public class DatabaseDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("instances")
     java.util.List<HostInstanceMap> instances;
+
+    /**
+     * Name of the CDB.Only applies to PDB.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("cdbName")
+    String cdbName;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

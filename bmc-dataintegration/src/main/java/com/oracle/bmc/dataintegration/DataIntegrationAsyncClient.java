@@ -891,6 +891,53 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<CreateFunctionLibraryResponse> createFunctionLibrary(
+            CreateFunctionLibraryRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            CreateFunctionLibraryRequest, CreateFunctionLibraryResponse>
+                    handler) {
+        LOG.trace("Called async createFunctionLibrary");
+        final CreateFunctionLibraryRequest interceptedRequest =
+                CreateFunctionLibraryConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateFunctionLibraryConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, CreateFunctionLibraryResponse>
+                transformer = CreateFunctionLibraryConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        CreateFunctionLibraryRequest, CreateFunctionLibraryResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CreateFunctionLibraryRequest, CreateFunctionLibraryResponse>,
+                        java.util.concurrent.Future<CreateFunctionLibraryResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateFunctionLibraryDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CreateFunctionLibraryRequest, CreateFunctionLibraryResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<CreatePatchResponse> createPatch(
             CreatePatchRequest request,
             final com.oracle.bmc.responses.AsyncHandler<CreatePatchRequest, CreatePatchResponse>
@@ -1282,6 +1329,107 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     CreateTaskValidationRequest, CreateTaskValidationResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateUserDefinedFunctionResponse> createUserDefinedFunction(
+            CreateUserDefinedFunctionRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            CreateUserDefinedFunctionRequest, CreateUserDefinedFunctionResponse>
+                    handler) {
+        LOG.trace("Called async createUserDefinedFunction");
+        final CreateUserDefinedFunctionRequest interceptedRequest =
+                CreateUserDefinedFunctionConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateUserDefinedFunctionConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, CreateUserDefinedFunctionResponse>
+                transformer = CreateUserDefinedFunctionConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        CreateUserDefinedFunctionRequest, CreateUserDefinedFunctionResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CreateUserDefinedFunctionRequest,
+                                CreateUserDefinedFunctionResponse>,
+                        java.util.concurrent.Future<CreateUserDefinedFunctionResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateUserDefinedFunctionDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CreateUserDefinedFunctionRequest, CreateUserDefinedFunctionResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateUserDefinedFunctionValidationResponse>
+            createUserDefinedFunctionValidation(
+                    CreateUserDefinedFunctionValidationRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    CreateUserDefinedFunctionValidationRequest,
+                                    CreateUserDefinedFunctionValidationResponse>
+                            handler) {
+        LOG.trace("Called async createUserDefinedFunctionValidation");
+        final CreateUserDefinedFunctionValidationRequest interceptedRequest =
+                CreateUserDefinedFunctionValidationConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateUserDefinedFunctionValidationConverter.fromRequest(
+                        client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, CreateUserDefinedFunctionValidationResponse>
+                transformer = CreateUserDefinedFunctionValidationConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        CreateUserDefinedFunctionValidationRequest,
+                        CreateUserDefinedFunctionValidationResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CreateUserDefinedFunctionValidationRequest,
+                                CreateUserDefinedFunctionValidationResponse>,
+                        java.util.concurrent.Future<CreateUserDefinedFunctionValidationResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateUserDefinedFunctionValidationDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CreateUserDefinedFunctionValidationRequest,
+                    CreateUserDefinedFunctionValidationResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -1708,6 +1856,47 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteFunctionLibraryResponse> deleteFunctionLibrary(
+            DeleteFunctionLibraryRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            DeleteFunctionLibraryRequest, DeleteFunctionLibraryResponse>
+                    handler) {
+        LOG.trace("Called async deleteFunctionLibrary");
+        final DeleteFunctionLibraryRequest interceptedRequest =
+                DeleteFunctionLibraryConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteFunctionLibraryConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, DeleteFunctionLibraryResponse>
+                transformer = DeleteFunctionLibraryConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        DeleteFunctionLibraryRequest, DeleteFunctionLibraryResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DeleteFunctionLibraryRequest, DeleteFunctionLibraryResponse>,
+                        java.util.concurrent.Future<DeleteFunctionLibraryResponse>>
+                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DeleteFunctionLibraryRequest, DeleteFunctionLibraryResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<DeletePatchResponse> deletePatch(
             DeletePatchRequest request,
             final com.oracle.bmc.responses.AsyncHandler<DeletePatchRequest, DeletePatchResponse>
@@ -2045,6 +2234,95 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     DeleteTaskValidationRequest, DeleteTaskValidationResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteUserDefinedFunctionResponse> deleteUserDefinedFunction(
+            DeleteUserDefinedFunctionRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            DeleteUserDefinedFunctionRequest, DeleteUserDefinedFunctionResponse>
+                    handler) {
+        LOG.trace("Called async deleteUserDefinedFunction");
+        final DeleteUserDefinedFunctionRequest interceptedRequest =
+                DeleteUserDefinedFunctionConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteUserDefinedFunctionConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, DeleteUserDefinedFunctionResponse>
+                transformer = DeleteUserDefinedFunctionConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        DeleteUserDefinedFunctionRequest, DeleteUserDefinedFunctionResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DeleteUserDefinedFunctionRequest,
+                                DeleteUserDefinedFunctionResponse>,
+                        java.util.concurrent.Future<DeleteUserDefinedFunctionResponse>>
+                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DeleteUserDefinedFunctionRequest, DeleteUserDefinedFunctionResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteUserDefinedFunctionValidationResponse>
+            deleteUserDefinedFunctionValidation(
+                    DeleteUserDefinedFunctionValidationRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    DeleteUserDefinedFunctionValidationRequest,
+                                    DeleteUserDefinedFunctionValidationResponse>
+                            handler) {
+        LOG.trace("Called async deleteUserDefinedFunctionValidation");
+        final DeleteUserDefinedFunctionValidationRequest interceptedRequest =
+                DeleteUserDefinedFunctionValidationConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteUserDefinedFunctionValidationConverter.fromRequest(
+                        client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, DeleteUserDefinedFunctionValidationResponse>
+                transformer = DeleteUserDefinedFunctionValidationConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        DeleteUserDefinedFunctionValidationRequest,
+                        DeleteUserDefinedFunctionValidationResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DeleteUserDefinedFunctionValidationRequest,
+                                DeleteUserDefinedFunctionValidationResponse>,
+                        java.util.concurrent.Future<DeleteUserDefinedFunctionValidationResponse>>
+                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DeleteUserDefinedFunctionValidationRequest,
+                    DeleteUserDefinedFunctionValidationResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -2571,6 +2849,45 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<GetFunctionLibraryResponse> getFunctionLibrary(
+            GetFunctionLibraryRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetFunctionLibraryRequest, GetFunctionLibraryResponse>
+                    handler) {
+        LOG.trace("Called async getFunctionLibrary");
+        final GetFunctionLibraryRequest interceptedRequest =
+                GetFunctionLibraryConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetFunctionLibraryConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<javax.ws.rs.core.Response, GetFunctionLibraryResponse>
+                transformer = GetFunctionLibraryConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<GetFunctionLibraryRequest, GetFunctionLibraryResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetFunctionLibraryRequest, GetFunctionLibraryResponse>,
+                        java.util.concurrent.Future<GetFunctionLibraryResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetFunctionLibraryRequest, GetFunctionLibraryResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<GetPatchResponse> getPatch(
             GetPatchRequest request,
             final com.oracle.bmc.responses.AsyncHandler<GetPatchRequest, GetPatchResponse>
@@ -3011,6 +3328,93 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     GetTaskValidationRequest, GetTaskValidationResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetUserDefinedFunctionResponse> getUserDefinedFunction(
+            GetUserDefinedFunctionRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetUserDefinedFunctionRequest, GetUserDefinedFunctionResponse>
+                    handler) {
+        LOG.trace("Called async getUserDefinedFunction");
+        final GetUserDefinedFunctionRequest interceptedRequest =
+                GetUserDefinedFunctionConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetUserDefinedFunctionConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, GetUserDefinedFunctionResponse>
+                transformer = GetUserDefinedFunctionConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        GetUserDefinedFunctionRequest, GetUserDefinedFunctionResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetUserDefinedFunctionRequest, GetUserDefinedFunctionResponse>,
+                        java.util.concurrent.Future<GetUserDefinedFunctionResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetUserDefinedFunctionRequest, GetUserDefinedFunctionResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetUserDefinedFunctionValidationResponse>
+            getUserDefinedFunctionValidation(
+                    GetUserDefinedFunctionValidationRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    GetUserDefinedFunctionValidationRequest,
+                                    GetUserDefinedFunctionValidationResponse>
+                            handler) {
+        LOG.trace("Called async getUserDefinedFunctionValidation");
+        final GetUserDefinedFunctionValidationRequest interceptedRequest =
+                GetUserDefinedFunctionValidationConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetUserDefinedFunctionValidationConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, GetUserDefinedFunctionValidationResponse>
+                transformer = GetUserDefinedFunctionValidationConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        GetUserDefinedFunctionValidationRequest,
+                        GetUserDefinedFunctionValidationResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetUserDefinedFunctionValidationRequest,
+                                GetUserDefinedFunctionValidationResponse>,
+                        java.util.concurrent.Future<GetUserDefinedFunctionValidationResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetUserDefinedFunctionValidationRequest,
+                    GetUserDefinedFunctionValidationResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -3531,6 +3935,47 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     ListFoldersRequest, ListFoldersResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListFunctionLibrariesResponse> listFunctionLibraries(
+            ListFunctionLibrariesRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListFunctionLibrariesRequest, ListFunctionLibrariesResponse>
+                    handler) {
+        LOG.trace("Called async listFunctionLibraries");
+        final ListFunctionLibrariesRequest interceptedRequest =
+                ListFunctionLibrariesConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListFunctionLibrariesConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ListFunctionLibrariesResponse>
+                transformer = ListFunctionLibrariesConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListFunctionLibrariesRequest, ListFunctionLibrariesResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListFunctionLibrariesRequest, ListFunctionLibrariesResponse>,
+                        java.util.concurrent.Future<ListFunctionLibrariesResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListFunctionLibrariesRequest, ListFunctionLibrariesResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -4087,6 +4532,93 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<ListUserDefinedFunctionValidationsResponse>
+            listUserDefinedFunctionValidations(
+                    ListUserDefinedFunctionValidationsRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListUserDefinedFunctionValidationsRequest,
+                                    ListUserDefinedFunctionValidationsResponse>
+                            handler) {
+        LOG.trace("Called async listUserDefinedFunctionValidations");
+        final ListUserDefinedFunctionValidationsRequest interceptedRequest =
+                ListUserDefinedFunctionValidationsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListUserDefinedFunctionValidationsConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ListUserDefinedFunctionValidationsResponse>
+                transformer = ListUserDefinedFunctionValidationsConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListUserDefinedFunctionValidationsRequest,
+                        ListUserDefinedFunctionValidationsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListUserDefinedFunctionValidationsRequest,
+                                ListUserDefinedFunctionValidationsResponse>,
+                        java.util.concurrent.Future<ListUserDefinedFunctionValidationsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListUserDefinedFunctionValidationsRequest,
+                    ListUserDefinedFunctionValidationsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListUserDefinedFunctionsResponse> listUserDefinedFunctions(
+            ListUserDefinedFunctionsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListUserDefinedFunctionsRequest, ListUserDefinedFunctionsResponse>
+                    handler) {
+        LOG.trace("Called async listUserDefinedFunctions");
+        final ListUserDefinedFunctionsRequest interceptedRequest =
+                ListUserDefinedFunctionsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListUserDefinedFunctionsConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ListUserDefinedFunctionsResponse>
+                transformer = ListUserDefinedFunctionsConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListUserDefinedFunctionsRequest, ListUserDefinedFunctionsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListUserDefinedFunctionsRequest, ListUserDefinedFunctionsResponse>,
+                        java.util.concurrent.Future<ListUserDefinedFunctionsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListUserDefinedFunctionsRequest, ListUserDefinedFunctionsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<ListWorkRequestErrorsResponse> listWorkRequestErrors(
             ListWorkRequestErrorsRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -4592,6 +5124,52 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<UpdateFunctionLibraryResponse> updateFunctionLibrary(
+            UpdateFunctionLibraryRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            UpdateFunctionLibraryRequest, UpdateFunctionLibraryResponse>
+                    handler) {
+        LOG.trace("Called async updateFunctionLibrary");
+        final UpdateFunctionLibraryRequest interceptedRequest =
+                UpdateFunctionLibraryConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateFunctionLibraryConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, UpdateFunctionLibraryResponse>
+                transformer = UpdateFunctionLibraryConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        UpdateFunctionLibraryRequest, UpdateFunctionLibraryResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpdateFunctionLibraryRequest, UpdateFunctionLibraryResponse>,
+                        java.util.concurrent.Future<UpdateFunctionLibraryResponse>>
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateFunctionLibraryDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpdateFunctionLibraryRequest, UpdateFunctionLibraryResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<UpdatePipelineResponse> updatePipeline(
             UpdatePipelineRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -4884,6 +5462,53 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     UpdateTaskScheduleRequest, UpdateTaskScheduleResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateUserDefinedFunctionResponse> updateUserDefinedFunction(
+            UpdateUserDefinedFunctionRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            UpdateUserDefinedFunctionRequest, UpdateUserDefinedFunctionResponse>
+                    handler) {
+        LOG.trace("Called async updateUserDefinedFunction");
+        final UpdateUserDefinedFunctionRequest interceptedRequest =
+                UpdateUserDefinedFunctionConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateUserDefinedFunctionConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, UpdateUserDefinedFunctionResponse>
+                transformer = UpdateUserDefinedFunctionConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        UpdateUserDefinedFunctionRequest, UpdateUserDefinedFunctionResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpdateUserDefinedFunctionRequest,
+                                UpdateUserDefinedFunctionResponse>,
+                        java.util.concurrent.Future<UpdateUserDefinedFunctionResponse>>
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateUserDefinedFunctionDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpdateUserDefinedFunctionRequest, UpdateUserDefinedFunctionResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,

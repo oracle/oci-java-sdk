@@ -49,6 +49,22 @@ public interface OperationsInsightsAsync extends AutoCloseable {
     void setRegion(String regionId);
 
     /**
+     * Add new members (e.g. databases and hosts) to an Exadata system in Operations Insights. Exadata-related metric collection and analysis will be started.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<AddExadataInsightMembersResponse> addExadataInsightMembers(
+            AddExadataInsightMembersRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            AddExadataInsightMembersRequest, AddExadataInsightMembersResponse>
+                    handler);
+
+    /**
      * Moves a DatabaseInsight resource from one compartment identifier to another. When provided, If-Match is checked against ETag values of the resource.
      *
      * @param request The request object containing the details to send
@@ -82,6 +98,24 @@ public interface OperationsInsightsAsync extends AutoCloseable {
                     com.oracle.bmc.responses.AsyncHandler<
                                     ChangeEnterpriseManagerBridgeCompartmentRequest,
                                     ChangeEnterpriseManagerBridgeCompartmentResponse>
+                            handler);
+
+    /**
+     * Moves an Exadata insight resource from one compartment identifier to another. When provided, If-Match is checked against ETag values of the resource.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ChangeExadataInsightCompartmentResponse>
+            changeExadataInsightCompartment(
+                    ChangeExadataInsightCompartmentRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeExadataInsightCompartmentRequest,
+                                    ChangeExadataInsightCompartmentResponse>
                             handler);
 
     /**
@@ -138,6 +172,23 @@ public interface OperationsInsightsAsync extends AutoCloseable {
                             handler);
 
     /**
+     * Create an Exadata insight resource for an Exadata system in Operations Insights. The Exadata system will be enabled in Operations Insights. Exadata-related metric collection and analysis will be started.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateExadataInsightResponse> createExadataInsight(
+            CreateExadataInsightRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            CreateExadataInsightRequest, CreateExadataInsightResponse>
+                    handler);
+
+    /**
      * Create a Host Insight resource for a host in Operations Insights. The host will be enabled in Operations Insights. Host metric collection and analysis will be started.
      *
      *
@@ -189,6 +240,22 @@ public interface OperationsInsightsAsync extends AutoCloseable {
                             handler);
 
     /**
+     * Deletes an Exadata insight. The Exadata insight will be deleted and cannot be enabled again.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteExadataInsightResponse> deleteExadataInsight(
+            DeleteExadataInsightRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            DeleteExadataInsightRequest, DeleteExadataInsightResponse>
+                    handler);
+
+    /**
      * Deletes a host insight. The host insight will be deleted and cannot be enabled again.
      *
      * @param request The request object containing the details to send
@@ -221,6 +288,22 @@ public interface OperationsInsightsAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Disables an Exadata system in Operations Insights. Exadata-related metric collection and analysis will be stopped.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<DisableExadataInsightResponse> disableExadataInsight(
+            DisableExadataInsightRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            DisableExadataInsightRequest, DisableExadataInsightResponse>
+                    handler);
+
+    /**
      * Disables a host in Operations Insights. Host metric collection and analysis will be stopped.
      *
      * @param request The request object containing the details to send
@@ -250,6 +333,22 @@ public interface OperationsInsightsAsync extends AutoCloseable {
             EnableDatabaseInsightRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             EnableDatabaseInsightRequest, EnableDatabaseInsightResponse>
+                    handler);
+
+    /**
+     * Enables an Exadata system in Operations Insights. Exadata-related metric collection and analysis will be started.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<EnableExadataInsightResponse> enableExadataInsight(
+            EnableExadataInsightRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            EnableExadataInsightRequest, EnableExadataInsightResponse>
                     handler);
 
     /**
@@ -298,6 +397,22 @@ public interface OperationsInsightsAsync extends AutoCloseable {
             GetEnterpriseManagerBridgeRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             GetEnterpriseManagerBridgeRequest, GetEnterpriseManagerBridgeResponse>
+                    handler);
+
+    /**
+     * Gets details of an Exadata insight.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetExadataInsightResponse> getExadataInsight(
+            GetExadataInsightRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetExadataInsightRequest, GetExadataInsightResponse>
                     handler);
 
     /**
@@ -434,6 +549,7 @@ public interface OperationsInsightsAsync extends AutoCloseable {
     /**
      * Gets a list of database insight configurations based on the query parameters specified. Either compartmentId or databaseInsightId query parameter must be specified.
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
      * @return A Future that can be used to get the response if no AsyncHandler was
@@ -449,6 +565,7 @@ public interface OperationsInsightsAsync extends AutoCloseable {
 
     /**
      * Gets a list of database insights based on the query parameters specified. Either compartmentId or id query parameter must be specified.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -482,7 +599,59 @@ public interface OperationsInsightsAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Gets a list of exadata insight configurations. Either compartmentId or exadataInsightsId query parameter must be specified.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListExadataConfigurationsResponse> listExadataConfigurations(
+            ListExadataConfigurationsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListExadataConfigurationsRequest, ListExadataConfigurationsResponse>
+                    handler);
+
+    /**
+     * Gets a list of Exadata insights based on the query parameters specified. Either compartmentId or id query parameter must be specified.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListExadataInsightsResponse> listExadataInsights(
+            ListExadataInsightsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListExadataInsightsRequest, ListExadataInsightsResponse>
+                    handler);
+
+    /**
+     * Gets a list of host insight configurations based on the query parameters specified. Either compartmentId or hostInsightId query parameter must be specified.
+     * When both compartmentId and compartmentIdInSubtree are specified, a list of host insight configurations in that compartment and in all sub-compartments will be returned.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListHostConfigurationsResponse> listHostConfigurations(
+            ListHostConfigurationsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListHostConfigurationsRequest, ListHostConfigurationsResponse>
+                    handler);
+
+    /**
      * Gets a list of host insights based on the query parameters specified. Either compartmentId or id query parameter must be specified.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -573,6 +742,7 @@ public interface OperationsInsightsAsync extends AutoCloseable {
     /**
      * Search SQL by SQL Identifier across databases and get the SQL Text and the details of the databases executing the SQL for a given time period.
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
      * @return A Future that can be used to get the response if no AsyncHandler was
@@ -587,6 +757,7 @@ public interface OperationsInsightsAsync extends AutoCloseable {
 
     /**
      * Query SQL Warehouse to get the full SQL Text for a SQL.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -635,7 +806,7 @@ public interface OperationsInsightsAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Lists the work requests in a compartment.
+     * Lists the work requests in a compartment. Either compartmentId or id must be specified. Only one of id, resourceId or relatedResourceId can be specified optionally.
      *
      *
      * @param request The request object containing the details to send
@@ -690,7 +861,9 @@ public interface OperationsInsightsAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Lists the Resource statistics (usage,capacity, usage change percent, utilization percent, base capacity, isAutoScalingEnabled) for each database filtered by utilization level
+     * Lists the Resource statistics (usage,capacity, usage change percent, utilization percent, base capacity, isAutoScalingEnabled)
+     * for each database filtered by utilization level.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -751,6 +924,7 @@ public interface OperationsInsightsAsync extends AutoCloseable {
     /**
      * Gets resources with current utilization (high and low) and projected utilization (high and low) for a resource type over specified time period.
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
      * @return A Future that can be used to get the response if no AsyncHandler was
@@ -786,6 +960,208 @@ public interface OperationsInsightsAsync extends AutoCloseable {
                                     SummarizeDatabaseInsightTablespaceUsageTrendRequest,
                                     SummarizeDatabaseInsightTablespaceUsageTrendResponse>
                             handler);
+
+    /**
+     * Returns response with time series data (endTimestamp, capacity) for the time period specified for an exadata system for a resource metric.
+     * Additionally resources can be filtered using databaseInsightId, hostInsightId or storageServerName query parameters.
+     * Top five resources are returned if total exceeds the limit specified.
+     * Valid values for ResourceType DATABASE are CPU,MEMORY,IO and STORAGE. Database name is returned in name field. DatabaseInsightId, cdbName and hostName query parameter applies to ResourceType DATABASE.
+     * Valid values for ResourceType HOST are CPU and MEMORY. HostName is returned in name field. HostInsightId and hostName query parameter applies to ResourceType HOST.
+     * Valid values for ResourceType STORAGE_SERVER are STORAGE, IOPS and THROUGHPUT. Storage server name is returned in name field for resourceMetric IOPS and THROUGHPUT
+     * and asmName is returned in name field for resourceMetric STORAGE. StorageServerName query parameter applies to ResourceType STORAGE_SERVER.
+     * Valid values for ResourceType DISKGROUP is STORAGE. Comma delimited (asmName,diskgroupName) is returned in name field.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<SummarizeExadataInsightResourceCapacityTrendResponse>
+            summarizeExadataInsightResourceCapacityTrend(
+                    SummarizeExadataInsightResourceCapacityTrendRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    SummarizeExadataInsightResourceCapacityTrendRequest,
+                                    SummarizeExadataInsightResourceCapacityTrendResponse>
+                            handler);
+
+    /**
+     * Returns response with time series data (endTimestamp, capacity) for the time period specified for an exadata system or fleet aggregation for a resource metric.
+     * The maximum time range for analysis is 2 years, hence this is intentionally not paginated.
+     * Valid values for ResourceType DATABASE are CPU,MEMORY,IO and STORAGE.
+     * Valid values for ResourceType HOST are CPU and MEMORY.
+     * Valid values for ResourceType STORAGE_SERVER are STORAGE, IOPS and THROUGHPUT.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<SummarizeExadataInsightResourceCapacityTrendAggregatedResponse>
+            summarizeExadataInsightResourceCapacityTrendAggregated(
+                    SummarizeExadataInsightResourceCapacityTrendAggregatedRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    SummarizeExadataInsightResourceCapacityTrendAggregatedRequest,
+                                    SummarizeExadataInsightResourceCapacityTrendAggregatedResponse>
+                            handler);
+
+    /**
+     * Get historical usage and forecast predictions for an exadata system with breakdown by databases, hosts or storage servers.
+     * Additionally resources can be filtered using databaseInsightId, hostInsightId or storageServerName query parameters.
+     * Top five resources are returned if total exceeds the limit specified.
+     * Valid values for ResourceType DATABASE are CPU,MEMORY,IO and STORAGE. Database name is returned in name field. DatabaseInsightId , cdbName and hostName query parameter applies to ResourceType DATABASE.
+     * Valid values for ResourceType HOST are CPU and MEMORY. HostName s returned in name field. HostInsightId and hostName query parameter applies to ResourceType HOST.
+     * Valid values for ResourceType STORAGE_SERVER are STORAGE, IOPS and THROUGHPUT. Storage server name is returned in name field for resourceMetric IOPS and THROUGHPUT
+     * and asmName is returned in name field for resourceMetric STORAGE. StorageServerName query parameter applies to ResourceType STORAGE_SERVER.
+     * Valid value for ResourceType DISKGROUP is STORAGE. Comma delimited (asmName,diskgroupName) is returned in name field.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<SummarizeExadataInsightResourceForecastTrendResponse>
+            summarizeExadataInsightResourceForecastTrend(
+                    SummarizeExadataInsightResourceForecastTrendRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    SummarizeExadataInsightResourceForecastTrendRequest,
+                                    SummarizeExadataInsightResourceForecastTrendResponse>
+                            handler);
+
+    /**
+     * Get aggregated historical usage and forecast predictions for resources. Either compartmentId or exadataInsightsId query parameter must be specified.
+     * Valid values for ResourceType DATABASE are CPU,MEMORY,IO and STORAGE.
+     * Valid values for ResourceType HOST are CPU and MEMORY.
+     * Valid values for ResourceType STORAGE_SERVER are STORAGE, IOPS and THROUGHPUT.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<SummarizeExadataInsightResourceForecastTrendAggregatedResponse>
+            summarizeExadataInsightResourceForecastTrendAggregated(
+                    SummarizeExadataInsightResourceForecastTrendAggregatedRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    SummarizeExadataInsightResourceForecastTrendAggregatedRequest,
+                                    SummarizeExadataInsightResourceForecastTrendAggregatedResponse>
+                            handler);
+
+    /**
+     * Lists the Resource statistics (usage, capacity, usage change percent, utilization percent) for each resource based on resourceMetric filtered by utilization level.
+     * Valid values for ResourceType DATABASE are CPU,MEMORY,IO and STORAGE.
+     * Valid values for ResourceType HOST are CPU and MEMORY.
+     * Valid values for ResourceType STORAGE_SERVER are STORAGE, IOPS, THROUGHPUT.
+     * Valid value for ResourceType DISKGROUP is STORAGE.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<SummarizeExadataInsightResourceStatisticsResponse>
+            summarizeExadataInsightResourceStatistics(
+                    SummarizeExadataInsightResourceStatisticsRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    SummarizeExadataInsightResourceStatisticsRequest,
+                                    SummarizeExadataInsightResourceStatisticsResponse>
+                            handler);
+
+    /**
+     * A cumulative distribution function is used to rank the usage data points per resource within the specified time period.
+     * For each resource, the minimum data point with a ranking > the percentile value is included in the summation.
+     * Linear regression functions are used to calculate the usage change percentage.
+     * Valid values for ResourceType DATABASE are CPU,MEMORY,IO and STORAGE.
+     * Valid values for ResourceType HOST are CPU and MEMORY.
+     * Valid values for ResourceType STORAGE_SERVER are STORAGE, IOPS and THROUGHPUT.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<SummarizeExadataInsightResourceUsageResponse>
+            summarizeExadataInsightResourceUsage(
+                    SummarizeExadataInsightResourceUsageRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    SummarizeExadataInsightResourceUsageRequest,
+                                    SummarizeExadataInsightResourceUsageResponse>
+                            handler);
+
+    /**
+     * A cumulative distribution function is used to rank the usage data points per database within the specified time period.
+     * For each database, the minimum data point with a ranking > the percentile value is included in the summation.
+     * Linear regression functions are used to calculate the usage change percentage.
+     * Valid values for ResourceType DATABASE are CPU,MEMORY,IO and STORAGE.
+     * Valid values for ResourceType HOST are CPU and MEMORY.
+     * Valid values for ResourceType STORAGE_SERVER are STORAGE, IOPS and THROUGHPUT.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<SummarizeExadataInsightResourceUsageAggregatedResponse>
+            summarizeExadataInsightResourceUsageAggregated(
+                    SummarizeExadataInsightResourceUsageAggregatedRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    SummarizeExadataInsightResourceUsageAggregatedRequest,
+                                    SummarizeExadataInsightResourceUsageAggregatedResponse>
+                            handler);
+
+    /**
+     * Gets current utilization, projected utilization and days to reach projectedUtilization for an exadata system over specified time period. Valid values for ResourceType DATABASE are CPU,MEMORY,IO and STORAGE. Valid values for ResourceType HOST are CPU and MEMORY. Valid values for ResourceType STORAGE_SERVER are STORAGE, IOPS and THROUGHPUT.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<SummarizeExadataInsightResourceUtilizationInsightResponse>
+            summarizeExadataInsightResourceUtilizationInsight(
+                    SummarizeExadataInsightResourceUtilizationInsightRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    SummarizeExadataInsightResourceUtilizationInsightRequest,
+                                    SummarizeExadataInsightResourceUtilizationInsightResponse>
+                            handler);
+
+    /**
+     * Lists the software and hardware inventory of the Exadata System.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<SummarizeExadataMembersResponse> summarizeExadataMembers(
+            SummarizeExadataMembersRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            SummarizeExadataMembersRequest, SummarizeExadataMembersResponse>
+                    handler);
 
     /**
      * Returns response with time series data (endTimestamp, capacity) for the time period specified.
@@ -890,6 +1266,7 @@ public interface OperationsInsightsAsync extends AutoCloseable {
     /**
      * Gets resources with current utilization (high and low) and projected utilization (high and low) for a resource type over specified time period.
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
      * @return A Future that can be used to get the response if no AsyncHandler was
@@ -906,7 +1283,9 @@ public interface OperationsInsightsAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Query SQL Warehouse to get the performance insights for SQLs taking greater than X% database time for a given time period across the given databases or database types.
+     * Query SQL Warehouse to get the performance insights for SQLs taking greater than X% database time for a given
+     * time period across the given databases or database types.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -960,7 +1339,9 @@ public interface OperationsInsightsAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Query SQL Warehouse to get the performance statistics for SQLs taking greater than X% database time for a given time period across the given databases or database types.
+     * Query SQL Warehouse to get the performance statistics for SQLs taking greater than X% database time for a given
+     * time period across the given databases or database types.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -1047,6 +1428,22 @@ public interface OperationsInsightsAsync extends AutoCloseable {
                                     UpdateEnterpriseManagerBridgeRequest,
                                     UpdateEnterpriseManagerBridgeResponse>
                             handler);
+
+    /**
+     * Updates configuration of an Exadata insight.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateExadataInsightResponse> updateExadataInsight(
+            UpdateExadataInsightRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            UpdateExadataInsightRequest, UpdateExadataInsightResponse>
+                    handler);
 
     /**
      * Updates configuration of a host insight.

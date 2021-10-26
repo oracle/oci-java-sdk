@@ -4384,11 +4384,15 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                             GetCpeDeviceConfigContentRequest, GetCpeDeviceConfigContentResponse>
                     handler) {
         LOG.trace("Called async getCpeDeviceConfigContent");
-        if (this.apacheConnectionClosingStrategy != null) {
+        if (com.oracle.bmc.http.ApacheUtils.isExtraStreamLogsEnabled()) {
             LOG.warn(
-                    "ApacheConnectionClosingStrategy set to {}. For large streams with partial reads of stream, please use ImmediateClosingStrategy. "
-                            + "For small streams with partial reads of stream, please use GracefulClosingStrategy. More info in ApacheConnectorProperties",
-                    this.apacheConnectionClosingStrategy);
+                    "getCpeDeviceConfigContent returns a stream, please make sure to close the stream to avoid any indefinite hangs");
+            if (this.apacheConnectionClosingStrategy != null) {
+                LOG.warn(
+                        "ApacheConnectionClosingStrategy set to {}. For large streams with partial reads of stream, please use ImmediateClosingStrategy. "
+                                + "For small streams with partial reads of stream, please use GracefulClosingStrategy. More info in ApacheConnectorProperties",
+                        this.apacheConnectionClosingStrategy);
+            }
         }
         final GetCpeDeviceConfigContentRequest interceptedRequest =
                 GetCpeDeviceConfigContentConverter.interceptRequest(request);
@@ -5219,11 +5223,15 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                                     GetIpsecCpeDeviceConfigContentResponse>
                             handler) {
         LOG.trace("Called async getIpsecCpeDeviceConfigContent");
-        if (this.apacheConnectionClosingStrategy != null) {
+        if (com.oracle.bmc.http.ApacheUtils.isExtraStreamLogsEnabled()) {
             LOG.warn(
-                    "ApacheConnectionClosingStrategy set to {}. For large streams with partial reads of stream, please use ImmediateClosingStrategy. "
-                            + "For small streams with partial reads of stream, please use GracefulClosingStrategy. More info in ApacheConnectorProperties",
-                    this.apacheConnectionClosingStrategy);
+                    "getIpsecCpeDeviceConfigContent returns a stream, please make sure to close the stream to avoid any indefinite hangs");
+            if (this.apacheConnectionClosingStrategy != null) {
+                LOG.warn(
+                        "ApacheConnectionClosingStrategy set to {}. For large streams with partial reads of stream, please use ImmediateClosingStrategy. "
+                                + "For small streams with partial reads of stream, please use GracefulClosingStrategy. More info in ApacheConnectorProperties",
+                        this.apacheConnectionClosingStrategy);
+            }
         }
         final GetIpsecCpeDeviceConfigContentRequest interceptedRequest =
                 GetIpsecCpeDeviceConfigContentConverter.interceptRequest(request);
@@ -5947,11 +5955,15 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                                     GetTunnelCpeDeviceConfigContentResponse>
                             handler) {
         LOG.trace("Called async getTunnelCpeDeviceConfigContent");
-        if (this.apacheConnectionClosingStrategy != null) {
+        if (com.oracle.bmc.http.ApacheUtils.isExtraStreamLogsEnabled()) {
             LOG.warn(
-                    "ApacheConnectionClosingStrategy set to {}. For large streams with partial reads of stream, please use ImmediateClosingStrategy. "
-                            + "For small streams with partial reads of stream, please use GracefulClosingStrategy. More info in ApacheConnectorProperties",
-                    this.apacheConnectionClosingStrategy);
+                    "getTunnelCpeDeviceConfigContent returns a stream, please make sure to close the stream to avoid any indefinite hangs");
+            if (this.apacheConnectionClosingStrategy != null) {
+                LOG.warn(
+                        "ApacheConnectionClosingStrategy set to {}. For large streams with partial reads of stream, please use ImmediateClosingStrategy. "
+                                + "For small streams with partial reads of stream, please use GracefulClosingStrategy. More info in ApacheConnectorProperties",
+                        this.apacheConnectionClosingStrategy);
+            }
         }
         final GetTunnelCpeDeviceConfigContentRequest interceptedRequest =
                 GetTunnelCpeDeviceConfigContentConverter.interceptRequest(request);

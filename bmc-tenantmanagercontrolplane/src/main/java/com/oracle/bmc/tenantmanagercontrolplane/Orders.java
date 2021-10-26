@@ -46,7 +46,7 @@ public interface Orders extends AutoCloseable {
     void setRegion(String regionId);
 
     /**
-     * Triggers an order activation workflow on behalf of the tenant given by compartment id in the body.
+     * Triggers an order activation workflow on behalf of the tenant, given by compartment ID in the body.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.

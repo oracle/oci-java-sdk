@@ -43,6 +43,18 @@ public class ListDatabaseConfigurationsRequest
     private java.util.List<String> databaseId;
 
     /**
+     * Optional list of exadata insight resource [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     *
+     */
+    private java.util.List<String> exadataInsightId;
+
+    /**
+     * Filter by one or more cdb name.
+     *
+     */
+    private java.util.List<String> cdbName;
+
+    /**
      * Filter by one or more database type.
      * Possible values are ADW-S, ATP-S, ADW-D, ATP-D, EXTERNAL-PDB, EXTERNAL-NONCDB.
      *
@@ -256,6 +268,48 @@ public class ListDatabaseConfigurationsRequest
             return this.databaseId(java.util.Arrays.asList(singularValue));
         }
 
+        private java.util.List<String> exadataInsightId = null;
+
+        /**
+         * Optional list of exadata insight resource [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         *
+         * @return this builder instance
+         */
+        public Builder exadataInsightId(java.util.List<String> exadataInsightId) {
+            this.exadataInsightId = exadataInsightId;
+            return this;
+        }
+
+        /**
+         * Singular setter. Optional list of exadata insight resource [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         *
+         * @return this builder instance
+         */
+        public Builder exadataInsightId(String singularValue) {
+            return this.exadataInsightId(java.util.Arrays.asList(singularValue));
+        }
+
+        private java.util.List<String> cdbName = null;
+
+        /**
+         * Filter by one or more cdb name.
+         *
+         * @return this builder instance
+         */
+        public Builder cdbName(java.util.List<String> cdbName) {
+            this.cdbName = cdbName;
+            return this;
+        }
+
+        /**
+         * Singular setter. Filter by one or more cdb name.
+         *
+         * @return this builder instance
+         */
+        public Builder cdbName(String singularValue) {
+            return this.cdbName(java.util.Arrays.asList(singularValue));
+        }
+
         private java.util.List<DatabaseType> databaseType = null;
 
         /**
@@ -442,6 +496,8 @@ public class ListDatabaseConfigurationsRequest
             enterpriseManagerBridgeId(o.getEnterpriseManagerBridgeId());
             id(o.getId());
             databaseId(o.getDatabaseId());
+            exadataInsightId(o.getExadataInsightId());
+            cdbName(o.getCdbName());
             databaseType(o.getDatabaseType());
             limit(o.getLimit());
             page(o.getPage());

@@ -5,7 +5,7 @@
 package com.oracle.bmc.dataintegration.model;
 
 /**
- * Details for the MYSQL data asset type.
+ * Details for the FUSION_APP data asset type.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -207,7 +207,7 @@ public class CreateDataAssetFromFusionApp extends CreateDataAssetDetails {
     }
 
     /**
-     * The service url of the Bi Server.
+     * The generic JDBC host name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("serviceUrl")
     String serviceUrl;

@@ -63,6 +63,14 @@ public class ListFoldersConverter {
                                     request.getName()));
         }
 
+        if (request.getNameContains() != null) {
+            target =
+                    target.queryParam(
+                            "nameContains",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getNameContains()));
+        }
+
         if (request.getIdentifier() != null) {
             target =
                     com.oracle.bmc.util.internal.HttpUtils.encodeCollectionFormatQueryParam(

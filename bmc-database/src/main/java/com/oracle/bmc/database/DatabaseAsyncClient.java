@@ -3935,11 +3935,15 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                                     DownloadExadataInfrastructureConfigFileResponse>
                             handler) {
         LOG.trace("Called async downloadExadataInfrastructureConfigFile");
-        if (this.apacheConnectionClosingStrategy != null) {
+        if (com.oracle.bmc.http.ApacheUtils.isExtraStreamLogsEnabled()) {
             LOG.warn(
-                    "ApacheConnectionClosingStrategy set to {}. For large streams with partial reads of stream, please use ImmediateClosingStrategy. "
-                            + "For small streams with partial reads of stream, please use GracefulClosingStrategy. More info in ApacheConnectorProperties",
-                    this.apacheConnectionClosingStrategy);
+                    "downloadExadataInfrastructureConfigFile returns a stream, please make sure to close the stream to avoid any indefinite hangs");
+            if (this.apacheConnectionClosingStrategy != null) {
+                LOG.warn(
+                        "ApacheConnectionClosingStrategy set to {}. For large streams with partial reads of stream, please use ImmediateClosingStrategy. "
+                                + "For small streams with partial reads of stream, please use GracefulClosingStrategy. More info in ApacheConnectorProperties",
+                        this.apacheConnectionClosingStrategy);
+            }
         }
         final DownloadExadataInfrastructureConfigFileRequest interceptedRequest =
                 DownloadExadataInfrastructureConfigFileConverter.interceptRequest(request);
@@ -3988,11 +3992,15 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                             DownloadValidationReportRequest, DownloadValidationReportResponse>
                     handler) {
         LOG.trace("Called async downloadValidationReport");
-        if (this.apacheConnectionClosingStrategy != null) {
+        if (com.oracle.bmc.http.ApacheUtils.isExtraStreamLogsEnabled()) {
             LOG.warn(
-                    "ApacheConnectionClosingStrategy set to {}. For large streams with partial reads of stream, please use ImmediateClosingStrategy. "
-                            + "For small streams with partial reads of stream, please use GracefulClosingStrategy. More info in ApacheConnectorProperties",
-                    this.apacheConnectionClosingStrategy);
+                    "downloadValidationReport returns a stream, please make sure to close the stream to avoid any indefinite hangs");
+            if (this.apacheConnectionClosingStrategy != null) {
+                LOG.warn(
+                        "ApacheConnectionClosingStrategy set to {}. For large streams with partial reads of stream, please use ImmediateClosingStrategy. "
+                                + "For small streams with partial reads of stream, please use GracefulClosingStrategy. More info in ApacheConnectorProperties",
+                        this.apacheConnectionClosingStrategy);
+            }
         }
         final DownloadValidationReportRequest interceptedRequest =
                 DownloadValidationReportConverter.interceptRequest(request);
@@ -4038,11 +4046,15 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                                     DownloadVmClusterNetworkConfigFileResponse>
                             handler) {
         LOG.trace("Called async downloadVmClusterNetworkConfigFile");
-        if (this.apacheConnectionClosingStrategy != null) {
+        if (com.oracle.bmc.http.ApacheUtils.isExtraStreamLogsEnabled()) {
             LOG.warn(
-                    "ApacheConnectionClosingStrategy set to {}. For large streams with partial reads of stream, please use ImmediateClosingStrategy. "
-                            + "For small streams with partial reads of stream, please use GracefulClosingStrategy. More info in ApacheConnectorProperties",
-                    this.apacheConnectionClosingStrategy);
+                    "downloadVmClusterNetworkConfigFile returns a stream, please make sure to close the stream to avoid any indefinite hangs");
+            if (this.apacheConnectionClosingStrategy != null) {
+                LOG.warn(
+                        "ApacheConnectionClosingStrategy set to {}. For large streams with partial reads of stream, please use ImmediateClosingStrategy. "
+                                + "For small streams with partial reads of stream, please use GracefulClosingStrategy. More info in ApacheConnectorProperties",
+                        this.apacheConnectionClosingStrategy);
+            }
         }
         final DownloadVmClusterNetworkConfigFileRequest interceptedRequest =
                 DownloadVmClusterNetworkConfigFileConverter.interceptRequest(request);
@@ -4626,11 +4638,15 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                                     GenerateAutonomousDatabaseWalletResponse>
                             handler) {
         LOG.trace("Called async generateAutonomousDatabaseWallet");
-        if (this.apacheConnectionClosingStrategy != null) {
+        if (com.oracle.bmc.http.ApacheUtils.isExtraStreamLogsEnabled()) {
             LOG.warn(
-                    "ApacheConnectionClosingStrategy set to {}. For large streams with partial reads of stream, please use ImmediateClosingStrategy. "
-                            + "For small streams with partial reads of stream, please use GracefulClosingStrategy. More info in ApacheConnectorProperties",
-                    this.apacheConnectionClosingStrategy);
+                    "generateAutonomousDatabaseWallet returns a stream, please make sure to close the stream to avoid any indefinite hangs");
+            if (this.apacheConnectionClosingStrategy != null) {
+                LOG.warn(
+                        "ApacheConnectionClosingStrategy set to {}. For large streams with partial reads of stream, please use ImmediateClosingStrategy. "
+                                + "For small streams with partial reads of stream, please use GracefulClosingStrategy. More info in ApacheConnectorProperties",
+                        this.apacheConnectionClosingStrategy);
+            }
         }
         final GenerateAutonomousDatabaseWalletRequest interceptedRequest =
                 GenerateAutonomousDatabaseWalletConverter.interceptRequest(request);

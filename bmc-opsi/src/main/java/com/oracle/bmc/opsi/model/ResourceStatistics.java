@@ -80,6 +80,15 @@ public class ResourceStatistics {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("instanceMetrics")
+        private java.util.List<InstanceMetrics> instanceMetrics;
+
+        public Builder instanceMetrics(java.util.List<InstanceMetrics> instanceMetrics) {
+            this.instanceMetrics = instanceMetrics;
+            this.__explicitlySet__.add("instanceMetrics");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -91,7 +100,8 @@ public class ResourceStatistics {
                             baseCapacity,
                             isAutoScalingEnabled,
                             utilizationPercent,
-                            usageChangePercent);
+                            usageChangePercent,
+                            instanceMetrics);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -104,7 +114,8 @@ public class ResourceStatistics {
                             .baseCapacity(o.getBaseCapacity())
                             .isAutoScalingEnabled(o.getIsAutoScalingEnabled())
                             .utilizationPercent(o.getUtilizationPercent())
-                            .usageChangePercent(o.getUsageChangePercent());
+                            .usageChangePercent(o.getUsageChangePercent())
+                            .instanceMetrics(o.getInstanceMetrics());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -156,6 +167,12 @@ public class ResourceStatistics {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("usageChangePercent")
     Double usageChangePercent;
+
+    /**
+     * Array of instance metrics
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("instanceMetrics")
+    java.util.List<InstanceMetrics> instanceMetrics;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

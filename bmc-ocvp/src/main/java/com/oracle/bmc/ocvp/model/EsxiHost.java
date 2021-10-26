@@ -131,6 +131,15 @@ public class EsxiHost {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("computeAvailabilityDomain")
+        private String computeAvailabilityDomain;
+
+        public Builder computeAvailabilityDomain(String computeAvailabilityDomain) {
+            this.computeAvailabilityDomain = computeAvailabilityDomain;
+            this.__explicitlySet__.add("computeAvailabilityDomain");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
@@ -167,6 +176,7 @@ public class EsxiHost {
                             currentSku,
                             nextSku,
                             billingContractEndDate,
+                            computeAvailabilityDomain,
                             freeformTags,
                             definedTags);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
@@ -187,6 +197,7 @@ public class EsxiHost {
                             .currentSku(o.getCurrentSku())
                             .nextSku(o.getNextSku())
                             .billingContractEndDate(o.getBillingContractEndDate())
+                            .computeAvailabilityDomain(o.getComputeAvailabilityDomain())
                             .freeformTags(o.getFreeformTags())
                             .definedTags(o.getDefinedTags());
 
@@ -291,6 +302,13 @@ public class EsxiHost {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("billingContractEndDate")
     java.util.Date billingContractEndDate;
+
+    /**
+     * The availability domain of the ESXi host.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("computeAvailabilityDomain")
+    String computeAvailabilityDomain;
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no

@@ -5,7 +5,7 @@
 package com.oracle.bmc.dataintegration.model;
 
 /**
- * An attribute within a key.
+ * An attribute within a key, the attribute property is being deprecated.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -33,6 +33,15 @@ public class KeyAttribute {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("shapeField")
+        private ShapeField shapeField;
+
+        public Builder shapeField(ShapeField shapeField) {
+            this.shapeField = shapeField;
+            this.__explicitlySet__.add("shapeField");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("attribute")
         private ShapeField attribute;
 
@@ -46,14 +55,17 @@ public class KeyAttribute {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public KeyAttribute build() {
-            KeyAttribute __instance__ = new KeyAttribute(position, attribute);
+            KeyAttribute __instance__ = new KeyAttribute(position, shapeField, attribute);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(KeyAttribute o) {
-            Builder copiedBuilder = position(o.getPosition()).attribute(o.getAttribute());
+            Builder copiedBuilder =
+                    position(o.getPosition())
+                            .shapeField(o.getShapeField())
+                            .attribute(o.getAttribute());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -72,6 +84,9 @@ public class KeyAttribute {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("position")
     Integer position;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("shapeField")
+    ShapeField shapeField;
 
     @com.fasterxml.jackson.annotation.JsonProperty("attribute")
     ShapeField attribute;

@@ -37,6 +37,10 @@ package com.oracle.bmc.dataintegration.model;
         name = "VIEW_ENTITY"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = DataEntityFromSqlEntityDetails.class,
+        name = "SQL_ENTITY"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = DataEntityFromDataStoreEntityDetails.class,
         name = "DATA_STORE_ENTITY"
     ),
@@ -55,6 +59,7 @@ public class DataEntityDetails {
         ViewEntity("VIEW_ENTITY"),
         TableEntity("TABLE_ENTITY"),
         FileEntity("FILE_ENTITY"),
+        SqlEntity("SQL_ENTITY"),
         DataStoreEntity("DATA_STORE_ENTITY"),
         ;
 

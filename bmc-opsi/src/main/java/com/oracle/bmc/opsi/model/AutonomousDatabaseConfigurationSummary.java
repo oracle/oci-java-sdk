@@ -86,6 +86,15 @@ public class AutonomousDatabaseConfigurationSummary extends DatabaseConfiguratio
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("cdbName")
+        private String cdbName;
+
+        public Builder cdbName(String cdbName) {
+            this.cdbName = cdbName;
+            this.__explicitlySet__.add("cdbName");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
@@ -135,6 +144,7 @@ public class AutonomousDatabaseConfigurationSummary extends DatabaseConfiguratio
                             databaseDisplayName,
                             databaseType,
                             databaseVersion,
+                            cdbName,
                             definedTags,
                             freeformTags,
                             processorCount,
@@ -152,6 +162,7 @@ public class AutonomousDatabaseConfigurationSummary extends DatabaseConfiguratio
                             .databaseDisplayName(o.getDatabaseDisplayName())
                             .databaseType(o.getDatabaseType())
                             .databaseVersion(o.getDatabaseVersion())
+                            .cdbName(o.getCdbName())
                             .definedTags(o.getDefinedTags())
                             .freeformTags(o.getFreeformTags())
                             .processorCount(o.getProcessorCount())
@@ -177,6 +188,7 @@ public class AutonomousDatabaseConfigurationSummary extends DatabaseConfiguratio
             String databaseDisplayName,
             String databaseType,
             String databaseVersion,
+            String cdbName,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             java.util.Map<String, String> freeformTags,
             Integer processorCount,
@@ -188,6 +200,7 @@ public class AutonomousDatabaseConfigurationSummary extends DatabaseConfiguratio
                 databaseDisplayName,
                 databaseType,
                 databaseVersion,
+                cdbName,
                 definedTags,
                 freeformTags,
                 processorCount);

@@ -58,6 +58,31 @@ public class ListImportableEnterpriseManagerEntitiesConverter {
                                     request.getPage()));
         }
 
+        if (request.getEnterpriseManagerEntityType() != null) {
+            target =
+                    com.oracle.bmc.util.internal.HttpUtils.encodeCollectionFormatQueryParam(
+                            target,
+                            "enterpriseManagerEntityType",
+                            request.getEnterpriseManagerEntityType(),
+                            com.oracle.bmc.util.internal.CollectionFormatType.Multi);
+        }
+
+        if (request.getEnterpriseManagerIdentifier() != null) {
+            target =
+                    target.queryParam(
+                            "enterpriseManagerIdentifier",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getEnterpriseManagerIdentifier()));
+        }
+
+        if (request.getEnterpriseManagerParentEntityIdentifier() != null) {
+            target =
+                    target.queryParam(
+                            "enterpriseManagerParentEntityIdentifier",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getEnterpriseManagerParentEntityIdentifier()));
+        }
+
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib = target.request();
 
         ib.accept(javax.ws.rs.core.MediaType.APPLICATION_JSON);

@@ -5,7 +5,7 @@
 package com.oracle.bmc.dataintegration.model;
 
 /**
- * The information about the Generic REST task.
+ * The information about the Generic REST task. The endpoint and cancelEndpoint  properties are deprecated, use the properties executeRestCallConfig, cancelRestCallConfig and pollRestCallConfig for execute, cancel and polling of the calls.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -248,6 +248,24 @@ public class TaskFromRestTaskDetails extends Task {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("executeRestCallConfig")
+        private ExecuteRestCallConfig executeRestCallConfig;
+
+        public Builder executeRestCallConfig(ExecuteRestCallConfig executeRestCallConfig) {
+            this.executeRestCallConfig = executeRestCallConfig;
+            this.__explicitlySet__.add("executeRestCallConfig");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("cancelRestCallConfig")
+        private CancelRestCallConfig cancelRestCallConfig;
+
+        public Builder cancelRestCallConfig(CancelRestCallConfig cancelRestCallConfig) {
+            this.cancelRestCallConfig = cancelRestCallConfig;
+            this.__explicitlySet__.add("cancelRestCallConfig");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -277,7 +295,9 @@ public class TaskFromRestTaskDetails extends Task {
                             jsonData,
                             apiCallMode,
                             cancelEndpoint,
-                            cancelMethodType);
+                            cancelMethodType,
+                            executeRestCallConfig,
+                            cancelRestCallConfig);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -308,7 +328,9 @@ public class TaskFromRestTaskDetails extends Task {
                             .jsonData(o.getJsonData())
                             .apiCallMode(o.getApiCallMode())
                             .cancelEndpoint(o.getCancelEndpoint())
-                            .cancelMethodType(o.getCancelMethodType());
+                            .cancelMethodType(o.getCancelMethodType())
+                            .executeRestCallConfig(o.getExecuteRestCallConfig())
+                            .cancelRestCallConfig(o.getCancelRestCallConfig());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -347,7 +369,9 @@ public class TaskFromRestTaskDetails extends Task {
             String jsonData,
             ApiCallMode apiCallMode,
             Expression cancelEndpoint,
-            CancelMethodType cancelMethodType) {
+            CancelMethodType cancelMethodType,
+            ExecuteRestCallConfig executeRestCallConfig,
+            CancelRestCallConfig cancelRestCallConfig) {
         super(
                 key,
                 modelVersion,
@@ -373,6 +397,8 @@ public class TaskFromRestTaskDetails extends Task {
         this.apiCallMode = apiCallMode;
         this.cancelEndpoint = cancelEndpoint;
         this.cancelMethodType = cancelMethodType;
+        this.executeRestCallConfig = executeRestCallConfig;
+        this.cancelRestCallConfig = cancelRestCallConfig;
     }
 
     @com.fasterxml.jackson.annotation.JsonProperty("authDetails")
@@ -381,7 +407,7 @@ public class TaskFromRestTaskDetails extends Task {
     @com.fasterxml.jackson.annotation.JsonProperty("endpoint")
     Expression endpoint;
     /**
-     * The REST method to use.
+     * The REST method to use. This property is deprecated, use ExecuteRestCallConfig's methodType property instead.
      **/
     @lombok.extern.slf4j.Slf4j
     public enum MethodType {
@@ -430,29 +456,30 @@ public class TaskFromRestTaskDetails extends Task {
         }
     };
     /**
-     * The REST method to use.
+     * The REST method to use. This property is deprecated, use ExecuteRestCallConfig's methodType property instead.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("methodType")
     MethodType methodType;
 
     /**
-     * The headers for the REST call.
+     * The headers for the REST call. This property is deprecated, use ExecuteRestCallConfig's headers property instead.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("headers")
     Object headers;
 
     /**
-     * JSON data for payload body.
+     * JSON data for payload body. This property is deprecated, use ExecuteRestCallConfig's payload config param instead.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("jsonData")
     String jsonData;
     /**
-     * The invocation type to be used for Generic REST invocation.
+     * The REST invocation pattern to use. ASYNC_OCI_WORKREQUEST is being deprecated as well as cancelEndpoint/MethodType.
      **/
     @lombok.extern.slf4j.Slf4j
     public enum ApiCallMode {
         Synchronous("SYNCHRONOUS"),
         AsyncOciWorkrequest("ASYNC_OCI_WORKREQUEST"),
+        AsyncGeneric("ASYNC_GENERIC"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this
@@ -493,7 +520,7 @@ public class TaskFromRestTaskDetails extends Task {
         }
     };
     /**
-     * The invocation type to be used for Generic REST invocation.
+     * The REST invocation pattern to use. ASYNC_OCI_WORKREQUEST is being deprecated as well as cancelEndpoint/MethodType.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("apiCallMode")
     ApiCallMode apiCallMode;
@@ -554,6 +581,12 @@ public class TaskFromRestTaskDetails extends Task {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("cancelMethodType")
     CancelMethodType cancelMethodType;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("executeRestCallConfig")
+    ExecuteRestCallConfig executeRestCallConfig;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("cancelRestCallConfig")
+    CancelRestCallConfig cancelRestCallConfig;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

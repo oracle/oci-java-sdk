@@ -113,6 +113,15 @@ public class CreateDataAssetFromObjectStorage extends CreateDataAssetDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("ociRegion")
+        private String ociRegion;
+
+        public Builder ociRegion(String ociRegion) {
+            this.ociRegion = ociRegion;
+            this.__explicitlySet__.add("ociRegion");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("url")
         private String url;
 
@@ -164,6 +173,7 @@ public class CreateDataAssetFromObjectStorage extends CreateDataAssetDetails {
                             externalKey,
                             assetProperties,
                             registryMetadata,
+                            ociRegion,
                             url,
                             tenancyId,
                             namespace,
@@ -184,6 +194,7 @@ public class CreateDataAssetFromObjectStorage extends CreateDataAssetDetails {
                             .externalKey(o.getExternalKey())
                             .assetProperties(o.getAssetProperties())
                             .registryMetadata(o.getRegistryMetadata())
+                            .ociRegion(o.getOciRegion())
                             .url(o.getUrl())
                             .tenancyId(o.getTenancyId())
                             .namespace(o.getNamespace())
@@ -212,6 +223,7 @@ public class CreateDataAssetFromObjectStorage extends CreateDataAssetDetails {
             String externalKey,
             java.util.Map<String, String> assetProperties,
             RegistryMetadata registryMetadata,
+            String ociRegion,
             String url,
             String tenancyId,
             String namespace,
@@ -226,11 +238,18 @@ public class CreateDataAssetFromObjectStorage extends CreateDataAssetDetails {
                 externalKey,
                 assetProperties,
                 registryMetadata);
+        this.ociRegion = ociRegion;
         this.url = url;
         this.tenancyId = tenancyId;
         this.namespace = namespace;
         this.defaultConnection = defaultConnection;
     }
+
+    /**
+     * The Oracle Object storage Region ie. us-ashburn-1
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("ociRegion")
+    String ociRegion;
 
     /**
      * The Oracle Object storage URL.

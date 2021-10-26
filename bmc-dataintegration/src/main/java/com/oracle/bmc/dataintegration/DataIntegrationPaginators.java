@@ -1304,6 +1304,124 @@ public class DataIntegrationPaginators {
     }
 
     /**
+     * Creates a new iterable which will iterate over the responses received from the listFunctionLibraries operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListFunctionLibrariesResponse> listFunctionLibrariesResponseIterator(
+            final ListFunctionLibrariesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListFunctionLibrariesRequest.Builder, ListFunctionLibrariesRequest,
+                ListFunctionLibrariesResponse>(
+                new com.google.common.base.Supplier<ListFunctionLibrariesRequest.Builder>() {
+                    @Override
+                    public ListFunctionLibrariesRequest.Builder get() {
+                        return ListFunctionLibrariesRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListFunctionLibrariesResponse, String>() {
+                    @Override
+                    public String apply(ListFunctionLibrariesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListFunctionLibrariesRequest.Builder>,
+                        ListFunctionLibrariesRequest>() {
+                    @Override
+                    public ListFunctionLibrariesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListFunctionLibrariesRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListFunctionLibrariesRequest, ListFunctionLibrariesResponse>() {
+                    @Override
+                    public ListFunctionLibrariesResponse apply(
+                            ListFunctionLibrariesRequest request) {
+                        return client.listFunctionLibraries(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.dataintegration.model.FunctionLibrarySummary} objects
+     * contained in responses from the listFunctionLibraries operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.dataintegration.model.FunctionLibrarySummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.dataintegration.model.FunctionLibrarySummary>
+            listFunctionLibrariesRecordIterator(final ListFunctionLibrariesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListFunctionLibrariesRequest.Builder, ListFunctionLibrariesRequest,
+                ListFunctionLibrariesResponse,
+                com.oracle.bmc.dataintegration.model.FunctionLibrarySummary>(
+                new com.google.common.base.Supplier<ListFunctionLibrariesRequest.Builder>() {
+                    @Override
+                    public ListFunctionLibrariesRequest.Builder get() {
+                        return ListFunctionLibrariesRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListFunctionLibrariesResponse, String>() {
+                    @Override
+                    public String apply(ListFunctionLibrariesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListFunctionLibrariesRequest.Builder>,
+                        ListFunctionLibrariesRequest>() {
+                    @Override
+                    public ListFunctionLibrariesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListFunctionLibrariesRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListFunctionLibrariesRequest, ListFunctionLibrariesResponse>() {
+                    @Override
+                    public ListFunctionLibrariesResponse apply(
+                            ListFunctionLibrariesRequest request) {
+                        return client.listFunctionLibraries(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListFunctionLibrariesResponse,
+                        java.util.List<
+                                com.oracle.bmc.dataintegration.model.FunctionLibrarySummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.dataintegration.model.FunctionLibrarySummary>
+                            apply(ListFunctionLibrariesResponse response) {
+                        return response.getFunctionLibrarySummaryCollection().getItems();
+                    }
+                });
+    }
+
+    /**
      * Creates a new iterable which will iterate over the responses received from the listPatchChanges operation. This iterable
      * will fetch more data from the server as needed.
      *
@@ -2869,6 +2987,256 @@ public class DataIntegrationPaginators {
                     public java.util.List<com.oracle.bmc.dataintegration.model.TaskSummary> apply(
                             ListTasksResponse response) {
                         return response.getTaskSummaryCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the listUserDefinedFunctionValidations operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListUserDefinedFunctionValidationsResponse>
+            listUserDefinedFunctionValidationsResponseIterator(
+                    final ListUserDefinedFunctionValidationsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListUserDefinedFunctionValidationsRequest.Builder,
+                ListUserDefinedFunctionValidationsRequest,
+                ListUserDefinedFunctionValidationsResponse>(
+                new com.google.common.base.Supplier<
+                        ListUserDefinedFunctionValidationsRequest.Builder>() {
+                    @Override
+                    public ListUserDefinedFunctionValidationsRequest.Builder get() {
+                        return ListUserDefinedFunctionValidationsRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListUserDefinedFunctionValidationsResponse, String>() {
+                    @Override
+                    public String apply(ListUserDefinedFunctionValidationsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListUserDefinedFunctionValidationsRequest.Builder>,
+                        ListUserDefinedFunctionValidationsRequest>() {
+                    @Override
+                    public ListUserDefinedFunctionValidationsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListUserDefinedFunctionValidationsRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListUserDefinedFunctionValidationsRequest,
+                        ListUserDefinedFunctionValidationsResponse>() {
+                    @Override
+                    public ListUserDefinedFunctionValidationsResponse apply(
+                            ListUserDefinedFunctionValidationsRequest request) {
+                        return client.listUserDefinedFunctionValidations(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.dataintegration.model.UserDefinedFunctionValidationSummary} objects
+     * contained in responses from the listUserDefinedFunctionValidations operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.dataintegration.model.UserDefinedFunctionValidationSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.dataintegration.model.UserDefinedFunctionValidationSummary>
+            listUserDefinedFunctionValidationsRecordIterator(
+                    final ListUserDefinedFunctionValidationsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListUserDefinedFunctionValidationsRequest.Builder,
+                ListUserDefinedFunctionValidationsRequest,
+                ListUserDefinedFunctionValidationsResponse,
+                com.oracle.bmc.dataintegration.model.UserDefinedFunctionValidationSummary>(
+                new com.google.common.base.Supplier<
+                        ListUserDefinedFunctionValidationsRequest.Builder>() {
+                    @Override
+                    public ListUserDefinedFunctionValidationsRequest.Builder get() {
+                        return ListUserDefinedFunctionValidationsRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListUserDefinedFunctionValidationsResponse, String>() {
+                    @Override
+                    public String apply(ListUserDefinedFunctionValidationsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListUserDefinedFunctionValidationsRequest.Builder>,
+                        ListUserDefinedFunctionValidationsRequest>() {
+                    @Override
+                    public ListUserDefinedFunctionValidationsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListUserDefinedFunctionValidationsRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListUserDefinedFunctionValidationsRequest,
+                        ListUserDefinedFunctionValidationsResponse>() {
+                    @Override
+                    public ListUserDefinedFunctionValidationsResponse apply(
+                            ListUserDefinedFunctionValidationsRequest request) {
+                        return client.listUserDefinedFunctionValidations(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListUserDefinedFunctionValidationsResponse,
+                        java.util.List<
+                                com.oracle.bmc.dataintegration.model
+                                        .UserDefinedFunctionValidationSummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.dataintegration.model
+                                            .UserDefinedFunctionValidationSummary>
+                            apply(ListUserDefinedFunctionValidationsResponse response) {
+                        return response.getUserDefinedFunctionValidationSummaryCollection()
+                                .getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the listUserDefinedFunctions operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListUserDefinedFunctionsResponse> listUserDefinedFunctionsResponseIterator(
+            final ListUserDefinedFunctionsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListUserDefinedFunctionsRequest.Builder, ListUserDefinedFunctionsRequest,
+                ListUserDefinedFunctionsResponse>(
+                new com.google.common.base.Supplier<ListUserDefinedFunctionsRequest.Builder>() {
+                    @Override
+                    public ListUserDefinedFunctionsRequest.Builder get() {
+                        return ListUserDefinedFunctionsRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListUserDefinedFunctionsResponse, String>() {
+                    @Override
+                    public String apply(ListUserDefinedFunctionsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListUserDefinedFunctionsRequest.Builder>,
+                        ListUserDefinedFunctionsRequest>() {
+                    @Override
+                    public ListUserDefinedFunctionsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListUserDefinedFunctionsRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListUserDefinedFunctionsRequest, ListUserDefinedFunctionsResponse>() {
+                    @Override
+                    public ListUserDefinedFunctionsResponse apply(
+                            ListUserDefinedFunctionsRequest request) {
+                        return client.listUserDefinedFunctions(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.dataintegration.model.UserDefinedFunctionSummary} objects
+     * contained in responses from the listUserDefinedFunctions operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.dataintegration.model.UserDefinedFunctionSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.dataintegration.model.UserDefinedFunctionSummary>
+            listUserDefinedFunctionsRecordIterator(final ListUserDefinedFunctionsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListUserDefinedFunctionsRequest.Builder, ListUserDefinedFunctionsRequest,
+                ListUserDefinedFunctionsResponse,
+                com.oracle.bmc.dataintegration.model.UserDefinedFunctionSummary>(
+                new com.google.common.base.Supplier<ListUserDefinedFunctionsRequest.Builder>() {
+                    @Override
+                    public ListUserDefinedFunctionsRequest.Builder get() {
+                        return ListUserDefinedFunctionsRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListUserDefinedFunctionsResponse, String>() {
+                    @Override
+                    public String apply(ListUserDefinedFunctionsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListUserDefinedFunctionsRequest.Builder>,
+                        ListUserDefinedFunctionsRequest>() {
+                    @Override
+                    public ListUserDefinedFunctionsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListUserDefinedFunctionsRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListUserDefinedFunctionsRequest, ListUserDefinedFunctionsResponse>() {
+                    @Override
+                    public ListUserDefinedFunctionsResponse apply(
+                            ListUserDefinedFunctionsRequest request) {
+                        return client.listUserDefinedFunctions(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListUserDefinedFunctionsResponse,
+                        java.util.List<
+                                com.oracle.bmc.dataintegration.model
+                                        .UserDefinedFunctionSummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.dataintegration.model.UserDefinedFunctionSummary>
+                            apply(ListUserDefinedFunctionsResponse response) {
+                        return response.getUserDefinedFunctionSummaryCollection().getItems();
                     }
                 });
     }

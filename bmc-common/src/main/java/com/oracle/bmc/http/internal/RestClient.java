@@ -1291,17 +1291,19 @@ public class RestClient implements AutoCloseable {
                 return body;
             } else if (body instanceof InputStream) {
                 final Long contentLength = tryGetContentLength(request);
-                try {
-                    final int bytesAvailable = ((InputStream) body).available();
-                    if (bytesAvailable == 0) {
+                if (ApacheUtils.isExtraStreamLogsEnabled()) {
+                    try {
+                        final int bytesAvailable = ((InputStream) body).available();
+                        if (bytesAvailable == 0) {
+                            LOG.warn(
+                                    "Stream size to upload is 0 bytes, "
+                                            + "this could potentially lead to data corruption. If this is not intended, "
+                                            + "please make sure all the OCI SDK dependencies point to the same version");
+                        }
+                    } catch (IOException e) {
                         LOG.warn(
-                                "Stream size to upload is 0 bytes, "
-                                        + "this could potentially lead to data corruption. If this is not intended, "
-                                        + "please make sure all the OCI SDK dependencies point to the same version");
+                                "Error calling available on the stream to get the available number of bytes");
                     }
-                } catch (IOException e) {
-                    LOG.warn(
-                            "Error calling available on the stream to get the available number of bytes");
                 }
                 if (this.isApacheNonBufferingClient && contentLength != null && contentLength > 0) {
                     // Customization for providing Apache HTTP Entity instead of InputStream. This is required to avoid

@@ -13,10 +13,14 @@ public enum OperationType {
     CreateSenderInvitation("CREATE_SENDER_INVITATION"),
     AcceptRecipientInvitation("ACCEPT_RECIPIENT_INVITATION"),
     CancelSenderInvitation("CANCEL_SENDER_INVITATION"),
+    CompleteOrderActivation("COMPLETE_ORDER_ACTIVATION"),
     ActivateOrderExistingTenancy("ACTIVATE_ORDER_EXISTING_TENANCY"),
     RegisterDomain("REGISTER_DOMAIN"),
     ReleaseDomain("RELEASE_DOMAIN"),
     CreateChildTenancy("CREATE_CHILD_TENANCY"),
+    AssignDefaultSubscription("ASSIGN_DEFAULT_SUBSCRIPTION"),
+    ManualLinkCreation("MANUAL_LINK_CREATION"),
+    TerminateOrganizationTenancy("TERMINATE_ORGANIZATION_TENANCY"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this

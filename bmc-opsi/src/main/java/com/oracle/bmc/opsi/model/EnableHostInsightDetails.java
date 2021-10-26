@@ -31,6 +31,10 @@ package com.oracle.bmc.opsi.model;
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = EnableMacsManagedExternalHostInsightDetails.class,
         name = "MACS_MANAGED_EXTERNAL_HOST"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = EnableEmManagedExternalHostInsightDetails.class,
+        name = "EM_MANAGED_EXTERNAL_HOST"
     )
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)

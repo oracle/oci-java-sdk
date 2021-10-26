@@ -156,6 +156,15 @@ public class Parameter extends TypedObject {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("usedFor")
+        private String usedFor;
+
+        public Builder usedFor(String usedFor) {
+            this.usedFor = usedFor;
+            this.__explicitlySet__.add("usedFor");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -175,7 +184,8 @@ public class Parameter extends TypedObject {
                             isInput,
                             isOutput,
                             outputAggregationType,
-                            typeName);
+                            typeName,
+                            usedFor);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -196,7 +206,8 @@ public class Parameter extends TypedObject {
                             .isInput(o.getIsInput())
                             .isOutput(o.getIsOutput())
                             .outputAggregationType(o.getOutputAggregationType())
-                            .typeName(o.getTypeName());
+                            .typeName(o.getTypeName())
+                            .usedFor(o.getUsedFor());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -225,7 +236,8 @@ public class Parameter extends TypedObject {
             Boolean isInput,
             Boolean isOutput,
             OutputAggregationType outputAggregationType,
-            String typeName) {
+            String typeName,
+            String usedFor) {
         super(key, modelVersion, parentRef, configValues, objectStatus, name, description);
         this.type = type;
         this.defaultValue = defaultValue;
@@ -234,6 +246,7 @@ public class Parameter extends TypedObject {
         this.isOutput = isOutput;
         this.outputAggregationType = outputAggregationType;
         this.typeName = typeName;
+        this.usedFor = usedFor;
     }
 
     /**
@@ -324,6 +337,12 @@ public class Parameter extends TypedObject {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("typeName")
     String typeName;
+
+    /**
+     * The param name for which parameter is created for for eg. driver Shape, Operation etc.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("usedFor")
+    String usedFor;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

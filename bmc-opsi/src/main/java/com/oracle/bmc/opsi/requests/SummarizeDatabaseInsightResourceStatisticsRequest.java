@@ -121,6 +121,18 @@ public class SummarizeDatabaseInsightResourceStatisticsRequest
     private java.util.List<String> id;
 
     /**
+     * Optional list of exadata insight resource [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     *
+     */
+    private java.util.List<String> exadataInsightId;
+
+    /**
+     * Filter by one or more cdb name.
+     *
+     */
+    private java.util.List<String> cdbName;
+
+    /**
      * Percentile values of daily usage to be used for computing the aggregate resource usage.
      *
      */
@@ -339,6 +351,48 @@ public class SummarizeDatabaseInsightResourceStatisticsRequest
             return this.id(java.util.Arrays.asList(singularValue));
         }
 
+        private java.util.List<String> exadataInsightId = null;
+
+        /**
+         * Optional list of exadata insight resource [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         *
+         * @return this builder instance
+         */
+        public Builder exadataInsightId(java.util.List<String> exadataInsightId) {
+            this.exadataInsightId = exadataInsightId;
+            return this;
+        }
+
+        /**
+         * Singular setter. Optional list of exadata insight resource [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         *
+         * @return this builder instance
+         */
+        public Builder exadataInsightId(String singularValue) {
+            return this.exadataInsightId(java.util.Arrays.asList(singularValue));
+        }
+
+        private java.util.List<String> cdbName = null;
+
+        /**
+         * Filter by one or more cdb name.
+         *
+         * @return this builder instance
+         */
+        public Builder cdbName(java.util.List<String> cdbName) {
+            this.cdbName = cdbName;
+            return this;
+        }
+
+        /**
+         * Singular setter. Filter by one or more cdb name.
+         *
+         * @return this builder instance
+         */
+        public Builder cdbName(String singularValue) {
+            return this.cdbName(java.util.Arrays.asList(singularValue));
+        }
+
         private java.util.List<String> hostName = null;
 
         /**
@@ -506,6 +560,8 @@ public class SummarizeDatabaseInsightResourceStatisticsRequest
             databaseType(o.getDatabaseType());
             databaseId(o.getDatabaseId());
             id(o.getId());
+            exadataInsightId(o.getExadataInsightId());
+            cdbName(o.getCdbName());
             percentile(o.getPercentile());
             insightBy(o.getInsightBy());
             forecastDays(o.getForecastDays());

@@ -26,6 +26,14 @@ public enum OperationType {
     CreateHostInsight("CREATE_HOST_INSIGHT"),
     MoveHostInsight("MOVE_HOST_INSIGHT"),
     DeleteHostInsight("DELETE_HOST_INSIGHT"),
+    CreateExadataInsight("CREATE_EXADATA_INSIGHT"),
+    EnableExadataInsight("ENABLE_EXADATA_INSIGHT"),
+    DisableExadataInsight("DISABLE_EXADATA_INSIGHT"),
+    UpdateExadataInsight("UPDATE_EXADATA_INSIGHT"),
+    MoveExadataInsight("MOVE_EXADATA_INSIGHT"),
+    DeleteExadataInsight("DELETE_EXADATA_INSIGHT"),
+    AddExadataInsightMembers("ADD_EXADATA_INSIGHT_MEMBERS"),
+    ExadataAutoSync("EXADATA_AUTO_SYNC"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this

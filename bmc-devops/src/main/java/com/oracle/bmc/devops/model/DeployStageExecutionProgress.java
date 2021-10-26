@@ -29,44 +29,20 @@ package com.oracle.bmc.devops.model;
 )
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = ComputeInstanceGroupBlueGreenTrafficShiftDeployStageExecutionProgress.class,
-        name = "COMPUTE_INSTANCE_GROUP_BLUE_GREEN_TRAFFIC_SHIFT"
-    ),
-    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = ComputeInstanceGroupCanaryDeployStageExecutionProgress.class,
-        name = "COMPUTE_INSTANCE_GROUP_CANARY_DEPLOYMENT"
+        value = ManualApprovalDeployStageExecutionProgress.class,
+        name = "MANUAL_APPROVAL"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = ComputeInstanceGroupDeployStageExecutionProgress.class,
         name = "COMPUTE_INSTANCE_GROUP_ROLLING_DEPLOYMENT"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = LoadBalancerTrafficShiftDeployStageExecutionProgress.class,
-        name = "LOAD_BALANCER_TRAFFIC_SHIFT"
-    ),
-    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = WaitDeployStageExecutionProgress.class,
-        name = "WAIT"
-    ),
-    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = ComputeInstanceGroupCanaryTrafficShiftDeployStageExecutionProgress.class,
-        name = "COMPUTE_INSTANCE_GROUP_CANARY_TRAFFIC_SHIFT"
-    ),
-    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = RunValidationTestOnComputeInstanceDeployStageExecutionProgress.class,
-        name = "RUN_VALIDATION_TEST_ON_COMPUTE_INSTANCE"
-    ),
-    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = ManualApprovalDeployStageExecutionProgress.class,
-        name = "MANUAL_APPROVAL"
-    ),
-    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = RunPipelineDeployStageExecutionProgress.class,
-        name = "RUN_DEPLOYMENT_PIPELINE"
-    ),
-    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = OkeDeployStageExecutionProgress.class,
         name = "OKE_DEPLOYMENT"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = LoadBalancerTrafficShiftDeployStageExecutionProgress.class,
+        name = "LOAD_BALANCER_TRAFFIC_SHIFT"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = FunctionDeployStageExecutionProgress.class,
@@ -77,12 +53,8 @@ package com.oracle.bmc.devops.model;
         name = "INVOKE_FUNCTION"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = ComputeInstanceGroupCanaryApprovalDeployStageExecutionProgress.class,
-        name = "COMPUTE_INSTANCE_GROUP_CANARY_APPROVAL"
-    ),
-    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = ComputeInstanceGroupBlueGreenDeployStageExecutionProgress.class,
-        name = "COMPUTE_INSTANCE_GROUP_BLUE_GREEN_DEPLOYMENT"
+        value = WaitDeployStageExecutionProgress.class,
+        name = "WAIT"
     )
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)

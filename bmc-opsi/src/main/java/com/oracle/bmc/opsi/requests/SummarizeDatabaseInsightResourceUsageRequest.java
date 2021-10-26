@@ -121,6 +121,12 @@ public class SummarizeDatabaseInsightResourceUsageRequest
     private java.util.List<String> id;
 
     /**
+     * Optional list of exadata insight resource [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     *
+     */
+    private java.util.List<String> exadataInsightId;
+
+    /**
      * Filter by one or more hostname.
      *
      */
@@ -262,6 +268,27 @@ public class SummarizeDatabaseInsightResourceUsageRequest
          */
         public Builder id(String singularValue) {
             return this.id(java.util.Arrays.asList(singularValue));
+        }
+
+        private java.util.List<String> exadataInsightId = null;
+
+        /**
+         * Optional list of exadata insight resource [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         *
+         * @return this builder instance
+         */
+        public Builder exadataInsightId(java.util.List<String> exadataInsightId) {
+            this.exadataInsightId = exadataInsightId;
+            return this;
+        }
+
+        /**
+         * Singular setter. Optional list of exadata insight resource [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         *
+         * @return this builder instance
+         */
+        public Builder exadataInsightId(String singularValue) {
+            return this.exadataInsightId(java.util.Arrays.asList(singularValue));
         }
 
         private java.util.List<String> hostName = null;
@@ -431,6 +458,7 @@ public class SummarizeDatabaseInsightResourceUsageRequest
             databaseType(o.getDatabaseType());
             databaseId(o.getDatabaseId());
             id(o.getId());
+            exadataInsightId(o.getExadataInsightId());
             hostName(o.getHostName());
             isDatabaseInstanceLevelMetrics(o.getIsDatabaseInstanceLevelMetrics());
             page(o.getPage());

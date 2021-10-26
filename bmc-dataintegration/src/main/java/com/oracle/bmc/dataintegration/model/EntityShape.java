@@ -29,6 +29,10 @@ package com.oracle.bmc.dataintegration.model;
 )
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = EntityShapeFromSQL.class,
+        name = "SQL_ENTITY"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = EntityShapeFromFile.class,
         name = "FILE_ENTITY"
     )
@@ -45,6 +49,7 @@ public class EntityShape {
     @lombok.extern.slf4j.Slf4j
     public enum ModelType {
         FileEntity("FILE_ENTITY"),
+        SqlEntity("SQL_ENTITY"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this

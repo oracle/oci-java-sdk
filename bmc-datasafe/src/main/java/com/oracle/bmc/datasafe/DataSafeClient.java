@@ -1091,13 +1091,15 @@ public class DataSafeClient implements DataSafe {
     public DownloadPrivilegeScriptResponse downloadPrivilegeScript(
             DownloadPrivilegeScriptRequest request) {
         LOG.trace("Called downloadPrivilegeScript");
-        LOG.warn(
-                "downloadPrivilegeScript returns a stream, please make sure to close the stream to avoid any indefinite hangs");
-        if (this.apacheConnectionClosingStrategy != null) {
+        if (com.oracle.bmc.http.ApacheUtils.isExtraStreamLogsEnabled()) {
             LOG.warn(
-                    "ApacheConnectionClosingStrategy set to {}. For large streams with partial reads of stream, please use ImmediateClosingStrategy. "
-                            + "For small streams with partial reads of stream, please use GracefulClosingStrategy. More info in ApacheConnectorProperties",
-                    this.apacheConnectionClosingStrategy);
+                    "downloadPrivilegeScript returns a stream, please make sure to close the stream to avoid any indefinite hangs");
+            if (this.apacheConnectionClosingStrategy != null) {
+                LOG.warn(
+                        "ApacheConnectionClosingStrategy set to {}. For large streams with partial reads of stream, please use ImmediateClosingStrategy. "
+                                + "For small streams with partial reads of stream, please use GracefulClosingStrategy. More info in ApacheConnectorProperties",
+                        this.apacheConnectionClosingStrategy);
+            }
         }
         final DownloadPrivilegeScriptRequest interceptedRequest =
                 DownloadPrivilegeScriptConverter.interceptRequest(request);
@@ -1130,13 +1132,15 @@ public class DataSafeClient implements DataSafe {
     public DownloadSecurityAssessmentReportResponse downloadSecurityAssessmentReport(
             DownloadSecurityAssessmentReportRequest request) {
         LOG.trace("Called downloadSecurityAssessmentReport");
-        LOG.warn(
-                "downloadSecurityAssessmentReport returns a stream, please make sure to close the stream to avoid any indefinite hangs");
-        if (this.apacheConnectionClosingStrategy != null) {
+        if (com.oracle.bmc.http.ApacheUtils.isExtraStreamLogsEnabled()) {
             LOG.warn(
-                    "ApacheConnectionClosingStrategy set to {}. For large streams with partial reads of stream, please use ImmediateClosingStrategy. "
-                            + "For small streams with partial reads of stream, please use GracefulClosingStrategy. More info in ApacheConnectorProperties",
-                    this.apacheConnectionClosingStrategy);
+                    "downloadSecurityAssessmentReport returns a stream, please make sure to close the stream to avoid any indefinite hangs");
+            if (this.apacheConnectionClosingStrategy != null) {
+                LOG.warn(
+                        "ApacheConnectionClosingStrategy set to {}. For large streams with partial reads of stream, please use ImmediateClosingStrategy. "
+                                + "For small streams with partial reads of stream, please use GracefulClosingStrategy. More info in ApacheConnectorProperties",
+                        this.apacheConnectionClosingStrategy);
+            }
         }
         final DownloadSecurityAssessmentReportRequest interceptedRequest =
                 DownloadSecurityAssessmentReportConverter.interceptRequest(request);
@@ -1174,13 +1178,15 @@ public class DataSafeClient implements DataSafe {
     public DownloadUserAssessmentReportResponse downloadUserAssessmentReport(
             DownloadUserAssessmentReportRequest request) {
         LOG.trace("Called downloadUserAssessmentReport");
-        LOG.warn(
-                "downloadUserAssessmentReport returns a stream, please make sure to close the stream to avoid any indefinite hangs");
-        if (this.apacheConnectionClosingStrategy != null) {
+        if (com.oracle.bmc.http.ApacheUtils.isExtraStreamLogsEnabled()) {
             LOG.warn(
-                    "ApacheConnectionClosingStrategy set to {}. For large streams with partial reads of stream, please use ImmediateClosingStrategy. "
-                            + "For small streams with partial reads of stream, please use GracefulClosingStrategy. More info in ApacheConnectorProperties",
-                    this.apacheConnectionClosingStrategy);
+                    "downloadUserAssessmentReport returns a stream, please make sure to close the stream to avoid any indefinite hangs");
+            if (this.apacheConnectionClosingStrategy != null) {
+                LOG.warn(
+                        "ApacheConnectionClosingStrategy set to {}. For large streams with partial reads of stream, please use ImmediateClosingStrategy. "
+                                + "For small streams with partial reads of stream, please use GracefulClosingStrategy. More info in ApacheConnectorProperties",
+                        this.apacheConnectionClosingStrategy);
+            }
         }
         final DownloadUserAssessmentReportRequest interceptedRequest =
                 DownloadUserAssessmentReportConverter.interceptRequest(request);
@@ -1253,13 +1259,15 @@ public class DataSafeClient implements DataSafe {
     public GenerateOnPremConnectorConfigurationResponse generateOnPremConnectorConfiguration(
             GenerateOnPremConnectorConfigurationRequest request) {
         LOG.trace("Called generateOnPremConnectorConfiguration");
-        LOG.warn(
-                "generateOnPremConnectorConfiguration returns a stream, please make sure to close the stream to avoid any indefinite hangs");
-        if (this.apacheConnectionClosingStrategy != null) {
+        if (com.oracle.bmc.http.ApacheUtils.isExtraStreamLogsEnabled()) {
             LOG.warn(
-                    "ApacheConnectionClosingStrategy set to {}. For large streams with partial reads of stream, please use ImmediateClosingStrategy. "
-                            + "For small streams with partial reads of stream, please use GracefulClosingStrategy. More info in ApacheConnectorProperties",
-                    this.apacheConnectionClosingStrategy);
+                    "generateOnPremConnectorConfiguration returns a stream, please make sure to close the stream to avoid any indefinite hangs");
+            if (this.apacheConnectionClosingStrategy != null) {
+                LOG.warn(
+                        "ApacheConnectionClosingStrategy set to {}. For large streams with partial reads of stream, please use ImmediateClosingStrategy. "
+                                + "For small streams with partial reads of stream, please use GracefulClosingStrategy. More info in ApacheConnectorProperties",
+                        this.apacheConnectionClosingStrategy);
+            }
         }
         final GenerateOnPremConnectorConfigurationRequest interceptedRequest =
                 GenerateOnPremConnectorConfigurationConverter.interceptRequest(request);

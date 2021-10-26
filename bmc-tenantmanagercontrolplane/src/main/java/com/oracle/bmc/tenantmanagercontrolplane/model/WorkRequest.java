@@ -5,7 +5,7 @@
 package com.oracle.bmc.tenantmanagercontrolplane.model;
 
 /**
- * A description of work request status.
+ * A description of the work request status.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -156,7 +156,7 @@ public class WorkRequest {
     OperationType operationType;
 
     /**
-     * Status of current work request.
+     * Status of the current work request.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     OperationStatus status;

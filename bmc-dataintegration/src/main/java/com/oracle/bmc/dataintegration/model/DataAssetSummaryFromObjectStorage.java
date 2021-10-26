@@ -140,6 +140,15 @@ public class DataAssetSummaryFromObjectStorage extends DataAssetSummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("ociRegion")
+        private String ociRegion;
+
+        public Builder ociRegion(String ociRegion) {
+            this.ociRegion = ociRegion;
+            this.__explicitlySet__.add("ociRegion");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("url")
         private String url;
 
@@ -194,6 +203,7 @@ public class DataAssetSummaryFromObjectStorage extends DataAssetSummary {
                             objectVersion,
                             parentRef,
                             metadata,
+                            ociRegion,
                             url,
                             tenancyId,
                             namespace,
@@ -217,6 +227,7 @@ public class DataAssetSummaryFromObjectStorage extends DataAssetSummary {
                             .objectVersion(o.getObjectVersion())
                             .parentRef(o.getParentRef())
                             .metadata(o.getMetadata())
+                            .ociRegion(o.getOciRegion())
                             .url(o.getUrl())
                             .tenancyId(o.getTenancyId())
                             .namespace(o.getNamespace())
@@ -248,6 +259,7 @@ public class DataAssetSummaryFromObjectStorage extends DataAssetSummary {
             Integer objectVersion,
             ParentReference parentRef,
             ObjectMetadata metadata,
+            String ociRegion,
             String url,
             String tenancyId,
             String namespace,
@@ -265,11 +277,18 @@ public class DataAssetSummaryFromObjectStorage extends DataAssetSummary {
                 objectVersion,
                 parentRef,
                 metadata);
+        this.ociRegion = ociRegion;
         this.url = url;
         this.tenancyId = tenancyId;
         this.namespace = namespace;
         this.defaultConnection = defaultConnection;
     }
+
+    /**
+     * The Oracle Object storage Region ie. us-ashburn-1
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("ociRegion")
+    String ociRegion;
 
     /**
      * The Oracle Object storage URL.

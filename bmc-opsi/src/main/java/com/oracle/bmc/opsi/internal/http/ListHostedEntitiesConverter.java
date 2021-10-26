@@ -81,6 +81,14 @@ public class ListHostedEntitiesConverter {
                         com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
                                 request.getId()));
 
+        if (request.getExadataInsightId() != null) {
+            target =
+                    target.queryParam(
+                            "exadataInsightId",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getExadataInsightId()));
+        }
+
         if (request.getLimit() != null) {
             target =
                     target.queryParam(

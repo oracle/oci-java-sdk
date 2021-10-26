@@ -379,6 +379,53 @@ public class OperationsInsightsAsyncClient implements OperationsInsightsAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<AddExadataInsightMembersResponse> addExadataInsightMembers(
+            AddExadataInsightMembersRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            AddExadataInsightMembersRequest, AddExadataInsightMembersResponse>
+                    handler) {
+        LOG.trace("Called async addExadataInsightMembers");
+        final AddExadataInsightMembersRequest interceptedRequest =
+                AddExadataInsightMembersConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                AddExadataInsightMembersConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, AddExadataInsightMembersResponse>
+                transformer = AddExadataInsightMembersConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        AddExadataInsightMembersRequest, AddExadataInsightMembersResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                AddExadataInsightMembersRequest, AddExadataInsightMembersResponse>,
+                        java.util.concurrent.Future<AddExadataInsightMembersResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getAddExadataInsightMembersDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    AddExadataInsightMembersRequest, AddExadataInsightMembersResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<ChangeDatabaseInsightCompartmentResponse>
             changeDatabaseInsightCompartment(
                     ChangeDatabaseInsightCompartmentRequest request,
@@ -472,6 +519,58 @@ public class OperationsInsightsAsyncClient implements OperationsInsightsAsync {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     ChangeEnterpriseManagerBridgeCompartmentRequest,
                     ChangeEnterpriseManagerBridgeCompartmentResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ChangeExadataInsightCompartmentResponse>
+            changeExadataInsightCompartment(
+                    ChangeExadataInsightCompartmentRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeExadataInsightCompartmentRequest,
+                                    ChangeExadataInsightCompartmentResponse>
+                            handler) {
+        LOG.trace("Called async changeExadataInsightCompartment");
+        final ChangeExadataInsightCompartmentRequest interceptedRequest =
+                ChangeExadataInsightCompartmentConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangeExadataInsightCompartmentConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ChangeExadataInsightCompartmentResponse>
+                transformer = ChangeExadataInsightCompartmentConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        ChangeExadataInsightCompartmentRequest,
+                        ChangeExadataInsightCompartmentResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ChangeExadataInsightCompartmentRequest,
+                                ChangeExadataInsightCompartmentResponse>,
+                        java.util.concurrent.Future<ChangeExadataInsightCompartmentResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getChangeExadataInsightCompartmentDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ChangeExadataInsightCompartmentRequest,
+                    ChangeExadataInsightCompartmentResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -632,6 +731,53 @@ public class OperationsInsightsAsyncClient implements OperationsInsightsAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<CreateExadataInsightResponse> createExadataInsight(
+            CreateExadataInsightRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            CreateExadataInsightRequest, CreateExadataInsightResponse>
+                    handler) {
+        LOG.trace("Called async createExadataInsight");
+        final CreateExadataInsightRequest interceptedRequest =
+                CreateExadataInsightConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateExadataInsightConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, CreateExadataInsightResponse>
+                transformer = CreateExadataInsightConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        CreateExadataInsightRequest, CreateExadataInsightResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CreateExadataInsightRequest, CreateExadataInsightResponse>,
+                        java.util.concurrent.Future<CreateExadataInsightResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateExadataInsightDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CreateExadataInsightRequest, CreateExadataInsightResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateHostInsightResponse> createHostInsight(
             CreateHostInsightRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -762,6 +908,47 @@ public class OperationsInsightsAsyncClient implements OperationsInsightsAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteExadataInsightResponse> deleteExadataInsight(
+            DeleteExadataInsightRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            DeleteExadataInsightRequest, DeleteExadataInsightResponse>
+                    handler) {
+        LOG.trace("Called async deleteExadataInsight");
+        final DeleteExadataInsightRequest interceptedRequest =
+                DeleteExadataInsightConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteExadataInsightConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, DeleteExadataInsightResponse>
+                transformer = DeleteExadataInsightConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        DeleteExadataInsightRequest, DeleteExadataInsightResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DeleteExadataInsightRequest, DeleteExadataInsightResponse>,
+                        java.util.concurrent.Future<DeleteExadataInsightResponse>>
+                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DeleteExadataInsightRequest, DeleteExadataInsightResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteHostInsightResponse> deleteHostInsight(
             DeleteHostInsightRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -830,6 +1017,48 @@ public class OperationsInsightsAsyncClient implements OperationsInsightsAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     DisableDatabaseInsightRequest, DisableDatabaseInsightResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<DisableExadataInsightResponse> disableExadataInsight(
+            DisableExadataInsightRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            DisableExadataInsightRequest, DisableExadataInsightResponse>
+                    handler) {
+        LOG.trace("Called async disableExadataInsight");
+        final DisableExadataInsightRequest interceptedRequest =
+                DisableExadataInsightConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DisableExadataInsightConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, DisableExadataInsightResponse>
+                transformer = DisableExadataInsightConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        DisableExadataInsightRequest, DisableExadataInsightResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DisableExadataInsightRequest, DisableExadataInsightResponse>,
+                        java.util.concurrent.Future<DisableExadataInsightResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DisableExadataInsightRequest, DisableExadataInsightResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -917,6 +1146,53 @@ public class OperationsInsightsAsyncClient implements OperationsInsightsAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     EnableDatabaseInsightRequest, EnableDatabaseInsightResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<EnableExadataInsightResponse> enableExadataInsight(
+            EnableExadataInsightRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            EnableExadataInsightRequest, EnableExadataInsightResponse>
+                    handler) {
+        LOG.trace("Called async enableExadataInsight");
+        final EnableExadataInsightRequest interceptedRequest =
+                EnableExadataInsightConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                EnableExadataInsightConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, EnableExadataInsightResponse>
+                transformer = EnableExadataInsightConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        EnableExadataInsightRequest, EnableExadataInsightResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                EnableExadataInsightRequest, EnableExadataInsightResponse>,
+                        java.util.concurrent.Future<EnableExadataInsightResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getEnableExadataInsightDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    EnableExadataInsightRequest, EnableExadataInsightResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -1045,6 +1321,45 @@ public class OperationsInsightsAsyncClient implements OperationsInsightsAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     GetEnterpriseManagerBridgeRequest, GetEnterpriseManagerBridgeResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetExadataInsightResponse> getExadataInsight(
+            GetExadataInsightRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetExadataInsightRequest, GetExadataInsightResponse>
+                    handler) {
+        LOG.trace("Called async getExadataInsight");
+        final GetExadataInsightRequest interceptedRequest =
+                GetExadataInsightConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetExadataInsightConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<javax.ws.rs.core.Response, GetExadataInsightResponse>
+                transformer = GetExadataInsightConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<GetExadataInsightRequest, GetExadataInsightResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetExadataInsightRequest, GetExadataInsightResponse>,
+                        java.util.concurrent.Future<GetExadataInsightResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetExadataInsightRequest, GetExadataInsightResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -1528,6 +1843,130 @@ public class OperationsInsightsAsyncClient implements OperationsInsightsAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     ListEnterpriseManagerBridgesRequest, ListEnterpriseManagerBridgesResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListExadataConfigurationsResponse> listExadataConfigurations(
+            ListExadataConfigurationsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListExadataConfigurationsRequest, ListExadataConfigurationsResponse>
+                    handler) {
+        LOG.trace("Called async listExadataConfigurations");
+        final ListExadataConfigurationsRequest interceptedRequest =
+                ListExadataConfigurationsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListExadataConfigurationsConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ListExadataConfigurationsResponse>
+                transformer = ListExadataConfigurationsConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListExadataConfigurationsRequest, ListExadataConfigurationsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListExadataConfigurationsRequest,
+                                ListExadataConfigurationsResponse>,
+                        java.util.concurrent.Future<ListExadataConfigurationsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListExadataConfigurationsRequest, ListExadataConfigurationsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListExadataInsightsResponse> listExadataInsights(
+            ListExadataInsightsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListExadataInsightsRequest, ListExadataInsightsResponse>
+                    handler) {
+        LOG.trace("Called async listExadataInsights");
+        final ListExadataInsightsRequest interceptedRequest =
+                ListExadataInsightsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListExadataInsightsConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ListExadataInsightsResponse>
+                transformer = ListExadataInsightsConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListExadataInsightsRequest, ListExadataInsightsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListExadataInsightsRequest, ListExadataInsightsResponse>,
+                        java.util.concurrent.Future<ListExadataInsightsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListExadataInsightsRequest, ListExadataInsightsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListHostConfigurationsResponse> listHostConfigurations(
+            ListHostConfigurationsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListHostConfigurationsRequest, ListHostConfigurationsResponse>
+                    handler) {
+        LOG.trace("Called async listHostConfigurations");
+        final ListHostConfigurationsRequest interceptedRequest =
+                ListHostConfigurationsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListHostConfigurationsConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ListHostConfigurationsResponse>
+                transformer = ListHostConfigurationsConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListHostConfigurationsRequest, ListHostConfigurationsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListHostConfigurationsRequest, ListHostConfigurationsResponse>,
+                        java.util.concurrent.Future<ListHostConfigurationsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListHostConfigurationsRequest, ListHostConfigurationsResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -2290,6 +2729,448 @@ public class OperationsInsightsAsyncClient implements OperationsInsightsAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<SummarizeExadataInsightResourceCapacityTrendResponse>
+            summarizeExadataInsightResourceCapacityTrend(
+                    SummarizeExadataInsightResourceCapacityTrendRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    SummarizeExadataInsightResourceCapacityTrendRequest,
+                                    SummarizeExadataInsightResourceCapacityTrendResponse>
+                            handler) {
+        LOG.trace("Called async summarizeExadataInsightResourceCapacityTrend");
+        final SummarizeExadataInsightResourceCapacityTrendRequest interceptedRequest =
+                SummarizeExadataInsightResourceCapacityTrendConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                SummarizeExadataInsightResourceCapacityTrendConverter.fromRequest(
+                        client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        SummarizeExadataInsightResourceCapacityTrendResponse>
+                transformer = SummarizeExadataInsightResourceCapacityTrendConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        SummarizeExadataInsightResourceCapacityTrendRequest,
+                        SummarizeExadataInsightResourceCapacityTrendResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                SummarizeExadataInsightResourceCapacityTrendRequest,
+                                SummarizeExadataInsightResourceCapacityTrendResponse>,
+                        java.util.concurrent.Future<
+                                SummarizeExadataInsightResourceCapacityTrendResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    SummarizeExadataInsightResourceCapacityTrendRequest,
+                    SummarizeExadataInsightResourceCapacityTrendResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<
+                    SummarizeExadataInsightResourceCapacityTrendAggregatedResponse>
+            summarizeExadataInsightResourceCapacityTrendAggregated(
+                    SummarizeExadataInsightResourceCapacityTrendAggregatedRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    SummarizeExadataInsightResourceCapacityTrendAggregatedRequest,
+                                    SummarizeExadataInsightResourceCapacityTrendAggregatedResponse>
+                            handler) {
+        LOG.trace("Called async summarizeExadataInsightResourceCapacityTrendAggregated");
+        final SummarizeExadataInsightResourceCapacityTrendAggregatedRequest interceptedRequest =
+                SummarizeExadataInsightResourceCapacityTrendAggregatedConverter.interceptRequest(
+                        request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                SummarizeExadataInsightResourceCapacityTrendAggregatedConverter.fromRequest(
+                        client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        SummarizeExadataInsightResourceCapacityTrendAggregatedResponse>
+                transformer =
+                        SummarizeExadataInsightResourceCapacityTrendAggregatedConverter
+                                .fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        SummarizeExadataInsightResourceCapacityTrendAggregatedRequest,
+                        SummarizeExadataInsightResourceCapacityTrendAggregatedResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                SummarizeExadataInsightResourceCapacityTrendAggregatedRequest,
+                                SummarizeExadataInsightResourceCapacityTrendAggregatedResponse>,
+                        java.util.concurrent.Future<
+                                SummarizeExadataInsightResourceCapacityTrendAggregatedResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    SummarizeExadataInsightResourceCapacityTrendAggregatedRequest,
+                    SummarizeExadataInsightResourceCapacityTrendAggregatedResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<SummarizeExadataInsightResourceForecastTrendResponse>
+            summarizeExadataInsightResourceForecastTrend(
+                    SummarizeExadataInsightResourceForecastTrendRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    SummarizeExadataInsightResourceForecastTrendRequest,
+                                    SummarizeExadataInsightResourceForecastTrendResponse>
+                            handler) {
+        LOG.trace("Called async summarizeExadataInsightResourceForecastTrend");
+        final SummarizeExadataInsightResourceForecastTrendRequest interceptedRequest =
+                SummarizeExadataInsightResourceForecastTrendConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                SummarizeExadataInsightResourceForecastTrendConverter.fromRequest(
+                        client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        SummarizeExadataInsightResourceForecastTrendResponse>
+                transformer = SummarizeExadataInsightResourceForecastTrendConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        SummarizeExadataInsightResourceForecastTrendRequest,
+                        SummarizeExadataInsightResourceForecastTrendResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                SummarizeExadataInsightResourceForecastTrendRequest,
+                                SummarizeExadataInsightResourceForecastTrendResponse>,
+                        java.util.concurrent.Future<
+                                SummarizeExadataInsightResourceForecastTrendResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    SummarizeExadataInsightResourceForecastTrendRequest,
+                    SummarizeExadataInsightResourceForecastTrendResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<
+                    SummarizeExadataInsightResourceForecastTrendAggregatedResponse>
+            summarizeExadataInsightResourceForecastTrendAggregated(
+                    SummarizeExadataInsightResourceForecastTrendAggregatedRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    SummarizeExadataInsightResourceForecastTrendAggregatedRequest,
+                                    SummarizeExadataInsightResourceForecastTrendAggregatedResponse>
+                            handler) {
+        LOG.trace("Called async summarizeExadataInsightResourceForecastTrendAggregated");
+        final SummarizeExadataInsightResourceForecastTrendAggregatedRequest interceptedRequest =
+                SummarizeExadataInsightResourceForecastTrendAggregatedConverter.interceptRequest(
+                        request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                SummarizeExadataInsightResourceForecastTrendAggregatedConverter.fromRequest(
+                        client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        SummarizeExadataInsightResourceForecastTrendAggregatedResponse>
+                transformer =
+                        SummarizeExadataInsightResourceForecastTrendAggregatedConverter
+                                .fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        SummarizeExadataInsightResourceForecastTrendAggregatedRequest,
+                        SummarizeExadataInsightResourceForecastTrendAggregatedResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                SummarizeExadataInsightResourceForecastTrendAggregatedRequest,
+                                SummarizeExadataInsightResourceForecastTrendAggregatedResponse>,
+                        java.util.concurrent.Future<
+                                SummarizeExadataInsightResourceForecastTrendAggregatedResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    SummarizeExadataInsightResourceForecastTrendAggregatedRequest,
+                    SummarizeExadataInsightResourceForecastTrendAggregatedResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<SummarizeExadataInsightResourceStatisticsResponse>
+            summarizeExadataInsightResourceStatistics(
+                    SummarizeExadataInsightResourceStatisticsRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    SummarizeExadataInsightResourceStatisticsRequest,
+                                    SummarizeExadataInsightResourceStatisticsResponse>
+                            handler) {
+        LOG.trace("Called async summarizeExadataInsightResourceStatistics");
+        final SummarizeExadataInsightResourceStatisticsRequest interceptedRequest =
+                SummarizeExadataInsightResourceStatisticsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                SummarizeExadataInsightResourceStatisticsConverter.fromRequest(
+                        client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        SummarizeExadataInsightResourceStatisticsResponse>
+                transformer = SummarizeExadataInsightResourceStatisticsConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        SummarizeExadataInsightResourceStatisticsRequest,
+                        SummarizeExadataInsightResourceStatisticsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                SummarizeExadataInsightResourceStatisticsRequest,
+                                SummarizeExadataInsightResourceStatisticsResponse>,
+                        java.util.concurrent.Future<
+                                SummarizeExadataInsightResourceStatisticsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    SummarizeExadataInsightResourceStatisticsRequest,
+                    SummarizeExadataInsightResourceStatisticsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<SummarizeExadataInsightResourceUsageResponse>
+            summarizeExadataInsightResourceUsage(
+                    SummarizeExadataInsightResourceUsageRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    SummarizeExadataInsightResourceUsageRequest,
+                                    SummarizeExadataInsightResourceUsageResponse>
+                            handler) {
+        LOG.trace("Called async summarizeExadataInsightResourceUsage");
+        final SummarizeExadataInsightResourceUsageRequest interceptedRequest =
+                SummarizeExadataInsightResourceUsageConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                SummarizeExadataInsightResourceUsageConverter.fromRequest(
+                        client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, SummarizeExadataInsightResourceUsageResponse>
+                transformer = SummarizeExadataInsightResourceUsageConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        SummarizeExadataInsightResourceUsageRequest,
+                        SummarizeExadataInsightResourceUsageResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                SummarizeExadataInsightResourceUsageRequest,
+                                SummarizeExadataInsightResourceUsageResponse>,
+                        java.util.concurrent.Future<SummarizeExadataInsightResourceUsageResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    SummarizeExadataInsightResourceUsageRequest,
+                    SummarizeExadataInsightResourceUsageResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<SummarizeExadataInsightResourceUsageAggregatedResponse>
+            summarizeExadataInsightResourceUsageAggregated(
+                    SummarizeExadataInsightResourceUsageAggregatedRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    SummarizeExadataInsightResourceUsageAggregatedRequest,
+                                    SummarizeExadataInsightResourceUsageAggregatedResponse>
+                            handler) {
+        LOG.trace("Called async summarizeExadataInsightResourceUsageAggregated");
+        final SummarizeExadataInsightResourceUsageAggregatedRequest interceptedRequest =
+                SummarizeExadataInsightResourceUsageAggregatedConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                SummarizeExadataInsightResourceUsageAggregatedConverter.fromRequest(
+                        client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        SummarizeExadataInsightResourceUsageAggregatedResponse>
+                transformer =
+                        SummarizeExadataInsightResourceUsageAggregatedConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        SummarizeExadataInsightResourceUsageAggregatedRequest,
+                        SummarizeExadataInsightResourceUsageAggregatedResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                SummarizeExadataInsightResourceUsageAggregatedRequest,
+                                SummarizeExadataInsightResourceUsageAggregatedResponse>,
+                        java.util.concurrent.Future<
+                                SummarizeExadataInsightResourceUsageAggregatedResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    SummarizeExadataInsightResourceUsageAggregatedRequest,
+                    SummarizeExadataInsightResourceUsageAggregatedResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<SummarizeExadataInsightResourceUtilizationInsightResponse>
+            summarizeExadataInsightResourceUtilizationInsight(
+                    SummarizeExadataInsightResourceUtilizationInsightRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    SummarizeExadataInsightResourceUtilizationInsightRequest,
+                                    SummarizeExadataInsightResourceUtilizationInsightResponse>
+                            handler) {
+        LOG.trace("Called async summarizeExadataInsightResourceUtilizationInsight");
+        final SummarizeExadataInsightResourceUtilizationInsightRequest interceptedRequest =
+                SummarizeExadataInsightResourceUtilizationInsightConverter.interceptRequest(
+                        request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                SummarizeExadataInsightResourceUtilizationInsightConverter.fromRequest(
+                        client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        SummarizeExadataInsightResourceUtilizationInsightResponse>
+                transformer =
+                        SummarizeExadataInsightResourceUtilizationInsightConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        SummarizeExadataInsightResourceUtilizationInsightRequest,
+                        SummarizeExadataInsightResourceUtilizationInsightResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                SummarizeExadataInsightResourceUtilizationInsightRequest,
+                                SummarizeExadataInsightResourceUtilizationInsightResponse>,
+                        java.util.concurrent.Future<
+                                SummarizeExadataInsightResourceUtilizationInsightResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    SummarizeExadataInsightResourceUtilizationInsightRequest,
+                    SummarizeExadataInsightResourceUtilizationInsightResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<SummarizeExadataMembersResponse> summarizeExadataMembers(
+            SummarizeExadataMembersRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            SummarizeExadataMembersRequest, SummarizeExadataMembersResponse>
+                    handler) {
+        LOG.trace("Called async summarizeExadataMembers");
+        final SummarizeExadataMembersRequest interceptedRequest =
+                SummarizeExadataMembersConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                SummarizeExadataMembersConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, SummarizeExadataMembersResponse>
+                transformer = SummarizeExadataMembersConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        SummarizeExadataMembersRequest, SummarizeExadataMembersResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                SummarizeExadataMembersRequest, SummarizeExadataMembersResponse>,
+                        java.util.concurrent.Future<SummarizeExadataMembersResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    SummarizeExadataMembersRequest, SummarizeExadataMembersResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<SummarizeHostInsightResourceCapacityTrendResponse>
             summarizeHostInsightResourceCapacityTrend(
                     SummarizeHostInsightResourceCapacityTrendRequest request,
@@ -2923,6 +3804,52 @@ public class OperationsInsightsAsyncClient implements OperationsInsightsAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     UpdateEnterpriseManagerBridgeRequest, UpdateEnterpriseManagerBridgeResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateExadataInsightResponse> updateExadataInsight(
+            UpdateExadataInsightRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            UpdateExadataInsightRequest, UpdateExadataInsightResponse>
+                    handler) {
+        LOG.trace("Called async updateExadataInsight");
+        final UpdateExadataInsightRequest interceptedRequest =
+                UpdateExadataInsightConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateExadataInsightConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, UpdateExadataInsightResponse>
+                transformer = UpdateExadataInsightConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        UpdateExadataInsightRequest, UpdateExadataInsightResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpdateExadataInsightRequest, UpdateExadataInsightResponse>,
+                        java.util.concurrent.Future<UpdateExadataInsightResponse>>
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateExadataInsightDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpdateExadataInsightRequest, UpdateExadataInsightResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,

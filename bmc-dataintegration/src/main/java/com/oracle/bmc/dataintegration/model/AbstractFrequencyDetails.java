@@ -33,8 +33,20 @@ package com.oracle.bmc.dataintegration.model;
         name = "MONTHLY"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = CustomFrequencyDetails.class,
+        name = "CUSTOM"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = DailyFrequencyDetails.class,
         name = "DAILY"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = WeeklyFrequencyDetails.class,
+        name = "WEEKLY"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = MonthlyRuleFrequencyDetails.class,
+        name = "MONTHLY_RULE"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = HourlyFrequencyDetails.class,
@@ -52,6 +64,8 @@ public class AbstractFrequencyDetails {
         Hourly("HOURLY"),
         Daily("DAILY"),
         Monthly("MONTHLY"),
+        Weekly("WEEKLY"),
+        Custom("CUSTOM"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this
@@ -105,6 +119,9 @@ public class AbstractFrequencyDetails {
         Hourly("HOURLY"),
         Daily("DAILY"),
         Monthly("MONTHLY"),
+        Weekly("WEEKLY"),
+        MonthlyRule("MONTHLY_RULE"),
+        Custom("CUSTOM"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this

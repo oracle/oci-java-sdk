@@ -8,7 +8,7 @@ import com.oracle.bmc.dataintegration.requests.*;
 import com.oracle.bmc.dataintegration.responses.*;
 
 /**
- * Use the Data Integration Service APIs to perform common extract, load, and transform (ETL) tasks.
+ * Use the Data Integration API to organize your data integration projects, create data flows, pipelines and tasks, and then publish, schedule, and run tasks that extract, transform, and load data. For more information, see [Data Integration](https://docs.oracle.com/iaas/data-integration/home.htm).
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
 public interface DataIntegrationAsync extends AutoCloseable {
@@ -226,6 +226,24 @@ public interface DataIntegrationAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Creates a function library in a project or in another function library, limited to two levels of function libraries. |
+     * FunctionLibraries are used to organize your design-time resources, such as tasks or data flows.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateFunctionLibraryResponse> createFunctionLibrary(
+            CreateFunctionLibraryRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            CreateFunctionLibraryRequest, CreateFunctionLibraryResponse>
+                    handler);
+
+    /**
      * Creates a patch in an application.
      *
      * @param request The request object containing the details to send
@@ -366,7 +384,43 @@ public interface DataIntegrationAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Creates a new Data Integration workspace ready for performing data integration tasks.
+     * Creates a new UserDefinedFunction in a function library ready for performing data integrations.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateUserDefinedFunctionResponse> createUserDefinedFunction(
+            CreateUserDefinedFunctionRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            CreateUserDefinedFunctionRequest, CreateUserDefinedFunctionResponse>
+                    handler);
+
+    /**
+     * Accepts the UserDefinedFunction definition in the request payload and creates a UserDefinedFunction validation.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateUserDefinedFunctionValidationResponse>
+            createUserDefinedFunctionValidation(
+                    CreateUserDefinedFunctionValidationRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    CreateUserDefinedFunctionValidationRequest,
+                                    CreateUserDefinedFunctionValidationResponse>
+                            handler);
+
+    /**
+     * Creates a new Data Integration workspace ready for performing data integration tasks. To retrieve the OCID for the new workspace, use the opc-work-request-id returned by this API and call the {@link #getWorkRequest(GetWorkRequestRequest, Consumer, Consumer) getWorkRequest} API.
      *
      *
      * @param request The request object containing the details to send
@@ -525,6 +579,22 @@ public interface DataIntegrationAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Removes a Function Library from a project using the specified identifier.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteFunctionLibraryResponse> deleteFunctionLibrary(
+            DeleteFunctionLibraryRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            DeleteFunctionLibraryRequest, DeleteFunctionLibraryResponse>
+                    handler);
+
+    /**
      * Removes a patch using the specified identifier.
      *
      * @param request The request object containing the details to send
@@ -660,6 +730,40 @@ public interface DataIntegrationAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<
                             DeleteTaskValidationRequest, DeleteTaskValidationResponse>
                     handler);
+
+    /**
+     * Removes a UserDefinedFunction from a function library using the specified identifier.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteUserDefinedFunctionResponse> deleteUserDefinedFunction(
+            DeleteUserDefinedFunctionRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            DeleteUserDefinedFunctionRequest, DeleteUserDefinedFunctionResponse>
+                    handler);
+
+    /**
+     * Removes a UserDefinedFunction validation using the specified identifier.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteUserDefinedFunctionValidationResponse>
+            deleteUserDefinedFunctionValidation(
+                    DeleteUserDefinedFunctionValidationRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    DeleteUserDefinedFunctionValidationRequest,
+                                    DeleteUserDefinedFunctionValidationResponse>
+                            handler);
 
     /**
      * Deletes a Data Integration workspace resource using the specified identifier.
@@ -865,6 +969,22 @@ public interface DataIntegrationAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<GetFolderRequest, GetFolderResponse> handler);
 
     /**
+     * Retrieves a Function Library using the specified identifier.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetFunctionLibraryResponse> getFunctionLibrary(
+            GetFunctionLibraryRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetFunctionLibraryRequest, GetFunctionLibraryResponse>
+                    handler);
+
+    /**
      * Retrieves a patch in an application using the specified identifier.
      *
      * @param request The request object containing the details to send
@@ -1040,6 +1160,40 @@ public interface DataIntegrationAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<
                             GetTaskValidationRequest, GetTaskValidationResponse>
                     handler);
+
+    /**
+     * Retrieves a UserDefinedFunction using the specified identifier.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetUserDefinedFunctionResponse> getUserDefinedFunction(
+            GetUserDefinedFunctionRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetUserDefinedFunctionRequest, GetUserDefinedFunctionResponse>
+                    handler);
+
+    /**
+     * Retrieves a UserDefinedFunction validation using the specified identifier.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetUserDefinedFunctionValidationResponse>
+            getUserDefinedFunctionValidation(
+                    GetUserDefinedFunctionValidationRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    GetUserDefinedFunctionValidationRequest,
+                                    GetUserDefinedFunctionValidationResponse>
+                            handler);
 
     /**
      * Retrieves the status of the work request with the given ID.
@@ -1246,6 +1400,23 @@ public interface DataIntegrationAsync extends AutoCloseable {
     java.util.concurrent.Future<ListFoldersResponse> listFolders(
             ListFoldersRequest request,
             com.oracle.bmc.responses.AsyncHandler<ListFoldersRequest, ListFoldersResponse> handler);
+
+    /**
+     * Retrieves a list of function libraries in a project and provides options to filter the list.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListFunctionLibrariesResponse> listFunctionLibraries(
+            ListFunctionLibrariesRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListFunctionLibrariesRequest, ListFunctionLibrariesResponse>
+                    handler);
 
     /**
      * Retrieves a list of patches in an application and provides options to filter the list.
@@ -1465,6 +1636,41 @@ public interface DataIntegrationAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<ListTasksRequest, ListTasksResponse> handler);
 
     /**
+     * Retrieves a list of UserDefinedFunctionvalidations within the specified workspace.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListUserDefinedFunctionValidationsResponse>
+            listUserDefinedFunctionValidations(
+                    ListUserDefinedFunctionValidationsRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ListUserDefinedFunctionValidationsRequest,
+                                    ListUserDefinedFunctionValidationsResponse>
+                            handler);
+
+    /**
+     * Retrieves a list of UserDefinedFunctions in a function library.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListUserDefinedFunctionsResponse> listUserDefinedFunctions(
+            ListUserDefinedFunctionsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListUserDefinedFunctionsRequest, ListUserDefinedFunctionsResponse>
+                    handler);
+
+    /**
      * Retrieves a paginated list of errors for a given work request.
      *
      *
@@ -1655,6 +1861,22 @@ public interface DataIntegrationAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Updates a specific Function Library.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateFunctionLibraryResponse> updateFunctionLibrary(
+            UpdateFunctionLibraryRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            UpdateFunctionLibraryRequest, UpdateFunctionLibraryResponse>
+                    handler);
+
+    /**
      * Updates a specific pipeline.
      *
      * @param request The request object containing the details to send
@@ -1757,6 +1979,22 @@ public interface DataIntegrationAsync extends AutoCloseable {
             UpdateTaskScheduleRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             UpdateTaskScheduleRequest, UpdateTaskScheduleResponse>
+                    handler);
+
+    /**
+     * Updates a specific UserDefinedFunction.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateUserDefinedFunctionResponse> updateUserDefinedFunction(
+            UpdateUserDefinedFunctionRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            UpdateUserDefinedFunctionRequest, UpdateUserDefinedFunctionResponse>
                     handler);
 
     /**

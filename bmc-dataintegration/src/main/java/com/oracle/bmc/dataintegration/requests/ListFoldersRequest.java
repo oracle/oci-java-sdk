@@ -49,6 +49,11 @@ public class ListFoldersRequest extends com.oracle.bmc.requests.BmcRequest<java.
     private String name;
 
     /**
+     * This parameter can be used to filter objects by the names that match partially or fully with the given value.
+     */
+    private String nameContains;
+
+    /**
      * Used to filter by the identifier of the object.
      */
     private java.util.List<String> identifier;
@@ -222,6 +227,7 @@ public class ListFoldersRequest extends com.oracle.bmc.requests.BmcRequest<java.
             aggregatorKey(o.getAggregatorKey());
             fields(o.getFields());
             name(o.getName());
+            nameContains(o.getNameContains());
             identifier(o.getIdentifier());
             page(o.getPage());
             limit(o.getLimit());

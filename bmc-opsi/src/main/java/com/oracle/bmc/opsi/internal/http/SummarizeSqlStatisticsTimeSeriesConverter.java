@@ -61,6 +61,24 @@ public class SummarizeSqlStatisticsTimeSeriesConverter {
                             com.oracle.bmc.util.internal.CollectionFormatType.Multi);
         }
 
+        if (request.getExadataInsightId() != null) {
+            target =
+                    com.oracle.bmc.util.internal.HttpUtils.encodeCollectionFormatQueryParam(
+                            target,
+                            "exadataInsightId",
+                            request.getExadataInsightId(),
+                            com.oracle.bmc.util.internal.CollectionFormatType.Multi);
+        }
+
+        if (request.getCdbName() != null) {
+            target =
+                    com.oracle.bmc.util.internal.HttpUtils.encodeCollectionFormatQueryParam(
+                            target,
+                            "cdbName",
+                            request.getCdbName(),
+                            com.oracle.bmc.util.internal.CollectionFormatType.Multi);
+        }
+
         if (request.getHostName() != null) {
             target =
                     com.oracle.bmc.util.internal.HttpUtils.encodeCollectionFormatQueryParam(

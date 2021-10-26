@@ -702,13 +702,15 @@ public class ManagementAgentClient implements ManagementAgent {
     public GetManagementAgentInstallKeyContentResponse getManagementAgentInstallKeyContent(
             GetManagementAgentInstallKeyContentRequest request) {
         LOG.trace("Called getManagementAgentInstallKeyContent");
-        LOG.warn(
-                "getManagementAgentInstallKeyContent returns a stream, please make sure to close the stream to avoid any indefinite hangs");
-        if (this.apacheConnectionClosingStrategy != null) {
+        if (com.oracle.bmc.http.ApacheUtils.isExtraStreamLogsEnabled()) {
             LOG.warn(
-                    "ApacheConnectionClosingStrategy set to {}. For large streams with partial reads of stream, please use ImmediateClosingStrategy. "
-                            + "For small streams with partial reads of stream, please use GracefulClosingStrategy. More info in ApacheConnectorProperties",
-                    this.apacheConnectionClosingStrategy);
+                    "getManagementAgentInstallKeyContent returns a stream, please make sure to close the stream to avoid any indefinite hangs");
+            if (this.apacheConnectionClosingStrategy != null) {
+                LOG.warn(
+                        "ApacheConnectionClosingStrategy set to {}. For large streams with partial reads of stream, please use ImmediateClosingStrategy. "
+                                + "For small streams with partial reads of stream, please use GracefulClosingStrategy. More info in ApacheConnectorProperties",
+                        this.apacheConnectionClosingStrategy);
+            }
         }
         final GetManagementAgentInstallKeyContentRequest interceptedRequest =
                 GetManagementAgentInstallKeyContentConverter.interceptRequest(request);

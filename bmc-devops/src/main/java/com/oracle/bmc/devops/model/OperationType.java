@@ -29,6 +29,23 @@ public enum OperationType {
     CreateDeployment("CREATE_DEPLOYMENT"),
     UpdateDeployment("UPDATE_DEPLOYMENT"),
     DeleteDeployment("DELETE_DEPLOYMENT"),
+    CreateBuildPipeline("CREATE_BUILD_PIPELINE"),
+    UpdateBuildPipeline("UPDATE_BUILD_PIPELINE"),
+    DeleteBuildPipeline("DELETE_BUILD_PIPELINE"),
+    CreateBuildPipelineStage("CREATE_BUILD_PIPELINE_STAGE"),
+    UpdateBuildPipelineStage("UPDATE_BUILD_PIPELINE_STAGE"),
+    DeleteBuildPipelineStage("DELETE_BUILD_PIPELINE_STAGE"),
+    CreateConnection("CREATE_CONNECTION"),
+    UpdateConnection("UPDATE_CONNECTION"),
+    DeleteConnection("DELETE_CONNECTION"),
+    CreateTrigger("CREATE_TRIGGER"),
+    UpdateTrigger("UPDATE_TRIGGER"),
+    DeleteTrigger("DELETE_TRIGGER"),
+    ExecuteTrigger("EXECUTE_TRIGGER"),
+    CreateRepository("CREATE_REPOSITORY"),
+    UpdateRepository("UPDATE_REPOSITORY"),
+    DeleteRepository("DELETE_REPOSITORY"),
+    MirrorRepository("MIRROR_REPOSITORY"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this
