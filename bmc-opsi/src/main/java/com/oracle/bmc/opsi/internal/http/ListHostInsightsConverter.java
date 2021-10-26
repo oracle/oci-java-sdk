@@ -116,6 +116,22 @@ public class ListHostInsightsConverter {
                                     request.getSortBy().getValue()));
         }
 
+        if (request.getEnterpriseManagerBridgeId() != null) {
+            target =
+                    target.queryParam(
+                            "enterpriseManagerBridgeId",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getEnterpriseManagerBridgeId()));
+        }
+
+        if (request.getExadataInsightId() != null) {
+            target =
+                    target.queryParam(
+                            "exadataInsightId",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getExadataInsightId()));
+        }
+
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib = target.request();
 
         ib.accept(javax.ws.rs.core.MediaType.APPLICATION_JSON);

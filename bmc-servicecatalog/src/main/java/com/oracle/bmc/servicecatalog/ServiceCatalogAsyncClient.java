@@ -858,11 +858,15 @@ public class ServiceCatalogAsyncClient implements ServiceCatalogAsync {
                                     GetPrivateApplicationActionDownloadLogoResponse>
                             handler) {
         LOG.trace("Called async getPrivateApplicationActionDownloadLogo");
-        if (this.apacheConnectionClosingStrategy != null) {
+        if (com.oracle.bmc.http.ApacheUtils.isExtraStreamLogsEnabled()) {
             LOG.warn(
-                    "ApacheConnectionClosingStrategy set to {}. For large streams with partial reads of stream, please use ImmediateClosingStrategy. "
-                            + "For small streams with partial reads of stream, please use GracefulClosingStrategy. More info in ApacheConnectorProperties",
-                    this.apacheConnectionClosingStrategy);
+                    "getPrivateApplicationActionDownloadLogo returns a stream, please make sure to close the stream to avoid any indefinite hangs");
+            if (this.apacheConnectionClosingStrategy != null) {
+                LOG.warn(
+                        "ApacheConnectionClosingStrategy set to {}. For large streams with partial reads of stream, please use ImmediateClosingStrategy. "
+                                + "For small streams with partial reads of stream, please use GracefulClosingStrategy. More info in ApacheConnectorProperties",
+                        this.apacheConnectionClosingStrategy);
+            }
         }
         final GetPrivateApplicationActionDownloadLogoRequest interceptedRequest =
                 GetPrivateApplicationActionDownloadLogoConverter.interceptRequest(request);
@@ -956,11 +960,15 @@ public class ServiceCatalogAsyncClient implements ServiceCatalogAsync {
                                     GetPrivateApplicationPackageActionDownloadConfigResponse>
                             handler) {
         LOG.trace("Called async getPrivateApplicationPackageActionDownloadConfig");
-        if (this.apacheConnectionClosingStrategy != null) {
+        if (com.oracle.bmc.http.ApacheUtils.isExtraStreamLogsEnabled()) {
             LOG.warn(
-                    "ApacheConnectionClosingStrategy set to {}. For large streams with partial reads of stream, please use ImmediateClosingStrategy. "
-                            + "For small streams with partial reads of stream, please use GracefulClosingStrategy. More info in ApacheConnectorProperties",
-                    this.apacheConnectionClosingStrategy);
+                    "getPrivateApplicationPackageActionDownloadConfig returns a stream, please make sure to close the stream to avoid any indefinite hangs");
+            if (this.apacheConnectionClosingStrategy != null) {
+                LOG.warn(
+                        "ApacheConnectionClosingStrategy set to {}. For large streams with partial reads of stream, please use ImmediateClosingStrategy. "
+                                + "For small streams with partial reads of stream, please use GracefulClosingStrategy. More info in ApacheConnectorProperties",
+                        this.apacheConnectionClosingStrategy);
+            }
         }
         final GetPrivateApplicationPackageActionDownloadConfigRequest interceptedRequest =
                 GetPrivateApplicationPackageActionDownloadConfigConverter.interceptRequest(request);

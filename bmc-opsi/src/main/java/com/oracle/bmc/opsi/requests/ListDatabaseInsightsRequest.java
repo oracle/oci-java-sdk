@@ -216,6 +216,12 @@ public class ListDatabaseInsightsRequest
         }
     };
     /**
+     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of exadata insight resource.
+     *
+     */
+    private String exadataInsightId;
+
+    /**
      * Unique Oracle-assigned identifier for the request. If you need to contact
      * Oracle about a particular request, please provide the request ID.
      *
@@ -394,6 +400,7 @@ public class ListDatabaseInsightsRequest
             page(o.getPage());
             sortOrder(o.getSortOrder());
             sortBy(o.getSortBy());
+            exadataInsightId(o.getExadataInsightId());
             opcRequestId(o.getOpcRequestId());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());

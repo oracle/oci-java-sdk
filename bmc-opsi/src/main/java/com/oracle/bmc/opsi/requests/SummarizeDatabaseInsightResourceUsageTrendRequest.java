@@ -121,6 +121,12 @@ public class SummarizeDatabaseInsightResourceUsageTrendRequest
     private java.util.List<String> id;
 
     /**
+     * Optional list of exadata insight resource [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     *
+     */
+    private java.util.List<String> exadataInsightId;
+
+    /**
      * For list pagination. The value of the {@code opc-next-page} response header from
      * the previous "List" call. For important details about how pagination works,
      * see [List Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine).
@@ -307,6 +313,27 @@ public class SummarizeDatabaseInsightResourceUsageTrendRequest
             return this.id(java.util.Arrays.asList(singularValue));
         }
 
+        private java.util.List<String> exadataInsightId = null;
+
+        /**
+         * Optional list of exadata insight resource [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         *
+         * @return this builder instance
+         */
+        public Builder exadataInsightId(java.util.List<String> exadataInsightId) {
+            this.exadataInsightId = exadataInsightId;
+            return this;
+        }
+
+        /**
+         * Singular setter. Optional list of exadata insight resource [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         *
+         * @return this builder instance
+         */
+        public Builder exadataInsightId(String singularValue) {
+            return this.exadataInsightId(java.util.Arrays.asList(singularValue));
+        }
+
         private java.util.List<String> hostName = null;
 
         /**
@@ -474,6 +501,7 @@ public class SummarizeDatabaseInsightResourceUsageTrendRequest
             databaseType(o.getDatabaseType());
             databaseId(o.getDatabaseId());
             id(o.getId());
+            exadataInsightId(o.getExadataInsightId());
             page(o.getPage());
             sortOrder(o.getSortOrder());
             sortBy(o.getSortBy());

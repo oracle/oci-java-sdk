@@ -44,6 +44,24 @@ public class ListImportableEnterpriseManagerEntitiesRequest
     private String page;
 
     /**
+     * Filter by one or more Enterprise Manager entity types. Currently, the supported types are "oracle_pdb", "oracle_database", "host", "oracle_dbmachine", "oracle_exa_cloud_service", and "oracle_oci_exadata_cloud_service". If this parameter is not specified, targets of all supported entity types are returned by default.
+     *
+     */
+    private java.util.List<String> enterpriseManagerEntityType;
+
+    /**
+     * Used in combination with enterpriseManagerParentEntityIdentifier to return the members of a particular Enterprise Manager parent entity. Both enterpriseManagerIdentifier and enterpriseManagerParentEntityIdentifier must be specified to identify a particular Enterprise Manager parent entity.
+     *
+     */
+    private String enterpriseManagerIdentifier;
+
+    /**
+     * Used in combination with enterpriseManagerIdentifier to return the members of a particular Enterprise Manager parent entity. Both enterpriseManagerIdentifier and enterpriseManagerParentEntityIdentifier must be specified to identify a particular  Enterprise Manager parent entity.
+     *
+     */
+    private String enterpriseManagerParentEntityIdentifier;
+
+    /**
      * Unique Oracle-assigned identifier for the request. If you need to contact
      * Oracle about a particular request, please provide the request ID.
      *
@@ -56,6 +74,28 @@ public class ListImportableEnterpriseManagerEntitiesRequest
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private java.util.List<String> enterpriseManagerEntityType = null;
+
+        /**
+         * Filter by one or more Enterprise Manager entity types. Currently, the supported types are "oracle_pdb", "oracle_database", "host", "oracle_dbmachine", "oracle_exa_cloud_service", and "oracle_oci_exadata_cloud_service". If this parameter is not specified, targets of all supported entity types are returned by default.
+         *
+         * @return this builder instance
+         */
+        public Builder enterpriseManagerEntityType(
+                java.util.List<String> enterpriseManagerEntityType) {
+            this.enterpriseManagerEntityType = enterpriseManagerEntityType;
+            return this;
+        }
+
+        /**
+         * Singular setter. Filter by one or more Enterprise Manager entity types. Currently, the supported types are "oracle_pdb", "oracle_database", "host", "oracle_dbmachine", "oracle_exa_cloud_service", and "oracle_oci_exadata_cloud_service". If this parameter is not specified, targets of all supported entity types are returned by default.
+         *
+         * @return this builder instance
+         */
+        public Builder enterpriseManagerEntityType(String singularValue) {
+            return this.enterpriseManagerEntityType(java.util.Arrays.asList(singularValue));
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -88,6 +128,9 @@ public class ListImportableEnterpriseManagerEntitiesRequest
             enterpriseManagerBridgeId(o.getEnterpriseManagerBridgeId());
             limit(o.getLimit());
             page(o.getPage());
+            enterpriseManagerEntityType(o.getEnterpriseManagerEntityType());
+            enterpriseManagerIdentifier(o.getEnterpriseManagerIdentifier());
+            enterpriseManagerParentEntityIdentifier(o.getEnterpriseManagerParentEntityIdentifier());
             opcRequestId(o.getOpcRequestId());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());

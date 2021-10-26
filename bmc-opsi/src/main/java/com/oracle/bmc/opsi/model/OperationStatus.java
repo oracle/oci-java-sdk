@@ -12,6 +12,7 @@ package com.oracle.bmc.opsi.model;
 public enum OperationStatus {
     Accepted("ACCEPTED"),
     InProgress("IN_PROGRESS"),
+    Waiting("WAITING"),
     Failed("FAILED"),
     Succeeded("SUCCEEDED"),
     Canceling("CANCELING"),

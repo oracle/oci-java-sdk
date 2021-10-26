@@ -22,6 +22,7 @@ import com.fasterxml.jackson.databind.ObjectReader;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder;
 import com.google.common.base.Optional;
+import com.oracle.bmc.http.ApacheUtils;
 import com.oracle.bmc.io.internal.AutoCloseableContentLengthVerifyingInputStream;
 import com.oracle.bmc.io.internal.ContentLengthVerifyingInputStream;
 import com.oracle.bmc.io.internal.WrappedResponseInputStream;
@@ -248,9 +249,11 @@ public class ResponseHelper {
                                             contentLengthHeader.get().get(0),
                                             Long.class);
                             if (SHOULD_AUTO_CLOSE_RESPONSE_INPUTSTREAM) {
-                                LOG.warn(
-                                        "Wrapping response stream into auto closeable stream, to disable this, please "
-                                                + "use ResponseHelper.shouldAutoCloseResponseInputStream(false)");
+                                if (ApacheUtils.isExtraStreamLogsEnabled()) {
+                                    LOG.warn(
+                                            "Wrapping response stream into auto closeable stream, to disable this, please "
+                                                    + "use ResponseHelper.shouldAutoCloseResponseInputStream(false)");
+                                }
                                 inputStream =
                                         new AutoCloseableContentLengthVerifyingInputStream(
                                                 inputStream, contentLength);

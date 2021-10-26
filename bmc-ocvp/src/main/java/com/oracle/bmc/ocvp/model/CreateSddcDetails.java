@@ -318,7 +318,7 @@ public class CreateSddcDetails {
     }
 
     /**
-     * The availability domain to create the SDDC's ESXi hosts in.
+     * The availability domain to create the SDDC's ESXi hosts in. For multi-AD SDDC deployment, set to {@code multi-AD}.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("computeAvailabilityDomain")

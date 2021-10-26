@@ -46,7 +46,7 @@ public interface Link extends AutoCloseable {
     void setRegion(String regionId);
 
     /**
-     * Terminate the link.
+     * Starts the link termination workflow.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.

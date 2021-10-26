@@ -123,6 +123,24 @@ public class UpdateConnectionFromAtp extends UpdateConnectionDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("tnsAlias")
+        private String tnsAlias;
+
+        public Builder tnsAlias(String tnsAlias) {
+            this.tnsAlias = tnsAlias;
+            this.__explicitlySet__.add("tnsAlias");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("tnsNames")
+        private java.util.List<String> tnsNames;
+
+        public Builder tnsNames(java.util.List<String> tnsNames) {
+            this.tnsNames = tnsNames;
+            this.__explicitlySet__.add("tnsNames");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("username")
         private String username;
 
@@ -166,6 +184,8 @@ public class UpdateConnectionFromAtp extends UpdateConnectionDetails {
                             identifier,
                             connectionProperties,
                             registryMetadata,
+                            tnsAlias,
+                            tnsNames,
                             username,
                             password,
                             passwordSecret);
@@ -186,6 +206,8 @@ public class UpdateConnectionFromAtp extends UpdateConnectionDetails {
                             .identifier(o.getIdentifier())
                             .connectionProperties(o.getConnectionProperties())
                             .registryMetadata(o.getRegistryMetadata())
+                            .tnsAlias(o.getTnsAlias())
+                            .tnsNames(o.getTnsNames())
                             .username(o.getUsername())
                             .password(o.getPassword())
                             .passwordSecret(o.getPasswordSecret());
@@ -214,6 +236,8 @@ public class UpdateConnectionFromAtp extends UpdateConnectionDetails {
             String identifier,
             java.util.List<ConnectionProperty> connectionProperties,
             RegistryMetadata registryMetadata,
+            String tnsAlias,
+            java.util.List<String> tnsNames,
             String username,
             String password,
             SensitiveAttribute passwordSecret) {
@@ -228,10 +252,24 @@ public class UpdateConnectionFromAtp extends UpdateConnectionDetails {
                 identifier,
                 connectionProperties,
                 registryMetadata);
+        this.tnsAlias = tnsAlias;
+        this.tnsNames = tnsNames;
         this.username = username;
         this.password = password;
         this.passwordSecret = passwordSecret;
     }
+
+    /**
+     * The Autonomous Transaction Processing instance service name.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("tnsAlias")
+    String tnsAlias;
+
+    /**
+     * Array of service names that are available for selection in the tnsAlias property.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("tnsNames")
+    java.util.List<String> tnsNames;
 
     /**
      * The user name for the connection.

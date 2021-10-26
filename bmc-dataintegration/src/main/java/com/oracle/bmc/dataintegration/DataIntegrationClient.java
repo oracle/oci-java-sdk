@@ -827,6 +827,40 @@ public class DataIntegrationClient implements DataIntegration {
     }
 
     @Override
+    public CreateFunctionLibraryResponse createFunctionLibrary(
+            CreateFunctionLibraryRequest request) {
+        LOG.trace("Called createFunctionLibrary");
+        final CreateFunctionLibraryRequest interceptedRequest =
+                CreateFunctionLibraryConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateFunctionLibraryConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, CreateFunctionLibraryResponse>
+                transformer = CreateFunctionLibraryConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getCreateFunctionLibraryDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public CreatePatchResponse createPatch(CreatePatchRequest request) {
         LOG.trace("Called createPatch");
         final CreatePatchRequest interceptedRequest =
@@ -1117,6 +1151,79 @@ public class DataIntegrationClient implements DataIntegration {
                                         client.post(
                                                 ib,
                                                 retriedRequest.getCreateTaskValidationDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public CreateUserDefinedFunctionResponse createUserDefinedFunction(
+            CreateUserDefinedFunctionRequest request) {
+        LOG.trace("Called createUserDefinedFunction");
+        final CreateUserDefinedFunctionRequest interceptedRequest =
+                CreateUserDefinedFunctionConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateUserDefinedFunctionConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, CreateUserDefinedFunctionResponse>
+                transformer = CreateUserDefinedFunctionConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getCreateUserDefinedFunctionDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public CreateUserDefinedFunctionValidationResponse createUserDefinedFunctionValidation(
+            CreateUserDefinedFunctionValidationRequest request) {
+        LOG.trace("Called createUserDefinedFunctionValidation");
+        final CreateUserDefinedFunctionValidationRequest interceptedRequest =
+                CreateUserDefinedFunctionValidationConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateUserDefinedFunctionValidationConverter.fromRequest(
+                        client, interceptedRequest);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, CreateUserDefinedFunctionValidationResponse>
+                transformer = CreateUserDefinedFunctionValidationConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getCreateUserDefinedFunctionValidationDetails(),
                                                 retriedRequest);
                                 return transformer.apply(response);
                             });
@@ -1426,6 +1533,36 @@ public class DataIntegrationClient implements DataIntegration {
     }
 
     @Override
+    public DeleteFunctionLibraryResponse deleteFunctionLibrary(
+            DeleteFunctionLibraryRequest request) {
+        LOG.trace("Called deleteFunctionLibrary");
+        final DeleteFunctionLibraryRequest interceptedRequest =
+                DeleteFunctionLibraryConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteFunctionLibraryConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteFunctionLibraryResponse>
+                transformer = DeleteFunctionLibraryConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.delete(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public DeletePatchResponse deletePatch(DeletePatchRequest request) {
         LOG.trace("Called deletePatch");
         final DeletePatchRequest interceptedRequest =
@@ -1666,6 +1803,69 @@ public class DataIntegrationClient implements DataIntegration {
                 DeleteTaskValidationConverter.fromRequest(client, interceptedRequest);
         com.google.common.base.Function<javax.ws.rs.core.Response, DeleteTaskValidationResponse>
                 transformer = DeleteTaskValidationConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.delete(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public DeleteUserDefinedFunctionResponse deleteUserDefinedFunction(
+            DeleteUserDefinedFunctionRequest request) {
+        LOG.trace("Called deleteUserDefinedFunction");
+        final DeleteUserDefinedFunctionRequest interceptedRequest =
+                DeleteUserDefinedFunctionConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteUserDefinedFunctionConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, DeleteUserDefinedFunctionResponse>
+                transformer = DeleteUserDefinedFunctionConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.delete(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public DeleteUserDefinedFunctionValidationResponse deleteUserDefinedFunctionValidation(
+            DeleteUserDefinedFunctionValidationRequest request) {
+        LOG.trace("Called deleteUserDefinedFunctionValidation");
+        final DeleteUserDefinedFunctionValidationRequest interceptedRequest =
+                DeleteUserDefinedFunctionValidationConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteUserDefinedFunctionValidationConverter.fromRequest(
+                        client, interceptedRequest);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, DeleteUserDefinedFunctionValidationResponse>
+                transformer = DeleteUserDefinedFunctionValidationConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
@@ -2056,6 +2256,34 @@ public class DataIntegrationClient implements DataIntegration {
     }
 
     @Override
+    public GetFunctionLibraryResponse getFunctionLibrary(GetFunctionLibraryRequest request) {
+        LOG.trace("Called getFunctionLibrary");
+        final GetFunctionLibraryRequest interceptedRequest =
+                GetFunctionLibraryConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetFunctionLibraryConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, GetFunctionLibraryResponse>
+                transformer = GetFunctionLibraryConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public GetPatchResponse getPatch(GetPatchRequest request) {
         LOG.trace("Called getPatch");
         final GetPatchRequest interceptedRequest = GetPatchConverter.interceptRequest(request);
@@ -2368,6 +2596,65 @@ public class DataIntegrationClient implements DataIntegration {
                 GetTaskValidationConverter.fromRequest(client, interceptedRequest);
         com.google.common.base.Function<javax.ws.rs.core.Response, GetTaskValidationResponse>
                 transformer = GetTaskValidationConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public GetUserDefinedFunctionResponse getUserDefinedFunction(
+            GetUserDefinedFunctionRequest request) {
+        LOG.trace("Called getUserDefinedFunction");
+        final GetUserDefinedFunctionRequest interceptedRequest =
+                GetUserDefinedFunctionConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetUserDefinedFunctionConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, GetUserDefinedFunctionResponse>
+                transformer = GetUserDefinedFunctionConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public GetUserDefinedFunctionValidationResponse getUserDefinedFunctionValidation(
+            GetUserDefinedFunctionValidationRequest request) {
+        LOG.trace("Called getUserDefinedFunctionValidation");
+        final GetUserDefinedFunctionValidationRequest interceptedRequest =
+                GetUserDefinedFunctionValidationConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetUserDefinedFunctionValidationConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, GetUserDefinedFunctionValidationResponse>
+                transformer = GetUserDefinedFunctionValidationConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
@@ -2738,6 +3025,35 @@ public class DataIntegrationClient implements DataIntegration {
                 ListFoldersConverter.fromRequest(client, interceptedRequest);
         com.google.common.base.Function<javax.ws.rs.core.Response, ListFoldersResponse>
                 transformer = ListFoldersConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ListFunctionLibrariesResponse listFunctionLibraries(
+            ListFunctionLibrariesRequest request) {
+        LOG.trace("Called listFunctionLibraries");
+        final ListFunctionLibrariesRequest interceptedRequest =
+                ListFunctionLibrariesConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListFunctionLibrariesConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, ListFunctionLibrariesResponse>
+                transformer = ListFunctionLibrariesConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
@@ -3150,6 +3466,65 @@ public class DataIntegrationClient implements DataIntegration {
     }
 
     @Override
+    public ListUserDefinedFunctionValidationsResponse listUserDefinedFunctionValidations(
+            ListUserDefinedFunctionValidationsRequest request) {
+        LOG.trace("Called listUserDefinedFunctionValidations");
+        final ListUserDefinedFunctionValidationsRequest interceptedRequest =
+                ListUserDefinedFunctionValidationsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListUserDefinedFunctionValidationsConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ListUserDefinedFunctionValidationsResponse>
+                transformer = ListUserDefinedFunctionValidationsConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ListUserDefinedFunctionsResponse listUserDefinedFunctions(
+            ListUserDefinedFunctionsRequest request) {
+        LOG.trace("Called listUserDefinedFunctions");
+        final ListUserDefinedFunctionsRequest interceptedRequest =
+                ListUserDefinedFunctionsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListUserDefinedFunctionsConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, ListUserDefinedFunctionsResponse>
+                transformer = ListUserDefinedFunctionsConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public ListWorkRequestErrorsResponse listWorkRequestErrors(
             ListWorkRequestErrorsRequest request) {
         LOG.trace("Called listWorkRequestErrors");
@@ -3518,6 +3893,39 @@ public class DataIntegrationClient implements DataIntegration {
     }
 
     @Override
+    public UpdateFunctionLibraryResponse updateFunctionLibrary(
+            UpdateFunctionLibraryRequest request) {
+        LOG.trace("Called updateFunctionLibrary");
+        final UpdateFunctionLibraryRequest interceptedRequest =
+                UpdateFunctionLibraryConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateFunctionLibraryConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateFunctionLibraryResponse>
+                transformer = UpdateFunctionLibraryConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.put(
+                                                ib,
+                                                retriedRequest.getUpdateFunctionLibraryDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public UpdatePipelineResponse updatePipeline(UpdatePipelineRequest request) {
         LOG.trace("Called updatePipeline");
         final UpdatePipelineRequest interceptedRequest =
@@ -3735,6 +4143,41 @@ public class DataIntegrationClient implements DataIntegration {
                                         client.put(
                                                 ib,
                                                 retriedRequest.getUpdateTaskScheduleDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public UpdateUserDefinedFunctionResponse updateUserDefinedFunction(
+            UpdateUserDefinedFunctionRequest request) {
+        LOG.trace("Called updateUserDefinedFunction");
+        final UpdateUserDefinedFunctionRequest interceptedRequest =
+                UpdateUserDefinedFunctionConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateUserDefinedFunctionConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, UpdateUserDefinedFunctionResponse>
+                transformer = UpdateUserDefinedFunctionConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.put(
+                                                ib,
+                                                retriedRequest
+                                                        .getUpdateUserDefinedFunctionDetails(),
                                                 retriedRequest);
                                 return transformer.apply(response);
                             });

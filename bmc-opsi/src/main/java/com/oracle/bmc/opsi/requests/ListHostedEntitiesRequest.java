@@ -102,6 +102,12 @@ public class ListHostedEntitiesRequest extends com.oracle.bmc.requests.BmcReques
         }
     };
     /**
+     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of exadata insight resource.
+     *
+     */
+    private String exadataInsightId;
+
+    /**
      * For list pagination. The maximum number of results per page, or items to
      * return in a paginated "List" call.
      * For important details about how pagination works, see
@@ -238,6 +244,7 @@ public class ListHostedEntitiesRequest extends com.oracle.bmc.requests.BmcReques
             timeIntervalStart(o.getTimeIntervalStart());
             timeIntervalEnd(o.getTimeIntervalEnd());
             platformType(o.getPlatformType());
+            exadataInsightId(o.getExadataInsightId());
             limit(o.getLimit());
             page(o.getPage());
             sortOrder(o.getSortOrder());

@@ -988,13 +988,15 @@ public class ResourceManagerClient implements ResourceManager {
     @Override
     public GetJobTfConfigResponse getJobTfConfig(GetJobTfConfigRequest request) {
         LOG.trace("Called getJobTfConfig");
-        LOG.warn(
-                "getJobTfConfig returns a stream, please make sure to close the stream to avoid any indefinite hangs");
-        if (this.apacheConnectionClosingStrategy != null) {
+        if (com.oracle.bmc.http.ApacheUtils.isExtraStreamLogsEnabled()) {
             LOG.warn(
-                    "ApacheConnectionClosingStrategy set to {}. For large streams with partial reads of stream, please use ImmediateClosingStrategy. "
-                            + "For small streams with partial reads of stream, please use GracefulClosingStrategy. More info in ApacheConnectorProperties",
-                    this.apacheConnectionClosingStrategy);
+                    "getJobTfConfig returns a stream, please make sure to close the stream to avoid any indefinite hangs");
+            if (this.apacheConnectionClosingStrategy != null) {
+                LOG.warn(
+                        "ApacheConnectionClosingStrategy set to {}. For large streams with partial reads of stream, please use ImmediateClosingStrategy. "
+                                + "For small streams with partial reads of stream, please use GracefulClosingStrategy. More info in ApacheConnectorProperties",
+                        this.apacheConnectionClosingStrategy);
+            }
         }
         final GetJobTfConfigRequest interceptedRequest =
                 GetJobTfConfigConverter.interceptRequest(request);
@@ -1024,13 +1026,15 @@ public class ResourceManagerClient implements ResourceManager {
     @Override
     public GetJobTfStateResponse getJobTfState(GetJobTfStateRequest request) {
         LOG.trace("Called getJobTfState");
-        LOG.warn(
-                "getJobTfState returns a stream, please make sure to close the stream to avoid any indefinite hangs");
-        if (this.apacheConnectionClosingStrategy != null) {
+        if (com.oracle.bmc.http.ApacheUtils.isExtraStreamLogsEnabled()) {
             LOG.warn(
-                    "ApacheConnectionClosingStrategy set to {}. For large streams with partial reads of stream, please use ImmediateClosingStrategy. "
-                            + "For small streams with partial reads of stream, please use GracefulClosingStrategy. More info in ApacheConnectorProperties",
-                    this.apacheConnectionClosingStrategy);
+                    "getJobTfState returns a stream, please make sure to close the stream to avoid any indefinite hangs");
+            if (this.apacheConnectionClosingStrategy != null) {
+                LOG.warn(
+                        "ApacheConnectionClosingStrategy set to {}. For large streams with partial reads of stream, please use ImmediateClosingStrategy. "
+                                + "For small streams with partial reads of stream, please use GracefulClosingStrategy. More info in ApacheConnectorProperties",
+                        this.apacheConnectionClosingStrategy);
+            }
         }
         final GetJobTfStateRequest interceptedRequest =
                 GetJobTfStateConverter.interceptRequest(request);
@@ -1087,13 +1091,15 @@ public class ResourceManagerClient implements ResourceManager {
     @Override
     public GetStackTfConfigResponse getStackTfConfig(GetStackTfConfigRequest request) {
         LOG.trace("Called getStackTfConfig");
-        LOG.warn(
-                "getStackTfConfig returns a stream, please make sure to close the stream to avoid any indefinite hangs");
-        if (this.apacheConnectionClosingStrategy != null) {
+        if (com.oracle.bmc.http.ApacheUtils.isExtraStreamLogsEnabled()) {
             LOG.warn(
-                    "ApacheConnectionClosingStrategy set to {}. For large streams with partial reads of stream, please use ImmediateClosingStrategy. "
-                            + "For small streams with partial reads of stream, please use GracefulClosingStrategy. More info in ApacheConnectorProperties",
-                    this.apacheConnectionClosingStrategy);
+                    "getStackTfConfig returns a stream, please make sure to close the stream to avoid any indefinite hangs");
+            if (this.apacheConnectionClosingStrategy != null) {
+                LOG.warn(
+                        "ApacheConnectionClosingStrategy set to {}. For large streams with partial reads of stream, please use ImmediateClosingStrategy. "
+                                + "For small streams with partial reads of stream, please use GracefulClosingStrategy. More info in ApacheConnectorProperties",
+                        this.apacheConnectionClosingStrategy);
+            }
         }
         final GetStackTfConfigRequest interceptedRequest =
                 GetStackTfConfigConverter.interceptRequest(request);
@@ -1123,13 +1129,15 @@ public class ResourceManagerClient implements ResourceManager {
     @Override
     public GetStackTfStateResponse getStackTfState(GetStackTfStateRequest request) {
         LOG.trace("Called getStackTfState");
-        LOG.warn(
-                "getStackTfState returns a stream, please make sure to close the stream to avoid any indefinite hangs");
-        if (this.apacheConnectionClosingStrategy != null) {
+        if (com.oracle.bmc.http.ApacheUtils.isExtraStreamLogsEnabled()) {
             LOG.warn(
-                    "ApacheConnectionClosingStrategy set to {}. For large streams with partial reads of stream, please use ImmediateClosingStrategy. "
-                            + "For small streams with partial reads of stream, please use GracefulClosingStrategy. More info in ApacheConnectorProperties",
-                    this.apacheConnectionClosingStrategy);
+                    "getStackTfState returns a stream, please make sure to close the stream to avoid any indefinite hangs");
+            if (this.apacheConnectionClosingStrategy != null) {
+                LOG.warn(
+                        "ApacheConnectionClosingStrategy set to {}. For large streams with partial reads of stream, please use ImmediateClosingStrategy. "
+                                + "For small streams with partial reads of stream, please use GracefulClosingStrategy. More info in ApacheConnectorProperties",
+                        this.apacheConnectionClosingStrategy);
+            }
         }
         final GetStackTfStateRequest interceptedRequest =
                 GetStackTfStateConverter.interceptRequest(request);
@@ -1187,13 +1195,15 @@ public class ResourceManagerClient implements ResourceManager {
     @Override
     public GetTemplateLogoResponse getTemplateLogo(GetTemplateLogoRequest request) {
         LOG.trace("Called getTemplateLogo");
-        LOG.warn(
-                "getTemplateLogo returns a stream, please make sure to close the stream to avoid any indefinite hangs");
-        if (this.apacheConnectionClosingStrategy != null) {
+        if (com.oracle.bmc.http.ApacheUtils.isExtraStreamLogsEnabled()) {
             LOG.warn(
-                    "ApacheConnectionClosingStrategy set to {}. For large streams with partial reads of stream, please use ImmediateClosingStrategy. "
-                            + "For small streams with partial reads of stream, please use GracefulClosingStrategy. More info in ApacheConnectorProperties",
-                    this.apacheConnectionClosingStrategy);
+                    "getTemplateLogo returns a stream, please make sure to close the stream to avoid any indefinite hangs");
+            if (this.apacheConnectionClosingStrategy != null) {
+                LOG.warn(
+                        "ApacheConnectionClosingStrategy set to {}. For large streams with partial reads of stream, please use ImmediateClosingStrategy. "
+                                + "For small streams with partial reads of stream, please use GracefulClosingStrategy. More info in ApacheConnectorProperties",
+                        this.apacheConnectionClosingStrategy);
+            }
         }
         final GetTemplateLogoRequest interceptedRequest =
                 GetTemplateLogoConverter.interceptRequest(request);
@@ -1223,13 +1233,15 @@ public class ResourceManagerClient implements ResourceManager {
     @Override
     public GetTemplateTfConfigResponse getTemplateTfConfig(GetTemplateTfConfigRequest request) {
         LOG.trace("Called getTemplateTfConfig");
-        LOG.warn(
-                "getTemplateTfConfig returns a stream, please make sure to close the stream to avoid any indefinite hangs");
-        if (this.apacheConnectionClosingStrategy != null) {
+        if (com.oracle.bmc.http.ApacheUtils.isExtraStreamLogsEnabled()) {
             LOG.warn(
-                    "ApacheConnectionClosingStrategy set to {}. For large streams with partial reads of stream, please use ImmediateClosingStrategy. "
-                            + "For small streams with partial reads of stream, please use GracefulClosingStrategy. More info in ApacheConnectorProperties",
-                    this.apacheConnectionClosingStrategy);
+                    "getTemplateTfConfig returns a stream, please make sure to close the stream to avoid any indefinite hangs");
+            if (this.apacheConnectionClosingStrategy != null) {
+                LOG.warn(
+                        "ApacheConnectionClosingStrategy set to {}. For large streams with partial reads of stream, please use ImmediateClosingStrategy. "
+                                + "For small streams with partial reads of stream, please use GracefulClosingStrategy. More info in ApacheConnectorProperties",
+                        this.apacheConnectionClosingStrategy);
+            }
         }
         final GetTemplateTfConfigRequest interceptedRequest =
                 GetTemplateTfConfigConverter.interceptRequest(request);

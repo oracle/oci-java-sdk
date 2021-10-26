@@ -46,7 +46,7 @@ public interface OrdersAsync extends AutoCloseable {
     void setRegion(String regionId);
 
     /**
-     * Triggers an order activation workflow on behalf of the tenant given by compartment id in the body.
+     * Triggers an order activation workflow on behalf of the tenant, given by compartment ID in the body.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.

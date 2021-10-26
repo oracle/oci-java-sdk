@@ -5,7 +5,7 @@
 package com.oracle.bmc.tenantmanagercontrolplane.model;
 
 /**
- * The parameters for activating an order subscription in a tenancy
+ * The parameters for activating an order subscription in a tenancy.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -61,7 +61,7 @@ public class ActivateOrderDetails {
     }
 
     /**
-     * Tenant Id to activate the Order.
+     * Tenant ID to activate the order.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     String compartmentId;

@@ -158,6 +158,11 @@ public class ListTaskRunsRequest extends com.oracle.bmc.requests.BmcRequest<java
      */
     private java.util.List<String> filter;
 
+    /**
+     * This parameter can be used to filter objects by the names starting with the given value.
+     */
+    private String nameStartsWith;
+
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListTaskRunsRequest, java.lang.Void> {
@@ -282,6 +287,7 @@ public class ListTaskRunsRequest extends com.oracle.bmc.requests.BmcRequest<java
             sortOrder(o.getSortOrder());
             sortBy(o.getSortBy());
             filter(o.getFilter());
+            nameStartsWith(o.getNameStartsWith());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;

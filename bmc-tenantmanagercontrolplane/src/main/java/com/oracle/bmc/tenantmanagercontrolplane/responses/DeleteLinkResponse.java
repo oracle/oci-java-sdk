@@ -19,9 +19,17 @@ public class DeleteLinkResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private String opcRequestId;
 
-    private DeleteLinkResponse(int __httpStatusCode__, String opcRequestId) {
+    /**
+     * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query status of the asynchronous operation.
+     *
+     */
+    private String opcWorkRequestId;
+
+    private DeleteLinkResponse(
+            int __httpStatusCode__, String opcRequestId, String opcWorkRequestId) {
         super(__httpStatusCode__);
         this.opcRequestId = opcRequestId;
+        this.opcWorkRequestId = opcWorkRequestId;
     }
 
     public static class Builder {
@@ -39,12 +47,13 @@ public class DeleteLinkResponse extends com.oracle.bmc.responses.BmcResponse {
         public Builder copy(DeleteLinkResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             opcRequestId(o.getOpcRequestId());
+            opcWorkRequestId(o.getOpcWorkRequestId());
 
             return this;
         }
 
         public DeleteLinkResponse build() {
-            return new DeleteLinkResponse(__httpStatusCode__, opcRequestId);
+            return new DeleteLinkResponse(__httpStatusCode__, opcRequestId, opcWorkRequestId);
         }
     }
 }

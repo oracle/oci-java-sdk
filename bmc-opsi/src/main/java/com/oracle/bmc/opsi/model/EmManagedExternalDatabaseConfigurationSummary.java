@@ -86,6 +86,15 @@ public class EmManagedExternalDatabaseConfigurationSummary extends DatabaseConfi
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("cdbName")
+        private String cdbName;
+
+        public Builder cdbName(String cdbName) {
+            this.cdbName = cdbName;
+            this.__explicitlySet__.add("cdbName");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
@@ -141,6 +150,15 @@ public class EmManagedExternalDatabaseConfigurationSummary extends DatabaseConfi
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("exadataDetails")
+        private ExadataDetails exadataDetails;
+
+        public Builder exadataDetails(ExadataDetails exadataDetails) {
+            this.exadataDetails = exadataDetails;
+            this.__explicitlySet__.add("exadataDetails");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -153,12 +171,14 @@ public class EmManagedExternalDatabaseConfigurationSummary extends DatabaseConfi
                             databaseDisplayName,
                             databaseType,
                             databaseVersion,
+                            cdbName,
                             definedTags,
                             freeformTags,
                             processorCount,
                             enterpriseManagerIdentifier,
                             enterpriseManagerBridgeId,
-                            instances);
+                            instances,
+                            exadataDetails);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -172,12 +192,14 @@ public class EmManagedExternalDatabaseConfigurationSummary extends DatabaseConfi
                             .databaseDisplayName(o.getDatabaseDisplayName())
                             .databaseType(o.getDatabaseType())
                             .databaseVersion(o.getDatabaseVersion())
+                            .cdbName(o.getCdbName())
                             .definedTags(o.getDefinedTags())
                             .freeformTags(o.getFreeformTags())
                             .processorCount(o.getProcessorCount())
                             .enterpriseManagerIdentifier(o.getEnterpriseManagerIdentifier())
                             .enterpriseManagerBridgeId(o.getEnterpriseManagerBridgeId())
-                            .instances(o.getInstances());
+                            .instances(o.getInstances())
+                            .exadataDetails(o.getExadataDetails());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -199,12 +221,14 @@ public class EmManagedExternalDatabaseConfigurationSummary extends DatabaseConfi
             String databaseDisplayName,
             String databaseType,
             String databaseVersion,
+            String cdbName,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             java.util.Map<String, String> freeformTags,
             Integer processorCount,
             String enterpriseManagerIdentifier,
             String enterpriseManagerBridgeId,
-            java.util.List<HostInstanceMap> instances) {
+            java.util.List<HostInstanceMap> instances,
+            ExadataDetails exadataDetails) {
         super(
                 databaseInsightId,
                 compartmentId,
@@ -212,12 +236,14 @@ public class EmManagedExternalDatabaseConfigurationSummary extends DatabaseConfi
                 databaseDisplayName,
                 databaseType,
                 databaseVersion,
+                cdbName,
                 definedTags,
                 freeformTags,
                 processorCount);
         this.enterpriseManagerIdentifier = enterpriseManagerIdentifier;
         this.enterpriseManagerBridgeId = enterpriseManagerBridgeId;
         this.instances = instances;
+        this.exadataDetails = exadataDetails;
     }
 
     /**
@@ -237,6 +263,9 @@ public class EmManagedExternalDatabaseConfigurationSummary extends DatabaseConfi
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("instances")
     java.util.List<HostInstanceMap> instances;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("exadataDetails")
+    ExadataDetails exadataDetails;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

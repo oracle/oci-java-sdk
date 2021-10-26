@@ -30,6 +30,11 @@ public class ListApplicationsRequest extends com.oracle.bmc.requests.BmcRequest<
     private String name;
 
     /**
+     * This parameter can be used to filter objects by the names that match partially or fully with the given value.
+     */
+    private String nameContains;
+
+    /**
      * Used to filter by the identifier of the published object.
      *
      */
@@ -215,6 +220,7 @@ public class ListApplicationsRequest extends com.oracle.bmc.requests.BmcRequest<
         public Builder copy(ListApplicationsRequest o) {
             workspaceId(o.getWorkspaceId());
             name(o.getName());
+            nameContains(o.getNameContains());
             identifier(o.getIdentifier());
             fields(o.getFields());
             limit(o.getLimit());

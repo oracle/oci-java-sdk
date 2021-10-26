@@ -13,6 +13,9 @@ public class CircuitBreakerUtils {
     @Setter @Getter
     private static volatile CircuitBreakerConfiguration defaultCircuitBreakerConfiguration = null;
 
+    @Setter @Getter
+    private static volatile CircuitBreakerConfiguration noCircuitBreakerConfiguration = null;
+
     /**
      * Get default CircuitBreakerConfiguration
      * @return the default CircuitBreakerConfiguration

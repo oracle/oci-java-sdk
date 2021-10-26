@@ -87,6 +87,15 @@ public class CreateEmManagedExternalDatabaseInsightDetails extends CreateDatabas
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("exadataInsightId")
+        private String exadataInsightId;
+
+        public Builder exadataInsightId(String exadataInsightId) {
+            this.exadataInsightId = exadataInsightId;
+            this.__explicitlySet__.add("exadataInsightId");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -98,7 +107,8 @@ public class CreateEmManagedExternalDatabaseInsightDetails extends CreateDatabas
                             definedTags,
                             enterpriseManagerIdentifier,
                             enterpriseManagerBridgeId,
-                            enterpriseManagerEntityIdentifier);
+                            enterpriseManagerEntityIdentifier,
+                            exadataInsightId);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -112,7 +122,8 @@ public class CreateEmManagedExternalDatabaseInsightDetails extends CreateDatabas
                             .enterpriseManagerIdentifier(o.getEnterpriseManagerIdentifier())
                             .enterpriseManagerBridgeId(o.getEnterpriseManagerBridgeId())
                             .enterpriseManagerEntityIdentifier(
-                                    o.getEnterpriseManagerEntityIdentifier());
+                                    o.getEnterpriseManagerEntityIdentifier())
+                            .exadataInsightId(o.getExadataInsightId());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -133,11 +144,13 @@ public class CreateEmManagedExternalDatabaseInsightDetails extends CreateDatabas
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             String enterpriseManagerIdentifier,
             String enterpriseManagerBridgeId,
-            String enterpriseManagerEntityIdentifier) {
+            String enterpriseManagerEntityIdentifier,
+            String exadataInsightId) {
         super(compartmentId, freeformTags, definedTags);
         this.enterpriseManagerIdentifier = enterpriseManagerIdentifier;
         this.enterpriseManagerBridgeId = enterpriseManagerBridgeId;
         this.enterpriseManagerEntityIdentifier = enterpriseManagerEntityIdentifier;
+        this.exadataInsightId = exadataInsightId;
     }
 
     /**
@@ -157,6 +170,12 @@ public class CreateEmManagedExternalDatabaseInsightDetails extends CreateDatabas
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("enterpriseManagerEntityIdentifier")
     String enterpriseManagerEntityIdentifier;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata insight.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("exadataInsightId")
+    String exadataInsightId;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

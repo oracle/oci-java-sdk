@@ -5,7 +5,7 @@
 package com.oracle.bmc.tenantmanagercontrolplane.model;
 
 /**
- * A single subscription's details
+ * A single subscription's details.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -101,31 +101,31 @@ public class SubscriptionInfo {
     }
 
     /**
-     * Subscription id.
+     * Subscription ID.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("spmSubscriptionId")
     String spmSubscriptionId;
 
     /**
-     * Service name for subscription
+     * Service name for subscription.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("service")
     String service;
 
     /**
-     * Subscription start date. An RFC3339 formatted datetime string
+     * Subscription start date. An RFC 3339-formatted date and time string.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("startDate")
     java.util.Date startDate;
 
     /**
-     * Subscription end date. An RFC3339 formatted datetime string
+     * Subscription end date. An RFC 3339-formatted date and time string.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("endDate")
     java.util.Date endDate;
 
     /**
-     * List of SKUs the subscription contains
+     * List of SKUs the subscription contains.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("skus")
     java.util.List<Sku> skus;

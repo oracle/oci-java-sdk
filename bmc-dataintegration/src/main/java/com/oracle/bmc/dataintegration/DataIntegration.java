@@ -8,7 +8,7 @@ import com.oracle.bmc.dataintegration.requests.*;
 import com.oracle.bmc.dataintegration.responses.*;
 
 /**
- * Use the Data Integration Service APIs to perform common extract, load, and transform (ETL) tasks.
+ * Use the Data Integration API to organize your data integration projects, create data flows, pipelines and tasks, and then publish, schedule, and run tasks that extract, transform, and load data. For more information, see [Data Integration](https://docs.oracle.com/iaas/data-integration/home.htm).
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
 public interface DataIntegration extends AutoCloseable {
@@ -166,6 +166,18 @@ public interface DataIntegration extends AutoCloseable {
     CreateFolderResponse createFolder(CreateFolderRequest request);
 
     /**
+     * Creates a function library in a project or in another function library, limited to two levels of function libraries. |
+     * FunctionLibraries are used to organize your design-time resources, such as tasks or data flows.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/CreateFunctionLibraryExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateFunctionLibrary API.
+     */
+    CreateFunctionLibraryResponse createFunctionLibrary(CreateFunctionLibraryRequest request);
+
+    /**
      * Creates a patch in an application.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -261,7 +273,31 @@ public interface DataIntegration extends AutoCloseable {
     CreateTaskValidationResponse createTaskValidation(CreateTaskValidationRequest request);
 
     /**
-     * Creates a new Data Integration workspace ready for performing data integration tasks.
+     * Creates a new UserDefinedFunction in a function library ready for performing data integrations.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/CreateUserDefinedFunctionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateUserDefinedFunction API.
+     */
+    CreateUserDefinedFunctionResponse createUserDefinedFunction(
+            CreateUserDefinedFunctionRequest request);
+
+    /**
+     * Accepts the UserDefinedFunction definition in the request payload and creates a UserDefinedFunction validation.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/CreateUserDefinedFunctionValidationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateUserDefinedFunctionValidation API.
+     */
+    CreateUserDefinedFunctionValidationResponse createUserDefinedFunctionValidation(
+            CreateUserDefinedFunctionValidationRequest request);
+
+    /**
+     * Creates a new Data Integration workspace ready for performing data integration tasks. To retrieve the OCID for the new workspace, use the opc-work-request-id returned by this API and call the {@link #getWorkRequest(GetWorkRequestRequest) getWorkRequest} API.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -367,6 +403,16 @@ public interface DataIntegration extends AutoCloseable {
     DeleteFolderResponse deleteFolder(DeleteFolderRequest request);
 
     /**
+     * Removes a Function Library from a project using the specified identifier.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/DeleteFunctionLibraryExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteFunctionLibrary API.
+     */
+    DeleteFunctionLibraryResponse deleteFunctionLibrary(DeleteFunctionLibraryRequest request);
+
+    /**
      * Removes a patch using the specified identifier.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -457,6 +503,28 @@ public interface DataIntegration extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/DeleteTaskValidationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteTaskValidation API.
      */
     DeleteTaskValidationResponse deleteTaskValidation(DeleteTaskValidationRequest request);
+
+    /**
+     * Removes a UserDefinedFunction from a function library using the specified identifier.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/DeleteUserDefinedFunctionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteUserDefinedFunction API.
+     */
+    DeleteUserDefinedFunctionResponse deleteUserDefinedFunction(
+            DeleteUserDefinedFunctionRequest request);
+
+    /**
+     * Removes a UserDefinedFunction validation using the specified identifier.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/DeleteUserDefinedFunctionValidationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteUserDefinedFunctionValidation API.
+     */
+    DeleteUserDefinedFunctionValidationResponse deleteUserDefinedFunctionValidation(
+            DeleteUserDefinedFunctionValidationRequest request);
 
     /**
      * Deletes a Data Integration workspace resource using the specified identifier.
@@ -592,6 +660,16 @@ public interface DataIntegration extends AutoCloseable {
     GetFolderResponse getFolder(GetFolderRequest request);
 
     /**
+     * Retrieves a Function Library using the specified identifier.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/GetFunctionLibraryExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetFunctionLibrary API.
+     */
+    GetFunctionLibraryResponse getFunctionLibrary(GetFunctionLibraryRequest request);
+
+    /**
      * Retrieves a patch in an application using the specified identifier.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -711,6 +789,27 @@ public interface DataIntegration extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/GetTaskValidationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetTaskValidation API.
      */
     GetTaskValidationResponse getTaskValidation(GetTaskValidationRequest request);
+
+    /**
+     * Retrieves a UserDefinedFunction using the specified identifier.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/GetUserDefinedFunctionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetUserDefinedFunction API.
+     */
+    GetUserDefinedFunctionResponse getUserDefinedFunction(GetUserDefinedFunctionRequest request);
+
+    /**
+     * Retrieves a UserDefinedFunction validation using the specified identifier.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/GetUserDefinedFunctionValidationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetUserDefinedFunctionValidation API.
+     */
+    GetUserDefinedFunctionValidationResponse getUserDefinedFunctionValidation(
+            GetUserDefinedFunctionValidationRequest request);
 
     /**
      * Retrieves the status of the work request with the given ID.
@@ -849,6 +948,17 @@ public interface DataIntegration extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/ListFoldersExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListFolders API.
      */
     ListFoldersResponse listFolders(ListFoldersRequest request);
+
+    /**
+     * Retrieves a list of function libraries in a project and provides options to filter the list.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/ListFunctionLibrariesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListFunctionLibraries API.
+     */
+    ListFunctionLibrariesResponse listFunctionLibraries(ListFunctionLibrariesRequest request);
 
     /**
      * Retrieves a list of patches in an application and provides options to filter the list.
@@ -997,6 +1107,29 @@ public interface DataIntegration extends AutoCloseable {
     ListTasksResponse listTasks(ListTasksRequest request);
 
     /**
+     * Retrieves a list of UserDefinedFunctionvalidations within the specified workspace.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/ListUserDefinedFunctionValidationsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListUserDefinedFunctionValidations API.
+     */
+    ListUserDefinedFunctionValidationsResponse listUserDefinedFunctionValidations(
+            ListUserDefinedFunctionValidationsRequest request);
+
+    /**
+     * Retrieves a list of UserDefinedFunctions in a function library.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/ListUserDefinedFunctionsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListUserDefinedFunctions API.
+     */
+    ListUserDefinedFunctionsResponse listUserDefinedFunctions(
+            ListUserDefinedFunctionsRequest request);
+
+    /**
      * Retrieves a paginated list of errors for a given work request.
      *
      * @param request The request object containing the details to send
@@ -1124,6 +1257,16 @@ public interface DataIntegration extends AutoCloseable {
     UpdateFolderResponse updateFolder(UpdateFolderRequest request);
 
     /**
+     * Updates a specific Function Library.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/UpdateFunctionLibraryExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateFunctionLibrary API.
+     */
+    UpdateFunctionLibraryResponse updateFunctionLibrary(UpdateFunctionLibraryRequest request);
+
+    /**
      * Updates a specific pipeline.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -1192,6 +1335,17 @@ public interface DataIntegration extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/UpdateTaskScheduleExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateTaskSchedule API.
      */
     UpdateTaskScheduleResponse updateTaskSchedule(UpdateTaskScheduleRequest request);
+
+    /**
+     * Updates a specific UserDefinedFunction.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/UpdateUserDefinedFunctionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateUserDefinedFunction API.
+     */
+    UpdateUserDefinedFunctionResponse updateUserDefinedFunction(
+            UpdateUserDefinedFunctionRequest request);
 
     /**
      * Updates the specified Data Integration workspace.

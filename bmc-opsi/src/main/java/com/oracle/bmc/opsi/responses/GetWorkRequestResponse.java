@@ -13,6 +13,12 @@ import com.oracle.bmc.opsi.model.*;
 @lombok.Getter
 public class GetWorkRequestResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
+     * For optimistic concurrency control. See {@code if-match}.
+     *
+     */
+    private String etag;
+
+    /**
      * Unique Oracle-assigned identifier for the request. If you need to contact
      * Oracle about a particular request, please provide the request ID.
      *
@@ -31,10 +37,12 @@ public class GetWorkRequestResponse extends com.oracle.bmc.responses.BmcResponse
 
     private GetWorkRequestResponse(
             int __httpStatusCode__,
+            String etag,
             String opcRequestId,
             java.math.BigDecimal retryAfter,
             com.oracle.bmc.opsi.model.WorkRequest workRequest) {
         super(__httpStatusCode__);
+        this.etag = etag;
         this.opcRequestId = opcRequestId;
         this.retryAfter = retryAfter;
         this.workRequest = workRequest;
@@ -54,6 +62,7 @@ public class GetWorkRequestResponse extends com.oracle.bmc.responses.BmcResponse
          */
         public Builder copy(GetWorkRequestResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
+            etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
             retryAfter(o.getRetryAfter());
             workRequest(o.getWorkRequest());
@@ -63,7 +72,7 @@ public class GetWorkRequestResponse extends com.oracle.bmc.responses.BmcResponse
 
         public GetWorkRequestResponse build() {
             return new GetWorkRequestResponse(
-                    __httpStatusCode__, opcRequestId, retryAfter, workRequest);
+                    __httpStatusCode__, etag, opcRequestId, retryAfter, workRequest);
         }
     }
 }

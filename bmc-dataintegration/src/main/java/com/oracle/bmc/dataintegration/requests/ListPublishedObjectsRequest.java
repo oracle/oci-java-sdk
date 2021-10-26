@@ -41,6 +41,16 @@ public class ListPublishedObjectsRequest
     private String name;
 
     /**
+     * This parameter can be used to filter objects by the names starting with the given value.
+     */
+    private String nameStartsWith;
+
+    /**
+     * This parameter can be used to filter objects by the names that match partially or fully with the given value.
+     */
+    private String nameContains;
+
+    /**
      * Used to filter by the identifier of the published object.
      *
      */
@@ -264,6 +274,8 @@ public class ListPublishedObjectsRequest
             applicationKey(o.getApplicationKey());
             fields(o.getFields());
             name(o.getName());
+            nameStartsWith(o.getNameStartsWith());
+            nameContains(o.getNameContains());
             identifier(o.getIdentifier());
             type(o.getType());
             typeInSubtree(o.getTypeInSubtree());

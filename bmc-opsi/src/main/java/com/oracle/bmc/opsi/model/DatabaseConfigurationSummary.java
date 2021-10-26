@@ -81,6 +81,12 @@ public class DatabaseConfigurationSummary {
     String databaseVersion;
 
     /**
+     * Name of the CDB.Only applies to PDB.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("cdbName")
+    String cdbName;
+
+    /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.
      * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
      *

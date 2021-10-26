@@ -5,7 +5,7 @@
 package com.oracle.bmc.tenantmanagercontrolplane.model;
 
 /**
- * A single Subscription SKU
+ * A single subscription SKU.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -78,19 +78,19 @@ public class Sku {
     }
 
     /**
-     * SKU number
+     * SKU number.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("number")
     String number;
 
     /**
-     * SKU name
+     * SKU name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     String name;
 
     /**
-     * SKU quantity
+     * SKU quantity.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("quantity")
     Integer quantity;

@@ -20,11 +20,6 @@ import com.oracle.bmc.opsi.model.*;
 public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-     */
-    private String compartmentId;
-
-    /**
      * Unique Oracle-assigned identifier for the request. If you need to contact
      * Oracle about a particular request, please provide the request ID.
      *
@@ -48,6 +43,79 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
      *
      */
     private Integer limit;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+     */
+    private String compartmentId;
+
+    /**
+     * The ID of the asynchronous work request.
+     */
+    private String id;
+
+    /**
+     * A filter to return only resources their lifecycleState matches the given OperationStatus.
+     */
+    private com.oracle.bmc.opsi.model.OperationStatus status;
+
+    /**
+     * The ID of the resource affected by the work request.
+     */
+    private String resourceId;
+
+    /**
+     * The ID of the related resource for the resource affected by the work request, e.g. the related Exadata Insight OCID of the Database Insight work request
+     */
+    private String relatedResourceId;
+
+    /**
+     * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
+     *
+     */
+    private com.oracle.bmc.opsi.model.SortOrder sortOrder;
+
+    /**
+     * The field to sort by. Only one sort order may be provided. Default order for timeAccepted is descending.
+     *
+     */
+    private SortBy sortBy;
+
+    /**
+     * The field to sort by. Only one sort order may be provided. Default order for timeAccepted is descending.
+     *
+     **/
+    public enum SortBy {
+        TimeAccepted("timeAccepted"),
+        ;
+
+        private final String value;
+        private static java.util.Map<String, SortBy> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (SortBy v : SortBy.values()) {
+                map.put(v.getValue(), v);
+            }
+        }
+
+        SortBy(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static SortBy create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            throw new IllegalArgumentException("Invalid SortBy: " + key);
+        }
+    };
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -84,10 +152,16 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
          * @return this builder instance
          */
         public Builder copy(ListWorkRequestsRequest o) {
-            compartmentId(o.getCompartmentId());
             opcRequestId(o.getOpcRequestId());
             page(o.getPage());
             limit(o.getLimit());
+            compartmentId(o.getCompartmentId());
+            id(o.getId());
+            status(o.getStatus());
+            resourceId(o.getResourceId());
+            relatedResourceId(o.getRelatedResourceId());
+            sortOrder(o.getSortOrder());
+            sortBy(o.getSortBy());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;

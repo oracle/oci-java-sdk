@@ -104,6 +104,15 @@ public class SummarizeDatabaseInsightResourceUtilizationInsightConverter {
                             com.oracle.bmc.util.internal.CollectionFormatType.Multi);
         }
 
+        if (request.getExadataInsightId() != null) {
+            target =
+                    com.oracle.bmc.util.internal.HttpUtils.encodeCollectionFormatQueryParam(
+                            target,
+                            "exadataInsightId",
+                            request.getExadataInsightId(),
+                            com.oracle.bmc.util.internal.CollectionFormatType.Multi);
+        }
+
         if (request.getForecastDays() != null) {
             target =
                     target.queryParam(

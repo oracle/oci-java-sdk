@@ -121,6 +121,18 @@ public class SummarizeDatabaseInsightResourceCapacityTrendRequest
     private java.util.List<String> id;
 
     /**
+     * Optional list of exadata insight resource [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     *
+     */
+    private java.util.List<String> exadataInsightId;
+
+    /**
+     * Filter by one or more cdb name.
+     *
+     */
+    private java.util.List<String> cdbName;
+
+    /**
      * Filter by utilization level by the following buckets:
      *   - HIGH_UTILIZATION: DBs with utilization greater or equal than 75.
      *   - LOW_UTILIZATION: DBs with utilization lower than 25.
@@ -365,6 +377,48 @@ public class SummarizeDatabaseInsightResourceCapacityTrendRequest
             return this.id(java.util.Arrays.asList(singularValue));
         }
 
+        private java.util.List<String> exadataInsightId = null;
+
+        /**
+         * Optional list of exadata insight resource [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         *
+         * @return this builder instance
+         */
+        public Builder exadataInsightId(java.util.List<String> exadataInsightId) {
+            this.exadataInsightId = exadataInsightId;
+            return this;
+        }
+
+        /**
+         * Singular setter. Optional list of exadata insight resource [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         *
+         * @return this builder instance
+         */
+        public Builder exadataInsightId(String singularValue) {
+            return this.exadataInsightId(java.util.Arrays.asList(singularValue));
+        }
+
+        private java.util.List<String> cdbName = null;
+
+        /**
+         * Filter by one or more cdb name.
+         *
+         * @return this builder instance
+         */
+        public Builder cdbName(java.util.List<String> cdbName) {
+            this.cdbName = cdbName;
+            return this;
+        }
+
+        /**
+         * Singular setter. Filter by one or more cdb name.
+         *
+         * @return this builder instance
+         */
+        public Builder cdbName(String singularValue) {
+            return this.cdbName(java.util.Arrays.asList(singularValue));
+        }
+
         private java.util.List<String> hostName = null;
 
         /**
@@ -532,6 +586,8 @@ public class SummarizeDatabaseInsightResourceCapacityTrendRequest
             databaseType(o.getDatabaseType());
             databaseId(o.getDatabaseId());
             id(o.getId());
+            exadataInsightId(o.getExadataInsightId());
+            cdbName(o.getCdbName());
             utilizationLevel(o.getUtilizationLevel());
             page(o.getPage());
             sortOrder(o.getSortOrder());

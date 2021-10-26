@@ -29,6 +29,10 @@ package com.oracle.bmc.dataintegration.model;
 )
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = CreateEntityShapeFromSQL.class,
+        name = "SQL_ENTITY"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = CreateEntityShapeFromFile.class,
         name = "FILE_ENTITY"
     )
@@ -41,6 +45,7 @@ public class CreateEntityShapeDetails {
      **/
     public enum ModelType {
         FileEntity("FILE_ENTITY"),
+        SqlEntity("SQL_ENTITY"),
         ;
 
         private final String value;

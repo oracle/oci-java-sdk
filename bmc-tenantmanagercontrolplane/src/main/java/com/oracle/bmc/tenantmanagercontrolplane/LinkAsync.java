@@ -46,7 +46,7 @@ public interface LinkAsync extends AutoCloseable {
     void setRegion(String regionId);
 
     /**
-     * Terminate the link.
+     * Starts the link termination workflow.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.

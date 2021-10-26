@@ -62,12 +62,22 @@ public class WorkRequestResource {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("metadata")
+        private java.util.Map<String, String> metadata;
+
+        public Builder metadata(java.util.Map<String, String> metadata) {
+            this.metadata = metadata;
+            this.__explicitlySet__.add("metadata");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public WorkRequestResource build() {
             WorkRequestResource __instance__ =
-                    new WorkRequestResource(entityType, actionType, identifier, entityUri);
+                    new WorkRequestResource(
+                            entityType, actionType, identifier, entityUri, metadata);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -78,7 +88,8 @@ public class WorkRequestResource {
                     entityType(o.getEntityType())
                             .actionType(o.getActionType())
                             .identifier(o.getIdentifier())
-                            .entityUri(o.getEntityUri());
+                            .entityUri(o.getEntityUri())
+                            .metadata(o.getMetadata());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -119,6 +130,12 @@ public class WorkRequestResource {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("entityUri")
     String entityUri;
+
+    /**
+     * Additional information that helps to explain the resource.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("metadata")
+    java.util.Map<String, String> metadata;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

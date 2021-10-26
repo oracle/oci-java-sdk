@@ -102,6 +102,15 @@ public class SummarizeDatabaseInsightResourceUsageTrendConverter {
                             com.oracle.bmc.util.internal.CollectionFormatType.Multi);
         }
 
+        if (request.getExadataInsightId() != null) {
+            target =
+                    com.oracle.bmc.util.internal.HttpUtils.encodeCollectionFormatQueryParam(
+                            target,
+                            "exadataInsightId",
+                            request.getExadataInsightId(),
+                            com.oracle.bmc.util.internal.CollectionFormatType.Multi);
+        }
+
         if (request.getPage() != null) {
             target =
                     target.queryParam(

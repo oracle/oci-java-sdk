@@ -81,6 +81,8 @@ public class CountStatisticSummary {
         Connection("CONNECTION"),
         Task("TASK"),
         Application("APPLICATION"),
+        FunctionLibrary("FUNCTION_LIBRARY"),
+        UserDefinedFunction("USER_DEFINED_FUNCTION"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this

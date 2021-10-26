@@ -453,6 +453,40 @@ public class OperationsInsightsClient implements OperationsInsights {
     }
 
     @Override
+    public AddExadataInsightMembersResponse addExadataInsightMembers(
+            AddExadataInsightMembersRequest request) {
+        LOG.trace("Called addExadataInsightMembers");
+        final AddExadataInsightMembersRequest interceptedRequest =
+                AddExadataInsightMembersConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                AddExadataInsightMembersConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, AddExadataInsightMembersResponse>
+                transformer = AddExadataInsightMembersConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getAddExadataInsightMembersDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public ChangeDatabaseInsightCompartmentResponse changeDatabaseInsightCompartment(
             ChangeDatabaseInsightCompartmentRequest request) {
         LOG.trace("Called changeDatabaseInsightCompartment");
@@ -519,6 +553,42 @@ public class OperationsInsightsClient implements OperationsInsights {
                                                 ib,
                                                 retriedRequest
                                                         .getChangeEnterpriseManagerBridgeCompartmentDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ChangeExadataInsightCompartmentResponse changeExadataInsightCompartment(
+            ChangeExadataInsightCompartmentRequest request) {
+        LOG.trace("Called changeExadataInsightCompartment");
+        final ChangeExadataInsightCompartmentRequest interceptedRequest =
+                ChangeExadataInsightCompartmentConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangeExadataInsightCompartmentConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ChangeExadataInsightCompartmentResponse>
+                transformer = ChangeExadataInsightCompartmentConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getChangeExadataInsightCompartmentDetails(),
                                                 retriedRequest);
                                 return transformer.apply(response);
                             });
@@ -632,6 +702,39 @@ public class OperationsInsightsClient implements OperationsInsights {
     }
 
     @Override
+    public CreateExadataInsightResponse createExadataInsight(CreateExadataInsightRequest request) {
+        LOG.trace("Called createExadataInsight");
+        final CreateExadataInsightRequest interceptedRequest =
+                CreateExadataInsightConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateExadataInsightConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, CreateExadataInsightResponse>
+                transformer = CreateExadataInsightConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getCreateExadataInsightDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public CreateHostInsightResponse createHostInsight(CreateHostInsightRequest request) {
         LOG.trace("Called createHostInsight");
         final CreateHostInsightRequest interceptedRequest =
@@ -726,6 +829,35 @@ public class OperationsInsightsClient implements OperationsInsights {
     }
 
     @Override
+    public DeleteExadataInsightResponse deleteExadataInsight(DeleteExadataInsightRequest request) {
+        LOG.trace("Called deleteExadataInsight");
+        final DeleteExadataInsightRequest interceptedRequest =
+                DeleteExadataInsightConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteExadataInsightConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteExadataInsightResponse>
+                transformer = DeleteExadataInsightConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.delete(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public DeleteHostInsightResponse deleteHostInsight(DeleteHostInsightRequest request) {
         LOG.trace("Called deleteHostInsight");
         final DeleteHostInsightRequest interceptedRequest =
@@ -764,6 +896,37 @@ public class OperationsInsightsClient implements OperationsInsights {
                 DisableDatabaseInsightConverter.fromRequest(client, interceptedRequest);
         com.google.common.base.Function<javax.ws.rs.core.Response, DisableDatabaseInsightResponse>
                 transformer = DisableDatabaseInsightConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public DisableExadataInsightResponse disableExadataInsight(
+            DisableExadataInsightRequest request) {
+        LOG.trace("Called disableExadataInsight");
+        final DisableExadataInsightRequest interceptedRequest =
+                DisableExadataInsightConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DisableExadataInsightConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, DisableExadataInsightResponse>
+                transformer = DisableExadataInsightConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
@@ -850,6 +1013,39 @@ public class OperationsInsightsClient implements OperationsInsights {
     }
 
     @Override
+    public EnableExadataInsightResponse enableExadataInsight(EnableExadataInsightRequest request) {
+        LOG.trace("Called enableExadataInsight");
+        final EnableExadataInsightRequest interceptedRequest =
+                EnableExadataInsightConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                EnableExadataInsightConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, EnableExadataInsightResponse>
+                transformer = EnableExadataInsightConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getEnableExadataInsightDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public EnableHostInsightResponse enableHostInsight(EnableHostInsightRequest request) {
         LOG.trace("Called enableHostInsight");
         final EnableHostInsightRequest interceptedRequest =
@@ -921,6 +1117,34 @@ public class OperationsInsightsClient implements OperationsInsights {
         com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetEnterpriseManagerBridgeResponse>
                 transformer = GetEnterpriseManagerBridgeConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public GetExadataInsightResponse getExadataInsight(GetExadataInsightRequest request) {
+        LOG.trace("Called getExadataInsight");
+        final GetExadataInsightRequest interceptedRequest =
+                GetExadataInsightConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetExadataInsightConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, GetExadataInsightResponse>
+                transformer = GetExadataInsightConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
@@ -1267,6 +1491,93 @@ public class OperationsInsightsClient implements OperationsInsights {
         com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListEnterpriseManagerBridgesResponse>
                 transformer = ListEnterpriseManagerBridgesConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ListExadataConfigurationsResponse listExadataConfigurations(
+            ListExadataConfigurationsRequest request) {
+        LOG.trace("Called listExadataConfigurations");
+        final ListExadataConfigurationsRequest interceptedRequest =
+                ListExadataConfigurationsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListExadataConfigurationsConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ListExadataConfigurationsResponse>
+                transformer = ListExadataConfigurationsConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ListExadataInsightsResponse listExadataInsights(ListExadataInsightsRequest request) {
+        LOG.trace("Called listExadataInsights");
+        final ListExadataInsightsRequest interceptedRequest =
+                ListExadataInsightsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListExadataInsightsConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, ListExadataInsightsResponse>
+                transformer = ListExadataInsightsConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ListHostConfigurationsResponse listHostConfigurations(
+            ListHostConfigurationsRequest request) {
+        LOG.trace("Called listHostConfigurations");
+        final ListHostConfigurationsRequest interceptedRequest =
+                ListHostConfigurationsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListHostConfigurationsConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, ListHostConfigurationsResponse>
+                transformer = ListHostConfigurationsConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
@@ -1804,6 +2115,306 @@ public class OperationsInsightsClient implements OperationsInsights {
     }
 
     @Override
+    public SummarizeExadataInsightResourceCapacityTrendResponse
+            summarizeExadataInsightResourceCapacityTrend(
+                    SummarizeExadataInsightResourceCapacityTrendRequest request) {
+        LOG.trace("Called summarizeExadataInsightResourceCapacityTrend");
+        final SummarizeExadataInsightResourceCapacityTrendRequest interceptedRequest =
+                SummarizeExadataInsightResourceCapacityTrendConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                SummarizeExadataInsightResourceCapacityTrendConverter.fromRequest(
+                        client, interceptedRequest);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        SummarizeExadataInsightResourceCapacityTrendResponse>
+                transformer = SummarizeExadataInsightResourceCapacityTrendConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public SummarizeExadataInsightResourceCapacityTrendAggregatedResponse
+            summarizeExadataInsightResourceCapacityTrendAggregated(
+                    SummarizeExadataInsightResourceCapacityTrendAggregatedRequest request) {
+        LOG.trace("Called summarizeExadataInsightResourceCapacityTrendAggregated");
+        final SummarizeExadataInsightResourceCapacityTrendAggregatedRequest interceptedRequest =
+                SummarizeExadataInsightResourceCapacityTrendAggregatedConverter.interceptRequest(
+                        request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                SummarizeExadataInsightResourceCapacityTrendAggregatedConverter.fromRequest(
+                        client, interceptedRequest);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        SummarizeExadataInsightResourceCapacityTrendAggregatedResponse>
+                transformer =
+                        SummarizeExadataInsightResourceCapacityTrendAggregatedConverter
+                                .fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public SummarizeExadataInsightResourceForecastTrendResponse
+            summarizeExadataInsightResourceForecastTrend(
+                    SummarizeExadataInsightResourceForecastTrendRequest request) {
+        LOG.trace("Called summarizeExadataInsightResourceForecastTrend");
+        final SummarizeExadataInsightResourceForecastTrendRequest interceptedRequest =
+                SummarizeExadataInsightResourceForecastTrendConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                SummarizeExadataInsightResourceForecastTrendConverter.fromRequest(
+                        client, interceptedRequest);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        SummarizeExadataInsightResourceForecastTrendResponse>
+                transformer = SummarizeExadataInsightResourceForecastTrendConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public SummarizeExadataInsightResourceForecastTrendAggregatedResponse
+            summarizeExadataInsightResourceForecastTrendAggregated(
+                    SummarizeExadataInsightResourceForecastTrendAggregatedRequest request) {
+        LOG.trace("Called summarizeExadataInsightResourceForecastTrendAggregated");
+        final SummarizeExadataInsightResourceForecastTrendAggregatedRequest interceptedRequest =
+                SummarizeExadataInsightResourceForecastTrendAggregatedConverter.interceptRequest(
+                        request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                SummarizeExadataInsightResourceForecastTrendAggregatedConverter.fromRequest(
+                        client, interceptedRequest);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        SummarizeExadataInsightResourceForecastTrendAggregatedResponse>
+                transformer =
+                        SummarizeExadataInsightResourceForecastTrendAggregatedConverter
+                                .fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public SummarizeExadataInsightResourceStatisticsResponse
+            summarizeExadataInsightResourceStatistics(
+                    SummarizeExadataInsightResourceStatisticsRequest request) {
+        LOG.trace("Called summarizeExadataInsightResourceStatistics");
+        final SummarizeExadataInsightResourceStatisticsRequest interceptedRequest =
+                SummarizeExadataInsightResourceStatisticsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                SummarizeExadataInsightResourceStatisticsConverter.fromRequest(
+                        client, interceptedRequest);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        SummarizeExadataInsightResourceStatisticsResponse>
+                transformer = SummarizeExadataInsightResourceStatisticsConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public SummarizeExadataInsightResourceUsageResponse summarizeExadataInsightResourceUsage(
+            SummarizeExadataInsightResourceUsageRequest request) {
+        LOG.trace("Called summarizeExadataInsightResourceUsage");
+        final SummarizeExadataInsightResourceUsageRequest interceptedRequest =
+                SummarizeExadataInsightResourceUsageConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                SummarizeExadataInsightResourceUsageConverter.fromRequest(
+                        client, interceptedRequest);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, SummarizeExadataInsightResourceUsageResponse>
+                transformer = SummarizeExadataInsightResourceUsageConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public SummarizeExadataInsightResourceUsageAggregatedResponse
+            summarizeExadataInsightResourceUsageAggregated(
+                    SummarizeExadataInsightResourceUsageAggregatedRequest request) {
+        LOG.trace("Called summarizeExadataInsightResourceUsageAggregated");
+        final SummarizeExadataInsightResourceUsageAggregatedRequest interceptedRequest =
+                SummarizeExadataInsightResourceUsageAggregatedConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                SummarizeExadataInsightResourceUsageAggregatedConverter.fromRequest(
+                        client, interceptedRequest);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        SummarizeExadataInsightResourceUsageAggregatedResponse>
+                transformer =
+                        SummarizeExadataInsightResourceUsageAggregatedConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public SummarizeExadataInsightResourceUtilizationInsightResponse
+            summarizeExadataInsightResourceUtilizationInsight(
+                    SummarizeExadataInsightResourceUtilizationInsightRequest request) {
+        LOG.trace("Called summarizeExadataInsightResourceUtilizationInsight");
+        final SummarizeExadataInsightResourceUtilizationInsightRequest interceptedRequest =
+                SummarizeExadataInsightResourceUtilizationInsightConverter.interceptRequest(
+                        request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                SummarizeExadataInsightResourceUtilizationInsightConverter.fromRequest(
+                        client, interceptedRequest);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        SummarizeExadataInsightResourceUtilizationInsightResponse>
+                transformer =
+                        SummarizeExadataInsightResourceUtilizationInsightConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public SummarizeExadataMembersResponse summarizeExadataMembers(
+            SummarizeExadataMembersRequest request) {
+        LOG.trace("Called summarizeExadataMembers");
+        final SummarizeExadataMembersRequest interceptedRequest =
+                SummarizeExadataMembersConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                SummarizeExadataMembersConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, SummarizeExadataMembersResponse>
+                transformer = SummarizeExadataMembersConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public SummarizeHostInsightResourceCapacityTrendResponse
             summarizeHostInsightResourceCapacityTrend(
                     SummarizeHostInsightResourceCapacityTrendRequest request) {
@@ -2235,6 +2846,38 @@ public class OperationsInsightsClient implements OperationsInsights {
                                                 ib,
                                                 retriedRequest
                                                         .getUpdateEnterpriseManagerBridgeDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public UpdateExadataInsightResponse updateExadataInsight(UpdateExadataInsightRequest request) {
+        LOG.trace("Called updateExadataInsight");
+        final UpdateExadataInsightRequest interceptedRequest =
+                UpdateExadataInsightConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateExadataInsightConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateExadataInsightResponse>
+                transformer = UpdateExadataInsightConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.put(
+                                                ib,
+                                                retriedRequest.getUpdateExadataInsightDetails(),
                                                 retriedRequest);
                                 return transformer.apply(response);
                             });

@@ -5,7 +5,7 @@
 package com.oracle.bmc.tenantmanagercontrolplane.model;
 
 /**
- * Order Details for Console plugin display
+ * Order details.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -101,7 +101,7 @@ public class Order {
     }
 
     /**
-     * Immutable and unique order number holding customer subscription information
+     * Immutable and unique order number holding customer subscription information.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("orderNumber")
     String orderNumber;
@@ -113,13 +113,13 @@ public class Order {
     String dataCenterRegion;
 
     /**
-     * Admin e-mail owning subscription.
+     * Administrator email owning the subscription.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("adminEmail")
     String adminEmail;
 
     /**
-     * State of order.
+     * State of the order.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("orderState")
     String orderState;

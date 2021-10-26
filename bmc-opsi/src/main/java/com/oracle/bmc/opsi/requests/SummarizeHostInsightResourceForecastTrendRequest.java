@@ -110,6 +110,12 @@ public class SummarizeHostInsightResourceForecastTrendRequest
     private java.util.List<String> id;
 
     /**
+     * Optional list of exadata insight resource [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     *
+     */
+    private java.util.List<String> exadataInsightId;
+
+    /**
      * Choose the type of statistic metric data to be used for forecasting.
      */
     private Statistic statistic;
@@ -371,6 +377,27 @@ public class SummarizeHostInsightResourceForecastTrendRequest
             return this.id(java.util.Arrays.asList(singularValue));
         }
 
+        private java.util.List<String> exadataInsightId = null;
+
+        /**
+         * Optional list of exadata insight resource [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         *
+         * @return this builder instance
+         */
+        public Builder exadataInsightId(java.util.List<String> exadataInsightId) {
+            this.exadataInsightId = exadataInsightId;
+            return this;
+        }
+
+        /**
+         * Singular setter. Optional list of exadata insight resource [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         *
+         * @return this builder instance
+         */
+        public Builder exadataInsightId(String singularValue) {
+            return this.exadataInsightId(java.util.Arrays.asList(singularValue));
+        }
+
         private java.util.List<String> definedTagEquals = null;
 
         /**
@@ -516,6 +543,7 @@ public class SummarizeHostInsightResourceForecastTrendRequest
             timeIntervalEnd(o.getTimeIntervalEnd());
             platformType(o.getPlatformType());
             id(o.getId());
+            exadataInsightId(o.getExadataInsightId());
             statistic(o.getStatistic());
             forecastDays(o.getForecastDays());
             forecastModel(o.getForecastModel());

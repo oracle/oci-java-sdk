@@ -574,9 +574,9 @@ public class Sddc {
     String id;
 
     /**
-     * The availability domain the ESXi hosts are running in.
+     * The availability domain the ESXi hosts are running in. For Multi-AD SDDC, it is {@code multi-AD}.
      * <p>
-     * Example: {@code Uocm:PHX-AD-1}
+     * Example: {@code Uocm:PHX-AD-1}, {@code multi-AD}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("computeAvailabilityDomain")

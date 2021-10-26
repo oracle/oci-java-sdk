@@ -47,6 +47,25 @@ public class SSLConfiguration {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("trustedCertificateAuthorityIds")
+        private java.util.List<String> trustedCertificateAuthorityIds;
+
+        public Builder trustedCertificateAuthorityIds(
+                java.util.List<String> trustedCertificateAuthorityIds) {
+            this.trustedCertificateAuthorityIds = trustedCertificateAuthorityIds;
+            this.__explicitlySet__.add("trustedCertificateAuthorityIds");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("certificateIds")
+        private java.util.List<String> certificateIds;
+
+        public Builder certificateIds(java.util.List<String> certificateIds) {
+            this.certificateIds = certificateIds;
+            this.__explicitlySet__.add("certificateIds");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("certificateName")
         private String certificateName;
 
@@ -91,6 +110,8 @@ public class SSLConfiguration {
                     new SSLConfiguration(
                             verifyDepth,
                             verifyPeerCertificate,
+                            trustedCertificateAuthorityIds,
+                            certificateIds,
                             certificateName,
                             serverOrderPreference,
                             cipherSuiteName,
@@ -104,6 +125,8 @@ public class SSLConfiguration {
             Builder copiedBuilder =
                     verifyDepth(o.getVerifyDepth())
                             .verifyPeerCertificate(o.getVerifyPeerCertificate())
+                            .trustedCertificateAuthorityIds(o.getTrustedCertificateAuthorityIds())
+                            .certificateIds(o.getCertificateIds())
                             .certificateName(o.getCertificateName())
                             .serverOrderPreference(o.getServerOrderPreference())
                             .cipherSuiteName(o.getCipherSuiteName())
@@ -138,6 +161,24 @@ public class SSLConfiguration {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("verifyPeerCertificate")
     Boolean verifyPeerCertificate;
+
+    /**
+     * Ids for OCI certificates service CA or CA bundles for the load balancer to trust.
+     * <p>
+     * Example: {@code [ocid1.cabundle.oc1.us-ashburn-1.amaaaaaaav3bgsaagl4zzyqdop5i2vuwoqewdvauuw34llqa74otq2jdsfyq]}
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("trustedCertificateAuthorityIds")
+    java.util.List<String> trustedCertificateAuthorityIds;
+
+    /**
+     * Ids for OCI certificates service certificates. Currently only a single Id may be passed.
+     * <p>
+     * Example: {@code [ocid1.certificate.oc1.us-ashburn-1.amaaaaaaav3bgsaa5o2q7rh5nfmkkukfkogasqhk6af2opufhjlqg7m6jqzq]}
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("certificateIds")
+    java.util.List<String> certificateIds;
 
     /**
      * A friendly name for the certificate bundle. It must be unique and it cannot be changed.

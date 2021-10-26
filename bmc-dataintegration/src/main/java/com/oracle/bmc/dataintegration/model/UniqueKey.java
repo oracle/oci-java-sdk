@@ -31,6 +31,10 @@ package com.oracle.bmc.dataintegration.model;
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = PrimaryKey.class,
         name = "PRIMARY_KEY"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = UniqueDataKey.class,
+        name = "UNIQUE_KEY"
     )
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)

@@ -661,13 +661,15 @@ public class DataLabelingClient implements DataLabeling {
     @Override
     public GetRecordContentResponse getRecordContent(GetRecordContentRequest request) {
         LOG.trace("Called getRecordContent");
-        LOG.warn(
-                "getRecordContent returns a stream, please make sure to close the stream to avoid any indefinite hangs");
-        if (this.apacheConnectionClosingStrategy != null) {
+        if (com.oracle.bmc.http.ApacheUtils.isExtraStreamLogsEnabled()) {
             LOG.warn(
-                    "ApacheConnectionClosingStrategy set to {}. For large streams with partial reads of stream, please use ImmediateClosingStrategy. "
-                            + "For small streams with partial reads of stream, please use GracefulClosingStrategy. More info in ApacheConnectorProperties",
-                    this.apacheConnectionClosingStrategy);
+                    "getRecordContent returns a stream, please make sure to close the stream to avoid any indefinite hangs");
+            if (this.apacheConnectionClosingStrategy != null) {
+                LOG.warn(
+                        "ApacheConnectionClosingStrategy set to {}. For large streams with partial reads of stream, please use ImmediateClosingStrategy. "
+                                + "For small streams with partial reads of stream, please use GracefulClosingStrategy. More info in ApacheConnectorProperties",
+                        this.apacheConnectionClosingStrategy);
+            }
         }
         final GetRecordContentRequest interceptedRequest =
                 GetRecordContentConverter.interceptRequest(request);
@@ -698,13 +700,15 @@ public class DataLabelingClient implements DataLabeling {
     public GetRecordPreviewContentResponse getRecordPreviewContent(
             GetRecordPreviewContentRequest request) {
         LOG.trace("Called getRecordPreviewContent");
-        LOG.warn(
-                "getRecordPreviewContent returns a stream, please make sure to close the stream to avoid any indefinite hangs");
-        if (this.apacheConnectionClosingStrategy != null) {
+        if (com.oracle.bmc.http.ApacheUtils.isExtraStreamLogsEnabled()) {
             LOG.warn(
-                    "ApacheConnectionClosingStrategy set to {}. For large streams with partial reads of stream, please use ImmediateClosingStrategy. "
-                            + "For small streams with partial reads of stream, please use GracefulClosingStrategy. More info in ApacheConnectorProperties",
-                    this.apacheConnectionClosingStrategy);
+                    "getRecordPreviewContent returns a stream, please make sure to close the stream to avoid any indefinite hangs");
+            if (this.apacheConnectionClosingStrategy != null) {
+                LOG.warn(
+                        "ApacheConnectionClosingStrategy set to {}. For large streams with partial reads of stream, please use ImmediateClosingStrategy. "
+                                + "For small streams with partial reads of stream, please use GracefulClosingStrategy. More info in ApacheConnectorProperties",
+                        this.apacheConnectionClosingStrategy);
+            }
         }
         final GetRecordPreviewContentRequest interceptedRequest =
                 GetRecordPreviewContentConverter.interceptRequest(request);

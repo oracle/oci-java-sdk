@@ -62,6 +62,15 @@ public class CreateEsxiHostDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("computeAvailabilityDomain")
+        private String computeAvailabilityDomain;
+
+        public Builder computeAvailabilityDomain(String computeAvailabilityDomain) {
+            this.computeAvailabilityDomain = computeAvailabilityDomain;
+            this.__explicitlySet__.add("computeAvailabilityDomain");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
@@ -87,7 +96,13 @@ public class CreateEsxiHostDetails {
         public CreateEsxiHostDetails build() {
             CreateEsxiHostDetails __instance__ =
                     new CreateEsxiHostDetails(
-                            sddcId, displayName, currentSku, nextSku, freeformTags, definedTags);
+                            sddcId,
+                            displayName,
+                            currentSku,
+                            nextSku,
+                            computeAvailabilityDomain,
+                            freeformTags,
+                            definedTags);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -99,6 +114,7 @@ public class CreateEsxiHostDetails {
                             .displayName(o.getDisplayName())
                             .currentSku(o.getCurrentSku())
                             .nextSku(o.getNextSku())
+                            .computeAvailabilityDomain(o.getComputeAvailabilityDomain())
                             .freeformTags(o.getFreeformTags())
                             .definedTags(o.getDefinedTags());
 
@@ -153,6 +169,15 @@ public class CreateEsxiHostDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("nextSku")
     Sku nextSku;
+
+    /**
+     * The availability domain to create the ESXi host in.
+     * If keep empty, for AD-specific SDDC, new ESXi host will be created in the same availability domain;
+     * for multi-AD SDDC, new ESXi host will be auto assigned to the next availability domain following evenly distribution strategy.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("computeAvailabilityDomain")
+    String computeAvailabilityDomain;
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no

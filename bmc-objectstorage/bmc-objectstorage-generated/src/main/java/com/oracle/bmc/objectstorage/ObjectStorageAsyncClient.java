@@ -1143,11 +1143,15 @@ public class ObjectStorageAsyncClient implements ObjectStorageAsync {
             final com.oracle.bmc.responses.AsyncHandler<GetObjectRequest, GetObjectResponse>
                     handler) {
         LOG.trace("Called async getObject");
-        if (this.apacheConnectionClosingStrategy != null) {
+        if (com.oracle.bmc.http.ApacheUtils.isExtraStreamLogsEnabled()) {
             LOG.warn(
-                    "ApacheConnectionClosingStrategy set to {}. For large streams with partial reads of stream, please use ImmediateClosingStrategy. "
-                            + "For small streams with partial reads of stream, please use GracefulClosingStrategy. More info in ApacheConnectorProperties",
-                    this.apacheConnectionClosingStrategy);
+                    "getObject returns a stream, please make sure to close the stream to avoid any indefinite hangs");
+            if (this.apacheConnectionClosingStrategy != null) {
+                LOG.warn(
+                        "ApacheConnectionClosingStrategy set to {}. For large streams with partial reads of stream, please use ImmediateClosingStrategy. "
+                                + "For small streams with partial reads of stream, please use GracefulClosingStrategy. More info in ApacheConnectorProperties",
+                        this.apacheConnectionClosingStrategy);
+            }
         }
         final GetObjectRequest interceptedRequest = GetObjectConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =

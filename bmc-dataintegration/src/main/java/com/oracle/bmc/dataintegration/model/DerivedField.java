@@ -111,6 +111,15 @@ public class DerivedField extends TypedObject {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("isUseInferredType")
+        private Boolean isUseInferredType;
+
+        public Builder isUseInferredType(Boolean isUseInferredType) {
+            this.isUseInferredType = isUseInferredType;
+            this.__explicitlySet__.add("isUseInferredType");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("labels")
         private java.util.List<String> labels;
 
@@ -135,6 +144,7 @@ public class DerivedField extends TypedObject {
                             description,
                             expr,
                             type,
+                            isUseInferredType,
                             labels);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
@@ -152,6 +162,7 @@ public class DerivedField extends TypedObject {
                             .description(o.getDescription())
                             .expr(o.getExpr())
                             .type(o.getType())
+                            .isUseInferredType(o.getIsUseInferredType())
                             .labels(o.getLabels());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
@@ -177,10 +188,12 @@ public class DerivedField extends TypedObject {
             String description,
             Expression expr,
             String type,
+            Boolean isUseInferredType,
             java.util.List<String> labels) {
         super(key, modelVersion, parentRef, configValues, objectStatus, name, description);
         this.expr = expr;
         this.type = type;
+        this.isUseInferredType = isUseInferredType;
         this.labels = labels;
     }
 
@@ -192,6 +205,12 @@ public class DerivedField extends TypedObject {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     String type;
+
+    /**
+     * Specifies whether to use inferred expression output type as output type of the derived field. Default value of this flag is false.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isUseInferredType")
+    Boolean isUseInferredType;
 
     /**
      * Labels are keywords or labels that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
