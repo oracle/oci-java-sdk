@@ -7,6 +7,8 @@ package com.oracle.bmc.genericartifactscontent;
 import com.oracle.bmc.genericartifactscontent.internal.http.*;
 import com.oracle.bmc.genericartifactscontent.requests.*;
 import com.oracle.bmc.genericartifactscontent.responses.*;
+import com.oracle.bmc.circuitbreaker.JaxRsCircuitBreaker;
+import com.oracle.bmc.util.CircuitBreakerUtils;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @lombok.extern.slf4j.Slf4j
@@ -262,12 +264,15 @@ public class GenericArtifactsContentClient implements GenericArtifactsContent {
                         ? configuration
                         : com.oracle.bmc.ClientConfiguration.builder().build();
         this.retryConfiguration = clientConfigurationToUse.getRetryConfiguration();
+        JaxRsCircuitBreaker circuitBreaker =
+                CircuitBreakerUtils.getUserDefinedCircuitBreaker(configuration);
         this.client =
                 restClientFactory.create(
                         defaultRequestSigner,
                         requestSigners,
                         clientConfigurationToUse,
-                        isNonBufferingApacheClient);
+                        isNonBufferingApacheClient,
+                        circuitBreaker);
 
         if (this.authenticationDetailsProvider instanceof com.oracle.bmc.auth.RegionProvider) {
             com.oracle.bmc.auth.RegionProvider provider =
@@ -399,7 +404,7 @@ public class GenericArtifactsContentClient implements GenericArtifactsContent {
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -439,7 +444,7 @@ public class GenericArtifactsContentClient implements GenericArtifactsContent {
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -483,7 +488,7 @@ public class GenericArtifactsContentClient implements GenericArtifactsContent {
 
             final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                     com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                            interceptedRequest.getRetryConfiguration(), retryConfiguration);
+                            interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
             return retrier.execute(
                     interceptedRequest,
                     retryRequest -> {

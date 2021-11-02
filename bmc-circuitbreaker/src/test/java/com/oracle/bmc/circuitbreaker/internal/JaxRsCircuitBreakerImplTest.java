@@ -32,6 +32,7 @@ public class JaxRsCircuitBreakerImplTest {
 
     private Invocation invocation503;
     private Invocation invocation200;
+    private Invocation invocation409;
 
     private Invocation invocationUnavailable;
     private Invocation invocationClientError;
@@ -44,6 +45,9 @@ public class JaxRsCircuitBreakerImplTest {
 
     @SuppressWarnings("unchecked")
     Future<Response> responseFutureUnavailable = (Future<Response>) mock(Future.class);
+
+    @SuppressWarnings("unchecked")
+    Future<Response> responseFuture409 = (Future<Response>) mock(Future.class);
 
     private final int MIN_NUM_CALLS = 4;
     private final int SLIDING_WINDOW_SIZE = 40;
@@ -63,12 +67,18 @@ public class JaxRsCircuitBreakerImplTest {
 
         Response response503 = mock(Response.class);
         Mockito.when(response503.getStatus()).thenReturn(503);
+        Mockito.when(response503.getStatusInfo()).thenReturn(Response.Status.BAD_GATEWAY);
         invocation503 = mock(Invocation.class);
         Mockito.when(invocation503.invoke()).thenReturn(response503);
+        Mockito.when(responseFuture503.get()).thenReturn(response503);
+
         Response response200 = mock(Response.class);
         Mockito.when(response200.getStatus()).thenReturn(200);
+        Mockito.when(response200.getStatusInfo()).thenReturn(Response.Status.OK);
         invocation200 = mock(Invocation.class);
         Mockito.when(invocation200.invoke()).thenReturn(response200);
+        Mockito.when(responseFuture200.get()).thenReturn(response200);
+
         invocationUnavailable = mock(Invocation.class);
         Mockito.when(invocationUnavailable.invoke()).thenThrow(new ServiceUnavailableException());
         invocationClientError = mock(Invocation.class);
@@ -78,6 +88,13 @@ public class JaxRsCircuitBreakerImplTest {
         Mockito.when(responseFuture200.get()).thenReturn(response200);
         Mockito.when(responseFuture503.get()).thenReturn(response503);
         Mockito.when(responseFutureUnavailable.get()).thenThrow(new ServiceUnavailableException());
+
+        Response response409 = mock(Response.class);
+        Mockito.when(response409.getStatus()).thenReturn(409);
+        Mockito.when(response409.getStatusInfo()).thenReturn(buildIncorrectStateResponse());
+        invocation409 = mock(Invocation.class);
+        Mockito.when(invocation409.invoke()).thenReturn(response409);
+        Mockito.when(responseFuture409.get()).thenReturn(response409);
     }
 
     @Test
@@ -100,6 +117,26 @@ public class JaxRsCircuitBreakerImplTest {
     }
 
     @Test
+    public void
+            validateCircuitBreakerOpensTheCircuitWhenFailsWithSupplierForIncorrectStateResponse() {
+        int callCount = 0;
+
+        for (int i = 0; i < MIN_NUM_CALLS + 2; i++) {
+            Supplier<Response> clientCall = circuitBreaker.decorateSupplier(invocation409::invoke);
+            try {
+                Response response = clientCall.get();
+                assertEquals(response.getStatus(), 409);
+                callCount++;
+            } catch (CallNotAllowedException ex) {
+                break;
+            }
+        }
+        assertTrue(callCount >= MIN_NUM_CALLS);
+        assertEquals(
+                CircuitBreaker.State.OPEN, circuitBreaker.getInternalCircuitBreaker().getState());
+    }
+
+    @Test
     public void validateCircuitBreakerOpensTheCircuitWhenFailsWithFunction() {
         int callCount = 0;
 
@@ -109,6 +146,27 @@ public class JaxRsCircuitBreakerImplTest {
             try {
                 Response response = clientCall.apply(invocation503);
                 assertEquals(response.getStatus(), 503);
+                callCount++;
+            } catch (CallNotAllowedException ex) {
+                break;
+            }
+        }
+        assertTrue(callCount >= MIN_NUM_CALLS);
+        assertEquals(
+                CircuitBreaker.State.OPEN, circuitBreaker.getInternalCircuitBreaker().getState());
+    }
+
+    @Test
+    public void
+            validateDefaultCircuitBreakerOpensTheCircuitWhenFailsWithFunctionForIncorrectStateResponse() {
+        int callCount = 0;
+
+        for (int i = 0; i < MIN_NUM_CALLS + 2; i++) {
+            Function<Invocation, Response> clientCall =
+                    circuitBreaker.decorateFunction(Invocation::invoke);
+            try {
+                Response response = clientCall.apply(invocation409);
+                assertEquals(response.getStatus(), 409);
                 callCount++;
             } catch (CallNotAllowedException ex) {
                 break;
@@ -178,12 +236,20 @@ public class JaxRsCircuitBreakerImplTest {
                 assertEquals(response.getStatus(), 200);
                 callCount++;
 
+                response = clientCall.apply(invocation200);
+                assertEquals(response.getStatus(), 200);
+                callCount++;
+
                 response = clientCall.apply(invocation503);
                 assertEquals(response.getStatus(), 503);
                 callCount++;
 
                 response = clientCall.apply(invocation503);
                 assertEquals(response.getStatus(), 503);
+                callCount++;
+
+                response = clientCall.apply(invocation200);
+                assertEquals(response.getStatus(), 200);
                 callCount++;
             } catch (CallNotAllowedException ex) {
                 break;
@@ -374,5 +440,24 @@ public class JaxRsCircuitBreakerImplTest {
         assertTrue(unavailableCount >= MIN_NUM_CALLS);
         assertEquals(
                 CircuitBreaker.State.OPEN, circuitBreaker.getInternalCircuitBreaker().getState());
+    }
+
+    private static Response.StatusType buildIncorrectStateResponse() {
+        return new Response.StatusType() {
+            @Override
+            public int getStatusCode() {
+                return 409;
+            }
+
+            @Override
+            public String getReasonPhrase() {
+                return "IncorrectState";
+            }
+
+            @Override
+            public Response.Status.Family getFamily() {
+                return null;
+            }
+        };
     }
 }

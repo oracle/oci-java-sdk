@@ -46,6 +46,38 @@ public interface IdentityAsync extends AutoCloseable {
     void setRegion(String regionId);
 
     /**
+     * If the domain's {@code lifecycleState} is INACTIVE,
+     * 1. Set the {@code lifecycleDetails} to ACTIVATING and asynchronously starts enabling
+     *    the domain and return 202 ACCEPTED.
+     *     1.1 Sets the domain status to ENABLED and set specified domain's
+     *         {@code lifecycleState} to ACTIVE and set the {@code lifecycleDetails} to null.
+     * <p>
+     * To track progress, HTTP GET on /iamWorkRequests/{iamWorkRequestsId} endpoint will provide
+     * the async operation's status. Deactivate a domain can be done using HTTP POST
+     * /domains/{domainId}/actions/deactivate.
+     * <p>
+     * - If the domain's {@code lifecycleState} is ACTIVE, returns 202 ACCEPTED with no action
+     *   taken on service side.
+     * - If domain is of {@code type} DEFAULT or DEFAULT_LIGHTWEIGHT or domain's {@code lifecycleState} is not INACTIVE,
+     *   returns 400 BAD REQUEST.
+     * - If the domain doesn't exists, returns 404 NOT FOUND.
+     * - If the authenticated user is part of the domain to be activated, returns 400 BAD REQUEST
+     * - If error occurs while activating domain, returns 500 INTERNAL SERVER ERROR.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ActivateDomainResponse> activateDomain(
+            ActivateDomainRequest request,
+            com.oracle.bmc.responses.AsyncHandler<ActivateDomainRequest, ActivateDomainResponse>
+                    handler);
+
+    /**
      * Activates the specified MFA TOTP device for the user. Activation requires manual interaction with the Console.
      *
      *
@@ -244,6 +276,65 @@ public interface IdentityAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Change the containing compartment for a domain.
+     * <p>
+     * This is an asynchronous call where the Domain's compartment is changed and is updated with the new compartment information.
+     * To track progress, HTTP GET on /iamWorkRequests/{iamWorkRequestsId} endpoint will provide
+     * the async operation's status.
+     * <p>
+     * The compartment change is complete when accessed via domain URL and
+     * also returns new compartment OCID.
+     * - If the domain doesn't exists, returns 404 NOT FOUND.
+     * - If Domain {@code type} is DEFAULT or DEFAULT_LIGHTWEIGHT, return 400 BAD Request
+     * - If Domain is not active or being updated, returns 400 BAD REQUEST.
+     * - If error occurs while changing compartment for domain, return 500 INTERNAL SERVER ERROR.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ChangeDomainCompartmentResponse> changeDomainCompartment(
+            ChangeDomainCompartmentRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ChangeDomainCompartmentRequest, ChangeDomainCompartmentResponse>
+                    handler);
+
+    /**
+     * If the domain's {@code lifecycleState} is ACTIVE, validates the requested {@code licenseType} update
+     * is allowed and
+     * 1. Set the {@code lifecycleDetails} to UPDATING
+     * 2. Asynchronously starts updating the domain and return 202 ACCEPTED.
+     *     2.1 Successfully updates specified domain's {@code licenseType}.
+     * 3. On completion set the {@code lifecycleDetails} to null.
+     * To track progress, HTTP GET on /iamWorkRequests/{iamWorkRequestsId} endpoint will provide
+     * the async operation's status.
+     * <p>
+     * - If license type update is successful, return 202 ACCEPTED
+     * - If requested {@code licenseType} validation fails, returns 400 Bad request.
+     * - If Domain is not active or being updated, returns 400 BAD REQUEST.
+     * - If Domain {@code type} is DEFAULT or DEFAULT_LIGHTWEIGHT, return 400 BAD Request
+     * - If the domain doesn't exists, returns 404 NOT FOUND
+     * - If any internal error occurs, returns 500 INTERNAL SERVER ERROR.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ChangeDomainLicenseTypeResponse> changeDomainLicenseType(
+            ChangeDomainLicenseTypeRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ChangeDomainLicenseTypeRequest, ChangeDomainLicenseTypeResponse>
+                    handler);
+
+    /**
      * Moves the specified tag namespace to the specified compartment within the same tenancy.
      * <p>
      * To move the tag namespace, you must have the manage tag-namespaces permission on both compartments.
@@ -355,6 +446,37 @@ public interface IdentityAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Creates a new domain in the tenancy with domain home in {@code homeRegion}. This is an asynchronous call - where, at start,
+     * {@code lifecycleState} of this domain is set to CREATING and {@code lifecycleDetails} to UPDATING. On domain creation completion
+     * this Domain's {@code lifecycleState} will be set to ACTIVE and {@code lifecycleDetails} to null.
+     * <p>
+     * To track progress, HTTP GET on /iamWorkRequests/{iamWorkRequestsId} endpoint will provide
+     * the async operation's status.
+     * <p>
+     * After creating a `Domain`, make sure its `lifecycleState` changes from CREATING to ACTIVE
+     * before using it.
+     * If the domain's {@code displayName} already exists, returns 400 BAD REQUEST.
+     * If any one of admin related fields are provided and one of the following 3 fields
+     * - {@code adminEmail}, {@code adminLastName} and {@code adminUserName} - is not provided,
+     * returns 400 BAD REQUEST.
+     * - If {@code isNotificationBypassed} is NOT provided when admin information is provided,
+     * returns 400 BAD REQUEST.
+     * - If any internal error occurs, return 500 INTERNAL SERVER ERROR.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateDomainResponse> createDomain(
+            CreateDomainRequest request,
+            com.oracle.bmc.responses.AsyncHandler<CreateDomainRequest, CreateDomainResponse>
+                    handler);
+
+    /**
      * Creates a new dynamic group in your tenancy.
      * <p>
      * You must specify your tenancy's OCID as the compartment ID in the request object (remember that the tenancy
@@ -424,6 +546,8 @@ public interface IdentityAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<CreateGroupRequest, CreateGroupResponse> handler);
 
     /**
+     * **Deprecated.** For more information, see [Deprecated IAM Service APIs](https://docs.cloud.oracle.com/Content/Identity/Reference/deprecatediamapis.htm).
+     * <p>
      * Creates a new identity provider in your tenancy. For more information, see
      * [Identity Providers and Federation](https://docs.cloud.oracle.com/Content/Identity/Concepts/federation.htm).
      * <p>
@@ -458,6 +582,8 @@ public interface IdentityAsync extends AutoCloseable {
                     handler);
 
     /**
+     * **Deprecated.** For more information, see [Deprecated IAM Service APIs](https://docs.cloud.oracle.com/Content/Identity/Reference/deprecatediamapis.htm).
+     * <p>
      * Creates a single mapping between an IdP group and an IAM Service
      * {@link Group}.
      *
@@ -809,6 +935,39 @@ public interface IdentityAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<CreateUserRequest, CreateUserResponse> handler);
 
     /**
+     * If the domain's {@code lifecycleState} is ACTIVE and no active Apps are present in domain,
+     * 1. Set the {@code lifecycleDetails} to DEACTIVATING and asynchronously starts disabling
+     *    the domain and return 202 ACCEPTED.
+     *     1.1 Sets the domain status to DISABLED and set specified domain's
+     *         {@code lifecycleState} to INACTIVE and set the {@code lifecycleDetails} to null.
+     * <p>
+     * To track progress, HTTP GET on /iamWorkRequests/{iamWorkRequestsId} endpoint will provide
+     * the async operation's status. Activate a domain can be done using HTTP POST
+     * /domains/{domainId}/actions/activate.
+     * <p>
+     * - If the domain's {@code lifecycleState} is INACTIVE, returns 202 ACCEPTED with no action
+     *   taken on service side.
+     * - If domain is of {@code type} DEFAULT or DEFAULT_LIGHTWEIGHT or domain's {@code lifecycleState}
+     *   is not ACTIVE, returns 400 BAD REQUEST.
+     * - If the domain doesn't exists, returns 404 NOT FOUND.
+     * - If any active Apps in domain, returns 400 BAD REQUEST.
+     * - If the authenticated user is part of the domain to be activated, returns 400 BAD REQUEST
+     * - If error occurs while deactivating domain, returns 500 INTERNAL SERVER ERROR.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<DeactivateDomainResponse> deactivateDomain(
+            DeactivateDomainRequest request,
+            com.oracle.bmc.responses.AsyncHandler<DeactivateDomainRequest, DeactivateDomainResponse>
+                    handler);
+
+    /**
      * Deletes the specified API signing key for the specified user.
      * <p>
      * Every user has permission to use this operation to delete a key for *their own user ID*. An
@@ -880,6 +1039,38 @@ public interface IdentityAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Soft Deletes a domain.
+     * <p>
+     * This is an asynchronous API, where, if the domain's {@code lifecycleState} is INACTIVE and
+     * no active Apps are present in underlying stripe,
+     *   1. Sets the specified domain's {@code lifecycleState} to DELETING.
+     *   2. Domains marked as DELETING will be cleaned up by a periodic task unless customer request it to be undo via ticket.
+     *   3. Work request is created and returned as opc-work-request-id along with 202 ACCEPTED.
+     * To track progress, HTTP GET on /iamWorkRequests/{iamWorkRequestsId} endpoint will provide
+     * the async operation's status.
+     * <p>
+     * - If the domain's {@code lifecycleState} is DELETING, returns 202 Accepted as a deletion
+     *   is already in progress for this domain.
+     * - If the domain doesn't exists, returns 404 NOT FOUND.
+     * - If domain is of {@code type} DEFAULT or DEFAULT_LIGHTWEIGHT, returns 400 BAD REQUEST.
+     * - If any active Apps in domain, returns 400 BAD REQUEST.
+     * - If the authenticated user is part of the domain to be deleted, returns 400 BAD REQUEST.
+     * - If any internal error occurs, return 500 INTERNAL SERVER ERROR.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteDomainResponse> deleteDomain(
+            DeleteDomainRequest request,
+            com.oracle.bmc.responses.AsyncHandler<DeleteDomainRequest, DeleteDomainResponse>
+                    handler);
+
+    /**
      * Deletes the specified dynamic group.
      *
      *
@@ -912,6 +1103,8 @@ public interface IdentityAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<DeleteGroupRequest, DeleteGroupResponse> handler);
 
     /**
+     * **Deprecated.** For more information, see [Deprecated IAM Service APIs](https://docs.cloud.oracle.com/Content/Identity/Reference/deprecatediamapis.htm).
+     * <p>
      * Deletes the specified identity provider. The identity provider must not have
      * any group mappings (see {@link IdpGroupMapping}).
      *
@@ -930,7 +1123,10 @@ public interface IdentityAsync extends AutoCloseable {
                     handler);
 
     /**
+     * **Deprecated.** For more information, see [Deprecated IAM Service APIs](https://docs.cloud.oracle.com/Content/Identity/Reference/deprecatediamapis.htm).
+     * <p>
      * Deletes the specified group mapping.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -1136,6 +1332,35 @@ public interface IdentityAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<DeleteUserRequest, DeleteUserResponse> handler);
 
     /**
+     * Replicate domain to a new region. This is an asynchronous call - where, at start,
+     * {@code state} of this domain in replica region is set to ENABLING_REPLICATION.
+     * On domain replication completion the {@code state} will be set to REPLICATION_ENABLED.
+     * <p>
+     * To track progress, HTTP GET on /iamWorkRequests/{iamWorkRequestsId} endpoint will provide
+     * the async operation's status.
+     * <p>
+     * If the replica region's {@code state} is already ENABLING_REPLICATION or REPLICATION_ENABLED,
+     * returns 409 CONFLICT.
+     * - If the domain doesn't exists, returns 404 NOT FOUND.
+     * - If home region is same as replication region, return 400 BAD REQUEST.
+     * - If Domain is not active or being updated, returns 400 BAD REQUEST.
+     * - If any internal error occurs, return 500 INTERNAL SERVER ERROR.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<EnableReplicationToRegionResponse> enableReplicationToRegion(
+            EnableReplicationToRegionRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            EnableReplicationToRegionRequest, EnableReplicationToRegionResponse>
+                    handler);
+
+    /**
      * Generate seed for the MFA TOTP device.
      *
      *
@@ -1193,6 +1418,24 @@ public interface IdentityAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Get the specified domain's information.
+     * <p>
+     * - If the domain doesn't exists, returns 404 NOT FOUND.
+     * - If any internal error occurs, returns 500 INTERNAL SERVER ERROR.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetDomainResponse> getDomain(
+            GetDomainRequest request,
+            com.oracle.bmc.responses.AsyncHandler<GetDomainRequest, GetDomainResponse> handler);
+
+    /**
      * Gets the specified dynamic group's information.
      *
      *
@@ -1228,7 +1471,31 @@ public interface IdentityAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<GetGroupRequest, GetGroupResponse> handler);
 
     /**
+     * Gets details on a specified IAM work request. For asynchronous operations in Identity and Access Management service, opc-work-request-id header values contains
+     * iam work request id that can be provided in this API to track the current status of the operation.
+     * <p>
+     * - If workrequest exists, returns 202 ACCEPTED
+     * - If workrequest does not exist, returns 404 NOT FOUND
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetIamWorkRequestResponse> getIamWorkRequest(
+            GetIamWorkRequestRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetIamWorkRequestRequest, GetIamWorkRequestResponse>
+                    handler);
+
+    /**
+     * **Deprecated.** For more information, see [Deprecated IAM Service APIs](https://docs.cloud.oracle.com/Content/Identity/Reference/deprecatediamapis.htm).
+     * <p>
      * Gets the specified identity provider's information.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -1244,7 +1511,10 @@ public interface IdentityAsync extends AutoCloseable {
                     handler);
 
     /**
+     * **Deprecated.** For more information, see [Deprecated IAM Service APIs](https://docs.cloud.oracle.com/Content/Identity/Reference/deprecatediamapis.htm).
+     * <p>
      * Gets the specified group mapping.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -1353,7 +1623,7 @@ public interface IdentityAsync extends AutoCloseable {
 
     /**
      * Gets details on a specified work request. The workRequestID is returned in the opc-workrequest-id header
-     * for any asynchronous operation in the Identity and Access Management service.
+     * for any asynchronous operation in tagging service.
      *
      *
      * @param request The request object containing the details to send
@@ -1434,7 +1704,7 @@ public interface IdentityAsync extends AutoCloseable {
 
     /**
      * Gets details on a specified work request. The workRequestID is returned in the opc-workrequest-id header
-     * for any asynchronous operation in the Identity and Access Management service.
+     * for any asynchronous operation in the compartment service.
      *
      *
      * @param request The request object containing the details to send
@@ -1448,6 +1718,31 @@ public interface IdentityAsync extends AutoCloseable {
             GetWorkRequestRequest request,
             com.oracle.bmc.responses.AsyncHandler<GetWorkRequestRequest, GetWorkRequestResponse>
                     handler);
+
+    /**
+     * List the allowed domain license types supported by OCI
+     * If {@code currentLicenseTypeName} provided, returns allowed license types a domain with the specified license type name can migrate to.
+     * If {@code name} is provided, it filters and returns resources that match the given license type name.
+     * Otherwise, returns all valid license types that are currently supported.
+     * <p>
+     * - If license type details are retrieved sucessfully, return 202 ACCEPTED.
+     * - If any internal error occurs, return 500 INTERNAL SERVER ERROR.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListAllowedDomainLicenseTypesResponse>
+            listAllowedDomainLicenseTypes(
+                    ListAllowedDomainLicenseTypesRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ListAllowedDomainLicenseTypesRequest,
+                                    ListAllowedDomainLicenseTypesResponse>
+                            handler);
 
     /**
      * Lists the API signing keys for the specified user. A user can have a maximum of three keys.
@@ -1617,6 +1912,22 @@ public interface IdentityAsync extends AutoCloseable {
                     handler);
 
     /**
+     * List all domains that are homed or have a replica region in current region.
+     * - If any internal error occurs, return 500 INTERNAL SERVER ERROR.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListDomainsResponse> listDomains(
+            ListDomainsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<ListDomainsRequest, ListDomainsResponse> handler);
+
+    /**
      * Lists the dynamic groups in your tenancy. You must specify your tenancy's OCID as the value for
      * the compartment ID (remember that the tenancy is simply the root compartment).
      * See [Where to Get the Tenancy's OCID and User's OCID](https://docs.cloud.oracle.com/Content/API/Concepts/apisigningkey.htm#five).
@@ -1671,7 +1982,72 @@ public interface IdentityAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<ListGroupsRequest, ListGroupsResponse> handler);
 
     /**
+     * Gets error details for a specified IAM work request. For asynchronous operations in Identity and Access Management service, opc-work-request-id header values contains
+     * iam work request id that can be provided in this API to track the current status of the operation.
+     * <p>
+     * - If workrequest exists, returns 202 ACCEPTED
+     * - If workrequest does not exist, returns 404 NOT FOUND
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListIamWorkRequestErrorsResponse> listIamWorkRequestErrors(
+            ListIamWorkRequestErrorsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListIamWorkRequestErrorsRequest, ListIamWorkRequestErrorsResponse>
+                    handler);
+
+    /**
+     * Gets logs for a specified IAM work request. For asynchronous operations in Identity and Access Management service, opc-work-request-id header values contains
+     * iam work request id that can be provided in this API to track the current status of the operation.
+     * <p>
+     * - If workrequest exists, returns 202 ACCEPTED
+     * - If workrequest does not exist, returns 404 NOT FOUND
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListIamWorkRequestLogsResponse> listIamWorkRequestLogs(
+            ListIamWorkRequestLogsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListIamWorkRequestLogsRequest, ListIamWorkRequestLogsResponse>
+                    handler);
+
+    /**
+     * List the IAM work requests in compartment
+     * <p>
+     * - If IAM workrequest  details are retrieved sucessfully, return 202 ACCEPTED.
+     * - If any internal error occurs, return 500 INTERNAL SERVER ERROR.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListIamWorkRequestsResponse> listIamWorkRequests(
+            ListIamWorkRequestsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListIamWorkRequestsRequest, ListIamWorkRequestsResponse>
+                    handler);
+
+    /**
+     * **Deprecated.** For more information, see [Deprecated IAM Service APIs](https://docs.cloud.oracle.com/Content/Identity/Reference/deprecatediamapis.htm).
+     * <p>
      * Lists the identity provider groups.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -1687,6 +2063,8 @@ public interface IdentityAsync extends AutoCloseable {
                     handler);
 
     /**
+     * **Deprecated.** For more information, see [Deprecated IAM Service APIs](https://docs.cloud.oracle.com/Content/Identity/Reference/deprecatediamapis.htm).
+     * <p>
      * Lists all the identity providers in your tenancy. You must specify the identity provider type (e.g., `SAML2` for
      * identity providers using the SAML2.0 protocol). You must specify your tenancy's OCID as the value for the
      * compartment ID (remember that the tenancy is simply the root compartment).
@@ -1707,6 +2085,8 @@ public interface IdentityAsync extends AutoCloseable {
                     handler);
 
     /**
+     * **Deprecated.** For more information, see [Deprecated IAM Service APIs](https://docs.cloud.oracle.com/Content/Identity/Reference/deprecatediamapis.htm).
+     * <p>
      * Lists the group mappings for the specified identity provider.
      *
      *
@@ -2164,6 +2544,33 @@ public interface IdentityAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Updates domain information and associated stripe. This is an asynchronous call where
+     * the associated stripe and domain are updated.
+     * <p>
+     * To track progress, HTTP GET on /iamWorkRequests/{iamWorkRequestsId} endpoint will provide
+     * the async operation's status.
+     * <p>
+     * - If the {@code displayName} is not unique within the tenancy, returns 400 BAD REQUEST.
+     * - If any field other than {@code description} is requested to be updated for DEFAULT domain,
+     * returns 400 BAD REQUEST.
+     * - If Domain is not active or being updated, returns 400 BAD REQUEST.
+     * - If Domain {@code type} is DEFAULT or DEFAULT_LIGHTWEIGHT, return 400 BAD Request
+     * - If the domain doesn't exists, returns 404 NOT FOUND.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateDomainResponse> updateDomain(
+            UpdateDomainRequest request,
+            com.oracle.bmc.responses.AsyncHandler<UpdateDomainRequest, UpdateDomainResponse>
+                    handler);
+
+    /**
      * Updates the specified dynamic group.
      *
      * @param request The request object containing the details to send
@@ -2194,7 +2601,10 @@ public interface IdentityAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<UpdateGroupRequest, UpdateGroupResponse> handler);
 
     /**
+     * **Deprecated.** For more information, see [Deprecated IAM Service APIs](https://docs.cloud.oracle.com/Content/Identity/Reference/deprecatediamapis.htm).
+     * <p>
      * Updates the specified identity provider.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -2210,7 +2620,10 @@ public interface IdentityAsync extends AutoCloseable {
                     handler);
 
     /**
+     * **Deprecated.** For more information, see [Deprecated IAM Service APIs](https://docs.cloud.oracle.com/Content/Identity/Reference/deprecatediamapis.htm).
+     * <p>
      * Updates the specified group mapping.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.

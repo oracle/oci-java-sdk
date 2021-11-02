@@ -6,6 +6,7 @@ package com.oracle.bmc.retrier;
 
 import com.oracle.bmc.waiter.DelayStrategy;
 import com.oracle.bmc.waiter.ExponentialBackoffDelayStrategy;
+import com.oracle.bmc.waiter.ExponentialBackoffDelayStrategyWithJitter;
 import com.oracle.bmc.waiter.MaxAttemptsTerminationStrategy;
 import com.oracle.bmc.waiter.TerminationStrategy;
 import com.oracle.bmc.waiter.WaiterConfiguration;
@@ -24,7 +25,16 @@ import java.util.concurrent.TimeUnit;
  */
 @ToString(callSuper = true)
 public class RetryConfiguration extends WaiterConfiguration {
-    static final RetryConfiguration NO_RETRY_CONFIGURATION = RetryConfiguration.builder().build();
+    public static final RetryConfiguration NO_RETRY_CONFIGURATION =
+            RetryConfiguration.builder().build();
+
+    public static final RetryConfiguration SDK_DEFAULT_RETRY_CONFIGURATION =
+            RetryConfiguration.builder()
+                    .terminationStrategy(new MaxAttemptsTerminationStrategy(8))
+                    .delayStrategy(new ExponentialBackoffDelayStrategyWithJitter(30))
+                    .retryCondition(
+                            exception -> new DefaultRetryCondition().shouldBeRetried(exception))
+                    .build();
 
     @Getter private final RetryCondition retryCondition;
     @Getter private final RetryOptions retryOptions;

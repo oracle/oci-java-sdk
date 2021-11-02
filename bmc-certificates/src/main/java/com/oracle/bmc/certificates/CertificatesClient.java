@@ -7,6 +7,8 @@ package com.oracle.bmc.certificates;
 import com.oracle.bmc.certificates.internal.http.*;
 import com.oracle.bmc.certificates.requests.*;
 import com.oracle.bmc.certificates.responses.*;
+import com.oracle.bmc.circuitbreaker.JaxRsCircuitBreaker;
+import com.oracle.bmc.util.CircuitBreakerUtils;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210224")
 @lombok.extern.slf4j.Slf4j
@@ -262,12 +264,15 @@ public class CertificatesClient implements Certificates {
                         ? configuration
                         : com.oracle.bmc.ClientConfiguration.builder().build();
         this.retryConfiguration = clientConfigurationToUse.getRetryConfiguration();
+        JaxRsCircuitBreaker circuitBreaker =
+                CircuitBreakerUtils.getUserDefinedCircuitBreaker(configuration);
         this.client =
                 restClientFactory.create(
                         defaultRequestSigner,
                         requestSigners,
                         clientConfigurationToUse,
-                        isNonBufferingApacheClient);
+                        isNonBufferingApacheClient,
+                        circuitBreaker);
 
         if (this.authenticationDetailsProvider instanceof com.oracle.bmc.auth.RegionProvider) {
             com.oracle.bmc.auth.RegionProvider provider =
@@ -386,7 +391,7 @@ public class CertificatesClient implements Certificates {
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -416,7 +421,7 @@ public class CertificatesClient implements Certificates {
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -444,7 +449,7 @@ public class CertificatesClient implements Certificates {
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -475,7 +480,7 @@ public class CertificatesClient implements Certificates {
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -505,7 +510,7 @@ public class CertificatesClient implements Certificates {
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {

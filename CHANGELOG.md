@@ -3,6 +3,17 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
+## 2.8.1 - 2021-11-02
+### Added
+- Support for the Database Tools service
+- Support for scan listener port TCP and TCP SSL on cloud VM clusters in the Database service
+- Support for domains in the Identity service
+- Support for redeemable users and support rewards in the Usage service
+- Support for calling Oracle Cloud Infrastructure services in the ap-singapore-1 and eu-marseille-1 regions
+
+### Changed
+- Endpoint for Identity service changed to include ".oci" subdomain
+
 ## 2.8.0 - 2021-10-26
 ### Added
 - Support for the Source Code Management service

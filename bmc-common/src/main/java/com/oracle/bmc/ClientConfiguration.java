@@ -23,22 +23,22 @@ public class ClientConfiguration {
     private static final int MAX_ASYNC_THREADS = 50;
 
     /**
-     * The max time to wait for a connection, in millis.  Default is 10000.
+     * The max time to wait for a connection, in millis. Default is 10000.
      */
     private final int connectionTimeoutMillis;
     /**
-     * The max time to wait for data, in millis.  Default is 60000;
+     * The max time to wait for data, in millis. Default is 60000;
      */
     private final int readTimeoutMillis;
     /**
-     * The max number of async threads to use.  Default is 50;
+     * The max number of async threads to use. Default is 50;
      * Note: This property is only supported for Jersey default HttpUrlConnector
      * To configure connection pool for Apache client, use ApacheConnectorProperties
      */
     private final int maxAsyncThreads;
 
     /**
-     * The retry configuration to use.  Default is no retry.
+     * The retry configuration to use. Default is no retry.
      */
     private final RetryConfiguration retryConfiguration;
 

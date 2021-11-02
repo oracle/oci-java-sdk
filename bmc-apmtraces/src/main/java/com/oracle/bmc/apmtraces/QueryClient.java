@@ -7,6 +7,8 @@ package com.oracle.bmc.apmtraces;
 import com.oracle.bmc.apmtraces.internal.http.*;
 import com.oracle.bmc.apmtraces.requests.*;
 import com.oracle.bmc.apmtraces.responses.*;
+import com.oracle.bmc.circuitbreaker.JaxRsCircuitBreaker;
+import com.oracle.bmc.util.CircuitBreakerUtils;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 @lombok.extern.slf4j.Slf4j
@@ -263,12 +265,15 @@ public class QueryClient implements Query {
                         ? configuration
                         : com.oracle.bmc.ClientConfiguration.builder().build();
         this.retryConfiguration = clientConfigurationToUse.getRetryConfiguration();
+        JaxRsCircuitBreaker circuitBreaker =
+                CircuitBreakerUtils.getUserDefinedCircuitBreaker(configuration);
         this.client =
                 restClientFactory.create(
                         defaultRequestSigner,
                         requestSigners,
                         clientConfigurationToUse,
-                        isNonBufferingApacheClient);
+                        isNonBufferingApacheClient,
+                        circuitBreaker);
 
         this.paginators = new QueryPaginators(this);
 
@@ -389,7 +394,7 @@ public class QueryClient implements Query {
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -416,7 +421,7 @@ public class QueryClient implements Query {
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -447,7 +452,7 @@ public class QueryClient implements Query {
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {

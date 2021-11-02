@@ -162,6 +162,24 @@ public class CreateCloudVmClusterDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("scanListenerPortTcp")
+        private Integer scanListenerPortTcp;
+
+        public Builder scanListenerPortTcp(Integer scanListenerPortTcp) {
+            this.scanListenerPortTcp = scanListenerPortTcp;
+            this.__explicitlySet__.add("scanListenerPortTcp");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("scanListenerPortTcpSsl")
+        private Integer scanListenerPortTcpSsl;
+
+        public Builder scanListenerPortTcpSsl(Integer scanListenerPortTcpSsl) {
+            this.scanListenerPortTcpSsl = scanListenerPortTcpSsl;
+            this.__explicitlySet__.add("scanListenerPortTcpSsl");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
         private java.util.List<String> nsgIds;
 
@@ -229,6 +247,8 @@ public class CreateCloudVmClusterDetails {
                             isSparseDiskgroupEnabled,
                             isLocalBackupEnabled,
                             timeZone,
+                            scanListenerPortTcp,
+                            scanListenerPortTcpSsl,
                             nsgIds,
                             backupNetworkNsgIds,
                             giVersion,
@@ -256,6 +276,8 @@ public class CreateCloudVmClusterDetails {
                             .isSparseDiskgroupEnabled(o.getIsSparseDiskgroupEnabled())
                             .isLocalBackupEnabled(o.getIsLocalBackupEnabled())
                             .timeZone(o.getTimeZone())
+                            .scanListenerPortTcp(o.getScanListenerPortTcp())
+                            .scanListenerPortTcpSsl(o.getScanListenerPortTcpSsl())
                             .nsgIds(o.getNsgIds())
                             .backupNetworkNsgIds(o.getBackupNetworkNsgIds())
                             .giVersion(o.getGiVersion())
@@ -427,6 +449,18 @@ public class CreateCloudVmClusterDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeZone")
     String timeZone;
+
+    /**
+     * The TCP Single Client Access Name (SCAN) port. The default port is 1521.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("scanListenerPortTcp")
+    Integer scanListenerPortTcp;
+
+    /**
+     * The TCPS Single Client Access Name (SCAN) port. The default port is 2484.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("scanListenerPortTcpSsl")
+    Integer scanListenerPortTcpSsl;
 
     /**
      * A list of the [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that this resource belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm).

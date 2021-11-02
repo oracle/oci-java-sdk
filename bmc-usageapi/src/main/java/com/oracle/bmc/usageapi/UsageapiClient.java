@@ -7,6 +7,8 @@ package com.oracle.bmc.usageapi;
 import com.oracle.bmc.usageapi.internal.http.*;
 import com.oracle.bmc.usageapi.requests.*;
 import com.oracle.bmc.usageapi.responses.*;
+import com.oracle.bmc.circuitbreaker.JaxRsCircuitBreaker;
+import com.oracle.bmc.util.CircuitBreakerUtils;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200107")
 @lombok.extern.slf4j.Slf4j
@@ -263,12 +265,15 @@ public class UsageapiClient implements Usageapi {
                         ? configuration
                         : com.oracle.bmc.ClientConfiguration.builder().build();
         this.retryConfiguration = clientConfigurationToUse.getRetryConfiguration();
+        JaxRsCircuitBreaker circuitBreaker =
+                CircuitBreakerUtils.getUserDefinedCircuitBreaker(configuration);
         this.client =
                 restClientFactory.create(
                         defaultRequestSigner,
                         requestSigners,
                         clientConfigurationToUse,
-                        isNonBufferingApacheClient);
+                        isNonBufferingApacheClient,
+                        circuitBreaker);
 
         this.paginators = new UsageapiPaginators(this);
 
@@ -389,7 +394,7 @@ public class UsageapiClient implements Usageapi {
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         return retrier.execute(
                 interceptedRequest,
@@ -422,7 +427,7 @@ public class UsageapiClient implements Usageapi {
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         return retrier.execute(
                 interceptedRequest,
@@ -455,7 +460,7 @@ public class UsageapiClient implements Usageapi {
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -484,7 +489,7 @@ public class UsageapiClient implements Usageapi {
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -513,7 +518,7 @@ public class UsageapiClient implements Usageapi {
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -540,7 +545,7 @@ public class UsageapiClient implements Usageapi {
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -568,7 +573,7 @@ public class UsageapiClient implements Usageapi {
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -596,7 +601,7 @@ public class UsageapiClient implements Usageapi {
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -626,7 +631,7 @@ public class UsageapiClient implements Usageapi {
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -655,7 +660,7 @@ public class UsageapiClient implements Usageapi {
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -687,7 +692,7 @@ public class UsageapiClient implements Usageapi {
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -719,7 +724,7 @@ public class UsageapiClient implements Usageapi {
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {

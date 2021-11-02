@@ -7,6 +7,8 @@ package com.oracle.bmc.audit;
 import com.oracle.bmc.audit.internal.http.*;
 import com.oracle.bmc.audit.requests.*;
 import com.oracle.bmc.audit.responses.*;
+import com.oracle.bmc.circuitbreaker.JaxRsCircuitBreaker;
+import com.oracle.bmc.util.CircuitBreakerUtils;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190901")
 @lombok.extern.slf4j.Slf4j
@@ -263,12 +265,15 @@ public class AuditClient implements Audit {
                         ? configuration
                         : com.oracle.bmc.ClientConfiguration.builder().build();
         this.retryConfiguration = clientConfigurationToUse.getRetryConfiguration();
+        JaxRsCircuitBreaker circuitBreaker =
+                CircuitBreakerUtils.getUserDefinedCircuitBreaker(configuration);
         this.client =
                 restClientFactory.create(
                         defaultRequestSigner,
                         requestSigners,
                         clientConfigurationToUse,
-                        isNonBufferingApacheClient);
+                        isNonBufferingApacheClient,
+                        circuitBreaker);
 
         this.paginators = new AuditPaginators(this);
 
@@ -389,7 +394,7 @@ public class AuditClient implements Audit {
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -416,7 +421,7 @@ public class AuditClient implements Audit {
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -444,7 +449,7 @@ public class AuditClient implements Audit {
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {

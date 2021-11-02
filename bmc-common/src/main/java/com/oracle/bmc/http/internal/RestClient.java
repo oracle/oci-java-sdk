@@ -6,7 +6,6 @@ package com.oracle.bmc.http.internal;
 
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Throwables;
-import com.oracle.bmc.ClientConfiguration;
 import com.oracle.bmc.circuitbreaker.CallNotAllowedException;
 import com.oracle.bmc.circuitbreaker.JaxRsCircuitBreaker;
 import com.oracle.bmc.http.ApacheUtils;

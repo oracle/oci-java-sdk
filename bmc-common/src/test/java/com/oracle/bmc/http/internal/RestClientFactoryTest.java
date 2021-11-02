@@ -9,13 +9,16 @@ import static org.junit.Assert.assertEquals;
 import com.google.common.collect.ImmutableList;
 import com.oracle.bmc.ClientConfiguration;
 import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
+import com.oracle.bmc.helper.EnvironmentVariablesHelper;
 import com.oracle.bmc.http.CompositeClientConfigurator;
+import com.oracle.bmc.util.CircuitBreakerUtils;
 import org.glassfish.jersey.client.JerseyClient;
 import org.glassfish.jersey.internal.InternalProperties;
 import org.junit.Assert;
 import org.junit.Test;
 
-import javax.ws.rs.client.Client;
+import java.util.HashMap;
+import java.util.Map;
 
 public class RestClientFactoryTest {
     @Test
@@ -53,7 +56,24 @@ public class RestClientFactoryTest {
     }
 
     @Test
-    public void validateCircuitBreakerIsSetToNullWhenNotConfigured() {
+    public void validateDefaultCircuitBreakerIsSet() {
+        RestClient client =
+                RestClientFactoryBuilder.builder()
+                        .build()
+                        .create(
+                                null,
+                                null,
+                                ClientConfiguration.builder().build(),
+                                false,
+                                CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER);
+        Assert.assertNotNull(client.circuitBreaker);
+    }
+
+    @Test
+    public void validateDefaultCircuitBreakerIsNotSetWhenEnvVariableIsFalse() throws Exception {
+        Map<String, String> newEnvMap = new HashMap<>();
+        newEnvMap.put("OCI_SDK_DEFAULT_CIRCUITBREAKER_ENABLED", "False");
+        EnvironmentVariablesHelper.setEnvironmentVariable(newEnvMap);
         RestClient client =
                 RestClientFactoryBuilder.builder()
                         .build()

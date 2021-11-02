@@ -28,13 +28,13 @@ import javax.ws.rs.core.Response;
 @Builder
 public class CircuitBreakerConfiguration {
 
-    public static final int DEFAULT_FAILURE_RATE_THRESHOLD = 50; // Percentage
+    public static final int DEFAULT_FAILURE_RATE_THRESHOLD = 80; // Percentage
     public static final int DEFAULT_SLOW_CALL_RATE_THRESHOLD = 100; // Percentage
-    public static final int DEFAULT_WAIT_DURATION_IN_OPEN_STATE = 60; // Seconds
+    public static final int DEFAULT_WAIT_DURATION_IN_OPEN_STATE = 30; // Seconds
     public static final int DEFAULT_PERMITTED_CALLS_IN_HALF_OPEN_STATE = 10;
-    public static final int DEFAULT_MINIMUM_NUMBER_OF_CALLS = 100;
-    public static final int DEFAULT_SLIDING_WINDOW_SIZE = 100;
-    public static final int DEFAULT_SLOW_CALL_DURATION_THRESHOLD = 60; // Seconds
+    public static final int DEFAULT_MINIMUM_NUMBER_OF_CALLS = 10;
+    public static final int DEFAULT_SLIDING_WINDOW_SIZE = 120;
+    public static final int DEFAULT_SLOW_CALL_DURATION_THRESHOLD = 60; // Minutes
     public static final boolean DEFAULT_WRITABLE_STACK_TRACE_ENABLED = true;
 
     public static final int TOO_MANY_REQUESTS = Response.Status.TOO_MANY_REQUESTS.getStatusCode();
@@ -42,6 +42,8 @@ public class CircuitBreakerConfiguration {
             Response.Status.INTERNAL_SERVER_ERROR.getStatusCode();
     public static final int SERVICE_UNAVAILABLE =
             Response.Status.SERVICE_UNAVAILABLE.getStatusCode();
+    public static final int BAD_GATEWAY = Response.Status.BAD_GATEWAY.getStatusCode();
+    public static final int GATEWAY_TIMEOUT = Response.Status.GATEWAY_TIMEOUT.getStatusCode();
 
     @Getter @Builder.Default
     private final int failureRateThreshold = DEFAULT_FAILURE_RATE_THRESHOLD;
@@ -64,7 +66,7 @@ public class CircuitBreakerConfiguration {
 
     @Getter @Builder.Default
     private final Duration slowCallDurationThreshold =
-            Duration.ofSeconds(DEFAULT_SLOW_CALL_DURATION_THRESHOLD);
+            Duration.ofMinutes(DEFAULT_SLOW_CALL_DURATION_THRESHOLD);
 
     @Getter @Builder.Default
     private final boolean writableStackTraceEnabled = DEFAULT_WRITABLE_STACK_TRACE_ENABLED;
@@ -79,7 +81,9 @@ public class CircuitBreakerConfiguration {
                             Arrays.asList(
                                     TOO_MANY_REQUESTS,
                                     INTERNAL_SERVER_ERROR,
-                                    SERVICE_UNAVAILABLE)));
+                                    BAD_GATEWAY,
+                                    SERVICE_UNAVAILABLE,
+                                    GATEWAY_TIMEOUT)));
 
     public static final Class<ProcessingException> PROCESSING_EXCEPTION_CLASS =
             ProcessingException.class;

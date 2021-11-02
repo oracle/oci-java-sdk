@@ -55,7 +55,7 @@ public class CircuitBreakerConfigurationTest {
         assertEquals(internalConfig.getPermittedNumberOfCallsInHalfOpenState(), 2);
         assertEquals(
                 internalConfig.getSlidingWindowType(),
-                CircuitBreakerConfig.SlidingWindowType.COUNT_BASED);
+                CircuitBreakerConfig.SlidingWindowType.TIME_BASED);
         assertEquals(internalConfig.getSlidingWindowSize(), 10);
         assertEquals(internalConfig.getMinimumNumberOfCalls(), 4);
         assertEquals(internalConfig.getWaitDurationInOpenState(), Duration.ofSeconds(2));
@@ -96,14 +96,14 @@ public class CircuitBreakerConfigurationTest {
                 0.1);
         assertEquals(
                 internalConfig.getSlowCallDurationThreshold(),
-                Duration.ofSeconds(
+                Duration.ofMinutes(
                         CircuitBreakerConfiguration.DEFAULT_SLOW_CALL_DURATION_THRESHOLD));
         assertEquals(
                 internalConfig.getPermittedNumberOfCallsInHalfOpenState(),
                 CircuitBreakerConfiguration.DEFAULT_PERMITTED_CALLS_IN_HALF_OPEN_STATE);
         assertEquals(
                 internalConfig.getSlidingWindowType(),
-                CircuitBreakerConfig.SlidingWindowType.COUNT_BASED);
+                CircuitBreakerConfig.SlidingWindowType.TIME_BASED);
         assertEquals(
                 internalConfig.getSlidingWindowSize(),
                 CircuitBreakerConfiguration.DEFAULT_SLIDING_WINDOW_SIZE);
@@ -131,6 +131,8 @@ public class CircuitBreakerConfigurationTest {
         assertTrue(recordHttpStatuses.contains(CircuitBreakerConfiguration.INTERNAL_SERVER_ERROR));
         assertTrue(recordHttpStatuses.contains(CircuitBreakerConfiguration.SERVICE_UNAVAILABLE));
         assertTrue(recordHttpStatuses.contains(CircuitBreakerConfiguration.TOO_MANY_REQUESTS));
-        assertEquals(recordHttpStatuses.size(), 3);
+        assertTrue(recordHttpStatuses.contains(CircuitBreakerConfiguration.BAD_GATEWAY));
+        assertTrue(recordHttpStatuses.contains(CircuitBreakerConfiguration.GATEWAY_TIMEOUT));
+        assertEquals(recordHttpStatuses.size(), 5);
     }
 }
