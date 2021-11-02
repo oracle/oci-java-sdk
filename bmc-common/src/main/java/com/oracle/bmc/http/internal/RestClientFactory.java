@@ -16,6 +16,7 @@ import com.oracle.bmc.circuitbreaker.JaxRsCircuitBreaker;
 import com.oracle.bmc.http.ClientConfigurator;
 import com.oracle.bmc.http.signing.RequestSigner;
 import com.oracle.bmc.http.signing.SigningStrategy;
+import com.oracle.bmc.util.CircuitBreakerUtils;
 import lombok.Getter;
 import org.glassfish.jersey.client.ClientProperties;
 import org.glassfish.jersey.client.JerseyClientBuilder;
@@ -122,12 +123,25 @@ public class RestClientFactory {
         return this.create(defaultRequestSigner, requestSigners, null);
     }
 
+    /**
+     * Creates a new client that will use the given
+     * {@link com.oracle.bmc.auth.AuthenticationDetailsProvider}.
+     *
+     * @param defaultRequestSigner
+     *            The default strategy used to sign requests.
+     * @param requestSigners
+     *            The strategies used to sign requests, per signing strategy.
+     * @param configuration
+     *            The client configuration to use, or null for default configuration.
+     * @return A new RestClient instance.
+     */
     public RestClient create(
             RequestSigner defaultRequestSigner,
             Map<SigningStrategy, RequestSigner> requestSigners,
             ClientConfiguration configuration) {
         return create(defaultRequestSigner, requestSigners, configuration, false);
     }
+
     /**
      * Creates a new client that will use the given
      * {@link com.oracle.bmc.auth.AuthenticationDetailsProvider} and {@link ClientConfiguration}.
@@ -148,6 +162,32 @@ public class RestClientFactory {
             Map<SigningStrategy, RequestSigner> requestSigners,
             ClientConfiguration configuration,
             boolean isNonBuffering) {
+        return create(defaultRequestSigner, requestSigners, configuration, isNonBuffering, null);
+    }
+
+    /**
+     * Creates a new client that will use the given
+     * {@link com.oracle.bmc.auth.AuthenticationDetailsProvider} and {@link ClientConfiguration}.
+     *
+     * @param defaultRequestSigner
+     *            The default strategy used to sign requests.
+     * @param requestSigners
+     *            The strategies used to sign requests, per signing strategy.
+     * @param configuration
+     *            The client configuration to use, or null for default
+     *            configuration.
+     * @param isNonBuffering
+     *            The boolean value indicating if entities should be buffered.
+     * @param circuitBreaker
+     *            The circuit breaker to use.
+     * @return A new RestClient instance.
+     */
+    public RestClient create(
+            RequestSigner defaultRequestSigner,
+            Map<SigningStrategy, RequestSigner> requestSigners,
+            ClientConfiguration configuration,
+            boolean isNonBuffering,
+            JaxRsCircuitBreaker circuitBreaker) {
         ClientConfiguration clientConfigurationToUse =
                 configuration != null ? configuration : ClientConfiguration.builder().build();
         Client client =
@@ -157,20 +197,9 @@ public class RestClientFactory {
                         clientConfigurationToUse,
                         this.clientConfigurator);
 
-        JaxRsCircuitBreaker circuitBreaker = null;
-        if (configuration != null) {
-
-            if (configuration.getCircuitBreakerConfiguration() != null
-                    && configuration.getCircuitBreaker() != null) {
-                throw new IllegalArgumentException(
-                        "Invalid CircuitBreaker setting. Please provide either CircuitBreaker configuration or CircuitBreaker and not both");
-            }
-
-            if (configuration.getCircuitBreakerConfiguration() != null) {
-                circuitBreaker =
-                        new JaxRsCircuitBreakerImpl(configuration.getCircuitBreakerConfiguration());
-            } else if (configuration.getCircuitBreaker() != null)
-                circuitBreaker = configuration.getCircuitBreaker();
+        if (circuitBreaker == null) {
+            circuitBreaker =
+                    CircuitBreakerUtils.getUserDefinedCircuitBreaker(clientConfigurationToUse);
         }
 
         return new RestClient(

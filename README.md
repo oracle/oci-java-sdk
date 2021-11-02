@@ -13,6 +13,11 @@ For basic set up, see [Getting Started](https://docs.cloud.oracle.com/iaas/Conte
 
 For details on compatibility, advanced configurations, and add-ons, see [Configuration](https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/javasdkconfig.htm).
 
+- *Circuit Breaker*: By default, circuit breaker feature is enabled, if it is not expected, please explicitly set the environment variable:
+```
+export OCI_SDK_DEFAULT_CIRCUITBREAKER_ENABLED=FALSE
+```
+
 ## Examples
 
 Examples can be found [here](/bmc-examples/src/main/java/).

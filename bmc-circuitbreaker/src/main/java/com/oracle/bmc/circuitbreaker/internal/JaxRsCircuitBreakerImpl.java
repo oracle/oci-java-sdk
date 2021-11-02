@@ -28,6 +28,8 @@ public class JaxRsCircuitBreakerImpl implements JaxRsCircuitBreaker {
     private final CircuitBreaker circuitBreaker;
     private final Set<Integer> recordHttpStatuses;
 
+    private static final String INCORRECT_STATE_RESPONSE_STATUS = "IncorrectState";
+
     /**
      * Creates a {@link JaxRsCircuitBreakerImpl}
      *
@@ -37,7 +39,7 @@ public class JaxRsCircuitBreakerImpl implements JaxRsCircuitBreaker {
 
         CircuitBreakerConfig.Builder custom = CircuitBreakerConfig.custom();
         custom.enableAutomaticTransitionFromOpenToHalfOpen();
-        custom.slidingWindowType(CircuitBreakerConfig.SlidingWindowType.COUNT_BASED);
+        custom.slidingWindowType(CircuitBreakerConfig.SlidingWindowType.TIME_BASED);
         custom.failureRateThreshold(configuration.getFailureRateThreshold());
         custom.slowCallRateThreshold(configuration.getSlowCallRateThreshold());
         custom.slowCallDurationThreshold(configuration.getSlowCallDurationThreshold());
@@ -46,6 +48,7 @@ public class JaxRsCircuitBreakerImpl implements JaxRsCircuitBreaker {
         custom.slidingWindowSize(configuration.getSlidingWindowSize());
         custom.minimumNumberOfCalls(configuration.getMinimumNumberOfCalls());
         custom.writableStackTraceEnabled(configuration.isWritableStackTraceEnabled());
+        custom.waitDurationInOpenState(configuration.getWaitDurationInOpenState());
 
         // Exceptions to consider as failure by circuit breaker
         // Please let me know if you know a better way to do this :(
@@ -58,10 +61,17 @@ public class JaxRsCircuitBreakerImpl implements JaxRsCircuitBreaker {
         //noinspection unchecked
         custom.recordExceptions(exs);
 
-        custom.waitDurationInOpenState(configuration.getWaitDurationInOpenState());
-
         this.circuitBreaker = CircuitBreaker.of("default", custom.build());
         this.recordHttpStatuses = configuration.getRecordHttpStatuses();
+    }
+
+    private boolean isResponseStatusIncorrectState(Response response) {
+        Response.StatusType statusType = response.getStatusInfo();
+        if (statusType.getStatusCode() == 409
+                && statusType.getReasonPhrase().equals(INCORRECT_STATE_RESPONSE_STATUS)) {
+            return true;
+        }
+        return false;
     }
 
     @Override
@@ -70,7 +80,8 @@ public class JaxRsCircuitBreakerImpl implements JaxRsCircuitBreaker {
                 circuitBreaker.decorateSupplier(
                         () -> {
                             Response response = supplier.get();
-                            if (recordHttpStatuses.contains(response.getStatus())) {
+                            if (recordHttpStatuses.contains(response.getStatus())
+                                    || isResponseStatusIncorrectState(response)) {
                                 throw new HttpStatusErrorException(response);
                             }
                             return response;
@@ -97,7 +108,8 @@ public class JaxRsCircuitBreakerImpl implements JaxRsCircuitBreaker {
                         circuitBreaker,
                         (Invocation inv) -> {
                             Response response = function.apply(inv);
-                            if (recordHttpStatuses.contains(response.getStatus())) {
+                            if (recordHttpStatuses.contains(response.getStatus())
+                                    || isResponseStatusIncorrectState(response)) {
                                 throw new HttpStatusErrorException(response);
                             }
                             return response;

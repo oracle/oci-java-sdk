@@ -7,6 +7,7 @@ package com.oracle.bmc.retrier;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Objects;
+import java.util.Optional;
 import java.util.stream.Stream;
 import javax.annotation.Nullable;
 
@@ -23,9 +24,14 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 public final class Retriers {
-    private static volatile RetryConfiguration DEFAULT_RETRY_CONFIGURATION =
-            RetryConfiguration.NO_RETRY_CONFIGURATION;
+    private static volatile RetryConfiguration DEFAULT_RETRY_CONFIGURATION = null;
     private static volatile boolean SEND_OPC_RETRY_TOKEN = true;
+
+    /**
+     * The environment variable to control default retry behavior
+     */
+    private static final String OCI_SDK_DEFAULT_RETRY_ENABLED_ENV_VAR =
+            "OCI_SDK_DEFAULT_RETRY_ENABLED";
 
     /**
      * Setter for the default retry configuration used in the SDK. This can be overriden by setting
@@ -65,16 +71,54 @@ public final class Retriers {
     public static BmcGenericRetrier createPreferredRetrier(
             @Nullable final RetryConfiguration requestRetryConfiguration,
             @Nullable final RetryConfiguration clientRetryConfiguration) {
-        final RetryConfiguration preferredRetryConfiguration =
+        return createPreferredRetrier(requestRetryConfiguration, clientRetryConfiguration, false);
+    }
+
+    /**
+     * Choose the desired retry configuration and use it to create the retrier.
+     * @param requestRetryConfiguration the retry configuration set on the request object
+     * @param clientRetryConfiguration the retry configuration set on the client object
+     * @param specBasedDefaultRetryEnabled boolean value indicating if default retry is enabled via spec
+     * @return The retrier based on the appropriate retry configuration
+     */
+    public static BmcGenericRetrier createPreferredRetrier(
+            @Nullable final RetryConfiguration requestRetryConfiguration,
+            @Nullable final RetryConfiguration clientRetryConfiguration,
+            boolean specBasedDefaultRetryEnabled) {
+        final Optional<RetryConfiguration> userRetryStrategy =
                 Stream.of(
                                 requestRetryConfiguration,
                                 clientRetryConfiguration,
                                 DEFAULT_RETRY_CONFIGURATION)
                         .filter(Objects::nonNull)
-                        .findFirst()
-                        .get();
+                        .findFirst();
+
+        RetryConfiguration preferredRetryConfiguration = null;
+        if (userRetryStrategy.isPresent()) {
+            preferredRetryConfiguration = userRetryStrategy.get();
+        } else if (envBasedRetryConfiguration() != null) {
+            preferredRetryConfiguration = envBasedRetryConfiguration();
+        } else if (specBasedDefaultRetryEnabled) {
+            preferredRetryConfiguration = RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION;
+        } else {
+            preferredRetryConfiguration = RetryConfiguration.NO_RETRY_CONFIGURATION;
+        }
+
         LOG.debug("Using retry configuration: {}", preferredRetryConfiguration);
         return new BmcGenericRetrier(preferredRetryConfiguration);
+    }
+
+    private static RetryConfiguration envBasedRetryConfiguration() {
+        final String defaultRetryEnvVariable = System.getenv(OCI_SDK_DEFAULT_RETRY_ENABLED_ENV_VAR);
+        if (defaultRetryEnvVariable != null) {
+            if (defaultRetryEnvVariable.equalsIgnoreCase("true")) {
+                return RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION;
+            }
+            if (defaultRetryEnvVariable.equalsIgnoreCase("false")) {
+                return RetryConfiguration.NO_RETRY_CONFIGURATION;
+            }
+        }
+        return null;
     }
 
     /**

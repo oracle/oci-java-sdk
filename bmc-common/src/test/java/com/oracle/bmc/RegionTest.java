@@ -17,7 +17,6 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -25,6 +24,7 @@ import java.util.Map;
 import java.util.Set;
 
 import com.google.common.base.Optional;
+import com.oracle.bmc.helper.EnvironmentVariablesHelper;
 import com.oracle.bmc.model.RegionSchema;
 import com.oracle.bmc.model.internal.JsonConverter;
 import com.oracle.bmc.util.internal.FileUtils;
@@ -58,42 +58,13 @@ public class RegionTest {
                     .serviceName("RegionTest")
                     .build();
 
-    private static void setEnvironmentVariable(Map<String, String> newEnvMap) throws Exception {
-        try {
-            Class<?> processEnvironmentClass = Class.forName("java.lang.ProcessEnvironment");
-            Field theEnvironmentField = processEnvironmentClass.getDeclaredField("theEnvironment");
-            theEnvironmentField.setAccessible(true);
-            Map<String, String> env = (Map<String, String>) theEnvironmentField.get(null);
-            env.putAll(newEnvMap);
-            Field theCaseInsensitiveEnvironmentField =
-                    processEnvironmentClass.getDeclaredField("theCaseInsensitiveEnvironment");
-            theCaseInsensitiveEnvironmentField.setAccessible(true);
-            Map<String, String> caseSensitiveEnvMap =
-                    (Map<String, String>) theCaseInsensitiveEnvironmentField.get(null);
-            caseSensitiveEnvMap.putAll(newEnvMap);
-        } catch (NoSuchFieldException e) {
-            Class[] classes = Collections.class.getDeclaredClasses();
-            Map<String, String> env = System.getenv();
-            for (Class cl : classes) {
-                if ("java.util.Collections$UnmodifiableMap".equals(cl.getName())) {
-                    Field field = cl.getDeclaredField("m");
-                    field.setAccessible(true);
-                    Object obj = field.get(env);
-                    Map<String, String> map = (Map<String, String>) obj;
-                    map.clear();
-                    map.putAll(newEnvMap);
-                }
-            }
-        }
-    }
-
     @BeforeClass
     public static void init() throws Exception {
         String regionBlob =
                 "{ \"realmKey\" : \"UCX\",\"realmDomainComponent\" : \"oracle-foobar.com\",\"regionKey\" : \"ABV\",\"regionIdentifier\" : \"us-abv-1\"}";
         Map<String, String> newEnvMap = new HashMap<>();
         newEnvMap.put("OCI_REGION_METADATA", regionBlob);
-        setEnvironmentVariable(newEnvMap);
+        EnvironmentVariablesHelper.setEnvironmentVariable(newEnvMap);
     }
 
     @Before
@@ -417,7 +388,7 @@ public class RegionTest {
                 "{ \"realmKey\" : \"YCX\",\"realmDomainComponent\" : \"\",\"regionKey\" : \"MSW\",\"regionIdentifier\" : \"us-moscow-1\"}";
         Map<String, String> newEnvMap = new HashMap<>();
         newEnvMap.put("OCI_REGION_METADATA", regionBlob);
-        setEnvironmentVariable(newEnvMap);
+        EnvironmentVariablesHelper.setEnvironmentVariable(newEnvMap);
         Region.fromRegionCodeOrId("MSW");
     }
 
@@ -436,7 +407,7 @@ public class RegionTest {
                 "{ \"realmKey\" : \"UCX\",\"realmDomainComponent\" : \"oracle-foobar.com\",\"regionKey\" : \"ABV\",\"regionIdentifier\" : \"us-abv-1\"}";
         Map<String, String> newEnvMap = new HashMap<>();
         newEnvMap.put("OCI_REGION_METADATA", regionBlob);
-        setEnvironmentVariable(newEnvMap);
+        EnvironmentVariablesHelper.setEnvironmentVariable(newEnvMap);
         int count = Region.values().length;
         Region.fromRegionCodeOrId("ABV");
         int afterCheckEnvCount = Region.values().length;
@@ -454,7 +425,7 @@ public class RegionTest {
                 "{ \"realmKey\" : \"RTC\",\"realmDomainComponent\" : \"oracle-cloudfoobar.com\",\"regionKey\" : \"HHH\",\"regionIdentifier\" : \"us-hhh-1\"}";
         Map<String, String> newEnvMap = new HashMap<>();
         newEnvMap.put("OCI_REGION_METADATA", regionBlob);
-        setEnvironmentVariable(newEnvMap);
+        EnvironmentVariablesHelper.setEnvironmentVariable(newEnvMap);
         Region.fromRegionCodeOrId("HHH");
     }
 
@@ -469,7 +440,7 @@ public class RegionTest {
                 "{ \"realmKey\" : \"\",\"realmDomainComponent\" : \"foobar-oraclecloud.com\",\"regionKey\" : \"BRN\",\"regionIdentifier\" : \"us-berlin-1\"}";
         Map<String, String> newEnvMap = new HashMap<>();
         newEnvMap.put("OCI_REGION_METADATA", regionBlob);
-        setEnvironmentVariable(newEnvMap);
+        EnvironmentVariablesHelper.setEnvironmentVariable(newEnvMap);
         Region.fromRegionCodeOrId("BRN");
     }
 

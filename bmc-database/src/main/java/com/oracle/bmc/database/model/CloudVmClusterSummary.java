@@ -361,6 +361,24 @@ public class CloudVmClusterSummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("scanListenerPortTcp")
+        private Integer scanListenerPortTcp;
+
+        public Builder scanListenerPortTcp(Integer scanListenerPortTcp) {
+            this.scanListenerPortTcp = scanListenerPortTcp;
+            this.__explicitlySet__.add("scanListenerPortTcp");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("scanListenerPortTcpSsl")
+        private Integer scanListenerPortTcpSsl;
+
+        public Builder scanListenerPortTcpSsl(Integer scanListenerPortTcpSsl) {
+            this.scanListenerPortTcpSsl = scanListenerPortTcpSsl;
+            this.__explicitlySet__.add("scanListenerPortTcpSsl");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -403,7 +421,9 @@ public class CloudVmClusterSummary {
                             freeformTags,
                             definedTags,
                             scanDnsName,
-                            zoneId);
+                            zoneId,
+                            scanListenerPortTcp,
+                            scanListenerPortTcpSsl);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -447,7 +467,9 @@ public class CloudVmClusterSummary {
                             .freeformTags(o.getFreeformTags())
                             .definedTags(o.getDefinedTags())
                             .scanDnsName(o.getScanDnsName())
-                            .zoneId(o.getZoneId());
+                            .zoneId(o.getZoneId())
+                            .scanListenerPortTcp(o.getScanListenerPortTcp())
+                            .scanListenerPortTcpSsl(o.getScanListenerPortTcpSsl());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -871,6 +893,18 @@ public class CloudVmClusterSummary {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("zoneId")
     String zoneId;
+
+    /**
+     * The TCP Single Client Access Name (SCAN) port. The default port is 1521.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("scanListenerPortTcp")
+    Integer scanListenerPortTcp;
+
+    /**
+     * The TCPS Single Client Access Name (SCAN) port. The default port is 2484.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("scanListenerPortTcpSsl")
+    Integer scanListenerPortTcpSsl;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

@@ -6,6 +6,7 @@ package com.oracle.bmc.retrier;
 
 import com.google.common.collect.ImmutableSetMultimap;
 import com.google.common.collect.Multimap;
+import com.oracle.bmc.circuitbreaker.CallNotAllowedException;
 import com.oracle.bmc.model.BmcException;
 import lombok.NonNull;
 
@@ -31,7 +32,8 @@ public class DefaultRetryCondition implements RetryCondition {
                 || exception.getStatusCode() == 504
                 || RETRYABLE_SERVICE_ERRORS.containsEntry(
                         exception.getStatusCode(), exception.getServiceCode())
-                || isProcessingException(exception);
+                || isProcessingException(exception)
+                || exception.getCause() instanceof CallNotAllowedException;
     }
 
     public static boolean isProcessingException(final BmcException exception) {
