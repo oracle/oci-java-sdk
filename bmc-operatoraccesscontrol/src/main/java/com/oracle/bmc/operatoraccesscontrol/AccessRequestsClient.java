@@ -610,6 +610,39 @@ public class AccessRequestsClient implements AccessRequests {
     }
 
     @Override
+    public ReviewAccessRequestResponse reviewAccessRequest(ReviewAccessRequestRequest request) {
+        LOG.trace("Called reviewAccessRequest");
+        final ReviewAccessRequestRequest interceptedRequest =
+                ReviewAccessRequestConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ReviewAccessRequestConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, ReviewAccessRequestResponse>
+                transformer = ReviewAccessRequestConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getReviewAccessRequestDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public RevokeAccessRequestResponse revokeAccessRequest(RevokeAccessRequestRequest request) {
         LOG.trace("Called revokeAccessRequest");
         final RevokeAccessRequestRequest interceptedRequest =

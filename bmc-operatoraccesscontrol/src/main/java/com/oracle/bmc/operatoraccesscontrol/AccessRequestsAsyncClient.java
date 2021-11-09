@@ -595,6 +595,53 @@ public class AccessRequestsAsyncClient implements AccessRequestsAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<ReviewAccessRequestResponse> reviewAccessRequest(
+            ReviewAccessRequestRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ReviewAccessRequestRequest, ReviewAccessRequestResponse>
+                    handler) {
+        LOG.trace("Called async reviewAccessRequest");
+        final ReviewAccessRequestRequest interceptedRequest =
+                ReviewAccessRequestConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ReviewAccessRequestConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ReviewAccessRequestResponse>
+                transformer = ReviewAccessRequestConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        ReviewAccessRequestRequest, ReviewAccessRequestResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ReviewAccessRequestRequest, ReviewAccessRequestResponse>,
+                        java.util.concurrent.Future<ReviewAccessRequestResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getReviewAccessRequestDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ReviewAccessRequestRequest, ReviewAccessRequestResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<RevokeAccessRequestResponse> revokeAccessRequest(
             RevokeAccessRequestRequest request,
             final com.oracle.bmc.responses.AsyncHandler<

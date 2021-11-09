@@ -42,6 +42,14 @@ public class ListOperatorActionsConverter {
                                     request.getName()));
         }
 
+        if (request.getResourceType() != null) {
+            target =
+                    target.queryParam(
+                            "resourceType",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getResourceType()));
+        }
+
         target =
                 target.queryParam(
                         "compartmentId",

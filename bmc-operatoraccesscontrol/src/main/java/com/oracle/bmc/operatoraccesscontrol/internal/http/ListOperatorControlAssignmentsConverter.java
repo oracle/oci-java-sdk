@@ -59,6 +59,14 @@ public class ListOperatorControlAssignmentsConverter {
                         com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
                                 request.getCompartmentId()));
 
+        if (request.getResourceType() != null) {
+            target =
+                    target.queryParam(
+                            "resourceType",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getResourceType()));
+        }
+
         if (request.getLifecycleState() != null) {
             target =
                     target.queryParam(

@@ -62,6 +62,15 @@ public class OperatorControlSummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("resourceType")
+        private ResourceTypes resourceType;
+
+        public Builder resourceType(ResourceTypes resourceType) {
+            this.resourceType = resourceType;
+            this.__explicitlySet__.add("resourceType");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("timeOfCreation")
         private java.util.Date timeOfCreation;
 
@@ -127,6 +136,7 @@ public class OperatorControlSummary {
                             operatorControlName,
                             compartmentId,
                             isFullyPreApproved,
+                            resourceType,
                             timeOfCreation,
                             timeOfModification,
                             timeOfDeletion,
@@ -144,6 +154,7 @@ public class OperatorControlSummary {
                             .operatorControlName(o.getOperatorControlName())
                             .compartmentId(o.getCompartmentId())
                             .isFullyPreApproved(o.getIsFullyPreApproved())
+                            .resourceType(o.getResourceType())
                             .timeOfCreation(o.getTimeOfCreation())
                             .timeOfModification(o.getTimeOfModification())
                             .timeOfDeletion(o.getTimeOfDeletion())
@@ -186,6 +197,12 @@ public class OperatorControlSummary {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isFullyPreApproved")
     Boolean isFullyPreApproved;
+
+    /**
+     * resourceType for which the OperatorControl is applicable
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("resourceType")
+    ResourceTypes resourceType;
 
     /**
      * Time when the operator control was created, expressed in [RFC 3339] (https://tools.ietf.org/html/rfc3339) timestamp format. Example: '2020-05-22T21:10:29.600Z'

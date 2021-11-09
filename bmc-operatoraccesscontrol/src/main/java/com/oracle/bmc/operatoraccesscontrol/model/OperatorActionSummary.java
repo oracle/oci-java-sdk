@@ -62,6 +62,15 @@ public class OperatorActionSummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("resourceType")
+        private ResourceTypes resourceType;
+
+        public Builder resourceType(ResourceTypes resourceType) {
+            this.resourceType = resourceType;
+            this.__explicitlySet__.add("resourceType");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private OperatorActionLifecycleStates lifecycleState;
 
@@ -86,7 +95,13 @@ public class OperatorActionSummary {
         public OperatorActionSummary build() {
             OperatorActionSummary __instance__ =
                     new OperatorActionSummary(
-                            id, name, component, compartmentId, lifecycleState, description);
+                            id,
+                            name,
+                            component,
+                            compartmentId,
+                            resourceType,
+                            lifecycleState,
+                            description);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -98,6 +113,7 @@ public class OperatorActionSummary {
                             .name(o.getName())
                             .component(o.getComponent())
                             .compartmentId(o.getCompartmentId())
+                            .resourceType(o.getResourceType())
                             .lifecycleState(o.getLifecycleState())
                             .description(o.getDescription());
 
@@ -136,6 +152,12 @@ public class OperatorActionSummary {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     String compartmentId;
+
+    /**
+     * resourceType for which the OperatorAction is applicable
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("resourceType")
+    ResourceTypes resourceType;
 
     /**
      * The current lifecycle state of the operator action.

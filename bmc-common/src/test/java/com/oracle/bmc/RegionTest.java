@@ -60,9 +60,11 @@ public class RegionTest {
 
     @BeforeClass
     public static void init() throws Exception {
+
+        Map<String, String> newEnvMap = new HashMap<>();
+
         String regionBlob =
                 "{ \"realmKey\" : \"UCX\",\"realmDomainComponent\" : \"oracle-foobar.com\",\"regionKey\" : \"ABV\",\"regionIdentifier\" : \"us-abv-1\"}";
-        Map<String, String> newEnvMap = new HashMap<>();
         newEnvMap.put("OCI_REGION_METADATA", regionBlob);
         EnvironmentVariablesHelper.setEnvironmentVariable(newEnvMap);
     }
@@ -399,6 +401,23 @@ public class RegionTest {
         Region US_SAN_DIEGO_TST =
                 Region.register("us-abv-1", Realm.register("UCX", "oracle-foobar.com"), "ABV");
         assertSame(US_SAN_DIEGO_TST, region);
+    }
+
+    @Test
+    public void testExistingDefaultRealmEnvRegion() throws Exception {
+        String realmDomainComponentFromEnv = "oraclevaporcloud.space";
+        Region.defaultRealmEnvVar = realmDomainComponentFromEnv;
+        String regionId = "dummy-region-from-default-realm-env-var";
+        Region region = Region.fromRegionCodeOrId(regionId);
+        String regionId2 = "dummy-region-from-default-realm-env-var-2";
+        Region region2 = Region.fromRegionCodeOrId(regionId);
+        assertNotNull(region);
+        assertSame(region.getRegionId(), regionId);
+        assertSame(region.getRealm().getSecondLevelDomain(), realmDomainComponentFromEnv);
+        assertNotNull(region);
+        assertSame(region2.getRegionId(), regionId);
+        assertSame(region2.getRealm().getSecondLevelDomain(), realmDomainComponentFromEnv);
+        Region.defaultRealmEnvVar = null;
     }
 
     @Test

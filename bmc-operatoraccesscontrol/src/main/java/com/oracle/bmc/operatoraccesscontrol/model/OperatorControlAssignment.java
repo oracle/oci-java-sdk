@@ -64,15 +64,6 @@ public class OperatorControlAssignment {
             return this;
         }
 
-        @com.fasterxml.jackson.annotation.JsonProperty("resourceType")
-        private ResourceTypes resourceType;
-
-        public Builder resourceType(ResourceTypes resourceType) {
-            this.resourceType = resourceType;
-            this.__explicitlySet__.add("resourceType");
-            return this;
-        }
-
         @com.fasterxml.jackson.annotation.JsonProperty("resourceCompartmentId")
         private String resourceCompartmentId;
 
@@ -88,6 +79,15 @@ public class OperatorControlAssignment {
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("resourceType")
+        private ResourceTypes resourceType;
+
+        public Builder resourceType(ResourceTypes resourceType) {
+            this.resourceType = resourceType;
+            this.__explicitlySet__.add("resourceType");
             return this;
         }
 
@@ -181,6 +181,69 @@ public class OperatorControlAssignment {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("isLogForwarded")
+        private Boolean isLogForwarded;
+
+        public Builder isLogForwarded(Boolean isLogForwarded) {
+            this.isLogForwarded = isLogForwarded;
+            this.__explicitlySet__.add("isLogForwarded");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("remoteSyslogServerAddress")
+        private String remoteSyslogServerAddress;
+
+        public Builder remoteSyslogServerAddress(String remoteSyslogServerAddress) {
+            this.remoteSyslogServerAddress = remoteSyslogServerAddress;
+            this.__explicitlySet__.add("remoteSyslogServerAddress");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("remoteSyslogServerPort")
+        private Integer remoteSyslogServerPort;
+
+        public Builder remoteSyslogServerPort(Integer remoteSyslogServerPort) {
+            this.remoteSyslogServerPort = remoteSyslogServerPort;
+            this.__explicitlySet__.add("remoteSyslogServerPort");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("remoteSyslogServerCACert")
+        private String remoteSyslogServerCACert;
+
+        public Builder remoteSyslogServerCACert(String remoteSyslogServerCACert) {
+            this.remoteSyslogServerCACert = remoteSyslogServerCACert;
+            this.__explicitlySet__.add("remoteSyslogServerCACert");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("isAutoApproveDuringMaintenance")
+        private Boolean isAutoApproveDuringMaintenance;
+
+        public Builder isAutoApproveDuringMaintenance(Boolean isAutoApproveDuringMaintenance) {
+            this.isAutoApproveDuringMaintenance = isAutoApproveDuringMaintenance;
+            this.__explicitlySet__.add("isAutoApproveDuringMaintenance");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("errorCode")
+        private Integer errorCode;
+
+        public Builder errorCode(Integer errorCode) {
+            this.errorCode = errorCode;
+            this.__explicitlySet__.add("errorCode");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("errorMessage")
+        private String errorMessage;
+
+        public Builder errorMessage(String errorMessage) {
+            this.errorMessage = errorMessage;
+            this.__explicitlySet__.add("errorMessage");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
@@ -210,9 +273,9 @@ public class OperatorControlAssignment {
                             operatorControlId,
                             resourceId,
                             resourceName,
-                            resourceType,
                             resourceCompartmentId,
                             compartmentId,
+                            resourceType,
                             timeAssignmentFrom,
                             timeAssignmentTo,
                             isEnforcedAlways,
@@ -223,6 +286,13 @@ public class OperatorControlAssignment {
                             unassignerId,
                             timeOfDeletion,
                             detachmentDescription,
+                            isLogForwarded,
+                            remoteSyslogServerAddress,
+                            remoteSyslogServerPort,
+                            remoteSyslogServerCACert,
+                            isAutoApproveDuringMaintenance,
+                            errorCode,
+                            errorMessage,
                             freeformTags,
                             definedTags);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
@@ -236,9 +306,9 @@ public class OperatorControlAssignment {
                             .operatorControlId(o.getOperatorControlId())
                             .resourceId(o.getResourceId())
                             .resourceName(o.getResourceName())
-                            .resourceType(o.getResourceType())
                             .resourceCompartmentId(o.getResourceCompartmentId())
                             .compartmentId(o.getCompartmentId())
+                            .resourceType(o.getResourceType())
                             .timeAssignmentFrom(o.getTimeAssignmentFrom())
                             .timeAssignmentTo(o.getTimeAssignmentTo())
                             .isEnforcedAlways(o.getIsEnforcedAlways())
@@ -249,6 +319,13 @@ public class OperatorControlAssignment {
                             .unassignerId(o.getUnassignerId())
                             .timeOfDeletion(o.getTimeOfDeletion())
                             .detachmentDescription(o.getDetachmentDescription())
+                            .isLogForwarded(o.getIsLogForwarded())
+                            .remoteSyslogServerAddress(o.getRemoteSyslogServerAddress())
+                            .remoteSyslogServerPort(o.getRemoteSyslogServerPort())
+                            .remoteSyslogServerCACert(o.getRemoteSyslogServerCACert())
+                            .isAutoApproveDuringMaintenance(o.getIsAutoApproveDuringMaintenance())
+                            .errorCode(o.getErrorCode())
+                            .errorMessage(o.getErrorMessage())
                             .freeformTags(o.getFreeformTags())
                             .definedTags(o.getDefinedTags());
 
@@ -289,12 +366,6 @@ public class OperatorControlAssignment {
     String resourceName;
 
     /**
-     * Type of the target resource.
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("resourceType")
-    ResourceTypes resourceType;
-
-    /**
      * The OCID of the compartment that contains the target resource.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("resourceCompartmentId")
@@ -305,6 +376,12 @@ public class OperatorControlAssignment {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     String compartmentId;
+
+    /**
+     * resourceType for which the OperatorControlAssignment is applicable
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("resourceType")
+    ResourceTypes resourceType;
 
     /**
      * The time at which the target resource will be brought under the governance of the operator control expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
@@ -371,6 +448,48 @@ public class OperatorControlAssignment {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("detachmentDescription")
     String detachmentDescription;
+
+    /**
+     * If set indicates that the audit logs are being forwarded to the relevant remote logging server
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isLogForwarded")
+    Boolean isLogForwarded;
+
+    /**
+     * The address of the remote syslog server where the audit logs are being forwarded to. Address in host or IP format.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("remoteSyslogServerAddress")
+    String remoteSyslogServerAddress;
+
+    /**
+     * The listening port of the remote syslog server. The port range is 0 - 65535. Only TCP supported.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("remoteSyslogServerPort")
+    Integer remoteSyslogServerPort;
+
+    /**
+     * The CA certificate of the remote syslog server.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("remoteSyslogServerCACert")
+    String remoteSyslogServerCACert;
+
+    /**
+     * The boolean if true would autoApprove during maintenance.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isAutoApproveDuringMaintenance")
+    Boolean isAutoApproveDuringMaintenance;
+
+    /**
+     * The code identifying the error occurred during Assignment operation.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("errorCode")
+    Integer errorCode;
+
+    /**
+     * The message describing the error occurred during Assignment operation.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("errorMessage")
+    String errorMessage;
 
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.

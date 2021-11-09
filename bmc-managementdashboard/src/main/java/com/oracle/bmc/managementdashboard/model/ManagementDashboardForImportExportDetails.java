@@ -207,6 +207,15 @@ public class ManagementDashboardForImportExportDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("drilldownConfig")
+        private java.util.List<Object> drilldownConfig;
+
+        public Builder drilldownConfig(java.util.List<Object> drilldownConfig) {
+            this.drilldownConfig = drilldownConfig;
+            this.__explicitlySet__.add("drilldownConfig");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
@@ -252,6 +261,7 @@ public class ManagementDashboardForImportExportDetails {
                             isFavorite,
                             savedSearches,
                             parametersConfig,
+                            drilldownConfig,
                             freeformTags,
                             definedTags);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
@@ -281,6 +291,7 @@ public class ManagementDashboardForImportExportDetails {
                             .isFavorite(o.getIsFavorite())
                             .savedSearches(o.getSavedSearches())
                             .parametersConfig(o.getParametersConfig())
+                            .drilldownConfig(o.getDrilldownConfig())
                             .freeformTags(o.getFreeformTags())
                             .definedTags(o.getDefinedTags());
 
@@ -415,6 +426,12 @@ public class ManagementDashboardForImportExportDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("parametersConfig")
     java.util.List<Object> parametersConfig;
+
+    /**
+     * Drill-down configuration to define the destination of a drill-down action.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("drilldownConfig")
+    java.util.List<Object> drilldownConfig;
 
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.

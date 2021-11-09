@@ -5,7 +5,7 @@
 package com.oracle.bmc.operatoraccesscontrol.model;
 
 /**
- * Details of the access request approval.
+ * Details to mark access request in review.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -18,11 +18,11 @@ package com.oracle.bmc.operatoraccesscontrol.model;
 @lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
 @lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = ApproveAccessRequestDetails.Builder.class
+    builder = ReviewAccessRequestDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 @lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class ApproveAccessRequestDetails {
+public class ReviewAccessRequestDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
@@ -35,51 +35,19 @@ public class ApproveAccessRequestDetails {
             return this;
         }
 
-        @com.fasterxml.jackson.annotation.JsonProperty("auditType")
-        private java.util.List<String> auditType;
-
-        public Builder auditType(java.util.List<String> auditType) {
-            this.auditType = auditType;
-            this.__explicitlySet__.add("auditType");
-            return this;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonProperty("additionalMessage")
-        private String additionalMessage;
-
-        public Builder additionalMessage(String additionalMessage) {
-            this.additionalMessage = additionalMessage;
-            this.__explicitlySet__.add("additionalMessage");
-            return this;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonProperty("timeOfUserCreation")
-        private java.util.Date timeOfUserCreation;
-
-        public Builder timeOfUserCreation(java.util.Date timeOfUserCreation) {
-            this.timeOfUserCreation = timeOfUserCreation;
-            this.__explicitlySet__.add("timeOfUserCreation");
-            return this;
-        }
-
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
-        public ApproveAccessRequestDetails build() {
-            ApproveAccessRequestDetails __instance__ =
-                    new ApproveAccessRequestDetails(
-                            approverComment, auditType, additionalMessage, timeOfUserCreation);
+        public ReviewAccessRequestDetails build() {
+            ReviewAccessRequestDetails __instance__ =
+                    new ReviewAccessRequestDetails(approverComment);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ApproveAccessRequestDetails o) {
-            Builder copiedBuilder =
-                    approverComment(o.getApproverComment())
-                            .auditType(o.getAuditType())
-                            .additionalMessage(o.getAdditionalMessage())
-                            .timeOfUserCreation(o.getTimeOfUserCreation());
+        public Builder copy(ReviewAccessRequestDetails o) {
+            Builder copiedBuilder = approverComment(o.getApproverComment());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -94,32 +62,10 @@ public class ApproveAccessRequestDetails {
     }
 
     /**
-     * Comment by the approver during approval.
+     * Comment by the approver explaining that the access request is in review.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("approverComment")
     String approverComment;
-
-    /**
-     * Specifies the type of auditing to be enabled. There are two levels of auditing: command-level and keystroke-level.
-     * By default, auditing is enabled at the command level i.e., each command issued by the operator is audited. When keystroke-level is chosen,
-     * in addition to command level logging, key strokes are also logged.
-     *
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("auditType")
-    java.util.List<String> auditType;
-
-    /**
-     * Message that needs to be displayed to the Ops User.
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("additionalMessage")
-    String additionalMessage;
-
-    /**
-     * The time when access request is scheduled to be approved in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.Example: '2020-05-22T21:10:29.600Z'
-     *
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("timeOfUserCreation")
-    java.util.Date timeOfUserCreation;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

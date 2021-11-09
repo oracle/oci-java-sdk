@@ -48,12 +48,30 @@ public class OperatorAction {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("customerDisplayName")
+        private String customerDisplayName;
+
+        public Builder customerDisplayName(String customerDisplayName) {
+            this.customerDisplayName = customerDisplayName;
+            this.__explicitlySet__.add("customerDisplayName");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("component")
         private String component;
 
         public Builder component(String component) {
             this.component = component;
             this.__explicitlySet__.add("component");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("resourceType")
+        private ResourceTypes resourceType;
+
+        public Builder resourceType(ResourceTypes resourceType) {
+            this.resourceType = resourceType;
+            this.__explicitlySet__.add("resourceType");
             return this;
         }
 
@@ -80,7 +98,14 @@ public class OperatorAction {
 
         public OperatorAction build() {
             OperatorAction __instance__ =
-                    new OperatorAction(id, name, component, description, properties);
+                    new OperatorAction(
+                            id,
+                            name,
+                            customerDisplayName,
+                            component,
+                            resourceType,
+                            description,
+                            properties);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -90,7 +115,9 @@ public class OperatorAction {
             Builder copiedBuilder =
                     id(o.getId())
                             .name(o.getName())
+                            .customerDisplayName(o.getCustomerDisplayName())
                             .component(o.getComponent())
+                            .resourceType(o.getResourceType())
                             .description(o.getDescription())
                             .properties(o.getProperties());
 
@@ -113,16 +140,28 @@ public class OperatorAction {
     String id;
 
     /**
-     * Name of the operator action.
+     * Unique name of the operator action.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     String name;
+
+    /**
+     * Display Name of the operator action.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("customerDisplayName")
+    String customerDisplayName;
 
     /**
      * Name of the infrastructure layer associated with the operator action.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("component")
     String component;
+
+    /**
+     * resourceType for which the OperatorAction is applicable
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("resourceType")
+    ResourceTypes resourceType;
 
     /**
      * Description of the operator action in terms of associated risk profile, and characteristics of the operating system commands made

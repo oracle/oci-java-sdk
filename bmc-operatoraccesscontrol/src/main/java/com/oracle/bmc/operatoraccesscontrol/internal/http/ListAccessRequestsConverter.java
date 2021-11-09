@@ -48,12 +48,36 @@ public class ListAccessRequestsConverter {
                                     request.getResourceName()));
         }
 
+        if (request.getResourceType() != null) {
+            target =
+                    target.queryParam(
+                            "resourceType",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getResourceType()));
+        }
+
         if (request.getLifecycleState() != null) {
             target =
                     target.queryParam(
                             "lifecycleState",
                             com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
                                     request.getLifecycleState().getValue()));
+        }
+
+        if (request.getTimeStart() != null) {
+            target =
+                    target.queryParam(
+                            "timeStart",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getTimeStart()));
+        }
+
+        if (request.getTimeEnd() != null) {
+            target =
+                    target.queryParam(
+                            "timeEnd",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getTimeEnd()));
         }
 
         if (request.getLimit() != null) {

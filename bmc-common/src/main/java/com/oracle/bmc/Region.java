@@ -28,6 +28,7 @@ import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NonNull;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.lang3.StringUtils;
 import org.glassfish.jersey.client.ClientConfig;
 import org.glassfish.jersey.client.ClientProperties;
 
@@ -49,6 +50,9 @@ public final class Region implements Serializable, Comparable<Region> {
     // Region metadata env attribute key
     private final static String OCI_REGION_METADATA_ENV_VAR_NAME = "OCI_REGION_METADATA";
 
+    // Default realm metadata env attribute key
+    private final static String OCI_DEFAULT_REALM_ENV_VAR_NAME = "OCI_DEFAULT_REALM";
+
     //The regions-config file path location
     private static final String REGIONS_CONFIG_FILE_PATH = "~/.oci/regions-config.json";
 
@@ -67,6 +71,13 @@ public final class Region implements Serializable, Comparable<Region> {
                 imdsClientConfiguration.property(ClientProperties.CONNECT_TIMEOUT, 30000);
         imdsClientConfiguration =
                 imdsClientConfiguration.property(ClientProperties.READ_TIMEOUT, 60000);
+    }
+
+    @VisibleForTesting static volatile String defaultRealmEnvVar = getDefaultRealmFromEnv();
+
+    private static String getDefaultRealmFromEnv() {
+        final String defaultRealmEnvVar = System.getenv(OCI_DEFAULT_REALM_ENV_VAR_NAME);
+        return defaultRealmEnvVar;
     }
 
     // LinkedHashMap to ensure stable ordering of registered regions
@@ -465,6 +476,14 @@ public final class Region implements Serializable, Comparable<Region> {
             }
         }
 
+        if (defaultRealmEnvVar != null && !StringUtils.isBlank(defaultRealmEnvVar)) {
+            registerRegionWithDefaultRealm(regionCodeOrId);
+            maybeRegion = maybeFromRegionCodeOrIdWithoutRegistering(regionCodeOrId);
+            if (maybeRegion.isPresent()) {
+                return Optional.fromNullable(maybeRegion.get());
+            }
+        }
+
         return Optional.absent();
     }
 
@@ -487,6 +506,26 @@ public final class Region implements Serializable, Comparable<Region> {
                     Realm.register(
                             regionSchema.getRealmKey(), regionSchema.getRealmDomainComponent()),
                     regionSchema.getRegionKey());
+        }
+    }
+
+    /**
+     * Registers region using regionId and default realm env var
+     */
+    private static void registerRegionWithDefaultRealm(String regionId) {
+        LOG.info(
+                "Realm domain component from OCI_DEFAULT_REALM env variable is {}",
+                defaultRealmEnvVar);
+        final String trimmedDefaultRealm =
+                defaultRealmEnvVar.replaceAll("\'", "").replaceAll("\"", "");
+        final Realm defaultRealmFromEnvVar =
+                Realm.register("defaultRealmFromEnv", trimmedDefaultRealm);
+        LOG.info(
+                "Unknown regionId '{}', default realm is defined, falling back to '{}'",
+                regionId,
+                trimmedDefaultRealm);
+        if (defaultRealmFromEnvVar != null) {
+            register(regionId, defaultRealmFromEnvVar);
         }
     }
 

@@ -85,6 +85,15 @@ public class CreateOperatorControlDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("resourceType")
+        private ResourceTypes resourceType;
+
+        public Builder resourceType(ResourceTypes resourceType) {
+            this.resourceType = resourceType;
+            this.__explicitlySet__.add("resourceType");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("emailIdList")
         private java.util.List<String> emailIdList;
 
@@ -143,6 +152,7 @@ public class CreateOperatorControlDetails {
                             approverGroupsList,
                             preApprovedOpActionList,
                             isFullyPreApproved,
+                            resourceType,
                             emailIdList,
                             systemMessage,
                             compartmentId,
@@ -161,6 +171,7 @@ public class CreateOperatorControlDetails {
                             .approverGroupsList(o.getApproverGroupsList())
                             .preApprovedOpActionList(o.getPreApprovedOpActionList())
                             .isFullyPreApproved(o.getIsFullyPreApproved())
+                            .resourceType(o.getResourceType())
                             .emailIdList(o.getEmailIdList())
                             .systemMessage(o.getSystemMessage())
                             .compartmentId(o.getCompartmentId())
@@ -218,6 +229,12 @@ public class CreateOperatorControlDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isFullyPreApproved")
     Boolean isFullyPreApproved;
+
+    /**
+     * resourceType for which the OperatorControl is applicable
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("resourceType")
+    ResourceTypes resourceType;
 
     /**
      * List of emailId.

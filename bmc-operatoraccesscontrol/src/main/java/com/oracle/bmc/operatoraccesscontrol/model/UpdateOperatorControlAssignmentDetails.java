@@ -62,6 +62,51 @@ public class UpdateOperatorControlAssignmentDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("isLogForwarded")
+        private Boolean isLogForwarded;
+
+        public Builder isLogForwarded(Boolean isLogForwarded) {
+            this.isLogForwarded = isLogForwarded;
+            this.__explicitlySet__.add("isLogForwarded");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("remoteSyslogServerAddress")
+        private String remoteSyslogServerAddress;
+
+        public Builder remoteSyslogServerAddress(String remoteSyslogServerAddress) {
+            this.remoteSyslogServerAddress = remoteSyslogServerAddress;
+            this.__explicitlySet__.add("remoteSyslogServerAddress");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("remoteSyslogServerPort")
+        private Integer remoteSyslogServerPort;
+
+        public Builder remoteSyslogServerPort(Integer remoteSyslogServerPort) {
+            this.remoteSyslogServerPort = remoteSyslogServerPort;
+            this.__explicitlySet__.add("remoteSyslogServerPort");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("remoteSyslogServerCACert")
+        private String remoteSyslogServerCACert;
+
+        public Builder remoteSyslogServerCACert(String remoteSyslogServerCACert) {
+            this.remoteSyslogServerCACert = remoteSyslogServerCACert;
+            this.__explicitlySet__.add("remoteSyslogServerCACert");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("isAutoApproveDuringMaintenance")
+        private Boolean isAutoApproveDuringMaintenance;
+
+        public Builder isAutoApproveDuringMaintenance(Boolean isAutoApproveDuringMaintenance) {
+            this.isAutoApproveDuringMaintenance = isAutoApproveDuringMaintenance;
+            this.__explicitlySet__.add("isAutoApproveDuringMaintenance");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
@@ -91,6 +136,11 @@ public class UpdateOperatorControlAssignmentDetails {
                             timeAssignmentTo,
                             isEnforcedAlways,
                             comment,
+                            isLogForwarded,
+                            remoteSyslogServerAddress,
+                            remoteSyslogServerPort,
+                            remoteSyslogServerCACert,
+                            isAutoApproveDuringMaintenance,
                             freeformTags,
                             definedTags);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
@@ -104,6 +154,11 @@ public class UpdateOperatorControlAssignmentDetails {
                             .timeAssignmentTo(o.getTimeAssignmentTo())
                             .isEnforcedAlways(o.getIsEnforcedAlways())
                             .comment(o.getComment())
+                            .isLogForwarded(o.getIsLogForwarded())
+                            .remoteSyslogServerAddress(o.getRemoteSyslogServerAddress())
+                            .remoteSyslogServerPort(o.getRemoteSyslogServerPort())
+                            .remoteSyslogServerCACert(o.getRemoteSyslogServerCACert())
+                            .isAutoApproveDuringMaintenance(o.getIsAutoApproveDuringMaintenance())
                             .freeformTags(o.getFreeformTags())
                             .definedTags(o.getDefinedTags());
 
@@ -144,6 +199,36 @@ public class UpdateOperatorControlAssignmentDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("comment")
     String comment;
+
+    /**
+     * If set, then the audit logs will be forwarded to the relevant remote logging server
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isLogForwarded")
+    Boolean isLogForwarded;
+
+    /**
+     * The address of the remote syslog server where the audit logs will be forwarded to. Address in host or IP format.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("remoteSyslogServerAddress")
+    String remoteSyslogServerAddress;
+
+    /**
+     * The listening port of the remote syslog server. The port range is 0 - 65535. Only TCP supported.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("remoteSyslogServerPort")
+    Integer remoteSyslogServerPort;
+
+    /**
+     * The CA certificate of the remote syslog server. Identity of the remote syslog server will be asserted based on this certificate.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("remoteSyslogServerCACert")
+    String remoteSyslogServerCACert;
+
+    /**
+     * The boolean if true would autoApprove during maintenance.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isAutoApproveDuringMaintenance")
+    Boolean isAutoApproveDuringMaintenance;
 
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.

@@ -3,6 +3,14 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
+## 2.9.0 - 2021-11-09
+### Added
+- Support for drill down metadata in the Management Dashboard service
+- Support for operator access control on dedicated autonomous databases in the Operator Access Control service
+
+### Breaking Changes
+- Return type of method `public java.lang.String getResourceType()` has been changed to `com.oracle.bmc.operatoraccesscontrol.model.ResourceTypes` in the model `com.oracle.bmc.operatoraccesscontrol.model.OperatorControlAssignmentSummary` in the Operator Access Control service
+
 ## 2.8.1 - 2021-11-02
 ### Added
 - Support for the Database Tools service

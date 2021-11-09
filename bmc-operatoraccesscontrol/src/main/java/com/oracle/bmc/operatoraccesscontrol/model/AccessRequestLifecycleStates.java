@@ -30,6 +30,8 @@ public enum AccessRequestLifecycleStates {
     Completing("COMPLETING"),
     Completed("COMPLETED"),
     Expired("EXPIRED"),
+    Approvedforfuture("APPROVEDFORFUTURE"),
+    Inreview("INREVIEW"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this

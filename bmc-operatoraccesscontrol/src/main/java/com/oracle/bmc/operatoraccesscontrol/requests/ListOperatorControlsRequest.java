@@ -37,6 +37,11 @@ public class ListOperatorControlsRequest
     private String displayName;
 
     /**
+     * A filter to return only lists of resources that match the entire given service type.
+     */
+    private String resourceType;
+
+    /**
      * The maximum number of items to return.
      */
     private Integer limit;
@@ -136,6 +141,7 @@ public class ListOperatorControlsRequest
             compartmentId(o.getCompartmentId());
             lifecycleState(o.getLifecycleState());
             displayName(o.getDisplayName());
+            resourceType(o.getResourceType());
             limit(o.getLimit());
             page(o.getPage());
             sortOrder(o.getSortOrder());
