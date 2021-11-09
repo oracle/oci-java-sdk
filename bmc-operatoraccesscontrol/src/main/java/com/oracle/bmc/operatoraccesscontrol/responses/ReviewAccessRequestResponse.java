@@ -11,18 +11,12 @@ import com.oracle.bmc.operatoraccesscontrol.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
-public class CreateOperatorControlAssignmentResponse extends com.oracle.bmc.responses.BmcResponse {
+public class ReviewAccessRequestResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * For optimistic concurrency control. See {@code if-match}.
      *
      */
     private String etag;
-
-    /**
-     * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query status of the asynchronous operation.
-     *
-     */
-    private String opcWorkRequestId;
 
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact
@@ -32,23 +26,19 @@ public class CreateOperatorControlAssignmentResponse extends com.oracle.bmc.resp
     private String opcRequestId;
 
     /**
-     * The returned OperatorControlAssignment instance.
+     * The returned AccessRequest instance.
      */
-    private com.oracle.bmc.operatoraccesscontrol.model.OperatorControlAssignment
-            operatorControlAssignment;
+    private com.oracle.bmc.operatoraccesscontrol.model.AccessRequest accessRequest;
 
-    private CreateOperatorControlAssignmentResponse(
+    private ReviewAccessRequestResponse(
             int __httpStatusCode__,
             String etag,
-            String opcWorkRequestId,
             String opcRequestId,
-            com.oracle.bmc.operatoraccesscontrol.model.OperatorControlAssignment
-                    operatorControlAssignment) {
+            com.oracle.bmc.operatoraccesscontrol.model.AccessRequest accessRequest) {
         super(__httpStatusCode__);
         this.etag = etag;
-        this.opcWorkRequestId = opcWorkRequestId;
         this.opcRequestId = opcRequestId;
-        this.operatorControlAssignment = operatorControlAssignment;
+        this.accessRequest = accessRequest;
     }
 
     public static class Builder {
@@ -63,23 +53,18 @@ public class CreateOperatorControlAssignmentResponse extends com.oracle.bmc.resp
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
          */
-        public Builder copy(CreateOperatorControlAssignmentResponse o) {
+        public Builder copy(ReviewAccessRequestResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             etag(o.getEtag());
-            opcWorkRequestId(o.getOpcWorkRequestId());
             opcRequestId(o.getOpcRequestId());
-            operatorControlAssignment(o.getOperatorControlAssignment());
+            accessRequest(o.getAccessRequest());
 
             return this;
         }
 
-        public CreateOperatorControlAssignmentResponse build() {
-            return new CreateOperatorControlAssignmentResponse(
-                    __httpStatusCode__,
-                    etag,
-                    opcWorkRequestId,
-                    opcRequestId,
-                    operatorControlAssignment);
+        public ReviewAccessRequestResponse build() {
+            return new ReviewAccessRequestResponse(
+                    __httpStatusCode__, etag, opcRequestId, accessRequest);
         }
     }
 }

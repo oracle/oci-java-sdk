@@ -198,6 +198,15 @@ public class ManagementSavedSearchForImportDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("drilldownConfig")
+        private java.util.List<Object> drilldownConfig;
+
+        public Builder drilldownConfig(java.util.List<Object> drilldownConfig) {
+            this.drilldownConfig = drilldownConfig;
+            this.__explicitlySet__.add("drilldownConfig");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -222,7 +231,8 @@ public class ManagementSavedSearchForImportDetails {
                             widgetVM,
                             freeformTags,
                             definedTags,
-                            parametersConfig);
+                            parametersConfig,
+                            drilldownConfig);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -248,7 +258,8 @@ public class ManagementSavedSearchForImportDetails {
                             .widgetVM(o.getWidgetVM())
                             .freeformTags(o.getFreeformTags())
                             .definedTags(o.getDefinedTags())
-                            .parametersConfig(o.getParametersConfig());
+                            .parametersConfig(o.getParametersConfig())
+                            .drilldownConfig(o.getDrilldownConfig());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -379,6 +390,12 @@ public class ManagementSavedSearchForImportDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("parametersConfig")
     java.util.List<Object> parametersConfig;
+
+    /**
+     * Drill-down configuration to define the destination of a drill-down action.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("drilldownConfig")
+    java.util.List<Object> drilldownConfig;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

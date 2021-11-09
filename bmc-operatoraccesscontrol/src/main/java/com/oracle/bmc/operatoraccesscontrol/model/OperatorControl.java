@@ -98,6 +98,24 @@ public class OperatorControl {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("emailIdList")
+        private java.util.List<String> emailIdList;
+
+        public Builder emailIdList(java.util.List<String> emailIdList) {
+            this.emailIdList = emailIdList;
+            this.__explicitlySet__.add("emailIdList");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("resourceType")
+        private ResourceTypes resourceType;
+
+        public Builder resourceType(ResourceTypes resourceType) {
+            this.resourceType = resourceType;
+            this.__explicitlySet__.add("resourceType");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("systemMessage")
         private String systemMessage;
 
@@ -194,6 +212,8 @@ public class OperatorControl {
                             preApprovedOpActionList,
                             approvalRequiredOpActionList,
                             isFullyPreApproved,
+                            emailIdList,
+                            resourceType,
                             systemMessage,
                             compartmentId,
                             lifecycleState,
@@ -218,6 +238,8 @@ public class OperatorControl {
                             .preApprovedOpActionList(o.getPreApprovedOpActionList())
                             .approvalRequiredOpActionList(o.getApprovalRequiredOpActionList())
                             .isFullyPreApproved(o.getIsFullyPreApproved())
+                            .emailIdList(o.getEmailIdList())
+                            .resourceType(o.getResourceType())
                             .systemMessage(o.getSystemMessage())
                             .compartmentId(o.getCompartmentId())
                             .lifecycleState(o.getLifecycleState())
@@ -294,6 +316,19 @@ public class OperatorControl {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isFullyPreApproved")
     Boolean isFullyPreApproved;
+
+    /**
+     * List of emailId.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("emailIdList")
+    java.util.List<String> emailIdList;
+
+    /**
+     * resourceType for which the OperatorControl is applicable
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("resourceType")
+    ResourceTypes resourceType;
 
     /**
      * System message that would be displayed to the operator users on accessing the target resource under the governance of this operator control.

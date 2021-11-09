@@ -192,6 +192,11 @@ Note : If both the above Apache Connection closing strategies do not give you op
 An example can be found [here](https://github.com/oracle/oci-java-sdk/tree/master/bmc-examples/src/main/java/ApacheConnectorPropertiesExample.java  "here")
 
 ## More info
+
+### Disabling extra logs related to streams
+The SDK emits warnings related to streams when an API that returns streams in its response is called. To disable the logs around streams, you can set 
+the system property `oci.javasdk.extra.stream.logs.enabled` to `false`. This can be done programmitically or by passing a system property in the java command line.
+
 More examples related to customizing Apache Connector can be found [here](https://github.com/oracle/oci-java-sdk/tree/master/bmc-examples/src/main/java/ApacheConnectorPropertiesExample.java  "here") 
 
 ## License

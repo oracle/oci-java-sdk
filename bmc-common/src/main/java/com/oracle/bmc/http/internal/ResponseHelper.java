@@ -306,7 +306,7 @@ public class ResponseHelper {
             try {
                 response.close();
             } catch (Throwable t) {
-                LOG.info("Exception while closing response", t);
+                LOG.debug("Exception while closing response", t);
             }
         }
     }

@@ -56,6 +56,14 @@ public class ListOperatorControlsConverter {
                                     request.getDisplayName()));
         }
 
+        if (request.getResourceType() != null) {
+            target =
+                    target.queryParam(
+                            "resourceType",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getResourceType()));
+        }
+
         if (request.getLimit() != null) {
             target =
                     target.queryParam(

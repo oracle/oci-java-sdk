@@ -30,6 +30,11 @@ public class ListOperatorActionsRequest extends com.oracle.bmc.requests.BmcReque
     private String name;
 
     /**
+     * A filter to return only lists of resources that match the entire given service type.
+     */
+    private String resourceType;
+
+    /**
      * A filter to return only resources whose lifecycleState matches the given OperatorAction lifecycleState.
      */
     private com.oracle.bmc.operatoraccesscontrol.model.OperatorActionLifecycleStates lifecycleState;
@@ -133,6 +138,7 @@ public class ListOperatorActionsRequest extends com.oracle.bmc.requests.BmcReque
         public Builder copy(ListOperatorActionsRequest o) {
             compartmentId(o.getCompartmentId());
             name(o.getName());
+            resourceType(o.getResourceType());
             lifecycleState(o.getLifecycleState());
             limit(o.getLimit());
             page(o.getPage());

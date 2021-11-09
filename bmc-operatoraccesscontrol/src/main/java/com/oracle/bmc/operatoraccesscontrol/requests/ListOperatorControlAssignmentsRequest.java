@@ -36,6 +36,11 @@ public class ListOperatorControlAssignmentsRequest
     private String resourceName;
 
     /**
+     * A filter to return only lists of resources that match the entire given service type.
+     */
+    private String resourceType;
+
+    /**
      * A filter to return only resources whose lifecycleState matches the given OperatorControlAssignment lifecycleState.
      */
     private com.oracle.bmc.operatoraccesscontrol.model.OperatorControlAssignmentLifecycleStates
@@ -141,6 +146,7 @@ public class ListOperatorControlAssignmentsRequest
             compartmentId(o.getCompartmentId());
             operatorControlName(o.getOperatorControlName());
             resourceName(o.getResourceName());
+            resourceType(o.getResourceType());
             lifecycleState(o.getLifecycleState());
             limit(o.getLimit());
             page(o.getPage());

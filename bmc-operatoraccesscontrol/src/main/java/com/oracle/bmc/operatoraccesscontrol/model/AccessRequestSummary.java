@@ -80,6 +80,15 @@ public class AccessRequestSummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("resourceType")
+        private ResourceTypes resourceType;
+
+        public Builder resourceType(ResourceTypes resourceType) {
+            this.resourceType = resourceType;
+            this.__explicitlySet__.add("resourceType");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private AccessRequestLifecycleStates lifecycleState;
 
@@ -104,6 +113,15 @@ public class AccessRequestSummary {
         public Builder timeOfModification(java.util.Date timeOfModification) {
             this.timeOfModification = timeOfModification;
             this.__explicitlySet__.add("timeOfModification");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("timeOfUserCreation")
+        private java.util.Date timeOfUserCreation;
+
+        public Builder timeOfUserCreation(java.util.Date timeOfUserCreation) {
+            this.timeOfUserCreation = timeOfUserCreation;
+            this.__explicitlySet__.add("timeOfUserCreation");
             return this;
         }
 
@@ -174,9 +192,11 @@ public class AccessRequestSummary {
                             compartmentId,
                             resourceId,
                             resourceName,
+                            resourceType,
                             lifecycleState,
                             timeOfCreation,
                             timeOfModification,
+                            timeOfUserCreation,
                             duration,
                             extendDuration,
                             severity,
@@ -196,9 +216,11 @@ public class AccessRequestSummary {
                             .compartmentId(o.getCompartmentId())
                             .resourceId(o.getResourceId())
                             .resourceName(o.getResourceName())
+                            .resourceType(o.getResourceType())
                             .lifecycleState(o.getLifecycleState())
                             .timeOfCreation(o.getTimeOfCreation())
                             .timeOfModification(o.getTimeOfModification())
+                            .timeOfUserCreation(o.getTimeOfUserCreation())
                             .duration(o.getDuration())
                             .extendDuration(o.getExtendDuration())
                             .severity(o.getSeverity())
@@ -257,6 +279,12 @@ public class AccessRequestSummary {
     String resourceName;
 
     /**
+     * resourceType for which the AccessRequest is applicable
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("resourceType")
+    ResourceTypes resourceType;
+
+    /**
      * The current state of the AccessRequest.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
@@ -275,6 +303,13 @@ public class AccessRequestSummary {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeOfModification")
     java.util.Date timeOfModification;
+
+    /**
+     * The time when access request is scheduled to be approved in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.Example: '2020-05-22T21:10:29.600Z'
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("timeOfUserCreation")
+    java.util.Date timeOfUserCreation;
 
     /**
      * Duration in hours for which access is sought on the target resource.

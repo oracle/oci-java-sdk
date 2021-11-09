@@ -30,9 +30,30 @@ public class ListAccessRequestsRequest extends com.oracle.bmc.requests.BmcReques
     private String resourceName;
 
     /**
+     * A filter to return only lists of resources that match the entire given service type.
+     */
+    private String resourceType;
+
+    /**
      * A filter to return only resources whose lifecycleState matches the given AccessRequest lifecycleState.
      */
     private com.oracle.bmc.operatoraccesscontrol.model.AccessRequestLifecycleStates lifecycleState;
+
+    /**
+     * Query start time in UTC in ISO 8601 format(inclusive).
+     * Example 2019-10-30T00:00:00Z (yyyy-MM-ddThh:mm:ssZ).
+     * timeIntervalStart and timeIntervalEnd parameters are used together.
+     *
+     */
+    private java.util.Date timeStart;
+
+    /**
+     * Query start time in UTC in ISO 8601 format(inclusive).
+     * Example 2019-10-30T00:00:00Z (yyyy-MM-ddThh:mm:ssZ).
+     * timeIntervalStart and timeIntervalEnd parameters are used together.
+     *
+     */
+    private java.util.Date timeEnd;
 
     /**
      * The maximum number of items to return.
@@ -133,7 +154,10 @@ public class ListAccessRequestsRequest extends com.oracle.bmc.requests.BmcReques
         public Builder copy(ListAccessRequestsRequest o) {
             compartmentId(o.getCompartmentId());
             resourceName(o.getResourceName());
+            resourceType(o.getResourceType());
             lifecycleState(o.getLifecycleState());
+            timeStart(o.getTimeStart());
+            timeEnd(o.getTimeEnd());
             limit(o.getLimit());
             page(o.getPage());
             sortOrder(o.getSortOrder());

@@ -13,7 +13,10 @@ public enum OperatorControlAssignmentLifecycleStates {
     Created("CREATED"),
     Applied("APPLIED"),
     Applyfailed("APPLYFAILED"),
+    Updating("UPDATING"),
+    Deleting("DELETING"),
     Deleted("DELETED"),
+    Deletionfailed("DELETIONFAILED"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this

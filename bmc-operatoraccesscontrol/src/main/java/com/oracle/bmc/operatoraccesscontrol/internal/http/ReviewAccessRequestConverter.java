@@ -12,16 +12,14 @@ import org.apache.commons.lang3.Validate;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 @lombok.extern.slf4j.Slf4j
-public class CreateOperatorControlAssignmentConverter {
+public class ReviewAccessRequestConverter {
     private static final com.oracle.bmc.http.internal.ResponseConversionFunctionFactory
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static com.oracle.bmc.operatoraccesscontrol.requests
-                    .CreateOperatorControlAssignmentRequest
+    public static com.oracle.bmc.operatoraccesscontrol.requests.ReviewAccessRequestRequest
             interceptRequest(
-                    com.oracle.bmc.operatoraccesscontrol.requests
-                                    .CreateOperatorControlAssignmentRequest
+                    com.oracle.bmc.operatoraccesscontrol.requests.ReviewAccessRequestRequest
                             request) {
 
         return request;
@@ -29,15 +27,21 @@ public class CreateOperatorControlAssignmentConverter {
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
             com.oracle.bmc.http.internal.RestClient client,
-            com.oracle.bmc.operatoraccesscontrol.requests.CreateOperatorControlAssignmentRequest
-                    request) {
+            com.oracle.bmc.operatoraccesscontrol.requests.ReviewAccessRequestRequest request) {
         Validate.notNull(request, "request instance is required");
+        Validate.notBlank(request.getAccessRequestId(), "accessRequestId must not be blank");
         Validate.notNull(
-                request.getCreateOperatorControlAssignmentDetails(),
-                "createOperatorControlAssignmentDetails is required");
+                request.getReviewAccessRequestDetails(), "reviewAccessRequestDetails is required");
 
         com.oracle.bmc.http.internal.WrappedWebTarget target =
-                client.getBaseTarget().path("/20200630").path("operatorControlAssignments");
+                client.getBaseTarget()
+                        .path("/20200630")
+                        .path("accessRequests")
+                        .path(
+                                com.oracle.bmc.util.internal.HttpUtils.encodePathSegment(
+                                        request.getAccessRequestId()))
+                        .path("action")
+                        .path("review");
 
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib = target.request();
 
@@ -45,6 +49,10 @@ public class CreateOperatorControlAssignmentConverter {
 
         if (request.getOpcRetryToken() != null) {
             ib.header("opc-retry-token", request.getOpcRetryToken());
+        }
+
+        if (request.getIfMatch() != null) {
+            ib.header("if-match", request.getIfMatch());
         }
 
         if (request.getOpcRequestId() != null) {
@@ -59,52 +67,49 @@ public class CreateOperatorControlAssignmentConverter {
 
     public static com.google.common.base.Function<
                     javax.ws.rs.core.Response,
-                    com.oracle.bmc.operatoraccesscontrol.responses
-                            .CreateOperatorControlAssignmentResponse>
+                    com.oracle.bmc.operatoraccesscontrol.responses.ReviewAccessRequestResponse>
             fromResponse() {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response,
-                        com.oracle.bmc.operatoraccesscontrol.responses
-                                .CreateOperatorControlAssignmentResponse>
+                        com.oracle.bmc.operatoraccesscontrol.responses.ReviewAccessRequestResponse>
                 transformer =
                         new com.google.common.base.Function<
                                 javax.ws.rs.core.Response,
                                 com.oracle.bmc.operatoraccesscontrol.responses
-                                        .CreateOperatorControlAssignmentResponse>() {
+                                        .ReviewAccessRequestResponse>() {
                             @Override
                             public com.oracle.bmc.operatoraccesscontrol.responses
-                                            .CreateOperatorControlAssignmentResponse
+                                            .ReviewAccessRequestResponse
                                     apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for com.oracle.bmc.operatoraccesscontrol.responses.CreateOperatorControlAssignmentResponse");
+                                        "Transform function invoked for com.oracle.bmc.operatoraccesscontrol.responses.ReviewAccessRequestResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
                                                         com.oracle.bmc.operatoraccesscontrol.model
-                                                                .OperatorControlAssignment>>
+                                                                .AccessRequest>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
                                                         com.oracle.bmc.operatoraccesscontrol.model
-                                                                        .OperatorControlAssignment
+                                                                        .AccessRequest
                                                                 .class);
 
                                 com.oracle.bmc.http.internal.WithHeaders<
                                                 com.oracle.bmc.operatoraccesscontrol.model
-                                                        .OperatorControlAssignment>
+                                                        .AccessRequest>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
                                 com.oracle.bmc.operatoraccesscontrol.responses
-                                                .CreateOperatorControlAssignmentResponse.Builder
+                                                .ReviewAccessRequestResponse.Builder
                                         builder =
                                                 com.oracle.bmc.operatoraccesscontrol.responses
-                                                        .CreateOperatorControlAssignmentResponse
-                                                        .builder()
+                                                        .ReviewAccessRequestResponse.builder()
                                                         .__httpStatusCode__(
                                                                 rawResponse.getStatus());
 
-                                builder.operatorControlAssignment(response.getItem());
+                                builder.accessRequest(response.getItem());
 
                                 com.google.common.base.Optional<java.util.List<String>> etagHeader =
                                         com.oracle.bmc.http.internal.HeaderUtils.get(
@@ -113,18 +118,6 @@ public class CreateOperatorControlAssignmentConverter {
                                     builder.etag(
                                             com.oracle.bmc.http.internal.HeaderUtils.toValue(
                                                     "etag", etagHeader.get().get(0), String.class));
-                                }
-
-                                com.google.common.base.Optional<java.util.List<String>>
-                                        opcWorkRequestIdHeader =
-                                                com.oracle.bmc.http.internal.HeaderUtils.get(
-                                                        headers, "opc-work-request-id");
-                                if (opcWorkRequestIdHeader.isPresent()) {
-                                    builder.opcWorkRequestId(
-                                            com.oracle.bmc.http.internal.HeaderUtils.toValue(
-                                                    "opc-work-request-id",
-                                                    opcWorkRequestIdHeader.get().get(0),
-                                                    String.class));
                                 }
 
                                 com.google.common.base.Optional<java.util.List<String>>
@@ -140,7 +133,7 @@ public class CreateOperatorControlAssignmentConverter {
                                 }
 
                                 com.oracle.bmc.operatoraccesscontrol.responses
-                                                .CreateOperatorControlAssignmentResponse
+                                                .ReviewAccessRequestResponse
                                         responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
