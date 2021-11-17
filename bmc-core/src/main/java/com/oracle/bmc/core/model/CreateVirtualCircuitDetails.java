@@ -182,6 +182,15 @@ public class CreateVirtualCircuitDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("ipMtu")
+        private VirtualCircuitIpMtu ipMtu;
+
+        public Builder ipMtu(VirtualCircuitIpMtu ipMtu) {
+            this.ipMtu = ipMtu;
+            this.__explicitlySet__.add("ipMtu");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -204,7 +213,8 @@ public class CreateVirtualCircuitDetails {
                             providerServiceName,
                             publicPrefixes,
                             region,
-                            type);
+                            type,
+                            ipMtu);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -228,7 +238,8 @@ public class CreateVirtualCircuitDetails {
                             .providerServiceName(o.getProviderServiceName())
                             .publicPrefixes(o.getPublicPrefixes())
                             .region(o.getRegion())
-                            .type(o.getType());
+                            .type(o.getType())
+                            .ipMtu(o.getIpMtu());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -254,7 +265,7 @@ public class CreateVirtualCircuitDetails {
     String bandwidthShapeName;
 
     /**
-     * The OCID of the compartment to contain the virtual circuit.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the virtual circuit.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
@@ -344,7 +355,8 @@ public class CreateVirtualCircuitDetails {
     java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+     * A user-friendly name. Does not have to be unique, and it's changeable.
+     * Avoid entering confidential information.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
@@ -361,7 +373,7 @@ public class CreateVirtualCircuitDetails {
     java.util.Map<String, String> freeformTags;
 
     /**
-     * For private virtual circuits only. The OCID of the {@link Drg}
+     * For private virtual circuits only. The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the {@link Drg}
      * that this virtual circuit uses.
      *
      **/
@@ -378,7 +390,7 @@ public class CreateVirtualCircuitDetails {
     String providerName;
 
     /**
-     * The OCID of the service offered by the provider (if you're connecting
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the service offered by the provider (if you're connecting
      * via a provider). To get a list of the available service offerings, see
      * {@link #listFastConnectProviderServices(ListFastConnectProviderServicesRequest) listFastConnectProviderServices}.
      *
@@ -464,6 +476,12 @@ public class CreateVirtualCircuitDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     Type type;
+
+    /**
+     * The layer 3 IP MTU to use with this virtual circuit.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("ipMtu")
+    VirtualCircuitIpMtu ipMtu;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

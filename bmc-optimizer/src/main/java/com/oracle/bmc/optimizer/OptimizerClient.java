@@ -309,6 +309,9 @@ public class OptimizerClient implements Optimizer {
         this.retryConfiguration = clientConfigurationToUse.getRetryConfiguration();
         JaxRsCircuitBreaker circuitBreaker =
                 CircuitBreakerUtils.getUserDefinedCircuitBreaker(configuration);
+        if (circuitBreaker == null) {
+            circuitBreaker = CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER;
+        }
         this.client =
                 restClientFactory.create(
                         defaultRequestSigner,
@@ -471,6 +474,7 @@ public class OptimizerClient implements Optimizer {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -504,6 +508,7 @@ public class OptimizerClient implements Optimizer {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -536,6 +541,7 @@ public class OptimizerClient implements Optimizer {
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -547,6 +553,40 @@ public class OptimizerClient implements Optimizer {
                             retriedRequest -> {
                                 javax.ws.rs.core.Response response =
                                         client.delete(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public FilterResourceActionsResponse filterResourceActions(
+            FilterResourceActionsRequest request) {
+        LOG.trace("Called filterResourceActions");
+        final FilterResourceActionsRequest interceptedRequest =
+                FilterResourceActionsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                FilterResourceActionsConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, FilterResourceActionsResponse>
+                transformer = FilterResourceActionsConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getQueryDetails(),
+                                                retriedRequest);
                                 return transformer.apply(response);
                             });
                 });
@@ -565,6 +605,7 @@ public class OptimizerClient implements Optimizer {
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -593,6 +634,7 @@ public class OptimizerClient implements Optimizer {
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -620,6 +662,7 @@ public class OptimizerClient implements Optimizer {
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -648,6 +691,7 @@ public class OptimizerClient implements Optimizer {
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -676,6 +720,7 @@ public class OptimizerClient implements Optimizer {
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -704,6 +749,7 @@ public class OptimizerClient implements Optimizer {
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -732,6 +778,7 @@ public class OptimizerClient implements Optimizer {
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -761,6 +808,7 @@ public class OptimizerClient implements Optimizer {
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -789,6 +837,36 @@ public class OptimizerClient implements Optimizer {
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ListProfileLevelsResponse listProfileLevels(ListProfileLevelsRequest request) {
+        LOG.trace("Called listProfileLevels");
+        final ListProfileLevelsRequest interceptedRequest =
+                ListProfileLevelsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListProfileLevelsConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, ListProfileLevelsResponse>
+                transformer = ListProfileLevelsConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -817,6 +895,7 @@ public class OptimizerClient implements Optimizer {
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -847,6 +926,7 @@ public class OptimizerClient implements Optimizer {
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -875,6 +955,38 @@ public class OptimizerClient implements Optimizer {
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ListResourceActionQueryableFieldsResponse listResourceActionQueryableFields(
+            ListResourceActionQueryableFieldsRequest request) {
+        LOG.trace("Called listResourceActionQueryableFields");
+        final ListResourceActionQueryableFieldsRequest interceptedRequest =
+                ListResourceActionQueryableFieldsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListResourceActionQueryableFieldsConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ListResourceActionQueryableFieldsResponse>
+                transformer = ListResourceActionQueryableFieldsConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -903,6 +1015,7 @@ public class OptimizerClient implements Optimizer {
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -932,6 +1045,7 @@ public class OptimizerClient implements Optimizer {
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -960,6 +1074,7 @@ public class OptimizerClient implements Optimizer {
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -988,6 +1103,7 @@ public class OptimizerClient implements Optimizer {
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1017,6 +1133,7 @@ public class OptimizerClient implements Optimizer {
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1049,6 +1166,7 @@ public class OptimizerClient implements Optimizer {
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1081,6 +1199,7 @@ public class OptimizerClient implements Optimizer {
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1113,6 +1232,7 @@ public class OptimizerClient implements Optimizer {
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {

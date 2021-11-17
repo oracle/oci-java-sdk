@@ -162,6 +162,15 @@ public class RecommendationSummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("extendedMetadata")
+        private java.util.Map<String, String> extendedMetadata;
+
+        public Builder extendedMetadata(java.util.Map<String, String> extendedMetadata) {
+            this.extendedMetadata = extendedMetadata;
+            this.__explicitlySet__.add("extendedMetadata");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -182,7 +191,8 @@ public class RecommendationSummary {
                             timeStatusEnd,
                             timeCreated,
                             timeUpdated,
-                            supportedLevels);
+                            supportedLevels,
+                            extendedMetadata);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -204,7 +214,8 @@ public class RecommendationSummary {
                             .timeStatusEnd(o.getTimeStatusEnd())
                             .timeCreated(o.getTimeCreated())
                             .timeUpdated(o.getTimeUpdated())
-                            .supportedLevels(o.getSupportedLevels());
+                            .supportedLevels(o.getSupportedLevels())
+                            .extendedMetadata(o.getExtendedMetadata());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -311,6 +322,17 @@ public class RecommendationSummary {
 
     @com.fasterxml.jackson.annotation.JsonProperty("supportedLevels")
     SupportedLevels supportedLevels;
+
+    /**
+     * Additional metadata key/value pairs for the recommendation summary.
+     * <p>
+     * For example:
+     * <p>
+     * {@code {"EstimatedSaving": "200"}}
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("extendedMetadata")
+    java.util.Map<String, String> extendedMetadata;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

@@ -160,7 +160,7 @@ public class CreateVcnDetails {
     java.util.List<String> cidrBlocks;
 
     /**
-     * The OCID of the compartment to contain the VCN.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the VCN.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     String compartmentId;

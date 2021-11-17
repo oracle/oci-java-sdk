@@ -53,13 +53,22 @@ public class TopologyRoutesToRelationshipDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("routeType")
+        private RouteType routeType;
+
+        public Builder routeType(RouteType routeType) {
+            this.routeType = routeType;
+            this.__explicitlySet__.add("routeType");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public TopologyRoutesToRelationshipDetails build() {
             TopologyRoutesToRelationshipDetails __instance__ =
                     new TopologyRoutesToRelationshipDetails(
-                            destinationType, destination, routeTableId);
+                            destinationType, destination, routeTableId, routeType);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -69,7 +78,8 @@ public class TopologyRoutesToRelationshipDetails {
             Builder copiedBuilder =
                     destinationType(o.getDestinationType())
                             .destination(o.getDestination())
-                            .routeTableId(o.getRouteTableId());
+                            .routeTableId(o.getRouteTableId())
+                            .routeType(o.getRouteType());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -105,6 +115,59 @@ public class TopologyRoutesToRelationshipDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("routeTableId")
     String routeTableId;
+    /**
+     * A route rule can be {@code STATIC} if manually added to the route table or {@code DYNAMIC} if imported from another route table.
+     *
+     **/
+    @lombok.extern.slf4j.Slf4j
+    public enum RouteType {
+        Static("STATIC"),
+        Dynamic("DYNAMIC"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private final String value;
+        private static java.util.Map<String, RouteType> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (RouteType v : RouteType.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        RouteType(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static RouteType create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'RouteType', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * A route rule can be {@code STATIC} if manually added to the route table or {@code DYNAMIC} if imported from another route table.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("routeType")
+    RouteType routeType;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

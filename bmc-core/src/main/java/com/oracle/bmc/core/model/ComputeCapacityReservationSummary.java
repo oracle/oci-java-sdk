@@ -188,10 +188,8 @@ public class ComputeCapacityReservationSummary {
     String compartmentId;
 
     /**
-     * A user-friendly name for the capacity reservation. Does not have to be unique, and it's changeable.
+     * A user-friendly name. Does not have to be unique, and it's changeable.
      * Avoid entering confidential information.
-     * <p>
-     * Example: {@code My Reservation}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
@@ -232,7 +230,7 @@ public class ComputeCapacityReservationSummary {
     /**
      * The number of instances for which capacity will be held in this
      * compute capacity reservation. This number is the sum of the values of the {@code reservedCount} fields
-     * for all of the instance reservation configurations under this reservation.
+     * for all of the instance capacity configurations under this reservation.
      * The purpose of this field is to calculate the percentage usage of the reservation.
      *
      **/
@@ -242,7 +240,7 @@ public class ComputeCapacityReservationSummary {
     /**
      * The total number of instances currently consuming space in
      * this compute capacity reservation. This number is the sum of the values of the {@code usedCount} fields
-     * for all of the instance reservation configurations under this reservation.
+     * for all of the instance capacity configurations under this reservation.
      * The purpose of this field is to calculate the percentage usage of the reservation.
      *
      **/

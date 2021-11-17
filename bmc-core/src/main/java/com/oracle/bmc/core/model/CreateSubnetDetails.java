@@ -239,7 +239,7 @@ public class CreateSubnetDetails {
     String cidrBlock;
 
     /**
-     * The OCID of the compartment to contain the subnet.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the subnet.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     String compartmentId;
@@ -255,7 +255,7 @@ public class CreateSubnetDetails {
     java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * The OCID of the set of DHCP options the subnet will use. If you don't
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the set of DHCP options the subnet will use. If you don't
      * provide a value, the subnet uses the VCN's default set of DHCP options.
      *
      **/
@@ -348,7 +348,7 @@ public class CreateSubnetDetails {
     Boolean prohibitPublicIpOnVnic;
 
     /**
-     * The OCID of the route table the subnet will use. If you don't provide a value,
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the subnet will use. If you don't provide a value,
      * the subnet uses the VCN's default route table.
      *
      **/
@@ -366,7 +366,7 @@ public class CreateSubnetDetails {
     java.util.List<String> securityListIds;
 
     /**
-     * The OCID of the VCN to contain the subnet.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN to contain the subnet.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("vcnId")
     String vcnId;

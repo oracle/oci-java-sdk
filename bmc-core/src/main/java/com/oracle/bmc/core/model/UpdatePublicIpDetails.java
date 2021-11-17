@@ -104,8 +104,8 @@ public class UpdatePublicIpDetails {
     java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * A user-friendly name. Does not have to be unique, and it's changeable. Avoid
-     * entering confidential information.
+     * A user-friendly name. Does not have to be unique, and it's changeable.
+     * Avoid entering confidential information.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
@@ -122,7 +122,7 @@ public class UpdatePublicIpDetails {
     java.util.Map<String, String> freeformTags;
 
     /**
-     * The OCID of the private IP to assign the public IP to.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private IP to assign the public IP to.
      * * If the public IP is already assigned to a different private IP, it will be unassigned
      * and then reassigned to the specified private IP.
      * * If you set this field to an empty string, the public IP will be unassigned from the

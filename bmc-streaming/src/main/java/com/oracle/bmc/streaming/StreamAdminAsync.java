@@ -8,7 +8,7 @@ import com.oracle.bmc.streaming.requests.*;
 import com.oracle.bmc.streaming.responses.*;
 
 /**
- * The API for the Streaming Service.
+ * Use the Streaming API to produce and consume messages, create streams and stream pools, and manage related items. For more information, see [Streaming](https://docs.cloud.oracle.com/Content/Streaming/Concepts/streamingoverview.htm).
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180418")
 public interface StreamAdminAsync extends AutoCloseable {

@@ -56,13 +56,25 @@ public class LocalClonePluggableDatabaseDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("shouldPdbAdminAccountBeLocked")
+        private Boolean shouldPdbAdminAccountBeLocked;
+
+        public Builder shouldPdbAdminAccountBeLocked(Boolean shouldPdbAdminAccountBeLocked) {
+            this.shouldPdbAdminAccountBeLocked = shouldPdbAdminAccountBeLocked;
+            this.__explicitlySet__.add("shouldPdbAdminAccountBeLocked");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public LocalClonePluggableDatabaseDetails build() {
             LocalClonePluggableDatabaseDetails __instance__ =
                     new LocalClonePluggableDatabaseDetails(
-                            clonedPdbName, pdbAdminPassword, targetTdeWalletPassword);
+                            clonedPdbName,
+                            pdbAdminPassword,
+                            targetTdeWalletPassword,
+                            shouldPdbAdminAccountBeLocked);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -72,7 +84,8 @@ public class LocalClonePluggableDatabaseDetails {
             Builder copiedBuilder =
                     clonedPdbName(o.getClonedPdbName())
                             .pdbAdminPassword(o.getPdbAdminPassword())
-                            .targetTdeWalletPassword(o.getTargetTdeWalletPassword());
+                            .targetTdeWalletPassword(o.getTargetTdeWalletPassword())
+                            .shouldPdbAdminAccountBeLocked(o.getShouldPdbAdminAccountBeLocked());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -103,6 +116,14 @@ public class LocalClonePluggableDatabaseDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("targetTdeWalletPassword")
     String targetTdeWalletPassword;
+
+    /**
+     * The locked mode of the pluggable database admin account. If false, the user needs to provide the PDB Admin Password to connect to it.
+     * If true, the pluggable database will be locked and user cannot login to it.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("shouldPdbAdminAccountBeLocked")
+    Boolean shouldPdbAdminAccountBeLocked;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

@@ -225,7 +225,7 @@ public class Vlan {
     String cidrBlock;
 
     /**
-     * The OCID of the compartment containing the VLAN.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the VLAN.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     String compartmentId;
@@ -259,7 +259,7 @@ public class Vlan {
     java.util.Map<String, String> freeformTags;
 
     /**
-     * The VLAN's Oracle ID (OCID).
+     * The VLAN's Oracle ID ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     String id;
@@ -338,7 +338,7 @@ public class Vlan {
     Integer vlanTag;
 
     /**
-     * The OCID of the route table that the VLAN uses.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table that the VLAN uses.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("routeTableId")
     String routeTableId;
@@ -353,7 +353,7 @@ public class Vlan {
     java.util.Date timeCreated;
 
     /**
-     * The OCID of the VCN the VLAN is in.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN the VLAN is in.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("vcnId")
     String vcnId;

@@ -5,7 +5,7 @@
 package com.oracle.bmc.core.model;
 
 /**
- * A template that contains the settings to use when defining the instance reservation configuration.
+ * A template that contains the settings to use when defining the instance capacity configuration.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -109,7 +109,7 @@ public class InstanceReservationConfigDetails {
     InstanceReservationShapeConfigDetails instanceShapeConfig;
 
     /**
-     * The fault domain to use for instances created using this reservation configuration.
+     * The fault domain to use for instances created using this capacity configuration.
      * For more information, see [Fault Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm#fault).
      * If you do not specify the fault domain, the capacity is available for an instance
      * that does not specify a fault domain. To change the fault domain for a reservation,
@@ -125,7 +125,7 @@ public class InstanceReservationConfigDetails {
     String faultDomain;
 
     /**
-     * The amount of capacity to reserve in this reservation configuration.
+     * The total number of instances that can be launched from the capacity configuration.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("reservedCount")
     Long reservedCount;

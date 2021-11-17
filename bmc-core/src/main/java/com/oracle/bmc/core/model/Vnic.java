@@ -269,7 +269,7 @@ public class Vnic {
     String availabilityDomain;
 
     /**
-     * The OCID of the compartment containing the VNIC.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the VNIC.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     String compartmentId;
@@ -285,7 +285,7 @@ public class Vnic {
     java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * A user-friendly name. Does not have to be unique.
+     * A user-friendly name. Does not have to be unique, and it's changeable.
      * Avoid entering confidential information.
      *
      **/
@@ -320,7 +320,7 @@ public class Vnic {
     String hostnameLabel;
 
     /**
-     * The OCID of the VNIC.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     String id;
@@ -415,7 +415,7 @@ public class Vnic {
 
     /**
      * If the VNIC belongs to a VLAN as part of the Oracle Cloud VMware Solution (instead of
-     * belonging to a subnet), the {@code vlanId} is the OCID of the VLAN the VNIC is in. See
+     * belonging to a subnet), the {@code vlanId} is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN the VNIC is in. See
      * {@link Vlan}. If the VNIC is instead in a subnet, {@code subnetId} has a value.
      *
      **/
@@ -457,7 +457,7 @@ public class Vnic {
     Boolean skipSourceDestCheck;
 
     /**
-     * The OCID of the subnet the VNIC is in.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the VNIC is in.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
     String subnetId;

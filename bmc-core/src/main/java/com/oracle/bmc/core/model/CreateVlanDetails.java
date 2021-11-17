@@ -194,7 +194,7 @@ public class CreateVlanDetails {
     String cidrBlock;
 
     /**
-     * The OCID of the compartment to contain the VLAN.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the VLAN.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     String compartmentId;
@@ -210,7 +210,7 @@ public class CreateVlanDetails {
     java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * A descriptive name. Does not have to be unique, and it's changeable.
+     * A user-friendly name. Does not have to be unique, and it's changeable.
      * Avoid entering confidential information.
      *
      **/
@@ -237,7 +237,7 @@ public class CreateVlanDetails {
     java.util.List<String> nsgIds;
 
     /**
-     * The OCID of the route table the VLAN will use. If you don't provide a value,
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the VLAN will use. If you don't provide a value,
      * the VLAN uses the VCN's default route table.
      *
      **/
@@ -245,7 +245,7 @@ public class CreateVlanDetails {
     String routeTableId;
 
     /**
-     * The OCID of the VCN to contain the VLAN.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN to contain the VLAN.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("vcnId")
     String vcnId;

@@ -180,7 +180,7 @@ public class SecurityList {
     }
 
     /**
-     * The OCID of the compartment containing the security list.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the security list.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     String compartmentId;
@@ -220,7 +220,7 @@ public class SecurityList {
     java.util.Map<String, String> freeformTags;
 
     /**
-     * The security list's Oracle Cloud ID (OCID).
+     * The security list's Oracle Cloud ID ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     String id;
@@ -294,7 +294,7 @@ public class SecurityList {
     java.util.Date timeCreated;
 
     /**
-     * The OCID of the VCN the security list belongs to.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN the security list belongs to.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("vcnId")
     String vcnId;

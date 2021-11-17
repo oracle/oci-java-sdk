@@ -20,7 +20,7 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 @RequiredArgsConstructor
 public class GenericWaiter {
-    private final WaiterConfiguration waiterConfiguration;
+    @lombok.Getter private final WaiterConfiguration waiterConfiguration;
 
     /**
      * Blocks until a specific condition is met.

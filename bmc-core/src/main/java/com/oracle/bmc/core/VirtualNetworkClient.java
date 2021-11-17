@@ -310,6 +310,9 @@ public class VirtualNetworkClient implements VirtualNetwork {
         this.retryConfiguration = clientConfigurationToUse.getRetryConfiguration();
         JaxRsCircuitBreaker circuitBreaker =
                 CircuitBreakerUtils.getUserDefinedCircuitBreaker(configuration);
+        if (circuitBreaker == null) {
+            circuitBreaker = CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER;
+        }
         this.client =
                 restClientFactory.create(
                         defaultRequestSigner,
@@ -473,6 +476,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -507,6 +511,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -540,6 +545,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -572,6 +578,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -607,6 +614,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -639,6 +647,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -671,6 +680,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -700,6 +710,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -735,6 +746,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -771,6 +783,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -807,6 +820,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -841,6 +855,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -876,6 +891,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -912,6 +928,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -948,6 +965,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -982,6 +1000,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1017,6 +1036,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1053,6 +1073,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1090,6 +1111,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1126,6 +1148,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1163,6 +1186,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1199,6 +1223,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1235,6 +1260,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1273,6 +1299,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1309,6 +1336,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1345,6 +1373,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1381,6 +1410,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1416,6 +1446,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1449,6 +1480,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1484,6 +1516,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1519,6 +1552,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1553,6 +1587,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1588,6 +1623,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1622,6 +1658,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1654,6 +1691,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1687,6 +1725,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1721,6 +1760,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1754,6 +1794,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1786,6 +1827,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1819,6 +1861,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1854,6 +1897,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1888,6 +1932,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1922,6 +1967,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1956,6 +2002,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1988,6 +2035,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2023,6 +2071,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2057,6 +2106,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2092,6 +2142,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2126,6 +2177,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2159,6 +2211,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2192,6 +2245,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2227,6 +2281,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2261,6 +2316,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2294,6 +2350,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2327,6 +2384,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2360,6 +2418,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2392,6 +2451,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2425,6 +2485,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2457,6 +2518,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2489,6 +2551,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2517,6 +2580,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2546,6 +2610,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2576,6 +2641,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2605,6 +2671,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2633,6 +2700,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2662,6 +2730,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2693,6 +2762,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2722,6 +2792,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2752,6 +2823,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2782,6 +2854,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2810,6 +2883,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2841,6 +2915,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2870,6 +2945,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2901,6 +2977,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2930,6 +3007,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2959,6 +3037,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2988,6 +3067,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3019,6 +3099,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3048,6 +3129,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3077,6 +3159,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3106,6 +3189,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3135,6 +3219,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3163,6 +3248,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3192,6 +3278,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3220,6 +3307,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3249,6 +3337,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3281,6 +3370,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3310,6 +3400,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3337,6 +3428,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3377,6 +3469,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3405,6 +3498,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3433,6 +3527,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3461,6 +3556,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3491,6 +3587,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3520,6 +3617,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3548,6 +3646,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3575,6 +3674,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3603,6 +3703,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3632,6 +3733,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3661,6 +3763,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3689,6 +3792,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3719,6 +3823,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3749,6 +3854,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3777,6 +3883,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3807,6 +3914,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3837,6 +3945,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3866,6 +3975,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3897,6 +4007,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3925,6 +4036,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3965,6 +4077,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3992,6 +4105,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -4021,6 +4135,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -4049,6 +4164,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -4078,6 +4194,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -4107,6 +4224,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -4135,6 +4253,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -4163,6 +4282,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -4192,6 +4312,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -4225,6 +4346,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -4257,6 +4379,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -4287,6 +4410,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -4315,6 +4439,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -4343,6 +4468,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -4370,6 +4496,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -4398,6 +4525,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -4425,6 +4553,36 @@ public class VirtualNetworkClient implements VirtualNetwork {
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public GetSubnetTopologyResponse getSubnetTopology(GetSubnetTopologyRequest request) {
+        LOG.trace("Called getSubnetTopology");
+        final GetSubnetTopologyRequest interceptedRequest =
+                GetSubnetTopologyConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetSubnetTopologyConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, GetSubnetTopologyResponse>
+                transformer = GetSubnetTopologyConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -4454,6 +4612,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -4494,6 +4653,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -4522,6 +4682,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -4549,6 +4710,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -4579,6 +4741,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -4607,6 +4770,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -4635,6 +4799,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -4662,6 +4827,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -4689,6 +4855,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -4720,6 +4887,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -4749,6 +4917,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -4777,6 +4946,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -4805,6 +4975,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -4832,6 +5003,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -4861,6 +5033,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -4891,6 +5064,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -4920,6 +5094,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -4948,6 +5123,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -4978,6 +5154,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -5006,6 +5183,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -5034,6 +5212,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -5064,6 +5243,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -5094,6 +5274,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -5122,6 +5303,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -5150,6 +5332,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -5177,6 +5360,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -5207,6 +5391,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -5243,6 +5428,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -5273,6 +5459,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -5301,6 +5488,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -5329,6 +5517,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -5356,6 +5545,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -5385,6 +5575,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -5413,6 +5604,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -5444,6 +5636,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -5474,6 +5667,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -5504,6 +5698,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -5532,6 +5727,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -5560,6 +5756,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -5588,6 +5785,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -5618,6 +5816,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -5646,6 +5845,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -5674,6 +5874,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -5702,6 +5903,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -5730,6 +5932,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -5758,6 +5961,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -5785,6 +5989,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -5815,6 +6020,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -5845,6 +6051,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -5873,6 +6080,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -5900,6 +6108,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -5929,6 +6138,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -5964,6 +6174,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -5997,6 +6208,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -6031,6 +6243,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -6062,6 +6275,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -6094,6 +6308,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -6130,6 +6345,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -6164,6 +6380,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -6196,6 +6413,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -6227,6 +6445,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -6259,6 +6478,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -6292,6 +6512,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -6324,6 +6545,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -6355,6 +6577,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -6387,6 +6610,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -6421,6 +6645,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -6457,6 +6682,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -6490,6 +6716,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -6522,6 +6749,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -6555,6 +6783,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -6589,6 +6818,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -6625,6 +6855,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -6659,6 +6890,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -6690,6 +6922,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -6724,6 +6957,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -6757,6 +6991,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -6791,6 +7026,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -6827,6 +7063,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -6860,6 +7097,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -6892,6 +7130,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -6924,6 +7163,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -6958,6 +7198,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -6991,6 +7232,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -7023,6 +7265,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -7055,6 +7298,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -7087,6 +7331,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -7122,6 +7367,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -7154,6 +7400,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -7186,6 +7433,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -7217,6 +7465,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -7248,6 +7497,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -7280,6 +7530,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -7309,6 +7560,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -7338,6 +7590,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {

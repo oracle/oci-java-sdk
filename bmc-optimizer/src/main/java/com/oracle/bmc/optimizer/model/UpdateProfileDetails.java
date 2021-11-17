@@ -36,6 +36,15 @@ public class UpdateProfileDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("aggregationIntervalInDays")
+        private Integer aggregationIntervalInDays;
+
+        public Builder aggregationIntervalInDays(Integer aggregationIntervalInDays) {
+            this.aggregationIntervalInDays = aggregationIntervalInDays;
+            this.__explicitlySet__.add("aggregationIntervalInDays");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
@@ -98,6 +107,7 @@ public class UpdateProfileDetails {
             UpdateProfileDetails __instance__ =
                     new UpdateProfileDetails(
                             description,
+                            aggregationIntervalInDays,
                             definedTags,
                             freeformTags,
                             levelsConfiguration,
@@ -112,6 +122,7 @@ public class UpdateProfileDetails {
         public Builder copy(UpdateProfileDetails o) {
             Builder copiedBuilder =
                     description(o.getDescription())
+                            .aggregationIntervalInDays(o.getAggregationIntervalInDays())
                             .definedTags(o.getDefinedTags())
                             .freeformTags(o.getFreeformTags())
                             .levelsConfiguration(o.getLevelsConfiguration())
@@ -136,6 +147,12 @@ public class UpdateProfileDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     String description;
+
+    /**
+     * The time period over which to collect data for the recommendations, measured in number of days.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("aggregationIntervalInDays")
+    Integer aggregationIntervalInDays;
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.

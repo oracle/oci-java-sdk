@@ -63,7 +63,7 @@ public class GetPublicIpByPrivateIpIdDetails {
     }
 
     /**
-     * OCID of the private IP.
+     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private IP.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("privateIpId")

@@ -83,7 +83,8 @@ public class BootVolumeReplicaInfo {
     }
 
     /**
-     * The display name of the boot volume replica
+     * A user-friendly name. Does not have to be unique, and it's changeable.
+     * Avoid entering confidential information.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")

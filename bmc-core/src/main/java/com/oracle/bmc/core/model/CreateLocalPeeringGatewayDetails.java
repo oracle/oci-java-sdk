@@ -120,7 +120,7 @@ public class CreateLocalPeeringGatewayDetails {
     }
 
     /**
-     * The OCID of the compartment containing the local peering gateway (LPG).
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the local peering gateway (LPG).
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
@@ -137,8 +137,8 @@ public class CreateLocalPeeringGatewayDetails {
     java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * A user-friendly name. Does not have to be unique, and it's changeable. Avoid
-     * entering confidential information.
+     * A user-friendly name. Does not have to be unique, and it's changeable.
+     * Avoid entering confidential information.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
@@ -155,7 +155,7 @@ public class CreateLocalPeeringGatewayDetails {
     java.util.Map<String, String> freeformTags;
 
     /**
-     * The OCID of the route table the LPG will use.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the LPG will use.
      * <p>
      * If you don't specify a route table here, the LPG is created without an associated route
      * table. The Networking service does NOT automatically associate the attached VCN's default route table
@@ -169,7 +169,7 @@ public class CreateLocalPeeringGatewayDetails {
     String routeTableId;
 
     /**
-     * The OCID of the VCN the LPG belongs to.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN the LPG belongs to.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("vcnId")
     String vcnId;

@@ -158,7 +158,7 @@ public class InternetGateway {
     }
 
     /**
-     * The OCID of the compartment containing the internet gateway.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the internet gateway.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     String compartmentId;
@@ -192,7 +192,7 @@ public class InternetGateway {
     java.util.Map<String, String> freeformTags;
 
     /**
-     * The internet gateway's Oracle ID (OCID).
+     * The internet gateway's Oracle ID ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     String id;
@@ -268,7 +268,7 @@ public class InternetGateway {
     java.util.Date timeCreated;
 
     /**
-     * The OCID of the VCN the internet gateway belongs to.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN the internet gateway belongs to.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("vcnId")
     String vcnId;

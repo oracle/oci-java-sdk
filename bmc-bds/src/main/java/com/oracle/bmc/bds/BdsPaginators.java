@@ -156,6 +156,118 @@ public class BdsPaginators {
     }
 
     /**
+     * Creates a new iterable which will iterate over the responses received from the listBdsApiKeys operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListBdsApiKeysResponse> listBdsApiKeysResponseIterator(
+            final ListBdsApiKeysRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListBdsApiKeysRequest.Builder, ListBdsApiKeysRequest, ListBdsApiKeysResponse>(
+                new com.google.common.base.Supplier<ListBdsApiKeysRequest.Builder>() {
+                    @Override
+                    public ListBdsApiKeysRequest.Builder get() {
+                        return ListBdsApiKeysRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListBdsApiKeysResponse, String>() {
+                    @Override
+                    public String apply(ListBdsApiKeysResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListBdsApiKeysRequest.Builder>,
+                        ListBdsApiKeysRequest>() {
+                    @Override
+                    public ListBdsApiKeysRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListBdsApiKeysRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListBdsApiKeysRequest, ListBdsApiKeysResponse>() {
+                    @Override
+                    public ListBdsApiKeysResponse apply(ListBdsApiKeysRequest request) {
+                        return client.listBdsApiKeys(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.bds.model.BdsApiKeySummary} objects
+     * contained in responses from the listBdsApiKeys operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.bds.model.BdsApiKeySummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.bds.model.BdsApiKeySummary> listBdsApiKeysRecordIterator(
+            final ListBdsApiKeysRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListBdsApiKeysRequest.Builder, ListBdsApiKeysRequest, ListBdsApiKeysResponse,
+                com.oracle.bmc.bds.model.BdsApiKeySummary>(
+                new com.google.common.base.Supplier<ListBdsApiKeysRequest.Builder>() {
+                    @Override
+                    public ListBdsApiKeysRequest.Builder get() {
+                        return ListBdsApiKeysRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListBdsApiKeysResponse, String>() {
+                    @Override
+                    public String apply(ListBdsApiKeysResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListBdsApiKeysRequest.Builder>,
+                        ListBdsApiKeysRequest>() {
+                    @Override
+                    public ListBdsApiKeysRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListBdsApiKeysRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListBdsApiKeysRequest, ListBdsApiKeysResponse>() {
+                    @Override
+                    public ListBdsApiKeysResponse apply(ListBdsApiKeysRequest request) {
+                        return client.listBdsApiKeys(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListBdsApiKeysResponse,
+                        java.util.List<com.oracle.bmc.bds.model.BdsApiKeySummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.bds.model.BdsApiKeySummary> apply(
+                            ListBdsApiKeysResponse response) {
+                        return response.getItems();
+                    }
+                });
+    }
+
+    /**
      * Creates a new iterable which will iterate over the responses received from the listBdsInstances operation. This iterable
      * will fetch more data from the server as needed.
      *

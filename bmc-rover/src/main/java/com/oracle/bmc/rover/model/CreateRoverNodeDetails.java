@@ -5,7 +5,7 @@
 package com.oracle.bmc.rover.model;
 
 /**
- * The information requied to create a RoverNode.
+ *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -197,6 +197,42 @@ public class CreateRoverNodeDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("isImportRequested")
+        private Boolean isImportRequested;
+
+        public Builder isImportRequested(Boolean isImportRequested) {
+            this.isImportRequested = isImportRequested;
+            this.__explicitlySet__.add("isImportRequested");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("importCompartmentId")
+        private String importCompartmentId;
+
+        public Builder importCompartmentId(String importCompartmentId) {
+            this.importCompartmentId = importCompartmentId;
+            this.__explicitlySet__.add("importCompartmentId");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("importFileBucket")
+        private String importFileBucket;
+
+        public Builder importFileBucket(String importFileBucket) {
+            this.importFileBucket = importFileBucket;
+            this.__explicitlySet__.add("importFileBucket");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("dataValidationCode")
+        private String dataValidationCode;
+
+        public Builder dataValidationCode(String dataValidationCode) {
+            this.dataValidationCode = dataValidationCode;
+            this.__explicitlySet__.add("dataValidationCode");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
@@ -250,6 +286,10 @@ public class CreateRoverNodeDetails {
                             lifecycleStateDetails,
                             serialNumber,
                             oracleShippingTrackingUrl,
+                            isImportRequested,
+                            importCompartmentId,
+                            importFileBucket,
+                            dataValidationCode,
                             freeformTags,
                             definedTags,
                             systemTags);
@@ -279,6 +319,10 @@ public class CreateRoverNodeDetails {
                             .lifecycleStateDetails(o.getLifecycleStateDetails())
                             .serialNumber(o.getSerialNumber())
                             .oracleShippingTrackingUrl(o.getOracleShippingTrackingUrl())
+                            .isImportRequested(o.getIsImportRequested())
+                            .importCompartmentId(o.getImportCompartmentId())
+                            .importFileBucket(o.getImportFileBucket())
+                            .dataValidationCode(o.getDataValidationCode())
                             .freeformTags(o.getFreeformTags())
                             .definedTags(o.getDefinedTags())
                             .systemTags(o.getSystemTags());
@@ -439,6 +483,30 @@ public class CreateRoverNodeDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("oracleShippingTrackingUrl")
     String oracleShippingTrackingUrl;
+
+    /**
+     * The flag indicating that customer requests data to be imported to OCI upon Rover node return.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isImportRequested")
+    Boolean isImportRequested;
+
+    /**
+     * An OCID of a compartment where data will be imported to upon Rover node return.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("importCompartmentId")
+    String importCompartmentId;
+
+    /**
+     * Name of a bucket where files from NFS share will be imported to upon Rover node return.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("importFileBucket")
+    String importFileBucket;
+
+    /**
+     * Validation code returned by data validation tool. Required for return shipping label generation if data import was requested.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("dataValidationCode")
+    String dataValidationCode;
 
     /**
      * The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no

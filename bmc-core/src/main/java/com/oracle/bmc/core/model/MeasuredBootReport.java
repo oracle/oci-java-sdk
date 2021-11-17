@@ -5,7 +5,7 @@
 package com.oracle.bmc.core.model;
 
 /**
- * The Measured Boot report for a shielded instance.
+ * The measured boot report for a shielded instance.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -73,7 +73,7 @@ public class MeasuredBootReport {
     }
 
     /**
-     * Whether the verification succeeded and the new values matched the expected values.
+     * Whether the verification succeeded, and the new values match the expected values.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isPolicyVerificationSuccessful")

@@ -130,7 +130,7 @@ public class UpdateVlanDetails {
     java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * A descriptive name. Does not have to be unique, and it's changeable.
+     * A user-friendly name. Does not have to be unique, and it's changeable.
      * Avoid entering confidential information.
      *
      **/
@@ -158,7 +158,7 @@ public class UpdateVlanDetails {
     java.util.List<String> nsgIds;
 
     /**
-     * The OCID of the route table the VLAN will use.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the VLAN will use.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("routeTableId")

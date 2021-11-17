@@ -136,6 +136,15 @@ public class UpdateVirtualCircuitDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("ipMtu")
+        private VirtualCircuitIpMtu ipMtu;
+
+        public Builder ipMtu(VirtualCircuitIpMtu ipMtu) {
+            this.ipMtu = ipMtu;
+            this.__explicitlySet__.add("ipMtu");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -153,7 +162,8 @@ public class UpdateVirtualCircuitDetails {
                             gatewayId,
                             providerState,
                             providerServiceKeyName,
-                            referenceComment);
+                            referenceComment,
+                            ipMtu);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -172,7 +182,8 @@ public class UpdateVirtualCircuitDetails {
                             .gatewayId(o.getGatewayId())
                             .providerState(o.getProviderState())
                             .providerServiceKeyName(o.getProviderServiceKeyName())
-                            .referenceComment(o.getReferenceComment());
+                            .referenceComment(o.getReferenceComment())
+                            .ipMtu(o.getIpMtu());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -290,10 +301,8 @@ public class UpdateVirtualCircuitDetails {
     java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * A user-friendly name. Does not have to be unique.
+     * A user-friendly name. Does not have to be unique, and it's changeable.
      * Avoid entering confidential information.
-     * <p>
-     * To be updated only by the customer who owns the virtual circuit.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
@@ -310,7 +319,7 @@ public class UpdateVirtualCircuitDetails {
     java.util.Map<String, String> freeformTags;
 
     /**
-     * The OCID of the {@link Drg}
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the {@link Drg}
      * that this private virtual circuit uses.
      * <p>
      * To be updated only by the customer who owns the virtual circuit.
@@ -389,6 +398,12 @@ public class UpdateVirtualCircuitDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("referenceComment")
     String referenceComment;
+
+    /**
+     * The layer 3 IP MTU to use on this virtual circuit.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("ipMtu")
+    VirtualCircuitIpMtu ipMtu;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

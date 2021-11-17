@@ -99,6 +99,15 @@ public class DrgRouteRule {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("attributes")
+        private Object attributes;
+
+        public Builder attributes(Object attributes) {
+            this.attributes = attributes;
+            this.__explicitlySet__.add("attributes");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -112,7 +121,8 @@ public class DrgRouteRule {
                             isConflict,
                             isBlackhole,
                             id,
-                            routeProvenance);
+                            routeProvenance,
+                            attributes);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -127,7 +137,8 @@ public class DrgRouteRule {
                             .isConflict(o.getIsConflict())
                             .isBlackhole(o.getIsBlackhole())
                             .id(o.getId())
-                            .routeProvenance(o.getRouteProvenance());
+                            .routeProvenance(o.getRouteProvenance())
+                            .attributes(o.getAttributes());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -371,6 +382,13 @@ public class DrgRouteRule {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("routeProvenance")
     RouteProvenance routeProvenance;
+
+    /**
+     * Additional properties for the route, computed by the service.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("attributes")
+    Object attributes;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

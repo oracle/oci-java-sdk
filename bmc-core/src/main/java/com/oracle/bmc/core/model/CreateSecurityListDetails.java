@@ -132,7 +132,7 @@ public class CreateSecurityListDetails {
     }
 
     /**
-     * The OCID of the compartment to contain the security list.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the security list.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     String compartmentId;
@@ -178,7 +178,7 @@ public class CreateSecurityListDetails {
     java.util.List<IngressSecurityRule> ingressSecurityRules;
 
     /**
-     * The OCID of the VCN the security list belongs to.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN the security list belongs to.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("vcnId")
     String vcnId;

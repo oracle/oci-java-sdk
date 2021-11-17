@@ -65,6 +65,15 @@ public class CreatePluggableDatabaseDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("shouldPdbAdminAccountBeLocked")
+        private Boolean shouldPdbAdminAccountBeLocked;
+
+        public Builder shouldPdbAdminAccountBeLocked(Boolean shouldPdbAdminAccountBeLocked) {
+            this.shouldPdbAdminAccountBeLocked = shouldPdbAdminAccountBeLocked;
+            this.__explicitlySet__.add("shouldPdbAdminAccountBeLocked");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
@@ -94,6 +103,7 @@ public class CreatePluggableDatabaseDetails {
                             containerDatabaseId,
                             pdbAdminPassword,
                             tdeWalletPassword,
+                            shouldPdbAdminAccountBeLocked,
                             freeformTags,
                             definedTags);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
@@ -107,6 +117,7 @@ public class CreatePluggableDatabaseDetails {
                             .containerDatabaseId(o.getContainerDatabaseId())
                             .pdbAdminPassword(o.getPdbAdminPassword())
                             .tdeWalletPassword(o.getTdeWalletPassword())
+                            .shouldPdbAdminAccountBeLocked(o.getShouldPdbAdminAccountBeLocked())
                             .freeformTags(o.getFreeformTags())
                             .definedTags(o.getDefinedTags());
 
@@ -145,6 +156,14 @@ public class CreatePluggableDatabaseDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("tdeWalletPassword")
     String tdeWalletPassword;
+
+    /**
+     * The locked mode of the pluggable database admin account. If false, the user needs to provide the PDB Admin Password to connect to it.
+     * If true, the pluggable database will be locked and user cannot login to it.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("shouldPdbAdminAccountBeLocked")
+    Boolean shouldPdbAdminAccountBeLocked;
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.

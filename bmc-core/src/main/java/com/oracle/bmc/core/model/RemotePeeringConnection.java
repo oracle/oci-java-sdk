@@ -206,7 +206,7 @@ public class RemotePeeringConnection {
     }
 
     /**
-     * The OCID of the compartment that contains the RPC.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the RPC.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     String compartmentId;
@@ -230,7 +230,7 @@ public class RemotePeeringConnection {
     String displayName;
 
     /**
-     * The OCID of the DRG that this RPC belongs to.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG that this RPC belongs to.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("drgId")
     String drgId;
@@ -246,7 +246,7 @@ public class RemotePeeringConnection {
     java.util.Map<String, String> freeformTags;
 
     /**
-     * The OCID of the RPC.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the RPC.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     String id;
@@ -314,7 +314,7 @@ public class RemotePeeringConnection {
     LifecycleState lifecycleState;
 
     /**
-     * If this RPC is peered, this value is the OCID of the other RPC.
+     * If this RPC is peered, this value is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the other RPC.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("peerId")
@@ -330,7 +330,7 @@ public class RemotePeeringConnection {
     String peerRegionName;
 
     /**
-     * If this RPC is peered, this value is the OCID of the other RPC's tenancy.
+     * If this RPC is peered, this value is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the other RPC's tenancy.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("peerTenancyId")

@@ -42,7 +42,8 @@ package com.oracle.bmc.core.model;
 public class InstanceConfigurationAttachVolumeDetails {
 
     /**
-     * A user-friendly name. Does not have to be unique, and it cannot be changed. Avoid entering confidential information.
+     * A user-friendly name. Does not have to be unique, and it's changeable.
+     * Avoid entering confidential information.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")

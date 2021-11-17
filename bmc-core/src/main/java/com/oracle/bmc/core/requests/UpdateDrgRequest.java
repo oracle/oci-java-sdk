@@ -21,7 +21,7 @@ public class UpdateDrgRequest
         extends com.oracle.bmc.requests.BmcRequest<com.oracle.bmc.core.model.UpdateDrgDetails> {
 
     /**
-     * The [[OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)](/iaas/Content/General/Concepts/identifiers.htm) of the DRG.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the DRG.
      */
     private String drgId;
 

@@ -179,6 +179,42 @@ public class UpdateRoverNodeDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("isImportRequested")
+        private Boolean isImportRequested;
+
+        public Builder isImportRequested(Boolean isImportRequested) {
+            this.isImportRequested = isImportRequested;
+            this.__explicitlySet__.add("isImportRequested");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("importCompartmentId")
+        private String importCompartmentId;
+
+        public Builder importCompartmentId(String importCompartmentId) {
+            this.importCompartmentId = importCompartmentId;
+            this.__explicitlySet__.add("importCompartmentId");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("importFileBucket")
+        private String importFileBucket;
+
+        public Builder importFileBucket(String importFileBucket) {
+            this.importFileBucket = importFileBucket;
+            this.__explicitlySet__.add("importFileBucket");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("dataValidationCode")
+        private String dataValidationCode;
+
+        public Builder dataValidationCode(String dataValidationCode) {
+            this.dataValidationCode = dataValidationCode;
+            this.__explicitlySet__.add("dataValidationCode");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("publicKey")
         private String publicKey;
 
@@ -239,6 +275,10 @@ public class UpdateRoverNodeDetails {
                             lifecycleStateDetails,
                             timeReturnWindowStarts,
                             timeReturnWindowEnds,
+                            isImportRequested,
+                            importCompartmentId,
+                            importFileBucket,
+                            dataValidationCode,
                             publicKey,
                             freeformTags,
                             definedTags,
@@ -267,6 +307,10 @@ public class UpdateRoverNodeDetails {
                             .lifecycleStateDetails(o.getLifecycleStateDetails())
                             .timeReturnWindowStarts(o.getTimeReturnWindowStarts())
                             .timeReturnWindowEnds(o.getTimeReturnWindowEnds())
+                            .isImportRequested(o.getIsImportRequested())
+                            .importCompartmentId(o.getImportCompartmentId())
+                            .importFileBucket(o.getImportFileBucket())
+                            .dataValidationCode(o.getDataValidationCode())
                             .publicKey(o.getPublicKey())
                             .freeformTags(o.getFreeformTags())
                             .definedTags(o.getDefinedTags())
@@ -416,6 +460,30 @@ public class UpdateRoverNodeDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeReturnWindowEnds")
     java.util.Date timeReturnWindowEnds;
+
+    /**
+     * The flag indicating that customer requests data to be imported to OCI upon Rover node return.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isImportRequested")
+    Boolean isImportRequested;
+
+    /**
+     * An OCID of a compartment where data will be imported to upon Rover node return.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("importCompartmentId")
+    String importCompartmentId;
+
+    /**
+     * Name of a bucket where files from NFS share will be imported to upon Rover node return.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("importFileBucket")
+    String importFileBucket;
+
+    /**
+     * Validation code returned by data validation tool. Required for return shipping label generation if data import was requested.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("dataValidationCode")
+    String dataValidationCode;
 
     /**
      * The public key of the resource principal

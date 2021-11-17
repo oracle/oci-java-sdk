@@ -112,6 +112,15 @@ public class CrossConnectGroup {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("macsecProperties")
+        private MacsecProperties macsecProperties;
+
+        public Builder macsecProperties(MacsecProperties macsecProperties) {
+            this.macsecProperties = macsecProperties;
+            this.__explicitlySet__.add("macsecProperties");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -125,7 +134,8 @@ public class CrossConnectGroup {
                             id,
                             lifecycleState,
                             customerReferenceName,
-                            timeCreated);
+                            timeCreated,
+                            macsecProperties);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -140,7 +150,8 @@ public class CrossConnectGroup {
                             .id(o.getId())
                             .lifecycleState(o.getLifecycleState())
                             .customerReferenceName(o.getCustomerReferenceName())
-                            .timeCreated(o.getTimeCreated());
+                            .timeCreated(o.getTimeCreated())
+                            .macsecProperties(o.getMacsecProperties());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -155,7 +166,7 @@ public class CrossConnectGroup {
     }
 
     /**
-     * The OCID of the compartment containing the cross-connect group.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the cross-connect group.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     String compartmentId;
@@ -171,7 +182,7 @@ public class CrossConnectGroup {
     java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * The display name of a user-friendly name. Does not have to be unique, and it's changeable.
+     * A user-friendly name. Does not have to be unique, and it's changeable.
      * Avoid entering confidential information.
      *
      **/
@@ -264,6 +275,9 @@ public class CrossConnectGroup {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     java.util.Date timeCreated;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("macsecProperties")
+    MacsecProperties macsecProperties;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

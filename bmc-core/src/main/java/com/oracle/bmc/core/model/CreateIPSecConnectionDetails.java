@@ -165,13 +165,13 @@ public class CreateIPSecConnectionDetails {
     }
 
     /**
-     * The OCID of the compartment to contain the IPSec connection.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the IPSec connection.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     String compartmentId;
 
     /**
-     * The OCID of the {@link Cpe} object.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the {@link Cpe} object.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("cpeId")
     String cpeId;

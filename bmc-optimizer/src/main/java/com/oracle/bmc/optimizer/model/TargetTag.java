@@ -5,7 +5,9 @@
 package com.oracle.bmc.optimizer.model;
 
 /**
- * A target tag with tag namespace, tag definition, tag value type, and tag values attached to the current profile override.
+ * A tag key definition used in the current profile override, including the tag namespace, tag key, tag value type, and tag values.
+ * Only defined tags are supported.
+ * For more information about tagging, see [Tagging Overview](https://docs.cloud.oracle.com/iaas/Content/Tagging/Concepts/taggingoverview.htm)
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -98,19 +100,26 @@ public class TargetTag {
     String tagNamespaceName;
 
     /**
-     * The name of the tag definition.
+     * The name you use to refer to the tag, also known as the tag key.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("tagDefinitionName")
     String tagDefinitionName;
 
     /**
-     * The tag value type.
+     * Specifies which tag value types in the {@code tagValues} field result in overrides of the recommendation criteria.
+     * <p>
+     * When the value for this field is {@code ANY}, the {@code tagValues} field should be empty, which enforces overrides to the recommendation
+     * for resources with any tag values attached to them.
+     * <p>
+     * When the value for this field value is {@code VALUE}, the {@code tagValues} field must include a specific value or list of values.
+     * Overrides to the recommendation criteria only occur for resources that match the values in the {@code tagValues} fields.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("tagValueType")
     TagValueType tagValueType;
 
     /**
-     * The list of tag values.
+     * The list of tag values. The tag value is the value that the user applying the tag adds to the tag key.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("tagValues")
     java.util.List<String> tagValues;

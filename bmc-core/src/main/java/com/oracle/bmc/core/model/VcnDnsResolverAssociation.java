@@ -84,13 +84,13 @@ public class VcnDnsResolverAssociation {
     }
 
     /**
-     * The OCID of the VCN in the association.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN in the association.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("vcnId")
     String vcnId;
 
     /**
-     * The OCID of the DNS resolver in the association.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DNS resolver in the association.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dnsResolverId")

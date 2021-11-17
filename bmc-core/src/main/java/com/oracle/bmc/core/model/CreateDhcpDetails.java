@@ -131,7 +131,7 @@ public class CreateDhcpDetails {
     }
 
     /**
-     * The OCID of the compartment to contain the set of DHCP options.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the set of DHCP options.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     String compartmentId;
@@ -171,7 +171,7 @@ public class CreateDhcpDetails {
     java.util.List<DhcpOption> options;
 
     /**
-     * The OCID of the VCN the set of DHCP options belongs to.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN the set of DHCP options belongs to.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("vcnId")
     String vcnId;

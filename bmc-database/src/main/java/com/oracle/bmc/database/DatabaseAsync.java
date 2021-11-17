@@ -862,7 +862,7 @@ public interface DatabaseAsync extends AutoCloseable {
 
     /**
      * Creates and starts a pluggable database in the specified container database.
-     * Use the [StartPluggableDatabase](#/en/database/latest/PluggableDatabase/StartPluggableDatabase] and [StopPluggableDatabase](#/en/database/latest/PluggableDatabase/StopPluggableDatabase] APIs to start and stop the pluggable database.
+     * Use the {@link #startPluggableDatabase(StartPluggableDatabaseRequest, Consumer, Consumer) startPluggableDatabase} and {@link #stopPluggableDatabase(StopPluggableDatabaseRequest, Consumer, Consumer) stopPluggableDatabase} APIs to start and stop the pluggable database.
      *
      *
      * @param request The request object containing the details to send

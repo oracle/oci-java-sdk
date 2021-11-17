@@ -119,6 +119,15 @@ public class CreateCrossConnectDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("macsecProperties")
+        private CreateMacsecProperties macsecProperties;
+
+        public Builder macsecProperties(CreateMacsecProperties macsecProperties) {
+            this.macsecProperties = macsecProperties;
+            this.__explicitlySet__.add("macsecProperties");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -134,7 +143,8 @@ public class CreateCrossConnectDetails {
                             locationName,
                             nearCrossConnectOrCrossConnectGroupId,
                             portSpeedShapeName,
-                            customerReferenceName);
+                            customerReferenceName,
+                            macsecProperties);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -153,7 +163,8 @@ public class CreateCrossConnectDetails {
                             .nearCrossConnectOrCrossConnectGroupId(
                                     o.getNearCrossConnectOrCrossConnectGroupId())
                             .portSpeedShapeName(o.getPortSpeedShapeName())
-                            .customerReferenceName(o.getCustomerReferenceName());
+                            .customerReferenceName(o.getCustomerReferenceName())
+                            .macsecProperties(o.getMacsecProperties());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -168,13 +179,13 @@ public class CreateCrossConnectDetails {
     }
 
     /**
-     * The OCID of the compartment to contain the cross-connect.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the cross-connect.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     String compartmentId;
 
     /**
-     * The OCID of the cross-connect group to put this cross-connect in.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cross-connect group to put this cross-connect in.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("crossConnectGroupId")
@@ -201,7 +212,7 @@ public class CreateCrossConnectDetails {
     /**
      * If you already have an existing cross-connect or cross-connect group at this FastConnect
      * location, and you want this new cross-connect to be on a different router (for the
-     * purposes of redundancy), provide the OCID of that existing cross-connect or
+     * purposes of redundancy), provide the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of that existing cross-connect or
      * cross-connect group.
      *
      **/
@@ -232,7 +243,7 @@ public class CreateCrossConnectDetails {
     /**
      * If you already have an existing cross-connect or cross-connect group at this FastConnect
      * location, and you want this new cross-connect to be on the same router, provide the
-     * OCID of that existing cross-connect or cross-connect group.
+     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of that existing cross-connect or cross-connect group.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("nearCrossConnectOrCrossConnectGroupId")
@@ -255,6 +266,9 @@ public class CreateCrossConnectDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("customerReferenceName")
     String customerReferenceName;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("macsecProperties")
+    CreateMacsecProperties macsecProperties;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

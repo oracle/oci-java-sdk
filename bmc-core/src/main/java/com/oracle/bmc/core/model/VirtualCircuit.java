@@ -288,6 +288,15 @@ public class VirtualCircuit {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("ipMtu")
+        private VirtualCircuitIpMtu ipMtu;
+
+        public Builder ipMtu(VirtualCircuitIpMtu ipMtu) {
+            this.ipMtu = ipMtu;
+            this.__explicitlySet__.add("ipMtu");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -320,7 +329,8 @@ public class VirtualCircuit {
                             region,
                             serviceType,
                             timeCreated,
-                            type);
+                            type,
+                            ipMtu);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -354,7 +364,8 @@ public class VirtualCircuit {
                             .region(o.getRegion())
                             .serviceType(o.getServiceType())
                             .timeCreated(o.getTimeCreated())
-                            .type(o.getType());
+                            .type(o.getType())
+                            .ipMtu(o.getIpMtu());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -538,7 +549,7 @@ public class VirtualCircuit {
     BgpIpv6SessionState bgpIpv6SessionState;
 
     /**
-     * The OCID of the compartment containing the virtual circuit.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the virtual circuit.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     String compartmentId;
@@ -657,7 +668,7 @@ public class VirtualCircuit {
     java.util.Map<String, String> freeformTags;
 
     /**
-     * The OCID of the customer's {@link Drg}
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer's {@link Drg}
      * that this virtual circuit uses. Applicable only to private virtual circuits.
      *
      **/
@@ -665,7 +676,7 @@ public class VirtualCircuit {
     String gatewayId;
 
     /**
-     * The virtual circuit's Oracle ID (OCID).
+     * The virtual circuit's Oracle ID ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     String id;
@@ -747,7 +758,7 @@ public class VirtualCircuit {
     String providerName;
 
     /**
-     * The OCID of the service offered by the provider (if the customer is connecting via a provider).
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the service offered by the provider (if the customer is connecting via a provider).
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("providerServiceId")
@@ -969,6 +980,12 @@ public class VirtualCircuit {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     Type type;
+
+    /**
+     * The layer 3 IP MTU to use on this virtual circuit.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("ipMtu")
+    VirtualCircuitIpMtu ipMtu;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

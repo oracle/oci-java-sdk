@@ -18,7 +18,7 @@ public class MaxAttemptsTerminationStrategy implements TerminationStrategy {
     /**
      * The maximum number of attempts to make.
      */
-    private final int maxAttempts;
+    @lombok.Getter private final int maxAttempts;
 
     @Override
     public boolean shouldTerminate(WaitContext context) {

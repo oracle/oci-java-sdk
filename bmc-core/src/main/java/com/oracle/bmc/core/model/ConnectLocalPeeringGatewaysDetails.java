@@ -62,7 +62,7 @@ public class ConnectLocalPeeringGatewaysDetails {
     }
 
     /**
-     * The OCID of the LPG you want to peer with.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the LPG you want to peer with.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("peerId")
     String peerId;

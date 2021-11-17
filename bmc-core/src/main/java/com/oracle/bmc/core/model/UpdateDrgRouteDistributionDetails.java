@@ -6,6 +6,8 @@ package com.oracle.bmc.core.model;
 
 /**
  * Details used in a request to update a route distribution.
+ * <p>
+ * You cannot assign a table to a virtual circuit or IPSec tunnel attachment if there is a static route rule for an RPC attachment.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -97,8 +99,6 @@ public class UpdateDrgRouteDistributionDetails {
     /**
      * A user-friendly name. Does not have to be unique, and it's changeable.
      * Avoid entering confidential information.
-     * <p>
-     * You cannot assign a table to a virtual circuit or IPSec connection attachment if there is a static route rule for an RPC attachment.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")

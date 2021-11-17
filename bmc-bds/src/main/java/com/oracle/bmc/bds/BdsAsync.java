@@ -144,6 +144,22 @@ public interface BdsAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<ChangeShapeRequest, ChangeShapeResponse> handler);
 
     /**
+     * Create an API key on behalf of the specified user.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateBdsApiKeyResponse> createBdsApiKey(
+            CreateBdsApiKeyRequest request,
+            com.oracle.bmc.responses.AsyncHandler<CreateBdsApiKeyRequest, CreateBdsApiKeyResponse>
+                    handler);
+
+    /**
      * Creates a Big Data Service cluster.
      *
      *
@@ -158,6 +174,21 @@ public interface BdsAsync extends AutoCloseable {
             CreateBdsInstanceRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             CreateBdsInstanceRequest, CreateBdsInstanceResponse>
+                    handler);
+
+    /**
+     * Deletes the user's API key represented by the provided ID.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteBdsApiKeyResponse> deleteBdsApiKey(
+            DeleteBdsApiKeyRequest request,
+            com.oracle.bmc.responses.AsyncHandler<DeleteBdsApiKeyRequest, DeleteBdsApiKeyResponse>
                     handler);
 
     /**
@@ -191,6 +222,21 @@ public interface BdsAsync extends AutoCloseable {
             GetAutoScalingConfigurationRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             GetAutoScalingConfigurationRequest, GetAutoScalingConfigurationResponse>
+                    handler);
+
+    /**
+     * Returns the user's API key information for the given ID.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetBdsApiKeyResponse> getBdsApiKey(
+            GetBdsApiKeyRequest request,
+            com.oracle.bmc.responses.AsyncHandler<GetBdsApiKeyRequest, GetBdsApiKeyResponse>
                     handler);
 
     /**
@@ -241,6 +287,22 @@ public interface BdsAsync extends AutoCloseable {
                                     ListAutoScalingConfigurationsRequest,
                                     ListAutoScalingConfigurationsResponse>
                             handler);
+
+    /**
+     * Returns a list of all API keys associated with this Big Data Service cluster.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListBdsApiKeysResponse> listBdsApiKeys(
+            ListBdsApiKeysRequest request,
+            com.oracle.bmc.responses.AsyncHandler<ListBdsApiKeysRequest, ListBdsApiKeysResponse>
+                    handler);
 
     /**
      * Returns a list of all Big Data Service clusters in a compartment.
@@ -357,6 +419,24 @@ public interface BdsAsync extends AutoCloseable {
     java.util.concurrent.Future<RestartNodeResponse> restartNode(
             RestartNodeRequest request,
             com.oracle.bmc.responses.AsyncHandler<RestartNodeRequest, RestartNodeResponse> handler);
+
+    /**
+     * Test access to specified Object Storage bucket using the API key.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<TestBdsObjectStorageConnectionResponse>
+            testBdsObjectStorageConnection(
+                    TestBdsObjectStorageConnectionRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    TestBdsObjectStorageConnectionRequest,
+                                    TestBdsObjectStorageConnectionResponse>
+                            handler);
 
     /**
      * Updates fields on an autoscale configuration, including the name, the threshold value, and whether the autoscale configuration is enabled.

@@ -116,6 +116,15 @@ public class Category {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("extendedMetadata")
+        private java.util.Map<String, String> extendedMetadata;
+
+        public Builder extendedMetadata(java.util.Map<String, String> extendedMetadata) {
+            this.extendedMetadata = extendedMetadata;
+            this.__explicitlySet__.add("extendedMetadata");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -131,7 +140,8 @@ public class Category {
                             lifecycleState,
                             estimatedCostSaving,
                             timeCreated,
-                            timeUpdated);
+                            timeUpdated,
+                            extendedMetadata);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -148,7 +158,8 @@ public class Category {
                             .lifecycleState(o.getLifecycleState())
                             .estimatedCostSaving(o.getEstimatedCostSaving())
                             .timeCreated(o.getTimeCreated())
-                            .timeUpdated(o.getTimeUpdated());
+                            .timeUpdated(o.getTimeUpdated())
+                            .extendedMetadata(o.getExtendedMetadata());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -175,13 +186,13 @@ public class Category {
     String compartmentId;
 
     /**
-     * The name assigned to the category. Avoid entering confidential information.
+     * The name assigned to the category.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     String name;
 
     /**
-     * Text describing the category. Avoid entering confidential information.
+     * Text describing the category.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     String description;
@@ -221,6 +232,17 @@ public class Category {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     java.util.Date timeUpdated;
+
+    /**
+     * Additional metadata key/value pairs for the category.
+     * <p>
+     * For example:
+     * <p>
+     * {@code {"EstimatedSaving": "200"}}
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("extendedMetadata")
+    java.util.Map<String, String> extendedMetadata;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

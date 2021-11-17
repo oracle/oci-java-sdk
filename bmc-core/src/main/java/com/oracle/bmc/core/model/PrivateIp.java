@@ -239,7 +239,7 @@ public class PrivateIp {
     String availabilityDomain;
 
     /**
-     * The OCID of the compartment containing the private IP.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the private IP.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     String compartmentId;
@@ -255,8 +255,8 @@ public class PrivateIp {
     java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * A user-friendly name. Does not have to be unique, and it's changeable. Avoid
-     * entering confidential information.
+     * A user-friendly name. Does not have to be unique, and it's changeable.
+     * Avoid entering confidential information.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
@@ -290,7 +290,7 @@ public class PrivateIp {
     String hostnameLabel;
 
     /**
-     * The private IP's Oracle ID (OCID).
+     * The private IP's Oracle ID ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     String id;
@@ -321,7 +321,7 @@ public class PrivateIp {
 
     /**
      * Applicable only if the {@code PrivateIp} object is being used with a VLAN as part of
-     * the Oracle Cloud VMware Solution. The {@code vlanId} is the OCID of the VLAN. See
+     * the Oracle Cloud VMware Solution. The {@code vlanId} is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN. See
      * {@link Vlan}.
      *
      **/
@@ -329,7 +329,7 @@ public class PrivateIp {
     String vlanId;
 
     /**
-     * The OCID of the subnet the VNIC is in.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the VNIC is in.
      * <p>
      * However, if the {@code PrivateIp} object is being used with a VLAN as part of
      * the Oracle Cloud VMware Solution, the {@code subnetId} is null.
@@ -348,7 +348,7 @@ public class PrivateIp {
     java.util.Date timeCreated;
 
     /**
-     * The OCID of the VNIC the private IP is assigned to. The VNIC and private IP
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC the private IP is assigned to. The VNIC and private IP
      * must be in the same subnet.
      * However, if the {@code PrivateIp} object is being used with a VLAN as part of
      * the Oracle Cloud VMware Solution, the {@code vnicId} is null.

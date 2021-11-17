@@ -5,7 +5,7 @@
 package com.oracle.bmc.core.model;
 
 /**
- * Defines the {@code associatedWith} relationship between virtual network topology entities. An {@code AssociatedWith} relationship
+ * Defines the {@code AssociatedWith} relationship between virtual network topology entities. An {@code AssociatedWith} relationship
  * is defined when there is no obvious {@code contains} relationship but entities are still related.
  * For example, a DRG is associated with a VCN because a DRG is not managed by VCN but can be
  * attached to a VCN.
@@ -54,19 +54,32 @@ public class TopologyAssociatedWithEntityRelationship extends TopologyEntityRela
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("associatedWithDetails")
+        private TopologyAssociatedWithRelationshipDetails associatedWithDetails;
+
+        public Builder associatedWithDetails(
+                TopologyAssociatedWithRelationshipDetails associatedWithDetails) {
+            this.associatedWithDetails = associatedWithDetails;
+            this.__explicitlySet__.add("associatedWithDetails");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public TopologyAssociatedWithEntityRelationship build() {
             TopologyAssociatedWithEntityRelationship __instance__ =
-                    new TopologyAssociatedWithEntityRelationship(id1, id2);
+                    new TopologyAssociatedWithEntityRelationship(id1, id2, associatedWithDetails);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(TopologyAssociatedWithEntityRelationship o) {
-            Builder copiedBuilder = id1(o.getId1()).id2(o.getId2());
+            Builder copiedBuilder =
+                    id1(o.getId1())
+                            .id2(o.getId2())
+                            .associatedWithDetails(o.getAssociatedWithDetails());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -81,9 +94,16 @@ public class TopologyAssociatedWithEntityRelationship extends TopologyEntityRela
     }
 
     @Deprecated
-    public TopologyAssociatedWithEntityRelationship(String id1, String id2) {
+    public TopologyAssociatedWithEntityRelationship(
+            String id1,
+            String id2,
+            TopologyAssociatedWithRelationshipDetails associatedWithDetails) {
         super(id1, id2);
+        this.associatedWithDetails = associatedWithDetails;
     }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("associatedWithDetails")
+    TopologyAssociatedWithRelationshipDetails associatedWithDetails;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

@@ -506,6 +506,52 @@ public class OptimizerAsyncClient implements OptimizerAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<FilterResourceActionsResponse> filterResourceActions(
+            FilterResourceActionsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            FilterResourceActionsRequest, FilterResourceActionsResponse>
+                    handler) {
+        LOG.trace("Called async filterResourceActions");
+        final FilterResourceActionsRequest interceptedRequest =
+                FilterResourceActionsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                FilterResourceActionsConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, FilterResourceActionsResponse>
+                transformer = FilterResourceActionsConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        FilterResourceActionsRequest, FilterResourceActionsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                FilterResourceActionsRequest, FilterResourceActionsResponse>,
+                        java.util.concurrent.Future<FilterResourceActionsResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getQueryDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    FilterResourceActionsRequest, FilterResourceActionsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<GetCategoryResponse> getCategory(
             GetCategoryRequest request,
             final com.oracle.bmc.responses.AsyncHandler<GetCategoryRequest, GetCategoryResponse>
@@ -857,6 +903,45 @@ public class OptimizerAsyncClient implements OptimizerAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<ListProfileLevelsResponse> listProfileLevels(
+            ListProfileLevelsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListProfileLevelsRequest, ListProfileLevelsResponse>
+                    handler) {
+        LOG.trace("Called async listProfileLevels");
+        final ListProfileLevelsRequest interceptedRequest =
+                ListProfileLevelsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListProfileLevelsConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<javax.ws.rs.core.Response, ListProfileLevelsResponse>
+                transformer = ListProfileLevelsConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<ListProfileLevelsRequest, ListProfileLevelsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListProfileLevelsRequest, ListProfileLevelsResponse>,
+                        java.util.concurrent.Future<ListProfileLevelsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListProfileLevelsRequest, ListProfileLevelsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<ListProfilesResponse> listProfiles(
             ListProfilesRequest request,
             final com.oracle.bmc.responses.AsyncHandler<ListProfilesRequest, ListProfilesResponse>
@@ -967,6 +1052,52 @@ public class OptimizerAsyncClient implements OptimizerAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     ListRecommendationsRequest, ListRecommendationsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListResourceActionQueryableFieldsResponse>
+            listResourceActionQueryableFields(
+                    ListResourceActionQueryableFieldsRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListResourceActionQueryableFieldsRequest,
+                                    ListResourceActionQueryableFieldsResponse>
+                            handler) {
+        LOG.trace("Called async listResourceActionQueryableFields");
+        final ListResourceActionQueryableFieldsRequest interceptedRequest =
+                ListResourceActionQueryableFieldsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListResourceActionQueryableFieldsConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ListResourceActionQueryableFieldsResponse>
+                transformer = ListResourceActionQueryableFieldsConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListResourceActionQueryableFieldsRequest,
+                        ListResourceActionQueryableFieldsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListResourceActionQueryableFieldsRequest,
+                                ListResourceActionQueryableFieldsResponse>,
+                        java.util.concurrent.Future<ListResourceActionQueryableFieldsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListResourceActionQueryableFieldsRequest,
+                    ListResourceActionQueryableFieldsResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,

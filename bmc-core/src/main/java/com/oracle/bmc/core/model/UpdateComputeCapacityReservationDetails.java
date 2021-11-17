@@ -121,8 +121,8 @@ public class UpdateComputeCapacityReservationDetails {
     java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * A user-friendly name for the compute capacity reservation. Does not have to be unique, and it's
-     * changeable. Avoid entering confidential information.
+     * A user-friendly name. Does not have to be unique, and it's changeable.
+     * Avoid entering confidential information.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
@@ -147,7 +147,7 @@ public class UpdateComputeCapacityReservationDetails {
     Boolean isDefaultReservation;
 
     /**
-     * The reservation configurations for the capacity reservation.
+     * The capacity configurations for the capacity reservation.
      * <p>
      * To use the reservation for the desired shape, specify the shape, count, and
      * optionally the fault domain where you want this configuration.

@@ -16,7 +16,8 @@ import lombok.extern.slf4j.Slf4j;
 public class CircuitBreakerUtils {
 
     @Setter @Getter
-    private static volatile CircuitBreakerConfiguration defaultCircuitBreakerConfiguration = null;
+    private static volatile CircuitBreakerConfiguration defaultCircuitBreakerConfiguration =
+            CircuitBreakerConfiguration.builder().build();
 
     @Setter @Getter
     private static volatile CircuitBreakerConfiguration noCircuitBreakerConfiguration = null;

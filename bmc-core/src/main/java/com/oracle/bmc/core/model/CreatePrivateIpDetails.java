@@ -141,8 +141,8 @@ public class CreatePrivateIpDetails {
     java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * A user-friendly name. Does not have to be unique, and it's changeable. Avoid
-     * entering confidential information.
+     * A user-friendly name. Does not have to be unique, and it's changeable.
+     * Avoid entering confidential information.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
@@ -187,7 +187,7 @@ public class CreatePrivateIpDetails {
     String ipAddress;
 
     /**
-     * The OCID of the VNIC to assign the private IP to. The VNIC and private IP
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC to assign the private IP to. The VNIC and private IP
      * must be in the same subnet.
      *
      **/
@@ -197,7 +197,7 @@ public class CreatePrivateIpDetails {
     /**
      * Use this attribute only with the Oracle Cloud VMware Solution.
      * <p>
-     * The OCID of the VLAN from which the private IP is to be drawn. The IP address,
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN from which the private IP is to be drawn. The IP address,
      * *if supplied*, must be valid for the given VLAN. See {@link Vlan}.
      *
      **/

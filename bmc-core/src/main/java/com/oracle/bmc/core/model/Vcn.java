@@ -239,26 +239,26 @@ public class Vcn {
     java.util.List<String> cidrBlocks;
 
     /**
-     * The OCID of the compartment containing the VCN.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the VCN.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     String compartmentId;
 
     /**
-     * The OCID for the VCN's default set of DHCP options.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the VCN's default set of DHCP options.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("defaultDhcpOptionsId")
     String defaultDhcpOptionsId;
 
     /**
-     * The OCID for the VCN's default route table.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the VCN's default route table.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("defaultRouteTableId")
     String defaultRouteTableId;
 
     /**
-     * The OCID for the VCN's default security list.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the VCN's default security list.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("defaultSecurityListId")
     String defaultSecurityListId;
@@ -311,7 +311,7 @@ public class Vcn {
     java.util.Map<String, String> freeformTags;
 
     /**
-     * The VCN's Oracle ID (OCID).
+     * The VCN's Oracle ID ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     String id;
