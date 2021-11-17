@@ -78,7 +78,7 @@ public class WorkRequestError {
     }
 
     /**
-     * A machine-usable code for the error that occured.
+     * A machine-usable code for the error that occurred.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("code")

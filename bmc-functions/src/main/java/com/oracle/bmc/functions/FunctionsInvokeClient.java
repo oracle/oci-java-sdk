@@ -265,6 +265,9 @@ public class FunctionsInvokeClient implements FunctionsInvoke {
         this.retryConfiguration = clientConfigurationToUse.getRetryConfiguration();
         JaxRsCircuitBreaker circuitBreaker =
                 CircuitBreakerUtils.getUserDefinedCircuitBreaker(configuration);
+        if (circuitBreaker == null) {
+            circuitBreaker = CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER;
+        }
         this.client =
                 restClientFactory.create(
                         defaultRequestSigner,
@@ -410,6 +413,7 @@ public class FunctionsInvokeClient implements FunctionsInvoke {
             final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                     com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                             interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+            com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
             return retrier.execute(
                     interceptedRequest,
                     retryRequest -> {

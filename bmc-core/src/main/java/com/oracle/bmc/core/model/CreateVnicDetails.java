@@ -229,7 +229,7 @@ public class CreateVnicDetails {
     java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * A user-friendly name for the VNIC. Does not have to be unique.
+     * A user-friendly name. Does not have to be unique, and it's changeable.
      * Avoid entering confidential information.
      *
      **/
@@ -327,7 +327,7 @@ public class CreateVnicDetails {
     Boolean skipSourceDestCheck;
 
     /**
-     * The OCID of the subnet to create the VNIC in. When launching an instance,
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet to create the VNIC in. When launching an instance,
      * use this {@code subnetId} instead of the deprecated {@code subnetId} in
      * {@link #launchInstanceDetails(LaunchInstanceDetailsRequest) launchInstanceDetails}.
      * At least one of them is required; if you provide both, the values must match.
@@ -342,7 +342,7 @@ public class CreateVnicDetails {
 
     /**
      * Provide this attribute only if you are an Oracle Cloud VMware Solution
-     * customer and creating a secondary VNIC in a VLAN. The value is the OCID of the VLAN.
+     * customer and creating a secondary VNIC in a VLAN. The value is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN.
      * See {@link Vlan}.
      * <p>
      * Provide a {@code vlanId} instead of a {@code subnetId}. If you provide both a

@@ -152,7 +152,7 @@ public class UpdateSubnetDetails {
     java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * The OCID of the set of DHCP options the subnet will use.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the set of DHCP options the subnet will use.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dhcpOptionsId")
@@ -177,7 +177,7 @@ public class UpdateSubnetDetails {
     java.util.Map<String, String> freeformTags;
 
     /**
-     * The OCID of the route table the subnet will use.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the subnet will use.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("routeTableId")

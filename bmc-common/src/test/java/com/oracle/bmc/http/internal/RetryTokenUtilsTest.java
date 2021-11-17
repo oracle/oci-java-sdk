@@ -4,23 +4,13 @@
  */
 package com.oracle.bmc.http.internal;
 
-import org.glassfish.jersey.internal.guava.Sets;
-import org.glassfish.jersey.internal.util.collection.ImmutableMultivaluedMap;
-import org.junit.Assert;
-import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;
 import org.mockito.runners.MockitoJUnitRunner;
-import org.omg.CORBA.Any;
 
 import javax.ws.rs.core.MultivaluedHashMap;
 import javax.ws.rs.core.MultivaluedMap;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Set;
 
 import static org.mockito.Matchers.anyString;
 import static org.mockito.Mockito.times;

@@ -72,6 +72,15 @@ public class CreateCrossConnectGroupDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("macsecProperties")
+        private CreateMacsecProperties macsecProperties;
+
+        public Builder macsecProperties(CreateMacsecProperties macsecProperties) {
+            this.macsecProperties = macsecProperties;
+            this.__explicitlySet__.add("macsecProperties");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -82,7 +91,8 @@ public class CreateCrossConnectGroupDetails {
                             definedTags,
                             displayName,
                             customerReferenceName,
-                            freeformTags);
+                            freeformTags,
+                            macsecProperties);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -94,7 +104,8 @@ public class CreateCrossConnectGroupDetails {
                             .definedTags(o.getDefinedTags())
                             .displayName(o.getDisplayName())
                             .customerReferenceName(o.getCustomerReferenceName())
-                            .freeformTags(o.getFreeformTags());
+                            .freeformTags(o.getFreeformTags())
+                            .macsecProperties(o.getMacsecProperties());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -109,7 +120,7 @@ public class CreateCrossConnectGroupDetails {
     }
 
     /**
-     * The OCID of the compartment to contain the cross-connect group.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the cross-connect group.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     String compartmentId;
@@ -149,6 +160,9 @@ public class CreateCrossConnectGroupDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     java.util.Map<String, String> freeformTags;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("macsecProperties")
+    CreateMacsecProperties macsecProperties;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

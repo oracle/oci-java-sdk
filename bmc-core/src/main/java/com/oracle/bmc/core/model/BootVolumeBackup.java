@@ -290,7 +290,7 @@ public class BootVolumeBackup {
     java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
     /**
-     * A user-friendly name for the boot volume backup. Does not have to be unique and it's changeable.
+     * A user-friendly name. Does not have to be unique, and it's changeable.
      * Avoid entering confidential information.
      *
      **/

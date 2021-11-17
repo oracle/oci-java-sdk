@@ -131,8 +131,8 @@ public class CreatePublicIpDetails {
     }
 
     /**
-     * The OCID of the compartment to contain the public IP. For ephemeral public IPs,
-     * you must set this to the private IP's compartment OCID.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the public IP. For ephemeral public IPs,
+     * you must set this to the private IP's compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
@@ -149,8 +149,8 @@ public class CreatePublicIpDetails {
     java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * A user-friendly name. Does not have to be unique, and it's changeable. Avoid
-     * entering confidential information.
+     * A user-friendly name. Does not have to be unique, and it's changeable.
+     * Avoid entering confidential information.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
@@ -213,7 +213,7 @@ public class CreatePublicIpDetails {
     Lifetime lifetime;
 
     /**
-     * The OCID of the private IP to assign the public IP to.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private IP to assign the public IP to.
      * <p>
      * Required for an ephemeral public IP because it must always be assigned to a private IP
      * (specifically a *primary* private IP).

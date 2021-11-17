@@ -5,7 +5,7 @@
 package com.oracle.bmc.optimizer.model;
 
 /**
- * Optional. The target compartments supported by a profile override for a recommendation.
+ * Optional. The compartments specified in the profile override for a recommendation.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -62,7 +62,7 @@ public class TargetCompartments {
     }
 
     /**
-     * The list of target compartment OCIDs attached to the current profile override.
+     * The list of OCIDs attached to the compartments specified in the current profile override.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     java.util.List<String> items;

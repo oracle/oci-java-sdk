@@ -116,7 +116,7 @@ public class DefaultDrgRouteTables {
     String ipsecTunnel;
 
     /**
-     * The OCID of the default DRG route table to be assigned to DRG attachments
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the default DRG route table to be assigned to DRG attachments
      * of type VIRTUAL_CIRCUIT on creation.
      *
      **/

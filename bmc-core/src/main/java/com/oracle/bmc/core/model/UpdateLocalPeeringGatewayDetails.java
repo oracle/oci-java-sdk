@@ -105,8 +105,8 @@ public class UpdateLocalPeeringGatewayDetails {
     java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * A user-friendly name. Does not have to be unique, and it's changeable. Avoid
-     * entering confidential information.
+     * A user-friendly name. Does not have to be unique, and it's changeable.
+     * Avoid entering confidential information.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
@@ -123,7 +123,7 @@ public class UpdateLocalPeeringGatewayDetails {
     java.util.Map<String, String> freeformTags;
 
     /**
-     * The OCID of the route table the LPG will use.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the LPG will use.
      * <p>
      * For information about why you would associate a route table with an LPG, see
      * [Transit Routing: Access to Multiple VCNs in Same Region](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitrouting.htm).

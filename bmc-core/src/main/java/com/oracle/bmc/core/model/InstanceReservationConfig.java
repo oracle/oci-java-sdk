@@ -5,7 +5,7 @@
 package com.oracle.bmc.core.model;
 
 /**
- * Data that defines the instance reservation configuration.
+ * Data that defines the capacity configuration.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -110,8 +110,8 @@ public class InstanceReservationConfig {
     }
 
     /**
-     * The fault domain of this reservation configuration.
-     * If a value is not supplied, this reservation configuration is applicable to all fault domains in the specified availability domain.
+     * The fault domain of this capacity configuration.
+     * If a value is not supplied, this capacity configuration is applicable to all fault domains in the specified availability domain.
      * For more information, see [Capacity Reservations](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm).
      *
      **/
@@ -131,13 +131,13 @@ public class InstanceReservationConfig {
     InstanceReservationShapeConfigDetails instanceShapeConfig;
 
     /**
-     * The amount of capacity reserved in this configuration.
+     * The total number of instances that can be launched from the capacity configuration.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("reservedCount")
     Long reservedCount;
 
     /**
-     * The amount of capacity in use out of the total capacity reserved in this reservation configuration.
+     * The amount of capacity in use out of the total capacity reserved in this capacity configuration.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("usedCount")
     Long usedCount;

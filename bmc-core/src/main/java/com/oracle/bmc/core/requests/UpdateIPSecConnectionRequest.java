@@ -27,7 +27,7 @@ public class UpdateIPSecConnectionRequest
     private String ipscId;
 
     /**
-     * Details object for updating a IPSec connection.
+     * Details object for updating an IPSec connection.
      */
     private com.oracle.bmc.core.model.UpdateIPSecConnectionDetails updateIPSecConnectionDetails;
 

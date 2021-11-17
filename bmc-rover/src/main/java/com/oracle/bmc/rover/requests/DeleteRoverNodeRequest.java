@@ -39,6 +39,16 @@ public class DeleteRoverNodeRequest extends com.oracle.bmc.requests.BmcRequest<j
      */
     private String opcRequestId;
 
+    /**
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or
+     * server error without risk of executing that same action again. Retry tokens expire after 24
+     * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request
+     * might be rejected.
+     *
+     */
+    private String opcRetryToken;
+
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     DeleteRoverNodeRequest, java.lang.Void> {
@@ -77,6 +87,7 @@ public class DeleteRoverNodeRequest extends com.oracle.bmc.requests.BmcRequest<j
             roverNodeId(o.getRoverNodeId());
             ifMatch(o.getIfMatch());
             opcRequestId(o.getOpcRequestId());
+            opcRetryToken(o.getOpcRetryToken());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;

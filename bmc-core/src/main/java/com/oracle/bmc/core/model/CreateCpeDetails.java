@@ -118,7 +118,7 @@ public class CreateCpeDetails {
     }
 
     /**
-     * The OCID of the compartment to contain the CPE.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the CPE.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     String compartmentId;

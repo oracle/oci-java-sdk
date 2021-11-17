@@ -158,7 +158,7 @@ public class RouteTable {
     }
 
     /**
-     * The OCID of the compartment containing the route table.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the route table.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     String compartmentId;
@@ -192,7 +192,7 @@ public class RouteTable {
     java.util.Map<String, String> freeformTags;
 
     /**
-     * The route table's Oracle ID (OCID).
+     * The route table's Oracle ID ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     String id;

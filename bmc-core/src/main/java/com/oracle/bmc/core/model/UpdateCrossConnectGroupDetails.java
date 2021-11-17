@@ -63,13 +63,26 @@ public class UpdateCrossConnectGroupDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("macsecProperties")
+        private UpdateMacsecProperties macsecProperties;
+
+        public Builder macsecProperties(UpdateMacsecProperties macsecProperties) {
+            this.macsecProperties = macsecProperties;
+            this.__explicitlySet__.add("macsecProperties");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public UpdateCrossConnectGroupDetails build() {
             UpdateCrossConnectGroupDetails __instance__ =
                     new UpdateCrossConnectGroupDetails(
-                            definedTags, displayName, customerReferenceName, freeformTags);
+                            definedTags,
+                            displayName,
+                            customerReferenceName,
+                            freeformTags,
+                            macsecProperties);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -80,7 +93,8 @@ public class UpdateCrossConnectGroupDetails {
                     definedTags(o.getDefinedTags())
                             .displayName(o.getDisplayName())
                             .customerReferenceName(o.getCustomerReferenceName())
-                            .freeformTags(o.getFreeformTags());
+                            .freeformTags(o.getFreeformTags())
+                            .macsecProperties(o.getMacsecProperties());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -113,8 +127,7 @@ public class UpdateCrossConnectGroupDetails {
     String displayName;
 
     /**
-     * A reference name or identifier for the physical fiber connection that this cross-connect
-     * group uses.
+     * A reference name or identifier for the physical fiber connection this cross-connect group uses.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("customerReferenceName")
@@ -129,6 +142,9 @@ public class UpdateCrossConnectGroupDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     java.util.Map<String, String> freeformTags;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("macsecProperties")
+    UpdateMacsecProperties macsecProperties;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

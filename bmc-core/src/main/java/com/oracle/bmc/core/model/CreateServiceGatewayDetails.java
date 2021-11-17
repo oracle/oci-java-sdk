@@ -166,7 +166,7 @@ public class CreateServiceGatewayDetails {
     java.util.Map<String, String> freeformTags;
 
     /**
-     * The OCID of the route table the service gateway will use.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the service gateway will use.
      * <p>
      * If you don't specify a route table here, the service gateway is created without an associated route
      * table. The Networking service does NOT automatically associate the attached VCN's default route table

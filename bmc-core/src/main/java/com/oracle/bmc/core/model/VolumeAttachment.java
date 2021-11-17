@@ -75,10 +75,8 @@ public class VolumeAttachment {
     String device;
 
     /**
-     * A user-friendly name. Does not have to be unique, and it cannot be changed.
+     * A user-friendly name. Does not have to be unique, and it's changeable.
      * Avoid entering confidential information.
-     * <p>
-     * Example: {@code My volume attachment}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")

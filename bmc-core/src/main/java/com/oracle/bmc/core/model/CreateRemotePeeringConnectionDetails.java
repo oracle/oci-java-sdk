@@ -105,7 +105,7 @@ public class CreateRemotePeeringConnectionDetails {
     }
 
     /**
-     * The OCID of the compartment to contain the RPC.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the RPC.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     String compartmentId;
@@ -129,7 +129,7 @@ public class CreateRemotePeeringConnectionDetails {
     String displayName;
 
     /**
-     * The OCID of the DRG the RPC belongs to.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG the RPC belongs to.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("drgId")
     String drgId;

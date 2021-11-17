@@ -120,7 +120,7 @@ public class CreateRouteTableDetails {
     }
 
     /**
-     * The OCID of the compartment to contain the route table.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the route table.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     String compartmentId;
@@ -161,7 +161,7 @@ public class CreateRouteTableDetails {
     java.util.List<RouteRule> routeRules;
 
     /**
-     * The OCID of the VCN the route table belongs to.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN the route table belongs to.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("vcnId")
     String vcnId;

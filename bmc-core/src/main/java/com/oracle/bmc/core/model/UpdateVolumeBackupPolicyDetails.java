@@ -109,7 +109,7 @@ public class UpdateVolumeBackupPolicyDetails {
     }
 
     /**
-     * A user-friendly name for the volume backup policy. Does not have to be unique and it's changeable.
+     * A user-friendly name. Does not have to be unique, and it's changeable.
      * Avoid entering confidential information.
      *
      **/

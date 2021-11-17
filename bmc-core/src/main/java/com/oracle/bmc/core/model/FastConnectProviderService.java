@@ -202,7 +202,7 @@ public class FastConnectProviderService {
     String description;
 
     /**
-     * The OCID of the service offered by the provider.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the service offered by the provider.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")

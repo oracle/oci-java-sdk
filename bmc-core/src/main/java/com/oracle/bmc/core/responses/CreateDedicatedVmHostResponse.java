@@ -26,7 +26,7 @@ public class CreateDedicatedVmHostResponse extends com.oracle.bmc.responses.BmcR
     private String opcRequestId;
 
     /**
-     * The OCID of the work request. Use [GetWorkRequest](https://docs.cloud.oracle.com/api/#/en/workrequests/20160918/WorkRequest/GetWorkRequest)
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the work request. Use [GetWorkRequest](https://docs.cloud.oracle.com/api/#/en/workrequests/20160918/WorkRequest/GetWorkRequest)
      * with this ID to track the status of the request.
      *
      */

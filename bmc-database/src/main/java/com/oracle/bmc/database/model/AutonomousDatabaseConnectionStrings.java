@@ -6,6 +6,52 @@ package com.oracle.bmc.database.model;
 
 /**
  * Connection strings to connect to an Oracle Autonomous Database.
+ * <p>
+ * Example output for connection strings. See {@link #databaseConnectionStringProfile(DatabaseConnectionStringProfileRequest) databaseConnectionStringProfile} for additional details:
+ * <p>
+ * \t\t"connectionStrings": {
+ *         "allConnectionStrings": {
+ *           "HIGH": "adb.region.oraclecloud.com:1522/unique_id_databasename_high.adwc.oraclecloud.com",
+ *           "LOW": "adb.region.oraclecloud.com:1522/unique_id_databasename_low.adwc.oraclecloud.com",
+ *           "MEDIUM": "adb.region.oraclecloud.com:1522/unique_id_databasename_medium.adwc.oraclecloud.com"
+ *         },
+ *         "profiles": [
+ *           {
+ *             "displayName": "databasename_high",
+ *             "value": "(description= (retry_count=20)(retry_delay=3)(address=(protocol=tcps)(port=1522)(host=adb.region.oraclecloud.com))(connect_data=(service_name=unique_id_databasename_high.adwc.oraclecloud.com))(security=(ssl_server_cert_dn="CN=adwc.uscom-east-1.oraclecloud.com,OU=Oracle BMCS US,O=Oracle Corporation,L=Redwood City,ST=California,C=US")))",
+ *             "consumerGroup": "HIGH",
+ *             "protocol": "TCPS",
+ *             "tlsAuthentication": "MUTUAL",
+ *             "hostFormat": "FQDN",
+ *             "sessionMode": "DIRECT",
+ *             "syntaxFormat": "LONG"
+ *           },
+ *           {
+ *             "displayName": "databasename_low",
+ *             "value": "(description= (retry_count=20)(retry_delay=3)(address=(protocol=tcps)(port=1522)(host=adb.region.oraclecloud.com))(connect_data=(service_name=unique_id_databasename_low.adwc.oraclecloud.com))(security=(ssl_server_cert_dn="CN=adwc.uscom-east-1.oraclecloud.com,OU=Oracle BMCS US,O=Oracle Corporation,L=Redwood City,ST=California,C=US")))",
+ *             "consumerGroup": "LOW",
+ *             "protocol": "TCPS",
+ *             "tlsAuthentication": "MUTUAL",
+ *             "hostFormat": "FQDN",
+ *             "sessionMode": "DIRECT",
+ *             "syntaxFormat": "LONG"
+ *           },
+ *           {
+ *             "displayName": "databasename_medium",
+ *             "value": "(description= (retry_count=20)(retry_delay=3)(address=(protocol=tcps)(port=1522)(host=adb.region.oraclecloud.com))(connect_data=(service_name=unique_id_databasename_medium.adwc.oraclecloud.com))(security=(ssl_server_cert_dn="CN=adwc.uscom-east-1.oraclecloud.com,OU=Oracle BMCS US,O=Oracle Corporation,L=Redwood City,ST=California,C=US")))",
+ *             "consumerGroup": "MEDIUM",
+ *             "protocol": "TCPS",
+ *             "tlsAuthentication": "MUTUAL",
+ *             "hostFormat": "FQDN",
+ *             "sessionMode": "DIRECT",
+ *             "syntaxFormat": "LONG"
+ *           }
+ *         ],
+ *         "dedicated": null,
+ *         "high": "adb.region.oraclecloud.com:1522/unique_id_databasename_high.adwc.oraclecloud.com",
+ *         "low": "adb.region.oraclecloud.com:1522/unique_id_databasename_low.adwc.oraclecloud.com",
+ *         "medium": "adb.region.oraclecloud.com:1522/unique_id_databasename_medium.adwc.oraclecloud.com"
+ *       }
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields

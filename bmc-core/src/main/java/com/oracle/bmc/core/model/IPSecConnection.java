@@ -7,7 +7,7 @@ package com.oracle.bmc.core.model;
 /**
  * A connection between a DRG and CPE. This connection consists of multiple IPSec
  * tunnels. Creating this connection is one of the steps required when setting up
- * an IPSec VPN.
+ * a Site-to-Site VPN.
  * <p>
  **Important:**  Each tunnel in an IPSec connection can use either static routing or BGP dynamic
  * routing (see the {@link IPSecConnectionTunnel} object's
@@ -21,7 +21,7 @@ package com.oracle.bmc.core.model;
  * if that tunnel's {@code routing} attribute = {@code STATIC}. Otherwise the static routes are ignored.
  * <p>
  * For more information about the workflow for setting up an IPSec connection, see
- * [IPSec VPN](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingIPsec.htm).
+ * [Site-to-Site VPN Overview](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/overviewIPsec.htm).
  * <p>
  * To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized,
  * talk to an administrator. If you're an administrator who needs to write policies to give users access, see
@@ -205,13 +205,13 @@ public class IPSecConnection {
     }
 
     /**
-     * The OCID of the compartment containing the IPSec connection.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the IPSec connection.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     String compartmentId;
 
     /**
-     * The OCID of the {@link Cpe} object.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the {@link Cpe} object.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("cpeId")
     String cpeId;

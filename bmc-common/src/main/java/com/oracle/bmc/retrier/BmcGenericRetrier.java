@@ -23,7 +23,7 @@ import java.util.function.Function;
  */
 @Slf4j
 public class BmcGenericRetrier {
-    private final GenericWaiter waiter;
+    @Getter private final GenericWaiter waiter;
     @Getter private final RetryCondition retryCondition;
 
     /**

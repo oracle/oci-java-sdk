@@ -170,7 +170,7 @@ public class CrossConnectMappingDetails {
     String bgpMd5AuthKey;
 
     /**
-     * The OCID of the cross-connect or cross-connect group for this mapping.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cross-connect or cross-connect group for this mapping.
      * Specified by the owner of the cross-connect or cross-connect group (the
      * customer if the customer is colocated with Oracle, or the provider if the
      * customer is connecting via provider).

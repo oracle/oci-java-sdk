@@ -73,6 +73,15 @@ public class UpdateCrossConnectDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("macsecProperties")
+        private UpdateMacsecProperties macsecProperties;
+
+        public Builder macsecProperties(UpdateMacsecProperties macsecProperties) {
+            this.macsecProperties = macsecProperties;
+            this.__explicitlySet__.add("macsecProperties");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -83,7 +92,8 @@ public class UpdateCrossConnectDetails {
                             displayName,
                             freeformTags,
                             isActive,
-                            customerReferenceName);
+                            customerReferenceName,
+                            macsecProperties);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -95,7 +105,8 @@ public class UpdateCrossConnectDetails {
                             .displayName(o.getDisplayName())
                             .freeformTags(o.getFreeformTags())
                             .isActive(o.getIsActive())
-                            .customerReferenceName(o.getCustomerReferenceName());
+                            .customerReferenceName(o.getCustomerReferenceName())
+                            .macsecProperties(o.getMacsecProperties());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -149,12 +160,14 @@ public class UpdateCrossConnectDetails {
     Boolean isActive;
 
     /**
-     * A reference name or identifier for the physical fiber connection that this cross-connect
-     * uses.
+     * A reference name or identifier for the physical fiber connection this cross-connect uses.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("customerReferenceName")
     String customerReferenceName;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("macsecProperties")
+    UpdateMacsecProperties macsecProperties;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

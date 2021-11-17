@@ -228,7 +228,7 @@ public class SecurityRule {
      *     setting up a security rule for traffic destined for a particular {@code Service} through
      *     a service gateway. For example: {@code oci-phx-objectstorage}.
      * <p>
-     * The OCID of a {@link NetworkSecurityGroup} in the same
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a {@link NetworkSecurityGroup} in the same
      *     VCN. The value can be the NSG that the rule belongs to if the rule's intent is to control
      *     traffic between VNICs in the same NSG.
      *
@@ -246,7 +246,7 @@ public class SecurityRule {
      *     {@link Service} (the rule is for traffic destined for a
      *     particular {@code Service} through a service gateway).
      * <p>
-     * {@code NETWORK_SECURITY_GROUP}: If the rule's {@code destination} is the OCID of a
+     * {@code NETWORK_SECURITY_GROUP}: If the rule's {@code destination} is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a
      *     {@link NetworkSecurityGroup}.
      *
      **/
@@ -305,7 +305,7 @@ public class SecurityRule {
      *     {@link Service} (the rule is for traffic destined for a
      *     particular {@code Service} through a service gateway).
      * <p>
-     * {@code NETWORK_SECURITY_GROUP}: If the rule's {@code destination} is the OCID of a
+     * {@code NETWORK_SECURITY_GROUP}: If the rule's {@code destination} is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a
      *     {@link NetworkSecurityGroup}.
      *
      **/
@@ -424,7 +424,7 @@ public class SecurityRule {
      *     setting up a security rule for traffic coming from a particular {@code Service} through
      *     a service gateway. For example: {@code oci-phx-objectstorage}.
      * <p>
-     * The OCID of a {@link NetworkSecurityGroup} in the same
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a {@link NetworkSecurityGroup} in the same
      *     VCN. The value can be the NSG that the rule belongs to if the rule's intent is to control
      *     traffic between VNICs in the same NSG.
      *
@@ -440,7 +440,7 @@ public class SecurityRule {
      *     {@link Service} (the rule is for traffic coming from a
      *     particular {@code Service} through a service gateway).
      * <p>
-     * {@code NETWORK_SECURITY_GROUP}: If the rule's {@code source} is the OCID of a
+     * {@code NETWORK_SECURITY_GROUP}: If the rule's {@code source} is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a
      *     {@link NetworkSecurityGroup}.
      *
      **/
@@ -497,7 +497,7 @@ public class SecurityRule {
      *     {@link Service} (the rule is for traffic coming from a
      *     particular {@code Service} through a service gateway).
      * <p>
-     * {@code NETWORK_SECURITY_GROUP}: If the rule's {@code source} is the OCID of a
+     * {@code NETWORK_SECURITY_GROUP}: If the rule's {@code source} is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a
      *     {@link NetworkSecurityGroup}.
      *
      **/

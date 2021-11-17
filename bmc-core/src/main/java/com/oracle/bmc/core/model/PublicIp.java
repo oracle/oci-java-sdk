@@ -226,7 +226,7 @@ public class PublicIp {
     }
 
     /**
-     * The OCID of the entity the public IP is assigned to, or in the process of
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the entity the public IP is assigned to, or in the process of
      * being assigned to.
      *
      **/
@@ -300,7 +300,7 @@ public class PublicIp {
     String availabilityDomain;
 
     /**
-     * The OCID of the compartment containing the public IP. For an ephemeral public IP, this is
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the public IP. For an ephemeral public IP, this is
      * the compartment of its assigned entity (which can be a private IP or a regional entity such
      * as a NAT gateway). For a reserved public IP that is currently assigned,
      * its compartment can be different from the assigned private IP's.
@@ -320,8 +320,8 @@ public class PublicIp {
     java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * A user-friendly name. Does not have to be unique, and it's changeable. Avoid
-     * entering confidential information.
+     * A user-friendly name. Does not have to be unique, and it's changeable.
+     * Avoid entering confidential information.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
@@ -338,7 +338,7 @@ public class PublicIp {
     java.util.Map<String, String> freeformTags;
 
     /**
-     * The public IP's Oracle ID (OCID).
+     * The public IP's Oracle ID ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     String id;
@@ -491,7 +491,7 @@ public class PublicIp {
     /**
      * Deprecated. Use {@code assignedEntityId} instead.
      * <p>
-     * The OCID of the private IP that the public IP is currently assigned to, or in the
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private IP that the public IP is currently assigned to, or in the
      * process of being assigned to.
      * <p>
      **Note:** This is {@code null} if the public IP is not assigned to a private IP, or is

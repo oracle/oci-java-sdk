@@ -5,13 +5,13 @@
 package com.oracle.bmc.optimizer.model;
 
 /**
- * Specifies which tag value types in the TagValues field result in overrides of the recommendation criteria. Allowed values are ANY and VALUE.
+ * Specifies which tag value types in the {@code tagValues} field result in overrides of the recommendation criteria. Allowed values are {@code ANY} and {@code VALUE}.
  * <p>
- * When the TagValueType field value is ANY, the TagValues field should be empty which will in turn enforce overrides to the recommendation for resources with any tag values attached to them.
- * When the TagValueType field value is VALUE, the TagValues field must include a specific value or list of values. Overrides to the recommendation criteria only occur for resources that match the values in the TagKey and in the TagValues fields.
+ * When the {@code tagValueType} field value is {@code ANY}, the {@code tagValues} field should be empty, which enforces overrides to the recommendation for resources with any tag values attached to them.
+ * When the {@code tagValueType} field value is {@code VALUE}, the {@code tagValues} field must include a specific value or list of values. Overrides to the recommendation criteria only occur for resources that match the values in the {@code tagKey} and the {@code tagValues} fields.
  * <p>
- * For example, if the TagKey value is B, the TagValueType value is ANY, and the TagValues field is empty, overrides to the recommendation criteria occur for any resources that have the tag key B.
- * If the TagKey value is B, the TagValueType value is VALUE, and the TagValues value is s1, overrides to the recommendation criteria only occur for resources that have the tag key B with the associated tag value s1.
+ * For example, if the {@code tagKey} value is {@code B}, the {@code tagValueType} value is {@code ANY}, and the {@code tagValues} field is empty, overrides to the recommendation criteria occur for any resources that have the tag key B.
+ * If the {@code tagKey} value is {@code B}, the {@code tagValueType} value is {@code VALUE}, and the {@code tagValues} value is {@code s1}, overrides to the recommendation criteria only occur for resources that have the tag key B with the associated tag value s1.
  *
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200606")

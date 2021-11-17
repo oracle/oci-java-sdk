@@ -189,7 +189,7 @@ public class LetterOfAuthority {
     CircuitType circuitType;
 
     /**
-     * The OCID of the cross-connect.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cross-connect.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("crossConnectId")
     String crossConnectId;

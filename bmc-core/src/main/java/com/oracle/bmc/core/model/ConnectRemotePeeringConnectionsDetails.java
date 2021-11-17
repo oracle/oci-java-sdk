@@ -71,7 +71,7 @@ public class ConnectRemotePeeringConnectionsDetails {
     }
 
     /**
-     * The OCID of the RPC you want to peer with.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the RPC you want to peer with.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("peerId")
     String peerId;

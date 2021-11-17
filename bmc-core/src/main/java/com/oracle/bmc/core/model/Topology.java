@@ -32,6 +32,10 @@ package com.oracle.bmc.core.model;
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = NetworkingTopology.class,
         name = "NETWORKING"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = SubnetTopology.class,
+        name = "SUBNET"
     )
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
@@ -61,6 +65,7 @@ public class Topology {
     public enum Type {
         Networking("NETWORKING"),
         Vcn("VCN"),
+        Subnet("SUBNET"),
         ;
 
         private final String value;

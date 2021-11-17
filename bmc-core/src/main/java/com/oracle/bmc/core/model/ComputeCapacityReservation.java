@@ -226,8 +226,8 @@ public class ComputeCapacityReservation {
     java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * A user-friendly name for the compute capacity reservation.
-     * It does not have to be unique, and it's changeable. Avoid entering confidential information.
+     * A user-friendly name. Does not have to be unique, and it's changeable.
+     * Avoid entering confidential information.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
@@ -258,7 +258,7 @@ public class ComputeCapacityReservation {
     Boolean isDefaultReservation;
 
     /**
-     * The reservation configurations for the capacity reservation.
+     * The capacity configurations for the capacity reservation.
      * <p>
      * To use the reservation for the desired shape, specify the shape, count, and
      * optionally the fault domain where you want this configuration.
@@ -325,7 +325,7 @@ public class ComputeCapacityReservation {
     /**
      * The number of instances for which capacity will be held with this
      * compute capacity reservation. This number is the sum of the values of the {@code reservedCount} fields
-     * for all of the instance reservation configurations under this reservation.
+     * for all of the instance capacity configurations under this reservation.
      * The purpose of this field is to calculate the percentage usage of the reservation.
      *
      **/
@@ -353,7 +353,7 @@ public class ComputeCapacityReservation {
     /**
      * The total number of instances currently consuming space in
      * this compute capacity reservation. This number is the sum of the values of the {@code usedCount} fields
-     * for all of the instance reservation configurations under this reservation.
+     * for all of the instance capacity configurations under this reservation.
      * The purpose of this field is to calculate the percentage usage of the reservation.
      *
      **/

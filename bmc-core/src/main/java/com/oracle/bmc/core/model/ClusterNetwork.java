@@ -172,7 +172,7 @@ public class ClusterNetwork {
     String id;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the cluster netowrk.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the cluster network.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     String compartmentId;
@@ -189,6 +189,8 @@ public class ClusterNetwork {
 
     /**
      * A user-friendly name. Does not have to be unique, and it's changeable.
+     * Avoid entering confidential information.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     String displayName;

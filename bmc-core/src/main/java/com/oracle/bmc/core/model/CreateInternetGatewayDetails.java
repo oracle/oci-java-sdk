@@ -120,7 +120,7 @@ public class CreateInternetGatewayDetails {
     }
 
     /**
-     * The OCID of the compartment to contain the internet gateway.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the internet gateway.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     String compartmentId;
@@ -160,7 +160,7 @@ public class CreateInternetGatewayDetails {
     Boolean isEnabled;
 
     /**
-     * The OCID of the VCN the internet gateway is attached to.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN the internet gateway is attached to.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("vcnId")
     String vcnId;

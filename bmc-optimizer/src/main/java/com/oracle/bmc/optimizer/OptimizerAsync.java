@@ -8,7 +8,10 @@ import com.oracle.bmc.optimizer.requests.*;
 import com.oracle.bmc.optimizer.responses.*;
 
 /**
- * APIs for managing Cloud Advisor. Cloud Advisor provides recommendations that help you maximize cost savings and improve the security posture of your tenancy.
+ * Use the Cloud Advisor API to find potential inefficiencies in your tenancy and address them.
+ * Cloud Advisor can help you save money, improve performance, strengthen system resilience, and improve security.
+ * For more information, see [Cloud Advisor](https://docs.cloud.oracle.com/Content/CloudAdvisor/Concepts/cloudadvisoroverview.htm).
+ *
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200606")
 public interface OptimizerAsync extends AutoCloseable {
@@ -92,6 +95,23 @@ public interface OptimizerAsync extends AutoCloseable {
     java.util.concurrent.Future<DeleteProfileResponse> deleteProfile(
             DeleteProfileRequest request,
             com.oracle.bmc.responses.AsyncHandler<DeleteProfileRequest, DeleteProfileResponse>
+                    handler);
+
+    /**
+     * Queries the Cloud Advisor resource actions that are supported by the specified recommendation.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<FilterResourceActionsResponse> filterResourceActions(
+            FilterResourceActionsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            FilterResourceActionsRequest, FilterResourceActionsResponse>
                     handler);
 
     /**
@@ -241,6 +261,23 @@ public interface OptimizerAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Lists the existing profile levels.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListProfileLevelsResponse> listProfileLevels(
+            ListProfileLevelsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListProfileLevelsRequest, ListProfileLevelsResponse>
+                    handler);
+
+    /**
      * Lists the existing profiles.
      *
      *
@@ -290,6 +327,25 @@ public interface OptimizerAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<
                             ListRecommendationsRequest, ListRecommendationsResponse>
                     handler);
+
+    /**
+     * Lists the fields that are indexed for querying and their associated value types.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListResourceActionQueryableFieldsResponse>
+            listResourceActionQueryableFields(
+                    ListResourceActionQueryableFieldsRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ListResourceActionQueryableFieldsRequest,
+                                    ListResourceActionQueryableFieldsResponse>
+                            handler);
 
     /**
      * Lists the Cloud Advisor resource actions that are supported by the specified recommendation.

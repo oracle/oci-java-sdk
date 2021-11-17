@@ -343,7 +343,10 @@ public class InstanceConfigurationLaunchInstanceDetails {
     String capacityReservationId;
 
     /**
-     * The OCID of the compartment.
+     * The OCID of the compartment containing the instance.
+     * Instances created from instance configurations are placed in the same compartment
+     * as the instance that was used to create the instance configuration.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     String compartmentId;
@@ -364,8 +367,6 @@ public class InstanceConfigurationLaunchInstanceDetails {
     /**
      * A user-friendly name. Does not have to be unique, and it's changeable.
      * Avoid entering confidential information.
-     * <p>
-     * Example: {@code My bare metal instance}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")

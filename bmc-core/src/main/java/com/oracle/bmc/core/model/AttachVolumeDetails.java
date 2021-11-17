@@ -49,13 +49,14 @@ package com.oracle.bmc.core.model;
 public class AttachVolumeDetails {
 
     /**
-     * The device name.
+     * The device name. To retrieve a list of devices for a given instance, see {@link #listInstanceDevices(ListInstanceDevicesRequest) listInstanceDevices}.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("device")
     String device;
 
     /**
-     * A user-friendly name. Does not have to be unique, and it cannot be changed. Avoid entering confidential information.
+     * A user-friendly name. Does not have to be unique, and it's changeable.
+     * Avoid entering confidential information.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")

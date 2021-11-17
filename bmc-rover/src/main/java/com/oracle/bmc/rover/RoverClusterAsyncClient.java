@@ -484,6 +484,7 @@ public class RoverClusterAsyncClient implements RoverClusterAsync {
                 DeleteRoverClusterConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteRoverClusterResponse>
                 transformer = DeleteRoverClusterConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<DeleteRoverClusterRequest, DeleteRoverClusterResponse>
                 handlerToUse = handler;

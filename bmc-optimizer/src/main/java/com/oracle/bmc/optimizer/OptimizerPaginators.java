@@ -369,6 +369,119 @@ public class OptimizerPaginators {
     }
 
     /**
+     * Creates a new iterable which will iterate over the responses received from the listProfileLevels operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListProfileLevelsResponse> listProfileLevelsResponseIterator(
+            final ListProfileLevelsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListProfileLevelsRequest.Builder, ListProfileLevelsRequest,
+                ListProfileLevelsResponse>(
+                new com.google.common.base.Supplier<ListProfileLevelsRequest.Builder>() {
+                    @Override
+                    public ListProfileLevelsRequest.Builder get() {
+                        return ListProfileLevelsRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListProfileLevelsResponse, String>() {
+                    @Override
+                    public String apply(ListProfileLevelsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListProfileLevelsRequest.Builder>,
+                        ListProfileLevelsRequest>() {
+                    @Override
+                    public ListProfileLevelsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListProfileLevelsRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListProfileLevelsRequest, ListProfileLevelsResponse>() {
+                    @Override
+                    public ListProfileLevelsResponse apply(ListProfileLevelsRequest request) {
+                        return client.listProfileLevels(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.optimizer.model.ProfileLevelSummary} objects
+     * contained in responses from the listProfileLevels operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.optimizer.model.ProfileLevelSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.optimizer.model.ProfileLevelSummary>
+            listProfileLevelsRecordIterator(final ListProfileLevelsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListProfileLevelsRequest.Builder, ListProfileLevelsRequest,
+                ListProfileLevelsResponse, com.oracle.bmc.optimizer.model.ProfileLevelSummary>(
+                new com.google.common.base.Supplier<ListProfileLevelsRequest.Builder>() {
+                    @Override
+                    public ListProfileLevelsRequest.Builder get() {
+                        return ListProfileLevelsRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListProfileLevelsResponse, String>() {
+                    @Override
+                    public String apply(ListProfileLevelsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListProfileLevelsRequest.Builder>,
+                        ListProfileLevelsRequest>() {
+                    @Override
+                    public ListProfileLevelsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListProfileLevelsRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListProfileLevelsRequest, ListProfileLevelsResponse>() {
+                    @Override
+                    public ListProfileLevelsResponse apply(ListProfileLevelsRequest request) {
+                        return client.listProfileLevels(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListProfileLevelsResponse,
+                        java.util.List<com.oracle.bmc.optimizer.model.ProfileLevelSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.optimizer.model.ProfileLevelSummary> apply(
+                            ListProfileLevelsResponse response) {
+                        return response.getProfileLevelCollection().getItems();
+                    }
+                });
+    }
+
+    /**
      * Creates a new iterable which will iterate over the responses received from the listProfiles operation. This iterable
      * will fetch more data from the server as needed.
      *
@@ -711,6 +824,131 @@ public class OptimizerPaginators {
                     public java.util.List<com.oracle.bmc.optimizer.model.RecommendationSummary>
                             apply(ListRecommendationsResponse response) {
                         return response.getRecommendationCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the listResourceActionQueryableFields operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListResourceActionQueryableFieldsResponse>
+            listResourceActionQueryableFieldsResponseIterator(
+                    final ListResourceActionQueryableFieldsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListResourceActionQueryableFieldsRequest.Builder,
+                ListResourceActionQueryableFieldsRequest,
+                ListResourceActionQueryableFieldsResponse>(
+                new com.google.common.base.Supplier<
+                        ListResourceActionQueryableFieldsRequest.Builder>() {
+                    @Override
+                    public ListResourceActionQueryableFieldsRequest.Builder get() {
+                        return ListResourceActionQueryableFieldsRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListResourceActionQueryableFieldsResponse, String>() {
+                    @Override
+                    public String apply(ListResourceActionQueryableFieldsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListResourceActionQueryableFieldsRequest.Builder>,
+                        ListResourceActionQueryableFieldsRequest>() {
+                    @Override
+                    public ListResourceActionQueryableFieldsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListResourceActionQueryableFieldsRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListResourceActionQueryableFieldsRequest,
+                        ListResourceActionQueryableFieldsResponse>() {
+                    @Override
+                    public ListResourceActionQueryableFieldsResponse apply(
+                            ListResourceActionQueryableFieldsRequest request) {
+                        return client.listResourceActionQueryableFields(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.optimizer.model.QueryableFieldSummary} objects
+     * contained in responses from the listResourceActionQueryableFields operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.optimizer.model.QueryableFieldSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.optimizer.model.QueryableFieldSummary>
+            listResourceActionQueryableFieldsRecordIterator(
+                    final ListResourceActionQueryableFieldsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListResourceActionQueryableFieldsRequest.Builder,
+                ListResourceActionQueryableFieldsRequest, ListResourceActionQueryableFieldsResponse,
+                com.oracle.bmc.optimizer.model.QueryableFieldSummary>(
+                new com.google.common.base.Supplier<
+                        ListResourceActionQueryableFieldsRequest.Builder>() {
+                    @Override
+                    public ListResourceActionQueryableFieldsRequest.Builder get() {
+                        return ListResourceActionQueryableFieldsRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListResourceActionQueryableFieldsResponse, String>() {
+                    @Override
+                    public String apply(ListResourceActionQueryableFieldsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListResourceActionQueryableFieldsRequest.Builder>,
+                        ListResourceActionQueryableFieldsRequest>() {
+                    @Override
+                    public ListResourceActionQueryableFieldsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListResourceActionQueryableFieldsRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListResourceActionQueryableFieldsRequest,
+                        ListResourceActionQueryableFieldsResponse>() {
+                    @Override
+                    public ListResourceActionQueryableFieldsResponse apply(
+                            ListResourceActionQueryableFieldsRequest request) {
+                        return client.listResourceActionQueryableFields(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListResourceActionQueryableFieldsResponse,
+                        java.util.List<com.oracle.bmc.optimizer.model.QueryableFieldSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.optimizer.model.QueryableFieldSummary>
+                            apply(ListResourceActionQueryableFieldsResponse response) {
+                        return response.getQueryableFieldCollection().getItems();
                     }
                 });
     }

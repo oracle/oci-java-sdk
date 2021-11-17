@@ -258,6 +258,42 @@ public class RoverNode {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("isImportRequested")
+        private Boolean isImportRequested;
+
+        public Builder isImportRequested(Boolean isImportRequested) {
+            this.isImportRequested = isImportRequested;
+            this.__explicitlySet__.add("isImportRequested");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("importCompartmentId")
+        private String importCompartmentId;
+
+        public Builder importCompartmentId(String importCompartmentId) {
+            this.importCompartmentId = importCompartmentId;
+            this.__explicitlySet__.add("importCompartmentId");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("importFileBucket")
+        private String importFileBucket;
+
+        public Builder importFileBucket(String importFileBucket) {
+            this.importFileBucket = importFileBucket;
+            this.__explicitlySet__.add("importFileBucket");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("dataValidationCode")
+        private String dataValidationCode;
+
+        public Builder dataValidationCode(String dataValidationCode) {
+            this.dataValidationCode = dataValidationCode;
+            this.__explicitlySet__.add("dataValidationCode");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("publicKey")
         private String publicKey;
 
@@ -273,6 +309,15 @@ public class RoverNode {
         public Builder imageExportPar(String imageExportPar) {
             this.imageExportPar = imageExportPar;
             this.__explicitlySet__.add("imageExportPar");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("tags")
+        private String tags;
+
+        public Builder tags(String tags) {
+            this.tags = tags;
+            this.__explicitlySet__.add("tags");
             return this;
         }
 
@@ -336,8 +381,13 @@ public class RoverNode {
                             oracleShippingTrackingUrl,
                             timeReturnWindowEnds,
                             returnShippingLabelUri,
+                            isImportRequested,
+                            importCompartmentId,
+                            importFileBucket,
+                            dataValidationCode,
                             publicKey,
                             imageExportPar,
+                            tags,
                             freeformTags,
                             definedTags,
                             systemTags);
@@ -374,8 +424,13 @@ public class RoverNode {
                             .oracleShippingTrackingUrl(o.getOracleShippingTrackingUrl())
                             .timeReturnWindowEnds(o.getTimeReturnWindowEnds())
                             .returnShippingLabelUri(o.getReturnShippingLabelUri())
+                            .isImportRequested(o.getIsImportRequested())
+                            .importCompartmentId(o.getImportCompartmentId())
+                            .importFileBucket(o.getImportFileBucket())
+                            .dataValidationCode(o.getDataValidationCode())
                             .publicKey(o.getPublicKey())
                             .imageExportPar(o.getImageExportPar())
+                            .tags(o.getTags())
                             .freeformTags(o.getFreeformTags())
                             .definedTags(o.getDefinedTags())
                             .systemTags(o.getSystemTags());
@@ -591,6 +646,30 @@ public class RoverNode {
     String returnShippingLabelUri;
 
     /**
+     * The flag indicating that customer requests data to be imported to OCI upon Rover node return.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isImportRequested")
+    Boolean isImportRequested;
+
+    /**
+     * An OCID of a compartment where data will be imported to upon Rover node return.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("importCompartmentId")
+    String importCompartmentId;
+
+    /**
+     * Name of a bucket where files from NFS share will be imported to upon Rover node return.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("importFileBucket")
+    String importFileBucket;
+
+    /**
+     * Validation code returned by data validation tool. Required for return shipping label generation if data import was requested.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("dataValidationCode")
+    String dataValidationCode;
+
+    /**
      * The public key of the resource principal
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("publicKey")
@@ -601,6 +680,13 @@ public class RoverNode {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("imageExportPar")
     String imageExportPar;
+
+    /**
+     * The tags associated with tagSlug.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("tags")
+    String tags;
 
     /**
      * The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no

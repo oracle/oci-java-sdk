@@ -62,13 +62,36 @@ public class CrossConnectStatus {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("encryptionStatus")
+        private EncryptionStatus encryptionStatus;
+
+        public Builder encryptionStatus(EncryptionStatus encryptionStatus) {
+            this.encryptionStatus = encryptionStatus;
+            this.__explicitlySet__.add("encryptionStatus");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("lightLevelsInDBm")
+        private java.util.List<Float> lightLevelsInDBm;
+
+        public Builder lightLevelsInDBm(java.util.List<Float> lightLevelsInDBm) {
+            this.lightLevelsInDBm = lightLevelsInDBm;
+            this.__explicitlySet__.add("lightLevelsInDBm");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CrossConnectStatus build() {
             CrossConnectStatus __instance__ =
                     new CrossConnectStatus(
-                            crossConnectId, interfaceState, lightLevelIndBm, lightLevelIndicator);
+                            crossConnectId,
+                            interfaceState,
+                            lightLevelIndBm,
+                            lightLevelIndicator,
+                            encryptionStatus,
+                            lightLevelsInDBm);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -79,7 +102,9 @@ public class CrossConnectStatus {
                     crossConnectId(o.getCrossConnectId())
                             .interfaceState(o.getInterfaceState())
                             .lightLevelIndBm(o.getLightLevelIndBm())
-                            .lightLevelIndicator(o.getLightLevelIndicator());
+                            .lightLevelIndicator(o.getLightLevelIndicator())
+                            .encryptionStatus(o.getEncryptionStatus())
+                            .lightLevelsInDBm(o.getLightLevelsInDBm());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -94,12 +119,12 @@ public class CrossConnectStatus {
     }
 
     /**
-     * The OCID of the cross-connect.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cross-connect.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("crossConnectId")
     String crossConnectId;
     /**
-     * Whether Oracle's side of the interface is up or down.
+     * Indicates whether Oracle's side of the interface is up or down.
      **/
     @lombok.extern.slf4j.Slf4j
     public enum InterfaceState {
@@ -145,7 +170,7 @@ public class CrossConnectStatus {
         }
     };
     /**
-     * Whether Oracle's side of the interface is up or down.
+     * Indicates whether Oracle's side of the interface is up or down.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("interfaceState")
     InterfaceState interfaceState;
@@ -162,14 +187,10 @@ public class CrossConnectStatus {
      * Status indicator corresponding to the light level.
      * <p>
      * **NO_LIGHT:** No measurable light
-     * <p>
-     * **LOW_WARN:** There's measurable light but it's too low
-     * <p>
-     * **HIGH_WARN:** Light level is too high
-     * <p>
-     * **BAD:** There's measurable light but the signal-to-noise ratio is bad
-     * <p>
-     * **GOOD:** Good light level
+     *   * **LOW_WARN:** There's measurable light but it's too low
+     *   * **HIGH_WARN:** Light level is too high
+     *   * **BAD:** There's measurable light but the signal-to-noise ratio is bad
+     *   * **GOOD:** Good light level
      *
      **/
     @lombok.extern.slf4j.Slf4j
@@ -222,18 +243,93 @@ public class CrossConnectStatus {
      * Status indicator corresponding to the light level.
      * <p>
      * **NO_LIGHT:** No measurable light
-     * <p>
-     * **LOW_WARN:** There's measurable light but it's too low
-     * <p>
-     * **HIGH_WARN:** Light level is too high
-     * <p>
-     * **BAD:** There's measurable light but the signal-to-noise ratio is bad
-     * <p>
-     * **GOOD:** Good light level
+     *   * **LOW_WARN:** There's measurable light but it's too low
+     *   * **HIGH_WARN:** Light level is too high
+     *   * **BAD:** There's measurable light but the signal-to-noise ratio is bad
+     *   * **GOOD:** Good light level
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lightLevelIndicator")
     LightLevelIndicator lightLevelIndicator;
+    /**
+     * Encryption status of this cross connect.
+     * <p>
+     * Possible values:
+     * * **UP:** Traffic is encrypted over this cross-connect
+     * * **DOWN:** Traffic is not encrypted over this cross-connect
+     * * **CIPHER_MISMATCH:** The MACsec encryption cipher doesn't match the cipher on the CPE
+     * * **CKN_MISMATCH:** The MACsec Connectivity association Key Name (CKN) doesn't match the CKN on the CPE
+     * * **CAK_MISMATCH:** The MACsec Connectivity Association Key (CAK) doesn't match the CAK on the CPE
+     *
+     **/
+    @lombok.extern.slf4j.Slf4j
+    public enum EncryptionStatus {
+        Up("UP"),
+        Down("DOWN"),
+        CipherMismatch("CIPHER_MISMATCH"),
+        CknMismatch("CKN_MISMATCH"),
+        CakMismatch("CAK_MISMATCH"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private final String value;
+        private static java.util.Map<String, EncryptionStatus> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (EncryptionStatus v : EncryptionStatus.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        EncryptionStatus(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static EncryptionStatus create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'EncryptionStatus', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * Encryption status of this cross connect.
+     * <p>
+     * Possible values:
+     * * **UP:** Traffic is encrypted over this cross-connect
+     * * **DOWN:** Traffic is not encrypted over this cross-connect
+     * * **CIPHER_MISMATCH:** The MACsec encryption cipher doesn't match the cipher on the CPE
+     * * **CKN_MISMATCH:** The MACsec Connectivity association Key Name (CKN) doesn't match the CKN on the CPE
+     * * **CAK_MISMATCH:** The MACsec Connectivity Association Key (CAK) doesn't match the CAK on the CPE
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("encryptionStatus")
+    EncryptionStatus encryptionStatus;
+
+    /**
+     * The light levels of the cross-connect (in dBm).
+     * <p>
+     * Example: {@code [14.0, -14.0, 2.1, -10.1]}
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("lightLevelsInDBm")
+    java.util.List<Float> lightLevelsInDBm;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

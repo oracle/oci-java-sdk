@@ -228,7 +228,7 @@ public class LocalPeeringGateway {
     }
 
     /**
-     * The OCID of the compartment containing the LPG.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the LPG.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     String compartmentId;
@@ -244,8 +244,8 @@ public class LocalPeeringGateway {
     java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * A user-friendly name. Does not have to be unique, and it's changeable. Avoid
-     * entering confidential information.
+     * A user-friendly name. Does not have to be unique, and it's changeable.
+     * Avoid entering confidential information.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
@@ -262,7 +262,7 @@ public class LocalPeeringGateway {
     java.util.Map<String, String> freeformTags;
 
     /**
-     * The LPG's Oracle ID (OCID).
+     * The LPG's Oracle ID ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     String id;
@@ -425,7 +425,7 @@ public class LocalPeeringGateway {
     String peerId;
 
     /**
-     * The OCID of the route table the LPG is using.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the LPG is using.
      * <p>
      * For information about why you would associate a route table with an LPG, see
      * [Transit Routing: Access to Multiple VCNs in Same Region](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitrouting.htm).
