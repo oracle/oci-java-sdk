@@ -80,6 +80,15 @@ public class DatabaseUsageMetrics {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("workloadType")
+        private WorkloadType workloadType;
+
+        public Builder workloadType(WorkloadType workloadType) {
+            this.workloadType = workloadType;
+            this.__explicitlySet__.add("workloadType");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("databaseName")
         private String databaseName;
 
@@ -119,6 +128,7 @@ public class DatabaseUsageMetrics {
                             databaseSubType,
                             deploymentType,
                             databaseVersion,
+                            workloadType,
                             databaseName,
                             databaseContainerId,
                             metrics);
@@ -135,6 +145,7 @@ public class DatabaseUsageMetrics {
                             .databaseSubType(o.getDatabaseSubType())
                             .deploymentType(o.getDeploymentType())
                             .databaseVersion(o.getDatabaseVersion())
+                            .workloadType(o.getWorkloadType())
                             .databaseName(o.getDatabaseName())
                             .databaseContainerId(o.getDatabaseContainerId())
                             .metrics(o.getMetrics());
@@ -170,7 +181,9 @@ public class DatabaseUsageMetrics {
     DatabaseType databaseType;
 
     /**
-     * The subtype of the Oracle Database. Indicates whether the database is a Container Database, Pluggable Database, or a Non-container Database.
+     * The subtype of the Oracle Database. Indicates whether the database is a Container Database,
+     * Pluggable Database, Non-container Database, Autonomous Database, or Autonomous Container Database.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("databaseSubType")
     DatabaseSubType databaseSubType;
@@ -186,6 +199,12 @@ public class DatabaseUsageMetrics {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("databaseVersion")
     String databaseVersion;
+
+    /**
+     * The workload type of the Autonomous Database.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("workloadType")
+    WorkloadType workloadType;
 
     /**
      * The display name of the Managed Database.

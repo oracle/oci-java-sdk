@@ -5,8 +5,8 @@
 package com.oracle.bmc.devops.model;
 
 /**
- * Specifies list of parameters present in BuildPipeline.
- * In case of UPDATE operation, replaces existing parameters list. Merging with existing parameters is not supported.
+ * Specifies list of parameters present in a build pipeline.
+ * An UPDATE operation replaces the existing parameters list entirely.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -64,7 +64,7 @@ public class BuildPipelineParameterCollection {
     }
 
     /**
-     * List of Parameters defined for a BuildPipeline.
+     * List of parameters defined for a build pipeline.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     java.util.List<BuildPipelineParameter> items;

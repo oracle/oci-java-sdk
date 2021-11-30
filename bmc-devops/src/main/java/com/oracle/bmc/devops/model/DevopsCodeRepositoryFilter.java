@@ -5,7 +5,7 @@
 package com.oracle.bmc.devops.model;
 
 /**
- * The filter for Gitlab events
+ * The filter for GitLab events.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -129,7 +129,7 @@ public class DevopsCodeRepositoryFilter extends Filter {
         }
     };
     /**
-     * The events, only support PUSH at this time
+     * The events only support PUSH.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("events")
     java.util.List<Events> events;

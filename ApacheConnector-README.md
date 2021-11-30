@@ -180,6 +180,9 @@ For example - `GetObjectReponse.getInputStream().close()` or
 use try-with-resources. Otherwise, a partial read without closing will lead to the connection not being released from 
 the pool and results in hanging for an indefinite time.
 
+In addition to the above steps, please make sure to specify the `ConnectionRequestTimeout` in the `ClientConfigurator`. By adding this, requests made after connection pool exhaustion will throw a Timeout exception instead of hanging indefinitely.
+An example can be found [here](https://github.com/oracle/oci-java-sdk/tree/master/bmc-examples/src/main/java/ApacheConnectorPropertiesExample.java  "here").
+
 ### Performance issues and switching between connection closing strategies with the Apache Connector
 
 The Java SDK supports the Apache Connector as the default. The Apache Connector supports the use of two connection closing strategies - `ApacheConnectionClosingStrategy.GracefulClosingStrategy` and `ApacheConnectionClosingStrategy.ImmediateClosingStrategy`. 

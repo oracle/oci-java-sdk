@@ -12,6 +12,7 @@ package com.oracle.bmc.managementagent.model;
 public enum PlatformTypes {
     Linux("LINUX"),
     Windows("WINDOWS"),
+    Solaris("SOLARIS"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this

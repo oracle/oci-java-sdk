@@ -74,6 +74,8 @@ public abstract class AbstractFederationClientAuthenticationDetailsProviderBuild
 
     private static final String REGION_PATH_LITERAL = "region";
 
+    private static final Client CLIENT = ClientBuilder.newClient();
+
     /**
      * Base url of metadata service.
      */
@@ -447,11 +449,9 @@ public abstract class AbstractFederationClientAuthenticationDetailsProviderBuild
 
         final int MAX_RETRIES = 3;
         RuntimeException lastException = null;
-        Client client = null;
         for (int retry = 0; retry < MAX_RETRIES; retry++) {
             try {
-                client = ClientBuilder.newClient();
-                WebTarget base = client.target(metadataServiceUrl + "instance/");
+                WebTarget base = CLIENT.target(metadataServiceUrl + "instance/");
                 return retryOperation.apply(base);
             } catch (RuntimeException e) {
                 LOG.warn(
@@ -472,10 +472,9 @@ public abstract class AbstractFederationClientAuthenticationDetailsProviderBuild
                     Thread.currentThread().interrupt();
                     break;
                 }
-            } finally {
-                client.close();
             }
         }
+        CLIENT.close();
         throw lastException;
     }
 }

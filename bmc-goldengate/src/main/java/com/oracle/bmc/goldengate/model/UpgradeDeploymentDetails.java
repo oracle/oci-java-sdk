@@ -5,7 +5,7 @@
 package com.oracle.bmc.goldengate.model;
 
 /**
- * The information about the Patch for a Deployment.
+ * The information about the Upgrade for a Deployment.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in

@@ -5,7 +5,7 @@
 package com.oracle.bmc.devops.model;
 
 /**
- * Object containing the details of a line in a file
+ * Object containing the details of a line in a file.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -68,13 +68,13 @@ public class FileLineDetails {
     }
 
     /**
-     * The line number
+     * The line number.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lineNumber")
     Integer lineNumber;
 
     /**
-     * The content of the line
+     * The content of the line.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lineContent")
     String lineContent;

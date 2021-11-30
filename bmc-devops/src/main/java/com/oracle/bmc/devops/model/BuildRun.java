@@ -5,7 +5,10 @@
 package com.oracle.bmc.devops.model;
 
 /**
- * Each time we attempt to run a BuildPipeline we create one BuildRun. A BuildRun may be happening now, or it may be a record of the run that happened in the past. The set of BuildRuns constitutes a BuildPipeline's history.
+ * Each time you attempt to run a build pipeline you create one build run.
+ * A build can be running currently, or it can be a record of the run that happened in the past.
+ * The set of build runs constitutes a build pipeline's history.
+ *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -239,31 +242,31 @@ public class BuildRun {
     }
 
     /**
-     * Unique identifier that is immutable on creation
+     * Unique identifier that is immutable on creation.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     String id;
 
     /**
-     * BuildRun identifier which can be renamed and is not necessarily unique
+     * Build run display name, which can be renamed and is not necessarily unique. Avoid entering confidential information.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     String displayName;
 
     /**
-     * Compartment Identifier
+     * The OCID of the compartment where the build is running.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     String compartmentId;
 
     /**
-     * Project Identifier
+     * The OCID of the DevOps project.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("projectId")
     String projectId;
 
     /**
-     * Pipeline Identifier
+     * The OCID of the build pipeline.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("buildPipelineId")
     String buildPipelineId;
@@ -275,18 +278,18 @@ public class BuildRun {
     BuildRunArgumentCollection buildRunArguments;
 
     /**
-     * The time the the BuildRun was created. An RFC3339 formatted datetime string
+     * The time the build run was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     java.util.Date timeCreated;
 
     /**
-     * The time the BuildRun was updated. An RFC3339 formatted datetime string
+     * The time the build run was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     java.util.Date timeUpdated;
     /**
-     * The current state of the BuildRun.
+     * The current state of the build run.
      **/
     @lombok.extern.slf4j.Slf4j
     public enum LifecycleState {
@@ -336,7 +339,7 @@ public class BuildRun {
         }
     };
     /**
-     * The current state of the BuildRun.
+     * The current state of the build run.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     LifecycleState lifecycleState;

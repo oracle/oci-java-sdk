@@ -35,7 +35,7 @@ public class ListConnectionsRequest extends com.oracle.bmc.requests.BmcRequest<j
     private String compartmentId;
 
     /**
-     * A filter to return only Connections that matches the given lifecycleState
+     * A filter to return only connections that matches the given lifecycle state.
      */
     private com.oracle.bmc.devops.model.Connection.LifecycleState lifecycleState;
 
@@ -45,7 +45,7 @@ public class ListConnectionsRequest extends com.oracle.bmc.requests.BmcRequest<j
     private String displayName;
 
     /**
-     * A filter to return only resources that match the connection type given.
+     * A filter to return only resources that match the given connection type.
      */
     private com.oracle.bmc.devops.model.Connection.ConnectionType connectionType;
 

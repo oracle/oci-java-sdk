@@ -5,7 +5,7 @@
 package com.oracle.bmc.devops.model;
 
 /**
- * The action to be performed
+ * The trigger action to be performed.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -40,7 +40,7 @@ public class TriggerAction {
     Filter filter;
 
     /**
-     * The type of action that will be taken (allowed value - TRIGGER_BUILD_PIPELINE)
+     * The type of action that will be taken. Allowed value is TRIGGER_BUILD_PIPELINE.
      **/
     @lombok.extern.slf4j.Slf4j
     public enum Type {

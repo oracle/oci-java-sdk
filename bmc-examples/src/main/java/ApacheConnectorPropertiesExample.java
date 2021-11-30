@@ -8,8 +8,13 @@ import com.oracle.bmc.auth.ConfigFileAuthenticationDetailsProvider;
 import com.oracle.bmc.http.ApacheConfigurator;
 import com.oracle.bmc.http.ApacheConnectionPoolConfig;
 import com.oracle.bmc.http.ApacheConnectorProperties;
+import com.oracle.bmc.http.ClientConfigurator;
 import com.oracle.bmc.objectstorage.ObjectStorageClient;
+import javax.ws.rs.client.Client;
+import javax.ws.rs.client.ClientBuilder;
+import org.apache.http.client.config.RequestConfig;
 import org.apache.http.conn.ssl.NoopHostnameVerifier;
+import org.glassfish.jersey.apache.connector.ApacheClientProperties;
 import org.glassfish.jersey.apache.connector.ApacheConnectionClosingStrategy;
 
 import javax.net.ssl.SSLContext;
@@ -52,9 +57,36 @@ public class ApacheConnectorPropertiesExample {
         final ApacheConfigurator configurator =
                 new ApacheConfigurator.NonBuffering(apacheConnectorProperties);
 
+        final ClientConfigurator additionalClientConfigurator =
+                new ClientConfigurator() {
+                    @Override
+                    public void customizeBuilder(ClientBuilder clientBuilder) {
+                        final RequestConfig config =
+                                RequestConfig.custom()
+                                        // max time to wait for a connection from the connection manager/pool
+                                        // prevents the connection manager from blocking indefinitely in the connection request operation
+                                        .setConnectionRequestTimeout(2000)
+                                        // max time to establish the connection with the remote host
+                                        .setConnectTimeout(2000)
+                                        // max time waiting for data after establishing the connection; maximum time of inactivity between two data packets
+                                        .setSocketTimeout(2000)
+                                        .build();
+
+                        clientBuilder.property(ApacheClientProperties.REQUEST_CONFIG, config);
+                    }
+
+                    @Override
+                    public void customizeClient(Client client) {
+                        // no op
+                    }
+                };
+
         // Initialize the client with the Apache Configurator with custom properties
         ObjectStorageClient objectStorageClient =
-                ObjectStorageClient.builder().clientConfigurator(configurator).build(provider);
+                ObjectStorageClient.builder()
+                        .clientConfigurator(configurator)
+                        .additionalClientConfigurator(additionalClientConfigurator)
+                        .build(provider);
 
         /*
          * When using ApacheConnectionClosingStrategy.GracefulClosingStrategy, streams returned from response are read

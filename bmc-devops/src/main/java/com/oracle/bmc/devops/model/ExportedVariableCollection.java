@@ -5,7 +5,7 @@
 package com.oracle.bmc.devops.model;
 
 /**
- * Specifies list of Exported Variables.
+ * Specifies list of exported variables.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -62,7 +62,7 @@ public class ExportedVariableCollection {
     }
 
     /**
-     * List of exported variables
+     * List of exported variables.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     java.util.List<ExportedVariable> items;

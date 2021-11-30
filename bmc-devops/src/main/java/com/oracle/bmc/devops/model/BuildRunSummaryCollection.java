@@ -5,7 +5,7 @@
 package com.oracle.bmc.devops.model;
 
 /**
- * List of BuildRunSummary.
+ * List of build run summary.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -61,7 +61,7 @@ public class BuildRunSummaryCollection {
     }
 
     /**
-     * Array of BuildRunSummary items.
+     * Array of build run summary items.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     java.util.List<BuildRunSummary> items;

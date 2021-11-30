@@ -576,6 +576,7 @@ public class BlockchainPlatformAsyncClient implements BlockchainPlatformAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, DeleteBlockchainPlatformResponse>
                 transformer = DeleteBlockchainPlatformConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         DeleteBlockchainPlatformRequest, DeleteBlockchainPlatformResponse>
@@ -650,6 +651,7 @@ public class BlockchainPlatformAsyncClient implements BlockchainPlatformAsync {
                 DeletePeerConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, DeletePeerResponse>
                 transformer = DeletePeerConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<DeletePeerRequest, DeletePeerResponse> handlerToUse =
                 handler;
@@ -852,6 +854,50 @@ public class BlockchainPlatformAsyncClient implements BlockchainPlatformAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     GetWorkRequestRequest, GetWorkRequestResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListBlockchainPlatformPatchesResponse>
+            listBlockchainPlatformPatches(
+                    ListBlockchainPlatformPatchesRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListBlockchainPlatformPatchesRequest,
+                                    ListBlockchainPlatformPatchesResponse>
+                            handler) {
+        LOG.trace("Called async listBlockchainPlatformPatches");
+        final ListBlockchainPlatformPatchesRequest interceptedRequest =
+                ListBlockchainPlatformPatchesConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListBlockchainPlatformPatchesConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ListBlockchainPlatformPatchesResponse>
+                transformer = ListBlockchainPlatformPatchesConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListBlockchainPlatformPatchesRequest, ListBlockchainPlatformPatchesResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListBlockchainPlatformPatchesRequest,
+                                ListBlockchainPlatformPatchesResponse>,
+                        java.util.concurrent.Future<ListBlockchainPlatformPatchesResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListBlockchainPlatformPatchesRequest, ListBlockchainPlatformPatchesResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -1401,6 +1447,54 @@ public class BlockchainPlatformAsyncClient implements BlockchainPlatformAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     UpdatePeerRequest, UpdatePeerResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpgradeBlockchainPlatformResponse> upgradeBlockchainPlatform(
+            UpgradeBlockchainPlatformRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            UpgradeBlockchainPlatformRequest, UpgradeBlockchainPlatformResponse>
+                    handler) {
+        LOG.trace("Called async upgradeBlockchainPlatform");
+        final UpgradeBlockchainPlatformRequest interceptedRequest =
+                UpgradeBlockchainPlatformConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpgradeBlockchainPlatformConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, UpgradeBlockchainPlatformResponse>
+                transformer = UpgradeBlockchainPlatformConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        UpgradeBlockchainPlatformRequest, UpgradeBlockchainPlatformResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpgradeBlockchainPlatformRequest,
+                                UpgradeBlockchainPlatformResponse>,
+                        java.util.concurrent.Future<UpgradeBlockchainPlatformResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpgradeBlockchainPlatformDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpgradeBlockchainPlatformRequest, UpgradeBlockchainPlatformResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,

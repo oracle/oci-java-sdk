@@ -111,6 +111,12 @@ public class ListSqlSearchesRequest extends com.oracle.bmc.requests.BmcRequest<j
      */
     private java.util.List<String> freeformTagExists;
 
+    /**
+     * A flag to search all resources within a given compartment and all sub-compartments.
+     *
+     */
+    private Boolean compartmentIdInSubtree;
+
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListSqlSearchesRequest, java.lang.Void> {
@@ -267,6 +273,7 @@ public class ListSqlSearchesRequest extends com.oracle.bmc.requests.BmcRequest<j
             freeformTagEquals(o.getFreeformTagEquals());
             definedTagExists(o.getDefinedTagExists());
             freeformTagExists(o.getFreeformTagExists());
+            compartmentIdInSubtree(o.getCompartmentIdInSubtree());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;

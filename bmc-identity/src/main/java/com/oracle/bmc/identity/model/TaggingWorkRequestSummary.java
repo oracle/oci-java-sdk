@@ -166,6 +166,7 @@ public class TaggingWorkRequestSummary {
         DeleteNonEmptyTagNamespace("DELETE_NON_EMPTY_TAG_NAMESPACE"),
         BulkDeleteTagDefinition("BULK_DELETE_TAG_DEFINITION"),
         BulkEditOfTags("BULK_EDIT_OF_TAGS"),
+        ImportStandardTags("IMPORT_STANDARD_TAGS"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this

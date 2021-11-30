@@ -5,7 +5,7 @@
 package com.oracle.bmc.devops.model;
 
 /**
- * Details of OCIR Artifact delivered via DeliverArtifactStage.
+ * Details of the container registry artifacts delivered through the Deliver Artifacts stage.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -111,7 +111,7 @@ public class ContainerRegistryDeliveredArtifact extends DeliveredArtifact {
     }
 
     /**
-     * The Hash of the OCIR artifact pushed by the DeliverArtifactStage
+     * The hash of the container registry artifact pushed by the Deliver Artifacts stage.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("deliveredArtifactHash")
     String deliveredArtifactHash;

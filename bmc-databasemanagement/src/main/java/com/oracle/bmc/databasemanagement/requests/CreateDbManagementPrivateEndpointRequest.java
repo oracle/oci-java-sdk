@@ -22,7 +22,7 @@ public class CreateDbManagementPrivateEndpointRequest
                 com.oracle.bmc.databasemanagement.model.CreateDbManagementPrivateEndpointDetails> {
 
     /**
-     * Details to create a new private endpoint.
+     * Details used to create a new Database Management private endpoint.
      */
     private com.oracle.bmc.databasemanagement.model.CreateDbManagementPrivateEndpointDetails
             createDbManagementPrivateEndpointDetails;

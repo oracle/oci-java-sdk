@@ -23,8 +23,10 @@ public enum OperationType {
     GoldengateDeploymentStart("GOLDENGATE_DEPLOYMENT_START"),
     GoldengateDeploymentStop("GOLDENGATE_DEPLOYMENT_STOP"),
     GoldengateDeploymentPatch("GOLDENGATE_DEPLOYMENT_PATCH"),
+    GoldengateDeploymentUpgrade("GOLDENGATE_DEPLOYMENT_UPGRADE"),
     GoldengateDeploymentBackupCreate("GOLDENGATE_DEPLOYMENT_BACKUP_CREATE"),
     GoldengateDeploymentBackupDelete("GOLDENGATE_DEPLOYMENT_BACKUP_DELETE"),
+    GoldengateDeploymentBackupCancel("GOLDENGATE_DEPLOYMENT_BACKUP_CANCEL"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this

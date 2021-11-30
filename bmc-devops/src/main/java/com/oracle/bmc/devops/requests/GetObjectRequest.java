@@ -20,7 +20,7 @@ import com.oracle.bmc.devops.model.*;
 public class GetObjectRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * unique Repository identifier.
+     * Unique repository identifier.
      */
     private String repositoryId;
 
@@ -30,7 +30,7 @@ public class GetObjectRequest extends com.oracle.bmc.requests.BmcRequest<java.la
     private String filePath;
 
     /**
-     * A filter to return only resources that match the given Ref name.
+     * A filter to return only resources that match the given reference name.
      */
     private String refName;
 

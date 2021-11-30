@@ -5,7 +5,7 @@
 package com.oracle.bmc.devops.model;
 
 /**
- * Collection of Build Sources.
+ * Collection of build sources.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -61,7 +61,7 @@ public class BuildSourceCollection {
     }
 
     /**
-     * Collection of Build sources. In case of UPDATE operation, replaces existing Build sources list. Merging with existing Build Sources is not supported.
+     * Collection of build sources. In case of UPDATE operation, replaces existing build sources list. Merging with existing build sources is not supported.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     java.util.List<BuildSource> items;

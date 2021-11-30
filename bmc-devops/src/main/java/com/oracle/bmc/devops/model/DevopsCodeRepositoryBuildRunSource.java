@@ -5,7 +5,7 @@
 package com.oracle.bmc.devops.model;
 
 /**
- * Specifies details of build run through Devops Code Repository.
+ * Specifies details of build run through DevOps code repository.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -98,7 +98,7 @@ public class DevopsCodeRepositoryBuildRunSource extends BuildRunSource {
     }
 
     /**
-     * The Trigger that invoked this build run
+     * The trigger that invoked the build run.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("triggerId")
     String triggerId;
@@ -107,7 +107,7 @@ public class DevopsCodeRepositoryBuildRunSource extends BuildRunSource {
     TriggerInfo triggerInfo;
 
     /**
-     * The Devops Code Repository RepoId that invoked this build run
+     * The DevOps code repository identifier that invoked the build run.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("repositoryId")
     String repositoryId;

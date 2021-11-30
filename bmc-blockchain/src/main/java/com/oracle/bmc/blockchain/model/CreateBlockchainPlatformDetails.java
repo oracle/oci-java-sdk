@@ -80,6 +80,15 @@ public class CreateBlockchainPlatformDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("platformVersion")
+        private String platformVersion;
+
+        public Builder platformVersion(String platformVersion) {
+            this.platformVersion = platformVersion;
+            this.__explicitlySet__.add("platformVersion");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("idcsAccessToken")
         private String idcsAccessToken;
 
@@ -138,6 +147,7 @@ public class CreateBlockchainPlatformDetails {
                             platformRole,
                             computeShape,
                             isByol,
+                            platformVersion,
                             idcsAccessToken,
                             federatedUserId,
                             caCertArchiveText,
@@ -156,6 +166,7 @@ public class CreateBlockchainPlatformDetails {
                             .platformRole(o.getPlatformRole())
                             .computeShape(o.getComputeShape())
                             .isByol(o.getIsByol())
+                            .platformVersion(o.getPlatformVersion())
                             .idcsAccessToken(o.getIdcsAccessToken())
                             .federatedUserId(o.getFederatedUserId())
                             .caCertArchiveText(o.getCaCertArchiveText())
@@ -209,6 +220,12 @@ public class CreateBlockchainPlatformDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isByol")
     Boolean isByol;
+
+    /**
+     * Platform version
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("platformVersion")
+    String platformVersion;
 
     /**
      * IDCS access token with Identity Domain Administrator role

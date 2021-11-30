@@ -5,7 +5,7 @@
 package com.oracle.bmc.devops.model;
 
 /**
- * Trigger Create response specific to Gitlab
+ * Trigger create response specific to GitLab.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -247,7 +247,7 @@ public class DevopsCodeRepositoryTriggerCreateResult extends TriggerCreateResult
     }
 
     /**
-     * The id of the OCI Devops Repository
+     * The OCID of the DevOps code repository.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("repositoryId")
     String repositoryId;

@@ -5,7 +5,7 @@
 package com.oracle.bmc.databasemanagement.model;
 
 /**
- * The summary of Pdb's and it's resource usage metrics (CPU, IO, Storage and Active sessions) for a specified Container database.
+ * The summary of Pluggable Databases (PDBs) and their resource usage metrics, within a specific Container Database (CDB).
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -60,7 +60,7 @@ public class PdbMetrics {
     }
 
     /**
-     * The summary of Pdb's and it's resource usage metrics (CPU, IO, Storage and Active sessions) for a specified Container database.
+     * A summary of PDBs and their resource usage metrics such as CPU, User I/O, and Storage, within a specific CDB.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("databaseUsageMetrics")
     java.util.List<DatabaseUsageMetrics> databaseUsageMetrics;

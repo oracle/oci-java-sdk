@@ -87,6 +87,15 @@ public class ManagedDatabase {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("workloadType")
+        private WorkloadType workloadType;
+
+        public Builder workloadType(WorkloadType workloadType) {
+            this.workloadType = workloadType;
+            this.__explicitlySet__.add("workloadType");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("isCluster")
         private Boolean isCluster;
 
@@ -208,6 +217,7 @@ public class ManagedDatabase {
                             databaseSubType,
                             deploymentType,
                             managementOption,
+                            workloadType,
                             isCluster,
                             parentContainerId,
                             managedDatabaseGroups,
@@ -234,6 +244,7 @@ public class ManagedDatabase {
                             .databaseSubType(o.getDatabaseSubType())
                             .deploymentType(o.getDeploymentType())
                             .managementOption(o.getManagementOption())
+                            .workloadType(o.getWorkloadType())
                             .isCluster(o.getIsCluster())
                             .parentContainerId(o.getParentContainerId())
                             .managedDatabaseGroups(o.getManagedDatabaseGroups())
@@ -284,7 +295,9 @@ public class ManagedDatabase {
     DatabaseType databaseType;
 
     /**
-     * The subtype of the Oracle Database. Indicates whether the database is a Container Database, Pluggable Database, or a Non-container Database.
+     * The subtype of the Oracle Database. Indicates whether the database is a Container Database,
+     * Pluggable Database, Non-container Database, Autonomous Database, or Autonomous Container Database.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("databaseSubType")
     DatabaseSubType databaseSubType;
@@ -300,6 +313,12 @@ public class ManagedDatabase {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("managementOption")
     ManagementOption managementOption;
+
+    /**
+     * The workload type of the Autonomous Database.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("workloadType")
+    WorkloadType workloadType;
 
     /**
      * Indicates whether the Oracle Database is part of a cluster.

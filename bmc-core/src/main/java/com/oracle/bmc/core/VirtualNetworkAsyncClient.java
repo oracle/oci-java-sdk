@@ -4306,6 +4306,50 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<GetAllowedIkeIPSecParametersResponse>
+            getAllowedIkeIPSecParameters(
+                    GetAllowedIkeIPSecParametersRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    GetAllowedIkeIPSecParametersRequest,
+                                    GetAllowedIkeIPSecParametersResponse>
+                            handler) {
+        LOG.trace("Called async getAllowedIkeIPSecParameters");
+        final GetAllowedIkeIPSecParametersRequest interceptedRequest =
+                GetAllowedIkeIPSecParametersConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetAllowedIkeIPSecParametersConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, GetAllowedIkeIPSecParametersResponse>
+                transformer = GetAllowedIkeIPSecParametersConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        GetAllowedIkeIPSecParametersRequest, GetAllowedIkeIPSecParametersResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetAllowedIkeIPSecParametersRequest,
+                                GetAllowedIkeIPSecParametersResponse>,
+                        java.util.concurrent.Future<GetAllowedIkeIPSecParametersResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetAllowedIkeIPSecParametersRequest, GetAllowedIkeIPSecParametersResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<GetByoipRangeResponse> getByoipRange(
             GetByoipRangeRequest request,
             final com.oracle.bmc.responses.AsyncHandler<GetByoipRangeRequest, GetByoipRangeResponse>
@@ -5116,6 +5160,50 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     GetIPSecConnectionTunnelRequest, GetIPSecConnectionTunnelResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetIPSecConnectionTunnelErrorResponse>
+            getIPSecConnectionTunnelError(
+                    GetIPSecConnectionTunnelErrorRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    GetIPSecConnectionTunnelErrorRequest,
+                                    GetIPSecConnectionTunnelErrorResponse>
+                            handler) {
+        LOG.trace("Called async getIPSecConnectionTunnelError");
+        final GetIPSecConnectionTunnelErrorRequest interceptedRequest =
+                GetIPSecConnectionTunnelErrorConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetIPSecConnectionTunnelErrorConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, GetIPSecConnectionTunnelErrorResponse>
+                transformer = GetIPSecConnectionTunnelErrorConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        GetIPSecConnectionTunnelErrorRequest, GetIPSecConnectionTunnelErrorResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetIPSecConnectionTunnelErrorRequest,
+                                GetIPSecConnectionTunnelErrorResponse>,
+                        java.util.concurrent.Future<GetIPSecConnectionTunnelErrorResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetIPSecConnectionTunnelErrorRequest, GetIPSecConnectionTunnelErrorResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -7085,6 +7173,101 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     ListFastConnectProviderVirtualCircuitBandwidthShapesRequest,
                     ListFastConnectProviderVirtualCircuitBandwidthShapesResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListIPSecConnectionTunnelRoutesResponse>
+            listIPSecConnectionTunnelRoutes(
+                    ListIPSecConnectionTunnelRoutesRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListIPSecConnectionTunnelRoutesRequest,
+                                    ListIPSecConnectionTunnelRoutesResponse>
+                            handler) {
+        LOG.trace("Called async listIPSecConnectionTunnelRoutes");
+        final ListIPSecConnectionTunnelRoutesRequest interceptedRequest =
+                ListIPSecConnectionTunnelRoutesConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListIPSecConnectionTunnelRoutesConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ListIPSecConnectionTunnelRoutesResponse>
+                transformer = ListIPSecConnectionTunnelRoutesConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListIPSecConnectionTunnelRoutesRequest,
+                        ListIPSecConnectionTunnelRoutesResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListIPSecConnectionTunnelRoutesRequest,
+                                ListIPSecConnectionTunnelRoutesResponse>,
+                        java.util.concurrent.Future<ListIPSecConnectionTunnelRoutesResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListIPSecConnectionTunnelRoutesRequest,
+                    ListIPSecConnectionTunnelRoutesResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListIPSecConnectionTunnelSecurityAssociationsResponse>
+            listIPSecConnectionTunnelSecurityAssociations(
+                    ListIPSecConnectionTunnelSecurityAssociationsRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListIPSecConnectionTunnelSecurityAssociationsRequest,
+                                    ListIPSecConnectionTunnelSecurityAssociationsResponse>
+                            handler) {
+        LOG.trace("Called async listIPSecConnectionTunnelSecurityAssociations");
+        final ListIPSecConnectionTunnelSecurityAssociationsRequest interceptedRequest =
+                ListIPSecConnectionTunnelSecurityAssociationsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListIPSecConnectionTunnelSecurityAssociationsConverter.fromRequest(
+                        client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        ListIPSecConnectionTunnelSecurityAssociationsResponse>
+                transformer = ListIPSecConnectionTunnelSecurityAssociationsConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListIPSecConnectionTunnelSecurityAssociationsRequest,
+                        ListIPSecConnectionTunnelSecurityAssociationsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListIPSecConnectionTunnelSecurityAssociationsRequest,
+                                ListIPSecConnectionTunnelSecurityAssociationsResponse>,
+                        java.util.concurrent.Future<
+                                ListIPSecConnectionTunnelSecurityAssociationsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListIPSecConnectionTunnelSecurityAssociationsRequest,
+                    ListIPSecConnectionTunnelSecurityAssociationsResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,

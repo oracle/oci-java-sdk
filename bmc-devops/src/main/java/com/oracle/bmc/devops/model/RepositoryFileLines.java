@@ -5,7 +5,7 @@
 package com.oracle.bmc.devops.model;
 
 /**
- * Object containing the lines of a file in a repository
+ * Object containing the lines of a file in a repository.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -61,7 +61,7 @@ public class RepositoryFileLines {
     }
 
     /**
-     * The list of lines in the file
+     * The list of lines in the file.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lines")
     java.util.List<FileLineDetails> lines;

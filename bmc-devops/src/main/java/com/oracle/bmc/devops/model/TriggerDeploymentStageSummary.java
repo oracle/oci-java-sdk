@@ -5,7 +5,7 @@
 package com.oracle.bmc.devops.model;
 
 /**
- * Specifies Trigger Deployment Pipleline stage which runs another pipeline of the application.
+ * Specifies the Trigger Deployment stage, which runs another pipeline of the application.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -275,13 +275,13 @@ public class TriggerDeploymentStageSummary extends BuildPipelineStageSummary {
     }
 
     /**
-     * A target deploy Pipeline ocid that will be run in this stage.
+     * A target deployment pipeline OCID that will run in this stage.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("deployPipelineId")
     String deployPipelineId;
 
     /**
-     * A boolean flag specifies whether the parameters should be passed during the deployment trigger.
+     * A boolean flag that specifies whether all the parameters must be passed when the deployment is triggered.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isPassAllParametersEnabled")
     Boolean isPassAllParametersEnabled;

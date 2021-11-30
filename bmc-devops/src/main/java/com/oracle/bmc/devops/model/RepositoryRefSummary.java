@@ -5,7 +5,7 @@
 package com.oracle.bmc.devops.model;
 
 /**
- * Summary of a Ref
+ * Summary of a reference.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -41,19 +41,19 @@ package com.oracle.bmc.devops.model;
 public class RepositoryRefSummary {
 
     /**
-     * Ref name inside a repository
+     * Reference name inside a repository.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("refName")
     String refName;
 
     /**
-     * Unique full ref name inside a repository
+     * Unique full reference name inside a repository.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("fullRefName")
     String fullRefName;
 
     /**
-     * The OCID of the repository containing the ref.
+     * The OCID of the repository containing the reference.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("repositoryId")
     String repositoryId;

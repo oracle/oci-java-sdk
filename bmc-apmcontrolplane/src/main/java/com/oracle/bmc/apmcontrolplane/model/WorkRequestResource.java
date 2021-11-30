@@ -5,7 +5,7 @@
 package com.oracle.bmc.apmcontrolplane.model;
 
 /**
- * A resource created or operated on by a work request.
+ * The details of the resource that the work request affects.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -115,7 +115,7 @@ public class WorkRequestResource {
     String identifier;
 
     /**
-     * The URI path that the user can do a GET on to access the resource metadata
+     * The URI path that the user can do a GET on to access the resource metadata.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("entityUri")
     String entityUri;

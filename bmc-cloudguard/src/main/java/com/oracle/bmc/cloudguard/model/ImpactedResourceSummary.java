@@ -62,6 +62,24 @@ public class ImpactedResourceSummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("sightingType")
+        private String sightingType;
+
+        public Builder sightingType(String sightingType) {
+            this.sightingType = sightingType;
+            this.__explicitlySet__.add("sightingType");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("sightingTypeDisplayName")
+        private String sightingTypeDisplayName;
+
+        public Builder sightingTypeDisplayName(String sightingTypeDisplayName) {
+            this.sightingTypeDisplayName = sightingTypeDisplayName;
+            this.__explicitlySet__.add("sightingTypeDisplayName");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("resourceName")
         private String resourceName;
 
@@ -108,6 +126,8 @@ public class ImpactedResourceSummary {
                             resourceId,
                             problemId,
                             compartmentId,
+                            sightingType,
+                            sightingTypeDisplayName,
                             resourceName,
                             resourceType,
                             region,
@@ -123,6 +143,8 @@ public class ImpactedResourceSummary {
                             .resourceId(o.getResourceId())
                             .problemId(o.getProblemId())
                             .compartmentId(o.getCompartmentId())
+                            .sightingType(o.getSightingType())
+                            .sightingTypeDisplayName(o.getSightingTypeDisplayName())
                             .resourceName(o.getResourceName())
                             .resourceType(o.getResourceType())
                             .region(o.getRegion())
@@ -163,6 +185,18 @@ public class ImpactedResourceSummary {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     String compartmentId;
+
+    /**
+     * Identifier for the sighting type
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("sightingType")
+    String sightingType;
+
+    /**
+     * Name of the sighting type
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("sightingTypeDisplayName")
+    String sightingTypeDisplayName;
 
     /**
      * Name of the Impacted Resource

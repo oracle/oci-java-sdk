@@ -222,6 +222,12 @@ public class ListDatabaseInsightsRequest
     private String exadataInsightId;
 
     /**
+     * A flag to search all resources within a given compartment and all sub-compartments.
+     *
+     */
+    private Boolean compartmentIdInSubtree;
+
+    /**
      * Unique Oracle-assigned identifier for the request. If you need to contact
      * Oracle about a particular request, please provide the request ID.
      *
@@ -401,6 +407,7 @@ public class ListDatabaseInsightsRequest
             sortOrder(o.getSortOrder());
             sortBy(o.getSortBy());
             exadataInsightId(o.getExadataInsightId());
+            compartmentIdInSubtree(o.getCompartmentIdInSubtree());
             opcRequestId(o.getOpcRequestId());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());

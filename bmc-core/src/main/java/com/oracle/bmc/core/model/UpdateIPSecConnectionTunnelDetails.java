@@ -62,6 +62,51 @@ public class UpdateIPSecConnectionTunnelDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("oracleInitiation")
+        private OracleInitiation oracleInitiation;
+
+        public Builder oracleInitiation(OracleInitiation oracleInitiation) {
+            this.oracleInitiation = oracleInitiation;
+            this.__explicitlySet__.add("oracleInitiation");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("natTranslationEnabled")
+        private NatTranslationEnabled natTranslationEnabled;
+
+        public Builder natTranslationEnabled(NatTranslationEnabled natTranslationEnabled) {
+            this.natTranslationEnabled = natTranslationEnabled;
+            this.__explicitlySet__.add("natTranslationEnabled");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("phaseOneConfig")
+        private PhaseOneConfigDetails phaseOneConfig;
+
+        public Builder phaseOneConfig(PhaseOneConfigDetails phaseOneConfig) {
+            this.phaseOneConfig = phaseOneConfig;
+            this.__explicitlySet__.add("phaseOneConfig");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("phaseTwoConfig")
+        private PhaseTwoConfigDetails phaseTwoConfig;
+
+        public Builder phaseTwoConfig(PhaseTwoConfigDetails phaseTwoConfig) {
+            this.phaseTwoConfig = phaseTwoConfig;
+            this.__explicitlySet__.add("phaseTwoConfig");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("dpdConfig")
+        private DpdConfig dpdConfig;
+
+        public Builder dpdConfig(DpdConfig dpdConfig) {
+            this.dpdConfig = dpdConfig;
+            this.__explicitlySet__.add("dpdConfig");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("encryptionDomainConfig")
         private UpdateIPSecTunnelEncryptionDomainDetails encryptionDomainConfig;
 
@@ -82,6 +127,11 @@ public class UpdateIPSecConnectionTunnelDetails {
                             routing,
                             ikeVersion,
                             bgpSessionConfig,
+                            oracleInitiation,
+                            natTranslationEnabled,
+                            phaseOneConfig,
+                            phaseTwoConfig,
+                            dpdConfig,
                             encryptionDomainConfig);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
@@ -94,6 +144,11 @@ public class UpdateIPSecConnectionTunnelDetails {
                             .routing(o.getRouting())
                             .ikeVersion(o.getIkeVersion())
                             .bgpSessionConfig(o.getBgpSessionConfig())
+                            .oracleInitiation(o.getOracleInitiation())
+                            .natTranslationEnabled(o.getNatTranslationEnabled())
+                            .phaseOneConfig(o.getPhaseOneConfig())
+                            .phaseTwoConfig(o.getPhaseTwoConfig())
+                            .dpdConfig(o.getDpdConfig())
                             .encryptionDomainConfig(o.getEncryptionDomainConfig());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
@@ -203,6 +258,96 @@ public class UpdateIPSecConnectionTunnelDetails {
 
     @com.fasterxml.jackson.annotation.JsonProperty("bgpSessionConfig")
     UpdateIPSecTunnelBgpSessionDetails bgpSessionConfig;
+    /**
+     * Whether Oracle side is the initiator for negotiation.
+     **/
+    public enum OracleInitiation {
+        InitiatorOrResponder("INITIATOR_OR_RESPONDER"),
+        ResponderOnly("RESPONDER_ONLY"),
+        ;
+
+        private final String value;
+        private static java.util.Map<String, OracleInitiation> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (OracleInitiation v : OracleInitiation.values()) {
+                map.put(v.getValue(), v);
+            }
+        }
+
+        OracleInitiation(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static OracleInitiation create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            throw new IllegalArgumentException("Invalid OracleInitiation: " + key);
+        }
+    };
+    /**
+     * Whether Oracle side is the initiator for negotiation.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("oracleInitiation")
+    OracleInitiation oracleInitiation;
+    /**
+     * Whether NAT-T Enabled on the tunnel
+     **/
+    public enum NatTranslationEnabled {
+        Enabled("ENABLED"),
+        Disabled("DISABLED"),
+        Auto("AUTO"),
+        ;
+
+        private final String value;
+        private static java.util.Map<String, NatTranslationEnabled> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (NatTranslationEnabled v : NatTranslationEnabled.values()) {
+                map.put(v.getValue(), v);
+            }
+        }
+
+        NatTranslationEnabled(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static NatTranslationEnabled create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            throw new IllegalArgumentException("Invalid NatTranslationEnabled: " + key);
+        }
+    };
+    /**
+     * Whether NAT-T Enabled on the tunnel
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("natTranslationEnabled")
+    NatTranslationEnabled natTranslationEnabled;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("phaseOneConfig")
+    PhaseOneConfigDetails phaseOneConfig;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("phaseTwoConfig")
+    PhaseTwoConfigDetails phaseTwoConfig;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("dpdConfig")
+    DpdConfig dpdConfig;
 
     @com.fasterxml.jackson.annotation.JsonProperty("encryptionDomainConfig")
     UpdateIPSecTunnelEncryptionDomainDetails encryptionDomainConfig;

@@ -5,7 +5,7 @@
 package com.oracle.bmc.devops.model;
 
 /**
- * Details about a line within the diff.
+ * Details about a line within the difference.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -108,7 +108,7 @@ public class DiffLineDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("lineContent")
     String lineContent;
     /**
-     * Indicates whether a line in a conflicted section of the diff is from the base version, the target version, or if its just a marker indicating the beginning, middle, or end of a conflicted section.
+     * Indicates whether a line in a conflicted section of the difference is from the base version, the target version, or if its just a marker indicating the beginning, middle, or end of a conflicted section.
      **/
     @lombok.extern.slf4j.Slf4j
     public enum ConflictMarker {
@@ -156,7 +156,7 @@ public class DiffLineDetails {
         }
     };
     /**
-     * Indicates whether a line in a conflicted section of the diff is from the base version, the target version, or if its just a marker indicating the beginning, middle, or end of a conflicted section.
+     * Indicates whether a line in a conflicted section of the difference is from the base version, the target version, or if its just a marker indicating the beginning, middle, or end of a conflicted section.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("conflictMarker")
     ConflictMarker conflictMarker;

@@ -5,7 +5,7 @@
 package com.oracle.bmc.apmcontrolplane.model;
 
 /**
- * Possible lifecycle states for an APM Domain.
+ * Possible lifecycle states for an APM domain.
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 @lombok.extern.slf4j.Slf4j
@@ -14,6 +14,7 @@ public enum LifecycleStates {
     Updating("UPDATING"),
     Active("ACTIVE"),
     Deleting("DELETING"),
+    Deleted("DELETED"),
     Failed("FAILED"),
 
     /**

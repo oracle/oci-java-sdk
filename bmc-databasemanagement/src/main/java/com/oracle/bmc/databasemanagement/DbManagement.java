@@ -179,7 +179,7 @@ public interface DbManagement extends AutoCloseable {
             CreateManagedDatabaseGroupRequest request);
 
     /**
-     * Deletes the specified Database Management private endpoint.
+     * Deletes a specific Database Management private endpoint.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -287,7 +287,7 @@ public interface DbManagement extends AutoCloseable {
     GetDatabaseHomeMetricsResponse getDatabaseHomeMetrics(GetDatabaseHomeMetricsRequest request);
 
     /**
-     * Gets the details of the specified Database Management private endpoint.
+     * Gets the details of a specific Database Management private endpoint.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -365,9 +365,10 @@ public interface DbManagement extends AutoCloseable {
     GetManagedDatabaseGroupResponse getManagedDatabaseGroup(GetManagedDatabaseGroupRequest request);
 
     /**
-     * Gets a summary of the resource usage metrics like DB Time, CPU, User I/O, Wait, Storage, and Memory
-     * for each Pdb under specified Container database in same compartment as container database.
-     * If comparmentId is provided then for each Pdb under specified compartmentId.
+     * Gets a summary of the resource usage metrics such as CPU, User I/O, and Storage for each
+     * PDB within a specific CDB. If comparmentId is specified, then the metrics for
+     * each PDB (within the CDB) in the specified compartment are retrieved.
+     * If compartmentId is not specified, then the metrics for all the PDBs within the CDB are retrieved.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -380,7 +381,20 @@ public interface DbManagement extends AutoCloseable {
     GetPdbMetricsResponse getPdbMetrics(GetPdbMetricsRequest request);
 
     /**
-     * Gets information of the work request with the given Work Request Id.
+     * Gets the details of a specific user for the specified managedDatabaseId and userName.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/GetUserExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetUser API.
+     */
+    GetUserResponse getUser(GetUserRequest request);
+
+    /**
+     * Gets the status of the work request with the given Work Request ID
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -392,7 +406,7 @@ public interface DbManagement extends AutoCloseable {
     GetWorkRequestResponse getWorkRequest(GetWorkRequestRequest request);
 
     /**
-     * Gets the list of Databases using the specified Database Management private endpoint.
+     * Gets the list of databases using a specific Database Management private endpoint.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -428,6 +442,32 @@ public interface DbManagement extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/ListAwrDbsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListAwrDbs API.
      */
     ListAwrDbsResponse listAwrDbs(ListAwrDbsRequest request);
+
+    /**
+     * Gets the list of Consumer Group Privileges granted for the specified user.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/ListConsumerGroupPrivilegesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListConsumerGroupPrivileges API.
+     */
+    ListConsumerGroupPrivilegesResponse listConsumerGroupPrivileges(
+            ListConsumerGroupPrivilegesRequest request);
+
+    /**
+     * Gets the list of Containers if it does not apply to all containers for the specified user.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/ListDataAccessContainersExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListDataAccessContainers API.
+     */
+    ListDataAccessContainersResponse listDataAccessContainers(
+            ListDataAccessContainersRequest request);
 
     /**
      * Gets the list of database parameters for the specified Managed Database. The parameters are listed in alphabetical order, along with their current values.
@@ -540,6 +580,66 @@ public interface DbManagement extends AutoCloseable {
     ListManagedDatabasesResponse listManagedDatabases(ListManagedDatabasesRequest request);
 
     /**
+     * Gets the list of Object Privileges granted for the specified user.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/ListObjectPrivilegesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListObjectPrivileges API.
+     */
+    ListObjectPrivilegesResponse listObjectPrivileges(ListObjectPrivilegesRequest request);
+
+    /**
+     * Gets the list of Users for which the current user acts as proxy.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/ListProxiedForUsersExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListProxiedForUsers API.
+     */
+    ListProxiedForUsersResponse listProxiedForUsers(ListProxiedForUsersRequest request);
+
+    /**
+     * Gets the list of proxy users for the current User.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/ListProxyUsersExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListProxyUsers API.
+     */
+    ListProxyUsersResponse listProxyUsers(ListProxyUsersRequest request);
+
+    /**
+     * Gets the list of roles granted for the specified user.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/ListRolesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListRoles API.
+     */
+    ListRolesResponse listRoles(ListRolesRequest request);
+
+    /**
+     * Gets the list of System Privileges granted for the specified user.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/ListSystemPrivilegesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListSystemPrivileges API.
+     */
+    ListSystemPrivilegesResponse listSystemPrivileges(ListSystemPrivilegesRequest request);
+
+    /**
      * Gets the list of tablespaces for the specified managedDatabaseId.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -552,7 +652,19 @@ public interface DbManagement extends AutoCloseable {
     ListTablespacesResponse listTablespaces(ListTablespacesRequest request);
 
     /**
-     * Returns a (paginated) list of errors for a given work request.
+     * Gets the list of users for the specified managedDatabaseId.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/ListUsersExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListUsers API.
+     */
+    ListUsersResponse listUsers(ListUsersRequest request);
+
+    /**
+     * Returns a paginated list of errors for a given work request.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -565,7 +677,7 @@ public interface DbManagement extends AutoCloseable {
     ListWorkRequestErrorsResponse listWorkRequestErrors(ListWorkRequestErrorsRequest request);
 
     /**
-     * Returns a (paginated) list of logs for a given work request.
+     * Returns a paginated list of logs for a given work request.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -578,7 +690,7 @@ public interface DbManagement extends AutoCloseable {
     ListWorkRequestLogsResponse listWorkRequestLogs(ListWorkRequestLogsRequest request);
 
     /**
-     * Lists all the work requests in the specified compartment.
+     * The list of work requests in a specific compartment was retrieved successfully.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -772,7 +884,7 @@ public interface DbManagement extends AutoCloseable {
             SummarizeJobExecutionsStatusesRequest request);
 
     /**
-     * Updates one or more attributes of the specified Database Management private endpoint.
+     * Updates one or more attributes of a specific Database Management private endpoint.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.

@@ -22,7 +22,7 @@ public class CreateBuildPipelineRequest
                 com.oracle.bmc.devops.model.CreateBuildPipelineDetails> {
 
     /**
-     * Details for the new BuildPipeline.
+     * Details for the new build pipeline.
      */
     private com.oracle.bmc.devops.model.CreateBuildPipelineDetails createBuildPipelineDetails;
 

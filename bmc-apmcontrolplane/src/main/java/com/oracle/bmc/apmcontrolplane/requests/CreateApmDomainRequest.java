@@ -22,7 +22,7 @@ public class CreateApmDomainRequest
                 com.oracle.bmc.apmcontrolplane.model.CreateApmDomainDetails> {
 
     /**
-     * Details for the new APM Domain.
+     * Details for the new APM domain.
      */
     private com.oracle.bmc.apmcontrolplane.model.CreateApmDomainDetails createApmDomainDetails;
 

@@ -21,17 +21,17 @@ public class GetRepositoryArchiveContentRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * unique Repository identifier.
+     * Unique repository identifier.
      */
     private String repositoryId;
 
     /**
-     * A filter to return only resources that match the given Ref name.
+     * A filter to return only resources that match the given reference name.
      */
     private String refName;
 
     /**
-     * The archive format query parm for download repo endpoint.
+     * The archive format query parameter for downloading repository endpoint.
      */
     private String format;
 

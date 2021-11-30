@@ -22,19 +22,18 @@ public class UpdateApmDomainRequest
                 com.oracle.bmc.apmcontrolplane.model.UpdateApmDomainDetails> {
 
     /**
-     * OCID of the APM Domain
+     * The OCID of the APM domain
      */
     private String apmDomainId;
 
     /**
-     * The information to be updated for the APM Domain.
+     * The information to be updated for the APM domain.
      */
     private com.oracle.bmc.apmcontrolplane.model.UpdateApmDomainDetails updateApmDomainDetails;
 
     /**
-     * For optimistic concurrency control. In the PUT or DELETE call
-     * for a resource, set the {@code if-match} parameter to the value of the
-     * etag from a previous GET or POST response for that resource.
+     * For optimistic concurrency control. Set the {@code if-match} parameter
+     * to the value of the etag from a previous GET or POST response for that resource.
      * The resource will be updated or deleted only if the etag you
      * provide matches the resource's current etag value.
      *

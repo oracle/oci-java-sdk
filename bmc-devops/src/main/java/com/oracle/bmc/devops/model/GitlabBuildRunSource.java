@@ -5,7 +5,7 @@
 package com.oracle.bmc.devops.model;
 
 /**
- * Specifies details of build run through Gitlab.
+ * Specifies details of build run through GitLab.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -83,7 +83,7 @@ public class GitlabBuildRunSource extends BuildRunSource {
     }
 
     /**
-     * The Trigger that invoked this build run
+     * The trigger that invoked the build run.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("triggerId")
     String triggerId;

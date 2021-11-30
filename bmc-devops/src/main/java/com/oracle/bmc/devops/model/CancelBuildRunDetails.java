@@ -5,7 +5,7 @@
 package com.oracle.bmc.devops.model;
 
 /**
- * The information about cancel BuildRun.
+ * Information about canceling the build run.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -61,7 +61,7 @@ public class CancelBuildRunDetails {
     }
 
     /**
-     * The reason for canceling the run.
+     * The reason for canceling the build run.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("reason")
     String reason;

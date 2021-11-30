@@ -5,7 +5,7 @@
 package com.oracle.bmc.devops.model;
 
 /**
- * Description of Trigger.
+ * Trigger the deployment pipeline to deploy the artifact.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -45,48 +45,48 @@ package com.oracle.bmc.devops.model;
 public class Trigger {
 
     /**
-     * Unique identifier that is immutable on creation
+     * Unique identifier that is immutable on creation.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     String id;
 
     /**
-     * Name for Trigger.
+     * Trigger display name. Avoid entering confidential information.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     String displayName;
 
     /**
-     * Description about the Trigger
+     * Description about the trigger.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     String description;
 
     /**
-     * Project to which the Trigger belongs
+     * The OCID of the DevOps project to which the trigger belongs to.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("projectId")
     String projectId;
 
     /**
-     * Compartment to which the Trigger belongs
+     * The OCID of the compartment that contains the trigger.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     String compartmentId;
 
     /**
-     * The time the the Trigger was created. An RFC3339 formatted datetime string
+     * The time the trigger was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     java.util.Date timeCreated;
 
     /**
-     * The time the Trigger was updated. An RFC3339 formatted datetime string
+     * The time the trigger was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     java.util.Date timeUpdated;
     /**
-     * The current state of the Trigger.
+     * The current state of the trigger.
      **/
     @lombok.extern.slf4j.Slf4j
     public enum LifecycleState {
@@ -131,7 +131,7 @@ public class Trigger {
         }
     };
     /**
-     * The current state of the Trigger.
+     * The current state of the trigger.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     LifecycleState lifecycleState;
@@ -143,7 +143,7 @@ public class Trigger {
     String lifecycleDetails;
 
     /**
-     * The list of actions that are to be performed for this Trigger
+     * The list of actions that are to be performed for this trigger.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("actions")
     java.util.List<TriggerAction> actions;
@@ -167,7 +167,7 @@ public class Trigger {
     java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
     /**
-     * Source of the Trigger (allowed values are - GITHUB, GITLAB)
+     * Source of the trigger. Allowed values are, GITHUB, GITLAB and DEVOPS_CODE_REPOSITORY.
      **/
     @lombok.extern.slf4j.Slf4j
     public enum TriggerSource {

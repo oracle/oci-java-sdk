@@ -5,7 +5,7 @@
 package com.oracle.bmc.devops.model;
 
 /**
- * Description of Repository.
+ * Repositories containing the source code to build and deploy.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -317,56 +317,56 @@ public class Repository {
     String name;
 
     /**
-     * The OCID of the repository's Compartment.
+     * The OCID of the repository's compartment.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     String compartmentId;
 
     /**
-     * Tenancy unique namespace
+     * Tenancy unique namespace.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("namespace")
     String namespace;
 
     /**
-     * The OCID of the Project containing the repository.
+     * The OCID of the DevOps project containing the repository.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("projectId")
     String projectId;
 
     /**
-     * Project unique Name under namespace
+     * Unique project name in a namespace.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("projectName")
     String projectName;
 
     /**
-     * ssh url user utilized to git clone, pull and push
+     * SSH URL that you use to git clone, pull and push.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sshUrl")
     String sshUrl;
 
     /**
-     * http url user utilized to git clone, pull and push
+     * HTTP URL that you use to git clone, pull and push.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("httpUrl")
     String httpUrl;
 
     /**
-     * The description of this repository. Avoid entering confidential information
+     * Details of the repository. Avoid entering confidential information.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     String description;
 
     /**
-     * The default branch of the repository
+     * The default branch of the repository.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("defaultBranch")
     String defaultBranch;
     /**
-     * Type of repository
-     * MIRRORED - Repository was created by mirroring an existing repository.
-     * HOSTED - Repository was created and hosted using OCI Devops Code Repository.
+     * Type of repository:
+     * Mirrored - Repository created by mirroring an existing repository.
+     * Hosted - Repository created and hosted using OCI DevOps code repository.
      *
      **/
     @lombok.extern.slf4j.Slf4j
@@ -413,9 +413,9 @@ public class Repository {
         }
     };
     /**
-     * Type of repository
-     * MIRRORED - Repository was created by mirroring an existing repository.
-     * HOSTED - Repository was created and hosted using OCI Devops Code Repository.
+     * Type of repository:
+     * Mirrored - Repository created by mirroring an existing repository.
+     * Hosted - Repository created and hosted using OCI DevOps code repository.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("repositoryType")
@@ -425,18 +425,18 @@ public class Repository {
     MirrorRepositoryConfig mirrorRepositoryConfig;
 
     /**
-     * The time the the Repository was created. An RFC3339 formatted datetime string
+     * The time the repository was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     java.util.Date timeCreated;
 
     /**
-     * The time the Repository was updated. An RFC3339 formatted datetime string
+     * The time the repository was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     java.util.Date timeUpdated;
     /**
-     * The current state of the Repository.
+     * The current state of the repository.
      **/
     @lombok.extern.slf4j.Slf4j
     public enum LifecycleState {
@@ -483,7 +483,7 @@ public class Repository {
         }
     };
     /**
-     * The current state of the Repository.
+     * The current state of the repository.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     LifecycleState lifecycleState;
@@ -557,9 +557,9 @@ public class Repository {
         }
     };
     /**
-     * Trigger Build Events supported for this repository
-     * PUSH - Build is triggered when a push event occurs
-     * COMMIT_UPDATES - Build is triggered when new commits are mirrored into repository
+     * Trigger build events supported for this repository:
+     * Push - Build is triggered when a push event occurs.
+     * Commit updates - Build is triggered when new commits are mirrored into a repository.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("triggerBuildEvents")

@@ -5,7 +5,7 @@
 package com.oracle.bmc.devops.model;
 
 /**
- * Result of a compare diff.
+ * Result of a compare difference.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -59,7 +59,7 @@ public class DiffCollection {
     }
 
     /**
-     * List of objects describing diffs for all changed files.
+     * List of objects describing differences for all changed files.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     java.util.List<DiffSummary> items;

@@ -5,7 +5,7 @@
 package com.oracle.bmc.databasemanagement.model;
 
 /**
- * Summary of a Database Management private endpoint.
+ * The summary of a Database Management private endpoint.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -141,31 +141,31 @@ public class DbManagementPrivateEndpointSummary {
     }
 
     /**
-     * The OCID of the Database Management private endpoint.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Database Management private endpoint.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     String id;
 
     /**
-     * The display name of the private endpoint.
+     * The display name of the Database Management private endpoint.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     String name;
 
     /**
-     * The OCID of the compartment.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     String compartmentId;
 
     /**
-     * The OCID of the VCN.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the VCN.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("vcnId")
     String vcnId;
 
     /**
-     * The OCID of the subnet.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the subnet.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
     String subnetId;
@@ -183,7 +183,7 @@ public class DbManagementPrivateEndpointSummary {
     java.util.Date timeCreated;
 
     /**
-     * The current state of the private endpoint.
+     * The current lifecycle state of the private endpoint.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     LifecycleStates lifecycleState;

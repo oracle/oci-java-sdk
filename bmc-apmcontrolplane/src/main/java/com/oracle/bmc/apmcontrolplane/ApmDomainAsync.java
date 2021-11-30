@@ -8,8 +8,8 @@ import com.oracle.bmc.apmcontrolplane.requests.*;
 import com.oracle.bmc.apmcontrolplane.responses.*;
 
 /**
- * Provide a set of APIs for tenant to perform operations like create, update, delete and list APM domains, and also
- * work request APIs to monitor progress of these operations.
+ * Use the Application Performance Monitoring Control Plane API to perform operations such as creating, updating,
+ * deleting and listing APM domains and monitoring the progress of these operations using the work request APIs.
  *
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
@@ -48,7 +48,7 @@ public interface ApmDomainAsync extends AutoCloseable {
     void setRegion(String regionId);
 
     /**
-     * Moves a APM Domain into a different compartment. When provided, If-Match is checked against ETag values of the resource.
+     * Moves an APM domain into a different compartment. When provided, If-Match is checked against ETag values of the APM domain.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -64,7 +64,7 @@ public interface ApmDomainAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Creates a new APM Domain.
+     * Creates a new APM domain.
      *
      *
      * @param request The request object containing the details to send
@@ -80,9 +80,9 @@ public interface ApmDomainAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Delete the specified APM domain asynchronously. The APM domain is placed in the 'Deleting' state and will stop
+     * Deletes the specified APM domain asynchronously. The APM domain is placed in the 'Deleting' state and will stop
      * accepting any operation requests. All resources associated with the APM domain are eventually recovered. Use the
-     * returned work request to track the progress of the background activity to complete deleting the domain.
+     * returned work request ID to track the progress of the background activity to complete deleting the APM domain.
      *
      *
      * @param request The request object containing the details to send
@@ -115,7 +115,7 @@ public interface ApmDomainAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets details of APM Domain by identifier
+     * Gets the details of the APM domain specified by OCID.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -145,7 +145,7 @@ public interface ApmDomainAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Returns a (paginated) list of work requests related to a specific APM Domain.
+     * Returns a (paginated) list of work requests related to a specific APM domain.
      *
      *
      * @param request The request object containing the details to send
@@ -162,7 +162,7 @@ public interface ApmDomainAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Lists all APM Domains for the specified tenant compartment.
+     * Lists all APM domains for the specified tenant compartment.
      *
      *
      * @param request The request object containing the details to send
@@ -178,7 +178,7 @@ public interface ApmDomainAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Lists all Data Keys for the specified APM Domain. The caller may filter the list by specifying the 'dataKeyType'
+     * Lists all Data Keys for the specified APM domain. The caller may filter the list by specifying the 'dataKeyType'
      * query parameter.
      *
      *
@@ -195,7 +195,7 @@ public interface ApmDomainAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Return a (paginated) list of errors for a given work request.
+     * Returns a (paginated) list of errors for a given work request.
      *
      *
      * @param request The request object containing the details to send
@@ -212,7 +212,7 @@ public interface ApmDomainAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Return a (paginated) list of logs for a given work request.
+     * Returns a (paginated) list of logs for a given work request.
      *
      *
      * @param request The request object containing the details to send
@@ -262,7 +262,7 @@ public interface ApmDomainAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Update the APM domain when it is ready and active.
+     * Updates the APM domain.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.

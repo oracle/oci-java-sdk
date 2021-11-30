@@ -99,6 +99,24 @@ public class DeploymentBackupSummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("timeBackupFinished")
+        private java.util.Date timeBackupFinished;
+
+        public Builder timeBackupFinished(java.util.Date timeBackupFinished) {
+            this.timeBackupFinished = timeBackupFinished;
+            this.__explicitlySet__.add("timeBackupFinished");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("sizeInBytes")
+        private java.math.BigDecimal sizeInBytes;
+
+        public Builder sizeInBytes(java.math.BigDecimal sizeInBytes) {
+            this.sizeInBytes = sizeInBytes;
+            this.__explicitlySet__.add("sizeInBytes");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("backupType")
         private DeploymentBackupType backupType;
 
@@ -204,6 +222,8 @@ public class DeploymentBackupSummary {
                             lifecycleState,
                             lifecycleDetails,
                             timeOfBackup,
+                            timeBackupFinished,
+                            sizeInBytes,
                             backupType,
                             oggVersion,
                             namespaceName,
@@ -229,6 +249,8 @@ public class DeploymentBackupSummary {
                             .lifecycleState(o.getLifecycleState())
                             .lifecycleDetails(o.getLifecycleDetails())
                             .timeOfBackup(o.getTimeOfBackup())
+                            .timeBackupFinished(o.getTimeBackupFinished())
+                            .sizeInBytes(o.getSizeInBytes())
                             .backupType(o.getBackupType())
                             .oggVersion(o.getOggVersion())
                             .namespaceName(o.getNamespaceName())
@@ -307,6 +329,20 @@ public class DeploymentBackupSummary {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeOfBackup")
     java.util.Date timeOfBackup;
+
+    /**
+     * The time of the resource backup finish. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("timeBackupFinished")
+    java.util.Date timeBackupFinished;
+
+    /**
+     * The size of the backup stored in object storage (in bytes)
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("sizeInBytes")
+    java.math.BigDecimal sizeInBytes;
 
     /**
      * Possible Deployment backup types.

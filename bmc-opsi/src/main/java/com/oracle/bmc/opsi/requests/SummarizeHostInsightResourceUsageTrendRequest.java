@@ -216,6 +216,12 @@ public class SummarizeHostInsightResourceUsageTrendRequest
      */
     private java.util.List<String> freeformTagExists;
 
+    /**
+     * A flag to search all resources within a given compartment and all sub-compartments.
+     *
+     */
+    private Boolean compartmentIdInSubtree;
+
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     SummarizeHostInsightResourceUsageTrendRequest, java.lang.Void> {
@@ -442,6 +448,7 @@ public class SummarizeHostInsightResourceUsageTrendRequest
             freeformTagEquals(o.getFreeformTagEquals());
             definedTagExists(o.getDefinedTagExists());
             freeformTagExists(o.getFreeformTagExists());
+            compartmentIdInSubtree(o.getCompartmentIdInSubtree());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;

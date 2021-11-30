@@ -22,7 +22,7 @@ public class CancelBuildRunRequest
                 com.oracle.bmc.devops.model.CancelBuildRunDetails> {
 
     /**
-     * Details the input parameters required to cancel a build run.
+     * Parameter details required to cancel a build run.
      */
     private com.oracle.bmc.devops.model.CancelBuildRunDetails cancelBuildRunDetails;
 

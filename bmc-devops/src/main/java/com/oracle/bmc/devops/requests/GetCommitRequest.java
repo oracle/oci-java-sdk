@@ -20,12 +20,12 @@ import com.oracle.bmc.devops.model.*;
 public class GetCommitRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * unique Repository identifier.
+     * Unique repository identifier.
      */
     private String repositoryId;
 
     /**
-     * A filter to return only resources that match the given commit Id.
+     * A filter to return only resources that match the given commit ID.
      */
     private String commitId;
 

@@ -222,13 +222,13 @@ public class DiffResponseEntry {
     String url;
 
     /**
-     * The number of lines added in whole diff.
+     * The number of lines added in whole difference.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("addedLinesCount")
     Integer addedLinesCount;
 
     /**
-     * The number of lines deleted in whole diff.
+     * The number of lines deleted in whole difference.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("deletedLinesCount")
     Integer deletedLinesCount;

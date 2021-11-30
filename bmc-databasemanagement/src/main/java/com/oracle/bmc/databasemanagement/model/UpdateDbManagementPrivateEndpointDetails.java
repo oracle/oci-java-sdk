@@ -93,7 +93,7 @@ public class UpdateDbManagementPrivateEndpointDetails {
     String description;
 
     /**
-     * The OCIDs of the network security groups that the private endpoint belongs to.
+     * The OCIDs of the Network Security Groups to which the Database Management private endpoint belongs.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")

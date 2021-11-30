@@ -105,14 +105,13 @@ public class WorkRequestLogEntry {
     String workRequestId;
 
     /**
-     * Human-readable log message.
+     * A human-readable log message.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("message")
     String message;
 
     /**
-     * The time the log message was written.
-     * An RFC3339 formatted datetime string. The precision for the time object is milliseconds.
+     * The date and time the log message was written, described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339). The precision for the time object is in milliseconds.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timestamp")

@@ -5,7 +5,7 @@
 package com.oracle.bmc.devops.model;
 
 /**
- * Object containing information about files and directories in a repository
+ * Object containing information about files and directories in a repository.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -142,37 +142,37 @@ public class RepositoryPathSummary {
     }
 
     /**
-     * File or Directory
+     * File or directory.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     String type;
 
     /**
-     * Size of file or directory
+     * Size of file or directory.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sizeInBytes")
     Long sizeInBytes;
 
     /**
-     * Name of file or directory
+     * Name of file or directory.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     String name;
 
     /**
-     * Path to file or directory in a repository
+     * Path to file or directory in a repository.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("path")
     String path;
 
     /**
-     * SHA-1 checksum of blob or tree
+     * SHA-1 checksum of blob or tree.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sha")
     String sha;
 
     /**
-     * The giturl of the submodule
+     * The git URL of the submodule.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("submoduleGitUrl")
     String submoduleGitUrl;

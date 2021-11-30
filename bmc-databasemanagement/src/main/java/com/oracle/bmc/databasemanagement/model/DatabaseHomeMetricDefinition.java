@@ -73,6 +73,36 @@ public class DatabaseHomeMetricDefinition {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("cpuUtilizationAggregateMetrics")
+        private CpuUtilizationAggregateMetrics cpuUtilizationAggregateMetrics;
+
+        public Builder cpuUtilizationAggregateMetrics(
+                CpuUtilizationAggregateMetrics cpuUtilizationAggregateMetrics) {
+            this.cpuUtilizationAggregateMetrics = cpuUtilizationAggregateMetrics;
+            this.__explicitlySet__.add("cpuUtilizationAggregateMetrics");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("statementsAggregateMetrics")
+        private StatementsAggregateMetrics statementsAggregateMetrics;
+
+        public Builder statementsAggregateMetrics(
+                StatementsAggregateMetrics statementsAggregateMetrics) {
+            this.statementsAggregateMetrics = statementsAggregateMetrics;
+            this.__explicitlySet__.add("statementsAggregateMetrics");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("failedConnectionsAggregateMetrics")
+        private FailedConnectionsAggregateMetrics failedConnectionsAggregateMetrics;
+
+        public Builder failedConnectionsAggregateMetrics(
+                FailedConnectionsAggregateMetrics failedConnectionsAggregateMetrics) {
+            this.failedConnectionsAggregateMetrics = failedConnectionsAggregateMetrics;
+            this.__explicitlySet__.add("failedConnectionsAggregateMetrics");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -83,7 +113,10 @@ public class DatabaseHomeMetricDefinition {
                             dbTimeAggregateMetrics,
                             ioAggregateMetrics,
                             memoryAggregateMetrics,
-                            dbStorageAggregateMetrics);
+                            dbStorageAggregateMetrics,
+                            cpuUtilizationAggregateMetrics,
+                            statementsAggregateMetrics,
+                            failedConnectionsAggregateMetrics);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -95,7 +128,11 @@ public class DatabaseHomeMetricDefinition {
                             .dbTimeAggregateMetrics(o.getDbTimeAggregateMetrics())
                             .ioAggregateMetrics(o.getIoAggregateMetrics())
                             .memoryAggregateMetrics(o.getMemoryAggregateMetrics())
-                            .dbStorageAggregateMetrics(o.getDbStorageAggregateMetrics());
+                            .dbStorageAggregateMetrics(o.getDbStorageAggregateMetrics())
+                            .cpuUtilizationAggregateMetrics(o.getCpuUtilizationAggregateMetrics())
+                            .statementsAggregateMetrics(o.getStatementsAggregateMetrics())
+                            .failedConnectionsAggregateMetrics(
+                                    o.getFailedConnectionsAggregateMetrics());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -126,6 +163,15 @@ public class DatabaseHomeMetricDefinition {
 
     @com.fasterxml.jackson.annotation.JsonProperty("dbStorageAggregateMetrics")
     DatabaseStorageAggregateMetrics dbStorageAggregateMetrics;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("cpuUtilizationAggregateMetrics")
+    CpuUtilizationAggregateMetrics cpuUtilizationAggregateMetrics;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("statementsAggregateMetrics")
+    StatementsAggregateMetrics statementsAggregateMetrics;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("failedConnectionsAggregateMetrics")
+    FailedConnectionsAggregateMetrics failedConnectionsAggregateMetrics;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

@@ -3125,6 +3125,47 @@ public class IdentityAsyncClient implements IdentityAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<GetStandardTagTemplateResponse> getStandardTagTemplate(
+            GetStandardTagTemplateRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetStandardTagTemplateRequest, GetStandardTagTemplateResponse>
+                    handler) {
+        LOG.trace("Called async getStandardTagTemplate");
+        final GetStandardTagTemplateRequest interceptedRequest =
+                GetStandardTagTemplateConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetStandardTagTemplateConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, GetStandardTagTemplateResponse>
+                transformer = GetStandardTagTemplateConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        GetStandardTagTemplateRequest, GetStandardTagTemplateResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetStandardTagTemplateRequest, GetStandardTagTemplateResponse>,
+                        java.util.concurrent.Future<GetStandardTagTemplateResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetStandardTagTemplateRequest, GetStandardTagTemplateResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<GetTagResponse> getTag(
             GetTagRequest request,
             final com.oracle.bmc.responses.AsyncHandler<GetTagRequest, GetTagResponse> handler) {
@@ -3460,6 +3501,51 @@ public class IdentityAsyncClient implements IdentityAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     GetWorkRequestRequest, GetWorkRequestResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ImportStandardTagsResponse> importStandardTags(
+            ImportStandardTagsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ImportStandardTagsRequest, ImportStandardTagsResponse>
+                    handler) {
+        LOG.trace("Called async importStandardTags");
+        final ImportStandardTagsRequest interceptedRequest =
+                ImportStandardTagsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ImportStandardTagsConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<javax.ws.rs.core.Response, ImportStandardTagsResponse>
+                transformer = ImportStandardTagsConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+
+        com.oracle.bmc.responses.AsyncHandler<ImportStandardTagsRequest, ImportStandardTagsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ImportStandardTagsRequest, ImportStandardTagsResponse>,
+                        java.util.concurrent.Future<ImportStandardTagsResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getImportStandardTagsDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ImportStandardTagsRequest, ImportStandardTagsResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -4513,6 +4599,48 @@ public class IdentityAsyncClient implements IdentityAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     ListSmtpCredentialsRequest, ListSmtpCredentialsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListStandardTagNamespacesResponse> listStandardTagNamespaces(
+            ListStandardTagNamespacesRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListStandardTagNamespacesRequest, ListStandardTagNamespacesResponse>
+                    handler) {
+        LOG.trace("Called async listStandardTagNamespaces");
+        final ListStandardTagNamespacesRequest interceptedRequest =
+                ListStandardTagNamespacesConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListStandardTagNamespacesConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ListStandardTagNamespacesResponse>
+                transformer = ListStandardTagNamespacesConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListStandardTagNamespacesRequest, ListStandardTagNamespacesResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListStandardTagNamespacesRequest,
+                                ListStandardTagNamespacesResponse>,
+                        java.util.concurrent.Future<ListStandardTagNamespacesResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListStandardTagNamespacesRequest, ListStandardTagNamespacesResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,

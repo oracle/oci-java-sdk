@@ -5,7 +5,7 @@
 package com.oracle.bmc.devops.model;
 
 /**
- * The information about new BuildRun.
+ * Information about the new build run.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -120,13 +120,13 @@ public class CreateBuildRunDetails {
     }
 
     /**
-     * BuildRun identifier which can be renamed and is not necessarily unique
+     * Build run display name, which can be renamed and is not necessarily unique. Avoid entering confidential information.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     String displayName;
 
     /**
-     * Pipeline Identifier
+     * The OCID of the build pipeline.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("buildPipelineId")
     String buildPipelineId;

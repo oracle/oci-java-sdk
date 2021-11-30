@@ -20,12 +20,12 @@ import com.oracle.bmc.devops.model.*;
 public class GetObjectContentRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * unique Repository identifier.
+     * Unique repository identifier.
      */
     private String repositoryId;
 
     /**
-     * The SHA of a blob or tree
+     * The SHA of a blob or tree.
      */
     private String sha;
 

@@ -5,7 +5,7 @@
 package com.oracle.bmc.devops.model;
 
 /**
- * Details of UIM Artifact delivered via DeliverArtifactStage.
+ * Details of the generic artifacts delivered through the Deliver Artifacts stage.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -146,7 +146,7 @@ public class GenericDeliveredArtifact extends DeliveredArtifact {
     String artifactRepositoryId;
 
     /**
-     * The OCID of the artifact pushed by the DeliverArtifactStage
+     * The OCID of the artifact pushed by the Deliver Artifacts stage.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("deliveredArtifactId")
     String deliveredArtifactId;

@@ -21,7 +21,7 @@ public class ListApmDomainWorkRequestsRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * OCID of the APM Domain
+     * The OCID of the APM domain
      */
     private String apmDomainId;
 
@@ -29,6 +29,16 @@ public class ListApmDomainWorkRequestsRequest
      * The client request ID for tracing.
      */
     private String opcRequestId;
+
+    /**
+     * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+     */
+    private String page;
+
+    /**
+     * The maximum number of items to return.
+     */
+    private Integer limit;
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -67,6 +77,8 @@ public class ListApmDomainWorkRequestsRequest
         public Builder copy(ListApmDomainWorkRequestsRequest o) {
             apmDomainId(o.getApmDomainId());
             opcRequestId(o.getOpcRequestId());
+            page(o.getPage());
+            limit(o.getLimit());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;

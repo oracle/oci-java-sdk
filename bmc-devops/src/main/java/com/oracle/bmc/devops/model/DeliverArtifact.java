@@ -5,7 +5,7 @@
 package com.oracle.bmc.devops.model;
 
 /**
- * Artifact info that need to be pushed to the artifactory stores.
+ * Artifact information that need to be pushed to the artifactory stores.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -68,13 +68,13 @@ public class DeliverArtifact {
     }
 
     /**
-     * Name of the artifact specified in the build_spec.yml file.
+     * Name of the artifact specified in the build_spec.yaml file.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("artifactName")
     String artifactName;
 
     /**
-     * Artifact Identifier which contains the Artifact Definition.
+     * Artifact identifier that contains the artifact definition.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("artifactId")
     String artifactId;

@@ -476,7 +476,7 @@ public class Tablespace {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     String name;
     /**
-     * The type of the tablespace.
+     * The type of tablespace.
      **/
     public enum Type {
         Undo("UNDO"),
@@ -513,7 +513,7 @@ public class Tablespace {
         }
     };
     /**
-     * The type of the tablespace.
+     * The type of tablespace.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     Type type;
@@ -560,7 +560,7 @@ public class Tablespace {
     Status status;
 
     /**
-     * The tablespace block size in bytes.
+     * The tablespace block size.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("blockSizeBytes")
     java.math.BigDecimal blockSizeBytes;
@@ -917,7 +917,7 @@ public class Tablespace {
     @com.fasterxml.jackson.annotation.JsonProperty("compressFor")
     CompressFor compressFor;
     /**
-     * Indicates whether the In-Memory Column Store (IM column store) is by default enabled or disabled for tables in this tablespace.
+     * Indicates whether the In-Memory Column Store (IM column store) is by default enabled or disabled for tables in the tablespace.
      **/
     public enum DefaultInMemory {
         Enabled("ENABLED"),
@@ -952,12 +952,12 @@ public class Tablespace {
         }
     };
     /**
-     * Indicates whether the In-Memory Column Store (IM column store) is by default enabled or disabled for tables in this tablespace.
+     * Indicates whether the In-Memory Column Store (IM column store) is by default enabled or disabled for tables in the tablespace.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("defaultInMemory")
     DefaultInMemory defaultInMemory;
     /**
-     * Indicates the default priority for In-Memory Column Store (IM column store) population for this tablespace.
+     * Indicates the default priority for In-Memory Column Store (IM column store) population for the tablespace.
      **/
     public enum DefaultInMemoryPriority {
         Low("LOW"),
@@ -995,12 +995,12 @@ public class Tablespace {
         }
     };
     /**
-     * Indicates the default priority for In-Memory Column Store (IM column store) population for this tablespace.
+     * Indicates the default priority for In-Memory Column Store (IM column store) population for the tablespace.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("defaultInMemoryPriority")
     DefaultInMemoryPriority defaultInMemoryPriority;
     /**
-     * Indicates how the IM column store is distributed by default for this tablespace in an Oracle Real Application Clusters (Oracle RAC) environment.
+     * Indicates how the IM column store is distributed by default for the tablespace in an Oracle Real Application Clusters (Oracle RAC) environment.
      **/
     public enum DefaultInMemoryDistribute {
         Auto("AUTO"),
@@ -1037,12 +1037,12 @@ public class Tablespace {
         }
     };
     /**
-     * Indicates how the IM column store is distributed by default for this tablespace in an Oracle Real Application Clusters (Oracle RAC) environment.
+     * Indicates how the IM column store is distributed by default for the tablespace in an Oracle Real Application Clusters (Oracle RAC) environment.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("defaultInMemoryDistribute")
     DefaultInMemoryDistribute defaultInMemoryDistribute;
     /**
-     * Indicates the default compression level for the IM column store for this tablespace.
+     * Indicates the default compression level for the IM column store for the tablespace.
      **/
     public enum DefaultInMemoryCompression {
         NoMemcompress("NO_MEMCOMPRESS"),
@@ -1081,7 +1081,7 @@ public class Tablespace {
         }
     };
     /**
-     * Indicates the default compression level for the IM column store for this tablespace.
+     * Indicates the default compression level for the IM column store for the tablespace.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("defaultInMemoryCompression")
     DefaultInMemoryCompression defaultInMemoryCompression;
@@ -1254,7 +1254,7 @@ public class Tablespace {
     @com.fasterxml.jackson.annotation.JsonProperty("defaultCellMemory")
     String defaultCellMemory;
     /**
-     * Indicates how the IM column store is populated on various instances by default for this tablespace.
+     * Indicates how the IM column store is populated on various instances by default for the tablespace.
      **/
     public enum DefaultInMemoryService {
         Default("DEFAULT"),
@@ -1291,13 +1291,13 @@ public class Tablespace {
         }
     };
     /**
-     * Indicates how the IM column store is populated on various instances by default for this tablespace.
+     * Indicates how the IM column store is populated on various instances by default for the tablespace.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("defaultInMemoryService")
     DefaultInMemoryService defaultInMemoryService;
 
     /**
-     * Indicates the service name for the service on which the IM column store should be populated by default for this tablespace. This column has a value only when the corresponding DEF_INMEMORY_SERVICE is USER_DEFINED. In all other cases, this column is null.
+     * Indicates the service name for the service on which the IM column store should be populated by default for the tablespace. This column has a value only when the corresponding DEF_INMEMORY_SERVICE is USER_DEFINED. In all other cases, this column is null.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("defaultInMemoryServiceName")
     String defaultInMemoryServiceName;
@@ -1356,7 +1356,7 @@ public class Tablespace {
     String tempGroup;
 
     /**
-     * The maximum tablespace size in KB. If the tablespace contains any datafiles with Autoextend enabled, then this column displays the amount of underlying free storage space for the tablespace. For example, if the current tablespace size is 1 GB, the combined maximum size of all its datafiles is 32 GB, and its underlying storage (for example, ASM or file system storage) has 20 GB of free space, then this column will have a value of approximately 20 GB. If the tablespace contains only datafiles with autoextend disabled, then this column displays the allocated space for the entire tablespace, that is, the combined size of all datafiles in the tablespace.
+     * The maximum tablespace size in KB. If the tablespace contains any data files with Autoextend enabled, then this column displays the amount of underlying free storage space for the tablespace. For example, if the current tablespace size is 1 GB, the combined maximum size of all its data files is 32 GB, and its underlying storage (for example, ASM or file system storage) has 20 GB of free space, then this column will have a value of approximately 20 GB. If the tablespace contains only data files with autoextend disabled, then this column displays the allocated space for the entire tablespace, that is, the combined size of all data files in the tablespace.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("maxSizeKB")
     java.math.BigDecimal maxSizeKB;
@@ -1374,7 +1374,7 @@ public class Tablespace {
     java.math.BigDecimal userSizeKB;
 
     /**
-     * The free space available in this tablespace in KB.
+     * The free space available in the tablespace in KB.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeSpaceKB")
     java.math.BigDecimal freeSpaceKB;
@@ -1398,7 +1398,7 @@ public class Tablespace {
     Double usedPercentAllocated;
 
     /**
-     * A list of the datafiles associated with the tablespace.
+     * A list of the data files associated with the tablespace.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("datafiles")
     java.util.List<Datafile> datafiles;

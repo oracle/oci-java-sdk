@@ -31,6 +31,123 @@ public class ApmDomainPaginators {
     private final ApmDomain client;
 
     /**
+     * Creates a new iterable which will iterate over the responses received from the listApmDomainWorkRequests operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListApmDomainWorkRequestsResponse> listApmDomainWorkRequestsResponseIterator(
+            final ListApmDomainWorkRequestsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListApmDomainWorkRequestsRequest.Builder, ListApmDomainWorkRequestsRequest,
+                ListApmDomainWorkRequestsResponse>(
+                new com.google.common.base.Supplier<ListApmDomainWorkRequestsRequest.Builder>() {
+                    @Override
+                    public ListApmDomainWorkRequestsRequest.Builder get() {
+                        return ListApmDomainWorkRequestsRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListApmDomainWorkRequestsResponse, String>() {
+                    @Override
+                    public String apply(ListApmDomainWorkRequestsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListApmDomainWorkRequestsRequest.Builder>,
+                        ListApmDomainWorkRequestsRequest>() {
+                    @Override
+                    public ListApmDomainWorkRequestsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListApmDomainWorkRequestsRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListApmDomainWorkRequestsRequest, ListApmDomainWorkRequestsResponse>() {
+                    @Override
+                    public ListApmDomainWorkRequestsResponse apply(
+                            ListApmDomainWorkRequestsRequest request) {
+                        return client.listApmDomainWorkRequests(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.apmcontrolplane.model.WorkRequest} objects
+     * contained in responses from the listApmDomainWorkRequests operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.apmcontrolplane.model.WorkRequest} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.apmcontrolplane.model.WorkRequest>
+            listApmDomainWorkRequestsRecordIterator(
+                    final ListApmDomainWorkRequestsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListApmDomainWorkRequestsRequest.Builder, ListApmDomainWorkRequestsRequest,
+                ListApmDomainWorkRequestsResponse,
+                com.oracle.bmc.apmcontrolplane.model.WorkRequest>(
+                new com.google.common.base.Supplier<ListApmDomainWorkRequestsRequest.Builder>() {
+                    @Override
+                    public ListApmDomainWorkRequestsRequest.Builder get() {
+                        return ListApmDomainWorkRequestsRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListApmDomainWorkRequestsResponse, String>() {
+                    @Override
+                    public String apply(ListApmDomainWorkRequestsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListApmDomainWorkRequestsRequest.Builder>,
+                        ListApmDomainWorkRequestsRequest>() {
+                    @Override
+                    public ListApmDomainWorkRequestsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListApmDomainWorkRequestsRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListApmDomainWorkRequestsRequest, ListApmDomainWorkRequestsResponse>() {
+                    @Override
+                    public ListApmDomainWorkRequestsResponse apply(
+                            ListApmDomainWorkRequestsRequest request) {
+                        return client.listApmDomainWorkRequests(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListApmDomainWorkRequestsResponse,
+                        java.util.List<com.oracle.bmc.apmcontrolplane.model.WorkRequest>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.apmcontrolplane.model.WorkRequest> apply(
+                            ListApmDomainWorkRequestsResponse response) {
+                        return response.getItems();
+                    }
+                });
+    }
+
+    /**
      * Creates a new iterable which will iterate over the responses received from the listApmDomains operation. This iterable
      * will fetch more data from the server as needed.
      *

@@ -20,7 +20,7 @@ import com.oracle.bmc.devops.model.*;
 public class GetFileDiffRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * unique Repository identifier.
+     * Unique repository identifier.
      */
     private String repositoryId;
 
@@ -30,17 +30,17 @@ public class GetFileDiffRequest extends com.oracle.bmc.requests.BmcRequest<java.
     private String filePath;
 
     /**
-     * The branch to compare changes against
+     * The branch to compare changes against.
      */
     private String baseVersion;
 
     /**
-     * The branch where changes are coming from
+     * The branch where changes are coming from.
      */
     private String targetVersion;
 
     /**
-     * boolean for whether to use merge base or most recent revision
+     * Boolean to indicate whether to use merge base or most recent revision.
      */
     private Boolean isComparisonFromMergeBase;
 

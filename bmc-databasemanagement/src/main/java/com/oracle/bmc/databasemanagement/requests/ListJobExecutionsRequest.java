@@ -60,12 +60,12 @@ public class ListJobExecutionsRequest extends com.oracle.bmc.requests.BmcRequest
     private String name;
 
     /**
-     * The maximum number of records returned in paginated response.
+     * The maximum number of records returned in the paginated response.
      */
     private Integer limit;
 
     /**
-     * The page token representing the page, from where the next set of paginated results
+     * The page token representing the page from where the next set of paginated results
      * are retrieved. This is usually retrieved from a previous list call.
      *
      */

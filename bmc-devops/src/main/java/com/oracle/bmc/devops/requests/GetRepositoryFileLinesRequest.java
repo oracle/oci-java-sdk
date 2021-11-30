@@ -21,7 +21,7 @@ public class GetRepositoryFileLinesRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * unique Repository identifier.
+     * Unique repository identifier.
      */
     private String repositoryId;
 
@@ -31,12 +31,12 @@ public class GetRepositoryFileLinesRequest
     private String filePath;
 
     /**
-     * Retrive file lines from specific revision.
+     * Retrieve file lines from specific revision.
      */
     private String revision;
 
     /**
-     * Line number from where to start returning file lines. 1 indexed.
+     * Line number from where to start returning file lines.
      */
     private Integer startLineNumber;
 

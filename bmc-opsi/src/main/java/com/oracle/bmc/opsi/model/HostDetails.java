@@ -33,6 +33,15 @@ public class HostDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
+        private String compartmentId;
+
+        public Builder compartmentId(String compartmentId) {
+            this.compartmentId = compartmentId;
+            this.__explicitlySet__.add("compartmentId");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("hostName")
         private String hostName;
 
@@ -74,7 +83,13 @@ public class HostDetails {
 
         public HostDetails build() {
             HostDetails __instance__ =
-                    new HostDetails(id, hostName, hostDisplayName, platformType, agentIdentifier);
+                    new HostDetails(
+                            id,
+                            compartmentId,
+                            hostName,
+                            hostDisplayName,
+                            platformType,
+                            agentIdentifier);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -83,6 +98,7 @@ public class HostDetails {
         public Builder copy(HostDetails o) {
             Builder copiedBuilder =
                     id(o.getId())
+                            .compartmentId(o.getCompartmentId())
                             .hostName(o.getHostName())
                             .hostDisplayName(o.getHostDisplayName())
                             .platformType(o.getPlatformType())
@@ -105,6 +121,12 @@ public class HostDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     String id;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
+    String compartmentId;
 
     /**
      * The host name. The host name is unique amongst the hosts managed by the same management agent.

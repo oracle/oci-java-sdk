@@ -131,25 +131,25 @@ public class UpdateRepositoryDetails {
     }
 
     /**
-     * Repository Identifier
+     * Unique name of a repository.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     String name;
 
     /**
-     * The description of this repository. Avoid entering confidential information
+     * Details of the repository. Avoid entering confidential information.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     String description;
 
     /**
-     * The default branch of the repository
+     * The default branch of the repository.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("defaultBranch")
     String defaultBranch;
 
     /**
-     * Type of repository
+     * Type of repository.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("repositoryType")
     Repository.RepositoryType repositoryType;

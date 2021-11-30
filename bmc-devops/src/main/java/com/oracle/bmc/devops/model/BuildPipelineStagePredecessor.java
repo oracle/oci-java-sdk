@@ -61,7 +61,7 @@ public class BuildPipelineStagePredecessor {
     }
 
     /**
-     * The id of the predecessor stage. If a stages is the first stage in the pipeline, then the id is the pipeline's id.
+     * The ID of the predecessor stage. If a stage is the first stage in the pipeline, then the ID is the pipeline's ID.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     String id;

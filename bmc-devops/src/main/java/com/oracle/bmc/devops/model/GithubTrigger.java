@@ -5,7 +5,7 @@
 package com.oracle.bmc.devops.model;
 
 /**
- * Trigger specific to Github
+ * Trigger specific to GitHub.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -245,7 +245,7 @@ public class GithubTrigger extends Trigger {
     }
 
     /**
-     * The endpoint which listens to Trigger events
+     * The endpoint that listens to trigger events.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("triggerUrl")
     String triggerUrl;

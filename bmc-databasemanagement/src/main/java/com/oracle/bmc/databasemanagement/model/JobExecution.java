@@ -114,6 +114,15 @@ public class JobExecution {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("workloadType")
+        private WorkloadType workloadType;
+
+        public Builder workloadType(WorkloadType workloadType) {
+            this.workloadType = workloadType;
+            this.__explicitlySet__.add("workloadType");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("jobId")
         private String jobId;
 
@@ -229,6 +238,7 @@ public class JobExecution {
                             databaseSubType,
                             deploymentType,
                             isCluster,
+                            workloadType,
                             jobId,
                             jobName,
                             jobRunId,
@@ -257,6 +267,7 @@ public class JobExecution {
                             .databaseSubType(o.getDatabaseSubType())
                             .deploymentType(o.getDeploymentType())
                             .isCluster(o.getIsCluster())
+                            .workloadType(o.getWorkloadType())
                             .jobId(o.getJobId())
                             .jobName(o.getJobName())
                             .jobRunId(o.getJobRunId())
@@ -340,6 +351,12 @@ public class JobExecution {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isCluster")
     Boolean isCluster;
+
+    /**
+     * The workload type of the Autonomous Database.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("workloadType")
+    WorkloadType workloadType;
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the parent job.

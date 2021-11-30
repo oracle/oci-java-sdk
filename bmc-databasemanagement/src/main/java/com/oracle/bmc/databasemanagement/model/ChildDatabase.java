@@ -60,6 +60,15 @@ public class ChildDatabase {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("workloadType")
+        private WorkloadType workloadType;
+
+        public Builder workloadType(WorkloadType workloadType) {
+            this.workloadType = workloadType;
+            this.__explicitlySet__.add("workloadType");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("databaseType")
         private DatabaseType databaseType;
 
@@ -97,6 +106,7 @@ public class ChildDatabase {
                             name,
                             compartmentId,
                             deploymentType,
+                            workloadType,
                             databaseType,
                             databaseSubType,
                             timeAdded);
@@ -111,6 +121,7 @@ public class ChildDatabase {
                             .name(o.getName())
                             .compartmentId(o.getCompartmentId())
                             .deploymentType(o.getDeploymentType())
+                            .workloadType(o.getWorkloadType())
                             .databaseType(o.getDatabaseType())
                             .databaseSubType(o.getDatabaseSubType())
                             .timeAdded(o.getTimeAdded());
@@ -152,13 +163,21 @@ public class ChildDatabase {
     DeploymentType deploymentType;
 
     /**
+     * The workload type of the Autonomous Database.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("workloadType")
+    WorkloadType workloadType;
+
+    /**
      * The type of Oracle Database installation.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("databaseType")
     DatabaseType databaseType;
 
     /**
-     * The subtype of the Oracle Database. Indicates whether the database is a Container Database, Pluggable Database, or a Non-container Database.
+     * The subtype of the Oracle Database. Indicates whether the database is a Container Database,
+     * Pluggable Database, Non-container Database, Autonomous Database, or Autonomous Container Database.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("databaseSubType")
     DatabaseSubType databaseSubType;

@@ -5,7 +5,7 @@
 package com.oracle.bmc.devops.model;
 
 /**
- * Summary of the Repository.
+ * Summary of the repository.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -275,55 +275,55 @@ public class RepositorySummary {
     String name;
 
     /**
-     * The OCID of the repository's Compartment.
+     * The OCID of the repository's compartment.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     String compartmentId;
 
     /**
-     * The OCID of the Project containing the repository.
+     * The OCID of the DevOps project containing the repository.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("projectId")
     String projectId;
 
     /**
-     * Tenancy unique namespace. This value is fetched from Project Service
+     * Tenancy unique namespace.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("namespace")
     String namespace;
 
     /**
-     * Unique name of a project in a namespace. This value is fetched from Project Service
+     * Unique project name in a namespace.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("projectName")
     String projectName;
 
     /**
-     * The description of this repository. Avoid entering confidential information
+     * Details of the repository. Avoid entering confidential information.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     String description;
 
     /**
-     * The default branch of the repository
+     * The default branch of the repository.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("defaultBranch")
     String defaultBranch;
 
     /**
-     * Type of repository
+     * Type of repository.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("repositoryType")
     Repository.RepositoryType repositoryType;
 
     /**
-     * ssh url user utilized to git clone, pull and push
+     * SSH URL that you use to git clone, pull and push.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sshUrl")
     String sshUrl;
 
     /**
-     * http url user utilized to git clone, pull and push
+     * HTTP URL that you use to git clone, pull and push.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("httpUrl")
     String httpUrl;
@@ -332,19 +332,19 @@ public class RepositorySummary {
     MirrorRepositoryConfig mirrorRepositoryConfig;
 
     /**
-     * The time the the Repository was created. An RFC3339 formatted datetime string
+     * The time the repository was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     java.util.Date timeCreated;
 
     /**
-     * The time the Repository was updated. An RFC3339 formatted datetime string
+     * The time the repository was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     java.util.Date timeUpdated;
 
     /**
-     * The current state of the Repository.
+     * The current state of the repository.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     Repository.LifecycleState lifecycleState;

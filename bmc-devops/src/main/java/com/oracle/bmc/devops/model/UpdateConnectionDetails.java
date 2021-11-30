@@ -42,13 +42,13 @@ package com.oracle.bmc.devops.model;
 public class UpdateConnectionDetails {
 
     /**
-     * Optional description about the Connection
+     * Optional description about the connection.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     String description;
 
     /**
-     * Optional Connection display name
+     * Optional connection display name. Avoid entering confidential information.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     String displayName;

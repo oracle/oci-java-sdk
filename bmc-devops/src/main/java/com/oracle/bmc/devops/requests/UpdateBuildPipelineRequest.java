@@ -22,7 +22,7 @@ public class UpdateBuildPipelineRequest
                 com.oracle.bmc.devops.model.UpdateBuildPipelineDetails> {
 
     /**
-     * unique BuildPipeline identifier
+     * Unique build pipeline identifier.
      */
     private String buildPipelineId;
 

@@ -84,6 +84,16 @@ public class DatabaseInstanceHomeMetricsDefinition {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("cpuUtilizationAggregateMetrics")
+        private CpuUtilizationAggregateMetrics cpuUtilizationAggregateMetrics;
+
+        public Builder cpuUtilizationAggregateMetrics(
+                CpuUtilizationAggregateMetrics cpuUtilizationAggregateMetrics) {
+            this.cpuUtilizationAggregateMetrics = cpuUtilizationAggregateMetrics;
+            this.__explicitlySet__.add("cpuUtilizationAggregateMetrics");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -95,7 +105,8 @@ public class DatabaseInstanceHomeMetricsDefinition {
                             activityTimeSeriesMetrics,
                             dbTimeAggregateMetrics,
                             ioAggregateMetrics,
-                            memoryAggregateMetrics);
+                            memoryAggregateMetrics,
+                            cpuUtilizationAggregateMetrics);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -108,7 +119,8 @@ public class DatabaseInstanceHomeMetricsDefinition {
                             .activityTimeSeriesMetrics(o.getActivityTimeSeriesMetrics())
                             .dbTimeAggregateMetrics(o.getDbTimeAggregateMetrics())
                             .ioAggregateMetrics(o.getIoAggregateMetrics())
-                            .memoryAggregateMetrics(o.getMemoryAggregateMetrics());
+                            .memoryAggregateMetrics(o.getMemoryAggregateMetrics())
+                            .cpuUtilizationAggregateMetrics(o.getCpuUtilizationAggregateMetrics());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -155,6 +167,9 @@ public class DatabaseInstanceHomeMetricsDefinition {
 
     @com.fasterxml.jackson.annotation.JsonProperty("memoryAggregateMetrics")
     MemoryAggregateMetrics memoryAggregateMetrics;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("cpuUtilizationAggregateMetrics")
+    CpuUtilizationAggregateMetrics cpuUtilizationAggregateMetrics;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

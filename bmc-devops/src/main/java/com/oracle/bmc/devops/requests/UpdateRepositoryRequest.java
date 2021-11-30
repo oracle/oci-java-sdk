@@ -22,7 +22,7 @@ public class UpdateRepositoryRequest
                 com.oracle.bmc.devops.model.UpdateRepositoryDetails> {
 
     /**
-     * unique Repository identifier.
+     * Unique repository identifier.
      */
     private String repositoryId;
 

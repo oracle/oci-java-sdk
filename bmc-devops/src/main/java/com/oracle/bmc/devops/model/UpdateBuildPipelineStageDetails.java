@@ -49,13 +49,13 @@ package com.oracle.bmc.devops.model;
 public class UpdateBuildPipelineStageDetails {
 
     /**
-     * Stage identifier which can be renamed and is not necessarily unique
+     * Stage display name, which can be renamed and is not necessarily unique. Avoid entering confidential information.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     String displayName;
 
     /**
-     * Optional description about the BuildStage
+     * Optional description about the build stage.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     String description;

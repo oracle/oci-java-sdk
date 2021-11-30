@@ -5,7 +5,7 @@
 package com.oracle.bmc.devops.model;
 
 /**
- * Specifies the Run details for Build Stage.
+ * Specifies the run details for Build stage.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -341,7 +341,7 @@ public class BuildStageRunProgress extends BuildPipelineStageRunProgress {
     String primaryBuildSource;
 
     /**
-     * The details about all the steps in a Build Stage
+     * The details about all the steps in a Build stage
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("steps")
     java.util.List<BuildStageRunStep> steps;

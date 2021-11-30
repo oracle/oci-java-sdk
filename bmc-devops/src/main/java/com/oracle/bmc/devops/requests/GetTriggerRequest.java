@@ -20,7 +20,7 @@ import com.oracle.bmc.devops.model.*;
 public class GetTriggerRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * unique Trigger identifier
+     * Unique trigger identifier.
      */
     private String triggerId;
 

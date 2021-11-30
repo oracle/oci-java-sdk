@@ -20,7 +20,7 @@ public class GetWorkRequestResponse extends com.oracle.bmc.responses.BmcResponse
     private String opcRequestId;
 
     /**
-     * some decimal number representing the number of seconds the client should wait before polling this endpoint again
+     * A decimal number representing the number of seconds the client should wait before polling this work request again
      */
     private Float retryAfter;
 

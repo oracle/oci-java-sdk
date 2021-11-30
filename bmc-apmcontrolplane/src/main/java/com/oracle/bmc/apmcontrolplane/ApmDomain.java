@@ -8,8 +8,8 @@ import com.oracle.bmc.apmcontrolplane.requests.*;
 import com.oracle.bmc.apmcontrolplane.responses.*;
 
 /**
- * Provide a set of APIs for tenant to perform operations like create, update, delete and list APM domains, and also
- * work request APIs to monitor progress of these operations.
+ * Use the Application Performance Monitoring Control Plane API to perform operations such as creating, updating,
+ * deleting and listing APM domains and monitoring the progress of these operations using the work request APIs.
  *
  * This service client uses CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER for all the operations by default if no circuit breaker configuration is defined by the user.
  */
@@ -49,7 +49,7 @@ public interface ApmDomain extends AutoCloseable {
     void setRegion(String regionId);
 
     /**
-     * Moves a APM Domain into a different compartment. When provided, If-Match is checked against ETag values of the resource.
+     * Moves an APM domain into a different compartment. When provided, If-Match is checked against ETag values of the APM domain.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -62,7 +62,7 @@ public interface ApmDomain extends AutoCloseable {
             ChangeApmDomainCompartmentRequest request);
 
     /**
-     * Creates a new APM Domain.
+     * Creates a new APM domain.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -75,9 +75,9 @@ public interface ApmDomain extends AutoCloseable {
     CreateApmDomainResponse createApmDomain(CreateApmDomainRequest request);
 
     /**
-     * Delete the specified APM domain asynchronously. The APM domain is placed in the 'Deleting' state and will stop
+     * Deletes the specified APM domain asynchronously. The APM domain is placed in the 'Deleting' state and will stop
      * accepting any operation requests. All resources associated with the APM domain are eventually recovered. Use the
-     * returned work request to track the progress of the background activity to complete deleting the domain.
+     * returned work request ID to track the progress of the background activity to complete deleting the APM domain.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -104,7 +104,7 @@ public interface ApmDomain extends AutoCloseable {
     GenerateDataKeysResponse generateDataKeys(GenerateDataKeysRequest request);
 
     /**
-     * Gets details of APM Domain by identifier
+     * Gets the details of the APM domain specified by OCID.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -128,7 +128,7 @@ public interface ApmDomain extends AutoCloseable {
     GetWorkRequestResponse getWorkRequest(GetWorkRequestRequest request);
 
     /**
-     * Returns a (paginated) list of work requests related to a specific APM Domain.
+     * Returns a (paginated) list of work requests related to a specific APM domain.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -142,7 +142,7 @@ public interface ApmDomain extends AutoCloseable {
             ListApmDomainWorkRequestsRequest request);
 
     /**
-     * Lists all APM Domains for the specified tenant compartment.
+     * Lists all APM domains for the specified tenant compartment.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -155,7 +155,7 @@ public interface ApmDomain extends AutoCloseable {
     ListApmDomainsResponse listApmDomains(ListApmDomainsRequest request);
 
     /**
-     * Lists all Data Keys for the specified APM Domain. The caller may filter the list by specifying the 'dataKeyType'
+     * Lists all Data Keys for the specified APM domain. The caller may filter the list by specifying the 'dataKeyType'
      * query parameter.
      *
      * @param request The request object containing the details to send
@@ -169,7 +169,7 @@ public interface ApmDomain extends AutoCloseable {
     ListDataKeysResponse listDataKeys(ListDataKeysRequest request);
 
     /**
-     * Return a (paginated) list of errors for a given work request.
+     * Returns a (paginated) list of errors for a given work request.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -182,7 +182,7 @@ public interface ApmDomain extends AutoCloseable {
     ListWorkRequestErrorsResponse listWorkRequestErrors(ListWorkRequestErrorsRequest request);
 
     /**
-     * Return a (paginated) list of logs for a given work request.
+     * Returns a (paginated) list of logs for a given work request.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -222,7 +222,7 @@ public interface ApmDomain extends AutoCloseable {
     RemoveDataKeysResponse removeDataKeys(RemoveDataKeysRequest request);
 
     /**
-     * Update the APM domain when it is ready and active.
+     * Updates the APM domain.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.

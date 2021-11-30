@@ -20,7 +20,7 @@ import com.oracle.bmc.devops.model.*;
 public class ListMirrorRecordsRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * unique Repository identifier.
+     * Unique repository identifier.
      */
     private String repositoryId;
 

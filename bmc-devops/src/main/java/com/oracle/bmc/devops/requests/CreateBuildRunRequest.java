@@ -22,7 +22,7 @@ public class CreateBuildRunRequest
                 com.oracle.bmc.devops.model.CreateBuildRunDetails> {
 
     /**
-     * Details the input parameters required to create a new build run.
+     * Parameter details required to create a new build run.
      */
     private com.oracle.bmc.devops.model.CreateBuildRunDetails createBuildRunDetails;
 

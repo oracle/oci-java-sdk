@@ -125,7 +125,7 @@ public class DiffChunk {
     Integer targetSpan;
 
     /**
-     * List of DiffSection.
+     * List of difference section.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("diffSections")
     java.util.List<DiffSection> diffSections;

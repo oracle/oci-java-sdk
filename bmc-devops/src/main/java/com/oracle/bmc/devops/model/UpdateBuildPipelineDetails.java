@@ -5,7 +5,7 @@
 package com.oracle.bmc.devops.model;
 
 /**
- * The information to be updated for the given BuildPipeline.
+ * The information to be updated for the given build pipeline.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -110,13 +110,13 @@ public class UpdateBuildPipelineDetails {
     }
 
     /**
-     * Optional description about the BuildPipeline
+     * Optional description about the build pipeline.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     String description;
 
     /**
-     * BuildPipeline display name
+     * Build pipeline display name. Avoid entering confidential information.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     String displayName;

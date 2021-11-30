@@ -8,7 +8,7 @@ import com.oracle.bmc.devops.requests.*;
 import com.oracle.bmc.devops.responses.*;
 
 /**
- * Use the DevOps APIs to create a DevOps project to group the pipelines,  add reference to target deployment environments, add artifacts to deploy,  and create deployment pipelines needed to deploy your software.
+ * Use the DevOps API to create DevOps projects, configure code repositories,  add artifacts to deploy, build and test software applications, configure  target deployment environments, and deploy software applications.  For more information, see [DevOps](https://docs.cloud.oracle.com/Content/devops/using/home.htm).
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210630")
 public interface DevopsAsync extends AutoCloseable {
@@ -62,7 +62,7 @@ public interface DevopsAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Cancels the Build Run based on build run id provided in request
+     * Cancels the build run based on the build run ID provided in the request.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -108,7 +108,7 @@ public interface DevopsAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Creates a new BuildPipeline.
+     * Creates a new build pipeline.
      *
      *
      * @param request The request object containing the details to send
@@ -125,7 +125,7 @@ public interface DevopsAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Creates a new Stage.
+     * Creates a new stage.
      *
      *
      * @param request The request object containing the details to send
@@ -142,7 +142,7 @@ public interface DevopsAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Starts a build pipeline run for a predefined build pipeline
+     * Starts a build pipeline run for a predefined build pipeline.
      *
      *
      * @param request The request object containing the details to send
@@ -158,7 +158,7 @@ public interface DevopsAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Creates a new Connection.
+     * Creates a new connection.
      *
      *
      * @param request The request object containing the details to send
@@ -268,7 +268,7 @@ public interface DevopsAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Creates a new Repository.
+     * Creates a new repository.
      *
      *
      * @param request The request object containing the details to send
@@ -284,7 +284,7 @@ public interface DevopsAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Creates a new Trigger.
+     * Creates a new trigger.
      *
      *
      * @param request The request object containing the details to send
@@ -300,7 +300,7 @@ public interface DevopsAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Deletes a BuildPipeline resource by identifier
+     * Deletes a build pipeline resource by identifier.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -316,7 +316,7 @@ public interface DevopsAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Deletes a Stage based on stage id provided in request
+     * Deletes a stage based on the stage ID provided in the request.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -332,7 +332,7 @@ public interface DevopsAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Deletes a Connection resource by identifier
+     * Deletes a connection resource by identifier.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -440,7 +440,7 @@ public interface DevopsAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<DeleteRefRequest, DeleteRefResponse> handler);
 
     /**
-     * Deletes a Repository resource by identifier
+     * Deletes a repository resource by identifier.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -455,7 +455,7 @@ public interface DevopsAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Deletes a Trigger resource by identifier
+     * Deletes a trigger resource by identifier.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -470,7 +470,7 @@ public interface DevopsAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets a BuildPipeline by identifier
+     * Retrieves a build pipeline by identifier.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -485,7 +485,7 @@ public interface DevopsAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets a Stage based on the stage id provided in request
+     * Retrieves a stage based on the stage ID provided in the request.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -501,7 +501,7 @@ public interface DevopsAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Returns the details of a build exection for a given build run id.
+     * Returns the details of a build run for a given build run ID.
      *
      *
      * @param request The request object containing the details to send
@@ -516,7 +516,7 @@ public interface DevopsAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<GetBuildRunRequest, GetBuildRunResponse> handler);
 
     /**
-     * Gets a Repository's Commit by commitId
+     * Retrieves a repository's commit by commit ID.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -530,7 +530,7 @@ public interface DevopsAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<GetCommitRequest, GetCommitResponse> handler);
 
     /**
-     * Compares two revisions for their differences. Supports comparison between two refs or commits.
+     * Compares two revisions for their differences. Supports comparison between two references or commits.
      *
      *
      * @param request The request object containing the details to send
@@ -546,7 +546,7 @@ public interface DevopsAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets a Connection by identifier
+     * Retrieves a connection by identifier.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -654,7 +654,7 @@ public interface DevopsAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<GetFileDiffRequest, GetFileDiffResponse> handler);
 
     /**
-     * Returns either current mirror record or last successful mirror record for a specific mirror repository
+     * Returns either current mirror record or last successful mirror record for a specific mirror repository.
      *
      *
      * @param request The request object containing the details to send
@@ -670,7 +670,7 @@ public interface DevopsAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Get blob of specific branch name/commit id and file path
+     * Retrieves blob of specific branch name/commit ID and file path.
      *
      *
      * @param request The request object containing the details to send
@@ -685,7 +685,7 @@ public interface DevopsAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<GetObjectRequest, GetObjectResponse> handler);
 
     /**
-     * Get contents of a specified Object
+     * Retrieve contents of a specified object.
      *
      *
      * @param request The request object containing the details to send
@@ -715,7 +715,7 @@ public interface DevopsAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<GetProjectRequest, GetProjectResponse> handler);
 
     /**
-     * Gets a Repository's Ref by its name with preference for branches over tags if the name is ambiguous. Can be disambiguated by using full names like \"heads/<name>\" or \"tags/<name>\".
+     * Retrieves a repository's reference by its name with preference for branches over tags if the name is ambiguous. This can be disambiguated by using full names like \"heads/<name>\" or \"tags/<name>\".
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -729,7 +729,7 @@ public interface DevopsAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<GetRefRequest, GetRefResponse> handler);
 
     /**
-     * Gets a Repository by identifier
+     * Retrieves a repository by identifier.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -744,7 +744,7 @@ public interface DevopsAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Return the archived repository information
+     * Returns the archived repository information.
      *
      *
      * @param request The request object containing the details to send
@@ -761,7 +761,7 @@ public interface DevopsAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Get lines of a specified file. Supports starting line number and limit.
+     * Retrieve lines of a specified file. Supports starting line number and limit.
      *
      *
      * @param request The request object containing the details to send
@@ -778,7 +778,7 @@ public interface DevopsAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets a Trigger by identifier
+     * Retrieves a trigger by identifier.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -807,7 +807,7 @@ public interface DevopsAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Get a list of all the authors
+     * Retrieve a list of all the authors.
      *
      *
      * @param request The request object containing the details to send
@@ -822,7 +822,7 @@ public interface DevopsAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<ListAuthorsRequest, ListAuthorsResponse> handler);
 
     /**
-     * Returns summary of list of all Stages in a compartment or buildPipeline
+     * Returns a list of all stages in a compartment or build pipeline.
      *
      *
      * @param request The request object containing the details to send
@@ -839,7 +839,7 @@ public interface DevopsAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Returns a list of BuildPipelines.
+     * Returns a list of build pipelines.
      *
      *
      * @param request The request object containing the details to send
@@ -856,7 +856,7 @@ public interface DevopsAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Returns a list of build runs summary.
+     * Returns a list of build run summary.
      *
      *
      * @param request The request object containing the details to send
@@ -872,7 +872,7 @@ public interface DevopsAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Compares two revisions and lists the differences. Supports comparison between two refs or commits.
+     * Compares two revisions and lists the differences. Supports comparison between two references or commits.
      *
      *
      * @param request The request object containing the details to send
@@ -888,7 +888,7 @@ public interface DevopsAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Returns a list of Commits.
+     * Returns a list of commits.
      *
      *
      * @param request The request object containing the details to send
@@ -903,7 +903,7 @@ public interface DevopsAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<ListCommitsRequest, ListCommitsResponse> handler);
 
     /**
-     * Returns a list of Connections.
+     * Returns a list of connections.
      *
      *
      * @param request The request object containing the details to send
@@ -997,7 +997,7 @@ public interface DevopsAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Returns a list of mirror entry in history within 30 days
+     * Returns a list of mirror entry in history within 30 days.
      *
      *
      * @param request The request object containing the details to send
@@ -1014,7 +1014,7 @@ public interface DevopsAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Fetches a list of files and directories in a repository.
+     * Retrieves a list of files and directories in a repository.
      *
      *
      * @param request The request object containing the details to send
@@ -1044,7 +1044,7 @@ public interface DevopsAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Returns a list of Refs.
+     * Returns a list of references.
      *
      *
      * @param request The request object containing the details to send
@@ -1059,7 +1059,7 @@ public interface DevopsAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<ListRefsRequest, ListRefsResponse> handler);
 
     /**
-     * Returns a list of Repositories given a compartmentId or a projectId.
+     * Returns a list of repositories given a compartment ID or a project ID.
      *
      *
      * @param request The request object containing the details to send
@@ -1075,7 +1075,7 @@ public interface DevopsAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Returns a list of Triggers.
+     * Returns a list of triggers.
      *
      *
      * @param request The request object containing the details to send
@@ -1138,7 +1138,7 @@ public interface DevopsAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Synchronize a mirrored repository to the latest version from external providers
+     * Synchronize a mirrored repository to the latest version from external providers.
      *
      *
      * @param request The request object containing the details to send
@@ -1154,7 +1154,7 @@ public interface DevopsAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Creates a new Ref or updates an existing one.
+     * Creates a new reference or updates an existing one.
      *
      *
      * @param request The request object containing the details to send
@@ -1170,7 +1170,7 @@ public interface DevopsAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Updates the BuildPipeline
+     * Updates the build pipeline.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -1186,7 +1186,7 @@ public interface DevopsAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Updates the Stage based on the stage id provided in request
+     * Updates the stage based on the stage ID provided in the request.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -1202,7 +1202,7 @@ public interface DevopsAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Updates the BuildRun
+     * Updates the build run.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -1217,7 +1217,7 @@ public interface DevopsAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Updates the Connection
+     * Updates the connection.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -1326,7 +1326,7 @@ public interface DevopsAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Updates the Repository
+     * Updates the repository.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -1341,7 +1341,7 @@ public interface DevopsAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Updates the Trigger
+     * Updates the trigger.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.

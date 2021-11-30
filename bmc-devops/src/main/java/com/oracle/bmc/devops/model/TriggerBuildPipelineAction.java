@@ -5,7 +5,7 @@
 package com.oracle.bmc.devops.model;
 
 /**
- * The action to trigger a build pipeline
+ * The action to trigger a build pipeline.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -83,7 +83,7 @@ public class TriggerBuildPipelineAction extends TriggerAction {
     }
 
     /**
-     * The id of the build pipeline to be triggered
+     * The OCID of the build pipeline to be triggered.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("buildPipelineId")
     String buildPipelineId;

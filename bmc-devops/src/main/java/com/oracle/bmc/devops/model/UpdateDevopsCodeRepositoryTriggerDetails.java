@@ -5,7 +5,7 @@
 package com.oracle.bmc.devops.model;
 
 /**
- * Update Trigger specific to OCI Devops Repository
+ * Update trigger specific to OCI DevOps code repository.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -138,7 +138,7 @@ public class UpdateDevopsCodeRepositoryTriggerDetails extends UpdateTriggerDetai
     }
 
     /**
-     * The Devops Code Repository Id
+     * The OCID of the DevOps code repository.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("repositoryId")
     String repositoryId;

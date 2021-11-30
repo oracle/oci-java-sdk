@@ -209,7 +209,7 @@ public interface DbManagementAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Deletes the specified Database Management private endpoint.
+     * Deletes a specific Database Management private endpoint.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -347,7 +347,7 @@ public interface DbManagementAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets the details of the specified Database Management private endpoint.
+     * Gets the details of a specific Database Management private endpoint.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -445,9 +445,10 @@ public interface DbManagementAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets a summary of the resource usage metrics like DB Time, CPU, User I/O, Wait, Storage, and Memory
-     * for each Pdb under specified Container database in same compartment as container database.
-     * If comparmentId is provided then for each Pdb under specified compartmentId.
+     * Gets a summary of the resource usage metrics such as CPU, User I/O, and Storage for each
+     * PDB within a specific CDB. If comparmentId is specified, then the metrics for
+     * each PDB (within the CDB) in the specified compartment are retrieved.
+     * If compartmentId is not specified, then the metrics for all the PDBs within the CDB are retrieved.
      *
      *
      * @param request The request object containing the details to send
@@ -463,7 +464,22 @@ public interface DbManagementAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets information of the work request with the given Work Request Id.
+     * Gets the details of a specific user for the specified managedDatabaseId and userName.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetUserResponse> getUser(
+            GetUserRequest request,
+            com.oracle.bmc.responses.AsyncHandler<GetUserRequest, GetUserResponse> handler);
+
+    /**
+     * Gets the status of the work request with the given Work Request ID
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -478,7 +494,7 @@ public interface DbManagementAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets the list of Databases using the specified Database Management private endpoint.
+     * Gets the list of databases using a specific Database Management private endpoint.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -524,6 +540,38 @@ public interface DbManagementAsync extends AutoCloseable {
     java.util.concurrent.Future<ListAwrDbsResponse> listAwrDbs(
             ListAwrDbsRequest request,
             com.oracle.bmc.responses.AsyncHandler<ListAwrDbsRequest, ListAwrDbsResponse> handler);
+
+    /**
+     * Gets the list of Consumer Group Privileges granted for the specified user.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListConsumerGroupPrivilegesResponse> listConsumerGroupPrivileges(
+            ListConsumerGroupPrivilegesRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListConsumerGroupPrivilegesRequest, ListConsumerGroupPrivilegesResponse>
+                    handler);
+
+    /**
+     * Gets the list of Containers if it does not apply to all containers for the specified user.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListDataAccessContainersResponse> listDataAccessContainers(
+            ListDataAccessContainersRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListDataAccessContainersRequest, ListDataAccessContainersResponse>
+                    handler);
 
     /**
      * Gets the list of database parameters for the specified Managed Database. The parameters are listed in alphabetical order, along with their current values.
@@ -660,6 +708,83 @@ public interface DbManagementAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Gets the list of Object Privileges granted for the specified user.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListObjectPrivilegesResponse> listObjectPrivileges(
+            ListObjectPrivilegesRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListObjectPrivilegesRequest, ListObjectPrivilegesResponse>
+                    handler);
+
+    /**
+     * Gets the list of Users for which the current user acts as proxy.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListProxiedForUsersResponse> listProxiedForUsers(
+            ListProxiedForUsersRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListProxiedForUsersRequest, ListProxiedForUsersResponse>
+                    handler);
+
+    /**
+     * Gets the list of proxy users for the current User.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListProxyUsersResponse> listProxyUsers(
+            ListProxyUsersRequest request,
+            com.oracle.bmc.responses.AsyncHandler<ListProxyUsersRequest, ListProxyUsersResponse>
+                    handler);
+
+    /**
+     * Gets the list of roles granted for the specified user.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListRolesResponse> listRoles(
+            ListRolesRequest request,
+            com.oracle.bmc.responses.AsyncHandler<ListRolesRequest, ListRolesResponse> handler);
+
+    /**
+     * Gets the list of System Privileges granted for the specified user.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListSystemPrivilegesResponse> listSystemPrivileges(
+            ListSystemPrivilegesRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListSystemPrivilegesRequest, ListSystemPrivilegesResponse>
+                    handler);
+
+    /**
      * Gets the list of tablespaces for the specified managedDatabaseId.
      *
      * @param request The request object containing the details to send
@@ -675,7 +800,21 @@ public interface DbManagementAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Returns a (paginated) list of errors for a given work request.
+     * Gets the list of users for the specified managedDatabaseId.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListUsersResponse> listUsers(
+            ListUsersRequest request,
+            com.oracle.bmc.responses.AsyncHandler<ListUsersRequest, ListUsersResponse> handler);
+
+    /**
+     * Returns a paginated list of errors for a given work request.
      *
      *
      * @param request The request object containing the details to send
@@ -692,7 +831,7 @@ public interface DbManagementAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Returns a (paginated) list of logs for a given work request.
+     * Returns a paginated list of logs for a given work request.
      *
      *
      * @param request The request object containing the details to send
@@ -709,7 +848,7 @@ public interface DbManagementAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Lists all the work requests in the specified compartment.
+     * The list of work requests in a specific compartment was retrieved successfully.
      *
      *
      * @param request The request object containing the details to send
@@ -954,7 +1093,7 @@ public interface DbManagementAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Updates one or more attributes of the specified Database Management private endpoint.
+     * Updates one or more attributes of a specific Database Management private endpoint.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.

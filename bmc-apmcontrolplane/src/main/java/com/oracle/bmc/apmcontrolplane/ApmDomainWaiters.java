@@ -111,7 +111,8 @@ public class ApmDomainWaiters {
                                         response.getApmDomain().getLifecycleState());
                             }
                         },
-                        false),
+                        targetStatesSet.contains(
+                                com.oracle.bmc.apmcontrolplane.model.LifecycleStates.Deleted)),
                 request);
     }
 

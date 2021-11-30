@@ -5,7 +5,7 @@
 package com.oracle.bmc.devops.model;
 
 /**
- * Specifies wait criteria for wait stage.
+ * Specifies wait criteria for the Wait stage.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -37,7 +37,7 @@ package com.oracle.bmc.devops.model;
 public class UpdateWaitCriteriaDetails {
 
     /**
-     * wait criteria sub type
+     * Wait criteria type.
      **/
     public enum WaitType {
         AbsoluteWait("ABSOLUTE_WAIT"),

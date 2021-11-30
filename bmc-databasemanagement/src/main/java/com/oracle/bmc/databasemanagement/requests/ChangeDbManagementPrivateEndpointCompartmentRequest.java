@@ -28,7 +28,7 @@ public class ChangeDbManagementPrivateEndpointCompartmentRequest
     private String dbManagementPrivateEndpointId;
 
     /**
-     * The details used to change the compartment of a Database Management private endpoint.
+     * The details used to move the Database Management private endpoint to another compartment.
      */
     private com.oracle.bmc.databasemanagement.model
                     .ChangeDbManagementPrivateEndpointCompartmentDetails
