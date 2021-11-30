@@ -5,7 +5,7 @@
 package com.oracle.bmc.apmcontrolplane.model;
 
 /**
- * The information about new APM Domain.
+ * The information about the new APM domain.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -120,19 +120,19 @@ public class CreateApmDomainDetails {
     }
 
     /**
-     * Display name of the APM Domain
+     * Display name of the APM domain.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     String displayName;
 
     /**
-     * Description of the APM Domain
+     * Description of the APM domain.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     String description;
 
     /**
-     * The OCID of the compartment corresponding to the APM Domain.
+     * The OCID of the compartment corresponding to the APM domain.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     String compartmentId;

@@ -20,7 +20,7 @@ import com.oracle.bmc.devops.model.*;
 public class DeleteBuildPipelineRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * unique BuildPipeline identifier
+     * Unique build pipeline identifier.
      */
     private String buildPipelineId;
 

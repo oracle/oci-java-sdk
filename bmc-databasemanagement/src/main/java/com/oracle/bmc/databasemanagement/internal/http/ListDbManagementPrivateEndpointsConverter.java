@@ -58,6 +58,14 @@ public class ListDbManagementPrivateEndpointsConverter {
                                     request.getVcnId()));
         }
 
+        if (request.getIsCluster() != null) {
+            target =
+                    target.queryParam(
+                            "isCluster",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getIsCluster()));
+        }
+
         if (request.getLifecycleState() != null) {
             target =
                     target.queryParam(

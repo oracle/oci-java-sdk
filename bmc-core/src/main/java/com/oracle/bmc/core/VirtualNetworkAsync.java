@@ -1982,6 +1982,24 @@ public interface VirtualNetworkAsync extends AutoCloseable {
                     handler);
 
     /**
+     * The allowed parameters for IKE IPSec
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetAllowedIkeIPSecParametersResponse> getAllowedIkeIPSecParameters(
+            GetAllowedIkeIPSecParametersRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetAllowedIkeIPSecParametersRequest,
+                            GetAllowedIkeIPSecParametersResponse>
+                    handler);
+
+    /**
      * Gets the `ByoipRange` resource. You must specify the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      *
      *
@@ -2348,6 +2366,25 @@ public interface VirtualNetworkAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<
                             GetIPSecConnectionTunnelRequest, GetIPSecConnectionTunnelResponse>
                     handler);
+
+    /**
+     * Get the identified error for the specified IPSec Tunnel ID.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetIPSecConnectionTunnelErrorResponse>
+            getIPSecConnectionTunnelError(
+                    GetIPSecConnectionTunnelErrorRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    GetIPSecConnectionTunnelErrorRequest,
+                                    GetIPSecConnectionTunnelErrorResponse>
+                            handler);
 
     /**
      * Gets the specified tunnel's shared secret (pre-shared key). To get other information
@@ -3258,6 +3295,44 @@ public interface VirtualNetworkAsync extends AutoCloseable {
                     com.oracle.bmc.responses.AsyncHandler<
                                     ListFastConnectProviderVirtualCircuitBandwidthShapesRequest,
                                     ListFastConnectProviderVirtualCircuitBandwidthShapesResponse>
+                            handler);
+
+    /**
+     * The routes advertised to the Customer and the routes received from the Customer.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListIPSecConnectionTunnelRoutesResponse>
+            listIPSecConnectionTunnelRoutes(
+                    ListIPSecConnectionTunnelRoutesRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ListIPSecConnectionTunnelRoutesRequest,
+                                    ListIPSecConnectionTunnelRoutesResponse>
+                            handler);
+
+    /**
+     * Lists the tunnel Security Associations information for the specified IPSec Tunnel ID.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListIPSecConnectionTunnelSecurityAssociationsResponse>
+            listIPSecConnectionTunnelSecurityAssociations(
+                    ListIPSecConnectionTunnelSecurityAssociationsRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ListIPSecConnectionTunnelSecurityAssociationsRequest,
+                                    ListIPSecConnectionTunnelSecurityAssociationsResponse>
                             handler);
 
     /**

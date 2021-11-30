@@ -5,7 +5,7 @@
 package com.oracle.bmc.databasemanagement.model;
 
 /**
- * Lists all work requests in a given compartment. Contains WorkRequestSummary items.
+ * Lists all work requests in a specific compartment. This contains WorkRequestSummary items.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -62,7 +62,7 @@ public class WorkRequestCollection {
     }
 
     /**
-     * Collection of work requests
+     * A collection of work requests.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     java.util.List<WorkRequestSummary> items;

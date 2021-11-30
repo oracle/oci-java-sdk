@@ -20,7 +20,7 @@ import com.oracle.bmc.apmcontrolplane.model.*;
 public class ListDataKeysRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * OCID of the APM Domain
+     * The OCID of the APM domain
      */
     private String apmDomainId;
 

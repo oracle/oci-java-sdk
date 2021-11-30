@@ -20,17 +20,17 @@ import com.oracle.bmc.devops.model.*;
 public class ListRefsRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * unique Repository identifier.
+     * Unique repository identifier.
      */
     private String repositoryId;
 
     /**
-     * Ref type to distinguish between branch and tag. If it is not specified, return all refs.
+     * Reference type to distinguish between branch and tag. If it is not specified, all references are returned.
      */
     private RefType refType;
 
     /**
-     * Ref type to distinguish between branch and tag. If it is not specified, return all refs.
+     * Reference type to distinguish between branch and tag. If it is not specified, all references are returned.
      **/
     public enum RefType {
         Branch("BRANCH"),
@@ -65,7 +65,7 @@ public class ListRefsRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
         }
     };
     /**
-     * Commit id in a repository
+     * Commit ID in a repository.
      */
     private String commitId;
 
@@ -80,7 +80,7 @@ public class ListRefsRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
     private String page;
 
     /**
-     * A filter to return only resources that match the given Ref name.
+     * A filter to return only resources that match the given reference name.
      */
     private String refName;
 
@@ -90,13 +90,13 @@ public class ListRefsRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
     private com.oracle.bmc.devops.model.SortOrder sortOrder;
 
     /**
-     * The field to sort by. Only one sort order may be provided. Default order for refName is ascending. Default order for refType is ascending. If no value is specified refName is default.
+     * The field to sort by. Only one sort order may be provided. Default order for reference name is ascending. Default order for reference type is ascending. If no value is specified reference name is default.
      *
      */
     private SortBy sortBy;
 
     /**
-     * The field to sort by. Only one sort order may be provided. Default order for refName is ascending. Default order for refType is ascending. If no value is specified refName is default.
+     * The field to sort by. Only one sort order may be provided. Default order for reference name is ascending. Default order for reference type is ascending. If no value is specified reference name is default.
      *
      **/
     public enum SortBy {

@@ -5,7 +5,7 @@
 package com.oracle.bmc.databasemanagement.model;
 
 /**
- * A description of workrequest status
+ * A description of the work request status.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -156,53 +156,52 @@ public class WorkRequest {
     String id;
 
     /**
-     * The ocid of the compartment that contains the work request. Work requests should be scoped to
-     * the same compartment as the resource the work request affects. If the work request affects multiple resources,
-     * and those resources are not in the same compartment, it is up to the service team to pick the primary
-     * resource whose compartment should be used.
+     * The OCID of the compartment that contains the work request. Work requests should be scoped to
+     * the same compartment as the resource the work request affects. If the work request affects multiple resources that are not in the same compartment,
+     * then the system picks the primary resource whose compartment should be used.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     String compartmentId;
 
     /**
-     * Type of the work request
+     * The type of work request.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("operationType")
     WorkRequestOperationType operationType;
 
     /**
-     * Status of current work request.
+     * The status of the current work request.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     WorkRequestStatus status;
 
     /**
-     * Percentage of the request completed.
+     * The completed percentage of the operation tracked by the work request.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("percentComplete")
     Float percentComplete;
 
     /**
-     * The date and time the request was created, as described in
-     * [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
-     * The precision for this time object is milliseconds.
+     * The date and time the work request was accepted, as described in
+     * [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+     * The precision for this time object in milliseconds.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeAccepted")
     java.util.Date timeAccepted;
 
     /**
-     * The date and time the request was started, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339),
-     * section 14.29. The precision for this time object is milliseconds.
+     * The date and time the work request transitioned from ACCEPTED to IN_PROGRESS, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+     * The precision for this time object is in milliseconds.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
     java.util.Date timeStarted;
 
     /**
-     * The date and time the object was finished, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
-     * The precision for this time object is milliseconds.
+     * The date and time the work request reached a terminal state, either FAILED or SUCCEEDED, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+     * The precision for this time object is in milliseconds.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeFinished")

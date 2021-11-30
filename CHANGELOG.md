@@ -3,6 +3,26 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
+## 2.11.0 - 2021-11-30
+### Added
+- Support for SQL Tuning Advisor in the Database Management service
+- Support for listing users and getting user details in the Database Management service
+- Support for autonomous databases in the Database Management service
+- Support for enabling and disabling Database Management features on autonomous databases in the Database service
+- Support for the Solaris platform in the Management Agent Cloud service
+- Support for cross-compartment operations in the Operations Insights service
+- Support for listing deployment backups in the GoldenGate service
+- Support for standard tags in the Identity service
+- Support for viewing problems for deleted targets in the Cloud Guard service
+- Support for choosing a platform version while creating a platform instance in the Blockchain Platform service
+- Support for custom IPSec connection tunnel internet key exchange phase 1 and phase 2 encryption algorithms in the Networking service
+- Support for pagination when listing work requests corresponding to an APM domain in the Application Performance Monitoring service
+- Support for the "deleted" lifecycle state on APM domains in the Application Performance Monitoring service
+- Support for calling Oracle Cloud Infrastructure services in the eu-milan-1 and me-abudhabi-1 regions
+
+### Breaking Changes
+- Support for retries enabled by default in all operations of the DevOps, Build, and Source Code Management services. This support is not added on the async clients.
+
 ## 2.10.0 - 2021-11-17
 ### Added
 - Support for getting subnet topology in the Networking service
@@ -10,7 +30,9 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 - Support for performance and high availability, as well as recommendation metrics, in the Optimizer service
 - Support for optional TDE wallet passwords in the Database service
 - Support for Object Storage service integration in the Big Data service
-- Support for circuit breakers enabled by default in all services except Streaming and Compute
+
+### Breaking Changes
+- Support for circuit breakers enabled by default in all services except Streaming and Compute. This support is not added on the async clients
 - Support for retries enabled by default in all operations of the Functions and Roving Edge services, and in some operations of the Streaming service. This support is not added on the async clients
 
 ## 2.9.0 - 2021-11-09

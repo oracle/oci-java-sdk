@@ -5,7 +5,7 @@
 package com.oracle.bmc.devops.model;
 
 /**
- * The information about new Stage.
+ * The information about a new stage.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -49,19 +49,19 @@ package com.oracle.bmc.devops.model;
 public class CreateBuildPipelineStageDetails {
 
     /**
-     * Stage identifier which can be renamed and is not necessarily unique
+     * Stage display name, which can be renamed and is not necessarily unique. Avoid entering confidential information.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     String displayName;
 
     /**
-     * Optional description about the Stage
+     * Optional description about the stage.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     String description;
 
     /**
-     * buildPipeline Identifier
+     * The OCID of the build pipeline.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("buildPipelineId")
     String buildPipelineId;

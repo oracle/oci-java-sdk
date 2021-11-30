@@ -5,8 +5,8 @@
 package com.oracle.bmc.devops.model;
 
 /**
- * A single step in a BuildPipeline. A stage takes a specific designated action. There are
- * many types of stages. For eg. {@code Build} stage, {@code Deliver Artifact} Stage.
+ * A single node in a build pipeline. A stage takes a specific designated action.
+ * There are many types of stages such as 'Build' and 'Deliver Artifacts'.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -45,54 +45,54 @@ package com.oracle.bmc.devops.model;
 public class BuildPipelineStage {
 
     /**
-     * Unique identifier that is immutable on creation
+     * Unique identifier that is immutable on creation.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     String id;
 
     /**
-     * Stage identifier which can be renamed and is not necessarily unique
+     * Stage display name, which can be renamed and is not necessarily unique. Avoid entering confidential information.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     String displayName;
 
     /**
-     * Optional description about the BuildStage
+     * Optional description about the build stage.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     String description;
 
     /**
-     * Project Identifier
+     * The OCID of the DevOps project.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("projectId")
     String projectId;
 
     /**
-     * Build Pipeline Identifier
+     * The OCID of the build pipeline.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("buildPipelineId")
     String buildPipelineId;
 
     /**
-     * Compartment Identifier
+     * The OCID of the compartment where the pipeline is created.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     String compartmentId;
 
     /**
-     * The time at which the Stage was created. An RFC3339 formatted datetime string
+     * The time the stage was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     java.util.Date timeCreated;
 
     /**
-     * The time at which the Stage was updated. An RFC3339 formatted datetime string
+     * The time the stage was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     java.util.Date timeUpdated;
     /**
-     * The current state of the Stage.
+     * The current state of the stage.
      *
      **/
     @lombok.extern.slf4j.Slf4j
@@ -143,7 +143,7 @@ public class BuildPipelineStage {
         }
     };
     /**
-     * The current state of the Stage.
+     * The current state of the stage.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
@@ -177,8 +177,7 @@ public class BuildPipelineStage {
     java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
     /**
-     * List of stage types. It includes 'Wait stage', 'Build Stage', 'Deliver Artifact Stage'
-     * and 'Trigger Deployment Stage'.
+     * Defines the stage type, which is one of the following: Build, Deliver Artifacts, Wait, and Trigger Deployment.
      *
      **/
     @lombok.extern.slf4j.Slf4j

@@ -5,7 +5,7 @@
 package com.oracle.bmc.devops.model;
 
 /**
- * Specifies an array of Artifacts that need to be pushed to the artifactory stores.
+ * Specifies an array of artifacts that need to be pushed to the artifactory stores.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -61,7 +61,7 @@ public class DeliverArtifactCollection {
     }
 
     /**
-     * Collection of Artifacts that were generated in the Build Stage and need to be pushed to the artifactory stores. In case of UPDATE operation, replaces existing artifacts list. Merging with existing artifacts is not supported.
+     * Collection of artifacts that were generated in the Build stage and need to be pushed to the artifactory stores. In case of UPDATE operation, replaces existing artifacts list. Merging with existing artifacts is not supported.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     java.util.List<DeliverArtifact> items;

@@ -5,7 +5,7 @@
 package com.oracle.bmc.devops.model;
 
 /**
- * Attributes to filter Github events
+ * Attributes to filter GitHub events.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -70,13 +70,13 @@ public class GithubFilterAttributes {
     }
 
     /**
-     * Branch for push event; source branch for pull requests
+     * Branch for push event; source branch for pull requests.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("headRef")
     String headRef;
 
     /**
-     * The target branch for pull requests; not applicable for push
+     * The target branch for pull requests; not applicable for push requests.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("baseRef")
     String baseRef;

@@ -13,6 +13,7 @@ public enum ProblemLifecycleDetail {
     Open("OPEN"),
     Resolved("RESOLVED"),
     Dismissed("DISMISSED"),
+    Deleted("DELETED"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this

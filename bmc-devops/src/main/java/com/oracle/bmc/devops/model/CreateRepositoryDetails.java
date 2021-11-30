@@ -5,7 +5,7 @@
 package com.oracle.bmc.devops.model;
 
 /**
- * The information about new Repository.
+ * Information about the new repository.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -148,7 +148,7 @@ public class CreateRepositoryDetails {
     String name;
 
     /**
-     * The OCID of the Project containing the repository.
+     * The OCID of the DevOps project containing the repository.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("projectId")
     String projectId;
@@ -160,7 +160,7 @@ public class CreateRepositoryDetails {
     String defaultBranch;
 
     /**
-     * Type of repository
+     * Type of repository.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("repositoryType")
     Repository.RepositoryType repositoryType;
@@ -169,7 +169,7 @@ public class CreateRepositoryDetails {
     MirrorRepositoryConfig mirrorRepositoryConfig;
 
     /**
-     * The description of this repository. Avoid entering confidential information
+     * Details of the repository. Avoid entering confidential information.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     String description;

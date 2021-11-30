@@ -20,22 +20,22 @@ import com.oracle.bmc.devops.model.*;
 public class GetMirrorRecordRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * unique Repository identifier.
+     * Unique repository identifier.
      */
     private String repositoryId;
 
     /**
-     * The field of mirror record type. Only one mirror record type may be provided.
+     * The field of mirror record type. Only one mirror record type can be provided:
      * current - The current mirror record.
-     * lastSuccessful - The last successful mirror record
+     * lastSuccessful - The last successful mirror record.
      *
      */
     private MirrorRecordType mirrorRecordType;
 
     /**
-     * The field of mirror record type. Only one mirror record type may be provided.
+     * The field of mirror record type. Only one mirror record type can be provided:
      * current - The current mirror record.
-     * lastSuccessful - The last successful mirror record
+     * lastSuccessful - The last successful mirror record.
      *
      **/
     public enum MirrorRecordType {

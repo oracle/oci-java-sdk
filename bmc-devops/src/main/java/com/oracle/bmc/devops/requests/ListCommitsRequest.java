@@ -20,17 +20,17 @@ import com.oracle.bmc.devops.model.*;
 public class ListCommitsRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * unique Repository identifier.
+     * Unique repository identifier.
      */
     private String repositoryId;
 
     /**
-     * A filter to return only resources that match the given Ref name.
+     * A filter to return only resources that match the given reference name.
      */
     private String refName;
 
     /**
-     * A filter to exclude commits that match the given Ref name.
+     * A filter to exclude commits that match the given reference name.
      */
     private String excludeRefName;
 

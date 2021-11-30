@@ -89,6 +89,15 @@ public class BlockchainPlatform {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("platformVersion")
+        private String platformVersion;
+
+        public Builder platformVersion(String platformVersion) {
+            this.platformVersion = platformVersion;
+            this.__explicitlySet__.add("platformVersion");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("serviceVersion")
         private String serviceVersion;
 
@@ -257,6 +266,7 @@ public class BlockchainPlatform {
                             isByol,
                             timeCreated,
                             timeUpdated,
+                            platformVersion,
                             serviceVersion,
                             platformRole,
                             computeShape,
@@ -288,6 +298,7 @@ public class BlockchainPlatform {
                             .isByol(o.getIsByol())
                             .timeCreated(o.getTimeCreated())
                             .timeUpdated(o.getTimeUpdated())
+                            .platformVersion(o.getPlatformVersion())
                             .serviceVersion(o.getServiceVersion())
                             .platformRole(o.getPlatformRole())
                             .computeShape(o.getComputeShape())
@@ -359,6 +370,12 @@ public class BlockchainPlatform {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     java.util.Date timeUpdated;
+
+    /**
+     * Platform Version
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("platformVersion")
+    String platformVersion;
 
     /**
      * The version of the Platform Instance.

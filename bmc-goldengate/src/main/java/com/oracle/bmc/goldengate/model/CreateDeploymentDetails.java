@@ -313,7 +313,8 @@ public class CreateDeploymentDetails {
     Boolean isAutoScalingEnabled;
 
     /**
-     * The deployment type.
+     * The type of deployment, the value determines the exact 'type' of service executed in the Deployment. NOTE: Use of the value OGG is maintained for backward compatibility purposes.  Its use is discouraged
+     *       in favor of the equivalent DATABASE_ORACLE value.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("deploymentType")

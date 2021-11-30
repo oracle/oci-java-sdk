@@ -36,17 +36,23 @@ public class ListDbManagementPrivateEndpointsRequest
     private String vcnId;
 
     /**
+     * The option to filter Database Management private endpoints that can used for Oracle Databases in a cluster. This should be used along with the vcnId query parameter.
+     *
+     */
+    private Boolean isCluster;
+
+    /**
      * The lifecycle state of a resource.
      */
     private com.oracle.bmc.databasemanagement.model.LifecycleStates lifecycleState;
 
     /**
-     * The maximum number of records returned in paginated response.
+     * The maximum number of records returned in the paginated response.
      */
     private Integer limit;
 
     /**
-     * The page token representing the page, from where the next set of paginated results
+     * The page token representing the page from where the next set of paginated results
      * are retrieved. This is usually retrieved from a previous list call.
      *
      */
@@ -146,6 +152,7 @@ public class ListDbManagementPrivateEndpointsRequest
             compartmentId(o.getCompartmentId());
             name(o.getName());
             vcnId(o.getVcnId());
+            isCluster(o.getIsCluster());
             lifecycleState(o.getLifecycleState());
             limit(o.getLimit());
             page(o.getPage());

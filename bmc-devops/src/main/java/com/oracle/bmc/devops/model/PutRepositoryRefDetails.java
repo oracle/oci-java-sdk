@@ -5,7 +5,7 @@
 package com.oracle.bmc.devops.model;
 
 /**
- * The information needed to create a ref. If the ref already exists, it can be used to update it.
+ * The information needed to create a reference. If the reference already exists, then it can be used to update the reference.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -41,7 +41,7 @@ package com.oracle.bmc.devops.model;
 public class PutRepositoryRefDetails {
 
     /**
-     * The type of Ref (Branch or Tag)
+     * The type of reference (Branch or Tag).
      **/
     public enum RefType {
         Branch("BRANCH"),

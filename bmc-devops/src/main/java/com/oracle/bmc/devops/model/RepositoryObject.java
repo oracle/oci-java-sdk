@@ -5,7 +5,7 @@
 package com.oracle.bmc.devops.model;
 
 /**
- * Object containing information about files and directories in a repository
+ * Object containing information about files and directories in a repository.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -142,19 +142,19 @@ public class RepositoryObject {
     Type type;
 
     /**
-     * Size in Bytes
+     * Size in bytes.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sizeInBytes")
     Long sizeInBytes;
 
     /**
-     * SHA-1 hash of git object
+     * SHA-1 hash of git object.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sha")
     String sha;
 
     /**
-     * flag to determine is the object contains binary file content or not.
+     * Flag to determine if the object contains binary file content or not.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isBinary")
     Boolean isBinary;

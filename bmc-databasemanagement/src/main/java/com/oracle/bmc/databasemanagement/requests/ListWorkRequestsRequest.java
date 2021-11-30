@@ -35,12 +35,12 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
     private String opcRequestId;
 
     /**
-     * The ID of the asynchronous work request.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the asynchronous work request.
      */
     private String workRequestId;
 
     /**
-     * A filter to return only resources their status matches the given WorkRequestStatus.
+     * A filter that returns the resources whose status matches the given WorkRequestStatus.
      */
     private com.oracle.bmc.databasemanagement.model.WorkRequestStatus status;
 
@@ -50,13 +50,13 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
     private com.oracle.bmc.databasemanagement.model.SortOrders sortOrder;
 
     /**
-     * The field to sort by. Only one sort order may be provided. Default order for timeAccepted is descending.
+     * The field to sort by. Only one sort order may be provided and the default order for timeAccepted is descending.
      *
      */
     private SortBy sortBy;
 
     /**
-     * The field to sort by. Only one sort order may be provided. Default order for timeAccepted is descending.
+     * The field to sort by. Only one sort order may be provided and the default order for timeAccepted is descending.
      *
      **/
     public enum SortBy {
@@ -91,14 +91,14 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
         }
     };
     /**
-     * The page token representing the page, from where the next set of paginated results
+     * The page token representing the page from where the next set of paginated results
      * are retrieved. This is usually retrieved from a previous list call.
      *
      */
     private String page;
 
     /**
-     * The maximum number of records returned in paginated response.
+     * The maximum number of records returned in the paginated response.
      */
     private Integer limit;
 

@@ -5,7 +5,7 @@
 package com.oracle.bmc.databasemanagement.model;
 
 /**
- * A resource created or operated on by a work request.
+ * The resource that is created or operated on by a work request.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -93,7 +93,7 @@ public class WorkRequestResource {
     }
 
     /**
-     * The entity type the work request is affects.
+     * The resource type the work request affects.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("entityType")
     String entityType;
@@ -109,13 +109,13 @@ public class WorkRequestResource {
     WorkRequestResourceActionType actionType;
 
     /**
-     * The identifier of the resource the work request affects.
+     * The OCID or other unique identifier of the resource the work request affects.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("identifier")
     String identifier;
 
     /**
-     * The URI path that the user can do a GET on to access the resource metadata
+     * The URI path that is used in a GET request to access the resource metadata.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("entityUri")
     String entityUri;

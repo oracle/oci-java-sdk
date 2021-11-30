@@ -5,7 +5,7 @@
 package com.oracle.bmc.devops.model;
 
 /**
- * The run progress details of a BuildRun.
+ * The run progress details of a build run.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -83,19 +83,19 @@ public class BuildRunProgress {
     }
 
     /**
-     * The time the the BuildRun is started. An RFC3339 formatted datetime string
+     * The time the build run started. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
     java.util.Date timeStarted;
 
     /**
-     * The time the BuildRun is finished. An RFC3339 formatted datetime string
+     * The time the build run finished. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeFinished")
     java.util.Date timeFinished;
 
     /**
-     * Map of stage OCIDs to BuildPipelineStageRunProgress model.
+     * Map of stage OCIDs to build pipeline stage run progress model.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("buildPipelineStageRunProgress")
     java.util.Map<String, BuildPipelineStageRunProgress> buildPipelineStageRunProgress;

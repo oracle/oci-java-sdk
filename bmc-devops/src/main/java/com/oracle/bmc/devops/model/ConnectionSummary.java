@@ -41,43 +41,43 @@ package com.oracle.bmc.devops.model;
 public class ConnectionSummary {
 
     /**
-     * Unique identifier that is immutable on creation
+     * Unique identifier that is immutable on creation.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     String id;
 
     /**
-     * Connection identifier which can be renamed and is not necessarily unique.
+     * Connection display name, which can be renamed and is not necessarily unique. Avoid entering confidential information.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     String displayName;
 
     /**
-     * Optional description about the connection
+     * Optional description about the connection.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     String description;
 
     /**
-     * Compartment Identifier
+     * The OCID of the compartment containing the connection.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     String compartmentId;
 
     /**
-     * Project Identifier
+     * The OCID of the DevOps project.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("projectId")
     String projectId;
 
     /**
-     * The time the the connection was created. An RFC3339 formatted datetime string
+     * The time the connection was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     java.util.Date timeCreated;
 
     /**
-     * The time the connection was updated. An RFC3339 formatted daservertetime string
+     * The time the connection was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     java.util.Date timeUpdated;

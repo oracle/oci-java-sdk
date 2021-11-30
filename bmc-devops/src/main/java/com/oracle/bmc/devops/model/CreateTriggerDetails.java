@@ -5,7 +5,7 @@
 package com.oracle.bmc.devops.model;
 
 /**
- * The information about new Trigger.
+ * Information about the new trigger.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -45,25 +45,25 @@ package com.oracle.bmc.devops.model;
 public class CreateTriggerDetails {
 
     /**
-     * Name of the Trigger
+     * Trigger display name. Avoid entering confidential information.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     String displayName;
 
     /**
-     * Optional description about the Trigger
+     * Optional description about the trigger.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     String description;
 
     /**
-     * Project to which the Trigger will belong
+     * The OCID of the DevOps project to which the trigger belongs to.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("projectId")
     String projectId;
 
     /**
-     * The list of actions that are to be performed for this Trigger
+     * The list of actions that are to be performed for this trigger.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("actions")
     java.util.List<TriggerAction> actions;

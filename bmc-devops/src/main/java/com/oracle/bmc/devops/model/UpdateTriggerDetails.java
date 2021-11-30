@@ -45,19 +45,19 @@ package com.oracle.bmc.devops.model;
 public class UpdateTriggerDetails {
 
     /**
-     * Trigger Identifier
+     * Trigger display name. Avoid entering confidential information.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     String displayName;
 
     /**
-     * Optional description about the Trigger
+     * Optional description about the trigger.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     String description;
 
     /**
-     * The list of actions that are to be performed for this Trigger
+     * The list of actions that are to be performed for this trigger.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("actions")
     java.util.List<TriggerAction> actions;

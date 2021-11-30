@@ -46,6 +46,7 @@ import com.oracle.bmc.core.requests.ListDrgRouteRulesRequest;
 import com.oracle.bmc.core.requests.RemoveDrgRouteDistributionStatementsRequest;
 import com.oracle.bmc.core.requests.UpdateDrgAttachmentRequest;
 import com.oracle.bmc.core.requests.UpdateDrgRouteDistributionStatementsRequest;
+import com.oracle.bmc.core.requests.GetDrgRouteTableRequest;
 import com.oracle.bmc.core.responses.CreateDrgAttachmentResponse;
 import com.oracle.bmc.core.responses.CreateDrgResponse;
 import com.oracle.bmc.core.responses.CreateDrgRouteDistributionResponse;
@@ -191,6 +192,16 @@ public class DRGRouteDistributionExample {
                                                             drgRouteDistribution.getId())
                                                     .build())
                                     .build());
+
+            WorkRequestClient workRequestClient = WorkRequestClient.builder().build(authProvider);
+            virtualNetworkClient
+                    .newWaiters(workRequestClient)
+                    .forDrgRouteTable(
+                            GetDrgRouteTableRequest.builder()
+                                    .drgRouteTableId(drgRouteTable.getDrgRouteTable().getId())
+                                    .build(),
+                            DrgRouteTable.LifecycleState.Available)
+                    .execute();
 
             System.out.println(
                     "Assign the newly created route table to drg attachment 1 (with VCN1).");

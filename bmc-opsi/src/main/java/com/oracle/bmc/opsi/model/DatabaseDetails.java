@@ -42,6 +42,15 @@ public class DatabaseDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
+        private String compartmentId;
+
+        public Builder compartmentId(String compartmentId) {
+            this.compartmentId = compartmentId;
+            this.__explicitlySet__.add("compartmentId");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("databaseName")
         private String databaseName;
 
@@ -104,6 +113,7 @@ public class DatabaseDetails {
                     new DatabaseDetails(
                             id,
                             databaseId,
+                            compartmentId,
                             databaseName,
                             databaseDisplayName,
                             databaseType,
@@ -119,6 +129,7 @@ public class DatabaseDetails {
             Builder copiedBuilder =
                     id(o.getId())
                             .databaseId(o.getDatabaseId())
+                            .compartmentId(o.getCompartmentId())
                             .databaseName(o.getDatabaseName())
                             .databaseDisplayName(o.getDatabaseDisplayName())
                             .databaseType(o.getDatabaseType())
@@ -149,6 +160,12 @@ public class DatabaseDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("databaseId")
     String databaseId;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
+    String compartmentId;
 
     /**
      * The database name. The database name is unique within the tenancy.

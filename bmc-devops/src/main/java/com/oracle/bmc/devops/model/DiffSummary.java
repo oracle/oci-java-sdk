@@ -5,7 +5,7 @@
 package com.oracle.bmc.devops.model;
 
 /**
- * Response object for showing diffs for a file between two revisions.
+ * Response object for showing differences for a file between two revisions.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -162,25 +162,25 @@ public class DiffSummary {
     }
 
     /**
-     * The path on the baseVersion to the changed object.
+     * The path on the base version to the changed object.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("oldPath")
     String oldPath;
 
     /**
-     * The path on the targetVersion to the changed object.
+     * The path on the target version to the changed object.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("newPath")
     String newPath;
 
     /**
-     * The ID of the changed object on the baseVersion.
+     * The ID of the changed object on the base version.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("oldId")
     String oldId;
 
     /**
-     * The ID of the changed object on the targetVersion.
+     * The ID of the changed object on the target version.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("newId")
     String newId;

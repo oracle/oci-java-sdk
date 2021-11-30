@@ -20,7 +20,7 @@ import com.oracle.bmc.databasemanagement.model.*;
 public class GetWorkRequestRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the async Work Request.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the asynchronous work request.
      */
     private String workRequestId;
 

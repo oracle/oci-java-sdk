@@ -6,7 +6,7 @@ package com.oracle.bmc.databasemanagement.model;
 
 /**
  * The subtype of the Oracle Database. Indicates whether the database is a Container Database,
- * Pluggable Database, or a Non-container Database.
+ * Pluggable Database, Non-container Database, Autonomous Database, or Autonomous Container Database.
  *
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
@@ -15,6 +15,8 @@ public enum DatabaseSubType {
     Cdb("CDB"),
     Pdb("PDB"),
     NonCdb("NON_CDB"),
+    Acd("ACD"),
+    Adb("ADB"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this

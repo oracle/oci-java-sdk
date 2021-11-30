@@ -2802,6 +2802,39 @@ public class DatabaseClient implements Database {
     }
 
     @Override
+    public DisableAutonomousDatabaseManagementResponse disableAutonomousDatabaseManagement(
+            DisableAutonomousDatabaseManagementRequest request) {
+        LOG.trace("Called disableAutonomousDatabaseManagement");
+        final DisableAutonomousDatabaseManagementRequest interceptedRequest =
+                DisableAutonomousDatabaseManagementConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DisableAutonomousDatabaseManagementConverter.fromRequest(
+                        client, interceptedRequest);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, DisableAutonomousDatabaseManagementResponse>
+                transformer = DisableAutonomousDatabaseManagementConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public DisableAutonomousDatabaseOperationsInsightsResponse
             disableAutonomousDatabaseOperationsInsights(
                     DisableAutonomousDatabaseOperationsInsightsRequest request) {
@@ -3173,6 +3206,38 @@ public class DatabaseClient implements Database {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public EnableAutonomousDatabaseManagementResponse enableAutonomousDatabaseManagement(
+            EnableAutonomousDatabaseManagementRequest request) {
+        LOG.trace("Called enableAutonomousDatabaseManagement");
+        final EnableAutonomousDatabaseManagementRequest interceptedRequest =
+                EnableAutonomousDatabaseManagementConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                EnableAutonomousDatabaseManagementConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, EnableAutonomousDatabaseManagementResponse>
+                transformer = EnableAutonomousDatabaseManagementConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,

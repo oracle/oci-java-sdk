@@ -5,7 +5,7 @@
 package com.oracle.bmc.databasemanagement.model;
 
 /**
- * The details used to change the compartment of a Database Management private endpoint.
+ * The details used to move the Database Management private endpoint to another compartment.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -62,7 +62,7 @@ public class ChangeDbManagementPrivateEndpointCompartmentDetails {
     }
 
     /**
-     * The OCID of the new compartment.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment to which the Database Management private endpoint needs to be moved.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     String compartmentId;

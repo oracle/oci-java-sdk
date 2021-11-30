@@ -22,7 +22,7 @@ public class CreateConnectionRequest
                 com.oracle.bmc.devops.model.CreateConnectionDetails> {
 
     /**
-     * Details for the new Connection.
+     * Details for the new connection.
      */
     private com.oracle.bmc.devops.model.CreateConnectionDetails createConnectionDetails;
 

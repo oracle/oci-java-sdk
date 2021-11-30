@@ -5,7 +5,7 @@
 package com.oracle.bmc.apmcontrolplane.model;
 
 /**
- * Basic details for an APM Domain.
+ * Details for an APM domain.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -170,25 +170,25 @@ public class BaseDomainDetails {
     String id;
 
     /**
-     * APM Domain display name, can be updated.
+     * Display name of the APM domain, which can be updated.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     String displayName;
 
     /**
-     * Description of the APM Domain.
+     * Description of the APM domain.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     String description;
 
     /**
-     * The OCID of the compartment corresponding to the APM Domain.
+     * The OCID of the compartment corresponding to the APM domain.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     String compartmentId;
 
     /**
-     * The current lifecycle state of the APM Domain.
+     * The current lifecycle state of the APM domain.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     LifecycleStates lifecycleState;
@@ -200,13 +200,13 @@ public class BaseDomainDetails {
     Boolean isFreeTier;
 
     /**
-     * The time the the APM Domain was created. An RFC3339 formatted datetime string
+     * The time the APM domain was created, expressed in RFC 3339 timestamp format.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     java.util.Date timeCreated;
 
     /**
-     * The time the APM Domain was updated. An RFC3339 formatted datetime string
+     * The time the APM domain was updated, expressed in RFC 3339 timestamp format.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     java.util.Date timeUpdated;

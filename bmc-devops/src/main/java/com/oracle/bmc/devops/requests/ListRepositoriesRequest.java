@@ -30,12 +30,12 @@ public class ListRepositoriesRequest extends com.oracle.bmc.requests.BmcRequest<
     private String projectId;
 
     /**
-     * unique Repository identifier.
+     * Unique repository identifier.
      */
     private String repositoryId;
 
     /**
-     * A filter to return only resources their lifecycleState matches the given lifecycleState.
+     * A filter to return only resources whose lifecycle state matches the given lifecycle state.
      */
     private com.oracle.bmc.devops.model.Repository.LifecycleState lifecycleState;
 
@@ -60,13 +60,13 @@ public class ListRepositoriesRequest extends com.oracle.bmc.requests.BmcRequest<
     private com.oracle.bmc.devops.model.SortOrder sortOrder;
 
     /**
-     * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for name is ascending. If no value is specified timeCreated is default.
+     * The field to sort by. Only one sort order may be provided. Default order for time created is descending. Default order for name is ascending. If no value is specified time created is default.
      *
      */
     private SortBy sortBy;
 
     /**
-     * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for name is ascending. If no value is specified timeCreated is default.
+     * The field to sort by. Only one sort order may be provided. Default order for time created is descending. Default order for name is ascending. If no value is specified time created is default.
      *
      **/
     public enum SortBy {

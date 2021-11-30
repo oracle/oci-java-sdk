@@ -5,7 +5,7 @@
 package com.oracle.bmc.devops.model;
 
 /**
- * Details of the Artifact delivered via DeliverArtifactStage.
+ * Details of the artifacts delivered through the Deliver Artifacts stage.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -41,19 +41,19 @@ package com.oracle.bmc.devops.model;
 public class DeliveredArtifact {
 
     /**
-     * The OCID of the deploy artifact definition
+     * The OCID of the deployment artifact definition.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("deployArtifactId")
     String deployArtifactId;
 
     /**
-     * Name of the output artifact defined in the build spec
+     * Name of the output artifact defined in the build specification file.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("outputArtifactName")
     String outputArtifactName;
 
     /**
-     * Type of Artifact Delivered
+     * Type of artifact delivered.
      **/
     @lombok.extern.slf4j.Slf4j
     public enum ArtifactType {

@@ -22,7 +22,7 @@ public class CreateRepositoryRequest
                 com.oracle.bmc.devops.model.CreateRepositoryDetails> {
 
     /**
-     * Details for the new Repository.
+     * Details for the new repository.
      */
     private com.oracle.bmc.devops.model.CreateRepositoryDetails createRepositoryDetails;
 

@@ -30,7 +30,7 @@ public class ListTriggersRequest extends com.oracle.bmc.requests.BmcRequest<java
     private String projectId;
 
     /**
-     * A filter to return only Triggers that matches the given lifecycleState
+     * A filter to return only triggers that matches the given lifecycle state.
      */
     private com.oracle.bmc.devops.model.Trigger.LifecycleState lifecycleState;
 
@@ -40,7 +40,7 @@ public class ListTriggersRequest extends com.oracle.bmc.requests.BmcRequest<java
     private String displayName;
 
     /**
-     * unique Trigger identifier
+     * Unique trigger identifier.
      */
     private String id;
 

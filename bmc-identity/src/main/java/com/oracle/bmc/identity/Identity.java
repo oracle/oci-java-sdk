@@ -1358,6 +1358,19 @@ public interface Identity extends AutoCloseable {
     GetPolicyResponse getPolicy(GetPolicyRequest request);
 
     /**
+     * Retrieve the standard tag namespace template given the standard tag namespace name.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/GetStandardTagTemplateExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetStandardTagTemplate API.
+     */
+    GetStandardTagTemplateResponse getStandardTagTemplate(GetStandardTagTemplateRequest request);
+
+    /**
      * Gets the specified tag's information.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -1473,6 +1486,20 @@ public interface Identity extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/GetWorkRequestExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetWorkRequest API.
      */
     GetWorkRequestResponse getWorkRequest(GetWorkRequestRequest request);
+
+    /**
+     * OCI will release Tag Namespaces that our customers can import.
+     * These Tag Namespaces will provide Tags for our customers and Partners to provide consistency and enable data reporting.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/ImportStandardTagsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ImportStandardTags API.
+     */
+    ImportStandardTagsResponse importStandardTags(ImportStandardTagsRequest request);
 
     /**
      * List the allowed domain license types supported by OCI
@@ -1889,6 +1916,20 @@ public interface Identity extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/ListSmtpCredentialsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListSmtpCredentials API.
      */
     ListSmtpCredentialsResponse listSmtpCredentials(ListSmtpCredentialsRequest request);
+
+    /**
+     * Lists available standard tag namespaces that users can create.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/ListStandardTagNamespacesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListStandardTagNamespaces API.
+     */
+    ListStandardTagNamespacesResponse listStandardTagNamespaces(
+            ListStandardTagNamespacesRequest request);
 
     /**
      * **Deprecated. Use {@link #listAuthTokens(ListAuthTokensRequest) listAuthTokens} instead.**

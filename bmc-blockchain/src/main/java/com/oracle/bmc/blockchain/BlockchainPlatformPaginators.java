@@ -31,6 +31,132 @@ public class BlockchainPlatformPaginators {
     private final BlockchainPlatform client;
 
     /**
+     * Creates a new iterable which will iterate over the responses received from the listBlockchainPlatformPatches operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListBlockchainPlatformPatchesResponse>
+            listBlockchainPlatformPatchesResponseIterator(
+                    final ListBlockchainPlatformPatchesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListBlockchainPlatformPatchesRequest.Builder, ListBlockchainPlatformPatchesRequest,
+                ListBlockchainPlatformPatchesResponse>(
+                new com.google.common.base.Supplier<
+                        ListBlockchainPlatformPatchesRequest.Builder>() {
+                    @Override
+                    public ListBlockchainPlatformPatchesRequest.Builder get() {
+                        return ListBlockchainPlatformPatchesRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListBlockchainPlatformPatchesResponse, String>() {
+                    @Override
+                    public String apply(ListBlockchainPlatformPatchesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListBlockchainPlatformPatchesRequest.Builder>,
+                        ListBlockchainPlatformPatchesRequest>() {
+                    @Override
+                    public ListBlockchainPlatformPatchesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListBlockchainPlatformPatchesRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListBlockchainPlatformPatchesRequest,
+                        ListBlockchainPlatformPatchesResponse>() {
+                    @Override
+                    public ListBlockchainPlatformPatchesResponse apply(
+                            ListBlockchainPlatformPatchesRequest request) {
+                        return client.listBlockchainPlatformPatches(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.blockchain.model.BlockchainPlatformPatchSummary} objects
+     * contained in responses from the listBlockchainPlatformPatches operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.blockchain.model.BlockchainPlatformPatchSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.blockchain.model.BlockchainPlatformPatchSummary>
+            listBlockchainPlatformPatchesRecordIterator(
+                    final ListBlockchainPlatformPatchesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListBlockchainPlatformPatchesRequest.Builder, ListBlockchainPlatformPatchesRequest,
+                ListBlockchainPlatformPatchesResponse,
+                com.oracle.bmc.blockchain.model.BlockchainPlatformPatchSummary>(
+                new com.google.common.base.Supplier<
+                        ListBlockchainPlatformPatchesRequest.Builder>() {
+                    @Override
+                    public ListBlockchainPlatformPatchesRequest.Builder get() {
+                        return ListBlockchainPlatformPatchesRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListBlockchainPlatformPatchesResponse, String>() {
+                    @Override
+                    public String apply(ListBlockchainPlatformPatchesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListBlockchainPlatformPatchesRequest.Builder>,
+                        ListBlockchainPlatformPatchesRequest>() {
+                    @Override
+                    public ListBlockchainPlatformPatchesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListBlockchainPlatformPatchesRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListBlockchainPlatformPatchesRequest,
+                        ListBlockchainPlatformPatchesResponse>() {
+                    @Override
+                    public ListBlockchainPlatformPatchesResponse apply(
+                            ListBlockchainPlatformPatchesRequest request) {
+                        return client.listBlockchainPlatformPatches(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListBlockchainPlatformPatchesResponse,
+                        java.util.List<
+                                com.oracle.bmc.blockchain.model.BlockchainPlatformPatchSummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.blockchain.model.BlockchainPlatformPatchSummary>
+                            apply(ListBlockchainPlatformPatchesResponse response) {
+                        return response.getBlockchainPlatformPatchCollection().getItems();
+                    }
+                });
+    }
+
+    /**
      * Creates a new iterable which will iterate over the responses received from the listBlockchainPlatforms operation. This iterable
      * will fetch more data from the server as needed.
      *

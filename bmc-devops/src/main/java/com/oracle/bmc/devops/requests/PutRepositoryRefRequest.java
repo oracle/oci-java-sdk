@@ -22,17 +22,17 @@ public class PutRepositoryRefRequest
                 com.oracle.bmc.devops.model.PutRepositoryRefDetails> {
 
     /**
-     * unique Repository identifier.
+     * Unique repository identifier.
      */
     private String repositoryId;
 
     /**
-     * A filter to return only resources that match the given Ref name.
+     * A filter to return only resources that match the given reference name.
      */
     private String refName;
 
     /**
-     * The information to create a Ref with the type specified in the query
+     * The information to create a reference with the type specified in the query.
      */
     private com.oracle.bmc.devops.model.PutRepositoryRefDetails putRepositoryRefDetails;
 

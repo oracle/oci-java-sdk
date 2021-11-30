@@ -26,7 +26,7 @@ public class ListBuildPipelineStagesRequest
     private String id;
 
     /**
-     * The ID of the parent build pipeline.
+     * The OCID of the parent build pipeline.
      */
     private String buildPipelineId;
 
@@ -36,7 +36,7 @@ public class ListBuildPipelineStagesRequest
     private String compartmentId;
 
     /**
-     * A filter to return the stages that match with the given lifecycleState.
+     * A filter to return the stages that matches the given lifecycle state.
      */
     private com.oracle.bmc.devops.model.BuildPipelineStage.LifecycleState lifecycleState;
 

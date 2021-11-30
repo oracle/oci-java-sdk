@@ -12,6 +12,7 @@ package com.oracle.bmc.databasemanagement.model;
  * - VM: Virtual machines in Oracle Cloud.
  * - EXADATA: Exadata infrastructure in Oracle Cloud.
  * - EXADATA_CC: Exadata Cloud@Customer infrastructure in customer's data center.
+ * - AUTONOMOUS: Oracle Autonomous Cloud infrastructure
  *
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
@@ -22,6 +23,7 @@ public enum DeploymentType {
     Vm("VM"),
     Exadata("EXADATA"),
     ExadataCc("EXADATA_CC"),
+    Autonomous("AUTONOMOUS"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this

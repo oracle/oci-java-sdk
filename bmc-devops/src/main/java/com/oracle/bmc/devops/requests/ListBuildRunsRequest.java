@@ -45,7 +45,7 @@ public class ListBuildRunsRequest extends com.oracle.bmc.requests.BmcRequest<jav
     private String displayName;
 
     /**
-     * A filter to return only Build Runs that matches the given lifecycleState.
+     * A filter to return only build runs that matches the given lifecycle state.
      */
     private com.oracle.bmc.devops.model.BuildRun.LifecycleState lifecycleState;
 

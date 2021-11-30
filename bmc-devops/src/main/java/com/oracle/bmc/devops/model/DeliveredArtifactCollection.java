@@ -5,7 +5,7 @@
 package com.oracle.bmc.devops.model;
 
 /**
- * Specifies the list of Artifacts delivered via DeliverArtifactStage
+ * Specifies the list of artifacts delivered through the Deliver Artifacts stage.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -61,7 +61,7 @@ public class DeliveredArtifactCollection {
     }
 
     /**
-     * List of Artifacts delivered via DeliverArtifactStage
+     * List of artifacts delivered through the Deliver Artifacts stage.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     java.util.List<DeliveredArtifact> items;

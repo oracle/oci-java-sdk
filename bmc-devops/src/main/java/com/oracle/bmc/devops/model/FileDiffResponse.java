@@ -139,25 +139,25 @@ public class FileDiffResponse {
     }
 
     /**
-     * The path on the baseVersion to the changed object.
+     * The path on the base version to the changed object.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("oldPath")
     String oldPath;
 
     /**
-     * The path on the targetVersion to the changed object.
+     * The path on the target version to the changed object.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("newPath")
     String newPath;
 
     /**
-     * The ID of the changed object on the baseVersion.
+     * The ID of the changed object on the base version.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("oldId")
     String oldId;
 
     /**
-     * The ID of the changed object on the targetVersion.
+     * The ID of the changed object on the target version.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("newId")
     String newId;

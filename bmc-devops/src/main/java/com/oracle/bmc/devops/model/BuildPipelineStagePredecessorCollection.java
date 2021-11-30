@@ -5,7 +5,7 @@
 package com.oracle.bmc.devops.model;
 
 /**
- * The containing collection for the predecessors of a Stage.
+ * The collection containing the predecessors of a stage.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -62,7 +62,7 @@ public class BuildPipelineStagePredecessorCollection {
     }
 
     /**
-     * A list of BuildPipelineStagePredecessors for a stage.
+     * A list of build pipeline stage predecessors for a stage.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     java.util.List<BuildPipelineStagePredecessor> items;

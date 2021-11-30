@@ -195,6 +195,19 @@ public interface BlockchainPlatform extends AutoCloseable {
     GetWorkRequestResponse getWorkRequest(GetWorkRequestRequest request);
 
     /**
+     * List Blockchain Platform Patches
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/blockchain/ListBlockchainPlatformPatchesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListBlockchainPlatformPatches API.
+     */
+    ListBlockchainPlatformPatchesResponse listBlockchainPlatformPatches(
+            ListBlockchainPlatformPatchesRequest request);
+
+    /**
      * Returns a list Blockchain Platform Instances in a compartment
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -354,6 +367,19 @@ public interface BlockchainPlatform extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/blockchain/UpdatePeerExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdatePeer API.
      */
     UpdatePeerResponse updatePeer(UpdatePeerRequest request);
+
+    /**
+     * Upgrade a Blockchain Platform version
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/blockchain/UpgradeBlockchainPlatformExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpgradeBlockchainPlatform API.
+     */
+    UpgradeBlockchainPlatformResponse upgradeBlockchainPlatform(
+            UpgradeBlockchainPlatformRequest request);
 
     /**
      * Gets the pre-configured waiters available for resources for this service.

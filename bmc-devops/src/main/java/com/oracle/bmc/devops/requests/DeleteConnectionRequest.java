@@ -20,7 +20,7 @@ import com.oracle.bmc.devops.model.*;
 public class DeleteConnectionRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * unique Connection identifier
+     * Unique connection identifier.
      */
     private String connectionId;
 

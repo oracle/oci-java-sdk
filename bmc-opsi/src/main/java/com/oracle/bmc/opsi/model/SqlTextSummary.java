@@ -52,6 +52,15 @@ public class SqlTextSummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
+        private String compartmentId;
+
+        public Builder compartmentId(String compartmentId) {
+            this.compartmentId = compartmentId;
+            this.__explicitlySet__.add("compartmentId");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("sqlText")
         private String sqlText;
 
@@ -66,7 +75,7 @@ public class SqlTextSummary {
 
         public SqlTextSummary build() {
             SqlTextSummary __instance__ =
-                    new SqlTextSummary(sqlIdentifier, id, databaseId, sqlText);
+                    new SqlTextSummary(sqlIdentifier, id, databaseId, compartmentId, sqlText);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -77,6 +86,7 @@ public class SqlTextSummary {
                     sqlIdentifier(o.getSqlIdentifier())
                             .id(o.getId())
                             .databaseId(o.getDatabaseId())
+                            .compartmentId(o.getCompartmentId())
                             .sqlText(o.getSqlText());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
@@ -109,6 +119,12 @@ public class SqlTextSummary {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("databaseId")
     String databaseId;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
+    String compartmentId;
 
     /**
      * SQL Text

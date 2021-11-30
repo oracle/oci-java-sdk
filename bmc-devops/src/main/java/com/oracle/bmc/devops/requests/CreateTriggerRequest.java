@@ -22,7 +22,7 @@ public class CreateTriggerRequest
                 com.oracle.bmc.devops.model.CreateTriggerDetails> {
 
     /**
-     * Details for the new Trigger.
+     * Details for the new trigger.
      */
     private com.oracle.bmc.devops.model.CreateTriggerDetails createTriggerDetails;
 

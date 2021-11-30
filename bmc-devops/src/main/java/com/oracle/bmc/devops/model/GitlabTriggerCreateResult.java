@@ -5,7 +5,7 @@
 package com.oracle.bmc.devops.model;
 
 /**
- * Trigger Create response specific to Gitlab
+ * Trigger create response specific to GitLab.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -260,13 +260,13 @@ public class GitlabTriggerCreateResult extends TriggerCreateResult {
     }
 
     /**
-     * The secret used to validate the incoming Trigger call (this is visible only once after the resource is created)
+     * The secret used to validate the incoming trigger call. This is visible only after the resource is created.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("secret")
     String secret;
 
     /**
-     * The endpoint which listens to Trigger events
+     * The endpoint that listens to trigger events.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("triggerUrl")
     String triggerUrl;

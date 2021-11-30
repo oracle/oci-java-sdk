@@ -5,7 +5,7 @@
 package com.oracle.bmc.devops.model;
 
 /**
- * Specifies the absolute wait criteria, user can specify fixed length of wait duration.
+ * Specifies the absolute wait criteria. You can specify fixed length of wait duration.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -75,8 +75,8 @@ public class UpdateAbsoluteWaitCriteriaDetails extends UpdateWaitCriteriaDetails
 
     /**
      * The absolute wait duration.
-     * Minimum waitDuration should be 5 seconds.
-     * Maximum waitDuration can be up to 2 days.
+     * Minimum wait duration must be 5 seconds.
+     * Maximum wait duration can be up to 2 days.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("waitDuration")

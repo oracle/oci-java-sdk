@@ -35,7 +35,7 @@ public class ListBuildPipelinesRequest extends com.oracle.bmc.requests.BmcReques
     private String compartmentId;
 
     /**
-     * A filter to return only BuildPipelines that matches the given lifecycleState
+     * A filter to return only build pipelines that matches the given lifecycle state.
      */
     private com.oracle.bmc.devops.model.BuildPipeline.LifecycleState lifecycleState;
 

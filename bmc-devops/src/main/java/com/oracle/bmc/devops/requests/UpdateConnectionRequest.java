@@ -22,7 +22,7 @@ public class UpdateConnectionRequest
                 com.oracle.bmc.devops.model.UpdateConnectionDetails> {
 
     /**
-     * unique Connection identifier
+     * Unique connection identifier.
      */
     private String connectionId;
 

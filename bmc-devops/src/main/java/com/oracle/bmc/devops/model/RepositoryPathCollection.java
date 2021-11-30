@@ -5,7 +5,7 @@
 package com.oracle.bmc.devops.model;
 
 /**
- * Result of a List Paths in a repository
+ * Result of list paths in a repository.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -61,7 +61,7 @@ public class RepositoryPathCollection {
     }
 
     /**
-     * List of objects describings files or directories in a repository.
+     * List of objects describing files or directories in a repository.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     java.util.List<RepositoryPathSummary> items;

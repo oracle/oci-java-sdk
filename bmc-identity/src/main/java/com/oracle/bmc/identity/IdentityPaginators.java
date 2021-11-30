@@ -1978,6 +1978,127 @@ public class IdentityPaginators {
     }
 
     /**
+     * Creates a new iterable which will iterate over the responses received from the listStandardTagNamespaces operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListStandardTagNamespacesResponse> listStandardTagNamespacesResponseIterator(
+            final ListStandardTagNamespacesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListStandardTagNamespacesRequest.Builder, ListStandardTagNamespacesRequest,
+                ListStandardTagNamespacesResponse>(
+                new com.google.common.base.Supplier<ListStandardTagNamespacesRequest.Builder>() {
+                    @Override
+                    public ListStandardTagNamespacesRequest.Builder get() {
+                        return ListStandardTagNamespacesRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListStandardTagNamespacesResponse, String>() {
+                    @Override
+                    public String apply(ListStandardTagNamespacesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListStandardTagNamespacesRequest.Builder>,
+                        ListStandardTagNamespacesRequest>() {
+                    @Override
+                    public ListStandardTagNamespacesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListStandardTagNamespacesRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListStandardTagNamespacesRequest, ListStandardTagNamespacesResponse>() {
+                    @Override
+                    public ListStandardTagNamespacesResponse apply(
+                            ListStandardTagNamespacesRequest request) {
+                        return client.listStandardTagNamespaces(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.identity.model.StandardTagNamespaceTemplateSummary} objects
+     * contained in responses from the listStandardTagNamespaces operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.identity.model.StandardTagNamespaceTemplateSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.identity.model.StandardTagNamespaceTemplateSummary>
+            listStandardTagNamespacesRecordIterator(
+                    final ListStandardTagNamespacesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListStandardTagNamespacesRequest.Builder, ListStandardTagNamespacesRequest,
+                ListStandardTagNamespacesResponse,
+                com.oracle.bmc.identity.model.StandardTagNamespaceTemplateSummary>(
+                new com.google.common.base.Supplier<ListStandardTagNamespacesRequest.Builder>() {
+                    @Override
+                    public ListStandardTagNamespacesRequest.Builder get() {
+                        return ListStandardTagNamespacesRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListStandardTagNamespacesResponse, String>() {
+                    @Override
+                    public String apply(ListStandardTagNamespacesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListStandardTagNamespacesRequest.Builder>,
+                        ListStandardTagNamespacesRequest>() {
+                    @Override
+                    public ListStandardTagNamespacesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListStandardTagNamespacesRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListStandardTagNamespacesRequest, ListStandardTagNamespacesResponse>() {
+                    @Override
+                    public ListStandardTagNamespacesResponse apply(
+                            ListStandardTagNamespacesRequest request) {
+                        return client.listStandardTagNamespaces(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListStandardTagNamespacesResponse,
+                        java.util.List<
+                                com.oracle.bmc.identity.model
+                                        .StandardTagNamespaceTemplateSummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.identity.model
+                                            .StandardTagNamespaceTemplateSummary>
+                            apply(ListStandardTagNamespacesResponse response) {
+                        return response.getItems();
+                    }
+                });
+    }
+
+    /**
      * Creates a new iterable which will iterate over the responses received from the listTagDefaults operation. This iterable
      * will fetch more data from the server as needed.
      *

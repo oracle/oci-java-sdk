@@ -1666,6 +1666,20 @@ public interface VirtualNetwork extends AutoCloseable {
     GetAllDrgAttachmentsResponse getAllDrgAttachments(GetAllDrgAttachmentsRequest request);
 
     /**
+     * The allowed parameters for IKE IPSec
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetAllowedIkeIPSecParametersExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetAllowedIkeIPSecParameters API.
+     */
+    GetAllowedIkeIPSecParametersResponse getAllowedIkeIPSecParameters(
+            GetAllowedIkeIPSecParametersRequest request);
+
+    /**
      * Gets the `ByoipRange` resource. You must specify the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      *
      * @param request The request object containing the details to send
@@ -1958,6 +1972,20 @@ public interface VirtualNetwork extends AutoCloseable {
      */
     GetIPSecConnectionTunnelResponse getIPSecConnectionTunnel(
             GetIPSecConnectionTunnelRequest request);
+
+    /**
+     * Get the identified error for the specified IPSec Tunnel ID.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetIPSecConnectionTunnelErrorExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetIPSecConnectionTunnelError API.
+     */
+    GetIPSecConnectionTunnelErrorResponse getIPSecConnectionTunnelError(
+            GetIPSecConnectionTunnelErrorRequest request);
 
     /**
      * Gets the specified tunnel's shared secret (pre-shared key). To get other information
@@ -2704,6 +2732,35 @@ public interface VirtualNetwork extends AutoCloseable {
     ListFastConnectProviderVirtualCircuitBandwidthShapesResponse
             listFastConnectProviderVirtualCircuitBandwidthShapes(
                     ListFastConnectProviderVirtualCircuitBandwidthShapesRequest request);
+
+    /**
+     * The routes advertised to the Customer and the routes received from the Customer.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListIPSecConnectionTunnelRoutesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListIPSecConnectionTunnelRoutes API.
+     */
+    ListIPSecConnectionTunnelRoutesResponse listIPSecConnectionTunnelRoutes(
+            ListIPSecConnectionTunnelRoutesRequest request);
+
+    /**
+     * Lists the tunnel Security Associations information for the specified IPSec Tunnel ID.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListIPSecConnectionTunnelSecurityAssociationsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListIPSecConnectionTunnelSecurityAssociations API.
+     */
+    ListIPSecConnectionTunnelSecurityAssociationsResponse
+            listIPSecConnectionTunnelSecurityAssociations(
+                    ListIPSecConnectionTunnelSecurityAssociationsRequest request);
 
     /**
      * Lists the tunnel information for the specified IPSec connection.

@@ -111,7 +111,7 @@ public class WorkRequestError {
     }
 
     /**
-     * The identifier of the work request erorr.
+     * The identifier of the work request error.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     String id;
@@ -123,28 +123,27 @@ public class WorkRequestError {
     String workRequestId;
 
     /**
-     * A machine-usable code for the error that occured. Error codes are listed on
-     * (https://docs.us-phoenix-1.oraclecloud.com/Content/API/References/apierrors.htm)
+     * A machine-usable code for the error that occurred. Error codes are listed on
+     * (https://docs.us-phoenix-1.oraclecloud.com/Content/API/References/apierrors.htm).
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("code")
     String code;
 
     /**
-     * A human readable description of the issue encountered.
+     * A human-readable description of the issue that occurred.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("message")
     String message;
 
     /**
-     * To determine the work request error is retryable or not
+     * Determines if the work request error can be reproduced and tried again.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isRetryable")
     Boolean isRetryable;
 
     /**
-     * The time the error occured.
-     * An RFC3339 formatted datetime string. The precision for the time object is milliseconds.
+     * The date and time the error occurred as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339). The precision for the time object is in milliseconds.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timestamp")

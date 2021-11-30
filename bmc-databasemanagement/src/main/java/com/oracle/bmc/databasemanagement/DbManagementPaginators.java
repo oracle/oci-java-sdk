@@ -151,6 +151,248 @@ public class DbManagementPaginators {
     }
 
     /**
+     * Creates a new iterable which will iterate over the responses received from the listConsumerGroupPrivileges operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListConsumerGroupPrivilegesResponse>
+            listConsumerGroupPrivilegesResponseIterator(
+                    final ListConsumerGroupPrivilegesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListConsumerGroupPrivilegesRequest.Builder, ListConsumerGroupPrivilegesRequest,
+                ListConsumerGroupPrivilegesResponse>(
+                new com.google.common.base.Supplier<ListConsumerGroupPrivilegesRequest.Builder>() {
+                    @Override
+                    public ListConsumerGroupPrivilegesRequest.Builder get() {
+                        return ListConsumerGroupPrivilegesRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListConsumerGroupPrivilegesResponse, String>() {
+                    @Override
+                    public String apply(ListConsumerGroupPrivilegesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListConsumerGroupPrivilegesRequest.Builder>,
+                        ListConsumerGroupPrivilegesRequest>() {
+                    @Override
+                    public ListConsumerGroupPrivilegesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListConsumerGroupPrivilegesRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListConsumerGroupPrivilegesRequest, ListConsumerGroupPrivilegesResponse>() {
+                    @Override
+                    public ListConsumerGroupPrivilegesResponse apply(
+                            ListConsumerGroupPrivilegesRequest request) {
+                        return client.listConsumerGroupPrivileges(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.databasemanagement.model.ConsumerGroupPrivilegeSummary} objects
+     * contained in responses from the listConsumerGroupPrivileges operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.databasemanagement.model.ConsumerGroupPrivilegeSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.databasemanagement.model.ConsumerGroupPrivilegeSummary>
+            listConsumerGroupPrivilegesRecordIterator(
+                    final ListConsumerGroupPrivilegesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListConsumerGroupPrivilegesRequest.Builder, ListConsumerGroupPrivilegesRequest,
+                ListConsumerGroupPrivilegesResponse,
+                com.oracle.bmc.databasemanagement.model.ConsumerGroupPrivilegeSummary>(
+                new com.google.common.base.Supplier<ListConsumerGroupPrivilegesRequest.Builder>() {
+                    @Override
+                    public ListConsumerGroupPrivilegesRequest.Builder get() {
+                        return ListConsumerGroupPrivilegesRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListConsumerGroupPrivilegesResponse, String>() {
+                    @Override
+                    public String apply(ListConsumerGroupPrivilegesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListConsumerGroupPrivilegesRequest.Builder>,
+                        ListConsumerGroupPrivilegesRequest>() {
+                    @Override
+                    public ListConsumerGroupPrivilegesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListConsumerGroupPrivilegesRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListConsumerGroupPrivilegesRequest, ListConsumerGroupPrivilegesResponse>() {
+                    @Override
+                    public ListConsumerGroupPrivilegesResponse apply(
+                            ListConsumerGroupPrivilegesRequest request) {
+                        return client.listConsumerGroupPrivileges(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListConsumerGroupPrivilegesResponse,
+                        java.util.List<
+                                com.oracle.bmc.databasemanagement.model
+                                        .ConsumerGroupPrivilegeSummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.databasemanagement.model
+                                            .ConsumerGroupPrivilegeSummary>
+                            apply(ListConsumerGroupPrivilegesResponse response) {
+                        return response.getConsumerGroupPrivilegeCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the listDataAccessContainers operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListDataAccessContainersResponse> listDataAccessContainersResponseIterator(
+            final ListDataAccessContainersRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListDataAccessContainersRequest.Builder, ListDataAccessContainersRequest,
+                ListDataAccessContainersResponse>(
+                new com.google.common.base.Supplier<ListDataAccessContainersRequest.Builder>() {
+                    @Override
+                    public ListDataAccessContainersRequest.Builder get() {
+                        return ListDataAccessContainersRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListDataAccessContainersResponse, String>() {
+                    @Override
+                    public String apply(ListDataAccessContainersResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListDataAccessContainersRequest.Builder>,
+                        ListDataAccessContainersRequest>() {
+                    @Override
+                    public ListDataAccessContainersRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListDataAccessContainersRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListDataAccessContainersRequest, ListDataAccessContainersResponse>() {
+                    @Override
+                    public ListDataAccessContainersResponse apply(
+                            ListDataAccessContainersRequest request) {
+                        return client.listDataAccessContainers(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.databasemanagement.model.DataAccessContainerSummary} objects
+     * contained in responses from the listDataAccessContainers operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.databasemanagement.model.DataAccessContainerSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.databasemanagement.model.DataAccessContainerSummary>
+            listDataAccessContainersRecordIterator(final ListDataAccessContainersRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListDataAccessContainersRequest.Builder, ListDataAccessContainersRequest,
+                ListDataAccessContainersResponse,
+                com.oracle.bmc.databasemanagement.model.DataAccessContainerSummary>(
+                new com.google.common.base.Supplier<ListDataAccessContainersRequest.Builder>() {
+                    @Override
+                    public ListDataAccessContainersRequest.Builder get() {
+                        return ListDataAccessContainersRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListDataAccessContainersResponse, String>() {
+                    @Override
+                    public String apply(ListDataAccessContainersResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListDataAccessContainersRequest.Builder>,
+                        ListDataAccessContainersRequest>() {
+                    @Override
+                    public ListDataAccessContainersRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListDataAccessContainersRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListDataAccessContainersRequest, ListDataAccessContainersResponse>() {
+                    @Override
+                    public ListDataAccessContainersResponse apply(
+                            ListDataAccessContainersRequest request) {
+                        return client.listDataAccessContainers(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListDataAccessContainersResponse,
+                        java.util.List<
+                                com.oracle.bmc.databasemanagement.model
+                                        .DataAccessContainerSummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.databasemanagement.model
+                                            .DataAccessContainerSummary>
+                            apply(ListDataAccessContainersResponse response) {
+                        return response.getDataAccessContainerCollection().getItems();
+                    }
+                });
+    }
+
+    /**
      * Creates a new iterable which will iterate over the responses received from the listDbManagementPrivateEndpoints operation. This iterable
      * will fetch more data from the server as needed.
      *
@@ -851,6 +1093,576 @@ public class DbManagementPaginators {
     }
 
     /**
+     * Creates a new iterable which will iterate over the responses received from the listObjectPrivileges operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListObjectPrivilegesResponse> listObjectPrivilegesResponseIterator(
+            final ListObjectPrivilegesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListObjectPrivilegesRequest.Builder, ListObjectPrivilegesRequest,
+                ListObjectPrivilegesResponse>(
+                new com.google.common.base.Supplier<ListObjectPrivilegesRequest.Builder>() {
+                    @Override
+                    public ListObjectPrivilegesRequest.Builder get() {
+                        return ListObjectPrivilegesRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListObjectPrivilegesResponse, String>() {
+                    @Override
+                    public String apply(ListObjectPrivilegesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListObjectPrivilegesRequest.Builder>,
+                        ListObjectPrivilegesRequest>() {
+                    @Override
+                    public ListObjectPrivilegesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListObjectPrivilegesRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListObjectPrivilegesRequest, ListObjectPrivilegesResponse>() {
+                    @Override
+                    public ListObjectPrivilegesResponse apply(ListObjectPrivilegesRequest request) {
+                        return client.listObjectPrivileges(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.databasemanagement.model.ObjectPrivilegeSummary} objects
+     * contained in responses from the listObjectPrivileges operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.databasemanagement.model.ObjectPrivilegeSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.databasemanagement.model.ObjectPrivilegeSummary>
+            listObjectPrivilegesRecordIterator(final ListObjectPrivilegesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListObjectPrivilegesRequest.Builder, ListObjectPrivilegesRequest,
+                ListObjectPrivilegesResponse,
+                com.oracle.bmc.databasemanagement.model.ObjectPrivilegeSummary>(
+                new com.google.common.base.Supplier<ListObjectPrivilegesRequest.Builder>() {
+                    @Override
+                    public ListObjectPrivilegesRequest.Builder get() {
+                        return ListObjectPrivilegesRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListObjectPrivilegesResponse, String>() {
+                    @Override
+                    public String apply(ListObjectPrivilegesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListObjectPrivilegesRequest.Builder>,
+                        ListObjectPrivilegesRequest>() {
+                    @Override
+                    public ListObjectPrivilegesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListObjectPrivilegesRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListObjectPrivilegesRequest, ListObjectPrivilegesResponse>() {
+                    @Override
+                    public ListObjectPrivilegesResponse apply(ListObjectPrivilegesRequest request) {
+                        return client.listObjectPrivileges(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListObjectPrivilegesResponse,
+                        java.util.List<
+                                com.oracle.bmc.databasemanagement.model.ObjectPrivilegeSummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.databasemanagement.model.ObjectPrivilegeSummary>
+                            apply(ListObjectPrivilegesResponse response) {
+                        return response.getObjectPrivilegeCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the listProxiedForUsers operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListProxiedForUsersResponse> listProxiedForUsersResponseIterator(
+            final ListProxiedForUsersRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListProxiedForUsersRequest.Builder, ListProxiedForUsersRequest,
+                ListProxiedForUsersResponse>(
+                new com.google.common.base.Supplier<ListProxiedForUsersRequest.Builder>() {
+                    @Override
+                    public ListProxiedForUsersRequest.Builder get() {
+                        return ListProxiedForUsersRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListProxiedForUsersResponse, String>() {
+                    @Override
+                    public String apply(ListProxiedForUsersResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListProxiedForUsersRequest.Builder>,
+                        ListProxiedForUsersRequest>() {
+                    @Override
+                    public ListProxiedForUsersRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListProxiedForUsersRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListProxiedForUsersRequest, ListProxiedForUsersResponse>() {
+                    @Override
+                    public ListProxiedForUsersResponse apply(ListProxiedForUsersRequest request) {
+                        return client.listProxiedForUsers(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.databasemanagement.model.ProxiedForUserSummary} objects
+     * contained in responses from the listProxiedForUsers operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.databasemanagement.model.ProxiedForUserSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.databasemanagement.model.ProxiedForUserSummary>
+            listProxiedForUsersRecordIterator(final ListProxiedForUsersRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListProxiedForUsersRequest.Builder, ListProxiedForUsersRequest,
+                ListProxiedForUsersResponse,
+                com.oracle.bmc.databasemanagement.model.ProxiedForUserSummary>(
+                new com.google.common.base.Supplier<ListProxiedForUsersRequest.Builder>() {
+                    @Override
+                    public ListProxiedForUsersRequest.Builder get() {
+                        return ListProxiedForUsersRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListProxiedForUsersResponse, String>() {
+                    @Override
+                    public String apply(ListProxiedForUsersResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListProxiedForUsersRequest.Builder>,
+                        ListProxiedForUsersRequest>() {
+                    @Override
+                    public ListProxiedForUsersRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListProxiedForUsersRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListProxiedForUsersRequest, ListProxiedForUsersResponse>() {
+                    @Override
+                    public ListProxiedForUsersResponse apply(ListProxiedForUsersRequest request) {
+                        return client.listProxiedForUsers(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListProxiedForUsersResponse,
+                        java.util.List<
+                                com.oracle.bmc.databasemanagement.model.ProxiedForUserSummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.databasemanagement.model.ProxiedForUserSummary>
+                            apply(ListProxiedForUsersResponse response) {
+                        return response.getProxiedForUserCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the listProxyUsers operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListProxyUsersResponse> listProxyUsersResponseIterator(
+            final ListProxyUsersRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListProxyUsersRequest.Builder, ListProxyUsersRequest, ListProxyUsersResponse>(
+                new com.google.common.base.Supplier<ListProxyUsersRequest.Builder>() {
+                    @Override
+                    public ListProxyUsersRequest.Builder get() {
+                        return ListProxyUsersRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListProxyUsersResponse, String>() {
+                    @Override
+                    public String apply(ListProxyUsersResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListProxyUsersRequest.Builder>,
+                        ListProxyUsersRequest>() {
+                    @Override
+                    public ListProxyUsersRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListProxyUsersRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListProxyUsersRequest, ListProxyUsersResponse>() {
+                    @Override
+                    public ListProxyUsersResponse apply(ListProxyUsersRequest request) {
+                        return client.listProxyUsers(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.databasemanagement.model.ProxyUserSummary} objects
+     * contained in responses from the listProxyUsers operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.databasemanagement.model.ProxyUserSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.databasemanagement.model.ProxyUserSummary>
+            listProxyUsersRecordIterator(final ListProxyUsersRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListProxyUsersRequest.Builder, ListProxyUsersRequest, ListProxyUsersResponse,
+                com.oracle.bmc.databasemanagement.model.ProxyUserSummary>(
+                new com.google.common.base.Supplier<ListProxyUsersRequest.Builder>() {
+                    @Override
+                    public ListProxyUsersRequest.Builder get() {
+                        return ListProxyUsersRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListProxyUsersResponse, String>() {
+                    @Override
+                    public String apply(ListProxyUsersResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListProxyUsersRequest.Builder>,
+                        ListProxyUsersRequest>() {
+                    @Override
+                    public ListProxyUsersRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListProxyUsersRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListProxyUsersRequest, ListProxyUsersResponse>() {
+                    @Override
+                    public ListProxyUsersResponse apply(ListProxyUsersRequest request) {
+                        return client.listProxyUsers(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListProxyUsersResponse,
+                        java.util.List<
+                                com.oracle.bmc.databasemanagement.model.ProxyUserSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.databasemanagement.model.ProxyUserSummary>
+                            apply(ListProxyUsersResponse response) {
+                        return response.getProxyUserCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the listRoles operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListRolesResponse> listRolesResponseIterator(final ListRolesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListRolesRequest.Builder, ListRolesRequest, ListRolesResponse>(
+                new com.google.common.base.Supplier<ListRolesRequest.Builder>() {
+                    @Override
+                    public ListRolesRequest.Builder get() {
+                        return ListRolesRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListRolesResponse, String>() {
+                    @Override
+                    public String apply(ListRolesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListRolesRequest.Builder>,
+                        ListRolesRequest>() {
+                    @Override
+                    public ListRolesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListRolesRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<ListRolesRequest, ListRolesResponse>() {
+                    @Override
+                    public ListRolesResponse apply(ListRolesRequest request) {
+                        return client.listRoles(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.databasemanagement.model.RoleSummary} objects
+     * contained in responses from the listRoles operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.databasemanagement.model.RoleSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.databasemanagement.model.RoleSummary> listRolesRecordIterator(
+            final ListRolesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListRolesRequest.Builder, ListRolesRequest, ListRolesResponse,
+                com.oracle.bmc.databasemanagement.model.RoleSummary>(
+                new com.google.common.base.Supplier<ListRolesRequest.Builder>() {
+                    @Override
+                    public ListRolesRequest.Builder get() {
+                        return ListRolesRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListRolesResponse, String>() {
+                    @Override
+                    public String apply(ListRolesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListRolesRequest.Builder>,
+                        ListRolesRequest>() {
+                    @Override
+                    public ListRolesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListRolesRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<ListRolesRequest, ListRolesResponse>() {
+                    @Override
+                    public ListRolesResponse apply(ListRolesRequest request) {
+                        return client.listRoles(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListRolesResponse,
+                        java.util.List<com.oracle.bmc.databasemanagement.model.RoleSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.databasemanagement.model.RoleSummary>
+                            apply(ListRolesResponse response) {
+                        return response.getRoleCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the listSystemPrivileges operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListSystemPrivilegesResponse> listSystemPrivilegesResponseIterator(
+            final ListSystemPrivilegesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListSystemPrivilegesRequest.Builder, ListSystemPrivilegesRequest,
+                ListSystemPrivilegesResponse>(
+                new com.google.common.base.Supplier<ListSystemPrivilegesRequest.Builder>() {
+                    @Override
+                    public ListSystemPrivilegesRequest.Builder get() {
+                        return ListSystemPrivilegesRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListSystemPrivilegesResponse, String>() {
+                    @Override
+                    public String apply(ListSystemPrivilegesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListSystemPrivilegesRequest.Builder>,
+                        ListSystemPrivilegesRequest>() {
+                    @Override
+                    public ListSystemPrivilegesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListSystemPrivilegesRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListSystemPrivilegesRequest, ListSystemPrivilegesResponse>() {
+                    @Override
+                    public ListSystemPrivilegesResponse apply(ListSystemPrivilegesRequest request) {
+                        return client.listSystemPrivileges(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.databasemanagement.model.SystemPrivilegeSummary} objects
+     * contained in responses from the listSystemPrivileges operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.databasemanagement.model.SystemPrivilegeSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.databasemanagement.model.SystemPrivilegeSummary>
+            listSystemPrivilegesRecordIterator(final ListSystemPrivilegesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListSystemPrivilegesRequest.Builder, ListSystemPrivilegesRequest,
+                ListSystemPrivilegesResponse,
+                com.oracle.bmc.databasemanagement.model.SystemPrivilegeSummary>(
+                new com.google.common.base.Supplier<ListSystemPrivilegesRequest.Builder>() {
+                    @Override
+                    public ListSystemPrivilegesRequest.Builder get() {
+                        return ListSystemPrivilegesRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListSystemPrivilegesResponse, String>() {
+                    @Override
+                    public String apply(ListSystemPrivilegesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListSystemPrivilegesRequest.Builder>,
+                        ListSystemPrivilegesRequest>() {
+                    @Override
+                    public ListSystemPrivilegesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListSystemPrivilegesRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListSystemPrivilegesRequest, ListSystemPrivilegesResponse>() {
+                    @Override
+                    public ListSystemPrivilegesResponse apply(ListSystemPrivilegesRequest request) {
+                        return client.listSystemPrivileges(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListSystemPrivilegesResponse,
+                        java.util.List<
+                                com.oracle.bmc.databasemanagement.model.SystemPrivilegeSummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.databasemanagement.model.SystemPrivilegeSummary>
+                            apply(ListSystemPrivilegesResponse response) {
+                        return response.getSystemPrivilegeCollection().getItems();
+                    }
+                });
+    }
+
+    /**
      * Creates a new iterable which will iterate over the responses received from the listTablespaces operation. This iterable
      * will fetch more data from the server as needed.
      *
@@ -959,6 +1771,115 @@ public class DbManagementPaginators {
                     public java.util.List<com.oracle.bmc.databasemanagement.model.TablespaceSummary>
                             apply(ListTablespacesResponse response) {
                         return response.getTablespaceCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the listUsers operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListUsersResponse> listUsersResponseIterator(final ListUsersRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListUsersRequest.Builder, ListUsersRequest, ListUsersResponse>(
+                new com.google.common.base.Supplier<ListUsersRequest.Builder>() {
+                    @Override
+                    public ListUsersRequest.Builder get() {
+                        return ListUsersRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListUsersResponse, String>() {
+                    @Override
+                    public String apply(ListUsersResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListUsersRequest.Builder>,
+                        ListUsersRequest>() {
+                    @Override
+                    public ListUsersRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListUsersRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<ListUsersRequest, ListUsersResponse>() {
+                    @Override
+                    public ListUsersResponse apply(ListUsersRequest request) {
+                        return client.listUsers(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.databasemanagement.model.UserSummary} objects
+     * contained in responses from the listUsers operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.databasemanagement.model.UserSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.databasemanagement.model.UserSummary> listUsersRecordIterator(
+            final ListUsersRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListUsersRequest.Builder, ListUsersRequest, ListUsersResponse,
+                com.oracle.bmc.databasemanagement.model.UserSummary>(
+                new com.google.common.base.Supplier<ListUsersRequest.Builder>() {
+                    @Override
+                    public ListUsersRequest.Builder get() {
+                        return ListUsersRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListUsersResponse, String>() {
+                    @Override
+                    public String apply(ListUsersResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListUsersRequest.Builder>,
+                        ListUsersRequest>() {
+                    @Override
+                    public ListUsersRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListUsersRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<ListUsersRequest, ListUsersResponse>() {
+                    @Override
+                    public ListUsersResponse apply(ListUsersRequest request) {
+                        return client.listUsers(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListUsersResponse,
+                        java.util.List<com.oracle.bmc.databasemanagement.model.UserSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.databasemanagement.model.UserSummary>
+                            apply(ListUsersResponse response) {
+                        return response.getUserCollection().getItems();
                     }
                 });
     }

@@ -84,7 +84,7 @@ public class BulkEditResource {
     String id;
 
     /**
-     * The type of resource. See {@link #bulkEditResourceTypes(BulkEditResourceTypesRequest) bulkEditResourceTypes}.
+     * The type of resource. See {@link #listBulkEditTagsResourceTypes(ListBulkEditTagsResourceTypesRequest) listBulkEditTagsResourceTypes}.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("resourceType")
     String resourceType;

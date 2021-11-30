@@ -612,6 +612,7 @@ public class BlockchainPlatformClient implements BlockchainPlatform {
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
@@ -670,6 +671,7 @@ public class BlockchainPlatformClient implements BlockchainPlatform {
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         return retrier.execute(
                 interceptedRequest,
@@ -812,6 +814,37 @@ public class BlockchainPlatformClient implements BlockchainPlatform {
                 GetWorkRequestConverter.fromRequest(client, interceptedRequest);
         com.google.common.base.Function<javax.ws.rs.core.Response, GetWorkRequestResponse>
                 transformer = GetWorkRequestConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ListBlockchainPlatformPatchesResponse listBlockchainPlatformPatches(
+            ListBlockchainPlatformPatchesRequest request) {
+        LOG.trace("Called listBlockchainPlatformPatches");
+        final ListBlockchainPlatformPatchesRequest interceptedRequest =
+                ListBlockchainPlatformPatchesConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListBlockchainPlatformPatchesConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ListBlockchainPlatformPatchesResponse>
+                transformer = ListBlockchainPlatformPatchesConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
@@ -1237,6 +1270,43 @@ public class BlockchainPlatformClient implements BlockchainPlatform {
                                         client.put(
                                                 ib,
                                                 retriedRequest.getUpdatePeerDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public UpgradeBlockchainPlatformResponse upgradeBlockchainPlatform(
+            UpgradeBlockchainPlatformRequest request) {
+        LOG.trace("Called upgradeBlockchainPlatform");
+        final UpgradeBlockchainPlatformRequest interceptedRequest =
+                UpgradeBlockchainPlatformConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpgradeBlockchainPlatformConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, UpgradeBlockchainPlatformResponse>
+                transformer = UpgradeBlockchainPlatformConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getUpgradeBlockchainPlatformDetails(),
                                                 retriedRequest);
                                 return transformer.apply(response);
                             });

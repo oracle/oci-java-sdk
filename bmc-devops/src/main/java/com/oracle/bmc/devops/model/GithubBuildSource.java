@@ -5,7 +5,7 @@
 package com.oracle.bmc.devops.model;
 
 /**
- * Github Build Source for Build Stage
+ * GitHub build source for Build stage.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -106,7 +106,7 @@ public class GithubBuildSource extends BuildSource {
     }
 
     /**
-     * Connection identifier pertinent to GITHUB source provider
+     * Connection identifier pertinent to GitHub source provider.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("connectionId")
     String connectionId;

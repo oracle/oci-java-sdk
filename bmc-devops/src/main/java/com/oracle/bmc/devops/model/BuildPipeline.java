@@ -5,7 +5,7 @@
 package com.oracle.bmc.devops.model;
 
 /**
- * A set of stages whose predecessor relation forms a directed acyclic graph.
+ * A set of stages forming a directed acyclic graph that defines the build process.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -196,48 +196,48 @@ public class BuildPipeline {
     }
 
     /**
-     * Unique identifier that is immutable on creation
+     * Unique identifier that is immutable on creation.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     String id;
 
     /**
-     * Optional description about the BuildPipeline
+     * Optional description about the build pipeline.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     String description;
 
     /**
-     * BuildPipeline identifier which can be renamed and is not necessarily unique
+     * Build pipeline display name, which can be renamed and is not necessarily unique. Avoid entering confidential information.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     String displayName;
 
     /**
-     * Compartment Identifier
+     * The OCID of the compartment where the build pipeline is created.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     String compartmentId;
 
     /**
-     * Project Identifier
+     * The OCID of the DevOps project.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("projectId")
     String projectId;
 
     /**
-     * The time the BuildPipeline was created. An RFC3339 formatted datetime string
+     * The time the build pipeline was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     java.util.Date timeCreated;
 
     /**
-     * The time at which the BuildPipeline was updated. An RFC3339 formatted datetime string
+     * The time the build pipeline was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     java.util.Date timeUpdated;
     /**
-     * The current state of the BuildPipeline.
+     * The current state of the build pipeline.
      **/
     @lombok.extern.slf4j.Slf4j
     public enum LifecycleState {
@@ -288,7 +288,7 @@ public class BuildPipeline {
         }
     };
     /**
-     * The current state of the BuildPipeline.
+     * The current state of the build pipeline.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     LifecycleState lifecycleState;

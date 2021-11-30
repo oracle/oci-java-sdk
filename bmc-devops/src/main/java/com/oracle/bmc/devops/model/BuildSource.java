@@ -5,7 +5,7 @@
 package com.oracle.bmc.devops.model;
 
 /**
- * Build Source required for Build Stage.
+ * Build source required for the Build stage.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -45,25 +45,25 @@ package com.oracle.bmc.devops.model;
 public class BuildSource {
 
     /**
-     * Name of the Build source. This must be unique within a BuildSourceCollection. The name can be used by customers to locate the working directory pertinent to this repository.
+     * Name of the build source. This must be unique within a build source collection. The name can be used by customers to locate the working directory pertinent to this repository.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     String name;
 
     /**
-     * Url for repository
+     * URL for the repository.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("repositoryUrl")
     String repositoryUrl;
 
     /**
-     * branch name
+     * Branch name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("branch")
     String branch;
 
     /**
-     * The type of Source Provider.
+     * The type of source provider.
      **/
     @lombok.extern.slf4j.Slf4j
     public enum ConnectionType {

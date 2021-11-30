@@ -447,6 +447,15 @@ public class AutonomousDatabaseSummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("databaseManagementStatus")
+        private DatabaseManagementStatus databaseManagementStatus;
+
+        public Builder databaseManagementStatus(DatabaseManagementStatus databaseManagementStatus) {
+            this.databaseManagementStatus = databaseManagementStatus;
+            this.__explicitlySet__.add("databaseManagementStatus");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("timeMaintenanceBegin")
         private java.util.Date timeMaintenanceBegin;
 
@@ -752,6 +761,7 @@ public class AutonomousDatabaseSummary {
                             isAutoScalingEnabled,
                             dataSafeStatus,
                             operationsInsightsStatus,
+                            databaseManagementStatus,
                             timeMaintenanceBegin,
                             timeMaintenanceEnd,
                             isRefreshableClone,
@@ -835,6 +845,7 @@ public class AutonomousDatabaseSummary {
                             .isAutoScalingEnabled(o.getIsAutoScalingEnabled())
                             .dataSafeStatus(o.getDataSafeStatus())
                             .operationsInsightsStatus(o.getOperationsInsightsStatus())
+                            .databaseManagementStatus(o.getDatabaseManagementStatus())
                             .timeMaintenanceBegin(o.getTimeMaintenanceBegin())
                             .timeMaintenanceEnd(o.getTimeMaintenanceEnd())
                             .isRefreshableClone(o.getIsRefreshableClone())
@@ -1531,6 +1542,61 @@ public class AutonomousDatabaseSummary {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("operationsInsightsStatus")
     OperationsInsightsStatus operationsInsightsStatus;
+    /**
+     * Status of Database Management for this Autonomous Database.
+     **/
+    @lombok.extern.slf4j.Slf4j
+    public enum DatabaseManagementStatus {
+        Enabling("ENABLING"),
+        Enabled("ENABLED"),
+        Disabling("DISABLING"),
+        NotEnabled("NOT_ENABLED"),
+        FailedEnabling("FAILED_ENABLING"),
+        FailedDisabling("FAILED_DISABLING"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private final String value;
+        private static java.util.Map<String, DatabaseManagementStatus> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (DatabaseManagementStatus v : DatabaseManagementStatus.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        DatabaseManagementStatus(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static DatabaseManagementStatus create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'DatabaseManagementStatus', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * Status of Database Management for this Autonomous Database.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("databaseManagementStatus")
+    DatabaseManagementStatus databaseManagementStatus;
 
     /**
      * The date and time when maintenance will begin.

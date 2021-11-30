@@ -3388,6 +3388,37 @@ public class VirtualNetworkClient implements VirtualNetwork {
     }
 
     @Override
+    public GetAllowedIkeIPSecParametersResponse getAllowedIkeIPSecParameters(
+            GetAllowedIkeIPSecParametersRequest request) {
+        LOG.trace("Called getAllowedIkeIPSecParameters");
+        final GetAllowedIkeIPSecParametersRequest interceptedRequest =
+                GetAllowedIkeIPSecParametersConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetAllowedIkeIPSecParametersConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, GetAllowedIkeIPSecParametersResponse>
+                transformer = GetAllowedIkeIPSecParametersConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public GetByoipRangeResponse getByoipRange(GetByoipRangeRequest request) {
         LOG.trace("Called getByoipRange");
         final GetByoipRangeRequest interceptedRequest =
@@ -3971,6 +4002,37 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 GetIPSecConnectionTunnelConverter.fromRequest(client, interceptedRequest);
         com.google.common.base.Function<javax.ws.rs.core.Response, GetIPSecConnectionTunnelResponse>
                 transformer = GetIPSecConnectionTunnelConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public GetIPSecConnectionTunnelErrorResponse getIPSecConnectionTunnelError(
+            GetIPSecConnectionTunnelErrorRequest request) {
+        LOG.trace("Called getIPSecConnectionTunnelError");
+        final GetIPSecConnectionTunnelErrorRequest interceptedRequest =
+                GetIPSecConnectionTunnelErrorConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetIPSecConnectionTunnelErrorConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, GetIPSecConnectionTunnelErrorResponse>
+                transformer = GetIPSecConnectionTunnelErrorConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
@@ -5424,6 +5486,71 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 transformer =
                         ListFastConnectProviderVirtualCircuitBandwidthShapesConverter
                                 .fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ListIPSecConnectionTunnelRoutesResponse listIPSecConnectionTunnelRoutes(
+            ListIPSecConnectionTunnelRoutesRequest request) {
+        LOG.trace("Called listIPSecConnectionTunnelRoutes");
+        final ListIPSecConnectionTunnelRoutesRequest interceptedRequest =
+                ListIPSecConnectionTunnelRoutesConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListIPSecConnectionTunnelRoutesConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ListIPSecConnectionTunnelRoutesResponse>
+                transformer = ListIPSecConnectionTunnelRoutesConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ListIPSecConnectionTunnelSecurityAssociationsResponse
+            listIPSecConnectionTunnelSecurityAssociations(
+                    ListIPSecConnectionTunnelSecurityAssociationsRequest request) {
+        LOG.trace("Called listIPSecConnectionTunnelSecurityAssociations");
+        final ListIPSecConnectionTunnelSecurityAssociationsRequest interceptedRequest =
+                ListIPSecConnectionTunnelSecurityAssociationsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListIPSecConnectionTunnelSecurityAssociationsConverter.fromRequest(
+                        client, interceptedRequest);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        ListIPSecConnectionTunnelSecurityAssociationsResponse>
+                transformer = ListIPSecConnectionTunnelSecurityAssociationsConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(

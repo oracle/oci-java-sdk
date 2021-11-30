@@ -3571,6 +3571,53 @@ public class DatabaseAsyncClient implements DatabaseAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<DisableAutonomousDatabaseManagementResponse>
+            disableAutonomousDatabaseManagement(
+                    DisableAutonomousDatabaseManagementRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    DisableAutonomousDatabaseManagementRequest,
+                                    DisableAutonomousDatabaseManagementResponse>
+                            handler) {
+        LOG.trace("Called async disableAutonomousDatabaseManagement");
+        final DisableAutonomousDatabaseManagementRequest interceptedRequest =
+                DisableAutonomousDatabaseManagementConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DisableAutonomousDatabaseManagementConverter.fromRequest(
+                        client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, DisableAutonomousDatabaseManagementResponse>
+                transformer = DisableAutonomousDatabaseManagementConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        DisableAutonomousDatabaseManagementRequest,
+                        DisableAutonomousDatabaseManagementResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DisableAutonomousDatabaseManagementRequest,
+                                DisableAutonomousDatabaseManagementResponse>,
+                        java.util.concurrent.Future<DisableAutonomousDatabaseManagementResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DisableAutonomousDatabaseManagementRequest,
+                    DisableAutonomousDatabaseManagementResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<DisableAutonomousDatabaseOperationsInsightsResponse>
             disableAutonomousDatabaseOperationsInsights(
                     DisableAutonomousDatabaseOperationsInsightsRequest request,
@@ -4082,6 +4129,52 @@ public class DatabaseAsyncClient implements DatabaseAsync {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     DownloadVmClusterNetworkConfigFileRequest,
                     DownloadVmClusterNetworkConfigFileResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<EnableAutonomousDatabaseManagementResponse>
+            enableAutonomousDatabaseManagement(
+                    EnableAutonomousDatabaseManagementRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    EnableAutonomousDatabaseManagementRequest,
+                                    EnableAutonomousDatabaseManagementResponse>
+                            handler) {
+        LOG.trace("Called async enableAutonomousDatabaseManagement");
+        final EnableAutonomousDatabaseManagementRequest interceptedRequest =
+                EnableAutonomousDatabaseManagementConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                EnableAutonomousDatabaseManagementConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, EnableAutonomousDatabaseManagementResponse>
+                transformer = EnableAutonomousDatabaseManagementConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        EnableAutonomousDatabaseManagementRequest,
+                        EnableAutonomousDatabaseManagementResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                EnableAutonomousDatabaseManagementRequest,
+                                EnableAutonomousDatabaseManagementResponse>,
+                        java.util.concurrent.Future<EnableAutonomousDatabaseManagementResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    EnableAutonomousDatabaseManagementRequest,
+                    EnableAutonomousDatabaseManagementResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,

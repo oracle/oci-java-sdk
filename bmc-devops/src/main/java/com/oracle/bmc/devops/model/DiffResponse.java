@@ -139,13 +139,13 @@ public class DiffResponse {
     }
 
     /**
-     * Boolean for whether all changes are included in the response.
+     * Boolean value to indicate if all changes are included in the response.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("areAllChangesIncluded")
     Boolean areAllChangesIncluded;
 
     /**
-     * Count of each type of change in diff.
+     * Count of each type of change in difference.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("changeTypeCount")
     java.util.Map<String, Integer> changeTypeCount;
@@ -169,19 +169,19 @@ public class DiffResponse {
     Integer commitsBehindCount;
 
     /**
-     * The number of lines added in whole diff.
+     * The number of lines added in whole difference.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("addedLinesCount")
     Integer addedLinesCount;
 
     /**
-     * The number of lines deleted in whole diff.
+     * The number of lines deleted in whole difference.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("deletedLinesCount")
     Integer deletedLinesCount;
 
     /**
-     * List of changes in the diff.
+     * List of changes in the difference.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("changes")
     java.util.List<DiffResponseEntry> changes;

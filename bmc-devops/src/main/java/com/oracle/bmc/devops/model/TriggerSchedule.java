@@ -69,10 +69,10 @@ public class TriggerSchedule {
     }
 
     /**
-     * Different types to trigger schedule
-     * - NONE - No automated sync schedule.
-     * - DEFAULT - Trigger Schedule will be every 30 minutes.
-     * - CUSTOM - Custom triggering schedule.
+     * Different types of trigger schedule:
+     * None - No automated synchronization schedule.
+     * Default - Trigger schedule is every 30 minutes.
+     * Custom - Custom triggering schedule.
      *
      **/
     @lombok.extern.slf4j.Slf4j
@@ -120,10 +120,10 @@ public class TriggerSchedule {
         }
     };
     /**
-     * Different types to trigger schedule
-     * - NONE - No automated sync schedule.
-     * - DEFAULT - Trigger Schedule will be every 30 minutes.
-     * - CUSTOM - Custom triggering schedule.
+     * Different types of trigger schedule:
+     * None - No automated synchronization schedule.
+     * Default - Trigger schedule is every 30 minutes.
+     * Custom - Custom triggering schedule.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("scheduleType")
@@ -131,8 +131,8 @@ public class TriggerSchedule {
 
     /**
      * Valid if type is CUSTOM. Following RFC 5545 recurrence rules, we can specify starting time, occurrence frequency, and interval size.
-     * Example for frequency could be DAILY/WEEKLY/HOURLY or any RFC 5545 supported frequency, which is followed by start time of this window, we can
-     * control the start time with BYHOUR, BYMINUTE and BYSECONDS. It is followed by the interval size.
+     * Example for frequency could be DAILY/WEEKLY/HOURLY or any RFC 5545 supported frequency, which is followed by start time of this window.
+     * You can control the start time with BYHOUR, BYMINUTE and BYSECONDS. It is followed by the interval size.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("customSchedule")

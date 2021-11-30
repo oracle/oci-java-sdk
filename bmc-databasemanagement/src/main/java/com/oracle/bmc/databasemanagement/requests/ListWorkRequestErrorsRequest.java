@@ -21,7 +21,7 @@ public class ListWorkRequestErrorsRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the async Work Request.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the asynchronous work request.
      */
     private String workRequestId;
 
@@ -31,25 +31,25 @@ public class ListWorkRequestErrorsRequest
     private String opcRequestId;
 
     /**
-     * The page token representing the page, from where the next set of paginated results
+     * The page token representing the page from where the next set of paginated results
      * are retrieved. This is usually retrieved from a previous list call.
      *
      */
     private String page;
 
     /**
-     * The maximum number of records returned in paginated response.
+     * The maximum number of records returned in the paginated response.
      */
     private Integer limit;
 
     /**
-     * The field to sort by. Only one sort order may be provided. Default order for timeAccepted is descending.
+     * The field to sort by. Only one sort order may be provided and the default order for timeAccepted is descending.
      *
      */
     private SortBy sortBy;
 
     /**
-     * The field to sort by. Only one sort order may be provided. Default order for timeAccepted is descending.
+     * The field to sort by. Only one sort order may be provided and the default order for timeAccepted is descending.
      *
      **/
     public enum SortBy {

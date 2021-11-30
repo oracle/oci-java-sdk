@@ -22,7 +22,7 @@ public class UpdateTriggerRequest
                 com.oracle.bmc.devops.model.UpdateTriggerDetails> {
 
     /**
-     * unique Trigger identifier
+     * Unique trigger identifier.
      */
     private String triggerId;
 

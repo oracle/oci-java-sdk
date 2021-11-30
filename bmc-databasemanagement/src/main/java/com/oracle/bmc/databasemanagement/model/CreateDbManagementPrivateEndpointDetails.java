@@ -44,6 +44,15 @@ public class CreateDbManagementPrivateEndpointDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("isCluster")
+        private Boolean isCluster;
+
+        public Builder isCluster(Boolean isCluster) {
+            this.isCluster = isCluster;
+            this.__explicitlySet__.add("isCluster");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
         private String subnetId;
 
@@ -77,7 +86,7 @@ public class CreateDbManagementPrivateEndpointDetails {
         public CreateDbManagementPrivateEndpointDetails build() {
             CreateDbManagementPrivateEndpointDetails __instance__ =
                     new CreateDbManagementPrivateEndpointDetails(
-                            name, compartmentId, subnetId, description, nsgIds);
+                            name, compartmentId, isCluster, subnetId, description, nsgIds);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -87,6 +96,7 @@ public class CreateDbManagementPrivateEndpointDetails {
             Builder copiedBuilder =
                     name(o.getName())
                             .compartmentId(o.getCompartmentId())
+                            .isCluster(o.getIsCluster())
                             .subnetId(o.getSubnetId())
                             .description(o.getDescription())
                             .nsgIds(o.getNsgIds());
@@ -104,19 +114,25 @@ public class CreateDbManagementPrivateEndpointDetails {
     }
 
     /**
-     * The display name for the private endpoint. It is changeable.
+     * The display name of the Database Management private endpoint.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     String name;
 
     /**
-     * The OCID of the compartment.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     String compartmentId;
 
     /**
-     * The OCID of the subnet.
+     * Specifies whether the Database Management private endpoint will be used for Oracle Databases in a cluster.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isCluster")
+    Boolean isCluster;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the subnet.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
     String subnetId;
@@ -128,7 +144,7 @@ public class CreateDbManagementPrivateEndpointDetails {
     String description;
 
     /**
-     * The OCIDs of the network security groups that the private endpoint belongs to.
+     * The OCIDs of the Network Security Groups to which the Database Management private endpoint belongs.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")

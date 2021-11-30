@@ -5,7 +5,7 @@
 package com.oracle.bmc.devops.model;
 
 /**
- * Commit details that need to be used for the BuildRun
+ * Commit details that need to be used for the build run.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -80,7 +80,7 @@ public class CommitInfo {
     }
 
     /**
-     * Repository URL
+     * Repository URL.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("repositoryUrl")
     String repositoryUrl;
@@ -92,7 +92,7 @@ public class CommitInfo {
     String repositoryBranch;
 
     /**
-     * Commit Hash pertinent to the repository URL and Branch specified.
+     * Commit hash pertinent to the repository URL and the specified branch.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("commitHash")
     String commitHash;

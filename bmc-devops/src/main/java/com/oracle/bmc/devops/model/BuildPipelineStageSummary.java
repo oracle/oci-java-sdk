@@ -49,49 +49,49 @@ package com.oracle.bmc.devops.model;
 public class BuildPipelineStageSummary {
 
     /**
-     * Unique identifier that is immutable on creation
+     * Unique identifier that is immutable on creation.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     String id;
 
     /**
-     * Stage identifier which can be renamed and is not necessarily unique
+     * Stage display name, which can be renamed and is not necessarily unique. Avoid entering confidential information.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     String displayName;
 
     /**
-     * Build Project Identifier
+     * The OCID of the DevOps project.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("projectId")
     String projectId;
 
     /**
-     * Build Pipeline Identifier
+     * The OCID of the build pipeline.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("buildPipelineId")
     String buildPipelineId;
 
     /**
-     * Compartment Identifier
+     * The OCID of the compartment where the pipeline is created.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     String compartmentId;
 
     /**
-     * The time at which the Stage was created. An RFC3339 formatted datetime string
+     * The time the stage was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     java.util.Date timeCreated;
 
     /**
-     * The time at which the Stage was updated. An RFC3339 formatted datetime string
+     * The time the stage was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     java.util.Date timeUpdated;
 
     /**
-     * The current state of the Stage.
+     * The current state of the stage.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
@@ -104,7 +104,7 @@ public class BuildPipelineStageSummary {
     String lifecycleDetails;
 
     /**
-     * Optional description about the BuildStage
+     * Optional description about the build stage.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     String description;

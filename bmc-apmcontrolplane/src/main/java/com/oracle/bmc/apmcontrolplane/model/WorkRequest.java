@@ -5,7 +5,7 @@
 package com.oracle.bmc.apmcontrolplane.model;
 
 /**
- * A description of workrequest status
+ * A description of work request.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -150,7 +150,7 @@ public class WorkRequest {
     }
 
     /**
-     * Type of the work request
+     * The type of the work request.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("operationType")
     OperationTypes operationType;
@@ -162,20 +162,20 @@ public class WorkRequest {
     OperationStatus status;
 
     /**
-     * The id of the work request.
+     * The ID of the work request.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     String id;
 
     /**
-     * The ocid of the compartment that contains the work request.
+     * The OCID of the compartment that contains the work request.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     String compartmentId;
 
     /**
-     * The resources affected by this work request.
+     * The resources affected by the work request.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("resources")
     java.util.List<WorkRequestResource> resources;

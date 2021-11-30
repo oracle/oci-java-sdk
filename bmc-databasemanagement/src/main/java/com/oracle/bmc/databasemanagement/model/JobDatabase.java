@@ -78,13 +78,28 @@ public class JobDatabase {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("workloadType")
+        private WorkloadType workloadType;
+
+        public Builder workloadType(WorkloadType workloadType) {
+            this.workloadType = workloadType;
+            this.__explicitlySet__.add("workloadType");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public JobDatabase build() {
             JobDatabase __instance__ =
                     new JobDatabase(
-                            id, name, databaseType, databaseSubType, deploymentType, isCluster);
+                            id,
+                            name,
+                            databaseType,
+                            databaseSubType,
+                            deploymentType,
+                            isCluster,
+                            workloadType);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -97,7 +112,8 @@ public class JobDatabase {
                             .databaseType(o.getDatabaseType())
                             .databaseSubType(o.getDatabaseSubType())
                             .deploymentType(o.getDeploymentType())
-                            .isCluster(o.getIsCluster());
+                            .isCluster(o.getIsCluster())
+                            .workloadType(o.getWorkloadType());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -146,6 +162,12 @@ public class JobDatabase {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isCluster")
     Boolean isCluster;
+
+    /**
+     * The workload type of the Autonomous Database.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("workloadType")
+    WorkloadType workloadType;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

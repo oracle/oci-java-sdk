@@ -146,6 +146,60 @@ public class IPSecConnectionTunnel {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("oracleCanInitiate")
+        private OracleCanInitiate oracleCanInitiate;
+
+        public Builder oracleCanInitiate(OracleCanInitiate oracleCanInitiate) {
+            this.oracleCanInitiate = oracleCanInitiate;
+            this.__explicitlySet__.add("oracleCanInitiate");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("natTranslationEnabled")
+        private NatTranslationEnabled natTranslationEnabled;
+
+        public Builder natTranslationEnabled(NatTranslationEnabled natTranslationEnabled) {
+            this.natTranslationEnabled = natTranslationEnabled;
+            this.__explicitlySet__.add("natTranslationEnabled");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("dpdMode")
+        private DpdMode dpdMode;
+
+        public Builder dpdMode(DpdMode dpdMode) {
+            this.dpdMode = dpdMode;
+            this.__explicitlySet__.add("dpdMode");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("dpdTimeoutInSec")
+        private Integer dpdTimeoutInSec;
+
+        public Builder dpdTimeoutInSec(Integer dpdTimeoutInSec) {
+            this.dpdTimeoutInSec = dpdTimeoutInSec;
+            this.__explicitlySet__.add("dpdTimeoutInSec");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("phaseOneDetails")
+        private TunnelPhaseOneDetails phaseOneDetails;
+
+        public Builder phaseOneDetails(TunnelPhaseOneDetails phaseOneDetails) {
+            this.phaseOneDetails = phaseOneDetails;
+            this.__explicitlySet__.add("phaseOneDetails");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("phaseTwoDetails")
+        private TunnelPhaseTwoDetails phaseTwoDetails;
+
+        public Builder phaseTwoDetails(TunnelPhaseTwoDetails phaseTwoDetails) {
+            this.phaseTwoDetails = phaseTwoDetails;
+            this.__explicitlySet__.add("phaseTwoDetails");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -164,7 +218,13 @@ public class IPSecConnectionTunnel {
                             encryptionDomainConfig,
                             routing,
                             timeCreated,
-                            timeStatusUpdated);
+                            timeStatusUpdated,
+                            oracleCanInitiate,
+                            natTranslationEnabled,
+                            dpdMode,
+                            dpdTimeoutInSec,
+                            phaseOneDetails,
+                            phaseTwoDetails);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -184,7 +244,13 @@ public class IPSecConnectionTunnel {
                             .encryptionDomainConfig(o.getEncryptionDomainConfig())
                             .routing(o.getRouting())
                             .timeCreated(o.getTimeCreated())
-                            .timeStatusUpdated(o.getTimeStatusUpdated());
+                            .timeStatusUpdated(o.getTimeStatusUpdated())
+                            .oracleCanInitiate(o.getOracleCanInitiate())
+                            .natTranslationEnabled(o.getNatTranslationEnabled())
+                            .dpdMode(o.getDpdMode())
+                            .dpdTimeoutInSec(o.getDpdTimeoutInSec())
+                            .phaseOneDetails(o.getPhaseOneDetails())
+                            .phaseTwoDetails(o.getPhaseTwoDetails());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -473,6 +539,172 @@ public class IPSecConnectionTunnel {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeStatusUpdated")
     java.util.Date timeStatusUpdated;
+    /**
+     * Indicates whether Oracle can either initiate the tunnel or respond, or respond only.
+     **/
+    @lombok.extern.slf4j.Slf4j
+    public enum OracleCanInitiate {
+        InitiatorOrResponder("INITIATOR_OR_RESPONDER"),
+        ResponderOnly("RESPONDER_ONLY"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private final String value;
+        private static java.util.Map<String, OracleCanInitiate> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (OracleCanInitiate v : OracleCanInitiate.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        OracleCanInitiate(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static OracleCanInitiate create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'OracleCanInitiate', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * Indicates whether Oracle can either initiate the tunnel or respond, or respond only.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("oracleCanInitiate")
+    OracleCanInitiate oracleCanInitiate;
+    /**
+     * Whether NAT-T Enabled on the tunnel
+     **/
+    @lombok.extern.slf4j.Slf4j
+    public enum NatTranslationEnabled {
+        Enabled("ENABLED"),
+        Disabled("DISABLED"),
+        Auto("AUTO"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private final String value;
+        private static java.util.Map<String, NatTranslationEnabled> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (NatTranslationEnabled v : NatTranslationEnabled.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        NatTranslationEnabled(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static NatTranslationEnabled create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'NatTranslationEnabled', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * Whether NAT-T Enabled on the tunnel
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("natTranslationEnabled")
+    NatTranslationEnabled natTranslationEnabled;
+    /**
+     * dpd mode
+     **/
+    @lombok.extern.slf4j.Slf4j
+    public enum DpdMode {
+        InitiateAndRespond("INITIATE_AND_RESPOND"),
+        RespondOnly("RESPOND_ONLY"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private final String value;
+        private static java.util.Map<String, DpdMode> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (DpdMode v : DpdMode.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        DpdMode(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static DpdMode create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'DpdMode', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * dpd mode
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("dpdMode")
+    DpdMode dpdMode;
+
+    /**
+     * Dead peer detection (DPD) timeout in seconds.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("dpdTimeoutInSec")
+    Integer dpdTimeoutInSec;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("phaseOneDetails")
+    TunnelPhaseOneDetails phaseOneDetails;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("phaseTwoDetails")
+    TunnelPhaseTwoDetails phaseTwoDetails;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

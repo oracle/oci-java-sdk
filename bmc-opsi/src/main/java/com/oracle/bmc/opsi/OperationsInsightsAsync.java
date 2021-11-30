@@ -548,6 +548,7 @@ public interface OperationsInsightsAsync extends AutoCloseable {
 
     /**
      * Gets a list of database insight configurations based on the query parameters specified. Either compartmentId or databaseInsightId query parameter must be specified.
+     * When both compartmentId and compartmentIdInSubtree are specified, a list of database insight configurations in that compartment and in all sub-compartments will be returned.
      *
      *
      * @param request The request object containing the details to send
@@ -565,6 +566,7 @@ public interface OperationsInsightsAsync extends AutoCloseable {
 
     /**
      * Gets a list of database insights based on the query parameters specified. Either compartmentId or id query parameter must be specified.
+     * When both compartmentId and compartmentIdInSubtree are specified, a list of database insights in that compartment and in all sub-compartments will be returned.
      *
      *
      * @param request The request object containing the details to send
@@ -582,6 +584,7 @@ public interface OperationsInsightsAsync extends AutoCloseable {
 
     /**
      * Gets a list of Operations Insights Enterprise Manager bridges. Either compartmentId or id must be specified.
+     * When both compartmentId and compartmentIdInSubtree are specified, a list of bridges in that compartment and in all sub-compartments will be returned.
      *
      *
      * @param request The request object containing the details to send
@@ -616,6 +619,7 @@ public interface OperationsInsightsAsync extends AutoCloseable {
 
     /**
      * Gets a list of Exadata insights based on the query parameters specified. Either compartmentId or id query parameter must be specified.
+     * When both compartmentId and compartmentIdInSubtree are specified, a list of Exadata insights in that compartment and in all sub-compartments will be returned.
      *
      *
      * @param request The request object containing the details to send
@@ -651,6 +655,7 @@ public interface OperationsInsightsAsync extends AutoCloseable {
 
     /**
      * Gets a list of host insights based on the query parameters specified. Either compartmentId or id query parameter must be specified.
+     * When both compartmentId and compartmentIdInSubtree are specified, a list of host insights in that compartment and in all sub-compartments will be returned.
      *
      *
      * @param request The request object containing the details to send
@@ -740,7 +745,8 @@ public interface OperationsInsightsAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Search SQL by SQL Identifier across databases and get the SQL Text and the details of the databases executing the SQL for a given time period.
+     * Search SQL by SQL Identifier across databases in a compartment and in all sub-compartments if specified.
+     * And get the SQL Text and the details of the databases executing the SQL for a given time period.
      *
      *
      * @param request The request object containing the details to send
@@ -756,7 +762,7 @@ public interface OperationsInsightsAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Query SQL Warehouse to get the full SQL Text for a SQL.
+     * Query SQL Warehouse to get the full SQL Text for a SQL in a compartment and in all sub-compartments if specified.
      *
      *
      * @param request The request object containing the details to send
@@ -824,6 +830,7 @@ public interface OperationsInsightsAsync extends AutoCloseable {
     /**
      * Returns response with time series data (endTimestamp, capacity, baseCapacity) for the time period specified.
      * The maximum time range for analysis is 2 years, hence this is intentionally not paginated.
+     * If compartmentIdInSubtree is specified, aggregates resources in a compartment and in all sub-compartments.
      *
      *
      * @param request The request object containing the details to send
@@ -843,6 +850,7 @@ public interface OperationsInsightsAsync extends AutoCloseable {
 
     /**
      * Get Forecast predictions for CPU and Storage resources since a time in the past.
+     * If compartmentIdInSubtree is specified, aggregates resources in a compartment and in all sub-compartments.
      *
      *
      * @param request The request object containing the details to send
@@ -862,7 +870,7 @@ public interface OperationsInsightsAsync extends AutoCloseable {
 
     /**
      * Lists the Resource statistics (usage,capacity, usage change percent, utilization percent, base capacity, isAutoScalingEnabled)
-     * for each database filtered by utilization level.
+     * for each database filtered by utilization level in a compartment and in all sub-compartments if specified.
      *
      *
      * @param request The request object containing the details to send
@@ -884,6 +892,7 @@ public interface OperationsInsightsAsync extends AutoCloseable {
      * A cumulative distribution function is used to rank the usage data points per database within the specified time period.
      * For each database, the minimum data point with a ranking > the percentile value is included in the summation.
      * Linear regression functions are used to calculate the usage change percentage.
+     * If compartmentIdInSubtree is specified, aggregates resources in a compartment and in all sub-compartments.
      *
      *
      * @param request The request object containing the details to send
@@ -904,6 +913,7 @@ public interface OperationsInsightsAsync extends AutoCloseable {
     /**
      * Returns response with time series data (endTimestamp, usage, capacity) for the time period specified.
      * The maximum time range for analysis is 2 years, hence this is intentionally not paginated.
+     * If compartmentIdInSubtree is specified, aggregates resources in a compartment and in all sub-compartments.
      *
      *
      * @param request The request object containing the details to send
@@ -923,6 +933,7 @@ public interface OperationsInsightsAsync extends AutoCloseable {
 
     /**
      * Gets resources with current utilization (high and low) and projected utilization (high and low) for a resource type over specified time period.
+     * If compartmentIdInSubtree is specified, aggregates resources in a compartment and in all sub-compartments.
      *
      *
      * @param request The request object containing the details to send
@@ -1166,6 +1177,7 @@ public interface OperationsInsightsAsync extends AutoCloseable {
     /**
      * Returns response with time series data (endTimestamp, capacity) for the time period specified.
      * The maximum time range for analysis is 2 years, hence this is intentionally not paginated.
+     * If compartmentIdInSubtree is specified, aggregates resources in a compartment and in all sub-compartments.
      *
      *
      * @param request The request object containing the details to send
@@ -1185,6 +1197,7 @@ public interface OperationsInsightsAsync extends AutoCloseable {
 
     /**
      * Get Forecast predictions for CPU or memory resources since a time in the past.
+     * If compartmentIdInSubtree is specified, aggregates resources in a compartment and in all sub-compartments.
      *
      *
      * @param request The request object containing the details to send
@@ -1204,7 +1217,7 @@ public interface OperationsInsightsAsync extends AutoCloseable {
 
     /**
      * Lists the resource statistics (usage, capacity, usage change percent, utilization percent, load) for each host filtered
-     * by utilization level.
+     * by utilization level in a compartment and in all sub-compartments if specified.
      *
      *
      * @param request The request object containing the details to send
@@ -1226,6 +1239,7 @@ public interface OperationsInsightsAsync extends AutoCloseable {
      * A cumulative distribution function is used to rank the usage data points per host within the specified time period.
      * For each host, the minimum data point with a ranking > the percentile value is included in the summation.
      * Linear regression functions are used to calculate the usage change percentage.
+     * If compartmentIdInSubtree is specified, aggregates resources in a compartment and in all sub-compartments.
      *
      *
      * @param request The request object containing the details to send
@@ -1246,6 +1260,7 @@ public interface OperationsInsightsAsync extends AutoCloseable {
     /**
      * Returns response with time series data (endTimestamp, usage, capacity) for the time period specified.
      * The maximum time range for analysis is 2 years, hence this is intentionally not paginated.
+     * If compartmentIdInSubtree is specified, aggregates resources in a compartment and in all sub-compartments.
      *
      *
      * @param request The request object containing the details to send
@@ -1265,6 +1280,7 @@ public interface OperationsInsightsAsync extends AutoCloseable {
 
     /**
      * Gets resources with current utilization (high and low) and projected utilization (high and low) for a resource type over specified time period.
+     * If compartmentIdInSubtree is specified, aggregates resources in a compartment and in all sub-compartments.
      *
      *
      * @param request The request object containing the details to send
@@ -1284,7 +1300,7 @@ public interface OperationsInsightsAsync extends AutoCloseable {
 
     /**
      * Query SQL Warehouse to get the performance insights for SQLs taking greater than X% database time for a given
-     * time period across the given databases or database types.
+     * time period across the given databases or database types in a compartment and in all sub-compartments if specified.
      *
      *
      * @param request The request object containing the details to send
@@ -1340,7 +1356,7 @@ public interface OperationsInsightsAsync extends AutoCloseable {
 
     /**
      * Query SQL Warehouse to get the performance statistics for SQLs taking greater than X% database time for a given
-     * time period across the given databases or database types.
+     * time period across the given databases or database types in a compartment and in all sub-compartments if specified.
      *
      *
      * @param request The request object containing the details to send
@@ -1357,7 +1373,8 @@ public interface OperationsInsightsAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Query SQL Warehouse to get the performance statistics time series for a given SQL across given databases for a given time period.
+     * Query SQL Warehouse to get the performance statistics time series for a given SQL across given databases for a
+     * given time period in a compartment and in all sub-compartments if specified.
      *
      *
      * @param request The request object containing the details to send

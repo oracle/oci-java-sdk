@@ -5,7 +5,7 @@
 package com.oracle.bmc.devops.model;
 
 /**
- * Values for pipeline parameters to be supplied at the time of run.
+ * Values for pipeline parameters to be supplied at the time of running the build.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -68,14 +68,15 @@ public class BuildRunArgument {
     }
 
     /**
-     * Name of the parameter (Case-sensitive).
+     * Name of the parameter (case-sensitive). Parameter name must be ^[a-zA-Z][a-zA-Z_0-9]*$.
+     * Example: 'Build_Pipeline_param' is not same as 'build_pipeline_Param'
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     String name;
 
     /**
-     * value of the argument
+     * Value of the argument.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("value")
     String value;

@@ -5,7 +5,7 @@
 package com.oracle.bmc.devops.model;
 
 /**
- * Specifies list of arguments passed along with the BuildRun.
+ * Specifies list of arguments passed along with the build run.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -62,7 +62,7 @@ public class BuildRunArgumentCollection {
     }
 
     /**
-     * List of arguments provided at the time of BuildRun.
+     * List of arguments provided at the time of running the build.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     java.util.List<BuildRunArgument> items;

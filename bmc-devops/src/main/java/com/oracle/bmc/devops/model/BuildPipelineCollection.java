@@ -5,7 +5,7 @@
 package com.oracle.bmc.devops.model;
 
 /**
- * Results of an pipeline search.
+ * Results of a pipeline search.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -61,7 +61,7 @@ public class BuildPipelineCollection {
     }
 
     /**
-     * Array of BuildPipelineSummary items.
+     * Array of build pipeline summary items.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     java.util.List<BuildPipelineSummary> items;

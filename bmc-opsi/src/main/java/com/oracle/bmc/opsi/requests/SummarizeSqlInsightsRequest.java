@@ -189,6 +189,12 @@ public class SummarizeSqlInsightsRequest
      */
     private java.util.List<String> freeformTagExists;
 
+    /**
+     * A flag to search all resources within a given compartment and all sub-compartments.
+     *
+     */
+    private Boolean compartmentIdInSubtree;
+
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     SummarizeSqlInsightsRequest, java.lang.Void> {
@@ -479,6 +485,7 @@ public class SummarizeSqlInsightsRequest
             freeformTagEquals(o.getFreeformTagEquals());
             definedTagExists(o.getDefinedTagExists());
             freeformTagExists(o.getFreeformTagExists());
+            compartmentIdInSubtree(o.getCompartmentIdInSubtree());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;

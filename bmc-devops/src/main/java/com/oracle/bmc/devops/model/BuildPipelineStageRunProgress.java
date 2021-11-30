@@ -5,7 +5,7 @@
 package com.oracle.bmc.devops.model;
 
 /**
- * The details about the run progress of a Stage in a BuildRun.
+ * The details about the run progress of a stage in a build run.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -49,30 +49,30 @@ package com.oracle.bmc.devops.model;
 public class BuildPipelineStageRunProgress {
 
     /**
-     * BuildRun identifier which can be renamed and is not necessarily unique
+     * Build Run display name, which can be renamed and is not necessarily unique. Avoid entering confidential information.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("stageDisplayName")
     String stageDisplayName;
 
     /**
-     * Stage id
+     * The stage OCID.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("buildPipelineStageId")
     String buildPipelineStageId;
 
     /**
-     * The time the Stage was started executing. An RFC3339 formatted datetime string
+     * The time the stage started executing. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
     java.util.Date timeStarted;
 
     /**
-     * The time the Stage was finished executing. An RFC3339 formatted datetime string
+     * The time the stage finished executing. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeFinished")
     java.util.Date timeFinished;
     /**
-     * The current status of the Stage.
+     * The current status of the stage.
      **/
     @lombok.extern.slf4j.Slf4j
     public enum Status {
@@ -122,7 +122,7 @@ public class BuildPipelineStageRunProgress {
         }
     };
     /**
-     * The current status of the Stage.
+     * The current status of the stage.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     Status status;

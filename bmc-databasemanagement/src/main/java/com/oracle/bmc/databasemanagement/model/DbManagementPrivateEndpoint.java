@@ -5,7 +5,7 @@
 package com.oracle.bmc.databasemanagement.model;
 
 /**
- * A Database Management private endpoint that allows Database Management services to connect to databases in a customer's virtual cloud network (VCN).
+ * A Database Management private endpoint allows Database Management to connect to databases in a Virtual Cloud Network (VCN).
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -50,6 +50,15 @@ public class DbManagementPrivateEndpoint {
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("isCluster")
+        private Boolean isCluster;
+
+        public Builder isCluster(Boolean isCluster) {
+            this.isCluster = isCluster;
+            this.__explicitlySet__.add("isCluster");
             return this;
         }
 
@@ -125,6 +134,7 @@ public class DbManagementPrivateEndpoint {
                             id,
                             name,
                             compartmentId,
+                            isCluster,
                             vcnId,
                             subnetId,
                             privateIp,
@@ -142,6 +152,7 @@ public class DbManagementPrivateEndpoint {
                     id(o.getId())
                             .name(o.getName())
                             .compartmentId(o.getCompartmentId())
+                            .isCluster(o.getIsCluster())
                             .vcnId(o.getVcnId())
                             .subnetId(o.getSubnetId())
                             .privateIp(o.getPrivateIp())
@@ -163,62 +174,68 @@ public class DbManagementPrivateEndpoint {
     }
 
     /**
-     * The OCID of the Database Management private endpoint.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Database Management private endpoint.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     String id;
 
     /**
-     * The display name of the private endpoint.
+     * The display name of the Database Management private endpoint.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     String name;
 
     /**
-     * The OCID of the compartment.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     String compartmentId;
 
     /**
-     * The OCID of the VCN.
+     * Specifies whether the Database Management private endpoint can be used for Oracle Databases in a cluster.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isCluster")
+    Boolean isCluster;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the VCN.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("vcnId")
     String vcnId;
 
     /**
-     * The OCID of the subnet.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the subnet.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
     String subnetId;
 
     /**
-     * The private IP addresses assigned to the private endpoint.
+     * The IP addresses assigned to the Database Management private endpoint.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("privateIp")
     String privateIp;
 
     /**
-     * The description of the private endpoint.
+     * The description of the Database Management private endpoint.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     String description;
 
     /**
-     * The date and time the private endpoint was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * The date and time the Database Managament private endpoint was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     java.util.Date timeCreated;
 
     /**
-     * The current state of the private endpoint.
+     * The current lifecycle state of the Database Management private endpoint.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     LifecycleStates lifecycleState;
 
     /**
-     * The OCIDs of the network security groups that the private endpoint belongs to.
+     * The OCIDs of the Network Security Groups to which the Database Management private endpoint belongs.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")

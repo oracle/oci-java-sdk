@@ -20,7 +20,7 @@ import com.oracle.bmc.devops.model.*;
 public class GetRepositoryRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * unique Repository identifier.
+     * Unique repository identifier.
      */
     private String repositoryId;
 
@@ -30,12 +30,12 @@ public class GetRepositoryRequest extends com.oracle.bmc.requests.BmcRequest<jav
     private String opcRequestId;
 
     /**
-     * Fields param can contain multiple flags useful in deciding the API functionality
+     * Fields parameter can contain multiple flags useful in deciding the API functionality.
      */
     private java.util.List<Fields> fields;
 
     /**
-     * Fields param can contain multiple flags useful in deciding the API functionality
+     * Fields parameter can contain multiple flags useful in deciding the API functionality.
      **/
     public enum Fields {
         BranchCount("branchCount"),
@@ -81,7 +81,7 @@ public class GetRepositoryRequest extends com.oracle.bmc.requests.BmcRequest<jav
         private java.util.List<Fields> fields = null;
 
         /**
-         * Fields param can contain multiple flags useful in deciding the API functionality
+         * Fields parameter can contain multiple flags useful in deciding the API functionality.
          * @return this builder instance
          */
         public Builder fields(java.util.List<Fields> fields) {
@@ -90,7 +90,7 @@ public class GetRepositoryRequest extends com.oracle.bmc.requests.BmcRequest<jav
         }
 
         /**
-         * Singular setter. Fields param can contain multiple flags useful in deciding the API functionality
+         * Singular setter. Fields parameter can contain multiple flags useful in deciding the API functionality.
          * @return this builder instance
          */
         public Builder fields(Fields singularValue) {

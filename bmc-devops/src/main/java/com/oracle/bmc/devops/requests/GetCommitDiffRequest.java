@@ -20,22 +20,22 @@ import com.oracle.bmc.devops.model.*;
 public class GetCommitDiffRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * unique Repository identifier.
+     * Unique repository identifier.
      */
     private String repositoryId;
 
     /**
-     * The commit or ref name where changes are coming from
+     * The commit or reference name where changes are coming from.
      */
     private String targetVersion;
 
     /**
-     * The commit or ref name to compare changes against. If baseVersion is not provided, the diff will be gone against an empty tree.
+     * The commit or reference name to compare changes against. If base version is not provided, the difference goes against an empty tree.
      */
     private String baseVersion;
 
     /**
-     * boolean for whether to use merge base or most recent revision
+     * Boolean value to indicate whether to use merge base or most recent revision.
      */
     private Boolean isComparisonFromMergeBase;
 

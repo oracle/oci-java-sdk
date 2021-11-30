@@ -5,7 +5,7 @@
 package com.oracle.bmc.devops.model;
 
 /**
- * Object containing information about a mirror record
+ * Object containing information about a mirror record.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -169,7 +169,7 @@ public class RepositoryMirrorRecord {
     MirrorStatus mirrorStatus;
 
     /**
-     * Workrequest Id to track current mirror operation
+     * Workrequest ID to track current mirror operation.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("workRequestId")
     String workRequestId;
@@ -187,7 +187,7 @@ public class RepositoryMirrorRecord {
     java.util.Date timeStarted;
 
     /**
-     * Time that the mirror operation ended or null if it hasn't yet ended.
+     * The time taken to complete a mirror operation. Value is null if not completed.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeEnded")
     java.util.Date timeEnded;

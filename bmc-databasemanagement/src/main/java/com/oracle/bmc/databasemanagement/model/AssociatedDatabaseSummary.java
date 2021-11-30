@@ -5,7 +5,7 @@
 package com.oracle.bmc.databasemanagement.model;
 
 /**
- * Summary of a Database currently using a Private Endpoint.
+ * The summary of a database currently using a Database Management private endpoint.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -93,7 +93,7 @@ public class AssociatedDatabaseSummary {
     }
 
     /**
-     * The OCID of the database.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the database.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     String id;
@@ -105,13 +105,13 @@ public class AssociatedDatabaseSummary {
     String name;
 
     /**
-     * The compartment ID of the database.
+     * The compartment [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the database.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     String compartmentId;
 
     /**
-     * The time when the database was registered for Database Management.
+     * The time when Database Management was enabled for the database.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeRegistered")
     java.util.Date timeRegistered;

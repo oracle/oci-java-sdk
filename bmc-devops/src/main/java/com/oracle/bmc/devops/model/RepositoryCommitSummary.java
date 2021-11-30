@@ -5,7 +5,7 @@
 package com.oracle.bmc.devops.model;
 
 /**
- * Commit summary with commit information
+ * Commit summary with commit information.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -175,7 +175,7 @@ public class RepositoryCommitSummary {
     }
 
     /**
-     * Commit hash pointed to by Ref name
+     * Commit hash pointed to by reference name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("commitId")
     String commitId;
@@ -187,31 +187,31 @@ public class RepositoryCommitSummary {
     String commitMessage;
 
     /**
-     * The name of the author of the repository.
+     * Name of the author of the repository.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("authorName")
     String authorName;
 
     /**
-     * The email of the author of the repository.
+     * Email of the author of the repository.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("authorEmail")
     String authorEmail;
 
     /**
-     * The name of who create the commit.
+     * Name of who creates the commit.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("committerName")
     String committerName;
 
     /**
-     * The email of who create the commit.
+     * Email of who creates the commit.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("committerEmail")
     String committerEmail;
 
     /**
-     * An array of parent commit ids of created commit.
+     * An array of parent commit IDs of created commit.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("parentCommitIds")
     java.util.List<String> parentCommitIds;
@@ -223,7 +223,7 @@ public class RepositoryCommitSummary {
     java.util.Date timeCreated;
 
     /**
-     * Tree information for the specified commit
+     * Tree information for the specified commit.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("treeId")
     String treeId;

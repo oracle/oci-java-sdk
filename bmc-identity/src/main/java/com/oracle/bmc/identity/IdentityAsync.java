@@ -1576,6 +1576,23 @@ public interface IdentityAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<GetPolicyRequest, GetPolicyResponse> handler);
 
     /**
+     * Retrieve the standard tag namespace template given the standard tag namespace name.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetStandardTagTemplateResponse> getStandardTagTemplate(
+            GetStandardTagTemplateRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetStandardTagTemplateRequest, GetStandardTagTemplateResponse>
+                    handler);
+
+    /**
      * Gets the specified tag's information.
      *
      * @param request The request object containing the details to send
@@ -1717,6 +1734,24 @@ public interface IdentityAsync extends AutoCloseable {
     java.util.concurrent.Future<GetWorkRequestResponse> getWorkRequest(
             GetWorkRequestRequest request,
             com.oracle.bmc.responses.AsyncHandler<GetWorkRequestRequest, GetWorkRequestResponse>
+                    handler);
+
+    /**
+     * OCI will release Tag Namespaces that our customers can import.
+     * These Tag Namespaces will provide Tags for our customers and Partners to provide consistency and enable data reporting.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ImportStandardTagsResponse> importStandardTags(
+            ImportStandardTagsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ImportStandardTagsRequest, ImportStandardTagsResponse>
                     handler);
 
     /**
@@ -2223,6 +2258,23 @@ public interface IdentityAsync extends AutoCloseable {
             ListSmtpCredentialsRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             ListSmtpCredentialsRequest, ListSmtpCredentialsResponse>
+                    handler);
+
+    /**
+     * Lists available standard tag namespaces that users can create.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListStandardTagNamespacesResponse> listStandardTagNamespaces(
+            ListStandardTagNamespacesRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListStandardTagNamespacesRequest, ListStandardTagNamespacesResponse>
                     handler);
 
     /**

@@ -89,7 +89,7 @@ public class MirrorRepositoryConfig {
     String connectorId;
 
     /**
-     * Url of external repository we'd like to mirror
+     * URL of external repository you want to mirror.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("repositoryUrl")
     String repositoryUrl;

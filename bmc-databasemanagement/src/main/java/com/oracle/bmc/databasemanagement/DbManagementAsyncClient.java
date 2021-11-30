@@ -1384,6 +1384,41 @@ public class DbManagementAsyncClient implements DbManagementAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<GetUserResponse> getUser(
+            GetUserRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<GetUserRequest, GetUserResponse> handler) {
+        LOG.trace("Called async getUser");
+        final GetUserRequest interceptedRequest = GetUserConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetUserConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<javax.ws.rs.core.Response, GetUserResponse>
+                transformer = GetUserConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<GetUserRequest, GetUserResponse> handlerToUse =
+                handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<GetUserRequest, GetUserResponse>,
+                        java.util.concurrent.Future<GetUserResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetUserRequest, GetUserResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<GetWorkRequestResponse> getWorkRequest(
             GetWorkRequestRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -1529,6 +1564,91 @@ public class DbManagementAsyncClient implements DbManagementAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     ListAwrDbsRequest, ListAwrDbsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListConsumerGroupPrivilegesResponse>
+            listConsumerGroupPrivileges(
+                    ListConsumerGroupPrivilegesRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListConsumerGroupPrivilegesRequest,
+                                    ListConsumerGroupPrivilegesResponse>
+                            handler) {
+        LOG.trace("Called async listConsumerGroupPrivileges");
+        final ListConsumerGroupPrivilegesRequest interceptedRequest =
+                ListConsumerGroupPrivilegesConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListConsumerGroupPrivilegesConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ListConsumerGroupPrivilegesResponse>
+                transformer = ListConsumerGroupPrivilegesConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListConsumerGroupPrivilegesRequest, ListConsumerGroupPrivilegesResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListConsumerGroupPrivilegesRequest,
+                                ListConsumerGroupPrivilegesResponse>,
+                        java.util.concurrent.Future<ListConsumerGroupPrivilegesResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListConsumerGroupPrivilegesRequest, ListConsumerGroupPrivilegesResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListDataAccessContainersResponse> listDataAccessContainers(
+            ListDataAccessContainersRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListDataAccessContainersRequest, ListDataAccessContainersResponse>
+                    handler) {
+        LOG.trace("Called async listDataAccessContainers");
+        final ListDataAccessContainersRequest interceptedRequest =
+                ListDataAccessContainersConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListDataAccessContainersConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ListDataAccessContainersResponse>
+                transformer = ListDataAccessContainersConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListDataAccessContainersRequest, ListDataAccessContainersResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListDataAccessContainersRequest, ListDataAccessContainersResponse>,
+                        java.util.concurrent.Future<ListDataAccessContainersResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListDataAccessContainersRequest, ListDataAccessContainersResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -1825,6 +1945,204 @@ public class DbManagementAsyncClient implements DbManagementAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<ListObjectPrivilegesResponse> listObjectPrivileges(
+            ListObjectPrivilegesRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListObjectPrivilegesRequest, ListObjectPrivilegesResponse>
+                    handler) {
+        LOG.trace("Called async listObjectPrivileges");
+        final ListObjectPrivilegesRequest interceptedRequest =
+                ListObjectPrivilegesConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListObjectPrivilegesConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ListObjectPrivilegesResponse>
+                transformer = ListObjectPrivilegesConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListObjectPrivilegesRequest, ListObjectPrivilegesResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListObjectPrivilegesRequest, ListObjectPrivilegesResponse>,
+                        java.util.concurrent.Future<ListObjectPrivilegesResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListObjectPrivilegesRequest, ListObjectPrivilegesResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListProxiedForUsersResponse> listProxiedForUsers(
+            ListProxiedForUsersRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListProxiedForUsersRequest, ListProxiedForUsersResponse>
+                    handler) {
+        LOG.trace("Called async listProxiedForUsers");
+        final ListProxiedForUsersRequest interceptedRequest =
+                ListProxiedForUsersConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListProxiedForUsersConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ListProxiedForUsersResponse>
+                transformer = ListProxiedForUsersConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListProxiedForUsersRequest, ListProxiedForUsersResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListProxiedForUsersRequest, ListProxiedForUsersResponse>,
+                        java.util.concurrent.Future<ListProxiedForUsersResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListProxiedForUsersRequest, ListProxiedForUsersResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListProxyUsersResponse> listProxyUsers(
+            ListProxyUsersRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListProxyUsersRequest, ListProxyUsersResponse>
+                    handler) {
+        LOG.trace("Called async listProxyUsers");
+        final ListProxyUsersRequest interceptedRequest =
+                ListProxyUsersConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListProxyUsersConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<javax.ws.rs.core.Response, ListProxyUsersResponse>
+                transformer = ListProxyUsersConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<ListProxyUsersRequest, ListProxyUsersResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListProxyUsersRequest, ListProxyUsersResponse>,
+                        java.util.concurrent.Future<ListProxyUsersResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListProxyUsersRequest, ListProxyUsersResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListRolesResponse> listRoles(
+            ListRolesRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<ListRolesRequest, ListRolesResponse>
+                    handler) {
+        LOG.trace("Called async listRoles");
+        final ListRolesRequest interceptedRequest = ListRolesConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListRolesConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<javax.ws.rs.core.Response, ListRolesResponse>
+                transformer = ListRolesConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<ListRolesRequest, ListRolesResponse> handlerToUse =
+                handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<ListRolesRequest, ListRolesResponse>,
+                        java.util.concurrent.Future<ListRolesResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListRolesRequest, ListRolesResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListSystemPrivilegesResponse> listSystemPrivileges(
+            ListSystemPrivilegesRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListSystemPrivilegesRequest, ListSystemPrivilegesResponse>
+                    handler) {
+        LOG.trace("Called async listSystemPrivileges");
+        final ListSystemPrivilegesRequest interceptedRequest =
+                ListSystemPrivilegesConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListSystemPrivilegesConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ListSystemPrivilegesResponse>
+                transformer = ListSystemPrivilegesConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListSystemPrivilegesRequest, ListSystemPrivilegesResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListSystemPrivilegesRequest, ListSystemPrivilegesResponse>,
+                        java.util.concurrent.Future<ListSystemPrivilegesResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListSystemPrivilegesRequest, ListSystemPrivilegesResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<ListTablespacesResponse> listTablespaces(
             ListTablespacesRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -1851,6 +2169,42 @@ public class DbManagementAsyncClient implements DbManagementAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     ListTablespacesRequest, ListTablespacesResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListUsersResponse> listUsers(
+            ListUsersRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<ListUsersRequest, ListUsersResponse>
+                    handler) {
+        LOG.trace("Called async listUsers");
+        final ListUsersRequest interceptedRequest = ListUsersConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListUsersConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<javax.ws.rs.core.Response, ListUsersResponse>
+                transformer = ListUsersConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<ListUsersRequest, ListUsersResponse> handlerToUse =
+                handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<ListUsersRequest, ListUsersResponse>,
+                        java.util.concurrent.Future<ListUsersResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListUsersRequest, ListUsersResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,

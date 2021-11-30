@@ -62,7 +62,7 @@ public class ChangeApmDomainCompartmentDetails {
     }
 
     /**
-     * The OCID of the destination compartment for the APM Domain.
+     * The OCID of the destination compartment for the APM domain.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     String compartmentId;

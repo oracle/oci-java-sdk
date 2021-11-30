@@ -44,6 +44,15 @@ public class FleetStatusByCategory {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("deploymentType")
+        private DeploymentType deploymentType;
+
+        public Builder deploymentType(DeploymentType deploymentType) {
+            this.deploymentType = deploymentType;
+            this.__explicitlySet__.add("deploymentType");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("inventoryCount")
         private Integer inventoryCount;
 
@@ -58,7 +67,8 @@ public class FleetStatusByCategory {
 
         public FleetStatusByCategory build() {
             FleetStatusByCategory __instance__ =
-                    new FleetStatusByCategory(databaseType, databaseSubType, inventoryCount);
+                    new FleetStatusByCategory(
+                            databaseType, databaseSubType, deploymentType, inventoryCount);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -68,6 +78,7 @@ public class FleetStatusByCategory {
             Builder copiedBuilder =
                     databaseType(o.getDatabaseType())
                             .databaseSubType(o.getDatabaseSubType())
+                            .deploymentType(o.getDeploymentType())
                             .inventoryCount(o.getInventoryCount());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
@@ -89,10 +100,18 @@ public class FleetStatusByCategory {
     DatabaseType databaseType;
 
     /**
-     * The subtype of the Oracle Database. Indicates whether the database is a Container Database, Pluggable Database, or a Non-container Database.
+     * The subtype of the Oracle Database. Indicates whether the database is a Container Database,
+     * Pluggable Database, Non-container Database, Autonomous Database, or Autonomous Container Database.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("databaseSubType")
     DatabaseSubType databaseSubType;
+
+    /**
+     * The infrastructure used to deploy the Oracle Database.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("deploymentType")
+    DeploymentType deploymentType;
 
     /**
      * The number of databases in the fleet.

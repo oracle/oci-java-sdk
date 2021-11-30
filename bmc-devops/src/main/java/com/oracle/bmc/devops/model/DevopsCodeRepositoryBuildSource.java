@@ -5,7 +5,7 @@
 package com.oracle.bmc.devops.model;
 
 /**
- * Devops Code Repository Build Source for Build Stage
+ * DevOps code repository build source for Build stage.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -106,7 +106,7 @@ public class DevopsCodeRepositoryBuildSource extends BuildSource {
     }
 
     /**
-     * The Devops Code Repository Id
+     * The DevOps code repository ID.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("repositoryId")
     String repositoryId;

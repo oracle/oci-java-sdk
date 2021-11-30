@@ -5,7 +5,7 @@
 package com.oracle.bmc.databasemanagement.model;
 
 /**
- * The details of a datafile.
+ * The details of a data file.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -216,12 +216,12 @@ public class Datafile {
     }
 
     /**
-     * The filename (including the path) of the datafile or tempfile.
+     * The filename (including the path) of the data file or temp file.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     String name;
     /**
-     * The status of the file. INVALID status is used when the file number is not in use, for example, a file in a tablespace that was dropped.
+     * The status of the file. INVALID status is used when the file number is not in use, for example, a file in a tablespace that was removed.
      **/
     @lombok.extern.slf4j.Slf4j
     public enum Status {
@@ -270,7 +270,7 @@ public class Datafile {
         }
     };
     /**
-     * The status of the file. INVALID status is used when the file number is not in use, for example, a file in a tablespace that was dropped.
+     * The status of the file. INVALID status is used when the file number is not in use, for example, a file in a tablespace that was removed.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     Status status;
@@ -330,7 +330,7 @@ public class Datafile {
     OnlineStatus onlineStatus;
 
     /**
-     * Indicates whether the datafile is auto-extensible.
+     * Indicates whether the data file is auto-extensible.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isAutoExtensible")
     Boolean isAutoExtensible;
@@ -470,13 +470,13 @@ public class Datafile {
     java.math.BigDecimal incrementBy;
 
     /**
-     * The free space available in the datafile in KB.
+     * The free space available in the data file in KB.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeSpaceKB")
     java.math.BigDecimal freeSpaceKB;
 
     /**
-     * The total space used in the datafile in KB.
+     * The total space used in the data file in KB.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("usedSpaceKB")
     java.math.BigDecimal usedSpaceKB;

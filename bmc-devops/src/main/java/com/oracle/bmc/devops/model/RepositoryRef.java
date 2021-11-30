@@ -5,7 +5,7 @@
 package com.oracle.bmc.devops.model;
 
 /**
- * Ref object with name and commitId
+ * Reference object with name and commit ID.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -38,25 +38,25 @@ package com.oracle.bmc.devops.model;
 public class RepositoryRef {
 
     /**
-     * Unique Ref name inside a repository
+     * Unique reference name inside a repository.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("refName")
     String refName;
 
     /**
-     * Unique full ref name inside a repository
+     * Unique full reference name inside a repository.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("fullRefName")
     String fullRefName;
 
     /**
-     * The OCID of the repository containing the ref.
+     * The OCID of the repository containing the reference.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("repositoryId")
     String repositoryId;
 
     /**
-     * The type of Ref (Branch or Tag)
+     * The type of reference (Branch or Tag).
      **/
     @lombok.extern.slf4j.Slf4j
     public enum RefType {

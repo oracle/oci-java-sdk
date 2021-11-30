@@ -119,6 +119,12 @@ public class ListExadataInsightsRequest extends com.oracle.bmc.requests.BmcReque
         }
     };
     /**
+     * A flag to search all resources within a given compartment and all sub-compartments.
+     *
+     */
+    private Boolean compartmentIdInSubtree;
+
+    /**
      * Unique Oracle-assigned identifier for the request. If you need to contact
      * Oracle about a particular request, please provide the request ID.
      *
@@ -253,6 +259,7 @@ public class ListExadataInsightsRequest extends com.oracle.bmc.requests.BmcReque
             page(o.getPage());
             sortOrder(o.getSortOrder());
             sortBy(o.getSortBy());
+            compartmentIdInSubtree(o.getCompartmentIdInSubtree());
             opcRequestId(o.getOpcRequestId());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());

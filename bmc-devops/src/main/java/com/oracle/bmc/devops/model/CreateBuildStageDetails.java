@@ -5,7 +5,7 @@
 package com.oracle.bmc.devops.model;
 
 /**
- * Specifies the Build Stage.
+ * Specifies the build stage.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -210,19 +210,19 @@ public class CreateBuildStageDetails extends CreateBuildPipelineStageDetails {
     }
 
     /**
-     * Image name for the Build Environment
+     * Image name for the build environment
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("image")
     BuildStage.Image image;
 
     /**
-     * The path to the build specification file for this Environment. The default location if not specified is build_spec.yaml
+     * The path to the build specification file for this environment. The default location of the file if not specified is build_spec.yaml.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("buildSpecFile")
     String buildSpecFile;
 
     /**
-     * Timeout for the Build Stage Execution. Value in seconds.
+     * Timeout for the build stage execution. Specify value in seconds.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("stageExecutionTimeoutInSeconds")
     Integer stageExecutionTimeoutInSeconds;
@@ -231,7 +231,7 @@ public class CreateBuildStageDetails extends CreateBuildPipelineStageDetails {
     BuildSourceCollection buildSourceCollection;
 
     /**
-     * Name of the BuildSource in which the build_spec.yml file need to be located. If not specified, the 1st entry in the BuildSource collection will be chosen as Primary.
+     * Name of the build source where the build_spec.yml file is located. If not specified, the first entry in the build source collection is chosen as primary build source.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("primaryBuildSource")
     String primaryBuildSource;
