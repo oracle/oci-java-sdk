@@ -24,6 +24,7 @@ public class GetPdbMetricsResponse extends com.oracle.bmc.responses.BmcResponse 
      */
     private com.oracle.bmc.databasemanagement.model.PdbMetrics pdbMetrics;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "pdbMetrics"})
     private GetPdbMetricsResponse(
             int __httpStatusCode__,
             String opcRequestId,

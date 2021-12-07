@@ -30,6 +30,12 @@ public class IngestSqlBucketResponse extends com.oracle.bmc.responses.BmcRespons
      */
     private com.oracle.bmc.opsi.model.IngestSqlBucketResponseDetails ingestSqlBucketResponseDetails;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "etag",
+        "ingestSqlBucketResponseDetails"
+    })
     private IngestSqlBucketResponse(
             int __httpStatusCode__,
             String opcRequestId,

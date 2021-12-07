@@ -30,6 +30,7 @@ public class GetLogGroupResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private com.oracle.bmc.logging.model.LogGroup logGroup;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "etag", "logGroup"})
     private GetLogGroupResponse(
             int __httpStatusCode__,
             String opcRequestId,

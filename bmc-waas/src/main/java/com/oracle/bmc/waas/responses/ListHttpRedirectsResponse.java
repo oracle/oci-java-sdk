@@ -27,6 +27,12 @@ public class ListHttpRedirectsResponse extends com.oracle.bmc.responses.BmcRespo
      */
     private java.util.List<com.oracle.bmc.waas.model.HttpRedirectSummary> items;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcNextPage",
+        "opcRequestId",
+        "items"
+    })
     private ListHttpRedirectsResponse(
             int __httpStatusCode__,
             String opcNextPage,

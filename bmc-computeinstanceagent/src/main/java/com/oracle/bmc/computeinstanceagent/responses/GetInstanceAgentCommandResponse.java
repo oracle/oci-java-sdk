@@ -30,6 +30,12 @@ public class GetInstanceAgentCommandResponse extends com.oracle.bmc.responses.Bm
      */
     private com.oracle.bmc.computeinstanceagent.model.InstanceAgentCommand instanceAgentCommand;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcRequestId",
+        "instanceAgentCommand"
+    })
     private GetInstanceAgentCommandResponse(
             int __httpStatusCode__,
             String etag,

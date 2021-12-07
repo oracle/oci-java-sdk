@@ -30,6 +30,12 @@ public class RemoveImportDrgRouteDistributionResponse extends com.oracle.bmc.res
      */
     private com.oracle.bmc.core.model.DrgRouteTable drgRouteTable;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcRequestId",
+        "drgRouteTable"
+    })
     private RemoveImportDrgRouteDistributionResponse(
             int __httpStatusCode__,
             String etag,

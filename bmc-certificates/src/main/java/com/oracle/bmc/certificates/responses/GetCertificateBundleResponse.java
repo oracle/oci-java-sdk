@@ -27,6 +27,12 @@ public class GetCertificateBundleResponse extends com.oracle.bmc.responses.BmcRe
      */
     private com.oracle.bmc.certificates.model.CertificateBundle certificateBundle;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcRequestId",
+        "certificateBundle"
+    })
     private GetCertificateBundleResponse(
             int __httpStatusCode__,
             String etag,

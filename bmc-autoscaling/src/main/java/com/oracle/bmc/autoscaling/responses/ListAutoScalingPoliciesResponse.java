@@ -31,6 +31,12 @@ public class ListAutoScalingPoliciesResponse extends com.oracle.bmc.responses.Bm
      */
     private java.util.List<com.oracle.bmc.autoscaling.model.AutoScalingPolicySummary> items;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcNextPage",
+        "opcRequestId",
+        "items"
+    })
     private ListAutoScalingPoliciesResponse(
             int __httpStatusCode__,
             String opcNextPage,

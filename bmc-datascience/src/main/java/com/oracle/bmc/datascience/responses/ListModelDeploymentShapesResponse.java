@@ -36,6 +36,13 @@ public class ListModelDeploymentShapesResponse extends com.oracle.bmc.responses.
      */
     private java.util.List<com.oracle.bmc.datascience.model.ModelDeploymentShapeSummary> items;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcNextPage",
+        "opcPrevPage",
+        "opcRequestId",
+        "items"
+    })
     private ListModelDeploymentShapesResponse(
             int __httpStatusCode__,
             String opcNextPage,

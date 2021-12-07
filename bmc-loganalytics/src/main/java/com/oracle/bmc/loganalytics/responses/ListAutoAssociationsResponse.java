@@ -39,6 +39,13 @@ public class ListAutoAssociationsResponse extends com.oracle.bmc.responses.BmcRe
      */
     private com.oracle.bmc.loganalytics.model.AutoAssociationCollection autoAssociationCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcPrevPage",
+        "opcNextPage",
+        "opcRequestId",
+        "autoAssociationCollection"
+    })
     private ListAutoAssociationsResponse(
             int __httpStatusCode__,
             String opcPrevPage,

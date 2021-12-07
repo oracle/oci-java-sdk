@@ -30,6 +30,12 @@ public class GetModelDeploymentResponse extends com.oracle.bmc.responses.BmcResp
      */
     private com.oracle.bmc.datascience.model.ModelDeployment modelDeployment;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcRequestId",
+        "modelDeployment"
+    })
     private GetModelDeploymentResponse(
             int __httpStatusCode__,
             String etag,

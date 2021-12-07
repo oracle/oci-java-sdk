@@ -39,6 +39,14 @@ public class GetRetentionRuleResponse extends com.oracle.bmc.responses.BmcRespon
      */
     private com.oracle.bmc.objectstorage.model.RetentionRule retentionRule;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcClientRequestId",
+        "opcRequestId",
+        "etag",
+        "lastModified",
+        "retentionRule"
+    })
     private GetRetentionRuleResponse(
             int __httpStatusCode__,
             String opcClientRequestId,

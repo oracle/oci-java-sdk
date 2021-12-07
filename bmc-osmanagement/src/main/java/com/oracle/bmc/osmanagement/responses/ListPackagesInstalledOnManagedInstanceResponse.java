@@ -34,6 +34,12 @@ public class ListPackagesInstalledOnManagedInstanceResponse
      */
     private java.util.List<com.oracle.bmc.osmanagement.model.InstalledPackageSummary> items;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "items"
+    })
     private ListPackagesInstalledOnManagedInstanceResponse(
             int __httpStatusCode__,
             String opcRequestId,

@@ -24,6 +24,7 @@ public class GetClusterCacheMetricResponse extends com.oracle.bmc.responses.BmcR
      */
     private com.oracle.bmc.databasemanagement.model.ClusterCacheMetric clusterCacheMetric;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "clusterCacheMetric"})
     private GetClusterCacheMetricResponse(
             int __httpStatusCode__,
             String opcRequestId,

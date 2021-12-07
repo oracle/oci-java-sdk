@@ -25,6 +25,7 @@ public class DeleteCloudExadataInfrastructureResponse extends com.oracle.bmc.res
      */
     private String opcRequestId;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcWorkRequestId", "opcRequestId"})
     private DeleteCloudExadataInfrastructureResponse(
             int __httpStatusCode__, String opcWorkRequestId, String opcRequestId) {
         super(__httpStatusCode__);

@@ -31,6 +31,12 @@ public class CheckExternalDatabaseConnectorConnectionStatusResponse
      */
     private String etag;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcWorkRequestId",
+        "opcRequestId",
+        "etag"
+    })
     private CheckExternalDatabaseConnectorConnectionStatusResponse(
             int __httpStatusCode__, String opcWorkRequestId, String opcRequestId, String etag) {
         super(__httpStatusCode__);

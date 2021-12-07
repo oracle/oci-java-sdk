@@ -30,6 +30,7 @@ public class GetNatGatewayResponse extends com.oracle.bmc.responses.BmcResponse 
      */
     private com.oracle.bmc.core.model.NatGateway natGateway;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "etag", "opcRequestId", "natGateway"})
     private GetNatGatewayResponse(
             int __httpStatusCode__,
             String etag,

@@ -33,6 +33,12 @@ public class ListLogAnalyticsObjectCollectionRulesResponse
     private com.oracle.bmc.loganalytics.model.LogAnalyticsObjectCollectionRuleCollection
             logAnalyticsObjectCollectionRuleCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "logAnalyticsObjectCollectionRuleCollection"
+    })
     private ListLogAnalyticsObjectCollectionRulesResponse(
             int __httpStatusCode__,
             String opcRequestId,

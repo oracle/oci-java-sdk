@@ -32,6 +32,12 @@ public class UpdateDbManagementPrivateEndpointResponse
     private com.oracle.bmc.databasemanagement.model.DbManagementPrivateEndpoint
             dbManagementPrivateEndpoint;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "etag",
+        "dbManagementPrivateEndpoint"
+    })
     private UpdateDbManagementPrivateEndpointResponse(
             int __httpStatusCode__,
             String opcRequestId,

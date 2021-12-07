@@ -33,6 +33,12 @@ public class ListEventsResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private com.oracle.bmc.osmanagement.model.EventCollection eventCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "eventCollection"
+    })
     private ListEventsResponse(
             int __httpStatusCode__,
             String opcRequestId,

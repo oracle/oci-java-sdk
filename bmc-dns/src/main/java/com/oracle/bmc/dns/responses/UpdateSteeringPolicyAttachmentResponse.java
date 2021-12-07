@@ -32,6 +32,12 @@ public class UpdateSteeringPolicyAttachmentResponse extends com.oracle.bmc.respo
      */
     private com.oracle.bmc.dns.model.SteeringPolicyAttachment steeringPolicyAttachment;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "eTag",
+        "steeringPolicyAttachment"
+    })
     private UpdateSteeringPolicyAttachmentResponse(
             int __httpStatusCode__,
             String opcRequestId,

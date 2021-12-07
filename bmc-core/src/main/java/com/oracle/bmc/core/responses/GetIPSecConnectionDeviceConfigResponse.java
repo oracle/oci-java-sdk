@@ -30,6 +30,12 @@ public class GetIPSecConnectionDeviceConfigResponse extends com.oracle.bmc.respo
      */
     private com.oracle.bmc.core.model.IPSecConnectionDeviceConfig iPSecConnectionDeviceConfig;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcRequestId",
+        "iPSecConnectionDeviceConfig"
+    })
     private GetIPSecConnectionDeviceConfigResponse(
             int __httpStatusCode__,
             String etag,

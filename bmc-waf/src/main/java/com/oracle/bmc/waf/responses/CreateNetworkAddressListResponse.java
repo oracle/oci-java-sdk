@@ -48,6 +48,15 @@ public class CreateNetworkAddressListResponse extends com.oracle.bmc.responses.B
      */
     private com.oracle.bmc.waf.model.NetworkAddressList networkAddressList;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcWorkRequestId",
+        "opcRequestId",
+        "location",
+        "contentLocation",
+        "networkAddressList"
+    })
     private CreateNetworkAddressListResponse(
             int __httpStatusCode__,
             String etag,

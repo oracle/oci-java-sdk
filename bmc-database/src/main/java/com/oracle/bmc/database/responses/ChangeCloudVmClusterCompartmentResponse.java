@@ -25,6 +25,7 @@ public class ChangeCloudVmClusterCompartmentResponse extends com.oracle.bmc.resp
      */
     private String opcRequestId;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcWorkRequestId", "opcRequestId"})
     private ChangeCloudVmClusterCompartmentResponse(
             int __httpStatusCode__, String opcWorkRequestId, String opcRequestId) {
         super(__httpStatusCode__);

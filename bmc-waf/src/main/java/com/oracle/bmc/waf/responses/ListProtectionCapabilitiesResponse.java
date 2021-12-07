@@ -32,6 +32,12 @@ public class ListProtectionCapabilitiesResponse extends com.oracle.bmc.responses
      */
     private com.oracle.bmc.waf.model.ProtectionCapabilityCollection protectionCapabilityCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "protectionCapabilityCollection"
+    })
     private ListProtectionCapabilitiesResponse(
             int __httpStatusCode__,
             String opcRequestId,

@@ -36,6 +36,12 @@ public class ListAutonomousExadataInfrastructureShapesResponse
                     com.oracle.bmc.database.model.AutonomousExadataInfrastructureShapeSummary>
             items;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "items"
+    })
     private ListAutonomousExadataInfrastructureShapesResponse(
             int __httpStatusCode__,
             String opcRequestId,

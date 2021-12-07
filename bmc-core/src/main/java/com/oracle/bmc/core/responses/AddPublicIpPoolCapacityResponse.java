@@ -30,6 +30,12 @@ public class AddPublicIpPoolCapacityResponse extends com.oracle.bmc.responses.Bm
      */
     private com.oracle.bmc.core.model.PublicIpPool publicIpPool;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcRequestId",
+        "publicIpPool"
+    })
     private AddPublicIpPoolCapacityResponse(
             int __httpStatusCode__,
             String etag,

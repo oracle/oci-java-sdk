@@ -25,6 +25,7 @@ public class ChangeDatasetCompartmentResponse extends com.oracle.bmc.responses.B
      */
     private String opcRequestId;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcWorkRequestId", "opcRequestId"})
     private ChangeDatasetCompartmentResponse(
             int __httpStatusCode__, String opcWorkRequestId, String opcRequestId) {
         super(__httpStatusCode__);

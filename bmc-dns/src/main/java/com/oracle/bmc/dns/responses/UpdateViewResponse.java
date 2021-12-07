@@ -39,6 +39,13 @@ public class UpdateViewResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private com.oracle.bmc.dns.model.View view;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcRequestId",
+        "opcWorkRequestId",
+        "view"
+    })
     private UpdateViewResponse(
             int __httpStatusCode__,
             String etag,

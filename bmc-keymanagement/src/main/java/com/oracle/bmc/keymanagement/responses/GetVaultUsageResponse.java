@@ -24,6 +24,7 @@ public class GetVaultUsageResponse extends com.oracle.bmc.responses.BmcResponse 
      */
     private com.oracle.bmc.keymanagement.model.VaultUsage vaultUsage;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "vaultUsage"})
     private GetVaultUsageResponse(
             int __httpStatusCode__,
             String opcRequestId,

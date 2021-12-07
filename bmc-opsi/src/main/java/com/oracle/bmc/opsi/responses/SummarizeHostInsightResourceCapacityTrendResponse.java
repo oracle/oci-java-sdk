@@ -34,6 +34,12 @@ public class SummarizeHostInsightResourceCapacityTrendResponse
     private com.oracle.bmc.opsi.model.SummarizeHostInsightResourceCapacityTrendAggregationCollection
             summarizeHostInsightResourceCapacityTrendAggregationCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "summarizeHostInsightResourceCapacityTrendAggregationCollection"
+    })
     private SummarizeHostInsightResourceCapacityTrendResponse(
             int __httpStatusCode__,
             String opcRequestId,

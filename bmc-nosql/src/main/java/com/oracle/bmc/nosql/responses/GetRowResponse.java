@@ -31,6 +31,7 @@ public class GetRowResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private com.oracle.bmc.nosql.model.Row row;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "etag", "opcRequestId", "row"})
     private GetRowResponse(
             int __httpStatusCode__,
             String etag,

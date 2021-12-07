@@ -32,6 +32,12 @@ public class ListDrgRouteDistributionsResponse extends com.oracle.bmc.responses.
      */
     private java.util.List<com.oracle.bmc.core.model.DrgRouteDistribution> items;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcNextPage",
+        "opcRequestId",
+        "items"
+    })
     private ListDrgRouteDistributionsResponse(
             int __httpStatusCode__,
             String opcNextPage,

@@ -30,6 +30,12 @@ public class UpdateLocalPeeringGatewayResponse extends com.oracle.bmc.responses.
      */
     private com.oracle.bmc.core.model.LocalPeeringGateway localPeeringGateway;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcRequestId",
+        "localPeeringGateway"
+    })
     private UpdateLocalPeeringGatewayResponse(
             int __httpStatusCode__,
             String etag,

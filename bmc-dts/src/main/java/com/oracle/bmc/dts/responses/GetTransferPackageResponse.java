@@ -27,6 +27,12 @@ public class GetTransferPackageResponse extends com.oracle.bmc.responses.BmcResp
      */
     private com.oracle.bmc.dts.model.TransferPackage transferPackage;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "etag",
+        "transferPackage"
+    })
     private GetTransferPackageResponse(
             int __httpStatusCode__,
             String opcRequestId,

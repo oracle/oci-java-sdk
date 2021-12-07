@@ -25,6 +25,11 @@ public class ValidateSourceExtendedFieldDetailsResponse
     private com.oracle.bmc.loganalytics.model.ExtendedFieldsValidationResult
             extendedFieldsValidationResult;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "extendedFieldsValidationResult"
+    })
     private ValidateSourceExtendedFieldDetailsResponse(
             int __httpStatusCode__,
             String opcRequestId,

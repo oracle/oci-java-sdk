@@ -48,6 +48,15 @@ public class CreateDatasetResponse extends com.oracle.bmc.responses.BmcResponse 
      */
     private com.oracle.bmc.datalabelingservice.model.Dataset dataset;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "location",
+        "contentLocation",
+        "opcWorkRequestId",
+        "opcRequestId",
+        "dataset"
+    })
     private CreateDatasetResponse(
             int __httpStatusCode__,
             String etag,

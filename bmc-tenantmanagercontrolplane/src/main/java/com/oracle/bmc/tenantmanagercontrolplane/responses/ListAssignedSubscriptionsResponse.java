@@ -33,6 +33,12 @@ public class ListAssignedSubscriptionsResponse extends com.oracle.bmc.responses.
     private com.oracle.bmc.tenantmanagercontrolplane.model.AssignedSubscriptionCollection
             assignedSubscriptionCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcNextPage",
+        "opcRequestId",
+        "assignedSubscriptionCollection"
+    })
     private ListAssignedSubscriptionsResponse(
             int __httpStatusCode__,
             String opcNextPage,

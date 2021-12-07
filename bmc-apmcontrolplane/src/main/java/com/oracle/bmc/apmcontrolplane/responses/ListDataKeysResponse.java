@@ -24,6 +24,7 @@ public class ListDataKeysResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private java.util.List<com.oracle.bmc.apmcontrolplane.model.DataKeySummary> items;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "items"})
     private ListDataKeysResponse(
             int __httpStatusCode__,
             String opcRequestId,

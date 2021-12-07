@@ -30,6 +30,12 @@ public class UpdateInstanceConfigurationResponse extends com.oracle.bmc.response
      */
     private com.oracle.bmc.core.model.InstanceConfiguration instanceConfiguration;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcRequestId",
+        "instanceConfiguration"
+    })
     private UpdateInstanceConfigurationResponse(
             int __httpStatusCode__,
             String etag,

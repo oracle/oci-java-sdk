@@ -30,6 +30,7 @@ public class CreateScheduleResponse extends com.oracle.bmc.responses.BmcResponse
      */
     private com.oracle.bmc.dataintegration.model.Schedule schedule;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "etag", "schedule"})
     private CreateScheduleResponse(
             int __httpStatusCode__,
             String opcRequestId,

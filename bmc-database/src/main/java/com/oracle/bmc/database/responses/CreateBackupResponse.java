@@ -35,6 +35,13 @@ public class CreateBackupResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private com.oracle.bmc.database.model.Backup backup;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcWorkRequestId",
+        "etag",
+        "opcRequestId",
+        "backup"
+    })
     private CreateBackupResponse(
             int __httpStatusCode__,
             String opcWorkRequestId,

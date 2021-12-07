@@ -31,6 +31,12 @@ public class GetDatabaseToolsPrivateEndpointResponse extends com.oracle.bmc.resp
     private com.oracle.bmc.databasetools.model.DatabaseToolsPrivateEndpoint
             databaseToolsPrivateEndpoint;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcRequestId",
+        "databaseToolsPrivateEndpoint"
+    })
     private GetDatabaseToolsPrivateEndpointResponse(
             int __httpStatusCode__,
             String etag,

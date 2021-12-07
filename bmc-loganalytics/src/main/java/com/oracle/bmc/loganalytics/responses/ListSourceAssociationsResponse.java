@@ -40,6 +40,13 @@ public class ListSourceAssociationsResponse extends com.oracle.bmc.responses.Bmc
     private com.oracle.bmc.loganalytics.model.LogAnalyticsAssociationCollection
             logAnalyticsAssociationCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcPrevPage",
+        "opcNextPage",
+        "opcRequestId",
+        "logAnalyticsAssociationCollection"
+    })
     private ListSourceAssociationsResponse(
             int __httpStatusCode__,
             String opcPrevPage,

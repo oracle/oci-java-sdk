@@ -30,6 +30,12 @@ public class RemoveContainerVersionResponse extends com.oracle.bmc.responses.Bmc
      */
     private com.oracle.bmc.artifacts.model.ContainerImage containerImage;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcRequestId",
+        "containerImage"
+    })
     private RemoveContainerVersionResponse(
             int __httpStatusCode__,
             String etag,

@@ -29,6 +29,12 @@ public class UpdateLogAnalyticsEntityResponse extends com.oracle.bmc.responses.B
      */
     private com.oracle.bmc.loganalytics.model.LogAnalyticsEntity logAnalyticsEntity;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcRequestId",
+        "logAnalyticsEntity"
+    })
     private UpdateLogAnalyticsEntityResponse(
             int __httpStatusCode__,
             String etag,

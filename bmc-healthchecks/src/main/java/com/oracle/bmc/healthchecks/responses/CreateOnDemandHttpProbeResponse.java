@@ -30,6 +30,12 @@ public class CreateOnDemandHttpProbeResponse extends com.oracle.bmc.responses.Bm
      */
     private com.oracle.bmc.healthchecks.model.HttpProbe httpProbe;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "location",
+        "httpProbe"
+    })
     private CreateOnDemandHttpProbeResponse(
             int __httpStatusCode__,
             String opcRequestId,

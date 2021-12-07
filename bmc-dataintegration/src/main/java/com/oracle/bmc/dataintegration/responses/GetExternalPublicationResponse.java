@@ -30,6 +30,12 @@ public class GetExternalPublicationResponse extends com.oracle.bmc.responses.Bmc
      */
     private com.oracle.bmc.dataintegration.model.ExternalPublication externalPublication;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcRequestId",
+        "externalPublication"
+    })
     private GetExternalPublicationResponse(
             int __httpStatusCode__,
             String etag,

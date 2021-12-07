@@ -30,6 +30,12 @@ public class ChangeAutonomousExadataInfrastructureCompartmentResponse
      */
     private String opcRequestId;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcWorkRequestId",
+        "opcRequestId"
+    })
     private ChangeAutonomousExadataInfrastructureCompartmentResponse(
             int __httpStatusCode__, String etag, String opcWorkRequestId, String opcRequestId) {
         super(__httpStatusCode__);

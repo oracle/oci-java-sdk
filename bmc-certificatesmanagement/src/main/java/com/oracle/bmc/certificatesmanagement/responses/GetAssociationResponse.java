@@ -29,6 +29,7 @@ public class GetAssociationResponse extends com.oracle.bmc.responses.BmcResponse
      */
     private com.oracle.bmc.certificatesmanagement.model.Association association;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "etag", "opcRequestId", "association"})
     private GetAssociationResponse(
             int __httpStatusCode__,
             String etag,

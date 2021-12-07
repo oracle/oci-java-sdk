@@ -27,6 +27,12 @@ public class ListDeployEnvironmentsResponse extends com.oracle.bmc.responses.Bmc
      */
     private com.oracle.bmc.devops.model.DeployEnvironmentCollection deployEnvironmentCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "deployEnvironmentCollection"
+    })
     private ListDeployEnvironmentsResponse(
             int __httpStatusCode__,
             String opcRequestId,

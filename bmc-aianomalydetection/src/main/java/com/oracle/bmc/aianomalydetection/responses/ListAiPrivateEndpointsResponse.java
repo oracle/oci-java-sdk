@@ -33,6 +33,12 @@ public class ListAiPrivateEndpointsResponse extends com.oracle.bmc.responses.Bmc
     private com.oracle.bmc.aianomalydetection.model.AiPrivateEndpointCollection
             aiPrivateEndpointCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "aiPrivateEndpointCollection"
+    })
     private ListAiPrivateEndpointsResponse(
             int __httpStatusCode__,
             String opcRequestId,

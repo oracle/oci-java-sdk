@@ -34,6 +34,13 @@ public class ListStreamsResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private java.util.List<com.oracle.bmc.streaming.model.StreamSummary> items;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcNextPage",
+        "opcPrevPage",
+        "opcRequestId",
+        "items"
+    })
     private ListStreamsResponse(
             int __httpStatusCode__,
             String opcNextPage,

@@ -33,6 +33,12 @@ public class ListCaBundlesResponse extends com.oracle.bmc.responses.BmcResponse 
      */
     private com.oracle.bmc.certificatesmanagement.model.CaBundleCollection caBundleCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "caBundleCollection"
+    })
     private ListCaBundlesResponse(
             int __httpStatusCode__,
             String opcRequestId,

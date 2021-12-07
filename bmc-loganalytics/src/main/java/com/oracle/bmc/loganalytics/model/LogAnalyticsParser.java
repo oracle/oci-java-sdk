@@ -5,7 +5,7 @@
 package com.oracle.bmc.loganalytics.model;
 
 /**
- * LoganParserDetails
+ * LogAnalyticsParser
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -314,6 +314,15 @@ public class LogAnalyticsParser {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("categories")
+        private java.util.List<LogAnalyticsCategory> categories;
+
+        public Builder categories(java.util.List<LogAnalyticsCategory> categories) {
+            this.categories = categories;
+            this.__explicitlySet__.add("categories");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -351,7 +360,8 @@ public class LogAnalyticsParser {
                             fieldQualifier,
                             type,
                             isUserDeleted,
-                            isNamespaceAware);
+                            isNamespaceAware,
+                            categories);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -390,7 +400,8 @@ public class LogAnalyticsParser {
                             .fieldQualifier(o.getFieldQualifier())
                             .type(o.getType())
                             .isUserDeleted(o.getIsUserDeleted())
-                            .isNamespaceAware(o.getIsNamespaceAware());
+                            .isNamespaceAware(o.getIsNamespaceAware())
+                            .categories(o.getCategories());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -647,6 +658,14 @@ public class LogAnalyticsParser {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isNamespaceAware")
     Boolean isNamespaceAware;
+
+    /**
+     * An array of categories assigned to this parser.
+     * The isSystem flag denotes if each category assignment is user-created or Oracle-defined.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("categories")
+    java.util.List<LogAnalyticsCategory> categories;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

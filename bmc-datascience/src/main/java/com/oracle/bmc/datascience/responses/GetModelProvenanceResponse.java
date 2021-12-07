@@ -30,6 +30,12 @@ public class GetModelProvenanceResponse extends com.oracle.bmc.responses.BmcResp
      */
     private com.oracle.bmc.datascience.model.ModelProvenance modelProvenance;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcRequestId",
+        "modelProvenance"
+    })
     private GetModelProvenanceResponse(
             int __httpStatusCode__,
             String etag,

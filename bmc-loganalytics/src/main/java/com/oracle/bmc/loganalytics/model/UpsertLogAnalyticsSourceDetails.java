@@ -284,6 +284,15 @@ public class UpsertLogAnalyticsSourceDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("categories")
+        private java.util.List<LogAnalyticsCategory> categories;
+
+        public Builder categories(java.util.List<LogAnalyticsCategory> categories) {
+            this.categories = categories;
+            this.__explicitlySet__.add("categories");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -317,7 +326,8 @@ public class UpsertLogAnalyticsSourceDetails {
                             labelDefinitions,
                             entityTypes,
                             isTimezoneOverride,
-                            userParsers);
+                            userParsers,
+                            categories);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -352,7 +362,8 @@ public class UpsertLogAnalyticsSourceDetails {
                             .labelDefinitions(o.getLabelDefinitions())
                             .entityTypes(o.getEntityTypes())
                             .isTimezoneOverride(o.getIsTimezoneOverride())
-                            .userParsers(o.getUserParsers());
+                            .userParsers(o.getUserParsers())
+                            .categories(o.getCategories());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -538,6 +549,14 @@ public class UpsertLogAnalyticsSourceDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("userParsers")
     java.util.List<LogAnalyticsParser> userParsers;
+
+    /**
+     * An array of categories to assign to the source. Specifying the name attribute for each category would suffice.
+     * Oracle-defined category assignments cannot be removed.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("categories")
+    java.util.List<LogAnalyticsCategory> categories;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

@@ -30,6 +30,7 @@ public class AddDataSelectorPatternsResponse extends com.oracle.bmc.responses.Bm
      */
     private com.oracle.bmc.datacatalog.model.DataAsset dataAsset;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "etag", "opcRequestId", "dataAsset"})
     private AddDataSelectorPatternsResponse(
             int __httpStatusCode__,
             String etag,

@@ -30,6 +30,12 @@ public class GenerateRecommendedVmClusterNetworkResponse
      */
     private com.oracle.bmc.database.model.VmClusterNetworkDetails vmClusterNetworkDetails;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcRequestId",
+        "vmClusterNetworkDetails"
+    })
     private GenerateRecommendedVmClusterNetworkResponse(
             int __httpStatusCode__,
             String etag,

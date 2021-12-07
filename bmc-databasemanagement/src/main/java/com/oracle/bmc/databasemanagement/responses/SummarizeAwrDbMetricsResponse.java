@@ -32,6 +32,12 @@ public class SummarizeAwrDbMetricsResponse extends com.oracle.bmc.responses.BmcR
      */
     private com.oracle.bmc.databasemanagement.model.AwrDbMetricCollection awrDbMetricCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "awrDbMetricCollection"
+    })
     private SummarizeAwrDbMetricsResponse(
             int __httpStatusCode__,
             String opcRequestId,

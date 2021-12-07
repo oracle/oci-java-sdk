@@ -33,6 +33,12 @@ public class ListSecretsResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private java.util.List<com.oracle.bmc.vault.model.SecretSummary> items;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcNextPage",
+        "opcRequestId",
+        "items"
+    })
     private ListSecretsResponse(
             int __httpStatusCode__,
             String opcNextPage,

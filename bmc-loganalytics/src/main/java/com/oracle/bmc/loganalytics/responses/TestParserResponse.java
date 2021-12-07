@@ -23,6 +23,7 @@ public class TestParserResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private com.oracle.bmc.loganalytics.model.ParserTestResult parserTestResult;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "parserTestResult"})
     private TestParserResponse(
             int __httpStatusCode__,
             String opcRequestId,

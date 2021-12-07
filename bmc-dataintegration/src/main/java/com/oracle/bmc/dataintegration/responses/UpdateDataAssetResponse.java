@@ -30,6 +30,7 @@ public class UpdateDataAssetResponse extends com.oracle.bmc.responses.BmcRespons
      */
     private com.oracle.bmc.dataintegration.model.DataAsset dataAsset;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "etag", "opcRequestId", "dataAsset"})
     private UpdateDataAssetResponse(
             int __httpStatusCode__,
             String etag,

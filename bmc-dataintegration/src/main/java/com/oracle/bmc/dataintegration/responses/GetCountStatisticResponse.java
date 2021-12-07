@@ -30,6 +30,12 @@ public class GetCountStatisticResponse extends com.oracle.bmc.responses.BmcRespo
      */
     private com.oracle.bmc.dataintegration.model.CountStatistic countStatistic;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "countStatistic"
+    })
     private GetCountStatisticResponse(
             int __httpStatusCode__,
             String opcRequestId,

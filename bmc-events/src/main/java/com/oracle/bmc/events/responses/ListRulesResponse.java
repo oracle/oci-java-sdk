@@ -32,6 +32,12 @@ public class ListRulesResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private java.util.List<com.oracle.bmc.events.model.RuleSummary> items;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcNextPage",
+        "opcRequestId",
+        "items"
+    })
     private ListRulesResponse(
             int __httpStatusCode__,
             String opcNextPage,

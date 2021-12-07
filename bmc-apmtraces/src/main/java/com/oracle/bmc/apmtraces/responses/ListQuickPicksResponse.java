@@ -38,6 +38,13 @@ public class ListQuickPicksResponse extends com.oracle.bmc.responses.BmcResponse
      */
     private java.util.List<com.oracle.bmc.apmtraces.model.QuickPickSummary> items;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcTotalItems",
+        "opcNextPage",
+        "items"
+    })
     private ListQuickPicksResponse(
             int __httpStatusCode__,
             String opcRequestId,

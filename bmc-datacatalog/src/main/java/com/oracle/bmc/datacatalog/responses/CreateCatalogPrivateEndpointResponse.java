@@ -25,6 +25,7 @@ public class CreateCatalogPrivateEndpointResponse extends com.oracle.bmc.respons
      */
     private String opcWorkRequestId;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "opcWorkRequestId"})
     private CreateCatalogPrivateEndpointResponse(
             int __httpStatusCode__, String opcRequestId, String opcWorkRequestId) {
         super(__httpStatusCode__);

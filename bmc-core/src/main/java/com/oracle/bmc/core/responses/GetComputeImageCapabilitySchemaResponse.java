@@ -30,6 +30,12 @@ public class GetComputeImageCapabilitySchemaResponse extends com.oracle.bmc.resp
      */
     private com.oracle.bmc.core.model.ComputeImageCapabilitySchema computeImageCapabilitySchema;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcRequestId",
+        "computeImageCapabilitySchema"
+    })
     private GetComputeImageCapabilitySchemaResponse(
             int __httpStatusCode__,
             String etag,

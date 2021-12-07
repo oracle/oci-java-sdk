@@ -37,6 +37,13 @@ public class ListTargetDatabasesResponse extends com.oracle.bmc.responses.BmcRes
      */
     private java.util.List<com.oracle.bmc.datasafe.model.TargetDatabaseSummary> items;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "opcPrevPage",
+        "items"
+    })
     private ListTargetDatabasesResponse(
             int __httpStatusCode__,
             String opcRequestId,

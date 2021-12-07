@@ -42,6 +42,14 @@ public class GetBucketResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private boolean isNotModified;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcClientRequestId",
+        "opcRequestId",
+        "eTag",
+        "bucket",
+        "isNotModified"
+    })
     private GetBucketResponse(
             int __httpStatusCode__,
             String opcClientRequestId,

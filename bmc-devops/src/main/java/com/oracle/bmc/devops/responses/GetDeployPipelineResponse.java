@@ -27,6 +27,12 @@ public class GetDeployPipelineResponse extends com.oracle.bmc.responses.BmcRespo
      */
     private com.oracle.bmc.devops.model.DeployPipeline deployPipeline;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcRequestId",
+        "deployPipeline"
+    })
     private GetDeployPipelineResponse(
             int __httpStatusCode__,
             String etag,

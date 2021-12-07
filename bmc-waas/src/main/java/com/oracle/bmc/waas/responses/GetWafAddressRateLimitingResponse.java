@@ -27,6 +27,12 @@ public class GetWafAddressRateLimitingResponse extends com.oracle.bmc.responses.
      */
     private com.oracle.bmc.waas.model.AddressRateLimiting addressRateLimiting;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcRequestId",
+        "addressRateLimiting"
+    })
     private GetWafAddressRateLimitingResponse(
             int __httpStatusCode__,
             String etag,

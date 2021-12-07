@@ -32,6 +32,12 @@ public class ListDynamicGroupsResponse extends com.oracle.bmc.responses.BmcRespo
      */
     private java.util.List<com.oracle.bmc.identity.model.DynamicGroup> items;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "items"
+    })
     private ListDynamicGroupsResponse(
             int __httpStatusCode__,
             String opcRequestId,

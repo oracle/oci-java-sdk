@@ -25,6 +25,7 @@ public class UpdateEnterpriseManagerBridgeResponse extends com.oracle.bmc.respon
      */
     private String opcRequestId;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcWorkRequestId", "opcRequestId"})
     private UpdateEnterpriseManagerBridgeResponse(
             int __httpStatusCode__, String opcWorkRequestId, String opcRequestId) {
         super(__httpStatusCode__);

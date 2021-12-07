@@ -30,6 +30,12 @@ public class UpdateDedicatedVmHostResponse extends com.oracle.bmc.responses.BmcR
      */
     private com.oracle.bmc.core.model.DedicatedVmHost dedicatedVmHost;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcRequestId",
+        "dedicatedVmHost"
+    })
     private UpdateDedicatedVmHostResponse(
             int __httpStatusCode__,
             String etag,

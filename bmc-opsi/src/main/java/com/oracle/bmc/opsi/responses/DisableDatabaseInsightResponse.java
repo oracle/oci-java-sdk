@@ -25,6 +25,7 @@ public class DisableDatabaseInsightResponse extends com.oracle.bmc.responses.Bmc
      */
     private String opcRequestId;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcWorkRequestId", "opcRequestId"})
     private DisableDatabaseInsightResponse(
             int __httpStatusCode__, String opcWorkRequestId, String opcRequestId) {
         super(__httpStatusCode__);

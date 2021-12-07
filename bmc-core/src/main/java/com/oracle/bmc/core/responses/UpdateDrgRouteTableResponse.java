@@ -30,6 +30,12 @@ public class UpdateDrgRouteTableResponse extends com.oracle.bmc.responses.BmcRes
      */
     private com.oracle.bmc.core.model.DrgRouteTable drgRouteTable;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcRequestId",
+        "drgRouteTable"
+    })
     private UpdateDrgRouteTableResponse(
             int __httpStatusCode__,
             String etag,

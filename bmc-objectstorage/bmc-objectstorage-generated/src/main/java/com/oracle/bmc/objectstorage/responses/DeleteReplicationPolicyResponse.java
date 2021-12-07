@@ -24,6 +24,7 @@ public class DeleteReplicationPolicyResponse extends com.oracle.bmc.responses.Bm
      */
     private String opcClientRequestId;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "opcClientRequestId"})
     private DeleteReplicationPolicyResponse(
             int __httpStatusCode__, String opcRequestId, String opcClientRequestId) {
         super(__httpStatusCode__);

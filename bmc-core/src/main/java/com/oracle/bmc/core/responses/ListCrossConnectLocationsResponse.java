@@ -32,6 +32,12 @@ public class ListCrossConnectLocationsResponse extends com.oracle.bmc.responses.
      */
     private java.util.List<com.oracle.bmc.core.model.CrossConnectLocation> items;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcNextPage",
+        "opcRequestId",
+        "items"
+    })
     private ListCrossConnectLocationsResponse(
             int __httpStatusCode__,
             String opcNextPage,

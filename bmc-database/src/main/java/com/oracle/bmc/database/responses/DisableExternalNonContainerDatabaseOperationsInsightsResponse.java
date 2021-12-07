@@ -31,6 +31,12 @@ public class DisableExternalNonContainerDatabaseOperationsInsightsResponse
      */
     private String opcRequestId;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcWorkRequestId",
+        "opcRequestId"
+    })
     private DisableExternalNonContainerDatabaseOperationsInsightsResponse(
             int __httpStatusCode__, String etag, String opcWorkRequestId, String opcRequestId) {
         super(__httpStatusCode__);

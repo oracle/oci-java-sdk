@@ -27,6 +27,12 @@ public class ListCommitDiffsResponse extends com.oracle.bmc.responses.BmcRespons
      */
     private com.oracle.bmc.devops.model.DiffCollection diffCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "diffCollection"
+    })
     private ListCommitDiffsResponse(
             int __httpStatusCode__,
             String opcRequestId,

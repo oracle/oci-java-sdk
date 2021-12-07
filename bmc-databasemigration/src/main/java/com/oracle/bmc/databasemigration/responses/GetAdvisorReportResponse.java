@@ -30,6 +30,12 @@ public class GetAdvisorReportResponse extends com.oracle.bmc.responses.BmcRespon
      */
     private com.oracle.bmc.databasemigration.model.AdvisorReport advisorReport;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "etag",
+        "advisorReport"
+    })
     private GetAdvisorReportResponse(
             int __httpStatusCode__,
             String opcRequestId,

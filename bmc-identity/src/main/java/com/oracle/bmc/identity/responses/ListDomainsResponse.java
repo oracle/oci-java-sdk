@@ -32,6 +32,12 @@ public class ListDomainsResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private java.util.List<com.oracle.bmc.identity.model.DomainSummary> items;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "items"
+    })
     private ListDomainsResponse(
             int __httpStatusCode__,
             String opcRequestId,

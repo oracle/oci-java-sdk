@@ -27,6 +27,12 @@ public class ListWaasPoliciesResponse extends com.oracle.bmc.responses.BmcRespon
      */
     private java.util.List<com.oracle.bmc.waas.model.WaasPolicySummary> items;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcNextPage",
+        "opcRequestId",
+        "items"
+    })
     private ListWaasPoliciesResponse(
             int __httpStatusCode__,
             String opcNextPage,

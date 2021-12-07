@@ -27,6 +27,12 @@ public class GetPolicyConfigResponse extends com.oracle.bmc.responses.BmcRespons
      */
     private com.oracle.bmc.waas.model.PolicyConfig policyConfig;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcRequestId",
+        "policyConfig"
+    })
     private GetPolicyConfigResponse(
             int __httpStatusCode__,
             String etag,

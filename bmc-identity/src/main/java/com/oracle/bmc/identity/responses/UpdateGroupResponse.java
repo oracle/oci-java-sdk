@@ -29,6 +29,7 @@ public class UpdateGroupResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private com.oracle.bmc.identity.model.Group group;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "etag", "group"})
     private UpdateGroupResponse(
             int __httpStatusCode__,
             String opcRequestId,

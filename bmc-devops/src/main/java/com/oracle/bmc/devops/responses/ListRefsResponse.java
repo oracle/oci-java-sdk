@@ -27,6 +27,12 @@ public class ListRefsResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private com.oracle.bmc.devops.model.RepositoryRefCollection repositoryRefCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "repositoryRefCollection"
+    })
     private ListRefsResponse(
             int __httpStatusCode__,
             String opcRequestId,

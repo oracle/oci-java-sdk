@@ -29,6 +29,12 @@ public class UpdateNamespaceMetadataResponse extends com.oracle.bmc.responses.Bm
      */
     private com.oracle.bmc.objectstorage.model.NamespaceMetadata namespaceMetadata;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcClientRequestId",
+        "opcRequestId",
+        "namespaceMetadata"
+    })
     private UpdateNamespaceMetadataResponse(
             int __httpStatusCode__,
             String opcClientRequestId,

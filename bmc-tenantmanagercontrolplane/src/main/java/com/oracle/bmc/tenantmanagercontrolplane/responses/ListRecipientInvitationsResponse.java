@@ -33,6 +33,12 @@ public class ListRecipientInvitationsResponse extends com.oracle.bmc.responses.B
     private com.oracle.bmc.tenantmanagercontrolplane.model.RecipientInvitationCollection
             recipientInvitationCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcNextPage",
+        "opcRequestId",
+        "recipientInvitationCollection"
+    })
     private ListRecipientInvitationsResponse(
             int __httpStatusCode__,
             String opcNextPage,

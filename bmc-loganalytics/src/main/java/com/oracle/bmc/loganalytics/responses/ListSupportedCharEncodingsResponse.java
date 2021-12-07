@@ -36,6 +36,13 @@ public class ListSupportedCharEncodingsResponse extends com.oracle.bmc.responses
      */
     private com.oracle.bmc.loganalytics.model.CharEncodingCollection charEncodingCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "opcTotalItems",
+        "charEncodingCollection"
+    })
     private ListSupportedCharEncodingsResponse(
             int __httpStatusCode__,
             String opcRequestId,

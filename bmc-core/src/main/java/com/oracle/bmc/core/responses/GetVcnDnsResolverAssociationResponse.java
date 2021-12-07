@@ -30,6 +30,12 @@ public class GetVcnDnsResolverAssociationResponse extends com.oracle.bmc.respons
      */
     private com.oracle.bmc.core.model.VcnDnsResolverAssociation vcnDnsResolverAssociation;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcRequestId",
+        "vcnDnsResolverAssociation"
+    })
     private GetVcnDnsResolverAssociationResponse(
             int __httpStatusCode__,
             String etag,

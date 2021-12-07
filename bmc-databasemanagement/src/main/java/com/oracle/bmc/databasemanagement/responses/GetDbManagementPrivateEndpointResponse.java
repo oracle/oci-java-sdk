@@ -31,6 +31,12 @@ public class GetDbManagementPrivateEndpointResponse extends com.oracle.bmc.respo
     private com.oracle.bmc.databasemanagement.model.DbManagementPrivateEndpoint
             dbManagementPrivateEndpoint;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcRequestId",
+        "dbManagementPrivateEndpoint"
+    })
     private GetDbManagementPrivateEndpointResponse(
             int __httpStatusCode__,
             String etag,

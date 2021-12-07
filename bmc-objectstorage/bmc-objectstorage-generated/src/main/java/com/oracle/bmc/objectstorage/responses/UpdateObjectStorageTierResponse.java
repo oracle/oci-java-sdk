@@ -24,6 +24,7 @@ public class UpdateObjectStorageTierResponse extends com.oracle.bmc.responses.Bm
      */
     private String opcRequestId;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcClientRequestId", "opcRequestId"})
     private UpdateObjectStorageTierResponse(
             int __httpStatusCode__, String opcClientRequestId, String opcRequestId) {
         super(__httpStatusCode__);

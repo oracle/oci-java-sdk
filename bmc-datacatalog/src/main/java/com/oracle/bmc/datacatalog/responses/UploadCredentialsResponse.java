@@ -30,6 +30,7 @@ public class UploadCredentialsResponse extends com.oracle.bmc.responses.BmcRespo
      */
     private com.oracle.bmc.datacatalog.model.Connection connection;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "etag", "opcRequestId", "connection"})
     private UploadCredentialsResponse(
             int __httpStatusCode__,
             String etag,

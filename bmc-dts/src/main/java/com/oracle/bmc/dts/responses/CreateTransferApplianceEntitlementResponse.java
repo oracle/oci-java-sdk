@@ -28,6 +28,12 @@ public class CreateTransferApplianceEntitlementResponse
      */
     private com.oracle.bmc.dts.model.TransferApplianceEntitlement transferApplianceEntitlement;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "etag",
+        "transferApplianceEntitlement"
+    })
     private CreateTransferApplianceEntitlementResponse(
             int __httpStatusCode__,
             String opcRequestId,

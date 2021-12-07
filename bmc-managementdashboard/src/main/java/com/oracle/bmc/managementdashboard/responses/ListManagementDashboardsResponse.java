@@ -33,6 +33,12 @@ public class ListManagementDashboardsResponse extends com.oracle.bmc.responses.B
     private com.oracle.bmc.managementdashboard.model.ManagementDashboardCollection
             managementDashboardCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "managementDashboardCollection"
+    })
     private ListManagementDashboardsResponse(
             int __httpStatusCode__,
             String opcRequestId,

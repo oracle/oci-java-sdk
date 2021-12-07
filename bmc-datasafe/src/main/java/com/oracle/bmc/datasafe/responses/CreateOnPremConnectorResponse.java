@@ -41,6 +41,14 @@ public class CreateOnPremConnectorResponse extends com.oracle.bmc.responses.BmcR
      */
     private com.oracle.bmc.datasafe.model.OnPremConnector onPremConnector;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcWorkRequestId",
+        "opcRequestId",
+        "location",
+        "onPremConnector"
+    })
     private CreateOnPremConnectorResponse(
             int __httpStatusCode__,
             String etag,

@@ -205,6 +205,11 @@ public class ListLookupsRequest extends com.oracle.bmc.requests.BmcRequest<java.
         }
     };
     /**
+     * A comma-separated list of categories used for filtering
+     */
+    private String categories;
+
+    /**
      * A flag indicating whether or not to return OMC annotated or hidden lookups.
      *
      */
@@ -308,6 +313,7 @@ public class ListLookupsRequest extends com.oracle.bmc.requests.BmcRequest<java.
             isSystem(o.getIsSystem());
             sortBy(o.getSortBy());
             status(o.getStatus());
+            categories(o.getCategories());
             isHideSpecial(o.getIsHideSpecial());
             limit(o.getLimit());
             page(o.getPage());

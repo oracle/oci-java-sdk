@@ -35,6 +35,12 @@ public class ListTableUsageResponse extends com.oracle.bmc.responses.BmcResponse
      */
     private com.oracle.bmc.nosql.model.TableUsageCollection tableUsageCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcNextPage",
+        "opcRequestId",
+        "tableUsageCollection"
+    })
     private ListTableUsageResponse(
             int __httpStatusCode__,
             String opcNextPage,

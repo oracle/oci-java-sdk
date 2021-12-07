@@ -32,6 +32,7 @@ public class CreateFunctionResponse extends com.oracle.bmc.responses.BmcResponse
      */
     private com.oracle.bmc.functions.model.Function function;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "etag", "opcRequestId", "function"})
     private CreateFunctionResponse(
             int __httpStatusCode__,
             String etag,

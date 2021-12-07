@@ -24,6 +24,7 @@ public class GetSoftwarePackageResponse extends com.oracle.bmc.responses.BmcResp
      */
     private com.oracle.bmc.osmanagement.model.SoftwarePackage softwarePackage;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "softwarePackage"})
     private GetSoftwarePackageResponse(
             int __httpStatusCode__,
             String opcRequestId,

@@ -33,6 +33,12 @@ public class RequestSummarizedSecurityScoresResponse extends com.oracle.bmc.resp
     private com.oracle.bmc.cloudguard.model.SecurityScoreAggregationCollection
             securityScoreAggregationCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "securityScoreAggregationCollection"
+    })
     private RequestSummarizedSecurityScoresResponse(
             int __httpStatusCode__,
             String opcRequestId,

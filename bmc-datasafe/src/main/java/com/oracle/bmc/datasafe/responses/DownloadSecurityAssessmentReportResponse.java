@@ -34,6 +34,13 @@ public class DownloadSecurityAssessmentReportResponse extends com.oracle.bmc.res
      */
     private java.io.InputStream inputStream;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "etag",
+        "contentLength",
+        "inputStream"
+    })
     private DownloadSecurityAssessmentReportResponse(
             int __httpStatusCode__,
             String opcRequestId,

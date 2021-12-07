@@ -30,6 +30,12 @@ public class GetContainerRepositoryResponse extends com.oracle.bmc.responses.Bmc
      */
     private com.oracle.bmc.artifacts.model.ContainerRepository containerRepository;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcRequestId",
+        "containerRepository"
+    })
     private GetContainerRepositoryResponse(
             int __httpStatusCode__,
             String etag,

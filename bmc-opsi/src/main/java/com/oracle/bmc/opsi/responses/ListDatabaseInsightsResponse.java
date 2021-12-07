@@ -38,6 +38,13 @@ public class ListDatabaseInsightsResponse extends com.oracle.bmc.responses.BmcRe
      */
     private com.oracle.bmc.opsi.model.DatabaseInsightsCollection databaseInsightsCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcTotalItems",
+        "opcNextPage",
+        "databaseInsightsCollection"
+    })
     private ListDatabaseInsightsResponse(
             int __httpStatusCode__,
             String opcRequestId,

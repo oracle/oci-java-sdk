@@ -24,6 +24,7 @@ public class ListSSLCipherSuitesResponse extends com.oracle.bmc.responses.BmcRes
      */
     private java.util.List<com.oracle.bmc.loadbalancer.model.SSLCipherSuite> items;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "items"})
     private ListSSLCipherSuitesResponse(
             int __httpStatusCode__,
             String opcRequestId,

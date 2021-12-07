@@ -30,6 +30,7 @@ public class GetEntityTagResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private com.oracle.bmc.datacatalog.model.EntityTag entityTag;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "etag", "opcRequestId", "entityTag"})
     private GetEntityTagResponse(
             int __httpStatusCode__,
             String etag,

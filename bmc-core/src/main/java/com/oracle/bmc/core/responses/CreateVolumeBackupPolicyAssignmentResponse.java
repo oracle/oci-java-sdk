@@ -31,6 +31,12 @@ public class CreateVolumeBackupPolicyAssignmentResponse
      */
     private com.oracle.bmc.core.model.VolumeBackupPolicyAssignment volumeBackupPolicyAssignment;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcRequestId",
+        "volumeBackupPolicyAssignment"
+    })
     private CreateVolumeBackupPolicyAssignmentResponse(
             int __httpStatusCode__,
             String etag,

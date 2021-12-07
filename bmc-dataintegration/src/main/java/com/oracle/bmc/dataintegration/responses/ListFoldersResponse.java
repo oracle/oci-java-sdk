@@ -42,6 +42,14 @@ public class ListFoldersResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private com.oracle.bmc.dataintegration.model.FolderSummaryCollection folderSummaryCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "opcPrevPage",
+        "opcTotalItems",
+        "folderSummaryCollection"
+    })
     private ListFoldersResponse(
             int __httpStatusCode__,
             String opcRequestId,

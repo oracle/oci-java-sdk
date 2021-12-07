@@ -39,6 +39,13 @@ public class ListSourceEventTypesResponse extends com.oracle.bmc.responses.BmcRe
      */
     private com.oracle.bmc.loganalytics.model.EventTypeCollection eventTypeCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcPrevPage",
+        "opcNextPage",
+        "opcRequestId",
+        "eventTypeCollection"
+    })
     private ListSourceEventTypesResponse(
             int __httpStatusCode__,
             String opcPrevPage,

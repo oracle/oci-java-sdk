@@ -30,6 +30,7 @@ public class UpdateFolderResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private com.oracle.bmc.dataintegration.model.Folder folder;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "etag", "opcRequestId", "folder"})
     private UpdateFolderResponse(
             int __httpStatusCode__,
             String etag,

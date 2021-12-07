@@ -30,6 +30,12 @@ public class SoftresetInstancePoolResponse extends com.oracle.bmc.responses.BmcR
      */
     private com.oracle.bmc.core.model.InstancePool instancePool;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcRequestId",
+        "instancePool"
+    })
     private SoftresetInstancePoolResponse(
             int __httpStatusCode__,
             String etag,

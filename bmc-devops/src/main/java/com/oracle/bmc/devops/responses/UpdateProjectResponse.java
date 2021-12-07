@@ -37,6 +37,14 @@ public class UpdateProjectResponse extends com.oracle.bmc.responses.BmcResponse 
      */
     private com.oracle.bmc.devops.model.Project project;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "location",
+        "etag",
+        "opcWorkRequestId",
+        "opcRequestId",
+        "project"
+    })
     private UpdateProjectResponse(
             int __httpStatusCode__,
             String location,

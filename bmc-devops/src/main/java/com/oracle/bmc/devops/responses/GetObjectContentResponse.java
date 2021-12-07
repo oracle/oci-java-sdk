@@ -32,6 +32,13 @@ public class GetObjectContentResponse extends com.oracle.bmc.responses.BmcRespon
      */
     private java.io.InputStream inputStream;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "contentType",
+        "contentDisposition",
+        "inputStream"
+    })
     private GetObjectContentResponse(
             int __httpStatusCode__,
             String opcRequestId,

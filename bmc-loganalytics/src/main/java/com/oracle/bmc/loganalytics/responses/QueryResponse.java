@@ -51,6 +51,15 @@ public class QueryResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private com.oracle.bmc.loganalytics.model.QueryAggregation queryAggregation;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPageId",
+        "opcPrevPageId",
+        "opcWorkRequestId",
+        "location",
+        "queryAggregation"
+    })
     private QueryResponse(
             int __httpStatusCode__,
             String opcRequestId,

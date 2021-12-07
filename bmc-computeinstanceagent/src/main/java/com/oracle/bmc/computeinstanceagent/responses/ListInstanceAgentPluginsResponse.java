@@ -33,6 +33,12 @@ public class ListInstanceAgentPluginsResponse extends com.oracle.bmc.responses.B
     private java.util.List<com.oracle.bmc.computeinstanceagent.model.InstanceAgentPluginSummary>
             items;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "items"
+    })
     private ListInstanceAgentPluginsResponse(
             int __httpStatusCode__,
             String opcRequestId,

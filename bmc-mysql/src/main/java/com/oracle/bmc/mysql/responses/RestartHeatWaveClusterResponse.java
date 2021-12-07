@@ -25,6 +25,7 @@ public class RestartHeatWaveClusterResponse extends com.oracle.bmc.responses.Bmc
      */
     private String opcWorkRequestId;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "opcWorkRequestId"})
     private RestartHeatWaveClusterResponse(
             int __httpStatusCode__, String opcRequestId, String opcWorkRequestId) {
         super(__httpStatusCode__);

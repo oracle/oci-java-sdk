@@ -33,6 +33,12 @@ public class ListKeyVersionsResponse extends com.oracle.bmc.responses.BmcRespons
      */
     private java.util.List<com.oracle.bmc.keymanagement.model.KeyVersionSummary> items;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcNextPage",
+        "opcRequestId",
+        "items"
+    })
     private ListKeyVersionsResponse(
             int __httpStatusCode__,
             String opcNextPage,

@@ -30,6 +30,12 @@ public class ListJobExecutionsResponse extends com.oracle.bmc.responses.BmcRespo
      */
     private com.oracle.bmc.datacatalog.model.JobExecutionCollection jobExecutionCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "jobExecutionCollection"
+    })
     private ListJobExecutionsResponse(
             int __httpStatusCode__,
             String opcRequestId,

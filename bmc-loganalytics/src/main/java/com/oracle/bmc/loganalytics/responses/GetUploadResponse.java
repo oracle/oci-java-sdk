@@ -29,6 +29,7 @@ public class GetUploadResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private com.oracle.bmc.loganalytics.model.Upload upload;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "etag", "opcRequestId", "upload"})
     private GetUploadResponse(
             int __httpStatusCode__,
             String etag,

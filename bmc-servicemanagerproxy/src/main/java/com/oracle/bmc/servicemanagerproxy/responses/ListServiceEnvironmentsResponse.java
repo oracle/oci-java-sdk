@@ -33,6 +33,12 @@ public class ListServiceEnvironmentsResponse extends com.oracle.bmc.responses.Bm
     private com.oracle.bmc.servicemanagerproxy.model.ServiceEnvironmentCollection
             serviceEnvironmentCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "serviceEnvironmentCollection"
+    })
     private ListServiceEnvironmentsResponse(
             int __httpStatusCode__,
             String opcRequestId,

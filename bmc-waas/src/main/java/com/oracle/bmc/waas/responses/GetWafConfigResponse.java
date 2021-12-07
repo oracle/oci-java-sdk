@@ -27,6 +27,7 @@ public class GetWafConfigResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private com.oracle.bmc.waas.model.WafConfig wafConfig;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "etag", "opcRequestId", "wafConfig"})
     private GetWafConfigResponse(
             int __httpStatusCode__,
             String etag,

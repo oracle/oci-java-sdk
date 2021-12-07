@@ -25,6 +25,11 @@ public class ChangeDatabaseParametersResponse extends com.oracle.bmc.responses.B
     private com.oracle.bmc.databasemanagement.model.UpdateDatabaseParametersResult
             updateDatabaseParametersResult;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "updateDatabaseParametersResult"
+    })
     private ChangeDatabaseParametersResponse(
             int __httpStatusCode__,
             String opcRequestId,

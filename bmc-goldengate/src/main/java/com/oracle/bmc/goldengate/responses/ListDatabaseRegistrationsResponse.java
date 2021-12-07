@@ -30,6 +30,12 @@ public class ListDatabaseRegistrationsResponse extends com.oracle.bmc.responses.
     private com.oracle.bmc.goldengate.model.DatabaseRegistrationCollection
             databaseRegistrationCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "databaseRegistrationCollection"
+    })
     private ListDatabaseRegistrationsResponse(
             int __httpStatusCode__,
             String opcRequestId,

@@ -31,6 +31,7 @@ public class GetIndexResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private com.oracle.bmc.nosql.model.Index index;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "etag", "opcRequestId", "index"})
     private GetIndexResponse(
             int __httpStatusCode__,
             String etag,

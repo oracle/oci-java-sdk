@@ -30,6 +30,7 @@ public class GetDomainResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private com.oracle.bmc.tenantmanagercontrolplane.model.Domain domain;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "etag", "opcRequestId", "domain"})
     private GetDomainResponse(
             int __httpStatusCode__,
             String etag,

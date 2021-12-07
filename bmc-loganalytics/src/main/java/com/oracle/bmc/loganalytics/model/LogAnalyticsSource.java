@@ -357,6 +357,15 @@ public class LogAnalyticsSource {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("categories")
+        private java.util.List<LogAnalyticsCategory> categories;
+
+        public Builder categories(java.util.List<LogAnalyticsCategory> categories) {
+            this.categories = categories;
+            this.__explicitlySet__.add("categories");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -398,7 +407,8 @@ public class LogAnalyticsSource {
                             isTimezoneOverride,
                             userParsers,
                             timeUpdated,
-                            eventTypes);
+                            eventTypes,
+                            categories);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -441,7 +451,8 @@ public class LogAnalyticsSource {
                             .isTimezoneOverride(o.getIsTimezoneOverride())
                             .userParsers(o.getUserParsers())
                             .timeUpdated(o.getTimeUpdated())
-                            .eventTypes(o.getEventTypes());
+                            .eventTypes(o.getEventTypes())
+                            .categories(o.getCategories());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -677,6 +688,14 @@ public class LogAnalyticsSource {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("eventTypes")
     java.util.List<EventType> eventTypes;
+
+    /**
+     * An array of categories assigned to this source.
+     * The isSystem flag denotes if each category assignment is user-created or Oracle-defined.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("categories")
+    java.util.List<LogAnalyticsCategory> categories;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

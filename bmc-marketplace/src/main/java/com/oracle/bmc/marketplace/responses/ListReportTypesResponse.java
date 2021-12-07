@@ -32,6 +32,12 @@ public class ListReportTypesResponse extends com.oracle.bmc.responses.BmcRespons
      */
     private com.oracle.bmc.marketplace.model.ReportTypeCollection reportTypeCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "reportTypeCollection"
+    })
     private ListReportTypesResponse(
             int __httpStatusCode__,
             String opcRequestId,

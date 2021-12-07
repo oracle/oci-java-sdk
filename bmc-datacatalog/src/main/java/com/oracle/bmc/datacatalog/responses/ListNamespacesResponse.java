@@ -30,6 +30,12 @@ public class ListNamespacesResponse extends com.oracle.bmc.responses.BmcResponse
      */
     private com.oracle.bmc.datacatalog.model.NamespaceCollection namespaceCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "namespaceCollection"
+    })
     private ListNamespacesResponse(
             int __httpStatusCode__,
             String opcRequestId,

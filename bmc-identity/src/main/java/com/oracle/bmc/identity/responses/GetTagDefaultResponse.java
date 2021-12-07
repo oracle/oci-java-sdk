@@ -29,6 +29,7 @@ public class GetTagDefaultResponse extends com.oracle.bmc.responses.BmcResponse 
      */
     private com.oracle.bmc.identity.model.TagDefault tagDefault;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "etag", "tagDefault"})
     private GetTagDefaultResponse(
             int __httpStatusCode__,
             String opcRequestId,

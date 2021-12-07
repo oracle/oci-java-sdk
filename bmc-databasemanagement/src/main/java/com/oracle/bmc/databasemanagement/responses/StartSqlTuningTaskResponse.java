@@ -24,6 +24,7 @@ public class StartSqlTuningTaskResponse extends com.oracle.bmc.responses.BmcResp
      */
     private com.oracle.bmc.databasemanagement.model.SqlTuningTaskReturn sqlTuningTaskReturn;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "sqlTuningTaskReturn"})
     private StartSqlTuningTaskResponse(
             int __httpStatusCode__,
             String opcRequestId,

@@ -35,6 +35,13 @@ public class CreateManagedInstanceGroupResponse extends com.oracle.bmc.responses
      */
     private com.oracle.bmc.osmanagement.model.ManagedInstanceGroup managedInstanceGroup;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "location",
+        "opcRequestId",
+        "etag",
+        "managedInstanceGroup"
+    })
     private CreateManagedInstanceGroupResponse(
             int __httpStatusCode__,
             String location,

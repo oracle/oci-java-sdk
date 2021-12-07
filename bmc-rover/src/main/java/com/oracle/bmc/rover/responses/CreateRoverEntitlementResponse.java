@@ -27,6 +27,12 @@ public class CreateRoverEntitlementResponse extends com.oracle.bmc.responses.Bmc
      */
     private com.oracle.bmc.rover.model.RoverEntitlement roverEntitlement;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "etag",
+        "roverEntitlement"
+    })
     private CreateRoverEntitlementResponse(
             int __httpStatusCode__,
             String opcRequestId,

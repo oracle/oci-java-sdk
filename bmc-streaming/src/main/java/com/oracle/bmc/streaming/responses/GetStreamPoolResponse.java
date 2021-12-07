@@ -29,6 +29,7 @@ public class GetStreamPoolResponse extends com.oracle.bmc.responses.BmcResponse 
      */
     private com.oracle.bmc.streaming.model.StreamPool streamPool;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "etag", "streamPool"})
     private GetStreamPoolResponse(
             int __httpStatusCode__,
             String opcRequestId,

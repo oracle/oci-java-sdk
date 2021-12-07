@@ -22,6 +22,7 @@ public class AttachDevicesToTransferPackageResponse extends com.oracle.bmc.respo
      */
     private String etag;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "etag"})
     private AttachDevicesToTransferPackageResponse(
             int __httpStatusCode__, String opcRequestId, String etag) {
         super(__httpStatusCode__);

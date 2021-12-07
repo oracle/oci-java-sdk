@@ -32,6 +32,12 @@ public class ListResourceTypesResponse extends com.oracle.bmc.responses.BmcRespo
      */
     private com.oracle.bmc.cloudguard.model.ResourceTypeCollection resourceTypeCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "resourceTypeCollection"
+    })
     private ListResourceTypesResponse(
             int __httpStatusCode__,
             String opcRequestId,

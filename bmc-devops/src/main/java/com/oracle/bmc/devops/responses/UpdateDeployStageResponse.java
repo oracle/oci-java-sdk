@@ -37,6 +37,14 @@ public class UpdateDeployStageResponse extends com.oracle.bmc.responses.BmcRespo
      */
     private com.oracle.bmc.devops.model.DeployStage deployStage;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "location",
+        "etag",
+        "opcWorkRequestId",
+        "opcRequestId",
+        "deployStage"
+    })
     private UpdateDeployStageResponse(
             int __httpStatusCode__,
             String location,

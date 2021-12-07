@@ -32,6 +32,12 @@ public class ListTagDefaultsResponse extends com.oracle.bmc.responses.BmcRespons
      */
     private java.util.List<com.oracle.bmc.identity.model.TagDefaultSummary> items;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "items"
+    })
     private ListTagDefaultsResponse(
             int __httpStatusCode__,
             String opcRequestId,

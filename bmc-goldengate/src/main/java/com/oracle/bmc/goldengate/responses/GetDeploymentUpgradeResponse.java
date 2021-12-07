@@ -29,6 +29,12 @@ public class GetDeploymentUpgradeResponse extends com.oracle.bmc.responses.BmcRe
      */
     private com.oracle.bmc.goldengate.model.DeploymentUpgrade deploymentUpgrade;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcRequestId",
+        "deploymentUpgrade"
+    })
     private GetDeploymentUpgradeResponse(
             int __httpStatusCode__,
             String etag,

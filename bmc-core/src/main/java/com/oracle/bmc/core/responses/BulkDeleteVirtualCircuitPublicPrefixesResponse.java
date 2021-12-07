@@ -14,6 +14,7 @@ import com.oracle.bmc.core.model.*;
 public class BulkDeleteVirtualCircuitPublicPrefixesResponse
         extends com.oracle.bmc.responses.BmcResponse {
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__"})
     private BulkDeleteVirtualCircuitPublicPrefixesResponse(int __httpStatusCode__) {
         super(__httpStatusCode__);
     }

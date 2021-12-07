@@ -24,6 +24,7 @@ public class EncryptResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private com.oracle.bmc.keymanagement.model.EncryptedData encryptedData;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "encryptedData"})
     private EncryptResponse(
             int __httpStatusCode__,
             String opcRequestId,

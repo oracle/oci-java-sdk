@@ -30,6 +30,7 @@ public class GetBdsApiKeyResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private com.oracle.bmc.bds.model.BdsApiKey bdsApiKey;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "etag", "bdsApiKey"})
     private GetBdsApiKeyResponse(
             int __httpStatusCode__,
             String opcRequestId,

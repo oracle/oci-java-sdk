@@ -29,6 +29,7 @@ public class EnableArchivingResponse extends com.oracle.bmc.responses.BmcRespons
      */
     private com.oracle.bmc.loganalytics.model.Success success;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "etag", "success"})
     private EnableArchivingResponse(
             int __httpStatusCode__,
             String opcRequestId,

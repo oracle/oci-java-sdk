@@ -24,6 +24,7 @@ public class GetJobOutputContentResponse extends com.oracle.bmc.responses.BmcRes
      */
     private java.io.InputStream inputStream;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "inputStream"})
     private GetJobOutputContentResponse(
             int __httpStatusCode__, String opcRequestId, java.io.InputStream inputStream) {
         super(__httpStatusCode__);

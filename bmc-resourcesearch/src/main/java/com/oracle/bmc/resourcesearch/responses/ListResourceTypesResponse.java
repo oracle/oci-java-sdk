@@ -29,6 +29,12 @@ public class ListResourceTypesResponse extends com.oracle.bmc.responses.BmcRespo
      */
     private java.util.List<com.oracle.bmc.resourcesearch.model.ResourceType> items;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcNextPage",
+        "opcRequestId",
+        "items"
+    })
     private ListResourceTypesResponse(
             int __httpStatusCode__,
             String opcNextPage,

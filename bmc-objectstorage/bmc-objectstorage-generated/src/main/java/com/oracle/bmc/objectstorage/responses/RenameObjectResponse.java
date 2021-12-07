@@ -39,6 +39,14 @@ public class RenameObjectResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private String versionId;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcClientRequestId",
+        "opcRequestId",
+        "eTag",
+        "lastModified",
+        "versionId"
+    })
     private RenameObjectResponse(
             int __httpStatusCode__,
             String opcClientRequestId,

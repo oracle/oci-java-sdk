@@ -32,6 +32,12 @@ public class ListNetworkSourcesResponse extends com.oracle.bmc.responses.BmcResp
      */
     private java.util.List<com.oracle.bmc.identity.model.NetworkSourcesSummary> items;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "items"
+    })
     private ListNetworkSourcesResponse(
             int __httpStatusCode__,
             String opcRequestId,

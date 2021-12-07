@@ -30,6 +30,12 @@ public class GetConfirmSubscriptionResponse extends com.oracle.bmc.responses.Bmc
      */
     private com.oracle.bmc.ons.model.ConfirmationResult confirmationResult;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "etag",
+        "confirmationResult"
+    })
     private GetConfirmSubscriptionResponse(
             int __httpStatusCode__,
             String opcRequestId,

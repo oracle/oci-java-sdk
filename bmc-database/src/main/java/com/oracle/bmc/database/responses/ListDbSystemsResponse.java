@@ -33,6 +33,12 @@ public class ListDbSystemsResponse extends com.oracle.bmc.responses.BmcResponse 
      */
     private java.util.List<com.oracle.bmc.database.model.DbSystemSummary> items;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "items"
+    })
     private ListDbSystemsResponse(
             int __httpStatusCode__,
             String opcRequestId,

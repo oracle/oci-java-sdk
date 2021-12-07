@@ -29,6 +29,12 @@ public class GetTransferApplianceEncryptionPassphraseResponse
     private com.oracle.bmc.dts.model.TransferApplianceEncryptionPassphrase
             transferApplianceEncryptionPassphrase;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "etag",
+        "transferApplianceEncryptionPassphrase"
+    })
     private GetTransferApplianceEncryptionPassphraseResponse(
             int __httpStatusCode__,
             String opcRequestId,

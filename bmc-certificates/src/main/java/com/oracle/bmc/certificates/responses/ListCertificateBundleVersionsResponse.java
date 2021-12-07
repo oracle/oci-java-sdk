@@ -23,6 +23,11 @@ public class ListCertificateBundleVersionsResponse extends com.oracle.bmc.respon
     private com.oracle.bmc.certificates.model.CertificateBundleVersionCollection
             certificateBundleVersionCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "certificateBundleVersionCollection"
+    })
     private ListCertificateBundleVersionsResponse(
             int __httpStatusCode__,
             String opcRequestId,

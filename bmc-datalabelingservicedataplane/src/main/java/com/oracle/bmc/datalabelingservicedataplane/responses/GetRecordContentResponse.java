@@ -59,6 +59,17 @@ public class GetRecordContentResponse extends com.oracle.bmc.responses.BmcRespon
      */
     private boolean isNotModified;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcRequestId",
+        "contentLength",
+        "contentDisposition",
+        "contentType",
+        "cacheControl",
+        "inputStream",
+        "isNotModified"
+    })
     private GetRecordContentResponse(
             int __httpStatusCode__,
             String etag,

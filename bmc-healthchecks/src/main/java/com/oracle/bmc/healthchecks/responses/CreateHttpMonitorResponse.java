@@ -35,6 +35,13 @@ public class CreateHttpMonitorResponse extends com.oracle.bmc.responses.BmcRespo
      */
     private com.oracle.bmc.healthchecks.model.HttpMonitor httpMonitor;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "location",
+        "etag",
+        "httpMonitor"
+    })
     private CreateHttpMonitorResponse(
             int __httpStatusCode__,
             String opcRequestId,

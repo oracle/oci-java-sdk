@@ -33,6 +33,12 @@ public class ListManagementAgentInstallKeysResponse extends com.oracle.bmc.respo
     private java.util.List<com.oracle.bmc.managementagent.model.ManagementAgentInstallKeySummary>
             items;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcNextPage",
+        "opcRequestId",
+        "items"
+    })
     private ListManagementAgentInstallKeysResponse(
             int __httpStatusCode__,
             String opcNextPage,

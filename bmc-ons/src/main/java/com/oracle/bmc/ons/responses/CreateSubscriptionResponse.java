@@ -30,6 +30,12 @@ public class CreateSubscriptionResponse extends com.oracle.bmc.responses.BmcResp
      */
     private com.oracle.bmc.ons.model.Subscription subscription;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "etag",
+        "subscription"
+    })
     private CreateSubscriptionResponse(
             int __httpStatusCode__,
             String opcRequestId,

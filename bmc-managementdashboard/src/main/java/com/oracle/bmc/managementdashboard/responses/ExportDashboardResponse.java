@@ -31,6 +31,12 @@ public class ExportDashboardResponse extends com.oracle.bmc.responses.BmcRespons
     private com.oracle.bmc.managementdashboard.model.ManagementDashboardExportDetails
             managementDashboardExportDetails;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcWorkRequestId",
+        "opcRequestId",
+        "managementDashboardExportDetails"
+    })
     private ExportDashboardResponse(
             int __httpStatusCode__,
             String opcWorkRequestId,

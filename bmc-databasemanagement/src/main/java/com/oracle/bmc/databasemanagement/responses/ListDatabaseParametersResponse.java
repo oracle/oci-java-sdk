@@ -25,6 +25,11 @@ public class ListDatabaseParametersResponse extends com.oracle.bmc.responses.Bmc
     private com.oracle.bmc.databasemanagement.model.DatabaseParametersCollection
             databaseParametersCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "databaseParametersCollection"
+    })
     private ListDatabaseParametersResponse(
             int __httpStatusCode__,
             String opcRequestId,

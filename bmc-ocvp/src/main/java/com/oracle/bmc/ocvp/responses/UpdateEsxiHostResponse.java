@@ -30,6 +30,7 @@ public class UpdateEsxiHostResponse extends com.oracle.bmc.responses.BmcResponse
      */
     private com.oracle.bmc.ocvp.model.EsxiHost esxiHost;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "etag", "opcRequestId", "esxiHost"})
     private UpdateEsxiHostResponse(
             int __httpStatusCode__,
             String etag,

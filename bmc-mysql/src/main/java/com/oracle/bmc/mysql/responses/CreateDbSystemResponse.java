@@ -41,6 +41,14 @@ public class CreateDbSystemResponse extends com.oracle.bmc.responses.BmcResponse
      */
     private com.oracle.bmc.mysql.model.DbSystem dbSystem;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "location",
+        "opcRequestId",
+        "opcWorkRequestId",
+        "dbSystem"
+    })
     private CreateDbSystemResponse(
             int __httpStatusCode__,
             String etag,

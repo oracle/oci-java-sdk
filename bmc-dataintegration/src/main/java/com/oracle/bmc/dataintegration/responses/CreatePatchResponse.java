@@ -30,6 +30,7 @@ public class CreatePatchResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private com.oracle.bmc.dataintegration.model.Patch patch;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "etag", "opcRequestId", "patch"})
     private CreatePatchResponse(
             int __httpStatusCode__,
             String etag,

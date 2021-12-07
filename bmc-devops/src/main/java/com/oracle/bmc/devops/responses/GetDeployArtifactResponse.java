@@ -27,6 +27,12 @@ public class GetDeployArtifactResponse extends com.oracle.bmc.responses.BmcRespo
      */
     private com.oracle.bmc.devops.model.DeployArtifact deployArtifact;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcRequestId",
+        "deployArtifact"
+    })
     private GetDeployArtifactResponse(
             int __httpStatusCode__,
             String etag,

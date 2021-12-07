@@ -30,6 +30,12 @@ public class GetFunctionLibraryResponse extends com.oracle.bmc.responses.BmcResp
      */
     private com.oracle.bmc.dataintegration.model.FunctionLibrary functionLibrary;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcRequestId",
+        "functionLibrary"
+    })
     private GetFunctionLibraryResponse(
             int __httpStatusCode__,
             String etag,

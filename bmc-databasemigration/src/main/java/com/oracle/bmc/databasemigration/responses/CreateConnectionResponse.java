@@ -36,6 +36,13 @@ public class CreateConnectionResponse extends com.oracle.bmc.responses.BmcRespon
      */
     private com.oracle.bmc.databasemigration.model.Connection connection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "etag",
+        "opcWorkRequestId",
+        "connection"
+    })
     private CreateConnectionResponse(
             int __httpStatusCode__,
             String opcRequestId,

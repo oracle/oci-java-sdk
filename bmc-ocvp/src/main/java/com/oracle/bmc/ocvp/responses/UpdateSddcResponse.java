@@ -30,6 +30,7 @@ public class UpdateSddcResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private com.oracle.bmc.ocvp.model.Sddc sddc;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "etag", "opcRequestId", "sddc"})
     private UpdateSddcResponse(
             int __httpStatusCode__,
             String etag,

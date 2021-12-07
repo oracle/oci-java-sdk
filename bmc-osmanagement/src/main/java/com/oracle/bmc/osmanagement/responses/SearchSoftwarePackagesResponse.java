@@ -33,6 +33,12 @@ public class SearchSoftwarePackagesResponse extends com.oracle.bmc.responses.Bmc
      */
     private java.util.List<com.oracle.bmc.osmanagement.model.SoftwarePackageSearchSummary> items;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "items"
+    })
     private SearchSoftwarePackagesResponse(
             int __httpStatusCode__,
             String opcRequestId,

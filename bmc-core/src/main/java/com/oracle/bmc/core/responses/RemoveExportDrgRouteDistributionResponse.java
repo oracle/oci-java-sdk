@@ -30,6 +30,12 @@ public class RemoveExportDrgRouteDistributionResponse extends com.oracle.bmc.res
      */
     private com.oracle.bmc.core.model.DrgAttachment drgAttachment;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcRequestId",
+        "drgAttachment"
+    })
     private RemoveExportDrgRouteDistributionResponse(
             int __httpStatusCode__,
             String etag,

@@ -29,6 +29,7 @@ public class GetDbServerResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private com.oracle.bmc.database.model.DbServer dbServer;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "etag", "opcRequestId", "dbServer"})
     private GetDbServerResponse(
             int __httpStatusCode__,
             String etag,

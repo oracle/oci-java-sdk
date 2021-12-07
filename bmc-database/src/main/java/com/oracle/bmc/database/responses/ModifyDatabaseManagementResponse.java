@@ -35,6 +35,13 @@ public class ModifyDatabaseManagementResponse extends com.oracle.bmc.responses.B
      */
     private com.oracle.bmc.database.model.Database database;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcWorkRequestId",
+        "opcRequestId",
+        "database"
+    })
     private ModifyDatabaseManagementResponse(
             int __httpStatusCode__,
             String etag,

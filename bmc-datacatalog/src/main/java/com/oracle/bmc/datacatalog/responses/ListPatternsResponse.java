@@ -30,6 +30,12 @@ public class ListPatternsResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private com.oracle.bmc.datacatalog.model.PatternCollection patternCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "patternCollection"
+    })
     private ListPatternsResponse(
             int __httpStatusCode__,
             String opcRequestId,

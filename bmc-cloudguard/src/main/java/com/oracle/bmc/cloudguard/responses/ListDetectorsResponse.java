@@ -32,6 +32,12 @@ public class ListDetectorsResponse extends com.oracle.bmc.responses.BmcResponse 
      */
     private com.oracle.bmc.cloudguard.model.DetectorCollection detectorCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "detectorCollection"
+    })
     private ListDetectorsResponse(
             int __httpStatusCode__,
             String opcRequestId,

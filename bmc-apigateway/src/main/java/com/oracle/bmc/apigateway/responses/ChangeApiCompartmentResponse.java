@@ -29,6 +29,7 @@ public class ChangeApiCompartmentResponse extends com.oracle.bmc.responses.BmcRe
      */
     private String opcRequestId;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcWorkRequestId", "opcRequestId"})
     private ChangeApiCompartmentResponse(
             int __httpStatusCode__, String opcWorkRequestId, String opcRequestId) {
         super(__httpStatusCode__);

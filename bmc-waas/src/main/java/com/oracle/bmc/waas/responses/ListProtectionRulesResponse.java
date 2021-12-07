@@ -32,6 +32,13 @@ public class ListProtectionRulesResponse extends com.oracle.bmc.responses.BmcRes
      */
     private java.util.List<com.oracle.bmc.waas.model.ProtectionRule> items;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcNextPage",
+        "opcRequestId",
+        "items"
+    })
     private ListProtectionRulesResponse(
             int __httpStatusCode__,
             String etag,

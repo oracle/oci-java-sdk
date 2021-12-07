@@ -32,6 +32,12 @@ public class ListSecurityListsResponse extends com.oracle.bmc.responses.BmcRespo
      */
     private java.util.List<com.oracle.bmc.core.model.SecurityList> items;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcNextPage",
+        "opcRequestId",
+        "items"
+    })
     private ListSecurityListsResponse(
             int __httpStatusCode__,
             String opcNextPage,

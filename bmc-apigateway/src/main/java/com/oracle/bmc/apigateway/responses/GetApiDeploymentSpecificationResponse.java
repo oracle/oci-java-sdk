@@ -31,6 +31,12 @@ public class GetApiDeploymentSpecificationResponse extends com.oracle.bmc.respon
      */
     private com.oracle.bmc.apigateway.model.ApiSpecification apiSpecification;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcRequestId",
+        "apiSpecification"
+    })
     private GetApiDeploymentSpecificationResponse(
             int __httpStatusCode__,
             String etag,

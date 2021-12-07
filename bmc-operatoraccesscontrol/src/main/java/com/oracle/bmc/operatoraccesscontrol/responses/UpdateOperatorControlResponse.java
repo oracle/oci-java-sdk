@@ -30,6 +30,12 @@ public class UpdateOperatorControlResponse extends com.oracle.bmc.responses.BmcR
      */
     private com.oracle.bmc.operatoraccesscontrol.model.OperatorControl operatorControl;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcRequestId",
+        "operatorControl"
+    })
     private UpdateOperatorControlResponse(
             int __httpStatusCode__,
             String etag,

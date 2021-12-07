@@ -40,6 +40,13 @@ public class ListStorageWorkRequestsResponse extends com.oracle.bmc.responses.Bm
     private com.oracle.bmc.loganalytics.model.StorageWorkRequestCollection
             storageWorkRequestCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "opcPrevPage",
+        "storageWorkRequestCollection"
+    })
     private ListStorageWorkRequestsResponse(
             int __httpStatusCode__,
             String opcRequestId,

@@ -35,6 +35,13 @@ public class MigrateVaultKeyResponse extends com.oracle.bmc.responses.BmcRespons
      */
     private com.oracle.bmc.database.model.Database database;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcWorkRequestId",
+        "opcRequestId",
+        "database"
+    })
     private MigrateVaultKeyResponse(
             int __httpStatusCode__,
             String etag,

@@ -29,6 +29,12 @@ public class UpdateIdentityProviderResponse extends com.oracle.bmc.responses.Bmc
      */
     private com.oracle.bmc.identity.model.IdentityProvider identityProvider;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "etag",
+        "identityProvider"
+    })
     private UpdateIdentityProviderResponse(
             int __httpStatusCode__,
             String opcRequestId,

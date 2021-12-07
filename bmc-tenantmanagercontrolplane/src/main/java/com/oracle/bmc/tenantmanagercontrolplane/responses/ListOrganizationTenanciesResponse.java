@@ -33,6 +33,12 @@ public class ListOrganizationTenanciesResponse extends com.oracle.bmc.responses.
     private com.oracle.bmc.tenantmanagercontrolplane.model.OrganizationTenancyCollection
             organizationTenancyCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcNextPage",
+        "opcRequestId",
+        "organizationTenancyCollection"
+    })
     private ListOrganizationTenanciesResponse(
             int __httpStatusCode__,
             String opcNextPage,

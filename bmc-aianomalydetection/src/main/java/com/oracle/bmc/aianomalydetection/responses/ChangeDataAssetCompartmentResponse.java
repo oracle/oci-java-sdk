@@ -30,6 +30,7 @@ public class ChangeDataAssetCompartmentResponse extends com.oracle.bmc.responses
      */
     private com.oracle.bmc.aianomalydetection.model.DataAsset dataAsset;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "etag", "opcRequestId", "dataAsset"})
     private ChangeDataAssetCompartmentResponse(
             int __httpStatusCode__,
             String etag,

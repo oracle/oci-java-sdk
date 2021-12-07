@@ -22,6 +22,7 @@ public class ListShippingVendorsResponse extends com.oracle.bmc.responses.BmcRes
      */
     private com.oracle.bmc.dts.model.ShippingVendors shippingVendors;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "shippingVendors"})
     private ListShippingVendorsResponse(
             int __httpStatusCode__,
             String opcRequestId,

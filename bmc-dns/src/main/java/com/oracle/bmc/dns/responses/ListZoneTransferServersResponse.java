@@ -32,6 +32,12 @@ public class ListZoneTransferServersResponse extends com.oracle.bmc.responses.Bm
      */
     private java.util.List<com.oracle.bmc.dns.model.ZoneTransferServer> items;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "items"
+    })
     private ListZoneTransferServersResponse(
             int __httpStatusCode__,
             String opcRequestId,

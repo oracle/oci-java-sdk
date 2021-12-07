@@ -29,6 +29,12 @@ public class UpdateMaintenanceRunResponse extends com.oracle.bmc.responses.BmcRe
      */
     private com.oracle.bmc.database.model.MaintenanceRun maintenanceRun;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcRequestId",
+        "maintenanceRun"
+    })
     private UpdateMaintenanceRunResponse(
             int __httpStatusCode__,
             String etag,

@@ -35,6 +35,13 @@ public class UpdateAutonomousDatabaseResponse extends com.oracle.bmc.responses.B
      */
     private com.oracle.bmc.database.model.AutonomousDatabase autonomousDatabase;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcRequestId",
+        "opcWorkRequestId",
+        "autonomousDatabase"
+    })
     private UpdateAutonomousDatabaseResponse(
             int __httpStatusCode__,
             String etag,

@@ -34,6 +34,12 @@ public class ListStackResourceDriftDetailsResponse extends com.oracle.bmc.respon
     private com.oracle.bmc.resourcemanager.model.StackResourceDriftCollection
             stackResourceDriftCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "stackResourceDriftCollection"
+    })
     private ListStackResourceDriftDetailsResponse(
             int __httpStatusCode__,
             String opcRequestId,

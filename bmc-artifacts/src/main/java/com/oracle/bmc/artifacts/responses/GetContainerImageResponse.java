@@ -30,6 +30,12 @@ public class GetContainerImageResponse extends com.oracle.bmc.responses.BmcRespo
      */
     private com.oracle.bmc.artifacts.model.ContainerImage containerImage;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcRequestId",
+        "containerImage"
+    })
     private GetContainerImageResponse(
             int __httpStatusCode__,
             String etag,

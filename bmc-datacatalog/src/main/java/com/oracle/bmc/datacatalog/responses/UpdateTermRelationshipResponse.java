@@ -30,6 +30,12 @@ public class UpdateTermRelationshipResponse extends com.oracle.bmc.responses.Bmc
      */
     private com.oracle.bmc.datacatalog.model.TermRelationship termRelationship;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcRequestId",
+        "termRelationship"
+    })
     private UpdateTermRelationshipResponse(
             int __httpStatusCode__,
             String etag,

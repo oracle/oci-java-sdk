@@ -33,6 +33,12 @@ public class SummarizeRecordAnalyticsResponse extends com.oracle.bmc.responses.B
     private com.oracle.bmc.datalabelingservicedataplane.model.RecordAnalyticsAggregationCollection
             recordAnalyticsAggregationCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "recordAnalyticsAggregationCollection"
+    })
     private SummarizeRecordAnalyticsResponse(
             int __httpStatusCode__,
             String opcRequestId,

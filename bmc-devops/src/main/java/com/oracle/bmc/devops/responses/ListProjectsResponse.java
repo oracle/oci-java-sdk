@@ -27,6 +27,12 @@ public class ListProjectsResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private com.oracle.bmc.devops.model.ProjectCollection projectCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "projectCollection"
+    })
     private ListProjectsResponse(
             int __httpStatusCode__,
             String opcRequestId,

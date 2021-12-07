@@ -30,6 +30,12 @@ public class UpdateTopicResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private com.oracle.bmc.ons.model.NotificationTopic notificationTopic;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "etag",
+        "notificationTopic"
+    })
     private UpdateTopicResponse(
             int __httpStatusCode__,
             String opcRequestId,

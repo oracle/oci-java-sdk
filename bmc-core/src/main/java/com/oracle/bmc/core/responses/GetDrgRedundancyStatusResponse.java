@@ -24,6 +24,7 @@ public class GetDrgRedundancyStatusResponse extends com.oracle.bmc.responses.Bmc
      */
     private com.oracle.bmc.core.model.DrgRedundancyStatus drgRedundancyStatus;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "drgRedundancyStatus"})
     private GetDrgRedundancyStatusResponse(
             int __httpStatusCode__,
             String opcRequestId,

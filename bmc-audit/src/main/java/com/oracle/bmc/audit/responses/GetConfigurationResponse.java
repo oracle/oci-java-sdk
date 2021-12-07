@@ -17,6 +17,7 @@ public class GetConfigurationResponse extends com.oracle.bmc.responses.BmcRespon
      */
     private com.oracle.bmc.audit.model.Configuration configuration;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "configuration"})
     private GetConfigurationResponse(
             int __httpStatusCode__, com.oracle.bmc.audit.model.Configuration configuration) {
         super(__httpStatusCode__);

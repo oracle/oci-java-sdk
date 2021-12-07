@@ -29,6 +29,12 @@ public class GetAutonomousPatchResponse extends com.oracle.bmc.responses.BmcResp
      */
     private com.oracle.bmc.database.model.AutonomousPatch autonomousPatch;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcRequestId",
+        "autonomousPatch"
+    })
     private GetAutonomousPatchResponse(
             int __httpStatusCode__,
             String etag,

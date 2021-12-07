@@ -33,6 +33,13 @@ public class UploadLogFileResponse extends com.oracle.bmc.responses.BmcResponse 
      */
     private com.oracle.bmc.loganalytics.model.Upload upload;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcContentMd5",
+        "opcObjectId",
+        "upload"
+    })
     private UploadLogFileResponse(
             int __httpStatusCode__,
             String opcRequestId,

@@ -8,12 +8,18 @@ package com.oracle.bmc.cloudguard.model;
  * Possible operators
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")
+@lombok.extern.slf4j.Slf4j
 public enum OperatorType {
     In("IN"),
     NotIn("NOT_IN"),
     Equals("EQUALS"),
     NotEquals("NOT_EQUALS"),
-    ;
+
+    /**
+     * This value is used if a service returns a value for this enum that is not recognized by this
+     * version of the SDK.
+     */
+    UnknownEnumValue(null);
 
     private final String value;
     private static java.util.Map<String, OperatorType> map;
@@ -21,7 +27,9 @@ public enum OperatorType {
     static {
         map = new java.util.HashMap<>();
         for (OperatorType v : OperatorType.values()) {
-            map.put(v.getValue(), v);
+            if (v != UnknownEnumValue) {
+                map.put(v.getValue(), v);
+            }
         }
     }
 
@@ -39,6 +47,9 @@ public enum OperatorType {
         if (map.containsKey(key)) {
             return map.get(key);
         }
-        throw new IllegalArgumentException("Invalid OperatorType: " + key);
+        LOG.warn(
+                "Received unknown value '{}' for enum 'OperatorType', returning UnknownEnumValue",
+                key);
+        return UnknownEnumValue;
     }
 }

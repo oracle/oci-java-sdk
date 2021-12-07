@@ -32,6 +32,12 @@ public class ListIdentityProvidersResponse extends com.oracle.bmc.responses.BmcR
      */
     private java.util.List<com.oracle.bmc.identity.model.IdentityProvider> items;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "items"
+    })
     private ListIdentityProvidersResponse(
             int __httpStatusCode__,
             String opcRequestId,

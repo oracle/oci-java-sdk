@@ -31,6 +31,12 @@ public class IngestHostMetricsResponse extends com.oracle.bmc.responses.BmcRespo
     private com.oracle.bmc.opsi.model.IngestHostMetricsResponseDetails
             ingestHostMetricsResponseDetails;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "etag",
+        "ingestHostMetricsResponseDetails"
+    })
     private IngestHostMetricsResponse(
             int __httpStatusCode__,
             String opcRequestId,

@@ -19,6 +19,7 @@ public class DeleteAutoScalingConfigurationResponse extends com.oracle.bmc.respo
      */
     private String opcRequestId;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId"})
     private DeleteAutoScalingConfigurationResponse(int __httpStatusCode__, String opcRequestId) {
         super(__httpStatusCode__);
         this.opcRequestId = opcRequestId;

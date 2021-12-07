@@ -33,6 +33,12 @@ public class ListResponderExecutionsResponse extends com.oracle.bmc.responses.Bm
     private com.oracle.bmc.cloudguard.model.ResponderExecutionCollection
             responderExecutionCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "responderExecutionCollection"
+    })
     private ListResponderExecutionsResponse(
             int __httpStatusCode__,
             String opcRequestId,

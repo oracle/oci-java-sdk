@@ -27,6 +27,7 @@ public class GetTransferJobResponse extends com.oracle.bmc.responses.BmcResponse
      */
     private com.oracle.bmc.dts.model.TransferJob transferJob;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "etag", "transferJob"})
     private GetTransferJobResponse(
             int __httpStatusCode__,
             String opcRequestId,

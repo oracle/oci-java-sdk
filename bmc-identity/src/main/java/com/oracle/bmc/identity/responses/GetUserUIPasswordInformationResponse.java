@@ -29,6 +29,12 @@ public class GetUserUIPasswordInformationResponse extends com.oracle.bmc.respons
      */
     private com.oracle.bmc.identity.model.UIPasswordInformation uIPasswordInformation;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "etag",
+        "uIPasswordInformation"
+    })
     private GetUserUIPasswordInformationResponse(
             int __httpStatusCode__,
             String opcRequestId,

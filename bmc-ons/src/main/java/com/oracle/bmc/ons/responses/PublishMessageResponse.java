@@ -24,6 +24,7 @@ public class PublishMessageResponse extends com.oracle.bmc.responses.BmcResponse
      */
     private com.oracle.bmc.ons.model.PublishResult publishResult;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "publishResult"})
     private PublishMessageResponse(
             int __httpStatusCode__,
             String opcRequestId,

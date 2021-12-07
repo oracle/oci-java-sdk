@@ -32,6 +32,12 @@ public class ListVirtualCircuitsResponse extends com.oracle.bmc.responses.BmcRes
      */
     private java.util.List<com.oracle.bmc.core.model.VirtualCircuit> items;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcNextPage",
+        "opcRequestId",
+        "items"
+    })
     private ListVirtualCircuitsResponse(
             int __httpStatusCode__,
             String opcNextPage,

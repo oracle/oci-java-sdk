@@ -24,6 +24,7 @@ public class ScheduleSecretVersionDeletionResponse extends com.oracle.bmc.respon
      */
     private String opcRequestId;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "etag", "opcRequestId"})
     private ScheduleSecretVersionDeletionResponse(
             int __httpStatusCode__, String etag, String opcRequestId) {
         super(__httpStatusCode__);

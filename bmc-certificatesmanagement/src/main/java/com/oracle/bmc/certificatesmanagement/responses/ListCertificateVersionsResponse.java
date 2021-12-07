@@ -34,6 +34,12 @@ public class ListCertificateVersionsResponse extends com.oracle.bmc.responses.Bm
     private com.oracle.bmc.certificatesmanagement.model.CertificateVersionCollection
             certificateVersionCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcNextPage",
+        "opcRequestId",
+        "certificateVersionCollection"
+    })
     private ListCertificateVersionsResponse(
             int __httpStatusCode__,
             String opcNextPage,

@@ -37,6 +37,13 @@ public class ListIntegrationInstancesResponse extends com.oracle.bmc.responses.B
      */
     private java.util.List<com.oracle.bmc.integration.model.IntegrationInstanceSummary> items;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "opcPreviousPage",
+        "items"
+    })
     private ListIntegrationInstancesResponse(
             int __httpStatusCode__,
             String opcRequestId,

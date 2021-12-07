@@ -29,6 +29,12 @@ public class GetVmClusterNetworkResponse extends com.oracle.bmc.responses.BmcRes
      */
     private com.oracle.bmc.database.model.VmClusterNetwork vmClusterNetwork;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcRequestId",
+        "vmClusterNetwork"
+    })
     private GetVmClusterNetworkResponse(
             int __httpStatusCode__,
             String etag,

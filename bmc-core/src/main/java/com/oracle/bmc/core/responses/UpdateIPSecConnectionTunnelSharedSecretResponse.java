@@ -32,6 +32,12 @@ public class UpdateIPSecConnectionTunnelSharedSecretResponse
     private com.oracle.bmc.core.model.IPSecConnectionTunnelSharedSecret
             iPSecConnectionTunnelSharedSecret;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcRequestId",
+        "iPSecConnectionTunnelSharedSecret"
+    })
     private UpdateIPSecConnectionTunnelSharedSecretResponse(
             int __httpStatusCode__,
             String etag,

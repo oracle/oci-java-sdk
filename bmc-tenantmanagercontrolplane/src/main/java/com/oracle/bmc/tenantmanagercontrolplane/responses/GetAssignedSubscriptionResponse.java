@@ -31,6 +31,12 @@ public class GetAssignedSubscriptionResponse extends com.oracle.bmc.responses.Bm
     private com.oracle.bmc.tenantmanagercontrolplane.model.AssignedSubscription
             assignedSubscription;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "etag",
+        "assignedSubscription"
+    })
     private GetAssignedSubscriptionResponse(
             int __httpStatusCode__,
             String opcRequestId,

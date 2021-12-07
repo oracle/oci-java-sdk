@@ -33,6 +33,12 @@ public class ListAssociatedDatabasesResponse extends com.oracle.bmc.responses.Bm
     private com.oracle.bmc.databasemanagement.model.AssociatedDatabaseCollection
             associatedDatabaseCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcNextPage",
+        "opcRequestId",
+        "associatedDatabaseCollection"
+    })
     private ListAssociatedDatabasesResponse(
             int __httpStatusCode__,
             String opcNextPage,

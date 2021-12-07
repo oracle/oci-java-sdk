@@ -26,6 +26,7 @@ public class DeleteExternalNonContainerDatabaseResponse
      */
     private String opcRequestId;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcWorkRequestId", "opcRequestId"})
     private DeleteExternalNonContainerDatabaseResponse(
             int __httpStatusCode__, String opcWorkRequestId, String opcRequestId) {
         super(__httpStatusCode__);

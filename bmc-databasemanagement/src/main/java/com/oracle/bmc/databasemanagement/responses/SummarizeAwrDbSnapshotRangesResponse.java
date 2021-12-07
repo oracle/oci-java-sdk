@@ -33,6 +33,12 @@ public class SummarizeAwrDbSnapshotRangesResponse extends com.oracle.bmc.respons
     private com.oracle.bmc.databasemanagement.model.AwrDbSnapshotRangeCollection
             awrDbSnapshotRangeCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "awrDbSnapshotRangeCollection"
+    })
     private SummarizeAwrDbSnapshotRangesResponse(
             int __httpStatusCode__,
             String opcRequestId,

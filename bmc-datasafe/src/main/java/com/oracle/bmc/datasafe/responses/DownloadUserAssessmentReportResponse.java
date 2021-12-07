@@ -34,6 +34,13 @@ public class DownloadUserAssessmentReportResponse extends com.oracle.bmc.respons
      */
     private java.io.InputStream inputStream;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "etag",
+        "contentLength",
+        "inputStream"
+    })
     private DownloadUserAssessmentReportResponse(
             int __httpStatusCode__,
             String opcRequestId,

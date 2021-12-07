@@ -19,6 +19,7 @@ public class RemoveUserFromGroupResponse extends com.oracle.bmc.responses.BmcRes
      */
     private String opcRequestId;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId"})
     private RemoveUserFromGroupResponse(int __httpStatusCode__, String opcRequestId) {
         super(__httpStatusCode__);
         this.opcRequestId = opcRequestId;

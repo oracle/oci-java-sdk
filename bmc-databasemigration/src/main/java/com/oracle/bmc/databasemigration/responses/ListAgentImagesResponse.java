@@ -32,6 +32,12 @@ public class ListAgentImagesResponse extends com.oracle.bmc.responses.BmcRespons
      */
     private com.oracle.bmc.databasemigration.model.AgentImageCollection agentImageCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "agentImageCollection"
+    })
     private ListAgentImagesResponse(
             int __httpStatusCode__,
             String opcRequestId,

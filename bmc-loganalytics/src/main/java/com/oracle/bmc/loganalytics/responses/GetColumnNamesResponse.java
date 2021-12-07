@@ -23,6 +23,11 @@ public class GetColumnNamesResponse extends com.oracle.bmc.responses.BmcResponse
      */
     private com.oracle.bmc.loganalytics.model.ColumnNameCollection columnNameCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "columnNameCollection"
+    })
     private GetColumnNamesResponse(
             int __httpStatusCode__,
             String opcRequestId,

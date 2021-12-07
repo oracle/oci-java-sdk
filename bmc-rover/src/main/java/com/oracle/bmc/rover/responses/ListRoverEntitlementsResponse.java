@@ -38,6 +38,13 @@ public class ListRoverEntitlementsResponse extends com.oracle.bmc.responses.BmcR
      */
     private com.oracle.bmc.rover.model.RoverEntitlementCollection roverEntitlementCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "opcPrevPage",
+        "roverEntitlementCollection"
+    })
     private ListRoverEntitlementsResponse(
             int __httpStatusCode__,
             String opcRequestId,

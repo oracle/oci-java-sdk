@@ -33,6 +33,12 @@ public class ListKeyStoresResponse extends com.oracle.bmc.responses.BmcResponse 
      */
     private java.util.List<com.oracle.bmc.database.model.KeyStoreSummary> items;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "items"
+    })
     private ListKeyStoresResponse(
             int __httpStatusCode__,
             String opcRequestId,

@@ -40,6 +40,13 @@ public class ListLookupsResponse extends com.oracle.bmc.responses.BmcResponse {
     private com.oracle.bmc.loganalytics.model.LogAnalyticsLookupCollection
             logAnalyticsLookupCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcPrevPage",
+        "opcNextPage",
+        "opcRequestId",
+        "logAnalyticsLookupCollection"
+    })
     private ListLookupsResponse(
             int __httpStatusCode__,
             String opcPrevPage,

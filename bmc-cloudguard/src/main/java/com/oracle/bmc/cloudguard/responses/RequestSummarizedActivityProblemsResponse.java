@@ -34,6 +34,12 @@ public class RequestSummarizedActivityProblemsResponse
     private com.oracle.bmc.cloudguard.model.ActivityProblemAggregationCollection
             activityProblemAggregationCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "activityProblemAggregationCollection"
+    })
     private RequestSummarizedActivityProblemsResponse(
             int __httpStatusCode__,
             String opcRequestId,

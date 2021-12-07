@@ -137,7 +137,8 @@ public interface JavaManagementServiceAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Returns a list of all the Fleets contained by a compartment.
+     * Returns a list of all the Fleets contained by a compartment. The query parameter `compartmentId`
+     * is required unless the query parameter `id` is specified.
      *
      *
      * @param request The request object containing the details to send
@@ -150,6 +151,21 @@ public interface JavaManagementServiceAsync extends AutoCloseable {
     java.util.concurrent.Future<ListFleetsResponse> listFleets(
             ListFleetsRequest request,
             com.oracle.bmc.responses.AsyncHandler<ListFleetsRequest, ListFleetsResponse> handler);
+
+    /**
+     * List Java Runtime usage in a specified host filtered by query parameters.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListJreUsageResponse> listJreUsage(
+            ListJreUsageRequest request,
+            com.oracle.bmc.responses.AsyncHandler<ListJreUsageRequest, ListJreUsageResponse>
+                    handler);
 
     /**
      * Retrieve a (paginated) list of errors for a specified work request.
@@ -186,7 +202,7 @@ public interface JavaManagementServiceAsync extends AutoCloseable {
                     handler);
 
     /**
-     * List the work requests in a compartment.
+     * List the work requests in a compartment. The query parameter `compartmentId` is required unless the query parameter `id` is specified.
      *
      *
      * @param request The request object containing the details to send
@@ -266,6 +282,23 @@ public interface JavaManagementServiceAsync extends AutoCloseable {
                                     SummarizeManagedInstanceUsageRequest,
                                     SummarizeManagedInstanceUsageResponse>
                             handler);
+
+    /**
+     * Retrieve the inventory of JMS resources in the specified compartment: a list of the number of _active_ fleets, managed instances, Java Runtimes, Java installations, and applications.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<SummarizeResourceInventoryResponse> summarizeResourceInventory(
+            SummarizeResourceInventoryRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            SummarizeResourceInventoryRequest, SummarizeResourceInventoryResponse>
+                    handler);
 
     /**
      * Update the Fleet specified by an identifier.

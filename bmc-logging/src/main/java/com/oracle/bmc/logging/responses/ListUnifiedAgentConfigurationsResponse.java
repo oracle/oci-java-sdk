@@ -41,6 +41,13 @@ public class ListUnifiedAgentConfigurationsResponse extends com.oracle.bmc.respo
     private com.oracle.bmc.logging.model.UnifiedAgentConfigurationCollection
             unifiedAgentConfigurationCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcNextPage",
+        "opcPreviousPage",
+        "opcRequestId",
+        "unifiedAgentConfigurationCollection"
+    })
     private ListUnifiedAgentConfigurationsResponse(
             int __httpStatusCode__,
             String opcNextPage,

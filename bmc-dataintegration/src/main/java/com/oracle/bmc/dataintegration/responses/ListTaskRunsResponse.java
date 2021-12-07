@@ -42,6 +42,14 @@ public class ListTaskRunsResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private com.oracle.bmc.dataintegration.model.TaskRunSummaryCollection taskRunSummaryCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "opcPrevPage",
+        "opcTotalItems",
+        "taskRunSummaryCollection"
+    })
     private ListTaskRunsResponse(
             int __httpStatusCode__,
             String opcRequestId,

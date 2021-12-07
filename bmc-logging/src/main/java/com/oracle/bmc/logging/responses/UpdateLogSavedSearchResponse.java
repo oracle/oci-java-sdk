@@ -30,6 +30,12 @@ public class UpdateLogSavedSearchResponse extends com.oracle.bmc.responses.BmcRe
      */
     private com.oracle.bmc.logging.model.LogSavedSearch logSavedSearch;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "etag",
+        "logSavedSearch"
+    })
     private UpdateLogSavedSearchResponse(
             int __httpStatusCode__,
             String opcRequestId,

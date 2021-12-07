@@ -57,6 +57,15 @@ public class ManagedInstanceUsage {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("hostId")
+        private String hostId;
+
+        public Builder hostId(String hostId) {
+            this.hostId = hostId;
+            this.__explicitlySet__.add("hostId");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("operatingSystem")
         private OperatingSystem operatingSystem;
 
@@ -138,6 +147,7 @@ public class ManagedInstanceUsage {
                             managedInstanceId,
                             managedInstanceType,
                             hostname,
+                            hostId,
                             operatingSystem,
                             approximateApplicationCount,
                             approximateInstallationCount,
@@ -156,6 +166,7 @@ public class ManagedInstanceUsage {
                     managedInstanceId(o.getManagedInstanceId())
                             .managedInstanceType(o.getManagedInstanceType())
                             .hostname(o.getHostname())
+                            .hostId(o.getHostId())
                             .operatingSystem(o.getOperatingSystem())
                             .approximateApplicationCount(o.getApproximateApplicationCount())
                             .approximateInstallationCount(o.getApproximateInstallationCount())
@@ -195,6 +206,13 @@ public class ManagedInstanceUsage {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("hostname")
     String hostname;
+
+    /**
+     * The host [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the related managed instance.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("hostId")
+    String hostId;
 
     @com.fasterxml.jackson.annotation.JsonProperty("operatingSystem")
     OperatingSystem operatingSystem;

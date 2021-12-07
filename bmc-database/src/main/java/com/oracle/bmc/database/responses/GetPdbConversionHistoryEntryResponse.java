@@ -24,6 +24,11 @@ public class GetPdbConversionHistoryEntryResponse extends com.oracle.bmc.respons
      */
     private com.oracle.bmc.database.model.PdbConversionHistoryEntry pdbConversionHistoryEntry;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "pdbConversionHistoryEntry"
+    })
     private GetPdbConversionHistoryEntryResponse(
             int __httpStatusCode__,
             String opcRequestId,

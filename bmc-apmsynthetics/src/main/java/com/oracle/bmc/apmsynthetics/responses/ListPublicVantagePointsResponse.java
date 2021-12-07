@@ -33,6 +33,12 @@ public class ListPublicVantagePointsResponse extends com.oracle.bmc.responses.Bm
     private com.oracle.bmc.apmsynthetics.model.PublicVantagePointCollection
             publicVantagePointCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "publicVantagePointCollection"
+    })
     private ListPublicVantagePointsResponse(
             int __httpStatusCode__,
             String opcRequestId,

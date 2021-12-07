@@ -33,6 +33,12 @@ public class ListImportableAgentEntitiesResponse extends com.oracle.bmc.response
     private com.oracle.bmc.opsi.model.ImportableAgentEntitySummaryCollection
             importableAgentEntitySummaryCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "importableAgentEntitySummaryCollection"
+    })
     private ListImportableAgentEntitiesResponse(
             int __httpStatusCode__,
             String opcRequestId,

@@ -32,6 +32,12 @@ public class ListNetworkSecurityGroupsResponse extends com.oracle.bmc.responses.
      */
     private java.util.List<com.oracle.bmc.core.model.NetworkSecurityGroup> items;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcNextPage",
+        "opcRequestId",
+        "items"
+    })
     private ListNetworkSecurityGroupsResponse(
             int __httpStatusCode__,
             String opcNextPage,

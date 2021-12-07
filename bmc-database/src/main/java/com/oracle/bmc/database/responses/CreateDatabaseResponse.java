@@ -35,6 +35,13 @@ public class CreateDatabaseResponse extends com.oracle.bmc.responses.BmcResponse
      */
     private com.oracle.bmc.database.model.Database database;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcWorkRequestId",
+        "etag",
+        "opcRequestId",
+        "database"
+    })
     private CreateDatabaseResponse(
             int __httpStatusCode__,
             String opcWorkRequestId,

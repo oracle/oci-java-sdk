@@ -30,6 +30,12 @@ public class GetBackupDestinationResponse extends com.oracle.bmc.responses.BmcRe
      */
     private com.oracle.bmc.database.model.BackupDestination backupDestination;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcRequestId",
+        "backupDestination"
+    })
     private GetBackupDestinationResponse(
             int __httpStatusCode__,
             String etag,

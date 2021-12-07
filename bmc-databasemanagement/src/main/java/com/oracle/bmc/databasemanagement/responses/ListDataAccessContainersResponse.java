@@ -33,6 +33,12 @@ public class ListDataAccessContainersResponse extends com.oracle.bmc.responses.B
     private com.oracle.bmc.databasemanagement.model.DataAccessContainerCollection
             dataAccessContainerCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcNextPage",
+        "opcRequestId",
+        "dataAccessContainerCollection"
+    })
     private ListDataAccessContainersResponse(
             int __httpStatusCode__,
             String opcNextPage,

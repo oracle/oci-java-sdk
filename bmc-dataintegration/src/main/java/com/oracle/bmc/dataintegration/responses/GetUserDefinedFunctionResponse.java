@@ -30,6 +30,12 @@ public class GetUserDefinedFunctionResponse extends com.oracle.bmc.responses.Bmc
      */
     private com.oracle.bmc.dataintegration.model.UserDefinedFunction userDefinedFunction;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcRequestId",
+        "userDefinedFunction"
+    })
     private GetUserDefinedFunctionResponse(
             int __httpStatusCode__,
             String etag,

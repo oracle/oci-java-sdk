@@ -37,6 +37,13 @@ public class HeadBucketResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private boolean isNotModified;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcClientRequestId",
+        "opcRequestId",
+        "eTag",
+        "isNotModified"
+    })
     private HeadBucketResponse(
             int __httpStatusCode__,
             String opcClientRequestId,

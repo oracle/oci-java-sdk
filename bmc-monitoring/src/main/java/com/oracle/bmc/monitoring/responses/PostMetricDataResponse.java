@@ -25,6 +25,11 @@ public class PostMetricDataResponse extends com.oracle.bmc.responses.BmcResponse
     private com.oracle.bmc.monitoring.model.PostMetricDataResponseDetails
             postMetricDataResponseDetails;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "postMetricDataResponseDetails"
+    })
     private PostMetricDataResponse(
             int __httpStatusCode__,
             String opcRequestId,

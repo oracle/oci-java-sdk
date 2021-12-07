@@ -32,6 +32,12 @@ public class ListBackendsResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private com.oracle.bmc.networkloadbalancer.model.BackendCollection backendCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "backendCollection"
+    })
     private ListBackendsResponse(
             int __httpStatusCode__,
             String opcRequestId,

@@ -40,6 +40,13 @@ public class GetTsigKeyResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private boolean isNotModified;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "eTag",
+        "opcRequestId",
+        "tsigKey",
+        "isNotModified"
+    })
     private GetTsigKeyResponse(
             int __httpStatusCode__,
             String eTag,

@@ -18,6 +18,7 @@ public class ChangeUserAssessmentCompartmentResponse extends com.oracle.bmc.resp
      */
     private String opcRequestId;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId"})
     private ChangeUserAssessmentCompartmentResponse(int __httpStatusCode__, String opcRequestId) {
         super(__httpStatusCode__);
         this.opcRequestId = opcRequestId;

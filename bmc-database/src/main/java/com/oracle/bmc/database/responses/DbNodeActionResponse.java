@@ -35,6 +35,13 @@ public class DbNodeActionResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private com.oracle.bmc.database.model.DbNode dbNode;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcWorkRequestId",
+        "etag",
+        "opcRequestId",
+        "dbNode"
+    })
     private DbNodeActionResponse(
             int __httpStatusCode__,
             String opcWorkRequestId,

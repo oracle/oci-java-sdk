@@ -30,6 +30,7 @@ public class UpdateSnapshotResponse extends com.oracle.bmc.responses.BmcResponse
      */
     private com.oracle.bmc.filestorage.model.Snapshot snapshot;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "etag", "opcRequestId", "snapshot"})
     private UpdateSnapshotResponse(
             int __httpStatusCode__,
             String etag,

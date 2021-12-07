@@ -30,6 +30,7 @@ public class DisassociateCustomPropertyResponse extends com.oracle.bmc.responses
      */
     private com.oracle.bmc.datacatalog.model.Type type;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "etag", "opcRequestId", "type"})
     private DisassociateCustomPropertyResponse(
             int __httpStatusCode__,
             String etag,

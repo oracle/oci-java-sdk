@@ -20,6 +20,7 @@ public class RemoveDrgRouteDistributionStatementsResponse
      */
     private String opcRequestId;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId"})
     private RemoveDrgRouteDistributionStatementsResponse(
             int __httpStatusCode__, String opcRequestId) {
         super(__httpStatusCode__);

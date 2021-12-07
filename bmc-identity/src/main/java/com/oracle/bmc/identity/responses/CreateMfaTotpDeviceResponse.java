@@ -29,6 +29,12 @@ public class CreateMfaTotpDeviceResponse extends com.oracle.bmc.responses.BmcRes
      */
     private com.oracle.bmc.identity.model.MfaTotpDevice mfaTotpDevice;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "etag",
+        "mfaTotpDevice"
+    })
     private CreateMfaTotpDeviceResponse(
             int __httpStatusCode__,
             String opcRequestId,

@@ -23,6 +23,7 @@ public class GetSourceSummaryResponse extends com.oracle.bmc.responses.BmcRespon
      */
     private com.oracle.bmc.loganalytics.model.SourceSummaryReport sourceSummaryReport;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "sourceSummaryReport"})
     private GetSourceSummaryResponse(
             int __httpStatusCode__,
             String opcRequestId,

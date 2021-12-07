@@ -43,6 +43,14 @@ public class CreateNotebookSessionResponse extends com.oracle.bmc.responses.BmcR
      */
     private com.oracle.bmc.datascience.model.NotebookSession notebookSession;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "location",
+        "opcRequestId",
+        "opcWorkRequestId",
+        "notebookSession"
+    })
     private CreateNotebookSessionResponse(
             int __httpStatusCode__,
             String etag,

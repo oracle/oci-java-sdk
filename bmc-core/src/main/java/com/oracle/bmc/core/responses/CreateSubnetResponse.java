@@ -30,6 +30,7 @@ public class CreateSubnetResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private com.oracle.bmc.core.model.Subnet subnet;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "etag", "opcRequestId", "subnet"})
     private CreateSubnetResponse(
             int __httpStatusCode__,
             String etag,

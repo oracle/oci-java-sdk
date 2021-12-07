@@ -33,6 +33,12 @@ public class ListExternalPluggableDatabasesResponse extends com.oracle.bmc.respo
      */
     private java.util.List<com.oracle.bmc.database.model.ExternalPluggableDatabaseSummary> items;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "items"
+    })
     private ListExternalPluggableDatabasesResponse(
             int __httpStatusCode__,
             String opcRequestId,

@@ -30,6 +30,12 @@ public class ValidateConnectionResponse extends com.oracle.bmc.responses.BmcResp
      */
     private com.oracle.bmc.datacatalog.model.ValidateConnectionResult validateConnectionResult;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcRequestId",
+        "validateConnectionResult"
+    })
     private ValidateConnectionResponse(
             int __httpStatusCode__,
             String etag,

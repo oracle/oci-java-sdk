@@ -32,6 +32,12 @@ public class ListAllowedDomainLicenseTypesResponse extends com.oracle.bmc.respon
      */
     private java.util.List<com.oracle.bmc.identity.model.AllowedDomainLicenseTypeSummary> items;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "items"
+    })
     private ListAllowedDomainLicenseTypesResponse(
             int __httpStatusCode__,
             String opcRequestId,

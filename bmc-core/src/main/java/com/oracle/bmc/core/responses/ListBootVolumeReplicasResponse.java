@@ -32,6 +32,12 @@ public class ListBootVolumeReplicasResponse extends com.oracle.bmc.responses.Bmc
      */
     private java.util.List<com.oracle.bmc.core.model.BootVolumeReplica> items;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcNextPage",
+        "opcRequestId",
+        "items"
+    })
     private ListBootVolumeReplicasResponse(
             int __httpStatusCode__,
             String opcNextPage,

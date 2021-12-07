@@ -29,6 +29,12 @@ public class GetCertificateVersionResponse extends com.oracle.bmc.responses.BmcR
      */
     private com.oracle.bmc.certificatesmanagement.model.CertificateVersion certificateVersion;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcRequestId",
+        "certificateVersion"
+    })
     private GetCertificateVersionResponse(
             int __httpStatusCode__,
             String etag,

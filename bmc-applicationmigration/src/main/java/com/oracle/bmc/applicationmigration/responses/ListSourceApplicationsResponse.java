@@ -33,6 +33,12 @@ public class ListSourceApplicationsResponse extends com.oracle.bmc.responses.Bmc
     private java.util.List<com.oracle.bmc.applicationmigration.model.SourceApplicationSummary>
             items;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "items"
+    })
     private ListSourceApplicationsResponse(
             int __httpStatusCode__,
             String opcRequestId,

@@ -37,6 +37,13 @@ public class ListUserAssessmentsResponse extends com.oracle.bmc.responses.BmcRes
      */
     private java.util.List<com.oracle.bmc.datasafe.model.UserAssessmentSummary> items;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "opcPrevPage",
+        "items"
+    })
     private ListUserAssessmentsResponse(
             int __httpStatusCode__,
             String opcRequestId,

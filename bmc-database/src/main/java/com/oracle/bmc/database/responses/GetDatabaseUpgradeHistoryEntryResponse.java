@@ -24,6 +24,11 @@ public class GetDatabaseUpgradeHistoryEntryResponse extends com.oracle.bmc.respo
      */
     private com.oracle.bmc.database.model.DatabaseUpgradeHistoryEntry databaseUpgradeHistoryEntry;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "databaseUpgradeHistoryEntry"
+    })
     private GetDatabaseUpgradeHistoryEntryResponse(
             int __httpStatusCode__,
             String opcRequestId,

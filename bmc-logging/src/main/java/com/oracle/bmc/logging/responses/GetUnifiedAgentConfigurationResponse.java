@@ -30,6 +30,12 @@ public class GetUnifiedAgentConfigurationResponse extends com.oracle.bmc.respons
      */
     private com.oracle.bmc.logging.model.UnifiedAgentConfiguration unifiedAgentConfiguration;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "etag",
+        "unifiedAgentConfiguration"
+    })
     private GetUnifiedAgentConfigurationResponse(
             int __httpStatusCode__,
             String opcRequestId,

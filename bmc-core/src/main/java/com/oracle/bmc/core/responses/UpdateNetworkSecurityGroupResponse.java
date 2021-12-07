@@ -30,6 +30,12 @@ public class UpdateNetworkSecurityGroupResponse extends com.oracle.bmc.responses
      */
     private com.oracle.bmc.core.model.NetworkSecurityGroup networkSecurityGroup;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcRequestId",
+        "networkSecurityGroup"
+    })
     private UpdateNetworkSecurityGroupResponse(
             int __httpStatusCode__,
             String etag,

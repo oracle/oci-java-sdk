@@ -30,6 +30,7 @@ public class GetOceInstanceResponse extends com.oracle.bmc.responses.BmcResponse
      */
     private com.oracle.bmc.oce.model.OceInstance oceInstance;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "etag", "opcRequestId", "oceInstance"})
     private GetOceInstanceResponse(
             int __httpStatusCode__,
             String etag,

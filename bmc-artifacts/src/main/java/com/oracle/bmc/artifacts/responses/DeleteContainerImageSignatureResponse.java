@@ -19,6 +19,7 @@ public class DeleteContainerImageSignatureResponse extends com.oracle.bmc.respon
      */
     private String opcRequestId;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId"})
     private DeleteContainerImageSignatureResponse(int __httpStatusCode__, String opcRequestId) {
         super(__httpStatusCode__);
         this.opcRequestId = opcRequestId;

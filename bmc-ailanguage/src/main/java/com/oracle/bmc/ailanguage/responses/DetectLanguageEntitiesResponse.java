@@ -25,6 +25,11 @@ public class DetectLanguageEntitiesResponse extends com.oracle.bmc.responses.Bmc
     private com.oracle.bmc.ailanguage.model.DetectLanguageEntitiesResult
             detectLanguageEntitiesResult;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "detectLanguageEntitiesResult"
+    })
     private DetectLanguageEntitiesResponse(
             int __httpStatusCode__,
             String opcRequestId,

@@ -30,6 +30,12 @@ public class CreateDataAssetTagResponse extends com.oracle.bmc.responses.BmcResp
      */
     private com.oracle.bmc.datacatalog.model.DataAssetTag dataAssetTag;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcRequestId",
+        "dataAssetTag"
+    })
     private CreateDataAssetTagResponse(
             int __httpStatusCode__,
             String etag,

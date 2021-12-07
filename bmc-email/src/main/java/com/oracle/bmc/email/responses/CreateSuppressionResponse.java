@@ -24,6 +24,7 @@ public class CreateSuppressionResponse extends com.oracle.bmc.responses.BmcRespo
      */
     private com.oracle.bmc.email.model.Suppression suppression;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "suppression"})
     private CreateSuppressionResponse(
             int __httpStatusCode__,
             String opcRequestId,

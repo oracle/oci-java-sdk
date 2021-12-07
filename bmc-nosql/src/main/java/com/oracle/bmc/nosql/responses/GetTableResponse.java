@@ -31,6 +31,7 @@ public class GetTableResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private com.oracle.bmc.nosql.model.Table table;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "etag", "opcRequestId", "table"})
     private GetTableResponse(
             int __httpStatusCode__,
             String etag,

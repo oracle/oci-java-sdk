@@ -33,6 +33,12 @@ public class ListDbSystemPatchHistoryEntriesResponse extends com.oracle.bmc.resp
      */
     private java.util.List<com.oracle.bmc.database.model.PatchHistoryEntrySummary> items;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "items"
+    })
     private ListDbSystemPatchHistoryEntriesResponse(
             int __httpStatusCode__,
             String opcRequestId,

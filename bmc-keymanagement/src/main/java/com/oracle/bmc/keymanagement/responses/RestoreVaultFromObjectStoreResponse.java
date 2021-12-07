@@ -36,6 +36,13 @@ public class RestoreVaultFromObjectStoreResponse extends com.oracle.bmc.response
      */
     private com.oracle.bmc.keymanagement.model.Vault vault;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcRequestId",
+        "opcWorkRequestId",
+        "vault"
+    })
     private RestoreVaultFromObjectStoreResponse(
             int __httpStatusCode__,
             String etag,

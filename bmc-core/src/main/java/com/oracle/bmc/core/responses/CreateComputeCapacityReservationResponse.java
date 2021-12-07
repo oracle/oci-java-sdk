@@ -43,6 +43,14 @@ public class CreateComputeCapacityReservationResponse extends com.oracle.bmc.res
      */
     private com.oracle.bmc.core.model.ComputeCapacityReservation computeCapacityReservation;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcRequestId",
+        "opcWorkRequestId",
+        "location",
+        "computeCapacityReservation"
+    })
     private CreateComputeCapacityReservationResponse(
             int __httpStatusCode__,
             String etag,

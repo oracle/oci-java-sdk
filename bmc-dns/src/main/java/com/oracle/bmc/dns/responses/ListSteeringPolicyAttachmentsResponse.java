@@ -37,6 +37,13 @@ public class ListSteeringPolicyAttachmentsResponse extends com.oracle.bmc.respon
      */
     private java.util.List<com.oracle.bmc.dns.model.SteeringPolicyAttachmentSummary> items;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcNextPage",
+        "opcTotalItems",
+        "opcRequestId",
+        "items"
+    })
     private ListSteeringPolicyAttachmentsResponse(
             int __httpStatusCode__,
             String opcNextPage,

@@ -30,6 +30,7 @@ public class GetBastionResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private com.oracle.bmc.bastion.model.Bastion bastion;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "etag", "opcRequestId", "bastion"})
     private GetBastionResponse(
             int __httpStatusCode__,
             String etag,

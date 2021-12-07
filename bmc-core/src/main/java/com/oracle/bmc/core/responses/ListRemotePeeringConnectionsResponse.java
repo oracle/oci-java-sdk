@@ -32,6 +32,12 @@ public class ListRemotePeeringConnectionsResponse extends com.oracle.bmc.respons
      */
     private java.util.List<com.oracle.bmc.core.model.RemotePeeringConnection> items;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcNextPage",
+        "opcRequestId",
+        "items"
+    })
     private ListRemotePeeringConnectionsResponse(
             int __httpStatusCode__,
             String opcNextPage,

@@ -31,6 +31,12 @@ public class IngestSqlPlanLinesResponse extends com.oracle.bmc.responses.BmcResp
     private com.oracle.bmc.opsi.model.IngestSqlPlanLinesResponseDetails
             ingestSqlPlanLinesResponseDetails;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "etag",
+        "ingestSqlPlanLinesResponseDetails"
+    })
     private IngestSqlPlanLinesResponse(
             int __httpStatusCode__,
             String opcRequestId,

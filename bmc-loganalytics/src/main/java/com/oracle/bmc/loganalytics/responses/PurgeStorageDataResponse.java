@@ -30,6 +30,12 @@ public class PurgeStorageDataResponse extends com.oracle.bmc.responses.BmcRespon
      */
     private String location;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcWorkRequestId",
+        "location"
+    })
     private PurgeStorageDataResponse(
             int __httpStatusCode__, String opcRequestId, String opcWorkRequestId, String location) {
         super(__httpStatusCode__);

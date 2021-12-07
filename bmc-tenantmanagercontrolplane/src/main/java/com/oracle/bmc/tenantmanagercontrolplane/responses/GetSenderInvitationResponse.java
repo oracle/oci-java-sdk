@@ -30,6 +30,12 @@ public class GetSenderInvitationResponse extends com.oracle.bmc.responses.BmcRes
      */
     private com.oracle.bmc.tenantmanagercontrolplane.model.SenderInvitation senderInvitation;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcRequestId",
+        "senderInvitation"
+    })
     private GetSenderInvitationResponse(
             int __httpStatusCode__,
             String etag,

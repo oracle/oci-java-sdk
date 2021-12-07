@@ -26,6 +26,11 @@ public class GetInstancePoolLoadBalancerAttachmentResponse
     private com.oracle.bmc.core.model.InstancePoolLoadBalancerAttachment
             instancePoolLoadBalancerAttachment;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "instancePoolLoadBalancerAttachment"
+    })
     private GetInstancePoolLoadBalancerAttachmentResponse(
             int __httpStatusCode__,
             String opcRequestId,

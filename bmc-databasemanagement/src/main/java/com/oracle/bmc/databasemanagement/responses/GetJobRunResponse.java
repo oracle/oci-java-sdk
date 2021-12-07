@@ -24,6 +24,7 @@ public class GetJobRunResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private com.oracle.bmc.databasemanagement.model.JobRun jobRun;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "jobRun"})
     private GetJobRunResponse(
             int __httpStatusCode__,
             String opcRequestId,

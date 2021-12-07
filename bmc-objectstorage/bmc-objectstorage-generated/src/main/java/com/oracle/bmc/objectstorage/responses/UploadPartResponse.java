@@ -34,6 +34,13 @@ public class UploadPartResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private String eTag;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcClientRequestId",
+        "opcRequestId",
+        "opcContentMd5",
+        "eTag"
+    })
     private UploadPartResponse(
             int __httpStatusCode__,
             String opcClientRequestId,

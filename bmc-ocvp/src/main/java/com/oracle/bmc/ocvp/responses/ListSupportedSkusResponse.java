@@ -32,6 +32,12 @@ public class ListSupportedSkusResponse extends com.oracle.bmc.responses.BmcRespo
      */
     private com.oracle.bmc.ocvp.model.SupportedSkuSummaryCollection supportedSkuSummaryCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "supportedSkuSummaryCollection"
+    })
     private ListSupportedSkusResponse(
             int __httpStatusCode__,
             String opcRequestId,

@@ -8,11 +8,17 @@ package com.oracle.bmc.networkloadbalancer.model;
  * Protocols supported for the listener of the network load balancer.
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200501")
+@lombok.extern.slf4j.Slf4j
 public enum NetworkLoadBalancersProtocolSummary {
     Any("ANY"),
     Tcp("TCP"),
     Udp("UDP"),
-    ;
+
+    /**
+     * This value is used if a service returns a value for this enum that is not recognized by this
+     * version of the SDK.
+     */
+    UnknownEnumValue(null);
 
     private final String value;
     private static java.util.Map<String, NetworkLoadBalancersProtocolSummary> map;
@@ -20,7 +26,9 @@ public enum NetworkLoadBalancersProtocolSummary {
     static {
         map = new java.util.HashMap<>();
         for (NetworkLoadBalancersProtocolSummary v : NetworkLoadBalancersProtocolSummary.values()) {
-            map.put(v.getValue(), v);
+            if (v != UnknownEnumValue) {
+                map.put(v.getValue(), v);
+            }
         }
     }
 
@@ -38,6 +46,9 @@ public enum NetworkLoadBalancersProtocolSummary {
         if (map.containsKey(key)) {
             return map.get(key);
         }
-        throw new IllegalArgumentException("Invalid NetworkLoadBalancersProtocolSummary: " + key);
+        LOG.warn(
+                "Received unknown value '{}' for enum 'NetworkLoadBalancersProtocolSummary', returning UnknownEnumValue",
+                key);
+        return UnknownEnumValue;
     }
 }

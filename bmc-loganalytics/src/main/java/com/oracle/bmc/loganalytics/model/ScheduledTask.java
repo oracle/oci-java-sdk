@@ -132,6 +132,7 @@ public class ScheduledTask {
         QueryStringNotValid("QUERY_STRING_NOT_VALID"),
         UserAction("USER_ACTION"),
         TenancyLifecycle("TENANCY_LIFECYCLE"),
+        PurgeResourceNotFound("PURGE_RESOURCE_NOT_FOUND"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this

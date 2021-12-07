@@ -30,6 +30,7 @@ public class GetExportSetResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private com.oracle.bmc.filestorage.model.ExportSet exportSet;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "etag", "opcRequestId", "exportSet"})
     private GetExportSetResponse(
             int __httpStatusCode__,
             String etag,

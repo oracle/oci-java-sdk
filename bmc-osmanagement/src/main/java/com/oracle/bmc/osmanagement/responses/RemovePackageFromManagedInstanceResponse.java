@@ -26,6 +26,7 @@ public class RemovePackageFromManagedInstanceResponse extends com.oracle.bmc.res
      */
     private String opcRequestId;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcWorkRequestId", "opcRequestId"})
     private RemovePackageFromManagedInstanceResponse(
             int __httpStatusCode__, String opcWorkRequestId, String opcRequestId) {
         super(__httpStatusCode__);

@@ -32,6 +32,12 @@ public class SummarizeManagedInstanceUsageResponse extends com.oracle.bmc.respon
      */
     private com.oracle.bmc.jms.model.ManagedInstanceUsageCollection managedInstanceUsageCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "managedInstanceUsageCollection"
+    })
     private SummarizeManagedInstanceUsageResponse(
             int __httpStatusCode__,
             String opcRequestId,

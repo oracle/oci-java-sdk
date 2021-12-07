@@ -37,6 +37,13 @@ public class PutQueryWorkRequestBackgroundResponse extends com.oracle.bmc.respon
      */
     private boolean isNotModified;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcRequestId",
+        "queryWorkRequest",
+        "isNotModified"
+    })
     private PutQueryWorkRequestBackgroundResponse(
             int __httpStatusCode__,
             String etag,

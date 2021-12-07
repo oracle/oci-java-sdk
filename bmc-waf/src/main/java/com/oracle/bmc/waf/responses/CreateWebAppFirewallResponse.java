@@ -48,6 +48,15 @@ public class CreateWebAppFirewallResponse extends com.oracle.bmc.responses.BmcRe
      */
     private com.oracle.bmc.waf.model.WebAppFirewall webAppFirewall;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcWorkRequestId",
+        "opcRequestId",
+        "location",
+        "contentLocation",
+        "webAppFirewall"
+    })
     private CreateWebAppFirewallResponse(
             int __httpStatusCode__,
             String etag,

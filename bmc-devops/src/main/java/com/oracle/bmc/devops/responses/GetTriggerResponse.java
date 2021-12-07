@@ -27,6 +27,7 @@ public class GetTriggerResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private com.oracle.bmc.devops.model.Trigger trigger;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "etag", "opcRequestId", "trigger"})
     private GetTriggerResponse(
             int __httpStatusCode__,
             String etag,

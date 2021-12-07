@@ -41,6 +41,13 @@ public class ListLogSavedSearchesResponse extends com.oracle.bmc.responses.BmcRe
     private com.oracle.bmc.logging.model.LogSavedSearchSummaryCollection
             logSavedSearchSummaryCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcNextPage",
+        "opcPreviousPage",
+        "opcRequestId",
+        "logSavedSearchSummaryCollection"
+    })
     private ListLogSavedSearchesResponse(
             int __httpStatusCode__,
             String opcNextPage,

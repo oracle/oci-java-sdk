@@ -24,6 +24,11 @@ public class RecommendationsResponse extends com.oracle.bmc.responses.BmcRespons
      */
     private com.oracle.bmc.datacatalog.model.RecommendationCollection recommendationCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "recommendationCollection"
+    })
     private RecommendationsResponse(
             int __httpStatusCode__,
             String opcRequestId,

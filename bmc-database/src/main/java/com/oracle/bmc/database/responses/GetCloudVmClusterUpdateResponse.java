@@ -24,6 +24,7 @@ public class GetCloudVmClusterUpdateResponse extends com.oracle.bmc.responses.Bm
      */
     private com.oracle.bmc.database.model.Update update;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "update"})
     private GetCloudVmClusterUpdateResponse(
             int __httpStatusCode__,
             String opcRequestId,

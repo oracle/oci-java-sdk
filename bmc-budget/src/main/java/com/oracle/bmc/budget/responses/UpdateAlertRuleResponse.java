@@ -30,6 +30,7 @@ public class UpdateAlertRuleResponse extends com.oracle.bmc.responses.BmcRespons
      */
     private com.oracle.bmc.budget.model.AlertRule alertRule;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "etag", "alertRule"})
     private UpdateAlertRuleResponse(
             int __httpStatusCode__,
             String opcRequestId,

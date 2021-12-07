@@ -32,6 +32,12 @@ public class ListCpeDeviceShapesResponse extends com.oracle.bmc.responses.BmcRes
      */
     private java.util.List<com.oracle.bmc.core.model.CpeDeviceShapeSummary> items;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcNextPage",
+        "opcRequestId",
+        "items"
+    })
     private ListCpeDeviceShapesResponse(
             int __httpStatusCode__,
             String opcNextPage,

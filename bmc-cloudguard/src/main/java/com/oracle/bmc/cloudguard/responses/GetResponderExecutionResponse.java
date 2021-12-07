@@ -30,6 +30,12 @@ public class GetResponderExecutionResponse extends com.oracle.bmc.responses.BmcR
      */
     private com.oracle.bmc.cloudguard.model.ResponderExecution responderExecution;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcRequestId",
+        "responderExecution"
+    })
     private GetResponderExecutionResponse(
             int __httpStatusCode__,
             String etag,

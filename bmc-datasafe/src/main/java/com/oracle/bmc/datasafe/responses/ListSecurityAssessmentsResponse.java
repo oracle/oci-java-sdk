@@ -37,6 +37,13 @@ public class ListSecurityAssessmentsResponse extends com.oracle.bmc.responses.Bm
      */
     private java.util.List<com.oracle.bmc.datasafe.model.SecurityAssessmentSummary> items;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "opcPrevPage",
+        "items"
+    })
     private ListSecurityAssessmentsResponse(
             int __httpStatusCode__,
             String opcRequestId,

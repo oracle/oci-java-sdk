@@ -24,6 +24,11 @@ public class GetAutoUpgradableConfigResponse extends com.oracle.bmc.responses.Bm
      */
     private com.oracle.bmc.managementagent.model.AutoUpgradableConfig autoUpgradableConfig;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "autoUpgradableConfig"
+    })
     private GetAutoUpgradableConfigResponse(
             int __httpStatusCode__,
             String opcRequestId,

@@ -30,6 +30,7 @@ public class GetServiceResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private com.oracle.bmc.core.model.Service service;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "etag", "opcRequestId", "service"})
     private GetServiceResponse(
             int __httpStatusCode__,
             String etag,

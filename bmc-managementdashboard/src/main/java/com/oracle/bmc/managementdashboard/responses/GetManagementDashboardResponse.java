@@ -36,6 +36,13 @@ public class GetManagementDashboardResponse extends com.oracle.bmc.responses.Bmc
      */
     private com.oracle.bmc.managementdashboard.model.ManagementDashboard managementDashboard;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcWorkRequestId",
+        "opcRequestId",
+        "managementDashboard"
+    })
     private GetManagementDashboardResponse(
             int __httpStatusCode__,
             String etag,

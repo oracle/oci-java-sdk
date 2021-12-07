@@ -33,6 +33,12 @@ public class ListOperatorControlsResponse extends com.oracle.bmc.responses.BmcRe
     private com.oracle.bmc.operatoraccesscontrol.model.OperatorControlCollection
             operatorControlCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "operatorControlCollection"
+    })
     private ListOperatorControlsResponse(
             int __httpStatusCode__,
             String opcRequestId,

@@ -40,6 +40,13 @@ public class ListFieldsResponse extends com.oracle.bmc.responses.BmcResponse {
     private com.oracle.bmc.loganalytics.model.LogAnalyticsFieldCollection
             logAnalyticsFieldCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcPrevPage",
+        "opcNextPage",
+        "opcRequestId",
+        "logAnalyticsFieldCollection"
+    })
     private ListFieldsResponse(
             int __httpStatusCode__,
             String opcPrevPage,

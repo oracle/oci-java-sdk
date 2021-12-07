@@ -33,6 +33,12 @@ public class ListManagedDatabaseGroupsResponse extends com.oracle.bmc.responses.
     private com.oracle.bmc.databasemanagement.model.ManagedDatabaseGroupCollection
             managedDatabaseGroupCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "managedDatabaseGroupCollection"
+    })
     private ListManagedDatabaseGroupsResponse(
             int __httpStatusCode__,
             String opcRequestId,

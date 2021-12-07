@@ -24,6 +24,7 @@ public class GetAgreementResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private com.oracle.bmc.marketplace.model.Agreement agreement;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "agreement"})
     private GetAgreementResponse(
             int __httpStatusCode__,
             String opcRequestId,

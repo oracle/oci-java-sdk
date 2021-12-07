@@ -25,6 +25,11 @@ public class DetectLanguageSentimentsResponse extends com.oracle.bmc.responses.B
     private com.oracle.bmc.ailanguage.model.DetectLanguageSentimentsResult
             detectLanguageSentimentsResult;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "detectLanguageSentimentsResult"
+    })
     private DetectLanguageSentimentsResponse(
             int __httpStatusCode__,
             String opcRequestId,

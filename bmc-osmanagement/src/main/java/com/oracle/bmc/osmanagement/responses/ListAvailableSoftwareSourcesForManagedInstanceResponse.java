@@ -34,6 +34,12 @@ public class ListAvailableSoftwareSourcesForManagedInstanceResponse
      */
     private java.util.List<com.oracle.bmc.osmanagement.model.AvailableSoftwareSourceSummary> items;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "items"
+    })
     private ListAvailableSoftwareSourcesForManagedInstanceResponse(
             int __httpStatusCode__,
             String opcRequestId,

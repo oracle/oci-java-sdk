@@ -30,6 +30,12 @@ public class GetTermRelationshipResponse extends com.oracle.bmc.responses.BmcRes
      */
     private com.oracle.bmc.datacatalog.model.TermRelationship termRelationship;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcRequestId",
+        "termRelationship"
+    })
     private GetTermRelationshipResponse(
             int __httpStatusCode__,
             String etag,

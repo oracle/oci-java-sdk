@@ -32,6 +32,12 @@ public class SummarizeAwrDbCpuUsagesResponse extends com.oracle.bmc.responses.Bm
      */
     private com.oracle.bmc.databasemanagement.model.AwrDbCpuUsageCollection awrDbCpuUsageCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "awrDbCpuUsageCollection"
+    })
     private SummarizeAwrDbCpuUsagesResponse(
             int __httpStatusCode__,
             String opcRequestId,

@@ -38,6 +38,13 @@ public class ListHostConfigurationsResponse extends com.oracle.bmc.responses.Bmc
      */
     private com.oracle.bmc.opsi.model.HostConfigurationCollection hostConfigurationCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcTotalItems",
+        "opcNextPage",
+        "hostConfigurationCollection"
+    })
     private ListHostConfigurationsResponse(
             int __httpStatusCode__,
             String opcRequestId,

@@ -17,6 +17,7 @@ public class GetNamespaceResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private String value;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "value"})
     private GetNamespaceResponse(int __httpStatusCode__, String value) {
         super(__httpStatusCode__);
         this.value = value;

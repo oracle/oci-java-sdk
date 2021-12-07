@@ -29,6 +29,12 @@ public class GetConnectHarnessResponse extends com.oracle.bmc.responses.BmcRespo
      */
     private com.oracle.bmc.streaming.model.ConnectHarness connectHarness;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "etag",
+        "connectHarness"
+    })
     private GetConnectHarnessResponse(
             int __httpStatusCode__,
             String opcRequestId,

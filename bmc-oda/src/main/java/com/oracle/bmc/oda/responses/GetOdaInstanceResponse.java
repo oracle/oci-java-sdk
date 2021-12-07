@@ -29,6 +29,7 @@ public class GetOdaInstanceResponse extends com.oracle.bmc.responses.BmcResponse
      */
     private com.oracle.bmc.oda.model.OdaInstance odaInstance;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "etag", "opcRequestId", "odaInstance"})
     private GetOdaInstanceResponse(
             int __httpStatusCode__,
             String etag,

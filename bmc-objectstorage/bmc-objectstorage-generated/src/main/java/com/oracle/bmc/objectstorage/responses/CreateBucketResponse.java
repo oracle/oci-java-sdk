@@ -39,6 +39,14 @@ public class CreateBucketResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private com.oracle.bmc.objectstorage.model.Bucket bucket;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcClientRequestId",
+        "opcRequestId",
+        "eTag",
+        "location",
+        "bucket"
+    })
     private CreateBucketResponse(
             int __httpStatusCode__,
             String opcClientRequestId,

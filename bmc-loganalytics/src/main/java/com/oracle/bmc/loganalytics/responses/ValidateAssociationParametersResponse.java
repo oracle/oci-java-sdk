@@ -30,6 +30,12 @@ public class ValidateAssociationParametersResponse extends com.oracle.bmc.respon
     private com.oracle.bmc.loganalytics.model.LogAnalyticsAssociationParameterCollection
             logAnalyticsAssociationParameterCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcRequestId",
+        "logAnalyticsAssociationParameterCollection"
+    })
     private ValidateAssociationParametersResponse(
             int __httpStatusCode__,
             String etag,

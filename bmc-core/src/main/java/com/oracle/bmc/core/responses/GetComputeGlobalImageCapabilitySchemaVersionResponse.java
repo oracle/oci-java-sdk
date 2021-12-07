@@ -32,6 +32,12 @@ public class GetComputeGlobalImageCapabilitySchemaVersionResponse
     private com.oracle.bmc.core.model.ComputeGlobalImageCapabilitySchemaVersion
             computeGlobalImageCapabilitySchemaVersion;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcRequestId",
+        "computeGlobalImageCapabilitySchemaVersion"
+    })
     private GetComputeGlobalImageCapabilitySchemaVersionResponse(
             int __httpStatusCode__,
             String etag,

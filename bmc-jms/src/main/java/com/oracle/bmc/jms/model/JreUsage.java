@@ -24,6 +24,60 @@ public class JreUsage {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
+        @com.fasterxml.jackson.annotation.JsonProperty("id")
+        private String id;
+
+        public Builder id(String id) {
+            this.id = id;
+            this.__explicitlySet__.add("id");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("fleetId")
+        private String fleetId;
+
+        public Builder fleetId(String fleetId) {
+            this.fleetId = fleetId;
+            this.__explicitlySet__.add("fleetId");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("managedInstanceId")
+        private String managedInstanceId;
+
+        public Builder managedInstanceId(String managedInstanceId) {
+            this.managedInstanceId = managedInstanceId;
+            this.__explicitlySet__.add("managedInstanceId");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("securityStatus")
+        private JreSecurityStatus securityStatus;
+
+        public Builder securityStatus(JreSecurityStatus securityStatus) {
+            this.securityStatus = securityStatus;
+            this.__explicitlySet__.add("securityStatus");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("releaseDate")
+        private java.util.Date releaseDate;
+
+        public Builder releaseDate(java.util.Date releaseDate) {
+            this.releaseDate = releaseDate;
+            this.__explicitlySet__.add("releaseDate");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("endOfSupportLifeDate")
+        private java.util.Date endOfSupportLifeDate;
+
+        public Builder endOfSupportLifeDate(java.util.Date endOfSupportLifeDate) {
+            this.endOfSupportLifeDate = endOfSupportLifeDate;
+            this.__explicitlySet__.add("endOfSupportLifeDate");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("vendor")
         private String vendor;
 
@@ -129,6 +183,12 @@ public class JreUsage {
         public JreUsage build() {
             JreUsage __instance__ =
                     new JreUsage(
+                            id,
+                            fleetId,
+                            managedInstanceId,
+                            securityStatus,
+                            releaseDate,
+                            endOfSupportLifeDate,
                             vendor,
                             distribution,
                             version,
@@ -147,7 +207,13 @@ public class JreUsage {
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(JreUsage o) {
             Builder copiedBuilder =
-                    vendor(o.getVendor())
+                    id(o.getId())
+                            .fleetId(o.getFleetId())
+                            .managedInstanceId(o.getManagedInstanceId())
+                            .securityStatus(o.getSecurityStatus())
+                            .releaseDate(o.getReleaseDate())
+                            .endOfSupportLifeDate(o.getEndOfSupportLifeDate())
+                            .vendor(o.getVendor())
                             .distribution(o.getDistribution())
                             .version(o.getVersion())
                             .operatingSystems(o.getOperatingSystems())
@@ -170,6 +236,42 @@ public class JreUsage {
     public static Builder builder() {
         return new Builder();
     }
+
+    /**
+     * The internal identifier of the Java Runtime.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("id")
+    String id;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the related fleet.  This property value is present only for /actions/listJreUsage.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("fleetId")
+    String fleetId;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the related managed instance. This property value is present only for /actions/listJreUsage.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("managedInstanceId")
+    String managedInstanceId;
+
+    /**
+     * The security status of the Java Runtime.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("securityStatus")
+    JreSecurityStatus securityStatus;
+
+    /**
+     * The release date of the Java Runtime (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("releaseDate")
+    java.util.Date releaseDate;
+
+    /**
+     * The End of Support Life (EOSL) date of the Java Runtime (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("endOfSupportLifeDate")
+    java.util.Date endOfSupportLifeDate;
 
     /**
      * The vendor of the Java Runtime.

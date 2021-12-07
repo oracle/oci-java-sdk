@@ -22,6 +22,7 @@ public class UpdateWafAddressRateLimitingResponse extends com.oracle.bmc.respons
      */
     private String opcWorkRequestId;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "opcWorkRequestId"})
     private UpdateWafAddressRateLimitingResponse(
             int __httpStatusCode__, String opcRequestId, String opcWorkRequestId) {
         super(__httpStatusCode__);

@@ -40,6 +40,13 @@ public class ListAssociatedEntitiesResponse extends com.oracle.bmc.responses.Bmc
     private com.oracle.bmc.loganalytics.model.LogAnalyticsAssociatedEntityCollection
             logAnalyticsAssociatedEntityCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcPrevPage",
+        "opcNextPage",
+        "opcRequestId",
+        "logAnalyticsAssociatedEntityCollection"
+    })
     private ListAssociatedEntitiesResponse(
             int __httpStatusCode__,
             String opcPrevPage,

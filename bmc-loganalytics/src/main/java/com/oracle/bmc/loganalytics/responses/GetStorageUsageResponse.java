@@ -23,6 +23,7 @@ public class GetStorageUsageResponse extends com.oracle.bmc.responses.BmcRespons
      */
     private com.oracle.bmc.loganalytics.model.StorageUsage storageUsage;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "storageUsage"})
     private GetStorageUsageResponse(
             int __httpStatusCode__,
             String opcRequestId,

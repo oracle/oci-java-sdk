@@ -30,6 +30,12 @@ public class GetWebAppFirewallResponse extends com.oracle.bmc.responses.BmcRespo
      */
     private com.oracle.bmc.waf.model.WebAppFirewall webAppFirewall;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcRequestId",
+        "webAppFirewall"
+    })
     private GetWebAppFirewallResponse(
             int __httpStatusCode__,
             String etag,

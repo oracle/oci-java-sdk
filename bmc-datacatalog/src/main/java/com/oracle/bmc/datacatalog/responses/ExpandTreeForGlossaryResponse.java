@@ -30,6 +30,7 @@ public class ExpandTreeForGlossaryResponse extends com.oracle.bmc.responses.BmcR
      */
     private java.util.List<com.oracle.bmc.datacatalog.model.GlossaryTreeElement> items;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "etag", "opcRequestId", "items"})
     private ExpandTreeForGlossaryResponse(
             int __httpStatusCode__,
             String etag,

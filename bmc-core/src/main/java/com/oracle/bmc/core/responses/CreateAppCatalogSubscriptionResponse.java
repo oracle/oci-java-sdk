@@ -30,6 +30,12 @@ public class CreateAppCatalogSubscriptionResponse extends com.oracle.bmc.respons
      */
     private com.oracle.bmc.core.model.AppCatalogSubscription appCatalogSubscription;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcRequestId",
+        "appCatalogSubscription"
+    })
     private CreateAppCatalogSubscriptionResponse(
             int __httpStatusCode__,
             String etag,

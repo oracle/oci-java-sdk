@@ -78,6 +78,14 @@ public class ListParsersConverter {
                                     request.getParserType().getValue()));
         }
 
+        if (request.getCategories() != null) {
+            target =
+                    target.queryParam(
+                            "categories",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getCategories()));
+        }
+
         if (request.getIsSystem() != null) {
             target =
                     target.queryParam(

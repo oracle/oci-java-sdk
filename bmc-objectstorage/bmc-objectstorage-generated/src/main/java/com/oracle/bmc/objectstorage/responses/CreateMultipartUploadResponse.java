@@ -34,6 +34,13 @@ public class CreateMultipartUploadResponse extends com.oracle.bmc.responses.BmcR
      */
     private com.oracle.bmc.objectstorage.model.MultipartUpload multipartUpload;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcClientRequestId",
+        "opcRequestId",
+        "location",
+        "multipartUpload"
+    })
     private CreateMultipartUploadResponse(
             int __httpStatusCode__,
             String opcClientRequestId,

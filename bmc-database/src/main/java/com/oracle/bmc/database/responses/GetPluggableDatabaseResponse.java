@@ -29,6 +29,12 @@ public class GetPluggableDatabaseResponse extends com.oracle.bmc.responses.BmcRe
      */
     private com.oracle.bmc.database.model.PluggableDatabase pluggableDatabase;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcRequestId",
+        "pluggableDatabase"
+    })
     private GetPluggableDatabaseResponse(
             int __httpStatusCode__,
             String etag,

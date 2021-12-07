@@ -30,6 +30,7 @@ public class CreateExportResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private com.oracle.bmc.filestorage.model.Export export;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "etag", "opcRequestId", "export"})
     private CreateExportResponse(
             int __httpStatusCode__,
             String etag,

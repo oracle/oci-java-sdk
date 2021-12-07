@@ -27,6 +27,12 @@ public class GetHumanInteractionChallengeResponse extends com.oracle.bmc.respons
      */
     private com.oracle.bmc.waas.model.HumanInteractionChallenge humanInteractionChallenge;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcRequestId",
+        "humanInteractionChallenge"
+    })
     private GetHumanInteractionChallengeResponse(
             int __httpStatusCode__,
             String etag,

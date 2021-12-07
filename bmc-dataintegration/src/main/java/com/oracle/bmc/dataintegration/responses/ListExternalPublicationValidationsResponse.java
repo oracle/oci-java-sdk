@@ -44,6 +44,14 @@ public class ListExternalPublicationValidationsResponse
     private com.oracle.bmc.dataintegration.model.ExternalPublicationValidationSummaryCollection
             externalPublicationValidationSummaryCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "opcPrevPage",
+        "opcTotalItems",
+        "externalPublicationValidationSummaryCollection"
+    })
     private ListExternalPublicationValidationsResponse(
             int __httpStatusCode__,
             String opcRequestId,

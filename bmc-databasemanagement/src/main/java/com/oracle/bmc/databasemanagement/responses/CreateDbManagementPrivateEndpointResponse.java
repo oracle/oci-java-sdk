@@ -44,6 +44,14 @@ public class CreateDbManagementPrivateEndpointResponse
     private com.oracle.bmc.databasemanagement.model.DbManagementPrivateEndpoint
             dbManagementPrivateEndpoint;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcWorkRequestId",
+        "opcRequestId",
+        "location",
+        "dbManagementPrivateEndpoint"
+    })
     private CreateDbManagementPrivateEndpointResponse(
             int __httpStatusCode__,
             String etag,

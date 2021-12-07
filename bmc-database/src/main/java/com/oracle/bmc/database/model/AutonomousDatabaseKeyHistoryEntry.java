@@ -36,6 +36,15 @@ public class AutonomousDatabaseKeyHistoryEntry {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyVersionId")
+        private String kmsKeyVersionId;
+
+        public Builder kmsKeyVersionId(String kmsKeyVersionId) {
+            this.kmsKeyVersionId = kmsKeyVersionId;
+            this.__explicitlySet__.add("kmsKeyVersionId");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("vaultId")
         private String vaultId;
 
@@ -59,7 +68,8 @@ public class AutonomousDatabaseKeyHistoryEntry {
 
         public AutonomousDatabaseKeyHistoryEntry build() {
             AutonomousDatabaseKeyHistoryEntry __instance__ =
-                    new AutonomousDatabaseKeyHistoryEntry(id, vaultId, timeActivated);
+                    new AutonomousDatabaseKeyHistoryEntry(
+                            id, kmsKeyVersionId, vaultId, timeActivated);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -67,7 +77,10 @@ public class AutonomousDatabaseKeyHistoryEntry {
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(AutonomousDatabaseKeyHistoryEntry o) {
             Builder copiedBuilder =
-                    id(o.getId()).vaultId(o.getVaultId()).timeActivated(o.getTimeActivated());
+                    id(o.getId())
+                            .kmsKeyVersionId(o.getKmsKeyVersionId())
+                            .vaultId(o.getVaultId())
+                            .timeActivated(o.getTimeActivated());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -86,6 +99,13 @@ public class AutonomousDatabaseKeyHistoryEntry {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     String id;
+
+    /**
+     * The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyVersionId")
+    String kmsKeyVersionId;
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm#concepts).

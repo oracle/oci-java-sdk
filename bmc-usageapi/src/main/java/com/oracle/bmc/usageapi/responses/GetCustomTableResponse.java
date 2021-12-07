@@ -29,6 +29,7 @@ public class GetCustomTableResponse extends com.oracle.bmc.responses.BmcResponse
      */
     private com.oracle.bmc.usageapi.model.CustomTable customTable;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "etag", "customTable"})
     private GetCustomTableResponse(
             int __httpStatusCode__,
             String opcRequestId,

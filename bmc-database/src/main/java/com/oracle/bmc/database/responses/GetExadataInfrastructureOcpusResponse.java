@@ -24,6 +24,7 @@ public class GetExadataInfrastructureOcpusResponse extends com.oracle.bmc.respon
      */
     private com.oracle.bmc.database.model.OCPUs oCPUs;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "oCPUs"})
     private GetExadataInfrastructureOcpusResponse(
             int __httpStatusCode__,
             String opcRequestId,

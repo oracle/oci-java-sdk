@@ -27,6 +27,12 @@ public class ListCommitsResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private com.oracle.bmc.devops.model.RepositoryCommitCollection repositoryCommitCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "repositoryCommitCollection"
+    })
     private ListCommitsResponse(
             int __httpStatusCode__,
             String opcRequestId,

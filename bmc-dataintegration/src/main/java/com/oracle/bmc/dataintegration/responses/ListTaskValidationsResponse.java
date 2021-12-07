@@ -43,6 +43,14 @@ public class ListTaskValidationsResponse extends com.oracle.bmc.responses.BmcRes
     private com.oracle.bmc.dataintegration.model.TaskValidationSummaryCollection
             taskValidationSummaryCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "opcPrevPage",
+        "opcTotalItems",
+        "taskValidationSummaryCollection"
+    })
     private ListTaskValidationsResponse(
             int __httpStatusCode__,
             String opcRequestId,

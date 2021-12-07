@@ -32,6 +32,13 @@ public class ListCachingRulesResponse extends com.oracle.bmc.responses.BmcRespon
      */
     private java.util.List<com.oracle.bmc.waas.model.CachingRuleSummary> items;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcNextPage",
+        "opcRequestId",
+        "items"
+    })
     private ListCachingRulesResponse(
             int __httpStatusCode__,
             String etag,

@@ -24,6 +24,7 @@ public class ReencryptObjectResponse extends com.oracle.bmc.responses.BmcRespons
      */
     private String opcRequestId;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcClientRequestId", "opcRequestId"})
     private ReencryptObjectResponse(
             int __httpStatusCode__, String opcClientRequestId, String opcRequestId) {
         super(__httpStatusCode__);

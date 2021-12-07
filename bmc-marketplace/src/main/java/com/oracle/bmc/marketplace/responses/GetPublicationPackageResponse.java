@@ -30,6 +30,12 @@ public class GetPublicationPackageResponse extends com.oracle.bmc.responses.BmcR
      */
     private com.oracle.bmc.marketplace.model.PublicationPackage publicationPackage;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcRequestId",
+        "publicationPackage"
+    })
     private GetPublicationPackageResponse(
             int __httpStatusCode__,
             String etag,

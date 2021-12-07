@@ -34,6 +34,12 @@ public class ListCertificateAuthoritiesResponse extends com.oracle.bmc.responses
     private com.oracle.bmc.certificatesmanagement.model.CertificateAuthorityCollection
             certificateAuthorityCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "certificateAuthorityCollection"
+    })
     private ListCertificateAuthoritiesResponse(
             int __httpStatusCode__,
             String opcRequestId,

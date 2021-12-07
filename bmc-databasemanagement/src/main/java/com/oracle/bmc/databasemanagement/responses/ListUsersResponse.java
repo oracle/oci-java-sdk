@@ -32,6 +32,12 @@ public class ListUsersResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private com.oracle.bmc.databasemanagement.model.UserCollection userCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcNextPage",
+        "opcRequestId",
+        "userCollection"
+    })
     private ListUsersResponse(
             int __httpStatusCode__,
             String opcNextPage,

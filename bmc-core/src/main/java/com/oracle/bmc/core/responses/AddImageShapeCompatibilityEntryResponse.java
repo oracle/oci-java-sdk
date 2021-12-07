@@ -24,6 +24,11 @@ public class AddImageShapeCompatibilityEntryResponse extends com.oracle.bmc.resp
      */
     private com.oracle.bmc.core.model.ImageShapeCompatibilityEntry imageShapeCompatibilityEntry;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "imageShapeCompatibilityEntry"
+    })
     private AddImageShapeCompatibilityEntryResponse(
             int __httpStatusCode__,
             String opcRequestId,

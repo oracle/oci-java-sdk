@@ -36,6 +36,13 @@ public class EvaluateMigrationResponse extends com.oracle.bmc.responses.BmcRespo
      */
     private com.oracle.bmc.databasemigration.model.Job job;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcWorkRequestId",
+        "etag",
+        "job"
+    })
     private EvaluateMigrationResponse(
             int __httpStatusCode__,
             String opcRequestId,

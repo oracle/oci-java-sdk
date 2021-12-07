@@ -39,6 +39,13 @@ public class ListApplicationsResponse extends com.oracle.bmc.responses.BmcRespon
      */
     private java.util.List<com.oracle.bmc.dataflow.model.ApplicationSummary> items;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcPrevPage",
+        "opcNextPage",
+        "opcRequestId",
+        "items"
+    })
     private ListApplicationsResponse(
             int __httpStatusCode__,
             String opcPrevPage,

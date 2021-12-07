@@ -35,6 +35,13 @@ public class ConvertToPdbResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private com.oracle.bmc.database.model.Database database;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcWorkRequestId",
+        "etag",
+        "opcRequestId",
+        "database"
+    })
     private ConvertToPdbResponse(
             int __httpStatusCode__,
             String opcWorkRequestId,

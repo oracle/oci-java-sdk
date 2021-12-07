@@ -25,6 +25,7 @@ public class DeleteRowResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private com.oracle.bmc.nosql.model.DeleteRowResult deleteRowResult;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "deleteRowResult"})
     private DeleteRowResponse(
             int __httpStatusCode__,
             String opcRequestId,

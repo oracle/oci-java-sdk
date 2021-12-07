@@ -32,6 +32,12 @@ public class ListCpesResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private java.util.List<com.oracle.bmc.core.model.Cpe> items;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcNextPage",
+        "opcRequestId",
+        "items"
+    })
     private ListCpesResponse(
             int __httpStatusCode__,
             String opcNextPage,

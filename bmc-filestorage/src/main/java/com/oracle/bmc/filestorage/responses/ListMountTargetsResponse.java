@@ -35,6 +35,12 @@ public class ListMountTargetsResponse extends com.oracle.bmc.responses.BmcRespon
      */
     private java.util.List<com.oracle.bmc.filestorage.model.MountTargetSummary> items;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcNextPage",
+        "opcRequestId",
+        "items"
+    })
     private ListMountTargetsResponse(
             int __httpStatusCode__,
             String opcNextPage,

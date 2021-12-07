@@ -42,6 +42,13 @@ public class ListObjectVersionsResponse extends com.oracle.bmc.responses.BmcResp
      */
     private com.oracle.bmc.objectstorage.model.ObjectVersionCollection objectVersionCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcClientRequestId",
+        "opcRequestId",
+        "opcNextPage",
+        "objectVersionCollection"
+    })
     private ListObjectVersionsResponse(
             int __httpStatusCode__,
             String opcClientRequestId,

@@ -30,6 +30,12 @@ public class GetDrgRouteDistributionResponse extends com.oracle.bmc.responses.Bm
      */
     private com.oracle.bmc.core.model.DrgRouteDistribution drgRouteDistribution;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcRequestId",
+        "drgRouteDistribution"
+    })
     private GetDrgRouteDistributionResponse(
             int __httpStatusCode__,
             String etag,

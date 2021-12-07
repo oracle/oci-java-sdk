@@ -40,6 +40,14 @@ public class DownloadVmClusterNetworkConfigFileResponse
      */
     private java.io.InputStream inputStream;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcRequestId",
+        "contentLength",
+        "lastModified",
+        "inputStream"
+    })
     private DownloadVmClusterNetworkConfigFileResponse(
             int __httpStatusCode__,
             String etag,

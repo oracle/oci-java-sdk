@@ -27,6 +27,7 @@ public class GetTemplateResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private com.oracle.bmc.resourcemanager.model.Template template;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "etag", "template"})
     private GetTemplateResponse(
             int __httpStatusCode__,
             String opcRequestId,

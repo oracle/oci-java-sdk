@@ -42,6 +42,14 @@ public class ListSchemasResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private com.oracle.bmc.dataintegration.model.SchemaSummaryCollection schemaSummaryCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "opcPrevPage",
+        "opcTotalItems",
+        "schemaSummaryCollection"
+    })
     private ListSchemasResponse(
             int __httpStatusCode__,
             String opcRequestId,

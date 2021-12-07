@@ -33,6 +33,12 @@ public class ListOceInstancesResponse extends com.oracle.bmc.responses.BmcRespon
      */
     private java.util.List<com.oracle.bmc.oce.model.OceInstanceSummary> items;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "items"
+    })
     private ListOceInstancesResponse(
             int __httpStatusCode__,
             String opcRequestId,

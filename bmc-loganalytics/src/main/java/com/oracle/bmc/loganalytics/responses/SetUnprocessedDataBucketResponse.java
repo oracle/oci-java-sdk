@@ -23,6 +23,11 @@ public class SetUnprocessedDataBucketResponse extends com.oracle.bmc.responses.B
      */
     private com.oracle.bmc.loganalytics.model.UnprocessedDataBucket unprocessedDataBucket;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "unprocessedDataBucket"
+    })
     private SetUnprocessedDataBucketResponse(
             int __httpStatusCode__,
             String opcRequestId,

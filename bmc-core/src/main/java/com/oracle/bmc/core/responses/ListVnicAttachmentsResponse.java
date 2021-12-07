@@ -32,6 +32,12 @@ public class ListVnicAttachmentsResponse extends com.oracle.bmc.responses.BmcRes
      */
     private java.util.List<com.oracle.bmc.core.model.VnicAttachment> items;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcNextPage",
+        "opcRequestId",
+        "items"
+    })
     private ListVnicAttachmentsResponse(
             int __httpStatusCode__,
             String opcNextPage,

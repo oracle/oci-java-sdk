@@ -32,6 +32,12 @@ public class ListProxyUsersResponse extends com.oracle.bmc.responses.BmcResponse
      */
     private com.oracle.bmc.databasemanagement.model.ProxyUserCollection proxyUserCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcNextPage",
+        "opcRequestId",
+        "proxyUserCollection"
+    })
     private ListProxyUsersResponse(
             int __httpStatusCode__,
             String opcNextPage,

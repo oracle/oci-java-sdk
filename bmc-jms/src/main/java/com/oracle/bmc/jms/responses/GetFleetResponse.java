@@ -30,6 +30,7 @@ public class GetFleetResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private com.oracle.bmc.jms.model.Fleet fleet;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "etag", "opcRequestId", "fleet"})
     private GetFleetResponse(
             int __httpStatusCode__,
             String etag,

@@ -30,6 +30,12 @@ public class GetResponderRuleResponse extends com.oracle.bmc.responses.BmcRespon
      */
     private com.oracle.bmc.cloudguard.model.ResponderRule responderRule;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcRequestId",
+        "responderRule"
+    })
     private GetResponderRuleResponse(
             int __httpStatusCode__,
             String etag,

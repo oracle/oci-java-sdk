@@ -29,6 +29,12 @@ public class GetTargetDatabaseResponse extends com.oracle.bmc.responses.BmcRespo
      */
     private com.oracle.bmc.datasafe.model.TargetDatabase targetDatabase;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcRequestId",
+        "targetDatabase"
+    })
     private GetTargetDatabaseResponse(
             int __httpStatusCode__,
             String etag,

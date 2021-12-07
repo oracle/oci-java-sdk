@@ -31,6 +31,12 @@ public class ListShapesResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private java.util.List<com.oracle.bmc.loadbalancer.model.LoadBalancerShape> items;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcNextPage",
+        "opcRequestId",
+        "items"
+    })
     private ListShapesResponse(
             int __httpStatusCode__,
             String opcNextPage,

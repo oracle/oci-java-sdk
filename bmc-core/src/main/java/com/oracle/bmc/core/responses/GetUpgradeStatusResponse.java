@@ -24,6 +24,7 @@ public class GetUpgradeStatusResponse extends com.oracle.bmc.responses.BmcRespon
      */
     private com.oracle.bmc.core.model.UpgradeStatus upgradeStatus;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "upgradeStatus"})
     private GetUpgradeStatusResponse(
             int __httpStatusCode__,
             String opcRequestId,

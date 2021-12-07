@@ -29,6 +29,12 @@ public class ListDeploymentBackupsResponse extends com.oracle.bmc.responses.BmcR
      */
     private com.oracle.bmc.goldengate.model.DeploymentBackupCollection deploymentBackupCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "deploymentBackupCollection"
+    })
     private ListDeploymentBackupsResponse(
             int __httpStatusCode__,
             String opcRequestId,

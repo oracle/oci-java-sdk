@@ -30,6 +30,12 @@ public class UpdateDetectorRecipeResponse extends com.oracle.bmc.responses.BmcRe
      */
     private com.oracle.bmc.cloudguard.model.DetectorRecipe detectorRecipe;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcRequestId",
+        "detectorRecipe"
+    })
     private UpdateDetectorRecipeResponse(
             int __httpStatusCode__,
             String etag,

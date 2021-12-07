@@ -30,6 +30,12 @@ public class ChangeAutonomousDatabaseCompartmentResponse
      */
     private String opcRequestId;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcWorkRequestId",
+        "opcRequestId"
+    })
     private ChangeAutonomousDatabaseCompartmentResponse(
             int __httpStatusCode__, String etag, String opcWorkRequestId, String opcRequestId) {
         super(__httpStatusCode__);

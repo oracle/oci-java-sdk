@@ -30,6 +30,7 @@ public class UpdateJobResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private com.oracle.bmc.databasemigration.model.Job job;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "etag", "job"})
     private UpdateJobResponse(
             int __httpStatusCode__,
             String opcRequestId,

@@ -32,6 +32,12 @@ public class ListBootVolumeAttachmentsResponse extends com.oracle.bmc.responses.
      */
     private java.util.List<com.oracle.bmc.core.model.BootVolumeAttachment> items;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcNextPage",
+        "opcRequestId",
+        "items"
+    })
     private ListBootVolumeAttachmentsResponse(
             int __httpStatusCode__,
             String opcNextPage,

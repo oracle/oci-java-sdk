@@ -29,6 +29,12 @@ public class UpdateDynamicGroupResponse extends com.oracle.bmc.responses.BmcResp
      */
     private com.oracle.bmc.identity.model.DynamicGroup dynamicGroup;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "etag",
+        "dynamicGroup"
+    })
     private UpdateDynamicGroupResponse(
             int __httpStatusCode__,
             String opcRequestId,

@@ -29,6 +29,7 @@ public class CreateKeyResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private com.oracle.bmc.keymanagement.model.Key key;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "etag", "opcRequestId", "key"})
     private CreateKeyResponse(
             int __httpStatusCode__,
             String etag,

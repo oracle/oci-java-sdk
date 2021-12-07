@@ -31,6 +31,7 @@ public class GetCertificateResponse extends com.oracle.bmc.responses.BmcResponse
      */
     private com.oracle.bmc.apigateway.model.Certificate certificate;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "etag", "opcRequestId", "certificate"})
     private GetCertificateResponse(
             int __httpStatusCode__,
             String etag,

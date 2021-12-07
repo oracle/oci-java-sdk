@@ -35,6 +35,12 @@ public class ListFileSystemsResponse extends com.oracle.bmc.responses.BmcRespons
      */
     private java.util.List<com.oracle.bmc.filestorage.model.FileSystemSummary> items;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcNextPage",
+        "opcRequestId",
+        "items"
+    })
     private ListFileSystemsResponse(
             int __httpStatusCode__,
             String opcNextPage,

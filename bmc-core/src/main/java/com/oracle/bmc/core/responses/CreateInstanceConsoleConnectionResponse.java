@@ -30,6 +30,12 @@ public class CreateInstanceConsoleConnectionResponse extends com.oracle.bmc.resp
      */
     private com.oracle.bmc.core.model.InstanceConsoleConnection instanceConsoleConnection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcRequestId",
+        "instanceConsoleConnection"
+    })
     private CreateInstanceConsoleConnectionResponse(
             int __httpStatusCode__,
             String etag,

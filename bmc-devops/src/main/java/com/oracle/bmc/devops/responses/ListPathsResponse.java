@@ -27,6 +27,12 @@ public class ListPathsResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private com.oracle.bmc.devops.model.RepositoryPathCollection repositoryPathCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "repositoryPathCollection"
+    })
     private ListPathsResponse(
             int __httpStatusCode__,
             String opcRequestId,

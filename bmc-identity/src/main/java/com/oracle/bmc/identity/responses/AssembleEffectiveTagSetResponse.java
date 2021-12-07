@@ -32,6 +32,12 @@ public class AssembleEffectiveTagSetResponse extends com.oracle.bmc.responses.Bm
      */
     private java.util.List<com.oracle.bmc.identity.model.TagDefaultSummary> items;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "items"
+    })
     private AssembleEffectiveTagSetResponse(
             int __httpStatusCode__,
             String opcRequestId,

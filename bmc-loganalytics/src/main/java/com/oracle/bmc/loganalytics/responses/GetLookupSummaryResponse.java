@@ -23,6 +23,7 @@ public class GetLookupSummaryResponse extends com.oracle.bmc.responses.BmcRespon
      */
     private com.oracle.bmc.loganalytics.model.LookupSummaryReport lookupSummaryReport;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "lookupSummaryReport"})
     private GetLookupSummaryResponse(
             int __httpStatusCode__,
             String opcRequestId,

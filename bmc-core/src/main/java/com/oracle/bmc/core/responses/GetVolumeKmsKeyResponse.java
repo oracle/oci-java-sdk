@@ -30,6 +30,12 @@ public class GetVolumeKmsKeyResponse extends com.oracle.bmc.responses.BmcRespons
      */
     private com.oracle.bmc.core.model.VolumeKmsKey volumeKmsKey;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcRequestId",
+        "volumeKmsKey"
+    })
     private GetVolumeKmsKeyResponse(
             int __httpStatusCode__,
             String etag,

@@ -30,6 +30,7 @@ public class UpdateRouteTableResponse extends com.oracle.bmc.responses.BmcRespon
      */
     private com.oracle.bmc.core.model.RouteTable routeTable;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "etag", "opcRequestId", "routeTable"})
     private UpdateRouteTableResponse(
             int __httpStatusCode__,
             String etag,

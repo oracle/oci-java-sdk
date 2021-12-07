@@ -30,6 +30,7 @@ public class GetNamespaceResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private com.oracle.bmc.datacatalog.model.Namespace namespace;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "etag", "opcRequestId", "namespace"})
     private GetNamespaceResponse(
             int __httpStatusCode__,
             String etag,

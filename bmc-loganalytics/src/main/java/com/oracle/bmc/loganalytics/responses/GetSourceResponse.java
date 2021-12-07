@@ -29,6 +29,12 @@ public class GetSourceResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private com.oracle.bmc.loganalytics.model.LogAnalyticsSource logAnalyticsSource;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcRequestId",
+        "logAnalyticsSource"
+    })
     private GetSourceResponse(
             int __httpStatusCode__,
             String etag,

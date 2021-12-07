@@ -30,6 +30,7 @@ public class GetProblemResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private com.oracle.bmc.cloudguard.model.Problem problem;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "etag", "problem"})
     private GetProblemResponse(
             int __httpStatusCode__,
             String opcRequestId,

@@ -25,6 +25,7 @@ public class UpdateNetworkSecurityGroupsResponse extends com.oracle.bmc.response
      */
     private String opcRequestId;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcWorkRequestId", "opcRequestId"})
     private UpdateNetworkSecurityGroupsResponse(
             int __httpStatusCode__, String opcWorkRequestId, String opcRequestId) {
         super(__httpStatusCode__);

@@ -32,6 +32,12 @@ public class ListDrgAttachmentsResponse extends com.oracle.bmc.responses.BmcResp
      */
     private java.util.List<com.oracle.bmc.core.model.DrgAttachment> items;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcNextPage",
+        "opcRequestId",
+        "items"
+    })
     private ListDrgAttachmentsResponse(
             int __httpStatusCode__,
             String opcNextPage,

@@ -32,6 +32,12 @@ public class ListVcnsResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private java.util.List<com.oracle.bmc.core.model.Vcn> items;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcNextPage",
+        "opcRequestId",
+        "items"
+    })
     private ListVcnsResponse(
             int __httpStatusCode__,
             String opcNextPage,

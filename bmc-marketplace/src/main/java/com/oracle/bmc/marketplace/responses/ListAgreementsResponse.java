@@ -32,6 +32,12 @@ public class ListAgreementsResponse extends com.oracle.bmc.responses.BmcResponse
      */
     private java.util.List<com.oracle.bmc.marketplace.model.AgreementSummary> items;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "items"
+    })
     private ListAgreementsResponse(
             int __httpStatusCode__,
             String opcRequestId,

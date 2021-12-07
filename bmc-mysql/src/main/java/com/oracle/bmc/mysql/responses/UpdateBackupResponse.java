@@ -27,6 +27,7 @@ public class UpdateBackupResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private boolean isNotModified;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "isNotModified"})
     private UpdateBackupResponse(
             int __httpStatusCode__, String opcRequestId, boolean isNotModified) {
         super(__httpStatusCode__);

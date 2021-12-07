@@ -42,6 +42,14 @@ public class CreateBastionResponse extends com.oracle.bmc.responses.BmcResponse 
      */
     private com.oracle.bmc.bastion.model.Bastion bastion;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcWorkRequestId",
+        "opcRequestId",
+        "location",
+        "etag",
+        "bastion"
+    })
     private CreateBastionResponse(
             int __httpStatusCode__,
             String opcWorkRequestId,

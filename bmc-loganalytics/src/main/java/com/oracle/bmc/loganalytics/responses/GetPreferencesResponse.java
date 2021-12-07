@@ -40,6 +40,13 @@ public class GetPreferencesResponse extends com.oracle.bmc.responses.BmcResponse
     private com.oracle.bmc.loganalytics.model.LogAnalyticsPreferenceCollection
             logAnalyticsPreferenceCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcPrevPage",
+        "opcNextPage",
+        "opcRequestId",
+        "logAnalyticsPreferenceCollection"
+    })
     private GetPreferencesResponse(
             int __httpStatusCode__,
             String opcPrevPage,

@@ -9,11 +9,17 @@ package com.oracle.bmc.databasemigration.model;
  *
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210929")
+@lombok.extern.slf4j.Slf4j
 public enum DataPumpExcludeParameters {
     Index("INDEX"),
     MaterializedView("MATERIALIZED_VIEW"),
     MaterializedViewLog("MATERIALIZED_VIEW_LOG"),
-    ;
+
+    /**
+     * This value is used if a service returns a value for this enum that is not recognized by this
+     * version of the SDK.
+     */
+    UnknownEnumValue(null);
 
     private final String value;
     private static java.util.Map<String, DataPumpExcludeParameters> map;
@@ -21,7 +27,9 @@ public enum DataPumpExcludeParameters {
     static {
         map = new java.util.HashMap<>();
         for (DataPumpExcludeParameters v : DataPumpExcludeParameters.values()) {
-            map.put(v.getValue(), v);
+            if (v != UnknownEnumValue) {
+                map.put(v.getValue(), v);
+            }
         }
     }
 
@@ -39,6 +47,9 @@ public enum DataPumpExcludeParameters {
         if (map.containsKey(key)) {
             return map.get(key);
         }
-        throw new IllegalArgumentException("Invalid DataPumpExcludeParameters: " + key);
+        LOG.warn(
+                "Received unknown value '{}' for enum 'DataPumpExcludeParameters', returning UnknownEnumValue",
+                key);
+        return UnknownEnumValue;
     }
 }

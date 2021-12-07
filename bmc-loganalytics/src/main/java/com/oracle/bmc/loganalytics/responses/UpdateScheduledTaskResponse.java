@@ -37,6 +37,13 @@ public class UpdateScheduledTaskResponse extends com.oracle.bmc.responses.BmcRes
      */
     private boolean isNotModified;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "etag",
+        "scheduledTask",
+        "isNotModified"
+    })
     private UpdateScheduledTaskResponse(
             int __httpStatusCode__,
             String opcRequestId,

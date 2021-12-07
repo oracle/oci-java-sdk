@@ -30,6 +30,12 @@ public class GetSubnetTopologyResponse extends com.oracle.bmc.responses.BmcRespo
      */
     private com.oracle.bmc.core.model.SubnetTopology subnetTopology;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcRequestId",
+        "subnetTopology"
+    })
     private GetSubnetTopologyResponse(
             int __httpStatusCode__,
             String etag,

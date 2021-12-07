@@ -40,6 +40,13 @@ public class ListWarningsResponse extends com.oracle.bmc.responses.BmcResponse {
     private com.oracle.bmc.loganalytics.model.LogAnalyticsWarningCollection
             logAnalyticsWarningCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcPrevPage",
+        "opcNextPage",
+        "opcRequestId",
+        "logAnalyticsWarningCollection"
+    })
     private ListWarningsResponse(
             int __httpStatusCode__,
             String opcPrevPage,

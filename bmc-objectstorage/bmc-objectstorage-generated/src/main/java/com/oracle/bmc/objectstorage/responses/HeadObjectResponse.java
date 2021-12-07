@@ -114,6 +114,27 @@ public class HeadObjectResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private boolean isNotModified;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcClientRequestId",
+        "opcRequestId",
+        "eTag",
+        "opcMeta",
+        "contentLength",
+        "contentMd5",
+        "opcMultipartMd5",
+        "contentType",
+        "contentLanguage",
+        "contentEncoding",
+        "cacheControl",
+        "contentDisposition",
+        "lastModified",
+        "storageTier",
+        "archivalState",
+        "timeOfArchival",
+        "versionId",
+        "isNotModified"
+    })
     private HeadObjectResponse(
             int __httpStatusCode__,
             String opcClientRequestId,

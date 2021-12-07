@@ -24,6 +24,7 @@ public class GetDataEntityResponse extends com.oracle.bmc.responses.BmcResponse 
      */
     private com.oracle.bmc.dataintegration.model.DataEntity dataEntity;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "dataEntity"})
     private GetDataEntityResponse(
             int __httpStatusCode__,
             String opcRequestId,

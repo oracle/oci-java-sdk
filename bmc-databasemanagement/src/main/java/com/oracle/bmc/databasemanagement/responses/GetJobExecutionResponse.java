@@ -24,6 +24,7 @@ public class GetJobExecutionResponse extends com.oracle.bmc.responses.BmcRespons
      */
     private com.oracle.bmc.databasemanagement.model.JobExecution jobExecution;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "jobExecution"})
     private GetJobExecutionResponse(
             int __httpStatusCode__,
             String opcRequestId,

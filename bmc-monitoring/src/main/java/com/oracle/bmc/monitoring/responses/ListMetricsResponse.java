@@ -31,6 +31,12 @@ public class ListMetricsResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private java.util.List<com.oracle.bmc.monitoring.model.Metric> items;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcNextPage",
+        "opcRequestId",
+        "items"
+    })
     private ListMetricsResponse(
             int __httpStatusCode__,
             String opcNextPage,

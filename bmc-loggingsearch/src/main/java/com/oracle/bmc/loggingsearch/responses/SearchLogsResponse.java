@@ -30,6 +30,12 @@ public class SearchLogsResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private com.oracle.bmc.loggingsearch.model.SearchResponse searchResponse;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcNextPage",
+        "opcRequestId",
+        "searchResponse"
+    })
     private SearchLogsResponse(
             int __httpStatusCode__,
             String opcNextPage,

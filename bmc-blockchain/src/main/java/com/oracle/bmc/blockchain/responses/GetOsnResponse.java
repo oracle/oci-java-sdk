@@ -30,6 +30,7 @@ public class GetOsnResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private com.oracle.bmc.blockchain.model.Osn osn;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "etag", "opcRequestId", "osn"})
     private GetOsnResponse(
             int __httpStatusCode__,
             String etag,

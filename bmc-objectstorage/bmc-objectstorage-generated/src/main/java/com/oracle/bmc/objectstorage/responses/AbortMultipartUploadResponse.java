@@ -24,6 +24,7 @@ public class AbortMultipartUploadResponse extends com.oracle.bmc.responses.BmcRe
      */
     private String opcRequestId;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcClientRequestId", "opcRequestId"})
     private AbortMultipartUploadResponse(
             int __httpStatusCode__, String opcClientRequestId, String opcRequestId) {
         super(__httpStatusCode__);

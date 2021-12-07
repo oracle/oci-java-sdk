@@ -34,6 +34,12 @@ public class ListWindowsUpdatesInstalledOnManagedInstanceResponse
      */
     private java.util.List<com.oracle.bmc.osmanagement.model.InstalledWindowsUpdateSummary> items;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "items"
+    })
     private ListWindowsUpdatesInstalledOnManagedInstanceResponse(
             int __httpStatusCode__,
             String opcRequestId,

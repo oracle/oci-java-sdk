@@ -30,6 +30,7 @@ public class GetCatalogResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private com.oracle.bmc.datacatalog.model.Catalog catalog;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "etag", "opcRequestId", "catalog"})
     private GetCatalogResponse(
             int __httpStatusCode__,
             String etag,

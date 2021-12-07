@@ -35,6 +35,13 @@ public class UpdateDbSystemResponse extends com.oracle.bmc.responses.BmcResponse
      */
     private com.oracle.bmc.database.model.DbSystem dbSystem;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcWorkRequestId",
+        "etag",
+        "opcRequestId",
+        "dbSystem"
+    })
     private UpdateDbSystemResponse(
             int __httpStatusCode__,
             String opcWorkRequestId,

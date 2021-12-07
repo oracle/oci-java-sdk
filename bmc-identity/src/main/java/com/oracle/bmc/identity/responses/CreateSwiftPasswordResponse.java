@@ -29,6 +29,12 @@ public class CreateSwiftPasswordResponse extends com.oracle.bmc.responses.BmcRes
      */
     private com.oracle.bmc.identity.model.SwiftPassword swiftPassword;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "etag",
+        "swiftPassword"
+    })
     private CreateSwiftPasswordResponse(
             int __httpStatusCode__,
             String opcRequestId,

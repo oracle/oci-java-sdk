@@ -30,6 +30,7 @@ public class GetDrgResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private com.oracle.bmc.core.model.Drg drg;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "etag", "opcRequestId", "drg"})
     private GetDrgResponse(
             int __httpStatusCode__,
             String etag,

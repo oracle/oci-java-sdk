@@ -30,6 +30,7 @@ public class GetTypeResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private com.oracle.bmc.datacatalog.model.Type type;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "etag", "opcRequestId", "type"})
     private GetTypeResponse(
             int __httpStatusCode__,
             String etag,

@@ -32,6 +32,12 @@ public class ListMonitorsResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private com.oracle.bmc.apmsynthetics.model.MonitorCollection monitorCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "monitorCollection"
+    })
     private ListMonitorsResponse(
             int __httpStatusCode__,
             String opcRequestId,

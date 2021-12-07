@@ -27,6 +27,7 @@ public class ApproveDeploymentResponse extends com.oracle.bmc.responses.BmcRespo
      */
     private com.oracle.bmc.devops.model.Deployment deployment;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "etag", "opcRequestId", "deployment"})
     private ApproveDeploymentResponse(
             int __httpStatusCode__,
             String etag,

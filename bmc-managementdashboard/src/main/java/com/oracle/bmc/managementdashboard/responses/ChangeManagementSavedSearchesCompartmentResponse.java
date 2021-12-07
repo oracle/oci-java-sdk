@@ -37,6 +37,13 @@ public class ChangeManagementSavedSearchesCompartmentResponse
      */
     private com.oracle.bmc.managementdashboard.model.ManagementSavedSearch managementSavedSearch;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcRequestId",
+        "opcWorkRequestId",
+        "managementSavedSearch"
+    })
     private ChangeManagementSavedSearchesCompartmentResponse(
             int __httpStatusCode__,
             String etag,

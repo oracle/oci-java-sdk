@@ -32,6 +32,12 @@ public class ListFunctionsResponse extends com.oracle.bmc.responses.BmcResponse 
      */
     private java.util.List<com.oracle.bmc.functions.model.FunctionSummary> items;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcNextPage",
+        "opcRequestId",
+        "items"
+    })
     private ListFunctionsResponse(
             int __httpStatusCode__,
             String opcNextPage,

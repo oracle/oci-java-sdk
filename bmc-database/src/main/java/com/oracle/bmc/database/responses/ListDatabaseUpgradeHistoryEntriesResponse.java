@@ -34,6 +34,12 @@ public class ListDatabaseUpgradeHistoryEntriesResponse
      */
     private java.util.List<com.oracle.bmc.database.model.DatabaseUpgradeHistoryEntrySummary> items;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "items"
+    })
     private ListDatabaseUpgradeHistoryEntriesResponse(
             int __httpStatusCode__,
             String opcRequestId,

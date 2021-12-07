@@ -25,6 +25,7 @@ public class UpdateAutonomousDatabaseWalletResponse extends com.oracle.bmc.respo
      */
     private String opcWorkRequestId;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "opcWorkRequestId"})
     private UpdateAutonomousDatabaseWalletResponse(
             int __httpStatusCode__, String opcRequestId, String opcWorkRequestId) {
         super(__httpStatusCode__);

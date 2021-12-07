@@ -32,6 +32,12 @@ public class ListInstanceConfigurationsResponse extends com.oracle.bmc.responses
      */
     private java.util.List<com.oracle.bmc.core.model.InstanceConfigurationSummary> items;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcNextPage",
+        "opcRequestId",
+        "items"
+    })
     private ListInstanceConfigurationsResponse(
             int __httpStatusCode__,
             String opcNextPage,

@@ -31,6 +31,12 @@ public class ListProtocolsResponse extends com.oracle.bmc.responses.BmcResponse 
      */
     private java.util.List<com.oracle.bmc.loadbalancer.model.LoadBalancerProtocol> items;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcNextPage",
+        "opcRequestId",
+        "items"
+    })
     private ListProtocolsResponse(
             int __httpStatusCode__,
             String opcNextPage,

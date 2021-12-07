@@ -32,6 +32,12 @@ public class ChangeDrgCompartmentResponse extends com.oracle.bmc.responses.BmcRe
      */
     private String opcWorkRequestId;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcRequestId",
+        "opcWorkRequestId"
+    })
     private ChangeDrgCompartmentResponse(
             int __httpStatusCode__, String etag, String opcRequestId, String opcWorkRequestId) {
         super(__httpStatusCode__);

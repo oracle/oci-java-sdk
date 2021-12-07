@@ -45,6 +45,14 @@ public class CreateViewResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private com.oracle.bmc.dns.model.View view;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "location",
+        "opcRequestId",
+        "opcWorkRequestId",
+        "view"
+    })
     private CreateViewResponse(
             int __httpStatusCode__,
             String etag,

@@ -25,6 +25,7 @@ public class RunScheduledJobNowResponse extends com.oracle.bmc.responses.BmcResp
      */
     private String opcRequestId;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "etag", "opcRequestId"})
     private RunScheduledJobNowResponse(int __httpStatusCode__, String etag, String opcRequestId) {
         super(__httpStatusCode__);
         this.etag = etag;

@@ -30,6 +30,7 @@ public class GetAttributeResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private com.oracle.bmc.datacatalog.model.Attribute attribute;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "etag", "opcRequestId", "attribute"})
     private GetAttributeResponse(
             int __httpStatusCode__,
             String etag,

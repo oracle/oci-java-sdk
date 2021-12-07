@@ -27,6 +27,12 @@ public class GetFileDiffResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private com.oracle.bmc.devops.model.FileDiffResponse fileDiffResponse;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcRequestId",
+        "fileDiffResponse"
+    })
     private GetFileDiffResponse(
             int __httpStatusCode__,
             String etag,

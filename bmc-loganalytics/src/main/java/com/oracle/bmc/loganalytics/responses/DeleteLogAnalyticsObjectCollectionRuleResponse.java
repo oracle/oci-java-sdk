@@ -19,6 +19,7 @@ public class DeleteLogAnalyticsObjectCollectionRuleResponse
      */
     private String opcRequestId;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId"})
     private DeleteLogAnalyticsObjectCollectionRuleResponse(
             int __httpStatusCode__, String opcRequestId) {
         super(__httpStatusCode__);

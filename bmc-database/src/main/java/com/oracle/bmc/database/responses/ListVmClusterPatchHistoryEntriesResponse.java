@@ -33,6 +33,12 @@ public class ListVmClusterPatchHistoryEntriesResponse extends com.oracle.bmc.res
      */
     private java.util.List<com.oracle.bmc.database.model.PatchHistoryEntrySummary> items;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "items"
+    })
     private ListVmClusterPatchHistoryEntriesResponse(
             int __httpStatusCode__,
             String opcRequestId,

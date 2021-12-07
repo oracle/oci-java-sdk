@@ -35,6 +35,13 @@ public class CreateDataGuardAssociationResponse extends com.oracle.bmc.responses
      */
     private com.oracle.bmc.database.model.DataGuardAssociation dataGuardAssociation;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcWorkRequestId",
+        "etag",
+        "opcRequestId",
+        "dataGuardAssociation"
+    })
     private CreateDataGuardAssociationResponse(
             int __httpStatusCode__,
             String opcWorkRequestId,

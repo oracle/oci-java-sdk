@@ -62,13 +62,22 @@ public class UpdateLookupMetadataDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("categories")
+        private java.util.List<LogAnalyticsCategory> categories;
+
+        public Builder categories(java.util.List<LogAnalyticsCategory> categories) {
+            this.categories = categories;
+            this.__explicitlySet__.add("categories");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public UpdateLookupMetadataDetails build() {
             UpdateLookupMetadataDetails __instance__ =
                     new UpdateLookupMetadataDetails(
-                            defaultMatchValue, description, fields, maxMatches);
+                            defaultMatchValue, description, fields, maxMatches, categories);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -79,7 +88,8 @@ public class UpdateLookupMetadataDetails {
                     defaultMatchValue(o.getDefaultMatchValue())
                             .description(o.getDescription())
                             .fields(o.getFields())
-                            .maxMatches(o.getMaxMatches());
+                            .maxMatches(o.getMaxMatches())
+                            .categories(o.getCategories());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -116,6 +126,14 @@ public class UpdateLookupMetadataDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("maxMatches")
     Long maxMatches;
+
+    /**
+     * An array of categories to assign to the lookup. Specifying the name attribute for each category would suffice.
+     * Oracle-defined category assignments cannot be removed.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("categories")
+    java.util.List<LogAnalyticsCategory> categories;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

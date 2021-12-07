@@ -43,6 +43,14 @@ public class ListTaskSchedulesResponse extends com.oracle.bmc.responses.BmcRespo
     private com.oracle.bmc.dataintegration.model.TaskScheduleSummaryCollection
             taskScheduleSummaryCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "opcPrevPage",
+        "opcTotalItems",
+        "taskScheduleSummaryCollection"
+    })
     private ListTaskSchedulesResponse(
             int __httpStatusCode__,
             String opcRequestId,

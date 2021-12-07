@@ -33,6 +33,12 @@ public class ListFlexComponentsResponse extends com.oracle.bmc.responses.BmcResp
      */
     private com.oracle.bmc.database.model.FlexComponentCollection flexComponentCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "flexComponentCollection"
+    })
     private ListFlexComponentsResponse(
             int __httpStatusCode__,
             String opcRequestId,

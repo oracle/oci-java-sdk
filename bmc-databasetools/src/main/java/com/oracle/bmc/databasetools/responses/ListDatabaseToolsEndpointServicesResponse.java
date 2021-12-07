@@ -34,6 +34,12 @@ public class ListDatabaseToolsEndpointServicesResponse
     private com.oracle.bmc.databasetools.model.DatabaseToolsEndpointServiceCollection
             databaseToolsEndpointServiceCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "databaseToolsEndpointServiceCollection"
+    })
     private ListDatabaseToolsEndpointServicesResponse(
             int __httpStatusCode__,
             String opcRequestId,

@@ -34,6 +34,12 @@ public class ListImportableEnterpriseManagerEntitiesResponse
     private com.oracle.bmc.opsi.model.ImportableEnterpriseManagerEntityCollection
             importableEnterpriseManagerEntityCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "importableEnterpriseManagerEntityCollection"
+    })
     private ListImportableEnterpriseManagerEntitiesResponse(
             int __httpStatusCode__,
             String opcRequestId,

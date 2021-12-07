@@ -32,6 +32,12 @@ public class ListDrgsResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private java.util.List<com.oracle.bmc.core.model.Drg> items;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcNextPage",
+        "opcRequestId",
+        "items"
+    })
     private ListDrgsResponse(
             int __httpStatusCode__,
             String opcNextPage,

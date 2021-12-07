@@ -31,6 +31,12 @@ public class ListNodePoolsResponse extends com.oracle.bmc.responses.BmcResponse 
      */
     private java.util.List<com.oracle.bmc.containerengine.model.NodePoolSummary> items;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcNextPage",
+        "opcRequestId",
+        "items"
+    })
     private ListNodePoolsResponse(
             int __httpStatusCode__,
             String opcNextPage,

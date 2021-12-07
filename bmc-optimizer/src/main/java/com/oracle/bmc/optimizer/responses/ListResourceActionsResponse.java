@@ -39,6 +39,13 @@ public class ListResourceActionsResponse extends com.oracle.bmc.responses.BmcRes
      */
     private com.oracle.bmc.optimizer.model.ResourceActionCollection resourceActionCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "opcPrevPage",
+        "resourceActionCollection"
+    })
     private ListResourceActionsResponse(
             int __httpStatusCode__,
             String opcRequestId,

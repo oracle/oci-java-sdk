@@ -29,6 +29,7 @@ public class ScheduleVaultDeletionResponse extends com.oracle.bmc.responses.BmcR
      */
     private com.oracle.bmc.keymanagement.model.Vault vault;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "etag", "opcRequestId", "vault"})
     private ScheduleVaultDeletionResponse(
             int __httpStatusCode__,
             String etag,

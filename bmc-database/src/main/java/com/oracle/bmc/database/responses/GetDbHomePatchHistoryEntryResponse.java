@@ -29,6 +29,12 @@ public class GetDbHomePatchHistoryEntryResponse extends com.oracle.bmc.responses
      */
     private com.oracle.bmc.database.model.PatchHistoryEntry patchHistoryEntry;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcRequestId",
+        "patchHistoryEntry"
+    })
     private GetDbHomePatchHistoryEntryResponse(
             int __httpStatusCode__,
             String etag,

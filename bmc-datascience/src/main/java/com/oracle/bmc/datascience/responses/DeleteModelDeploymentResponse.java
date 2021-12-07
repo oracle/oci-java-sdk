@@ -26,6 +26,7 @@ public class DeleteModelDeploymentResponse extends com.oracle.bmc.responses.BmcR
      */
     private String opcRequestId;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcWorkRequestId", "opcRequestId"})
     private DeleteModelDeploymentResponse(
             int __httpStatusCode__, String opcWorkRequestId, String opcRequestId) {
         super(__httpStatusCode__);

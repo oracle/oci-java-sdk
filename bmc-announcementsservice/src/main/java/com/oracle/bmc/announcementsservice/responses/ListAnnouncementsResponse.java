@@ -28,6 +28,12 @@ public class ListAnnouncementsResponse extends com.oracle.bmc.responses.BmcRespo
     private com.oracle.bmc.announcementsservice.model.AnnouncementsCollection
             announcementsCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcNextPage",
+        "opcRequestId",
+        "announcementsCollection"
+    })
     private ListAnnouncementsResponse(
             int __httpStatusCode__,
             String opcNextPage,

@@ -39,6 +39,13 @@ public class ListIPSecConnectionTunnelSecurityAssociationsResponse
      */
     private java.util.List<com.oracle.bmc.core.model.TunnelSecurityAssociationSummary> items;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcNextPage",
+        "opcRequestId",
+        "opcTotalItems",
+        "items"
+    })
     private ListIPSecConnectionTunnelSecurityAssociationsResponse(
             int __httpStatusCode__,
             String opcNextPage,

@@ -32,6 +32,12 @@ public class ListIPSecConnectionsResponse extends com.oracle.bmc.responses.BmcRe
      */
     private java.util.List<com.oracle.bmc.core.model.IPSecConnection> items;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcNextPage",
+        "opcRequestId",
+        "items"
+    })
     private ListIPSecConnectionsResponse(
             int __httpStatusCode__,
             String opcNextPage,

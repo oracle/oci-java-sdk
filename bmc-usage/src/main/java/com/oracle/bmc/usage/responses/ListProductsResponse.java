@@ -32,6 +32,12 @@ public class ListProductsResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private com.oracle.bmc.usage.model.ProductCollection productCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "productCollection"
+    })
     private ListProductsResponse(
             int __httpStatusCode__,
             String opcRequestId,

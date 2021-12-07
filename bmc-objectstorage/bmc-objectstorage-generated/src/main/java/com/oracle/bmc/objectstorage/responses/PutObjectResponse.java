@@ -44,6 +44,15 @@ public class PutObjectResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private String versionId;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcClientRequestId",
+        "opcRequestId",
+        "opcContentMd5",
+        "eTag",
+        "lastModified",
+        "versionId"
+    })
     private PutObjectResponse(
             int __httpStatusCode__,
             String opcClientRequestId,

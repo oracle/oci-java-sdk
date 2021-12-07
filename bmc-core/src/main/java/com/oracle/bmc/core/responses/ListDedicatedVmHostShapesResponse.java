@@ -32,6 +32,12 @@ public class ListDedicatedVmHostShapesResponse extends com.oracle.bmc.responses.
      */
     private java.util.List<com.oracle.bmc.core.model.DedicatedVmHostShapeSummary> items;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcNextPage",
+        "opcRequestId",
+        "items"
+    })
     private ListDedicatedVmHostShapesResponse(
             int __httpStatusCode__,
             String opcNextPage,

@@ -30,6 +30,12 @@ public class ListTermsResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private com.oracle.bmc.datacatalog.model.TermCollection termCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "termCollection"
+    })
     private ListTermsResponse(
             int __httpStatusCode__,
             String opcRequestId,

@@ -19,6 +19,7 @@ public class ChangeByoipRangeCompartmentResponse extends com.oracle.bmc.response
      */
     private String opcRequestId;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId"})
     private ChangeByoipRangeCompartmentResponse(int __httpStatusCode__, String opcRequestId) {
         super(__httpStatusCode__);
         this.opcRequestId = opcRequestId;

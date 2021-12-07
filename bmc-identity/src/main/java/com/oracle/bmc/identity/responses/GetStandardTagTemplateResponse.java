@@ -24,6 +24,11 @@ public class GetStandardTagTemplateResponse extends com.oracle.bmc.responses.Bmc
      */
     private com.oracle.bmc.identity.model.StandardTagNamespaceTemplate standardTagNamespaceTemplate;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "standardTagNamespaceTemplate"
+    })
     private GetStandardTagTemplateResponse(
             int __httpStatusCode__,
             String opcRequestId,

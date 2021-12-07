@@ -30,6 +30,12 @@ public class PutGenericArtifactContentByPathResponse extends com.oracle.bmc.resp
      */
     private com.oracle.bmc.genericartifactscontent.model.GenericArtifact genericArtifact;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcRequestId",
+        "genericArtifact"
+    })
     private PutGenericArtifactContentByPathResponse(
             int __httpStatusCode__,
             String etag,

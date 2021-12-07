@@ -33,6 +33,12 @@ public class ListSoftwareSourcePackagesResponse extends com.oracle.bmc.responses
      */
     private java.util.List<com.oracle.bmc.osmanagement.model.SoftwarePackageSummary> items;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "items"
+    })
     private ListSoftwareSourcePackagesResponse(
             int __httpStatusCode__,
             String opcRequestId,

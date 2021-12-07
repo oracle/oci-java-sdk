@@ -24,6 +24,7 @@ public class GetClusterOptionsResponse extends com.oracle.bmc.responses.BmcRespo
      */
     private com.oracle.bmc.containerengine.model.ClusterOptions clusterOptions;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "clusterOptions"})
     private GetClusterOptionsResponse(
             int __httpStatusCode__,
             String opcRequestId,

@@ -29,6 +29,7 @@ public class GetQuotaResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private com.oracle.bmc.limits.model.Quota quota;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "etag", "quota"})
     private GetQuotaResponse(
             int __httpStatusCode__,
             String opcRequestId,

@@ -26,6 +26,7 @@ public class ChangeAiPrivateEndpointCompartmentResponse
      */
     private String opcRequestId;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcWorkRequestId", "opcRequestId"})
     private ChangeAiPrivateEndpointCompartmentResponse(
             int __httpStatusCode__, String opcWorkRequestId, String opcRequestId) {
         super(__httpStatusCode__);

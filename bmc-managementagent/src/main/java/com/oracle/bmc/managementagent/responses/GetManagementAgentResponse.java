@@ -30,6 +30,12 @@ public class GetManagementAgentResponse extends com.oracle.bmc.responses.BmcResp
      */
     private com.oracle.bmc.managementagent.model.ManagementAgent managementAgent;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcRequestId",
+        "managementAgent"
+    })
     private GetManagementAgentResponse(
             int __httpStatusCode__,
             String etag,

@@ -31,6 +31,12 @@ public class ReencryptBucketResponse extends com.oracle.bmc.responses.BmcRespons
      */
     private String opcRequestId;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcWorkRequestId",
+        "opcClientRequestId",
+        "opcRequestId"
+    })
     private ReencryptBucketResponse(
             int __httpStatusCode__,
             String opcWorkRequestId,

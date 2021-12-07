@@ -29,6 +29,7 @@ public class UpdateCertificateResponse extends com.oracle.bmc.responses.BmcRespo
      */
     private com.oracle.bmc.certificatesmanagement.model.Certificate certificate;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "etag", "opcRequestId", "certificate"})
     private UpdateCertificateResponse(
             int __httpStatusCode__,
             String etag,

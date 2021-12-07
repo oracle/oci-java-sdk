@@ -26,6 +26,7 @@ public class CreateVaultReplicaResponse extends com.oracle.bmc.responses.BmcResp
      */
     private String opcWorkRequestId;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "opcWorkRequestId"})
     private CreateVaultReplicaResponse(
             int __httpStatusCode__, String opcRequestId, String opcWorkRequestId) {
         super(__httpStatusCode__);

@@ -25,6 +25,7 @@ public class UpdateDrgRouteDistributionStatementsResponse
      */
     private java.util.List<com.oracle.bmc.core.model.DrgRouteDistributionStatement> items;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "items"})
     private UpdateDrgRouteDistributionStatementsResponse(
             int __httpStatusCode__,
             String opcRequestId,

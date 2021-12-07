@@ -32,6 +32,12 @@ public class ListManagementAgentsResponse extends com.oracle.bmc.responses.BmcRe
      */
     private java.util.List<com.oracle.bmc.managementagent.model.ManagementAgentSummary> items;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "items"
+    })
     private ListManagementAgentsResponse(
             int __httpStatusCode__,
             String opcRequestId,

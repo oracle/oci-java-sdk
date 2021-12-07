@@ -32,6 +32,12 @@ public class ListResolverEndpointsResponse extends com.oracle.bmc.responses.BmcR
      */
     private java.util.List<com.oracle.bmc.dns.model.ResolverEndpointSummary> items;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "items"
+    })
     private ListResolverEndpointsResponse(
             int __httpStatusCode__,
             String opcRequestId,

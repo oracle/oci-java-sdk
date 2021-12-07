@@ -35,6 +35,12 @@ public class ListExportsResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private java.util.List<com.oracle.bmc.filestorage.model.ExportSummary> items;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcNextPage",
+        "opcRequestId",
+        "items"
+    })
     private ListExportsResponse(
             int __httpStatusCode__,
             String opcNextPage,

@@ -24,6 +24,7 @@ public class CreateRegionSubscriptionResponse extends com.oracle.bmc.responses.B
      */
     private com.oracle.bmc.identity.model.RegionSubscription regionSubscription;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "regionSubscription"})
     private CreateRegionSubscriptionResponse(
             int __httpStatusCode__,
             String opcRequestId,

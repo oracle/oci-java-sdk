@@ -30,6 +30,7 @@ public class UpdateByoipRangeResponse extends com.oracle.bmc.responses.BmcRespon
      */
     private com.oracle.bmc.core.model.ByoipRange byoipRange;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "etag", "opcRequestId", "byoipRange"})
     private UpdateByoipRangeResponse(
             int __httpStatusCode__,
             String etag,

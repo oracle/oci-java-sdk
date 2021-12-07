@@ -22,6 +22,7 @@ public class GetJobDetailedLogContentResponse extends com.oracle.bmc.responses.B
      */
     private String value;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "value"})
     private GetJobDetailedLogContentResponse(
             int __httpStatusCode__, String opcRequestId, String value) {
         super(__httpStatusCode__);

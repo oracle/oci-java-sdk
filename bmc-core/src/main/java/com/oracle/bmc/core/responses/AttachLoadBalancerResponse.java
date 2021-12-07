@@ -30,6 +30,12 @@ public class AttachLoadBalancerResponse extends com.oracle.bmc.responses.BmcResp
      */
     private com.oracle.bmc.core.model.InstancePool instancePool;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcRequestId",
+        "instancePool"
+    })
     private AttachLoadBalancerResponse(
             int __httpStatusCode__,
             String etag,

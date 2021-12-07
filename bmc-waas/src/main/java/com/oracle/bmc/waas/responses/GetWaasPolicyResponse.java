@@ -27,6 +27,7 @@ public class GetWaasPolicyResponse extends com.oracle.bmc.responses.BmcResponse 
      */
     private com.oracle.bmc.waas.model.WaasPolicy waasPolicy;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "etag", "opcRequestId", "waasPolicy"})
     private GetWaasPolicyResponse(
             int __httpStatusCode__,
             String etag,

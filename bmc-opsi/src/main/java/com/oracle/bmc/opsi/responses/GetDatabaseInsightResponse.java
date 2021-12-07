@@ -30,6 +30,12 @@ public class GetDatabaseInsightResponse extends com.oracle.bmc.responses.BmcResp
      */
     private com.oracle.bmc.opsi.model.DatabaseInsight databaseInsight;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcRequestId",
+        "databaseInsight"
+    })
     private GetDatabaseInsightResponse(
             int __httpStatusCode__,
             String etag,

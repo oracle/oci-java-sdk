@@ -40,6 +40,13 @@ public class GetSteeringPolicyAttachmentResponse extends com.oracle.bmc.response
      */
     private boolean isNotModified;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "eTag",
+        "steeringPolicyAttachment",
+        "isNotModified"
+    })
     private GetSteeringPolicyAttachmentResponse(
             int __httpStatusCode__,
             String opcRequestId,

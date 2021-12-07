@@ -31,6 +31,12 @@ public class ProcessRecommendationResponse extends com.oracle.bmc.responses.BmcR
     private com.oracle.bmc.datacatalog.model.ProcessRecommendationDetails
             processRecommendationDetails;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcRequestId",
+        "processRecommendationDetails"
+    })
     private ProcessRecommendationResponse(
             int __httpStatusCode__,
             String etag,

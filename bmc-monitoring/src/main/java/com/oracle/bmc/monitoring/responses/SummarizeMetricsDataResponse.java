@@ -24,6 +24,7 @@ public class SummarizeMetricsDataResponse extends com.oracle.bmc.responses.BmcRe
      */
     private java.util.List<com.oracle.bmc.monitoring.model.MetricData> items;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "items"})
     private SummarizeMetricsDataResponse(
             int __httpStatusCode__,
             String opcRequestId,

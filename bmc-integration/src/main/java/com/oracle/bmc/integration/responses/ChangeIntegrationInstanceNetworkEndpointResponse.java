@@ -28,6 +28,7 @@ public class ChangeIntegrationInstanceNetworkEndpointResponse
      */
     private String opcRequestId;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcWorkRequestId", "opcRequestId"})
     private ChangeIntegrationInstanceNetworkEndpointResponse(
             int __httpStatusCode__, String opcWorkRequestId, String opcRequestId) {
         super(__httpStatusCode__);

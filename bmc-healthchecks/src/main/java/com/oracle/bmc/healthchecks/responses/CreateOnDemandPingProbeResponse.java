@@ -30,6 +30,12 @@ public class CreateOnDemandPingProbeResponse extends com.oracle.bmc.responses.Bm
      */
     private com.oracle.bmc.healthchecks.model.PingProbe pingProbe;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "location",
+        "pingProbe"
+    })
     private CreateOnDemandPingProbeResponse(
             int __httpStatusCode__,
             String opcRequestId,

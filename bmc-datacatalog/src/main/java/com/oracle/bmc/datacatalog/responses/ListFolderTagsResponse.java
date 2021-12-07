@@ -30,6 +30,12 @@ public class ListFolderTagsResponse extends com.oracle.bmc.responses.BmcResponse
      */
     private com.oracle.bmc.datacatalog.model.FolderTagCollection folderTagCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "folderTagCollection"
+    })
     private ListFolderTagsResponse(
             int __httpStatusCode__,
             String opcRequestId,

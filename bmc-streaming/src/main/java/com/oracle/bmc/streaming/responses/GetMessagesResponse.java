@@ -29,6 +29,12 @@ public class GetMessagesResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private java.util.List<com.oracle.bmc.streaming.model.Message> items;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcNextCursor",
+        "opcRequestId",
+        "items"
+    })
     private GetMessagesResponse(
             int __httpStatusCode__,
             String opcNextCursor,

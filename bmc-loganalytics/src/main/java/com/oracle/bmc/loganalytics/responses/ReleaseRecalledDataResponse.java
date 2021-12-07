@@ -30,6 +30,12 @@ public class ReleaseRecalledDataResponse extends com.oracle.bmc.responses.BmcRes
      */
     private String location;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcWorkRequestId",
+        "location"
+    })
     private ReleaseRecalledDataResponse(
             int __httpStatusCode__, String opcRequestId, String opcWorkRequestId, String location) {
         super(__httpStatusCode__);

@@ -27,6 +27,12 @@ public class UpdateTransferDeviceResponse extends com.oracle.bmc.responses.BmcRe
      */
     private com.oracle.bmc.dts.model.TransferDevice transferDevice;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "etag",
+        "transferDevice"
+    })
     private UpdateTransferDeviceResponse(
             int __httpStatusCode__,
             String opcRequestId,

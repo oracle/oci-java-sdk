@@ -35,6 +35,13 @@ public class CreateDbHomeResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private com.oracle.bmc.database.model.DbHome dbHome;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcWorkRequestId",
+        "etag",
+        "opcRequestId",
+        "dbHome"
+    })
     private CreateDbHomeResponse(
             int __httpStatusCode__,
             String opcWorkRequestId,

@@ -29,6 +29,12 @@ public class UpdateIdpGroupMappingResponse extends com.oracle.bmc.responses.BmcR
      */
     private com.oracle.bmc.identity.model.IdpGroupMapping idpGroupMapping;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "etag",
+        "idpGroupMapping"
+    })
     private UpdateIdpGroupMappingResponse(
             int __httpStatusCode__,
             String opcRequestId,

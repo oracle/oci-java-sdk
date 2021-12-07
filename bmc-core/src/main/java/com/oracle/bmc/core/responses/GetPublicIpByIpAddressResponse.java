@@ -30,6 +30,7 @@ public class GetPublicIpByIpAddressResponse extends com.oracle.bmc.responses.Bmc
      */
     private com.oracle.bmc.core.model.PublicIp publicIp;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "etag", "opcRequestId", "publicIp"})
     private GetPublicIpByIpAddressResponse(
             int __httpStatusCode__,
             String etag,

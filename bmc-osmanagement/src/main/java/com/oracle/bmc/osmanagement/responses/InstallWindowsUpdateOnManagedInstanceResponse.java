@@ -27,6 +27,7 @@ public class InstallWindowsUpdateOnManagedInstanceResponse
      */
     private String opcRequestId;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcWorkRequestId", "opcRequestId"})
     private InstallWindowsUpdateOnManagedInstanceResponse(
             int __httpStatusCode__, String opcWorkRequestId, String opcRequestId) {
         super(__httpStatusCode__);

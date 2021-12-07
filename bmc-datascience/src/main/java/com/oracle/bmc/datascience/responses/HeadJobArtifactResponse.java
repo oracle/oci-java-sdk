@@ -50,6 +50,15 @@ public class HeadJobArtifactResponse extends com.oracle.bmc.responses.BmcRespons
      */
     private java.util.Date lastModified;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcRequestId",
+        "contentLength",
+        "contentMd5",
+        "contentDisposition",
+        "lastModified"
+    })
     private HeadJobArtifactResponse(
             int __httpStatusCode__,
             String etag,

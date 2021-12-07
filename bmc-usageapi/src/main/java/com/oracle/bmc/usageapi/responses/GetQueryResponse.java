@@ -29,6 +29,7 @@ public class GetQueryResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private com.oracle.bmc.usageapi.model.Query query;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "etag", "query"})
     private GetQueryResponse(
             int __httpStatusCode__,
             String opcRequestId,

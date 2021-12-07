@@ -32,6 +32,12 @@ public class ListLocalPeeringGatewaysResponse extends com.oracle.bmc.responses.B
      */
     private java.util.List<com.oracle.bmc.core.model.LocalPeeringGateway> items;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcNextPage",
+        "opcRequestId",
+        "items"
+    })
     private ListLocalPeeringGatewaysResponse(
             int __httpStatusCode__,
             String opcNextPage,

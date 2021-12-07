@@ -37,6 +37,13 @@ public class GetManagedInstanceGroupResponse extends com.oracle.bmc.responses.Bm
      */
     private com.oracle.bmc.osmanagement.model.ManagedInstanceGroup managedInstanceGroup;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcRequestId",
+        "retryAfter",
+        "managedInstanceGroup"
+    })
     private GetManagedInstanceGroupResponse(
             int __httpStatusCode__,
             String etag,

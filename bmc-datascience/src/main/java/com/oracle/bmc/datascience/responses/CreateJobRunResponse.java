@@ -30,6 +30,7 @@ public class CreateJobRunResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private com.oracle.bmc.datascience.model.JobRun jobRun;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "etag", "opcRequestId", "jobRun"})
     private CreateJobRunResponse(
             int __httpStatusCode__,
             String etag,

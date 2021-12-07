@@ -23,6 +23,7 @@ public class GetLabelSummaryResponse extends com.oracle.bmc.responses.BmcRespons
      */
     private com.oracle.bmc.loganalytics.model.LabelSummaryReport labelSummaryReport;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "labelSummaryReport"})
     private GetLabelSummaryResponse(
             int __httpStatusCode__,
             String opcRequestId,

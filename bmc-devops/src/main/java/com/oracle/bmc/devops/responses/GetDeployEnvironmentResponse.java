@@ -27,6 +27,12 @@ public class GetDeployEnvironmentResponse extends com.oracle.bmc.responses.BmcRe
      */
     private com.oracle.bmc.devops.model.DeployEnvironment deployEnvironment;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcRequestId",
+        "deployEnvironment"
+    })
     private GetDeployEnvironmentResponse(
             int __httpStatusCode__,
             String etag,

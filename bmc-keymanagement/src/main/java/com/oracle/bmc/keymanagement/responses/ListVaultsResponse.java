@@ -33,6 +33,12 @@ public class ListVaultsResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private java.util.List<com.oracle.bmc.keymanagement.model.VaultSummary> items;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcNextPage",
+        "opcRequestId",
+        "items"
+    })
     private ListVaultsResponse(
             int __httpStatusCode__,
             String opcNextPage,

@@ -24,6 +24,7 @@ public class GetBackendSetResponse extends com.oracle.bmc.responses.BmcResponse 
      */
     private com.oracle.bmc.loadbalancer.model.BackendSet backendSet;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "backendSet"})
     private GetBackendSetResponse(
             int __httpStatusCode__,
             String opcRequestId,

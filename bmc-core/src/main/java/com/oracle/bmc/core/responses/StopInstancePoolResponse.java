@@ -30,6 +30,12 @@ public class StopInstancePoolResponse extends com.oracle.bmc.responses.BmcRespon
      */
     private com.oracle.bmc.core.model.InstancePool instancePool;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcRequestId",
+        "instancePool"
+    })
     private StopInstancePoolResponse(
             int __httpStatusCode__,
             String etag,

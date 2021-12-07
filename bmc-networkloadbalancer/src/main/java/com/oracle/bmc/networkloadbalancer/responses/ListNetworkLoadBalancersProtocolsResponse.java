@@ -34,6 +34,12 @@ public class ListNetworkLoadBalancersProtocolsResponse
     private com.oracle.bmc.networkloadbalancer.model.NetworkLoadBalancersProtocolCollection
             networkLoadBalancersProtocolCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcNextPage",
+        "opcRequestId",
+        "networkLoadBalancersProtocolCollection"
+    })
     private ListNetworkLoadBalancersProtocolsResponse(
             int __httpStatusCode__,
             String opcNextPage,

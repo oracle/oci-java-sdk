@@ -27,6 +27,7 @@ public class UpdateCertificateResponse extends com.oracle.bmc.responses.BmcRespo
      */
     private com.oracle.bmc.waas.model.Certificate certificate;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "etag", "certificate"})
     private UpdateCertificateResponse(
             int __httpStatusCode__,
             String opcRequestId,

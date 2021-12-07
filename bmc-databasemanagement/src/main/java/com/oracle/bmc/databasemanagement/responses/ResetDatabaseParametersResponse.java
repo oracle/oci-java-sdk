@@ -25,6 +25,11 @@ public class ResetDatabaseParametersResponse extends com.oracle.bmc.responses.Bm
     private com.oracle.bmc.databasemanagement.model.UpdateDatabaseParametersResult
             updateDatabaseParametersResult;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "updateDatabaseParametersResult"
+    })
     private ResetDatabaseParametersResponse(
             int __httpStatusCode__,
             String opcRequestId,

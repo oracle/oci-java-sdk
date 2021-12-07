@@ -29,6 +29,7 @@ public class UploadApiKeyResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private com.oracle.bmc.identity.model.ApiKey apiKey;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "etag", "apiKey"})
     private UploadApiKeyResponse(
             int __httpStatusCode__,
             String opcRequestId,

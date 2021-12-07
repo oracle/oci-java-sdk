@@ -30,6 +30,12 @@ public class GetRemotePeeringConnectionResponse extends com.oracle.bmc.responses
      */
     private com.oracle.bmc.core.model.RemotePeeringConnection remotePeeringConnection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcRequestId",
+        "remotePeeringConnection"
+    })
     private GetRemotePeeringConnectionResponse(
             int __httpStatusCode__,
             String etag,

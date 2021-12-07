@@ -27,6 +27,12 @@ public class UpdateApplianceExportJobResponse extends com.oracle.bmc.responses.B
      */
     private com.oracle.bmc.dts.model.ApplianceExportJob applianceExportJob;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "etag",
+        "applianceExportJob"
+    })
     private UpdateApplianceExportJobResponse(
             int __httpStatusCode__,
             String opcRequestId,

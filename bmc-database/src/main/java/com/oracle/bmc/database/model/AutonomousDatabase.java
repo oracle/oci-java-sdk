@@ -90,6 +90,15 @@ public class AutonomousDatabase {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyVersionId")
+        private String kmsKeyVersionId;
+
+        public Builder kmsKeyVersionId(String kmsKeyVersionId) {
+            this.kmsKeyVersionId = kmsKeyVersionId;
+            this.__explicitlySet__.add("kmsKeyVersionId");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("dbName")
         private String dbName;
 
@@ -720,6 +729,7 @@ public class AutonomousDatabase {
                             kmsKeyId,
                             vaultId,
                             kmsKeyLifecycleDetails,
+                            kmsKeyVersionId,
                             dbName,
                             isFreeTier,
                             systemTags,
@@ -802,6 +812,7 @@ public class AutonomousDatabase {
                             .kmsKeyId(o.getKmsKeyId())
                             .vaultId(o.getVaultId())
                             .kmsKeyLifecycleDetails(o.getKmsKeyLifecycleDetails())
+                            .kmsKeyVersionId(o.getKmsKeyVersionId())
                             .dbName(o.getDbName())
                             .isFreeTier(o.getIsFreeTier())
                             .systemTags(o.getSystemTags())
@@ -990,6 +1001,13 @@ public class AutonomousDatabase {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyLifecycleDetails")
     String kmsKeyLifecycleDetails;
+
+    /**
+     * The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyVersionId")
+    String kmsKeyVersionId;
 
     /**
      * The database name.

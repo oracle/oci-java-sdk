@@ -190,6 +190,15 @@ public class DatabaseRegistration {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("sessionMode")
+        private SessionMode sessionMode;
+
+        public Builder sessionMode(SessionMode sessionMode) {
+            this.sessionMode = sessionMode;
+            this.__explicitlySet__.add("sessionMode");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("aliasName")
         private String aliasName;
 
@@ -259,6 +268,7 @@ public class DatabaseRegistration {
                             systemTags,
                             username,
                             connectionString,
+                            sessionMode,
                             aliasName,
                             vaultId,
                             keyId,
@@ -289,6 +299,7 @@ public class DatabaseRegistration {
                             .systemTags(o.getSystemTags())
                             .username(o.getUsername())
                             .connectionString(o.getConnectionString())
+                            .sessionMode(o.getSessionMode())
                             .aliasName(o.getAliasName())
                             .vaultId(o.getVaultId())
                             .keyId(o.getKeyId())
@@ -435,6 +446,59 @@ public class DatabaseRegistration {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("connectionString")
     String connectionString;
+    /**
+     * The mode of the database connection session to be established by the data client. REDIRECT - for a RAC database, DIRECT - for a non-RAC database. Connection to a RAC database involves a redirection received from the SCAN listeners to the database node to connect to. By default the mode would be DIRECT.
+     *
+     **/
+    @lombok.extern.slf4j.Slf4j
+    public enum SessionMode {
+        Direct("DIRECT"),
+        Redirect("REDIRECT"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private final String value;
+        private static java.util.Map<String, SessionMode> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (SessionMode v : SessionMode.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        SessionMode(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static SessionMode create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'SessionMode', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * The mode of the database connection session to be established by the data client. REDIRECT - for a RAC database, DIRECT - for a non-RAC database. Connection to a RAC database involves a redirection received from the SCAN listeners to the database node to connect to. By default the mode would be DIRECT.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("sessionMode")
+    SessionMode sessionMode;
 
     /**
      * Credential store alias.

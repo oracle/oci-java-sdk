@@ -30,6 +30,7 @@ public class UpdateAlarmResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private com.oracle.bmc.monitoring.model.Alarm alarm;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "etag", "opcRequestId", "alarm"})
     private UpdateAlarmResponse(
             int __httpStatusCode__,
             String etag,

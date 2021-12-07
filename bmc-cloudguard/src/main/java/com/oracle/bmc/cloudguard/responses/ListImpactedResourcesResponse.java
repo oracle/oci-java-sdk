@@ -32,6 +32,12 @@ public class ListImpactedResourcesResponse extends com.oracle.bmc.responses.BmcR
      */
     private com.oracle.bmc.cloudguard.model.ImpactedResourceCollection impactedResourceCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "impactedResourceCollection"
+    })
     private ListImpactedResourcesResponse(
             int __httpStatusCode__,
             String opcRequestId,

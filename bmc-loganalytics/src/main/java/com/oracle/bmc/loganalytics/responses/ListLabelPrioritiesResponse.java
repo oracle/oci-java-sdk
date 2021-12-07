@@ -39,6 +39,13 @@ public class ListLabelPrioritiesResponse extends com.oracle.bmc.responses.BmcRes
      */
     private com.oracle.bmc.loganalytics.model.LabelPriorityCollection labelPriorityCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcPrevPage",
+        "opcNextPage",
+        "opcRequestId",
+        "labelPriorityCollection"
+    })
     private ListLabelPrioritiesResponse(
             int __httpStatusCode__,
             String opcPrevPage,

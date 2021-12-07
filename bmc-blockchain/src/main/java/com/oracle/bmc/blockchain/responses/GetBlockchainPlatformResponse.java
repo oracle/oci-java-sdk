@@ -30,6 +30,12 @@ public class GetBlockchainPlatformResponse extends com.oracle.bmc.responses.BmcR
      */
     private com.oracle.bmc.blockchain.model.BlockchainPlatform blockchainPlatform;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcRequestId",
+        "blockchainPlatform"
+    })
     private GetBlockchainPlatformResponse(
             int __httpStatusCode__,
             String etag,

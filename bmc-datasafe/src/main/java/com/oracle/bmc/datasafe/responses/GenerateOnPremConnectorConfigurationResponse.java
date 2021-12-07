@@ -34,6 +34,13 @@ public class GenerateOnPremConnectorConfigurationResponse
      */
     private java.io.InputStream inputStream;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "contentLength",
+        "lastModified",
+        "inputStream"
+    })
     private GenerateOnPremConnectorConfigurationResponse(
             int __httpStatusCode__,
             String opcRequestId,

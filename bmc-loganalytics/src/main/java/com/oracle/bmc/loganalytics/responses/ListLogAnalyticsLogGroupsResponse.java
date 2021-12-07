@@ -40,6 +40,13 @@ public class ListLogAnalyticsLogGroupsResponse extends com.oracle.bmc.responses.
     private com.oracle.bmc.loganalytics.model.LogAnalyticsLogGroupSummaryCollection
             logAnalyticsLogGroupSummaryCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcPrevPage",
+        "opcRequestId",
+        "opcNextPage",
+        "logAnalyticsLogGroupSummaryCollection"
+    })
     private ListLogAnalyticsLogGroupsResponse(
             int __httpStatusCode__,
             String opcPrevPage,

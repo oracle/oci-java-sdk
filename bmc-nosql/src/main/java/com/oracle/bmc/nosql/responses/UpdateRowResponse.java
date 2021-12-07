@@ -31,6 +31,12 @@ public class UpdateRowResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private com.oracle.bmc.nosql.model.UpdateRowResult updateRowResult;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcRequestId",
+        "updateRowResult"
+    })
     private UpdateRowResponse(
             int __httpStatusCode__,
             String etag,

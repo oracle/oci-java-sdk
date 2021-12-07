@@ -38,6 +38,13 @@ public class ListVaultReplicasResponse extends com.oracle.bmc.responses.BmcRespo
      */
     private java.util.List<com.oracle.bmc.keymanagement.model.VaultReplicaSummary> items;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcNextPage",
+        "opcRequestId",
+        "items"
+    })
     private ListVaultReplicasResponse(
             int __httpStatusCode__,
             String etag,

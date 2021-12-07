@@ -25,6 +25,11 @@ public class DetectDominantLanguageResponse extends com.oracle.bmc.responses.Bmc
     private com.oracle.bmc.ailanguage.model.DetectDominantLanguageResult
             detectDominantLanguageResult;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "detectDominantLanguageResult"
+    })
     private DetectDominantLanguageResponse(
             int __httpStatusCode__,
             String opcRequestId,

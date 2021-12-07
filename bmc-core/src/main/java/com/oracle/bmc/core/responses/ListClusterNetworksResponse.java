@@ -32,6 +32,12 @@ public class ListClusterNetworksResponse extends com.oracle.bmc.responses.BmcRes
      */
     private java.util.List<com.oracle.bmc.core.model.ClusterNetworkSummary> items;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcNextPage",
+        "opcRequestId",
+        "items"
+    })
     private ListClusterNetworksResponse(
             int __httpStatusCode__,
             String opcNextPage,

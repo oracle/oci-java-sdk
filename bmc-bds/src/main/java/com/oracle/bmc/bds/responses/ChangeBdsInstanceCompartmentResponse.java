@@ -25,6 +25,7 @@ public class ChangeBdsInstanceCompartmentResponse extends com.oracle.bmc.respons
      */
     private String opcRequestId;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcWorkRequestId", "opcRequestId"})
     private ChangeBdsInstanceCompartmentResponse(
             int __httpStatusCode__, String opcWorkRequestId, String opcRequestId) {
         super(__httpStatusCode__);

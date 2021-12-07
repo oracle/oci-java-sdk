@@ -37,6 +37,14 @@ public class CreateConnectionResponse extends com.oracle.bmc.responses.BmcRespon
      */
     private com.oracle.bmc.devops.model.Connection connection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcWorkRequestId",
+        "opcRequestId",
+        "location",
+        "connection"
+    })
     private CreateConnectionResponse(
             int __httpStatusCode__,
             String etag,

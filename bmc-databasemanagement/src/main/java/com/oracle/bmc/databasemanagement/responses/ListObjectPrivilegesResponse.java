@@ -33,6 +33,12 @@ public class ListObjectPrivilegesResponse extends com.oracle.bmc.responses.BmcRe
     private com.oracle.bmc.databasemanagement.model.ObjectPrivilegeCollection
             objectPrivilegeCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcNextPage",
+        "opcRequestId",
+        "objectPrivilegeCollection"
+    })
     private ListObjectPrivilegesResponse(
             int __httpStatusCode__,
             String opcNextPage,

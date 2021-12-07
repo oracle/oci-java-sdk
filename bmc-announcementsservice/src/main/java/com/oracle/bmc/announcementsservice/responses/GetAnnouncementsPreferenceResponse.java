@@ -23,6 +23,11 @@ public class GetAnnouncementsPreferenceResponse extends com.oracle.bmc.responses
     private com.oracle.bmc.announcementsservice.model.AnnouncementsPreferences
             announcementsPreferences;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "announcementsPreferences"
+    })
     private GetAnnouncementsPreferenceResponse(
             int __httpStatusCode__,
             String opcRequestId,

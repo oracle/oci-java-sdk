@@ -35,6 +35,13 @@ public class CreatePluggableDatabaseResponse extends com.oracle.bmc.responses.Bm
      */
     private com.oracle.bmc.database.model.PluggableDatabase pluggableDatabase;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcWorkRequestId",
+        "etag",
+        "opcRequestId",
+        "pluggableDatabase"
+    })
     private CreatePluggableDatabaseResponse(
             int __httpStatusCode__,
             String opcWorkRequestId,

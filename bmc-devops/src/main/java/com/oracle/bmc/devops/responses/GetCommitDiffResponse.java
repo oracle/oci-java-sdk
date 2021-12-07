@@ -27,6 +27,12 @@ public class GetCommitDiffResponse extends com.oracle.bmc.responses.BmcResponse 
      */
     private com.oracle.bmc.devops.model.DiffResponse diffResponse;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcRequestId",
+        "diffResponse"
+    })
     private GetCommitDiffResponse(
             int __httpStatusCode__,
             String etag,

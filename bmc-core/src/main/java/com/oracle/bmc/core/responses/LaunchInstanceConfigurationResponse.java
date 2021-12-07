@@ -37,6 +37,13 @@ public class LaunchInstanceConfigurationResponse extends com.oracle.bmc.response
      */
     private com.oracle.bmc.core.model.Instance instance;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcRequestId",
+        "opcWorkRequestId",
+        "instance"
+    })
     private LaunchInstanceConfigurationResponse(
             int __httpStatusCode__,
             String etag,

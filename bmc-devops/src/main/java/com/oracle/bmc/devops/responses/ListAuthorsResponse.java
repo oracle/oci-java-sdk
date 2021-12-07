@@ -27,6 +27,12 @@ public class ListAuthorsResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private com.oracle.bmc.devops.model.RepositoryAuthorCollection repositoryAuthorCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "repositoryAuthorCollection"
+    })
     private ListAuthorsResponse(
             int __httpStatusCode__,
             String opcRequestId,

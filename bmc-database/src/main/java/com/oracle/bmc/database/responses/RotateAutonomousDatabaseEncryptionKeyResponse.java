@@ -36,6 +36,13 @@ public class RotateAutonomousDatabaseEncryptionKeyResponse
      */
     private com.oracle.bmc.database.model.AutonomousDatabase autonomousDatabase;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcWorkRequestId",
+        "opcRequestId",
+        "autonomousDatabase"
+    })
     private RotateAutonomousDatabaseEncryptionKeyResponse(
             int __httpStatusCode__,
             String etag,

@@ -36,6 +36,13 @@ public class CreateChannelResponse extends com.oracle.bmc.responses.BmcResponse 
      */
     private com.oracle.bmc.mysql.model.Channel channel;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcRequestId",
+        "opcWorkRequestId",
+        "channel"
+    })
     private CreateChannelResponse(
             int __httpStatusCode__,
             String etag,

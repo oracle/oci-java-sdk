@@ -32,6 +32,12 @@ public class ListCrossConnectGroupsResponse extends com.oracle.bmc.responses.Bmc
      */
     private java.util.List<com.oracle.bmc.core.model.CrossConnectGroup> items;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcNextPage",
+        "opcRequestId",
+        "items"
+    })
     private ListCrossConnectGroupsResponse(
             int __httpStatusCode__,
             String opcNextPage,

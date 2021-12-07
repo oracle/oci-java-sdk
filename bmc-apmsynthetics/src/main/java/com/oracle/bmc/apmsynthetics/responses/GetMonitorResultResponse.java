@@ -24,6 +24,7 @@ public class GetMonitorResultResponse extends com.oracle.bmc.responses.BmcRespon
      */
     private com.oracle.bmc.apmsynthetics.model.MonitorResult monitorResult;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "monitorResult"})
     private GetMonitorResultResponse(
             int __httpStatusCode__,
             String opcRequestId,

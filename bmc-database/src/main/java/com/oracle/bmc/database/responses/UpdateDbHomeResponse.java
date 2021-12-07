@@ -35,6 +35,13 @@ public class UpdateDbHomeResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private com.oracle.bmc.database.model.DbHome dbHome;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcWorkRequestId",
+        "etag",
+        "opcRequestId",
+        "dbHome"
+    })
     private UpdateDbHomeResponse(
             int __httpStatusCode__,
             String opcWorkRequestId,

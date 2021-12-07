@@ -43,6 +43,14 @@ public class ListPipelinesResponse extends com.oracle.bmc.responses.BmcResponse 
     private com.oracle.bmc.dataintegration.model.PipelineSummaryCollection
             pipelineSummaryCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "opcPrevPage",
+        "opcTotalItems",
+        "pipelineSummaryCollection"
+    })
     private ListPipelinesResponse(
             int __httpStatusCode__,
             String opcRequestId,

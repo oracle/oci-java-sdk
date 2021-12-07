@@ -24,6 +24,7 @@ public class ListFaultDomainsResponse extends com.oracle.bmc.responses.BmcRespon
      */
     private java.util.List<com.oracle.bmc.identity.model.FaultDomain> items;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "items"})
     private ListFaultDomainsResponse(
             int __httpStatusCode__,
             String opcRequestId,

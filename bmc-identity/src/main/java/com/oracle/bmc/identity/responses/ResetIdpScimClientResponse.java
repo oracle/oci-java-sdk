@@ -24,6 +24,11 @@ public class ResetIdpScimClientResponse extends com.oracle.bmc.responses.BmcResp
      */
     private com.oracle.bmc.identity.model.ScimClientCredentials scimClientCredentials;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "scimClientCredentials"
+    })
     private ResetIdpScimClientResponse(
             int __httpStatusCode__,
             String opcRequestId,

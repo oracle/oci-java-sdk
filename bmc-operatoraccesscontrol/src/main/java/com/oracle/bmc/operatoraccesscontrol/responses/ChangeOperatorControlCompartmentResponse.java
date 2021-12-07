@@ -19,6 +19,7 @@ public class ChangeOperatorControlCompartmentResponse extends com.oracle.bmc.res
      */
     private String opcRequestId;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId"})
     private ChangeOperatorControlCompartmentResponse(int __httpStatusCode__, String opcRequestId) {
         super(__httpStatusCode__);
         this.opcRequestId = opcRequestId;

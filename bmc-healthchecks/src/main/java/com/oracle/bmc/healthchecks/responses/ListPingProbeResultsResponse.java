@@ -36,6 +36,12 @@ public class ListPingProbeResultsResponse extends com.oracle.bmc.responses.BmcRe
      */
     private java.util.List<com.oracle.bmc.healthchecks.model.PingProbeResultSummary> items;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "items"
+    })
     private ListPingProbeResultsResponse(
             int __httpStatusCode__,
             String opcRequestId,

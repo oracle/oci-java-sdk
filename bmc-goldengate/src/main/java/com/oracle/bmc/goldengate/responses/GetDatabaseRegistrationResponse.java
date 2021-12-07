@@ -29,6 +29,12 @@ public class GetDatabaseRegistrationResponse extends com.oracle.bmc.responses.Bm
      */
     private com.oracle.bmc.goldengate.model.DatabaseRegistration databaseRegistration;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcRequestId",
+        "databaseRegistration"
+    })
     private GetDatabaseRegistrationResponse(
             int __httpStatusCode__,
             String etag,

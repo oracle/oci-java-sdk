@@ -34,6 +34,12 @@ public class ListSupportedVmwareSoftwareVersionsResponse
     private com.oracle.bmc.ocvp.model.SupportedVmwareSoftwareVersionCollection
             supportedVmwareSoftwareVersionCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "supportedVmwareSoftwareVersionCollection"
+    })
     private ListSupportedVmwareSoftwareVersionsResponse(
             int __httpStatusCode__,
             String opcRequestId,

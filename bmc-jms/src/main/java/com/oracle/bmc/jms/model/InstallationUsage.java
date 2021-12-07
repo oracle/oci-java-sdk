@@ -216,7 +216,7 @@ public class InstallationUsage {
     String jreVersion;
 
     /**
-     * The file system path of the installation.
+     * The file system path of the Java installation.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("path")
     String path;

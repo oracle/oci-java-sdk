@@ -30,6 +30,7 @@ public class CreateModelResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private com.oracle.bmc.datascience.model.Model model;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "etag", "opcRequestId", "model"})
     private CreateModelResponse(
             int __httpStatusCode__,
             String etag,

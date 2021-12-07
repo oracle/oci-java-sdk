@@ -25,6 +25,7 @@ public class GetPrivateApplicationActionDownloadLogoResponse
      */
     private java.io.InputStream inputStream;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "inputStream"})
     private GetPrivateApplicationActionDownloadLogoResponse(
             int __httpStatusCode__, String opcRequestId, java.io.InputStream inputStream) {
         super(__httpStatusCode__);

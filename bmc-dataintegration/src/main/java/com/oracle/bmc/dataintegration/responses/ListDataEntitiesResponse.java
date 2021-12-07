@@ -43,6 +43,14 @@ public class ListDataEntitiesResponse extends com.oracle.bmc.responses.BmcRespon
     private com.oracle.bmc.dataintegration.model.DataEntitySummaryCollection
             dataEntitySummaryCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "opcPrevPage",
+        "opcTotalItems",
+        "dataEntitySummaryCollection"
+    })
     private ListDataEntitiesResponse(
             int __httpStatusCode__,
             String opcRequestId,

@@ -24,6 +24,7 @@ public class SuggestMatchesResponse extends com.oracle.bmc.responses.BmcResponse
      */
     private com.oracle.bmc.datacatalog.model.SuggestResults suggestResults;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "suggestResults"})
     private SuggestMatchesResponse(
             int __httpStatusCode__,
             String opcRequestId,

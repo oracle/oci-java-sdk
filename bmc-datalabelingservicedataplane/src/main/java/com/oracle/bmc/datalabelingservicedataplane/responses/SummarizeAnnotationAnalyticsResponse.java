@@ -34,6 +34,12 @@ public class SummarizeAnnotationAnalyticsResponse extends com.oracle.bmc.respons
                     .AnnotationAnalyticsAggregationCollection
             annotationAnalyticsAggregationCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "annotationAnalyticsAggregationCollection"
+    })
     private SummarizeAnnotationAnalyticsResponse(
             int __httpStatusCode__,
             String opcRequestId,

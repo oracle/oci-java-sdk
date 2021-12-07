@@ -45,6 +45,14 @@ public class UpdateRRSetResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private com.oracle.bmc.dns.model.RecordCollection recordCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcNextPage",
+        "opcTotalItems",
+        "opcRequestId",
+        "eTag",
+        "recordCollection"
+    })
     private UpdateRRSetResponse(
             int __httpStatusCode__,
             String opcNextPage,

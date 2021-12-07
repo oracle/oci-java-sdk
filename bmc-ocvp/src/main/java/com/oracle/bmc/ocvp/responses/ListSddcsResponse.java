@@ -32,6 +32,12 @@ public class ListSddcsResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private com.oracle.bmc.ocvp.model.SddcCollection sddcCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "sddcCollection"
+    })
     private ListSddcsResponse(
             int __httpStatusCode__,
             String opcRequestId,

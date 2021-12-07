@@ -31,6 +31,7 @@ public class UpdateRunResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private com.oracle.bmc.dataflow.model.Run run;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "etag", "opcRequestId", "run"})
     private UpdateRunResponse(
             int __httpStatusCode__,
             String etag,

@@ -37,6 +37,14 @@ public class CreateDeployArtifactResponse extends com.oracle.bmc.responses.BmcRe
      */
     private com.oracle.bmc.devops.model.DeployArtifact deployArtifact;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "location",
+        "etag",
+        "opcWorkRequestId",
+        "opcRequestId",
+        "deployArtifact"
+    })
     private CreateDeployArtifactResponse(
             int __httpStatusCode__,
             String location,

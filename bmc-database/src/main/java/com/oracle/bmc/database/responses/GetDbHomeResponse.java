@@ -29,6 +29,7 @@ public class GetDbHomeResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private com.oracle.bmc.database.model.DbHome dbHome;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "etag", "opcRequestId", "dbHome"})
     private GetDbHomeResponse(
             int __httpStatusCode__,
             String etag,

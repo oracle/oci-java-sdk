@@ -30,6 +30,7 @@ public class GetLogResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private com.oracle.bmc.logging.model.Log log;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "etag", "log"})
     private GetLogResponse(
             int __httpStatusCode__,
             String opcRequestId,

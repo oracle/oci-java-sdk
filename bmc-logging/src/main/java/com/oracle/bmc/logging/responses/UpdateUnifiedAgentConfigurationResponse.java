@@ -25,6 +25,7 @@ public class UpdateUnifiedAgentConfigurationResponse extends com.oracle.bmc.resp
      */
     private String opcRequestId;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcWorkRequestId", "opcRequestId"})
     private UpdateUnifiedAgentConfigurationResponse(
             int __httpStatusCode__, String opcWorkRequestId, String opcRequestId) {
         super(__httpStatusCode__);

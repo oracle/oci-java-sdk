@@ -28,6 +28,7 @@ public class StopOdaInstanceResponse extends com.oracle.bmc.responses.BmcRespons
      */
     private String opcRequestId;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcWorkRequestId", "opcRequestId"})
     private StopOdaInstanceResponse(
             int __httpStatusCode__, String opcWorkRequestId, String opcRequestId) {
         super(__httpStatusCode__);

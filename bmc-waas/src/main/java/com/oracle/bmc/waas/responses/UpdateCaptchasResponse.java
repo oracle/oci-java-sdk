@@ -22,6 +22,7 @@ public class UpdateCaptchasResponse extends com.oracle.bmc.responses.BmcResponse
      */
     private String opcWorkRequestId;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "opcWorkRequestId"})
     private UpdateCaptchasResponse(
             int __httpStatusCode__, String opcRequestId, String opcWorkRequestId) {
         super(__httpStatusCode__);

@@ -32,6 +32,12 @@ public class ListRecordsResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private com.oracle.bmc.datalabelingservicedataplane.model.RecordCollection recordCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "recordCollection"
+    })
     private ListRecordsResponse(
             int __httpStatusCode__,
             String opcRequestId,

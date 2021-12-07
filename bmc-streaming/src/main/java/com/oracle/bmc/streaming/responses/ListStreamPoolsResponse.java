@@ -34,6 +34,13 @@ public class ListStreamPoolsResponse extends com.oracle.bmc.responses.BmcRespons
      */
     private java.util.List<com.oracle.bmc.streaming.model.StreamPoolSummary> items;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcNextPage",
+        "opcPrevPage",
+        "opcRequestId",
+        "items"
+    })
     private ListStreamPoolsResponse(
             int __httpStatusCode__,
             String opcNextPage,

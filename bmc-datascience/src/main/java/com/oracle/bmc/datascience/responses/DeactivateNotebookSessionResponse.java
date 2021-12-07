@@ -26,6 +26,7 @@ public class DeactivateNotebookSessionResponse extends com.oracle.bmc.responses.
      */
     private String opcRequestId;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcWorkRequestId", "opcRequestId"})
     private DeactivateNotebookSessionResponse(
             int __httpStatusCode__, String opcWorkRequestId, String opcRequestId) {
         super(__httpStatusCode__);

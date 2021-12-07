@@ -41,6 +41,14 @@ public class CreateOdaInstanceResponse extends com.oracle.bmc.responses.BmcRespo
      */
     private com.oracle.bmc.oda.model.OdaInstance odaInstance;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "location",
+        "etag",
+        "opcWorkRequestId",
+        "opcRequestId",
+        "odaInstance"
+    })
     private CreateOdaInstanceResponse(
             int __httpStatusCode__,
             String location,

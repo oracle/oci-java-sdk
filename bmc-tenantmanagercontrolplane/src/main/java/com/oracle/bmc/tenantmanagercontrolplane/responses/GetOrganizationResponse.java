@@ -30,6 +30,12 @@ public class GetOrganizationResponse extends com.oracle.bmc.responses.BmcRespons
      */
     private com.oracle.bmc.tenantmanagercontrolplane.model.Organization organization;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcRequestId",
+        "organization"
+    })
     private GetOrganizationResponse(
             int __httpStatusCode__,
             String etag,

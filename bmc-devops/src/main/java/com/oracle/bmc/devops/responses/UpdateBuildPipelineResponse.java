@@ -37,6 +37,14 @@ public class UpdateBuildPipelineResponse extends com.oracle.bmc.responses.BmcRes
      */
     private com.oracle.bmc.devops.model.BuildPipeline buildPipeline;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcRequestId",
+        "opcWorkRequestId",
+        "location",
+        "buildPipeline"
+    })
     private UpdateBuildPipelineResponse(
             int __httpStatusCode__,
             String etag,

@@ -25,6 +25,7 @@ public class AddExadataInsightMembersResponse extends com.oracle.bmc.responses.B
      */
     private String opcRequestId;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcWorkRequestId", "opcRequestId"})
     private AddExadataInsightMembersResponse(
             int __httpStatusCode__, String opcWorkRequestId, String opcRequestId) {
         super(__httpStatusCode__);

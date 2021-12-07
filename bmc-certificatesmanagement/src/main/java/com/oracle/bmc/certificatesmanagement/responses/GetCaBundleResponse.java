@@ -29,6 +29,7 @@ public class GetCaBundleResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private com.oracle.bmc.certificatesmanagement.model.CaBundle caBundle;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "etag", "opcRequestId", "caBundle"})
     private GetCaBundleResponse(
             int __httpStatusCode__,
             String etag,

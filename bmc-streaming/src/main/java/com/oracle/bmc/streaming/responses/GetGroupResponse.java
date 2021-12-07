@@ -24,6 +24,7 @@ public class GetGroupResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private com.oracle.bmc.streaming.model.Group group;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "group"})
     private GetGroupResponse(
             int __httpStatusCode__,
             String opcRequestId,

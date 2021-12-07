@@ -29,6 +29,12 @@ public class GetDeploymentBackupResponse extends com.oracle.bmc.responses.BmcRes
      */
     private com.oracle.bmc.goldengate.model.DeploymentBackup deploymentBackup;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcRequestId",
+        "deploymentBackup"
+    })
     private GetDeploymentBackupResponse(
             int __httpStatusCode__,
             String etag,

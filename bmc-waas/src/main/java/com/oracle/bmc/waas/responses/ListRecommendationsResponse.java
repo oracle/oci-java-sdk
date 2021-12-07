@@ -32,6 +32,13 @@ public class ListRecommendationsResponse extends com.oracle.bmc.responses.BmcRes
      */
     private java.util.List<com.oracle.bmc.waas.model.Recommendation> items;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcNextPage",
+        "opcRequestId",
+        "items"
+    })
     private ListRecommendationsResponse(
             int __httpStatusCode__,
             String etag,

@@ -33,6 +33,12 @@ public class ListProxiedForUsersResponse extends com.oracle.bmc.responses.BmcRes
     private com.oracle.bmc.databasemanagement.model.ProxiedForUserCollection
             proxiedForUserCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcNextPage",
+        "opcRequestId",
+        "proxiedForUserCollection"
+    })
     private ListProxiedForUsersResponse(
             int __httpStatusCode__,
             String opcNextPage,

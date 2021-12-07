@@ -118,6 +118,25 @@ public class AutonomousContainerDatabaseSummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyVersionId")
+        private String kmsKeyVersionId;
+
+        public Builder kmsKeyVersionId(String kmsKeyVersionId) {
+            this.kmsKeyVersionId = kmsKeyVersionId;
+            this.__explicitlySet__.add("kmsKeyVersionId");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("keyHistoryEntry")
+        private java.util.List<AutonomousDatabaseKeyHistoryEntry> keyHistoryEntry;
+
+        public Builder keyHistoryEntry(
+                java.util.List<AutonomousDatabaseKeyHistoryEntry> keyHistoryEntry) {
+            this.keyHistoryEntry = keyHistoryEntry;
+            this.__explicitlySet__.add("keyHistoryEntry");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
@@ -288,6 +307,8 @@ public class AutonomousContainerDatabaseSummary {
                             infrastructureType,
                             kmsKeyId,
                             vaultId,
+                            kmsKeyVersionId,
+                            keyHistoryEntry,
                             lifecycleState,
                             lifecycleDetails,
                             timeCreated,
@@ -323,6 +344,8 @@ public class AutonomousContainerDatabaseSummary {
                             .infrastructureType(o.getInfrastructureType())
                             .kmsKeyId(o.getKmsKeyId())
                             .vaultId(o.getVaultId())
+                            .kmsKeyVersionId(o.getKmsKeyVersionId())
+                            .keyHistoryEntry(o.getKeyHistoryEntry())
                             .lifecycleState(o.getLifecycleState())
                             .lifecycleDetails(o.getLifecycleDetails())
                             .timeCreated(o.getTimeCreated())
@@ -504,6 +527,19 @@ public class AutonomousContainerDatabaseSummary {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("vaultId")
     String vaultId;
+
+    /**
+     * The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyVersionId")
+    String kmsKeyVersionId;
+
+    /**
+     * Key History Entry.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("keyHistoryEntry")
+    java.util.List<AutonomousDatabaseKeyHistoryEntry> keyHistoryEntry;
     /**
      * The current state of the Autonomous Container Database.
      **/

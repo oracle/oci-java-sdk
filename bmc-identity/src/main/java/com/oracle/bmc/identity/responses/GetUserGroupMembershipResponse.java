@@ -29,6 +29,12 @@ public class GetUserGroupMembershipResponse extends com.oracle.bmc.responses.Bmc
      */
     private com.oracle.bmc.identity.model.UserGroupMembership userGroupMembership;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "etag",
+        "userGroupMembership"
+    })
     private GetUserGroupMembershipResponse(
             int __httpStatusCode__,
             String opcRequestId,

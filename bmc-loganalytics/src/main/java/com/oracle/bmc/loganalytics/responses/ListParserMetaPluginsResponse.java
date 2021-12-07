@@ -40,6 +40,13 @@ public class ListParserMetaPluginsResponse extends com.oracle.bmc.responses.BmcR
     private com.oracle.bmc.loganalytics.model.LogAnalyticsParserMetaPluginCollection
             logAnalyticsParserMetaPluginCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcPrevPage",
+        "opcNextPage",
+        "opcRequestId",
+        "logAnalyticsParserMetaPluginCollection"
+    })
     private ListParserMetaPluginsResponse(
             int __httpStatusCode__,
             String opcPrevPage,

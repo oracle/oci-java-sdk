@@ -43,6 +43,14 @@ public class ListDataFlowValidationsResponse extends com.oracle.bmc.responses.Bm
     private com.oracle.bmc.dataintegration.model.DataFlowValidationSummaryCollection
             dataFlowValidationSummaryCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "opcPrevPage",
+        "opcTotalItems",
+        "dataFlowValidationSummaryCollection"
+    })
     private ListDataFlowValidationsResponse(
             int __httpStatusCode__,
             String opcRequestId,

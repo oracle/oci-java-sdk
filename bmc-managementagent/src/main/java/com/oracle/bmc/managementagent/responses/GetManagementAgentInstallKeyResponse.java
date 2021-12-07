@@ -31,6 +31,12 @@ public class GetManagementAgentInstallKeyResponse extends com.oracle.bmc.respons
     private com.oracle.bmc.managementagent.model.ManagementAgentInstallKey
             managementAgentInstallKey;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcRequestId",
+        "managementAgentInstallKey"
+    })
     private GetManagementAgentInstallKeyResponse(
             int __httpStatusCode__,
             String etag,

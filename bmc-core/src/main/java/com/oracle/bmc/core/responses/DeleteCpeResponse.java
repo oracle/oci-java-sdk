@@ -19,6 +19,7 @@ public class DeleteCpeResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private String opcRequestId;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId"})
     private DeleteCpeResponse(int __httpStatusCode__, String opcRequestId) {
         super(__httpStatusCode__);
         this.opcRequestId = opcRequestId;

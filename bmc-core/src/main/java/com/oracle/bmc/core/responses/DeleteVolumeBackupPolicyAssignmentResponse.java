@@ -20,6 +20,7 @@ public class DeleteVolumeBackupPolicyAssignmentResponse
      */
     private String opcRequestId;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId"})
     private DeleteVolumeBackupPolicyAssignmentResponse(
             int __httpStatusCode__, String opcRequestId) {
         super(__httpStatusCode__);

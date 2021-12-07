@@ -32,6 +32,12 @@ public class ListMfaTotpDevicesResponse extends com.oracle.bmc.responses.BmcResp
      */
     private java.util.List<com.oracle.bmc.identity.model.MfaTotpDeviceSummary> items;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "items"
+    })
     private ListMfaTotpDevicesResponse(
             int __httpStatusCode__,
             String opcRequestId,

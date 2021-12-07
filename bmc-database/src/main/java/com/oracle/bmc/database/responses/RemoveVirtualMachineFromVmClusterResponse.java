@@ -36,6 +36,13 @@ public class RemoveVirtualMachineFromVmClusterResponse
      */
     private com.oracle.bmc.database.model.VmCluster vmCluster;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcWorkRequestId",
+        "etag",
+        "opcRequestId",
+        "vmCluster"
+    })
     private RemoveVirtualMachineFromVmClusterResponse(
             int __httpStatusCode__,
             String opcWorkRequestId,

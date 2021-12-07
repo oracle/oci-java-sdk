@@ -32,6 +32,12 @@ public class ListAwrDbsResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private com.oracle.bmc.databasemanagement.model.AwrDbCollection awrDbCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "awrDbCollection"
+    })
     private ListAwrDbsResponse(
             int __httpStatusCode__,
             String opcRequestId,

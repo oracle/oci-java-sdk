@@ -30,6 +30,12 @@ public class RoverNodeActionSetKeyResponse extends com.oracle.bmc.responses.BmcR
      */
     private com.oracle.bmc.rover.model.RoverNodeSetKey roverNodeSetKey;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcRequestId",
+        "roverNodeSetKey"
+    })
     private RoverNodeActionSetKeyResponse(
             int __httpStatusCode__,
             String etag,

@@ -24,6 +24,7 @@ public class PutMessagesResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private com.oracle.bmc.streaming.model.PutMessagesResult putMessagesResult;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "putMessagesResult"})
     private PutMessagesResponse(
             int __httpStatusCode__,
             String opcRequestId,

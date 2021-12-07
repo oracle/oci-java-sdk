@@ -30,6 +30,12 @@ public class GetDetectorRecipeDetectorRuleResponse extends com.oracle.bmc.respon
      */
     private com.oracle.bmc.cloudguard.model.DetectorRecipeDetectorRule detectorRecipeDetectorRule;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcRequestId",
+        "detectorRecipeDetectorRule"
+    })
     private GetDetectorRecipeDetectorRuleResponse(
             int __httpStatusCode__,
             String etag,

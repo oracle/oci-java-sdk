@@ -24,6 +24,7 @@ public class CreateGroupCursorResponse extends com.oracle.bmc.responses.BmcRespo
      */
     private com.oracle.bmc.streaming.model.Cursor cursor;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "cursor"})
     private CreateGroupCursorResponse(
             int __httpStatusCode__,
             String opcRequestId,

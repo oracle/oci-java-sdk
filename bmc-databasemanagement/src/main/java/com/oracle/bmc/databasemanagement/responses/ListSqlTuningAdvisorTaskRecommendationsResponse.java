@@ -34,6 +34,12 @@ public class ListSqlTuningAdvisorTaskRecommendationsResponse
     private com.oracle.bmc.databasemanagement.model.SqlTuningAdvisorTaskRecommendationCollection
             sqlTuningAdvisorTaskRecommendationCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "sqlTuningAdvisorTaskRecommendationCollection"
+    })
     private ListSqlTuningAdvisorTaskRecommendationsResponse(
             int __httpStatusCode__,
             String opcRequestId,

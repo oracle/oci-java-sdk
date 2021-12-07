@@ -30,6 +30,12 @@ public class UpdateManagedDatabaseGroupResponse extends com.oracle.bmc.responses
      */
     private com.oracle.bmc.databasemanagement.model.ManagedDatabaseGroup managedDatabaseGroup;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "etag",
+        "managedDatabaseGroup"
+    })
     private UpdateManagedDatabaseGroupResponse(
             int __httpStatusCode__,
             String opcRequestId,

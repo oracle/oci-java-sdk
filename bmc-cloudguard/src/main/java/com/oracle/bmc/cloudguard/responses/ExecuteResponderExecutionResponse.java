@@ -19,6 +19,7 @@ public class ExecuteResponderExecutionResponse extends com.oracle.bmc.responses.
      */
     private String opcRequestId;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId"})
     private ExecuteResponderExecutionResponse(int __httpStatusCode__, String opcRequestId) {
         super(__httpStatusCode__);
         this.opcRequestId = opcRequestId;

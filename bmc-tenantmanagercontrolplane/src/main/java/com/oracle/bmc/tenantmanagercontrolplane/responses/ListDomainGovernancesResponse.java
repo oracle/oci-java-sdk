@@ -33,6 +33,12 @@ public class ListDomainGovernancesResponse extends com.oracle.bmc.responses.BmcR
     private com.oracle.bmc.tenantmanagercontrolplane.model.DomainGovernanceCollection
             domainGovernanceCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcNextPage",
+        "opcRequestId",
+        "domainGovernanceCollection"
+    })
     private ListDomainGovernancesResponse(
             int __httpStatusCode__,
             String opcNextPage,

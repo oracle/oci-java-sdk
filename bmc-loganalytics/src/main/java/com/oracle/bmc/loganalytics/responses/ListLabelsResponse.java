@@ -40,6 +40,13 @@ public class ListLabelsResponse extends com.oracle.bmc.responses.BmcResponse {
     private com.oracle.bmc.loganalytics.model.LogAnalyticsLabelCollection
             logAnalyticsLabelCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcPrevPage",
+        "opcNextPage",
+        "opcRequestId",
+        "logAnalyticsLabelCollection"
+    })
     private ListLabelsResponse(
             int __httpStatusCode__,
             String opcPrevPage,

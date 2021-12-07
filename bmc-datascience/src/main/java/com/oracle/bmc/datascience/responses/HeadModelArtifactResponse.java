@@ -50,6 +50,15 @@ public class HeadModelArtifactResponse extends com.oracle.bmc.responses.BmcRespo
      */
     private java.util.Date lastModified;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcRequestId",
+        "contentLength",
+        "contentDisposition",
+        "contentMd5",
+        "lastModified"
+    })
     private HeadModelArtifactResponse(
             int __httpStatusCode__,
             String etag,

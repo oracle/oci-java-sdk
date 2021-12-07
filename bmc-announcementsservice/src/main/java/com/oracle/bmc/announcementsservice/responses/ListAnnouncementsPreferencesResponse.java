@@ -29,6 +29,12 @@ public class ListAnnouncementsPreferencesResponse extends com.oracle.bmc.respons
                     com.oracle.bmc.announcementsservice.model.AnnouncementsPreferencesSummary>
             items;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcNextPage",
+        "opcRequestId",
+        "items"
+    })
     private ListAnnouncementsPreferencesResponse(
             int __httpStatusCode__,
             String opcNextPage,

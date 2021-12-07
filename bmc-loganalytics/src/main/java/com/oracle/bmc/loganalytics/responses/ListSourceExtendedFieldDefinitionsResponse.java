@@ -41,6 +41,13 @@ public class ListSourceExtendedFieldDefinitionsResponse
     private com.oracle.bmc.loganalytics.model.LogAnalyticsSourceExtendedFieldDefinitionCollection
             logAnalyticsSourceExtendedFieldDefinitionCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcPrevPage",
+        "opcNextPage",
+        "opcRequestId",
+        "logAnalyticsSourceExtendedFieldDefinitionCollection"
+    })
     private ListSourceExtendedFieldDefinitionsResponse(
             int __httpStatusCode__,
             String opcPrevPage,

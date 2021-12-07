@@ -38,6 +38,13 @@ public class ListTopicsResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private java.util.List<com.oracle.bmc.ons.model.NotificationTopicSummary> items;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcNextPage",
+        "opcPreviousPage",
+        "opcRequestId",
+        "items"
+    })
     private ListTopicsResponse(
             int __httpStatusCode__,
             String opcNextPage,

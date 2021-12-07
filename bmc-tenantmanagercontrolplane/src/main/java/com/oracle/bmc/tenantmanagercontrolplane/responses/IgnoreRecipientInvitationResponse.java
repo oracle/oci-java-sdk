@@ -30,6 +30,12 @@ public class IgnoreRecipientInvitationResponse extends com.oracle.bmc.responses.
      */
     private com.oracle.bmc.tenantmanagercontrolplane.model.RecipientInvitation recipientInvitation;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "etag",
+        "recipientInvitation"
+    })
     private IgnoreRecipientInvitationResponse(
             int __httpStatusCode__,
             String opcRequestId,

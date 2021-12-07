@@ -30,6 +30,7 @@ public class GetLinkResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private com.oracle.bmc.tenantmanagercontrolplane.model.Link link;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "etag", "opcRequestId", "link"})
     private GetLinkResponse(
             int __httpStatusCode__,
             String etag,

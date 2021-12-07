@@ -32,6 +32,12 @@ public class ListProblemHistoriesResponse extends com.oracle.bmc.responses.BmcRe
      */
     private com.oracle.bmc.cloudguard.model.ProblemHistoryCollection problemHistoryCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "problemHistoryCollection"
+    })
     private ListProblemHistoriesResponse(
             int __httpStatusCode__,
             String opcRequestId,

@@ -30,6 +30,12 @@ public class GetRecommendationResponse extends com.oracle.bmc.responses.BmcRespo
      */
     private com.oracle.bmc.optimizer.model.Recommendation recommendation;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcRequestId",
+        "recommendation"
+    })
     private GetRecommendationResponse(
             int __httpStatusCode__,
             String etag,

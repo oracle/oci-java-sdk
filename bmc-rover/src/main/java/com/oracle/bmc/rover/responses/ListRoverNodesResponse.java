@@ -40,6 +40,13 @@ public class ListRoverNodesResponse extends com.oracle.bmc.responses.BmcResponse
      */
     private com.oracle.bmc.rover.model.RoverNodeCollection roverNodeCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "opcPrevPage",
+        "roverNodeCollection"
+    })
     private ListRoverNodesResponse(
             int __httpStatusCode__,
             String opcRequestId,

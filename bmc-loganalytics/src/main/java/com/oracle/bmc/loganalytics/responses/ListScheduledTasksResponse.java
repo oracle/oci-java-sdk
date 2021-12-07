@@ -39,6 +39,13 @@ public class ListScheduledTasksResponse extends com.oracle.bmc.responses.BmcResp
      */
     private com.oracle.bmc.loganalytics.model.ScheduledTaskCollection scheduledTaskCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "opcPrevPage",
+        "scheduledTaskCollection"
+    })
     private ListScheduledTasksResponse(
             int __httpStatusCode__,
             String opcRequestId,

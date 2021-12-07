@@ -29,6 +29,12 @@ public class GetCloudVmClusterIormConfigResponse extends com.oracle.bmc.response
      */
     private com.oracle.bmc.database.model.ExadataIormConfig exadataIormConfig;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "etag",
+        "exadataIormConfig"
+    })
     private GetCloudVmClusterIormConfigResponse(
             int __httpStatusCode__,
             String opcRequestId,

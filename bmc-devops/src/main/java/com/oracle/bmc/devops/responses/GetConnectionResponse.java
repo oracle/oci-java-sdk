@@ -27,6 +27,7 @@ public class GetConnectionResponse extends com.oracle.bmc.responses.BmcResponse 
      */
     private com.oracle.bmc.devops.model.Connection connection;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "etag", "opcRequestId", "connection"})
     private GetConnectionResponse(
             int __httpStatusCode__,
             String etag,

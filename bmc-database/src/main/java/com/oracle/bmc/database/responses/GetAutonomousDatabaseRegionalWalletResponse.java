@@ -25,6 +25,11 @@ public class GetAutonomousDatabaseRegionalWalletResponse
      */
     private com.oracle.bmc.database.model.AutonomousDatabaseWallet autonomousDatabaseWallet;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "autonomousDatabaseWallet"
+    })
     private GetAutonomousDatabaseRegionalWalletResponse(
             int __httpStatusCode__,
             String opcRequestId,

@@ -32,6 +32,12 @@ public class CreateUserDefinedFunctionValidationResponse
     private com.oracle.bmc.dataintegration.model.UserDefinedFunctionValidation
             userDefinedFunctionValidation;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcRequestId",
+        "userDefinedFunctionValidation"
+    })
     private CreateUserDefinedFunctionValidationResponse(
             int __httpStatusCode__,
             String etag,

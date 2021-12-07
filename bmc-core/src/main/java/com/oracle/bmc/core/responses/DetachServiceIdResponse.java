@@ -24,6 +24,7 @@ public class DetachServiceIdResponse extends com.oracle.bmc.responses.BmcRespons
      */
     private com.oracle.bmc.core.model.ServiceGateway serviceGateway;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "serviceGateway"})
     private DetachServiceIdResponse(
             int __httpStatusCode__,
             String opcRequestId,

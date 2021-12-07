@@ -43,6 +43,14 @@ public class ListPublishedObjectsResponse extends com.oracle.bmc.responses.BmcRe
     private com.oracle.bmc.dataintegration.model.PublishedObjectSummaryCollection
             publishedObjectSummaryCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "opcPrevPage",
+        "opcTotalItems",
+        "publishedObjectSummaryCollection"
+    })
     private ListPublishedObjectsResponse(
             int __httpStatusCode__,
             String opcRequestId,

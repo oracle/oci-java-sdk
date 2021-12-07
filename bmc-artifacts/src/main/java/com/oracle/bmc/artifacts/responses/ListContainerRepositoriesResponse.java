@@ -33,6 +33,12 @@ public class ListContainerRepositoriesResponse extends com.oracle.bmc.responses.
     private com.oracle.bmc.artifacts.model.ContainerRepositoryCollection
             containerRepositoryCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcNextPage",
+        "opcRequestId",
+        "containerRepositoryCollection"
+    })
     private ListContainerRepositoriesResponse(
             int __httpStatusCode__,
             String opcNextPage,

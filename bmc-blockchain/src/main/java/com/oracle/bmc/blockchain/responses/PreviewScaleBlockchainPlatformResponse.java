@@ -31,6 +31,12 @@ public class PreviewScaleBlockchainPlatformResponse extends com.oracle.bmc.respo
     private com.oracle.bmc.blockchain.model.ScaledBlockchainPlatformPreview
             scaledBlockchainPlatformPreview;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcRequestId",
+        "scaledBlockchainPlatformPreview"
+    })
     private PreviewScaleBlockchainPlatformResponse(
             int __httpStatusCode__,
             String etag,

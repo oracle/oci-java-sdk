@@ -22,6 +22,7 @@ public class GetStackTfConfigResponse extends com.oracle.bmc.responses.BmcRespon
      */
     private java.io.InputStream inputStream;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "inputStream"})
     private GetStackTfConfigResponse(
             int __httpStatusCode__, String opcRequestId, java.io.InputStream inputStream) {
         super(__httpStatusCode__);

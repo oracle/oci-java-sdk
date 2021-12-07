@@ -35,6 +35,13 @@ public class SwitchoverAutonomousDatabaseResponse extends com.oracle.bmc.respons
      */
     private com.oracle.bmc.database.model.AutonomousDatabase autonomousDatabase;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcRequestId",
+        "opcWorkRequestId",
+        "autonomousDatabase"
+    })
     private SwitchoverAutonomousDatabaseResponse(
             int __httpStatusCode__,
             String etag,

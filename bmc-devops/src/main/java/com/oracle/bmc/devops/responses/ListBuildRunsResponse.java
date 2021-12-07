@@ -27,6 +27,12 @@ public class ListBuildRunsResponse extends com.oracle.bmc.responses.BmcResponse 
      */
     private com.oracle.bmc.devops.model.BuildRunSummaryCollection buildRunSummaryCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "buildRunSummaryCollection"
+    })
     private ListBuildRunsResponse(
             int __httpStatusCode__,
             String opcRequestId,

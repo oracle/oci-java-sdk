@@ -30,6 +30,12 @@ public class GetDependentObjectResponse extends com.oracle.bmc.responses.BmcResp
      */
     private com.oracle.bmc.dataintegration.model.DependentObject dependentObject;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcRequestId",
+        "dependentObject"
+    })
     private GetDependentObjectResponse(
             int __httpStatusCode__,
             String etag,

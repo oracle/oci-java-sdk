@@ -30,6 +30,12 @@ public class GetDatabaseToolsConnectionResponse extends com.oracle.bmc.responses
      */
     private com.oracle.bmc.databasetools.model.DatabaseToolsConnection databaseToolsConnection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcRequestId",
+        "databaseToolsConnection"
+    })
     private GetDatabaseToolsConnectionResponse(
             int __httpStatusCode__,
             String etag,

@@ -34,6 +34,13 @@ public class GetQueryWorkRequestResponse extends com.oracle.bmc.responses.BmcRes
      */
     private com.oracle.bmc.loganalytics.model.QueryWorkRequest queryWorkRequest;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "etag",
+        "retryAfter",
+        "queryWorkRequest"
+    })
     private GetQueryWorkRequestResponse(
             int __httpStatusCode__,
             String opcRequestId,

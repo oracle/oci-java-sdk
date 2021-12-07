@@ -31,6 +31,7 @@ public class GetGatewayResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private com.oracle.bmc.apigateway.model.Gateway gateway;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "etag", "opcRequestId", "gateway"})
     private GetGatewayResponse(
             int __httpStatusCode__,
             String etag,

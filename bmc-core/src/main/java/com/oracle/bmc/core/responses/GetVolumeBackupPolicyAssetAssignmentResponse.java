@@ -33,6 +33,12 @@ public class GetVolumeBackupPolicyAssetAssignmentResponse
      */
     private java.util.List<com.oracle.bmc.core.model.VolumeBackupPolicyAssignment> items;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcNextPage",
+        "opcRequestId",
+        "items"
+    })
     private GetVolumeBackupPolicyAssetAssignmentResponse(
             int __httpStatusCode__,
             String opcNextPage,

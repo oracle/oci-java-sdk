@@ -30,6 +30,12 @@ public class SearchCriteriaResponse extends com.oracle.bmc.responses.BmcResponse
      */
     private com.oracle.bmc.datacatalog.model.SearchResultCollection searchResultCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "searchResultCollection"
+    })
     private SearchCriteriaResponse(
             int __httpStatusCode__,
             String opcRequestId,

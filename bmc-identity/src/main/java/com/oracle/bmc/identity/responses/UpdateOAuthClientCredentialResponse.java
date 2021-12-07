@@ -29,6 +29,12 @@ public class UpdateOAuthClientCredentialResponse extends com.oracle.bmc.response
      */
     private com.oracle.bmc.identity.model.OAuth2ClientCredential oAuth2ClientCredential;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "etag",
+        "oAuth2ClientCredential"
+    })
     private UpdateOAuthClientCredentialResponse(
             int __httpStatusCode__,
             String opcRequestId,

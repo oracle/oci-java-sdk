@@ -35,6 +35,13 @@ public class GetManagementAgentInstallKeyContentResponse
      */
     private java.io.InputStream inputStream;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "contentLength",
+        "contentType",
+        "inputStream"
+    })
     private GetManagementAgentInstallKeyContentResponse(
             int __httpStatusCode__,
             String opcRequestId,

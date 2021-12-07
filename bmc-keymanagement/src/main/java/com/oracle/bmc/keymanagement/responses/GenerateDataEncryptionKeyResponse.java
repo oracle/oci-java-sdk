@@ -24,6 +24,7 @@ public class GenerateDataEncryptionKeyResponse extends com.oracle.bmc.responses.
      */
     private com.oracle.bmc.keymanagement.model.GeneratedKey generatedKey;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "generatedKey"})
     private GenerateDataEncryptionKeyResponse(
             int __httpStatusCode__,
             String opcRequestId,

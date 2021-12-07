@@ -24,6 +24,7 @@ public class DeleteObjectLifecyclePolicyResponse extends com.oracle.bmc.response
      */
     private String opcClientRequestId;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "opcClientRequestId"})
     private DeleteObjectLifecyclePolicyResponse(
             int __httpStatusCode__, String opcRequestId, String opcClientRequestId) {
         super(__httpStatusCode__);

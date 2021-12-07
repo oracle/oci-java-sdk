@@ -161,6 +161,15 @@ public class LogAnalyticsLookup {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("categories")
+        private java.util.List<LogAnalyticsCategory> categories;
+
+        public Builder categories(java.util.List<LogAnalyticsCategory> categories) {
+            this.categories = categories;
+            this.__explicitlySet__.add("categories");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -181,7 +190,8 @@ public class LogAnalyticsLookup {
                             lookupDisplayName,
                             referringSources,
                             statusSummary,
-                            timeUpdated);
+                            timeUpdated,
+                            categories);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -203,7 +213,8 @@ public class LogAnalyticsLookup {
                             .lookupDisplayName(o.getLookupDisplayName())
                             .referringSources(o.getReferringSources())
                             .statusSummary(o.getStatusSummary())
-                            .timeUpdated(o.getTimeUpdated());
+                            .timeUpdated(o.getTimeUpdated())
+                            .categories(o.getCategories());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -348,6 +359,14 @@ public class LogAnalyticsLookup {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     java.util.Date timeUpdated;
+
+    /**
+     * An array of categories assigned to this lookup.
+     * The isSystem flag denotes if each category assignment is user-created or Oracle-defined.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("categories")
+    java.util.List<LogAnalyticsCategory> categories;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

@@ -34,6 +34,12 @@ public class ListVmClusterUpdateHistoryEntriesResponse
      */
     private java.util.List<com.oracle.bmc.database.model.VmClusterUpdateHistoryEntrySummary> items;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "items"
+    })
     private ListVmClusterUpdateHistoryEntriesResponse(
             int __httpStatusCode__,
             String opcRequestId,

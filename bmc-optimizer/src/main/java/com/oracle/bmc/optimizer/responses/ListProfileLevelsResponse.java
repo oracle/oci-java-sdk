@@ -39,6 +39,13 @@ public class ListProfileLevelsResponse extends com.oracle.bmc.responses.BmcRespo
      */
     private com.oracle.bmc.optimizer.model.ProfileLevelCollection profileLevelCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "opcPrevPage",
+        "profileLevelCollection"
+    })
     private ListProfileLevelsResponse(
             int __httpStatusCode__,
             String opcRequestId,

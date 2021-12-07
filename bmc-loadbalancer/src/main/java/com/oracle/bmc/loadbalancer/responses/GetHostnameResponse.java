@@ -24,6 +24,7 @@ public class GetHostnameResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private com.oracle.bmc.loadbalancer.model.Hostname hostname;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "hostname"})
     private GetHostnameResponse(
             int __httpStatusCode__,
             String opcRequestId,

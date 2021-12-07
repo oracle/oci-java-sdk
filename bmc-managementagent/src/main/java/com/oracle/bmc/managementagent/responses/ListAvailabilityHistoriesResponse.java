@@ -32,6 +32,12 @@ public class ListAvailabilityHistoriesResponse extends com.oracle.bmc.responses.
      */
     private java.util.List<com.oracle.bmc.managementagent.model.AvailabilityHistorySummary> items;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "items"
+    })
     private ListAvailabilityHistoriesResponse(
             int __httpStatusCode__,
             String opcRequestId,

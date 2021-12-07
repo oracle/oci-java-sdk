@@ -30,6 +30,12 @@ public class EstimatePurgeDataSizeResponse extends com.oracle.bmc.responses.BmcR
     private com.oracle.bmc.loganalytics.model.EstimatePurgeDataSizeResult
             estimatePurgeDataSizeResult;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "etag",
+        "estimatePurgeDataSizeResult"
+    })
     private EstimatePurgeDataSizeResponse(
             int __httpStatusCode__,
             String opcRequestId,

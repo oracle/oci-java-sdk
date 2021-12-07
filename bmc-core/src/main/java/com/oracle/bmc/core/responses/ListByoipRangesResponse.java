@@ -32,6 +32,12 @@ public class ListByoipRangesResponse extends com.oracle.bmc.responses.BmcRespons
      */
     private com.oracle.bmc.core.model.ByoipRangeCollection byoipRangeCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcNextPage",
+        "opcRequestId",
+        "byoipRangeCollection"
+    })
     private ListByoipRangesResponse(
             int __httpStatusCode__,
             String opcNextPage,

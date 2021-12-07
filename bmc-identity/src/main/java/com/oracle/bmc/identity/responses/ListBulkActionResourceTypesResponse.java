@@ -33,6 +33,12 @@ public class ListBulkActionResourceTypesResponse extends com.oracle.bmc.response
     private com.oracle.bmc.identity.model.BulkActionResourceTypeCollection
             bulkActionResourceTypeCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "bulkActionResourceTypeCollection"
+    })
     private ListBulkActionResourceTypesResponse(
             int __httpStatusCode__,
             String opcRequestId,

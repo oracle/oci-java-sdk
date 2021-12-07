@@ -43,6 +43,13 @@ public class ListSdkLanguageTypesResponse extends com.oracle.bmc.responses.BmcRe
      */
     private com.oracle.bmc.apigateway.model.SdkLanguageTypeCollection sdkLanguageTypeCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "opcPrevPage",
+        "sdkLanguageTypeCollection"
+    })
     private ListSdkLanguageTypesResponse(
             int __httpStatusCode__,
             String opcRequestId,

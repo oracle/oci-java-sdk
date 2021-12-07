@@ -33,6 +33,12 @@ public class ListPrivateApplicationsResponse extends com.oracle.bmc.responses.Bm
     private com.oracle.bmc.servicecatalog.model.PrivateApplicationCollection
             privateApplicationCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "privateApplicationCollection"
+    })
     private ListPrivateApplicationsResponse(
             int __httpStatusCode__,
             String opcRequestId,

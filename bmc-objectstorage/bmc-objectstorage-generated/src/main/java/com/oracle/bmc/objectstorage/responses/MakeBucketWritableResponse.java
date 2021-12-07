@@ -24,6 +24,7 @@ public class MakeBucketWritableResponse extends com.oracle.bmc.responses.BmcResp
      */
     private String opcRequestId;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcClientRequestId", "opcRequestId"})
     private MakeBucketWritableResponse(
             int __httpStatusCode__, String opcClientRequestId, String opcRequestId) {
         super(__httpStatusCode__);

@@ -32,6 +32,12 @@ public class ListRolesResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private com.oracle.bmc.databasemanagement.model.RoleCollection roleCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcNextPage",
+        "opcRequestId",
+        "roleCollection"
+    })
     private ListRolesResponse(
             int __httpStatusCode__,
             String opcNextPage,

@@ -37,6 +37,13 @@ public class GetSoftwareSourceResponse extends com.oracle.bmc.responses.BmcRespo
      */
     private com.oracle.bmc.osmanagement.model.SoftwareSource softwareSource;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcRequestId",
+        "retryAfter",
+        "softwareSource"
+    })
     private GetSoftwareSourceResponse(
             int __httpStatusCode__,
             String etag,

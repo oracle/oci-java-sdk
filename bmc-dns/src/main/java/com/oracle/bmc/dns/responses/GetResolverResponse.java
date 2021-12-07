@@ -40,6 +40,13 @@ public class GetResolverResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private boolean isNotModified;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcRequestId",
+        "resolver",
+        "isNotModified"
+    })
     private GetResolverResponse(
             int __httpStatusCode__,
             String etag,

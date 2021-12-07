@@ -30,6 +30,7 @@ public class UpdateTaskResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private com.oracle.bmc.dataintegration.model.Task task;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "etag", "opcRequestId", "task"})
     private UpdateTaskResponse(
             int __httpStatusCode__,
             String etag,

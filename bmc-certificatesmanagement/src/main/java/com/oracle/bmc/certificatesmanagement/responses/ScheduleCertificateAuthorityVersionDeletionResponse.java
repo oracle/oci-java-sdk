@@ -25,6 +25,7 @@ public class ScheduleCertificateAuthorityVersionDeletionResponse
      */
     private String opcRequestId;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "etag", "opcRequestId"})
     private ScheduleCertificateAuthorityVersionDeletionResponse(
             int __httpStatusCode__, String etag, String opcRequestId) {
         super(__httpStatusCode__);

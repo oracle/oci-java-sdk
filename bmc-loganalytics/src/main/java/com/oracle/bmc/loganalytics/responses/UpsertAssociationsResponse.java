@@ -24,6 +24,7 @@ public class UpsertAssociationsResponse extends com.oracle.bmc.responses.BmcResp
      */
     private String opcRequestId;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcWorkRequestId", "opcRequestId"})
     private UpsertAssociationsResponse(
             int __httpStatusCode__, String opcWorkRequestId, String opcRequestId) {
         super(__httpStatusCode__);

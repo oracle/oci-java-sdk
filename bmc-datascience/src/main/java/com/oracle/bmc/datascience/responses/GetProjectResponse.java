@@ -30,6 +30,7 @@ public class GetProjectResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private com.oracle.bmc.datascience.model.Project project;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "etag", "opcRequestId", "project"})
     private GetProjectResponse(
             int __httpStatusCode__,
             String etag,

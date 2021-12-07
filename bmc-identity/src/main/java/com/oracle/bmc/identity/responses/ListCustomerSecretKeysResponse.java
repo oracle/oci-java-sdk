@@ -32,6 +32,12 @@ public class ListCustomerSecretKeysResponse extends com.oracle.bmc.responses.Bmc
      */
     private java.util.List<com.oracle.bmc.identity.model.CustomerSecretKeySummary> items;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "items"
+    })
     private ListCustomerSecretKeysResponse(
             int __httpStatusCode__,
             String opcRequestId,

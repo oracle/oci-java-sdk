@@ -24,6 +24,7 @@ public class CreateServiceGatewayResponse extends com.oracle.bmc.responses.BmcRe
      */
     private com.oracle.bmc.core.model.ServiceGateway serviceGateway;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "serviceGateway"})
     private CreateServiceGatewayResponse(
             int __httpStatusCode__,
             String opcRequestId,

@@ -44,6 +44,14 @@ public class ListSendersResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private java.util.List<com.oracle.bmc.email.model.SenderSummary> items;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "opcPrevPage",
+        "opcTotalItems",
+        "items"
+    })
     private ListSendersResponse(
             int __httpStatusCode__,
             String opcRequestId,

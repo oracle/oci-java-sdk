@@ -32,6 +32,12 @@ public class ListModelsResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private com.oracle.bmc.aianomalydetection.model.ModelCollection modelCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "modelCollection"
+    })
     private ListModelsResponse(
             int __httpStatusCode__,
             String opcRequestId,

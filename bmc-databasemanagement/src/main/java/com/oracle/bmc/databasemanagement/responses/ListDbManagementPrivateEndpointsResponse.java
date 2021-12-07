@@ -33,6 +33,12 @@ public class ListDbManagementPrivateEndpointsResponse extends com.oracle.bmc.res
     private com.oracle.bmc.databasemanagement.model.DbManagementPrivateEndpointCollection
             dbManagementPrivateEndpointCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "dbManagementPrivateEndpointCollection"
+    })
     private ListDbManagementPrivateEndpointsResponse(
             int __httpStatusCode__,
             String opcRequestId,

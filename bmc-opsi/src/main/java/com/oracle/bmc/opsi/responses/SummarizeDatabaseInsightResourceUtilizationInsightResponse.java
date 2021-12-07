@@ -34,6 +34,12 @@ public class SummarizeDatabaseInsightResourceUtilizationInsightResponse
     private com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceUtilizationInsightAggregation
             summarizeDatabaseInsightResourceUtilizationInsightAggregation;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "summarizeDatabaseInsightResourceUtilizationInsightAggregation"
+    })
     private SummarizeDatabaseInsightResourceUtilizationInsightResponse(
             int __httpStatusCode__,
             String opcRequestId,

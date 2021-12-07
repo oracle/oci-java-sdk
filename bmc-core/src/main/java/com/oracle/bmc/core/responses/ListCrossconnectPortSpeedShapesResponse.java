@@ -32,6 +32,12 @@ public class ListCrossconnectPortSpeedShapesResponse extends com.oracle.bmc.resp
      */
     private java.util.List<com.oracle.bmc.core.model.CrossConnectPortSpeedShape> items;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcNextPage",
+        "opcRequestId",
+        "items"
+    })
     private ListCrossconnectPortSpeedShapesResponse(
             int __httpStatusCode__,
             String opcNextPage,

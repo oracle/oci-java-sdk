@@ -38,6 +38,13 @@ public class GetPingMonitorResponse extends com.oracle.bmc.responses.BmcResponse
      */
     private boolean isNotModified;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "etag",
+        "pingMonitor",
+        "isNotModified"
+    })
     private GetPingMonitorResponse(
             int __httpStatusCode__,
             String opcRequestId,

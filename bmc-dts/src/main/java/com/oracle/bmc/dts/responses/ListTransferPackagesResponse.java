@@ -22,6 +22,11 @@ public class ListTransferPackagesResponse extends com.oracle.bmc.responses.BmcRe
      */
     private com.oracle.bmc.dts.model.MultipleTransferPackages multipleTransferPackages;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "multipleTransferPackages"
+    })
     private ListTransferPackagesResponse(
             int __httpStatusCode__,
             String opcRequestId,

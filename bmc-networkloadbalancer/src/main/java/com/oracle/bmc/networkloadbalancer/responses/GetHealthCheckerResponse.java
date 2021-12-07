@@ -30,6 +30,12 @@ public class GetHealthCheckerResponse extends com.oracle.bmc.responses.BmcRespon
      */
     private com.oracle.bmc.networkloadbalancer.model.HealthChecker healthChecker;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "etag",
+        "healthChecker"
+    })
     private GetHealthCheckerResponse(
             int __httpStatusCode__,
             String opcRequestId,

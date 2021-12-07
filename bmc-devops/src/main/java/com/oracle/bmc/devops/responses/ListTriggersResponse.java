@@ -27,6 +27,12 @@ public class ListTriggersResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private com.oracle.bmc.devops.model.TriggerCollection triggerCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "triggerCollection"
+    })
     private ListTriggersResponse(
             int __httpStatusCode__,
             String opcRequestId,

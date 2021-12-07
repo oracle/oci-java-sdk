@@ -34,6 +34,12 @@ public class RequestSecurityScoreSummarizedTrendResponse
     private com.oracle.bmc.cloudguard.model.SecurityScoreTrendAggregationCollection
             securityScoreTrendAggregationCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "securityScoreTrendAggregationCollection"
+    })
     private RequestSecurityScoreSummarizedTrendResponse(
             int __httpStatusCode__,
             String opcRequestId,

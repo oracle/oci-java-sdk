@@ -41,6 +41,14 @@ public class CreateDatabaseToolsConnectionResponse extends com.oracle.bmc.respon
      */
     private com.oracle.bmc.databasetools.model.DatabaseToolsConnection databaseToolsConnection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "location",
+        "etag",
+        "opcWorkRequestId",
+        "opcRequestId",
+        "databaseToolsConnection"
+    })
     private CreateDatabaseToolsConnectionResponse(
             int __httpStatusCode__,
             String location,

@@ -27,6 +27,7 @@ public class GetJsChallengeResponse extends com.oracle.bmc.responses.BmcResponse
      */
     private com.oracle.bmc.waas.model.JsChallenge jsChallenge;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "etag", "opcRequestId", "jsChallenge"})
     private GetJsChallengeResponse(
             int __httpStatusCode__,
             String etag,

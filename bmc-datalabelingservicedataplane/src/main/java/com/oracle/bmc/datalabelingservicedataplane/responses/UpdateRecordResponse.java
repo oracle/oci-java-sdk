@@ -30,6 +30,7 @@ public class UpdateRecordResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private com.oracle.bmc.datalabelingservicedataplane.model.Record record;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "etag", "opcRequestId", "record"})
     private UpdateRecordResponse(
             int __httpStatusCode__,
             String etag,

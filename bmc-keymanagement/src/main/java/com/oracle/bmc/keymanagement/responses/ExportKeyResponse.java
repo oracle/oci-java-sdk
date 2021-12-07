@@ -24,6 +24,7 @@ public class ExportKeyResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private com.oracle.bmc.keymanagement.model.ExportedKeyData exportedKeyData;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "exportedKeyData"})
     private ExportKeyResponse(
             int __httpStatusCode__,
             String opcRequestId,

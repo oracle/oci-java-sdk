@@ -40,6 +40,13 @@ public class ListLogsResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private java.util.List<com.oracle.bmc.logging.model.LogSummary> items;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcNextPage",
+        "opcPreviousPage",
+        "opcRequestId",
+        "items"
+    })
     private ListLogsResponse(
             int __httpStatusCode__,
             String opcNextPage,

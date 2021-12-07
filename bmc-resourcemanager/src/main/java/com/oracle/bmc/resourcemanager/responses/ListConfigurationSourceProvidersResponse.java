@@ -34,6 +34,12 @@ public class ListConfigurationSourceProvidersResponse extends com.oracle.bmc.res
     private com.oracle.bmc.resourcemanager.model.ConfigurationSourceProviderCollection
             configurationSourceProviderCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "configurationSourceProviderCollection"
+    })
     private ListConfigurationSourceProvidersResponse(
             int __httpStatusCode__,
             String opcRequestId,

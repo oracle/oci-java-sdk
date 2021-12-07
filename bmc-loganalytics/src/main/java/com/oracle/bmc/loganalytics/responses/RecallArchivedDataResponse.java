@@ -30,6 +30,12 @@ public class RecallArchivedDataResponse extends com.oracle.bmc.responses.BmcResp
      */
     private String location;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcWorkRequestId",
+        "location"
+    })
     private RecallArchivedDataResponse(
             int __httpStatusCode__, String opcRequestId, String opcWorkRequestId, String location) {
         super(__httpStatusCode__);

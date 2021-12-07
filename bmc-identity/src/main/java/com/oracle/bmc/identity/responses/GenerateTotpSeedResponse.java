@@ -29,6 +29,12 @@ public class GenerateTotpSeedResponse extends com.oracle.bmc.responses.BmcRespon
      */
     private com.oracle.bmc.identity.model.MfaTotpDevice mfaTotpDevice;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "etag",
+        "mfaTotpDevice"
+    })
     private GenerateTotpSeedResponse(
             int __httpStatusCode__,
             String opcRequestId,

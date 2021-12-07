@@ -46,6 +46,15 @@ public class CreateDatabaseInsightResponse extends com.oracle.bmc.responses.BmcR
      */
     private com.oracle.bmc.opsi.model.DatabaseInsight databaseInsight;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcWorkRequestId",
+        "opcRequestId",
+        "location",
+        "contentLocation",
+        "etag",
+        "databaseInsight"
+    })
     private CreateDatabaseInsightResponse(
             int __httpStatusCode__,
             String opcWorkRequestId,

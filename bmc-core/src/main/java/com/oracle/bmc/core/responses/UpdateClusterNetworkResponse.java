@@ -30,6 +30,12 @@ public class UpdateClusterNetworkResponse extends com.oracle.bmc.responses.BmcRe
      */
     private com.oracle.bmc.core.model.ClusterNetwork clusterNetwork;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcRequestId",
+        "clusterNetwork"
+    })
     private UpdateClusterNetworkResponse(
             int __httpStatusCode__,
             String etag,

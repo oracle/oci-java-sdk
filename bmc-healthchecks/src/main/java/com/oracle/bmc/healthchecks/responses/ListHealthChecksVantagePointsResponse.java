@@ -35,6 +35,12 @@ public class ListHealthChecksVantagePointsResponse extends com.oracle.bmc.respon
      */
     private java.util.List<com.oracle.bmc.healthchecks.model.HealthChecksVantagePointSummary> items;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "items"
+    })
     private ListHealthChecksVantagePointsResponse(
             int __httpStatusCode__,
             String opcRequestId,

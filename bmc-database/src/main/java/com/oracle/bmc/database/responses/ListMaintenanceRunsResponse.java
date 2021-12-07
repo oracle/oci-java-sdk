@@ -33,6 +33,12 @@ public class ListMaintenanceRunsResponse extends com.oracle.bmc.responses.BmcRes
      */
     private java.util.List<com.oracle.bmc.database.model.MaintenanceRunSummary> items;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "items"
+    })
     private ListMaintenanceRunsResponse(
             int __httpStatusCode__,
             String opcRequestId,

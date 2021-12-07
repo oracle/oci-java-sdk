@@ -30,6 +30,12 @@ public class CreateTaskValidationResponse extends com.oracle.bmc.responses.BmcRe
      */
     private com.oracle.bmc.dataintegration.model.TaskValidation taskValidation;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcRequestId",
+        "taskValidation"
+    })
     private CreateTaskValidationResponse(
             int __httpStatusCode__,
             String etag,

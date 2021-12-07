@@ -35,6 +35,13 @@ public class LocalClonePluggableDatabaseResponse extends com.oracle.bmc.response
      */
     private com.oracle.bmc.database.model.PluggableDatabase pluggableDatabase;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcWorkRequestId",
+        "etag",
+        "opcRequestId",
+        "pluggableDatabase"
+    })
     private LocalClonePluggableDatabaseResponse(
             int __httpStatusCode__,
             String opcWorkRequestId,

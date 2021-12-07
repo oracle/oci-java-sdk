@@ -33,6 +33,12 @@ public class ListAutonomousContainerDatabasesResponse extends com.oracle.bmc.res
      */
     private java.util.List<com.oracle.bmc.database.model.AutonomousContainerDatabaseSummary> items;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "items"
+    })
     private ListAutonomousContainerDatabasesResponse(
             int __httpStatusCode__,
             String opcRequestId,

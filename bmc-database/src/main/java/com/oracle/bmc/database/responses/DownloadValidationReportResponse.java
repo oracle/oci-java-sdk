@@ -39,6 +39,14 @@ public class DownloadValidationReportResponse extends com.oracle.bmc.responses.B
      */
     private java.io.InputStream inputStream;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcRequestId",
+        "contentLength",
+        "lastModified",
+        "inputStream"
+    })
     private DownloadValidationReportResponse(
             int __httpStatusCode__,
             String etag,

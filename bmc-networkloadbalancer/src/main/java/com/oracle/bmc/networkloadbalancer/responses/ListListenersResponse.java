@@ -32,6 +32,12 @@ public class ListListenersResponse extends com.oracle.bmc.responses.BmcResponse 
      */
     private com.oracle.bmc.networkloadbalancer.model.ListenerCollection listenerCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "listenerCollection"
+    })
     private ListListenersResponse(
             int __httpStatusCode__,
             String opcRequestId,

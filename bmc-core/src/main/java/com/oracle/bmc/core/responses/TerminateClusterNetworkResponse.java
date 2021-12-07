@@ -26,6 +26,7 @@ public class TerminateClusterNetworkResponse extends com.oracle.bmc.responses.Bm
      */
     private String opcWorkRequestId;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "opcWorkRequestId"})
     private TerminateClusterNetworkResponse(
             int __httpStatusCode__, String opcRequestId, String opcWorkRequestId) {
         super(__httpStatusCode__);

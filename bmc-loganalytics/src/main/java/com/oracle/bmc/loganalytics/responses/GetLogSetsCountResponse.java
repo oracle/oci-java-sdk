@@ -23,6 +23,7 @@ public class GetLogSetsCountResponse extends com.oracle.bmc.responses.BmcRespons
      */
     private com.oracle.bmc.loganalytics.model.LogSetsCount logSetsCount;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "logSetsCount"})
     private GetLogSetsCountResponse(
             int __httpStatusCode__,
             String opcRequestId,

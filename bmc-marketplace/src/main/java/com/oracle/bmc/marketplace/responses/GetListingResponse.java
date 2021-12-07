@@ -30,6 +30,7 @@ public class GetListingResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private com.oracle.bmc.marketplace.model.Listing listing;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "etag", "listing"})
     private GetListingResponse(
             int __httpStatusCode__,
             String opcRequestId,

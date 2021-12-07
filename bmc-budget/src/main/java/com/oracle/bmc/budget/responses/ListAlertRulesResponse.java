@@ -33,6 +33,12 @@ public class ListAlertRulesResponse extends com.oracle.bmc.responses.BmcResponse
      */
     private java.util.List<com.oracle.bmc.budget.model.AlertRuleSummary> items;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "items"
+    })
     private ListAlertRulesResponse(
             int __httpStatusCode__,
             String opcRequestId,

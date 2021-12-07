@@ -30,6 +30,12 @@ public class ListEntityTagsResponse extends com.oracle.bmc.responses.BmcResponse
      */
     private com.oracle.bmc.datacatalog.model.EntityTagCollection entityTagCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "entityTagCollection"
+    })
     private ListEntityTagsResponse(
             int __httpStatusCode__,
             String opcRequestId,

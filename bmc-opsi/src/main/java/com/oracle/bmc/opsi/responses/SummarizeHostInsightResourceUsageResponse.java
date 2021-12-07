@@ -26,6 +26,11 @@ public class SummarizeHostInsightResourceUsageResponse
     private com.oracle.bmc.opsi.model.SummarizeHostInsightResourceUsageAggregation
             summarizeHostInsightResourceUsageAggregation;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "summarizeHostInsightResourceUsageAggregation"
+    })
     private SummarizeHostInsightResourceUsageResponse(
             int __httpStatusCode__,
             String opcRequestId,

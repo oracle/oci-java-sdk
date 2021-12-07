@@ -39,6 +39,13 @@ public class FilterResourceActionsResponse extends com.oracle.bmc.responses.BmcR
      */
     private com.oracle.bmc.optimizer.model.ResourceActionCollection resourceActionCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "opcPrevPage",
+        "resourceActionCollection"
+    })
     private FilterResourceActionsResponse(
             int __httpStatusCode__,
             String opcRequestId,

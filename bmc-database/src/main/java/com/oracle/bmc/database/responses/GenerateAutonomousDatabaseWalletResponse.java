@@ -39,6 +39,14 @@ public class GenerateAutonomousDatabaseWalletResponse extends com.oracle.bmc.res
      */
     private java.io.InputStream inputStream;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcRequestId",
+        "contentLength",
+        "lastModified",
+        "inputStream"
+    })
     private GenerateAutonomousDatabaseWalletResponse(
             int __httpStatusCode__,
             String etag,

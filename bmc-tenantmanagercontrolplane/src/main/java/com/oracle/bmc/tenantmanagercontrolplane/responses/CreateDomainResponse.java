@@ -36,6 +36,13 @@ public class CreateDomainResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private com.oracle.bmc.tenantmanagercontrolplane.model.Domain domain;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcWorkRequestId",
+        "etag",
+        "domain"
+    })
     private CreateDomainResponse(
             int __httpStatusCode__,
             String opcRequestId,

@@ -30,6 +30,7 @@ public class ExportGlossaryResponse extends com.oracle.bmc.responses.BmcResponse
      */
     private String value;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "etag", "opcRequestId", "value"})
     private ExportGlossaryResponse(
             int __httpStatusCode__, String etag, String opcRequestId, String value) {
         super(__httpStatusCode__);

@@ -32,6 +32,12 @@ public class ListResponderRulesResponse extends com.oracle.bmc.responses.BmcResp
      */
     private com.oracle.bmc.cloudguard.model.ResponderRuleCollection responderRuleCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "responderRuleCollection"
+    })
     private ListResponderRulesResponse(
             int __httpStatusCode__,
             String opcRequestId,

@@ -24,6 +24,7 @@ public class GetCrossConnectLetterOfAuthorityResponse extends com.oracle.bmc.res
      */
     private com.oracle.bmc.core.model.LetterOfAuthority letterOfAuthority;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "letterOfAuthority"})
     private GetCrossConnectLetterOfAuthorityResponse(
             int __httpStatusCode__,
             String opcRequestId,

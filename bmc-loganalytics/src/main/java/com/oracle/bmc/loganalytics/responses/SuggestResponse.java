@@ -23,6 +23,7 @@ public class SuggestResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private com.oracle.bmc.loganalytics.model.SuggestOutput suggestOutput;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "suggestOutput"})
     private SuggestResponse(
             int __httpStatusCode__,
             String opcRequestId,

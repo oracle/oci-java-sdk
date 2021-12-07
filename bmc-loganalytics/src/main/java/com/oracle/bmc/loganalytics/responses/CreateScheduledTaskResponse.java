@@ -29,6 +29,12 @@ public class CreateScheduledTaskResponse extends com.oracle.bmc.responses.BmcRes
      */
     private com.oracle.bmc.loganalytics.model.ScheduledTask scheduledTask;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "etag",
+        "scheduledTask"
+    })
     private CreateScheduledTaskResponse(
             int __httpStatusCode__,
             String opcRequestId,

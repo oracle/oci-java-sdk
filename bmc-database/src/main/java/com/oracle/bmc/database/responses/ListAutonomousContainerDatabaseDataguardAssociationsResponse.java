@@ -36,6 +36,12 @@ public class ListAutonomousContainerDatabaseDataguardAssociationsResponse
                     com.oracle.bmc.database.model.AutonomousContainerDatabaseDataguardAssociation>
             items;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "items"
+    })
     private ListAutonomousContainerDatabaseDataguardAssociationsResponse(
             int __httpStatusCode__,
             String opcRequestId,

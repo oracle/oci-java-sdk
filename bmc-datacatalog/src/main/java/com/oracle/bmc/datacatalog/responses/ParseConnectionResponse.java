@@ -30,6 +30,7 @@ public class ParseConnectionResponse extends com.oracle.bmc.responses.BmcRespons
      */
     private java.util.List<com.oracle.bmc.datacatalog.model.ConnectionAliasSummary> items;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "etag", "opcRequestId", "items"})
     private ParseConnectionResponse(
             int __httpStatusCode__,
             String etag,

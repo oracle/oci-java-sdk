@@ -33,6 +33,12 @@ public class ListManagementSavedSearchesResponse extends com.oracle.bmc.response
     private com.oracle.bmc.managementdashboard.model.ManagementSavedSearchCollection
             managementSavedSearchCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "managementSavedSearchCollection"
+    })
     private ListManagementSavedSearchesResponse(
             int __httpStatusCode__,
             String opcRequestId,

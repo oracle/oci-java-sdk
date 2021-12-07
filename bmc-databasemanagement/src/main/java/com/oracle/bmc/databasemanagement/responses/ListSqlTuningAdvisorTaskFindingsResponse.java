@@ -33,6 +33,12 @@ public class ListSqlTuningAdvisorTaskFindingsResponse extends com.oracle.bmc.res
     private com.oracle.bmc.databasemanagement.model.SqlTuningAdvisorTaskFindingCollection
             sqlTuningAdvisorTaskFindingCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "sqlTuningAdvisorTaskFindingCollection"
+    })
     private ListSqlTuningAdvisorTaskFindingsResponse(
             int __httpStatusCode__,
             String opcRequestId,

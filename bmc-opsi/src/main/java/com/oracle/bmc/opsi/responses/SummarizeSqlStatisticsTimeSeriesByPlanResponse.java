@@ -34,6 +34,12 @@ public class SummarizeSqlStatisticsTimeSeriesByPlanResponse
     private com.oracle.bmc.opsi.model.SqlStatisticsTimeSeriesByPlanAggregationCollection
             sqlStatisticsTimeSeriesByPlanAggregationCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "sqlStatisticsTimeSeriesByPlanAggregationCollection"
+    })
     private SummarizeSqlStatisticsTimeSeriesByPlanResponse(
             int __httpStatusCode__,
             String opcRequestId,

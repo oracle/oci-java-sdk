@@ -24,6 +24,7 @@ public class GetDbHomePatchResponse extends com.oracle.bmc.responses.BmcResponse
      */
     private com.oracle.bmc.database.model.Patch patch;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "patch"})
     private GetDbHomePatchResponse(
             int __httpStatusCode__,
             String opcRequestId,

@@ -32,6 +32,12 @@ public class ListOsnsResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private com.oracle.bmc.blockchain.model.OsnCollection osnCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "osnCollection"
+    })
     private ListOsnsResponse(
             int __httpStatusCode__,
             String opcRequestId,

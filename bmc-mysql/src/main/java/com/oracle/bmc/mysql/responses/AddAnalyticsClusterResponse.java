@@ -36,6 +36,13 @@ public class AddAnalyticsClusterResponse extends com.oracle.bmc.responses.BmcRes
      */
     private com.oracle.bmc.mysql.model.AnalyticsCluster analyticsCluster;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcRequestId",
+        "opcWorkRequestId",
+        "analyticsCluster"
+    })
     private AddAnalyticsClusterResponse(
             int __httpStatusCode__,
             String etag,

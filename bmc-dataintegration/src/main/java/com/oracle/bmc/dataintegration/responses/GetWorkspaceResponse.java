@@ -30,6 +30,7 @@ public class GetWorkspaceResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private com.oracle.bmc.dataintegration.model.Workspace workspace;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "etag", "opcRequestId", "workspace"})
     private GetWorkspaceResponse(
             int __httpStatusCode__,
             String etag,

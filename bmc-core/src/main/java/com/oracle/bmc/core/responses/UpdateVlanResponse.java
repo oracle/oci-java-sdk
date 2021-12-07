@@ -30,6 +30,7 @@ public class UpdateVlanResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private com.oracle.bmc.core.model.Vlan vlan;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "etag", "opcRequestId", "vlan"})
     private UpdateVlanResponse(
             int __httpStatusCode__,
             String etag,

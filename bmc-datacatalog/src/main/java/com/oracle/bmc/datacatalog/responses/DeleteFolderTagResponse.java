@@ -19,6 +19,7 @@ public class DeleteFolderTagResponse extends com.oracle.bmc.responses.BmcRespons
      */
     private String opcRequestId;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId"})
     private DeleteFolderTagResponse(int __httpStatusCode__, String opcRequestId) {
         super(__httpStatusCode__);
         this.opcRequestId = opcRequestId;

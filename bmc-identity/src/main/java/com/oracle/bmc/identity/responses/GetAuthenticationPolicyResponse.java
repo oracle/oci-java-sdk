@@ -29,6 +29,12 @@ public class GetAuthenticationPolicyResponse extends com.oracle.bmc.responses.Bm
      */
     private com.oracle.bmc.identity.model.AuthenticationPolicy authenticationPolicy;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "etag",
+        "authenticationPolicy"
+    })
     private GetAuthenticationPolicyResponse(
             int __httpStatusCode__,
             String opcRequestId,

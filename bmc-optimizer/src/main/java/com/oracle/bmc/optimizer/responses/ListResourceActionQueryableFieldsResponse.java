@@ -40,6 +40,13 @@ public class ListResourceActionQueryableFieldsResponse
      */
     private com.oracle.bmc.optimizer.model.QueryableFieldCollection queryableFieldCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "opcPrevPage",
+        "queryableFieldCollection"
+    })
     private ListResourceActionQueryableFieldsResponse(
             int __httpStatusCode__,
             String opcRequestId,

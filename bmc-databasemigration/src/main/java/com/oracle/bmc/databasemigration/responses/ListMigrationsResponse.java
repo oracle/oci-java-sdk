@@ -32,6 +32,12 @@ public class ListMigrationsResponse extends com.oracle.bmc.responses.BmcResponse
      */
     private com.oracle.bmc.databasemigration.model.MigrationCollection migrationCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "migrationCollection"
+    })
     private ListMigrationsResponse(
             int __httpStatusCode__,
             String opcRequestId,

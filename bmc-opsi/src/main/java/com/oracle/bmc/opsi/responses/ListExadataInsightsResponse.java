@@ -39,6 +39,13 @@ public class ListExadataInsightsResponse extends com.oracle.bmc.responses.BmcRes
     private com.oracle.bmc.opsi.model.ExadataInsightSummaryCollection
             exadataInsightSummaryCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcTotalItems",
+        "opcNextPage",
+        "exadataInsightSummaryCollection"
+    })
     private ListExadataInsightsResponse(
             int __httpStatusCode__,
             String opcRequestId,

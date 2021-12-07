@@ -38,6 +38,13 @@ public class GetWorkRequestResponse extends com.oracle.bmc.responses.BmcResponse
      */
     private com.oracle.bmc.apigateway.model.WorkRequest workRequest;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcRequestId",
+        "retryAfter",
+        "workRequest"
+    })
     private GetWorkRequestResponse(
             int __httpStatusCode__,
             String etag,

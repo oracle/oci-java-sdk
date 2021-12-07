@@ -32,6 +32,12 @@ public class ListPoliciesResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private com.oracle.bmc.cloudguard.model.PolicyCollection policyCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "policyCollection"
+    })
     private ListPoliciesResponse(
             int __httpStatusCode__,
             String opcRequestId,

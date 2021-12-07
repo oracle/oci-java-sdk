@@ -35,6 +35,12 @@ public class ListIndexesResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private com.oracle.bmc.nosql.model.IndexCollection indexCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcNextPage",
+        "opcRequestId",
+        "indexCollection"
+    })
     private ListIndexesResponse(
             int __httpStatusCode__,
             String opcNextPage,

@@ -42,6 +42,13 @@ public class ListServiceConnectorsResponse extends com.oracle.bmc.responses.BmcR
      */
     private com.oracle.bmc.sch.model.ServiceConnectorCollection serviceConnectorCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "opcPrevPage",
+        "serviceConnectorCollection"
+    })
     private ListServiceConnectorsResponse(
             int __httpStatusCode__,
             String opcRequestId,

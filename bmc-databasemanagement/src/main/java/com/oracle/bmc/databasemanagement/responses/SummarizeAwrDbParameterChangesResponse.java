@@ -33,6 +33,12 @@ public class SummarizeAwrDbParameterChangesResponse extends com.oracle.bmc.respo
     private com.oracle.bmc.databasemanagement.model.AwrDbParameterChangeCollection
             awrDbParameterChangeCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "awrDbParameterChangeCollection"
+    })
     private SummarizeAwrDbParameterChangesResponse(
             int __httpStatusCode__,
             String opcRequestId,

@@ -29,6 +29,7 @@ public class GetKeyStoreResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private com.oracle.bmc.database.model.KeyStore keyStore;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "etag", "opcRequestId", "keyStore"})
     private GetKeyStoreResponse(
             int __httpStatusCode__,
             String etag,

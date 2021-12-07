@@ -32,6 +32,12 @@ public class SummarizeAwrDbSysstatsResponse extends com.oracle.bmc.responses.Bmc
      */
     private com.oracle.bmc.databasemanagement.model.AwrDbSysstatCollection awrDbSysstatCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "awrDbSysstatCollection"
+    })
     private SummarizeAwrDbSysstatsResponse(
             int __httpStatusCode__,
             String opcRequestId,

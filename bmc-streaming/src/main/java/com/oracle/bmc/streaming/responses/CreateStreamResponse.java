@@ -29,6 +29,7 @@ public class CreateStreamResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private com.oracle.bmc.streaming.model.Stream stream;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "etag", "stream"})
     private CreateStreamResponse(
             int __httpStatusCode__,
             String opcRequestId,

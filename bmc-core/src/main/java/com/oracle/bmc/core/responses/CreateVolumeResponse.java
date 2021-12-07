@@ -30,6 +30,7 @@ public class CreateVolumeResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private com.oracle.bmc.core.model.Volume volume;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "etag", "opcRequestId", "volume"})
     private CreateVolumeResponse(
             int __httpStatusCode__,
             String etag,

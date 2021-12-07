@@ -25,6 +25,7 @@ public class ChangeCrossConnectCompartmentResponse extends com.oracle.bmc.respon
      */
     private String opcRequestId;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "etag", "opcRequestId"})
     private ChangeCrossConnectCompartmentResponse(
             int __httpStatusCode__, String etag, String opcRequestId) {
         super(__httpStatusCode__);

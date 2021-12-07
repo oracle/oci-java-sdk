@@ -43,6 +43,13 @@ public class ListApisResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private com.oracle.bmc.apigateway.model.ApiCollection apiCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "opcPrevPage",
+        "apiCollection"
+    })
     private ListApisResponse(
             int __httpStatusCode__,
             String opcRequestId,

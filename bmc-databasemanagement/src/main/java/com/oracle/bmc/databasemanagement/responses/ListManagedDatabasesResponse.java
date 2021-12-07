@@ -33,6 +33,12 @@ public class ListManagedDatabasesResponse extends com.oracle.bmc.responses.BmcRe
     private com.oracle.bmc.databasemanagement.model.ManagedDatabaseCollection
             managedDatabaseCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "managedDatabaseCollection"
+    })
     private ListManagedDatabasesResponse(
             int __httpStatusCode__,
             String opcRequestId,

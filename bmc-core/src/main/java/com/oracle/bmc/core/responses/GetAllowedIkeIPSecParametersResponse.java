@@ -24,6 +24,11 @@ public class GetAllowedIkeIPSecParametersResponse extends com.oracle.bmc.respons
      */
     private com.oracle.bmc.core.model.AllowedIkeIPSecParameters allowedIkeIPSecParameters;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "allowedIkeIPSecParameters"
+    })
     private GetAllowedIkeIPSecParametersResponse(
             int __httpStatusCode__,
             String opcRequestId,

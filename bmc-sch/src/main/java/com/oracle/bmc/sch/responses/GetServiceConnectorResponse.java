@@ -30,6 +30,12 @@ public class GetServiceConnectorResponse extends com.oracle.bmc.responses.BmcRes
      */
     private com.oracle.bmc.sch.model.ServiceConnector serviceConnector;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcRequestId",
+        "serviceConnector"
+    })
     private GetServiceConnectorResponse(
             int __httpStatusCode__,
             String etag,

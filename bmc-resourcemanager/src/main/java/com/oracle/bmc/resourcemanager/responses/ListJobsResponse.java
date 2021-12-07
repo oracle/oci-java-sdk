@@ -33,6 +33,12 @@ public class ListJobsResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private java.util.List<com.oracle.bmc.resourcemanager.model.JobSummary> items;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "items"
+    })
     private ListJobsResponse(
             int __httpStatusCode__,
             String opcRequestId,

@@ -29,6 +29,7 @@ public class CreateOrResetUIPasswordResponse extends com.oracle.bmc.responses.Bm
      */
     private com.oracle.bmc.identity.model.UIPassword uIPassword;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "etag", "uIPassword"})
     private CreateOrResetUIPasswordResponse(
             int __httpStatusCode__,
             String opcRequestId,

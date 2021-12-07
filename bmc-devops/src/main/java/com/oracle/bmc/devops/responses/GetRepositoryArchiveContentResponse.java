@@ -32,6 +32,13 @@ public class GetRepositoryArchiveContentResponse extends com.oracle.bmc.response
      */
     private java.io.InputStream inputStream;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "contentType",
+        "contentDisposition",
+        "inputStream"
+    })
     private GetRepositoryArchiveContentResponse(
             int __httpStatusCode__,
             String opcRequestId,

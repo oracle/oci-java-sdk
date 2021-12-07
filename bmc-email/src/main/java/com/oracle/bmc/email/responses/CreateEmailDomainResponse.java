@@ -48,6 +48,15 @@ public class CreateEmailDomainResponse extends com.oracle.bmc.responses.BmcRespo
      */
     private com.oracle.bmc.email.model.EmailDomain emailDomain;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "contentLocation",
+        "etag",
+        "location",
+        "opcRequestId",
+        "opcWorkRequestId",
+        "emailDomain"
+    })
     private CreateEmailDomainResponse(
             int __httpStatusCode__,
             String contentLocation,

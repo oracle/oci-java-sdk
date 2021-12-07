@@ -30,6 +30,7 @@ public class GetApmDomainResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private com.oracle.bmc.apmcontrolplane.model.ApmDomain apmDomain;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "etag", "opcRequestId", "apmDomain"})
     private GetApmDomainResponse(
             int __httpStatusCode__,
             String etag,

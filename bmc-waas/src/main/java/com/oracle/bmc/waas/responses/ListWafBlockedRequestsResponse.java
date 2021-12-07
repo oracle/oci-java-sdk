@@ -27,6 +27,12 @@ public class ListWafBlockedRequestsResponse extends com.oracle.bmc.responses.Bmc
      */
     private java.util.List<com.oracle.bmc.waas.model.WafBlockedRequest> items;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "items"
+    })
     private ListWafBlockedRequestsResponse(
             int __httpStatusCode__,
             String opcRequestId,

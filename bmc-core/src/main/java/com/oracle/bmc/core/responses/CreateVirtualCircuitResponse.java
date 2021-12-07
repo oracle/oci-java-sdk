@@ -30,6 +30,12 @@ public class CreateVirtualCircuitResponse extends com.oracle.bmc.responses.BmcRe
      */
     private com.oracle.bmc.core.model.VirtualCircuit virtualCircuit;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcRequestId",
+        "virtualCircuit"
+    })
     private CreateVirtualCircuitResponse(
             int __httpStatusCode__,
             String etag,

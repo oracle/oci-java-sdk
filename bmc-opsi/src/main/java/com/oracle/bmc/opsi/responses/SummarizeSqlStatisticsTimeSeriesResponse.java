@@ -33,6 +33,12 @@ public class SummarizeSqlStatisticsTimeSeriesResponse extends com.oracle.bmc.res
     private com.oracle.bmc.opsi.model.SqlStatisticsTimeSeriesAggregationCollection
             sqlStatisticsTimeSeriesAggregationCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "sqlStatisticsTimeSeriesAggregationCollection"
+    })
     private SummarizeSqlStatisticsTimeSeriesResponse(
             int __httpStatusCode__,
             String opcRequestId,

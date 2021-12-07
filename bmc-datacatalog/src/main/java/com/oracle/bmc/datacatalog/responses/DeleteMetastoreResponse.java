@@ -25,6 +25,7 @@ public class DeleteMetastoreResponse extends com.oracle.bmc.responses.BmcRespons
      */
     private String opcRequestId;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcWorkRequestId", "opcRequestId"})
     private DeleteMetastoreResponse(
             int __httpStatusCode__, String opcWorkRequestId, String opcRequestId) {
         super(__httpStatusCode__);

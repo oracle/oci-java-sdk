@@ -36,6 +36,13 @@ public class GetApiContentResponse extends com.oracle.bmc.responses.BmcResponse 
      */
     private java.io.InputStream inputStream;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcRequestId",
+        "xContentSha256",
+        "inputStream"
+    })
     private GetApiContentResponse(
             int __httpStatusCode__,
             String etag,

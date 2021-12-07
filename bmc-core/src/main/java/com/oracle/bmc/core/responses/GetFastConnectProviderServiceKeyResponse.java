@@ -24,6 +24,11 @@ public class GetFastConnectProviderServiceKeyResponse extends com.oracle.bmc.res
      */
     private com.oracle.bmc.core.model.FastConnectProviderServiceKey fastConnectProviderServiceKey;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "fastConnectProviderServiceKey"
+    })
     private GetFastConnectProviderServiceKeyResponse(
             int __httpStatusCode__,
             String opcRequestId,

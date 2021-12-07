@@ -25,6 +25,11 @@ public class ListTerraformVersionsResponse extends com.oracle.bmc.responses.BmcR
     private com.oracle.bmc.resourcemanager.model.TerraformVersionCollection
             terraformVersionCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "terraformVersionCollection"
+    })
     private ListTerraformVersionsResponse(
             int __httpStatusCode__,
             String opcRequestId,

@@ -30,6 +30,12 @@ public class GetResourceActionResponse extends com.oracle.bmc.responses.BmcRespo
      */
     private com.oracle.bmc.optimizer.model.ResourceAction resourceAction;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcRequestId",
+        "resourceAction"
+    })
     private GetResourceActionResponse(
             int __httpStatusCode__,
             String etag,

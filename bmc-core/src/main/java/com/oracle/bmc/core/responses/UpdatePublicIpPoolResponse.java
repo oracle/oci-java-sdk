@@ -30,6 +30,12 @@ public class UpdatePublicIpPoolResponse extends com.oracle.bmc.responses.BmcResp
      */
     private com.oracle.bmc.core.model.PublicIpPool publicIpPool;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcRequestId",
+        "publicIpPool"
+    })
     private UpdatePublicIpPoolResponse(
             int __httpStatusCode__,
             String etag,

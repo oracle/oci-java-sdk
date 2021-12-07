@@ -29,6 +29,12 @@ public class UpsertParserResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private com.oracle.bmc.loganalytics.model.LogAnalyticsParser logAnalyticsParser;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcRequestId",
+        "logAnalyticsParser"
+    })
     private UpsertParserResponse(
             int __httpStatusCode__,
             String etag,

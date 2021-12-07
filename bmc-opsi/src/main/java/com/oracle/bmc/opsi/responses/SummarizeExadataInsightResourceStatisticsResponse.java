@@ -40,6 +40,13 @@ public class SummarizeExadataInsightResourceStatisticsResponse
     private com.oracle.bmc.opsi.model.SummarizeExadataInsightResourceStatisticsAggregationCollection
             summarizeExadataInsightResourceStatisticsAggregationCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcTotalItems",
+        "opcNextPage",
+        "summarizeExadataInsightResourceStatisticsAggregationCollection"
+    })
     private SummarizeExadataInsightResourceStatisticsResponse(
             int __httpStatusCode__,
             String opcRequestId,

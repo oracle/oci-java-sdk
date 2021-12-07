@@ -29,6 +29,12 @@ public class CreateConfigurationSourceProviderResponse
     private com.oracle.bmc.resourcemanager.model.ConfigurationSourceProvider
             configurationSourceProvider;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "etag",
+        "configurationSourceProvider"
+    })
     private CreateConfigurationSourceProviderResponse(
             int __httpStatusCode__,
             String opcRequestId,

@@ -35,6 +35,12 @@ public class ListAutonomousExadataInfrastructuresResponse
     private java.util.List<com.oracle.bmc.database.model.AutonomousExadataInfrastructureSummary>
             items;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "items"
+    })
     private ListAutonomousExadataInfrastructuresResponse(
             int __httpStatusCode__,
             String opcRequestId,

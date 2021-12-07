@@ -30,6 +30,12 @@ public class GetCrossConnectGroupResponse extends com.oracle.bmc.responses.BmcRe
      */
     private com.oracle.bmc.core.model.CrossConnectGroup crossConnectGroup;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcRequestId",
+        "crossConnectGroup"
+    })
     private GetCrossConnectGroupResponse(
             int __httpStatusCode__,
             String etag,

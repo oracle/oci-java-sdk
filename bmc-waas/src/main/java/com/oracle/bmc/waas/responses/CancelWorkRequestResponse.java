@@ -17,6 +17,7 @@ public class CancelWorkRequestResponse extends com.oracle.bmc.responses.BmcRespo
      */
     private String opcRequestId;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId"})
     private CancelWorkRequestResponse(int __httpStatusCode__, String opcRequestId) {
         super(__httpStatusCode__);
         this.opcRequestId = opcRequestId;

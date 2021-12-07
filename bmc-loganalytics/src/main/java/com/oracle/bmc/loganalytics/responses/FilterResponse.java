@@ -23,6 +23,7 @@ public class FilterResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private com.oracle.bmc.loganalytics.model.FilterOutput filterOutput;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "filterOutput"})
     private FilterResponse(
             int __httpStatusCode__,
             String opcRequestId,

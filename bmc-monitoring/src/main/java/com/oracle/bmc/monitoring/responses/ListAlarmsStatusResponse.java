@@ -31,6 +31,12 @@ public class ListAlarmsStatusResponse extends com.oracle.bmc.responses.BmcRespon
      */
     private java.util.List<com.oracle.bmc.monitoring.model.AlarmStatusSummary> items;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcNextPage",
+        "opcRequestId",
+        "items"
+    })
     private ListAlarmsStatusResponse(
             int __httpStatusCode__,
             String opcNextPage,

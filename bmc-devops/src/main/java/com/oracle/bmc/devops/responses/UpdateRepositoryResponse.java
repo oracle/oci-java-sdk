@@ -32,6 +32,13 @@ public class UpdateRepositoryResponse extends com.oracle.bmc.responses.BmcRespon
      */
     private com.oracle.bmc.devops.model.Repository repository;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcWorkRequestId",
+        "opcRequestId",
+        "etag",
+        "repository"
+    })
     private UpdateRepositoryResponse(
             int __httpStatusCode__,
             String opcWorkRequestId,

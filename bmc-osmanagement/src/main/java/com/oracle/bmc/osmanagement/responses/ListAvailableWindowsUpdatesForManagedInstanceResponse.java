@@ -34,6 +34,12 @@ public class ListAvailableWindowsUpdatesForManagedInstanceResponse
      */
     private java.util.List<com.oracle.bmc.osmanagement.model.AvailableWindowsUpdateSummary> items;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "items"
+    })
     private ListAvailableWindowsUpdatesForManagedInstanceResponse(
             int __httpStatusCode__,
             String opcRequestId,

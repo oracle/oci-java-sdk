@@ -38,6 +38,13 @@ public class GetHeatWaveClusterResponse extends com.oracle.bmc.responses.BmcResp
      */
     private boolean isNotModified;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcRequestId",
+        "heatWaveCluster",
+        "isNotModified"
+    })
     private GetHeatWaveClusterResponse(
             int __httpStatusCode__,
             String etag,

@@ -30,6 +30,7 @@ public class UpdatePingMonitorResponse extends com.oracle.bmc.responses.BmcRespo
      */
     private com.oracle.bmc.healthchecks.model.PingMonitor pingMonitor;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "etag", "pingMonitor"})
     private UpdatePingMonitorResponse(
             int __httpStatusCode__,
             String opcRequestId,

@@ -41,6 +41,13 @@ public class ListReplicationSourcesResponse extends com.oracle.bmc.responses.Bmc
      */
     private java.util.List<com.oracle.bmc.objectstorage.model.ReplicationSource> items;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcClientRequestId",
+        "opcNextPage",
+        "items"
+    })
     private ListReplicationSourcesResponse(
             int __httpStatusCode__,
             String opcRequestId,

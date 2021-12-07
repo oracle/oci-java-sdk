@@ -30,6 +30,12 @@ public class GetLocalPeeringGatewayResponse extends com.oracle.bmc.responses.Bmc
      */
     private com.oracle.bmc.core.model.LocalPeeringGateway localPeeringGateway;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcRequestId",
+        "localPeeringGateway"
+    })
     private GetLocalPeeringGatewayResponse(
             int __httpStatusCode__,
             String etag,
