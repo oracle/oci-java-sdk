@@ -32,6 +32,12 @@ public class ListComputeCapacityReservationsResponse extends com.oracle.bmc.resp
      */
     private java.util.List<com.oracle.bmc.core.model.ComputeCapacityReservationSummary> items;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcNextPage",
+        "opcRequestId",
+        "items"
+    })
     private ListComputeCapacityReservationsResponse(
             int __httpStatusCode__,
             String opcNextPage,

@@ -30,6 +30,12 @@ public class GetAppCatalogListingResponse extends com.oracle.bmc.responses.BmcRe
      */
     private com.oracle.bmc.core.model.AppCatalogListing appCatalogListing;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcRequestId",
+        "appCatalogListing"
+    })
     private GetAppCatalogListingResponse(
             int __httpStatusCode__,
             String etag,

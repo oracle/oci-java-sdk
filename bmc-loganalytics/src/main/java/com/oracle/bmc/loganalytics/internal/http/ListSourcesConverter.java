@@ -111,6 +111,14 @@ public class ListSourcesConverter {
                                     request.getName()));
         }
 
+        if (request.getCategories() != null) {
+            target =
+                    target.queryParam(
+                            "categories",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getCategories()));
+        }
+
         if (request.getIsSimplified() != null) {
             target =
                     target.queryParam(

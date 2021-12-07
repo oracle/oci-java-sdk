@@ -29,6 +29,7 @@ public class CancelKeyDeletionResponse extends com.oracle.bmc.responses.BmcRespo
      */
     private com.oracle.bmc.keymanagement.model.Key key;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "etag", "opcRequestId", "key"})
     private CancelKeyDeletionResponse(
             int __httpStatusCode__,
             String etag,

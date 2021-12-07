@@ -24,6 +24,7 @@ public class GetOrderResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private com.oracle.bmc.tenantmanagercontrolplane.model.Order order;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "order"})
     private GetOrderResponse(
             int __httpStatusCode__,
             String opcRequestId,

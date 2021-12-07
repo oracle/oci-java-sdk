@@ -30,6 +30,12 @@ public class GetPreauthenticatedRequestResponse extends com.oracle.bmc.responses
     private com.oracle.bmc.objectstorage.model.PreauthenticatedRequestSummary
             preauthenticatedRequestSummary;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcClientRequestId",
+        "opcRequestId",
+        "preauthenticatedRequestSummary"
+    })
     private GetPreauthenticatedRequestResponse(
             int __httpStatusCode__,
             String opcClientRequestId,

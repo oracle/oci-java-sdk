@@ -36,6 +36,13 @@ public class ListNotebookSessionsResponse extends com.oracle.bmc.responses.BmcRe
      */
     private java.util.List<com.oracle.bmc.datascience.model.NotebookSessionSummary> items;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcNextPage",
+        "opcPrevPage",
+        "opcRequestId",
+        "items"
+    })
     private ListNotebookSessionsResponse(
             int __httpStatusCode__,
             String opcNextPage,

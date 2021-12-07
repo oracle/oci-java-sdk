@@ -24,6 +24,11 @@ public class EstimateRecallDataSizeResponse extends com.oracle.bmc.responses.Bmc
     private com.oracle.bmc.loganalytics.model.EstimateRecallDataSizeResult
             estimateRecallDataSizeResult;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "estimateRecallDataSizeResult"
+    })
     private EstimateRecallDataSizeResponse(
             int __httpStatusCode__,
             String opcRequestId,

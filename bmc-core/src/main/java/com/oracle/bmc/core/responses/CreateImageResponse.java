@@ -37,6 +37,13 @@ public class CreateImageResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private com.oracle.bmc.core.model.Image image;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcRequestId",
+        "opcWorkRequestId",
+        "image"
+    })
     private CreateImageResponse(
             int __httpStatusCode__,
             String etag,

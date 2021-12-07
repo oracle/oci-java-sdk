@@ -39,6 +39,13 @@ public class UpdateZoneResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private com.oracle.bmc.dns.model.Zone zone;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "eTag",
+        "opcRequestId",
+        "opcWorkRequestId",
+        "zone"
+    })
     private UpdateZoneResponse(
             int __httpStatusCode__,
             String eTag,

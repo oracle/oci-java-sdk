@@ -36,6 +36,13 @@ public class CloneMigrationResponse extends com.oracle.bmc.responses.BmcResponse
      */
     private com.oracle.bmc.databasemigration.model.Migration migration;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcWorkRequestId",
+        "etag",
+        "migration"
+    })
     private CloneMigrationResponse(
             int __httpStatusCode__,
             String opcRequestId,

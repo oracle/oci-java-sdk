@@ -27,6 +27,12 @@ public class GetProtectionSettingsResponse extends com.oracle.bmc.responses.BmcR
      */
     private com.oracle.bmc.waas.model.ProtectionSettings protectionSettings;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcRequestId",
+        "protectionSettings"
+    })
     private GetProtectionSettingsResponse(
             int __httpStatusCode__,
             String etag,

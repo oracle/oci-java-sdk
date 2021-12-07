@@ -31,6 +31,12 @@ public class ChangeExternalContainerDatabaseCompartmentResponse
      */
     private String opcRequestId;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcWorkRequestId",
+        "opcRequestId"
+    })
     private ChangeExternalContainerDatabaseCompartmentResponse(
             int __httpStatusCode__, String etag, String opcWorkRequestId, String opcRequestId) {
         super(__httpStatusCode__);

@@ -33,6 +33,12 @@ public class ListDbHomePatchesResponse extends com.oracle.bmc.responses.BmcRespo
      */
     private java.util.List<com.oracle.bmc.database.model.PatchSummary> items;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "items"
+    })
     private ListDbHomePatchesResponse(
             int __httpStatusCode__,
             String opcRequestId,

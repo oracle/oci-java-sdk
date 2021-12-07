@@ -29,6 +29,7 @@ public class CreateUserResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private com.oracle.bmc.identity.model.User user;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "etag", "user"})
     private CreateUserResponse(
             int __httpStatusCode__,
             String opcRequestId,

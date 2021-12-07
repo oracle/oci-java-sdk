@@ -49,6 +49,15 @@ public class ListReferencesResponse extends com.oracle.bmc.responses.BmcResponse
     private com.oracle.bmc.dataintegration.model.ReferenceSummaryCollection
             referenceSummaryCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcRequestId",
+        "opcNextPage",
+        "opcPrevPage",
+        "opcTotalItems",
+        "referenceSummaryCollection"
+    })
     private ListReferencesResponse(
             int __httpStatusCode__,
             String etag,

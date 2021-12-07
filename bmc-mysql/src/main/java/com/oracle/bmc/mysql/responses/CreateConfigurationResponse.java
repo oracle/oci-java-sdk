@@ -41,6 +41,14 @@ public class CreateConfigurationResponse extends com.oracle.bmc.responses.BmcRes
      */
     private com.oracle.bmc.mysql.model.Configuration configuration;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "location",
+        "etag",
+        "opcRequestId",
+        "opcWorkRequestId",
+        "configuration"
+    })
     private CreateConfigurationResponse(
             int __httpStatusCode__,
             String location,

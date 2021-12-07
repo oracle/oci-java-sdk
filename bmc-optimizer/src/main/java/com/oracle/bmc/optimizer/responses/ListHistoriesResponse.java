@@ -39,6 +39,13 @@ public class ListHistoriesResponse extends com.oracle.bmc.responses.BmcResponse 
      */
     private com.oracle.bmc.optimizer.model.HistoryCollection historyCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "opcPrevPage",
+        "historyCollection"
+    })
     private ListHistoriesResponse(
             int __httpStatusCode__,
             String opcRequestId,

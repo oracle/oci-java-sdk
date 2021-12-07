@@ -42,6 +42,14 @@ public class ListPatchesResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private com.oracle.bmc.dataintegration.model.PatchSummaryCollection patchSummaryCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "opcPrevPage",
+        "opcTotalItems",
+        "patchSummaryCollection"
+    })
     private ListPatchesResponse(
             int __httpStatusCode__,
             String opcRequestId,

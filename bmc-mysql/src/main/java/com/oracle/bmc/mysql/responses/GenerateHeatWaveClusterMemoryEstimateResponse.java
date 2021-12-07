@@ -31,6 +31,12 @@ public class GenerateHeatWaveClusterMemoryEstimateResponse
      */
     private com.oracle.bmc.mysql.model.HeatWaveClusterMemoryEstimate heatWaveClusterMemoryEstimate;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcWorkRequestId",
+        "heatWaveClusterMemoryEstimate"
+    })
     private GenerateHeatWaveClusterMemoryEstimateResponse(
             int __httpStatusCode__,
             String opcRequestId,

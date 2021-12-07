@@ -30,6 +30,7 @@ public class UpdateAgentResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private com.oracle.bmc.databasemigration.model.Agent agent;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "etag", "agent"})
     private UpdateAgentResponse(
             int __httpStatusCode__,
             String opcRequestId,

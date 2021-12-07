@@ -32,6 +32,12 @@ public class ListServiceGatewaysResponse extends com.oracle.bmc.responses.BmcRes
      */
     private java.util.List<com.oracle.bmc.core.model.ServiceGateway> items;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcNextPage",
+        "opcRequestId",
+        "items"
+    })
     private ListServiceGatewaysResponse(
             int __httpStatusCode__,
             String opcNextPage,

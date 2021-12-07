@@ -24,6 +24,7 @@ public class ListRewardsResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private com.oracle.bmc.usage.model.RewardCollection rewardCollection;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "rewardCollection"})
     private ListRewardsResponse(
             int __httpStatusCode__,
             String opcRequestId,

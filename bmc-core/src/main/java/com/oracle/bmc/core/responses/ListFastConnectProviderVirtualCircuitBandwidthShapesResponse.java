@@ -33,6 +33,12 @@ public class ListFastConnectProviderVirtualCircuitBandwidthShapesResponse
      */
     private java.util.List<com.oracle.bmc.core.model.VirtualCircuitBandwidthShape> items;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcNextPage",
+        "opcRequestId",
+        "items"
+    })
     private ListFastConnectProviderVirtualCircuitBandwidthShapesResponse(
             int __httpStatusCode__,
             String opcNextPage,

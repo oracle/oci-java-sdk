@@ -24,6 +24,7 @@ public class GetResourceTypeResponse extends com.oracle.bmc.responses.BmcRespons
      */
     private com.oracle.bmc.resourcesearch.model.ResourceType resourceType;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "resourceType"})
     private GetResourceTypeResponse(
             int __httpStatusCode__,
             String opcRequestId,

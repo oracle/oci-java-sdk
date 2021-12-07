@@ -32,6 +32,12 @@ public class ListImagesResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private java.util.List<com.oracle.bmc.core.model.Image> items;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcNextPage",
+        "opcRequestId",
+        "items"
+    })
     private ListImagesResponse(
             int __httpStatusCode__,
             String opcNextPage,

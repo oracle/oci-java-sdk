@@ -30,6 +30,7 @@ public class CreateMountTargetResponse extends com.oracle.bmc.responses.BmcRespo
      */
     private com.oracle.bmc.filestorage.model.MountTarget mountTarget;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "etag", "opcRequestId", "mountTarget"})
     private CreateMountTargetResponse(
             int __httpStatusCode__,
             String etag,

@@ -39,6 +39,13 @@ public class ListStorageWorkRequestErrorsResponse extends com.oracle.bmc.respons
      */
     private com.oracle.bmc.loganalytics.model.WorkRequestErrorCollection workRequestErrorCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "opcPrevPage",
+        "workRequestErrorCollection"
+    })
     private ListStorageWorkRequestErrorsResponse(
             int __httpStatusCode__,
             String opcRequestId,

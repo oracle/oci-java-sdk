@@ -29,6 +29,12 @@ public class GetCertificateAuthorityResponse extends com.oracle.bmc.responses.Bm
      */
     private com.oracle.bmc.certificatesmanagement.model.CertificateAuthority certificateAuthority;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcRequestId",
+        "certificateAuthority"
+    })
     private GetCertificateAuthorityResponse(
             int __httpStatusCode__,
             String etag,

@@ -32,6 +32,12 @@ public class ListFleetsResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private com.oracle.bmc.jms.model.FleetCollection fleetCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "fleetCollection"
+    })
     private ListFleetsResponse(
             int __httpStatusCode__,
             String opcRequestId,

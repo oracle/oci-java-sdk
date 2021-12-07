@@ -24,6 +24,7 @@ public class CreateEntityShapeResponse extends com.oracle.bmc.responses.BmcRespo
      */
     private com.oracle.bmc.dataintegration.model.EntityShape entityShape;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "entityShape"})
     private CreateEntityShapeResponse(
             int __httpStatusCode__,
             String opcRequestId,

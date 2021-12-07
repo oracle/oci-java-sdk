@@ -32,6 +32,12 @@ public class ListServiceCatalogsResponse extends com.oracle.bmc.responses.BmcRes
      */
     private com.oracle.bmc.servicecatalog.model.ServiceCatalogCollection serviceCatalogCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "serviceCatalogCollection"
+    })
     private ListServiceCatalogsResponse(
             int __httpStatusCode__,
             String opcRequestId,

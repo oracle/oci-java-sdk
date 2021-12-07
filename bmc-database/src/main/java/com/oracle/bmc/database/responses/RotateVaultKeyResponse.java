@@ -35,6 +35,13 @@ public class RotateVaultKeyResponse extends com.oracle.bmc.responses.BmcResponse
      */
     private com.oracle.bmc.database.model.Database database;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcWorkRequestId",
+        "opcRequestId",
+        "database"
+    })
     private RotateVaultKeyResponse(
             int __httpStatusCode__,
             String etag,

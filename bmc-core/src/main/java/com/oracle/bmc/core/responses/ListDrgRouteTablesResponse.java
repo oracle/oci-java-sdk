@@ -32,6 +32,12 @@ public class ListDrgRouteTablesResponse extends com.oracle.bmc.responses.BmcResp
      */
     private java.util.List<com.oracle.bmc.core.model.DrgRouteTable> items;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcNextPage",
+        "opcRequestId",
+        "items"
+    })
     private ListDrgRouteTablesResponse(
             int __httpStatusCode__,
             String opcNextPage,

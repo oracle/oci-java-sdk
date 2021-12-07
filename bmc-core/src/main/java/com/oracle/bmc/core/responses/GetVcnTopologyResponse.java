@@ -30,6 +30,7 @@ public class GetVcnTopologyResponse extends com.oracle.bmc.responses.BmcResponse
      */
     private com.oracle.bmc.core.model.VcnTopology vcnTopology;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "etag", "opcRequestId", "vcnTopology"})
     private GetVcnTopologyResponse(
             int __httpStatusCode__,
             String etag,

@@ -27,6 +27,12 @@ public class GetRepositoryFileLinesResponse extends com.oracle.bmc.responses.Bmc
      */
     private com.oracle.bmc.devops.model.RepositoryFileLines repositoryFileLines;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "etag",
+        "repositoryFileLines"
+    })
     private GetRepositoryFileLinesResponse(
             int __httpStatusCode__,
             String opcRequestId,

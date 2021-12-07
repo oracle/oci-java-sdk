@@ -35,6 +35,13 @@ public class CreateSoftwareSourceResponse extends com.oracle.bmc.responses.BmcRe
      */
     private com.oracle.bmc.osmanagement.model.SoftwareSource softwareSource;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "location",
+        "opcRequestId",
+        "etag",
+        "softwareSource"
+    })
     private CreateSoftwareSourceResponse(
             int __httpStatusCode__,
             String location,

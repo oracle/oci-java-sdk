@@ -34,6 +34,13 @@ public class ListConnectHarnessesResponse extends com.oracle.bmc.responses.BmcRe
      */
     private java.util.List<com.oracle.bmc.streaming.model.ConnectHarnessSummary> items;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcNextPage",
+        "opcPrevPage",
+        "opcRequestId",
+        "items"
+    })
     private ListConnectHarnessesResponse(
             int __httpStatusCode__,
             String opcNextPage,

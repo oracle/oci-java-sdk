@@ -30,6 +30,12 @@ public class GetConnectionValidationResponse extends com.oracle.bmc.responses.Bm
      */
     private com.oracle.bmc.dataintegration.model.ConnectionValidation connectionValidation;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcRequestId",
+        "connectionValidation"
+    })
     private GetConnectionValidationResponse(
             int __httpStatusCode__,
             String etag,

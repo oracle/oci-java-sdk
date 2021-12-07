@@ -24,6 +24,7 @@ public class GetManagedDatabaseResponse extends com.oracle.bmc.responses.BmcResp
      */
     private com.oracle.bmc.databasemanagement.model.ManagedDatabase managedDatabase;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "managedDatabase"})
     private GetManagedDatabaseResponse(
             int __httpStatusCode__,
             String opcRequestId,

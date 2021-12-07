@@ -30,6 +30,12 @@ public class GetServiceEnvironmentResponse extends com.oracle.bmc.responses.BmcR
      */
     private com.oracle.bmc.servicemanagerproxy.model.ServiceEnvironment serviceEnvironment;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "etag",
+        "serviceEnvironment"
+    })
     private GetServiceEnvironmentResponse(
             int __httpStatusCode__,
             String opcRequestId,

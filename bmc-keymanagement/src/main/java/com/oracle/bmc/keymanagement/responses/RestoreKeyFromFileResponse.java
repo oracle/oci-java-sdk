@@ -43,6 +43,14 @@ public class RestoreKeyFromFileResponse extends com.oracle.bmc.responses.BmcResp
      */
     private com.oracle.bmc.keymanagement.model.Key key;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcContentMd5",
+        "opcRequestId",
+        "opcWorkRequestId",
+        "key"
+    })
     private RestoreKeyFromFileResponse(
             int __httpStatusCode__,
             String etag,

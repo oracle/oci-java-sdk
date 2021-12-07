@@ -30,6 +30,12 @@ public class ResetInstancePoolResponse extends com.oracle.bmc.responses.BmcRespo
      */
     private com.oracle.bmc.core.model.InstancePool instancePool;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcRequestId",
+        "instancePool"
+    })
     private ResetInstancePoolResponse(
             int __httpStatusCode__,
             String etag,

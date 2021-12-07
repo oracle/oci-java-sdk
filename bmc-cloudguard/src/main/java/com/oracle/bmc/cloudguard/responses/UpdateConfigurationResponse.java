@@ -30,6 +30,12 @@ public class UpdateConfigurationResponse extends com.oracle.bmc.responses.BmcRes
      */
     private com.oracle.bmc.cloudguard.model.Configuration configuration;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcRequestId",
+        "configuration"
+    })
     private UpdateConfigurationResponse(
             int __httpStatusCode__,
             String etag,

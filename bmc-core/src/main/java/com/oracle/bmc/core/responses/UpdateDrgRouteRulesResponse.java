@@ -24,6 +24,7 @@ public class UpdateDrgRouteRulesResponse extends com.oracle.bmc.responses.BmcRes
      */
     private java.util.List<com.oracle.bmc.core.model.DrgRouteRule> items;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "items"})
     private UpdateDrgRouteRulesResponse(
             int __httpStatusCode__,
             String opcRequestId,

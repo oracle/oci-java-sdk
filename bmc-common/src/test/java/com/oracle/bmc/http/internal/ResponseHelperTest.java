@@ -6,6 +6,7 @@ package com.oracle.bmc.http.internal;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.common.collect.ImmutableList;
+import com.oracle.bmc.io.internal.AutoCloseableContentLengthVerifyingInputStream;
 import com.oracle.bmc.io.internal.ContentLengthVerifyingInputStream;
 import com.oracle.bmc.io.internal.WrappedResponseInputStream;
 import com.oracle.bmc.model.BmcException;
@@ -22,6 +23,7 @@ import java.util.List;
 
 import static org.hamcrest.Matchers.instanceOf;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertThat;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
@@ -225,6 +227,46 @@ public class ResponseHelperTest {
         assertEquals(ImmutableList.of(contentType), headers.get(HttpHeaders.CONTENT_TYPE));
         assertEquals(ImmutableList.of("100"), headers.get(HttpHeaders.CONTENT_LENGTH));
         assertEquals(ImmutableList.of("100"), stringHeaders.get(HttpHeaders.CONTENT_LENGTH));
+    }
+
+    @Test
+    public void testReadEntity_streamWithoutVerifyingContentLength() {
+        Response response = mock(Response.class);
+        Response.StatusType statusInfo = mock(Response.StatusType.class);
+        MultivaluedMap<String, Object> headers = new MultivaluedHashMap<>();
+        List<Object> contentType = ImmutableList.<Object>of("text");
+        InputStream mockStream = mock(InputStream.class);
+
+        Class<InputStream> entityType = InputStream.class;
+
+        when(response.getStatusInfo()).thenReturn(statusInfo);
+        when(statusInfo.getFamily()).thenReturn(Response.Status.Family.SUCCESSFUL);
+        when(response.getHeaders()).thenReturn(headers);
+        headers.add(HttpHeaders.CONTENT_TYPE, contentType);
+        headers.add(HttpHeaders.CONTENT_LENGTH, "100");
+        headers.add(HttpHeaders.CONTENT_ENCODING, "gzip");
+        MultivaluedMap<String, String> stringHeaders = new MultivaluedHashMap<>();
+        stringHeaders.putSingle(HttpHeaders.CONTENT_LENGTH, "100");
+        when(response.getStringHeaders()).thenReturn(stringHeaders);
+        when(response.readEntity(entityType)).thenReturn(mockStream);
+
+        InputStream inputStream = ResponseHelper.readEntity(response, entityType);
+
+        assertFalse(inputStream instanceof ContentLengthVerifyingInputStream);
+        assertFalse(inputStream instanceof AutoCloseableContentLengthVerifyingInputStream);
+        verify(response).getStatusInfo();
+        verify(statusInfo).getFamily();
+        verify(response, atLeastOnce()).getHeaders();
+        verify(response).readEntity(entityType);
+        verify(response, never()).bufferEntity();
+        verify(response).getStringHeaders();
+        verifyNoMoreInteractions(response, statusInfo, mockStream);
+        headers = response.getHeaders();
+        stringHeaders = response.getStringHeaders();
+        assertEquals(ImmutableList.of(contentType), headers.get(HttpHeaders.CONTENT_TYPE));
+        assertEquals(ImmutableList.of("100"), headers.get(HttpHeaders.CONTENT_LENGTH));
+        assertEquals(ImmutableList.of("100"), stringHeaders.get(HttpHeaders.CONTENT_LENGTH));
+        assertEquals(ImmutableList.of("gzip"), headers.get(HttpHeaders.CONTENT_ENCODING));
     }
 
     private static Response buildMockResponse(

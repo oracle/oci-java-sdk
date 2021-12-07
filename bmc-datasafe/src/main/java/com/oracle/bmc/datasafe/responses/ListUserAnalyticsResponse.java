@@ -29,6 +29,12 @@ public class ListUserAnalyticsResponse extends com.oracle.bmc.responses.BmcRespo
      */
     private java.util.List<com.oracle.bmc.datasafe.model.UserAggregation> items;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "items"
+    })
     private ListUserAnalyticsResponse(
             int __httpStatusCode__,
             String opcRequestId,

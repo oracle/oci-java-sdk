@@ -32,6 +32,12 @@ public class RequestSummarizedUsagesResponse extends com.oracle.bmc.responses.Bm
      */
     private com.oracle.bmc.usageapi.model.UsageAggregation usageAggregation;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "usageAggregation"
+    })
     private RequestSummarizedUsagesResponse(
             int __httpStatusCode__,
             String opcRequestId,

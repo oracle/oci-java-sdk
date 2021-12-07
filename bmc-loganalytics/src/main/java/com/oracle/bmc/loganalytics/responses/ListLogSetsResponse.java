@@ -31,6 +31,12 @@ public class ListLogSetsResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private com.oracle.bmc.loganalytics.model.LogSetCollection logSetCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "logSetCollection"
+    })
     private ListLogSetsResponse(
             int __httpStatusCode__,
             String opcRequestId,

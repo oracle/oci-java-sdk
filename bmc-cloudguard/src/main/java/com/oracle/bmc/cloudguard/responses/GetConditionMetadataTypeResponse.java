@@ -30,6 +30,12 @@ public class GetConditionMetadataTypeResponse extends com.oracle.bmc.responses.B
      */
     private com.oracle.bmc.cloudguard.model.ConditionMetadataType conditionMetadataType;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcRequestId",
+        "conditionMetadataType"
+    })
     private GetConditionMetadataTypeResponse(
             int __httpStatusCode__,
             String etag,

@@ -33,6 +33,12 @@ public class ListContainerImageSignaturesResponse extends com.oracle.bmc.respons
     private com.oracle.bmc.artifacts.model.ContainerImageSignatureCollection
             containerImageSignatureCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcNextPage",
+        "opcRequestId",
+        "containerImageSignatureCollection"
+    })
     private ListContainerImageSignaturesResponse(
             int __httpStatusCode__,
             String opcNextPage,

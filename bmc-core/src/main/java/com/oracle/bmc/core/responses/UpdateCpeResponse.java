@@ -30,6 +30,7 @@ public class UpdateCpeResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private com.oracle.bmc.core.model.Cpe cpe;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "etag", "opcRequestId", "cpe"})
     private UpdateCpeResponse(
             int __httpStatusCode__,
             String etag,

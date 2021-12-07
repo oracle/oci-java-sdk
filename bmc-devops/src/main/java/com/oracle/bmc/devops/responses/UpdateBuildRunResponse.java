@@ -32,6 +32,13 @@ public class UpdateBuildRunResponse extends com.oracle.bmc.responses.BmcResponse
      */
     private com.oracle.bmc.devops.model.BuildRun buildRun;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcRequestId",
+        "location",
+        "buildRun"
+    })
     private UpdateBuildRunResponse(
             int __httpStatusCode__,
             String etag,

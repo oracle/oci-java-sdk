@@ -27,6 +27,12 @@ public class GetRefResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private com.oracle.bmc.devops.model.RepositoryRef repositoryRef;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcRequestId",
+        "repositoryRef"
+    })
     private GetRefResponse(
             int __httpStatusCode__,
             String etag,

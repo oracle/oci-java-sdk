@@ -30,6 +30,12 @@ public class GetBackendSetHealthResponse extends com.oracle.bmc.responses.BmcRes
      */
     private com.oracle.bmc.networkloadbalancer.model.BackendSetHealth backendSetHealth;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "etag",
+        "backendSetHealth"
+    })
     private GetBackendSetHealthResponse(
             int __httpStatusCode__,
             String opcRequestId,

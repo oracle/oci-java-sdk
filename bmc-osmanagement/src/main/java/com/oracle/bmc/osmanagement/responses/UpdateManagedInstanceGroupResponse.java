@@ -30,6 +30,12 @@ public class UpdateManagedInstanceGroupResponse extends com.oracle.bmc.responses
      */
     private com.oracle.bmc.osmanagement.model.ManagedInstanceGroup managedInstanceGroup;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcRequestId",
+        "managedInstanceGroup"
+    })
     private UpdateManagedInstanceGroupResponse(
             int __httpStatusCode__,
             String etag,

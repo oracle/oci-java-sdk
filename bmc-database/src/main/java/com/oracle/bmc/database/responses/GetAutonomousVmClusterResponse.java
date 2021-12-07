@@ -29,6 +29,12 @@ public class GetAutonomousVmClusterResponse extends com.oracle.bmc.responses.Bmc
      */
     private com.oracle.bmc.database.model.AutonomousVmCluster autonomousVmCluster;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcRequestId",
+        "autonomousVmCluster"
+    })
     private GetAutonomousVmClusterResponse(
             int __httpStatusCode__,
             String etag,

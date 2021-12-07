@@ -31,6 +31,12 @@ public class GetClusterMigrateToNativeVcnStatusResponse
     private com.oracle.bmc.containerengine.model.ClusterMigrateToNativeVcnStatus
             clusterMigrateToNativeVcnStatus;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcRequestId",
+        "clusterMigrateToNativeVcnStatus"
+    })
     private GetClusterMigrateToNativeVcnStatusResponse(
             int __httpStatusCode__,
             String etag,

@@ -33,6 +33,12 @@ public class ListDrgRouteDistributionStatementsResponse
      */
     private java.util.List<com.oracle.bmc.core.model.DrgRouteDistributionStatement> items;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcNextPage",
+        "opcRequestId",
+        "items"
+    })
     private ListDrgRouteDistributionStatementsResponse(
             int __httpStatusCode__,
             String opcNextPage,

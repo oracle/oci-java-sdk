@@ -32,6 +32,12 @@ public class ListGenericArtifactsResponse extends com.oracle.bmc.responses.BmcRe
      */
     private com.oracle.bmc.artifacts.model.GenericArtifactCollection genericArtifactCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcNextPage",
+        "opcRequestId",
+        "genericArtifactCollection"
+    })
     private ListGenericArtifactsResponse(
             int __httpStatusCode__,
             String opcNextPage,

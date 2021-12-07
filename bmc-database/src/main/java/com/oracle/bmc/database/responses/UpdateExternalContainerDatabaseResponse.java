@@ -35,6 +35,13 @@ public class UpdateExternalContainerDatabaseResponse extends com.oracle.bmc.resp
      */
     private com.oracle.bmc.database.model.ExternalContainerDatabase externalContainerDatabase;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcWorkRequestId",
+        "opcRequestId",
+        "etag",
+        "externalContainerDatabase"
+    })
     private UpdateExternalContainerDatabaseResponse(
             int __httpStatusCode__,
             String opcWorkRequestId,

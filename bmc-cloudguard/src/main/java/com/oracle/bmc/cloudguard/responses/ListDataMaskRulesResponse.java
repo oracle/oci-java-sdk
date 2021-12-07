@@ -32,6 +32,12 @@ public class ListDataMaskRulesResponse extends com.oracle.bmc.responses.BmcRespo
      */
     private com.oracle.bmc.cloudguard.model.DataMaskRuleCollection dataMaskRuleCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "dataMaskRuleCollection"
+    })
     private ListDataMaskRulesResponse(
             int __httpStatusCode__,
             String opcRequestId,

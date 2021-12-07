@@ -31,6 +31,7 @@ public class GetApiResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private com.oracle.bmc.apigateway.model.Api api;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "etag", "opcRequestId", "api"})
     private GetApiResponse(
             int __httpStatusCode__,
             String etag,

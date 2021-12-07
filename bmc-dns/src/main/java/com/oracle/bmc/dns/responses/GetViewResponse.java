@@ -40,6 +40,13 @@ public class GetViewResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private boolean isNotModified;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcRequestId",
+        "view",
+        "isNotModified"
+    })
     private GetViewResponse(
             int __httpStatusCode__,
             String etag,

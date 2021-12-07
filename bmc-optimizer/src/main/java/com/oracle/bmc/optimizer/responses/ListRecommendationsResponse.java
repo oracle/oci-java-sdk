@@ -39,6 +39,13 @@ public class ListRecommendationsResponse extends com.oracle.bmc.responses.BmcRes
      */
     private com.oracle.bmc.optimizer.model.RecommendationCollection recommendationCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "opcPrevPage",
+        "recommendationCollection"
+    })
     private ListRecommendationsResponse(
             int __httpStatusCode__,
             String opcRequestId,

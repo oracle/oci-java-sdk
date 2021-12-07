@@ -33,6 +33,12 @@ public class ListRecommendationsResponse extends com.oracle.bmc.responses.BmcRes
     private com.oracle.bmc.cloudguard.model.RecommendationSummaryCollection
             recommendationSummaryCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "recommendationSummaryCollection"
+    })
     private ListRecommendationsResponse(
             int __httpStatusCode__,
             String opcRequestId,

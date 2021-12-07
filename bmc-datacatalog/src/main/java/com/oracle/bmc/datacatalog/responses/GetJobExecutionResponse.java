@@ -30,6 +30,12 @@ public class GetJobExecutionResponse extends com.oracle.bmc.responses.BmcRespons
      */
     private com.oracle.bmc.datacatalog.model.JobExecution jobExecution;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcRequestId",
+        "jobExecution"
+    })
     private GetJobExecutionResponse(
             int __httpStatusCode__,
             String etag,

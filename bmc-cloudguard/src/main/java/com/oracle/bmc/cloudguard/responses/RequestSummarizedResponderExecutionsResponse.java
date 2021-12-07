@@ -34,6 +34,12 @@ public class RequestSummarizedResponderExecutionsResponse
     private com.oracle.bmc.cloudguard.model.ResponderExecutionAggregationCollection
             responderExecutionAggregationCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "responderExecutionAggregationCollection"
+    })
     private RequestSummarizedResponderExecutionsResponse(
             int __httpStatusCode__,
             String opcRequestId,

@@ -24,6 +24,11 @@ public class GetLogAnalyticsEntitiesSummaryResponse extends com.oracle.bmc.respo
     private com.oracle.bmc.loganalytics.model.LogAnalyticsEntitySummaryReport
             logAnalyticsEntitySummaryReport;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "logAnalyticsEntitySummaryReport"
+    })
     private GetLogAnalyticsEntitiesSummaryResponse(
             int __httpStatusCode__,
             String opcRequestId,

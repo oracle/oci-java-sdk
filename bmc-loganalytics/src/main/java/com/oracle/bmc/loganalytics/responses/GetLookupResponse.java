@@ -29,6 +29,12 @@ public class GetLookupResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private com.oracle.bmc.loganalytics.model.LogAnalyticsLookup logAnalyticsLookup;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcRequestId",
+        "logAnalyticsLookup"
+    })
     private GetLookupResponse(
             int __httpStatusCode__,
             String etag,

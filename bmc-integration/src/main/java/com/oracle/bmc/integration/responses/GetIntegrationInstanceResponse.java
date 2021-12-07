@@ -30,6 +30,12 @@ public class GetIntegrationInstanceResponse extends com.oracle.bmc.responses.Bmc
      */
     private com.oracle.bmc.integration.model.IntegrationInstance integrationInstance;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcRequestId",
+        "integrationInstance"
+    })
     private GetIntegrationInstanceResponse(
             int __httpStatusCode__,
             String etag,

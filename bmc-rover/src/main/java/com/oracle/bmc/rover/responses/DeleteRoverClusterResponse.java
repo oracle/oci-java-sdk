@@ -19,6 +19,7 @@ public class DeleteRoverClusterResponse extends com.oracle.bmc.responses.BmcResp
      */
     private String opcRequestId;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId"})
     private DeleteRoverClusterResponse(int __httpStatusCode__, String opcRequestId) {
         super(__httpStatusCode__);
         this.opcRequestId = opcRequestId;

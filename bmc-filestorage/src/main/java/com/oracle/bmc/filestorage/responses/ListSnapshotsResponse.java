@@ -35,6 +35,12 @@ public class ListSnapshotsResponse extends com.oracle.bmc.responses.BmcResponse 
      */
     private java.util.List<com.oracle.bmc.filestorage.model.SnapshotSummary> items;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcNextPage",
+        "opcRequestId",
+        "items"
+    })
     private ListSnapshotsResponse(
             int __httpStatusCode__,
             String opcNextPage,

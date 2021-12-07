@@ -25,6 +25,11 @@ public class GetIPSecConnectionTunnelErrorResponse extends com.oracle.bmc.respon
     private com.oracle.bmc.core.model.IPSecConnectionTunnelErrorDetails
             iPSecConnectionTunnelErrorDetails;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "iPSecConnectionTunnelErrorDetails"
+    })
     private GetIPSecConnectionTunnelErrorResponse(
             int __httpStatusCode__,
             String opcRequestId,

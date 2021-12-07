@@ -32,6 +32,12 @@ public class ListLimitDefinitionsResponse extends com.oracle.bmc.responses.BmcRe
      */
     private java.util.List<com.oracle.bmc.limits.model.LimitDefinitionSummary> items;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcNextPage",
+        "opcRequestId",
+        "items"
+    })
     private ListLimitDefinitionsResponse(
             int __httpStatusCode__,
             String opcNextPage,

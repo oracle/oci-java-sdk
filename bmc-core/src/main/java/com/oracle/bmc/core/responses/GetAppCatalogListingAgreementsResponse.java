@@ -31,6 +31,12 @@ public class GetAppCatalogListingAgreementsResponse extends com.oracle.bmc.respo
     private com.oracle.bmc.core.model.AppCatalogListingResourceVersionAgreements
             appCatalogListingResourceVersionAgreements;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcRequestId",
+        "appCatalogListingResourceVersionAgreements"
+    })
     private GetAppCatalogListingAgreementsResponse(
             int __httpStatusCode__,
             String etag,

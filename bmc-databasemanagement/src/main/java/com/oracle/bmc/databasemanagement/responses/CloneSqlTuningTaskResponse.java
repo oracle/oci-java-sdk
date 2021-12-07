@@ -24,6 +24,7 @@ public class CloneSqlTuningTaskResponse extends com.oracle.bmc.responses.BmcResp
      */
     private com.oracle.bmc.databasemanagement.model.SqlTuningTaskReturn sqlTuningTaskReturn;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "sqlTuningTaskReturn"})
     private CloneSqlTuningTaskResponse(
             int __httpStatusCode__,
             String opcRequestId,

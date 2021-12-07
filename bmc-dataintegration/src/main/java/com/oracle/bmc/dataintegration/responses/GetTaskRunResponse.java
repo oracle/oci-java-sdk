@@ -30,6 +30,7 @@ public class GetTaskRunResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private com.oracle.bmc.dataintegration.model.TaskRun taskRun;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "etag", "opcRequestId", "taskRun"})
     private GetTaskRunResponse(
             int __httpStatusCode__,
             String etag,

@@ -32,6 +32,13 @@ public class ListWhitelistsResponse extends com.oracle.bmc.responses.BmcResponse
      */
     private java.util.List<com.oracle.bmc.waas.model.Whitelist> items;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcRequestId",
+        "opcNextPage",
+        "items"
+    })
     private ListWhitelistsResponse(
             int __httpStatusCode__,
             String etag,

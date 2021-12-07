@@ -40,6 +40,13 @@ public class ListServicesResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private java.util.List<com.oracle.bmc.logging.model.ServiceSummary> items;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "opcPreviousPage",
+        "items"
+    })
     private ListServicesResponse(
             int __httpStatusCode__,
             String opcRequestId,

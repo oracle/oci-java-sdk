@@ -29,6 +29,12 @@ public class CreateSmtpCredentialResponse extends com.oracle.bmc.responses.BmcRe
      */
     private com.oracle.bmc.identity.model.SmtpCredential smtpCredential;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "etag",
+        "smtpCredential"
+    })
     private CreateSmtpCredentialResponse(
             int __httpStatusCode__,
             String opcRequestId,

@@ -25,6 +25,7 @@ public class AddAutoScalingConfigurationResponse extends com.oracle.bmc.response
      */
     private String opcWorkRequestId;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "opcWorkRequestId"})
     private AddAutoScalingConfigurationResponse(
             int __httpStatusCode__, String opcRequestId, String opcWorkRequestId) {
         super(__httpStatusCode__);

@@ -32,6 +32,12 @@ public class ListInstanceConsoleConnectionsResponse extends com.oracle.bmc.respo
      */
     private java.util.List<com.oracle.bmc.core.model.InstanceConsoleConnection> items;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcNextPage",
+        "opcRequestId",
+        "items"
+    })
     private ListInstanceConsoleConnectionsResponse(
             int __httpStatusCode__,
             String opcNextPage,

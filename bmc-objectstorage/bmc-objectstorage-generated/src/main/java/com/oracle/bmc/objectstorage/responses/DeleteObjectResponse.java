@@ -42,6 +42,14 @@ public class DeleteObjectResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private Boolean isDeleteMarker;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcClientRequestId",
+        "opcRequestId",
+        "lastModified",
+        "versionId",
+        "isDeleteMarker"
+    })
     private DeleteObjectResponse(
             int __httpStatusCode__,
             String opcClientRequestId,

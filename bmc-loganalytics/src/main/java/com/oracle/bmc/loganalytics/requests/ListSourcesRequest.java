@@ -200,6 +200,11 @@ public class ListSourcesRequest extends com.oracle.bmc.requests.BmcRequest<java.
     private String name;
 
     /**
+     * A comma-separated list of categories used for filtering
+     */
+    private String categories;
+
+    /**
      * A flag specifying whether or not to return all source information, or a subset of the
      * information about each source.  A value of true will return only the source unique
      * identifier and the source name.  A value of false will return all source information
@@ -259,6 +264,7 @@ public class ListSourcesRequest extends com.oracle.bmc.requests.BmcRequest<java.
             limit(o.getLimit());
             page(o.getPage());
             name(o.getName());
+            categories(o.getCategories());
             isSimplified(o.getIsSimplified());
             opcRequestId(o.getOpcRequestId());
             invocationCallback(o.getInvocationCallback());

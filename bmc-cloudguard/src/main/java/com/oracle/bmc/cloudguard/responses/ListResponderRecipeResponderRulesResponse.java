@@ -34,6 +34,12 @@ public class ListResponderRecipeResponderRulesResponse
     private com.oracle.bmc.cloudguard.model.ResponderRecipeResponderRuleCollection
             responderRecipeResponderRuleCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "responderRecipeResponderRuleCollection"
+    })
     private ListResponderRecipeResponderRulesResponse(
             int __httpStatusCode__,
             String opcRequestId,

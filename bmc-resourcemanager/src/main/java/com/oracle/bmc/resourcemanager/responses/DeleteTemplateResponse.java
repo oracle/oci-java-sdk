@@ -17,6 +17,7 @@ public class DeleteTemplateResponse extends com.oracle.bmc.responses.BmcResponse
      */
     private String opcRequestId;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId"})
     private DeleteTemplateResponse(int __httpStatusCode__, String opcRequestId) {
         super(__httpStatusCode__);
         this.opcRequestId = opcRequestId;

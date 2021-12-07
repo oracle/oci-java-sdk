@@ -24,6 +24,7 @@ public class GetVmClusterPatchResponse extends com.oracle.bmc.responses.BmcRespo
      */
     private com.oracle.bmc.database.model.Patch patch;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "patch"})
     private GetVmClusterPatchResponse(
             int __httpStatusCode__,
             String opcRequestId,

@@ -26,6 +26,7 @@ public class ChangeLocalPeeringGatewayCompartmentResponse
      */
     private String opcRequestId;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "etag", "opcRequestId"})
     private ChangeLocalPeeringGatewayCompartmentResponse(
             int __httpStatusCode__, String etag, String opcRequestId) {
         super(__httpStatusCode__);

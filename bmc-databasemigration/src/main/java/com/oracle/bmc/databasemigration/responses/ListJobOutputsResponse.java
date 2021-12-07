@@ -33,6 +33,12 @@ public class ListJobOutputsResponse extends com.oracle.bmc.responses.BmcResponse
     private com.oracle.bmc.databasemigration.model.JobOutputSummaryCollection
             jobOutputSummaryCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "jobOutputSummaryCollection"
+    })
     private ListJobOutputsResponse(
             int __httpStatusCode__,
             String opcRequestId,

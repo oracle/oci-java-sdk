@@ -32,6 +32,12 @@ public class ListFastConnectProviderServicesResponse extends com.oracle.bmc.resp
      */
     private java.util.List<com.oracle.bmc.core.model.FastConnectProviderService> items;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcNextPage",
+        "opcRequestId",
+        "items"
+    })
     private ListFastConnectProviderServicesResponse(
             int __httpStatusCode__,
             String opcNextPage,

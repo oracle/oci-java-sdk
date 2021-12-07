@@ -43,6 +43,14 @@ public class ListDependentObjectsResponse extends com.oracle.bmc.responses.BmcRe
     private com.oracle.bmc.dataintegration.model.DependentObjectSummaryCollection
             dependentObjectSummaryCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "opcPrevPage",
+        "opcTotalItems",
+        "dependentObjectSummaryCollection"
+    })
     private ListDependentObjectsResponse(
             int __httpStatusCode__,
             String opcRequestId,

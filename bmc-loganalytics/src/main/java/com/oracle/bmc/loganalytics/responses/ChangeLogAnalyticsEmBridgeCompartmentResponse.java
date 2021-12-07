@@ -19,6 +19,7 @@ public class ChangeLogAnalyticsEmBridgeCompartmentResponse
      */
     private String opcRequestId;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId"})
     private ChangeLogAnalyticsEmBridgeCompartmentResponse(
             int __httpStatusCode__, String opcRequestId) {
         super(__httpStatusCode__);

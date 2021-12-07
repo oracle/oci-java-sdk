@@ -35,6 +35,13 @@ public class DisableDatabaseManagementResponse extends com.oracle.bmc.responses.
      */
     private com.oracle.bmc.database.model.Database database;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcWorkRequestId",
+        "opcRequestId",
+        "database"
+    })
     private DisableDatabaseManagementResponse(
             int __httpStatusCode__,
             String etag,

@@ -25,6 +25,11 @@ public class GetNetworkLoadBalancerHealthResponse extends com.oracle.bmc.respons
     private com.oracle.bmc.networkloadbalancer.model.NetworkLoadBalancerHealth
             networkLoadBalancerHealth;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "networkLoadBalancerHealth"
+    })
     private GetNetworkLoadBalancerHealthResponse(
             int __httpStatusCode__,
             String opcRequestId,

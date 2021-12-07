@@ -33,6 +33,12 @@ public class ListConsumerGroupPrivilegesResponse extends com.oracle.bmc.response
     private com.oracle.bmc.databasemanagement.model.ConsumerGroupPrivilegeCollection
             consumerGroupPrivilegeCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcNextPage",
+        "opcRequestId",
+        "consumerGroupPrivilegeCollection"
+    })
     private ListConsumerGroupPrivilegesResponse(
             int __httpStatusCode__,
             String opcNextPage,

@@ -32,6 +32,12 @@ public class ListCustomTablesResponse extends com.oracle.bmc.responses.BmcRespon
      */
     private com.oracle.bmc.usageapi.model.CustomTableCollection customTableCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "customTableCollection"
+    })
     private ListCustomTablesResponse(
             int __httpStatusCode__,
             String opcRequestId,

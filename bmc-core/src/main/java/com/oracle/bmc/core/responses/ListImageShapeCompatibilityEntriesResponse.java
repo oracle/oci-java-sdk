@@ -33,6 +33,12 @@ public class ListImageShapeCompatibilityEntriesResponse
      */
     private java.util.List<com.oracle.bmc.core.model.ImageShapeCompatibilitySummary> items;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcNextPage",
+        "opcRequestId",
+        "items"
+    })
     private ListImageShapeCompatibilityEntriesResponse(
             int __httpStatusCode__,
             String opcNextPage,

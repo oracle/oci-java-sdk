@@ -32,6 +32,12 @@ public class ListNatGatewaysResponse extends com.oracle.bmc.responses.BmcRespons
      */
     private java.util.List<com.oracle.bmc.core.model.NatGateway> items;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcNextPage",
+        "opcRequestId",
+        "items"
+    })
     private ListNatGatewaysResponse(
             int __httpStatusCode__,
             String opcNextPage,

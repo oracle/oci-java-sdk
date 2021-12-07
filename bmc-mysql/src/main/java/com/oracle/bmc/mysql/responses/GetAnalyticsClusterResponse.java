@@ -38,6 +38,13 @@ public class GetAnalyticsClusterResponse extends com.oracle.bmc.responses.BmcRes
      */
     private boolean isNotModified;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcRequestId",
+        "analyticsCluster",
+        "isNotModified"
+    })
     private GetAnalyticsClusterResponse(
             int __httpStatusCode__,
             String etag,

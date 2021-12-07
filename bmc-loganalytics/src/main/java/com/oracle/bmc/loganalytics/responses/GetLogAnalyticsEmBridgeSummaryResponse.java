@@ -24,6 +24,11 @@ public class GetLogAnalyticsEmBridgeSummaryResponse extends com.oracle.bmc.respo
     private com.oracle.bmc.loganalytics.model.LogAnalyticsEmBridgeSummaryReport
             logAnalyticsEmBridgeSummaryReport;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "logAnalyticsEmBridgeSummaryReport"
+    })
     private GetLogAnalyticsEmBridgeSummaryResponse(
             int __httpStatusCode__,
             String opcRequestId,

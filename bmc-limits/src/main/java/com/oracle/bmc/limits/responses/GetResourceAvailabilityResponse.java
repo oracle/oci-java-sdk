@@ -24,6 +24,11 @@ public class GetResourceAvailabilityResponse extends com.oracle.bmc.responses.Bm
      */
     private com.oracle.bmc.limits.model.ResourceAvailability resourceAvailability;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "resourceAvailability"
+    })
     private GetResourceAvailabilityResponse(
             int __httpStatusCode__,
             String opcRequestId,

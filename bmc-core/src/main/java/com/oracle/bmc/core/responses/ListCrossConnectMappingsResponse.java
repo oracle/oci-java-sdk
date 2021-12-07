@@ -25,6 +25,11 @@ public class ListCrossConnectMappingsResponse extends com.oracle.bmc.responses.B
     private com.oracle.bmc.core.model.CrossConnectMappingDetailsCollection
             crossConnectMappingDetailsCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "crossConnectMappingDetailsCollection"
+    })
     private ListCrossConnectMappingsResponse(
             int __httpStatusCode__,
             String opcRequestId,

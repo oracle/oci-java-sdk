@@ -30,6 +30,12 @@ public class UpdateAnalyticsInstanceResponse extends com.oracle.bmc.responses.Bm
      */
     private com.oracle.bmc.analytics.model.AnalyticsInstance analyticsInstance;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcRequestId",
+        "analyticsInstance"
+    })
     private UpdateAnalyticsInstanceResponse(
             int __httpStatusCode__,
             String etag,

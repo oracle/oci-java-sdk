@@ -22,6 +22,7 @@ public class GetSecretBundleByNameResponse extends com.oracle.bmc.responses.BmcR
      */
     private com.oracle.bmc.secrets.model.SecretBundle secretBundle;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "secretBundle"})
     private GetSecretBundleByNameResponse(
             int __httpStatusCode__,
             String opcRequestId,

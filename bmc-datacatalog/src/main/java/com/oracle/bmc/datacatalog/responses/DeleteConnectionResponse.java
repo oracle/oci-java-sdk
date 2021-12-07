@@ -19,6 +19,7 @@ public class DeleteConnectionResponse extends com.oracle.bmc.responses.BmcRespon
      */
     private String opcRequestId;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId"})
     private DeleteConnectionResponse(int __httpStatusCode__, String opcRequestId) {
         super(__httpStatusCode__);
         this.opcRequestId = opcRequestId;

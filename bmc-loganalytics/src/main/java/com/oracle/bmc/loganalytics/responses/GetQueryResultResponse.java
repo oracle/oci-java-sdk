@@ -44,6 +44,14 @@ public class GetQueryResultResponse extends com.oracle.bmc.responses.BmcResponse
      */
     private com.oracle.bmc.loganalytics.model.QueryAggregation queryAggregation;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "opcPrevPage",
+        "retryAfter",
+        "queryAggregation"
+    })
     private GetQueryResultResponse(
             int __httpStatusCode__,
             String opcRequestId,

@@ -131,6 +131,30 @@ public class GetObjectResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private boolean isNotModified;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcClientRequestId",
+        "opcRequestId",
+        "eTag",
+        "opcMeta",
+        "contentLength",
+        "contentRange",
+        "contentMd5",
+        "opcMultipartMd5",
+        "contentType",
+        "contentLanguage",
+        "contentEncoding",
+        "cacheControl",
+        "contentDisposition",
+        "lastModified",
+        "storageTier",
+        "archivalState",
+        "timeOfArchival",
+        "versionId",
+        "expires",
+        "inputStream",
+        "isNotModified"
+    })
     private GetObjectResponse(
             int __httpStatusCode__,
             String opcClientRequestId,

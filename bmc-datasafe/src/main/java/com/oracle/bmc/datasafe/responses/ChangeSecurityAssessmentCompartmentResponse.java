@@ -19,6 +19,7 @@ public class ChangeSecurityAssessmentCompartmentResponse
      */
     private String opcRequestId;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId"})
     private ChangeSecurityAssessmentCompartmentResponse(
             int __httpStatusCode__, String opcRequestId) {
         super(__httpStatusCode__);

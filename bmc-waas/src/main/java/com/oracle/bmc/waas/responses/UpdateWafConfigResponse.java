@@ -22,6 +22,7 @@ public class UpdateWafConfigResponse extends com.oracle.bmc.responses.BmcRespons
      */
     private String opcWorkRequestId;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "opcWorkRequestId"})
     private UpdateWafConfigResponse(
             int __httpStatusCode__, String opcRequestId, String opcWorkRequestId) {
         super(__httpStatusCode__);

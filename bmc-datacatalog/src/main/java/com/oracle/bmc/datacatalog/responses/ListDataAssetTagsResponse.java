@@ -30,6 +30,12 @@ public class ListDataAssetTagsResponse extends com.oracle.bmc.responses.BmcRespo
      */
     private com.oracle.bmc.datacatalog.model.DataAssetTagCollection dataAssetTagCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "dataAssetTagCollection"
+    })
     private ListDataAssetTagsResponse(
             int __httpStatusCode__,
             String opcRequestId,

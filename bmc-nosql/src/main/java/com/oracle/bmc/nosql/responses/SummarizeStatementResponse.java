@@ -25,6 +25,7 @@ public class SummarizeStatementResponse extends com.oracle.bmc.responses.BmcResp
      */
     private com.oracle.bmc.nosql.model.StatementSummary statementSummary;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "statementSummary"})
     private SummarizeStatementResponse(
             int __httpStatusCode__,
             String opcRequestId,

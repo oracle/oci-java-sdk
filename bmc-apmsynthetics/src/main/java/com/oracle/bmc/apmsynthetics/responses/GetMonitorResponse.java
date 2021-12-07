@@ -30,6 +30,7 @@ public class GetMonitorResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private com.oracle.bmc.apmsynthetics.model.Monitor monitor;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "etag", "opcRequestId", "monitor"})
     private GetMonitorResponse(
             int __httpStatusCode__,
             String etag,

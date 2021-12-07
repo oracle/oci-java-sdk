@@ -27,6 +27,12 @@ public class ListCustomProtectionRulesResponse extends com.oracle.bmc.responses.
      */
     private java.util.List<com.oracle.bmc.waas.model.CustomProtectionRuleSummary> items;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcNextPage",
+        "opcRequestId",
+        "items"
+    })
     private ListCustomProtectionRulesResponse(
             int __httpStatusCode__,
             String opcNextPage,

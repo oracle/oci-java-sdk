@@ -49,6 +49,15 @@ public class CommitMultipartUploadResponse extends com.oracle.bmc.responses.BmcR
      */
     private String versionId;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcClientRequestId",
+        "opcRequestId",
+        "opcMultipartMd5",
+        "eTag",
+        "lastModified",
+        "versionId"
+    })
     private CommitMultipartUploadResponse(
             int __httpStatusCode__,
             String opcClientRequestId,

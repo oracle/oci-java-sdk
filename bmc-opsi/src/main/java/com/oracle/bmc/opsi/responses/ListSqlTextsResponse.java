@@ -32,6 +32,12 @@ public class ListSqlTextsResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private com.oracle.bmc.opsi.model.SqlTextCollection sqlTextCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "sqlTextCollection"
+    })
     private ListSqlTextsResponse(
             int __httpStatusCode__,
             String opcRequestId,

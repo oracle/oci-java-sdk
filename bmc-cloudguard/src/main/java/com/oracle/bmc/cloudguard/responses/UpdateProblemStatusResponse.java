@@ -30,6 +30,7 @@ public class UpdateProblemStatusResponse extends com.oracle.bmc.responses.BmcRes
      */
     private com.oracle.bmc.cloudguard.model.Problem problem;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "etag", "opcRequestId", "problem"})
     private UpdateProblemStatusResponse(
             int __httpStatusCode__,
             String etag,

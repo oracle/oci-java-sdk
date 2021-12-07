@@ -30,6 +30,12 @@ public class GetAiPrivateEndpointResponse extends com.oracle.bmc.responses.BmcRe
      */
     private com.oracle.bmc.aianomalydetection.model.AiPrivateEndpoint aiPrivateEndpoint;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "etag",
+        "aiPrivateEndpoint"
+    })
     private GetAiPrivateEndpointResponse(
             int __httpStatusCode__,
             String opcRequestId,

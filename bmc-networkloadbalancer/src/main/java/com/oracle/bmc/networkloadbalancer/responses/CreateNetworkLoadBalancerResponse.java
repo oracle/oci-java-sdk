@@ -36,6 +36,13 @@ public class CreateNetworkLoadBalancerResponse extends com.oracle.bmc.responses.
      */
     private com.oracle.bmc.networkloadbalancer.model.NetworkLoadBalancer networkLoadBalancer;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcWorkRequestId",
+        "opcRequestId",
+        "etag",
+        "networkLoadBalancer"
+    })
     private CreateNetworkLoadBalancerResponse(
             int __httpStatusCode__,
             String opcWorkRequestId,

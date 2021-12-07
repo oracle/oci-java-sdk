@@ -45,6 +45,14 @@ public class GetZoneRecordsResponse extends com.oracle.bmc.responses.BmcResponse
      */
     private com.oracle.bmc.dns.model.RecordCollection recordCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcNextPage",
+        "opcTotalItems",
+        "opcRequestId",
+        "eTag",
+        "recordCollection"
+    })
     private GetZoneRecordsResponse(
             int __httpStatusCode__,
             String opcNextPage,

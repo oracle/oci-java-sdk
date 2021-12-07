@@ -24,6 +24,7 @@ public class GetTagNamespaceResponse extends com.oracle.bmc.responses.BmcRespons
      */
     private com.oracle.bmc.identity.model.TagNamespace tagNamespace;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "tagNamespace"})
     private GetTagNamespaceResponse(
             int __httpStatusCode__,
             String opcRequestId,

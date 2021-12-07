@@ -34,6 +34,12 @@ public class SummarizeExadataInsightResourceCapacityTrendAggregatedResponse
     private com.oracle.bmc.opsi.model.SummarizeExadataInsightResourceCapacityTrendAggregation
             summarizeExadataInsightResourceCapacityTrendAggregation;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "summarizeExadataInsightResourceCapacityTrendAggregation"
+    })
     private SummarizeExadataInsightResourceCapacityTrendAggregatedResponse(
             int __httpStatusCode__,
             String opcRequestId,

@@ -24,6 +24,7 @@ public class CreateRoutingPolicyResponse extends com.oracle.bmc.responses.BmcRes
      */
     private String opcRequestId;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcWorkRequestId", "opcRequestId"})
     private CreateRoutingPolicyResponse(
             int __httpStatusCode__, String opcWorkRequestId, String opcRequestId) {
         super(__httpStatusCode__);

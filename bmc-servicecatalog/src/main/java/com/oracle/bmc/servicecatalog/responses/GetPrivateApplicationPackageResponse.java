@@ -30,6 +30,12 @@ public class GetPrivateApplicationPackageResponse extends com.oracle.bmc.respons
      */
     private com.oracle.bmc.servicecatalog.model.PrivateApplicationPackage privateApplicationPackage;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcRequestId",
+        "privateApplicationPackage"
+    })
     private GetPrivateApplicationPackageResponse(
             int __httpStatusCode__,
             String etag,

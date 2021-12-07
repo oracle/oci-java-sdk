@@ -30,6 +30,7 @@ public class UpdatePrivateIpResponse extends com.oracle.bmc.responses.BmcRespons
      */
     private com.oracle.bmc.core.model.PrivateIp privateIp;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "etag", "opcRequestId", "privateIp"})
     private UpdatePrivateIpResponse(
             int __httpStatusCode__,
             String etag,

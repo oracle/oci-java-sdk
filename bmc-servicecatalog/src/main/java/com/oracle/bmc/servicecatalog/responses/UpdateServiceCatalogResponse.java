@@ -30,6 +30,12 @@ public class UpdateServiceCatalogResponse extends com.oracle.bmc.responses.BmcRe
      */
     private com.oracle.bmc.servicecatalog.model.ServiceCatalog serviceCatalog;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "etag",
+        "serviceCatalog"
+    })
     private UpdateServiceCatalogResponse(
             int __httpStatusCode__,
             String opcRequestId,

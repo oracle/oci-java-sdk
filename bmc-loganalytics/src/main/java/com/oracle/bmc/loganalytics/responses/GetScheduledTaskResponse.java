@@ -29,6 +29,12 @@ public class GetScheduledTaskResponse extends com.oracle.bmc.responses.BmcRespon
      */
     private com.oracle.bmc.loganalytics.model.ScheduledTask scheduledTask;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "etag",
+        "scheduledTask"
+    })
     private GetScheduledTaskResponse(
             int __httpStatusCode__,
             String opcRequestId,

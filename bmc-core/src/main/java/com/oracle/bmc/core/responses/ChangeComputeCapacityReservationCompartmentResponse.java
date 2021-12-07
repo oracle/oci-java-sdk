@@ -27,6 +27,7 @@ public class ChangeComputeCapacityReservationCompartmentResponse
      */
     private String opcWorkRequestId;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "opcWorkRequestId"})
     private ChangeComputeCapacityReservationCompartmentResponse(
             int __httpStatusCode__, String opcRequestId, String opcWorkRequestId) {
         super(__httpStatusCode__);

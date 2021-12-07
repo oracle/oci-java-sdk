@@ -24,6 +24,7 @@ public class ListShapesResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private java.util.List<com.oracle.bmc.mysql.model.ShapeSummary> items;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "items"})
     private ListShapesResponse(
             int __httpStatusCode__,
             String opcRequestId,

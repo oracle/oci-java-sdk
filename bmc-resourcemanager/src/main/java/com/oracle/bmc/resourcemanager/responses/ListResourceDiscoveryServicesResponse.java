@@ -25,6 +25,11 @@ public class ListResourceDiscoveryServicesResponse extends com.oracle.bmc.respon
     private com.oracle.bmc.resourcemanager.model.ResourceDiscoveryServiceCollection
             resourceDiscoveryServiceCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "resourceDiscoveryServiceCollection"
+    })
     private ListResourceDiscoveryServicesResponse(
             int __httpStatusCode__,
             String opcRequestId,

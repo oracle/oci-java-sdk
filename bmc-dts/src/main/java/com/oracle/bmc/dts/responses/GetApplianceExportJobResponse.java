@@ -27,6 +27,12 @@ public class GetApplianceExportJobResponse extends com.oracle.bmc.responses.BmcR
      */
     private com.oracle.bmc.dts.model.ApplianceExportJob applianceExportJob;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "etag",
+        "applianceExportJob"
+    })
     private GetApplianceExportJobResponse(
             int __httpStatusCode__,
             String opcRequestId,

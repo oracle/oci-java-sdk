@@ -20,6 +20,7 @@ public class ChangePingMonitorCompartmentResponse extends com.oracle.bmc.respons
      */
     private String opcRequestId;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId"})
     private ChangePingMonitorCompartmentResponse(int __httpStatusCode__, String opcRequestId) {
         super(__httpStatusCode__);
         this.opcRequestId = opcRequestId;

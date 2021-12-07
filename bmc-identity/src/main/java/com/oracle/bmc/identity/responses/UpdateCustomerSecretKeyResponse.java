@@ -29,6 +29,12 @@ public class UpdateCustomerSecretKeyResponse extends com.oracle.bmc.responses.Bm
      */
     private com.oracle.bmc.identity.model.CustomerSecretKeySummary customerSecretKeySummary;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "etag",
+        "customerSecretKeySummary"
+    })
     private UpdateCustomerSecretKeyResponse(
             int __httpStatusCode__,
             String opcRequestId,

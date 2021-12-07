@@ -30,6 +30,12 @@ public class GetRoverNodeEncryptionKeyResponse extends com.oracle.bmc.responses.
      */
     private com.oracle.bmc.rover.model.RoverNodeEncryptionKey roverNodeEncryptionKey;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcRequestId",
+        "roverNodeEncryptionKey"
+    })
     private GetRoverNodeEncryptionKeyResponse(
             int __httpStatusCode__,
             String etag,

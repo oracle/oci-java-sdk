@@ -32,6 +32,12 @@ public class ListResponderRecipesResponse extends com.oracle.bmc.responses.BmcRe
      */
     private com.oracle.bmc.cloudguard.model.ResponderRecipeCollection responderRecipeCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "responderRecipeCollection"
+    })
     private ListResponderRecipesResponse(
             int __httpStatusCode__,
             String opcRequestId,

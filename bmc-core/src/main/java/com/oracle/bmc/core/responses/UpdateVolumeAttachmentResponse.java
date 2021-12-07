@@ -30,6 +30,12 @@ public class UpdateVolumeAttachmentResponse extends com.oracle.bmc.responses.Bmc
      */
     private com.oracle.bmc.core.model.VolumeAttachment volumeAttachment;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcRequestId",
+        "volumeAttachment"
+    })
     private UpdateVolumeAttachmentResponse(
             int __httpStatusCode__,
             String etag,

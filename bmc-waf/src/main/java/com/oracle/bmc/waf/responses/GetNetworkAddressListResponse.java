@@ -30,6 +30,12 @@ public class GetNetworkAddressListResponse extends com.oracle.bmc.responses.BmcR
      */
     private com.oracle.bmc.waf.model.NetworkAddressList networkAddressList;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcRequestId",
+        "networkAddressList"
+    })
     private GetNetworkAddressListResponse(
             int __httpStatusCode__,
             String etag,

@@ -38,6 +38,13 @@ public class GetChannelResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private boolean isNotModified;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcRequestId",
+        "channel",
+        "isNotModified"
+    })
     private GetChannelResponse(
             int __httpStatusCode__,
             String etag,

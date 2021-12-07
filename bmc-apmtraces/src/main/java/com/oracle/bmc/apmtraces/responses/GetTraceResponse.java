@@ -24,6 +24,7 @@ public class GetTraceResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private com.oracle.bmc.apmtraces.model.Trace trace;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "trace"})
     private GetTraceResponse(
             int __httpStatusCode__,
             String opcRequestId,

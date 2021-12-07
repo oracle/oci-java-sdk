@@ -30,6 +30,12 @@ public class CreateTaskScheduleResponse extends com.oracle.bmc.responses.BmcResp
      */
     private com.oracle.bmc.dataintegration.model.TaskSchedule taskSchedule;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "etag",
+        "taskSchedule"
+    })
     private CreateTaskScheduleResponse(
             int __httpStatusCode__,
             String opcRequestId,

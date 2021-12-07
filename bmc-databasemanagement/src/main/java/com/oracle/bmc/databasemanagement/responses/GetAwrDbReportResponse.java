@@ -24,6 +24,7 @@ public class GetAwrDbReportResponse extends com.oracle.bmc.responses.BmcResponse
      */
     private com.oracle.bmc.databasemanagement.model.AwrDbReport awrDbReport;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "awrDbReport"})
     private GetAwrDbReportResponse(
             int __httpStatusCode__,
             String opcRequestId,

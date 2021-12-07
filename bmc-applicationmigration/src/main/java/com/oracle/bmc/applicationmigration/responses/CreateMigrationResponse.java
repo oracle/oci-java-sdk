@@ -36,6 +36,13 @@ public class CreateMigrationResponse extends com.oracle.bmc.responses.BmcRespons
      */
     private com.oracle.bmc.applicationmigration.model.Migration migration;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcRequestId",
+        "opcWorkRequestId",
+        "migration"
+    })
     private CreateMigrationResponse(
             int __httpStatusCode__,
             String etag,

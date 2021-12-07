@@ -28,6 +28,12 @@ public class ListMirrorRecordsResponse extends com.oracle.bmc.responses.BmcRespo
     private com.oracle.bmc.devops.model.RepositoryMirrorRecordCollection
             repositoryMirrorRecordCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "repositoryMirrorRecordCollection"
+    })
     private ListMirrorRecordsResponse(
             int __httpStatusCode__,
             String opcRequestId,

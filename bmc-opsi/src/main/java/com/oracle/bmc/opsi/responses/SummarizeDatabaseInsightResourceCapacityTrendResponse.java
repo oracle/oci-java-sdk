@@ -35,6 +35,12 @@ public class SummarizeDatabaseInsightResourceCapacityTrendResponse
                     .SummarizeDatabaseInsightResourceCapacityTrendAggregationCollection
             summarizeDatabaseInsightResourceCapacityTrendAggregationCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "summarizeDatabaseInsightResourceCapacityTrendAggregationCollection"
+    })
     private SummarizeDatabaseInsightResourceCapacityTrendResponse(
             int __httpStatusCode__,
             String opcRequestId,

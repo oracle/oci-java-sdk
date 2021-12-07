@@ -23,6 +23,11 @@ public class ValidateFileResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private com.oracle.bmc.loganalytics.model.FileValidationResponse fileValidationResponse;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "fileValidationResponse"
+    })
     private ValidateFileResponse(
             int __httpStatusCode__,
             String opcRequestId,

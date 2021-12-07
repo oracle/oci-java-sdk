@@ -20,6 +20,7 @@ public class AttachChildSoftwareSourceToManagedInstanceResponse
      */
     private String opcRequestId;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId"})
     private AttachChildSoftwareSourceToManagedInstanceResponse(
             int __httpStatusCode__, String opcRequestId) {
         super(__httpStatusCode__);

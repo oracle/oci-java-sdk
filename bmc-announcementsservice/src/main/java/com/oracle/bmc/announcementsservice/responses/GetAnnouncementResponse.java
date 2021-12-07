@@ -22,6 +22,7 @@ public class GetAnnouncementResponse extends com.oracle.bmc.responses.BmcRespons
      */
     private com.oracle.bmc.announcementsservice.model.Announcement announcement;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "announcement"})
     private GetAnnouncementResponse(
             int __httpStatusCode__,
             String opcRequestId,

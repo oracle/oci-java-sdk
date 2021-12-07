@@ -32,6 +32,12 @@ public class ListApplianceExportJobsResponse extends com.oracle.bmc.responses.Bm
      */
     private java.util.List<com.oracle.bmc.dts.model.ApplianceExportJobSummary> items;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcNextPage",
+        "opcRequestId",
+        "items"
+    })
     private ListApplianceExportJobsResponse(
             int __httpStatusCode__,
             String opcNextPage,

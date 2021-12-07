@@ -30,6 +30,7 @@ public class UpdateSessionResponse extends com.oracle.bmc.responses.BmcResponse 
      */
     private com.oracle.bmc.bastion.model.Session session;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "etag", "opcRequestId", "session"})
     private UpdateSessionResponse(
             int __httpStatusCode__,
             String etag,

@@ -55,6 +55,16 @@ public class GetJobArtifactContentResponse extends com.oracle.bmc.responses.BmcR
      */
     private java.io.InputStream inputStream;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcRequestId",
+        "contentLength",
+        "contentMd5",
+        "lastModified",
+        "contentDisposition",
+        "inputStream"
+    })
     private GetJobArtifactContentResponse(
             int __httpStatusCode__,
             String etag,

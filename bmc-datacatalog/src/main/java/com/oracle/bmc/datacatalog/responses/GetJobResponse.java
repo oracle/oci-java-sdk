@@ -30,6 +30,7 @@ public class GetJobResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private com.oracle.bmc.datacatalog.model.Job job;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "etag", "opcRequestId", "job"})
     private GetJobResponse(
             int __httpStatusCode__,
             String etag,

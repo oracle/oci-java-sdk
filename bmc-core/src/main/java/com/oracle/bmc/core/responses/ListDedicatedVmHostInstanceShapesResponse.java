@@ -33,6 +33,12 @@ public class ListDedicatedVmHostInstanceShapesResponse
      */
     private java.util.List<com.oracle.bmc.core.model.DedicatedVmHostInstanceShapeSummary> items;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcNextPage",
+        "opcRequestId",
+        "items"
+    })
     private ListDedicatedVmHostInstanceShapesResponse(
             int __httpStatusCode__,
             String opcNextPage,

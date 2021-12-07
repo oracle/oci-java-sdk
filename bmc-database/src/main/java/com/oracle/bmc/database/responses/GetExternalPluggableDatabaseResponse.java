@@ -29,6 +29,12 @@ public class GetExternalPluggableDatabaseResponse extends com.oracle.bmc.respons
      */
     private com.oracle.bmc.database.model.ExternalPluggableDatabase externalPluggableDatabase;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcRequestId",
+        "externalPluggableDatabase"
+    })
     private GetExternalPluggableDatabaseResponse(
             int __httpStatusCode__,
             String etag,

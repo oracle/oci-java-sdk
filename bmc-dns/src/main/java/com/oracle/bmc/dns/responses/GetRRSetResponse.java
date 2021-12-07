@@ -45,6 +45,14 @@ public class GetRRSetResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private com.oracle.bmc.dns.model.RRSet rRSet;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcNextPage",
+        "opcTotalItems",
+        "opcRequestId",
+        "eTag",
+        "rRSet"
+    })
     private GetRRSetResponse(
             int __httpStatusCode__,
             String opcNextPage,

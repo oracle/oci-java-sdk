@@ -25,6 +25,11 @@ public class DetectLanguageKeyPhrasesResponse extends com.oracle.bmc.responses.B
     private com.oracle.bmc.ailanguage.model.DetectLanguageKeyPhrasesResult
             detectLanguageKeyPhrasesResult;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "detectLanguageKeyPhrasesResult"
+    })
     private DetectLanguageKeyPhrasesResponse(
             int __httpStatusCode__,
             String opcRequestId,

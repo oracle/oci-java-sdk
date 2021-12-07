@@ -24,6 +24,7 @@ public class GetSchemaResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private com.oracle.bmc.dataintegration.model.Schema schema;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "schema"})
     private GetSchemaResponse(
             int __httpStatusCode__,
             String opcRequestId,

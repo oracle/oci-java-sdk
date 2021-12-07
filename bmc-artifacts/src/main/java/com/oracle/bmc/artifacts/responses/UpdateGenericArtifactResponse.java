@@ -30,6 +30,12 @@ public class UpdateGenericArtifactResponse extends com.oracle.bmc.responses.BmcR
      */
     private com.oracle.bmc.artifacts.model.GenericArtifact genericArtifact;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcRequestId",
+        "genericArtifact"
+    })
     private UpdateGenericArtifactResponse(
             int __httpStatusCode__,
             String etag,

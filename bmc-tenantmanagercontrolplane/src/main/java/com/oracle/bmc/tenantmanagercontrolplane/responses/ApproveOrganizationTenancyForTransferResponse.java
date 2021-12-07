@@ -31,6 +31,12 @@ public class ApproveOrganizationTenancyForTransferResponse
      */
     private com.oracle.bmc.tenantmanagercontrolplane.model.OrganizationTenancy organizationTenancy;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "etag",
+        "organizationTenancy"
+    })
     private ApproveOrganizationTenancyForTransferResponse(
             int __httpStatusCode__,
             String opcRequestId,

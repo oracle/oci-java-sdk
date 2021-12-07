@@ -32,6 +32,12 @@ public class ListVolumesResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private java.util.List<com.oracle.bmc.core.model.Volume> items;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcNextPage",
+        "opcRequestId",
+        "items"
+    })
     private ListVolumesResponse(
             int __httpStatusCode__,
             String opcNextPage,

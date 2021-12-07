@@ -30,6 +30,12 @@ public class GetPrivateAccessChannelResponse extends com.oracle.bmc.responses.Bm
      */
     private com.oracle.bmc.analytics.model.PrivateAccessChannel privateAccessChannel;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcRequestId",
+        "privateAccessChannel"
+    })
     private GetPrivateAccessChannelResponse(
             int __httpStatusCode__,
             String etag,

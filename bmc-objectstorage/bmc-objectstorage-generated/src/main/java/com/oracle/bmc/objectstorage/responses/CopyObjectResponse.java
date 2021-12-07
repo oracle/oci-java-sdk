@@ -31,6 +31,12 @@ public class CopyObjectResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private String opcClientRequestId;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcWorkRequestId",
+        "opcRequestId",
+        "opcClientRequestId"
+    })
     private CopyObjectResponse(
             int __httpStatusCode__,
             String opcWorkRequestId,

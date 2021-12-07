@@ -29,6 +29,12 @@ public class ListDataSafePrivateEndpointsResponse extends com.oracle.bmc.respons
      */
     private java.util.List<com.oracle.bmc.datasafe.model.DataSafePrivateEndpointSummary> items;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "items"
+    })
     private ListDataSafePrivateEndpointsResponse(
             int __httpStatusCode__,
             String opcRequestId,

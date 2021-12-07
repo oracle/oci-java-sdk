@@ -33,6 +33,12 @@ public class ListDetectorRecipeDetectorRulesResponse extends com.oracle.bmc.resp
     private com.oracle.bmc.cloudguard.model.DetectorRecipeDetectorRuleCollection
             detectorRecipeDetectorRuleCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "detectorRecipeDetectorRuleCollection"
+    })
     private ListDetectorRecipeDetectorRulesResponse(
             int __httpStatusCode__,
             String opcRequestId,

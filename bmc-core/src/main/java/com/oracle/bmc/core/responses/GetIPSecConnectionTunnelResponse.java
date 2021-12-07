@@ -30,6 +30,12 @@ public class GetIPSecConnectionTunnelResponse extends com.oracle.bmc.responses.B
      */
     private com.oracle.bmc.core.model.IPSecConnectionTunnel iPSecConnectionTunnel;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcRequestId",
+        "iPSecConnectionTunnel"
+    })
     private GetIPSecConnectionTunnelResponse(
             int __httpStatusCode__,
             String etag,

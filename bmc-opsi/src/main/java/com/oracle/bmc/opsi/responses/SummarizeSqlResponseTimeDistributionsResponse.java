@@ -34,6 +34,12 @@ public class SummarizeSqlResponseTimeDistributionsResponse
     private com.oracle.bmc.opsi.model.SqlResponseTimeDistributionAggregationCollection
             sqlResponseTimeDistributionAggregationCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "sqlResponseTimeDistributionAggregationCollection"
+    })
     private SummarizeSqlResponseTimeDistributionsResponse(
             int __httpStatusCode__,
             String opcRequestId,

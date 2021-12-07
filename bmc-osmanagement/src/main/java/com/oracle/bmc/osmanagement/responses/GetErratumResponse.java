@@ -24,6 +24,7 @@ public class GetErratumResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private com.oracle.bmc.osmanagement.model.Erratum erratum;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "erratum"})
     private GetErratumResponse(
             int __httpStatusCode__,
             String opcRequestId,

@@ -33,6 +33,12 @@ public class ListAnnotationFormatsResponse extends com.oracle.bmc.responses.BmcR
     private com.oracle.bmc.datalabelingservice.model.AnnotationFormatCollection
             annotationFormatCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "annotationFormatCollection"
+    })
     private ListAnnotationFormatsResponse(
             int __httpStatusCode__,
             String opcRequestId,

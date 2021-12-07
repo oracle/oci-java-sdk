@@ -25,6 +25,7 @@ public class ListAllowedPeerRegionsForRemotePeeringResponse
      */
     private java.util.List<com.oracle.bmc.core.model.PeerRegionForRemotePeering> items;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "items"})
     private ListAllowedPeerRegionsForRemotePeeringResponse(
             int __httpStatusCode__,
             String opcRequestId,

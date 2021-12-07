@@ -26,6 +26,11 @@ public class GetThirdPartyPaidListingEligibilityResponse
     private com.oracle.bmc.marketplace.model.ThirdPartyPaidListingEligibility
             thirdPartyPaidListingEligibility;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "thirdPartyPaidListingEligibility"
+    })
     private GetThirdPartyPaidListingEligibilityResponse(
             int __httpStatusCode__,
             String opcRequestId,

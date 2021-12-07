@@ -24,6 +24,11 @@ public class ImportCustomContentResponse extends com.oracle.bmc.responses.BmcRes
     private com.oracle.bmc.loganalytics.model.LogAnalyticsImportCustomContent
             logAnalyticsImportCustomContent;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "logAnalyticsImportCustomContent"
+    })
     private ImportCustomContentResponse(
             int __httpStatusCode__,
             String opcRequestId,

@@ -30,6 +30,7 @@ public class UpdateApplicationResponse extends com.oracle.bmc.responses.BmcRespo
      */
     private com.oracle.bmc.dataintegration.model.Application application;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "etag", "opcRequestId", "application"})
     private UpdateApplicationResponse(
             int __httpStatusCode__,
             String etag,

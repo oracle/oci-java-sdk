@@ -35,6 +35,13 @@ public class ActivateExadataInfrastructureResponse extends com.oracle.bmc.respon
      */
     private com.oracle.bmc.database.model.ExadataInfrastructure exadataInfrastructure;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcWorkRequestId",
+        "etag",
+        "opcRequestId",
+        "exadataInfrastructure"
+    })
     private ActivateExadataInfrastructureResponse(
             int __httpStatusCode__,
             String opcWorkRequestId,

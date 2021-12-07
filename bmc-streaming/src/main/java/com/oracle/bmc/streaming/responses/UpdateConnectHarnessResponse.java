@@ -29,6 +29,12 @@ public class UpdateConnectHarnessResponse extends com.oracle.bmc.responses.BmcRe
      */
     private com.oracle.bmc.streaming.model.ConnectHarness connectHarness;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "etag",
+        "connectHarness"
+    })
     private UpdateConnectHarnessResponse(
             int __httpStatusCode__,
             String opcRequestId,

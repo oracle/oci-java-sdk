@@ -24,6 +24,11 @@ public class RequestSummarizedConfigurationsResponse extends com.oracle.bmc.resp
      */
     private com.oracle.bmc.usageapi.model.ConfigurationAggregation configurationAggregation;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "configurationAggregation"
+    })
     private RequestSummarizedConfigurationsResponse(
             int __httpStatusCode__,
             String opcRequestId,

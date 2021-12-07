@@ -32,6 +32,12 @@ public class ChangeSubnetCompartmentResponse extends com.oracle.bmc.responses.Bm
      */
     private String opcWorkRequestId;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcRequestId",
+        "opcWorkRequestId"
+    })
     private ChangeSubnetCompartmentResponse(
             int __httpStatusCode__, String etag, String opcRequestId, String opcWorkRequestId) {
         super(__httpStatusCode__);

@@ -30,6 +30,12 @@ public class GetDataFlowValidationResponse extends com.oracle.bmc.responses.BmcR
      */
     private com.oracle.bmc.dataintegration.model.DataFlowValidation dataFlowValidation;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcRequestId",
+        "dataFlowValidation"
+    })
     private GetDataFlowValidationResponse(
             int __httpStatusCode__,
             String etag,

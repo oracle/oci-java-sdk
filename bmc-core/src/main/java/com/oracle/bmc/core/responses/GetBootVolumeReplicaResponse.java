@@ -30,6 +30,12 @@ public class GetBootVolumeReplicaResponse extends com.oracle.bmc.responses.BmcRe
      */
     private com.oracle.bmc.core.model.BootVolumeReplica bootVolumeReplica;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcRequestId",
+        "bootVolumeReplica"
+    })
     private GetBootVolumeReplicaResponse(
             int __httpStatusCode__,
             String etag,

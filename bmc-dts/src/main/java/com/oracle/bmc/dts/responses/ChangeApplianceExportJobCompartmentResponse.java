@@ -18,6 +18,7 @@ public class ChangeApplianceExportJobCompartmentResponse
      */
     private String opcRequestId;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId"})
     private ChangeApplianceExportJobCompartmentResponse(
             int __httpStatusCode__, String opcRequestId) {
         super(__httpStatusCode__);

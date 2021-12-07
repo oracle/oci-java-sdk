@@ -23,6 +23,11 @@ public class GetLogAnalyticsLogGroupsSummaryResponse extends com.oracle.bmc.resp
      */
     private com.oracle.bmc.loganalytics.model.LogGroupSummaryReport logGroupSummaryReport;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "logGroupSummaryReport"
+    })
     private GetLogAnalyticsLogGroupsSummaryResponse(
             int __httpStatusCode__,
             String opcRequestId,

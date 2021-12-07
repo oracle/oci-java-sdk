@@ -30,6 +30,12 @@ public class GetContainerConfigurationResponse extends com.oracle.bmc.responses.
      */
     private com.oracle.bmc.artifacts.model.ContainerConfiguration containerConfiguration;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcRequestId",
+        "containerConfiguration"
+    })
     private GetContainerConfigurationResponse(
             int __httpStatusCode__,
             String etag,

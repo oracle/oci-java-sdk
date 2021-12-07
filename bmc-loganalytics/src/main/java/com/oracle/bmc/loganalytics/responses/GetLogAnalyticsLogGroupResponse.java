@@ -29,6 +29,12 @@ public class GetLogAnalyticsLogGroupResponse extends com.oracle.bmc.responses.Bm
      */
     private com.oracle.bmc.loganalytics.model.LogAnalyticsLogGroup logAnalyticsLogGroup;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcRequestId",
+        "logAnalyticsLogGroup"
+    })
     private GetLogAnalyticsLogGroupResponse(
             int __httpStatusCode__,
             String etag,

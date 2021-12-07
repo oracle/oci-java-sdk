@@ -30,6 +30,12 @@ public class ListRulesResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private com.oracle.bmc.datacatalog.model.RuleCollection ruleCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "ruleCollection"
+    })
     private ListRulesResponse(
             int __httpStatusCode__,
             String opcRequestId,

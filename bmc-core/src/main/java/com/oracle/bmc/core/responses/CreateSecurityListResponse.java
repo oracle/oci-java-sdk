@@ -30,6 +30,12 @@ public class CreateSecurityListResponse extends com.oracle.bmc.responses.BmcResp
      */
     private com.oracle.bmc.core.model.SecurityList securityList;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcRequestId",
+        "securityList"
+    })
     private CreateSecurityListResponse(
             int __httpStatusCode__,
             String etag,

@@ -35,6 +35,13 @@ public class CreateManagedDatabaseGroupResponse extends com.oracle.bmc.responses
      */
     private com.oracle.bmc.databasemanagement.model.ManagedDatabaseGroup managedDatabaseGroup;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "location",
+        "opcRequestId",
+        "etag",
+        "managedDatabaseGroup"
+    })
     private CreateManagedDatabaseGroupResponse(
             int __httpStatusCode__,
             String location,

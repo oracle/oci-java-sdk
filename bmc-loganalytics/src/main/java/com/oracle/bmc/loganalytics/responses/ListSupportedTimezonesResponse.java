@@ -36,6 +36,13 @@ public class ListSupportedTimezonesResponse extends com.oracle.bmc.responses.Bmc
      */
     private com.oracle.bmc.loganalytics.model.TimezoneCollection timezoneCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "opcTotalItems",
+        "timezoneCollection"
+    })
     private ListSupportedTimezonesResponse(
             int __httpStatusCode__,
             String opcRequestId,

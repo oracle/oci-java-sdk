@@ -30,6 +30,12 @@ public class CreateDrgAttachmentResponse extends com.oracle.bmc.responses.BmcRes
      */
     private com.oracle.bmc.core.model.DrgAttachment drgAttachment;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcRequestId",
+        "drgAttachment"
+    })
     private CreateDrgAttachmentResponse(
             int __httpStatusCode__,
             String etag,

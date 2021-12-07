@@ -40,6 +40,13 @@ public class ListSourceMetaFunctionsResponse extends com.oracle.bmc.responses.Bm
     private com.oracle.bmc.loganalytics.model.LogAnalyticsMetaFunctionCollection
             logAnalyticsMetaFunctionCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcPrevPage",
+        "opcNextPage",
+        "opcRequestId",
+        "logAnalyticsMetaFunctionCollection"
+    })
     private ListSourceMetaFunctionsResponse(
             int __httpStatusCode__,
             String opcPrevPage,

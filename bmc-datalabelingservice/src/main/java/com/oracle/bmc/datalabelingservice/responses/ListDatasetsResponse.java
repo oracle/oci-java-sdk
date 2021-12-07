@@ -32,6 +32,12 @@ public class ListDatasetsResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private com.oracle.bmc.datalabelingservice.model.DatasetCollection datasetCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "datasetCollection"
+    })
     private ListDatasetsResponse(
             int __httpStatusCode__,
             String opcRequestId,

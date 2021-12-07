@@ -34,6 +34,12 @@ public class ListComputeCapacityReservationInstanceShapesResponse
     private java.util.List<com.oracle.bmc.core.model.ComputeCapacityReservationInstanceShapeSummary>
             items;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcNextPage",
+        "opcRequestId",
+        "items"
+    })
     private ListComputeCapacityReservationInstanceShapesResponse(
             int __httpStatusCode__,
             String opcNextPage,

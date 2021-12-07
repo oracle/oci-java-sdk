@@ -30,6 +30,12 @@ public class GetRoverNodeCertificateResponse extends com.oracle.bmc.responses.Bm
      */
     private com.oracle.bmc.rover.model.RoverNodeCertificate roverNodeCertificate;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcRequestId",
+        "roverNodeCertificate"
+    })
     private GetRoverNodeCertificateResponse(
             int __httpStatusCode__,
             String etag,

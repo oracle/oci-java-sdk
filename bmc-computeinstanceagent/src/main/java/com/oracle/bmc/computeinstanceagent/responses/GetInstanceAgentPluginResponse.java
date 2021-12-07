@@ -24,6 +24,7 @@ public class GetInstanceAgentPluginResponse extends com.oracle.bmc.responses.Bmc
      */
     private com.oracle.bmc.computeinstanceagent.model.InstanceAgentPlugin instanceAgentPlugin;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "instanceAgentPlugin"})
     private GetInstanceAgentPluginResponse(
             int __httpStatusCode__,
             String opcRequestId,

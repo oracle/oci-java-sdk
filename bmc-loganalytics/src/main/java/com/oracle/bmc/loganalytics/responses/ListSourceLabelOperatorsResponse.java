@@ -40,6 +40,13 @@ public class ListSourceLabelOperatorsResponse extends com.oracle.bmc.responses.B
     private com.oracle.bmc.loganalytics.model.LogAnalyticsLabelOperatorCollection
             logAnalyticsLabelOperatorCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcPrevPage",
+        "opcNextPage",
+        "opcRequestId",
+        "logAnalyticsLabelOperatorCollection"
+    })
     private ListSourceLabelOperatorsResponse(
             int __httpStatusCode__,
             String opcPrevPage,

@@ -44,6 +44,14 @@ public class ListUserDefinedFunctionValidationsResponse
     private com.oracle.bmc.dataintegration.model.UserDefinedFunctionValidationSummaryCollection
             userDefinedFunctionValidationSummaryCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "opcPrevPage",
+        "opcTotalItems",
+        "userDefinedFunctionValidationSummaryCollection"
+    })
     private ListUserDefinedFunctionValidationsResponse(
             int __httpStatusCode__,
             String opcRequestId,

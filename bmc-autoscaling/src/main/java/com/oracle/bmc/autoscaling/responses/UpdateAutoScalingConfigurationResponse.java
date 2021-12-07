@@ -29,6 +29,12 @@ public class UpdateAutoScalingConfigurationResponse extends com.oracle.bmc.respo
      */
     private com.oracle.bmc.autoscaling.model.AutoScalingConfiguration autoScalingConfiguration;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcRequestId",
+        "autoScalingConfiguration"
+    })
     private UpdateAutoScalingConfigurationResponse(
             int __httpStatusCode__,
             String etag,

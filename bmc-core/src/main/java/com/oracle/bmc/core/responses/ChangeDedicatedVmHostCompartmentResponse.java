@@ -32,6 +32,12 @@ public class ChangeDedicatedVmHostCompartmentResponse extends com.oracle.bmc.res
      */
     private String opcWorkRequestId;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcRequestId",
+        "opcWorkRequestId"
+    })
     private ChangeDedicatedVmHostCompartmentResponse(
             int __httpStatusCode__, String etag, String opcRequestId, String opcWorkRequestId) {
         super(__httpStatusCode__);

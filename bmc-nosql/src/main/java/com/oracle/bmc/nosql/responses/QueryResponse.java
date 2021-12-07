@@ -35,6 +35,12 @@ public class QueryResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private com.oracle.bmc.nosql.model.QueryResultCollection queryResultCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcNextPage",
+        "opcRequestId",
+        "queryResultCollection"
+    })
     private QueryResponse(
             int __httpStatusCode__,
             String opcNextPage,

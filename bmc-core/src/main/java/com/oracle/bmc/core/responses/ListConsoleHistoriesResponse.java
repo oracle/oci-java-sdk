@@ -32,6 +32,12 @@ public class ListConsoleHistoriesResponse extends com.oracle.bmc.responses.BmcRe
      */
     private java.util.List<com.oracle.bmc.core.model.ConsoleHistory> items;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcNextPage",
+        "opcRequestId",
+        "items"
+    })
     private ListConsoleHistoriesResponse(
             int __httpStatusCode__,
             String opcNextPage,

@@ -24,6 +24,7 @@ public class ListAggregatedPhysicalEntitiesResponse extends com.oracle.bmc.respo
      */
     private com.oracle.bmc.datacatalog.model.EntityCollection entityCollection;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "entityCollection"})
     private ListAggregatedPhysicalEntitiesResponse(
             int __httpStatusCode__,
             String opcRequestId,

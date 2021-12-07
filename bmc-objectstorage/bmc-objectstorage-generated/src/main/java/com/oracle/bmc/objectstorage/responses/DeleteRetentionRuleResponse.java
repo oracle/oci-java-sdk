@@ -24,6 +24,7 @@ public class DeleteRetentionRuleResponse extends com.oracle.bmc.responses.BmcRes
      */
     private String opcRequestId;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcClientRequestId", "opcRequestId"})
     private DeleteRetentionRuleResponse(
             int __httpStatusCode__, String opcClientRequestId, String opcRequestId) {
         super(__httpStatusCode__);

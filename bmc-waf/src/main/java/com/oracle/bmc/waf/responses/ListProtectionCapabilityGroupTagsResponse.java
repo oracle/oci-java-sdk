@@ -34,6 +34,12 @@ public class ListProtectionCapabilityGroupTagsResponse
     private com.oracle.bmc.waf.model.ProtectionCapabilityGroupTagCollection
             protectionCapabilityGroupTagCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "protectionCapabilityGroupTagCollection"
+    })
     private ListProtectionCapabilityGroupTagsResponse(
             int __httpStatusCode__,
             String opcRequestId,

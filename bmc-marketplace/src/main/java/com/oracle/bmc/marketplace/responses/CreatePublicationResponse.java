@@ -30,6 +30,7 @@ public class CreatePublicationResponse extends com.oracle.bmc.responses.BmcRespo
      */
     private com.oracle.bmc.marketplace.model.Publication publication;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "etag", "publication"})
     private CreatePublicationResponse(
             int __httpStatusCode__,
             String opcRequestId,

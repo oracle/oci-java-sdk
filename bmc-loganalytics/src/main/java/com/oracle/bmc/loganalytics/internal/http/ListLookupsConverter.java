@@ -77,6 +77,14 @@ public class ListLookupsConverter {
                                     request.getStatus().getValue()));
         }
 
+        if (request.getCategories() != null) {
+            target =
+                    target.queryParam(
+                            "categories",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getCategories()));
+        }
+
         if (request.getIsHideSpecial() != null) {
             target =
                     target.queryParam(

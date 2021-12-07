@@ -20,6 +20,7 @@ public class RemoveManagedDatabaseFromManagedDatabaseGroupResponse
      */
     private String opcRequestId;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId"})
     private RemoveManagedDatabaseFromManagedDatabaseGroupResponse(
             int __httpStatusCode__, String opcRequestId) {
         super(__httpStatusCode__);

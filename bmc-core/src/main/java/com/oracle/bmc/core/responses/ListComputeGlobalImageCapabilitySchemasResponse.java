@@ -34,6 +34,12 @@ public class ListComputeGlobalImageCapabilitySchemasResponse
     private java.util.List<com.oracle.bmc.core.model.ComputeGlobalImageCapabilitySchemaSummary>
             items;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcNextPage",
+        "opcRequestId",
+        "items"
+    })
     private ListComputeGlobalImageCapabilitySchemasResponse(
             int __httpStatusCode__,
             String opcNextPage,

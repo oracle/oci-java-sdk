@@ -30,6 +30,12 @@ public class AttachBootVolumeResponse extends com.oracle.bmc.responses.BmcRespon
      */
     private com.oracle.bmc.core.model.BootVolumeAttachment bootVolumeAttachment;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcRequestId",
+        "bootVolumeAttachment"
+    })
     private AttachBootVolumeResponse(
             int __httpStatusCode__,
             String etag,

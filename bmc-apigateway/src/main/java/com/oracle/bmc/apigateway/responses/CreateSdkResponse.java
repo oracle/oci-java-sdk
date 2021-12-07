@@ -46,6 +46,14 @@ public class CreateSdkResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private com.oracle.bmc.apigateway.model.Sdk sdk;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcWorkRequestId",
+        "opcRequestId",
+        "location",
+        "sdk"
+    })
     private CreateSdkResponse(
             int __httpStatusCode__,
             String etag,

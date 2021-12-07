@@ -22,6 +22,7 @@ public class DetachDevicesFromTransferPackageResponse extends com.oracle.bmc.res
      */
     private String etag;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "etag"})
     private DetachDevicesFromTransferPackageResponse(
             int __httpStatusCode__, String opcRequestId, String etag) {
         super(__httpStatusCode__);

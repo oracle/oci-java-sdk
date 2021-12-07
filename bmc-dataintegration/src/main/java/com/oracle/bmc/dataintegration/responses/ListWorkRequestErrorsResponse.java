@@ -30,6 +30,12 @@ public class ListWorkRequestErrorsResponse extends com.oracle.bmc.responses.BmcR
      */
     private java.util.List<com.oracle.bmc.dataintegration.model.WorkRequestError> items;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "items"
+    })
     private ListWorkRequestErrorsResponse(
             int __httpStatusCode__,
             String opcRequestId,

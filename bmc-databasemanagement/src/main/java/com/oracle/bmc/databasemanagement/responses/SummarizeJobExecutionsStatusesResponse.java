@@ -25,6 +25,11 @@ public class SummarizeJobExecutionsStatusesResponse extends com.oracle.bmc.respo
     private com.oracle.bmc.databasemanagement.model.JobExecutionsStatusSummaryCollection
             jobExecutionsStatusSummaryCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "jobExecutionsStatusSummaryCollection"
+    })
     private SummarizeJobExecutionsStatusesResponse(
             int __httpStatusCode__,
             String opcRequestId,

@@ -30,6 +30,7 @@ public class CreateManagedListResponse extends com.oracle.bmc.responses.BmcRespo
      */
     private com.oracle.bmc.cloudguard.model.ManagedList managedList;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "etag", "opcRequestId", "managedList"})
     private CreateManagedListResponse(
             int __httpStatusCode__,
             String etag,

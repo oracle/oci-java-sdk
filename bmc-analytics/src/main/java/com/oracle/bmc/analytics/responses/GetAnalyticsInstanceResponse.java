@@ -30,6 +30,12 @@ public class GetAnalyticsInstanceResponse extends com.oracle.bmc.responses.BmcRe
      */
     private com.oracle.bmc.analytics.model.AnalyticsInstance analyticsInstance;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcRequestId",
+        "analyticsInstance"
+    })
     private GetAnalyticsInstanceResponse(
             int __httpStatusCode__,
             String etag,

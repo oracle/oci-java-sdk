@@ -27,6 +27,12 @@ public class GetSecretBundleResponse extends com.oracle.bmc.responses.BmcRespons
      */
     private com.oracle.bmc.secrets.model.SecretBundle secretBundle;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcRequestId",
+        "secretBundle"
+    })
     private GetSecretBundleResponse(
             int __httpStatusCode__,
             String etag,

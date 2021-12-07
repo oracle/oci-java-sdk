@@ -30,6 +30,7 @@ public class CreateProjectResponse extends com.oracle.bmc.responses.BmcResponse 
      */
     private com.oracle.bmc.aianomalydetection.model.Project project;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "etag", "opcRequestId", "project"})
     private CreateProjectResponse(
             int __httpStatusCode__,
             String etag,

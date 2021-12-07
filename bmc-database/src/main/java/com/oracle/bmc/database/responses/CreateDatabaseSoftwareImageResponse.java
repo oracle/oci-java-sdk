@@ -35,6 +35,13 @@ public class CreateDatabaseSoftwareImageResponse extends com.oracle.bmc.response
      */
     private com.oracle.bmc.database.model.DatabaseSoftwareImage databaseSoftwareImage;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcWorkRequestId",
+        "etag",
+        "opcRequestId",
+        "databaseSoftwareImage"
+    })
     private CreateDatabaseSoftwareImageResponse(
             int __httpStatusCode__,
             String opcWorkRequestId,

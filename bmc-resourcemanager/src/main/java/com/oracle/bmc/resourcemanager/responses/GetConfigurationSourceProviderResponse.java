@@ -28,6 +28,12 @@ public class GetConfigurationSourceProviderResponse extends com.oracle.bmc.respo
     private com.oracle.bmc.resourcemanager.model.ConfigurationSourceProvider
             configurationSourceProvider;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "etag",
+        "configurationSourceProvider"
+    })
     private GetConfigurationSourceProviderResponse(
             int __httpStatusCode__,
             String opcRequestId,

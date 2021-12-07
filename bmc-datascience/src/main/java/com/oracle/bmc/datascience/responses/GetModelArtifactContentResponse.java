@@ -55,6 +55,16 @@ public class GetModelArtifactContentResponse extends com.oracle.bmc.responses.Bm
      */
     private java.io.InputStream inputStream;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcRequestId",
+        "contentLength",
+        "contentDisposition",
+        "contentMd5",
+        "lastModified",
+        "inputStream"
+    })
     private GetModelArtifactContentResponse(
             int __httpStatusCode__,
             String etag,

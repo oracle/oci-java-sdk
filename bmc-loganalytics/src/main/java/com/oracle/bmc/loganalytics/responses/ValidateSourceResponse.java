@@ -23,6 +23,11 @@ public class ValidateSourceResponse extends com.oracle.bmc.responses.BmcResponse
      */
     private com.oracle.bmc.loganalytics.model.SourceValidateResults sourceValidateResults;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "sourceValidateResults"
+    })
     private ValidateSourceResponse(
             int __httpStatusCode__,
             String opcRequestId,

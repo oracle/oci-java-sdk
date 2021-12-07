@@ -25,6 +25,7 @@ public class CreateLogGroupResponse extends com.oracle.bmc.responses.BmcResponse
      */
     private String opcRequestId;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcWorkRequestId", "opcRequestId"})
     private CreateLogGroupResponse(
             int __httpStatusCode__, String opcWorkRequestId, String opcRequestId) {
         super(__httpStatusCode__);

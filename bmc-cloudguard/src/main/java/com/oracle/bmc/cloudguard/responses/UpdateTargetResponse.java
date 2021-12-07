@@ -30,6 +30,7 @@ public class UpdateTargetResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private com.oracle.bmc.cloudguard.model.Target target;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "etag", "opcRequestId", "target"})
     private UpdateTargetResponse(
             int __httpStatusCode__,
             String etag,

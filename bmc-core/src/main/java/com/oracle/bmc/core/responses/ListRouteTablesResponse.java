@@ -32,6 +32,12 @@ public class ListRouteTablesResponse extends com.oracle.bmc.responses.BmcRespons
      */
     private java.util.List<com.oracle.bmc.core.model.RouteTable> items;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcNextPage",
+        "opcRequestId",
+        "items"
+    })
     private ListRouteTablesResponse(
             int __httpStatusCode__,
             String opcNextPage,

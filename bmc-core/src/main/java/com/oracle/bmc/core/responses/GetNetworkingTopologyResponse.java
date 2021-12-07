@@ -30,6 +30,12 @@ public class GetNetworkingTopologyResponse extends com.oracle.bmc.responses.BmcR
      */
     private com.oracle.bmc.core.model.NetworkingTopology networkingTopology;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcRequestId",
+        "networkingTopology"
+    })
     private GetNetworkingTopologyResponse(
             int __httpStatusCode__,
             String etag,

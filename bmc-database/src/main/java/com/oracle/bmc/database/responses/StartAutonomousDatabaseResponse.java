@@ -35,6 +35,13 @@ public class StartAutonomousDatabaseResponse extends com.oracle.bmc.responses.Bm
      */
     private com.oracle.bmc.database.model.AutonomousDatabase autonomousDatabase;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcRequestId",
+        "opcWorkRequestId",
+        "autonomousDatabase"
+    })
     private StartAutonomousDatabaseResponse(
             int __httpStatusCode__,
             String etag,

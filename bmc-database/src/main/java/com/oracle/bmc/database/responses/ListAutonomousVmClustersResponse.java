@@ -33,6 +33,12 @@ public class ListAutonomousVmClustersResponse extends com.oracle.bmc.responses.B
      */
     private java.util.List<com.oracle.bmc.database.model.AutonomousVmClusterSummary> items;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "items"
+    })
     private ListAutonomousVmClustersResponse(
             int __httpStatusCode__,
             String opcRequestId,

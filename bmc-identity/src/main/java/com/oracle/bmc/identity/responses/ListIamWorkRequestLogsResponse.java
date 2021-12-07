@@ -38,6 +38,13 @@ public class ListIamWorkRequestLogsResponse extends com.oracle.bmc.responses.Bmc
      */
     private java.util.List<com.oracle.bmc.identity.model.IamWorkRequestLogSummary> items;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "retryAfter",
+        "opcNextPage",
+        "items"
+    })
     private ListIamWorkRequestLogsResponse(
             int __httpStatusCode__,
             String opcRequestId,

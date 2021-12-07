@@ -38,6 +38,13 @@ public class GetBackupResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private boolean isNotModified;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcRequestId",
+        "backup",
+        "isNotModified"
+    })
     private GetBackupResponse(
             int __httpStatusCode__,
             String etag,

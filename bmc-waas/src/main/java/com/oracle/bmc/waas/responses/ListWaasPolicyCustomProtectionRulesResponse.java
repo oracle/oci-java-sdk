@@ -33,6 +33,13 @@ public class ListWaasPolicyCustomProtectionRulesResponse
      */
     private java.util.List<com.oracle.bmc.waas.model.WaasPolicyCustomProtectionRuleSummary> items;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcNextPage",
+        "opcRequestId",
+        "items"
+    })
     private ListWaasPolicyCustomProtectionRulesResponse(
             int __httpStatusCode__,
             String etag,

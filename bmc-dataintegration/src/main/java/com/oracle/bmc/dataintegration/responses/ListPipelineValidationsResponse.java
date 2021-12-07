@@ -43,6 +43,14 @@ public class ListPipelineValidationsResponse extends com.oracle.bmc.responses.Bm
     private com.oracle.bmc.dataintegration.model.PipelineValidationSummaryCollection
             pipelineValidationSummaryCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "opcPrevPage",
+        "opcTotalItems",
+        "pipelineValidationSummaryCollection"
+    })
     private ListPipelineValidationsResponse(
             int __httpStatusCode__,
             String opcRequestId,

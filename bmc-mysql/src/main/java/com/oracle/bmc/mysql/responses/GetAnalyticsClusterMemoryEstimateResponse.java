@@ -26,6 +26,11 @@ public class GetAnalyticsClusterMemoryEstimateResponse
     private com.oracle.bmc.mysql.model.AnalyticsClusterMemoryEstimate
             analyticsClusterMemoryEstimate;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "analyticsClusterMemoryEstimate"
+    })
     private GetAnalyticsClusterMemoryEstimateResponse(
             int __httpStatusCode__,
             String opcRequestId,

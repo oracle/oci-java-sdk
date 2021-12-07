@@ -32,6 +32,12 @@ public class ListScriptsResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private com.oracle.bmc.apmsynthetics.model.ScriptCollection scriptCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "scriptCollection"
+    })
     private ListScriptsResponse(
             int __httpStatusCode__,
             String opcRequestId,

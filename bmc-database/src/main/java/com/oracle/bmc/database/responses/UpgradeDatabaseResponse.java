@@ -35,6 +35,13 @@ public class UpgradeDatabaseResponse extends com.oracle.bmc.responses.BmcRespons
      */
     private com.oracle.bmc.database.model.Database database;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcWorkRequestId",
+        "etag",
+        "opcRequestId",
+        "database"
+    })
     private UpgradeDatabaseResponse(
             int __httpStatusCode__,
             String opcWorkRequestId,

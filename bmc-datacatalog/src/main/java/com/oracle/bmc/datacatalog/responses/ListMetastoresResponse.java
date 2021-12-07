@@ -30,6 +30,12 @@ public class ListMetastoresResponse extends com.oracle.bmc.responses.BmcResponse
      */
     private java.util.List<com.oracle.bmc.datacatalog.model.MetastoreSummary> items;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "items"
+    })
     private ListMetastoresResponse(
             int __httpStatusCode__,
             String opcRequestId,

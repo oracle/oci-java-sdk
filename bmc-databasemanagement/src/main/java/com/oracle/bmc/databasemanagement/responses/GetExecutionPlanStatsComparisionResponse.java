@@ -25,6 +25,11 @@ public class GetExecutionPlanStatsComparisionResponse extends com.oracle.bmc.res
     private com.oracle.bmc.databasemanagement.model.ExecutionPlanStatsComparision
             executionPlanStatsComparision;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "executionPlanStatsComparision"
+    })
     private GetExecutionPlanStatsComparisionResponse(
             int __httpStatusCode__,
             String opcRequestId,

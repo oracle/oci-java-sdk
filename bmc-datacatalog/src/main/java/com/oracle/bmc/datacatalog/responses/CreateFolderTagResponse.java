@@ -30,6 +30,7 @@ public class CreateFolderTagResponse extends com.oracle.bmc.responses.BmcRespons
      */
     private com.oracle.bmc.datacatalog.model.FolderTag folderTag;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "etag", "opcRequestId", "folderTag"})
     private CreateFolderTagResponse(
             int __httpStatusCode__,
             String etag,

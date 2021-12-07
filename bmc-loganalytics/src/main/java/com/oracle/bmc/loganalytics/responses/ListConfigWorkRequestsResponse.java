@@ -40,6 +40,13 @@ public class ListConfigWorkRequestsResponse extends com.oracle.bmc.responses.Bmc
     private com.oracle.bmc.loganalytics.model.LogAnalyticsConfigWorkRequestCollection
             logAnalyticsConfigWorkRequestCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcPrevPage",
+        "opcNextPage",
+        "opcRequestId",
+        "logAnalyticsConfigWorkRequestCollection"
+    })
     private ListConfigWorkRequestsResponse(
             int __httpStatusCode__,
             String opcPrevPage,

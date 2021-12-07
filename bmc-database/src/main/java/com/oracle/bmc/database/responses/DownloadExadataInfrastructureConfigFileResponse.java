@@ -40,6 +40,14 @@ public class DownloadExadataInfrastructureConfigFileResponse
      */
     private java.io.InputStream inputStream;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcRequestId",
+        "contentLength",
+        "lastModified",
+        "inputStream"
+    })
     private DownloadExadataInfrastructureConfigFileResponse(
             int __httpStatusCode__,
             String etag,

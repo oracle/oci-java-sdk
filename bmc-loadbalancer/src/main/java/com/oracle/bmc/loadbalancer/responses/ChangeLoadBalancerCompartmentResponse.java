@@ -24,6 +24,7 @@ public class ChangeLoadBalancerCompartmentResponse extends com.oracle.bmc.respon
      */
     private String opcRequestId;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcWorkRequestId", "opcRequestId"})
     private ChangeLoadBalancerCompartmentResponse(
             int __httpStatusCode__, String opcWorkRequestId, String opcRequestId) {
         super(__httpStatusCode__);

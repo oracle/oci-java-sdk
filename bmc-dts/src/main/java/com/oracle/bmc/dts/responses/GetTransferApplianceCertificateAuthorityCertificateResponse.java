@@ -28,6 +28,12 @@ public class GetTransferApplianceCertificateAuthorityCertificateResponse
      */
     private com.oracle.bmc.dts.model.TransferApplianceCertificate transferApplianceCertificate;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "etag",
+        "transferApplianceCertificate"
+    })
     private GetTransferApplianceCertificateAuthorityCertificateResponse(
             int __httpStatusCode__,
             String opcRequestId,

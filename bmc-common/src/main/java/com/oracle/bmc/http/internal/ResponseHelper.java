@@ -241,8 +241,11 @@ public class ResponseHelper {
                         Optional<List<String>> contentLengthHeader =
                                 HeaderUtils.get(
                                         response.getStringHeaders(), HttpHeaders.CONTENT_LENGTH);
-                        // If the Content-Length header is present, verify that the length of the input stream matches it
-                        if (contentLengthHeader.isPresent()) {
+                        // If the Content-Length header is present and Content-Encoding header is not present in the response,
+                        // verify that the length of the input stream matches it
+                        if (contentLengthHeader.isPresent()
+                                && response.getHeaders().get(HttpHeaders.CONTENT_ENCODING)
+                                        == null) {
                             long contentLength =
                                     HeaderUtils.toValue(
                                             HttpHeaders.CONTENT_LENGTH,

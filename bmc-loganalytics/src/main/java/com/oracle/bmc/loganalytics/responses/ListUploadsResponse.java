@@ -36,6 +36,13 @@ public class ListUploadsResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private com.oracle.bmc.loganalytics.model.UploadCollection uploadCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "opcTotalItems",
+        "uploadCollection"
+    })
     private ListUploadsResponse(
             int __httpStatusCode__,
             String opcRequestId,

@@ -31,6 +31,12 @@ public class CreateComputeImageCapabilitySchemaResponse
      */
     private com.oracle.bmc.core.model.ComputeImageCapabilitySchema computeImageCapabilitySchema;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcRequestId",
+        "computeImageCapabilitySchema"
+    })
     private CreateComputeImageCapabilitySchemaResponse(
             int __httpStatusCode__,
             String etag,

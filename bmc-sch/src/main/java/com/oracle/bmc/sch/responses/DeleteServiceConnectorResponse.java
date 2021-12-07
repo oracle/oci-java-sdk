@@ -25,6 +25,7 @@ public class DeleteServiceConnectorResponse extends com.oracle.bmc.responses.Bmc
      */
     private String opcRequestId;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcWorkRequestId", "opcRequestId"})
     private DeleteServiceConnectorResponse(
             int __httpStatusCode__, String opcWorkRequestId, String opcRequestId) {
         super(__httpStatusCode__);

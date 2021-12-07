@@ -35,6 +35,13 @@ public class CreateDeploymentResponse extends com.oracle.bmc.responses.BmcRespon
      */
     private com.oracle.bmc.goldengate.model.Deployment deployment;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcWorkRequestId",
+        "opcRequestId",
+        "etag",
+        "deployment"
+    })
     private CreateDeploymentResponse(
             int __httpStatusCode__,
             String opcWorkRequestId,

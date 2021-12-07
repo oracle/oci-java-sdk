@@ -31,6 +31,7 @@ public class GetDeploymentResponse extends com.oracle.bmc.responses.BmcResponse 
      */
     private com.oracle.bmc.apigateway.model.Deployment deployment;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "etag", "opcRequestId", "deployment"})
     private GetDeploymentResponse(
             int __httpStatusCode__,
             String etag,

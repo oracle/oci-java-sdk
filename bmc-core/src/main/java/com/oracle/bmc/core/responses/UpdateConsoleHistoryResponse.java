@@ -30,6 +30,12 @@ public class UpdateConsoleHistoryResponse extends com.oracle.bmc.responses.BmcRe
      */
     private com.oracle.bmc.core.model.ConsoleHistory consoleHistory;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcRequestId",
+        "consoleHistory"
+    })
     private UpdateConsoleHistoryResponse(
             int __httpStatusCode__,
             String etag,

@@ -24,6 +24,7 @@ public class DeleteBucketResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private String opcRequestId;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcClientRequestId", "opcRequestId"})
     private DeleteBucketResponse(
             int __httpStatusCode__, String opcClientRequestId, String opcRequestId) {
         super(__httpStatusCode__);

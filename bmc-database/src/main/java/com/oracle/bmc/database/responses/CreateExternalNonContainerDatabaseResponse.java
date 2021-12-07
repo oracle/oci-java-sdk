@@ -36,6 +36,13 @@ public class CreateExternalNonContainerDatabaseResponse
      */
     private com.oracle.bmc.database.model.ExternalNonContainerDatabase externalNonContainerDatabase;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcWorkRequestId",
+        "etag",
+        "opcRequestId",
+        "externalNonContainerDatabase"
+    })
     private CreateExternalNonContainerDatabaseResponse(
             int __httpStatusCode__,
             String opcWorkRequestId,

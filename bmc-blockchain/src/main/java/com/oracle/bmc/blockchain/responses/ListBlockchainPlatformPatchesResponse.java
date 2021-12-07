@@ -33,6 +33,12 @@ public class ListBlockchainPlatformPatchesResponse extends com.oracle.bmc.respon
     private com.oracle.bmc.blockchain.model.BlockchainPlatformPatchCollection
             blockchainPlatformPatchCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "blockchainPlatformPatchCollection"
+    })
     private ListBlockchainPlatformPatchesResponse(
             int __httpStatusCode__,
             String opcRequestId,

@@ -26,6 +26,7 @@ public class ActivateModelDeploymentResponse extends com.oracle.bmc.responses.Bm
      */
     private String opcRequestId;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcWorkRequestId", "opcRequestId"})
     private ActivateModelDeploymentResponse(
             int __httpStatusCode__, String opcWorkRequestId, String opcRequestId) {
         super(__httpStatusCode__);

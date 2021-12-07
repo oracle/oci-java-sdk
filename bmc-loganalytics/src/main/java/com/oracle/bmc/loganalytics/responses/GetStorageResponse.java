@@ -29,6 +29,7 @@ public class GetStorageResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private com.oracle.bmc.loganalytics.model.Storage storage;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "etag", "storage"})
     private GetStorageResponse(
             int __httpStatusCode__,
             String opcRequestId,

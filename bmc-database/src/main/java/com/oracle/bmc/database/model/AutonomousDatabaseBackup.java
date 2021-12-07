@@ -171,6 +171,15 @@ public class AutonomousDatabaseBackup {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyVersionId")
+        private String kmsKeyVersionId;
+
+        public Builder kmsKeyVersionId(String kmsKeyVersionId) {
+            this.kmsKeyVersionId = kmsKeyVersionId;
+            this.__explicitlySet__.add("kmsKeyVersionId");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -192,7 +201,8 @@ public class AutonomousDatabaseBackup {
                             keyStoreId,
                             keyStoreWalletName,
                             kmsKeyId,
-                            vaultId);
+                            vaultId,
+                            kmsKeyVersionId);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -215,7 +225,8 @@ public class AutonomousDatabaseBackup {
                             .keyStoreId(o.getKeyStoreId())
                             .keyStoreWalletName(o.getKeyStoreWalletName())
                             .kmsKeyId(o.getKmsKeyId())
-                            .vaultId(o.getVaultId());
+                            .vaultId(o.getVaultId())
+                            .kmsKeyVersionId(o.getKmsKeyVersionId());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -417,6 +428,13 @@ public class AutonomousDatabaseBackup {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("vaultId")
     String vaultId;
+
+    /**
+     * The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyVersionId")
+    String kmsKeyVersionId;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

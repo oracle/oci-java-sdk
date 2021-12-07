@@ -35,6 +35,13 @@ public class UpdateExternalDatabaseConnectorResponse extends com.oracle.bmc.resp
      */
     private com.oracle.bmc.database.model.ExternalDatabaseConnector externalDatabaseConnector;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcWorkRequestId",
+        "etag",
+        "opcRequestId",
+        "externalDatabaseConnector"
+    })
     private UpdateExternalDatabaseConnectorResponse(
             int __httpStatusCode__,
             String opcWorkRequestId,

@@ -24,6 +24,7 @@ public class ListPathRouteSetsResponse extends com.oracle.bmc.responses.BmcRespo
      */
     private java.util.List<com.oracle.bmc.loadbalancer.model.PathRouteSet> items;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "items"})
     private ListPathRouteSetsResponse(
             int __httpStatusCode__,
             String opcRequestId,

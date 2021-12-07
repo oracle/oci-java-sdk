@@ -32,6 +32,12 @@ public class SummarizeJreUsageResponse extends com.oracle.bmc.responses.BmcRespo
      */
     private com.oracle.bmc.jms.model.JreUsageCollection jreUsageCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "jreUsageCollection"
+    })
     private SummarizeJreUsageResponse(
             int __httpStatusCode__,
             String opcRequestId,

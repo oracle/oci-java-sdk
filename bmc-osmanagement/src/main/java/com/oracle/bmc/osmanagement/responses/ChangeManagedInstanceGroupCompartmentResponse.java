@@ -20,6 +20,7 @@ public class ChangeManagedInstanceGroupCompartmentResponse
      */
     private String opcRequestId;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId"})
     private ChangeManagedInstanceGroupCompartmentResponse(
             int __httpStatusCode__, String opcRequestId) {
         super(__httpStatusCode__);

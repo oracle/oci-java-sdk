@@ -30,6 +30,7 @@ public class UpdateConnectionResponse extends com.oracle.bmc.responses.BmcRespon
      */
     private com.oracle.bmc.dataintegration.model.Connection connection;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "etag", "opcRequestId", "connection"})
     private UpdateConnectionResponse(
             int __httpStatusCode__,
             String etag,

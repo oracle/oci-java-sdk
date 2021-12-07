@@ -24,6 +24,7 @@ public class UpdatePathRouteSetResponse extends com.oracle.bmc.responses.BmcResp
      */
     private String opcRequestId;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcWorkRequestId", "opcRequestId"})
     private UpdatePathRouteSetResponse(
             int __httpStatusCode__, String opcWorkRequestId, String opcRequestId) {
         super(__httpStatusCode__);

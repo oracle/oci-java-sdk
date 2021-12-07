@@ -22,6 +22,7 @@ public class UpdateIncidentResponse extends com.oracle.bmc.responses.BmcResponse
      */
     private com.oracle.bmc.cims.model.Incident incident;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "incident"})
     private UpdateIncidentResponse(
             int __httpStatusCode__,
             String opcRequestId,

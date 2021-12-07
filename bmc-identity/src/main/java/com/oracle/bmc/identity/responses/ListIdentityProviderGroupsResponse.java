@@ -32,6 +32,12 @@ public class ListIdentityProviderGroupsResponse extends com.oracle.bmc.responses
      */
     private java.util.List<com.oracle.bmc.identity.model.IdentityProviderGroupSummary> items;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "items"
+    })
     private ListIdentityProviderGroupsResponse(
             int __httpStatusCode__,
             String opcRequestId,

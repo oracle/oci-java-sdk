@@ -32,6 +32,12 @@ public class ListManagedListsResponse extends com.oracle.bmc.responses.BmcRespon
      */
     private com.oracle.bmc.cloudguard.model.ManagedListCollection managedListCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "managedListCollection"
+    })
     private ListManagedListsResponse(
             int __httpStatusCode__,
             String opcRequestId,

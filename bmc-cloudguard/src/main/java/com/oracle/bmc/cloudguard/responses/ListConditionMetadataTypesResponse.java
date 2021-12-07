@@ -33,6 +33,12 @@ public class ListConditionMetadataTypesResponse extends com.oracle.bmc.responses
     private com.oracle.bmc.cloudguard.model.ConditionMetadataTypeCollection
             conditionMetadataTypeCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "conditionMetadataTypeCollection"
+    })
     private ListConditionMetadataTypesResponse(
             int __httpStatusCode__,
             String opcRequestId,

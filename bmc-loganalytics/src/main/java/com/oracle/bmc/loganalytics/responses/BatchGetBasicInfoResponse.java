@@ -40,6 +40,13 @@ public class BatchGetBasicInfoResponse extends com.oracle.bmc.responses.BmcRespo
     private com.oracle.bmc.loganalytics.model.LogAnalyticsLabelCollection
             logAnalyticsLabelCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcPrevPage",
+        "opcNextPage",
+        "opcRequestId",
+        "logAnalyticsLabelCollection"
+    })
     private BatchGetBasicInfoResponse(
             int __httpStatusCode__,
             String opcPrevPage,

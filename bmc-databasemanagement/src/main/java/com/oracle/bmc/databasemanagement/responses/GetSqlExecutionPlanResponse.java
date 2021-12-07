@@ -25,6 +25,11 @@ public class GetSqlExecutionPlanResponse extends com.oracle.bmc.responses.BmcRes
     private com.oracle.bmc.databasemanagement.model.SqlTuningAdvisorTaskSqlExecutionPlan
             sqlTuningAdvisorTaskSqlExecutionPlan;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "sqlTuningAdvisorTaskSqlExecutionPlan"
+    })
     private GetSqlExecutionPlanResponse(
             int __httpStatusCode__,
             String opcRequestId,

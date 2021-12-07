@@ -29,6 +29,12 @@ public class CreateReplicationPolicyResponse extends com.oracle.bmc.responses.Bm
      */
     private com.oracle.bmc.objectstorage.model.ReplicationPolicy replicationPolicy;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcClientRequestId",
+        "replicationPolicy"
+    })
     private CreateReplicationPolicyResponse(
             int __httpStatusCode__,
             String opcRequestId,

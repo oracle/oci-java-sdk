@@ -21,6 +21,7 @@ public class ListFleetsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+     *
      */
     private String compartmentId;
 

@@ -29,6 +29,12 @@ public class GetCloudVmClusterResponse extends com.oracle.bmc.responses.BmcRespo
      */
     private com.oracle.bmc.database.model.CloudVmCluster cloudVmCluster;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcRequestId",
+        "cloudVmCluster"
+    })
     private GetCloudVmClusterResponse(
             int __httpStatusCode__,
             String etag,

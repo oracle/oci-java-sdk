@@ -19,6 +19,7 @@ public class ChangeNotebookSessionCompartmentResponse extends com.oracle.bmc.res
      */
     private String opcRequestId;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId"})
     private ChangeNotebookSessionCompartmentResponse(int __httpStatusCode__, String opcRequestId) {
         super(__httpStatusCode__);
         this.opcRequestId = opcRequestId;

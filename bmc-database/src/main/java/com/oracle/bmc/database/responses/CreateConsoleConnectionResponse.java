@@ -29,6 +29,12 @@ public class CreateConsoleConnectionResponse extends com.oracle.bmc.responses.Bm
      */
     private com.oracle.bmc.database.model.ConsoleConnection consoleConnection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcRequestId",
+        "consoleConnection"
+    })
     private CreateConsoleConnectionResponse(
             int __httpStatusCode__,
             String etag,

@@ -30,6 +30,7 @@ public class GetListenerResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private com.oracle.bmc.networkloadbalancer.model.Listener listener;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "etag", "listener"})
     private GetListenerResponse(
             int __httpStatusCode__,
             String opcRequestId,

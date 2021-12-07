@@ -23,6 +23,11 @@ public class GetAssociationSummaryResponse extends com.oracle.bmc.responses.BmcR
      */
     private com.oracle.bmc.loganalytics.model.AssociationSummaryReport associationSummaryReport;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "associationSummaryReport"
+    })
     private GetAssociationSummaryResponse(
             int __httpStatusCode__,
             String opcRequestId,

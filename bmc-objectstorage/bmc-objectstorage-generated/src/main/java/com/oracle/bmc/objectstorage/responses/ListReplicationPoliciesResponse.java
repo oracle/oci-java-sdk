@@ -41,6 +41,13 @@ public class ListReplicationPoliciesResponse extends com.oracle.bmc.responses.Bm
      */
     private java.util.List<com.oracle.bmc.objectstorage.model.ReplicationPolicySummary> items;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcClientRequestId",
+        "opcNextPage",
+        "items"
+    })
     private ListReplicationPoliciesResponse(
             int __httpStatusCode__,
             String opcRequestId,

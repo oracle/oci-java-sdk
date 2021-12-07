@@ -30,6 +30,7 @@ public class GetSenderResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private com.oracle.bmc.email.model.Sender sender;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "etag", "sender"})
     private GetSenderResponse(
             int __httpStatusCode__,
             String opcRequestId,

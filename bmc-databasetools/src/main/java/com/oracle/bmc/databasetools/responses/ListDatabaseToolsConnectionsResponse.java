@@ -33,6 +33,12 @@ public class ListDatabaseToolsConnectionsResponse extends com.oracle.bmc.respons
     private com.oracle.bmc.databasetools.model.DatabaseToolsConnectionCollection
             databaseToolsConnectionCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "databaseToolsConnectionCollection"
+    })
     private ListDatabaseToolsConnectionsResponse(
             int __httpStatusCode__,
             String opcRequestId,

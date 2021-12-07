@@ -30,6 +30,7 @@ public class CreateProfileResponse extends com.oracle.bmc.responses.BmcResponse 
      */
     private com.oracle.bmc.optimizer.model.Profile profile;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "etag", "opcRequestId", "profile"})
     private CreateProfileResponse(
             int __httpStatusCode__,
             String etag,

@@ -24,6 +24,7 @@ public class GetOperatorActionResponse extends com.oracle.bmc.responses.BmcRespo
      */
     private com.oracle.bmc.operatoraccesscontrol.model.OperatorAction operatorAction;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "operatorAction"})
     private GetOperatorActionResponse(
             int __httpStatusCode__,
             String opcRequestId,

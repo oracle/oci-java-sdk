@@ -30,6 +30,7 @@ public class CreateIpv6Response extends com.oracle.bmc.responses.BmcResponse {
      */
     private com.oracle.bmc.core.model.Ipv6 ipv6;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "etag", "opcRequestId", "ipv6"})
     private CreateIpv6Response(
             int __httpStatusCode__,
             String etag,

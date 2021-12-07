@@ -25,6 +25,7 @@ public class ChangePublicIpCompartmentResponse extends com.oracle.bmc.responses.
      */
     private String opcRequestId;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "etag", "opcRequestId"})
     private ChangePublicIpCompartmentResponse(
             int __httpStatusCode__, String etag, String opcRequestId) {
         super(__httpStatusCode__);

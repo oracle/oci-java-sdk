@@ -39,6 +39,13 @@ public class ListLabelSourceDetailsResponse extends com.oracle.bmc.responses.Bmc
      */
     private com.oracle.bmc.loganalytics.model.LabelSourceCollection labelSourceCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcPrevPage",
+        "opcNextPage",
+        "opcRequestId",
+        "labelSourceCollection"
+    })
     private ListLabelSourceDetailsResponse(
             int __httpStatusCode__,
             String opcPrevPage,

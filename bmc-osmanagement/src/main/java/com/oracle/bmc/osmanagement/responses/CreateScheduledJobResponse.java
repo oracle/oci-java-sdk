@@ -35,6 +35,13 @@ public class CreateScheduledJobResponse extends com.oracle.bmc.responses.BmcResp
      */
     private com.oracle.bmc.osmanagement.model.ScheduledJob scheduledJob;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "location",
+        "opcRequestId",
+        "etag",
+        "scheduledJob"
+    })
     private CreateScheduledJobResponse(
             int __httpStatusCode__,
             String location,

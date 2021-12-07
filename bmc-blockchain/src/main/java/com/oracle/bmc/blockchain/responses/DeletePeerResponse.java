@@ -25,6 +25,7 @@ public class DeletePeerResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private String opcRequestId;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcWorkRequestId", "opcRequestId"})
     private DeletePeerResponse(
             int __httpStatusCode__, String opcWorkRequestId, String opcRequestId) {
         super(__httpStatusCode__);

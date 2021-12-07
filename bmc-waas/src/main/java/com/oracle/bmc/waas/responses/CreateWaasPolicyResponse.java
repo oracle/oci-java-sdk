@@ -27,6 +27,12 @@ public class CreateWaasPolicyResponse extends com.oracle.bmc.responses.BmcRespon
      */
     private String opcWorkRequestId;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "etag",
+        "opcWorkRequestId"
+    })
     private CreateWaasPolicyResponse(
             int __httpStatusCode__, String opcRequestId, String etag, String opcWorkRequestId) {
         super(__httpStatusCode__);

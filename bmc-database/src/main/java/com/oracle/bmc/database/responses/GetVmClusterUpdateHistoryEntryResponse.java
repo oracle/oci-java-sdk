@@ -29,6 +29,12 @@ public class GetVmClusterUpdateHistoryEntryResponse extends com.oracle.bmc.respo
      */
     private com.oracle.bmc.database.model.VmClusterUpdateHistoryEntry vmClusterUpdateHistoryEntry;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcRequestId",
+        "vmClusterUpdateHistoryEntry"
+    })
     private GetVmClusterUpdateHistoryEntryResponse(
             int __httpStatusCode__,
             String etag,

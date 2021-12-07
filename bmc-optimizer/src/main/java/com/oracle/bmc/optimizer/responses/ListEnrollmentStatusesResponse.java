@@ -39,6 +39,13 @@ public class ListEnrollmentStatusesResponse extends com.oracle.bmc.responses.Bmc
      */
     private com.oracle.bmc.optimizer.model.EnrollmentStatusCollection enrollmentStatusCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "opcPrevPage",
+        "enrollmentStatusCollection"
+    })
     private ListEnrollmentStatusesResponse(
             int __httpStatusCode__,
             String opcRequestId,

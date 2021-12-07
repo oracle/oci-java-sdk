@@ -30,6 +30,12 @@ public class GetInstancePoolResponse extends com.oracle.bmc.responses.BmcRespons
      */
     private com.oracle.bmc.core.model.InstancePool instancePool;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcRequestId",
+        "instancePool"
+    })
     private GetInstancePoolResponse(
             int __httpStatusCode__,
             String etag,

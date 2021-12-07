@@ -31,6 +31,12 @@ public class ListLoadBalancersResponse extends com.oracle.bmc.responses.BmcRespo
      */
     private java.util.List<com.oracle.bmc.loadbalancer.model.LoadBalancer> items;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcNextPage",
+        "opcRequestId",
+        "items"
+    })
     private ListLoadBalancersResponse(
             int __httpStatusCode__,
             String opcNextPage,

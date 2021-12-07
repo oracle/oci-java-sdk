@@ -29,6 +29,7 @@ public class GetNodePoolResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private com.oracle.bmc.containerengine.model.NodePool nodePool;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "etag", "opcRequestId", "nodePool"})
     private GetNodePoolResponse(
             int __httpStatusCode__,
             String etag,

@@ -23,6 +23,7 @@ public class GetParserSummaryResponse extends com.oracle.bmc.responses.BmcRespon
      */
     private com.oracle.bmc.loganalytics.model.ParserSummaryReport parserSummaryReport;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "parserSummaryReport"})
     private GetParserSummaryResponse(
             int __httpStatusCode__,
             String opcRequestId,

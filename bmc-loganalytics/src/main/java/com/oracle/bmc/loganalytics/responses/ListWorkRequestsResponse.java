@@ -31,6 +31,12 @@ public class ListWorkRequestsResponse extends com.oracle.bmc.responses.BmcRespon
      */
     private com.oracle.bmc.loganalytics.model.WorkRequestCollection workRequestCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "workRequestCollection"
+    })
     private ListWorkRequestsResponse(
             int __httpStatusCode__,
             String opcRequestId,

@@ -22,6 +22,7 @@ public class GetEventReportResponse extends com.oracle.bmc.responses.BmcResponse
      */
     private com.oracle.bmc.osmanagement.model.EventReport eventReport;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "eventReport"})
     private GetEventReportResponse(
             int __httpStatusCode__,
             String opcRequestId,

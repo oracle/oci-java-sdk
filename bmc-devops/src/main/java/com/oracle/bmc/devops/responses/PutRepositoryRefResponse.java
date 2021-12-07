@@ -37,6 +37,14 @@ public class PutRepositoryRefResponse extends com.oracle.bmc.responses.BmcRespon
      */
     private com.oracle.bmc.devops.model.RepositoryRef repositoryRef;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "location",
+        "etag",
+        "opcWorkRequestId",
+        "opcRequestId",
+        "repositoryRef"
+    })
     private PutRepositoryRefResponse(
             int __httpStatusCode__,
             String location,

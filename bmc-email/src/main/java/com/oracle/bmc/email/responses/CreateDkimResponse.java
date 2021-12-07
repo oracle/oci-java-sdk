@@ -48,6 +48,15 @@ public class CreateDkimResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private com.oracle.bmc.email.model.Dkim dkim;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "contentLocation",
+        "etag",
+        "location",
+        "opcRequestId",
+        "opcWorkRequestId",
+        "dkim"
+    })
     private CreateDkimResponse(
             int __httpStatusCode__,
             String contentLocation,

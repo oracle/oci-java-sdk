@@ -37,6 +37,13 @@ public class ListZonesResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private java.util.List<com.oracle.bmc.dns.model.ZoneSummary> items;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcNextPage",
+        "opcTotalItems",
+        "opcRequestId",
+        "items"
+    })
     private ListZonesResponse(
             int __httpStatusCode__,
             String opcNextPage,

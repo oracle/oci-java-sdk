@@ -43,6 +43,14 @@ public class GetWorkRequestResponse extends com.oracle.bmc.responses.BmcResponse
      */
     private boolean isNotModified;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "retryAfter",
+        "opcRequestId",
+        "workRequest",
+        "isNotModified"
+    })
     private GetWorkRequestResponse(
             int __httpStatusCode__,
             String etag,

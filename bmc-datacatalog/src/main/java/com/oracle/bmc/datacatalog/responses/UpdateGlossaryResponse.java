@@ -30,6 +30,7 @@ public class UpdateGlossaryResponse extends com.oracle.bmc.responses.BmcResponse
      */
     private com.oracle.bmc.datacatalog.model.Glossary glossary;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "etag", "opcRequestId", "glossary"})
     private UpdateGlossaryResponse(
             int __httpStatusCode__,
             String etag,

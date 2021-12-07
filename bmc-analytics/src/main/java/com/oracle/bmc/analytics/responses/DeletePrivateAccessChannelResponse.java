@@ -26,6 +26,7 @@ public class DeletePrivateAccessChannelResponse extends com.oracle.bmc.responses
      */
     private String opcWorkRequestId;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "opcWorkRequestId"})
     private DeletePrivateAccessChannelResponse(
             int __httpStatusCode__, String opcRequestId, String opcWorkRequestId) {
         super(__httpStatusCode__);

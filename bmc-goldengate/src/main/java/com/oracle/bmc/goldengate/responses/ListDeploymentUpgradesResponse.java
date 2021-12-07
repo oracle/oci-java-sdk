@@ -29,6 +29,12 @@ public class ListDeploymentUpgradesResponse extends com.oracle.bmc.responses.Bmc
      */
     private com.oracle.bmc.goldengate.model.DeploymentUpgradeCollection deploymentUpgradeCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "deploymentUpgradeCollection"
+    })
     private ListDeploymentUpgradesResponse(
             int __httpStatusCode__,
             String opcRequestId,

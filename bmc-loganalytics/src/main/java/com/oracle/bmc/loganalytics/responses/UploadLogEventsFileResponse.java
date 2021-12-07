@@ -28,6 +28,12 @@ public class UploadLogEventsFileResponse extends com.oracle.bmc.responses.BmcRes
      */
     private java.util.Date timeCreated;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcObjectId",
+        "timeCreated"
+    })
     private UploadLogEventsFileResponse(
             int __httpStatusCode__,
             String opcRequestId,

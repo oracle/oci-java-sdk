@@ -30,6 +30,7 @@ public class CreateBudgetResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private com.oracle.bmc.budget.model.Budget budget;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "etag", "budget"})
     private CreateBudgetResponse(
             int __httpStatusCode__,
             String opcRequestId,

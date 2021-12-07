@@ -82,6 +82,10 @@ package com.oracle.bmc.loganalytics.model;
         name = "GEO_STATS"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = JsonExtractCommandDescriptor.class,
+        name = "JSON_EXTRACT"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = MapCommandDescriptor.class,
         name = "MAP"
     ),
@@ -200,6 +204,10 @@ package com.oracle.bmc.loganalytics.model;
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = RenameCommandDescriptor.class,
         name = "RENAME"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = XmlExtractCommandDescriptor.class,
+        name = "XML_EXTRACT"
     )
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
@@ -261,6 +269,8 @@ public class AbstractCommandDescriptor {
         ClusterSplit("CLUSTER_SPLIT"),
         Eval("EVAL"),
         Extract("EXTRACT"),
+        JsonExtract("JSON_EXTRACT"),
+        XmlExtract("XML_EXTRACT"),
         EventStats("EVENT_STATS"),
         Bucket("BUCKET"),
         Classify("CLASSIFY"),

@@ -33,6 +33,12 @@ public class ListEnterpriseManagerBridgesResponse extends com.oracle.bmc.respons
     private com.oracle.bmc.opsi.model.EnterpriseManagerBridgeCollection
             enterpriseManagerBridgeCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "enterpriseManagerBridgeCollection"
+    })
     private ListEnterpriseManagerBridgesResponse(
             int __httpStatusCode__,
             String opcRequestId,

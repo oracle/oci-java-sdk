@@ -24,6 +24,7 @@ public class GetIamWorkRequestResponse extends com.oracle.bmc.responses.BmcRespo
      */
     private com.oracle.bmc.identity.model.IamWorkRequest iamWorkRequest;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "iamWorkRequest"})
     private GetIamWorkRequestResponse(
             int __httpStatusCode__,
             String opcRequestId,

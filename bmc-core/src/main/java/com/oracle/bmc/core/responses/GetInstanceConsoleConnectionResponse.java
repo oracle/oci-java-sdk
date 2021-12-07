@@ -24,6 +24,11 @@ public class GetInstanceConsoleConnectionResponse extends com.oracle.bmc.respons
      */
     private com.oracle.bmc.core.model.InstanceConsoleConnection instanceConsoleConnection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "instanceConsoleConnection"
+    })
     private GetInstanceConsoleConnectionResponse(
             int __httpStatusCode__,
             String opcRequestId,

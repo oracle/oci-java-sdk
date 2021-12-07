@@ -22,6 +22,7 @@ public class UpdateWaasPolicyResponse extends com.oracle.bmc.responses.BmcRespon
      */
     private String opcWorkRequestId;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "opcWorkRequestId"})
     private UpdateWaasPolicyResponse(
             int __httpStatusCode__, String opcRequestId, String opcWorkRequestId) {
         super(__httpStatusCode__);

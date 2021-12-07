@@ -30,6 +30,7 @@ public class GetBdsInstanceResponse extends com.oracle.bmc.responses.BmcResponse
      */
     private com.oracle.bmc.bds.model.BdsInstance bdsInstance;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "etag", "bdsInstance"})
     private GetBdsInstanceResponse(
             int __httpStatusCode__,
             String opcRequestId,

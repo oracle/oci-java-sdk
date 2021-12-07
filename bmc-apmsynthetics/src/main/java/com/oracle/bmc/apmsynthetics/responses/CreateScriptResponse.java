@@ -30,6 +30,7 @@ public class CreateScriptResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private com.oracle.bmc.apmsynthetics.model.Script script;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "etag", "opcRequestId", "script"})
     private CreateScriptResponse(
             int __httpStatusCode__,
             String etag,

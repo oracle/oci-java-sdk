@@ -24,6 +24,7 @@ public class GetLoadBalancerHealthResponse extends com.oracle.bmc.responses.BmcR
      */
     private com.oracle.bmc.loadbalancer.model.LoadBalancerHealth loadBalancerHealth;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "loadBalancerHealth"})
     private GetLoadBalancerHealthResponse(
             int __httpStatusCode__,
             String opcRequestId,

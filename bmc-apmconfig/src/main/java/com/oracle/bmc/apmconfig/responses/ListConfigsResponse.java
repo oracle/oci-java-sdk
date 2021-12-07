@@ -32,6 +32,12 @@ public class ListConfigsResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private com.oracle.bmc.apmconfig.model.ConfigCollection configCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "configCollection"
+    })
     private ListConfigsResponse(
             int __httpStatusCode__,
             String opcRequestId,

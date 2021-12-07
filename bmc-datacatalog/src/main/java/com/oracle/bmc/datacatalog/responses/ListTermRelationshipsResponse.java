@@ -30,6 +30,12 @@ public class ListTermRelationshipsResponse extends com.oracle.bmc.responses.BmcR
      */
     private com.oracle.bmc.datacatalog.model.TermRelationshipCollection termRelationshipCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "termRelationshipCollection"
+    })
     private ListTermRelationshipsResponse(
             int __httpStatusCode__,
             String opcRequestId,

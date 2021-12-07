@@ -55,6 +55,16 @@ public class GetRunLogResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private java.io.InputStream inputStream;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "etag",
+        "contentLength",
+        "contentType",
+        "contentEncoding",
+        "opcMeta",
+        "inputStream"
+    })
     private GetRunLogResponse(
             int __httpStatusCode__,
             String opcRequestId,

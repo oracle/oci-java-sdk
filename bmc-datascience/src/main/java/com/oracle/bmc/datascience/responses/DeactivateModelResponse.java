@@ -30,6 +30,7 @@ public class DeactivateModelResponse extends com.oracle.bmc.responses.BmcRespons
      */
     private com.oracle.bmc.datascience.model.Model model;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "etag", "opcRequestId", "model"})
     private DeactivateModelResponse(
             int __httpStatusCode__,
             String etag,

@@ -27,6 +27,12 @@ public class ListDeployPipelinesResponse extends com.oracle.bmc.responses.BmcRes
      */
     private com.oracle.bmc.devops.model.DeployPipelineCollection deployPipelineCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "deployPipelineCollection"
+    })
     private ListDeployPipelinesResponse(
             int __httpStatusCode__,
             String opcRequestId,

@@ -24,6 +24,7 @@ public class ListDerivedLogicalEntitiesResponse extends com.oracle.bmc.responses
      */
     private com.oracle.bmc.datacatalog.model.EntityCollection entityCollection;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "entityCollection"})
     private ListDerivedLogicalEntitiesResponse(
             int __httpStatusCode__,
             String opcRequestId,

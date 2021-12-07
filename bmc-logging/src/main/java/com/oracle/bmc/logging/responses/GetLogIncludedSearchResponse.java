@@ -30,6 +30,12 @@ public class GetLogIncludedSearchResponse extends com.oracle.bmc.responses.BmcRe
      */
     private com.oracle.bmc.logging.model.LogIncludedSearch logIncludedSearch;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "etag",
+        "logIncludedSearch"
+    })
     private GetLogIncludedSearchResponse(
             int __httpStatusCode__,
             String opcRequestId,

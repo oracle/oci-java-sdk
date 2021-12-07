@@ -30,6 +30,7 @@ public class GetDatasetResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private com.oracle.bmc.datalabelingservice.model.Dataset dataset;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "etag", "opcRequestId", "dataset"})
     private GetDatasetResponse(
             int __httpStatusCode__,
             String etag,

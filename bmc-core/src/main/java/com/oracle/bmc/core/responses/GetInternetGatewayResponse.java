@@ -30,6 +30,12 @@ public class GetInternetGatewayResponse extends com.oracle.bmc.responses.BmcResp
      */
     private com.oracle.bmc.core.model.InternetGateway internetGateway;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcRequestId",
+        "internetGateway"
+    })
     private GetInternetGatewayResponse(
             int __httpStatusCode__,
             String etag,

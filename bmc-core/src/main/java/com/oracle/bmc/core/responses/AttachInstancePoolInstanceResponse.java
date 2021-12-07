@@ -43,6 +43,14 @@ public class AttachInstancePoolInstanceResponse extends com.oracle.bmc.responses
      */
     private com.oracle.bmc.core.model.InstancePoolInstance instancePoolInstance;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "etag",
+        "opcWorkRequestId",
+        "location",
+        "instancePoolInstance"
+    })
     private AttachInstancePoolInstanceResponse(
             int __httpStatusCode__,
             String opcRequestId,

@@ -29,6 +29,12 @@ public class UpdateLogAnalyticsEmBridgeResponse extends com.oracle.bmc.responses
      */
     private com.oracle.bmc.loganalytics.model.LogAnalyticsEmBridge logAnalyticsEmBridge;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcRequestId",
+        "logAnalyticsEmBridge"
+    })
     private UpdateLogAnalyticsEmBridgeResponse(
             int __httpStatusCode__,
             String etag,

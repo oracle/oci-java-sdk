@@ -22,6 +22,11 @@ public class ListTransferDevicesResponse extends com.oracle.bmc.responses.BmcRes
      */
     private com.oracle.bmc.dts.model.MultipleTransferDevices multipleTransferDevices;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "multipleTransferDevices"
+    })
     private ListTransferDevicesResponse(
             int __httpStatusCode__,
             String opcRequestId,

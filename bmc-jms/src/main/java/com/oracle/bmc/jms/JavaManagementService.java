@@ -122,7 +122,8 @@ public interface JavaManagementService extends AutoCloseable {
     GetWorkRequestResponse getWorkRequest(GetWorkRequestRequest request);
 
     /**
-     * Returns a list of all the Fleets contained by a compartment.
+     * Returns a list of all the Fleets contained by a compartment. The query parameter `compartmentId`
+     * is required unless the query parameter `id` is specified.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -133,6 +134,18 @@ public interface JavaManagementService extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/ListFleetsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListFleets API.
      */
     ListFleetsResponse listFleets(ListFleetsRequest request);
+
+    /**
+     * List Java Runtime usage in a specified host filtered by query parameters.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/ListJreUsageExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListJreUsage API.
+     */
+    ListJreUsageResponse listJreUsage(ListJreUsageRequest request);
 
     /**
      * Retrieve a (paginated) list of errors for a specified work request.
@@ -161,7 +174,7 @@ public interface JavaManagementService extends AutoCloseable {
     ListWorkRequestLogsResponse listWorkRequestLogs(ListWorkRequestLogsRequest request);
 
     /**
-     * List the work requests in a compartment.
+     * List the work requests in a compartment. The query parameter `compartmentId` is required unless the query parameter `id` is specified.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -223,6 +236,20 @@ public interface JavaManagementService extends AutoCloseable {
      */
     SummarizeManagedInstanceUsageResponse summarizeManagedInstanceUsage(
             SummarizeManagedInstanceUsageRequest request);
+
+    /**
+     * Retrieve the inventory of JMS resources in the specified compartment: a list of the number of _active_ fleets, managed instances, Java Runtimes, Java installations, and applications.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/SummarizeResourceInventoryExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use SummarizeResourceInventory API.
+     */
+    SummarizeResourceInventoryResponse summarizeResourceInventory(
+            SummarizeResourceInventoryRequest request);
 
     /**
      * Update the Fleet specified by an identifier.

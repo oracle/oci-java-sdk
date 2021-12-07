@@ -31,6 +31,12 @@ public class UpdateLogAnalyticsObjectCollectionRuleResponse
     private com.oracle.bmc.loganalytics.model.LogAnalyticsObjectCollectionRule
             logAnalyticsObjectCollectionRule;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcRequestId",
+        "logAnalyticsObjectCollectionRule"
+    })
     private UpdateLogAnalyticsObjectCollectionRuleResponse(
             int __httpStatusCode__,
             String etag,

@@ -30,6 +30,12 @@ public class RemovePublicIpPoolCapacityResponse extends com.oracle.bmc.responses
      */
     private com.oracle.bmc.core.model.PublicIpPool publicIpPool;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcRequestId",
+        "publicIpPool"
+    })
     private RemovePublicIpPoolCapacityResponse(
             int __httpStatusCode__,
             String etag,

@@ -43,6 +43,13 @@ public class ListWorkRequestLogsResponse extends com.oracle.bmc.responses.BmcRes
      */
     private com.oracle.bmc.apigateway.model.WorkRequestLogCollection workRequestLogCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcNextPage",
+        "opcPrevPage",
+        "opcRequestId",
+        "workRequestLogCollection"
+    })
     private ListWorkRequestLogsResponse(
             int __httpStatusCode__,
             String opcNextPage,

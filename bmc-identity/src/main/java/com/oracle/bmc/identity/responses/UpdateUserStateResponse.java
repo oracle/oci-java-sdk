@@ -29,6 +29,7 @@ public class UpdateUserStateResponse extends com.oracle.bmc.responses.BmcRespons
      */
     private com.oracle.bmc.identity.model.User user;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "etag", "user"})
     private UpdateUserStateResponse(
             int __httpStatusCode__,
             String opcRequestId,

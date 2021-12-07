@@ -25,6 +25,11 @@ public class GetDatabaseFleetHealthMetricsResponse extends com.oracle.bmc.respon
     private com.oracle.bmc.databasemanagement.model.DatabaseFleetHealthMetrics
             databaseFleetHealthMetrics;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "databaseFleetHealthMetrics"
+    })
     private GetDatabaseFleetHealthMetricsResponse(
             int __httpStatusCode__,
             String opcRequestId,

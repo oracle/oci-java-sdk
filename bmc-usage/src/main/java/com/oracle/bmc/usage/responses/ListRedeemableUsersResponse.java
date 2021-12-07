@@ -37,6 +37,13 @@ public class ListRedeemableUsersResponse extends com.oracle.bmc.responses.BmcRes
      */
     private com.oracle.bmc.usage.model.RedeemableUserCollection redeemableUserCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "etag",
+        "opcNextPage",
+        "redeemableUserCollection"
+    })
     private ListRedeemableUsersResponse(
             int __httpStatusCode__,
             String opcRequestId,

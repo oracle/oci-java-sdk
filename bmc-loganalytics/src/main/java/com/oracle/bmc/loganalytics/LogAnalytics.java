@@ -220,6 +220,19 @@ public interface LogAnalytics extends AutoCloseable {
     CleanResponse clean(CleanRequest request);
 
     /**
+     * Returns the difference between the two input payloads, including intraline differences.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/CompareContentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CompareContent API.
+     */
+    CompareContentResponse compareContent(CompareContentRequest request);
+
+    /**
      * Add configuration for enterprise manager bridge. Enterprise manager bridge is used to automatically add selected entities from enterprise manager cloud control. A corresponding OCI bridge configuration is required in enterprise manager.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -694,6 +707,19 @@ public interface LogAnalytics extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/GetAssociationSummaryExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetAssociationSummary API.
      */
     GetAssociationSummaryResponse getAssociationSummary(GetAssociationSummaryRequest request);
+
+    /**
+     * Gets detailed information about the category with the specified name.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/GetCategoryExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetCategory API.
+     */
+    GetCategoryResponse getCategory(GetCategoryRequest request);
 
     /**
      * Extracts column names from the input SQL query.
@@ -1189,6 +1215,19 @@ public interface LogAnalytics extends AutoCloseable {
     ListAutoAssociationsResponse listAutoAssociations(ListAutoAssociationsRequest request);
 
     /**
+     * Returns a list of categories, containing detailed information about them. You may limit the number of results, provide sorting order, and filter by information such as category name or description.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/ListCategoriesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListCategories API.
+     */
+    ListCategoriesResponse listCategories(ListCategoriesRequest request);
+
+    /**
      * Returns the list of configuration work requests such as association or lookup operations, containing detailed information about them. You may paginate or limit the number of results.
      *
      * @param request The request object containing the details to send
@@ -1304,6 +1343,19 @@ public interface LogAnalytics extends AutoCloseable {
      */
     ListLogAnalyticsEntitiesResponse listLogAnalyticsEntities(
             ListLogAnalyticsEntitiesRequest request);
+
+    /**
+     * Return a log analytics entity topology collection that contains a set of log analytics entities and a set of relationships between those, for the input source entity.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/ListLogAnalyticsEntityTopologyExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListLogAnalyticsEntityTopology API.
+     */
+    ListLogAnalyticsEntityTopologyResponse listLogAnalyticsEntityTopology(
+            ListLogAnalyticsEntityTopologyRequest request);
 
     /**
      * Return a list of log analytics entity types.
@@ -1461,6 +1513,20 @@ public interface LogAnalytics extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/ListRecalledDataExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListRecalledData API.
      */
     ListRecalledDataResponse listRecalledData(ListRecalledDataRequest request);
+
+    /**
+     * Returns a list of resources and their category assignments.
+     * You may limit the number of results, provide sorting order, and filter by information such as resource type.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/ListResourceCategoriesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListResourceCategories API.
+     */
+    ListResourceCategoriesResponse listResourceCategories(ListResourceCategoriesRequest request);
 
     /**
      * Lists scheduled tasks.
@@ -1891,6 +1957,20 @@ public interface LogAnalytics extends AutoCloseable {
     RemovePreferencesResponse removePreferences(RemovePreferencesRequest request);
 
     /**
+     * Removes the category assignments of DASHBOARD and SAVEDSEARCH resources.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/RemoveResourceCategoriesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RemoveResourceCategories API.
+     */
+    RemoveResourceCategoriesResponse removeResourceCategories(
+            RemoveResourceCategoriesRequest request);
+
+    /**
      * Remove one or more event types from a source.
      *
      * @param request The request object containing the details to send
@@ -2131,6 +2211,20 @@ public interface LogAnalytics extends AutoCloseable {
     UpdatePreferencesResponse updatePreferences(UpdatePreferencesRequest request);
 
     /**
+     * Updates the category assignments of DASHBOARD and SAVEDSEARCH resources.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/UpdateResourceCategoriesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateResourceCategories API.
+     */
+    UpdateResourceCategoriesResponse updateResourceCategories(
+            UpdateResourceCategoriesRequest request);
+
+    /**
      * Update the scheduled task. Schedules may be updated only for taskType SAVED_SEARCH and PURGE.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -2364,6 +2458,22 @@ public interface LogAnalytics extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/ValidateSourceMappingExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ValidateSourceMapping API.
      */
     ValidateSourceMappingResponse validateSourceMapping(ValidateSourceMappingRequest request);
+
+    /**
+     * Verify the accelerated saved search task specified by {scheduledTaskId}.
+     * For internal use only.
+     * Optionally specify whether to return accelerated search results; the default is false.
+     * The ScheduledTask taskType must be ACCELERATION.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/VerifyExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use Verify API.
+     */
+    VerifyResponse verify(VerifyRequest request);
 
     /**
      * Gets the pre-configured waiters available for resources for this service.

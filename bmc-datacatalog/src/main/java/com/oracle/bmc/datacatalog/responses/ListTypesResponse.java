@@ -30,6 +30,12 @@ public class ListTypesResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private com.oracle.bmc.datacatalog.model.TypeCollection typeCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "typeCollection"
+    })
     private ListTypesResponse(
             int __httpStatusCode__,
             String opcRequestId,

@@ -27,6 +27,12 @@ public class GetMirrorRecordResponse extends com.oracle.bmc.responses.BmcRespons
      */
     private com.oracle.bmc.devops.model.RepositoryMirrorRecord repositoryMirrorRecord;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcRequestId",
+        "repositoryMirrorRecord"
+    })
     private GetMirrorRecordResponse(
             int __httpStatusCode__,
             String etag,

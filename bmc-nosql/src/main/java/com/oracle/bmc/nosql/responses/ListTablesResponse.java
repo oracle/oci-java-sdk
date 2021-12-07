@@ -35,6 +35,12 @@ public class ListTablesResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private com.oracle.bmc.nosql.model.TableCollection tableCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcNextPage",
+        "opcRequestId",
+        "tableCollection"
+    })
     private ListTablesResponse(
             int __httpStatusCode__,
             String opcNextPage,

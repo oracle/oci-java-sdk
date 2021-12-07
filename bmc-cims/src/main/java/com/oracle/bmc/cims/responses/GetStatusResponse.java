@@ -22,6 +22,7 @@ public class GetStatusResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private com.oracle.bmc.cims.model.Status status;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "status"})
     private GetStatusResponse(
             int __httpStatusCode__, String opcRequestId, com.oracle.bmc.cims.model.Status status) {
         super(__httpStatusCode__);

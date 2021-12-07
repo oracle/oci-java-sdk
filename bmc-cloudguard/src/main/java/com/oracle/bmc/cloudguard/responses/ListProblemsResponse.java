@@ -32,6 +32,12 @@ public class ListProblemsResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private com.oracle.bmc.cloudguard.model.ProblemCollection problemCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "problemCollection"
+    })
     private ListProblemsResponse(
             int __httpStatusCode__,
             String opcRequestId,

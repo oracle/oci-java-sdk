@@ -31,6 +31,12 @@ public class GetDatabaseToolsEndpointServiceResponse extends com.oracle.bmc.resp
     private com.oracle.bmc.databasetools.model.DatabaseToolsEndpointService
             databaseToolsEndpointService;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcRequestId",
+        "databaseToolsEndpointService"
+    })
     private GetDatabaseToolsEndpointServiceResponse(
             int __httpStatusCode__,
             String etag,

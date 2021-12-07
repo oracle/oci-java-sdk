@@ -27,6 +27,12 @@ public class UpdateCustomProtectionRuleResponse extends com.oracle.bmc.responses
      */
     private com.oracle.bmc.waas.model.CustomProtectionRule customProtectionRule;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "etag",
+        "customProtectionRule"
+    })
     private UpdateCustomProtectionRuleResponse(
             int __httpStatusCode__,
             String opcRequestId,

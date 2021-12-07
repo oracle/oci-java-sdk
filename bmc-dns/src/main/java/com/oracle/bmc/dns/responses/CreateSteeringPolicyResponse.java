@@ -38,6 +38,13 @@ public class CreateSteeringPolicyResponse extends com.oracle.bmc.responses.BmcRe
      */
     private com.oracle.bmc.dns.model.SteeringPolicy steeringPolicy;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "eTag",
+        "location",
+        "opcRequestId",
+        "steeringPolicy"
+    })
     private CreateSteeringPolicyResponse(
             int __httpStatusCode__,
             String eTag,

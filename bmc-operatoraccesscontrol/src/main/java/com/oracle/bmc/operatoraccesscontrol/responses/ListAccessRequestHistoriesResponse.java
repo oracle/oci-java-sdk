@@ -33,6 +33,12 @@ public class ListAccessRequestHistoriesResponse extends com.oracle.bmc.responses
     private com.oracle.bmc.operatoraccesscontrol.model.AccessRequestHistoryCollection
             accessRequestHistoryCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "accessRequestHistoryCollection"
+    })
     private ListAccessRequestHistoriesResponse(
             int __httpStatusCode__,
             String opcRequestId,

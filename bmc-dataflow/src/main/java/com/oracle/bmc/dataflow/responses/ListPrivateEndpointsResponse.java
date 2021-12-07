@@ -39,6 +39,13 @@ public class ListPrivateEndpointsResponse extends com.oracle.bmc.responses.BmcRe
      */
     private com.oracle.bmc.dataflow.model.PrivateEndpointCollection privateEndpointCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcPrevPage",
+        "opcNextPage",
+        "opcRequestId",
+        "privateEndpointCollection"
+    })
     private ListPrivateEndpointsResponse(
             int __httpStatusCode__,
             String opcPrevPage,

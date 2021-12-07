@@ -32,6 +32,12 @@ public class CreateExternalPublicationValidationResponse
     private com.oracle.bmc.dataintegration.model.ExternalPublicationValidation
             externalPublicationValidation;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcRequestId",
+        "externalPublicationValidation"
+    })
     private CreateExternalPublicationValidationResponse(
             int __httpStatusCode__,
             String etag,

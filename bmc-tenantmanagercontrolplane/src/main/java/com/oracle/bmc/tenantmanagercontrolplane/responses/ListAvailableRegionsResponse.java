@@ -33,6 +33,12 @@ public class ListAvailableRegionsResponse extends com.oracle.bmc.responses.BmcRe
     private com.oracle.bmc.tenantmanagercontrolplane.model.AvailableRegionCollection
             availableRegionCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcNextPage",
+        "opcRequestId",
+        "availableRegionCollection"
+    })
     private ListAvailableRegionsResponse(
             int __httpStatusCode__,
             String opcNextPage,

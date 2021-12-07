@@ -29,6 +29,12 @@ public class UpsertFieldResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private com.oracle.bmc.loganalytics.model.LogAnalyticsField logAnalyticsField;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcRequestId",
+        "logAnalyticsField"
+    })
     private UpsertFieldResponse(
             int __httpStatusCode__,
             String etag,

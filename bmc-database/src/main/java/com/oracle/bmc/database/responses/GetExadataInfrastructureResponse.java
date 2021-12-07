@@ -29,6 +29,12 @@ public class GetExadataInfrastructureResponse extends com.oracle.bmc.responses.B
      */
     private com.oracle.bmc.database.model.ExadataInfrastructure exadataInfrastructure;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcRequestId",
+        "exadataInfrastructure"
+    })
     private GetExadataInfrastructureResponse(
             int __httpStatusCode__,
             String etag,

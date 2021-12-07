@@ -24,6 +24,7 @@ public class GetWindowsUpdateResponse extends com.oracle.bmc.responses.BmcRespon
      */
     private com.oracle.bmc.osmanagement.model.WindowsUpdate windowsUpdate;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "windowsUpdate"})
     private GetWindowsUpdateResponse(
             int __httpStatusCode__,
             String opcRequestId,

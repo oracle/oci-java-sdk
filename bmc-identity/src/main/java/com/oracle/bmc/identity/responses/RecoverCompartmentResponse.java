@@ -29,6 +29,7 @@ public class RecoverCompartmentResponse extends com.oracle.bmc.responses.BmcResp
      */
     private com.oracle.bmc.identity.model.Compartment compartment;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "etag", "compartment"})
     private RecoverCompartmentResponse(
             int __httpStatusCode__,
             String opcRequestId,

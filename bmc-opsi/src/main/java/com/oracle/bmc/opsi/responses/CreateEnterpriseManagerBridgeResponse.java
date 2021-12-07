@@ -46,6 +46,15 @@ public class CreateEnterpriseManagerBridgeResponse extends com.oracle.bmc.respon
      */
     private com.oracle.bmc.opsi.model.EnterpriseManagerBridge enterpriseManagerBridge;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcWorkRequestId",
+        "opcRequestId",
+        "location",
+        "contentLocation",
+        "etag",
+        "enterpriseManagerBridge"
+    })
     private CreateEnterpriseManagerBridgeResponse(
             int __httpStatusCode__,
             String opcWorkRequestId,

@@ -30,6 +30,12 @@ public class ReviewAccessRequestResponse extends com.oracle.bmc.responses.BmcRes
      */
     private com.oracle.bmc.operatoraccesscontrol.model.AccessRequest accessRequest;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcRequestId",
+        "accessRequest"
+    })
     private ReviewAccessRequestResponse(
             int __httpStatusCode__,
             String etag,

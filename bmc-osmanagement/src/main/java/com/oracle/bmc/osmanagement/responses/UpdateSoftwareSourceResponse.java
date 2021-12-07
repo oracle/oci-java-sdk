@@ -30,6 +30,12 @@ public class UpdateSoftwareSourceResponse extends com.oracle.bmc.responses.BmcRe
      */
     private com.oracle.bmc.osmanagement.model.SoftwareSource softwareSource;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcRequestId",
+        "softwareSource"
+    })
     private UpdateSoftwareSourceResponse(
             int __httpStatusCode__,
             String etag,

@@ -38,6 +38,13 @@ public class QueryOldResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private com.oracle.bmc.apmtraces.model.QueryResultResponse queryResultResponse;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcTotalItems",
+        "opcNextPage",
+        "queryResultResponse"
+    })
     private QueryOldResponse(
             int __httpStatusCode__,
             String opcRequestId,

@@ -30,6 +30,12 @@ public class GetMeasuredBootReportResponse extends com.oracle.bmc.responses.BmcR
      */
     private com.oracle.bmc.core.model.MeasuredBootReport measuredBootReport;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcRequestId",
+        "measuredBootReport"
+    })
     private GetMeasuredBootReportResponse(
             int __httpStatusCode__,
             String etag,

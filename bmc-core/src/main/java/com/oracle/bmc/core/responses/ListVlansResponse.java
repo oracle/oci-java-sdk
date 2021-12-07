@@ -32,6 +32,12 @@ public class ListVlansResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private java.util.List<com.oracle.bmc.core.model.Vlan> items;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcNextPage",
+        "opcRequestId",
+        "items"
+    })
     private ListVlansResponse(
             int __httpStatusCode__,
             String opcNextPage,

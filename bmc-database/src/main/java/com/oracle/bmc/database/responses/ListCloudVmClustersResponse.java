@@ -33,6 +33,12 @@ public class ListCloudVmClustersResponse extends com.oracle.bmc.responses.BmcRes
      */
     private java.util.List<com.oracle.bmc.database.model.CloudVmClusterSummary> items;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "items"
+    })
     private ListCloudVmClustersResponse(
             int __httpStatusCode__,
             String opcRequestId,

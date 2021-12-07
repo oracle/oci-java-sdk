@@ -33,6 +33,12 @@ public class ListAppCatalogListingResourceVersionsResponse
      */
     private java.util.List<com.oracle.bmc.core.model.AppCatalogListingResourceVersionSummary> items;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcNextPage",
+        "opcRequestId",
+        "items"
+    })
     private ListAppCatalogListingResourceVersionsResponse(
             int __httpStatusCode__,
             String opcNextPage,

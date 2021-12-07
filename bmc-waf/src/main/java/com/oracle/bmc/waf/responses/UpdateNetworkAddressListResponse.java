@@ -25,6 +25,7 @@ public class UpdateNetworkAddressListResponse extends com.oracle.bmc.responses.B
      */
     private String opcRequestId;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcWorkRequestId", "opcRequestId"})
     private UpdateNetworkAddressListResponse(
             int __httpStatusCode__, String opcWorkRequestId, String opcRequestId) {
         super(__httpStatusCode__);

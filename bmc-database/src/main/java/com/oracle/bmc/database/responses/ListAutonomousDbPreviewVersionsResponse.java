@@ -33,6 +33,12 @@ public class ListAutonomousDbPreviewVersionsResponse extends com.oracle.bmc.resp
      */
     private java.util.List<com.oracle.bmc.database.model.AutonomousDbPreviewVersionSummary> items;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "items"
+    })
     private ListAutonomousDbPreviewVersionsResponse(
             int __httpStatusCode__,
             String opcRequestId,

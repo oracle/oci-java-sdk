@@ -33,6 +33,12 @@ public class SummarizeManagementAgentCountsResponse extends com.oracle.bmc.respo
     private com.oracle.bmc.managementagent.model.ManagementAgentAggregationCollection
             managementAgentAggregationCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "managementAgentAggregationCollection"
+    })
     private SummarizeManagementAgentCountsResponse(
             int __httpStatusCode__,
             String opcRequestId,

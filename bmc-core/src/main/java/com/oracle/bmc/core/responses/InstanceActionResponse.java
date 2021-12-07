@@ -30,6 +30,7 @@ public class InstanceActionResponse extends com.oracle.bmc.responses.BmcResponse
      */
     private com.oracle.bmc.core.model.Instance instance;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "etag", "opcRequestId", "instance"})
     private InstanceActionResponse(
             int __httpStatusCode__,
             String etag,

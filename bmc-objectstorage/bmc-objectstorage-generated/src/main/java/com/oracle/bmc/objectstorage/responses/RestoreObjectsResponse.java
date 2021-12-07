@@ -24,6 +24,7 @@ public class RestoreObjectsResponse extends com.oracle.bmc.responses.BmcResponse
      */
     private String opcRequestId;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcClientRequestId", "opcRequestId"})
     private RestoreObjectsResponse(
             int __httpStatusCode__, String opcClientRequestId, String opcRequestId) {
         super(__httpStatusCode__);

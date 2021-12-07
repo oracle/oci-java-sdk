@@ -39,6 +39,13 @@ public class ListDatabaseConfigurationsResponse extends com.oracle.bmc.responses
     private com.oracle.bmc.opsi.model.DatabaseConfigurationCollection
             databaseConfigurationCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcTotalItems",
+        "opcNextPage",
+        "databaseConfigurationCollection"
+    })
     private ListDatabaseConfigurationsResponse(
             int __httpStatusCode__,
             String opcRequestId,

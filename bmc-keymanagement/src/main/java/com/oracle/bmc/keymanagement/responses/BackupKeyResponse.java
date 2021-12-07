@@ -36,6 +36,13 @@ public class BackupKeyResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private com.oracle.bmc.keymanagement.model.Key key;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcRequestId",
+        "opcWorkRequestId",
+        "key"
+    })
     private BackupKeyResponse(
             int __httpStatusCode__,
             String etag,

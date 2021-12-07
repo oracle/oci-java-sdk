@@ -32,6 +32,13 @@ public class ListCaptchasResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private java.util.List<com.oracle.bmc.waas.model.Captcha> items;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcNextPage",
+        "opcRequestId",
+        "items"
+    })
     private ListCaptchasResponse(
             int __httpStatusCode__,
             String etag,

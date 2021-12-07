@@ -34,6 +34,12 @@ public class ListDatabaseToolsPrivateEndpointsResponse
     private com.oracle.bmc.databasetools.model.DatabaseToolsPrivateEndpointCollection
             databaseToolsPrivateEndpointCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "databaseToolsPrivateEndpointCollection"
+    })
     private ListDatabaseToolsPrivateEndpointsResponse(
             int __httpStatusCode__,
             String opcRequestId,

@@ -30,6 +30,7 @@ public class CreateAnnotationResponse extends com.oracle.bmc.responses.BmcRespon
      */
     private com.oracle.bmc.datalabelingservicedataplane.model.Annotation annotation;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "etag", "opcRequestId", "annotation"})
     private CreateAnnotationResponse(
             int __httpStatusCode__,
             String etag,

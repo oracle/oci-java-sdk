@@ -25,6 +25,7 @@ public class PrepareStatementResponse extends com.oracle.bmc.responses.BmcRespon
      */
     private com.oracle.bmc.nosql.model.PreparedStatement preparedStatement;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "preparedStatement"})
     private PrepareStatementResponse(
             int __httpStatusCode__,
             String opcRequestId,

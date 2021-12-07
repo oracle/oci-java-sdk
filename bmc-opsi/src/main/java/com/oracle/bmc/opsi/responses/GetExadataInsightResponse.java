@@ -30,6 +30,12 @@ public class GetExadataInsightResponse extends com.oracle.bmc.responses.BmcRespo
      */
     private com.oracle.bmc.opsi.model.ExadataInsight exadataInsight;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcRequestId",
+        "exadataInsight"
+    })
     private GetExadataInsightResponse(
             int __httpStatusCode__,
             String etag,

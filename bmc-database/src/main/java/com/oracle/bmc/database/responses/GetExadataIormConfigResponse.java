@@ -24,6 +24,7 @@ public class GetExadataIormConfigResponse extends com.oracle.bmc.responses.BmcRe
      */
     private com.oracle.bmc.database.model.ExadataIormConfig exadataIormConfig;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "exadataIormConfig"})
     private GetExadataIormConfigResponse(
             int __httpStatusCode__,
             String opcRequestId,

@@ -39,6 +39,13 @@ public class ListProfilesResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private com.oracle.bmc.optimizer.model.ProfileCollection profileCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "opcPrevPage",
+        "profileCollection"
+    })
     private ListProfilesResponse(
             int __httpStatusCode__,
             String opcRequestId,

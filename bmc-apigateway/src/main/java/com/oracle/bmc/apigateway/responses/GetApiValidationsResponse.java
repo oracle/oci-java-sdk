@@ -31,6 +31,12 @@ public class GetApiValidationsResponse extends com.oracle.bmc.responses.BmcRespo
      */
     private com.oracle.bmc.apigateway.model.ApiValidations apiValidations;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcRequestId",
+        "apiValidations"
+    })
     private GetApiValidationsResponse(
             int __httpStatusCode__,
             String etag,

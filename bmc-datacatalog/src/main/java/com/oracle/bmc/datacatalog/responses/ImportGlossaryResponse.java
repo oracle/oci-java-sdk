@@ -25,6 +25,7 @@ public class ImportGlossaryResponse extends com.oracle.bmc.responses.BmcResponse
      */
     private String opcRequestId;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "etag", "opcRequestId"})
     private ImportGlossaryResponse(int __httpStatusCode__, String etag, String opcRequestId) {
         super(__httpStatusCode__);
         this.etag = etag;

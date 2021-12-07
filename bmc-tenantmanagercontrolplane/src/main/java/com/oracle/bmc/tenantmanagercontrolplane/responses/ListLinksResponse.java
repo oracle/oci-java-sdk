@@ -32,6 +32,12 @@ public class ListLinksResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private com.oracle.bmc.tenantmanagercontrolplane.model.LinkCollection linkCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcNextPage",
+        "opcRequestId",
+        "linkCollection"
+    })
     private ListLinksResponse(
             int __httpStatusCode__,
             String opcNextPage,

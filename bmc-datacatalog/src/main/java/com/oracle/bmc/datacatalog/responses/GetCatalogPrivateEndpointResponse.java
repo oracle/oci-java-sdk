@@ -30,6 +30,12 @@ public class GetCatalogPrivateEndpointResponse extends com.oracle.bmc.responses.
      */
     private com.oracle.bmc.datacatalog.model.CatalogPrivateEndpoint catalogPrivateEndpoint;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "etag",
+        "catalogPrivateEndpoint"
+    })
     private GetCatalogPrivateEndpointResponse(
             int __httpStatusCode__,
             String opcRequestId,

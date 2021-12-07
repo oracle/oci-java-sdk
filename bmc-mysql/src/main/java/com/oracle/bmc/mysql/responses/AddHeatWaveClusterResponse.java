@@ -36,6 +36,13 @@ public class AddHeatWaveClusterResponse extends com.oracle.bmc.responses.BmcResp
      */
     private com.oracle.bmc.mysql.model.HeatWaveCluster heatWaveCluster;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcRequestId",
+        "opcWorkRequestId",
+        "heatWaveCluster"
+    })
     private AddHeatWaveClusterResponse(
             int __httpStatusCode__,
             String etag,

@@ -33,6 +33,12 @@ public class ListAnnotationsResponse extends com.oracle.bmc.responses.BmcRespons
     private com.oracle.bmc.datalabelingservicedataplane.model.AnnotationCollection
             annotationCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "annotationCollection"
+    })
     private ListAnnotationsResponse(
             int __httpStatusCode__,
             String opcRequestId,

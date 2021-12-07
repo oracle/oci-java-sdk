@@ -37,6 +37,13 @@ public class UpdateWorkspaceResponse extends com.oracle.bmc.responses.BmcRespons
      */
     private com.oracle.bmc.dataintegration.model.Workspace workspace;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcRequestId",
+        "opcWorkRequestId",
+        "workspace"
+    })
     private UpdateWorkspaceResponse(
             int __httpStatusCode__,
             String etag,

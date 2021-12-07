@@ -143,6 +143,11 @@ public class ListParsersRequest extends com.oracle.bmc.requests.BmcRequest<java.
         }
     };
     /**
+     * A comma-separated list of categories used for filtering
+     */
+    private String categories;
+
+    /**
      * The system value used for filtering.  Only items with the specified system value
      * will be returned.  Valid values are built in, custom (for user defined items), or
      * all (for all items, regardless of system value).
@@ -329,6 +334,7 @@ public class ListParsersRequest extends com.oracle.bmc.requests.BmcRequest<java.
             parserName(o.getParserName());
             parserDisplayText(o.getParserDisplayText());
             parserType(o.getParserType());
+            categories(o.getCategories());
             isSystem(o.getIsSystem());
             limit(o.getLimit());
             page(o.getPage());

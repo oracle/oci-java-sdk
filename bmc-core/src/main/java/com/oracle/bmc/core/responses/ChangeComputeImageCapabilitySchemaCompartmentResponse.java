@@ -20,6 +20,7 @@ public class ChangeComputeImageCapabilitySchemaCompartmentResponse
      */
     private String opcRequestId;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId"})
     private ChangeComputeImageCapabilitySchemaCompartmentResponse(
             int __httpStatusCode__, String opcRequestId) {
         super(__httpStatusCode__);

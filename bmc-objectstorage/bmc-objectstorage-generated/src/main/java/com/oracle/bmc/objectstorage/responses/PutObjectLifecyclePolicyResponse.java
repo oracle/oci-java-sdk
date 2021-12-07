@@ -34,6 +34,13 @@ public class PutObjectLifecyclePolicyResponse extends com.oracle.bmc.responses.B
      */
     private com.oracle.bmc.objectstorage.model.ObjectLifecyclePolicy objectLifecyclePolicy;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcClientRequestId",
+        "eTag",
+        "objectLifecyclePolicy"
+    })
     private PutObjectLifecyclePolicyResponse(
             int __httpStatusCode__,
             String opcRequestId,

@@ -42,6 +42,13 @@ public class ListMultipartUploadsResponse extends com.oracle.bmc.responses.BmcRe
      */
     private java.util.List<com.oracle.bmc.objectstorage.model.MultipartUpload> items;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcClientRequestId",
+        "opcRequestId",
+        "opcNextPage",
+        "items"
+    })
     private ListMultipartUploadsResponse(
             int __httpStatusCode__,
             String opcClientRequestId,

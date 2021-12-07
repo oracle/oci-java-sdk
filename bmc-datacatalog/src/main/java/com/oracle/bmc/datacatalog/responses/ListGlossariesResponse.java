@@ -30,6 +30,12 @@ public class ListGlossariesResponse extends com.oracle.bmc.responses.BmcResponse
      */
     private com.oracle.bmc.datacatalog.model.GlossaryCollection glossaryCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "glossaryCollection"
+    })
     private ListGlossariesResponse(
             int __httpStatusCode__,
             String opcRequestId,

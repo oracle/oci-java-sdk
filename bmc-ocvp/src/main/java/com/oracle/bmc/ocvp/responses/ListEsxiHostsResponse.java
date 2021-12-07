@@ -32,6 +32,12 @@ public class ListEsxiHostsResponse extends com.oracle.bmc.responses.BmcResponse 
      */
     private com.oracle.bmc.ocvp.model.EsxiHostCollection esxiHostCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "esxiHostCollection"
+    })
     private ListEsxiHostsResponse(
             int __httpStatusCode__,
             String opcRequestId,

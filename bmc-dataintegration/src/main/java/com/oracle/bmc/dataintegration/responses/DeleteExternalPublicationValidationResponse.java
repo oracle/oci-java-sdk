@@ -20,6 +20,7 @@ public class DeleteExternalPublicationValidationResponse
      */
     private String opcRequestId;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId"})
     private DeleteExternalPublicationValidationResponse(
             int __httpStatusCode__, String opcRequestId) {
         super(__httpStatusCode__);

@@ -30,6 +30,12 @@ public class UpdateAcceptedAgreementResponse extends com.oracle.bmc.responses.Bm
      */
     private com.oracle.bmc.marketplace.model.AcceptedAgreement acceptedAgreement;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "etag",
+        "acceptedAgreement"
+    })
     private UpdateAcceptedAgreementResponse(
             int __httpStatusCode__,
             String opcRequestId,

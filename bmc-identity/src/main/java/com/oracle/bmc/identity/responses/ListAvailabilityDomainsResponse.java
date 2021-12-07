@@ -32,6 +32,12 @@ public class ListAvailabilityDomainsResponse extends com.oracle.bmc.responses.Bm
      */
     private java.util.List<com.oracle.bmc.identity.model.AvailabilityDomain> items;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "items"
+    })
     private ListAvailabilityDomainsResponse(
             int __httpStatusCode__,
             String opcRequestId,

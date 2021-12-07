@@ -23,6 +23,11 @@ public class ExtractStructuredLogFieldPathsResponse extends com.oracle.bmc.respo
      */
     private com.oracle.bmc.loganalytics.model.ExtractLogFieldResults extractLogFieldResults;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "extractLogFieldResults"
+    })
     private ExtractStructuredLogFieldPathsResponse(
             int __httpStatusCode__,
             String opcRequestId,

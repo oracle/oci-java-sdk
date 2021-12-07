@@ -30,6 +30,7 @@ public class GetGenericArtifactContentResponse extends com.oracle.bmc.responses.
      */
     private java.io.InputStream inputStream;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "etag", "opcRequestId", "inputStream"})
     private GetGenericArtifactContentResponse(
             int __httpStatusCode__,
             String etag,

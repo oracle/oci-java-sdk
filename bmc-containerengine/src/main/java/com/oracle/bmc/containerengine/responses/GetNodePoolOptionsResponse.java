@@ -24,6 +24,7 @@ public class GetNodePoolOptionsResponse extends com.oracle.bmc.responses.BmcResp
      */
     private com.oracle.bmc.containerengine.model.NodePoolOptions nodePoolOptions;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "nodePoolOptions"})
     private GetNodePoolOptionsResponse(
             int __httpStatusCode__,
             String opcRequestId,

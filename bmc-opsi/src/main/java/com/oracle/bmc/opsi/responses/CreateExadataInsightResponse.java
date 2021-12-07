@@ -46,6 +46,15 @@ public class CreateExadataInsightResponse extends com.oracle.bmc.responses.BmcRe
      */
     private com.oracle.bmc.opsi.model.ExadataInsight exadataInsight;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcWorkRequestId",
+        "opcRequestId",
+        "location",
+        "contentLocation",
+        "etag",
+        "exadataInsight"
+    })
     private CreateExadataInsightResponse(
             int __httpStatusCode__,
             String opcWorkRequestId,

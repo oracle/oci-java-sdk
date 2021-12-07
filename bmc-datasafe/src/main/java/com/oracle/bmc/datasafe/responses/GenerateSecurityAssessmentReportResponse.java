@@ -24,6 +24,7 @@ public class GenerateSecurityAssessmentReportResponse extends com.oracle.bmc.res
      */
     private String opcRequestId;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcWorkRequestId", "opcRequestId"})
     private GenerateSecurityAssessmentReportResponse(
             int __httpStatusCode__, String opcWorkRequestId, String opcRequestId) {
         super(__httpStatusCode__);

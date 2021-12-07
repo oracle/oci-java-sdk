@@ -22,6 +22,7 @@ public class ValidateUserResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private com.oracle.bmc.cims.model.ValidationResponse validationResponse;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "validationResponse"})
     private ValidateUserResponse(
             int __httpStatusCode__,
             String opcRequestId,

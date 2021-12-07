@@ -24,6 +24,7 @@ public class GetSpanResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private com.oracle.bmc.apmtraces.model.Span span;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "span"})
     private GetSpanResponse(
             int __httpStatusCode__, String opcRequestId, com.oracle.bmc.apmtraces.model.Span span) {
         super(__httpStatusCode__);

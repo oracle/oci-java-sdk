@@ -36,6 +36,13 @@ public class CreateAutonomousContainerDatabaseResponse
      */
     private com.oracle.bmc.database.model.AutonomousContainerDatabase autonomousContainerDatabase;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcRequestId",
+        "opcWorkRequestId",
+        "autonomousContainerDatabase"
+    })
     private CreateAutonomousContainerDatabaseResponse(
             int __httpStatusCode__,
             String etag,

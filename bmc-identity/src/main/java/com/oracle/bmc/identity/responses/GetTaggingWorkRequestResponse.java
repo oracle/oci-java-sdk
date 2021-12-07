@@ -30,6 +30,12 @@ public class GetTaggingWorkRequestResponse extends com.oracle.bmc.responses.BmcR
      */
     private com.oracle.bmc.identity.model.TaggingWorkRequest taggingWorkRequest;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "retryAfter",
+        "taggingWorkRequest"
+    })
     private GetTaggingWorkRequestResponse(
             int __httpStatusCode__,
             String opcRequestId,

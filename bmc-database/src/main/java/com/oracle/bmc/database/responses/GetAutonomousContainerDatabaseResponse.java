@@ -29,6 +29,12 @@ public class GetAutonomousContainerDatabaseResponse extends com.oracle.bmc.respo
      */
     private com.oracle.bmc.database.model.AutonomousContainerDatabase autonomousContainerDatabase;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcRequestId",
+        "autonomousContainerDatabase"
+    })
     private GetAutonomousContainerDatabaseResponse(
             int __httpStatusCode__,
             String etag,

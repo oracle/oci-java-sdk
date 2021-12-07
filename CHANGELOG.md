@@ -3,6 +3,15 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
+## 2.11.1 - 2021-12-07
+### Added
+- Support for the Application Management service
+- Support for getting the inventory of JMS resources and listing Java runtime usage in a specified host in the Java Management service
+- Support for categories, entity topology, and verifying scheduled tasks in the Logging Analytics service
+- Support for RAC databases in the GoldenGate service
+- Support for querying additional fields of a resource using return clauses in the Search service
+- Support for key versions and key version OCIDs in the Key Management service
+
 ## 2.11.0 - 2021-11-30
 ### Added
 - Support for SQL Tuning Advisor in the Database Management service

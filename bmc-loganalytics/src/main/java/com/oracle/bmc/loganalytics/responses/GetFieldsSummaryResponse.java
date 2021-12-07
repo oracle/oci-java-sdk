@@ -23,6 +23,7 @@ public class GetFieldsSummaryResponse extends com.oracle.bmc.responses.BmcRespon
      */
     private com.oracle.bmc.loganalytics.model.FieldSummaryReport fieldSummaryReport;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "fieldSummaryReport"})
     private GetFieldsSummaryResponse(
             int __httpStatusCode__,
             String opcRequestId,

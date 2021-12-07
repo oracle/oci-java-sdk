@@ -33,6 +33,12 @@ public class ListAutonomousDatabaseClonesResponse extends com.oracle.bmc.respons
      */
     private java.util.List<com.oracle.bmc.database.model.AutonomousDatabaseSummary> items;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "items"
+    })
     private ListAutonomousDatabaseClonesResponse(
             int __httpStatusCode__,
             String opcRequestId,

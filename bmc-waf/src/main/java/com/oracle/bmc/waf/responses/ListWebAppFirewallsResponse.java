@@ -32,6 +32,12 @@ public class ListWebAppFirewallsResponse extends com.oracle.bmc.responses.BmcRes
      */
     private com.oracle.bmc.waf.model.WebAppFirewallCollection webAppFirewallCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "webAppFirewallCollection"
+    })
     private ListWebAppFirewallsResponse(
             int __httpStatusCode__,
             String opcRequestId,

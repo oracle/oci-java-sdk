@@ -29,6 +29,12 @@ public class GetIdpGroupMappingResponse extends com.oracle.bmc.responses.BmcResp
      */
     private com.oracle.bmc.identity.model.IdpGroupMapping idpGroupMapping;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "etag",
+        "idpGroupMapping"
+    })
     private GetIdpGroupMappingResponse(
             int __httpStatusCode__,
             String opcRequestId,

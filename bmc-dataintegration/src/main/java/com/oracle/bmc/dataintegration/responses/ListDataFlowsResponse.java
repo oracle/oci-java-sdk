@@ -43,6 +43,14 @@ public class ListDataFlowsResponse extends com.oracle.bmc.responses.BmcResponse 
     private com.oracle.bmc.dataintegration.model.DataFlowSummaryCollection
             dataFlowSummaryCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "opcPrevPage",
+        "opcTotalItems",
+        "dataFlowSummaryCollection"
+    })
     private ListDataFlowsResponse(
             int __httpStatusCode__,
             String opcRequestId,

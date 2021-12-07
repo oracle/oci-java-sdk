@@ -29,6 +29,12 @@ public class GetReplicationStatusResponse extends com.oracle.bmc.responses.BmcRe
      */
     private com.oracle.bmc.keymanagement.model.ReplicationStatusDetails replicationStatusDetails;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcRequestId",
+        "replicationStatusDetails"
+    })
     private GetReplicationStatusResponse(
             int __httpStatusCode__,
             String etag,

@@ -45,6 +45,14 @@ public class UpdateZoneRecordsResponse extends com.oracle.bmc.responses.BmcRespo
      */
     private com.oracle.bmc.dns.model.RecordCollection recordCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcNextPage",
+        "opcTotalItems",
+        "opcRequestId",
+        "eTag",
+        "recordCollection"
+    })
     private UpdateZoneRecordsResponse(
             int __httpStatusCode__,
             String opcNextPage,

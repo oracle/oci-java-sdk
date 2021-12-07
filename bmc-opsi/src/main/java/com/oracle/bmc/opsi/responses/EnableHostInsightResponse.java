@@ -25,6 +25,7 @@ public class EnableHostInsightResponse extends com.oracle.bmc.responses.BmcRespo
      */
     private String opcRequestId;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcWorkRequestId", "opcRequestId"})
     private EnableHostInsightResponse(
             int __httpStatusCode__, String opcWorkRequestId, String opcRequestId) {
         super(__httpStatusCode__);

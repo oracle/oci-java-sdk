@@ -30,6 +30,12 @@ public class AttachVnicResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private com.oracle.bmc.core.model.VnicAttachment vnicAttachment;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcRequestId",
+        "vnicAttachment"
+    })
     private AttachVnicResponse(
             int __httpStatusCode__,
             String etag,

@@ -33,6 +33,12 @@ public class ListServiceCatalogAssociationsResponse extends com.oracle.bmc.respo
     private com.oracle.bmc.servicecatalog.model.ServiceCatalogAssociationCollection
             serviceCatalogAssociationCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "serviceCatalogAssociationCollection"
+    })
     private ListServiceCatalogAssociationsResponse(
             int __httpStatusCode__,
             String opcRequestId,

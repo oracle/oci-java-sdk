@@ -25,6 +25,11 @@ public class DetectLanguageTextClassificationResponse extends com.oracle.bmc.res
     private com.oracle.bmc.ailanguage.model.DetectLanguageTextClassificationResult
             detectLanguageTextClassificationResult;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "detectLanguageTextClassificationResult"
+    })
     private DetectLanguageTextClassificationResponse(
             int __httpStatusCode__,
             String opcRequestId,

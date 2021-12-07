@@ -29,6 +29,7 @@ public class ScheduleKeyDeletionResponse extends com.oracle.bmc.responses.BmcRes
      */
     private com.oracle.bmc.keymanagement.model.Key key;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "etag", "opcRequestId", "key"})
     private ScheduleKeyDeletionResponse(
             int __httpStatusCode__,
             String etag,

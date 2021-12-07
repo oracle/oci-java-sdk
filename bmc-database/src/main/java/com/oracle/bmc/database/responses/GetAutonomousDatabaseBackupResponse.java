@@ -29,6 +29,12 @@ public class GetAutonomousDatabaseBackupResponse extends com.oracle.bmc.response
      */
     private com.oracle.bmc.database.model.AutonomousDatabaseBackup autonomousDatabaseBackup;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcRequestId",
+        "autonomousDatabaseBackup"
+    })
     private GetAutonomousDatabaseBackupResponse(
             int __httpStatusCode__,
             String etag,

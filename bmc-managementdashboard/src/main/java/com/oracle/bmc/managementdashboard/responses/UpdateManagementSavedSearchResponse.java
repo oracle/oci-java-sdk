@@ -36,6 +36,13 @@ public class UpdateManagementSavedSearchResponse extends com.oracle.bmc.response
      */
     private com.oracle.bmc.managementdashboard.model.ManagementSavedSearch managementSavedSearch;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcWorkRequestId",
+        "opcRequestId",
+        "managementSavedSearch"
+    })
     private UpdateManagementSavedSearchResponse(
             int __httpStatusCode__,
             String etag,

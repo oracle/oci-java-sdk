@@ -27,6 +27,12 @@ public class GetDeviceFingerprintChallengeResponse extends com.oracle.bmc.respon
      */
     private com.oracle.bmc.waas.model.DeviceFingerprintChallenge deviceFingerprintChallenge;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcRequestId",
+        "deviceFingerprintChallenge"
+    })
     private GetDeviceFingerprintChallengeResponse(
             int __httpStatusCode__,
             String etag,

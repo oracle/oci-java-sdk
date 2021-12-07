@@ -24,6 +24,7 @@ public class ListRegionsResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private java.util.List<com.oracle.bmc.identity.model.Region> items;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "items"})
     private ListRegionsResponse(
             int __httpStatusCode__,
             String opcRequestId,

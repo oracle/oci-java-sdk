@@ -34,6 +34,13 @@ public class GetStorageWorkRequestResponse extends com.oracle.bmc.responses.BmcR
      */
     private com.oracle.bmc.loganalytics.model.StorageWorkRequest storageWorkRequest;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "etag",
+        "retryAfter",
+        "storageWorkRequest"
+    })
     private GetStorageWorkRequestResponse(
             int __httpStatusCode__,
             String opcRequestId,

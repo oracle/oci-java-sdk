@@ -31,6 +31,12 @@ public class GetAlarmHistoryResponse extends com.oracle.bmc.responses.BmcRespons
      */
     private com.oracle.bmc.monitoring.model.AlarmHistoryCollection alarmHistoryCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "alarmHistoryCollection"
+    })
     private GetAlarmHistoryResponse(
             int __httpStatusCode__,
             String opcRequestId,

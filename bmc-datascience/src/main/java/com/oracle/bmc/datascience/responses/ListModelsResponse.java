@@ -36,6 +36,13 @@ public class ListModelsResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private java.util.List<com.oracle.bmc.datascience.model.ModelSummary> items;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcNextPage",
+        "opcPrevPage",
+        "opcRequestId",
+        "items"
+    })
     private ListModelsResponse(
             int __httpStatusCode__,
             String opcNextPage,

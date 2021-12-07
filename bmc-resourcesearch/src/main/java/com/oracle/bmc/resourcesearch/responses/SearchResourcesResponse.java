@@ -29,6 +29,12 @@ public class SearchResourcesResponse extends com.oracle.bmc.responses.BmcRespons
      */
     private com.oracle.bmc.resourcesearch.model.ResourceSummaryCollection resourceSummaryCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcNextPage",
+        "opcRequestId",
+        "resourceSummaryCollection"
+    })
     private SearchResourcesResponse(
             int __httpStatusCode__,
             String opcNextPage,

@@ -31,6 +31,12 @@ public class IngestDatabaseConfigurationResponse extends com.oracle.bmc.response
     private com.oracle.bmc.opsi.model.IngestDatabaseConfigurationResponseDetails
             ingestDatabaseConfigurationResponseDetails;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "etag",
+        "ingestDatabaseConfigurationResponseDetails"
+    })
     private IngestDatabaseConfigurationResponse(
             int __httpStatusCode__,
             String opcRequestId,

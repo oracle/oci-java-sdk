@@ -33,6 +33,12 @@ public class ListNetworkSecurityGroupSecurityRulesResponse
      */
     private java.util.List<com.oracle.bmc.core.model.SecurityRule> items;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcNextPage",
+        "opcRequestId",
+        "items"
+    })
     private ListNetworkSecurityGroupSecurityRulesResponse(
             int __httpStatusCode__,
             String opcNextPage,

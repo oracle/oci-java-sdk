@@ -30,6 +30,12 @@ public class GetRoverClusterResponse extends com.oracle.bmc.responses.BmcRespons
      */
     private com.oracle.bmc.rover.model.RoverCluster roverCluster;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcRequestId",
+        "roverCluster"
+    })
     private GetRoverClusterResponse(
             int __httpStatusCode__,
             String etag,

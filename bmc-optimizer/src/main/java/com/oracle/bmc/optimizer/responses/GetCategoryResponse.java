@@ -24,6 +24,7 @@ public class GetCategoryResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private com.oracle.bmc.optimizer.model.Category category;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "category"})
     private GetCategoryResponse(
             int __httpStatusCode__,
             String opcRequestId,

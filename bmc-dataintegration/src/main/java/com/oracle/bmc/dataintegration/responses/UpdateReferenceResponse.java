@@ -30,6 +30,7 @@ public class UpdateReferenceResponse extends com.oracle.bmc.responses.BmcRespons
      */
     private com.oracle.bmc.dataintegration.model.Reference reference;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "etag", "opcRequestId", "reference"})
     private UpdateReferenceResponse(
             int __httpStatusCode__,
             String etag,

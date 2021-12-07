@@ -30,6 +30,12 @@ public class UpdateManagedInstanceResponse extends com.oracle.bmc.responses.BmcR
      */
     private com.oracle.bmc.osmanagement.model.ManagedInstance managedInstance;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcRequestId",
+        "managedInstance"
+    })
     private UpdateManagedInstanceResponse(
             int __httpStatusCode__,
             String etag,

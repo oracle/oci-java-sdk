@@ -34,6 +34,12 @@ public class ListTemplatesResponse extends com.oracle.bmc.responses.BmcResponse 
     private com.oracle.bmc.resourcemanager.model.TemplateSummaryCollection
             templateSummaryCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "templateSummaryCollection"
+    })
     private ListTemplatesResponse(
             int __httpStatusCode__,
             String opcRequestId,

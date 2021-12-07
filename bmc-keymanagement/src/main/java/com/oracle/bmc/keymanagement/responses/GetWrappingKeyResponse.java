@@ -29,6 +29,7 @@ public class GetWrappingKeyResponse extends com.oracle.bmc.responses.BmcResponse
      */
     private com.oracle.bmc.keymanagement.model.WrappingKey wrappingKey;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "etag", "opcRequestId", "wrappingKey"})
     private GetWrappingKeyResponse(
             int __httpStatusCode__,
             String etag,

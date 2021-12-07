@@ -32,6 +32,12 @@ public class ListPublicIpPoolsResponse extends com.oracle.bmc.responses.BmcRespo
      */
     private com.oracle.bmc.core.model.PublicIpPoolCollection publicIpPoolCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcNextPage",
+        "opcRequestId",
+        "publicIpPoolCollection"
+    })
     private ListPublicIpPoolsResponse(
             int __httpStatusCode__,
             String opcNextPage,

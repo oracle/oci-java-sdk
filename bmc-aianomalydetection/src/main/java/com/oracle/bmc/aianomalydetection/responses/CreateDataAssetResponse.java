@@ -30,6 +30,7 @@ public class CreateDataAssetResponse extends com.oracle.bmc.responses.BmcRespons
      */
     private com.oracle.bmc.aianomalydetection.model.DataAsset dataAsset;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "etag", "opcRequestId", "dataAsset"})
     private CreateDataAssetResponse(
             int __httpStatusCode__,
             String etag,

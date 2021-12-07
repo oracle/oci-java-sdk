@@ -27,6 +27,7 @@ public class GetDeployStageResponse extends com.oracle.bmc.responses.BmcResponse
      */
     private com.oracle.bmc.devops.model.DeployStage deployStage;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "etag", "opcRequestId", "deployStage"})
     private GetDeployStageResponse(
             int __httpStatusCode__,
             String etag,

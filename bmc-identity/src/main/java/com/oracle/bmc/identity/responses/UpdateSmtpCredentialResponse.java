@@ -29,6 +29,12 @@ public class UpdateSmtpCredentialResponse extends com.oracle.bmc.responses.BmcRe
      */
     private com.oracle.bmc.identity.model.SmtpCredentialSummary smtpCredentialSummary;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "etag",
+        "smtpCredentialSummary"
+    })
     private UpdateSmtpCredentialResponse(
             int __httpStatusCode__,
             String opcRequestId,

@@ -32,6 +32,12 @@ public class ListAgentsResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private com.oracle.bmc.databasemigration.model.AgentCollection agentCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "agentCollection"
+    })
     private ListAgentsResponse(
             int __httpStatusCode__,
             String opcRequestId,

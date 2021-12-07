@@ -29,6 +29,12 @@ public class ListObjectsResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private com.oracle.bmc.objectstorage.model.ListObjects listObjects;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcClientRequestId",
+        "opcRequestId",
+        "listObjects"
+    })
     private ListObjectsResponse(
             int __httpStatusCode__,
             String opcClientRequestId,

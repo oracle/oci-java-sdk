@@ -25,6 +25,7 @@ public class DeleteWebAppFirewallResponse extends com.oracle.bmc.responses.BmcRe
      */
     private String opcRequestId;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcWorkRequestId", "opcRequestId"})
     private DeleteWebAppFirewallResponse(
             int __httpStatusCode__, String opcWorkRequestId, String opcRequestId) {
         super(__httpStatusCode__);

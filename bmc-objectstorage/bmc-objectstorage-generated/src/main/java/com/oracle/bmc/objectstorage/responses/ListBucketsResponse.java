@@ -42,6 +42,13 @@ public class ListBucketsResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private java.util.List<com.oracle.bmc.objectstorage.model.BucketSummary> items;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcClientRequestId",
+        "opcRequestId",
+        "opcNextPage",
+        "items"
+    })
     private ListBucketsResponse(
             int __httpStatusCode__,
             String opcClientRequestId,

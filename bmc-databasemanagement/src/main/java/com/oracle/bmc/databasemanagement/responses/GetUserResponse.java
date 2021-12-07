@@ -24,6 +24,7 @@ public class GetUserResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private com.oracle.bmc.databasemanagement.model.User user;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "user"})
     private GetUserResponse(
             int __httpStatusCode__,
             String opcRequestId,

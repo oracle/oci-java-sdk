@@ -27,6 +27,12 @@ public class ListEdgeSubnetsResponse extends com.oracle.bmc.responses.BmcRespons
      */
     private java.util.List<com.oracle.bmc.waas.model.EdgeSubnet> items;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcNextPage",
+        "opcRequestId",
+        "items"
+    })
     private ListEdgeSubnetsResponse(
             int __httpStatusCode__,
             String opcNextPage,

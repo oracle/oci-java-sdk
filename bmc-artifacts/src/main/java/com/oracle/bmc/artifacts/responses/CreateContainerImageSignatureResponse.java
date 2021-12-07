@@ -30,6 +30,12 @@ public class CreateContainerImageSignatureResponse extends com.oracle.bmc.respon
      */
     private com.oracle.bmc.artifacts.model.ContainerImageSignature containerImageSignature;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcRequestId",
+        "containerImageSignature"
+    })
     private CreateContainerImageSignatureResponse(
             int __httpStatusCode__,
             String etag,

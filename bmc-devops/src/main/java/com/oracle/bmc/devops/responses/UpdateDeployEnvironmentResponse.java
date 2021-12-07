@@ -37,6 +37,14 @@ public class UpdateDeployEnvironmentResponse extends com.oracle.bmc.responses.Bm
      */
     private com.oracle.bmc.devops.model.DeployEnvironment deployEnvironment;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "location",
+        "etag",
+        "opcWorkRequestId",
+        "opcRequestId",
+        "deployEnvironment"
+    })
     private UpdateDeployEnvironmentResponse(
             int __httpStatusCode__,
             String location,

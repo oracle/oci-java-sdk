@@ -32,6 +32,12 @@ public class ListHostedEntitiesResponse extends com.oracle.bmc.responses.BmcResp
      */
     private com.oracle.bmc.opsi.model.HostedEntityCollection hostedEntityCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "hostedEntityCollection"
+    })
     private ListHostedEntitiesResponse(
             int __httpStatusCode__,
             String opcRequestId,

@@ -32,6 +32,12 @@ public class ListResponderActivitiesResponse extends com.oracle.bmc.responses.Bm
      */
     private com.oracle.bmc.cloudguard.model.ResponderActivityCollection responderActivityCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "responderActivityCollection"
+    })
     private ListResponderActivitiesResponse(
             int __httpStatusCode__,
             String opcRequestId,

@@ -29,6 +29,12 @@ public class GetDatabaseSoftwareImageResponse extends com.oracle.bmc.responses.B
      */
     private com.oracle.bmc.database.model.DatabaseSoftwareImage databaseSoftwareImage;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcRequestId",
+        "databaseSoftwareImage"
+    })
     private GetDatabaseSoftwareImageResponse(
             int __httpStatusCode__,
             String etag,

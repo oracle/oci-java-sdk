@@ -30,6 +30,7 @@ public class CreateTermResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private com.oracle.bmc.datacatalog.model.Term term;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "etag", "opcRequestId", "term"})
     private CreateTermResponse(
             int __httpStatusCode__,
             String etag,

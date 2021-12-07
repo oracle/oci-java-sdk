@@ -30,6 +30,7 @@ public class AssociateCustomPropertyResponse extends com.oracle.bmc.responses.Bm
      */
     private com.oracle.bmc.datacatalog.model.Type type;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "etag", "opcRequestId", "type"})
     private AssociateCustomPropertyResponse(
             int __httpStatusCode__,
             String etag,

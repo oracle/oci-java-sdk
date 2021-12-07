@@ -25,6 +25,11 @@ public class RetrieveSupportedPhasesResponse extends com.oracle.bmc.responses.Bm
     private com.oracle.bmc.databasemigration.model.MigrationPhaseCollection
             migrationPhaseCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "migrationPhaseCollection"
+    })
     private RetrieveSupportedPhasesResponse(
             int __httpStatusCode__,
             String opcRequestId,

@@ -22,6 +22,7 @@ public class UpdateAnnouncementUserStatusResponse extends com.oracle.bmc.respons
      */
     private String etag;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "etag"})
     private UpdateAnnouncementUserStatusResponse(
             int __httpStatusCode__, String opcRequestId, String etag) {
         super(__httpStatusCode__);

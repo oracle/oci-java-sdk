@@ -30,6 +30,12 @@ public class UpdateJobDefinitionResponse extends com.oracle.bmc.responses.BmcRes
      */
     private com.oracle.bmc.datacatalog.model.JobDefinition jobDefinition;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcRequestId",
+        "jobDefinition"
+    })
     private UpdateJobDefinitionResponse(
             int __httpStatusCode__,
             String etag,

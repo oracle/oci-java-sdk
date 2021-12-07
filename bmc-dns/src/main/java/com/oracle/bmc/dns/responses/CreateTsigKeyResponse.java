@@ -45,6 +45,14 @@ public class CreateTsigKeyResponse extends com.oracle.bmc.responses.BmcResponse 
      */
     private com.oracle.bmc.dns.model.TsigKey tsigKey;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "eTag",
+        "location",
+        "opcRequestId",
+        "opcWorkRequestId",
+        "tsigKey"
+    })
     private CreateTsigKeyResponse(
             int __httpStatusCode__,
             String eTag,

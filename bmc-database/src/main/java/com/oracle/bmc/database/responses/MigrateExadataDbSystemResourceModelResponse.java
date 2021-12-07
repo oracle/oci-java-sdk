@@ -36,6 +36,13 @@ public class MigrateExadataDbSystemResourceModelResponse
      */
     private com.oracle.bmc.database.model.ExadataDbSystemMigration exadataDbSystemMigration;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcWorkRequestId",
+        "opcRequestId",
+        "etag",
+        "exadataDbSystemMigration"
+    })
     private MigrateExadataDbSystemResourceModelResponse(
             int __httpStatusCode__,
             String opcWorkRequestId,

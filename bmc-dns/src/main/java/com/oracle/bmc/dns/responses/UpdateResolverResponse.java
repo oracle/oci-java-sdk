@@ -39,6 +39,13 @@ public class UpdateResolverResponse extends com.oracle.bmc.responses.BmcResponse
      */
     private com.oracle.bmc.dns.model.Resolver resolver;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcRequestId",
+        "opcWorkRequestId",
+        "resolver"
+    })
     private UpdateResolverResponse(
             int __httpStatusCode__,
             String etag,

@@ -59,6 +59,17 @@ public class GetRecordPreviewContentResponse extends com.oracle.bmc.responses.Bm
      */
     private boolean isNotModified;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcRequestId",
+        "contentLength",
+        "contentDisposition",
+        "contentType",
+        "cacheControl",
+        "inputStream",
+        "isNotModified"
+    })
     private GetRecordPreviewContentResponse(
             int __httpStatusCode__,
             String etag,

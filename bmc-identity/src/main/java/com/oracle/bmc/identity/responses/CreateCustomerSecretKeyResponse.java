@@ -29,6 +29,12 @@ public class CreateCustomerSecretKeyResponse extends com.oracle.bmc.responses.Bm
      */
     private com.oracle.bmc.identity.model.CustomerSecretKey customerSecretKey;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "etag",
+        "customerSecretKey"
+    })
     private CreateCustomerSecretKeyResponse(
             int __httpStatusCode__,
             String opcRequestId,

@@ -30,6 +30,12 @@ public class UpdateEnrollmentStatusResponse extends com.oracle.bmc.responses.Bmc
      */
     private com.oracle.bmc.optimizer.model.EnrollmentStatus enrollmentStatus;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcRequestId",
+        "enrollmentStatus"
+    })
     private UpdateEnrollmentStatusResponse(
             int __httpStatusCode__,
             String etag,

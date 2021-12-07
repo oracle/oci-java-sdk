@@ -31,6 +31,12 @@ public class ListSubscriptionsResponse extends com.oracle.bmc.responses.BmcRespo
      */
     private java.util.List<com.oracle.bmc.ons.model.SubscriptionSummary> items;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcNextPage",
+        "opcRequestId",
+        "items"
+    })
     private ListSubscriptionsResponse(
             int __httpStatusCode__,
             String opcNextPage,

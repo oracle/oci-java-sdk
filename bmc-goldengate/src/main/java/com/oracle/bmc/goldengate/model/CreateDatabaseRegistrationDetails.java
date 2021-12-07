@@ -136,6 +136,15 @@ public class CreateDatabaseRegistrationDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("sessionMode")
+        private SessionMode sessionMode;
+
+        public Builder sessionMode(SessionMode sessionMode) {
+            this.sessionMode = sessionMode;
+            this.__explicitlySet__.add("sessionMode");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("wallet")
         private String wallet;
 
@@ -199,6 +208,7 @@ public class CreateDatabaseRegistrationDetails {
                             username,
                             password,
                             connectionString,
+                            sessionMode,
                             wallet,
                             aliasName,
                             vaultId,
@@ -223,6 +233,7 @@ public class CreateDatabaseRegistrationDetails {
                             .username(o.getUsername())
                             .password(o.getPassword())
                             .connectionString(o.getConnectionString())
+                            .sessionMode(o.getSessionMode())
                             .wallet(o.getWallet())
                             .aliasName(o.getAliasName())
                             .vaultId(o.getVaultId())
@@ -326,6 +337,48 @@ public class CreateDatabaseRegistrationDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("connectionString")
     String connectionString;
+    /**
+     * The mode of the database connection session to be established by the data client. REDIRECT - for a RAC database, DIRECT - for a non-RAC database. Connection to a RAC database involves a redirection received from the SCAN listeners to the database node to connect to. By default the mode would be DIRECT.
+     *
+     **/
+    public enum SessionMode {
+        Direct("DIRECT"),
+        Redirect("REDIRECT"),
+        ;
+
+        private final String value;
+        private static java.util.Map<String, SessionMode> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (SessionMode v : SessionMode.values()) {
+                map.put(v.getValue(), v);
+            }
+        }
+
+        SessionMode(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static SessionMode create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            throw new IllegalArgumentException("Invalid SessionMode: " + key);
+        }
+    };
+    /**
+     * The mode of the database connection session to be established by the data client. REDIRECT - for a RAC database, DIRECT - for a non-RAC database. Connection to a RAC database involves a redirection received from the SCAN listeners to the database node to connect to. By default the mode would be DIRECT.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("sessionMode")
+    SessionMode sessionMode;
 
     /**
      * The wallet contents Oracle GoldenGate uses to make connections to a database.  This attribute is expected to be base64 encoded.

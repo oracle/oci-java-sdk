@@ -24,6 +24,7 @@ public class GetLaunchEligibilityResponse extends com.oracle.bmc.responses.BmcRe
      */
     private com.oracle.bmc.marketplace.model.LaunchEligibility launchEligibility;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "launchEligibility"})
     private GetLaunchEligibilityResponse(
             int __httpStatusCode__,
             String opcRequestId,

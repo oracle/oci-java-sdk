@@ -32,6 +32,7 @@ public class GetZoneContentResponse extends com.oracle.bmc.responses.BmcResponse
      */
     private java.io.InputStream inputStream;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "etag", "opcRequestId", "inputStream"})
     private GetZoneContentResponse(
             int __httpStatusCode__,
             String etag,

@@ -38,6 +38,13 @@ public class ListTaggingWorkRequestErrorsResponse extends com.oracle.bmc.respons
      */
     private java.util.List<com.oracle.bmc.identity.model.TaggingWorkRequestErrorSummary> items;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "retryAfter",
+        "opcNextPage",
+        "items"
+    })
     private ListTaggingWorkRequestErrorsResponse(
             int __httpStatusCode__,
             String opcRequestId,

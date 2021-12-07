@@ -43,6 +43,14 @@ public class RestoreVaultFromFileResponse extends com.oracle.bmc.responses.BmcRe
      */
     private com.oracle.bmc.keymanagement.model.Vault vault;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcContentMd5",
+        "opcRequestId",
+        "opcWorkRequestId",
+        "vault"
+    })
     private RestoreVaultFromFileResponse(
             int __httpStatusCode__,
             String etag,

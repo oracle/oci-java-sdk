@@ -43,6 +43,14 @@ public class ListFunctionLibrariesResponse extends com.oracle.bmc.responses.BmcR
     private com.oracle.bmc.dataintegration.model.FunctionLibrarySummaryCollection
             functionLibrarySummaryCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "opcPrevPage",
+        "opcTotalItems",
+        "functionLibrarySummaryCollection"
+    })
     private ListFunctionLibrariesResponse(
             int __httpStatusCode__,
             String opcRequestId,

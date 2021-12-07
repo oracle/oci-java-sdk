@@ -35,6 +35,13 @@ public class UpdateCloudExadataInfrastructureResponse extends com.oracle.bmc.res
      */
     private com.oracle.bmc.database.model.CloudExadataInfrastructure cloudExadataInfrastructure;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcWorkRequestId",
+        "etag",
+        "opcRequestId",
+        "cloudExadataInfrastructure"
+    })
     private UpdateCloudExadataInfrastructureResponse(
             int __httpStatusCode__,
             String opcWorkRequestId,

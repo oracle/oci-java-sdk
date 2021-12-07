@@ -24,6 +24,11 @@ public class ImportDataAssetResponse extends com.oracle.bmc.responses.BmcRespons
      */
     private com.oracle.bmc.datacatalog.model.ImportDataAssetJobResult importDataAssetJobResult;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "importDataAssetJobResult"
+    })
     private ImportDataAssetResponse(
             int __httpStatusCode__,
             String opcRequestId,

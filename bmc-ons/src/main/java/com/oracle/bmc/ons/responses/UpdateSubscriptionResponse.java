@@ -30,6 +30,12 @@ public class UpdateSubscriptionResponse extends com.oracle.bmc.responses.BmcResp
      */
     private com.oracle.bmc.ons.model.UpdateSubscriptionDetails updateSubscriptionDetails;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "etag",
+        "updateSubscriptionDetails"
+    })
     private UpdateSubscriptionResponse(
             int __httpStatusCode__,
             String opcRequestId,

@@ -24,6 +24,7 @@ public class DetectAnomaliesResponse extends com.oracle.bmc.responses.BmcRespons
      */
     private com.oracle.bmc.aianomalydetection.model.AnomalyDetectResult anomalyDetectResult;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "anomalyDetectResult"})
     private DetectAnomaliesResponse(
             int __httpStatusCode__,
             String opcRequestId,

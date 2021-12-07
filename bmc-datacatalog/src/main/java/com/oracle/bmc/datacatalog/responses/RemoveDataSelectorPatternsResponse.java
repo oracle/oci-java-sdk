@@ -30,6 +30,7 @@ public class RemoveDataSelectorPatternsResponse extends com.oracle.bmc.responses
      */
     private com.oracle.bmc.datacatalog.model.DataAsset dataAsset;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "etag", "opcRequestId", "dataAsset"})
     private RemoveDataSelectorPatternsResponse(
             int __httpStatusCode__,
             String etag,

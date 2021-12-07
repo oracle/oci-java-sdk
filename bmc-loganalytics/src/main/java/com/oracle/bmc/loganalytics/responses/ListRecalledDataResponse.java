@@ -39,6 +39,13 @@ public class ListRecalledDataResponse extends com.oracle.bmc.responses.BmcRespon
      */
     private com.oracle.bmc.loganalytics.model.RecalledDataCollection recalledDataCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "opcPrevPage",
+        "recalledDataCollection"
+    })
     private ListRecalledDataResponse(
             int __httpStatusCode__,
             String opcRequestId,

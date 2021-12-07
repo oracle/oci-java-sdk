@@ -30,6 +30,7 @@ public class GetDataFlowResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private com.oracle.bmc.dataintegration.model.DataFlow dataFlow;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "etag", "opcRequestId", "dataFlow"})
     private GetDataFlowResponse(
             int __httpStatusCode__,
             String etag,

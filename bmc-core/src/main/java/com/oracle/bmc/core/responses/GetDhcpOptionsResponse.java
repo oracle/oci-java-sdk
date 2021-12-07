@@ -30,6 +30,7 @@ public class GetDhcpOptionsResponse extends com.oracle.bmc.responses.BmcResponse
      */
     private com.oracle.bmc.core.model.DhcpOptions dhcpOptions;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "etag", "opcRequestId", "dhcpOptions"})
     private GetDhcpOptionsResponse(
             int __httpStatusCode__,
             String etag,

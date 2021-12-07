@@ -30,6 +30,12 @@ public class ListConnectionsResponse extends com.oracle.bmc.responses.BmcRespons
      */
     private com.oracle.bmc.datacatalog.model.ConnectionCollection connectionCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "connectionCollection"
+    })
     private ListConnectionsResponse(
             int __httpStatusCode__,
             String opcRequestId,

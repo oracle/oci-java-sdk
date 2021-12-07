@@ -32,6 +32,12 @@ public class ListAnalyticsInstancesResponse extends com.oracle.bmc.responses.Bmc
      */
     private java.util.List<com.oracle.bmc.analytics.model.AnalyticsInstanceSummary> items;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcNextPage",
+        "opcRequestId",
+        "items"
+    })
     private ListAnalyticsInstancesResponse(
             int __httpStatusCode__,
             String opcNextPage,

@@ -32,6 +32,12 @@ public class ListSqlPlansResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private com.oracle.bmc.opsi.model.SqlPlanCollection sqlPlanCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "sqlPlanCollection"
+    })
     private ListSqlPlansResponse(
             int __httpStatusCode__,
             String opcRequestId,

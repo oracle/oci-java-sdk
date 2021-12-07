@@ -30,6 +30,12 @@ public class ListJobMetricsResponse extends com.oracle.bmc.responses.BmcResponse
      */
     private com.oracle.bmc.datacatalog.model.JobMetricCollection jobMetricCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "jobMetricCollection"
+    })
     private ListJobMetricsResponse(
             int __httpStatusCode__,
             String opcRequestId,

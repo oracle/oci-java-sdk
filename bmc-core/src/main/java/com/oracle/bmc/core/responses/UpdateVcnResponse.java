@@ -30,6 +30,7 @@ public class UpdateVcnResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private com.oracle.bmc.core.model.Vcn vcn;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "etag", "opcRequestId", "vcn"})
     private UpdateVcnResponse(
             int __httpStatusCode__,
             String etag,

@@ -27,6 +27,12 @@ public class ListDeployArtifactsResponse extends com.oracle.bmc.responses.BmcRes
      */
     private com.oracle.bmc.devops.model.DeployArtifactCollection deployArtifactCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "deployArtifactCollection"
+    })
     private ListDeployArtifactsResponse(
             int __httpStatusCode__,
             String opcRequestId,

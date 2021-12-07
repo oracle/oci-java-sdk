@@ -23,6 +23,11 @@ public class GetUserAssessmentComparisonResponse extends com.oracle.bmc.response
      */
     private com.oracle.bmc.datasafe.model.UserAssessmentComparison userAssessmentComparison;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "userAssessmentComparison"
+    })
     private GetUserAssessmentComparisonResponse(
             int __httpStatusCode__,
             String opcRequestId,

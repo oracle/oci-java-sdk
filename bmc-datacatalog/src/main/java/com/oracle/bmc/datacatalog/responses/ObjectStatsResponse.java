@@ -30,6 +30,12 @@ public class ObjectStatsResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private String value;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "value"
+    })
     private ObjectStatsResponse(
             int __httpStatusCode__, String opcRequestId, String opcNextPage, String value) {
         super(__httpStatusCode__);

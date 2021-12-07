@@ -31,6 +31,12 @@ public class GetPrivateEndpointResponse extends com.oracle.bmc.responses.BmcResp
      */
     private com.oracle.bmc.dataflow.model.PrivateEndpoint privateEndpoint;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcRequestId",
+        "privateEndpoint"
+    })
     private GetPrivateEndpointResponse(
             int __httpStatusCode__,
             String etag,

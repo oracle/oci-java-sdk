@@ -30,6 +30,7 @@ public class GetPeerResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private com.oracle.bmc.blockchain.model.Peer peer;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "etag", "opcRequestId", "peer"})
     private GetPeerResponse(
             int __httpStatusCode__,
             String etag,

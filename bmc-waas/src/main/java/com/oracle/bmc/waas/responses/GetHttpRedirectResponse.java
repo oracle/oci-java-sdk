@@ -27,6 +27,12 @@ public class GetHttpRedirectResponse extends com.oracle.bmc.responses.BmcRespons
      */
     private com.oracle.bmc.waas.model.HttpRedirect httpRedirect;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcRequestId",
+        "httpRedirect"
+    })
     private GetHttpRedirectResponse(
             int __httpStatusCode__,
             String etag,

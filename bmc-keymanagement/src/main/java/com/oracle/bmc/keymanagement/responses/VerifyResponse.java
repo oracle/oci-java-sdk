@@ -24,6 +24,7 @@ public class VerifyResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private com.oracle.bmc.keymanagement.model.VerifiedData verifiedData;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "verifiedData"})
     private VerifyResponse(
             int __httpStatusCode__,
             String opcRequestId,

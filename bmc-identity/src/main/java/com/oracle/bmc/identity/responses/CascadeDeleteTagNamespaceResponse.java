@@ -25,6 +25,7 @@ public class CascadeDeleteTagNamespaceResponse extends com.oracle.bmc.responses.
      */
     private String opcWorkRequestId;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "opcWorkRequestId"})
     private CascadeDeleteTagNamespaceResponse(
             int __httpStatusCode__, String opcRequestId, String opcWorkRequestId) {
         super(__httpStatusCode__);

@@ -29,6 +29,7 @@ public class GetClusterResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private com.oracle.bmc.containerengine.model.Cluster cluster;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "etag", "opcRequestId", "cluster"})
     private GetClusterResponse(
             int __httpStatusCode__,
             String etag,

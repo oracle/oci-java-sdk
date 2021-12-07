@@ -40,6 +40,13 @@ public class ListParsersResponse extends com.oracle.bmc.responses.BmcResponse {
     private com.oracle.bmc.loganalytics.model.LogAnalyticsParserCollection
             logAnalyticsParserCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcPrevPage",
+        "opcNextPage",
+        "opcRequestId",
+        "logAnalyticsParserCollection"
+    })
     private ListParsersResponse(
             int __httpStatusCode__,
             String opcPrevPage,

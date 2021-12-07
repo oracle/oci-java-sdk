@@ -38,6 +38,13 @@ public class ListHostInsightsResponse extends com.oracle.bmc.responses.BmcRespon
      */
     private com.oracle.bmc.opsi.model.HostInsightSummaryCollection hostInsightSummaryCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcTotalItems",
+        "opcNextPage",
+        "hostInsightSummaryCollection"
+    })
     private ListHostInsightsResponse(
             int __httpStatusCode__,
             String opcRequestId,

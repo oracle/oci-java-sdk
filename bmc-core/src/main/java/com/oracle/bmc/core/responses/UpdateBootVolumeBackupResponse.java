@@ -23,6 +23,7 @@ public class UpdateBootVolumeBackupResponse extends com.oracle.bmc.responses.Bmc
      */
     private com.oracle.bmc.core.model.BootVolumeBackup bootVolumeBackup;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "etag", "bootVolumeBackup"})
     private UpdateBootVolumeBackupResponse(
             int __httpStatusCode__,
             String etag,

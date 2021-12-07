@@ -35,6 +35,13 @@ public class CreatePingMonitorResponse extends com.oracle.bmc.responses.BmcRespo
      */
     private com.oracle.bmc.healthchecks.model.PingMonitor pingMonitor;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "location",
+        "etag",
+        "pingMonitor"
+    })
     private CreatePingMonitorResponse(
             int __httpStatusCode__,
             String opcRequestId,

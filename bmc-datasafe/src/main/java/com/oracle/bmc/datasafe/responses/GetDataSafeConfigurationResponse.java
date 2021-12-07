@@ -29,6 +29,12 @@ public class GetDataSafeConfigurationResponse extends com.oracle.bmc.responses.B
      */
     private com.oracle.bmc.datasafe.model.DataSafeConfiguration dataSafeConfiguration;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcRequestId",
+        "dataSafeConfiguration"
+    })
     private GetDataSafeConfigurationResponse(
             int __httpStatusCode__,
             String etag,

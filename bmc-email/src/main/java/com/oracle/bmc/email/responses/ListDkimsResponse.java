@@ -31,6 +31,12 @@ public class ListDkimsResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private com.oracle.bmc.email.model.DkimCollection dkimCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcNextPage",
+        "opcRequestId",
+        "dkimCollection"
+    })
     private ListDkimsResponse(
             int __httpStatusCode__,
             String opcNextPage,

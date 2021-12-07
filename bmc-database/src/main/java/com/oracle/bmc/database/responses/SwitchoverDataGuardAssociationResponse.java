@@ -35,6 +35,13 @@ public class SwitchoverDataGuardAssociationResponse extends com.oracle.bmc.respo
      */
     private com.oracle.bmc.database.model.DataGuardAssociation dataGuardAssociation;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcWorkRequestId",
+        "etag",
+        "opcRequestId",
+        "dataGuardAssociation"
+    })
     private SwitchoverDataGuardAssociationResponse(
             int __httpStatusCode__,
             String opcWorkRequestId,

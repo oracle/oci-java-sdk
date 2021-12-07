@@ -25,6 +25,7 @@ public class CreateModelArtifactResponse extends com.oracle.bmc.responses.BmcRes
      */
     private String opcRequestId;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "etag", "opcRequestId"})
     private CreateModelArtifactResponse(int __httpStatusCode__, String etag, String opcRequestId) {
         super(__httpStatusCode__);
         this.etag = etag;

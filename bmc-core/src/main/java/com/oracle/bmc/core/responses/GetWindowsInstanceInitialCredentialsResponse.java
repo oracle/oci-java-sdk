@@ -25,6 +25,7 @@ public class GetWindowsInstanceInitialCredentialsResponse
      */
     private com.oracle.bmc.core.model.InstanceCredentials instanceCredentials;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "instanceCredentials"})
     private GetWindowsInstanceInitialCredentialsResponse(
             int __httpStatusCode__,
             String opcRequestId,

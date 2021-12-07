@@ -30,6 +30,12 @@ public class CreateCustomPropertyResponse extends com.oracle.bmc.responses.BmcRe
      */
     private com.oracle.bmc.datacatalog.model.CustomProperty customProperty;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcRequestId",
+        "customProperty"
+    })
     private CreateCustomPropertyResponse(
             int __httpStatusCode__,
             String etag,

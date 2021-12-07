@@ -33,6 +33,12 @@ public class ListExternalContainerDatabasesResponse extends com.oracle.bmc.respo
      */
     private java.util.List<com.oracle.bmc.database.model.ExternalContainerDatabaseSummary> items;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "items"
+    })
     private ListExternalContainerDatabasesResponse(
             int __httpStatusCode__,
             String opcRequestId,

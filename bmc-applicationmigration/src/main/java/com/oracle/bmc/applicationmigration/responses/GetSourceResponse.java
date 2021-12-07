@@ -30,6 +30,7 @@ public class GetSourceResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private com.oracle.bmc.applicationmigration.model.Source source;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "etag", "source"})
     private GetSourceResponse(
             int __httpStatusCode__,
             String opcRequestId,

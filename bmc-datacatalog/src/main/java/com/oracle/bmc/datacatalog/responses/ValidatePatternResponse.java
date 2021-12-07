@@ -24,6 +24,11 @@ public class ValidatePatternResponse extends com.oracle.bmc.responses.BmcRespons
      */
     private com.oracle.bmc.datacatalog.model.ValidatePatternResult validatePatternResult;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "validatePatternResult"
+    })
     private ValidatePatternResponse(
             int __httpStatusCode__,
             String opcRequestId,

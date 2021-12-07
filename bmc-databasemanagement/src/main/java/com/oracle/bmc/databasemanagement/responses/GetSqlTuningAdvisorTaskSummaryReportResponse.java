@@ -26,6 +26,11 @@ public class GetSqlTuningAdvisorTaskSummaryReportResponse
     private com.oracle.bmc.databasemanagement.model.SqlTuningAdvisorTaskSummaryReport
             sqlTuningAdvisorTaskSummaryReport;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "sqlTuningAdvisorTaskSummaryReport"
+    })
     private GetSqlTuningAdvisorTaskSummaryReportResponse(
             int __httpStatusCode__,
             String opcRequestId,

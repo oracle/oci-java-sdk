@@ -33,6 +33,12 @@ public class ListBackupsResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private java.util.List<com.oracle.bmc.database.model.BackupSummary> items;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "items"
+    })
     private ListBackupsResponse(
             int __httpStatusCode__,
             String opcRequestId,

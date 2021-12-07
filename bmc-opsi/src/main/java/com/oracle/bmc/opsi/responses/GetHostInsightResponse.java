@@ -30,6 +30,7 @@ public class GetHostInsightResponse extends com.oracle.bmc.responses.BmcResponse
      */
     private com.oracle.bmc.opsi.model.HostInsight hostInsight;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "etag", "opcRequestId", "hostInsight"})
     private GetHostInsightResponse(
             int __httpStatusCode__,
             String etag,

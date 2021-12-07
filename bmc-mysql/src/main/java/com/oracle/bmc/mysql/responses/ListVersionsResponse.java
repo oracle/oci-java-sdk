@@ -24,6 +24,7 @@ public class ListVersionsResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private java.util.List<com.oracle.bmc.mysql.model.VersionSummary> items;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "items"})
     private ListVersionsResponse(
             int __httpStatusCode__,
             String opcRequestId,

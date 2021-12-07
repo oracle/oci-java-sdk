@@ -43,6 +43,14 @@ public class ListExternalPublicationsResponse extends com.oracle.bmc.responses.B
     private com.oracle.bmc.dataintegration.model.ExternalPublicationSummaryCollection
             externalPublicationSummaryCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "opcPrevPage",
+        "opcTotalItems",
+        "externalPublicationSummaryCollection"
+    })
     private ListExternalPublicationsResponse(
             int __httpStatusCode__,
             String opcRequestId,

@@ -29,6 +29,12 @@ public class CreateNetworkSourceResponse extends com.oracle.bmc.responses.BmcRes
      */
     private com.oracle.bmc.identity.model.NetworkSources networkSources;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "etag",
+        "networkSources"
+    })
     private CreateNetworkSourceResponse(
             int __httpStatusCode__,
             String opcRequestId,

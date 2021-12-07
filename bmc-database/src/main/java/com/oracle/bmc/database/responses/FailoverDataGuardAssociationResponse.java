@@ -35,6 +35,13 @@ public class FailoverDataGuardAssociationResponse extends com.oracle.bmc.respons
      */
     private com.oracle.bmc.database.model.DataGuardAssociation dataGuardAssociation;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcWorkRequestId",
+        "etag",
+        "opcRequestId",
+        "dataGuardAssociation"
+    })
     private FailoverDataGuardAssociationResponse(
             int __httpStatusCode__,
             String opcWorkRequestId,

@@ -32,6 +32,12 @@ public class ListIamWorkRequestErrorsResponse extends com.oracle.bmc.responses.B
      */
     private java.util.List<com.oracle.bmc.identity.model.IamWorkRequestErrorSummary> items;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcNextPage",
+        "opcRequestId",
+        "items"
+    })
     private ListIamWorkRequestErrorsResponse(
             int __httpStatusCode__,
             String opcNextPage,

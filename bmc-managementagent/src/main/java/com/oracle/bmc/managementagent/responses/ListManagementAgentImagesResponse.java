@@ -32,6 +32,12 @@ public class ListManagementAgentImagesResponse extends com.oracle.bmc.responses.
      */
     private java.util.List<com.oracle.bmc.managementagent.model.ManagementAgentImageSummary> items;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "items"
+    })
     private ListManagementAgentImagesResponse(
             int __httpStatusCode__,
             String opcRequestId,

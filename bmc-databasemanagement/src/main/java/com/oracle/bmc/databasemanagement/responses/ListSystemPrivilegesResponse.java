@@ -33,6 +33,12 @@ public class ListSystemPrivilegesResponse extends com.oracle.bmc.responses.BmcRe
     private com.oracle.bmc.databasemanagement.model.SystemPrivilegeCollection
             systemPrivilegeCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcNextPage",
+        "opcRequestId",
+        "systemPrivilegeCollection"
+    })
     private ListSystemPrivilegesResponse(
             int __httpStatusCode__,
             String opcNextPage,

@@ -35,6 +35,12 @@ public class SummarizeDatabaseInsightTablespaceUsageTrendResponse
                     .SummarizeDatabaseInsightTablespaceUsageTrendAggregationCollection
             summarizeDatabaseInsightTablespaceUsageTrendAggregationCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "summarizeDatabaseInsightTablespaceUsageTrendAggregationCollection"
+    })
     private SummarizeDatabaseInsightTablespaceUsageTrendResponse(
             int __httpStatusCode__,
             String opcRequestId,

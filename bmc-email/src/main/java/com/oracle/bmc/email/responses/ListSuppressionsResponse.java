@@ -38,6 +38,13 @@ public class ListSuppressionsResponse extends com.oracle.bmc.responses.BmcRespon
      */
     private java.util.List<com.oracle.bmc.email.model.SuppressionSummary> items;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "opcPrevPage",
+        "items"
+    })
     private ListSuppressionsResponse(
             int __httpStatusCode__,
             String opcRequestId,

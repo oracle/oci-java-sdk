@@ -24,6 +24,7 @@ public class DecryptResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private com.oracle.bmc.keymanagement.model.DecryptedData decryptedData;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "decryptedData"})
     private DecryptResponse(
             int __httpStatusCode__,
             String opcRequestId,

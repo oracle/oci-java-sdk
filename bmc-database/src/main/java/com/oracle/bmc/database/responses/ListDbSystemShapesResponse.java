@@ -33,6 +33,12 @@ public class ListDbSystemShapesResponse extends com.oracle.bmc.responses.BmcResp
      */
     private java.util.List<com.oracle.bmc.database.model.DbSystemShapeSummary> items;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "items"
+    })
     private ListDbSystemShapesResponse(
             int __httpStatusCode__,
             String opcRequestId,

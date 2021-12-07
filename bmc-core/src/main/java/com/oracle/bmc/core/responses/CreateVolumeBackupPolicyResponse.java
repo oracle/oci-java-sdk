@@ -30,6 +30,12 @@ public class CreateVolumeBackupPolicyResponse extends com.oracle.bmc.responses.B
      */
     private com.oracle.bmc.core.model.VolumeBackupPolicy volumeBackupPolicy;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcRequestId",
+        "volumeBackupPolicy"
+    })
     private CreateVolumeBackupPolicyResponse(
             int __httpStatusCode__,
             String etag,

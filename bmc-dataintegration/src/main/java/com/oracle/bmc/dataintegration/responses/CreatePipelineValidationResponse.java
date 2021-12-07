@@ -30,6 +30,12 @@ public class CreatePipelineValidationResponse extends com.oracle.bmc.responses.B
      */
     private com.oracle.bmc.dataintegration.model.PipelineValidation pipelineValidation;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcRequestId",
+        "pipelineValidation"
+    })
     private CreatePipelineValidationResponse(
             int __httpStatusCode__,
             String etag,

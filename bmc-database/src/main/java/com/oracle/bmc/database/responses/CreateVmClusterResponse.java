@@ -35,6 +35,13 @@ public class CreateVmClusterResponse extends com.oracle.bmc.responses.BmcRespons
      */
     private com.oracle.bmc.database.model.VmCluster vmCluster;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcWorkRequestId",
+        "etag",
+        "opcRequestId",
+        "vmCluster"
+    })
     private CreateVmClusterResponse(
             int __httpStatusCode__,
             String opcWorkRequestId,

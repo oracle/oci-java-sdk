@@ -27,6 +27,12 @@ public class GetObjectResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private com.oracle.bmc.devops.model.RepositoryObject repositoryObject;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "etag",
+        "repositoryObject"
+    })
     private GetObjectResponse(
             int __httpStatusCode__,
             String opcRequestId,

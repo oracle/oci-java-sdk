@@ -40,6 +40,13 @@ public class ListMetaSourceTypesResponse extends com.oracle.bmc.responses.BmcRes
     private com.oracle.bmc.loganalytics.model.LogAnalyticsMetaSourceTypeCollection
             logAnalyticsMetaSourceTypeCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcPrevPage",
+        "opcNextPage",
+        "opcRequestId",
+        "logAnalyticsMetaSourceTypeCollection"
+    })
     private ListMetaSourceTypesResponse(
             int __httpStatusCode__,
             String opcPrevPage,

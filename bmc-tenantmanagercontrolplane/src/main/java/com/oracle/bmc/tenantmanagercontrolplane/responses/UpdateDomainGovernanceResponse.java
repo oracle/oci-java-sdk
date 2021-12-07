@@ -30,6 +30,12 @@ public class UpdateDomainGovernanceResponse extends com.oracle.bmc.responses.Bmc
      */
     private com.oracle.bmc.tenantmanagercontrolplane.model.DomainGovernance domainGovernance;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "etag",
+        "domainGovernance"
+    })
     private UpdateDomainGovernanceResponse(
             int __httpStatusCode__,
             String opcRequestId,

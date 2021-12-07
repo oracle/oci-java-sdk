@@ -31,6 +31,12 @@ public class GetAutonomousDatabaseDataguardAssociationResponse
     private com.oracle.bmc.database.model.AutonomousDatabaseDataguardAssociation
             autonomousDatabaseDataguardAssociation;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcRequestId",
+        "autonomousDatabaseDataguardAssociation"
+    })
     private GetAutonomousDatabaseDataguardAssociationResponse(
             int __httpStatusCode__,
             String etag,

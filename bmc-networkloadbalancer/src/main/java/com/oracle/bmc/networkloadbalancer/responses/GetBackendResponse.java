@@ -30,6 +30,7 @@ public class GetBackendResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private com.oracle.bmc.networkloadbalancer.model.Backend backend;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "etag", "backend"})
     private GetBackendResponse(
             int __httpStatusCode__,
             String opcRequestId,

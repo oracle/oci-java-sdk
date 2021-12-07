@@ -25,6 +25,11 @@ public class ValidateDatabaseToolsConnectionResponse extends com.oracle.bmc.resp
     private com.oracle.bmc.databasetools.model.ValidateDatabaseToolsConnectionResult
             validateDatabaseToolsConnectionResult;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "validateDatabaseToolsConnectionResult"
+    })
     private ValidateDatabaseToolsConnectionResponse(
             int __httpStatusCode__,
             String opcRequestId,

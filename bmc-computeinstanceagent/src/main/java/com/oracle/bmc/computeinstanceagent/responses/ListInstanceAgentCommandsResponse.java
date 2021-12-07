@@ -33,6 +33,12 @@ public class ListInstanceAgentCommandsResponse extends com.oracle.bmc.responses.
     private java.util.List<com.oracle.bmc.computeinstanceagent.model.InstanceAgentCommandSummary>
             items;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcNextPage",
+        "opcRequestId",
+        "items"
+    })
     private ListInstanceAgentCommandsResponse(
             int __httpStatusCode__,
             String opcNextPage,

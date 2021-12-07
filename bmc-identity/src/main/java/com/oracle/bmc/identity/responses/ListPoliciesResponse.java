@@ -32,6 +32,12 @@ public class ListPoliciesResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private java.util.List<com.oracle.bmc.identity.model.Policy> items;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "items"
+    })
     private ListPoliciesResponse(
             int __httpStatusCode__,
             String opcRequestId,

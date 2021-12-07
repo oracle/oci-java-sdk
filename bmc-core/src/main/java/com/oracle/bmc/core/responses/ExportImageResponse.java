@@ -37,6 +37,13 @@ public class ExportImageResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private com.oracle.bmc.core.model.Image image;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcRequestId",
+        "opcWorkRequestId",
+        "image"
+    })
     private ExportImageResponse(
             int __httpStatusCode__,
             String etag,

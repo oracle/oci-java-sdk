@@ -31,6 +31,12 @@ public class CreateListenerResponse extends com.oracle.bmc.responses.BmcResponse
      */
     private String eTag;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcWorkRequestId",
+        "opcRequestId",
+        "eTag"
+    })
     private CreateListenerResponse(
             int __httpStatusCode__, String opcWorkRequestId, String opcRequestId, String eTag) {
         super(__httpStatusCode__);

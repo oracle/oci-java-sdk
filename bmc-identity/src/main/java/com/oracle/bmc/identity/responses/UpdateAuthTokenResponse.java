@@ -29,6 +29,7 @@ public class UpdateAuthTokenResponse extends com.oracle.bmc.responses.BmcRespons
      */
     private com.oracle.bmc.identity.model.AuthToken authToken;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "etag", "authToken"})
     private UpdateAuthTokenResponse(
             int __httpStatusCode__,
             String opcRequestId,

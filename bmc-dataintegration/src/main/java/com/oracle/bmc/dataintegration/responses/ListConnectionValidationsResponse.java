@@ -43,6 +43,14 @@ public class ListConnectionValidationsResponse extends com.oracle.bmc.responses.
     private com.oracle.bmc.dataintegration.model.ConnectionValidationSummaryCollection
             connectionValidationSummaryCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "opcPrevPage",
+        "opcTotalItems",
+        "connectionValidationSummaryCollection"
+    })
     private ListConnectionValidationsResponse(
             int __httpStatusCode__,
             String opcRequestId,

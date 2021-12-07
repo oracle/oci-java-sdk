@@ -24,6 +24,7 @@ public class EnableDataSafeConfigurationResponse extends com.oracle.bmc.response
      */
     private String opcRequestId;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcWorkRequestId", "opcRequestId"})
     private EnableDataSafeConfigurationResponse(
             int __httpStatusCode__, String opcWorkRequestId, String opcRequestId) {
         super(__httpStatusCode__);

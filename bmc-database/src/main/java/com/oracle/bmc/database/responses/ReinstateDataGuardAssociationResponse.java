@@ -35,6 +35,13 @@ public class ReinstateDataGuardAssociationResponse extends com.oracle.bmc.respon
      */
     private com.oracle.bmc.database.model.DataGuardAssociation dataGuardAssociation;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcWorkRequestId",
+        "etag",
+        "opcRequestId",
+        "dataGuardAssociation"
+    })
     private ReinstateDataGuardAssociationResponse(
             int __httpStatusCode__,
             String opcWorkRequestId,

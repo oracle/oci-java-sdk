@@ -33,6 +33,12 @@ public class SummarizeAwrDbWaitEventBucketsResponse extends com.oracle.bmc.respo
     private com.oracle.bmc.databasemanagement.model.AwrDbWaitEventBucketCollection
             awrDbWaitEventBucketCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "awrDbWaitEventBucketCollection"
+    })
     private SummarizeAwrDbWaitEventBucketsResponse(
             int __httpStatusCode__,
             String opcRequestId,

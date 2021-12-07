@@ -28,6 +28,7 @@ public class ChangeOdaInstanceCompartmentResponse extends com.oracle.bmc.respons
      */
     private String opcRequestId;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcWorkRequestId", "opcRequestId"})
     private ChangeOdaInstanceCompartmentResponse(
             int __httpStatusCode__, String opcWorkRequestId, String opcRequestId) {
         super(__httpStatusCode__);

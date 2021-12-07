@@ -17,6 +17,7 @@ public class ChangeRoverNodeCompartmentResponse extends com.oracle.bmc.responses
      */
     private String opcRequestId;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId"})
     private ChangeRoverNodeCompartmentResponse(int __httpStatusCode__, String opcRequestId) {
         super(__httpStatusCode__);
         this.opcRequestId = opcRequestId;

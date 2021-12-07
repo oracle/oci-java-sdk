@@ -38,6 +38,13 @@ public class ListExadataConfigurationsResponse extends com.oracle.bmc.responses.
      */
     private com.oracle.bmc.opsi.model.ExadataConfigurationCollection exadataConfigurationCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcTotalItems",
+        "opcNextPage",
+        "exadataConfigurationCollection"
+    })
     private ListExadataConfigurationsResponse(
             int __httpStatusCode__,
             String opcRequestId,

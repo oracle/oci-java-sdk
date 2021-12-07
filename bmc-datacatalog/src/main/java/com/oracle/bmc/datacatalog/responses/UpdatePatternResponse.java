@@ -30,6 +30,7 @@ public class UpdatePatternResponse extends com.oracle.bmc.responses.BmcResponse 
      */
     private com.oracle.bmc.datacatalog.model.Pattern pattern;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "etag", "opcRequestId", "pattern"})
     private UpdatePatternResponse(
             int __httpStatusCode__,
             String etag,

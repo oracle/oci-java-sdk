@@ -24,6 +24,7 @@ public class GetRuleSetResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private com.oracle.bmc.loadbalancer.model.RuleSet ruleSet;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "ruleSet"})
     private GetRuleSetResponse(
             int __httpStatusCode__,
             String opcRequestId,

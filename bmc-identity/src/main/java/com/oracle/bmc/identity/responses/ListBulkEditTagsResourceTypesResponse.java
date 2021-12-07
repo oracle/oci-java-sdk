@@ -33,6 +33,12 @@ public class ListBulkEditTagsResourceTypesResponse extends com.oracle.bmc.respon
     private com.oracle.bmc.identity.model.BulkEditTagsResourceTypeCollection
             bulkEditTagsResourceTypeCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "bulkEditTagsResourceTypeCollection"
+    })
     private ListBulkEditTagsResourceTypesResponse(
             int __httpStatusCode__,
             String opcRequestId,

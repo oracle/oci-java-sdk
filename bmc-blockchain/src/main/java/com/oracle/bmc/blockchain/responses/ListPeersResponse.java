@@ -32,6 +32,12 @@ public class ListPeersResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private com.oracle.bmc.blockchain.model.PeerCollection peerCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "peerCollection"
+    })
     private ListPeersResponse(
             int __httpStatusCode__,
             String opcRequestId,

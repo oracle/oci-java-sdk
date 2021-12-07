@@ -30,6 +30,12 @@ public class GetVolumeBackupResponse extends com.oracle.bmc.responses.BmcRespons
      */
     private com.oracle.bmc.core.model.VolumeBackup volumeBackup;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcRequestId",
+        "volumeBackup"
+    })
     private GetVolumeBackupResponse(
             int __httpStatusCode__,
             String etag,

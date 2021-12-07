@@ -27,6 +27,12 @@ public class GetCommitResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private com.oracle.bmc.devops.model.RepositoryCommit repositoryCommit;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcRequestId",
+        "repositoryCommit"
+    })
     private GetCommitResponse(
             int __httpStatusCode__,
             String etag,

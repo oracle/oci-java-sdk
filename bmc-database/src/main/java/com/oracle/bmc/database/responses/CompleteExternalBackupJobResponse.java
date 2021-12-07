@@ -35,6 +35,13 @@ public class CompleteExternalBackupJobResponse extends com.oracle.bmc.responses.
      */
     private com.oracle.bmc.database.model.ExternalBackupJob externalBackupJob;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcWorkRequestId",
+        "etag",
+        "opcRequestId",
+        "externalBackupJob"
+    })
     private CompleteExternalBackupJobResponse(
             int __httpStatusCode__,
             String opcWorkRequestId,

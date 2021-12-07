@@ -24,6 +24,11 @@ public class GetConfigWorkRequestResponse extends com.oracle.bmc.responses.BmcRe
     private com.oracle.bmc.loganalytics.model.LogAnalyticsConfigWorkRequest
             logAnalyticsConfigWorkRequest;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "logAnalyticsConfigWorkRequest"
+    })
     private GetConfigWorkRequestResponse(
             int __httpStatusCode__,
             String opcRequestId,

@@ -29,6 +29,7 @@ public class UpdateSecretResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private com.oracle.bmc.vault.model.Secret secret;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "etag", "opcRequestId", "secret"})
     private UpdateSecretResponse(
             int __httpStatusCode__,
             String etag,

@@ -27,6 +27,7 @@ public class CreateAddressListResponse extends com.oracle.bmc.responses.BmcRespo
      */
     private com.oracle.bmc.waas.model.AddressList addressList;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "etag", "addressList"})
     private CreateAddressListResponse(
             int __httpStatusCode__,
             String opcRequestId,

@@ -30,6 +30,12 @@ public class ListCustomPropertiesResponse extends com.oracle.bmc.responses.BmcRe
      */
     private com.oracle.bmc.datacatalog.model.CustomPropertyCollection customPropertyCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "customPropertyCollection"
+    })
     private ListCustomPropertiesResponse(
             int __httpStatusCode__,
             String opcRequestId,

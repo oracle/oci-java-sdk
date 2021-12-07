@@ -37,6 +37,14 @@ public class UpdateTriggerResponse extends com.oracle.bmc.responses.BmcResponse 
      */
     private com.oracle.bmc.devops.model.Trigger trigger;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcWorkRequestId",
+        "opcRequestId",
+        "location",
+        "trigger"
+    })
     private UpdateTriggerResponse(
             int __httpStatusCode__,
             String etag,

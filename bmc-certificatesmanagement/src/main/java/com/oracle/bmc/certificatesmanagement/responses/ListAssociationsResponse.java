@@ -32,6 +32,12 @@ public class ListAssociationsResponse extends com.oracle.bmc.responses.BmcRespon
      */
     private com.oracle.bmc.certificatesmanagement.model.AssociationCollection associationCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "associationCollection"
+    })
     private ListAssociationsResponse(
             int __httpStatusCode__,
             String opcRequestId,

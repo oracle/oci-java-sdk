@@ -34,6 +34,13 @@ public class UpdateBucketResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private com.oracle.bmc.objectstorage.model.Bucket bucket;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcClientRequestId",
+        "opcRequestId",
+        "eTag",
+        "bucket"
+    })
     private UpdateBucketResponse(
             int __httpStatusCode__,
             String opcClientRequestId,

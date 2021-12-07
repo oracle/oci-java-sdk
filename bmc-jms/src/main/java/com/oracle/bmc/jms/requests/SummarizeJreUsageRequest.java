@@ -103,6 +103,11 @@ public class SummarizeJreUsageRequest extends com.oracle.bmc.requests.BmcRequest
      */
     private java.util.List<com.oracle.bmc.jms.model.OsFamily> osFamily;
 
+    /**
+     * The security status of the Java Runtime.
+     */
+    private com.oracle.bmc.jms.model.JreSecurityStatus jreSecurityStatus;
+
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     SummarizeJreUsageRequest, java.lang.Void> {
@@ -198,6 +203,7 @@ public class SummarizeJreUsageRequest extends com.oracle.bmc.requests.BmcRequest
             sortBy(o.getSortBy());
             opcRequestId(o.getOpcRequestId());
             osFamily(o.getOsFamily());
+            jreSecurityStatus(o.getJreSecurityStatus());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;

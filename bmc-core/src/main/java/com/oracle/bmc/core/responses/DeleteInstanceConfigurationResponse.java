@@ -19,6 +19,7 @@ public class DeleteInstanceConfigurationResponse extends com.oracle.bmc.response
      */
     private String opcRequestId;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId"})
     private DeleteInstanceConfigurationResponse(int __httpStatusCode__, String opcRequestId) {
         super(__httpStatusCode__);
         this.opcRequestId = opcRequestId;

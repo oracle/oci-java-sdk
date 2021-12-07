@@ -33,6 +33,12 @@ public class RequestSummarizedTrendProblemsResponse extends com.oracle.bmc.respo
     private com.oracle.bmc.cloudguard.model.ProblemTrendAggregationCollection
             problemTrendAggregationCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "problemTrendAggregationCollection"
+    })
     private RequestSummarizedTrendProblemsResponse(
             int __httpStatusCode__,
             String opcRequestId,

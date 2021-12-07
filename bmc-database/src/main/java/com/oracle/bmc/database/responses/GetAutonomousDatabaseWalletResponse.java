@@ -24,6 +24,11 @@ public class GetAutonomousDatabaseWalletResponse extends com.oracle.bmc.response
      */
     private com.oracle.bmc.database.model.AutonomousDatabaseWallet autonomousDatabaseWallet;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "autonomousDatabaseWallet"
+    })
     private GetAutonomousDatabaseWalletResponse(
             int __httpStatusCode__,
             String opcRequestId,

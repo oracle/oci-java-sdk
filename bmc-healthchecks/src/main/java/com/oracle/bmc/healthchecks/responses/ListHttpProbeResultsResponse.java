@@ -34,6 +34,12 @@ public class ListHttpProbeResultsResponse extends com.oracle.bmc.responses.BmcRe
      */
     private java.util.List<com.oracle.bmc.healthchecks.model.HttpProbeResultSummary> items;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "items"
+    })
     private ListHttpProbeResultsResponse(
             int __httpStatusCode__,
             String opcRequestId,

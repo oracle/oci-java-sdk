@@ -30,6 +30,12 @@ public class GetDataMaskRuleResponse extends com.oracle.bmc.responses.BmcRespons
      */
     private com.oracle.bmc.cloudguard.model.DataMaskRule dataMaskRule;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcRequestId",
+        "dataMaskRule"
+    })
     private GetDataMaskRuleResponse(
             int __httpStatusCode__,
             String etag,

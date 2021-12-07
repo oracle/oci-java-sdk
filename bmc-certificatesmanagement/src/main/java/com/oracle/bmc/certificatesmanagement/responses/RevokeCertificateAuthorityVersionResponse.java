@@ -25,6 +25,7 @@ public class RevokeCertificateAuthorityVersionResponse
      */
     private String opcRequestId;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "etag", "opcRequestId"})
     private RevokeCertificateAuthorityVersionResponse(
             int __httpStatusCode__, String etag, String opcRequestId) {
         super(__httpStatusCode__);

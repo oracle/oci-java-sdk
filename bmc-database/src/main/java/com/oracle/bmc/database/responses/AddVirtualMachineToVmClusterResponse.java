@@ -35,6 +35,13 @@ public class AddVirtualMachineToVmClusterResponse extends com.oracle.bmc.respons
      */
     private com.oracle.bmc.database.model.VmCluster vmCluster;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcWorkRequestId",
+        "etag",
+        "opcRequestId",
+        "vmCluster"
+    })
     private AddVirtualMachineToVmClusterResponse(
             int __httpStatusCode__,
             String opcWorkRequestId,

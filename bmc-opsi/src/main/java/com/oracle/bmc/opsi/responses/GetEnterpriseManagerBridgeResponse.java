@@ -30,6 +30,12 @@ public class GetEnterpriseManagerBridgeResponse extends com.oracle.bmc.responses
      */
     private com.oracle.bmc.opsi.model.EnterpriseManagerBridge enterpriseManagerBridge;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcRequestId",
+        "enterpriseManagerBridge"
+    })
     private GetEnterpriseManagerBridgeResponse(
             int __httpStatusCode__,
             String etag,

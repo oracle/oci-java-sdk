@@ -31,6 +31,7 @@ public class CreateApplicationResponse extends com.oracle.bmc.responses.BmcRespo
      */
     private com.oracle.bmc.dataflow.model.Application application;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "etag", "opcRequestId", "application"})
     private CreateApplicationResponse(
             int __httpStatusCode__,
             String etag,

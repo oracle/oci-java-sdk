@@ -36,6 +36,13 @@ public class CreateSubscriptionMappingResponse extends com.oracle.bmc.responses.
      */
     private com.oracle.bmc.tenantmanagercontrolplane.model.SubscriptionMapping subscriptionMapping;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcWorkRequestId",
+        "etag",
+        "subscriptionMapping"
+    })
     private CreateSubscriptionMappingResponse(
             int __httpStatusCode__,
             String opcRequestId,

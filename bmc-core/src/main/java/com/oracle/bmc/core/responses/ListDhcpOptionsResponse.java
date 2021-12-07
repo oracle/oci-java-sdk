@@ -32,6 +32,12 @@ public class ListDhcpOptionsResponse extends com.oracle.bmc.responses.BmcRespons
      */
     private java.util.List<com.oracle.bmc.core.model.DhcpOptions> items;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcNextPage",
+        "opcRequestId",
+        "items"
+    })
     private ListDhcpOptionsResponse(
             int __httpStatusCode__,
             String opcNextPage,

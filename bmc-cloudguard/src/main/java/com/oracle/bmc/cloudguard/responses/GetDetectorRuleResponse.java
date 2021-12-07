@@ -38,6 +38,13 @@ public class GetDetectorRuleResponse extends com.oracle.bmc.responses.BmcRespons
      */
     private com.oracle.bmc.cloudguard.model.DetectorRule detectorRule;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcRequestId",
+        "opcNextPage",
+        "detectorRule"
+    })
     private GetDetectorRuleResponse(
             int __httpStatusCode__,
             String etag,

@@ -24,6 +24,7 @@ public class GetAccessRequestResponse extends com.oracle.bmc.responses.BmcRespon
      */
     private com.oracle.bmc.operatoraccesscontrol.model.AccessRequest accessRequest;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "accessRequest"})
     private GetAccessRequestResponse(
             int __httpStatusCode__,
             String opcRequestId,

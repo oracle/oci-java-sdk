@@ -41,6 +41,14 @@ public class CreateTargetDatabaseResponse extends com.oracle.bmc.responses.BmcRe
      */
     private com.oracle.bmc.datasafe.model.TargetDatabase targetDatabase;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcWorkRequestId",
+        "opcRequestId",
+        "location",
+        "targetDatabase"
+    })
     private CreateTargetDatabaseResponse(
             int __httpStatusCode__,
             String etag,

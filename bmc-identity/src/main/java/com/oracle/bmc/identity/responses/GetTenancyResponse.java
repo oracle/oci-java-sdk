@@ -24,6 +24,7 @@ public class GetTenancyResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private com.oracle.bmc.identity.model.Tenancy tenancy;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "tenancy"})
     private GetTenancyResponse(
             int __httpStatusCode__,
             String opcRequestId,

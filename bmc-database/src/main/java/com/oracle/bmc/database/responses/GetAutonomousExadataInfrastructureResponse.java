@@ -31,6 +31,12 @@ public class GetAutonomousExadataInfrastructureResponse
     private com.oracle.bmc.database.model.AutonomousExadataInfrastructure
             autonomousExadataInfrastructure;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcRequestId",
+        "autonomousExadataInfrastructure"
+    })
     private GetAutonomousExadataInfrastructureResponse(
             int __httpStatusCode__,
             String etag,

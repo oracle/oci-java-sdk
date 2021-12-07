@@ -31,6 +31,12 @@ public class GetWorkRequestResponse extends com.oracle.bmc.responses.BmcResponse
      */
     private com.oracle.bmc.oda.model.WorkRequest workRequest;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "retryAfter",
+        "workRequest"
+    })
     private GetWorkRequestResponse(
             int __httpStatusCode__,
             String opcRequestId,

@@ -45,6 +45,14 @@ public class CreateZoneResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private com.oracle.bmc.dns.model.Zone zone;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "eTag",
+        "location",
+        "opcRequestId",
+        "opcWorkRequestId",
+        "zone"
+    })
     private CreateZoneResponse(
             int __httpStatusCode__,
             String eTag,

@@ -38,6 +38,13 @@ public class GetConfigurationResponse extends com.oracle.bmc.responses.BmcRespon
      */
     private boolean isNotModified;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcRequestId",
+        "configuration",
+        "isNotModified"
+    })
     private GetConfigurationResponse(
             int __httpStatusCode__,
             String etag,

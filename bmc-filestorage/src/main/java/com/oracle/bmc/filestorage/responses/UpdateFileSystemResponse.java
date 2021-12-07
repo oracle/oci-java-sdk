@@ -30,6 +30,7 @@ public class UpdateFileSystemResponse extends com.oracle.bmc.responses.BmcRespon
      */
     private com.oracle.bmc.filestorage.model.FileSystem fileSystem;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "etag", "opcRequestId", "fileSystem"})
     private UpdateFileSystemResponse(
             int __httpStatusCode__,
             String etag,

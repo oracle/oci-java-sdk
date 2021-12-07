@@ -24,6 +24,7 @@ public class SignResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private com.oracle.bmc.keymanagement.model.SignedData signedData;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "signedData"})
     private SignResponse(
             int __httpStatusCode__,
             String opcRequestId,

@@ -29,6 +29,12 @@ public class AddUserToGroupResponse extends com.oracle.bmc.responses.BmcResponse
      */
     private com.oracle.bmc.identity.model.UserGroupMembership userGroupMembership;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "etag",
+        "userGroupMembership"
+    })
     private AddUserToGroupResponse(
             int __httpStatusCode__,
             String opcRequestId,

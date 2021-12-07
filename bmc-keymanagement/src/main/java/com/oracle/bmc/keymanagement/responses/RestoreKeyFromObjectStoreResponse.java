@@ -36,6 +36,13 @@ public class RestoreKeyFromObjectStoreResponse extends com.oracle.bmc.responses.
      */
     private com.oracle.bmc.keymanagement.model.Key key;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcRequestId",
+        "opcWorkRequestId",
+        "key"
+    })
     private RestoreKeyFromObjectStoreResponse(
             int __httpStatusCode__,
             String etag,

@@ -42,6 +42,14 @@ public class CreateSessionResponse extends com.oracle.bmc.responses.BmcResponse 
      */
     private com.oracle.bmc.bastion.model.Session session;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcWorkRequestId",
+        "opcRequestId",
+        "location",
+        "etag",
+        "session"
+    })
     private CreateSessionResponse(
             int __httpStatusCode__,
             String opcWorkRequestId,

@@ -34,6 +34,12 @@ public class ListTargetDetectorRecipeDetectorRulesResponse
     private com.oracle.bmc.cloudguard.model.TargetDetectorRecipeDetectorRuleCollection
             targetDetectorRecipeDetectorRuleCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "targetDetectorRecipeDetectorRuleCollection"
+    })
     private ListTargetDetectorRecipeDetectorRulesResponse(
             int __httpStatusCode__,
             String opcRequestId,

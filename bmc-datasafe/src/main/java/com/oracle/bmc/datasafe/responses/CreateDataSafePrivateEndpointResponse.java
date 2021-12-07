@@ -41,6 +41,14 @@ public class CreateDataSafePrivateEndpointResponse extends com.oracle.bmc.respon
      */
     private com.oracle.bmc.datasafe.model.DataSafePrivateEndpoint dataSafePrivateEndpoint;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcWorkRequestId",
+        "opcRequestId",
+        "location",
+        "dataSafePrivateEndpoint"
+    })
     private CreateDataSafePrivateEndpointResponse(
             int __httpStatusCode__,
             String etag,

@@ -24,6 +24,7 @@ public class ChangeSecretCompartmentResponse extends com.oracle.bmc.responses.Bm
      */
     private String opcRequestId;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "etag", "opcRequestId"})
     private ChangeSecretCompartmentResponse(
             int __httpStatusCode__, String etag, String opcRequestId) {
         super(__httpStatusCode__);

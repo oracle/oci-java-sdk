@@ -24,6 +24,7 @@ public class ListVirtualCircuitPublicPrefixesResponse extends com.oracle.bmc.res
      */
     private java.util.List<com.oracle.bmc.core.model.VirtualCircuitPublicPrefix> items;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "items"})
     private ListVirtualCircuitPublicPrefixesResponse(
             int __httpStatusCode__,
             String opcRequestId,

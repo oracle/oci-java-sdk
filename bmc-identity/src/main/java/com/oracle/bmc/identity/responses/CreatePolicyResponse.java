@@ -29,6 +29,7 @@ public class CreatePolicyResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private com.oracle.bmc.identity.model.Policy policy;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "etag", "policy"})
     private CreatePolicyResponse(
             int __httpStatusCode__,
             String opcRequestId,

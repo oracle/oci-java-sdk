@@ -33,6 +33,12 @@ public class ListManagedInstanceErrataResponse extends com.oracle.bmc.responses.
      */
     private java.util.List<com.oracle.bmc.osmanagement.model.ErratumSummary> items;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "items"
+    })
     private ListManagedInstanceErrataResponse(
             int __httpStatusCode__,
             String opcRequestId,

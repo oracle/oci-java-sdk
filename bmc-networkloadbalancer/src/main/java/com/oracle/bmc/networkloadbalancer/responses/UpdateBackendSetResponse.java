@@ -25,6 +25,7 @@ public class UpdateBackendSetResponse extends com.oracle.bmc.responses.BmcRespon
      */
     private String opcRequestId;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcWorkRequestId", "opcRequestId"})
     private UpdateBackendSetResponse(
             int __httpStatusCode__, String opcWorkRequestId, String opcRequestId) {
         super(__httpStatusCode__);

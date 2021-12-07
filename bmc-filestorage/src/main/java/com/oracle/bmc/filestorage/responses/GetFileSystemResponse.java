@@ -30,6 +30,7 @@ public class GetFileSystemResponse extends com.oracle.bmc.responses.BmcResponse 
      */
     private com.oracle.bmc.filestorage.model.FileSystem fileSystem;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "etag", "opcRequestId", "fileSystem"})
     private GetFileSystemResponse(
             int __httpStatusCode__,
             String etag,

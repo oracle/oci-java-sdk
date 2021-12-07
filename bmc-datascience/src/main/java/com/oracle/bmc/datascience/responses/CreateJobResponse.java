@@ -30,6 +30,7 @@ public class CreateJobResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private com.oracle.bmc.datascience.model.Job job;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "etag", "opcRequestId", "job"})
     private CreateJobResponse(
             int __httpStatusCode__,
             String etag,

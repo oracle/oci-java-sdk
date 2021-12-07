@@ -41,6 +41,14 @@ public class CreateUserAssessmentResponse extends com.oracle.bmc.responses.BmcRe
      */
     private com.oracle.bmc.datasafe.model.UserAssessment userAssessment;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcWorkRequestId",
+        "opcRequestId",
+        "location",
+        "userAssessment"
+    })
     private CreateUserAssessmentResponse(
             int __httpStatusCode__,
             String etag,

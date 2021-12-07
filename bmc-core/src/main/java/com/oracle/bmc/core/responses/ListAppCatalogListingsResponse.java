@@ -32,6 +32,12 @@ public class ListAppCatalogListingsResponse extends com.oracle.bmc.responses.Bmc
      */
     private java.util.List<com.oracle.bmc.core.model.AppCatalogListingSummary> items;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcNextPage",
+        "opcRequestId",
+        "items"
+    })
     private ListAppCatalogListingsResponse(
             int __httpStatusCode__,
             String opcNextPage,

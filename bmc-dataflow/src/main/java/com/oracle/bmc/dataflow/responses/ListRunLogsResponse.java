@@ -39,6 +39,13 @@ public class ListRunLogsResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private java.util.List<com.oracle.bmc.dataflow.model.RunLogSummary> items;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcPrevPage",
+        "opcNextPage",
+        "items"
+    })
     private ListRunLogsResponse(
             int __httpStatusCode__,
             String opcRequestId,

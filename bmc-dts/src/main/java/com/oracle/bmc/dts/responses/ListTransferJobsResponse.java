@@ -32,6 +32,12 @@ public class ListTransferJobsResponse extends com.oracle.bmc.responses.BmcRespon
      */
     private java.util.List<com.oracle.bmc.dts.model.TransferJobSummary> items;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcNextPage",
+        "opcRequestId",
+        "items"
+    })
     private ListTransferJobsResponse(
             int __httpStatusCode__,
             String opcNextPage,

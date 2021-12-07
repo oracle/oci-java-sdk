@@ -28,6 +28,12 @@ public class DeleteUploadFileResponse extends com.oracle.bmc.responses.BmcRespon
      */
     private Long opcDeletedLogfileCount;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcDeletedLogCount",
+        "opcDeletedLogfileCount"
+    })
     private DeleteUploadFileResponse(
             int __httpStatusCode__,
             String opcRequestId,

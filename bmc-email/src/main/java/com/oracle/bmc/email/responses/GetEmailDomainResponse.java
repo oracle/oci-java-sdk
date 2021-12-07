@@ -30,6 +30,7 @@ public class GetEmailDomainResponse extends com.oracle.bmc.responses.BmcResponse
      */
     private com.oracle.bmc.email.model.EmailDomain emailDomain;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "etag", "opcRequestId", "emailDomain"})
     private GetEmailDomainResponse(
             int __httpStatusCode__,
             String etag,

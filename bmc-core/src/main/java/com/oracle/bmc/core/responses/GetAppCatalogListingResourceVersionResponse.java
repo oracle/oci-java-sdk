@@ -32,6 +32,12 @@ public class GetAppCatalogListingResourceVersionResponse
     private com.oracle.bmc.core.model.AppCatalogListingResourceVersion
             appCatalogListingResourceVersion;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcRequestId",
+        "appCatalogListingResourceVersion"
+    })
     private GetAppCatalogListingResourceVersionResponse(
             int __httpStatusCode__,
             String etag,

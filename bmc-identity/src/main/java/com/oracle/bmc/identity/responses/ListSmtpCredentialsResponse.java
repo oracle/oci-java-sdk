@@ -32,6 +32,12 @@ public class ListSmtpCredentialsResponse extends com.oracle.bmc.responses.BmcRes
      */
     private java.util.List<com.oracle.bmc.identity.model.SmtpCredentialSummary> items;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "items"
+    })
     private ListSmtpCredentialsResponse(
             int __httpStatusCode__,
             String opcRequestId,

@@ -24,6 +24,7 @@ public class ResendSubscriptionConfirmationResponse extends com.oracle.bmc.respo
      */
     private com.oracle.bmc.ons.model.Subscription subscription;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "subscription"})
     private ResendSubscriptionConfirmationResponse(
             int __httpStatusCode__,
             String opcRequestId,

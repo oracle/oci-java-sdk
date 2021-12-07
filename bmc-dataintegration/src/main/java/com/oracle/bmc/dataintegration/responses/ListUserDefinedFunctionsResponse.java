@@ -43,6 +43,14 @@ public class ListUserDefinedFunctionsResponse extends com.oracle.bmc.responses.B
     private com.oracle.bmc.dataintegration.model.UserDefinedFunctionSummaryCollection
             userDefinedFunctionSummaryCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "opcPrevPage",
+        "opcTotalItems",
+        "userDefinedFunctionSummaryCollection"
+    })
     private ListUserDefinedFunctionsResponse(
             int __httpStatusCode__,
             String opcRequestId,

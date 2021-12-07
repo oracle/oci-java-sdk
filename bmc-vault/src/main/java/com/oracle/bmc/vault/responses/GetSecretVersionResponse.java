@@ -29,6 +29,12 @@ public class GetSecretVersionResponse extends com.oracle.bmc.responses.BmcRespon
      */
     private com.oracle.bmc.vault.model.SecretVersion secretVersion;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcRequestId",
+        "secretVersion"
+    })
     private GetSecretVersionResponse(
             int __httpStatusCode__,
             String etag,

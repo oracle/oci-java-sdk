@@ -32,6 +32,12 @@ public class ListTablespacesResponse extends com.oracle.bmc.responses.BmcRespons
      */
     private com.oracle.bmc.databasemanagement.model.TablespaceCollection tablespaceCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "tablespaceCollection"
+    })
     private ListTablespacesResponse(
             int __httpStatusCode__,
             String opcRequestId,

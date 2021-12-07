@@ -22,6 +22,11 @@ public class GetTransferApplianceEntitlementResponse extends com.oracle.bmc.resp
      */
     private com.oracle.bmc.dts.model.TransferApplianceEntitlement transferApplianceEntitlement;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "transferApplianceEntitlement"
+    })
     private GetTransferApplianceEntitlementResponse(
             int __httpStatusCode__,
             String opcRequestId,

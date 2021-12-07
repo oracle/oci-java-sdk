@@ -43,6 +43,14 @@ public class CreateModelDeploymentResponse extends com.oracle.bmc.responses.BmcR
      */
     private com.oracle.bmc.datascience.model.ModelDeployment modelDeployment;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "location",
+        "opcRequestId",
+        "opcWorkRequestId",
+        "modelDeployment"
+    })
     private CreateModelDeploymentResponse(
             int __httpStatusCode__,
             String etag,

@@ -30,6 +30,12 @@ public class CreateServiceCatalogAssociationResponse extends com.oracle.bmc.resp
      */
     private com.oracle.bmc.servicecatalog.model.ServiceCatalogAssociation serviceCatalogAssociation;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "etag",
+        "serviceCatalogAssociation"
+    })
     private CreateServiceCatalogAssociationResponse(
             int __httpStatusCode__,
             String opcRequestId,

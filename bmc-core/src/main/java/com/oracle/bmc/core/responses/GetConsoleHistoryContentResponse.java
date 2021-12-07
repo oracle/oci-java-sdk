@@ -29,6 +29,12 @@ public class GetConsoleHistoryContentResponse extends com.oracle.bmc.responses.B
      */
     private String value;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcBytesRemaining",
+        "opcRequestId",
+        "value"
+    })
     private GetConsoleHistoryContentResponse(
             int __httpStatusCode__, Integer opcBytesRemaining, String opcRequestId, String value) {
         super(__httpStatusCode__);

@@ -23,6 +23,7 @@ public class ParseQueryResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private com.oracle.bmc.loganalytics.model.ParseQueryOutput parseQueryOutput;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "parseQueryOutput"})
     private ParseQueryResponse(
             int __httpStatusCode__,
             String opcRequestId,

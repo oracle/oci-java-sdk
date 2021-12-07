@@ -27,6 +27,12 @@ public class ListBuildPipelineStagesResponse extends com.oracle.bmc.responses.Bm
      */
     private com.oracle.bmc.devops.model.BuildPipelineStageCollection buildPipelineStageCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "buildPipelineStageCollection"
+    })
     private ListBuildPipelineStagesResponse(
             int __httpStatusCode__,
             String opcRequestId,

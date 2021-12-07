@@ -39,6 +39,13 @@ public class ListBackupDestinationResponse extends com.oracle.bmc.responses.BmcR
      */
     private java.util.List<com.oracle.bmc.database.model.BackupDestinationSummary> items;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcRequestId",
+        "opcNextPage",
+        "items"
+    })
     private ListBackupDestinationResponse(
             int __httpStatusCode__,
             String etag,

@@ -31,6 +31,12 @@ public class ListEmailDomainsResponse extends com.oracle.bmc.responses.BmcRespon
      */
     private com.oracle.bmc.email.model.EmailDomainCollection emailDomainCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcNextPage",
+        "opcRequestId",
+        "emailDomainCollection"
+    })
     private ListEmailDomainsResponse(
             int __httpStatusCode__,
             String opcNextPage,

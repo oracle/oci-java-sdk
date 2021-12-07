@@ -41,6 +41,14 @@ public class CreateSecurityAssessmentResponse extends com.oracle.bmc.responses.B
      */
     private com.oracle.bmc.datasafe.model.SecurityAssessment securityAssessment;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcWorkRequestId",
+        "opcRequestId",
+        "location",
+        "securityAssessment"
+    })
     private CreateSecurityAssessmentResponse(
             int __httpStatusCode__,
             String etag,

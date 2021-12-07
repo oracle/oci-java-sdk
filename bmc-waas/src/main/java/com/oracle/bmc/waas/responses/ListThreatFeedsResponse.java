@@ -32,6 +32,13 @@ public class ListThreatFeedsResponse extends com.oracle.bmc.responses.BmcRespons
      */
     private java.util.List<com.oracle.bmc.waas.model.ThreatFeed> items;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcRequestId",
+        "opcNextPage",
+        "items"
+    })
     private ListThreatFeedsResponse(
             int __httpStatusCode__,
             String etag,

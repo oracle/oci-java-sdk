@@ -32,6 +32,12 @@ public class ListVolumeBackupPoliciesResponse extends com.oracle.bmc.responses.B
      */
     private java.util.List<com.oracle.bmc.core.model.VolumeBackupPolicy> items;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcNextPage",
+        "opcRequestId",
+        "items"
+    })
     private ListVolumeBackupPoliciesResponse(
             int __httpStatusCode__,
             String opcNextPage,

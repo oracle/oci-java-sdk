@@ -32,6 +32,12 @@ public class ListQueriesResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private com.oracle.bmc.usageapi.model.QueryCollection queryCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "queryCollection"
+    })
     private ListQueriesResponse(
             int __httpStatusCode__,
             String opcRequestId,

@@ -30,6 +30,12 @@ public class CreateResponderRecipeResponse extends com.oracle.bmc.responses.BmcR
      */
     private com.oracle.bmc.cloudguard.model.ResponderRecipe responderRecipe;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcRequestId",
+        "responderRecipe"
+    })
     private CreateResponderRecipeResponse(
             int __httpStatusCode__,
             String etag,

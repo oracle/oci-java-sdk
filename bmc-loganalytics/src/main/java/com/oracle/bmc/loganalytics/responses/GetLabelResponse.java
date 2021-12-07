@@ -29,6 +29,12 @@ public class GetLabelResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private com.oracle.bmc.loganalytics.model.LogAnalyticsLabel logAnalyticsLabel;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcRequestId",
+        "logAnalyticsLabel"
+    })
     private GetLabelResponse(
             int __httpStatusCode__,
             String etag,

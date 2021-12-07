@@ -36,6 +36,13 @@ public class CreatePrivateApplicationResponse extends com.oracle.bmc.responses.B
      */
     private com.oracle.bmc.servicecatalog.model.PrivateApplication privateApplication;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcWorkRequestId",
+        "etag",
+        "privateApplication"
+    })
     private CreatePrivateApplicationResponse(
             int __httpStatusCode__,
             String opcRequestId,

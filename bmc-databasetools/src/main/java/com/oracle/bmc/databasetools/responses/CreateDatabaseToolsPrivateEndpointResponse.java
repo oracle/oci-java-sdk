@@ -43,6 +43,14 @@ public class CreateDatabaseToolsPrivateEndpointResponse
     private com.oracle.bmc.databasetools.model.DatabaseToolsPrivateEndpoint
             databaseToolsPrivateEndpoint;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "location",
+        "etag",
+        "opcWorkRequestId",
+        "opcRequestId",
+        "databaseToolsPrivateEndpoint"
+    })
     private CreateDatabaseToolsPrivateEndpointResponse(
             int __httpStatusCode__,
             String location,

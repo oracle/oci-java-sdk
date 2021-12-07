@@ -45,6 +45,14 @@ public class CreateResolverEndpointResponse extends com.oracle.bmc.responses.Bmc
      */
     private com.oracle.bmc.dns.model.ResolverEndpoint resolverEndpoint;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "location",
+        "opcRequestId",
+        "opcWorkRequestId",
+        "resolverEndpoint"
+    })
     private CreateResolverEndpointResponse(
             int __httpStatusCode__,
             String etag,

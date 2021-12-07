@@ -32,6 +32,12 @@ public class ListInstancePoolInstancesResponse extends com.oracle.bmc.responses.
      */
     private java.util.List<com.oracle.bmc.core.model.InstanceSummary> items;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcNextPage",
+        "opcRequestId",
+        "items"
+    })
     private ListInstancePoolInstancesResponse(
             int __httpStatusCode__,
             String opcNextPage,

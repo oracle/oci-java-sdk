@@ -32,6 +32,12 @@ public class ListLogAnalyticsEmBridgesResponse extends com.oracle.bmc.responses.
     private com.oracle.bmc.loganalytics.model.LogAnalyticsEmBridgeCollection
             logAnalyticsEmBridgeCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "logAnalyticsEmBridgeCollection"
+    })
     private ListLogAnalyticsEmBridgesResponse(
             int __httpStatusCode__,
             String opcRequestId,

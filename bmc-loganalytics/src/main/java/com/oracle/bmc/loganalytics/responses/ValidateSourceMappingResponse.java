@@ -23,6 +23,11 @@ public class ValidateSourceMappingResponse extends com.oracle.bmc.responses.BmcR
      */
     private com.oracle.bmc.loganalytics.model.SourceMappingResponse sourceMappingResponse;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "sourceMappingResponse"
+    })
     private ValidateSourceMappingResponse(
             int __httpStatusCode__,
             String opcRequestId,

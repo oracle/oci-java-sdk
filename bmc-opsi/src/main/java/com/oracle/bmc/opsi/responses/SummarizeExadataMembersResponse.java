@@ -38,6 +38,13 @@ public class SummarizeExadataMembersResponse extends com.oracle.bmc.responses.Bm
      */
     private com.oracle.bmc.opsi.model.ExadataMemberCollection exadataMemberCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcTotalItems",
+        "opcNextPage",
+        "exadataMemberCollection"
+    })
     private SummarizeExadataMembersResponse(
             int __httpStatusCode__,
             String opcRequestId,

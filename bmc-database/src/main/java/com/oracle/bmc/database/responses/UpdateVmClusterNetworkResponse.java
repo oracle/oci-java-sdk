@@ -35,6 +35,13 @@ public class UpdateVmClusterNetworkResponse extends com.oracle.bmc.responses.Bmc
      */
     private com.oracle.bmc.database.model.VmClusterNetwork vmClusterNetwork;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcWorkRequestId",
+        "etag",
+        "opcRequestId",
+        "vmClusterNetwork"
+    })
     private UpdateVmClusterNetworkResponse(
             int __httpStatusCode__,
             String opcWorkRequestId,

@@ -37,6 +37,14 @@ public class CreateRepositoryResponse extends com.oracle.bmc.responses.BmcRespon
      */
     private com.oracle.bmc.devops.model.Repository repository;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "location",
+        "opcWorkRequestId",
+        "opcRequestId",
+        "etag",
+        "repository"
+    })
     private CreateRepositoryResponse(
             int __httpStatusCode__,
             String location,

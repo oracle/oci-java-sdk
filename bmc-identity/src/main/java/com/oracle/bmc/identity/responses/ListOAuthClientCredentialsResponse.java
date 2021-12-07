@@ -32,6 +32,12 @@ public class ListOAuthClientCredentialsResponse extends com.oracle.bmc.responses
      */
     private java.util.List<com.oracle.bmc.identity.model.OAuth2ClientCredentialSummary> items;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "items"
+    })
     private ListOAuthClientCredentialsResponse(
             int __httpStatusCode__,
             String opcRequestId,

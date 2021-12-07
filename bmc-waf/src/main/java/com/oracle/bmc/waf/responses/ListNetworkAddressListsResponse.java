@@ -32,6 +32,12 @@ public class ListNetworkAddressListsResponse extends com.oracle.bmc.responses.Bm
      */
     private com.oracle.bmc.waf.model.NetworkAddressListCollection networkAddressListCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "networkAddressListCollection"
+    })
     private ListNetworkAddressListsResponse(
             int __httpStatusCode__,
             String opcRequestId,

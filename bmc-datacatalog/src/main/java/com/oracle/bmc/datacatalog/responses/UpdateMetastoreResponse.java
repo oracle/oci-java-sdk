@@ -30,6 +30,7 @@ public class UpdateMetastoreResponse extends com.oracle.bmc.responses.BmcRespons
      */
     private com.oracle.bmc.datacatalog.model.Metastore metastore;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "etag", "opcRequestId", "metastore"})
     private UpdateMetastoreResponse(
             int __httpStatusCode__,
             String etag,

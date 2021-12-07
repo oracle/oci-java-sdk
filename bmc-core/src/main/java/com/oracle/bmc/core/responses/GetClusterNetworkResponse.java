@@ -30,6 +30,12 @@ public class GetClusterNetworkResponse extends com.oracle.bmc.responses.BmcRespo
      */
     private com.oracle.bmc.core.model.ClusterNetwork clusterNetwork;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcRequestId",
+        "clusterNetwork"
+    })
     private GetClusterNetworkResponse(
             int __httpStatusCode__,
             String etag,

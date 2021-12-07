@@ -30,6 +30,7 @@ public class GetDkimResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private com.oracle.bmc.email.model.Dkim dkim;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "etag", "opcRequestId", "dkim"})
     private GetDkimResponse(
             int __httpStatusCode__,
             String etag,

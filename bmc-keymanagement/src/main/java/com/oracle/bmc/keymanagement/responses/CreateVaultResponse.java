@@ -29,6 +29,7 @@ public class CreateVaultResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private com.oracle.bmc.keymanagement.model.Vault vault;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "etag", "opcRequestId", "vault"})
     private CreateVaultResponse(
             int __httpStatusCode__,
             String etag,

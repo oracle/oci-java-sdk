@@ -31,6 +31,12 @@ public class DeleteListenerResponse extends com.oracle.bmc.responses.BmcResponse
      */
     private String eTag;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcWorkRequestId",
+        "opcRequestId",
+        "eTag"
+    })
     private DeleteListenerResponse(
             int __httpStatusCode__, String opcWorkRequestId, String opcRequestId, String eTag) {
         super(__httpStatusCode__);

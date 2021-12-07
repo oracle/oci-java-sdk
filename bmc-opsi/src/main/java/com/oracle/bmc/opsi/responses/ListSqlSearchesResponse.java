@@ -32,6 +32,12 @@ public class ListSqlSearchesResponse extends com.oracle.bmc.responses.BmcRespons
      */
     private com.oracle.bmc.opsi.model.SqlSearchCollection sqlSearchCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "sqlSearchCollection"
+    })
     private ListSqlSearchesResponse(
             int __httpStatusCode__,
             String opcRequestId,

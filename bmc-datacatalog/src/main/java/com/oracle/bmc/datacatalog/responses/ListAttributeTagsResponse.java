@@ -30,6 +30,12 @@ public class ListAttributeTagsResponse extends com.oracle.bmc.responses.BmcRespo
      */
     private com.oracle.bmc.datacatalog.model.AttributeTagCollection attributeTagCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "attributeTagCollection"
+    })
     private ListAttributeTagsResponse(
             int __httpStatusCode__,
             String opcRequestId,

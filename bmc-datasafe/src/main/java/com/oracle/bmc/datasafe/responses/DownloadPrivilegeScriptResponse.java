@@ -34,6 +34,13 @@ public class DownloadPrivilegeScriptResponse extends com.oracle.bmc.responses.Bm
      */
     private java.io.InputStream inputStream;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "etag",
+        "contentLength",
+        "inputStream"
+    })
     private DownloadPrivilegeScriptResponse(
             int __httpStatusCode__,
             String opcRequestId,

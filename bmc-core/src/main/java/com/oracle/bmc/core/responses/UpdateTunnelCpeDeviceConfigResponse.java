@@ -30,6 +30,12 @@ public class UpdateTunnelCpeDeviceConfigResponse extends com.oracle.bmc.response
      */
     private com.oracle.bmc.core.model.TunnelCpeDeviceConfig tunnelCpeDeviceConfig;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcRequestId",
+        "tunnelCpeDeviceConfig"
+    })
     private UpdateTunnelCpeDeviceConfigResponse(
             int __httpStatusCode__,
             String etag,

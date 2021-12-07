@@ -30,6 +30,7 @@ public class UpdateNamespaceResponse extends com.oracle.bmc.responses.BmcRespons
      */
     private com.oracle.bmc.datacatalog.model.Namespace namespace;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "etag", "opcRequestId", "namespace"})
     private UpdateNamespaceResponse(
             int __httpStatusCode__,
             String etag,

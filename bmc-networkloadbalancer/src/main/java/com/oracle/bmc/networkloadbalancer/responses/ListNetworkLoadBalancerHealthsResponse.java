@@ -33,6 +33,12 @@ public class ListNetworkLoadBalancerHealthsResponse extends com.oracle.bmc.respo
     private com.oracle.bmc.networkloadbalancer.model.NetworkLoadBalancerHealthCollection
             networkLoadBalancerHealthCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcNextPage",
+        "opcRequestId",
+        "networkLoadBalancerHealthCollection"
+    })
     private ListNetworkLoadBalancerHealthsResponse(
             int __httpStatusCode__,
             String opcNextPage,

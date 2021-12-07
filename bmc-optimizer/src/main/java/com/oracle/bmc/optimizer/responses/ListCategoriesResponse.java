@@ -39,6 +39,13 @@ public class ListCategoriesResponse extends com.oracle.bmc.responses.BmcResponse
      */
     private com.oracle.bmc.optimizer.model.CategoryCollection categoryCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "opcPrevPage",
+        "categoryCollection"
+    })
     private ListCategoriesResponse(
             int __httpStatusCode__,
             String opcRequestId,

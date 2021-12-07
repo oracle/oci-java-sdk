@@ -33,6 +33,12 @@ public class SummarizeSqlPlanInsightsResponse extends com.oracle.bmc.responses.B
     private com.oracle.bmc.opsi.model.SqlPlanInsightAggregationCollection
             sqlPlanInsightAggregationCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "sqlPlanInsightAggregationCollection"
+    })
     private SummarizeSqlPlanInsightsResponse(
             int __httpStatusCode__,
             String opcRequestId,

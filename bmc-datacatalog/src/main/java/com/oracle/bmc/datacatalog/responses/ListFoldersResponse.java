@@ -30,6 +30,12 @@ public class ListFoldersResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private com.oracle.bmc.datacatalog.model.FolderCollection folderCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "folderCollection"
+    })
     private ListFoldersResponse(
             int __httpStatusCode__,
             String opcRequestId,

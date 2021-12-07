@@ -37,6 +37,13 @@ public class ChangeManagementDashboardsCompartmentResponse
      */
     private com.oracle.bmc.managementdashboard.model.ManagementDashboard managementDashboard;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "etag",
+        "opcRequestId",
+        "opcWorkRequestId",
+        "managementDashboard"
+    })
     private ChangeManagementDashboardsCompartmentResponse(
             int __httpStatusCode__,
             String etag,

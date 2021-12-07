@@ -31,6 +31,12 @@ public class ListUploadWarningsResponse extends com.oracle.bmc.responses.BmcResp
      */
     private com.oracle.bmc.loganalytics.model.UploadWarningCollection uploadWarningCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "uploadWarningCollection"
+    })
     private ListUploadWarningsResponse(
             int __httpStatusCode__,
             String opcRequestId,

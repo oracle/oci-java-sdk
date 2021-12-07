@@ -26,6 +26,11 @@ public class UpdateNetworkSecurityGroupSecurityRulesResponse
     private com.oracle.bmc.core.model.UpdatedNetworkSecurityGroupSecurityRules
             updatedNetworkSecurityGroupSecurityRules;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "updatedNetworkSecurityGroupSecurityRules"
+    })
     private UpdateNetworkSecurityGroupSecurityRulesResponse(
             int __httpStatusCode__,
             String opcRequestId,

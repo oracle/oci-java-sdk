@@ -32,6 +32,12 @@ public class ListPublicationPackagesResponse extends com.oracle.bmc.responses.Bm
      */
     private java.util.List<com.oracle.bmc.marketplace.model.PublicationPackageSummary> items;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "items"
+    })
     private ListPublicationPackagesResponse(
             int __httpStatusCode__,
             String opcRequestId,

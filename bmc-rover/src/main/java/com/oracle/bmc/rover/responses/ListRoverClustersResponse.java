@@ -40,6 +40,13 @@ public class ListRoverClustersResponse extends com.oracle.bmc.responses.BmcRespo
      */
     private com.oracle.bmc.rover.model.RoverClusterCollection roverClusterCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "opcPrevPage",
+        "roverClusterCollection"
+    })
     private ListRoverClustersResponse(
             int __httpStatusCode__,
             String opcRequestId,

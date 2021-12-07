@@ -30,6 +30,12 @@ public class ListEntitiesResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private com.oracle.bmc.datacatalog.model.EntityCollection entityCollection;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "opcNextPage",
+        "entityCollection"
+    })
     private ListEntitiesResponse(
             int __httpStatusCode__,
             String opcRequestId,

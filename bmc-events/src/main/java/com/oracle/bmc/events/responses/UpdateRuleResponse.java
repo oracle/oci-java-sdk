@@ -32,6 +32,7 @@ public class UpdateRuleResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private com.oracle.bmc.events.model.Rule rule;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "etag", "opcRequestId", "rule"})
     private UpdateRuleResponse(
             int __httpStatusCode__,
             String etag,

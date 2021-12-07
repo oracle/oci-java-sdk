@@ -22,6 +22,11 @@ public class ListTransferAppliancesResponse extends com.oracle.bmc.responses.Bmc
      */
     private com.oracle.bmc.dts.model.MultipleTransferAppliances multipleTransferAppliances;
 
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "multipleTransferAppliances"
+    })
     private ListTransferAppliancesResponse(
             int __httpStatusCode__,
             String opcRequestId,

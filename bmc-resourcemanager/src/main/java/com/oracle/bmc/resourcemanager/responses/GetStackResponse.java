@@ -27,6 +27,7 @@ public class GetStackResponse extends com.oracle.bmc.responses.BmcResponse {
      */
     private com.oracle.bmc.resourcemanager.model.Stack stack;
 
+    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "etag", "stack"})
     private GetStackResponse(
             int __httpStatusCode__,
             String opcRequestId,
