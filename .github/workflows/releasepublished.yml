@@ -131,7 +131,7 @@ jobs:
             set -e
           fi
           echo "Asset id for release $RELEASE file $FILE_NAME_PART is $asset_id"
-          wget -q --header="Authorization: Bearer $ACCESS_TOKEN" --auth-no-challenge --header='Accept:application/octet-stream' https://api.github.com/repos/$REPO/releases/assets/$asset_id -O asset.zip
+          wget -q --auth-no-challenge --header='Accept:application/octet-stream' https://api.github.com/repos/$REPO/releases/assets/$asset_id -O asset.zip
       - name: Examine asset
         run: |
           ls
