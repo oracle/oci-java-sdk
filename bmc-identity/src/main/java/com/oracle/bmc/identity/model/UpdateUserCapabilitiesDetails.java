@@ -62,6 +62,15 @@ public class UpdateUserCapabilitiesDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("canUseDBCredentials")
+        private Boolean canUseDBCredentials;
+
+        public Builder canUseDBCredentials(Boolean canUseDBCredentials) {
+            this.canUseDBCredentials = canUseDBCredentials;
+            this.__explicitlySet__.add("canUseDBCredentials");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("canUseCustomerSecretKeys")
         private Boolean canUseCustomerSecretKeys;
 
@@ -90,6 +99,7 @@ public class UpdateUserCapabilitiesDetails {
                             canUseApiKeys,
                             canUseAuthTokens,
                             canUseSmtpCredentials,
+                            canUseDBCredentials,
                             canUseCustomerSecretKeys,
                             canUseOAuth2ClientCredentials);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
@@ -103,6 +113,7 @@ public class UpdateUserCapabilitiesDetails {
                             .canUseApiKeys(o.getCanUseApiKeys())
                             .canUseAuthTokens(o.getCanUseAuthTokens())
                             .canUseSmtpCredentials(o.getCanUseSmtpCredentials())
+                            .canUseDBCredentials(o.getCanUseDBCredentials())
                             .canUseCustomerSecretKeys(o.getCanUseCustomerSecretKeys())
                             .canUseOAuth2ClientCredentials(o.getCanUseOAuth2ClientCredentials());
 
@@ -145,6 +156,13 @@ public class UpdateUserCapabilitiesDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("canUseSmtpCredentials")
     Boolean canUseSmtpCredentials;
+
+    /**
+     * Indicates if the user can use DB passwords.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("canUseDBCredentials")
+    Boolean canUseDBCredentials;
 
     /**
      * Indicates if the user can use SigV4 symmetric keys.

@@ -123,6 +123,33 @@ public class EsxiHostSummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("failedEsxiHostId")
+        private String failedEsxiHostId;
+
+        public Builder failedEsxiHostId(String failedEsxiHostId) {
+            this.failedEsxiHostId = failedEsxiHostId;
+            this.__explicitlySet__.add("failedEsxiHostId");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("replacementEsxiHostId")
+        private String replacementEsxiHostId;
+
+        public Builder replacementEsxiHostId(String replacementEsxiHostId) {
+            this.replacementEsxiHostId = replacementEsxiHostId;
+            this.__explicitlySet__.add("replacementEsxiHostId");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("gracePeriodEndDate")
+        private java.util.Date gracePeriodEndDate;
+
+        public Builder gracePeriodEndDate(java.util.Date gracePeriodEndDate) {
+            this.gracePeriodEndDate = gracePeriodEndDate;
+            this.__explicitlySet__.add("gracePeriodEndDate");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("computeAvailabilityDomain")
         private String computeAvailabilityDomain;
 
@@ -168,6 +195,9 @@ public class EsxiHostSummary {
                             currentSku,
                             nextSku,
                             billingContractEndDate,
+                            failedEsxiHostId,
+                            replacementEsxiHostId,
+                            gracePeriodEndDate,
                             computeAvailabilityDomain,
                             freeformTags,
                             definedTags);
@@ -189,6 +219,9 @@ public class EsxiHostSummary {
                             .currentSku(o.getCurrentSku())
                             .nextSku(o.getNextSku())
                             .billingContractEndDate(o.getBillingContractEndDate())
+                            .failedEsxiHostId(o.getFailedEsxiHostId())
+                            .replacementEsxiHostId(o.getReplacementEsxiHostId())
+                            .gracePeriodEndDate(o.getGracePeriodEndDate())
                             .computeAvailabilityDomain(o.getComputeAvailabilityDomain())
                             .freeformTags(o.getFreeformTags())
                             .definedTags(o.getDefinedTags());
@@ -294,6 +327,31 @@ public class EsxiHostSummary {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("billingContractEndDate")
     java.util.Date billingContractEndDate;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the esxi host that
+     * is failed.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("failedEsxiHostId")
+    String failedEsxiHostId;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the esxi host that
+     * is newly created to replace the failed node.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("replacementEsxiHostId")
+    String replacementEsxiHostId;
+
+    /**
+     * The date and time when the new esxi host should start billing cycle.
+     * [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * Example: {@code 2021-07-25T21:10:29.600Z}
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("gracePeriodEndDate")
+    java.util.Date gracePeriodEndDate;
 
     /**
      * The availability domain of the ESXi host.

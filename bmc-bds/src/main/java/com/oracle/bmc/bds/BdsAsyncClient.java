@@ -378,6 +378,58 @@ public class BdsAsyncClient implements BdsAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<ActivateBdsMetastoreConfigurationResponse>
+            activateBdsMetastoreConfiguration(
+                    ActivateBdsMetastoreConfigurationRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ActivateBdsMetastoreConfigurationRequest,
+                                    ActivateBdsMetastoreConfigurationResponse>
+                            handler) {
+        LOG.trace("Called async activateBdsMetastoreConfiguration");
+        final ActivateBdsMetastoreConfigurationRequest interceptedRequest =
+                ActivateBdsMetastoreConfigurationConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ActivateBdsMetastoreConfigurationConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ActivateBdsMetastoreConfigurationResponse>
+                transformer = ActivateBdsMetastoreConfigurationConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        ActivateBdsMetastoreConfigurationRequest,
+                        ActivateBdsMetastoreConfigurationResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ActivateBdsMetastoreConfigurationRequest,
+                                ActivateBdsMetastoreConfigurationResponse>,
+                        java.util.concurrent.Future<ActivateBdsMetastoreConfigurationResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getActivateBdsMetastoreConfigurationDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ActivateBdsMetastoreConfigurationRequest,
+                    ActivateBdsMetastoreConfigurationResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<AddAutoScalingConfigurationResponse>
             addAutoScalingConfiguration(
                     AddAutoScalingConfigurationRequest request,
@@ -746,6 +798,58 @@ public class BdsAsyncClient implements BdsAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<CreateBdsMetastoreConfigurationResponse>
+            createBdsMetastoreConfiguration(
+                    CreateBdsMetastoreConfigurationRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    CreateBdsMetastoreConfigurationRequest,
+                                    CreateBdsMetastoreConfigurationResponse>
+                            handler) {
+        LOG.trace("Called async createBdsMetastoreConfiguration");
+        final CreateBdsMetastoreConfigurationRequest interceptedRequest =
+                CreateBdsMetastoreConfigurationConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateBdsMetastoreConfigurationConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, CreateBdsMetastoreConfigurationResponse>
+                transformer = CreateBdsMetastoreConfigurationConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        CreateBdsMetastoreConfigurationRequest,
+                        CreateBdsMetastoreConfigurationResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CreateBdsMetastoreConfigurationRequest,
+                                CreateBdsMetastoreConfigurationResponse>,
+                        java.util.concurrent.Future<CreateBdsMetastoreConfigurationResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateBdsMetastoreConfigurationDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CreateBdsMetastoreConfigurationRequest,
+                    CreateBdsMetastoreConfigurationResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteBdsApiKeyResponse> deleteBdsApiKey(
             DeleteBdsApiKeyRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -811,6 +915,52 @@ public class BdsAsyncClient implements BdsAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     DeleteBdsInstanceRequest, DeleteBdsInstanceResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteBdsMetastoreConfigurationResponse>
+            deleteBdsMetastoreConfiguration(
+                    DeleteBdsMetastoreConfigurationRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    DeleteBdsMetastoreConfigurationRequest,
+                                    DeleteBdsMetastoreConfigurationResponse>
+                            handler) {
+        LOG.trace("Called async deleteBdsMetastoreConfiguration");
+        final DeleteBdsMetastoreConfigurationRequest interceptedRequest =
+                DeleteBdsMetastoreConfigurationConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteBdsMetastoreConfigurationConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, DeleteBdsMetastoreConfigurationResponse>
+                transformer = DeleteBdsMetastoreConfigurationConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        DeleteBdsMetastoreConfigurationRequest,
+                        DeleteBdsMetastoreConfigurationResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DeleteBdsMetastoreConfigurationRequest,
+                                DeleteBdsMetastoreConfigurationResponse>,
+                        java.util.concurrent.Future<DeleteBdsMetastoreConfigurationResponse>>
+                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DeleteBdsMetastoreConfigurationRequest,
+                    DeleteBdsMetastoreConfigurationResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -932,6 +1082,50 @@ public class BdsAsyncClient implements BdsAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     GetBdsInstanceRequest, GetBdsInstanceResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetBdsMetastoreConfigurationResponse>
+            getBdsMetastoreConfiguration(
+                    GetBdsMetastoreConfigurationRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    GetBdsMetastoreConfigurationRequest,
+                                    GetBdsMetastoreConfigurationResponse>
+                            handler) {
+        LOG.trace("Called async getBdsMetastoreConfiguration");
+        final GetBdsMetastoreConfigurationRequest interceptedRequest =
+                GetBdsMetastoreConfigurationConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetBdsMetastoreConfigurationConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, GetBdsMetastoreConfigurationResponse>
+                transformer = GetBdsMetastoreConfigurationConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        GetBdsMetastoreConfigurationRequest, GetBdsMetastoreConfigurationResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetBdsMetastoreConfigurationRequest,
+                                GetBdsMetastoreConfigurationResponse>,
+                        java.util.concurrent.Future<GetBdsMetastoreConfigurationResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetBdsMetastoreConfigurationRequest, GetBdsMetastoreConfigurationResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -1093,6 +1287,51 @@ public class BdsAsyncClient implements BdsAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     ListBdsInstancesRequest, ListBdsInstancesResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListBdsMetastoreConfigurationsResponse>
+            listBdsMetastoreConfigurations(
+                    ListBdsMetastoreConfigurationsRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListBdsMetastoreConfigurationsRequest,
+                                    ListBdsMetastoreConfigurationsResponse>
+                            handler) {
+        LOG.trace("Called async listBdsMetastoreConfigurations");
+        final ListBdsMetastoreConfigurationsRequest interceptedRequest =
+                ListBdsMetastoreConfigurationsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListBdsMetastoreConfigurationsConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ListBdsMetastoreConfigurationsResponse>
+                transformer = ListBdsMetastoreConfigurationsConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListBdsMetastoreConfigurationsRequest,
+                        ListBdsMetastoreConfigurationsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListBdsMetastoreConfigurationsRequest,
+                                ListBdsMetastoreConfigurationsResponse>,
+                        java.util.concurrent.Future<ListBdsMetastoreConfigurationsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListBdsMetastoreConfigurationsRequest, ListBdsMetastoreConfigurationsResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -1367,6 +1606,55 @@ public class BdsAsyncClient implements BdsAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<TestBdsMetastoreConfigurationResponse>
+            testBdsMetastoreConfiguration(
+                    TestBdsMetastoreConfigurationRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    TestBdsMetastoreConfigurationRequest,
+                                    TestBdsMetastoreConfigurationResponse>
+                            handler) {
+        LOG.trace("Called async testBdsMetastoreConfiguration");
+        final TestBdsMetastoreConfigurationRequest interceptedRequest =
+                TestBdsMetastoreConfigurationConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                TestBdsMetastoreConfigurationConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, TestBdsMetastoreConfigurationResponse>
+                transformer = TestBdsMetastoreConfigurationConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        TestBdsMetastoreConfigurationRequest, TestBdsMetastoreConfigurationResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                TestBdsMetastoreConfigurationRequest,
+                                TestBdsMetastoreConfigurationResponse>,
+                        java.util.concurrent.Future<TestBdsMetastoreConfigurationResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getTestBdsMetastoreConfigurationDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    TestBdsMetastoreConfigurationRequest, TestBdsMetastoreConfigurationResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<TestBdsObjectStorageConnectionResponse>
             testBdsObjectStorageConnection(
                     TestBdsObjectStorageConnectionRequest request,
@@ -1499,6 +1787,57 @@ public class BdsAsyncClient implements BdsAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     UpdateBdsInstanceRequest, UpdateBdsInstanceResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateBdsMetastoreConfigurationResponse>
+            updateBdsMetastoreConfiguration(
+                    UpdateBdsMetastoreConfigurationRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    UpdateBdsMetastoreConfigurationRequest,
+                                    UpdateBdsMetastoreConfigurationResponse>
+                            handler) {
+        LOG.trace("Called async updateBdsMetastoreConfiguration");
+        final UpdateBdsMetastoreConfigurationRequest interceptedRequest =
+                UpdateBdsMetastoreConfigurationConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateBdsMetastoreConfigurationConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, UpdateBdsMetastoreConfigurationResponse>
+                transformer = UpdateBdsMetastoreConfigurationConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        UpdateBdsMetastoreConfigurationRequest,
+                        UpdateBdsMetastoreConfigurationResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpdateBdsMetastoreConfigurationRequest,
+                                UpdateBdsMetastoreConfigurationResponse>,
+                        java.util.concurrent.Future<UpdateBdsMetastoreConfigurationResponse>>
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateBdsMetastoreConfigurationDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpdateBdsMetastoreConfigurationRequest,
+                    UpdateBdsMetastoreConfigurationResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,

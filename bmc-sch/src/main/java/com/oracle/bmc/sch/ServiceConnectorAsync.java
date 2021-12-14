@@ -98,6 +98,8 @@ public interface ServiceConnectorAsync extends AutoCloseable {
      * Creates a new service connector in the specified compartment.
      * A service connector is a logically defined flow for moving data from
      * a source service to a destination service in Oracle Cloud Infrastructure.
+     * For instructions, see
+     * [To create a service connector](https://docs.cloud.oracle.com/iaas/Content/service-connector-hub/managingconnectors.htm#create).
      * For general information about service connectors, see
      * [Service Connector Hub Overview](https://docs.cloud.oracle.com/iaas/Content/service-connector-hub/overview.htm).
      * <p>

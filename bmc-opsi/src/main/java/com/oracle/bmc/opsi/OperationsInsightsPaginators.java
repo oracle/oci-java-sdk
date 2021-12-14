@@ -31,6 +31,228 @@ public class OperationsInsightsPaginators {
     private final OperationsInsights client;
 
     /**
+     * Creates a new iterable which will iterate over the responses received from the listAwrHubs operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListAwrHubsResponse> listAwrHubsResponseIterator(
+            final ListAwrHubsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListAwrHubsRequest.Builder, ListAwrHubsRequest, ListAwrHubsResponse>(
+                new com.google.common.base.Supplier<ListAwrHubsRequest.Builder>() {
+                    @Override
+                    public ListAwrHubsRequest.Builder get() {
+                        return ListAwrHubsRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListAwrHubsResponse, String>() {
+                    @Override
+                    public String apply(ListAwrHubsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListAwrHubsRequest.Builder>,
+                        ListAwrHubsRequest>() {
+                    @Override
+                    public ListAwrHubsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListAwrHubsRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<ListAwrHubsRequest, ListAwrHubsResponse>() {
+                    @Override
+                    public ListAwrHubsResponse apply(ListAwrHubsRequest request) {
+                        return client.listAwrHubs(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.opsi.model.AwrHubSummary} objects
+     * contained in responses from the listAwrHubs operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.opsi.model.AwrHubSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.opsi.model.AwrHubSummary> listAwrHubsRecordIterator(
+            final ListAwrHubsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListAwrHubsRequest.Builder, ListAwrHubsRequest, ListAwrHubsResponse,
+                com.oracle.bmc.opsi.model.AwrHubSummary>(
+                new com.google.common.base.Supplier<ListAwrHubsRequest.Builder>() {
+                    @Override
+                    public ListAwrHubsRequest.Builder get() {
+                        return ListAwrHubsRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListAwrHubsResponse, String>() {
+                    @Override
+                    public String apply(ListAwrHubsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListAwrHubsRequest.Builder>,
+                        ListAwrHubsRequest>() {
+                    @Override
+                    public ListAwrHubsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListAwrHubsRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<ListAwrHubsRequest, ListAwrHubsResponse>() {
+                    @Override
+                    public ListAwrHubsResponse apply(ListAwrHubsRequest request) {
+                        return client.listAwrHubs(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListAwrHubsResponse,
+                        java.util.List<com.oracle.bmc.opsi.model.AwrHubSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.opsi.model.AwrHubSummary> apply(
+                            ListAwrHubsResponse response) {
+                        return response.getAwrHubSummaryCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the listAwrSnapshots operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListAwrSnapshotsResponse> listAwrSnapshotsResponseIterator(
+            final ListAwrSnapshotsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListAwrSnapshotsRequest.Builder, ListAwrSnapshotsRequest, ListAwrSnapshotsResponse>(
+                new com.google.common.base.Supplier<ListAwrSnapshotsRequest.Builder>() {
+                    @Override
+                    public ListAwrSnapshotsRequest.Builder get() {
+                        return ListAwrSnapshotsRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListAwrSnapshotsResponse, String>() {
+                    @Override
+                    public String apply(ListAwrSnapshotsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListAwrSnapshotsRequest.Builder>,
+                        ListAwrSnapshotsRequest>() {
+                    @Override
+                    public ListAwrSnapshotsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListAwrSnapshotsRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListAwrSnapshotsRequest, ListAwrSnapshotsResponse>() {
+                    @Override
+                    public ListAwrSnapshotsResponse apply(ListAwrSnapshotsRequest request) {
+                        return client.listAwrSnapshots(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.opsi.model.AwrSnapshotSummary} objects
+     * contained in responses from the listAwrSnapshots operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.opsi.model.AwrSnapshotSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.opsi.model.AwrSnapshotSummary> listAwrSnapshotsRecordIterator(
+            final ListAwrSnapshotsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListAwrSnapshotsRequest.Builder, ListAwrSnapshotsRequest, ListAwrSnapshotsResponse,
+                com.oracle.bmc.opsi.model.AwrSnapshotSummary>(
+                new com.google.common.base.Supplier<ListAwrSnapshotsRequest.Builder>() {
+                    @Override
+                    public ListAwrSnapshotsRequest.Builder get() {
+                        return ListAwrSnapshotsRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListAwrSnapshotsResponse, String>() {
+                    @Override
+                    public String apply(ListAwrSnapshotsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListAwrSnapshotsRequest.Builder>,
+                        ListAwrSnapshotsRequest>() {
+                    @Override
+                    public ListAwrSnapshotsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListAwrSnapshotsRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListAwrSnapshotsRequest, ListAwrSnapshotsResponse>() {
+                    @Override
+                    public ListAwrSnapshotsResponse apply(ListAwrSnapshotsRequest request) {
+                        return client.listAwrSnapshots(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListAwrSnapshotsResponse,
+                        java.util.List<com.oracle.bmc.opsi.model.AwrSnapshotSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.opsi.model.AwrSnapshotSummary> apply(
+                            ListAwrSnapshotsResponse response) {
+                        return response.getAwrSnapshotCollection().getItems();
+                    }
+                });
+    }
+
+    /**
      * Creates a new iterable which will iterate over the responses received from the listDatabaseConfigurations operation. This iterable
      * will fetch more data from the server as needed.
      *
@@ -1197,6 +1419,264 @@ public class OperationsInsightsPaginators {
                                     com.oracle.bmc.opsi.model.ImportableEnterpriseManagerEntity>
                             apply(ListImportableEnterpriseManagerEntitiesResponse response) {
                         return response.getImportableEnterpriseManagerEntityCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the listOperationsInsightsWarehouseUsers operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListOperationsInsightsWarehouseUsersResponse>
+            listOperationsInsightsWarehouseUsersResponseIterator(
+                    final ListOperationsInsightsWarehouseUsersRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListOperationsInsightsWarehouseUsersRequest.Builder,
+                ListOperationsInsightsWarehouseUsersRequest,
+                ListOperationsInsightsWarehouseUsersResponse>(
+                new com.google.common.base.Supplier<
+                        ListOperationsInsightsWarehouseUsersRequest.Builder>() {
+                    @Override
+                    public ListOperationsInsightsWarehouseUsersRequest.Builder get() {
+                        return ListOperationsInsightsWarehouseUsersRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListOperationsInsightsWarehouseUsersResponse, String>() {
+                    @Override
+                    public String apply(ListOperationsInsightsWarehouseUsersResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListOperationsInsightsWarehouseUsersRequest.Builder>,
+                        ListOperationsInsightsWarehouseUsersRequest>() {
+                    @Override
+                    public ListOperationsInsightsWarehouseUsersRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListOperationsInsightsWarehouseUsersRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListOperationsInsightsWarehouseUsersRequest,
+                        ListOperationsInsightsWarehouseUsersResponse>() {
+                    @Override
+                    public ListOperationsInsightsWarehouseUsersResponse apply(
+                            ListOperationsInsightsWarehouseUsersRequest request) {
+                        return client.listOperationsInsightsWarehouseUsers(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.opsi.model.OperationsInsightsWarehouseUserSummary} objects
+     * contained in responses from the listOperationsInsightsWarehouseUsers operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.opsi.model.OperationsInsightsWarehouseUserSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.opsi.model.OperationsInsightsWarehouseUserSummary>
+            listOperationsInsightsWarehouseUsersRecordIterator(
+                    final ListOperationsInsightsWarehouseUsersRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListOperationsInsightsWarehouseUsersRequest.Builder,
+                ListOperationsInsightsWarehouseUsersRequest,
+                ListOperationsInsightsWarehouseUsersResponse,
+                com.oracle.bmc.opsi.model.OperationsInsightsWarehouseUserSummary>(
+                new com.google.common.base.Supplier<
+                        ListOperationsInsightsWarehouseUsersRequest.Builder>() {
+                    @Override
+                    public ListOperationsInsightsWarehouseUsersRequest.Builder get() {
+                        return ListOperationsInsightsWarehouseUsersRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListOperationsInsightsWarehouseUsersResponse, String>() {
+                    @Override
+                    public String apply(ListOperationsInsightsWarehouseUsersResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListOperationsInsightsWarehouseUsersRequest.Builder>,
+                        ListOperationsInsightsWarehouseUsersRequest>() {
+                    @Override
+                    public ListOperationsInsightsWarehouseUsersRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListOperationsInsightsWarehouseUsersRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListOperationsInsightsWarehouseUsersRequest,
+                        ListOperationsInsightsWarehouseUsersResponse>() {
+                    @Override
+                    public ListOperationsInsightsWarehouseUsersResponse apply(
+                            ListOperationsInsightsWarehouseUsersRequest request) {
+                        return client.listOperationsInsightsWarehouseUsers(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListOperationsInsightsWarehouseUsersResponse,
+                        java.util.List<
+                                com.oracle.bmc.opsi.model
+                                        .OperationsInsightsWarehouseUserSummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.opsi.model
+                                            .OperationsInsightsWarehouseUserSummary>
+                            apply(ListOperationsInsightsWarehouseUsersResponse response) {
+                        return response.getOperationsInsightsWarehouseUserSummaryCollection()
+                                .getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the listOperationsInsightsWarehouses operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListOperationsInsightsWarehousesResponse>
+            listOperationsInsightsWarehousesResponseIterator(
+                    final ListOperationsInsightsWarehousesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListOperationsInsightsWarehousesRequest.Builder,
+                ListOperationsInsightsWarehousesRequest, ListOperationsInsightsWarehousesResponse>(
+                new com.google.common.base.Supplier<
+                        ListOperationsInsightsWarehousesRequest.Builder>() {
+                    @Override
+                    public ListOperationsInsightsWarehousesRequest.Builder get() {
+                        return ListOperationsInsightsWarehousesRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListOperationsInsightsWarehousesResponse, String>() {
+                    @Override
+                    public String apply(ListOperationsInsightsWarehousesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListOperationsInsightsWarehousesRequest.Builder>,
+                        ListOperationsInsightsWarehousesRequest>() {
+                    @Override
+                    public ListOperationsInsightsWarehousesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListOperationsInsightsWarehousesRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListOperationsInsightsWarehousesRequest,
+                        ListOperationsInsightsWarehousesResponse>() {
+                    @Override
+                    public ListOperationsInsightsWarehousesResponse apply(
+                            ListOperationsInsightsWarehousesRequest request) {
+                        return client.listOperationsInsightsWarehouses(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.opsi.model.OperationsInsightsWarehouseSummary} objects
+     * contained in responses from the listOperationsInsightsWarehouses operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.opsi.model.OperationsInsightsWarehouseSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.opsi.model.OperationsInsightsWarehouseSummary>
+            listOperationsInsightsWarehousesRecordIterator(
+                    final ListOperationsInsightsWarehousesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListOperationsInsightsWarehousesRequest.Builder,
+                ListOperationsInsightsWarehousesRequest, ListOperationsInsightsWarehousesResponse,
+                com.oracle.bmc.opsi.model.OperationsInsightsWarehouseSummary>(
+                new com.google.common.base.Supplier<
+                        ListOperationsInsightsWarehousesRequest.Builder>() {
+                    @Override
+                    public ListOperationsInsightsWarehousesRequest.Builder get() {
+                        return ListOperationsInsightsWarehousesRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListOperationsInsightsWarehousesResponse, String>() {
+                    @Override
+                    public String apply(ListOperationsInsightsWarehousesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListOperationsInsightsWarehousesRequest.Builder>,
+                        ListOperationsInsightsWarehousesRequest>() {
+                    @Override
+                    public ListOperationsInsightsWarehousesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListOperationsInsightsWarehousesRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListOperationsInsightsWarehousesRequest,
+                        ListOperationsInsightsWarehousesResponse>() {
+                    @Override
+                    public ListOperationsInsightsWarehousesResponse apply(
+                            ListOperationsInsightsWarehousesRequest request) {
+                        return client.listOperationsInsightsWarehouses(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListOperationsInsightsWarehousesResponse,
+                        java.util.List<
+                                com.oracle.bmc.opsi.model.OperationsInsightsWarehouseSummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.opsi.model.OperationsInsightsWarehouseSummary>
+                            apply(ListOperationsInsightsWarehousesResponse response) {
+                        return response.getOperationsInsightsWarehouseSummaryCollection()
+                                .getItems();
                     }
                 });
     }

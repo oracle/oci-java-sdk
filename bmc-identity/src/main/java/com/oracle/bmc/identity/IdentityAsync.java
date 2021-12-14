@@ -446,6 +446,23 @@ public interface IdentityAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Creates a new DB credential for the specified user.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateDbCredentialResponse> createDbCredential(
+            CreateDbCredentialRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            CreateDbCredentialRequest, CreateDbCredentialResponse>
+                    handler);
+
+    /**
      * Creates a new domain in the tenancy with domain home in {@code homeRegion}. This is an asynchronous call - where, at start,
      * {@code lifecycleState} of this domain is set to CREATING and {@code lifecycleDetails} to UPDATING. On domain creation completion
      * this Domain's {@code lifecycleState} will be set to ACTIVE and {@code lifecycleDetails} to null.
@@ -1036,6 +1053,23 @@ public interface IdentityAsync extends AutoCloseable {
             DeleteCustomerSecretKeyRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             DeleteCustomerSecretKeyRequest, DeleteCustomerSecretKeyResponse>
+                    handler);
+
+    /**
+     * Deletes the specified DB credential for the specified user.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteDbCredentialResponse> deleteDbCredential(
+            DeleteDbCredentialRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            DeleteDbCredentialRequest, DeleteDbCredentialResponse>
                     handler);
 
     /**
@@ -1944,6 +1978,23 @@ public interface IdentityAsync extends AutoCloseable {
             ListCustomerSecretKeysRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             ListCustomerSecretKeysRequest, ListCustomerSecretKeysResponse>
+                    handler);
+
+    /**
+     * Lists the DB credentials for the specified user. The returned object contains the credential's OCID
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListDbCredentialsResponse> listDbCredentials(
+            ListDbCredentialsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListDbCredentialsRequest, ListDbCredentialsResponse>
                     handler);
 
     /**

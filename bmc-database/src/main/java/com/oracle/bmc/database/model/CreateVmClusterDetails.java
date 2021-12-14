@@ -64,6 +64,15 @@ public class CreateVmClusterDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("ocpuCount")
+        private Float ocpuCount;
+
+        public Builder ocpuCount(Float ocpuCount) {
+            this.ocpuCount = ocpuCount;
+            this.__explicitlySet__.add("ocpuCount");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("memorySizeInGBs")
         private Integer memorySizeInGBs;
 
@@ -88,6 +97,15 @@ public class CreateVmClusterDetails {
         public Builder dataStorageSizeInTBs(Double dataStorageSizeInTBs) {
             this.dataStorageSizeInTBs = dataStorageSizeInTBs;
             this.__explicitlySet__.add("dataStorageSizeInTBs");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("dataStorageSizeInGBs")
+        private Double dataStorageSizeInGBs;
+
+        public Builder dataStorageSizeInGBs(Double dataStorageSizeInGBs) {
+            this.dataStorageSizeInGBs = dataStorageSizeInGBs;
+            this.__explicitlySet__.add("dataStorageSizeInGBs");
             return this;
         }
 
@@ -192,9 +210,11 @@ public class CreateVmClusterDetails {
                             displayName,
                             exadataInfrastructureId,
                             cpuCoreCount,
+                            ocpuCount,
                             memorySizeInGBs,
                             dbNodeStorageSizeInGBs,
                             dataStorageSizeInTBs,
+                            dataStorageSizeInGBs,
                             sshPublicKeys,
                             vmClusterNetworkId,
                             licenseModel,
@@ -216,9 +236,11 @@ public class CreateVmClusterDetails {
                             .displayName(o.getDisplayName())
                             .exadataInfrastructureId(o.getExadataInfrastructureId())
                             .cpuCoreCount(o.getCpuCoreCount())
+                            .ocpuCount(o.getOcpuCount())
                             .memorySizeInGBs(o.getMemorySizeInGBs())
                             .dbNodeStorageSizeInGBs(o.getDbNodeStorageSizeInGBs())
                             .dataStorageSizeInTBs(o.getDataStorageSizeInTBs())
+                            .dataStorageSizeInGBs(o.getDataStorageSizeInGBs())
                             .sshPublicKeys(o.getSshPublicKeys())
                             .vmClusterNetworkId(o.getVmClusterNetworkId())
                             .licenseModel(o.getLicenseModel())
@@ -267,6 +289,12 @@ public class CreateVmClusterDetails {
     Integer cpuCoreCount;
 
     /**
+     * The number of OCPU cores to enable for the VM cluster. Only 1 decimal place is allowed for the fractional part.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("ocpuCount")
+    Float ocpuCount;
+
+    /**
      * The memory to be allocated in GBs.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("memorySizeInGBs")
@@ -283,6 +311,12 @@ public class CreateVmClusterDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dataStorageSizeInTBs")
     Double dataStorageSizeInTBs;
+
+    /**
+     * The data disk group size to be allocated in GBs.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("dataStorageSizeInGBs")
+    Double dataStorageSizeInGBs;
 
     /**
      * The public key portion of one or more key pairs used for SSH access to the VM cluster.

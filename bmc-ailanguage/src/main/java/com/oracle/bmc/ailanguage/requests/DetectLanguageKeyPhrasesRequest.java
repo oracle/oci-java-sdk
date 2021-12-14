@@ -23,8 +23,6 @@ public class DetectLanguageKeyPhrasesRequest
 
     /**
      * The details to make keyPhrase detect call.
-     *  Example: {@code {"text": "If an emerging growth company, indicate by check mark if the registrant has elected not
-     *                to use the extended transition period for complying"}}
      *
      */
     private com.oracle.bmc.ailanguage.model.DetectLanguageKeyPhrasesDetails

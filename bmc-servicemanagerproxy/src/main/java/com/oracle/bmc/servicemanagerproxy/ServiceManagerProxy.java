@@ -8,7 +8,9 @@ import com.oracle.bmc.servicemanagerproxy.requests.*;
 import com.oracle.bmc.servicemanagerproxy.responses.*;
 
 /**
- * API to manage Service manager proxy.
+ * Use the Service Manager Proxy API to obtain information about SaaS environments provisioned by Service Manager.
+ * You can get information such as service types and service environment URLs.
+ *
  * This service client uses CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER for all the operations by default if no circuit breaker configuration is defined by the user.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210914")
@@ -47,7 +49,8 @@ public interface ServiceManagerProxy extends AutoCloseable {
     void setRegion(String regionId);
 
     /**
-     * Gets details of the service environment specified by the serviceEnvironmentId.
+     * Get the detailed information for a specific service environment.
+     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -59,9 +62,8 @@ public interface ServiceManagerProxy extends AutoCloseable {
     GetServiceEnvironmentResponse getServiceEnvironment(GetServiceEnvironmentRequest request);
 
     /**
-     * List details of environments which the service is authorized to view.
-     * This includes the service instance endpoints and service definition
-     * details.
+     * List the details of Software as a Service (SaaS) environments provisioned by Service Manager.
+     * Information includes the service instance endpoints and service definition details.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation

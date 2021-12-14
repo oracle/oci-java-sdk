@@ -53,12 +53,22 @@ public class ApiSpecificationRequestPolicies {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("mutualTls")
+        private MutualTlsDetails mutualTls;
+
+        public Builder mutualTls(MutualTlsDetails mutualTls) {
+            this.mutualTls = mutualTls;
+            this.__explicitlySet__.add("mutualTls");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ApiSpecificationRequestPolicies build() {
             ApiSpecificationRequestPolicies __instance__ =
-                    new ApiSpecificationRequestPolicies(authentication, rateLimiting, cors);
+                    new ApiSpecificationRequestPolicies(
+                            authentication, rateLimiting, cors, mutualTls);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -68,7 +78,8 @@ public class ApiSpecificationRequestPolicies {
             Builder copiedBuilder =
                     authentication(o.getAuthentication())
                             .rateLimiting(o.getRateLimiting())
-                            .cors(o.getCors());
+                            .cors(o.getCors())
+                            .mutualTls(o.getMutualTls());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -90,6 +101,9 @@ public class ApiSpecificationRequestPolicies {
 
     @com.fasterxml.jackson.annotation.JsonProperty("cors")
     CorsPolicy cors;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("mutualTls")
+    MutualTlsDetails mutualTls;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

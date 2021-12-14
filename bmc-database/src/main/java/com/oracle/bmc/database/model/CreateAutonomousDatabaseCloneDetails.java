@@ -316,6 +316,16 @@ public class CreateAutonomousDatabaseCloneDetails extends CreateAutonomousDataba
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("scheduledOperations")
+        private java.util.List<ScheduledOperationDetails> scheduledOperations;
+
+        public Builder scheduledOperations(
+                java.util.List<ScheduledOperationDetails> scheduledOperations) {
+            this.scheduledOperations = scheduledOperations;
+            this.__explicitlySet__.add("scheduledOperations");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("sourceId")
         private String sourceId;
 
@@ -371,6 +381,7 @@ public class CreateAutonomousDatabaseCloneDetails extends CreateAutonomousDataba
                             customerContacts,
                             isMtlsConnectionRequired,
                             autonomousMaintenanceScheduleType,
+                            scheduledOperations,
                             sourceId,
                             cloneType);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
@@ -413,6 +424,7 @@ public class CreateAutonomousDatabaseCloneDetails extends CreateAutonomousDataba
                             .isMtlsConnectionRequired(o.getIsMtlsConnectionRequired())
                             .autonomousMaintenanceScheduleType(
                                     o.getAutonomousMaintenanceScheduleType())
+                            .scheduledOperations(o.getScheduledOperations())
                             .sourceId(o.getSourceId())
                             .cloneType(o.getCloneType());
 
@@ -461,6 +473,7 @@ public class CreateAutonomousDatabaseCloneDetails extends CreateAutonomousDataba
             java.util.List<CustomerContact> customerContacts,
             Boolean isMtlsConnectionRequired,
             AutonomousMaintenanceScheduleType autonomousMaintenanceScheduleType,
+            java.util.List<ScheduledOperationDetails> scheduledOperations,
             String sourceId,
             CloneType cloneType) {
         super(
@@ -494,7 +507,8 @@ public class CreateAutonomousDatabaseCloneDetails extends CreateAutonomousDataba
                 dbVersion,
                 customerContacts,
                 isMtlsConnectionRequired,
-                autonomousMaintenanceScheduleType);
+                autonomousMaintenanceScheduleType,
+                scheduledOperations);
         this.sourceId = sourceId;
         this.cloneType = cloneType;
     }

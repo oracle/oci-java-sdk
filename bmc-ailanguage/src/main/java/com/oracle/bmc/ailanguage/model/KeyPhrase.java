@@ -5,7 +5,7 @@
 package com.oracle.bmc.ailanguage.model;
 
 /**
- * Key phrase and score for the given text.
+ * Key phrase for the given text.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -68,13 +68,15 @@ public class KeyPhrase {
     }
 
     /**
-     * Key phrase of the the given text.
+     * Key phrase exreacted from given text.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("text")
     String text;
 
     /**
-     * Score of the given key phrase.
+     * Score or confidence of the key phrase.
+     * Example: {@code 0.9999856066867399}
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("score")
     Double score;

@@ -88,6 +88,15 @@ public class TermRelationship {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("relatedTermGlossaryKey")
+        private String relatedTermGlossaryKey;
+
+        public Builder relatedTermGlossaryKey(String relatedTermGlossaryKey) {
+            this.relatedTermGlossaryKey = relatedTermGlossaryKey;
+            this.__explicitlySet__.add("relatedTermGlossaryKey");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("uri")
         private String uri;
 
@@ -133,6 +142,15 @@ public class TermRelationship {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("parentTermGlossaryKey")
+        private String parentTermGlossaryKey;
+
+        public Builder parentTermGlossaryKey(String parentTermGlossaryKey) {
+            this.parentTermGlossaryKey = parentTermGlossaryKey;
+            this.__explicitlySet__.add("parentTermGlossaryKey");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
@@ -164,11 +182,13 @@ public class TermRelationship {
                             relatedTermDisplayName,
                             relatedTermDescription,
                             relatedTermPath,
+                            relatedTermGlossaryKey,
                             uri,
                             parentTermKey,
                             parentTermDisplayName,
                             parentTermDescription,
                             parentTermPath,
+                            parentTermGlossaryKey,
                             timeCreated,
                             lifecycleState);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
@@ -185,11 +205,13 @@ public class TermRelationship {
                             .relatedTermDisplayName(o.getRelatedTermDisplayName())
                             .relatedTermDescription(o.getRelatedTermDescription())
                             .relatedTermPath(o.getRelatedTermPath())
+                            .relatedTermGlossaryKey(o.getRelatedTermGlossaryKey())
                             .uri(o.getUri())
                             .parentTermKey(o.getParentTermKey())
                             .parentTermDisplayName(o.getParentTermDisplayName())
                             .parentTermDescription(o.getParentTermDescription())
                             .parentTermPath(o.getParentTermPath())
+                            .parentTermGlossaryKey(o.getParentTermGlossaryKey())
                             .timeCreated(o.getTimeCreated())
                             .lifecycleState(o.getLifecycleState());
 
@@ -250,6 +272,12 @@ public class TermRelationship {
     String relatedTermPath;
 
     /**
+     * Glossary key of the related term.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("relatedTermGlossaryKey")
+    String relatedTermGlossaryKey;
+
+    /**
      * URI to the term relationship instance in the API.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("uri")
@@ -278,6 +306,12 @@ public class TermRelationship {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("parentTermPath")
     String parentTermPath;
+
+    /**
+     * Glossary key of the parent term.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("parentTermGlossaryKey")
+    String parentTermGlossaryKey;
 
     /**
      * The date and time the term relationship was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).

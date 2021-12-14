@@ -316,6 +316,16 @@ public class CreateAutonomousDatabaseFromBackupDetails extends CreateAutonomousD
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("scheduledOperations")
+        private java.util.List<ScheduledOperationDetails> scheduledOperations;
+
+        public Builder scheduledOperations(
+                java.util.List<ScheduledOperationDetails> scheduledOperations) {
+            this.scheduledOperations = scheduledOperations;
+            this.__explicitlySet__.add("scheduledOperations");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("autonomousDatabaseBackupId")
         private String autonomousDatabaseBackupId;
 
@@ -371,6 +381,7 @@ public class CreateAutonomousDatabaseFromBackupDetails extends CreateAutonomousD
                             customerContacts,
                             isMtlsConnectionRequired,
                             autonomousMaintenanceScheduleType,
+                            scheduledOperations,
                             autonomousDatabaseBackupId,
                             cloneType);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
@@ -413,6 +424,7 @@ public class CreateAutonomousDatabaseFromBackupDetails extends CreateAutonomousD
                             .isMtlsConnectionRequired(o.getIsMtlsConnectionRequired())
                             .autonomousMaintenanceScheduleType(
                                     o.getAutonomousMaintenanceScheduleType())
+                            .scheduledOperations(o.getScheduledOperations())
                             .autonomousDatabaseBackupId(o.getAutonomousDatabaseBackupId())
                             .cloneType(o.getCloneType());
 
@@ -461,6 +473,7 @@ public class CreateAutonomousDatabaseFromBackupDetails extends CreateAutonomousD
             java.util.List<CustomerContact> customerContacts,
             Boolean isMtlsConnectionRequired,
             AutonomousMaintenanceScheduleType autonomousMaintenanceScheduleType,
+            java.util.List<ScheduledOperationDetails> scheduledOperations,
             String autonomousDatabaseBackupId,
             CloneType cloneType) {
         super(
@@ -494,7 +507,8 @@ public class CreateAutonomousDatabaseFromBackupDetails extends CreateAutonomousD
                 dbVersion,
                 customerContacts,
                 isMtlsConnectionRequired,
-                autonomousMaintenanceScheduleType);
+                autonomousMaintenanceScheduleType,
+                scheduledOperations);
         this.autonomousDatabaseBackupId = autonomousDatabaseBackupId;
         this.cloneType = cloneType;
     }

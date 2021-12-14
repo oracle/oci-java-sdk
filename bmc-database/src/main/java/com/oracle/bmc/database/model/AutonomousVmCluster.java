@@ -126,6 +126,15 @@ public class AutonomousVmCluster {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("ocpusEnabled")
+        private Float ocpusEnabled;
+
+        public Builder ocpusEnabled(Float ocpusEnabled) {
+            this.ocpusEnabled = ocpusEnabled;
+            this.__explicitlySet__.add("ocpusEnabled");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("availableCpus")
         private Integer availableCpus;
 
@@ -159,6 +168,15 @@ public class AutonomousVmCluster {
         public Builder dataStorageSizeInTBs(Double dataStorageSizeInTBs) {
             this.dataStorageSizeInTBs = dataStorageSizeInTBs;
             this.__explicitlySet__.add("dataStorageSizeInTBs");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("dataStorageSizeInGBs")
+        private Double dataStorageSizeInGBs;
+
+        public Builder dataStorageSizeInGBs(Double dataStorageSizeInGBs) {
+            this.dataStorageSizeInGBs = dataStorageSizeInGBs;
+            this.__explicitlySet__.add("dataStorageSizeInGBs");
             return this;
         }
 
@@ -216,10 +234,12 @@ public class AutonomousVmCluster {
                             vmClusterNetworkId,
                             isLocalBackupEnabled,
                             cpusEnabled,
+                            ocpusEnabled,
                             availableCpus,
                             memorySizeInGBs,
                             dbNodeStorageSizeInGBs,
                             dataStorageSizeInTBs,
+                            dataStorageSizeInGBs,
                             availableDataStorageSizeInTBs,
                             licenseModel,
                             freeformTags,
@@ -242,10 +262,12 @@ public class AutonomousVmCluster {
                             .vmClusterNetworkId(o.getVmClusterNetworkId())
                             .isLocalBackupEnabled(o.getIsLocalBackupEnabled())
                             .cpusEnabled(o.getCpusEnabled())
+                            .ocpusEnabled(o.getOcpusEnabled())
                             .availableCpus(o.getAvailableCpus())
                             .memorySizeInGBs(o.getMemorySizeInGBs())
                             .dbNodeStorageSizeInGBs(o.getDbNodeStorageSizeInGBs())
                             .dataStorageSizeInTBs(o.getDataStorageSizeInTBs())
+                            .dataStorageSizeInGBs(o.getDataStorageSizeInGBs())
                             .availableDataStorageSizeInTBs(o.getAvailableDataStorageSizeInTBs())
                             .licenseModel(o.getLicenseModel())
                             .freeformTags(o.getFreeformTags())
@@ -381,6 +403,12 @@ public class AutonomousVmCluster {
     Integer cpusEnabled;
 
     /**
+     * The number of enabled OCPU cores.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("ocpusEnabled")
+    Float ocpusEnabled;
+
+    /**
      * The numnber of CPU cores available.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("availableCpus")
@@ -403,6 +431,12 @@ public class AutonomousVmCluster {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dataStorageSizeInTBs")
     Double dataStorageSizeInTBs;
+
+    /**
+     * The total data storage allocated in GBs
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("dataStorageSizeInGBs")
+    Double dataStorageSizeInGBs;
 
     /**
      * The data storage available in TBs

@@ -100,7 +100,7 @@ public class ListAggregatedPhysicalEntitiesRequest
     /**
      * A filter to return only resources that match display name pattern given. The match is not case sensitive.
      * For Example : /folders?displayNameContains=Cu.*
-     * The above would match all folders with display name that starts with "Cu".
+     * The above would match all folders with display name that starts with "Cu" or has the pattern "Cu" anywhere in between.
      *
      */
     private String displayNameContains;
@@ -198,6 +198,11 @@ public class ListAggregatedPhysicalEntitiesRequest
     private String page;
 
     /**
+     * Indicates whether the properties map will be provided in the response.
+     */
+    private Boolean isIncludeProperties;
+
+    /**
      * The client request ID for tracing.
      */
     private String opcRequestId;
@@ -267,6 +272,7 @@ public class ListAggregatedPhysicalEntitiesRequest
             sortOrder(o.getSortOrder());
             limit(o.getLimit());
             page(o.getPage());
+            isIncludeProperties(o.getIsIncludeProperties());
             opcRequestId(o.getOpcRequestId());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());

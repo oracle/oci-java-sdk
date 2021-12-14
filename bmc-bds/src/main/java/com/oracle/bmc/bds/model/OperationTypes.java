@@ -23,6 +23,14 @@ public enum OperationTypes {
     RestartNode("RESTART_NODE"),
     AutoscaleConfig("AUTOSCALE_CONFIG"),
     AutoscaleRun("AUTOSCALE_RUN"),
+    CreateApiKey("CREATE_API_KEY"),
+    DeleteApiKey("DELETE_API_KEY"),
+    TestObjectStoreConnection("TEST_OBJECT_STORE_CONNECTION"),
+    CreateMetastoreConfig("CREATE_METASTORE_CONFIG"),
+    DeleteMetastoreConfig("DELETE_METASTORE_CONFIG"),
+    UpdateMetastoreConfig("UPDATE_METASTORE_CONFIG"),
+    ActivateMetastoreConfig("ACTIVATE_METASTORE_CONFIG"),
+    TestMetastoreConfig("TEST_METASTORE_CONFIG"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this

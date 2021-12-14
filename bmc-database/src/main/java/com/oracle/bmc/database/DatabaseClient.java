@@ -797,6 +797,46 @@ public class DatabaseClient implements Database {
     }
 
     @Override
+    public ChangeCloudAutonomousVmClusterCompartmentResponse
+            changeCloudAutonomousVmClusterCompartment(
+                    ChangeCloudAutonomousVmClusterCompartmentRequest request) {
+        LOG.trace("Called changeCloudAutonomousVmClusterCompartment");
+        final ChangeCloudAutonomousVmClusterCompartmentRequest interceptedRequest =
+                ChangeCloudAutonomousVmClusterCompartmentConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangeCloudAutonomousVmClusterCompartmentConverter.fromRequest(
+                        client, interceptedRequest);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        ChangeCloudAutonomousVmClusterCompartmentResponse>
+                transformer = ChangeCloudAutonomousVmClusterCompartmentConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getChangeCloudAutonomousVmClusterCompartmentDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public ChangeCloudExadataInfrastructureCompartmentResponse
             changeCloudExadataInfrastructureCompartment(
                     ChangeCloudExadataInfrastructureCompartmentRequest request) {
@@ -1529,6 +1569,43 @@ public class DatabaseClient implements Database {
                                         client.post(
                                                 ib,
                                                 retriedRequest.getCreateBackupDestinationDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public CreateCloudAutonomousVmClusterResponse createCloudAutonomousVmCluster(
+            CreateCloudAutonomousVmClusterRequest request) {
+        LOG.trace("Called createCloudAutonomousVmCluster");
+        final CreateCloudAutonomousVmClusterRequest interceptedRequest =
+                CreateCloudAutonomousVmClusterConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateCloudAutonomousVmClusterConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, CreateCloudAutonomousVmClusterResponse>
+                transformer = CreateCloudAutonomousVmClusterConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getCreateCloudAutonomousVmClusterDetails(),
                                                 retriedRequest);
                                 return transformer.apply(response);
                             });
@@ -2276,6 +2353,38 @@ public class DatabaseClient implements Database {
                 DeleteBackupDestinationConverter.fromRequest(client, interceptedRequest);
         com.google.common.base.Function<javax.ws.rs.core.Response, DeleteBackupDestinationResponse>
                 transformer = DeleteBackupDestinationConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.delete(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public DeleteCloudAutonomousVmClusterResponse deleteCloudAutonomousVmCluster(
+            DeleteCloudAutonomousVmClusterRequest request) {
+        LOG.trace("Called deleteCloudAutonomousVmCluster");
+        final DeleteCloudAutonomousVmClusterRequest interceptedRequest =
+                DeleteCloudAutonomousVmClusterConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteCloudAutonomousVmClusterConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, DeleteCloudAutonomousVmClusterResponse>
+                transformer = DeleteCloudAutonomousVmClusterConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
@@ -4102,6 +4211,37 @@ public class DatabaseClient implements Database {
     }
 
     @Override
+    public GetCloudAutonomousVmClusterResponse getCloudAutonomousVmCluster(
+            GetCloudAutonomousVmClusterRequest request) {
+        LOG.trace("Called getCloudAutonomousVmCluster");
+        final GetCloudAutonomousVmClusterRequest interceptedRequest =
+                GetCloudAutonomousVmClusterConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetCloudAutonomousVmClusterConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, GetCloudAutonomousVmClusterResponse>
+                transformer = GetCloudAutonomousVmClusterConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public GetCloudExadataInfrastructureResponse getCloudExadataInfrastructure(
             GetCloudExadataInfrastructureRequest request) {
         LOG.trace("Called getCloudExadataInfrastructure");
@@ -5638,6 +5778,37 @@ public class DatabaseClient implements Database {
                 ListBackupsConverter.fromRequest(client, interceptedRequest);
         com.google.common.base.Function<javax.ws.rs.core.Response, ListBackupsResponse>
                 transformer = ListBackupsConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ListCloudAutonomousVmClustersResponse listCloudAutonomousVmClusters(
+            ListCloudAutonomousVmClustersRequest request) {
+        LOG.trace("Called listCloudAutonomousVmClusters");
+        final ListCloudAutonomousVmClustersRequest interceptedRequest =
+                ListCloudAutonomousVmClustersConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListCloudAutonomousVmClustersConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ListCloudAutonomousVmClustersResponse>
+                transformer = ListCloudAutonomousVmClustersConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
@@ -7298,6 +7469,74 @@ public class DatabaseClient implements Database {
     }
 
     @Override
+    public RotateCloudAutonomousVmClusterOrdsCertsResponse rotateCloudAutonomousVmClusterOrdsCerts(
+            RotateCloudAutonomousVmClusterOrdsCertsRequest request) {
+        LOG.trace("Called rotateCloudAutonomousVmClusterOrdsCerts");
+        final RotateCloudAutonomousVmClusterOrdsCertsRequest interceptedRequest =
+                RotateCloudAutonomousVmClusterOrdsCertsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                RotateCloudAutonomousVmClusterOrdsCertsConverter.fromRequest(
+                        client, interceptedRequest);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, RotateCloudAutonomousVmClusterOrdsCertsResponse>
+                transformer = RotateCloudAutonomousVmClusterOrdsCertsConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public RotateCloudAutonomousVmClusterSslCertsResponse rotateCloudAutonomousVmClusterSslCerts(
+            RotateCloudAutonomousVmClusterSslCertsRequest request) {
+        LOG.trace("Called rotateCloudAutonomousVmClusterSslCerts");
+        final RotateCloudAutonomousVmClusterSslCertsRequest interceptedRequest =
+                RotateCloudAutonomousVmClusterSslCertsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                RotateCloudAutonomousVmClusterSslCertsConverter.fromRequest(
+                        client, interceptedRequest);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, RotateCloudAutonomousVmClusterSslCertsResponse>
+                transformer = RotateCloudAutonomousVmClusterSslCertsConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public RotateOrdsCertsResponse rotateOrdsCerts(RotateOrdsCertsRequest request) {
         LOG.trace("Called rotateOrdsCerts");
         final RotateOrdsCertsRequest interceptedRequest =
@@ -8001,6 +8240,42 @@ public class DatabaseClient implements Database {
                                         client.put(
                                                 ib,
                                                 retriedRequest.getUpdateBackupDestinationDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public UpdateCloudAutonomousVmClusterResponse updateCloudAutonomousVmCluster(
+            UpdateCloudAutonomousVmClusterRequest request) {
+        LOG.trace("Called updateCloudAutonomousVmCluster");
+        final UpdateCloudAutonomousVmClusterRequest interceptedRequest =
+                UpdateCloudAutonomousVmClusterConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateCloudAutonomousVmClusterConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, UpdateCloudAutonomousVmClusterResponse>
+                transformer = UpdateCloudAutonomousVmClusterConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.put(
+                                                ib,
+                                                retriedRequest
+                                                        .getUpdateCloudAutonomousVmClusterDetails(),
                                                 retriedRequest);
                                 return transformer.apply(response);
                             });

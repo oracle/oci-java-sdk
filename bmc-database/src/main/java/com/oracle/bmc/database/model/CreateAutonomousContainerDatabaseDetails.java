@@ -94,6 +94,15 @@ public class CreateAutonomousContainerDatabaseDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("peerCloudAutonomousVmClusterId")
+        private String peerCloudAutonomousVmClusterId;
+
+        public Builder peerCloudAutonomousVmClusterId(String peerCloudAutonomousVmClusterId) {
+            this.peerCloudAutonomousVmClusterId = peerCloudAutonomousVmClusterId;
+            this.__explicitlySet__.add("peerCloudAutonomousVmClusterId");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("peerAutonomousVmClusterId")
         private String peerAutonomousVmClusterId;
 
@@ -144,6 +153,15 @@ public class CreateAutonomousContainerDatabaseDetails {
         public Builder autonomousVmClusterId(String autonomousVmClusterId) {
             this.autonomousVmClusterId = autonomousVmClusterId;
             this.__explicitlySet__.add("autonomousVmClusterId");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("cloudAutonomousVmClusterId")
+        private String cloudAutonomousVmClusterId;
+
+        public Builder cloudAutonomousVmClusterId(String cloudAutonomousVmClusterId) {
+            this.cloudAutonomousVmClusterId = cloudAutonomousVmClusterId;
+            this.__explicitlySet__.add("cloudAutonomousVmClusterId");
             return this;
         }
 
@@ -260,11 +278,13 @@ public class CreateAutonomousContainerDatabaseDetails {
                             peerAutonomousExadataInfrastructureId,
                             peerAutonomousContainerDatabaseDisplayName,
                             protectionMode,
+                            peerCloudAutonomousVmClusterId,
                             peerAutonomousVmClusterId,
                             peerAutonomousContainerDatabaseCompartmentId,
                             peerAutonomousContainerDatabaseBackupConfig,
                             peerDbUniqueName,
                             autonomousVmClusterId,
+                            cloudAutonomousVmClusterId,
                             compartmentId,
                             patchModel,
                             maintenanceWindowDetails,
@@ -293,6 +313,7 @@ public class CreateAutonomousContainerDatabaseDetails {
                             .peerAutonomousContainerDatabaseDisplayName(
                                     o.getPeerAutonomousContainerDatabaseDisplayName())
                             .protectionMode(o.getProtectionMode())
+                            .peerCloudAutonomousVmClusterId(o.getPeerCloudAutonomousVmClusterId())
                             .peerAutonomousVmClusterId(o.getPeerAutonomousVmClusterId())
                             .peerAutonomousContainerDatabaseCompartmentId(
                                     o.getPeerAutonomousContainerDatabaseCompartmentId())
@@ -300,6 +321,7 @@ public class CreateAutonomousContainerDatabaseDetails {
                                     o.getPeerAutonomousContainerDatabaseBackupConfig())
                             .peerDbUniqueName(o.getPeerDbUniqueName())
                             .autonomousVmClusterId(o.getAutonomousVmClusterId())
+                            .cloudAutonomousVmClusterId(o.getCloudAutonomousVmClusterId())
                             .compartmentId(o.getCompartmentId())
                             .patchModel(o.getPatchModel())
                             .maintenanceWindowDetails(o.getMaintenanceWindowDetails())
@@ -442,6 +464,12 @@ public class CreateAutonomousContainerDatabaseDetails {
     ProtectionMode protectionMode;
 
     /**
+     * The OCID of the peer cloud Autonomous VM Cluster.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("peerCloudAutonomousVmClusterId")
+    String peerCloudAutonomousVmClusterId;
+
+    /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the peer Autonomous VM cluster for Autonomous Data Guard. Required to enable Data Guard.
      *
      **/
@@ -471,6 +499,12 @@ public class CreateAutonomousContainerDatabaseDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("autonomousVmClusterId")
     String autonomousVmClusterId;
+
+    /**
+     * The OCID of the cloud Autonomous VM Cluster.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("cloudAutonomousVmClusterId")
+    String cloudAutonomousVmClusterId;
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment containing the Autonomous Container Database.

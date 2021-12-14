@@ -5,7 +5,7 @@
 package com.oracle.bmc.ailanguage.model;
 
 /**
- * Aspect object.
+ * Sentiment aspect object.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -107,7 +107,7 @@ public class SentimentAspect {
     Integer offset;
 
     /**
-     * Length of text.
+     * Length of aspect text.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("length")
     Integer length;
@@ -125,8 +125,8 @@ public class SentimentAspect {
     String sentiment;
 
     /**
-     * Scores for each sentiment.
-     * Example: "{\\"positive\\": 1.0, \\"negative\\": 0.0}"
+     * Scores or confidences for each sentiment.
+     * Example: {@code {"positive": 1.0, "negative": 0.0}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("scores")

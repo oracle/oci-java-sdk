@@ -100,6 +100,14 @@ public class ListAggregatedPhysicalEntitiesConverter {
                                     request.getPage()));
         }
 
+        if (request.getIsIncludeProperties() != null) {
+            target =
+                    target.queryParam(
+                            "isIncludeProperties",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getIsIncludeProperties()));
+        }
+
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib = target.request();
 
         ib.accept(javax.ws.rs.core.MediaType.APPLICATION_JSON);

@@ -452,6 +452,12 @@ public class CreateAutonomousDatabaseBase {
     AutonomousMaintenanceScheduleType autonomousMaintenanceScheduleType;
 
     /**
+     * list of scheduled operations
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("scheduledOperations")
+    java.util.List<ScheduledOperationDetails> scheduledOperations;
+
+    /**
      * The source of the database: Use {@code NONE} for creating a new Autonomous Database. Use {@code DATABASE} for creating a new Autonomous Database by cloning an existing Autonomous Database.
      * <p>
      * For Autonomous Databases on [shared Exadata infrastructure](https://docs.cloud.oracle.com/Content/Database/Concepts/adboverview.htm#AEI), the following cloning options are available: Use {@code BACKUP_FROM_ID} for creating a new Autonomous Database from a specified backup. Use {@code BACKUP_FROM_TIMESTAMP} for creating a point-in-time Autonomous Database clone using backups. For more information, see [Cloning an Autonomous Database](https://docs.cloud.oracle.com/Content/Database/Tasks/adbcloning.htm).

@@ -498,6 +498,119 @@ public class IdentityPaginators {
     }
 
     /**
+     * Creates a new iterable which will iterate over the responses received from the listDbCredentials operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListDbCredentialsResponse> listDbCredentialsResponseIterator(
+            final ListDbCredentialsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListDbCredentialsRequest.Builder, ListDbCredentialsRequest,
+                ListDbCredentialsResponse>(
+                new com.google.common.base.Supplier<ListDbCredentialsRequest.Builder>() {
+                    @Override
+                    public ListDbCredentialsRequest.Builder get() {
+                        return ListDbCredentialsRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListDbCredentialsResponse, String>() {
+                    @Override
+                    public String apply(ListDbCredentialsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListDbCredentialsRequest.Builder>,
+                        ListDbCredentialsRequest>() {
+                    @Override
+                    public ListDbCredentialsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListDbCredentialsRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListDbCredentialsRequest, ListDbCredentialsResponse>() {
+                    @Override
+                    public ListDbCredentialsResponse apply(ListDbCredentialsRequest request) {
+                        return client.listDbCredentials(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.identity.model.DbCredentialSummary} objects
+     * contained in responses from the listDbCredentials operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.identity.model.DbCredentialSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.identity.model.DbCredentialSummary>
+            listDbCredentialsRecordIterator(final ListDbCredentialsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListDbCredentialsRequest.Builder, ListDbCredentialsRequest,
+                ListDbCredentialsResponse, com.oracle.bmc.identity.model.DbCredentialSummary>(
+                new com.google.common.base.Supplier<ListDbCredentialsRequest.Builder>() {
+                    @Override
+                    public ListDbCredentialsRequest.Builder get() {
+                        return ListDbCredentialsRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListDbCredentialsResponse, String>() {
+                    @Override
+                    public String apply(ListDbCredentialsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListDbCredentialsRequest.Builder>,
+                        ListDbCredentialsRequest>() {
+                    @Override
+                    public ListDbCredentialsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListDbCredentialsRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListDbCredentialsRequest, ListDbCredentialsResponse>() {
+                    @Override
+                    public ListDbCredentialsResponse apply(ListDbCredentialsRequest request) {
+                        return client.listDbCredentials(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListDbCredentialsResponse,
+                        java.util.List<com.oracle.bmc.identity.model.DbCredentialSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.identity.model.DbCredentialSummary> apply(
+                            ListDbCredentialsResponse response) {
+                        return response.getItems();
+                    }
+                });
+    }
+
+    /**
      * Creates a new iterable which will iterate over the responses received from the listDomains operation. This iterable
      * will fetch more data from the server as needed.
      *

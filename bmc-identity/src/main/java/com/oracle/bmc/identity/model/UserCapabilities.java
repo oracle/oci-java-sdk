@@ -60,6 +60,15 @@ public class UserCapabilities {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("canUseDbCredentials")
+        private Boolean canUseDbCredentials;
+
+        public Builder canUseDbCredentials(Boolean canUseDbCredentials) {
+            this.canUseDbCredentials = canUseDbCredentials;
+            this.__explicitlySet__.add("canUseDbCredentials");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("canUseCustomerSecretKeys")
         private Boolean canUseCustomerSecretKeys;
 
@@ -88,6 +97,7 @@ public class UserCapabilities {
                             canUseApiKeys,
                             canUseAuthTokens,
                             canUseSmtpCredentials,
+                            canUseDbCredentials,
                             canUseCustomerSecretKeys,
                             canUseOAuth2ClientCredentials);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
@@ -101,6 +111,7 @@ public class UserCapabilities {
                             .canUseApiKeys(o.getCanUseApiKeys())
                             .canUseAuthTokens(o.getCanUseAuthTokens())
                             .canUseSmtpCredentials(o.getCanUseSmtpCredentials())
+                            .canUseDbCredentials(o.getCanUseDbCredentials())
                             .canUseCustomerSecretKeys(o.getCanUseCustomerSecretKeys())
                             .canUseOAuth2ClientCredentials(o.getCanUseOAuth2ClientCredentials());
 
@@ -139,6 +150,13 @@ public class UserCapabilities {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("canUseSmtpCredentials")
     Boolean canUseSmtpCredentials;
+
+    /**
+     * Indicates if the user can use DB passwords.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("canUseDbCredentials")
+    Boolean canUseDbCredentials;
 
     /**
      * Indicates if the user can use SigV4 symmetric keys.

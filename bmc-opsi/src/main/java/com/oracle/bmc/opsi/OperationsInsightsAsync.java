@@ -136,6 +136,23 @@ public interface OperationsInsightsAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Create a AWR hub resource for the tenant in Operations Insights.
+     * This resource will be created in root compartment.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateAwrHubResponse> createAwrHub(
+            CreateAwrHubRequest request,
+            com.oracle.bmc.responses.AsyncHandler<CreateAwrHubRequest, CreateAwrHubResponse>
+                    handler);
+
+    /**
      * Create a Database Insight resource for a database in Operations Insights. The database will be enabled in Operations Insights. Database metric collection and analysis will be started.
      *
      *
@@ -206,6 +223,61 @@ public interface OperationsInsightsAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Create a Operations Insights Warehouse resource for the tenant in Operations Insights. New ADW will be provisioned for this tenant.
+     * There is only expected to be 1 warehouse per tenant. The warehouse is expected to be in the root compartment.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateOperationsInsightsWarehouseResponse>
+            createOperationsInsightsWarehouse(
+                    CreateOperationsInsightsWarehouseRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    CreateOperationsInsightsWarehouseRequest,
+                                    CreateOperationsInsightsWarehouseResponse>
+                            handler);
+
+    /**
+     * Create a Operations Insights Warehouse user resource for the tenant in Operations Insights.
+     * This resource will be created in root compartment.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateOperationsInsightsWarehouseUserResponse>
+            createOperationsInsightsWarehouseUser(
+                    CreateOperationsInsightsWarehouseUserRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    CreateOperationsInsightsWarehouseUserRequest,
+                                    CreateOperationsInsightsWarehouseUserResponse>
+                            handler);
+
+    /**
+     * Deletes an AWR hub.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteAwrHubResponse> deleteAwrHub(
+            DeleteAwrHubRequest request,
+            com.oracle.bmc.responses.AsyncHandler<DeleteAwrHubRequest, DeleteAwrHubResponse>
+                    handler);
+
+    /**
      * Deletes a database insight. The database insight will be deleted and cannot be enabled again.
      *
      * @param request The request object containing the details to send
@@ -272,6 +344,46 @@ public interface OperationsInsightsAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Deletes an Operations Insights Warehouse. There is only expected to be 1 warehouse per tenant.
+     * The warehouse is expected to be in the root compartment.
+     * User must delete AWR Hub resource for this warehouse before calling this operation.
+     * User must delete the warehouse users before calling this operation.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteOperationsInsightsWarehouseResponse>
+            deleteOperationsInsightsWarehouse(
+                    DeleteOperationsInsightsWarehouseRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    DeleteOperationsInsightsWarehouseRequest,
+                                    DeleteOperationsInsightsWarehouseResponse>
+                            handler);
+
+    /**
+     * Deletes an Operations Insights Warehouse User.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteOperationsInsightsWarehouseUserResponse>
+            deleteOperationsInsightsWarehouseUser(
+                    DeleteOperationsInsightsWarehouseUserRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    DeleteOperationsInsightsWarehouseUserRequest,
+                                    DeleteOperationsInsightsWarehouseUserResponse>
+                            handler);
+
+    /**
      * Disables a database in Operations Insights. Database metric collection and analysis will be stopped.
      *
      * @param request The request object containing the details to send
@@ -320,6 +432,24 @@ public interface OperationsInsightsAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Download the ADW wallet for Operations Insights Warehouse using which the Hub data is exposed.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<DownloadOperationsInsightsWarehouseWalletResponse>
+            downloadOperationsInsightsWarehouseWallet(
+                    DownloadOperationsInsightsWarehouseWalletRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    DownloadOperationsInsightsWarehouseWalletRequest,
+                                    DownloadOperationsInsightsWarehouseWalletResponse>
+                            handler);
+
+    /**
      * Enables a database in Operations Insights. Database metric collection and analysis will be started.
      *
      * @param request The request object containing the details to send
@@ -365,6 +495,37 @@ public interface OperationsInsightsAsync extends AutoCloseable {
             EnableHostInsightRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             EnableHostInsightRequest, EnableHostInsightResponse>
+                    handler);
+
+    /**
+     * Gets details of an AWR hub.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetAwrHubResponse> getAwrHub(
+            GetAwrHubRequest request,
+            com.oracle.bmc.responses.AsyncHandler<GetAwrHubRequest, GetAwrHubResponse> handler);
+
+    /**
+     * Gets the AWR report for the specified source database in the AWR hub. The difference between the timeGreaterThanOrEqualTo and timeLessThanOrEqualTo should not be greater than 7 days.
+     * Either beginSnapshotIdentifierGreaterThanOrEqualTo & endSnapshotIdentifierLessThanOrEqualTo params Or timeGreaterThanOrEqualTo & timeLessThanOrEqualTo params are required.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetAwrReportResponse> getAwrReport(
+            GetAwrReportRequest request,
+            com.oracle.bmc.responses.AsyncHandler<GetAwrReportRequest, GetAwrReportResponse>
                     handler);
 
     /**
@@ -429,6 +590,44 @@ public interface OperationsInsightsAsync extends AutoCloseable {
             GetHostInsightRequest request,
             com.oracle.bmc.responses.AsyncHandler<GetHostInsightRequest, GetHostInsightResponse>
                     handler);
+
+    /**
+     * Gets details of an Operations Insights Warehouse.
+     * There is only expected to be 1 warehouse per tenant. The warehouse is expected to be in the root compartment.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetOperationsInsightsWarehouseResponse>
+            getOperationsInsightsWarehouse(
+                    GetOperationsInsightsWarehouseRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    GetOperationsInsightsWarehouseRequest,
+                                    GetOperationsInsightsWarehouseResponse>
+                            handler);
+
+    /**
+     * Gets details of an Operations Insights Warehouse User.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetOperationsInsightsWarehouseUserResponse>
+            getOperationsInsightsWarehouseUser(
+                    GetOperationsInsightsWarehouseUserRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    GetOperationsInsightsWarehouseUserRequest,
+                                    GetOperationsInsightsWarehouseUserResponse>
+                            handler);
 
     /**
      * Gets the status of the work request with the given ID.
@@ -529,6 +728,23 @@ public interface OperationsInsightsAsync extends AutoCloseable {
                     handler);
 
     /**
+     * The SQL Stats endpoint takes in a JSON payload, persists it in Operations Insights ingest pipeline.
+     * Either databaseId or id must be specified.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<IngestSqlStatsResponse> ingestSqlStats(
+            IngestSqlStatsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<IngestSqlStatsRequest, IngestSqlStatsResponse>
+                    handler);
+
+    /**
      * The SqlText endpoint takes in a JSON payload, persists it in Operation Insights ingest pipeline.
      * Either databaseId or id must be specified.
      * Disclaimer: SQL text being uploaded explicitly via APIs is not masked. Any sensitive literals contained in the sqlFullText column should be masked prior to ingestion.
@@ -544,6 +760,38 @@ public interface OperationsInsightsAsync extends AutoCloseable {
     java.util.concurrent.Future<IngestSqlTextResponse> ingestSqlText(
             IngestSqlTextRequest request,
             com.oracle.bmc.responses.AsyncHandler<IngestSqlTextRequest, IngestSqlTextResponse>
+                    handler);
+
+    /**
+     * Gets a list of AWR hubs. Either compartmentId or id must be specified. All these resources are expected to be in root compartment.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListAwrHubsResponse> listAwrHubs(
+            ListAwrHubsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<ListAwrHubsRequest, ListAwrHubsResponse> handler);
+
+    /**
+     * Lists AWR snapshots for the specified source database in the AWR hub. The difference between the timeGreaterThanOrEqualTo and timeLessThanOrEqualTo should not exceed an elapsed range of 1 day.
+     * The timeGreaterThanOrEqualTo & timeLessThanOrEqualTo params are optional. If these params are not provided, by default last 1 day snapshots will be returned.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListAwrSnapshotsResponse> listAwrSnapshots(
+            ListAwrSnapshotsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<ListAwrSnapshotsRequest, ListAwrSnapshotsResponse>
                     handler);
 
     /**
@@ -728,6 +976,45 @@ public interface OperationsInsightsAsync extends AutoCloseable {
                             handler);
 
     /**
+     * Gets a list of Operations Insights Warehouse users. Either compartmentId or id must be specified. All these resources are expected to be in root compartment.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListOperationsInsightsWarehouseUsersResponse>
+            listOperationsInsightsWarehouseUsers(
+                    ListOperationsInsightsWarehouseUsersRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ListOperationsInsightsWarehouseUsersRequest,
+                                    ListOperationsInsightsWarehouseUsersResponse>
+                            handler);
+
+    /**
+     * Gets a list of Operations Insights warehouses. Either compartmentId or id must be specified.
+     * There is only expected to be 1 warehouse per tenant. The warehouse is expected to be in the root compartment.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListOperationsInsightsWarehousesResponse>
+            listOperationsInsightsWarehouses(
+                    ListOperationsInsightsWarehousesRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ListOperationsInsightsWarehousesRequest,
+                                    ListOperationsInsightsWarehousesResponse>
+                            handler);
+
+    /**
      * Query SQL Warehouse to list the plan xml for a given SQL execution plan. This returns a SqlPlanCollection object, but is currently limited to a single plan.
      * Either databaseId or id must be specified.
      *
@@ -825,6 +1112,42 @@ public interface OperationsInsightsAsync extends AutoCloseable {
     java.util.concurrent.Future<ListWorkRequestsResponse> listWorkRequests(
             ListWorkRequestsRequest request,
             com.oracle.bmc.responses.AsyncHandler<ListWorkRequestsRequest, ListWorkRequestsResponse>
+                    handler);
+
+    /**
+     * Rotate the ADW wallet for Operations Insights Warehouse using which the Hub data is exposed.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<RotateOperationsInsightsWarehouseWalletResponse>
+            rotateOperationsInsightsWarehouseWallet(
+                    RotateOperationsInsightsWarehouseWalletRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    RotateOperationsInsightsWarehouseWalletRequest,
+                                    RotateOperationsInsightsWarehouseWalletResponse>
+                            handler);
+
+    /**
+     * Gets a list of summary of AWR Sources.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<SummarizeAwrSourcesSummariesResponse> summarizeAwrSourcesSummaries(
+            SummarizeAwrSourcesSummariesRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            SummarizeAwrSourcesSummariesRequest,
+                            SummarizeAwrSourcesSummariesResponse>
                     handler);
 
     /**
@@ -1299,6 +1622,26 @@ public interface OperationsInsightsAsync extends AutoCloseable {
                             handler);
 
     /**
+     * Gets the details of resources used by an Operations Insights Warehouse.
+     * There is only expected to be 1 warehouse per tenant. The warehouse is expected to be in the root compartment.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<SummarizeOperationsInsightsWarehouseResourceUsageResponse>
+            summarizeOperationsInsightsWarehouseResourceUsage(
+                    SummarizeOperationsInsightsWarehouseResourceUsageRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    SummarizeOperationsInsightsWarehouseResourceUsageRequest,
+                                    SummarizeOperationsInsightsWarehouseResourceUsageResponse>
+                            handler);
+
+    /**
      * Query SQL Warehouse to get the performance insights for SQLs taking greater than X% database time for a given
      * time period across the given databases or database types in a compartment and in all sub-compartments if specified.
      *
@@ -1413,6 +1756,21 @@ public interface OperationsInsightsAsync extends AutoCloseable {
                             handler);
 
     /**
+     * Updates the configuration of a hub .
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateAwrHubResponse> updateAwrHub(
+            UpdateAwrHubRequest request,
+            com.oracle.bmc.responses.AsyncHandler<UpdateAwrHubRequest, UpdateAwrHubResponse>
+                    handler);
+
+    /**
      * Updates configuration of a database insight.
      *
      * @param request The request object containing the details to send
@@ -1477,4 +1835,42 @@ public interface OperationsInsightsAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<
                             UpdateHostInsightRequest, UpdateHostInsightResponse>
                     handler);
+
+    /**
+     * Updates the configuration of an Operations Insights Warehouse.
+     * There is only expected to be 1 warehouse per tenant. The warehouse is expected to be in the root compartment.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateOperationsInsightsWarehouseResponse>
+            updateOperationsInsightsWarehouse(
+                    UpdateOperationsInsightsWarehouseRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    UpdateOperationsInsightsWarehouseRequest,
+                                    UpdateOperationsInsightsWarehouseResponse>
+                            handler);
+
+    /**
+     * Updates the configuration of an Operations Insights Warehouse User.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateOperationsInsightsWarehouseUserResponse>
+            updateOperationsInsightsWarehouseUser(
+                    UpdateOperationsInsightsWarehouseUserRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    UpdateOperationsInsightsWarehouseUserRequest,
+                                    UpdateOperationsInsightsWarehouseUserResponse>
+                            handler);
 }

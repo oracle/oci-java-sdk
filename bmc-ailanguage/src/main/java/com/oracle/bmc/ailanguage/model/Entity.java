@@ -116,7 +116,7 @@ public class Entity {
     Integer offset;
 
     /**
-     * Length of text
+     * Length of entity text
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("length")
     Integer length;
@@ -140,7 +140,9 @@ public class Entity {
     Boolean isPii;
 
     /**
-     * Score or confidence for prediction.
+     * Score or confidence of extracted entity type.
+     * Example: {@code 0.9999856066867399}
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("score")
     Double score;

@@ -44,6 +44,15 @@ public class CreateEntityDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("typeKey")
+        private String typeKey;
+
+        public Builder typeKey(String typeKey) {
+            this.typeKey = typeKey;
+            this.__explicitlySet__.add("typeKey");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
@@ -152,6 +161,7 @@ public class CreateEntityDetails {
                     new CreateEntityDetails(
                             displayName,
                             businessName,
+                            typeKey,
                             description,
                             timeExternal,
                             isLogical,
@@ -172,6 +182,7 @@ public class CreateEntityDetails {
             Builder copiedBuilder =
                     displayName(o.getDisplayName())
                             .businessName(o.getBusinessName())
+                            .typeKey(o.getTypeKey())
                             .description(o.getDescription())
                             .timeExternal(o.getTimeExternal())
                             .isLogical(o.getIsLogical())
@@ -209,6 +220,12 @@ public class CreateEntityDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("businessName")
     String businessName;
+
+    /**
+     * The type of data entity object. Type key's can be found via the '/types' endpoint.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("typeKey")
+    String typeKey;
 
     /**
      * Detailed description of a data entity.

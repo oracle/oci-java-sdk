@@ -63,6 +63,24 @@ public class EntitySummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("isLogical")
+        private Boolean isLogical;
+
+        public Builder isLogical(Boolean isLogical) {
+            this.isLogical = isLogical;
+            this.__explicitlySet__.add("isLogical");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("isPartition")
+        private Boolean isPartition;
+
+        public Builder isPartition(Boolean isPartition) {
+            this.isPartition = isPartition;
+            this.__explicitlySet__.add("isPartition");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("dataAssetKey")
         private String dataAssetKey;
 
@@ -180,6 +198,15 @@ public class EntitySummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("properties")
+        private java.util.Map<String, java.util.Map<String, String>> properties;
+
+        public Builder properties(java.util.Map<String, java.util.Map<String, String>> properties) {
+            this.properties = properties;
+            this.__explicitlySet__.add("properties");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -190,6 +217,8 @@ public class EntitySummary {
                             displayName,
                             businessName,
                             description,
+                            isLogical,
+                            isPartition,
                             dataAssetKey,
                             folderKey,
                             folderName,
@@ -202,7 +231,8 @@ public class EntitySummary {
                             timeUpdated,
                             updatedById,
                             uri,
-                            lifecycleState);
+                            lifecycleState,
+                            properties);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -214,6 +244,8 @@ public class EntitySummary {
                             .displayName(o.getDisplayName())
                             .businessName(o.getBusinessName())
                             .description(o.getDescription())
+                            .isLogical(o.getIsLogical())
+                            .isPartition(o.getIsPartition())
                             .dataAssetKey(o.getDataAssetKey())
                             .folderKey(o.getFolderKey())
                             .folderName(o.getFolderName())
@@ -226,7 +258,8 @@ public class EntitySummary {
                             .timeUpdated(o.getTimeUpdated())
                             .updatedById(o.getUpdatedById())
                             .uri(o.getUri())
-                            .lifecycleState(o.getLifecycleState());
+                            .lifecycleState(o.getLifecycleState())
+                            .properties(o.getProperties());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -265,6 +298,20 @@ public class EntitySummary {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     String description;
+
+    /**
+     * Property that identifies if the object is a physical object (materialized) or virtual/logical object
+     * defined on other objects.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isLogical")
+    Boolean isLogical;
+
+    /**
+     * Property that identifies if an object is a sub object of a physical or materialized parent object.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isPartition")
+    Boolean isPartition;
 
     /**
      * Unique key of the parent data asset.
@@ -346,6 +393,17 @@ public class EntitySummary {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     LifecycleState lifecycleState;
+
+    /**
+     * A map of maps that contains the properties which are specific to the entity type. Each entity type
+     * definition defines it's set of required and optional properties. The map keys are category names and the
+     * values are maps of property name to property value. Every property is contained inside of a category. Most
+     * data entities have required properties within the "default" category.
+     * Example: {@code {"properties": { "default": { "key1": "value1"}}}}
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("properties")
+    java.util.Map<String, java.util.Map<String, String>> properties;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

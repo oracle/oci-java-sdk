@@ -311,6 +311,7 @@ public class MacsManagedExternalHostInsight extends HostInsight {
     String platformName;
     /**
      * Platform type.
+     *
      **/
     @lombok.extern.slf4j.Slf4j
     public enum PlatformType {
@@ -356,6 +357,7 @@ public class MacsManagedExternalHostInsight extends HostInsight {
     };
     /**
      * Platform type.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("platformType")
     PlatformType platformType;

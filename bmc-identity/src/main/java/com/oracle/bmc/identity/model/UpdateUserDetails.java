@@ -44,6 +44,15 @@ public class UpdateUserDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("dbUserName")
+        private String dbUserName;
+
+        public Builder dbUserName(String dbUserName) {
+            this.dbUserName = dbUserName;
+            this.__explicitlySet__.add("dbUserName");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
@@ -68,7 +77,8 @@ public class UpdateUserDetails {
 
         public UpdateUserDetails build() {
             UpdateUserDetails __instance__ =
-                    new UpdateUserDetails(description, email, freeformTags, definedTags);
+                    new UpdateUserDetails(
+                            description, email, dbUserName, freeformTags, definedTags);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -78,6 +88,7 @@ public class UpdateUserDetails {
             Builder copiedBuilder =
                     description(o.getDescription())
                             .email(o.getEmail())
+                            .dbUserName(o.getDbUserName())
                             .freeformTags(o.getFreeformTags())
                             .definedTags(o.getDefinedTags());
 
@@ -104,6 +115,12 @@ public class UpdateUserDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("email")
     String email;
+
+    /**
+     * DB username of the DB credential. Has to be unique across the tenancy.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("dbUserName")
+    String dbUserName;
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.

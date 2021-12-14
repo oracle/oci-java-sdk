@@ -61,7 +61,7 @@ public class DetectLanguageEntitiesResult {
     }
 
     /**
-     * List of entities.
+     * List of detected entities.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("entities")
     java.util.List<Entity> entities;

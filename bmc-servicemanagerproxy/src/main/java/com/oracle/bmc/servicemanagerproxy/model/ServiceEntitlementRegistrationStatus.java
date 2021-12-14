@@ -5,7 +5,7 @@
 package com.oracle.bmc.servicemanagerproxy.model;
 
 /**
- * Service Entitlement Registration status
+ * Service Entitlement registration status
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210914")
 @lombok.extern.slf4j.Slf4j

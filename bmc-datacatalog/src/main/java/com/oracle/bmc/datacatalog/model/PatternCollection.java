@@ -5,8 +5,7 @@
 package com.oracle.bmc.datacatalog.model;
 
 /**
- * Results of a patterns listing.  A Pattern is defined using an expression and can be used as data selectors or filters
- * to provide a singular view of an entity across multiple physical data artifacts.
+ * Results of a pattern listing. Patterns are used in entity harvesting.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields

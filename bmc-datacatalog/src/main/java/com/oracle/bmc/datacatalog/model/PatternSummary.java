@@ -5,8 +5,8 @@
 package com.oracle.bmc.datacatalog.model;
 
 /**
- * Summary of a pattern. A Pattern is defined using an expression and can be used as data selectors or filters
- * to provide a singular view of an entity across multiple physical data artifacts.
+ * Summary of a pattern. A pattern is a data selector or filter which can provide a singular,
+ * logical entity view aggregating multiple physical data artifacts for ease of use.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -80,6 +80,15 @@ public class PatternSummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("filePathPrefix")
+        private String filePathPrefix;
+
+        public Builder filePathPrefix(String filePathPrefix) {
+            this.filePathPrefix = filePathPrefix;
+            this.__explicitlySet__.add("filePathPrefix");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
@@ -101,6 +110,7 @@ public class PatternSummary {
                             catalogId,
                             timeCreated,
                             expression,
+                            filePathPrefix,
                             lifecycleState);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
@@ -115,6 +125,7 @@ public class PatternSummary {
                             .catalogId(o.getCatalogId())
                             .timeCreated(o.getTimeCreated())
                             .expression(o.getExpression())
+                            .filePathPrefix(o.getFilePathPrefix())
                             .lifecycleState(o.getLifecycleState());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
@@ -164,10 +175,22 @@ public class PatternSummary {
     java.util.Date timeCreated;
 
     /**
-     * The expression used in the pattern that may include qualifiers.
+     * Input string which drives the selection process, allowing for fine-grained control using qualifiers.
+     * Refer to the user documentation for details of the format and examples. A pattern cannot include both
+     * a prefix and an expression.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("expression")
     String expression;
+
+    /**
+     * Input string which drives the selection process.
+     * Refer to the user documentation for details of the format and examples. A pattern cannot include both
+     * a prefix and an expression.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("filePathPrefix")
+    String filePathPrefix;
 
     /**
      * State of the pattern.

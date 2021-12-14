@@ -3,6 +3,25 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
+## 2.12.0 - 2021-12-14
+### Added
+- Support for node replacement in the VMWare Solution service
+- Support for ingestion of SQL stats metrics in the Operations Insights service
+- Support for AWR hub integration in the Operations Insights service
+- Support for automatically generating logical entities from filename patterns and relationships between business terms across glossaries in the Data Catalog service
+- Support for automatic start/stop at scheduled times in the Database service
+- Support for cloud VM cluster resources on autonomous dedicated databases in the Database service
+- Support for external Hive metastores in the Big Data service
+- Support for batch detection/inference in the AI Language service
+- Support for dimensions on monitoring targets in the Service Connector Hub service
+- Support for invoice operations in the Account Management service
+- Support for custom CA trust stores in the API Gateway service
+- Support for generating scoped database tokens in the Identity service
+- Support for database passwords for users, for logging into database accounts, in the Identity service 
+
+### Breaking Changes
+- Support for retries enabled by default on some operations in the Data Catalog service
+
 ## 2.11.1 - 2021-12-07
 ### Added
 - Support for the Application Management service
