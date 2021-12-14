@@ -5,7 +5,10 @@
 package com.oracle.bmc.servicemanagerproxy.model;
 
 /**
- * Model describing service environment properties.
+ * Detailed information about a service environment.
+ * <p>
+ **Note:** Service URL formats may vary from the provided example.
+ *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -132,13 +135,17 @@ public class ServiceEnvironment {
 
     /**
      * Unqiue identifier for the entitlement related to the environment.
+     * <p>
+     **Note:** Not an [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     String id;
 
     /**
-     * The subscription Id corresponding to the service environment Id.
+     * The unique subscription ID associated with the service environment ID.
+     * <p>
+     **Note:** Not an [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("subscriptionId")
@@ -151,7 +158,7 @@ public class ServiceEnvironment {
     ServiceEntitlementRegistrationStatus status;
 
     /**
-     * Compartment Id associated with the service.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) for the compartment.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     String compartmentId;

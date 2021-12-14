@@ -141,6 +141,7 @@ public class HostDetails {
     String hostDisplayName;
     /**
      * Platform type.
+     *
      **/
     @lombok.extern.slf4j.Slf4j
     public enum PlatformType {
@@ -186,6 +187,7 @@ public class HostDetails {
     };
     /**
      * Platform type.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("platformType")
     PlatformType platformType;

@@ -48,6 +48,20 @@ public interface Bds extends AutoCloseable {
     void setRegion(String regionId);
 
     /**
+     * Activate specified metastore configuration.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/ActivateBdsMetastoreConfigurationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ActivateBdsMetastoreConfiguration API.
+     */
+    ActivateBdsMetastoreConfigurationResponse activateBdsMetastoreConfiguration(
+            ActivateBdsMetastoreConfigurationRequest request);
+
+    /**
      * Add an autoscale configuration to the cluster.
      *
      * @param request The request object containing the details to send
@@ -154,6 +168,20 @@ public interface Bds extends AutoCloseable {
     CreateBdsInstanceResponse createBdsInstance(CreateBdsInstanceRequest request);
 
     /**
+     * Create and activate external metastore configuration.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/CreateBdsMetastoreConfigurationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateBdsMetastoreConfiguration API.
+     */
+    CreateBdsMetastoreConfigurationResponse createBdsMetastoreConfiguration(
+            CreateBdsMetastoreConfigurationRequest request);
+
+    /**
      * Deletes the user's API key represented by the provided ID.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -176,6 +204,19 @@ public interface Bds extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/DeleteBdsInstanceExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteBdsInstance API.
      */
     DeleteBdsInstanceResponse deleteBdsInstance(DeleteBdsInstanceRequest request);
+
+    /**
+     * Delete the BDS metastore configuration represented by the provided ID.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/DeleteBdsMetastoreConfigurationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteBdsMetastoreConfiguration API.
+     */
+    DeleteBdsMetastoreConfigurationResponse deleteBdsMetastoreConfiguration(
+            DeleteBdsMetastoreConfigurationRequest request);
 
     /**
      * Returns details of the autoscale configuration identified by the given ID.
@@ -214,6 +255,19 @@ public interface Bds extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/GetBdsInstanceExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetBdsInstance API.
      */
     GetBdsInstanceResponse getBdsInstance(GetBdsInstanceRequest request);
+
+    /**
+     * Returns the BDS Metastore configuration information for the given ID.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/GetBdsMetastoreConfigurationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetBdsMetastoreConfiguration API.
+     */
+    GetBdsMetastoreConfigurationResponse getBdsMetastoreConfiguration(
+            GetBdsMetastoreConfigurationRequest request);
 
     /**
      * Returns the status of the work request identified by the given ID.
@@ -266,6 +320,20 @@ public interface Bds extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/ListBdsInstancesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListBdsInstances API.
      */
     ListBdsInstancesResponse listBdsInstances(ListBdsInstancesRequest request);
+
+    /**
+     * Returns a list of metastore configurations ssociated with this Big Data Service cluster.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/ListBdsMetastoreConfigurationsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListBdsMetastoreConfigurations API.
+     */
+    ListBdsMetastoreConfigurationsResponse listBdsMetastoreConfigurations(
+            ListBdsMetastoreConfigurationsRequest request);
 
     /**
      * Returns a paginated list of errors for a work request identified by the given ID.
@@ -347,6 +415,20 @@ public interface Bds extends AutoCloseable {
     RestartNodeResponse restartNode(RestartNodeRequest request);
 
     /**
+     * Test specified metastore configuration.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/TestBdsMetastoreConfigurationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use TestBdsMetastoreConfiguration API.
+     */
+    TestBdsMetastoreConfigurationResponse testBdsMetastoreConfiguration(
+            TestBdsMetastoreConfigurationRequest request);
+
+    /**
      * Test access to specified Object Storage bucket using the API key.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -384,6 +466,19 @@ public interface Bds extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/UpdateBdsInstanceExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateBdsInstance API.
      */
     UpdateBdsInstanceResponse updateBdsInstance(UpdateBdsInstanceRequest request);
+
+    /**
+     * Update the BDS metastore configuration represented by the provided ID.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/UpdateBdsMetastoreConfigurationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateBdsMetastoreConfiguration API.
+     */
+    UpdateBdsMetastoreConfigurationResponse updateBdsMetastoreConfiguration(
+            UpdateBdsMetastoreConfigurationRequest request);
 
     /**
      * Gets the pre-configured waiters available for resources for this service.

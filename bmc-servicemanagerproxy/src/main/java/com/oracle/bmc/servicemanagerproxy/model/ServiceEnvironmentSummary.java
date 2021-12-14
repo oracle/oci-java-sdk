@@ -5,7 +5,7 @@
 package com.oracle.bmc.servicemanagerproxy.model;
 
 /**
- * Model describing service environment details.
+ * Summary of service environment details.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -155,13 +155,17 @@ public class ServiceEnvironmentSummary {
 
     /**
      * Unqiue identifier for the entitlement related to the environment.
+     * <p>
+     **Note:** Not an [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     String id;
 
     /**
-     * The subscription Id corresponding to the service environment Id.
+     * The unique subscription ID associated with the service environment ID.
+     * <p>
+     **Note:** Not an [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("subscriptionId")
@@ -174,7 +178,7 @@ public class ServiceEnvironmentSummary {
     ServiceEntitlementRegistrationStatus status;
 
     /**
-     * Compartment Id associated with the service.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) for the compartment.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     String compartmentId;
@@ -195,16 +199,20 @@ public class ServiceEnvironmentSummary {
     java.util.List<ServiceEnvironmentEndPointOverview> serviceEnvironmentEndpoints;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     * Defined tags for this resource. Each key is predefined and scoped to a
+     * namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-     * Example: {@code {"bar-key": "value"}}
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no
+     * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: {@code {"CostCenter": "42"}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")

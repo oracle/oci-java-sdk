@@ -45,6 +45,15 @@ public class UpdateCloudVmClusterDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("ocpuCount")
+        private Float ocpuCount;
+
+        public Builder ocpuCount(Float ocpuCount) {
+            this.ocpuCount = ocpuCount;
+            this.__explicitlySet__.add("ocpuCount");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("licenseModel")
         private LicenseModel licenseModel;
 
@@ -135,6 +144,7 @@ public class UpdateCloudVmClusterDetails {
                     new UpdateCloudVmClusterDetails(
                             displayName,
                             cpuCoreCount,
+                            ocpuCount,
                             licenseModel,
                             sshPublicKeys,
                             updateDetails,
@@ -153,6 +163,7 @@ public class UpdateCloudVmClusterDetails {
             Builder copiedBuilder =
                     displayName(o.getDisplayName())
                             .cpuCoreCount(o.getCpuCoreCount())
+                            .ocpuCount(o.getOcpuCount())
                             .licenseModel(o.getLicenseModel())
                             .sshPublicKeys(o.getSshPublicKeys())
                             .updateDetails(o.getUpdateDetails())
@@ -187,6 +198,12 @@ public class UpdateCloudVmClusterDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("cpuCoreCount")
     Integer cpuCoreCount;
+
+    /**
+     * The number of OCPU cores to enable for a cloud VM cluster. Only 1 decimal place is allowed for the fractional part.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("ocpuCount")
+    Float ocpuCount;
     /**
      * The Oracle license model that applies to the cloud VM cluster. The default is BRING_YOUR_OWN_LICENSE. Applies to Exadata Cloud Service instances only.
      *

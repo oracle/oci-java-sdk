@@ -81,6 +81,15 @@ public class UpdateGatewayDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("caBundles")
+        private java.util.List<CaBundle> caBundles;
+
+        public Builder caBundles(java.util.List<CaBundle> caBundles) {
+            this.caBundles = caBundles;
+            this.__explicitlySet__.add("caBundles");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -92,7 +101,8 @@ public class UpdateGatewayDetails {
                             certificateId,
                             responseCacheDetails,
                             freeformTags,
-                            definedTags);
+                            definedTags,
+                            caBundles);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -105,7 +115,8 @@ public class UpdateGatewayDetails {
                             .certificateId(o.getCertificateId())
                             .responseCacheDetails(o.getResponseCacheDetails())
                             .freeformTags(o.getFreeformTags())
-                            .definedTags(o.getDefinedTags());
+                            .definedTags(o.getDefinedTags())
+                            .caBundles(o.getCaBundles());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -167,6 +178,12 @@ public class UpdateGatewayDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    /**
+     * An array of CA bundles that should be used on the Gateway for TLS validation.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("caBundles")
+    java.util.List<CaBundle> caBundles;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

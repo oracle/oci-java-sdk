@@ -307,6 +307,15 @@ public class SearchResult {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("properties")
+        private java.util.Map<String, java.util.Map<String, String>> properties;
+
+        public Builder properties(java.util.Map<String, java.util.Map<String, String>> properties) {
+            this.properties = properties;
+            this.__explicitlySet__.add("properties");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -343,7 +352,8 @@ public class SearchResult {
                             lifecycleState,
                             attributeType,
                             expression,
-                            customProperties);
+                            customProperties,
+                            properties);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -381,7 +391,8 @@ public class SearchResult {
                             .lifecycleState(o.getLifecycleState())
                             .attributeType(o.getAttributeType())
                             .expression(o.getExpression())
-                            .customProperties(o.getCustomProperties());
+                            .customProperties(o.getCustomProperties())
+                            .properties(o.getProperties());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -584,6 +595,16 @@ public class SearchResult {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("customProperties")
     java.util.List<FacetedSearchCustomProperty> customProperties;
+
+    /**
+     * A map of maps that contains the properties which are specific to the element type in the search result.
+     * The map keys are category names and the values are maps of property name to property value. Every property
+     * is contained inside of a category. Most element types have required properties within the "default" category.
+     * Example: {@code {"properties": { "default": { "key1": "value1"}}}}
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("properties")
+    java.util.Map<String, java.util.Map<String, String>> properties;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

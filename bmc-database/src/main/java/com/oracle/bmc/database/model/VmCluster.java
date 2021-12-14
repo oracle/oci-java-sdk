@@ -142,6 +142,15 @@ public class VmCluster {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("ocpusEnabled")
+        private Float ocpusEnabled;
+
+        public Builder ocpusEnabled(Float ocpusEnabled) {
+            this.ocpusEnabled = ocpusEnabled;
+            this.__explicitlySet__.add("ocpusEnabled");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("memorySizeInGBs")
         private Integer memorySizeInGBs;
 
@@ -166,6 +175,15 @@ public class VmCluster {
         public Builder dataStorageSizeInTBs(Double dataStorageSizeInTBs) {
             this.dataStorageSizeInTBs = dataStorageSizeInTBs;
             this.__explicitlySet__.add("dataStorageSizeInTBs");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("dataStorageSizeInGBs")
+        private Double dataStorageSizeInGBs;
+
+        public Builder dataStorageSizeInGBs(Double dataStorageSizeInGBs) {
+            this.dataStorageSizeInGBs = dataStorageSizeInGBs;
+            this.__explicitlySet__.add("dataStorageSizeInGBs");
             return this;
         }
 
@@ -261,9 +279,11 @@ public class VmCluster {
                             isSparseDiskgroupEnabled,
                             vmClusterNetworkId,
                             cpusEnabled,
+                            ocpusEnabled,
                             memorySizeInGBs,
                             dbNodeStorageSizeInGBs,
                             dataStorageSizeInTBs,
+                            dataStorageSizeInGBs,
                             shape,
                             giVersion,
                             systemVersion,
@@ -292,9 +312,11 @@ public class VmCluster {
                             .isSparseDiskgroupEnabled(o.getIsSparseDiskgroupEnabled())
                             .vmClusterNetworkId(o.getVmClusterNetworkId())
                             .cpusEnabled(o.getCpusEnabled())
+                            .ocpusEnabled(o.getOcpusEnabled())
                             .memorySizeInGBs(o.getMemorySizeInGBs())
                             .dbNodeStorageSizeInGBs(o.getDbNodeStorageSizeInGBs())
                             .dataStorageSizeInTBs(o.getDataStorageSizeInTBs())
+                            .dataStorageSizeInGBs(o.getDataStorageSizeInGBs())
                             .shape(o.getShape())
                             .giVersion(o.getGiVersion())
                             .systemVersion(o.getSystemVersion())
@@ -447,6 +469,12 @@ public class VmCluster {
     Integer cpusEnabled;
 
     /**
+     * The number of enabled OCPU cores.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("ocpusEnabled")
+    Float ocpusEnabled;
+
+    /**
      * The memory allocated in GBs.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("memorySizeInGBs")
@@ -463,6 +491,12 @@ public class VmCluster {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dataStorageSizeInTBs")
     Double dataStorageSizeInTBs;
+
+    /**
+     * Size, in gigabytes, of the DATA disk group.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("dataStorageSizeInGBs")
+    Double dataStorageSizeInGBs;
 
     /**
      * The shape of the Exadata infrastructure. The shape determines the amount of CPU, storage, and memory resources allocated to the instance.

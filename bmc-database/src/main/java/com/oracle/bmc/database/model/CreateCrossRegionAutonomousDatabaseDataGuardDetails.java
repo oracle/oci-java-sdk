@@ -317,6 +317,16 @@ public class CreateCrossRegionAutonomousDatabaseDataGuardDetails
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("scheduledOperations")
+        private java.util.List<ScheduledOperationDetails> scheduledOperations;
+
+        public Builder scheduledOperations(
+                java.util.List<ScheduledOperationDetails> scheduledOperations) {
+            this.scheduledOperations = scheduledOperations;
+            this.__explicitlySet__.add("scheduledOperations");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("sourceId")
         private String sourceId;
 
@@ -363,6 +373,7 @@ public class CreateCrossRegionAutonomousDatabaseDataGuardDetails
                             customerContacts,
                             isMtlsConnectionRequired,
                             autonomousMaintenanceScheduleType,
+                            scheduledOperations,
                             sourceId);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
@@ -404,6 +415,7 @@ public class CreateCrossRegionAutonomousDatabaseDataGuardDetails
                             .isMtlsConnectionRequired(o.getIsMtlsConnectionRequired())
                             .autonomousMaintenanceScheduleType(
                                     o.getAutonomousMaintenanceScheduleType())
+                            .scheduledOperations(o.getScheduledOperations())
                             .sourceId(o.getSourceId());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
@@ -451,6 +463,7 @@ public class CreateCrossRegionAutonomousDatabaseDataGuardDetails
             java.util.List<CustomerContact> customerContacts,
             Boolean isMtlsConnectionRequired,
             AutonomousMaintenanceScheduleType autonomousMaintenanceScheduleType,
+            java.util.List<ScheduledOperationDetails> scheduledOperations,
             String sourceId) {
         super(
                 compartmentId,
@@ -483,7 +496,8 @@ public class CreateCrossRegionAutonomousDatabaseDataGuardDetails
                 dbVersion,
                 customerContacts,
                 isMtlsConnectionRequired,
-                autonomousMaintenanceScheduleType);
+                autonomousMaintenanceScheduleType,
+                scheduledOperations);
         this.sourceId = sourceId;
     }
 

@@ -98,6 +98,15 @@ public class User {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("dbUserName")
+        private String dbUserName;
+
+        public Builder dbUserName(String dbUserName) {
+            this.dbUserName = dbUserName;
+            this.__explicitlySet__.add("dbUserName");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("identityProviderId")
         private String identityProviderId;
 
@@ -210,6 +219,7 @@ public class User {
                             description,
                             email,
                             emailVerified,
+                            dbUserName,
                             identityProviderId,
                             externalIdentifier,
                             timeCreated,
@@ -234,6 +244,7 @@ public class User {
                             .description(o.getDescription())
                             .email(o.getEmail())
                             .emailVerified(o.getEmailVerified())
+                            .dbUserName(o.getDbUserName())
                             .identityProviderId(o.getIdentityProviderId())
                             .externalIdentifier(o.getExternalIdentifier())
                             .timeCreated(o.getTimeCreated())
@@ -297,6 +308,12 @@ public class User {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("emailVerified")
     Boolean emailVerified;
+
+    /**
+     * DB username of the DB credential. Has to be unique across the tenancy.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("dbUserName")
+    String dbUserName;
 
     /**
      * The OCID of the {@code IdentityProvider} this user belongs to.

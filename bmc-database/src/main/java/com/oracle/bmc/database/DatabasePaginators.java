@@ -1654,6 +1654,132 @@ public class DatabasePaginators {
     }
 
     /**
+     * Creates a new iterable which will iterate over the responses received from the listCloudAutonomousVmClusters operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListCloudAutonomousVmClustersResponse>
+            listCloudAutonomousVmClustersResponseIterator(
+                    final ListCloudAutonomousVmClustersRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListCloudAutonomousVmClustersRequest.Builder, ListCloudAutonomousVmClustersRequest,
+                ListCloudAutonomousVmClustersResponse>(
+                new com.google.common.base.Supplier<
+                        ListCloudAutonomousVmClustersRequest.Builder>() {
+                    @Override
+                    public ListCloudAutonomousVmClustersRequest.Builder get() {
+                        return ListCloudAutonomousVmClustersRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListCloudAutonomousVmClustersResponse, String>() {
+                    @Override
+                    public String apply(ListCloudAutonomousVmClustersResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListCloudAutonomousVmClustersRequest.Builder>,
+                        ListCloudAutonomousVmClustersRequest>() {
+                    @Override
+                    public ListCloudAutonomousVmClustersRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListCloudAutonomousVmClustersRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListCloudAutonomousVmClustersRequest,
+                        ListCloudAutonomousVmClustersResponse>() {
+                    @Override
+                    public ListCloudAutonomousVmClustersResponse apply(
+                            ListCloudAutonomousVmClustersRequest request) {
+                        return client.listCloudAutonomousVmClusters(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.database.model.CloudAutonomousVmClusterSummary} objects
+     * contained in responses from the listCloudAutonomousVmClusters operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.database.model.CloudAutonomousVmClusterSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.database.model.CloudAutonomousVmClusterSummary>
+            listCloudAutonomousVmClustersRecordIterator(
+                    final ListCloudAutonomousVmClustersRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListCloudAutonomousVmClustersRequest.Builder, ListCloudAutonomousVmClustersRequest,
+                ListCloudAutonomousVmClustersResponse,
+                com.oracle.bmc.database.model.CloudAutonomousVmClusterSummary>(
+                new com.google.common.base.Supplier<
+                        ListCloudAutonomousVmClustersRequest.Builder>() {
+                    @Override
+                    public ListCloudAutonomousVmClustersRequest.Builder get() {
+                        return ListCloudAutonomousVmClustersRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListCloudAutonomousVmClustersResponse, String>() {
+                    @Override
+                    public String apply(ListCloudAutonomousVmClustersResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListCloudAutonomousVmClustersRequest.Builder>,
+                        ListCloudAutonomousVmClustersRequest>() {
+                    @Override
+                    public ListCloudAutonomousVmClustersRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListCloudAutonomousVmClustersRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListCloudAutonomousVmClustersRequest,
+                        ListCloudAutonomousVmClustersResponse>() {
+                    @Override
+                    public ListCloudAutonomousVmClustersResponse apply(
+                            ListCloudAutonomousVmClustersRequest request) {
+                        return client.listCloudAutonomousVmClusters(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListCloudAutonomousVmClustersResponse,
+                        java.util.List<
+                                com.oracle.bmc.database.model.CloudAutonomousVmClusterSummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.database.model.CloudAutonomousVmClusterSummary>
+                            apply(ListCloudAutonomousVmClustersResponse response) {
+                        return response.getItems();
+                    }
+                });
+    }
+
+    /**
      * Creates a new iterable which will iterate over the responses received from the listCloudExadataInfrastructures operation. This iterable
      * will fetch more data from the server as needed.
      *

@@ -5,7 +5,7 @@
 package com.oracle.bmc.ailanguage.model;
 
 /**
- * Result of text labels detect call.
+ * Result of text classification detect call.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -62,7 +62,7 @@ public class DetectLanguageTextClassificationResult {
     }
 
     /**
-     * List of categories
+     * List of detected text classes.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("textClassification")
     java.util.List<TextClassification> textClassification;

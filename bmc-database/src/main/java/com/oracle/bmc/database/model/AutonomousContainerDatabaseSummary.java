@@ -100,6 +100,15 @@ public class AutonomousContainerDatabaseSummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("cloudAutonomousVmClusterId")
+        private String cloudAutonomousVmClusterId;
+
+        public Builder cloudAutonomousVmClusterId(String cloudAutonomousVmClusterId) {
+            this.cloudAutonomousVmClusterId = cloudAutonomousVmClusterId;
+            this.__explicitlySet__.add("cloudAutonomousVmClusterId");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyId")
         private String kmsKeyId;
 
@@ -305,6 +314,7 @@ public class AutonomousContainerDatabaseSummary {
                             autonomousExadataInfrastructureId,
                             autonomousVmClusterId,
                             infrastructureType,
+                            cloudAutonomousVmClusterId,
                             kmsKeyId,
                             vaultId,
                             kmsKeyVersionId,
@@ -342,6 +352,7 @@ public class AutonomousContainerDatabaseSummary {
                                     o.getAutonomousExadataInfrastructureId())
                             .autonomousVmClusterId(o.getAutonomousVmClusterId())
                             .infrastructureType(o.getInfrastructureType())
+                            .cloudAutonomousVmClusterId(o.getCloudAutonomousVmClusterId())
                             .kmsKeyId(o.getKmsKeyId())
                             .vaultId(o.getVaultId())
                             .kmsKeyVersionId(o.getKmsKeyVersionId())
@@ -515,6 +526,12 @@ public class AutonomousContainerDatabaseSummary {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("infrastructureType")
     InfrastructureType infrastructureType;
+
+    /**
+     * The OCID of the cloud Autonomous VM Cluster.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("cloudAutonomousVmClusterId")
+    String cloudAutonomousVmClusterId;
 
     /**
      * The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.

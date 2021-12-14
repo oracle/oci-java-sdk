@@ -226,6 +226,26 @@ public interface DatabaseAsync extends AutoCloseable {
                             handler);
 
     /**
+     * To move a cloud Autonomous VM cluster and its dependent resources to another compartment, use the
+     * {@link #changeCloudAutonomousVmClusterCompartment(ChangeCloudAutonomousVmClusterCompartmentRequest, Consumer, Consumer) changeCloudAutonomousVmClusterCompartment} operation.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ChangeCloudAutonomousVmClusterCompartmentResponse>
+            changeCloudAutonomousVmClusterCompartment(
+                    ChangeCloudAutonomousVmClusterCompartmentRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeCloudAutonomousVmClusterCompartmentRequest,
+                                    ChangeCloudAutonomousVmClusterCompartmentResponse>
+                            handler);
+
+    /**
      * Moves a cloud Exadata infrastructure resource and its dependent resources to another compartment. Applies to Exadata Cloud Service instances only. For more information about moving resources to a different compartment, see [Moving Database Resources to a Different Compartment](https://docs.cloud.oracle.com/Content/Database/Concepts/databaseoverview.htm#moveRes).
      *
      *
@@ -603,6 +623,25 @@ public interface DatabaseAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<
                             CreateBackupDestinationRequest, CreateBackupDestinationResponse>
                     handler);
+
+    /**
+     * Creates a cloud Autonomous VM cluster.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateCloudAutonomousVmClusterResponse>
+            createCloudAutonomousVmCluster(
+                    CreateCloudAutonomousVmClusterRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    CreateCloudAutonomousVmClusterRequest,
+                                    CreateCloudAutonomousVmClusterResponse>
+                            handler);
 
     /**
      * Creates a cloud Exadata infrastructure resource. This resource is used to create an [Exadata Cloud Service](https://docs.cloud.oracle.com/Content/Database/Concepts/exaoverview.htm) instance.
@@ -1005,6 +1044,25 @@ public interface DatabaseAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<
                             DeleteBackupDestinationRequest, DeleteBackupDestinationResponse>
                     handler);
+
+    /**
+     * Deletes the specified cloud Autonomous VM cluster.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteCloudAutonomousVmClusterResponse>
+            deleteCloudAutonomousVmCluster(
+                    DeleteCloudAutonomousVmClusterRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    DeleteCloudAutonomousVmClusterRequest,
+                                    DeleteCloudAutonomousVmClusterResponse>
+                            handler);
 
     /**
      * Deletes the cloud Exadata infrastructure resource. Applies to Exadata Cloud Service instances only.
@@ -1962,6 +2020,22 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Gets information about the specified cloud Autonomous VM cluster.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetCloudAutonomousVmClusterResponse> getCloudAutonomousVmCluster(
+            GetCloudAutonomousVmClusterRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetCloudAutonomousVmClusterRequest, GetCloudAutonomousVmClusterResponse>
+                    handler);
+
+    /**
      * Gets information about the specified cloud Exadata infrastructure resource. Applies to Exadata Cloud Service instances only.
      *
      *
@@ -2862,6 +2936,25 @@ public interface DatabaseAsync extends AutoCloseable {
     java.util.concurrent.Future<ListBackupsResponse> listBackups(
             ListBackupsRequest request,
             com.oracle.bmc.responses.AsyncHandler<ListBackupsRequest, ListBackupsResponse> handler);
+
+    /**
+     * Gets a list of the Autonomous cloud VM clusters in the specified compartment.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListCloudAutonomousVmClustersResponse>
+            listCloudAutonomousVmClusters(
+                    ListCloudAutonomousVmClustersRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ListCloudAutonomousVmClustersRequest,
+                                    ListCloudAutonomousVmClustersResponse>
+                            handler);
 
     /**
      * Gets a list of the cloud Exadata infrastructure resources in the specified compartment. Applies to Exadata Cloud Service instances only.
@@ -3777,6 +3870,44 @@ public interface DatabaseAsync extends AutoCloseable {
                             handler);
 
     /**
+     * Rotates Oracle REST Data Services (ORDS) certs for a cloud Autonomous VM cluster.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<RotateCloudAutonomousVmClusterOrdsCertsResponse>
+            rotateCloudAutonomousVmClusterOrdsCerts(
+                    RotateCloudAutonomousVmClusterOrdsCertsRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    RotateCloudAutonomousVmClusterOrdsCertsRequest,
+                                    RotateCloudAutonomousVmClusterOrdsCertsResponse>
+                            handler);
+
+    /**
+     * Rotates SSL certs for a cloud Autonomous VM cluster.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<RotateCloudAutonomousVmClusterSslCertsResponse>
+            rotateCloudAutonomousVmClusterSslCerts(
+                    RotateCloudAutonomousVmClusterSslCertsRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    RotateCloudAutonomousVmClusterSslCertsRequest,
+                                    RotateCloudAutonomousVmClusterSslCertsResponse>
+                            handler);
+
+    /**
      * Rotates Oracle REST Data Services (ORDS) certs for an Autonomous Exadata Infrastructure resource.
      *
      *
@@ -4153,6 +4284,25 @@ public interface DatabaseAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<
                             UpdateBackupDestinationRequest, UpdateBackupDestinationResponse>
                     handler);
+
+    /**
+     * Updates the specified cloud VM cluster.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateCloudAutonomousVmClusterResponse>
+            updateCloudAutonomousVmCluster(
+                    UpdateCloudAutonomousVmClusterRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    UpdateCloudAutonomousVmClusterRequest,
+                                    UpdateCloudAutonomousVmClusterResponse>
+                            handler);
 
     /**
      * Updates the Cloud Exadata infrastructure resource. Applies to Exadata Cloud Service instances only.

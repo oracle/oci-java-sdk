@@ -461,6 +461,43 @@ public class BdsClient implements Bds {
     }
 
     @Override
+    public ActivateBdsMetastoreConfigurationResponse activateBdsMetastoreConfiguration(
+            ActivateBdsMetastoreConfigurationRequest request) {
+        LOG.trace("Called activateBdsMetastoreConfiguration");
+        final ActivateBdsMetastoreConfigurationRequest interceptedRequest =
+                ActivateBdsMetastoreConfigurationConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ActivateBdsMetastoreConfigurationConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ActivateBdsMetastoreConfigurationResponse>
+                transformer = ActivateBdsMetastoreConfigurationConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getActivateBdsMetastoreConfigurationDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public AddAutoScalingConfigurationResponse addAutoScalingConfiguration(
             AddAutoScalingConfigurationRequest request) {
         LOG.trace("Called addAutoScalingConfiguration");
@@ -739,6 +776,43 @@ public class BdsClient implements Bds {
     }
 
     @Override
+    public CreateBdsMetastoreConfigurationResponse createBdsMetastoreConfiguration(
+            CreateBdsMetastoreConfigurationRequest request) {
+        LOG.trace("Called createBdsMetastoreConfiguration");
+        final CreateBdsMetastoreConfigurationRequest interceptedRequest =
+                CreateBdsMetastoreConfigurationConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateBdsMetastoreConfigurationConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, CreateBdsMetastoreConfigurationResponse>
+                transformer = CreateBdsMetastoreConfigurationConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getCreateBdsMetastoreConfigurationDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public DeleteBdsApiKeyResponse deleteBdsApiKey(DeleteBdsApiKeyRequest request) {
         LOG.trace("Called deleteBdsApiKey");
         final DeleteBdsApiKeyRequest interceptedRequest =
@@ -777,6 +851,38 @@ public class BdsClient implements Bds {
                 DeleteBdsInstanceConverter.fromRequest(client, interceptedRequest);
         com.google.common.base.Function<javax.ws.rs.core.Response, DeleteBdsInstanceResponse>
                 transformer = DeleteBdsInstanceConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.delete(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public DeleteBdsMetastoreConfigurationResponse deleteBdsMetastoreConfiguration(
+            DeleteBdsMetastoreConfigurationRequest request) {
+        LOG.trace("Called deleteBdsMetastoreConfiguration");
+        final DeleteBdsMetastoreConfigurationRequest interceptedRequest =
+                DeleteBdsMetastoreConfigurationConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteBdsMetastoreConfigurationConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, DeleteBdsMetastoreConfigurationResponse>
+                transformer = DeleteBdsMetastoreConfigurationConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
@@ -867,6 +973,37 @@ public class BdsClient implements Bds {
                 GetBdsInstanceConverter.fromRequest(client, interceptedRequest);
         com.google.common.base.Function<javax.ws.rs.core.Response, GetBdsInstanceResponse>
                 transformer = GetBdsInstanceConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public GetBdsMetastoreConfigurationResponse getBdsMetastoreConfiguration(
+            GetBdsMetastoreConfigurationRequest request) {
+        LOG.trace("Called getBdsMetastoreConfiguration");
+        final GetBdsMetastoreConfigurationRequest interceptedRequest =
+                GetBdsMetastoreConfigurationConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetBdsMetastoreConfigurationConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, GetBdsMetastoreConfigurationResponse>
+                transformer = GetBdsMetastoreConfigurationConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
@@ -985,6 +1122,37 @@ public class BdsClient implements Bds {
                 ListBdsInstancesConverter.fromRequest(client, interceptedRequest);
         com.google.common.base.Function<javax.ws.rs.core.Response, ListBdsInstancesResponse>
                 transformer = ListBdsInstancesConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ListBdsMetastoreConfigurationsResponse listBdsMetastoreConfigurations(
+            ListBdsMetastoreConfigurationsRequest request) {
+        LOG.trace("Called listBdsMetastoreConfigurations");
+        final ListBdsMetastoreConfigurationsRequest interceptedRequest =
+                ListBdsMetastoreConfigurationsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListBdsMetastoreConfigurationsConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ListBdsMetastoreConfigurationsResponse>
+                transformer = ListBdsMetastoreConfigurationsConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
@@ -1199,6 +1367,42 @@ public class BdsClient implements Bds {
     }
 
     @Override
+    public TestBdsMetastoreConfigurationResponse testBdsMetastoreConfiguration(
+            TestBdsMetastoreConfigurationRequest request) {
+        LOG.trace("Called testBdsMetastoreConfiguration");
+        final TestBdsMetastoreConfigurationRequest interceptedRequest =
+                TestBdsMetastoreConfigurationConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                TestBdsMetastoreConfigurationConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, TestBdsMetastoreConfigurationResponse>
+                transformer = TestBdsMetastoreConfigurationConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getTestBdsMetastoreConfigurationDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public TestBdsObjectStorageConnectionResponse testBdsObjectStorageConnection(
             TestBdsObjectStorageConnectionRequest request) {
         LOG.trace("Called testBdsObjectStorageConnection");
@@ -1298,6 +1502,42 @@ public class BdsClient implements Bds {
                                         client.put(
                                                 ib,
                                                 retriedRequest.getUpdateBdsInstanceDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public UpdateBdsMetastoreConfigurationResponse updateBdsMetastoreConfiguration(
+            UpdateBdsMetastoreConfigurationRequest request) {
+        LOG.trace("Called updateBdsMetastoreConfiguration");
+        final UpdateBdsMetastoreConfigurationRequest interceptedRequest =
+                UpdateBdsMetastoreConfigurationConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateBdsMetastoreConfigurationConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, UpdateBdsMetastoreConfigurationResponse>
+                transformer = UpdateBdsMetastoreConfigurationConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.put(
+                                                ib,
+                                                retriedRequest
+                                                        .getUpdateBdsMetastoreConfigurationDetails(),
                                                 retriedRequest);
                                 return transformer.apply(response);
                             });

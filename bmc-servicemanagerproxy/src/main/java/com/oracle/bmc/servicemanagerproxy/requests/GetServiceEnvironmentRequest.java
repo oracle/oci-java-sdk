@@ -21,12 +21,15 @@ public class GetServiceEnvironmentRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The Id associated with the service environment.
+     * The unique identifier associated with the service environment.
+     * <p>
+     **Note:** Not an [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     *
      */
     private String serviceEnvironmentId;
 
     /**
-     * The unique identifier for the compartment.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) for the compartment.
      */
     private String compartmentId;
 

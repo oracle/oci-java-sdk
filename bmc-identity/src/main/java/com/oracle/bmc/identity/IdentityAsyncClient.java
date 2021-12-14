@@ -1055,6 +1055,51 @@ public class IdentityAsyncClient implements IdentityAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<CreateDbCredentialResponse> createDbCredential(
+            CreateDbCredentialRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            CreateDbCredentialRequest, CreateDbCredentialResponse>
+                    handler) {
+        LOG.trace("Called async createDbCredential");
+        final CreateDbCredentialRequest interceptedRequest =
+                CreateDbCredentialConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateDbCredentialConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateDbCredentialResponse>
+                transformer = CreateDbCredentialConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+
+        com.oracle.bmc.responses.AsyncHandler<CreateDbCredentialRequest, CreateDbCredentialResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CreateDbCredentialRequest, CreateDbCredentialResponse>,
+                        java.util.concurrent.Future<CreateDbCredentialResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateDbCredentialDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CreateDbCredentialRequest, CreateDbCredentialResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateDomainResponse> createDomain(
             CreateDomainRequest request,
             final com.oracle.bmc.responses.AsyncHandler<CreateDomainRequest, CreateDomainResponse>
@@ -2007,6 +2052,45 @@ public class IdentityAsyncClient implements IdentityAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     DeleteCustomerSecretKeyRequest, DeleteCustomerSecretKeyResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteDbCredentialResponse> deleteDbCredential(
+            DeleteDbCredentialRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            DeleteDbCredentialRequest, DeleteDbCredentialResponse>
+                    handler) {
+        LOG.trace("Called async deleteDbCredential");
+        final DeleteDbCredentialRequest interceptedRequest =
+                DeleteDbCredentialConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteDbCredentialConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteDbCredentialResponse>
+                transformer = DeleteDbCredentialConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<DeleteDbCredentialRequest, DeleteDbCredentialResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DeleteDbCredentialRequest, DeleteDbCredentialResponse>,
+                        java.util.concurrent.Future<DeleteDbCredentialResponse>>
+                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DeleteDbCredentialRequest, DeleteDbCredentialResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -3917,6 +4001,45 @@ public class IdentityAsyncClient implements IdentityAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     ListCustomerSecretKeysRequest, ListCustomerSecretKeysResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListDbCredentialsResponse> listDbCredentials(
+            ListDbCredentialsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListDbCredentialsRequest, ListDbCredentialsResponse>
+                    handler) {
+        LOG.trace("Called async listDbCredentials");
+        final ListDbCredentialsRequest interceptedRequest =
+                ListDbCredentialsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListDbCredentialsConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<javax.ws.rs.core.Response, ListDbCredentialsResponse>
+                transformer = ListDbCredentialsConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<ListDbCredentialsRequest, ListDbCredentialsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListDbCredentialsRequest, ListDbCredentialsResponse>,
+                        java.util.concurrent.Future<ListDbCredentialsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListDbCredentialsRequest, ListDbCredentialsResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,

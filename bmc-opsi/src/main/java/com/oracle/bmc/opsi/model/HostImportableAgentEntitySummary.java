@@ -117,6 +117,7 @@ public class HostImportableAgentEntitySummary extends ImportableAgentEntitySumma
     String hostName;
     /**
      * Platform type.
+     *
      **/
     @lombok.extern.slf4j.Slf4j
     public enum PlatformType {
@@ -162,6 +163,7 @@ public class HostImportableAgentEntitySummary extends ImportableAgentEntitySumma
     };
     /**
      * Platform type.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("platformType")
     PlatformType platformType;

@@ -82,6 +82,7 @@ public class GetAttributeRequest extends com.oracle.bmc.requests.BmcRequest<java
         ExternalDatatypeEntityKey("externalDatatypeEntityKey"),
         ParentAttributeKey("parentAttributeKey"),
         ExternalParentAttributeKey("externalParentAttributeKey"),
+        TypeKey("typeKey"),
         ;
 
         private final String value;

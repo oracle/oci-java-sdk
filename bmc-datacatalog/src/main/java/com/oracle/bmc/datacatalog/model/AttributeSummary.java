@@ -159,6 +159,15 @@ public class AttributeSummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("typeKey")
+        private String typeKey;
+
+        public Builder typeKey(String typeKey) {
+            this.typeKey = typeKey;
+            this.__explicitlySet__.add("typeKey");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("minCollectionCount")
         private Integer minCollectionCount;
 
@@ -289,6 +298,7 @@ public class AttributeSummary {
                             lifecycleState,
                             timeCreated,
                             externalDataType,
+                            typeKey,
                             minCollectionCount,
                             maxCollectionCount,
                             datatypeEntityKey,
@@ -323,6 +333,7 @@ public class AttributeSummary {
                             .lifecycleState(o.getLifecycleState())
                             .timeCreated(o.getTimeCreated())
                             .externalDataType(o.getExternalDataType())
+                            .typeKey(o.getTypeKey())
                             .minCollectionCount(o.getMinCollectionCount())
                             .maxCollectionCount(o.getMaxCollectionCount())
                             .datatypeEntityKey(o.getDatatypeEntityKey())
@@ -441,6 +452,12 @@ public class AttributeSummary {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("externalDataType")
     String externalDataType;
+
+    /**
+     * The type of the attribute. Type keys can be found via the '/types' endpoint.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("typeKey")
+    String typeKey;
 
     /**
      * The minimum count for the number of instances of a given type stored in this collection type attribute,applicable if this attribute is a complex type.

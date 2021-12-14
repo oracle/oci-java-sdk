@@ -380,6 +380,131 @@ public class BdsPaginators {
     }
 
     /**
+     * Creates a new iterable which will iterate over the responses received from the listBdsMetastoreConfigurations operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListBdsMetastoreConfigurationsResponse>
+            listBdsMetastoreConfigurationsResponseIterator(
+                    final ListBdsMetastoreConfigurationsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListBdsMetastoreConfigurationsRequest.Builder,
+                ListBdsMetastoreConfigurationsRequest, ListBdsMetastoreConfigurationsResponse>(
+                new com.google.common.base.Supplier<
+                        ListBdsMetastoreConfigurationsRequest.Builder>() {
+                    @Override
+                    public ListBdsMetastoreConfigurationsRequest.Builder get() {
+                        return ListBdsMetastoreConfigurationsRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListBdsMetastoreConfigurationsResponse, String>() {
+                    @Override
+                    public String apply(ListBdsMetastoreConfigurationsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListBdsMetastoreConfigurationsRequest.Builder>,
+                        ListBdsMetastoreConfigurationsRequest>() {
+                    @Override
+                    public ListBdsMetastoreConfigurationsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListBdsMetastoreConfigurationsRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListBdsMetastoreConfigurationsRequest,
+                        ListBdsMetastoreConfigurationsResponse>() {
+                    @Override
+                    public ListBdsMetastoreConfigurationsResponse apply(
+                            ListBdsMetastoreConfigurationsRequest request) {
+                        return client.listBdsMetastoreConfigurations(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.bds.model.BdsMetastoreConfigurationSummary} objects
+     * contained in responses from the listBdsMetastoreConfigurations operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.bds.model.BdsMetastoreConfigurationSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.bds.model.BdsMetastoreConfigurationSummary>
+            listBdsMetastoreConfigurationsRecordIterator(
+                    final ListBdsMetastoreConfigurationsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListBdsMetastoreConfigurationsRequest.Builder,
+                ListBdsMetastoreConfigurationsRequest, ListBdsMetastoreConfigurationsResponse,
+                com.oracle.bmc.bds.model.BdsMetastoreConfigurationSummary>(
+                new com.google.common.base.Supplier<
+                        ListBdsMetastoreConfigurationsRequest.Builder>() {
+                    @Override
+                    public ListBdsMetastoreConfigurationsRequest.Builder get() {
+                        return ListBdsMetastoreConfigurationsRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListBdsMetastoreConfigurationsResponse, String>() {
+                    @Override
+                    public String apply(ListBdsMetastoreConfigurationsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListBdsMetastoreConfigurationsRequest.Builder>,
+                        ListBdsMetastoreConfigurationsRequest>() {
+                    @Override
+                    public ListBdsMetastoreConfigurationsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListBdsMetastoreConfigurationsRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListBdsMetastoreConfigurationsRequest,
+                        ListBdsMetastoreConfigurationsResponse>() {
+                    @Override
+                    public ListBdsMetastoreConfigurationsResponse apply(
+                            ListBdsMetastoreConfigurationsRequest request) {
+                        return client.listBdsMetastoreConfigurations(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListBdsMetastoreConfigurationsResponse,
+                        java.util.List<
+                                com.oracle.bmc.bds.model.BdsMetastoreConfigurationSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.bds.model.BdsMetastoreConfigurationSummary>
+                            apply(ListBdsMetastoreConfigurationsResponse response) {
+                        return response.getItems();
+                    }
+                });
+    }
+
+    /**
      * Creates a new iterable which will iterate over the responses received from the listWorkRequestErrors operation. This iterable
      * will fetch more data from the server as needed.
      *

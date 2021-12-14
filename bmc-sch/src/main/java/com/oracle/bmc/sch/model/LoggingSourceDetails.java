@@ -5,7 +5,9 @@
 package com.oracle.bmc.sch.model;
 
 /**
- * The logging source.
+ * The Logging source.
+ * For configuration instructions, see
+ * [To create a service connector](https://docs.cloud.oracle.com/iaas/Content/service-connector-hub/managingconnectors.htm#create).
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -74,7 +76,7 @@ public class LoggingSourceDetails extends SourceDetails {
     }
 
     /**
-     * The resources affected by this work request.
+     * The logs for this Logging source.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("logSources")

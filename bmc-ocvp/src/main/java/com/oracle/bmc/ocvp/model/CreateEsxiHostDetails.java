@@ -71,6 +71,15 @@ public class CreateEsxiHostDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("failedEsxiHostId")
+        private String failedEsxiHostId;
+
+        public Builder failedEsxiHostId(String failedEsxiHostId) {
+            this.failedEsxiHostId = failedEsxiHostId;
+            this.__explicitlySet__.add("failedEsxiHostId");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
@@ -101,6 +110,7 @@ public class CreateEsxiHostDetails {
                             currentSku,
                             nextSku,
                             computeAvailabilityDomain,
+                            failedEsxiHostId,
                             freeformTags,
                             definedTags);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
@@ -115,6 +125,7 @@ public class CreateEsxiHostDetails {
                             .currentSku(o.getCurrentSku())
                             .nextSku(o.getNextSku())
                             .computeAvailabilityDomain(o.getComputeAvailabilityDomain())
+                            .failedEsxiHostId(o.getFailedEsxiHostId())
                             .freeformTags(o.getFreeformTags())
                             .definedTags(o.getDefinedTags());
 
@@ -178,6 +189,16 @@ public class CreateEsxiHostDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("computeAvailabilityDomain")
     String computeAvailabilityDomain;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the esxi host that
+     * is failed. It is an optional param, when user supplies this param, new Esxi
+     * Host will be created to replace the failed one, and failedEsxiHostId field
+     * will be udpated in the newly created EsxiHost.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("failedEsxiHostId")
+    String failedEsxiHostId;
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no

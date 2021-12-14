@@ -152,6 +152,15 @@ public class Attribute {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("typeKey")
+        private String typeKey;
+
+        public Builder typeKey(String typeKey) {
+            this.typeKey = typeKey;
+            this.__explicitlySet__.add("typeKey");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("minCollectionCount")
         private Integer minCollectionCount;
 
@@ -344,6 +353,7 @@ public class Attribute {
                             externalKey,
                             isIncrementalData,
                             isNullable,
+                            typeKey,
                             minCollectionCount,
                             maxCollectionCount,
                             datatypeEntityKey,
@@ -384,6 +394,7 @@ public class Attribute {
                             .externalKey(o.getExternalKey())
                             .isIncrementalData(o.getIsIncrementalData())
                             .isNullable(o.getIsNullable())
+                            .typeKey(o.getTypeKey())
                             .minCollectionCount(o.getMinCollectionCount())
                             .maxCollectionCount(o.getMaxCollectionCount())
                             .datatypeEntityKey(o.getDatatypeEntityKey())
@@ -508,6 +519,12 @@ public class Attribute {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isNullable")
     Boolean isNullable;
+
+    /**
+     * The type of the attribute. Type keys can be found via the '/types' endpoint.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("typeKey")
+    String typeKey;
 
     /**
      * The minimum count for the number of instances of a given type stored in this collection type attribute,applicable if this attribute is a complex type.

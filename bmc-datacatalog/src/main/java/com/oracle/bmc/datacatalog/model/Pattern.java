@@ -5,8 +5,8 @@
 package com.oracle.bmc.datacatalog.model;
 
 /**
- * Pattern representation. A Pattern is defined using an expression and can be used as data selectors or filters
- * to provide a singular view of an entity across multiple physical data artifacts.
+ * A pattern is a data selector or filter which can provide a singular,
+ * logical entity view aggregating multiple physical data artifacts for ease of use.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -116,6 +116,15 @@ public class Pattern {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("filePathPrefix")
+        private String filePathPrefix;
+
+        public Builder filePathPrefix(String filePathPrefix) {
+            this.filePathPrefix = filePathPrefix;
+            this.__explicitlySet__.add("filePathPrefix");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("checkFilePathList")
         private java.util.List<String> checkFilePathList;
 
@@ -168,6 +177,7 @@ public class Pattern {
                             createdById,
                             updatedById,
                             expression,
+                            filePathPrefix,
                             checkFilePathList,
                             isEnableCheckFailureLimit,
                             checkFailureLimit,
@@ -189,6 +199,7 @@ public class Pattern {
                             .createdById(o.getCreatedById())
                             .updatedById(o.getUpdatedById())
                             .expression(o.getExpression())
+                            .filePathPrefix(o.getFilePathPrefix())
                             .checkFilePathList(o.getCheckFilePathList())
                             .isEnableCheckFailureLimit(o.getIsEnableCheckFailureLimit())
                             .checkFailureLimit(o.getCheckFailureLimit())
@@ -233,7 +244,7 @@ public class Pattern {
     String catalogId;
 
     /**
-     * The current state of the data asset.
+     * The current state of the pattern.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     LifecycleState lifecycleState;
@@ -266,14 +277,25 @@ public class Pattern {
     String updatedById;
 
     /**
-     * The expression used in the pattern that may include qualifiers. Refer to the user documentation for details of the format and examples.
+     * Input string which drives the selection process, allowing for fine-grained control using qualifiers.
+     * Refer to the user documentation for details of the format and examples. A pattern cannot include both
+     * a prefix and an expression.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("expression")
     String expression;
 
     /**
-     * List of file paths against which the expression can be tried, as a check. This documents, for reference
+     * Input string which drives the selection process.
+     * Refer to the user documentation for details of the format and examples. A pattern cannot include both
+     * a prefix and an expression.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("filePathPrefix")
+    String filePathPrefix;
+
+    /**
+     * List of file paths against which the pattern can be tried, as a check. This documents, for reference
      * purposes, some example objects a pattern is meant to work with. If isEnableCheckFailureLimit is set to true,
      * this will be run as a validation during the request, such that if the check fails the request fails. If
      * isEnableCheckFailureLimit instead is set to (the default) false, a pattern will still be created or updated even
@@ -284,7 +306,7 @@ public class Pattern {
     java.util.List<String> checkFilePathList;
 
     /**
-     * Indicates whether the expression check, against the checkFilePathList, will fail the request if the count of
+     * Indicates whether the pattern check, against the checkFilePathList, will fail the request if the count of
      * UNMATCHED files is above the checkFailureLimit.
      *
      **/

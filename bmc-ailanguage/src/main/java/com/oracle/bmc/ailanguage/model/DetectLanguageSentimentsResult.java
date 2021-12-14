@@ -62,7 +62,7 @@ public class DetectLanguageSentimentsResult {
     }
 
     /**
-     * List of aspects.
+     * List of detected aspects.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("aspects")
     java.util.List<SentimentAspect> aspects;

@@ -316,6 +316,16 @@ public class CreateRefreshableAutonomousDatabaseCloneDetails extends CreateAuton
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("scheduledOperations")
+        private java.util.List<ScheduledOperationDetails> scheduledOperations;
+
+        public Builder scheduledOperations(
+                java.util.List<ScheduledOperationDetails> scheduledOperations) {
+            this.scheduledOperations = scheduledOperations;
+            this.__explicitlySet__.add("scheduledOperations");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("sourceId")
         private String sourceId;
 
@@ -371,6 +381,7 @@ public class CreateRefreshableAutonomousDatabaseCloneDetails extends CreateAuton
                             customerContacts,
                             isMtlsConnectionRequired,
                             autonomousMaintenanceScheduleType,
+                            scheduledOperations,
                             sourceId,
                             refreshableMode);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
@@ -413,6 +424,7 @@ public class CreateRefreshableAutonomousDatabaseCloneDetails extends CreateAuton
                             .isMtlsConnectionRequired(o.getIsMtlsConnectionRequired())
                             .autonomousMaintenanceScheduleType(
                                     o.getAutonomousMaintenanceScheduleType())
+                            .scheduledOperations(o.getScheduledOperations())
                             .sourceId(o.getSourceId())
                             .refreshableMode(o.getRefreshableMode());
 
@@ -461,6 +473,7 @@ public class CreateRefreshableAutonomousDatabaseCloneDetails extends CreateAuton
             java.util.List<CustomerContact> customerContacts,
             Boolean isMtlsConnectionRequired,
             AutonomousMaintenanceScheduleType autonomousMaintenanceScheduleType,
+            java.util.List<ScheduledOperationDetails> scheduledOperations,
             String sourceId,
             RefreshableMode refreshableMode) {
         super(
@@ -494,7 +507,8 @@ public class CreateRefreshableAutonomousDatabaseCloneDetails extends CreateAuton
                 dbVersion,
                 customerContacts,
                 isMtlsConnectionRequired,
-                autonomousMaintenanceScheduleType);
+                autonomousMaintenanceScheduleType,
+                scheduledOperations);
         this.sourceId = sourceId;
         this.refreshableMode = refreshableMode;
     }

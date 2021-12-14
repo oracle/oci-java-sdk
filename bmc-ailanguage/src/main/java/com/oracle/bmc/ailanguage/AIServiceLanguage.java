@@ -8,7 +8,7 @@ import com.oracle.bmc.ailanguage.requests.*;
 import com.oracle.bmc.ailanguage.responses.*;
 
 /**
- * OCI AI Service solutions can help Enterprise customers integrate AI into their products immediately using our proven,
+ * OCI Language Service solutions can help enterprise customers integrate AI into their products immediately using our proven,
  * pre-trained and custom models or containers, without a need to set up an house team of AI and ML experts.
  * This allows enterprises to focus on business drivers and development work rather than AI and ML operations, which shortens the time to market.
  *
@@ -48,6 +48,71 @@ public interface AIServiceLanguage extends AutoCloseable {
      * @param regionId The public region ID.
      */
     void setRegion(String regionId);
+
+    /**
+     * Make a detect call to language detection pre-deployed model.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ailanguage/BatchDetectDominantLanguageExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use BatchDetectDominantLanguage API.
+     */
+    BatchDetectDominantLanguageResponse batchDetectDominantLanguage(
+            BatchDetectDominantLanguageRequest request);
+
+    /**
+     * Make a batch detect call to entity pre-deployed model
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ailanguage/BatchDetectLanguageEntitiesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use BatchDetectLanguageEntities API.
+     */
+    BatchDetectLanguageEntitiesResponse batchDetectLanguageEntities(
+            BatchDetectLanguageEntitiesRequest request);
+
+    /**
+     * Make a detect call to the keyPhrase pre-deployed model.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ailanguage/BatchDetectLanguageKeyPhrasesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use BatchDetectLanguageKeyPhrases API.
+     */
+    BatchDetectLanguageKeyPhrasesResponse batchDetectLanguageKeyPhrases(
+            BatchDetectLanguageKeyPhrasesRequest request);
+
+    /**
+     * Make a detect call to sentiment pre-deployed model.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ailanguage/BatchDetectLanguageSentimentsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use BatchDetectLanguageSentiments API.
+     */
+    BatchDetectLanguageSentimentsResponse batchDetectLanguageSentiments(
+            BatchDetectLanguageSentimentsRequest request);
+
+    /**
+     * Make a detect call to text classification from the pre-deployed model.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ailanguage/BatchDetectLanguageTextClassificationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use BatchDetectLanguageTextClassification API.
+     */
+    BatchDetectLanguageTextClassificationResponse batchDetectLanguageTextClassification(
+            BatchDetectLanguageTextClassificationRequest request);
 
     /**
      * Make a detect call to language detection pre-deployed model.

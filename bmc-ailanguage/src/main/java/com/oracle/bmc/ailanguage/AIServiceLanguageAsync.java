@@ -8,7 +8,7 @@ import com.oracle.bmc.ailanguage.requests.*;
 import com.oracle.bmc.ailanguage.responses.*;
 
 /**
- * OCI AI Service solutions can help Enterprise customers integrate AI into their products immediately using our proven,
+ * OCI Language Service solutions can help enterprise customers integrate AI into their products immediately using our proven,
  * pre-trained and custom models or containers, without a need to set up an house team of AI and ML experts.
  * This allows enterprises to focus on business drivers and development work rather than AI and ML operations, which shortens the time to market.
  *
@@ -47,6 +47,92 @@ public interface AIServiceLanguageAsync extends AutoCloseable {
      * @param regionId The public region ID.
      */
     void setRegion(String regionId);
+
+    /**
+     * Make a detect call to language detection pre-deployed model.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<BatchDetectDominantLanguageResponse> batchDetectDominantLanguage(
+            BatchDetectDominantLanguageRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            BatchDetectDominantLanguageRequest, BatchDetectDominantLanguageResponse>
+                    handler);
+
+    /**
+     * Make a batch detect call to entity pre-deployed model
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<BatchDetectLanguageEntitiesResponse> batchDetectLanguageEntities(
+            BatchDetectLanguageEntitiesRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            BatchDetectLanguageEntitiesRequest, BatchDetectLanguageEntitiesResponse>
+                    handler);
+
+    /**
+     * Make a detect call to the keyPhrase pre-deployed model.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<BatchDetectLanguageKeyPhrasesResponse>
+            batchDetectLanguageKeyPhrases(
+                    BatchDetectLanguageKeyPhrasesRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    BatchDetectLanguageKeyPhrasesRequest,
+                                    BatchDetectLanguageKeyPhrasesResponse>
+                            handler);
+
+    /**
+     * Make a detect call to sentiment pre-deployed model.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<BatchDetectLanguageSentimentsResponse>
+            batchDetectLanguageSentiments(
+                    BatchDetectLanguageSentimentsRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    BatchDetectLanguageSentimentsRequest,
+                                    BatchDetectLanguageSentimentsResponse>
+                            handler);
+
+    /**
+     * Make a detect call to text classification from the pre-deployed model.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<BatchDetectLanguageTextClassificationResponse>
+            batchDetectLanguageTextClassification(
+                    BatchDetectLanguageTextClassificationRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    BatchDetectLanguageTextClassificationRequest,
+                                    BatchDetectLanguageTextClassificationResponse>
+                            handler);
 
     /**
      * Make a detect call to language detection pre-deployed model.

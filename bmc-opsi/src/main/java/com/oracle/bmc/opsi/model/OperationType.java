@@ -34,6 +34,19 @@ public enum OperationType {
     DeleteExadataInsight("DELETE_EXADATA_INSIGHT"),
     AddExadataInsightMembers("ADD_EXADATA_INSIGHT_MEMBERS"),
     ExadataAutoSync("EXADATA_AUTO_SYNC"),
+    UpdateOpsiWarehouse("UPDATE_OPSI_WAREHOUSE"),
+    CreateOpsiWarehouse("CREATE_OPSI_WAREHOUSE"),
+    MoveOpsiWarehouse("MOVE_OPSI_WAREHOUSE"),
+    DeleteOpsiWarehouse("DELETE_OPSI_WAREHOUSE"),
+    RotateOpsiWarehouseWallet("ROTATE_OPSI_WAREHOUSE_WALLET"),
+    UpdateOpsiWarehouseUser("UPDATE_OPSI_WAREHOUSE_USER"),
+    CreateOpsiWarehouseUser("CREATE_OPSI_WAREHOUSE_USER"),
+    MoveOpsiWarehouseUser("MOVE_OPSI_WAREHOUSE_USER"),
+    DeleteOpsiWarehouseUser("DELETE_OPSI_WAREHOUSE_USER"),
+    UpdateAwrhub("UPDATE_AWRHUB"),
+    CreateAwrhub("CREATE_AWRHUB"),
+    MoveAwrhub("MOVE_AWRHUB"),
+    DeleteAwrhub("DELETE_AWRHUB"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this

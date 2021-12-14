@@ -295,6 +295,16 @@ public class UpdateAutonomousDatabaseDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("scheduledOperations")
+        private java.util.List<ScheduledOperationDetails> scheduledOperations;
+
+        public Builder scheduledOperations(
+                java.util.List<ScheduledOperationDetails> scheduledOperations) {
+            this.scheduledOperations = scheduledOperations;
+            this.__explicitlySet__.add("scheduledOperations");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -329,7 +339,8 @@ public class UpdateAutonomousDatabaseDetails {
                             privateEndpointLabel,
                             nsgIds,
                             customerContacts,
-                            isMtlsConnectionRequired);
+                            isMtlsConnectionRequired,
+                            scheduledOperations);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -365,7 +376,8 @@ public class UpdateAutonomousDatabaseDetails {
                             .privateEndpointLabel(o.getPrivateEndpointLabel())
                             .nsgIds(o.getNsgIds())
                             .customerContacts(o.getCustomerContacts())
-                            .isMtlsConnectionRequired(o.getIsMtlsConnectionRequired());
+                            .isMtlsConnectionRequired(o.getIsMtlsConnectionRequired())
+                            .scheduledOperations(o.getScheduledOperations());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -815,6 +827,12 @@ public class UpdateAutonomousDatabaseDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isMtlsConnectionRequired")
     Boolean isMtlsConnectionRequired;
+
+    /**
+     * list of scheduled operations
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("scheduledOperations")
+    java.util.List<ScheduledOperationDetails> scheduledOperations;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

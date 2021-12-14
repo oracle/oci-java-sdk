@@ -62,7 +62,7 @@ public class DetectLanguageKeyPhrasesResult {
     }
 
     /**
-     * List of keyPhrases.
+     * List of detected keyPhrases.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("keyPhrases")
     java.util.List<KeyPhrase> keyPhrases;

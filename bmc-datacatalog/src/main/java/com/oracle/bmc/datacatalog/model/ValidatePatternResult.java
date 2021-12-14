@@ -53,6 +53,15 @@ public class ValidatePatternResult {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("filePathPrefix")
+        private String filePathPrefix;
+
+        public Builder filePathPrefix(String filePathPrefix) {
+            this.filePathPrefix = filePathPrefix;
+            this.__explicitlySet__.add("filePathPrefix");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("derivedLogicalEntities")
         private java.util.List<DerivedLogicalEntities> derivedLogicalEntities;
 
@@ -68,7 +77,8 @@ public class ValidatePatternResult {
 
         public ValidatePatternResult build() {
             ValidatePatternResult __instance__ =
-                    new ValidatePatternResult(message, status, expression, derivedLogicalEntities);
+                    new ValidatePatternResult(
+                            message, status, expression, filePathPrefix, derivedLogicalEntities);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -79,6 +89,7 @@ public class ValidatePatternResult {
                     message(o.getMessage())
                             .status(o.getStatus())
                             .expression(o.getExpression())
+                            .filePathPrefix(o.getFilePathPrefix())
                             .derivedLogicalEntities(o.getDerivedLogicalEntities());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
@@ -112,7 +123,13 @@ public class ValidatePatternResult {
     String expression;
 
     /**
-     * Collection of logical entities derived from the expression applied to a list of file paths.
+     * The prefix used in the pattern validation.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("filePathPrefix")
+    String filePathPrefix;
+
+    /**
+     * Collection of logical entities derived from the pattern, as applied to a list of file paths.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("derivedLogicalEntities")
     java.util.List<DerivedLogicalEntities> derivedLogicalEntities;

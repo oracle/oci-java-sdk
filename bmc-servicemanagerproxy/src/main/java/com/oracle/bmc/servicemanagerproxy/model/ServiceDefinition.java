@@ -5,7 +5,8 @@
 package com.oracle.bmc.servicemanagerproxy.model;
 
 /**
- * Model for details associated with service
+ * Details for a service definition.
+ *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -83,19 +84,23 @@ public class ServiceDefinition {
     }
 
     /**
-     * The service definition type.
+     * The service definition type. For example, a service definition type "RGBUOROMS"
+     * would be for the service "Oracle Retail Order Management Cloud Service".
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     String type;
 
     /**
-     * Display name of the service.
+     * Display name of the service. For example, "Oracle Retail Order Management Cloud Service".
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     String displayName;
 
     /**
-     * Short display name of the service.
+     * Short display name of the service. For example, "Retail Order Management".
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("shortDisplayName")
     String shortDisplayName;

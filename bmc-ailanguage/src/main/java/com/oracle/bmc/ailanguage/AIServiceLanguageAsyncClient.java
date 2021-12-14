@@ -379,6 +379,255 @@ public class AIServiceLanguageAsyncClient implements AIServiceLanguageAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<BatchDetectDominantLanguageResponse>
+            batchDetectDominantLanguage(
+                    BatchDetectDominantLanguageRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    BatchDetectDominantLanguageRequest,
+                                    BatchDetectDominantLanguageResponse>
+                            handler) {
+        LOG.trace("Called async batchDetectDominantLanguage");
+        final BatchDetectDominantLanguageRequest interceptedRequest =
+                BatchDetectDominantLanguageConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                BatchDetectDominantLanguageConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, BatchDetectDominantLanguageResponse>
+                transformer = BatchDetectDominantLanguageConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        BatchDetectDominantLanguageRequest, BatchDetectDominantLanguageResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                BatchDetectDominantLanguageRequest,
+                                BatchDetectDominantLanguageResponse>,
+                        java.util.concurrent.Future<BatchDetectDominantLanguageResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getBatchDetectDominantLanguageDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    BatchDetectDominantLanguageRequest, BatchDetectDominantLanguageResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<BatchDetectLanguageEntitiesResponse>
+            batchDetectLanguageEntities(
+                    BatchDetectLanguageEntitiesRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    BatchDetectLanguageEntitiesRequest,
+                                    BatchDetectLanguageEntitiesResponse>
+                            handler) {
+        LOG.trace("Called async batchDetectLanguageEntities");
+        final BatchDetectLanguageEntitiesRequest interceptedRequest =
+                BatchDetectLanguageEntitiesConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                BatchDetectLanguageEntitiesConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, BatchDetectLanguageEntitiesResponse>
+                transformer = BatchDetectLanguageEntitiesConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        BatchDetectLanguageEntitiesRequest, BatchDetectLanguageEntitiesResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                BatchDetectLanguageEntitiesRequest,
+                                BatchDetectLanguageEntitiesResponse>,
+                        java.util.concurrent.Future<BatchDetectLanguageEntitiesResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getBatchDetectLanguageEntitiesDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    BatchDetectLanguageEntitiesRequest, BatchDetectLanguageEntitiesResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<BatchDetectLanguageKeyPhrasesResponse>
+            batchDetectLanguageKeyPhrases(
+                    BatchDetectLanguageKeyPhrasesRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    BatchDetectLanguageKeyPhrasesRequest,
+                                    BatchDetectLanguageKeyPhrasesResponse>
+                            handler) {
+        LOG.trace("Called async batchDetectLanguageKeyPhrases");
+        final BatchDetectLanguageKeyPhrasesRequest interceptedRequest =
+                BatchDetectLanguageKeyPhrasesConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                BatchDetectLanguageKeyPhrasesConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, BatchDetectLanguageKeyPhrasesResponse>
+                transformer = BatchDetectLanguageKeyPhrasesConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        BatchDetectLanguageKeyPhrasesRequest, BatchDetectLanguageKeyPhrasesResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                BatchDetectLanguageKeyPhrasesRequest,
+                                BatchDetectLanguageKeyPhrasesResponse>,
+                        java.util.concurrent.Future<BatchDetectLanguageKeyPhrasesResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getBatchDetectLanguageKeyPhrasesDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    BatchDetectLanguageKeyPhrasesRequest, BatchDetectLanguageKeyPhrasesResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<BatchDetectLanguageSentimentsResponse>
+            batchDetectLanguageSentiments(
+                    BatchDetectLanguageSentimentsRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    BatchDetectLanguageSentimentsRequest,
+                                    BatchDetectLanguageSentimentsResponse>
+                            handler) {
+        LOG.trace("Called async batchDetectLanguageSentiments");
+        final BatchDetectLanguageSentimentsRequest interceptedRequest =
+                BatchDetectLanguageSentimentsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                BatchDetectLanguageSentimentsConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, BatchDetectLanguageSentimentsResponse>
+                transformer = BatchDetectLanguageSentimentsConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        BatchDetectLanguageSentimentsRequest, BatchDetectLanguageSentimentsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                BatchDetectLanguageSentimentsRequest,
+                                BatchDetectLanguageSentimentsResponse>,
+                        java.util.concurrent.Future<BatchDetectLanguageSentimentsResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getBatchDetectLanguageSentimentsDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    BatchDetectLanguageSentimentsRequest, BatchDetectLanguageSentimentsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<BatchDetectLanguageTextClassificationResponse>
+            batchDetectLanguageTextClassification(
+                    BatchDetectLanguageTextClassificationRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    BatchDetectLanguageTextClassificationRequest,
+                                    BatchDetectLanguageTextClassificationResponse>
+                            handler) {
+        LOG.trace("Called async batchDetectLanguageTextClassification");
+        final BatchDetectLanguageTextClassificationRequest interceptedRequest =
+                BatchDetectLanguageTextClassificationConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                BatchDetectLanguageTextClassificationConverter.fromRequest(
+                        client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, BatchDetectLanguageTextClassificationResponse>
+                transformer = BatchDetectLanguageTextClassificationConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        BatchDetectLanguageTextClassificationRequest,
+                        BatchDetectLanguageTextClassificationResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                BatchDetectLanguageTextClassificationRequest,
+                                BatchDetectLanguageTextClassificationResponse>,
+                        java.util.concurrent.Future<BatchDetectLanguageTextClassificationResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest
+                                        .getBatchDetectLanguageTextClassificationDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    BatchDetectLanguageTextClassificationRequest,
+                    BatchDetectLanguageTextClassificationResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<DetectDominantLanguageResponse> detectDominantLanguage(
             DetectDominantLanguageRequest request,
             final com.oracle.bmc.responses.AsyncHandler<

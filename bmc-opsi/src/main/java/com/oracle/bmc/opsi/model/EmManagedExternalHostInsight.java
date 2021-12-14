@@ -416,6 +416,7 @@ public class EmManagedExternalHostInsight extends HostInsight {
     String enterpriseManagerBridgeId;
     /**
      * Platform type.
+     *
      **/
     @lombok.extern.slf4j.Slf4j
     public enum PlatformType {
@@ -461,6 +462,7 @@ public class EmManagedExternalHostInsight extends HostInsight {
     };
     /**
      * Platform type.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("platformType")
     PlatformType platformType;

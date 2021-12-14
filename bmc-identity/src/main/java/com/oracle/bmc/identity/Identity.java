@@ -392,6 +392,19 @@ public interface Identity extends AutoCloseable {
     CreateCustomerSecretKeyResponse createCustomerSecretKey(CreateCustomerSecretKeyRequest request);
 
     /**
+     * Creates a new DB credential for the specified user.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/CreateDbCredentialExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateDbCredential API.
+     */
+    CreateDbCredentialResponse createDbCredential(CreateDbCredentialRequest request);
+
+    /**
      * Creates a new domain in the tenancy with domain home in {@code homeRegion}. This is an asynchronous call - where, at start,
      * {@code lifecycleState} of this domain is set to CREATING and {@code lifecycleDetails} to UPDATING. On domain creation completion
      * this Domain's {@code lifecycleState} will be set to ACTIVE and {@code lifecycleDetails} to null.
@@ -909,6 +922,19 @@ public interface Identity extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/DeleteCustomerSecretKeyExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteCustomerSecretKey API.
      */
     DeleteCustomerSecretKeyResponse deleteCustomerSecretKey(DeleteCustomerSecretKeyRequest request);
+
+    /**
+     * Deletes the specified DB credential for the specified user.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/DeleteDbCredentialExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteDbCredential API.
+     */
+    DeleteDbCredentialResponse deleteDbCredential(DeleteDbCredentialRequest request);
 
     /**
      * Soft Deletes a domain.
@@ -1659,6 +1685,19 @@ public interface Identity extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/ListCustomerSecretKeysExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListCustomerSecretKeys API.
      */
     ListCustomerSecretKeysResponse listCustomerSecretKeys(ListCustomerSecretKeysRequest request);
+
+    /**
+     * Lists the DB credentials for the specified user. The returned object contains the credential's OCID
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/ListDbCredentialsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListDbCredentials API.
+     */
+    ListDbCredentialsResponse listDbCredentials(ListDbCredentialsRequest request);
 
     /**
      * List all domains that are homed or have a replica region in current region.

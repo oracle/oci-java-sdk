@@ -158,6 +158,11 @@ public class ListAutonomousContainerDatabasesRequest
      */
     private String serviceLevelAgreementType;
 
+    /**
+     * The cloud Autonomous VM Cluster [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     */
+    private String cloudAutonomousVmClusterId;
+
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListAutonomousContainerDatabasesRequest, java.lang.Void> {
@@ -205,6 +210,7 @@ public class ListAutonomousContainerDatabasesRequest
             availabilityDomain(o.getAvailabilityDomain());
             displayName(o.getDisplayName());
             serviceLevelAgreementType(o.getServiceLevelAgreementType());
+            cloudAutonomousVmClusterId(o.getCloudAutonomousVmClusterId());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;

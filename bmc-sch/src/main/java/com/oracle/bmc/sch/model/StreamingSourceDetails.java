@@ -5,7 +5,7 @@
 package com.oracle.bmc.sch.model;
 
 /**
- * The streaming source.
+ * The Streaming source.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields

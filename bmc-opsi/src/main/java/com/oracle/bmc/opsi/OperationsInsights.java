@@ -115,6 +115,20 @@ public interface OperationsInsights extends AutoCloseable {
             ChangeHostInsightCompartmentRequest request);
 
     /**
+     * Create a AWR hub resource for the tenant in Operations Insights.
+     * This resource will be created in root compartment.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/CreateAwrHubExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateAwrHub API.
+     */
+    CreateAwrHubResponse createAwrHub(CreateAwrHubRequest request);
+
+    /**
      * Create a Database Insight resource for a database in Operations Insights. The database will be enabled in Operations Insights. Database metric collection and analysis will be started.
      *
      * @param request The request object containing the details to send
@@ -168,6 +182,48 @@ public interface OperationsInsights extends AutoCloseable {
     CreateHostInsightResponse createHostInsight(CreateHostInsightRequest request);
 
     /**
+     * Create a Operations Insights Warehouse resource for the tenant in Operations Insights. New ADW will be provisioned for this tenant.
+     * There is only expected to be 1 warehouse per tenant. The warehouse is expected to be in the root compartment.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/CreateOperationsInsightsWarehouseExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateOperationsInsightsWarehouse API.
+     */
+    CreateOperationsInsightsWarehouseResponse createOperationsInsightsWarehouse(
+            CreateOperationsInsightsWarehouseRequest request);
+
+    /**
+     * Create a Operations Insights Warehouse user resource for the tenant in Operations Insights.
+     * This resource will be created in root compartment.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/CreateOperationsInsightsWarehouseUserExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateOperationsInsightsWarehouseUser API.
+     */
+    CreateOperationsInsightsWarehouseUserResponse createOperationsInsightsWarehouseUser(
+            CreateOperationsInsightsWarehouseUserRequest request);
+
+    /**
+     * Deletes an AWR hub.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/DeleteAwrHubExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteAwrHub API.
+     */
+    DeleteAwrHubResponse deleteAwrHub(DeleteAwrHubRequest request);
+
+    /**
      * Deletes a database insight. The database insight will be deleted and cannot be enabled again.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -217,6 +273,36 @@ public interface OperationsInsights extends AutoCloseable {
     DeleteHostInsightResponse deleteHostInsight(DeleteHostInsightRequest request);
 
     /**
+     * Deletes an Operations Insights Warehouse. There is only expected to be 1 warehouse per tenant.
+     * The warehouse is expected to be in the root compartment.
+     * User must delete AWR Hub resource for this warehouse before calling this operation.
+     * User must delete the warehouse users before calling this operation.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/DeleteOperationsInsightsWarehouseExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteOperationsInsightsWarehouse API.
+     */
+    DeleteOperationsInsightsWarehouseResponse deleteOperationsInsightsWarehouse(
+            DeleteOperationsInsightsWarehouseRequest request);
+
+    /**
+     * Deletes an Operations Insights Warehouse User.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/DeleteOperationsInsightsWarehouseUserExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteOperationsInsightsWarehouseUser API.
+     */
+    DeleteOperationsInsightsWarehouseUserResponse deleteOperationsInsightsWarehouseUser(
+            DeleteOperationsInsightsWarehouseUserRequest request);
+
+    /**
      * Disables a database in Operations Insights. Database metric collection and analysis will be stopped.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -253,6 +339,19 @@ public interface OperationsInsights extends AutoCloseable {
     DisableHostInsightResponse disableHostInsight(DisableHostInsightRequest request);
 
     /**
+     * Download the ADW wallet for Operations Insights Warehouse using which the Hub data is exposed.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/DownloadOperationsInsightsWarehouseWalletExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DownloadOperationsInsightsWarehouseWallet API.
+     */
+    DownloadOperationsInsightsWarehouseWalletResponse downloadOperationsInsightsWarehouseWallet(
+            DownloadOperationsInsightsWarehouseWalletRequest request);
+
+    /**
      * Enables a database in Operations Insights. Database metric collection and analysis will be started.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -287,6 +386,32 @@ public interface OperationsInsights extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/EnableHostInsightExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use EnableHostInsight API.
      */
     EnableHostInsightResponse enableHostInsight(EnableHostInsightRequest request);
+
+    /**
+     * Gets details of an AWR hub.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/GetAwrHubExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetAwrHub API.
+     */
+    GetAwrHubResponse getAwrHub(GetAwrHubRequest request);
+
+    /**
+     * Gets the AWR report for the specified source database in the AWR hub. The difference between the timeGreaterThanOrEqualTo and timeLessThanOrEqualTo should not be greater than 7 days.
+     * Either beginSnapshotIdentifierGreaterThanOrEqualTo & endSnapshotIdentifierLessThanOrEqualTo params Or timeGreaterThanOrEqualTo & timeLessThanOrEqualTo params are required.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/GetAwrReportExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetAwrReport API.
+     */
+    GetAwrReportResponse getAwrReport(GetAwrReportRequest request);
 
     /**
      * Gets details of a database insight.
@@ -336,6 +461,34 @@ public interface OperationsInsights extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/GetHostInsightExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetHostInsight API.
      */
     GetHostInsightResponse getHostInsight(GetHostInsightRequest request);
+
+    /**
+     * Gets details of an Operations Insights Warehouse.
+     * There is only expected to be 1 warehouse per tenant. The warehouse is expected to be in the root compartment.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/GetOperationsInsightsWarehouseExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetOperationsInsightsWarehouse API.
+     */
+    GetOperationsInsightsWarehouseResponse getOperationsInsightsWarehouse(
+            GetOperationsInsightsWarehouseRequest request);
+
+    /**
+     * Gets details of an Operations Insights Warehouse User.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/GetOperationsInsightsWarehouseUserExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetOperationsInsightsWarehouseUser API.
+     */
+    GetOperationsInsightsWarehouseUserResponse getOperationsInsightsWarehouseUser(
+            GetOperationsInsightsWarehouseUserRequest request);
 
     /**
      * Gets the status of the work request with the given ID.
@@ -415,6 +568,20 @@ public interface OperationsInsights extends AutoCloseable {
     IngestSqlPlanLinesResponse ingestSqlPlanLines(IngestSqlPlanLinesRequest request);
 
     /**
+     * The SQL Stats endpoint takes in a JSON payload, persists it in Operations Insights ingest pipeline.
+     * Either databaseId or id must be specified.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/IngestSqlStatsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use IngestSqlStats API.
+     */
+    IngestSqlStatsResponse ingestSqlStats(IngestSqlStatsRequest request);
+
+    /**
      * The SqlText endpoint takes in a JSON payload, persists it in Operation Insights ingest pipeline.
      * Either databaseId or id must be specified.
      * Disclaimer: SQL text being uploaded explicitly via APIs is not masked. Any sensitive literals contained in the sqlFullText column should be masked prior to ingestion.
@@ -428,6 +595,33 @@ public interface OperationsInsights extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/IngestSqlTextExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use IngestSqlText API.
      */
     IngestSqlTextResponse ingestSqlText(IngestSqlTextRequest request);
+
+    /**
+     * Gets a list of AWR hubs. Either compartmentId or id must be specified. All these resources are expected to be in root compartment.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/ListAwrHubsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListAwrHubs API.
+     */
+    ListAwrHubsResponse listAwrHubs(ListAwrHubsRequest request);
+
+    /**
+     * Lists AWR snapshots for the specified source database in the AWR hub. The difference between the timeGreaterThanOrEqualTo and timeLessThanOrEqualTo should not exceed an elapsed range of 1 day.
+     * The timeGreaterThanOrEqualTo & timeLessThanOrEqualTo params are optional. If these params are not provided, by default last 1 day snapshots will be returned.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/ListAwrSnapshotsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListAwrSnapshots API.
+     */
+    ListAwrSnapshotsResponse listAwrSnapshots(ListAwrSnapshotsRequest request);
 
     /**
      * Gets a list of database insight configurations based on the query parameters specified. Either compartmentId or databaseInsightId query parameter must be specified.
@@ -574,6 +768,35 @@ public interface OperationsInsights extends AutoCloseable {
             ListImportableEnterpriseManagerEntitiesRequest request);
 
     /**
+     * Gets a list of Operations Insights Warehouse users. Either compartmentId or id must be specified. All these resources are expected to be in root compartment.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/ListOperationsInsightsWarehouseUsersExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListOperationsInsightsWarehouseUsers API.
+     */
+    ListOperationsInsightsWarehouseUsersResponse listOperationsInsightsWarehouseUsers(
+            ListOperationsInsightsWarehouseUsersRequest request);
+
+    /**
+     * Gets a list of Operations Insights warehouses. Either compartmentId or id must be specified.
+     * There is only expected to be 1 warehouse per tenant. The warehouse is expected to be in the root compartment.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/ListOperationsInsightsWarehousesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListOperationsInsightsWarehouses API.
+     */
+    ListOperationsInsightsWarehousesResponse listOperationsInsightsWarehouses(
+            ListOperationsInsightsWarehousesRequest request);
+
+    /**
      * Query SQL Warehouse to list the plan xml for a given SQL execution plan. This returns a SqlPlanCollection object, but is currently limited to a single plan.
      * Either databaseId or id must be specified.
      *
@@ -652,6 +875,33 @@ public interface OperationsInsights extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/ListWorkRequestsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWorkRequests API.
      */
     ListWorkRequestsResponse listWorkRequests(ListWorkRequestsRequest request);
+
+    /**
+     * Rotate the ADW wallet for Operations Insights Warehouse using which the Hub data is exposed.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/RotateOperationsInsightsWarehouseWalletExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RotateOperationsInsightsWarehouseWallet API.
+     */
+    RotateOperationsInsightsWarehouseWalletResponse rotateOperationsInsightsWarehouseWallet(
+            RotateOperationsInsightsWarehouseWalletRequest request);
+
+    /**
+     * Gets a list of summary of AWR Sources.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/SummarizeAwrSourcesSummariesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use SummarizeAwrSourcesSummaries API.
+     */
+    SummarizeAwrSourcesSummariesResponse summarizeAwrSourcesSummaries(
+            SummarizeAwrSourcesSummariesRequest request);
 
     /**
      * Returns response with time series data (endTimestamp, capacity, baseCapacity) for the time period specified.
@@ -1027,6 +1277,22 @@ public interface OperationsInsights extends AutoCloseable {
                     SummarizeHostInsightResourceUtilizationInsightRequest request);
 
     /**
+     * Gets the details of resources used by an Operations Insights Warehouse.
+     * There is only expected to be 1 warehouse per tenant. The warehouse is expected to be in the root compartment.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/SummarizeOperationsInsightsWarehouseResourceUsageExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use SummarizeOperationsInsightsWarehouseResourceUsage API.
+     */
+    SummarizeOperationsInsightsWarehouseResourceUsageResponse
+            summarizeOperationsInsightsWarehouseResourceUsage(
+                    SummarizeOperationsInsightsWarehouseResourceUsageRequest request);
+
+    /**
      * Query SQL Warehouse to get the performance insights for SQLs taking greater than X% database time for a given
      * time period across the given databases or database types in a compartment and in all sub-compartments if specified.
      *
@@ -1115,6 +1381,18 @@ public interface OperationsInsights extends AutoCloseable {
             SummarizeSqlStatisticsTimeSeriesByPlanRequest request);
 
     /**
+     * Updates the configuration of a hub .
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/UpdateAwrHubExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateAwrHub API.
+     */
+    UpdateAwrHubResponse updateAwrHub(UpdateAwrHubRequest request);
+
+    /**
      * Updates configuration of a database insight.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -1162,6 +1440,34 @@ public interface OperationsInsights extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/UpdateHostInsightExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateHostInsight API.
      */
     UpdateHostInsightResponse updateHostInsight(UpdateHostInsightRequest request);
+
+    /**
+     * Updates the configuration of an Operations Insights Warehouse.
+     * There is only expected to be 1 warehouse per tenant. The warehouse is expected to be in the root compartment.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/UpdateOperationsInsightsWarehouseExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateOperationsInsightsWarehouse API.
+     */
+    UpdateOperationsInsightsWarehouseResponse updateOperationsInsightsWarehouse(
+            UpdateOperationsInsightsWarehouseRequest request);
+
+    /**
+     * Updates the configuration of an Operations Insights Warehouse User.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/UpdateOperationsInsightsWarehouseUserExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateOperationsInsightsWarehouseUser API.
+     */
+    UpdateOperationsInsightsWarehouseUserResponse updateOperationsInsightsWarehouseUser(
+            UpdateOperationsInsightsWarehouseUserRequest request);
 
     /**
      * Gets the pre-configured waiters available for resources for this service.

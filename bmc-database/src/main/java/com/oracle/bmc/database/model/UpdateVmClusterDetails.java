@@ -37,6 +37,15 @@ public class UpdateVmClusterDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("ocpuCount")
+        private Float ocpuCount;
+
+        public Builder ocpuCount(Float ocpuCount) {
+            this.ocpuCount = ocpuCount;
+            this.__explicitlySet__.add("ocpuCount");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("memorySizeInGBs")
         private Integer memorySizeInGBs;
 
@@ -61,6 +70,15 @@ public class UpdateVmClusterDetails {
         public Builder dataStorageSizeInTBs(Double dataStorageSizeInTBs) {
             this.dataStorageSizeInTBs = dataStorageSizeInTBs;
             this.__explicitlySet__.add("dataStorageSizeInTBs");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("dataStorageSizeInGBs")
+        private Double dataStorageSizeInGBs;
+
+        public Builder dataStorageSizeInGBs(Double dataStorageSizeInGBs) {
+            this.dataStorageSizeInGBs = dataStorageSizeInGBs;
+            this.__explicitlySet__.add("dataStorageSizeInGBs");
             return this;
         }
 
@@ -126,9 +144,11 @@ public class UpdateVmClusterDetails {
             UpdateVmClusterDetails __instance__ =
                     new UpdateVmClusterDetails(
                             cpuCoreCount,
+                            ocpuCount,
                             memorySizeInGBs,
                             dbNodeStorageSizeInGBs,
                             dataStorageSizeInTBs,
+                            dataStorageSizeInGBs,
                             licenseModel,
                             sshPublicKeys,
                             version,
@@ -143,9 +163,11 @@ public class UpdateVmClusterDetails {
         public Builder copy(UpdateVmClusterDetails o) {
             Builder copiedBuilder =
                     cpuCoreCount(o.getCpuCoreCount())
+                            .ocpuCount(o.getOcpuCount())
                             .memorySizeInGBs(o.getMemorySizeInGBs())
                             .dbNodeStorageSizeInGBs(o.getDbNodeStorageSizeInGBs())
                             .dataStorageSizeInTBs(o.getDataStorageSizeInTBs())
+                            .dataStorageSizeInGBs(o.getDataStorageSizeInGBs())
                             .licenseModel(o.getLicenseModel())
                             .sshPublicKeys(o.getSshPublicKeys())
                             .version(o.getVersion())
@@ -172,6 +194,12 @@ public class UpdateVmClusterDetails {
     Integer cpuCoreCount;
 
     /**
+     * The number of OCPU cores to enable for the VM cluster. Only 1 decimal place is allowed for the fractional part.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("ocpuCount")
+    Float ocpuCount;
+
+    /**
      * The memory to be allocated in GBs.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("memorySizeInGBs")
@@ -188,6 +216,12 @@ public class UpdateVmClusterDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dataStorageSizeInTBs")
     Double dataStorageSizeInTBs;
+
+    /**
+     * The data disk group size to be allocated in GBs.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("dataStorageSizeInGBs")
+    Double dataStorageSizeInGBs;
     /**
      * The Oracle license model that applies to the VM cluster. The default is BRING_YOUR_OWN_LICENSE.
      *

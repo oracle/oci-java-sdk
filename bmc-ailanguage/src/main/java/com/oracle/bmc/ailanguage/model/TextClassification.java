@@ -76,7 +76,9 @@ public class TextClassification {
     String label;
 
     /**
-     * Score of the given text.
+     * Score or confidence of extracted text label.
+     * Example: {@code 0.9999856066867399}
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("score")
     Double score;

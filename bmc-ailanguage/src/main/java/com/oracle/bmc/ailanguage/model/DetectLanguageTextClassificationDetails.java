@@ -62,7 +62,7 @@ public class DetectLanguageTextClassificationDetails {
     }
 
     /**
-     * Document text for detect text labels.
+     * Document text for detect text classes.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("text")
     String text;

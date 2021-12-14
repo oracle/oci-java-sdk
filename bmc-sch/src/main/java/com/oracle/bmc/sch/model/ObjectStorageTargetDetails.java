@@ -6,6 +6,8 @@ package com.oracle.bmc.sch.model;
 
 /**
  * The bucket used for the Object Storage target.
+ * For configuration instructions, see
+ * [To create a service connector](https://docs.cloud.oracle.com/iaas/Content/service-connector-hub/managingconnectors.htm#create).
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields

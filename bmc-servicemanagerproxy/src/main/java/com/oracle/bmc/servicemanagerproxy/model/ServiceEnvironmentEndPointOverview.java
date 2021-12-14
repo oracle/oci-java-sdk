@@ -5,7 +5,7 @@
 package com.oracle.bmc.servicemanagerproxy.model;
 
 /**
- * Model describing the properties of service environment endPoint overview.
+ * An overview of service environment endpoints.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -45,19 +45,31 @@ public class ServiceEnvironmentEndPointOverview {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("description")
+        private String description;
+
+        public Builder description(String description) {
+            this.description = description;
+            this.__explicitlySet__.add("description");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ServiceEnvironmentEndPointOverview build() {
             ServiceEnvironmentEndPointOverview __instance__ =
-                    new ServiceEnvironmentEndPointOverview(environmentType, url);
+                    new ServiceEnvironmentEndPointOverview(environmentType, url, description);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(ServiceEnvironmentEndPointOverview o) {
-            Builder copiedBuilder = environmentType(o.getEnvironmentType()).url(o.getUrl());
+            Builder copiedBuilder =
+                    environmentType(o.getEnvironmentType())
+                            .url(o.getUrl())
+                            .description(o.getDescription());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -72,13 +84,14 @@ public class ServiceEnvironmentEndPointOverview {
     }
 
     /**
-     * Service Environemnt EndPoint type.
+     * Service environment endpoint type.
      **/
     @lombok.extern.slf4j.Slf4j
     public enum EnvironmentType {
         InstanceUrlProd("INSTANCE_URL_PROD"),
         InstanceUrlTest("INSTANCE_URL_TEST"),
         InstanceUrlDev("INSTANCE_URL_DEV"),
+        Other("OTHER"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this
@@ -119,16 +132,22 @@ public class ServiceEnvironmentEndPointOverview {
         }
     };
     /**
-     * Service Environemnt EndPoint type.
+     * Service environment endpoint type.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("environmentType")
     EnvironmentType environmentType;
 
     /**
-     * Service Environemnt Instance EndPoint url.
+     * Service environment instance URL.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("url")
     String url;
+
+    /**
+     * Description of the environment link
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("description")
+    String description;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

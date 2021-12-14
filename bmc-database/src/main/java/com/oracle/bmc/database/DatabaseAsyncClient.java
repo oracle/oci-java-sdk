@@ -847,6 +847,62 @@ public class DatabaseAsyncClient implements DatabaseAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<ChangeCloudAutonomousVmClusterCompartmentResponse>
+            changeCloudAutonomousVmClusterCompartment(
+                    ChangeCloudAutonomousVmClusterCompartmentRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeCloudAutonomousVmClusterCompartmentRequest,
+                                    ChangeCloudAutonomousVmClusterCompartmentResponse>
+                            handler) {
+        LOG.trace("Called async changeCloudAutonomousVmClusterCompartment");
+        final ChangeCloudAutonomousVmClusterCompartmentRequest interceptedRequest =
+                ChangeCloudAutonomousVmClusterCompartmentConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangeCloudAutonomousVmClusterCompartmentConverter.fromRequest(
+                        client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        ChangeCloudAutonomousVmClusterCompartmentResponse>
+                transformer = ChangeCloudAutonomousVmClusterCompartmentConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        ChangeCloudAutonomousVmClusterCompartmentRequest,
+                        ChangeCloudAutonomousVmClusterCompartmentResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ChangeCloudAutonomousVmClusterCompartmentRequest,
+                                ChangeCloudAutonomousVmClusterCompartmentResponse>,
+                        java.util.concurrent.Future<
+                                ChangeCloudAutonomousVmClusterCompartmentResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest
+                                        .getChangeCloudAutonomousVmClusterCompartmentDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ChangeCloudAutonomousVmClusterCompartmentRequest,
+                    ChangeCloudAutonomousVmClusterCompartmentResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<ChangeCloudExadataInfrastructureCompartmentResponse>
             changeCloudExadataInfrastructureCompartment(
                     ChangeCloudExadataInfrastructureCompartmentRequest request,
@@ -1844,6 +1900,57 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     CreateBackupDestinationRequest, CreateBackupDestinationResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateCloudAutonomousVmClusterResponse>
+            createCloudAutonomousVmCluster(
+                    CreateCloudAutonomousVmClusterRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    CreateCloudAutonomousVmClusterRequest,
+                                    CreateCloudAutonomousVmClusterResponse>
+                            handler) {
+        LOG.trace("Called async createCloudAutonomousVmCluster");
+        final CreateCloudAutonomousVmClusterRequest interceptedRequest =
+                CreateCloudAutonomousVmClusterConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateCloudAutonomousVmClusterConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, CreateCloudAutonomousVmClusterResponse>
+                transformer = CreateCloudAutonomousVmClusterConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        CreateCloudAutonomousVmClusterRequest,
+                        CreateCloudAutonomousVmClusterResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CreateCloudAutonomousVmClusterRequest,
+                                CreateCloudAutonomousVmClusterResponse>,
+                        java.util.concurrent.Future<CreateCloudAutonomousVmClusterResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateCloudAutonomousVmClusterDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CreateCloudAutonomousVmClusterRequest, CreateCloudAutonomousVmClusterResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -2869,6 +2976,51 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     DeleteBackupDestinationRequest, DeleteBackupDestinationResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteCloudAutonomousVmClusterResponse>
+            deleteCloudAutonomousVmCluster(
+                    DeleteCloudAutonomousVmClusterRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    DeleteCloudAutonomousVmClusterRequest,
+                                    DeleteCloudAutonomousVmClusterResponse>
+                            handler) {
+        LOG.trace("Called async deleteCloudAutonomousVmCluster");
+        final DeleteCloudAutonomousVmClusterRequest interceptedRequest =
+                DeleteCloudAutonomousVmClusterConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteCloudAutonomousVmClusterConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, DeleteCloudAutonomousVmClusterResponse>
+                transformer = DeleteCloudAutonomousVmClusterConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        DeleteCloudAutonomousVmClusterRequest,
+                        DeleteCloudAutonomousVmClusterResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DeleteCloudAutonomousVmClusterRequest,
+                                DeleteCloudAutonomousVmClusterResponse>,
+                        java.util.concurrent.Future<DeleteCloudAutonomousVmClusterResponse>>
+                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DeleteCloudAutonomousVmClusterRequest, DeleteCloudAutonomousVmClusterResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -5362,6 +5514,50 @@ public class DatabaseAsyncClient implements DatabaseAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<GetCloudAutonomousVmClusterResponse>
+            getCloudAutonomousVmCluster(
+                    GetCloudAutonomousVmClusterRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    GetCloudAutonomousVmClusterRequest,
+                                    GetCloudAutonomousVmClusterResponse>
+                            handler) {
+        LOG.trace("Called async getCloudAutonomousVmCluster");
+        final GetCloudAutonomousVmClusterRequest interceptedRequest =
+                GetCloudAutonomousVmClusterConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetCloudAutonomousVmClusterConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, GetCloudAutonomousVmClusterResponse>
+                transformer = GetCloudAutonomousVmClusterConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        GetCloudAutonomousVmClusterRequest, GetCloudAutonomousVmClusterResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetCloudAutonomousVmClusterRequest,
+                                GetCloudAutonomousVmClusterResponse>,
+                        java.util.concurrent.Future<GetCloudAutonomousVmClusterResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetCloudAutonomousVmClusterRequest, GetCloudAutonomousVmClusterResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<GetCloudExadataInfrastructureResponse>
             getCloudExadataInfrastructure(
                     GetCloudExadataInfrastructureRequest request,
@@ -7515,6 +7711,50 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     ListBackupsRequest, ListBackupsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListCloudAutonomousVmClustersResponse>
+            listCloudAutonomousVmClusters(
+                    ListCloudAutonomousVmClustersRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListCloudAutonomousVmClustersRequest,
+                                    ListCloudAutonomousVmClustersResponse>
+                            handler) {
+        LOG.trace("Called async listCloudAutonomousVmClusters");
+        final ListCloudAutonomousVmClustersRequest interceptedRequest =
+                ListCloudAutonomousVmClustersConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListCloudAutonomousVmClustersConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ListCloudAutonomousVmClustersResponse>
+                transformer = ListCloudAutonomousVmClustersConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListCloudAutonomousVmClustersRequest, ListCloudAutonomousVmClustersResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListCloudAutonomousVmClustersRequest,
+                                ListCloudAutonomousVmClustersResponse>,
+                        java.util.concurrent.Future<ListCloudAutonomousVmClustersResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListCloudAutonomousVmClustersRequest, ListCloudAutonomousVmClustersResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -9805,6 +10045,103 @@ public class DatabaseAsyncClient implements DatabaseAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<RotateCloudAutonomousVmClusterOrdsCertsResponse>
+            rotateCloudAutonomousVmClusterOrdsCerts(
+                    RotateCloudAutonomousVmClusterOrdsCertsRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    RotateCloudAutonomousVmClusterOrdsCertsRequest,
+                                    RotateCloudAutonomousVmClusterOrdsCertsResponse>
+                            handler) {
+        LOG.trace("Called async rotateCloudAutonomousVmClusterOrdsCerts");
+        final RotateCloudAutonomousVmClusterOrdsCertsRequest interceptedRequest =
+                RotateCloudAutonomousVmClusterOrdsCertsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                RotateCloudAutonomousVmClusterOrdsCertsConverter.fromRequest(
+                        client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, RotateCloudAutonomousVmClusterOrdsCertsResponse>
+                transformer = RotateCloudAutonomousVmClusterOrdsCertsConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        RotateCloudAutonomousVmClusterOrdsCertsRequest,
+                        RotateCloudAutonomousVmClusterOrdsCertsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                RotateCloudAutonomousVmClusterOrdsCertsRequest,
+                                RotateCloudAutonomousVmClusterOrdsCertsResponse>,
+                        java.util.concurrent.Future<
+                                RotateCloudAutonomousVmClusterOrdsCertsResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    RotateCloudAutonomousVmClusterOrdsCertsRequest,
+                    RotateCloudAutonomousVmClusterOrdsCertsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<RotateCloudAutonomousVmClusterSslCertsResponse>
+            rotateCloudAutonomousVmClusterSslCerts(
+                    RotateCloudAutonomousVmClusterSslCertsRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    RotateCloudAutonomousVmClusterSslCertsRequest,
+                                    RotateCloudAutonomousVmClusterSslCertsResponse>
+                            handler) {
+        LOG.trace("Called async rotateCloudAutonomousVmClusterSslCerts");
+        final RotateCloudAutonomousVmClusterSslCertsRequest interceptedRequest =
+                RotateCloudAutonomousVmClusterSslCertsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                RotateCloudAutonomousVmClusterSslCertsConverter.fromRequest(
+                        client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, RotateCloudAutonomousVmClusterSslCertsResponse>
+                transformer = RotateCloudAutonomousVmClusterSslCertsConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        RotateCloudAutonomousVmClusterSslCertsRequest,
+                        RotateCloudAutonomousVmClusterSslCertsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                RotateCloudAutonomousVmClusterSslCertsRequest,
+                                RotateCloudAutonomousVmClusterSslCertsResponse>,
+                        java.util.concurrent.Future<RotateCloudAutonomousVmClusterSslCertsResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    RotateCloudAutonomousVmClusterSslCertsRequest,
+                    RotateCloudAutonomousVmClusterSslCertsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<RotateOrdsCertsResponse> rotateOrdsCerts(
             RotateOrdsCertsRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -10756,6 +11093,56 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     UpdateBackupDestinationRequest, UpdateBackupDestinationResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateCloudAutonomousVmClusterResponse>
+            updateCloudAutonomousVmCluster(
+                    UpdateCloudAutonomousVmClusterRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    UpdateCloudAutonomousVmClusterRequest,
+                                    UpdateCloudAutonomousVmClusterResponse>
+                            handler) {
+        LOG.trace("Called async updateCloudAutonomousVmCluster");
+        final UpdateCloudAutonomousVmClusterRequest interceptedRequest =
+                UpdateCloudAutonomousVmClusterConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateCloudAutonomousVmClusterConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, UpdateCloudAutonomousVmClusterResponse>
+                transformer = UpdateCloudAutonomousVmClusterConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        UpdateCloudAutonomousVmClusterRequest,
+                        UpdateCloudAutonomousVmClusterResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpdateCloudAutonomousVmClusterRequest,
+                                UpdateCloudAutonomousVmClusterResponse>,
+                        java.util.concurrent.Future<UpdateCloudAutonomousVmClusterResponse>>
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateCloudAutonomousVmClusterDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpdateCloudAutonomousVmClusterRequest, UpdateCloudAutonomousVmClusterResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,

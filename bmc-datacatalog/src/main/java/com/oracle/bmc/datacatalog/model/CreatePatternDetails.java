@@ -5,7 +5,7 @@
 package com.oracle.bmc.datacatalog.model;
 
 /**
- * Properties used in data asset create operations.
+ * Properties used in pattern create operations.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -50,6 +50,15 @@ public class CreatePatternDetails {
         public Builder expression(String expression) {
             this.expression = expression;
             this.__explicitlySet__.add("expression");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("filePathPrefix")
+        private String filePathPrefix;
+
+        public Builder filePathPrefix(String filePathPrefix) {
+            this.filePathPrefix = filePathPrefix;
+            this.__explicitlySet__.add("filePathPrefix");
             return this;
         }
 
@@ -98,6 +107,7 @@ public class CreatePatternDetails {
                             displayName,
                             description,
                             expression,
+                            filePathPrefix,
                             checkFilePathList,
                             isEnableCheckFailureLimit,
                             checkFailureLimit,
@@ -112,6 +122,7 @@ public class CreatePatternDetails {
                     displayName(o.getDisplayName())
                             .description(o.getDescription())
                             .expression(o.getExpression())
+                            .filePathPrefix(o.getFilePathPrefix())
                             .checkFilePathList(o.getCheckFilePathList())
                             .isEnableCheckFailureLimit(o.getIsEnableCheckFailureLimit())
                             .checkFailureLimit(o.getCheckFailureLimit())
@@ -144,14 +155,25 @@ public class CreatePatternDetails {
     String description;
 
     /**
-     * The expression used in the pattern that may include qualifiers. Refer to the user documentation for details of the format and examples.
+     * Input string which drives the selection process, allowing for fine-grained control using qualifiers.
+     * Refer to the user documentation for details of the format and examples. A pattern cannot include both
+     * a prefix and an expression.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("expression")
     String expression;
 
     /**
-     * List of file paths against which the expression can be tried, as a check. This documents, for reference
+     * Input string which drives the selection process.
+     * Refer to the user documentation for details of the format and examples. A pattern cannot include both
+     * a prefix and an expression.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("filePathPrefix")
+    String filePathPrefix;
+
+    /**
+     * List of file paths against which the pattern can be tried, as a check. This documents, for reference
      * purposes, some example objects a pattern is meant to work with. If isEnableCheckFailureLimit is set to true,
      * this will be run as a validation during the request, such that if the check fails the request fails. If
      * isEnableCheckFailureLimit instead is set to (the default) false, a pattern will still be created or updated even
@@ -162,7 +184,7 @@ public class CreatePatternDetails {
     java.util.List<String> checkFilePathList;
 
     /**
-     * Indicates whether the expression check, against the checkFilePathList, will fail the request if the count of
+     * Indicates whether the pattern check, against the checkFilePathList, will fail the request if the count of
      * UNMATCHED files is above the checkFailureLimit.
      *
      **/

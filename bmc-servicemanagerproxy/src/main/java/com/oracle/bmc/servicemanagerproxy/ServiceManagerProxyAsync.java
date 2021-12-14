@@ -8,7 +8,9 @@ import com.oracle.bmc.servicemanagerproxy.requests.*;
 import com.oracle.bmc.servicemanagerproxy.responses.*;
 
 /**
- * API to manage Service manager proxy.
+ * Use the Service Manager Proxy API to obtain information about SaaS environments provisioned by Service Manager.
+ * You can get information such as service types and service environment URLs.
+ *
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210914")
 public interface ServiceManagerProxyAsync extends AutoCloseable {
@@ -46,7 +48,8 @@ public interface ServiceManagerProxyAsync extends AutoCloseable {
     void setRegion(String regionId);
 
     /**
-     * Gets details of the service environment specified by the serviceEnvironmentId.
+     * Get the detailed information for a specific service environment.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -62,9 +65,8 @@ public interface ServiceManagerProxyAsync extends AutoCloseable {
                     handler);
 
     /**
-     * List details of environments which the service is authorized to view.
-     * This includes the service instance endpoints and service definition
-     * details.
+     * List the details of Software as a Service (SaaS) environments provisioned by Service Manager.
+     * Information includes the service instance endpoints and service definition details.
      *
      *
      * @param request The request object containing the details to send

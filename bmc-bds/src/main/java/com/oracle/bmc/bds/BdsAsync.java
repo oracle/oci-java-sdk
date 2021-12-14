@@ -47,6 +47,25 @@ public interface BdsAsync extends AutoCloseable {
     void setRegion(String regionId);
 
     /**
+     * Activate specified metastore configuration.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ActivateBdsMetastoreConfigurationResponse>
+            activateBdsMetastoreConfiguration(
+                    ActivateBdsMetastoreConfigurationRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ActivateBdsMetastoreConfigurationRequest,
+                                    ActivateBdsMetastoreConfigurationResponse>
+                            handler);
+
+    /**
      * Add an autoscale configuration to the cluster.
      *
      *
@@ -177,6 +196,25 @@ public interface BdsAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Create and activate external metastore configuration.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateBdsMetastoreConfigurationResponse>
+            createBdsMetastoreConfiguration(
+                    CreateBdsMetastoreConfigurationRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    CreateBdsMetastoreConfigurationRequest,
+                                    CreateBdsMetastoreConfigurationResponse>
+                            handler);
+
+    /**
      * Deletes the user's API key represented by the provided ID.
      *
      * @param request The request object containing the details to send
@@ -206,6 +244,24 @@ public interface BdsAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<
                             DeleteBdsInstanceRequest, DeleteBdsInstanceResponse>
                     handler);
+
+    /**
+     * Delete the BDS metastore configuration represented by the provided ID.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteBdsMetastoreConfigurationResponse>
+            deleteBdsMetastoreConfiguration(
+                    DeleteBdsMetastoreConfigurationRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    DeleteBdsMetastoreConfigurationRequest,
+                                    DeleteBdsMetastoreConfigurationResponse>
+                            handler);
 
     /**
      * Returns details of the autoscale configuration identified by the given ID.
@@ -252,6 +308,23 @@ public interface BdsAsync extends AutoCloseable {
     java.util.concurrent.Future<GetBdsInstanceResponse> getBdsInstance(
             GetBdsInstanceRequest request,
             com.oracle.bmc.responses.AsyncHandler<GetBdsInstanceRequest, GetBdsInstanceResponse>
+                    handler);
+
+    /**
+     * Returns the BDS Metastore configuration information for the given ID.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetBdsMetastoreConfigurationResponse> getBdsMetastoreConfiguration(
+            GetBdsMetastoreConfigurationRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetBdsMetastoreConfigurationRequest,
+                            GetBdsMetastoreConfigurationResponse>
                     handler);
 
     /**
@@ -319,6 +392,25 @@ public interface BdsAsync extends AutoCloseable {
             ListBdsInstancesRequest request,
             com.oracle.bmc.responses.AsyncHandler<ListBdsInstancesRequest, ListBdsInstancesResponse>
                     handler);
+
+    /**
+     * Returns a list of metastore configurations ssociated with this Big Data Service cluster.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListBdsMetastoreConfigurationsResponse>
+            listBdsMetastoreConfigurations(
+                    ListBdsMetastoreConfigurationsRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ListBdsMetastoreConfigurationsRequest,
+                                    ListBdsMetastoreConfigurationsResponse>
+                            handler);
 
     /**
      * Returns a paginated list of errors for a work request identified by the given ID.
@@ -421,6 +513,25 @@ public interface BdsAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<RestartNodeRequest, RestartNodeResponse> handler);
 
     /**
+     * Test specified metastore configuration.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<TestBdsMetastoreConfigurationResponse>
+            testBdsMetastoreConfiguration(
+                    TestBdsMetastoreConfigurationRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    TestBdsMetastoreConfigurationRequest,
+                                    TestBdsMetastoreConfigurationResponse>
+                            handler);
+
+    /**
      * Test access to specified Object Storage bucket using the API key.
      *
      * @param request The request object containing the details to send
@@ -472,4 +583,22 @@ public interface BdsAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<
                             UpdateBdsInstanceRequest, UpdateBdsInstanceResponse>
                     handler);
+
+    /**
+     * Update the BDS metastore configuration represented by the provided ID.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateBdsMetastoreConfigurationResponse>
+            updateBdsMetastoreConfiguration(
+                    UpdateBdsMetastoreConfigurationRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    UpdateBdsMetastoreConfigurationRequest,
+                                    UpdateBdsMetastoreConfigurationResponse>
+                            handler);
 }

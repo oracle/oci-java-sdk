@@ -214,6 +214,15 @@ public class CloudVmCluster {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("ocpuCount")
+        private Float ocpuCount;
+
+        public Builder ocpuCount(Float ocpuCount) {
+            this.ocpuCount = ocpuCount;
+            this.__explicitlySet__.add("ocpuCount");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("clusterName")
         private String clusterName;
 
@@ -413,6 +422,7 @@ public class CloudVmCluster {
                             hostname,
                             domain,
                             cpuCoreCount,
+                            ocpuCount,
                             clusterName,
                             dataStoragePercentage,
                             isLocalBackupEnabled,
@@ -460,6 +470,7 @@ public class CloudVmCluster {
                             .hostname(o.getHostname())
                             .domain(o.getDomain())
                             .cpuCoreCount(o.getCpuCoreCount())
+                            .ocpuCount(o.getOcpuCount())
                             .clusterName(o.getClusterName())
                             .dataStoragePercentage(o.getDataStoragePercentage())
                             .isLocalBackupEnabled(o.getIsLocalBackupEnabled())
@@ -681,6 +692,12 @@ public class CloudVmCluster {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("cpuCoreCount")
     Integer cpuCoreCount;
+
+    /**
+     * The number of OCPU cores to enable on the cloud VM cluster. Only 1 decimal place is allowed for the fractional part.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("ocpuCount")
+    Float ocpuCount;
 
     /**
      * The cluster name for cloud VM cluster. The cluster name must begin with an alphabetic character, and may contain hyphens (-). Underscores (_) are not permitted. The cluster name can be no longer than 11 characters and is not case sensitive.

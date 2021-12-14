@@ -316,6 +316,16 @@ public class CreateAutonomousDatabaseDetails extends CreateAutonomousDatabaseBas
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("scheduledOperations")
+        private java.util.List<ScheduledOperationDetails> scheduledOperations;
+
+        public Builder scheduledOperations(
+                java.util.List<ScheduledOperationDetails> scheduledOperations) {
+            this.scheduledOperations = scheduledOperations;
+            this.__explicitlySet__.add("scheduledOperations");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -352,7 +362,8 @@ public class CreateAutonomousDatabaseDetails extends CreateAutonomousDatabaseBas
                             dbVersion,
                             customerContacts,
                             isMtlsConnectionRequired,
-                            autonomousMaintenanceScheduleType);
+                            autonomousMaintenanceScheduleType,
+                            scheduledOperations);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -392,7 +403,8 @@ public class CreateAutonomousDatabaseDetails extends CreateAutonomousDatabaseBas
                             .customerContacts(o.getCustomerContacts())
                             .isMtlsConnectionRequired(o.getIsMtlsConnectionRequired())
                             .autonomousMaintenanceScheduleType(
-                                    o.getAutonomousMaintenanceScheduleType());
+                                    o.getAutonomousMaintenanceScheduleType())
+                            .scheduledOperations(o.getScheduledOperations());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -438,7 +450,8 @@ public class CreateAutonomousDatabaseDetails extends CreateAutonomousDatabaseBas
             String dbVersion,
             java.util.List<CustomerContact> customerContacts,
             Boolean isMtlsConnectionRequired,
-            AutonomousMaintenanceScheduleType autonomousMaintenanceScheduleType) {
+            AutonomousMaintenanceScheduleType autonomousMaintenanceScheduleType,
+            java.util.List<ScheduledOperationDetails> scheduledOperations) {
         super(
                 compartmentId,
                 dbName,
@@ -470,7 +483,8 @@ public class CreateAutonomousDatabaseDetails extends CreateAutonomousDatabaseBas
                 dbVersion,
                 customerContacts,
                 isMtlsConnectionRequired,
-                autonomousMaintenanceScheduleType);
+                autonomousMaintenanceScheduleType,
+                scheduledOperations);
     }
 
     @com.fasterxml.jackson.annotation.JsonIgnore

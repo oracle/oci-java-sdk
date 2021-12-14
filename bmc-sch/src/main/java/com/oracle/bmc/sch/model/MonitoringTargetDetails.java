@@ -6,6 +6,8 @@ package com.oracle.bmc.sch.model;
 
 /**
  * The metric and metric namespace used for the Monitoring target.
+ * For configuration instructions, see
+ * [To create a service connector](https://docs.cloud.oracle.com/iaas/Content/service-connector-hub/managingconnectors.htm#create).
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -60,12 +62,21 @@ public class MonitoringTargetDetails extends TargetDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("dimensions")
+        private java.util.List<DimensionDetails> dimensions;
+
+        public Builder dimensions(java.util.List<DimensionDetails> dimensions) {
+            this.dimensions = dimensions;
+            this.__explicitlySet__.add("dimensions");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public MonitoringTargetDetails build() {
             MonitoringTargetDetails __instance__ =
-                    new MonitoringTargetDetails(compartmentId, metricNamespace, metric);
+                    new MonitoringTargetDetails(compartmentId, metricNamespace, metric, dimensions);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -75,7 +86,8 @@ public class MonitoringTargetDetails extends TargetDetails {
             Builder copiedBuilder =
                     compartmentId(o.getCompartmentId())
                             .metricNamespace(o.getMetricNamespace())
-                            .metric(o.getMetric());
+                            .metric(o.getMetric())
+                            .dimensions(o.getDimensions());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -90,11 +102,16 @@ public class MonitoringTargetDetails extends TargetDetails {
     }
 
     @Deprecated
-    public MonitoringTargetDetails(String compartmentId, String metricNamespace, String metric) {
+    public MonitoringTargetDetails(
+            String compartmentId,
+            String metricNamespace,
+            String metric,
+            java.util.List<DimensionDetails> dimensions) {
         super();
         this.compartmentId = compartmentId;
         this.metricNamespace = metricNamespace;
         this.metric = metric;
+        this.dimensions = dimensions;
     }
 
     /**
@@ -121,6 +138,13 @@ public class MonitoringTargetDetails extends TargetDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("metric")
     String metric;
+
+    /**
+     * List of dimension names and values.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("dimensions")
+    java.util.List<DimensionDetails> dimensions;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

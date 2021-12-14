@@ -317,6 +317,16 @@ public class CreateAutonomousDatabaseFromBackupTimestampDetails
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("scheduledOperations")
+        private java.util.List<ScheduledOperationDetails> scheduledOperations;
+
+        public Builder scheduledOperations(
+                java.util.List<ScheduledOperationDetails> scheduledOperations) {
+            this.scheduledOperations = scheduledOperations;
+            this.__explicitlySet__.add("scheduledOperations");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("autonomousDatabaseId")
         private String autonomousDatabaseId;
 
@@ -381,6 +391,7 @@ public class CreateAutonomousDatabaseFromBackupTimestampDetails
                             customerContacts,
                             isMtlsConnectionRequired,
                             autonomousMaintenanceScheduleType,
+                            scheduledOperations,
                             autonomousDatabaseId,
                             timestamp,
                             cloneType);
@@ -424,6 +435,7 @@ public class CreateAutonomousDatabaseFromBackupTimestampDetails
                             .isMtlsConnectionRequired(o.getIsMtlsConnectionRequired())
                             .autonomousMaintenanceScheduleType(
                                     o.getAutonomousMaintenanceScheduleType())
+                            .scheduledOperations(o.getScheduledOperations())
                             .autonomousDatabaseId(o.getAutonomousDatabaseId())
                             .timestamp(o.getTimestamp())
                             .cloneType(o.getCloneType());
@@ -473,6 +485,7 @@ public class CreateAutonomousDatabaseFromBackupTimestampDetails
             java.util.List<CustomerContact> customerContacts,
             Boolean isMtlsConnectionRequired,
             AutonomousMaintenanceScheduleType autonomousMaintenanceScheduleType,
+            java.util.List<ScheduledOperationDetails> scheduledOperations,
             String autonomousDatabaseId,
             java.util.Date timestamp,
             CloneType cloneType) {
@@ -507,7 +520,8 @@ public class CreateAutonomousDatabaseFromBackupTimestampDetails
                 dbVersion,
                 customerContacts,
                 isMtlsConnectionRequired,
-                autonomousMaintenanceScheduleType);
+                autonomousMaintenanceScheduleType,
+                scheduledOperations);
         this.autonomousDatabaseId = autonomousDatabaseId;
         this.timestamp = timestamp;
         this.cloneType = cloneType;

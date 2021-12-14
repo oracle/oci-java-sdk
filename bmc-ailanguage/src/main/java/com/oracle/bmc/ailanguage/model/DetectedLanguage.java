@@ -77,21 +77,25 @@ public class DetectedLanguage {
     }
 
     /**
-     * Language Name
+     * Full language name.
+     * Example: {@code English, Hindi, and so on}
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     String name;
 
     /**
-     * Detected language code with standard [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes).
-     * Example: en, fr, hi etc.
+     * Detected language code as per [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) standard.
+     * Example: {@code en, fr, hi etc}.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("code")
     String code;
 
     /**
-     * Score or confidence for prediction.
+     * Score or confidence of detected language code.
+     * Example: {@code 0.9999856066867399}
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("score")
     Double score;
