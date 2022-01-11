@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2021, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2022, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.database.model;
@@ -185,6 +185,12 @@ public class CreateDataGuardAssociationDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("transportType")
     TransportType transportType;
+
+    /**
+     * True if active Data Guard is enabled.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isActiveDataGuardEnabled")
+    Boolean isActiveDataGuardEnabled;
 
     /**
      * Specifies the {@code DB_UNIQUE_NAME} of the peer database to be created.

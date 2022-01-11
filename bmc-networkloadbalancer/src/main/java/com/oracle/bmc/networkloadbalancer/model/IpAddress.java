@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2021, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2022, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.networkloadbalancer.model;
@@ -42,6 +42,15 @@ public class IpAddress {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("ipVersion")
+        private IpVersion ipVersion;
+
+        public Builder ipVersion(IpVersion ipVersion) {
+            this.ipVersion = ipVersion;
+            this.__explicitlySet__.add("ipVersion");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("reservedIp")
         private ReservedIP reservedIp;
 
@@ -55,7 +64,7 @@ public class IpAddress {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public IpAddress build() {
-            IpAddress __instance__ = new IpAddress(ipAddress, isPublic, reservedIp);
+            IpAddress __instance__ = new IpAddress(ipAddress, isPublic, ipVersion, reservedIp);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -65,6 +74,7 @@ public class IpAddress {
             Builder copiedBuilder =
                     ipAddress(o.getIpAddress())
                             .isPublic(o.getIsPublic())
+                            .ipVersion(o.getIpVersion())
                             .reservedIp(o.getReservedIp());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
@@ -98,6 +108,12 @@ public class IpAddress {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isPublic")
     Boolean isPublic;
+
+    /**
+     * IP version associated with this IP address.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("ipVersion")
+    IpVersion ipVersion;
 
     @com.fasterxml.jackson.annotation.JsonProperty("reservedIp")
     ReservedIP reservedIp;

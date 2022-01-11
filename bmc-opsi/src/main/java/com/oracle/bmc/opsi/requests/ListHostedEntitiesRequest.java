@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2021, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2022, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.opsi.requests;
@@ -60,18 +60,22 @@ public class ListHostedEntitiesRequest extends com.oracle.bmc.requests.BmcReques
 
     /**
      * Filter by one or more platform types.
-     * Possible value is LINUX.
+     * Supported platformType(s) for MACS-managed external host insight: [LINUX].
+     * Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS].
      *
      */
     private java.util.List<PlatformType> platformType;
 
     /**
      * Filter by one or more platform types.
-     * Possible value is LINUX.
+     * Supported platformType(s) for MACS-managed external host insight: [LINUX].
+     * Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS].
      *
      **/
     public enum PlatformType {
         Linux("LINUX"),
+        Solaris("SOLARIS"),
+        Sunos("SUNOS"),
         ;
 
         private final String value;
@@ -191,7 +195,8 @@ public class ListHostedEntitiesRequest extends com.oracle.bmc.requests.BmcReques
 
         /**
          * Filter by one or more platform types.
-         * Possible value is LINUX.
+         * Supported platformType(s) for MACS-managed external host insight: [LINUX].
+         * Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS].
          *
          * @return this builder instance
          */
@@ -202,7 +207,8 @@ public class ListHostedEntitiesRequest extends com.oracle.bmc.requests.BmcReques
 
         /**
          * Singular setter. Filter by one or more platform types.
-         * Possible value is LINUX.
+         * Supported platformType(s) for MACS-managed external host insight: [LINUX].
+         * Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS].
          *
          * @return this builder instance
          */

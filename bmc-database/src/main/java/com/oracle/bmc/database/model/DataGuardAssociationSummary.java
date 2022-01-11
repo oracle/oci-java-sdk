@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2021, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2022, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.database.model;
@@ -170,6 +170,15 @@ public class DataGuardAssociationSummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("isActiveDataGuardEnabled")
+        private Boolean isActiveDataGuardEnabled;
+
+        public Builder isActiveDataGuardEnabled(Boolean isActiveDataGuardEnabled) {
+            this.isActiveDataGuardEnabled = isActiveDataGuardEnabled;
+            this.__explicitlySet__.add("isActiveDataGuardEnabled");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -190,7 +199,8 @@ public class DataGuardAssociationSummary {
                             applyRate,
                             protectionMode,
                             transportType,
-                            timeCreated);
+                            timeCreated,
+                            isActiveDataGuardEnabled);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -212,7 +222,8 @@ public class DataGuardAssociationSummary {
                             .applyRate(o.getApplyRate())
                             .protectionMode(o.getProtectionMode())
                             .transportType(o.getTransportType())
-                            .timeCreated(o.getTimeCreated());
+                            .timeCreated(o.getTimeCreated())
+                            .isActiveDataGuardEnabled(o.getIsActiveDataGuardEnabled());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -570,6 +581,12 @@ public class DataGuardAssociationSummary {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     java.util.Date timeCreated;
+
+    /**
+     * True if active Data Guard is enabled.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isActiveDataGuardEnabled")
+    Boolean isActiveDataGuardEnabled;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

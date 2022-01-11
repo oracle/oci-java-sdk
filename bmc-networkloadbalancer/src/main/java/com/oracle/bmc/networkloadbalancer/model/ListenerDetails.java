@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2021, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2022, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.networkloadbalancer.model;
@@ -45,6 +45,15 @@ public class ListenerDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("ipVersion")
+        private IpVersion ipVersion;
+
+        public Builder ipVersion(IpVersion ipVersion) {
+            this.ipVersion = ipVersion;
+            this.__explicitlySet__.add("ipVersion");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("port")
         private Integer port;
 
@@ -68,7 +77,7 @@ public class ListenerDetails {
 
         public ListenerDetails build() {
             ListenerDetails __instance__ =
-                    new ListenerDetails(name, defaultBackendSetName, port, protocol);
+                    new ListenerDetails(name, defaultBackendSetName, ipVersion, port, protocol);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -78,6 +87,7 @@ public class ListenerDetails {
             Builder copiedBuilder =
                     name(o.getName())
                             .defaultBackendSetName(o.getDefaultBackendSetName())
+                            .ipVersion(o.getIpVersion())
                             .port(o.getPort())
                             .protocol(o.getProtocol());
 
@@ -110,6 +120,12 @@ public class ListenerDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("defaultBackendSetName")
     String defaultBackendSetName;
+
+    /**
+     * IP version associated with the listener.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("ipVersion")
+    IpVersion ipVersion;
 
     /**
      * The communication port for the listener.

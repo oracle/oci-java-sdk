@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2021, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2022, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.networkloadbalancer.model;
@@ -65,12 +65,22 @@ public class CreateListenerDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("ipVersion")
+        private IpVersion ipVersion;
+
+        public Builder ipVersion(IpVersion ipVersion) {
+            this.ipVersion = ipVersion;
+            this.__explicitlySet__.add("ipVersion");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CreateListenerDetails build() {
             CreateListenerDetails __instance__ =
-                    new CreateListenerDetails(name, defaultBackendSetName, port, protocol);
+                    new CreateListenerDetails(
+                            name, defaultBackendSetName, port, protocol, ipVersion);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -81,7 +91,8 @@ public class CreateListenerDetails {
                     name(o.getName())
                             .defaultBackendSetName(o.getDefaultBackendSetName())
                             .port(o.getPort())
-                            .protocol(o.getProtocol());
+                            .protocol(o.getProtocol())
+                            .ipVersion(o.getIpVersion());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -134,6 +145,12 @@ public class CreateListenerDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("protocol")
     ListenerProtocols protocol;
+
+    /**
+     * IP version associated with the listener.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("ipVersion")
+    IpVersion ipVersion;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2021, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2022, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.networkloadbalancer.requests;
@@ -33,7 +33,10 @@ public class DeleteBackendRequest extends com.oracle.bmc.requests.BmcRequest<jav
     private String backendSetName;
 
     /**
-     * The name of the backend server to remove. This is specified as <ip>:<port>, or as <ip> <OCID>:<port>.
+     * The name of the backend server to remove.
+     * If the backend was created with an explicitly specified name, that name should be used here.
+     * If the backend was created without explicitly specifying the name, but was created using ipAddress, this is specified as <ipAddress>:<port>.
+     * If the backend was created without explicitly specifying the name, but was created using targetId, this is specified as <targetId>:<port>.
      * <p>
      * Example: {@code 10.0.0.3:8080} or {@code ocid1.privateip..oc1.<var>&lt;unique_ID&gt;</var>:8080}
      *

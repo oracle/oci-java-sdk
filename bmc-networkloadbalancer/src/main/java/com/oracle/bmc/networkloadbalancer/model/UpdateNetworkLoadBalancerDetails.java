@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2021, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2022, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.networkloadbalancer.model;
@@ -47,6 +47,15 @@ public class UpdateNetworkLoadBalancerDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("nlbIpVersion")
+        private NlbIpVersion nlbIpVersion;
+
+        public Builder nlbIpVersion(NlbIpVersion nlbIpVersion) {
+            this.nlbIpVersion = nlbIpVersion;
+            this.__explicitlySet__.add("nlbIpVersion");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
@@ -72,7 +81,11 @@ public class UpdateNetworkLoadBalancerDetails {
         public UpdateNetworkLoadBalancerDetails build() {
             UpdateNetworkLoadBalancerDetails __instance__ =
                     new UpdateNetworkLoadBalancerDetails(
-                            displayName, isPreserveSourceDestination, freeformTags, definedTags);
+                            displayName,
+                            isPreserveSourceDestination,
+                            nlbIpVersion,
+                            freeformTags,
+                            definedTags);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -82,6 +95,7 @@ public class UpdateNetworkLoadBalancerDetails {
             Builder copiedBuilder =
                     displayName(o.getDisplayName())
                             .isPreserveSourceDestination(o.getIsPreserveSourceDestination())
+                            .nlbIpVersion(o.getNlbIpVersion())
                             .freeformTags(o.getFreeformTags())
                             .definedTags(o.getDefinedTags());
 
@@ -114,6 +128,12 @@ public class UpdateNetworkLoadBalancerDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isPreserveSourceDestination")
     Boolean isPreserveSourceDestination;
+
+    /**
+     * IP version associated with the NLB.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("nlbIpVersion")
+    NlbIpVersion nlbIpVersion;
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.

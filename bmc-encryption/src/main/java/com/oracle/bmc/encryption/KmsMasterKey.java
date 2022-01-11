@@ -1,10 +1,10 @@
 /**
- * Copyright (c) 2016, 2021, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2022, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.encryption;
 
-import com.oracle.bmc.auth.AuthenticationDetailsProvider;
+import com.oracle.bmc.auth.BasicAuthenticationDetailsProvider;
 import com.oracle.bmc.encryption.internal.CryptoAlgorithm;
 import com.oracle.bmc.encryption.internal.DataKey;
 import com.oracle.bmc.keymanagement.KmsCryptoClient;
@@ -32,7 +32,7 @@ public class KmsMasterKey implements MasterKey {
     private final KmsManagementClient kmsManagementClient;
     private final KmsVaultClient kmsVaultClient;
 
-    @Getter private final AuthenticationDetailsProvider provider;
+    @Getter private final BasicAuthenticationDetailsProvider provider;
 
     @Getter private final String vaultId;
 
@@ -49,7 +49,7 @@ public class KmsMasterKey implements MasterKey {
      * @param kmsMasterKeyId The OCID of the KMS master key.
      */
     public KmsMasterKey(
-            AuthenticationDetailsProvider authenticationDetailsProvider,
+            BasicAuthenticationDetailsProvider authenticationDetailsProvider,
             String region,
             String vaultId,
             String kmsMasterKeyId) {

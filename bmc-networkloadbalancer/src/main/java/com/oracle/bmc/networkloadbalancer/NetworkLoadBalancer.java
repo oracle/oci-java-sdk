@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2021, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2022, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.networkloadbalancer;
@@ -8,7 +8,7 @@ import com.oracle.bmc.networkloadbalancer.requests.*;
 import com.oracle.bmc.networkloadbalancer.responses.*;
 
 /**
- * A description of the network load balancer API
+ * This describes the network load balancer API.
  * This service client uses CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER for all the operations by default if no circuit breaker configuration is defined by the user.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200501")
@@ -349,7 +349,9 @@ public interface NetworkLoadBalancer extends AutoCloseable {
             ListNetworkLoadBalancersPoliciesRequest request);
 
     /**
+     * This API has been deprecated so it won't return the updated list of supported protocls.
      * Lists all supported traffic protocols.
+     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -448,7 +450,7 @@ public interface NetworkLoadBalancer extends AutoCloseable {
     UpdateListenerResponse updateListener(UpdateListenerRequest request);
 
     /**
-     * Updates the network load balancer.
+     * Updates the network load balancer
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
