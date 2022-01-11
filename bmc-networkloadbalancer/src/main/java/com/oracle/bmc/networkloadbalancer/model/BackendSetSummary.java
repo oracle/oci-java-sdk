@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2021, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2022, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.networkloadbalancer.model;
@@ -58,6 +58,15 @@ public class BackendSetSummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("ipVersion")
+        private IpVersion ipVersion;
+
+        public Builder ipVersion(IpVersion ipVersion) {
+            this.ipVersion = ipVersion;
+            this.__explicitlySet__.add("ipVersion");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("backends")
         private java.util.List<Backend> backends;
 
@@ -81,7 +90,8 @@ public class BackendSetSummary {
 
         public BackendSetSummary build() {
             BackendSetSummary __instance__ =
-                    new BackendSetSummary(name, policy, isPreserveSource, backends, healthChecker);
+                    new BackendSetSummary(
+                            name, policy, isPreserveSource, ipVersion, backends, healthChecker);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -92,6 +102,7 @@ public class BackendSetSummary {
                     name(o.getName())
                             .policy(o.getPolicy())
                             .isPreserveSource(o.getIsPreserveSource())
+                            .ipVersion(o.getIpVersion())
                             .backends(o.getBackends())
                             .healthChecker(o.getHealthChecker());
 
@@ -129,13 +140,19 @@ public class BackendSetSummary {
     NetworkLoadBalancingPolicy policy;
 
     /**
-     * If this parameter is enabled, then the network load balancer preserves the source IP of the packet when it is forwarded to backends.
-     * Backends see the original source IP. If the isPreserveSourceDestination parameter is enabled for the network load balancer resource, then this parameter cannot be disabled.
+     * If this parameter is enabled, the network load balancer preserves the source IP of the packet forwarded to the backend servers.
+     * Backend servers see the original source IP. If the {@code isPreserveSourceDestination} parameter is enabled for the network load balancer resource, this parameter cannot be disabled.
      * The value is true by default.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isPreserveSource")
     Boolean isPreserveSource;
+
+    /**
+     * IP version associated with the backend set.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("ipVersion")
+    IpVersion ipVersion;
 
     /**
      * An array of backends.

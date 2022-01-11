@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2021, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2022, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc;
@@ -115,6 +115,8 @@ public final class Region implements Serializable, Comparable<Region> {
     public static final Region AP_SINGAPORE_1 = register("ap-singapore-1", Realm.OC1, "sin");
     public static final Region ME_ABUDHABI_1 = register("me-abudhabi-1", Realm.OC1, "auh");
     public static final Region EU_MILAN_1 = register("eu-milan-1", Realm.OC1, "lin");
+    public static final Region EU_STOCKHOLM_1 = register("eu-stockholm-1", Realm.OC1, "arn");
+    public static final Region AF_JOHANNESBURG_1 = register("af-johannesburg-1", Realm.OC1, "jnb");
 
     // OC2
     public static final Region US_LANGLEY_1 = register("us-langley-1", Realm.OC2, "lfi");

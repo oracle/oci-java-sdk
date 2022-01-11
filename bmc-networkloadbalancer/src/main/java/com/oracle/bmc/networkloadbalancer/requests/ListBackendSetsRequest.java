@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2021, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2022, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.networkloadbalancer.requests;
@@ -61,6 +61,51 @@ public class ListBackendSetsRequest extends com.oracle.bmc.requests.BmcRequest<j
      */
     private com.oracle.bmc.networkloadbalancer.model.SortOrder sortOrder;
 
+    /**
+     * The field to sort by. Only one sort order can be provided. The default order for timeCreated is descending.
+     * The default order for displayName is ascending. If no value is specified, then timeCreated is the default.
+     *
+     */
+    private SortBy sortBy;
+
+    /**
+     * The field to sort by. Only one sort order can be provided. The default order for timeCreated is descending.
+     * The default order for displayName is ascending. If no value is specified, then timeCreated is the default.
+     *
+     **/
+    public enum SortBy {
+        TimeCreated("timeCreated"),
+        DisplayName("displayName"),
+        ;
+
+        private final String value;
+        private static java.util.Map<String, SortBy> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (SortBy v : SortBy.values()) {
+                map.put(v.getValue(), v);
+            }
+        }
+
+        SortBy(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static SortBy create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            throw new IllegalArgumentException("Invalid SortBy: " + key);
+        }
+    };
+
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListBackendSetsRequest, java.lang.Void> {
@@ -102,6 +147,7 @@ public class ListBackendSetsRequest extends com.oracle.bmc.requests.BmcRequest<j
             limit(o.getLimit());
             page(o.getPage());
             sortOrder(o.getSortOrder());
+            sortBy(o.getSortBy());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;

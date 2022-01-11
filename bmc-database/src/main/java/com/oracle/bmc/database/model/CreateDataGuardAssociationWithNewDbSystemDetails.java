@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2021, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2022, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.database.model;
@@ -69,6 +69,15 @@ public class CreateDataGuardAssociationWithNewDbSystemDetails
         public Builder transportType(TransportType transportType) {
             this.transportType = transportType;
             this.__explicitlySet__.add("transportType");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("isActiveDataGuardEnabled")
+        private Boolean isActiveDataGuardEnabled;
+
+        public Builder isActiveDataGuardEnabled(Boolean isActiveDataGuardEnabled) {
+            this.isActiveDataGuardEnabled = isActiveDataGuardEnabled;
+            this.__explicitlySet__.add("isActiveDataGuardEnabled");
             return this;
         }
 
@@ -163,6 +172,7 @@ public class CreateDataGuardAssociationWithNewDbSystemDetails
                             databaseAdminPassword,
                             protectionMode,
                             transportType,
+                            isActiveDataGuardEnabled,
                             peerDbUniqueName,
                             peerSidPrefix,
                             displayName,
@@ -183,6 +193,7 @@ public class CreateDataGuardAssociationWithNewDbSystemDetails
                             .databaseAdminPassword(o.getDatabaseAdminPassword())
                             .protectionMode(o.getProtectionMode())
                             .transportType(o.getTransportType())
+                            .isActiveDataGuardEnabled(o.getIsActiveDataGuardEnabled())
                             .peerDbUniqueName(o.getPeerDbUniqueName())
                             .peerSidPrefix(o.getPeerSidPrefix())
                             .displayName(o.getDisplayName())
@@ -211,6 +222,7 @@ public class CreateDataGuardAssociationWithNewDbSystemDetails
             String databaseAdminPassword,
             ProtectionMode protectionMode,
             TransportType transportType,
+            Boolean isActiveDataGuardEnabled,
             String peerDbUniqueName,
             String peerSidPrefix,
             String displayName,
@@ -225,6 +237,7 @@ public class CreateDataGuardAssociationWithNewDbSystemDetails
                 databaseAdminPassword,
                 protectionMode,
                 transportType,
+                isActiveDataGuardEnabled,
                 peerDbUniqueName,
                 peerSidPrefix);
         this.displayName = displayName;

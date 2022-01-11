@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2021, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2022, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.jms.model;
@@ -218,13 +218,13 @@ public class ApplicationUsage {
     Integer approximateManagedInstanceCount;
 
     /**
-     * Lower bound of the specified time period filter.
+     * Lower bound of the specified time period filter. JMS provides a view of the data that is _per day_. The query uses only the date element of the parameter.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeStart")
     java.util.Date timeStart;
 
     /**
-     * Upper bound of the specified time period filter.
+     * Upper bound of the specified time period filter. JMS provides a view of the data that is _per day_. The query uses only the date element of the parameter.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeEnd")
     java.util.Date timeEnd;

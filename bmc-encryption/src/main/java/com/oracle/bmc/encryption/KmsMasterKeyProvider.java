@@ -1,10 +1,10 @@
 /**
- * Copyright (c) 2016, 2021, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2022, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.encryption;
 
-import com.oracle.bmc.auth.AuthenticationDetailsProvider;
+import com.oracle.bmc.auth.BasicAuthenticationDetailsProvider;
 import com.oracle.bmc.encryption.internal.CryptoAlgorithm;
 import lombok.Getter;
 
@@ -13,13 +13,13 @@ import lombok.Getter;
  */
 public class KmsMasterKeyProvider implements MasterKeyProvider {
     private final KmsMasterKey kmsMasterKey;
-    private final AuthenticationDetailsProvider authenticationDetailsProvider;
+    private final BasicAuthenticationDetailsProvider authenticationDetailsProvider;
 
     /**
      * Initialize KmsMasterKeyProvider for decryption.
      * @param authenticationDetailsProvider Authentication Provider for OCI.
      */
-    public KmsMasterKeyProvider(AuthenticationDetailsProvider authenticationDetailsProvider) {
+    public KmsMasterKeyProvider(BasicAuthenticationDetailsProvider authenticationDetailsProvider) {
         this.kmsMasterKey = null;
         this.authenticationDetailsProvider = authenticationDetailsProvider;
     }
@@ -43,7 +43,7 @@ public class KmsMasterKeyProvider implements MasterKeyProvider {
      * Get Authentication Details Provider.
      */
     @Override
-    public AuthenticationDetailsProvider getAuthenticationProvider() {
+    public BasicAuthenticationDetailsProvider getAuthenticationProvider() {
         return authenticationDetailsProvider;
     }
     /**

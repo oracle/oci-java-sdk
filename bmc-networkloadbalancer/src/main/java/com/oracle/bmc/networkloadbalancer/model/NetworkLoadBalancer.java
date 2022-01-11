@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2021, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2022, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.networkloadbalancer.model;
@@ -78,6 +78,15 @@ public class NetworkLoadBalancer {
         public Builder lifecycleDetails(String lifecycleDetails) {
             this.lifecycleDetails = lifecycleDetails;
             this.__explicitlySet__.add("lifecycleDetails");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("nlbIpVersion")
+        private NlbIpVersion nlbIpVersion;
+
+        public Builder nlbIpVersion(NlbIpVersion nlbIpVersion) {
+            this.nlbIpVersion = nlbIpVersion;
+            this.__explicitlySet__.add("nlbIpVersion");
             return this;
         }
 
@@ -201,6 +210,7 @@ public class NetworkLoadBalancer {
                             displayName,
                             lifecycleState,
                             lifecycleDetails,
+                            nlbIpVersion,
                             timeCreated,
                             timeUpdated,
                             ipAddresses,
@@ -225,6 +235,7 @@ public class NetworkLoadBalancer {
                             .displayName(o.getDisplayName())
                             .lifecycleState(o.getLifecycleState())
                             .lifecycleDetails(o.getLifecycleDetails())
+                            .nlbIpVersion(o.getNlbIpVersion())
                             .timeCreated(o.getTimeCreated())
                             .timeUpdated(o.getTimeUpdated())
                             .ipAddresses(o.getIpAddresses())
@@ -284,6 +295,12 @@ public class NetworkLoadBalancer {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
     String lifecycleDetails;
+
+    /**
+     * IP version associated with the NLB.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("nlbIpVersion")
+    NlbIpVersion nlbIpVersion;
 
     /**
      * The date and time the network load balancer was created, in the format defined by RFC3339.

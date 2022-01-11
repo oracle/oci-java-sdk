@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2021, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2022, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.opsi.model;
@@ -390,11 +390,15 @@ public class EmManagedExternalHostInsightSummary extends HostInsightSummary {
     String enterpriseManagerBridgeId;
     /**
      * Platform type.
+     * Supported platformType(s) for MACS-managed external host insight: [LINUX].
+     * Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS].
      *
      **/
     @lombok.extern.slf4j.Slf4j
     public enum PlatformType {
         Linux("LINUX"),
+        Solaris("SOLARIS"),
+        Sunos("SUNOS"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this
@@ -436,6 +440,8 @@ public class EmManagedExternalHostInsightSummary extends HostInsightSummary {
     };
     /**
      * Platform type.
+     * Supported platformType(s) for MACS-managed external host insight: [LINUX].
+     * Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS].
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("platformType")

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2021, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2022, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.networkloadbalancer.model;
@@ -56,6 +56,15 @@ public class BackendSet {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("ipVersion")
+        private IpVersion ipVersion;
+
+        public Builder ipVersion(IpVersion ipVersion) {
+            this.ipVersion = ipVersion;
+            this.__explicitlySet__.add("ipVersion");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("backends")
         private java.util.List<Backend> backends;
 
@@ -79,7 +88,8 @@ public class BackendSet {
 
         public BackendSet build() {
             BackendSet __instance__ =
-                    new BackendSet(name, policy, isPreserveSource, backends, healthChecker);
+                    new BackendSet(
+                            name, policy, isPreserveSource, ipVersion, backends, healthChecker);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -90,6 +100,7 @@ public class BackendSet {
                     name(o.getName())
                             .policy(o.getPolicy())
                             .isPreserveSource(o.getIsPreserveSource())
+                            .ipVersion(o.getIpVersion())
                             .backends(o.getBackends())
                             .healthChecker(o.getHealthChecker());
 
@@ -134,6 +145,12 @@ public class BackendSet {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isPreserveSource")
     Boolean isPreserveSource;
+
+    /**
+     * IP version associated with the backend set.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("ipVersion")
+    IpVersion ipVersion;
 
     /**
      * Array of backends.

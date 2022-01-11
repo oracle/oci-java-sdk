@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2016, 2021, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2022, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.networkloadbalancer.model;
 
 /**
- * Wrapper object for an array of BackendSetSummary objects.
+ * Wrapper object for an array of {@code BackendSetSummary} objects.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -61,7 +61,7 @@ public class BackendSetCollection {
     }
 
     /**
-     * An array of BackendSetSummary objects.
+     * An array of {@code BackendSetSummary} objects.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     java.util.List<BackendSetSummary> items;
