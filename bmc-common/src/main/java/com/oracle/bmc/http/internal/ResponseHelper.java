@@ -251,19 +251,26 @@ public class ResponseHelper {
                                             HttpHeaders.CONTENT_LENGTH,
                                             contentLengthHeader.get().get(0),
                                             Long.class);
-                            if (SHOULD_AUTO_CLOSE_RESPONSE_INPUTSTREAM) {
-                                if (ApacheUtils.isExtraStreamLogsEnabled()) {
-                                    LOG.warn(
-                                            "Wrapping response stream into auto closeable stream, to disable this, please "
-                                                    + "use ResponseHelper.shouldAutoCloseResponseInputStream(false)");
+
+                            // Some 3rd libraries provide the Content-Length header with either zero or negative values
+                            // to represent an unknown length. Although it contradicts the specification,
+                            // we have to accommodate for it.
+                            // See: https://github.com/eclipse-ee4j/jersey/issues/4965
+                            if (contentLength > 0) {
+                                if (SHOULD_AUTO_CLOSE_RESPONSE_INPUTSTREAM) {
+                                    if (ApacheUtils.isExtraStreamLogsEnabled()) {
+                                        LOG.warn(
+                                                "Wrapping response stream into auto closeable stream, to disable this, please "
+                                                        + "use ResponseHelper.shouldAutoCloseResponseInputStream(false)");
+                                    }
+                                    inputStream =
+                                            new AutoCloseableContentLengthVerifyingInputStream(
+                                                    inputStream, contentLength);
+                                } else {
+                                    inputStream =
+                                            new ContentLengthVerifyingInputStream(
+                                                    inputStream, contentLength);
                                 }
-                                inputStream =
-                                        new AutoCloseableContentLengthVerifyingInputStream(
-                                                inputStream, contentLength);
-                            } else {
-                                inputStream =
-                                        new ContentLengthVerifyingInputStream(
-                                                inputStream, contentLength);
                             }
                         }
 
