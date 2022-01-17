@@ -256,7 +256,7 @@ public class ResponseHelper {
                             // to represent an unknown length. Although it contradicts the specification,
                             // we have to accommodate for it.
                             // See: https://github.com/eclipse-ee4j/jersey/issues/4965
-                            if (contentLength > 0) {
+                            if (contentLength >= 0) {
                                 if (SHOULD_AUTO_CLOSE_RESPONSE_INPUTSTREAM) {
                                     if (ApacheUtils.isExtraStreamLogsEnabled()) {
                                         LOG.warn(
