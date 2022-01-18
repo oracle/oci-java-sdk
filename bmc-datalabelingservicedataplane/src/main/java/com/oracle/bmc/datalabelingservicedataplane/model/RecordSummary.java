@@ -162,13 +162,13 @@ public class RecordSummary {
     }
 
     /**
-     * The OCID of the record
+     * The OCID of the record.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     String id;
 
     /**
-     * This will be automatically assigned by the service. It will be unique and immutable
+     * The name is automatically assigned by the service. It is unique and immutable
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     String name;
@@ -186,7 +186,7 @@ public class RecordSummary {
     java.util.Date timeUpdated;
 
     /**
-     * The OCID of the dataset to associate the record with
+     * The OCID of the dataset to associate the record with.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("datasetId")
     String datasetId;
@@ -198,7 +198,7 @@ public class RecordSummary {
     String compartmentId;
 
     /**
-     * Whether the record has been labeled and has associated annotations.
+     * Whether or not the record has been labeled and has associated annotations.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isLabeled")
     Boolean isLabeled;
@@ -210,16 +210,16 @@ public class RecordSummary {
     Record.LifecycleState lifecycleState;
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-     * Example: {@code {"bar-key": "value"}}
+     * A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only.
+     * For example: {@code {"bar-key": "value"}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     java.util.Map<String, String> freeformTags;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     * The defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * For example: {@code {"foo-namespace": {"bar-key": "value"}}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")

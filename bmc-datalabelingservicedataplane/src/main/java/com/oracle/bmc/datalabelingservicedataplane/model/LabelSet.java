@@ -5,7 +5,7 @@
 package com.oracle.bmc.datalabelingservicedataplane.model;
 
 /**
- * An ordered collection of Labels that are unique by name.
+ * An ordered collection of labels that are unique by name.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -60,7 +60,7 @@ public class LabelSet {
     }
 
     /**
-     * An ordered collection of Labels that are unique by name.
+     * An ordered collection of labels that are unique by name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     java.util.List<LabelName> items;

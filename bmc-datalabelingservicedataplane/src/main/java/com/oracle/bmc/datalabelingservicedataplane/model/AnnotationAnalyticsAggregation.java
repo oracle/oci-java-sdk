@@ -5,7 +5,7 @@
 package com.oracle.bmc.datalabelingservicedataplane.model;
 
 /**
- * Aggregation entities are required by the api consistency guidelines for API Consistency Guidelines#AnalyticsAPIs.  These are used to summarize annotations for a given dataset and will be used to populate UI elements.  Aggregations need to have the fields that identify the exact scope that they're summarizing.  Any filters to the list API we apply would have to show up in the aggregation. We should limit the number of filters and dimensions as much as possible.
+ * Aggregation entities are required by the API consistency guidelines for API Consistency Guidelines#AnalyticsAPIs.  These are used to summarize annotations for a given dataset and will be used to populate UI elements.  Aggregations need to have the fields that identify the exact scope that they're summarizing.  Any filters applied to the list API, have to show up in the aggregation.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -114,13 +114,13 @@ public class AnnotationAnalyticsAggregation {
     }
 
     /**
-     * the count of the matching results
+     * The count of the matching results.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("count")
     java.math.BigDecimal count;
 
     /**
-     * OCID of the dataset the annotations belongs to
+     * The OCID of the dataset the annotations belong to.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("datasetId")
     String datasetId;
@@ -129,13 +129,13 @@ public class AnnotationAnalyticsAggregation {
     AnnotationAggregationDimensions dimensions;
 
     /**
-     * The OCID of the principal who updated the annotation
+     * The OCID of the principal which updated the annotation.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("updatedBy")
     String updatedBy;
 
     /**
-     * OCID of the compartment containing the annotations
+     * The OCID of the compartment containing the annotations.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     String compartmentId;

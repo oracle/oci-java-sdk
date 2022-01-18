@@ -5,7 +5,7 @@
 package com.oracle.bmc.datalabelingservice.model;
 
 /**
- * Specifies how to process the data. Supported formats include IMAGE and TEXT.
+ * Specifies how to process the data. Supported formats include DOCUMENT, IMAGE and TEXT.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -45,7 +45,7 @@ package com.oracle.bmc.datalabelingservice.model;
 public class DatasetFormatDetails {
 
     /**
-     * Format type. IMAGE format are for record contents that are JPEGs or PNGs. TEXT format is for record contents that are txt files.
+     * Format type. DOCUMENT format is for record contents that are PDFs or TIFFs. IMAGE format is for record contents that are JPEGs or PNGs. TEXT format is for record contents that are txt files.
      **/
     @lombok.extern.slf4j.Slf4j
     public enum FormatType {

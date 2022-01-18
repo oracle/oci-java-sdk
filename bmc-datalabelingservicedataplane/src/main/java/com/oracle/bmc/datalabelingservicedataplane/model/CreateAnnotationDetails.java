@@ -5,7 +5,7 @@
 package com.oracle.bmc.datalabelingservicedataplane.model;
 
 /**
- * This is the payload sent in the CreateAnnotation operation.  It contains all the information required for a user to create an Annotation for a record.
+ * This is the payload sent in the CreateAnnotation operation.  It contains all the information required for a user to create an annotation for a record.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -105,34 +105,34 @@ public class CreateAnnotationDetails {
     }
 
     /**
-     * The OCID of the record annotated
+     * The OCID of the record annotated.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("recordId")
     String recordId;
 
     /**
-     * The OCID of the compartment for the annotation
+     * The OCID of the compartment for the annotation.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     String compartmentId;
 
     /**
-     * The entity types will be validated against the dataset to ensure consistency.
+     * The entity types are validated against the dataset to ensure consistency.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("entities")
     java.util.List<Entity> entities;
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-     * Example: {@code {"bar-key": "value"}}
+     * A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only.
+     * For example: {@code {"bar-key": "value"}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     java.util.Map<String, String> freeformTags;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     * The defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * For example: {@code {"foo-namespace": {"bar-key": "value"}}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")

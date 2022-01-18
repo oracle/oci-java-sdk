@@ -5,7 +5,7 @@
 package com.oracle.bmc.datalabelingservicedataplane.model;
 
 /**
- * A dataset is a logical collection of records. The dataset contains all the information necessary to describe a record's source, format, type of annotations allowed on these records, and labels allowed on annotations.
+ * A dataset is a logical collection of records. The dataset contains all the information necessary to describe a record's source, format, the type of annotations allowed for the record, and the labels allowed on annotations.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -143,6 +143,15 @@ public class Dataset {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("labelingInstructions")
+        private String labelingInstructions;
+
+        public Builder labelingInstructions(String labelingInstructions) {
+            this.labelingInstructions = labelingInstructions;
+            this.__explicitlySet__.add("labelingInstructions");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
@@ -190,6 +199,7 @@ public class Dataset {
                             datasetFormatDetails,
                             labelSet,
                             initialRecordGenerationConfiguration,
+                            labelingInstructions,
                             freeformTags,
                             definedTags,
                             systemTags);
@@ -214,6 +224,7 @@ public class Dataset {
                             .labelSet(o.getLabelSet())
                             .initialRecordGenerationConfiguration(
                                     o.getInitialRecordGenerationConfiguration())
+                            .labelingInstructions(o.getLabelingInstructions())
                             .freeformTags(o.getFreeformTags())
                             .definedTags(o.getDefinedTags())
                             .systemTags(o.getSystemTags());
@@ -231,7 +242,7 @@ public class Dataset {
     }
 
     /**
-     * The OCID of the Dataset.
+     * The OCID of the dataset.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     String id;
@@ -249,7 +260,7 @@ public class Dataset {
     String compartmentId;
 
     /**
-     * A user provided description of the dataset
+     * A user-provided description of the dataset
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     String description;
@@ -267,10 +278,10 @@ public class Dataset {
     java.util.Date timeUpdated;
     /**
      * The state of a dataset.
-     * CREATING - The dataset is being created.  It will transition to ACTIVE when it is ready for labeling.
+     * CREATING - The dataset is being created.  It transitions to ACTIVE when it is ready for labeling.
      * ACTIVE   - The dataset is ready for labeling.
-     * UPDATING - The dataset is being updated.  It and its related resources may be unavailable for other updates until it returns to ACTIVE.
-     * NEEDS_ATTENTION - A dataset updation operation has failed due to validation or other errors and needs attention.
+     * UPDATING - The dataset is being updated.  It, and its related resources, might be unavailable for other updates until it returns to ACTIVE.
+     * NEEDS_ATTENTION - A dataset updaten operation has failed due to validation or other errors, and needs attention.
      * DELETING - The dataset and its related resources are being deleted.
      * DELETED  - The dataset has been deleted and is no longer available.
      * FAILED   - The dataset has failed due to validation or other errors.
@@ -326,10 +337,10 @@ public class Dataset {
     };
     /**
      * The state of a dataset.
-     * CREATING - The dataset is being created.  It will transition to ACTIVE when it is ready for labeling.
+     * CREATING - The dataset is being created.  It transitions to ACTIVE when it is ready for labeling.
      * ACTIVE   - The dataset is ready for labeling.
-     * UPDATING - The dataset is being updated.  It and its related resources may be unavailable for other updates until it returns to ACTIVE.
-     * NEEDS_ATTENTION - A dataset updation operation has failed due to validation or other errors and needs attention.
+     * UPDATING - The dataset is being updated.  It, and its related resources, might be unavailable for other updates until it returns to ACTIVE.
+     * NEEDS_ATTENTION - A dataset updaten operation has failed due to validation or other errors, and needs attention.
      * DELETING - The dataset and its related resources are being deleted.
      * DELETED  - The dataset has been deleted and is no longer available.
      * FAILED   - The dataset has failed due to validation or other errors.
@@ -363,24 +374,30 @@ public class Dataset {
     InitialRecordGenerationConfiguration initialRecordGenerationConfiguration;
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-     * Example: {@code {"bar-key": "value"}}
+     * The labeling instructions for human labelers in rich text format
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("labelingInstructions")
+    String labelingInstructions;
+
+    /**
+     * A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only.
+     * For example: {@code {"bar-key": "value"}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     java.util.Map<String, String> freeformTags;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     * The defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * For example: {@code {"foo-namespace": {"bar-key": "value"}}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Usage of system tag keys. These predefined keys are scoped to namespaces.
-     * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+     * The usage of system tag keys. These predefined keys are scoped to namespaces.
+     * For example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("systemTags")

@@ -147,6 +147,16 @@ public class VolumeGroup {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("volumeGroupReplicas")
+        private java.util.List<VolumeGroupReplicaInfo> volumeGroupReplicas;
+
+        public Builder volumeGroupReplicas(
+                java.util.List<VolumeGroupReplicaInfo> volumeGroupReplicas) {
+            this.volumeGroupReplicas = volumeGroupReplicas;
+            this.__explicitlySet__.add("volumeGroupReplicas");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -165,7 +175,8 @@ public class VolumeGroup {
                             sourceDetails,
                             timeCreated,
                             volumeIds,
-                            isHydrated);
+                            isHydrated,
+                            volumeGroupReplicas);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -185,7 +196,8 @@ public class VolumeGroup {
                             .sourceDetails(o.getSourceDetails())
                             .timeCreated(o.getTimeCreated())
                             .volumeIds(o.getVolumeIds())
-                            .isHydrated(o.getIsHydrated());
+                            .isHydrated(o.getIsHydrated())
+                            .volumeGroupReplicas(o.getVolumeGroupReplicas());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -333,6 +345,12 @@ public class VolumeGroup {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isHydrated")
     Boolean isHydrated;
+
+    /**
+     * The list of volume group replicas of this volume group.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("volumeGroupReplicas")
+    java.util.List<VolumeGroupReplicaInfo> volumeGroupReplicas;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

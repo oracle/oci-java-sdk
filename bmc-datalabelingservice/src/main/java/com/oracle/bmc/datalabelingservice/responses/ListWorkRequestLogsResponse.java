@@ -13,7 +13,7 @@ import com.oracle.bmc.datalabelingservice.model.*;
 @lombok.Getter
 public class ListWorkRequestLogsResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
-     * For pagination of a list of items. When paging through a list, if this header appears in the response,
+     * For the pagination of a list of items. When paging through a list, if this header appears in the response,
      * then a partial list might have been returned. Include this value as the {@code page} parameter for the
      * subsequent GET request to get the next batch of items.
      *
@@ -21,7 +21,7 @@ public class ListWorkRequestLogsResponse extends com.oracle.bmc.responses.BmcRes
     private String opcNextPage;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * A unique Oracle-assigned identifier for the request. If you need to contact
      * Oracle about a particular request, please provide the request ID.
      *
      */

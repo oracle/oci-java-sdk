@@ -62,6 +62,15 @@ public class CreateRecordDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("recordMetadata")
+        private RecordMetadata recordMetadata;
+
+        public Builder recordMetadata(RecordMetadata recordMetadata) {
+            this.recordMetadata = recordMetadata;
+            this.__explicitlySet__.add("recordMetadata");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
@@ -91,6 +100,7 @@ public class CreateRecordDetails {
                             datasetId,
                             compartmentId,
                             sourceDetails,
+                            recordMetadata,
                             freeformTags,
                             definedTags);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
@@ -104,6 +114,7 @@ public class CreateRecordDetails {
                             .datasetId(o.getDatasetId())
                             .compartmentId(o.getCompartmentId())
                             .sourceDetails(o.getSourceDetails())
+                            .recordMetadata(o.getRecordMetadata())
                             .freeformTags(o.getFreeformTags())
                             .definedTags(o.getDefinedTags());
 
@@ -120,7 +131,7 @@ public class CreateRecordDetails {
     }
 
     /**
-     * This will be automatically assigned by the service. It will be unique and immutable.
+     * The name is automatically assigned by the service. It is unique and immutable.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     String name;
@@ -140,17 +151,20 @@ public class CreateRecordDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("sourceDetails")
     CreateSourceDetails sourceDetails;
 
+    @com.fasterxml.jackson.annotation.JsonProperty("recordMetadata")
+    RecordMetadata recordMetadata;
+
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-     * Example: {@code {"bar-key": "value"}}
+     * A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only.
+     * For example: {@code {"bar-key": "value"}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     java.util.Map<String, String> freeformTags;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     * The defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * For example: {@code {"foo-namespace": {"bar-key": "value"}}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")

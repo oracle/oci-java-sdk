@@ -44,6 +44,24 @@ public class NodePoolNodeConfigDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyId")
+        private String kmsKeyId;
+
+        public Builder kmsKeyId(String kmsKeyId) {
+            this.kmsKeyId = kmsKeyId;
+            this.__explicitlySet__.add("kmsKeyId");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("isPvEncryptionInTransitEnabled")
+        private Boolean isPvEncryptionInTransitEnabled;
+
+        public Builder isPvEncryptionInTransitEnabled(Boolean isPvEncryptionInTransitEnabled) {
+            this.isPvEncryptionInTransitEnabled = isPvEncryptionInTransitEnabled;
+            this.__explicitlySet__.add("isPvEncryptionInTransitEnabled");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("placementConfigs")
         private java.util.List<NodePoolPlacementConfigDetails> placementConfigs;
 
@@ -59,7 +77,12 @@ public class NodePoolNodeConfigDetails {
 
         public NodePoolNodeConfigDetails build() {
             NodePoolNodeConfigDetails __instance__ =
-                    new NodePoolNodeConfigDetails(size, nsgIds, placementConfigs);
+                    new NodePoolNodeConfigDetails(
+                            size,
+                            nsgIds,
+                            kmsKeyId,
+                            isPvEncryptionInTransitEnabled,
+                            placementConfigs);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -69,6 +92,8 @@ public class NodePoolNodeConfigDetails {
             Builder copiedBuilder =
                     size(o.getSize())
                             .nsgIds(o.getNsgIds())
+                            .kmsKeyId(o.getKmsKeyId())
+                            .isPvEncryptionInTransitEnabled(o.getIsPvEncryptionInTransitEnabled())
                             .placementConfigs(o.getPlacementConfigs());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
@@ -96,6 +121,18 @@ public class NodePoolNodeConfigDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
     java.util.List<String> nsgIds;
+
+    /**
+     * The OCID of the Key Management Service key assigned to the boot volume.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyId")
+    String kmsKeyId;
+
+    /**
+     * Whether to enable in-transit encryption for the data volume's paravirtualized attachment. This field applies to both block volumes and boot volumes. The default value is false.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isPvEncryptionInTransitEnabled")
+    Boolean isPvEncryptionInTransitEnabled;
 
     /**
      * The placement configurations for the node pool. Provide one placement

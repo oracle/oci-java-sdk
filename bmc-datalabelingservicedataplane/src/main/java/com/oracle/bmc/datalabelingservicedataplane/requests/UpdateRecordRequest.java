@@ -22,7 +22,7 @@ public class UpdateRecordRequest
                 com.oracle.bmc.datalabelingservicedataplane.model.UpdateRecordDetails> {
 
     /**
-     * The OCID of the record annotated
+     * The OCID of the record annotated.
      */
     private String recordId;
 
@@ -36,7 +36,7 @@ public class UpdateRecordRequest
      * For optimistic concurrency control. In the PUT or DELETE call
      * for a resource, set the {@code if-match} parameter to the value of the
      * etag from a previous GET or POST response for that resource.
-     * The resource will be updated or deleted only if the etag you
+     * The resource is updated or deleted only if the etag you
      * provide matches the resource's current etag value.
      *
      */

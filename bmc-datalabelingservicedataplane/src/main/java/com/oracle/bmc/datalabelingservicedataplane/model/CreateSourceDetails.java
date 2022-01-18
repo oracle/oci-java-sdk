@@ -39,7 +39,7 @@ public class CreateSourceDetails {
 
     /**
      * The type of data source.
-     * OBJECT_STORAGE - source details for an object storage bucket.
+     * OBJECT_STORAGE - The source details for an object storage bucket.
      *
      **/
     public enum SourceType {

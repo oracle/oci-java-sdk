@@ -5,7 +5,7 @@
 package com.oracle.bmc.datalabelingservicedataplane.model;
 
 /**
- * Dimensions to summarize record information for a given dataset
+ * The dimensions to summarize record information for a given dataset.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -73,13 +73,13 @@ public class RecordAggregationDimensions {
     }
 
     /**
-     * Whether the record has been labeled and has associated annotations.
+     * Whether or not the record has been labeled and has associated annotations.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isLabeled")
     Boolean isLabeled;
 
     /**
-     * Whether the annotation contains label.
+     * Whether or not the annotation contains a label.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("annotationLabelContains")
     String annotationLabelContains;

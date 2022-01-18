@@ -53,13 +53,25 @@ public class SnapshotDatasetDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("exportFormat")
+        private ExportFormat exportFormat;
+
+        public Builder exportFormat(ExportFormat exportFormat) {
+            this.exportFormat = exportFormat;
+            this.__explicitlySet__.add("exportFormat");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public SnapshotDatasetDetails build() {
             SnapshotDatasetDetails __instance__ =
                     new SnapshotDatasetDetails(
-                            areAnnotationsIncluded, areUnannotatedRecordsIncluded, exportDetails);
+                            areAnnotationsIncluded,
+                            areUnannotatedRecordsIncluded,
+                            exportDetails,
+                            exportFormat);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -69,7 +81,8 @@ public class SnapshotDatasetDetails {
             Builder copiedBuilder =
                     areAnnotationsIncluded(o.getAreAnnotationsIncluded())
                             .areUnannotatedRecordsIncluded(o.getAreUnannotatedRecordsIncluded())
-                            .exportDetails(o.getExportDetails());
+                            .exportDetails(o.getExportDetails())
+                            .exportFormat(o.getExportFormat());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -97,6 +110,9 @@ public class SnapshotDatasetDetails {
 
     @com.fasterxml.jackson.annotation.JsonProperty("exportDetails")
     ObjectStorageSnapshotExportDetails exportDetails;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("exportFormat")
+    ExportFormat exportFormat;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

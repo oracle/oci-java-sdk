@@ -39,6 +39,14 @@ public class UpdateVolumeGroupConverter {
                                 com.oracle.bmc.util.internal.HttpUtils.encodePathSegment(
                                         request.getVolumeGroupId()));
 
+        if (request.getPreserveVolumeReplica() != null) {
+            target =
+                    target.queryParam(
+                            "preserveVolumeReplica",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getPreserveVolumeReplica()));
+        }
+
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib = target.request();
 
         ib.accept(javax.ws.rs.core.MediaType.APPLICATION_JSON);

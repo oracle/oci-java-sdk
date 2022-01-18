@@ -20,7 +20,7 @@ import com.oracle.bmc.datalabelingservicedataplane.model.*;
 public class GetAnnotationRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * unique Annotation identifier
+     * A unique annotation identifier.
      */
     private String annotationId;
 

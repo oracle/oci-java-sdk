@@ -19,7 +19,7 @@ public class CreateAnnotationResponse extends com.oracle.bmc.responses.BmcRespon
     private String etag;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * A unique Oracle-assigned identifier for the request. If you need to contact
      * Oracle about a particular request, please provide the request ID.
      *
      */

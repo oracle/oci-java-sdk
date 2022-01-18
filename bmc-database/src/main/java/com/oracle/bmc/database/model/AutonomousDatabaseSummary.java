@@ -708,6 +708,25 @@ public class AutonomousDatabaseSummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("isReconnectCloneEnabled")
+        private Boolean isReconnectCloneEnabled;
+
+        public Builder isReconnectCloneEnabled(Boolean isReconnectCloneEnabled) {
+            this.isReconnectCloneEnabled = isReconnectCloneEnabled;
+            this.__explicitlySet__.add("isReconnectCloneEnabled");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("timeUntilReconnectCloneEnabled")
+        private java.util.Date timeUntilReconnectCloneEnabled;
+
+        public Builder timeUntilReconnectCloneEnabled(
+                java.util.Date timeUntilReconnectCloneEnabled) {
+            this.timeUntilReconnectCloneEnabled = timeUntilReconnectCloneEnabled;
+            this.__explicitlySet__.add("timeUntilReconnectCloneEnabled");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("autonomousMaintenanceScheduleType")
         private AutonomousMaintenanceScheduleType autonomousMaintenanceScheduleType;
 
@@ -809,6 +828,8 @@ public class AutonomousDatabaseSummary {
                             timeDataGuardRoleChanged,
                             peerDbIds,
                             isMtlsConnectionRequired,
+                            isReconnectCloneEnabled,
+                            timeUntilReconnectCloneEnabled,
                             autonomousMaintenanceScheduleType,
                             scheduledOperations);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
@@ -895,6 +916,8 @@ public class AutonomousDatabaseSummary {
                             .timeDataGuardRoleChanged(o.getTimeDataGuardRoleChanged())
                             .peerDbIds(o.getPeerDbIds())
                             .isMtlsConnectionRequired(o.getIsMtlsConnectionRequired())
+                            .isReconnectCloneEnabled(o.getIsReconnectCloneEnabled())
+                            .timeUntilReconnectCloneEnabled(o.getTimeUntilReconnectCloneEnabled())
                             .autonomousMaintenanceScheduleType(
                                     o.getAutonomousMaintenanceScheduleType())
                             .scheduledOperations(o.getScheduledOperations());
@@ -2058,6 +2081,18 @@ public class AutonomousDatabaseSummary {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isMtlsConnectionRequired")
     Boolean isMtlsConnectionRequired;
+
+    /**
+     * Indicates if the refreshable clone can be reconnected to its source database.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isReconnectCloneEnabled")
+    Boolean isReconnectCloneEnabled;
+
+    /**
+     * The time and date as an RFC3339 formatted string, e.g., 2022-01-01T12:00:00.000Z, to set the limit for a refreshable clone to be reconnected to its source database.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("timeUntilReconnectCloneEnabled")
+    java.util.Date timeUntilReconnectCloneEnabled;
     /**
      * The maintenance schedule type of the Autonomous Database on shared Exadata infrastructure. The EARLY maintenance schedule of this Autonomous Database
      * follows a schedule that applies patches prior to the REGULAR schedule.The REGULAR maintenance schedule of this Autonomous Database follows the normal cycle.

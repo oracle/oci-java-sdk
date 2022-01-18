@@ -5,7 +5,7 @@
 package com.oracle.bmc.datalabelingservicedataplane.model;
 
 /**
- * Results of a record search. Contains both RecordSummary items and other data.
+ * The results of a record search. It contains RecordSummary items and other data.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -59,7 +59,7 @@ public class RecordCollection {
     }
 
     /**
-     * List of records.
+     * The list of records.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     java.util.List<RecordSummary> items;

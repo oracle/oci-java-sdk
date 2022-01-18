@@ -25,22 +25,22 @@ public class ListRecordsRequest extends com.oracle.bmc.requests.BmcRequest<java.
     private String compartmentId;
 
     /**
-     * Filter results by the OCID of the dataset.
+     * Filter the results by the OCID of the dataset.
      */
     private String datasetId;
 
     /**
-     * A filter to return only resources their lifecycleState matches the given lifecycleState.
+     * A filter to return only resources whose lifecycleState matches the given lifecycleState.
      */
     private com.oracle.bmc.datalabelingservicedataplane.model.Record.LifecycleState lifecycleState;
 
     /**
-     * Name of the record
+     * The name of the record.
      */
     private String name;
 
     /**
-     * Unique OCID identifier
+     * The unique OCID identifier.
      */
     private String id;
 
@@ -50,7 +50,7 @@ public class ListRecordsRequest extends com.oracle.bmc.requests.BmcRequest<java.
     private Boolean isLabeled;
 
     /**
-     * Allows the user to filter records based on the related annotations.
+     * Lets the user filter records based on the related annotations.
      *
      */
     private java.util.List<String> annotationLabelsContains;
@@ -71,13 +71,13 @@ public class ListRecordsRequest extends com.oracle.bmc.requests.BmcRequest<java.
     private com.oracle.bmc.datalabelingservicedataplane.model.SortOrders sortOrder;
 
     /**
-     * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for name is ascending. If no value is specified timeCreated is default.
+     * The field to sort by. Only one sort order may be provided. The default order for timeCreated is descending. The default order for name is ascending. If no value is specified, timeCreated is used by default.
      *
      */
     private SortBy sortBy;
 
     /**
-     * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for name is ascending. If no value is specified timeCreated is default.
+     * The field to sort by. Only one sort order may be provided. The default order for timeCreated is descending. The default order for name is ascending. If no value is specified, timeCreated is used by default.
      *
      **/
     public enum SortBy {
@@ -127,7 +127,7 @@ public class ListRecordsRequest extends com.oracle.bmc.requests.BmcRequest<java.
         private java.util.List<String> annotationLabelsContains = null;
 
         /**
-         * Allows the user to filter records based on the related annotations.
+         * Lets the user filter records based on the related annotations.
          *
          * @return this builder instance
          */
@@ -137,7 +137,7 @@ public class ListRecordsRequest extends com.oracle.bmc.requests.BmcRequest<java.
         }
 
         /**
-         * Singular setter. Allows the user to filter records based on the related annotations.
+         * Singular setter. Lets the user filter records based on the related annotations.
          *
          * @return this builder instance
          */

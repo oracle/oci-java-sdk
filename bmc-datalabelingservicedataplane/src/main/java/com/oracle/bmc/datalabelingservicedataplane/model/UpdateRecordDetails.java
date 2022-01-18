@@ -5,7 +5,7 @@
 package com.oracle.bmc.datalabelingservicedataplane.model;
 
 /**
- * Assuming we support tags, tags are supposed to be updatable.
+ * The details of the tags that is updated.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -45,11 +45,21 @@ public class UpdateRecordDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("recordMetadata")
+        private RecordMetadata recordMetadata;
+
+        public Builder recordMetadata(RecordMetadata recordMetadata) {
+            this.recordMetadata = recordMetadata;
+            this.__explicitlySet__.add("recordMetadata");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public UpdateRecordDetails build() {
-            UpdateRecordDetails __instance__ = new UpdateRecordDetails(freeformTags, definedTags);
+            UpdateRecordDetails __instance__ =
+                    new UpdateRecordDetails(freeformTags, definedTags, recordMetadata);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -57,7 +67,9 @@ public class UpdateRecordDetails {
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(UpdateRecordDetails o) {
             Builder copiedBuilder =
-                    freeformTags(o.getFreeformTags()).definedTags(o.getDefinedTags());
+                    freeformTags(o.getFreeformTags())
+                            .definedTags(o.getDefinedTags())
+                            .recordMetadata(o.getRecordMetadata());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -72,20 +84,23 @@ public class UpdateRecordDetails {
     }
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-     * Example: {@code {"bar-key": "value"}}
+     * A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only.
+     * For example: {@code {"bar-key": "value"}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     java.util.Map<String, String> freeformTags;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     * The defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * For example: {@code {"foo-namespace": {"bar-key": "value"}}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("recordMetadata")
+    RecordMetadata recordMetadata;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

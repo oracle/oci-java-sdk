@@ -8,7 +8,7 @@ import com.oracle.bmc.datalabelingservicedataplane.requests.*;
 import com.oracle.bmc.datalabelingservicedataplane.responses.*;
 
 /**
- * A description of the DlsDataPlane API.
+ * Use Data Labeling API to create Annotations on Images, Texts & Documents, and generate snapshots.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211001")
 public interface DataLabelingAsync extends AutoCloseable {
@@ -62,7 +62,7 @@ public interface DataLabelingAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Creates a Record.
+     * Creates a record.
      *
      *
      * @param request The request object containing the details to send
@@ -78,7 +78,7 @@ public interface DataLabelingAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Deletes an Annotation resource by identifier
+     * It deletes an annotation resource by identifier.
      *
      *
      * @param request The request object containing the details to send
@@ -94,7 +94,7 @@ public interface DataLabelingAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Deletes a Record resource by identifier
+     * Deletes a record resource by identifier.
      *
      *
      * @param request The request object containing the details to send
@@ -110,7 +110,7 @@ public interface DataLabelingAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets an Annotation
+     * Gets an annotation.
      *
      *
      * @param request The request object containing the details to send
@@ -126,7 +126,7 @@ public interface DataLabelingAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets a Dataset by identifier
+     * Gets a dataset by identifier.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -140,7 +140,7 @@ public interface DataLabelingAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<GetDatasetRequest, GetDatasetResponse> handler);
 
     /**
-     * Gets a record
+     * Gets a record.
      *
      *
      * @param request The request object containing the details to send
@@ -155,7 +155,7 @@ public interface DataLabelingAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<GetRecordRequest, GetRecordResponse> handler);
 
     /**
-     * Retrieves the content of the record from the Dataset source.
+     * Retrieves the content of the record from the dataset source.
      *
      *
      * @param request The request object containing the details to send
@@ -171,7 +171,7 @@ public interface DataLabelingAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Retrieves the preview of the record content from the Dataset source.
+     * Retrieves the preview of the record content from the dataset source.
      *
      *
      * @param request The request object containing the details to send
@@ -188,7 +188,7 @@ public interface DataLabelingAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Returns a list of Annotations.
+     * Returns a list of annotations.
      *
      *
      * @param request The request object containing the details to send
@@ -204,7 +204,7 @@ public interface DataLabelingAsync extends AutoCloseable {
                     handler);
 
     /**
-     * List Record in the specified compartment.
+     * The list of records in the specified compartment.
      *
      *
      * @param request The request object containing the details to send
@@ -219,7 +219,7 @@ public interface DataLabelingAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<ListRecordsRequest, ListRecordsResponse> handler);
 
     /**
-     * Summarize annotations created for a given dataset
+     * Summarize the annotations created for a given dataset.
      *
      *
      * @param request The request object containing the details to send
@@ -237,7 +237,7 @@ public interface DataLabelingAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Summarize records created for a given dataset
+     * Summarize the records created for a given dataset.
      *
      *
      * @param request The request object containing the details to send
@@ -270,7 +270,7 @@ public interface DataLabelingAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Updates record.
+     * Updates a record.
      *
      *
      * @param request The request object containing the details to send

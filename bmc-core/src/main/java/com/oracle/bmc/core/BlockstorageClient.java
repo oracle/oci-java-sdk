@@ -1716,6 +1716,36 @@ public class BlockstorageClient implements Blockstorage {
     }
 
     @Override
+    public GetVolumeGroupReplicaResponse getVolumeGroupReplica(
+            GetVolumeGroupReplicaRequest request) {
+        LOG.trace("Called getVolumeGroupReplica");
+        final GetVolumeGroupReplicaRequest interceptedRequest =
+                GetVolumeGroupReplicaConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetVolumeGroupReplicaConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, GetVolumeGroupReplicaResponse>
+                transformer = GetVolumeGroupReplicaConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public GetVolumeKmsKeyResponse getVolumeKmsKey(GetVolumeKmsKeyRequest request) {
         LOG.trace("Called getVolumeKmsKey");
         final GetVolumeKmsKeyRequest interceptedRequest =
@@ -1932,6 +1962,36 @@ public class BlockstorageClient implements Blockstorage {
                 ListVolumeGroupBackupsConverter.fromRequest(client, interceptedRequest);
         com.google.common.base.Function<javax.ws.rs.core.Response, ListVolumeGroupBackupsResponse>
                 transformer = ListVolumeGroupBackupsConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ListVolumeGroupReplicasResponse listVolumeGroupReplicas(
+            ListVolumeGroupReplicasRequest request) {
+        LOG.trace("Called listVolumeGroupReplicas");
+        final ListVolumeGroupReplicasRequest interceptedRequest =
+                ListVolumeGroupReplicasConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListVolumeGroupReplicasConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, ListVolumeGroupReplicasResponse>
+                transformer = ListVolumeGroupReplicasConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(

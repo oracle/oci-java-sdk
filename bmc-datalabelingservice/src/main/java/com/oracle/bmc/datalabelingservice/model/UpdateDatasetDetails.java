@@ -45,6 +45,15 @@ public class UpdateDatasetDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("labelingInstructions")
+        private String labelingInstructions;
+
+        public Builder labelingInstructions(String labelingInstructions) {
+            this.labelingInstructions = labelingInstructions;
+            this.__explicitlySet__.add("labelingInstructions");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
@@ -69,7 +78,12 @@ public class UpdateDatasetDetails {
 
         public UpdateDatasetDetails build() {
             UpdateDatasetDetails __instance__ =
-                    new UpdateDatasetDetails(displayName, description, freeformTags, definedTags);
+                    new UpdateDatasetDetails(
+                            displayName,
+                            description,
+                            labelingInstructions,
+                            freeformTags,
+                            definedTags);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -79,6 +93,7 @@ public class UpdateDatasetDetails {
             Builder copiedBuilder =
                     displayName(o.getDisplayName())
                             .description(o.getDescription())
+                            .labelingInstructions(o.getLabelingInstructions())
                             .freeformTags(o.getFreeformTags())
                             .definedTags(o.getDefinedTags());
 
@@ -107,16 +122,22 @@ public class UpdateDatasetDetails {
     String description;
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-     * Example: {@code {"bar-key": "value"}}
+     * The labeling instructions for human labelers in rich text format
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("labelingInstructions")
+    String labelingInstructions;
+
+    /**
+     * A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only.
+     * For example: {@code {"bar-key": "value"}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     java.util.Map<String, String> freeformTags;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     * The defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * For example: {@code {"foo-namespace": {"bar-key": "value"}}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")

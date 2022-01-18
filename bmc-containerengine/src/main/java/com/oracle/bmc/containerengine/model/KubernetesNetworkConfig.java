@@ -71,13 +71,13 @@ public class KubernetesNetworkConfig {
     }
 
     /**
-     * The CIDR block for Kubernetes pods.
+     * The CIDR block for Kubernetes pods. Optional, defaults to 10.244.0.0/16.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("podsCidr")
     String podsCidr;
 
     /**
-     * The CIDR block for Kubernetes services.
+     * The CIDR block for Kubernetes services. Optional, defaults to 10.96.0.0/16.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("servicesCidr")
     String servicesCidr;

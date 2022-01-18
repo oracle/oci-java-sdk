@@ -8,7 +8,7 @@ import com.oracle.bmc.datalabelingservice.requests.*;
 import com.oracle.bmc.datalabelingservice.responses.*;
 
 /**
- * A description of the DataLabelingService API
+ * Use Data Labeling Management API to create, list, edit & delete datasets.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211001")
 public interface DataLabelingManagementAsync extends AutoCloseable {

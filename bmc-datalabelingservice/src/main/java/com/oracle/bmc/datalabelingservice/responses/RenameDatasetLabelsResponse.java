@@ -13,13 +13,13 @@ import com.oracle.bmc.datalabelingservice.model.*;
 @lombok.Getter
 public class RenameDatasetLabelsResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
-     * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query status of the asynchronous operation.
+     * A unique Oracle-assigned identifier for the asynchronous request. You can use this to query the status of the asynchronous operation.
      *
      */
     private String opcWorkRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * A unique Oracle-assigned identifier for the request. If you need to contact
      * Oracle about a particular request, please provide the request ID.
      *
      */

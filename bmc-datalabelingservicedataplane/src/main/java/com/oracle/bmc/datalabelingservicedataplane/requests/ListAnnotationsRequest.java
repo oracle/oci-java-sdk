@@ -25,28 +25,28 @@ public class ListAnnotationsRequest extends com.oracle.bmc.requests.BmcRequest<j
     private String compartmentId;
 
     /**
-     * Filter results by the OCID of the dataset.
+     * Filter the results by the OCID of the dataset.
      */
     private String datasetId;
 
     /**
-     * A filter to return only resources their lifecycleState matches the given lifecycleState.
+     * A filter to return only resources whose lifecycleState matches the given lifecycleState.
      */
     private com.oracle.bmc.datalabelingservicedataplane.model.Annotation.LifecycleState
             lifecycleState;
 
     /**
-     * Unique OCID identifier
+     * The unique OCID identifier.
      */
     private String id;
 
     /**
-     * The OCID of the principal who updated the annotation.
+     * The OCID of the principal which updated the annotation.
      */
     private String updatedBy;
 
     /**
-     * The OCID of the record annotated
+     * The OCID of the record annotated.
      */
     private String recordId;
 
@@ -78,12 +78,12 @@ public class ListAnnotationsRequest extends com.oracle.bmc.requests.BmcRequest<j
     private com.oracle.bmc.datalabelingservicedataplane.model.SortOrders sortOrder;
 
     /**
-     * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. If no value is specified timeCreated is default.
+     * The field to sort by. Only one sort order may be provided. The default order for timeCreated is descending. If no value is specified timeCreated is used by default.
      */
     private SortBy sortBy;
 
     /**
-     * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. If no value is specified timeCreated is default.
+     * The field to sort by. Only one sort order may be provided. The default order for timeCreated is descending. If no value is specified timeCreated is used by default.
      **/
     public enum SortBy {
         TimeCreated("timeCreated"),

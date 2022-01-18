@@ -5,7 +5,7 @@
 package com.oracle.bmc.datalabelingservicedataplane.model;
 
 /**
- * Initial Generate Records configuration, generates records from the Dataset's source.
+ * The initial generate records configuration It generates records from the dataset's source.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -62,7 +62,7 @@ public class InitialRecordGenerationConfiguration {
     }
 
     /**
-     * the maximum number of records to generate.
+     * The maximum number of records to generate.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("limit")
     java.math.BigDecimal limit;

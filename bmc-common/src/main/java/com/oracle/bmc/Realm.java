@@ -29,6 +29,7 @@ public final class Realm implements Serializable, Comparable<Realm> {
     public static final Realm OC3 = new Realm("oc3", "oraclegovcloud.com");
     public static final Realm OC4 = new Realm("oc4", "oraclegovcloud.uk");
     public static final Realm OC8 = new Realm("oc8", "oraclecloud8.com");
+    public static final Realm OC9 = new Realm("oc9", "oraclecloud9.com");
     private static final long serialVersionUID = -905344971L;
 
     @Getter

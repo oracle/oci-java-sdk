@@ -29,6 +29,10 @@ package com.oracle.bmc.core.model;
 )
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = VolumeGroupSourceFromVolumeGroupReplicaDetails.class,
+        name = "volumeGroupReplicaId"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = VolumeGroupSourceFromVolumeGroupDetails.class,
         name = "volumeGroupId"
     ),

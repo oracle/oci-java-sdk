@@ -130,7 +130,7 @@ public class ObjectStorageSourceDetails extends SourceDetails {
     java.math.BigDecimal offset;
 
     /**
-     * The length from offset into the file containing the content.
+     * The length from the offset into the file containing the content.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("length")
     java.math.BigDecimal length;
