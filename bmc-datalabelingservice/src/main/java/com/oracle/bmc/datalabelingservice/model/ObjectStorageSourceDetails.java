@@ -108,7 +108,7 @@ public class ObjectStorageSourceDetails extends DatasetSourceDetails {
     String bucket;
 
     /**
-     * A common path prefix shared by the objects that make up the dataset.
+     * A common path prefix shared by the objects that make up the dataset. Records will not be generated for objects whose name match exactly with prefix.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("prefix")
     String prefix;

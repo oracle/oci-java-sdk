@@ -8,7 +8,7 @@ import com.oracle.bmc.datalabelingservicedataplane.requests.*;
 import com.oracle.bmc.datalabelingservicedataplane.responses.*;
 
 /**
- * A description of the DlsDataPlane API.
+ * Use Data Labeling API to create Annotations on Images, Texts & Documents, and generate snapshots.
  * This service client uses CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER for all the operations by default if no circuit breaker configuration is defined by the user.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211001")
@@ -60,7 +60,7 @@ public interface DataLabeling extends AutoCloseable {
     CreateAnnotationResponse createAnnotation(CreateAnnotationRequest request);
 
     /**
-     * Creates a Record.
+     * Creates a record.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -73,7 +73,7 @@ public interface DataLabeling extends AutoCloseable {
     CreateRecordResponse createRecord(CreateRecordRequest request);
 
     /**
-     * Deletes an Annotation resource by identifier
+     * It deletes an annotation resource by identifier.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -86,7 +86,7 @@ public interface DataLabeling extends AutoCloseable {
     DeleteAnnotationResponse deleteAnnotation(DeleteAnnotationRequest request);
 
     /**
-     * Deletes a Record resource by identifier
+     * Deletes a record resource by identifier.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -99,7 +99,7 @@ public interface DataLabeling extends AutoCloseable {
     DeleteRecordResponse deleteRecord(DeleteRecordRequest request);
 
     /**
-     * Gets an Annotation
+     * Gets an annotation.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -112,7 +112,7 @@ public interface DataLabeling extends AutoCloseable {
     GetAnnotationResponse getAnnotation(GetAnnotationRequest request);
 
     /**
-     * Gets a Dataset by identifier
+     * Gets a dataset by identifier.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -124,7 +124,7 @@ public interface DataLabeling extends AutoCloseable {
     GetDatasetResponse getDataset(GetDatasetRequest request);
 
     /**
-     * Gets a record
+     * Gets a record.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -137,7 +137,7 @@ public interface DataLabeling extends AutoCloseable {
     GetRecordResponse getRecord(GetRecordRequest request);
 
     /**
-     * Retrieves the content of the record from the Dataset source.
+     * Retrieves the content of the record from the dataset source.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -150,7 +150,7 @@ public interface DataLabeling extends AutoCloseable {
     GetRecordContentResponse getRecordContent(GetRecordContentRequest request);
 
     /**
-     * Retrieves the preview of the record content from the Dataset source.
+     * Retrieves the preview of the record content from the dataset source.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -163,7 +163,7 @@ public interface DataLabeling extends AutoCloseable {
     GetRecordPreviewContentResponse getRecordPreviewContent(GetRecordPreviewContentRequest request);
 
     /**
-     * Returns a list of Annotations.
+     * Returns a list of annotations.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -176,7 +176,7 @@ public interface DataLabeling extends AutoCloseable {
     ListAnnotationsResponse listAnnotations(ListAnnotationsRequest request);
 
     /**
-     * List Record in the specified compartment.
+     * The list of records in the specified compartment.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -189,7 +189,7 @@ public interface DataLabeling extends AutoCloseable {
     ListRecordsResponse listRecords(ListRecordsRequest request);
 
     /**
-     * Summarize annotations created for a given dataset
+     * Summarize the annotations created for a given dataset.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -203,7 +203,7 @@ public interface DataLabeling extends AutoCloseable {
             SummarizeAnnotationAnalyticsRequest request);
 
     /**
-     * Summarize records created for a given dataset
+     * Summarize the records created for a given dataset.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -230,7 +230,7 @@ public interface DataLabeling extends AutoCloseable {
     UpdateAnnotationResponse updateAnnotation(UpdateAnnotationRequest request);
 
     /**
-     * Updates record.
+     * Updates a record.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation

@@ -62,7 +62,7 @@ public class RecordAnalyticsAggregationCollection {
     }
 
     /**
-     * List of Record entities.
+     * The list of record entities.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     java.util.List<RecordAnalyticsAggregation> items;

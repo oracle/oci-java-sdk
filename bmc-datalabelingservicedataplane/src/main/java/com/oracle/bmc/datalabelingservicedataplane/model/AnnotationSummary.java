@@ -142,7 +142,7 @@ public class AnnotationSummary {
     }
 
     /**
-     * The OCID of the annotation
+     * The OCID of the annotation.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     String id;
@@ -160,13 +160,13 @@ public class AnnotationSummary {
     java.util.Date timeUpdated;
 
     /**
-     * The OCID of the record annotated
+     * The OCID of the record annotated.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("recordId")
     String recordId;
 
     /**
-     * The OCID of the compartment for the annotation
+     * The OCID of the compartment for the annotation.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     String compartmentId;
@@ -178,16 +178,16 @@ public class AnnotationSummary {
     Annotation.LifecycleState lifecycleState;
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-     * Example: {@code {"bar-key": "value"}}
+     * A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only.
+     * For example: {@code {"bar-key": "value"}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     java.util.Map<String, String> freeformTags;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     * The defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * For example: {@code {"foo-namespace": {"bar-key": "value"}}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")

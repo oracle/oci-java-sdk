@@ -5,7 +5,7 @@
 package com.oracle.bmc.datalabelingservicedataplane.model;
 
 /**
- * Sort orders.
+ * The sort orders.
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211001")
 public enum SortOrders {

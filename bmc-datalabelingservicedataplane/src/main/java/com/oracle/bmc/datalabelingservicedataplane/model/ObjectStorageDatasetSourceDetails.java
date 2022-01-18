@@ -5,7 +5,7 @@
 package com.oracle.bmc.datalabelingservicedataplane.model;
 
 /**
- * Specifies the dataset location in object storage. This requires that all records are in this bucket, and under this prefix. We do not support a dataset with objects in arbitrary locations across buckets or prefixes.
+ * Specifies the dataset location in object storage. This requires that all records are in this bucket, and under this prefix. A dataset with objects in arbitrary locations across buckets or prefixes is not allowed.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -96,19 +96,19 @@ public class ObjectStorageDatasetSourceDetails extends DatasetSourceDetails {
     }
 
     /**
-     * Namespace of the bucket that contains the dataset data source
+     * The namespace of the bucket that contains the dataset data source.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("namespace")
     String namespace;
 
     /**
-     * The object storage bucket that contains the dataset data source
+     * The object storage bucket that contains the dataset data source.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("bucket")
     String bucket;
 
     /**
-     * A common path prefix shared by the objects that make up the dataset.
+     * A common path prefix shared by the objects that make up the dataset. Records will not be generated for objects whose name match exactly with prefix.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("prefix")
     String prefix;

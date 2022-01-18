@@ -5,7 +5,7 @@
 package com.oracle.bmc.datalabelingservicedataplane.model;
 
 /**
- * Aggregation entities are required by the api consistency guidelines for API Consistency Guidelines#AnalyticsAPIs.  These are used to summarize annotations for a given dataset and will be used to populate UI elements.  Aggregations need to have the fields that identify the exact scope that they're summarizing.  Any filters to the list API we apply would have to show up in the aggregation. We should limit the number of filters and dimensions as much as possible.
+ * Aggregation entities are required by the API consistency guidelines for API Consistency Guidelines#AnalyticsAPIs.  These are used to summarize annotations for a given dataset and will be used to populate UI elements.  Aggregations need to have the fields that identify the exact scope that they're summarizing.  Any filters applied to the list API, have to show up in the aggregation.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -62,7 +62,7 @@ public class AnnotationAnalyticsAggregationCollection {
     }
 
     /**
-     * List of Annotation entities.
+     * The list of annotation entities.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     java.util.List<AnnotationAnalyticsAggregation> items;

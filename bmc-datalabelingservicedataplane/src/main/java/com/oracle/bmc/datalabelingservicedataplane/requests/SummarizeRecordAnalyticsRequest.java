@@ -26,12 +26,12 @@ public class SummarizeRecordAnalyticsRequest
     private String compartmentId;
 
     /**
-     * Filter results by the OCID of the dataset.
+     * Filter the results by the OCID of the dataset.
      */
     private String datasetId;
 
     /**
-     * A filter to return only resources their lifecycleState matches the given lifecycleState.
+     * A filter to return only resources whose lifecycleState matches the given lifecycleState.
      */
     private com.oracle.bmc.datalabelingservicedataplane.model.Record.LifecycleState lifecycleState;
 
@@ -51,13 +51,13 @@ public class SummarizeRecordAnalyticsRequest
     private com.oracle.bmc.datalabelingservicedataplane.model.SortOrders sortOrder;
 
     /**
-     * The field to group by. If no value is specified isLabeled is default.
+     * The field to group by. If no value is specified isLabeled is used by default.
      *
      */
     private RecordGroupBy recordGroupBy;
 
     /**
-     * The field to group by. If no value is specified isLabeled is default.
+     * The field to group by. If no value is specified isLabeled is used by default.
      *
      **/
     public enum RecordGroupBy {
@@ -93,12 +93,12 @@ public class SummarizeRecordAnalyticsRequest
         }
     };
     /**
-     * The field to sort by. Only one sort order may be provided. Default order is descending. If no value is specified count is default.
+     * The field to sort by. Only one sort order may be provided. The default order is descending. If no value is specified, count is used by default.
      */
     private SortBy sortBy;
 
     /**
-     * The field to sort by. Only one sort order may be provided. Default order is descending. If no value is specified count is default.
+     * The field to sort by. Only one sort order may be provided. The default order is descending. If no value is specified, count is used by default.
      **/
     public enum SortBy {
         Count("count"),

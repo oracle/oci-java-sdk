@@ -145,6 +145,15 @@ public class BlockVolumeReplica {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("volumeGroupReplicaId")
+        private String volumeGroupReplicaId;
+
+        public Builder volumeGroupReplicaId(String volumeGroupReplicaId) {
+            this.volumeGroupReplicaId = volumeGroupReplicaId;
+            this.__explicitlySet__.add("volumeGroupReplicaId");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -162,7 +171,8 @@ public class BlockVolumeReplica {
                             timeCreated,
                             timeLastSynced,
                             blockVolumeId,
-                            totalDataTransferredInGBs);
+                            totalDataTransferredInGBs,
+                            volumeGroupReplicaId);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -181,7 +191,8 @@ public class BlockVolumeReplica {
                             .timeCreated(o.getTimeCreated())
                             .timeLastSynced(o.getTimeLastSynced())
                             .blockVolumeId(o.getBlockVolumeId())
-                            .totalDataTransferredInGBs(o.getTotalDataTransferredInGBs());
+                            .totalDataTransferredInGBs(o.getTotalDataTransferredInGBs())
+                            .volumeGroupReplicaId(o.getVolumeGroupReplicaId());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -334,6 +345,13 @@ public class BlockVolumeReplica {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("totalDataTransferredInGBs")
     Long totalDataTransferredInGBs;
+
+    /**
+     * The OCID of the volume group replica.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("volumeGroupReplicaId")
+    String volumeGroupReplicaId;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

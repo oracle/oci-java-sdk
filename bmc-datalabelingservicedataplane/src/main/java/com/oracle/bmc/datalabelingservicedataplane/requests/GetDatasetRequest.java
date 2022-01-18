@@ -20,7 +20,7 @@ import com.oracle.bmc.datalabelingservicedataplane.model.*;
 public class GetDatasetRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * Unique Dataset OCID
+     * A unique dataset OCID.
      */
     private String datasetId;
 

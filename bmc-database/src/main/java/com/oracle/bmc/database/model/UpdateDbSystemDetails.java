@@ -65,6 +65,15 @@ public class UpdateDbSystemDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("recoStorageSizeInGBs")
+        private Integer recoStorageSizeInGBs;
+
+        public Builder recoStorageSizeInGBs(Integer recoStorageSizeInGBs) {
+            this.recoStorageSizeInGBs = recoStorageSizeInGBs;
+            this.__explicitlySet__.add("recoStorageSizeInGBs");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
@@ -139,6 +148,7 @@ public class UpdateDbSystemDetails {
                             version,
                             sshPublicKeys,
                             dataStorageSizeInGBs,
+                            recoStorageSizeInGBs,
                             freeformTags,
                             definedTags,
                             shape,
@@ -157,6 +167,7 @@ public class UpdateDbSystemDetails {
                             .version(o.getVersion())
                             .sshPublicKeys(o.getSshPublicKeys())
                             .dataStorageSizeInGBs(o.getDataStorageSizeInGBs())
+                            .recoStorageSizeInGBs(o.getRecoStorageSizeInGBs())
                             .freeformTags(o.getFreeformTags())
                             .definedTags(o.getDefinedTags())
                             .shape(o.getShape())
@@ -198,6 +209,13 @@ public class UpdateDbSystemDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dataStorageSizeInGBs")
     Integer dataStorageSizeInGBs;
+
+    /**
+     * The size, in gigabytes, to scale the attached RECO storage up to for this virtual machine DB system. This value must be greater than current storage size. Note that the resulting total storage size attached will be greater than the amount requested to allow for the software volume. Applies only to virtual machine DB systems.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("recoStorageSizeInGBs")
+    Integer recoStorageSizeInGBs;
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.

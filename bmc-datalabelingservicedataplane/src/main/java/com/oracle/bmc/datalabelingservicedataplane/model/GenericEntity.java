@@ -5,7 +5,7 @@
 package com.oracle.bmc.datalabelingservicedataplane.model;
 
 /**
- * This is an extensible entity type for users and the base entity type for some annotation formats
+ * This is an extensible entity type for users, and the base entity type for some annotation formats.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -82,14 +82,14 @@ public class GenericEntity extends Entity {
     }
 
     /**
-     * collection of Label entities
+     * A collection of label entities.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("labels")
     java.util.List<Label> labels;
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-     * Example: {@code {"bar-key": "value"}}
+     * A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only.
+     * For example: {@code {"bar-key": "value"}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("extendedMetadata")

@@ -105,6 +105,15 @@ public class Record {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("recordMetadata")
+        private RecordMetadata recordMetadata;
+
+        public Builder recordMetadata(RecordMetadata recordMetadata) {
+            this.recordMetadata = recordMetadata;
+            this.__explicitlySet__.add("recordMetadata");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
@@ -139,6 +148,7 @@ public class Record {
                             sourceDetails,
                             isLabeled,
                             lifecycleState,
+                            recordMetadata,
                             freeformTags,
                             definedTags);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
@@ -157,6 +167,7 @@ public class Record {
                             .sourceDetails(o.getSourceDetails())
                             .isLabeled(o.getIsLabeled())
                             .lifecycleState(o.getLifecycleState())
+                            .recordMetadata(o.getRecordMetadata())
                             .freeformTags(o.getFreeformTags())
                             .definedTags(o.getDefinedTags());
 
@@ -173,13 +184,13 @@ public class Record {
     }
 
     /**
-     * The OCID of the record
+     * The OCID of the record.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     String id;
 
     /**
-     * This will be created by Customer. It will be unique and immutable.
+     * The name is created by the user. It is unique and immutable.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     String name;
@@ -197,7 +208,7 @@ public class Record {
     java.util.Date timeUpdated;
 
     /**
-     * The OCID of the dataset to associate the record with
+     * The OCID of the dataset to associate the record with.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("datasetId")
     String datasetId;
@@ -212,15 +223,15 @@ public class Record {
     SourceDetails sourceDetails;
 
     /**
-     * Whether the record has been labeled and has associated annotations.
+     * Whether or not the record has been labeled and has associated annotations.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isLabeled")
     Boolean isLabeled;
     /**
-     * Lifecycle state of the Record.
-     * ACTIVE - Record is active and ready for labeling.
-     * INACTIVE - Record has been marked as inactive and should not be used for labeling.
-     * DELETED - Record has been deleted and no longer available for labeling.
+     * The lifecycle state of the record.
+     * ACTIVE - The record is active and ready for labeling.
+     * INACTIVE - The record has been marked as inactive and should not be used for labeling.
+     * DELETED - The record has been deleted and is no longer available for labeling.
      *
      **/
     @lombok.extern.slf4j.Slf4j
@@ -268,26 +279,29 @@ public class Record {
         }
     };
     /**
-     * Lifecycle state of the Record.
-     * ACTIVE - Record is active and ready for labeling.
-     * INACTIVE - Record has been marked as inactive and should not be used for labeling.
-     * DELETED - Record has been deleted and no longer available for labeling.
+     * The lifecycle state of the record.
+     * ACTIVE - The record is active and ready for labeling.
+     * INACTIVE - The record has been marked as inactive and should not be used for labeling.
+     * DELETED - The record has been deleted and is no longer available for labeling.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     LifecycleState lifecycleState;
 
+    @com.fasterxml.jackson.annotation.JsonProperty("recordMetadata")
+    RecordMetadata recordMetadata;
+
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-     * Example: {@code {"bar-key": "value"}}
+     * A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only.
+     * For example: {@code {"bar-key": "value"}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     java.util.Map<String, String> freeformTags;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     * The defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * For example: {@code {"foo-namespace": {"bar-key": "value"}}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")

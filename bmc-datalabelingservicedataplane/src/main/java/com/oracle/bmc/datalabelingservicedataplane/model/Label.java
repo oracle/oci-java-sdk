@@ -5,7 +5,7 @@
 package com.oracle.bmc.datalabelingservicedataplane.model;
 
 /**
- * A label is a string value.  The API will validate that it's one of the dataset's pre-defined labels. In the future, we'll be able to support a confidence score.
+ * A label is a string value.  The API validates that it's one of the dataset's pre-defined labels.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in

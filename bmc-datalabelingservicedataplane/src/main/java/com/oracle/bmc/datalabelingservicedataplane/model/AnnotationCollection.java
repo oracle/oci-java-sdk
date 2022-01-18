@@ -5,7 +5,7 @@
 package com.oracle.bmc.datalabelingservicedataplane.model;
 
 /**
- * Results of a annotations search. Contains boh AnnotationSummary items and other information, such as metadata.
+ * The results of an annotations search. It contains AnnotationSummary items and other information, such as metadata.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -61,7 +61,7 @@ public class AnnotationCollection {
     }
 
     /**
-     * List of annotations.
+     * The list of annotations.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     java.util.List<AnnotationSummary> items;

@@ -138,6 +138,15 @@ public class AutonomousContainerDatabaseDataguardAssociation {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("isAutomaticFailoverEnabled")
+        private Boolean isAutomaticFailoverEnabled;
+
+        public Builder isAutomaticFailoverEnabled(Boolean isAutomaticFailoverEnabled) {
+            this.isAutomaticFailoverEnabled = isAutomaticFailoverEnabled;
+            this.__explicitlySet__.add("isAutomaticFailoverEnabled");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("transportLag")
         private String transportLag;
 
@@ -192,6 +201,7 @@ public class AutonomousContainerDatabaseDataguardAssociation {
                             protectionMode,
                             applyLag,
                             applyRate,
+                            isAutomaticFailoverEnabled,
                             transportLag,
                             timeLastSynced,
                             timeCreated,
@@ -217,6 +227,7 @@ public class AutonomousContainerDatabaseDataguardAssociation {
                             .protectionMode(o.getProtectionMode())
                             .applyLag(o.getApplyLag())
                             .applyRate(o.getApplyRate())
+                            .isAutomaticFailoverEnabled(o.getIsAutomaticFailoverEnabled())
                             .transportLag(o.getTransportLag())
                             .timeLastSynced(o.getTimeLastSynced())
                             .timeCreated(o.getTimeCreated())
@@ -562,6 +573,13 @@ public class AutonomousContainerDatabaseDataguardAssociation {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("applyRate")
     String applyRate;
+
+    /**
+     * Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isAutomaticFailoverEnabled")
+    Boolean isAutomaticFailoverEnabled;
 
     /**
      * The approximate number of seconds of redo data not yet available on the standby Autonomous Container Database,

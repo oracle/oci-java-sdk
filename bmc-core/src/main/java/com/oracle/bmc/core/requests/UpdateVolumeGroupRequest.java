@@ -40,6 +40,14 @@ public class UpdateVolumeGroupRequest
     private String ifMatch;
 
     /**
+     * Specifies whether to disable or preserve the individual volume replication when removing a volume from the
+     * replication enabled volume group. When set to {@code true}, the individual volume replica is preserved. The default
+     * value is {@code true}.
+     *
+     */
+    private Boolean preserveVolumeReplica;
+
+    /**
      * Alternative accessor for the body parameter.
      * @return body parameter
      */
@@ -87,6 +95,7 @@ public class UpdateVolumeGroupRequest
             volumeGroupId(o.getVolumeGroupId());
             updateVolumeGroupDetails(o.getUpdateVolumeGroupDetails());
             ifMatch(o.getIfMatch());
+            preserveVolumeReplica(o.getPreserveVolumeReplica());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;

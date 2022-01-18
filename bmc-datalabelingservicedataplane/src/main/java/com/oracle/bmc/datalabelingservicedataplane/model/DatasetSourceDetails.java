@@ -37,7 +37,7 @@ package com.oracle.bmc.datalabelingservicedataplane.model;
 public class DatasetSourceDetails {
 
     /**
-     * Source type.  OBJECT_STORAGE allows the customer to describe where the dataset is in object storage.
+     * The source type.  OBJECT_STORAGE allows the user to describe where in object storage the dataset is.
      **/
     @lombok.extern.slf4j.Slf4j
     public enum SourceType {

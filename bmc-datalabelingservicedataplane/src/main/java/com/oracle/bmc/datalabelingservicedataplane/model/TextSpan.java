@@ -5,7 +5,7 @@
 package com.oracle.bmc.datalabelingservicedataplane.model;
 
 /**
- * A wrapper class for offset and length, which together represent a span of text in a text document.
+ * A wrapper class for offset and length, which together, represent a span of text in a text document.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -68,13 +68,13 @@ public class TextSpan {
     }
 
     /**
-     * Offset of the selected text within the entire text.
+     * The offset of the selected text within the entire text.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("offset")
     java.math.BigDecimal offset;
 
     /**
-     * Length of the selected text.
+     * The length of the selected text.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("length")
     java.math.BigDecimal length;

@@ -22,12 +22,12 @@ public class UpdateAnnotationRequest
                 com.oracle.bmc.datalabelingservicedataplane.model.UpdateAnnotationDetails> {
 
     /**
-     * unique Annotation identifier
+     * A unique annotation identifier.
      */
     private String annotationId;
 
     /**
-     * Information to be updated.
+     * The information to be updated.
      */
     private com.oracle.bmc.datalabelingservicedataplane.model.UpdateAnnotationDetails
             updateAnnotationDetails;
@@ -36,7 +36,7 @@ public class UpdateAnnotationRequest
      * For optimistic concurrency control. In the PUT or DELETE call
      * for a resource, set the {@code if-match} parameter to the value of the
      * etag from a previous GET or POST response for that resource.
-     * The resource will be updated or deleted only if the etag you
+     * The resource is updated or deleted only if the etag you
      * provide matches the resource's current etag value.
      *
      */

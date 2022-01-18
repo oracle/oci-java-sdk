@@ -773,6 +773,22 @@ public interface BlockstorageAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Gets information for the specified volume group replica.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetVolumeGroupReplicaResponse> getVolumeGroupReplica(
+            GetVolumeGroupReplicaRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetVolumeGroupReplicaRequest, GetVolumeGroupReplicaResponse>
+                    handler);
+
+    /**
      * Gets the Key Management encryption key assigned to the specified volume.
      *
      *
@@ -908,6 +924,24 @@ public interface BlockstorageAsync extends AutoCloseable {
             ListVolumeGroupBackupsRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             ListVolumeGroupBackupsRequest, ListVolumeGroupBackupsResponse>
+                    handler);
+
+    /**
+     * Lists the volume group replicas in the specified compartment. You can filter the results by volume group.
+     * For more information, see [Volume Group Replication](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/volumegroupreplication.htm).
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListVolumeGroupReplicasResponse> listVolumeGroupReplicas(
+            ListVolumeGroupReplicasRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListVolumeGroupReplicasRequest, ListVolumeGroupReplicasResponse>
                     handler);
 
     /**

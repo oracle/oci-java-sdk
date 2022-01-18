@@ -90,6 +90,16 @@ public class CreateVolumeGroupDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("volumeGroupReplicas")
+        private java.util.List<VolumeGroupReplicaDetails> volumeGroupReplicas;
+
+        public Builder volumeGroupReplicas(
+                java.util.List<VolumeGroupReplicaDetails> volumeGroupReplicas) {
+            this.volumeGroupReplicas = volumeGroupReplicas;
+            this.__explicitlySet__.add("volumeGroupReplicas");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -102,7 +112,8 @@ public class CreateVolumeGroupDetails {
                             definedTags,
                             displayName,
                             freeformTags,
-                            sourceDetails);
+                            sourceDetails,
+                            volumeGroupReplicas);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -116,7 +127,8 @@ public class CreateVolumeGroupDetails {
                             .definedTags(o.getDefinedTags())
                             .displayName(o.getDisplayName())
                             .freeformTags(o.getFreeformTags())
-                            .sourceDetails(o.getSourceDetails());
+                            .sourceDetails(o.getSourceDetails())
+                            .volumeGroupReplicas(o.getVolumeGroupReplicas());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -180,6 +192,14 @@ public class CreateVolumeGroupDetails {
 
     @com.fasterxml.jackson.annotation.JsonProperty("sourceDetails")
     VolumeGroupSourceDetails sourceDetails;
+
+    /**
+     * The list of volume group replicas that this volume group will be enabled to have
+     * in the specified destination availability domains.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("volumeGroupReplicas")
+    java.util.List<VolumeGroupReplicaDetails> volumeGroupReplicas;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

@@ -10812,6 +10812,65 @@ public class DatabaseAsyncClient implements DatabaseAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<
+                    UpdateAutonomousContainerDatabaseDataguardAssociationResponse>
+            updateAutonomousContainerDatabaseDataguardAssociation(
+                    UpdateAutonomousContainerDatabaseDataguardAssociationRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    UpdateAutonomousContainerDatabaseDataguardAssociationRequest,
+                                    UpdateAutonomousContainerDatabaseDataguardAssociationResponse>
+                            handler) {
+        LOG.trace("Called async updateAutonomousContainerDatabaseDataguardAssociation");
+        final UpdateAutonomousContainerDatabaseDataguardAssociationRequest interceptedRequest =
+                UpdateAutonomousContainerDatabaseDataguardAssociationConverter.interceptRequest(
+                        request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateAutonomousContainerDatabaseDataguardAssociationConverter.fromRequest(
+                        client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        UpdateAutonomousContainerDatabaseDataguardAssociationResponse>
+                transformer =
+                        UpdateAutonomousContainerDatabaseDataguardAssociationConverter
+                                .fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        UpdateAutonomousContainerDatabaseDataguardAssociationRequest,
+                        UpdateAutonomousContainerDatabaseDataguardAssociationResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpdateAutonomousContainerDatabaseDataguardAssociationRequest,
+                                UpdateAutonomousContainerDatabaseDataguardAssociationResponse>,
+                        java.util.concurrent.Future<
+                                UpdateAutonomousContainerDatabaseDataguardAssociationResponse>>
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest
+                                        .getUpdateAutonomousContainerDatabaseDataGuardAssociationDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpdateAutonomousContainerDatabaseDataguardAssociationRequest,
+                    UpdateAutonomousContainerDatabaseDataguardAssociationResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<UpdateAutonomousDatabaseResponse> updateAutonomousDatabase(
             UpdateAutonomousDatabaseRequest request,
             final com.oracle.bmc.responses.AsyncHandler<

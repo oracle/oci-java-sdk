@@ -957,6 +957,121 @@ public class BlockstoragePaginators {
     }
 
     /**
+     * Creates a new iterable which will iterate over the responses received from the listVolumeGroupReplicas operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListVolumeGroupReplicasResponse> listVolumeGroupReplicasResponseIterator(
+            final ListVolumeGroupReplicasRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListVolumeGroupReplicasRequest.Builder, ListVolumeGroupReplicasRequest,
+                ListVolumeGroupReplicasResponse>(
+                new com.google.common.base.Supplier<ListVolumeGroupReplicasRequest.Builder>() {
+                    @Override
+                    public ListVolumeGroupReplicasRequest.Builder get() {
+                        return ListVolumeGroupReplicasRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListVolumeGroupReplicasResponse, String>() {
+                    @Override
+                    public String apply(ListVolumeGroupReplicasResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListVolumeGroupReplicasRequest.Builder>,
+                        ListVolumeGroupReplicasRequest>() {
+                    @Override
+                    public ListVolumeGroupReplicasRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListVolumeGroupReplicasRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListVolumeGroupReplicasRequest, ListVolumeGroupReplicasResponse>() {
+                    @Override
+                    public ListVolumeGroupReplicasResponse apply(
+                            ListVolumeGroupReplicasRequest request) {
+                        return client.listVolumeGroupReplicas(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.core.model.VolumeGroupReplica} objects
+     * contained in responses from the listVolumeGroupReplicas operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.core.model.VolumeGroupReplica} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.core.model.VolumeGroupReplica>
+            listVolumeGroupReplicasRecordIterator(final ListVolumeGroupReplicasRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListVolumeGroupReplicasRequest.Builder, ListVolumeGroupReplicasRequest,
+                ListVolumeGroupReplicasResponse, com.oracle.bmc.core.model.VolumeGroupReplica>(
+                new com.google.common.base.Supplier<ListVolumeGroupReplicasRequest.Builder>() {
+                    @Override
+                    public ListVolumeGroupReplicasRequest.Builder get() {
+                        return ListVolumeGroupReplicasRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListVolumeGroupReplicasResponse, String>() {
+                    @Override
+                    public String apply(ListVolumeGroupReplicasResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListVolumeGroupReplicasRequest.Builder>,
+                        ListVolumeGroupReplicasRequest>() {
+                    @Override
+                    public ListVolumeGroupReplicasRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListVolumeGroupReplicasRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListVolumeGroupReplicasRequest, ListVolumeGroupReplicasResponse>() {
+                    @Override
+                    public ListVolumeGroupReplicasResponse apply(
+                            ListVolumeGroupReplicasRequest request) {
+                        return client.listVolumeGroupReplicas(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListVolumeGroupReplicasResponse,
+                        java.util.List<com.oracle.bmc.core.model.VolumeGroupReplica>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.core.model.VolumeGroupReplica> apply(
+                            ListVolumeGroupReplicasResponse response) {
+                        return response.getItems();
+                    }
+                });
+    }
+
+    /**
      * Creates a new iterable which will iterate over the responses received from the listVolumeGroups operation. This iterable
      * will fetch more data from the server as needed.
      *

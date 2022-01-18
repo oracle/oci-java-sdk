@@ -21,7 +21,7 @@ public class GetRecordPreviewContentRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The OCID of the record annotated
+     * The OCID of the record annotated.
      */
     private String recordId;
 

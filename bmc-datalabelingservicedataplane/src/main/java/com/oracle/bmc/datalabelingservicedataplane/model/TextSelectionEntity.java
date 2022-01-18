@@ -5,7 +5,7 @@
 package com.oracle.bmc.datalabelingservicedataplane.model;
 
 /**
- * This allows the labeler to highlight text by specifying an offset and a length and apply labels to it.
+ * This lets the labeler highlight text, by specifying an offset and a length, and apply labels to it.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -100,7 +100,7 @@ public class TextSelectionEntity extends Entity {
     }
 
     /**
-     * Collection of Label entities
+     * A collection of label entities.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("labels")
     java.util.List<Label> labels;
@@ -109,8 +109,8 @@ public class TextSelectionEntity extends Entity {
     TextSpan textSpan;
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-     * Example: {@code {"bar-key": "value"}}
+     * A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only.
+     * For example: {@code {"bar-key": "value"}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("extendedMetadata")

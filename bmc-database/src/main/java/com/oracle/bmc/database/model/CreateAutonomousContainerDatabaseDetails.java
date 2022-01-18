@@ -94,6 +94,15 @@ public class CreateAutonomousContainerDatabaseDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("isAutomaticFailoverEnabled")
+        private Boolean isAutomaticFailoverEnabled;
+
+        public Builder isAutomaticFailoverEnabled(Boolean isAutomaticFailoverEnabled) {
+            this.isAutomaticFailoverEnabled = isAutomaticFailoverEnabled;
+            this.__explicitlySet__.add("isAutomaticFailoverEnabled");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("peerCloudAutonomousVmClusterId")
         private String peerCloudAutonomousVmClusterId;
 
@@ -278,6 +287,7 @@ public class CreateAutonomousContainerDatabaseDetails {
                             peerAutonomousExadataInfrastructureId,
                             peerAutonomousContainerDatabaseDisplayName,
                             protectionMode,
+                            isAutomaticFailoverEnabled,
                             peerCloudAutonomousVmClusterId,
                             peerAutonomousVmClusterId,
                             peerAutonomousContainerDatabaseCompartmentId,
@@ -313,6 +323,7 @@ public class CreateAutonomousContainerDatabaseDetails {
                             .peerAutonomousContainerDatabaseDisplayName(
                                     o.getPeerAutonomousContainerDatabaseDisplayName())
                             .protectionMode(o.getProtectionMode())
+                            .isAutomaticFailoverEnabled(o.getIsAutomaticFailoverEnabled())
                             .peerCloudAutonomousVmClusterId(o.getPeerCloudAutonomousVmClusterId())
                             .peerAutonomousVmClusterId(o.getPeerAutonomousVmClusterId())
                             .peerAutonomousContainerDatabaseCompartmentId(
@@ -462,6 +473,13 @@ public class CreateAutonomousContainerDatabaseDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("protectionMode")
     ProtectionMode protectionMode;
+
+    /**
+     * Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isAutomaticFailoverEnabled")
+    Boolean isAutomaticFailoverEnabled;
 
     /**
      * The OCID of the peer cloud Autonomous VM Cluster.

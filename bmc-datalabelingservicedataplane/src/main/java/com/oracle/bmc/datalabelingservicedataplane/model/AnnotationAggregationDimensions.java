@@ -5,7 +5,7 @@
 package com.oracle.bmc.datalabelingservicedataplane.model;
 
 /**
- * Dimensions to summarize annotations for a given dataset
+ * The dimensions to summarize annotations for a given dataset.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -74,7 +74,7 @@ public class AnnotationAggregationDimensions {
     Label label;
 
     /**
-     * The OCID of the principal who updated the resource.
+     * The OCID of the principal which updated the resource.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("updatedBy")
     String updatedBy;
