@@ -433,7 +433,7 @@ public class AutonomousVmClusterSummary {
     Double dataStorageSizeInTBs;
 
     /**
-     * The total data storage allocated in GBs
+     * The total data storage allocated in GBs.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dataStorageSizeInGBs")
     Double dataStorageSizeInGBs;

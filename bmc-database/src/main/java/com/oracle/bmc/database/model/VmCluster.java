@@ -493,7 +493,7 @@ public class VmCluster {
     Double dataStorageSizeInTBs;
 
     /**
-     * Size, in gigabytes, of the DATA disk group.
+     * Size of the DATA disk group in GBs.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dataStorageSizeInGBs")
     Double dataStorageSizeInGBs;

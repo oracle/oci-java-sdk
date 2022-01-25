@@ -72,13 +72,27 @@ public class UpdateClusterNetworkInstancePoolDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("instanceConfigurationId")
+        private String instanceConfigurationId;
+
+        public Builder instanceConfigurationId(String instanceConfigurationId) {
+            this.instanceConfigurationId = instanceConfigurationId;
+            this.__explicitlySet__.add("instanceConfigurationId");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public UpdateClusterNetworkInstancePoolDetails build() {
             UpdateClusterNetworkInstancePoolDetails __instance__ =
                     new UpdateClusterNetworkInstancePoolDetails(
-                            id, definedTags, displayName, freeformTags, size);
+                            id,
+                            definedTags,
+                            displayName,
+                            freeformTags,
+                            size,
+                            instanceConfigurationId);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -90,7 +104,8 @@ public class UpdateClusterNetworkInstancePoolDetails {
                             .definedTags(o.getDefinedTags())
                             .displayName(o.getDisplayName())
                             .freeformTags(o.getFreeformTags())
-                            .size(o.getSize());
+                            .size(o.getSize())
+                            .instanceConfigurationId(o.getInstanceConfigurationId());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -143,6 +158,13 @@ public class UpdateClusterNetworkInstancePoolDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("size")
     Integer size;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance configuration associated with the instance pool.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("instanceConfigurationId")
+    String instanceConfigurationId;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

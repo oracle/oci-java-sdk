@@ -289,7 +289,7 @@ public class CreateVmClusterDetails {
     Integer cpuCoreCount;
 
     /**
-     * The number of OCPU cores to enable for the VM cluster. Only 1 decimal place is allowed for the fractional part.
+     * The number of OCPU cores to enable for the VM cluster. Only one decimal place is allowed for the fractional part.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("ocpuCount")
     Float ocpuCount;

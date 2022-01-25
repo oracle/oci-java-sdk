@@ -136,6 +136,15 @@ public class ApplicationSummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("type")
+        private ApplicationType type;
+
+        public Builder type(ApplicationType type) {
+            this.type = type;
+            this.__explicitlySet__.add("type");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -153,7 +162,8 @@ public class ApplicationSummary {
                             ownerUserName,
                             sparkVersion,
                             timeCreated,
-                            timeUpdated);
+                            timeUpdated,
+                            type);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -172,7 +182,8 @@ public class ApplicationSummary {
                             .ownerUserName(o.getOwnerUserName())
                             .sparkVersion(o.getSparkVersion())
                             .timeCreated(o.getTimeCreated())
-                            .timeUpdated(o.getTimeUpdated());
+                            .timeUpdated(o.getTimeUpdated())
+                            .type(o.getType());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -275,6 +286,13 @@ public class ApplicationSummary {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     java.util.Date timeUpdated;
+
+    /**
+     * The Spark application processing type.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("type")
+    ApplicationType type;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

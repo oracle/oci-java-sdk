@@ -9,7 +9,7 @@ package com.oracle.bmc.database.model;
  * <p>
  * Example output for connection strings. See {@link #databaseConnectionStringProfile(DatabaseConnectionStringProfileRequest) databaseConnectionStringProfile} for additional details:
  * <p>
- * \t\t"connectionStrings": {
+ * \t"connectionStrings": {
  *         "allConnectionStrings": {
  *           "HIGH": "adb.region.oraclecloud.com:1522/unique_id_databasename_high.adwc.oraclecloud.com",
  *           "LOW": "adb.region.oraclecloud.com:1522/unique_id_databasename_low.adwc.oraclecloud.com",

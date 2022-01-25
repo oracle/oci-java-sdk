@@ -17,6 +17,8 @@ public enum RunLifecycleState {
     Canceled("CANCELED"),
     Failed("FAILED"),
     Succeeded("SUCCEEDED"),
+    Stopping("STOPPING"),
+    Stopped("STOPPED"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this

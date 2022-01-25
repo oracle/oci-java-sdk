@@ -213,7 +213,7 @@ public class AutonomousDbVersionSummary {
     DbWorkload dbWorkload;
 
     /**
-     * True if the database uses [dedicated Exadata infrastructure](https://docs.cloud.oracle.com/Content/Database/Concepts/adbddoverview.htm).
+     * True if the database uses [dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html).
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isDedicated")

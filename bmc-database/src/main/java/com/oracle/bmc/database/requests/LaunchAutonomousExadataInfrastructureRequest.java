@@ -22,7 +22,8 @@ public class LaunchAutonomousExadataInfrastructureRequest
                 com.oracle.bmc.database.model.LaunchAutonomousExadataInfrastructureDetails> {
 
     /**
-     * Request to create an Autonomous Exadata Infrastructure resource.
+     * **Deprecated.** Use the {@link #createCloudExadataInfrastructure(CreateCloudExadataInfrastructureRequest) createCloudExadataInfrastructure} or {@link #createCloudAutonomousVmCluster(CreateCloudAutonomousVmClusterRequest) createCloudAutonomousVmCluster} operations instead.
+     *
      */
     private com.oracle.bmc.database.model.LaunchAutonomousExadataInfrastructureDetails
             launchAutonomousExadataInfrastructureDetails;

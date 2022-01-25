@@ -528,7 +528,7 @@ public class AutonomousContainerDatabaseSummary {
     InfrastructureType infrastructureType;
 
     /**
-     * The OCID of the cloud Autonomous VM Cluster.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the cloud Autonomous Exadata VM Cluster.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("cloudAutonomousVmClusterId")
     String cloudAutonomousVmClusterId;

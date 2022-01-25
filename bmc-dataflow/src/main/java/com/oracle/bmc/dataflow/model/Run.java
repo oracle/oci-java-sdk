@@ -350,6 +350,15 @@ public class Run {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("type")
+        private ApplicationType type;
+
+        public Builder type(ApplicationType type) {
+            this.type = type;
+            this.__explicitlySet__.add("type");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("warehouseBucketUri")
         private String warehouseBucketUri;
 
@@ -401,6 +410,7 @@ public class Run {
                             timeCreated,
                             timeUpdated,
                             totalOCpu,
+                            type,
                             warehouseBucketUri);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
@@ -445,6 +455,7 @@ public class Run {
                             .timeCreated(o.getTimeCreated())
                             .timeUpdated(o.getTimeUpdated())
                             .totalOCpu(o.getTotalOCpu())
+                            .type(o.getType())
                             .warehouseBucketUri(o.getWarehouseBucketUri());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
@@ -742,6 +753,13 @@ public class Run {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("totalOCpu")
     Integer totalOCpu;
+
+    /**
+     * The Spark application processing type.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("type")
+    ApplicationType type;
 
     /**
      * An Oracle Cloud Infrastructure URI of the bucket to be used as default warehouse directory
