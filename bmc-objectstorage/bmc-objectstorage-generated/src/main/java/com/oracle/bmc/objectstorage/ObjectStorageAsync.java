@@ -101,6 +101,9 @@ public interface ObjectStorageAsync extends AutoCloseable {
 
     /**
      * Creates a request to copy an object within a region or to another region.
+     * <p>
+     * See [Object Names](https://docs.cloud.oracle.com/Content/Object/Tasks/managingobjects.htm#namerequirements)
+     * for object naming requirements.
      *
      *
      * @param request The request object containing the details to send
@@ -133,6 +136,9 @@ public interface ObjectStorageAsync extends AutoCloseable {
 
     /**
      * Starts a new multipart upload to a specific object in the given bucket in the given namespace.
+     * <p>
+     * See [Object Names](https://docs.cloud.oracle.com/Content/Object/Tasks/managingobjects.htm#namerequirements)
+     * for object naming requirements.
      *
      *
      * @param request The request object containing the details to send

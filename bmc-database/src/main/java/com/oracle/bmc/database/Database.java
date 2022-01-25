@@ -137,7 +137,7 @@ public interface Database extends AutoCloseable {
             ChangeAutonomousDatabaseCompartmentRequest request);
 
     /**
-     * Moves the Autonomous Exadata Infrastructure resource and its dependent resources to the specified compartment.
+     * **Deprecated.** Use the {@link #changeCloudExadataInfrastructureCompartment(ChangeCloudExadataInfrastructureCompartmentRequest) changeCloudExadataInfrastructureCompartment} operation to move an Exadata infrastructure resource to a different compartment and  {@link #changeCloudAutonomousVmClusterCompartment(ChangeCloudAutonomousVmClusterCompartmentRequest) changeCloudAutonomousVmClusterCompartment} operation to move an Autonomous Exadata VM cluster to a different compartment.
      * For more information, see
      * [Moving Database Resources to a Different Compartment](https://docs.cloud.oracle.com/Content/Database/Concepts/databaseoverview.htm#moveRes).
      *
@@ -154,8 +154,7 @@ public interface Database extends AutoCloseable {
                     ChangeAutonomousExadataInfrastructureCompartmentRequest request);
 
     /**
-     * To move an Autonomous VM cluster and its dependent resources to another compartment, use the
-     * {@link #changeAutonomousVmClusterCompartment(ChangeAutonomousVmClusterCompartmentRequest) changeAutonomousVmClusterCompartment} operation.
+     * Moves an Autonomous VM cluster and its dependent resources to another compartment. Applies to Exadata Cloud@Customer  only. For systems in the Oracle cloud, see {@link #changeAutonomousVmClusterCompartment(ChangeAutonomousVmClusterCompartmentRequest) changeAutonomousVmClusterCompartment}.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -185,8 +184,7 @@ public interface Database extends AutoCloseable {
             ChangeBackupDestinationCompartmentRequest request);
 
     /**
-     * To move a cloud Autonomous VM cluster and its dependent resources to another compartment, use the
-     * {@link #changeCloudAutonomousVmClusterCompartment(ChangeCloudAutonomousVmClusterCompartmentRequest) changeCloudAutonomousVmClusterCompartment} operation.
+     * Moves an Autonomous Exadata VM cluster in the Oracle cloud and its dependent resources to another compartment. For Exadata Cloud@Customer systems, see {@link #changeAutonomousVmClusterCompartment(ChangeAutonomousVmClusterCompartmentRequest) changeAutonomousVmClusterCompartment}.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -200,7 +198,7 @@ public interface Database extends AutoCloseable {
             ChangeCloudAutonomousVmClusterCompartmentRequest request);
 
     /**
-     * Moves a cloud Exadata infrastructure resource and its dependent resources to another compartment. Applies to Exadata Cloud Service instances only. For more information about moving resources to a different compartment, see [Moving Database Resources to a Different Compartment](https://docs.cloud.oracle.com/Content/Database/Concepts/databaseoverview.htm#moveRes).
+     * Moves a cloud Exadata infrastructure resource and its dependent resources to another compartment. Applies to Exadata Cloud Service instances and Autonomous Database on dedicated Exadata infrastructure only.For more information about moving resources to a different compartment, see [Moving Database Resources to a Different Compartment](https://docs.cloud.oracle.com/Content/Database/Concepts/databaseoverview.htm#moveRes).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -214,7 +212,7 @@ public interface Database extends AutoCloseable {
             ChangeCloudExadataInfrastructureCompartmentRequest request);
 
     /**
-     * Moves a cloud VM cluster and its dependent resources to another compartment. Applies to Exadata Cloud Service instances only.
+     * Moves a cloud VM cluster and its dependent resources to another compartment. Applies to Exadata Cloud Service instances and Autonomous Database on dedicated Exadata infrastructure only.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -458,7 +456,7 @@ public interface Database extends AutoCloseable {
             CreateAutonomousDatabaseBackupRequest request);
 
     /**
-     * Creates an Autonomous VM cluster for Exadata Cloud@Customer.
+     * Creates an Autonomous VM cluster for Exadata Cloud@Customer. To create an Autonomous VM Cluster in the Oracle cloud, see {@link #createCloudAutonomousVmCluster(CreateCloudAutonomousVmClusterRequest) createCloudAutonomousVmCluster}.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -498,7 +496,7 @@ public interface Database extends AutoCloseable {
     CreateBackupDestinationResponse createBackupDestination(CreateBackupDestinationRequest request);
 
     /**
-     * Creates a cloud Autonomous VM cluster.
+     * Creates an Autonomous Exadata VM cluster in the Oracle cloud. For Exadata Cloud@Customer systems, see {@link #createAutonomousVmCluster(CreateAutonomousVmClusterRequest) createAutonomousVmCluster}.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -512,7 +510,7 @@ public interface Database extends AutoCloseable {
             CreateCloudAutonomousVmClusterRequest request);
 
     /**
-     * Creates a cloud Exadata infrastructure resource. This resource is used to create an [Exadata Cloud Service](https://docs.cloud.oracle.com/Content/Database/Concepts/exaoverview.htm) instance.
+     * Creates a cloud Exadata infrastructure resource. This resource is used to create either an [Exadata Cloud Service](https://docs.cloud.oracle.com/Content/Database/Concepts/exaoverview.htm) instance or an Autonomous Database on dedicated Exadata infrastructure.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -793,7 +791,7 @@ public interface Database extends AutoCloseable {
             DeleteAutonomousDatabaseRequest request);
 
     /**
-     * Deletes the specified Autonomous VM cluster in an Exadata Cloud@Customer system.
+     * Deletes the specified Autonomous VM cluster in an Exadata Cloud@Customer system. To delete an Autonomous VM Cluster in the Oracle cloud, see {@link #deleteCloudAutonomousVmCluster(DeleteCloudAutonomousVmClusterRequest) deleteCloudAutonomousVmCluster}.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -832,7 +830,7 @@ public interface Database extends AutoCloseable {
     DeleteBackupDestinationResponse deleteBackupDestination(DeleteBackupDestinationRequest request);
 
     /**
-     * Deletes the specified cloud Autonomous VM cluster.
+     * Deletes the specified Autonomous Exadata VM cluster in the Oracle cloud. For Exadata Cloud@Customer systems, see {@link #deleteAutonomousVmCluster(DeleteAutonomousVmClusterRequest) deleteAutonomousVmCluster}.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -846,7 +844,7 @@ public interface Database extends AutoCloseable {
             DeleteCloudAutonomousVmClusterRequest request);
 
     /**
-     * Deletes the cloud Exadata infrastructure resource. Applies to Exadata Cloud Service instances only.
+     * Deletes the cloud Exadata infrastructure resource. Applies to Exadata Cloud Service instances and Autonomous Database on dedicated Exadata infrastructure only.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -860,7 +858,7 @@ public interface Database extends AutoCloseable {
             DeleteCloudExadataInfrastructureRequest request);
 
     /**
-     * Deletes the specified cloud VM cluster. Applies to Exadata Cloud Service instances only.
+     * Deletes the specified cloud VM cluster. Applies to Exadata Cloud Service instances and Autonomous Database on dedicated Exadata infrastructure only.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -1527,7 +1525,8 @@ public interface Database extends AutoCloseable {
             GetAutonomousDatabaseWalletRequest request);
 
     /**
-     * Gets information about the specified Autonomous Exadata Infrastructure resource.
+     * **Deprecated.** Use the {@link #getCloudExadataInfrastructure(GetCloudExadataInfrastructureRequest) getCloudExadataInfrastructure} operation to get details of an Exadata Infrastructure resource and the {@link #getCloudAutonomousVmCluster(GetCloudAutonomousVmClusterRequest) getCloudAutonomousVmCluster} operation to get details of an Autonomous Exadata VM cluster.
+     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -1552,7 +1551,8 @@ public interface Database extends AutoCloseable {
     GetAutonomousPatchResponse getAutonomousPatch(GetAutonomousPatchRequest request);
 
     /**
-     * Gets information about the specified Autonomous VM cluster for an Exadata Cloud@Customer system.
+     * Gets information about the specified Autonomous VM cluster for an Exadata Cloud@Customer system. To get information about an Autonomous VM Cluster in the Oracle cloud, see {@link #getCloudAutonomousVmCluster(GetCloudAutonomousVmClusterRequest) getCloudAutonomousVmCluster}.
+     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -1589,7 +1589,8 @@ public interface Database extends AutoCloseable {
     GetBackupDestinationResponse getBackupDestination(GetBackupDestinationRequest request);
 
     /**
-     * Gets information about the specified cloud Autonomous VM cluster.
+     * Gets information about the specified Autonomous Exadata VM cluster in the Oracle cloud. For Exadata Cloud@Custustomer systems, see {@link #getAutonomousVmCluster(GetAutonomousVmClusterRequest) getAutonomousVmCluster}.
+     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -1602,7 +1603,7 @@ public interface Database extends AutoCloseable {
             GetCloudAutonomousVmClusterRequest request);
 
     /**
-     * Gets information about the specified cloud Exadata infrastructure resource. Applies to Exadata Cloud Service instances only.
+     * Gets information about the specified cloud Exadata infrastructure resource. Applies to Exadata Cloud Service instances and Autonomous Database on dedicated Exadata infrastructure only.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -1616,7 +1617,7 @@ public interface Database extends AutoCloseable {
             GetCloudExadataInfrastructureRequest request);
 
     /**
-     * Gets information about the specified cloud VM cluster. Applies to Exadata Cloud Service instances only.
+     * Gets information about the specified cloud VM cluster. Applies to Exadata Cloud Service instances and Autonomous Database on dedicated Exadata infrastructure only.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -2094,7 +2095,7 @@ public interface Database extends AutoCloseable {
             GetVmClusterUpdateHistoryEntryRequest request);
 
     /**
-     * Creates a new Autonomous Exadata Infrastructure in the specified compartment and availability domain.
+     * **Deprecated** To create a new Autonomous Database system on dedicated Exadata Infrastructure, use the {@link #createCloudExadataInfrastructure(CreateCloudExadataInfrastructureRequest) createCloudExadataInfrastructure} and {@link #createCloudAutonomousVmCluster(CreateCloudAutonomousVmClusterRequest) createCloudAutonomousVmCluster} operations instead. Note that to create an Autonomous VM cluster, you must have an existing Exadata Infrastructure resource to contain the VM cluster.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -2216,7 +2217,7 @@ public interface Database extends AutoCloseable {
 
     /**
      * Gets a list of supported Autonomous Database versions. Note that preview version software is only available for
-     * databases with [shared Exadata infrastructure](https://docs.cloud.oracle.com/Content/Database/Concepts/adboverview.htm#AEI).
+     * databases with [shared Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -2243,7 +2244,8 @@ public interface Database extends AutoCloseable {
             ListAutonomousDbVersionsRequest request);
 
     /**
-     * Gets a list of the shapes that can be used to launch a new Autonomous Exadata Infrastructure resource. The shape determines resources to allocate (CPU cores, memory and storage).
+     * **Deprecated.**
+     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -2256,7 +2258,7 @@ public interface Database extends AutoCloseable {
             ListAutonomousExadataInfrastructureShapesRequest request);
 
     /**
-     * Gets a list of the Autonomous Exadata Infrastructures in the specified compartment.
+     * **Deprecated.** Use the {@link #listCloudExadataInfrastructures(ListCloudExadataInfrastructuresRequest) listCloudExadataInfrastructures} operation to list Exadata Infrastructures in the Oracle cloud and the  {@link #listCloudAutonomousVmClusters(ListCloudAutonomousVmClustersRequest) listCloudAutonomousVmClusters} operation to list Autonomous Exadata VM clusters.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -2270,7 +2272,7 @@ public interface Database extends AutoCloseable {
             ListAutonomousExadataInfrastructuresRequest request);
 
     /**
-     * Gets a list of Exadata Cloud@Customer Autonomous VM clusters in the specified compartment.
+     * Gets a list of Exadata Cloud@Customer Autonomous VM clusters in the specified compartment. To list Autonomous VM Clusters in the Oracle Cloud, see {@link #listCloudAutonomousVmClusters(ListCloudAutonomousVmClustersRequest) listCloudAutonomousVmClusters}.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -2310,7 +2312,7 @@ public interface Database extends AutoCloseable {
     ListBackupsResponse listBackups(ListBackupsRequest request);
 
     /**
-     * Gets a list of the Autonomous cloud VM clusters in the specified compartment.
+     * Lists Autonomous Exadata VM clusters in the Oracle cloud. For Exadata Cloud@Customer systems, see {@link #listAutonomousVmClusters(ListAutonomousVmClustersRequest) listAutonomousVmClusters}.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -2324,7 +2326,7 @@ public interface Database extends AutoCloseable {
             ListCloudAutonomousVmClustersRequest request);
 
     /**
-     * Gets a list of the cloud Exadata infrastructure resources in the specified compartment. Applies to Exadata Cloud Service instances only.
+     * Gets a list of the cloud Exadata infrastructure resources in the specified compartment. Applies to Exadata Cloud Service instances and Autonomous Database on dedicated Exadata infrastructure only.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -2366,7 +2368,7 @@ public interface Database extends AutoCloseable {
             ListCloudVmClusterUpdatesRequest request);
 
     /**
-     * Gets a list of the cloud VM clusters in the specified compartment. Applies to Exadata Cloud Service instances only.
+     * Gets a list of the cloud VM clusters in the specified compartment. Applies to Exadata Cloud Service instances and Autonomous Database on dedicated Exadata infrastructure only.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -3032,7 +3034,7 @@ public interface Database extends AutoCloseable {
             RotateAutonomousDatabaseEncryptionKeyRequest request);
 
     /**
-     * Rotates Oracle REST Data Services (ORDS) certs for a cloud Autonomous VM cluster.
+     * Rotates the Oracle REST Data Services (ORDS) certificates for a cloud Autonomous Exadata VM cluster.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -3046,7 +3048,7 @@ public interface Database extends AutoCloseable {
             RotateCloudAutonomousVmClusterOrdsCertsRequest request);
 
     /**
-     * Rotates SSL certs for a cloud Autonomous VM cluster.
+     * Rotates the SSL certficates for a cloud Autonomous Exadata VM cluster.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -3060,7 +3062,7 @@ public interface Database extends AutoCloseable {
             RotateCloudAutonomousVmClusterSslCertsRequest request);
 
     /**
-     * Rotates Oracle REST Data Services (ORDS) certs for an Autonomous Exadata Infrastructure resource.
+     * **Deprecated.** Use the {@link #rotateCloudAutonomousVmClusterOrdsCerts(RotateCloudAutonomousVmClusterOrdsCertsRequest) rotateCloudAutonomousVmClusterOrdsCerts} to rotate Oracle REST Data Services (ORDS) certs for an Autonomous Exadata VM cluster instead.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -3073,7 +3075,7 @@ public interface Database extends AutoCloseable {
     RotateOrdsCertsResponse rotateOrdsCerts(RotateOrdsCertsRequest request);
 
     /**
-     * Rotates SSL certs for an Autonomous Exadata Infrastructure resource.
+     * **Deprecated.** Use the {@link #rotateCloudAutonomousVmClusterSslCerts(RotateCloudAutonomousVmClusterSslCertsRequest) rotateCloudAutonomousVmClusterSslCerts} to rotate SSL certs for an Autonomous Exadata VM cluster instead.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -3225,7 +3227,8 @@ public interface Database extends AutoCloseable {
             TerminateAutonomousContainerDatabaseRequest request);
 
     /**
-     * Terminates an Autonomous Exadata Infrastructure, which permanently deletes the infrastructure resource and any container databases and databases contained in the resource. The database data is local to the Autonomous Exadata Infrastructure and will be lost when the system is terminated. Oracle recommends that you back up any data in the Autonomous Exadata Infrastructure prior to terminating it.
+     * **Deprecated.** To terminate an Exadata Infrastructure resource in the Oracle cloud, use the {@link #deleteCloudExadataInfrastructure(DeleteCloudExadataInfrastructureRequest) deleteCloudExadataInfrastructure} operation. To delete an Autonomous Exadata VM cluster in the Oracle cloud, use the {@link #deleteCloudAutonomousVmCluster(DeleteCloudAutonomousVmClusterRequest) deleteCloudAutonomousVmCluster} operation.
+     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -3325,7 +3328,8 @@ public interface Database extends AutoCloseable {
             UpdateAutonomousDatabaseWalletRequest request);
 
     /**
-     * Updates the properties of an Autonomous Exadata Infrastructure, such as the CPU core count.
+     * **Deprecated.** Use the {@link #updateCloudExadataInfrastructure(UpdateCloudExadataInfrastructureRequest) updateCloudExadataInfrastructure} operation to update an Exadata Infrastructure resource and  {@link #updateCloudAutonomousVmCluster(UpdateCloudAutonomousVmClusterRequest) updateCloudAutonomousVmCluster} operation to update an Autonomous Exadata VM cluster.
+     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -3338,7 +3342,7 @@ public interface Database extends AutoCloseable {
             UpdateAutonomousExadataInfrastructureRequest request);
 
     /**
-     * Updates the specified Autonomous VM cluster for the Exadata Cloud@Customer system.
+     * Updates the specified Autonomous VM cluster for the Exadata Cloud@Customer system.To update an Autonomous VM Cluster in the Oracle cloud, see {@link #updateCloudAutonomousVmCluster(UpdateCloudAutonomousVmClusterRequest) updateCloudAutonomousVmCluster}.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -3367,7 +3371,7 @@ public interface Database extends AutoCloseable {
     UpdateBackupDestinationResponse updateBackupDestination(UpdateBackupDestinationRequest request);
 
     /**
-     * Updates the specified cloud VM cluster.
+     * Updates the specified Autonomous Exadata VM cluster in the Oracle cloud. For Exadata Cloud@Customer systems, see {@link #updateAutonomousVmCluster(UpdateAutonomousVmClusterRequest) updateAutonomousVmCluster}.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -3381,7 +3385,7 @@ public interface Database extends AutoCloseable {
             UpdateCloudAutonomousVmClusterRequest request);
 
     /**
-     * Updates the Cloud Exadata infrastructure resource. Applies to Exadata Cloud Service instances only.
+     * Updates the Cloud Exadata infrastructure resource. Applies to Exadata Cloud Service instances and Autonomous Database on dedicated Exadata infrastructure only.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -3395,7 +3399,7 @@ public interface Database extends AutoCloseable {
             UpdateCloudExadataInfrastructureRequest request);
 
     /**
-     * Updates the specified cloud VM cluster. Applies to Exadata Cloud Service instances only.
+     * Updates the specified cloud VM cluster. Applies to Exadata Cloud Service instances and Autonomous Database on dedicated Exadata infrastructure only.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation

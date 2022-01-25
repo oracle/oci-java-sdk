@@ -46,16 +46,14 @@ public class ListBucketsRequest extends com.oracle.bmc.requests.BmcRequest<java.
 
     /**
      * Bucket summary in list of buckets includes the 'namespace', 'name', 'compartmentId', 'createdBy', 'timeCreated',
-     * and 'etag' fields. This parameter can also include 'tags' (freeformTags and definedTags). The only supported value
-     * of this parameter is 'tags' for now. Example 'tags'.
+     * and 'etag' fields. This parameter can also include 'tags' (freeformTags and definedTags). The only supported value of this parameter is 'tags' for now. Example 'tags'.
      *
      */
     private java.util.List<Fields> fields;
 
     /**
      * Bucket summary in list of buckets includes the 'namespace', 'name', 'compartmentId', 'createdBy', 'timeCreated',
-     * and 'etag' fields. This parameter can also include 'tags' (freeformTags and definedTags). The only supported value
-     * of this parameter is 'tags' for now. Example 'tags'.
+     * and 'etag' fields. This parameter can also include 'tags' (freeformTags and definedTags). The only supported value of this parameter is 'tags' for now. Example 'tags'.
      *
      **/
     public enum Fields {
@@ -105,8 +103,7 @@ public class ListBucketsRequest extends com.oracle.bmc.requests.BmcRequest<java.
 
         /**
          * Bucket summary in list of buckets includes the 'namespace', 'name', 'compartmentId', 'createdBy', 'timeCreated',
-         * and 'etag' fields. This parameter can also include 'tags' (freeformTags and definedTags). The only supported value
-         * of this parameter is 'tags' for now. Example 'tags'.
+         * and 'etag' fields. This parameter can also include 'tags' (freeformTags and definedTags). The only supported value of this parameter is 'tags' for now. Example 'tags'.
          *
          * @return this builder instance
          */
@@ -117,8 +114,7 @@ public class ListBucketsRequest extends com.oracle.bmc.requests.BmcRequest<java.
 
         /**
          * Singular setter. Bucket summary in list of buckets includes the 'namespace', 'name', 'compartmentId', 'createdBy', 'timeCreated',
-         * and 'etag' fields. This parameter can also include 'tags' (freeformTags and definedTags). The only supported value
-         * of this parameter is 'tags' for now. Example 'tags'.
+         * and 'etag' fields. This parameter can also include 'tags' (freeformTags and definedTags). The only supported value of this parameter is 'tags' for now. Example 'tags'.
          *
          * @return this builder instance
          */

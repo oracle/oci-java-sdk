@@ -26,6 +26,18 @@ public class JsonConverterTest {
     }
 
     @Test
+    public void parseJsonSchemaUnknownKey() {
+
+        String regionBlob =
+                "{ \"realmKey\" : \"RTC\",\"realmDomainComponent\" : \"oraclecloud-foobar.com\",\"regionKey\" : \"rrr\",\"regionIdentifier\" : \"us-rrr-1\",\"iaasDomainComponent\":\"value\",\"gibberishKey\":\"gibberishValue\"}";
+        RegionSchema regionSchema = JsonConverter.jsonBlobToObject(regionBlob, RegionSchema.class);
+        assertThat(regionSchema.getRegionIdentifier(), is("us-rrr-1"));
+        assertThat(regionSchema.getRegionKey(), is("rrr"));
+        assertThat(regionSchema.getRealmKey(), is("RTC"));
+        assertThat(regionSchema.getRealmDomainComponent(), is("oraclecloud-foobar.com"));
+    }
+
+    @Test
     public void parseJsonSchemaInvalid() {
 
         String regionBlob =

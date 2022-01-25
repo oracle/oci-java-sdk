@@ -1178,7 +1178,7 @@ public class AutonomousDatabaseSummary {
     InfrastructureType infrastructureType;
 
     /**
-     * True if the database uses [dedicated Exadata infrastructure](https://docs.cloud.oracle.com/Content/Database/Concepts/adbddoverview.htm).
+     * True if the database uses [dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html).
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isDedicated")
@@ -1219,8 +1219,8 @@ public class AutonomousDatabaseSummary {
     /**
      * The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle PaaS and IaaS services in the cloud.
      * License Included allows you to subscribe to new Oracle Database software licenses and the Database service.
-     * Note that when provisioning an Autonomous Database on [dedicated Exadata infrastructure](https://docs.cloud.oracle.com/Content/Database/Concepts/adbddoverview.htm), this attribute must be null because the attribute is already set at the
-     * Autonomous Exadata Infrastructure level. When using [shared Exadata infrastructure](https://docs.cloud.oracle.com/Content/Database/Concepts/adboverview.htm#AEI), if a value is not specified, the system will supply the value of {@code BRING_YOUR_OWN_LICENSE}.
+     * Note that when provisioning an Autonomous Database on [dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this attribute must be null because the attribute is already set at the
+     * Autonomous Exadata Infrastructure level. When using [shared Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), if a value is not specified, the system will supply the value of {@code BRING_YOUR_OWN_LICENSE}.
      *
      **/
     @lombok.extern.slf4j.Slf4j
@@ -1269,8 +1269,8 @@ public class AutonomousDatabaseSummary {
     /**
      * The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle PaaS and IaaS services in the cloud.
      * License Included allows you to subscribe to new Oracle Database software licenses and the Database service.
-     * Note that when provisioning an Autonomous Database on [dedicated Exadata infrastructure](https://docs.cloud.oracle.com/Content/Database/Concepts/adbddoverview.htm), this attribute must be null because the attribute is already set at the
-     * Autonomous Exadata Infrastructure level. When using [shared Exadata infrastructure](https://docs.cloud.oracle.com/Content/Database/Concepts/adboverview.htm#AEI), if a value is not specified, the system will supply the value of {@code BRING_YOUR_OWN_LICENSE}.
+     * Note that when provisioning an Autonomous Database on [dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this attribute must be null because the attribute is already set at the
+     * Autonomous Exadata Infrastructure level. When using [shared Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), if a value is not specified, the system will supply the value of {@code BRING_YOUR_OWN_LICENSE}.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("licenseModel")
@@ -1434,7 +1434,7 @@ public class AutonomousDatabaseSummary {
     Boolean isAccessControlEnabled;
 
     /**
-     * The client IP access control list (ACL). This feature is available for autonomous databases on [shared Exadata infrastructure](https://docs.cloud.oracle.com/Content/Database/Concepts/adboverview.htm#AEI) and on Exadata Cloud@Customer.
+     * The client IP access control list (ACL). This feature is available for autonomous databases on [shared Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) and on Exadata Cloud@Customer.
      * Only clients connecting from an IP address included in the ACL may access the Autonomous Database instance.
      * <p>
      * For shared Exadata infrastructure, this is an array of CIDR (Classless Inter-Domain Routing) notations for a subnet or VCN OCID.
@@ -1459,7 +1459,7 @@ public class AutonomousDatabaseSummary {
     Boolean arePrimaryWhitelistedIpsUsed;
 
     /**
-     * The client IP access control list (ACL). This feature is available for autonomous databases on [shared Exadata infrastructure](https://docs.cloud.oracle.com/Content/Database/Concepts/adboverview.htm#AEI) and on Exadata Cloud@Customer.
+     * The client IP access control list (ACL). This feature is available for autonomous databases on [shared Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) and on Exadata Cloud@Customer.
      * Only clients connecting from an IP address included in the ACL may access the Autonomous Database instance.
      * <p>
      * For shared Exadata infrastructure, this is an array of CIDR (Classless Inter-Domain Routing) notations for a subnet or VCN OCID.
@@ -1910,7 +1910,9 @@ public class AutonomousDatabaseSummary {
     java.util.Date timeOfLastFailover;
 
     /**
-     * Indicates whether the Autonomous Database has Data Guard enabled.
+     * Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to
+     * Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isDataGuardEnabled")
     Boolean isDataGuardEnabled;

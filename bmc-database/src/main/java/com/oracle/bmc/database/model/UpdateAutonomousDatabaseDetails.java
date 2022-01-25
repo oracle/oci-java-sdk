@@ -533,8 +533,8 @@ public class UpdateAutonomousDatabaseDetails {
     /**
      * The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle PaaS and IaaS services in the cloud.
      * License Included allows you to subscribe to new Oracle Database software licenses and the Database service.
-     * Note that when provisioning an Autonomous Database on [dedicated Exadata infrastructure](https://docs.cloud.oracle.com/Content/Database/Concepts/adbddoverview.htm), this attribute must be null because the attribute is already set at the
-     * Autonomous Exadata Infrastructure level. When using [shared Exadata infrastructure](https://docs.cloud.oracle.com/Content/Database/Concepts/adboverview.htm#AEI), if a value is not specified, the system will supply the value of {@code BRING_YOUR_OWN_LICENSE}.
+     * Note that when provisioning an Autonomous Database on [dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this attribute must be null because the attribute is already set at the
+     * Autonomous Exadata Infrastructure level. When using [shared Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), if a value is not specified, the system will supply the value of {@code BRING_YOUR_OWN_LICENSE}.
      *
      **/
     public enum LicenseModel {
@@ -572,8 +572,8 @@ public class UpdateAutonomousDatabaseDetails {
     /**
      * The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle PaaS and IaaS services in the cloud.
      * License Included allows you to subscribe to new Oracle Database software licenses and the Database service.
-     * Note that when provisioning an Autonomous Database on [dedicated Exadata infrastructure](https://docs.cloud.oracle.com/Content/Database/Concepts/adbddoverview.htm), this attribute must be null because the attribute is already set at the
-     * Autonomous Exadata Infrastructure level. When using [shared Exadata infrastructure](https://docs.cloud.oracle.com/Content/Database/Concepts/adboverview.htm#AEI), if a value is not specified, the system will supply the value of {@code BRING_YOUR_OWN_LICENSE}.
+     * Note that when provisioning an Autonomous Database on [dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this attribute must be null because the attribute is already set at the
+     * Autonomous Exadata Infrastructure level. When using [shared Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), if a value is not specified, the system will supply the value of {@code BRING_YOUR_OWN_LICENSE}.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("licenseModel")
@@ -593,7 +593,7 @@ public class UpdateAutonomousDatabaseDetails {
     Boolean isAccessControlEnabled;
 
     /**
-     * The client IP access control list (ACL). This feature is available for autonomous databases on [shared Exadata infrastructure](https://docs.cloud.oracle.com/Content/Database/Concepts/adboverview.htm#AEI) and on Exadata Cloud@Customer.
+     * The client IP access control list (ACL). This feature is available for autonomous databases on [shared Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) and on Exadata Cloud@Customer.
      * Only clients connecting from an IP address included in the ACL may access the Autonomous Database instance.
      * <p>
      * For shared Exadata infrastructure, this is an array of CIDR (Classless Inter-Domain Routing) notations for a subnet or VCN OCID.
@@ -610,15 +610,15 @@ public class UpdateAutonomousDatabaseDetails {
 
     /**
      * This field will be null if the Autonomous Database is not Data Guard enabled or Access Control is disabled.
-     * It's value would be {@code TRUE} if Autonomous Database is Data Guard enabled and Access Control is enabled and if the Autonomous Database uses primary IP access control list (ACL) for standby.
-     * It's value would be {@code FALSE} if Autonomous Database is Data Guard enabled and Access Control is enabled and if the Autonomous Database uses different IP access control list (ACL) for standby compared to primary.
+     * {@code TRUE} if the Autonomous Database has Data Guard and Access Control enabled, and the Autonomous Database uses the primary's IP access control list (ACL) for standby.
+     * {@code FALSE} if the Autonomous Database has Data Guard and Access Control enabled, and the Autonomous Database uses a different IP access control list (ACL) for standby compared to primary.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("arePrimaryWhitelistedIpsUsed")
     Boolean arePrimaryWhitelistedIpsUsed;
 
     /**
-     * The client IP access control list (ACL). This feature is available for autonomous databases on [shared Exadata infrastructure](https://docs.cloud.oracle.com/Content/Database/Concepts/adboverview.htm#AEI) and on Exadata Cloud@Customer.
+     * The client IP access control list (ACL). This feature is available for autonomous databases on [shared Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) and on Exadata Cloud@Customer.
      * Only clients connecting from an IP address included in the ACL may access the Autonomous Database instance.
      * <p>
      * For shared Exadata infrastructure, this is an array of CIDR (Classless Inter-Domain Routing) notations for a subnet or VCN OCID.
@@ -634,7 +634,7 @@ public class UpdateAutonomousDatabaseDetails {
     java.util.List<String> standbyWhitelistedIps;
 
     /**
-     * Indicates whether to enable or disable auto scaling for the Autonomous Database OCPU core count. Setting to {@code true} enables auto scaling. Setting to {@code false} disables auto scaling. The default value is true. Auto scaling is available for databases on [shared Exadata infrastructure](https://docs.cloud.oracle.com/Content/Database/Concepts/adboverview.htm#AEI) only.
+     * Indicates whether auto scaling is enabled for the Autonomous Database OCPU core count. Setting to {@code TRUE} enables auto scaling. Setting to {@code FALSE} disables auto scaling. The default value is true. Auto scaling is available for databases on [shared Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) only.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isAutoScalingEnabled")
@@ -687,7 +687,14 @@ public class UpdateAutonomousDatabaseDetails {
     RefreshableMode refreshableMode;
 
     /**
-     * If set to {@code FALSE} and {@code peerDbId} is specified, the specified remote region peer database is terminated. If set to {@code FALSE} and {@code peerDbId} is not specified, the peer database in the region of the source primary database terminated.
+     * Indicates whether the Autonomous Database has a local (in-region) standby database. Not applicable when creating a cross-region Autonomous Data Guard associations, or to
+     * Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
+     * <p>
+     * To create a local standby, set to {@code TRUE}. To delete a local standby, set to {@code FALSE}. For more information on using Autonomous Data Guard on shared Exadata infrastructure (local and cross-region) , see [About Standby Databases](https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/autonomous-data-guard-about.html#GUID-045AD017-8120-4BDC-AF58-7430FFE28D2B)
+     * <p>
+     * To enable cross-region Autonomous Data Guard on shared Exadata infrastructure, see {@link #createCrossRegionAutonomousDatabaseDataGuardDetails(CreateCrossRegionAutonomousDatabaseDataGuardDetailsRequest) createCrossRegionAutonomousDatabaseDataGuardDetails}.
+     * <p>
+     * To delete a cross-region standby database, provide the {@code peerDbId} for the standby database in a remote region, and set {@code isDataGuardEnabled} to {@code FALSE}.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isDataGuardEnabled")
@@ -695,6 +702,9 @@ public class UpdateAutonomousDatabaseDetails {
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Autonomous Data Guard standby database located in a different (remote) region from the source primary Autonomous Database.
+     * <p>
+     * To create or delete a local (in-region) standby, see the {@code isDataGuardEnabled} parameter.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("peerDbId")
     String peerDbId;
