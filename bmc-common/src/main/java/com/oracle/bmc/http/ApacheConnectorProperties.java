@@ -9,9 +9,11 @@ import lombok.Data;
 import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.http.ConnectionReuseStrategy;
-import org.apache.http.client.config.RequestConfig;
+import org.apache.http.client.HttpRequestRetryHandler;
 import org.apache.http.conn.ConnectionKeepAliveStrategy;
 import org.apache.http.conn.HttpClientConnectionManager;
+import org.apache.http.impl.NoConnectionReuseStrategy;
+import org.apache.http.impl.client.DefaultHttpRequestRetryHandler;
 import org.glassfish.jersey.apache.connector.ApacheConnectionClosingStrategy;
 
 import javax.net.ssl.HostnameVerifier;
@@ -24,9 +26,12 @@ public class ApacheConnectorProperties {
     private static ConnectionKeepAliveStrategy DEFAULT_KEEP_ALIVE_STRATEGY = null;
     private static boolean DEFAULT_CONNECTION_MANAGER_SHARED = false;
     private static HttpClientConnectionManager DEFAULT_CONNECTION_MANAGER = null;
-    private static ConnectionReuseStrategy DEFAULT_CONNECTION_REUSE_STRATEGY = null;
+    private static ConnectionReuseStrategy DEFAULT_CONNECTION_REUSE_STRATEGY =
+            new NoConnectionReuseStrategy();
     private static SSLContext DEFAULT_SSL_CONTEXT = null;
     private static HostnameVerifier DEFAULT_HOSTNAME_VERIFIER = null;
+    private static HttpRequestRetryHandler DEFAULT_REQUEST_RETRY_HANDLER =
+            new DefaultHttpRequestRetryHandler(0, false);
 
     private static ApacheConnectionClosingStrategy DEFAULT_APACHE_CONNECTION_CLOSING_STRATEGY =
             new ApacheConnectionClosingStrategy.ImmediateClosingStrategy();
@@ -144,4 +149,10 @@ public class ApacheConnectorProperties {
      */
     @Getter @Builder.Default
     private final HostnameVerifier hostnameVerifier = DEFAULT_HOSTNAME_VERIFIER;
+
+    /**
+     * Request RetryHandler to be used for the Apache Connection. Accepts an instance of HttpRequestRetryHandler
+     */
+    @Getter @Builder.Default
+    private final HttpRequestRetryHandler requestRetryHandler = DEFAULT_REQUEST_RETRY_HANDLER;
 }

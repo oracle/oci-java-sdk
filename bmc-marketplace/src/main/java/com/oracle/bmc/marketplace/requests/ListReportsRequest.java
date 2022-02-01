@@ -25,7 +25,8 @@ public class ListReportsRequest extends com.oracle.bmc.requests.BmcRequest<java.
     private String reportType;
 
     /**
-     * Date, expressed in {@code YYYYMMDD} format, where {@code Y} represents the year, {@code M} represents the month, and {@code D} represents the day.
+     * Date, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. The service only interprets the year, month, and day parts in the input value, and ignores the hour, minute, and second parts.
+     *
      */
     private java.util.Date date;
 

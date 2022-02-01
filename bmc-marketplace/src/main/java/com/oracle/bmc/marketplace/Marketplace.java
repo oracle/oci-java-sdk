@@ -8,7 +8,7 @@ import com.oracle.bmc.marketplace.requests.*;
 import com.oracle.bmc.marketplace.responses.*;
 
 /**
- * Manage applications in Oracle Cloud Infrastructure Marketplace.
+ * Use the Marketplace API to manage applications in Oracle Cloud Infrastructure Marketplace. For more information, see [Overview of Marketplace](https://docs.cloud.oracle.com/Content/Marketplace/Concepts/marketoverview.htm)
  * This service client uses CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER for all the operations by default if no circuit breaker configuration is defined by the user.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181001")
@@ -384,8 +384,8 @@ public interface Marketplace extends AutoCloseable {
     ListTaxesResponse listTaxes(ListTaxesRequest request);
 
     /**
-     * Find listings that match the specified criteria. The search query could be free text
-     * or structured.
+     * Queries all Marketplace Applications to find listings that match the specified criteria. To search
+     * for a listing, you can use a free text or structured search.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation

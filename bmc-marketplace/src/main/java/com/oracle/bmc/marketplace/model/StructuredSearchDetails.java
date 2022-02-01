@@ -5,7 +5,9 @@
 package com.oracle.bmc.marketplace.model;
 
 /**
- * The model for a request that uses Search's structured query language.
+ * A request that uses Search's structured query language to specify filter conditions to
+ * apply to search listings. For more information about writing search queries, see [Search Language Syntax](https://docs.cloud.oracle.com/Content/Search/Concepts/querysyntax.htm).
+ *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in

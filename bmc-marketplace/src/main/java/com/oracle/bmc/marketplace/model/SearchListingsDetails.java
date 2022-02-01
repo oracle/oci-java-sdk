@@ -5,7 +5,8 @@
 package com.oracle.bmc.marketplace.model;
 
 /**
- * The base model for a Search Listings details.
+ * A base request type that contains common criteria for Marketplace Search Listings details.
+ *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -41,7 +42,8 @@ package com.oracle.bmc.marketplace.model;
 public class SearchListingsDetails {
 
     /**
-     * The type of matching context returned in the response.
+     * The type of matching context returned in the response. If you specify HIGHLIGHTS, then the service will highlight fragments in its response. The default value is NONE.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("matchingContextType")
     MatchingContextTypeEnum matchingContextType;

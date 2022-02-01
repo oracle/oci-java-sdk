@@ -7,6 +7,7 @@ package com.oracle.bmc.util;
 import com.oracle.bmc.ClientConfiguration;
 import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
 import com.oracle.bmc.circuitbreaker.JaxRsCircuitBreaker;
+import com.oracle.bmc.circuitbreaker.NoCircuitBreakerConfiguration;
 import com.oracle.bmc.circuitbreaker.internal.JaxRsCircuitBreakerImpl;
 import lombok.Getter;
 import lombok.Setter;
@@ -16,11 +17,11 @@ import lombok.extern.slf4j.Slf4j;
 public class CircuitBreakerUtils {
 
     @Setter @Getter
-    private static volatile CircuitBreakerConfiguration defaultCircuitBreakerConfiguration =
-            CircuitBreakerConfiguration.builder().build();
+    private static volatile CircuitBreakerConfiguration defaultCircuitBreakerConfiguration;
 
-    @Setter @Getter
-    private static volatile CircuitBreakerConfiguration noCircuitBreakerConfiguration = null;
+    public static CircuitBreakerConfiguration getNoCircuitBreakerConfiguration() {
+        return new NoCircuitBreakerConfiguration();
+    }
 
     /**
      * Get default CircuitBreakerConfiguration
@@ -32,12 +33,14 @@ public class CircuitBreakerUtils {
 
     public static final JaxRsCircuitBreaker DEFAULT_CIRCUIT_BREAKER =
             new JaxRsCircuitBreakerImpl(CircuitBreakerConfiguration.builder().build());
+    public static final CircuitBreakerConfiguration DEFAULT_CIRCUIT_BREAKER_CONFIGURATION =
+            CircuitBreakerConfiguration.builder().build();
     private static final String OCI_SDK_DEFAULT_CIRCUITBREAKER_ENABLED_ENV_VAR =
             "OCI_SDK_DEFAULT_CIRCUITBREAKER_ENABLED";
 
-    public static JaxRsCircuitBreaker getUserDefinedCircuitBreaker(
+    public static CircuitBreakerConfiguration getUserDefinedCircuitBreakerConfiguration(
             ClientConfiguration configuration) {
-        JaxRsCircuitBreaker circuitBreaker = null;
+        CircuitBreakerConfiguration circuitBreakerConfiguration = null;
         if (configuration != null) {
             if (configuration.getCircuitBreakerConfiguration() != null
                     && configuration.getCircuitBreaker() != null) {
@@ -46,24 +49,17 @@ public class CircuitBreakerUtils {
             }
 
             if (configuration.getCircuitBreakerConfiguration() != null) {
-                circuitBreaker =
-                        new JaxRsCircuitBreakerImpl(configuration.getCircuitBreakerConfiguration());
-            } else if (configuration.getCircuitBreaker() != null)
-                circuitBreaker = configuration.getCircuitBreaker();
-        } else {
-            JaxRsCircuitBreaker userGlobalCircuitBreaker = null;
-            CircuitBreakerConfiguration globalCircuitBreakerConfiguration =
-                    CircuitBreakerUtils.getDefaultCircuitBreakerConfiguration();
-            if (globalCircuitBreakerConfiguration != null) {
-                userGlobalCircuitBreaker =
-                        new JaxRsCircuitBreakerImpl(globalCircuitBreakerConfiguration);
-            } else if (isEnvBasedDefaultCircuitBreakerEnabled()) {
-                userGlobalCircuitBreaker = DEFAULT_CIRCUIT_BREAKER;
+                circuitBreakerConfiguration = configuration.getCircuitBreakerConfiguration();
             }
-            circuitBreaker = userGlobalCircuitBreaker;
+        } else if (defaultCircuitBreakerConfiguration != null) {
+            circuitBreakerConfiguration = defaultCircuitBreakerConfiguration;
+        } else if (isEnvBasedDefaultCircuitBreakerEnabled()) {
+            circuitBreakerConfiguration = DEFAULT_CIRCUIT_BREAKER_CONFIGURATION;
+        } else if (!isEnvBasedDefaultCircuitBreakerEnabled()) {
+            circuitBreakerConfiguration = getNoCircuitBreakerConfiguration();
         }
-        LOG.debug("Circuit breaker in use: {}", circuitBreaker);
-        return circuitBreaker;
+        LOG.debug("Circuit breaker configuration in use: {}", circuitBreakerConfiguration);
+        return circuitBreakerConfiguration;
     }
 
     private static boolean isEnvBasedDefaultCircuitBreakerEnabled() {

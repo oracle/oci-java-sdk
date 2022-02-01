@@ -7,6 +7,7 @@ package com.oracle.bmc.circuitbreaker.internal;
 import com.google.common.annotations.VisibleForTesting;
 import com.oracle.bmc.circuitbreaker.CallNotAllowedException;
 import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
+import com.oracle.bmc.circuitbreaker.CircuitBreakerState;
 import com.oracle.bmc.circuitbreaker.JaxRsCircuitBreaker;
 import io.github.resilience4j.circuitbreaker.CallNotPermittedException;
 import io.github.resilience4j.circuitbreaker.CircuitBreaker;
@@ -138,6 +139,24 @@ public class JaxRsCircuitBreakerImpl implements JaxRsCircuitBreaker {
                 new PostCircuitBreakerFuture(
                         circuitBreakerFuture.get(),
                         circuitBreaker.getCircuitBreakerConfig().isWritableStackTraceEnabled());
+    }
+
+    @Override
+    public CircuitBreakerState getState() {
+        switch (circuitBreaker.getState()) {
+            case OPEN:
+                return CircuitBreakerState.OPEN;
+            case CLOSED:
+                return CircuitBreakerState.CLOSED;
+            case DISABLED:
+                return CircuitBreakerState.DISABLED;
+            case HALF_OPEN:
+                return CircuitBreakerState.HALF_OPEN;
+            case FORCED_OPEN:
+                return CircuitBreakerState.FORCED_OPEN;
+            default:
+                return CircuitBreakerState.UNKNOWN;
+        }
     }
 
     @VisibleForTesting

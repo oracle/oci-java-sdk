@@ -5,8 +5,10 @@
 package com.oracle.bmc.circuitbreaker;
 
 import com.oracle.bmc.circuitbreaker.internal.JaxRsCircuitBreakerImpl;
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 
 import java.time.Duration;
 import java.util.Arrays;
@@ -26,6 +28,8 @@ import javax.ws.rs.core.Response;
  * breaker
  */
 @Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class CircuitBreakerConfiguration {
 
     public static final int DEFAULT_FAILURE_RATE_THRESHOLD = 80; // Percentage

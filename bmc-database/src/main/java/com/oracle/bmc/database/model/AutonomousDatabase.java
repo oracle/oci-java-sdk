@@ -1996,7 +1996,8 @@ public class AutonomousDatabase {
     String keyStoreWalletName;
 
     /**
-     * The list of regions that support the creation of Autonomous Data Guard standby database.
+     * The list of regions that support the creation of an Autonomous Database clone or an Autonomous Data Guard standby database.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("supportedRegionsToCloneTo")
     java.util.List<String> supportedRegionsToCloneTo;
