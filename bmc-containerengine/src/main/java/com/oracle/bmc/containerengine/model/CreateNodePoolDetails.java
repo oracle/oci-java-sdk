@@ -152,6 +152,25 @@ public class CreateNodePoolDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
+        private java.util.Map<String, String> freeformTags;
+
+        public Builder freeformTags(java.util.Map<String, String> freeformTags) {
+            this.freeformTags = freeformTags;
+            this.__explicitlySet__.add("freeformTags");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
+        private java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+        public Builder definedTags(
+                java.util.Map<String, java.util.Map<String, Object>> definedTags) {
+            this.definedTags = definedTags;
+            this.__explicitlySet__.add("definedTags");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -171,7 +190,9 @@ public class CreateNodePoolDetails {
                             sshPublicKey,
                             quantityPerSubnet,
                             subnetIds,
-                            nodeConfigDetails);
+                            nodeConfigDetails,
+                            freeformTags,
+                            definedTags);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -192,7 +213,9 @@ public class CreateNodePoolDetails {
                             .sshPublicKey(o.getSshPublicKey())
                             .quantityPerSubnet(o.getQuantityPerSubnet())
                             .subnetIds(o.getSubnetIds())
-                            .nodeConfigDetails(o.getNodeConfigDetails());
+                            .nodeConfigDetails(o.getNodeConfigDetails())
+                            .freeformTags(o.getFreeformTags())
+                            .definedTags(o.getDefinedTags());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -301,6 +324,24 @@ public class CreateNodePoolDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("nodeConfigDetails")
     CreateNodePoolNodeConfigDetails nodeConfigDetails;
+
+    /**
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Example: {@code {"Department": "Finance"}}
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
+    java.util.Map<String, String> freeformTags;
+
+    /**
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
+    java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

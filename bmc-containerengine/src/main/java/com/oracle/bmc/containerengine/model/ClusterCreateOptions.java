@@ -63,6 +63,25 @@ public class ClusterCreateOptions {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("persistentVolumeConfig")
+        private PersistentVolumeConfigDetails persistentVolumeConfig;
+
+        public Builder persistentVolumeConfig(
+                PersistentVolumeConfigDetails persistentVolumeConfig) {
+            this.persistentVolumeConfig = persistentVolumeConfig;
+            this.__explicitlySet__.add("persistentVolumeConfig");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("serviceLbConfig")
+        private ServiceLbConfigDetails serviceLbConfig;
+
+        public Builder serviceLbConfig(ServiceLbConfigDetails serviceLbConfig) {
+            this.serviceLbConfig = serviceLbConfig;
+            this.__explicitlySet__.add("serviceLbConfig");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -72,7 +91,9 @@ public class ClusterCreateOptions {
                             serviceLbSubnetIds,
                             kubernetesNetworkConfig,
                             addOns,
-                            admissionControllerOptions);
+                            admissionControllerOptions,
+                            persistentVolumeConfig,
+                            serviceLbConfig);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -83,7 +104,9 @@ public class ClusterCreateOptions {
                     serviceLbSubnetIds(o.getServiceLbSubnetIds())
                             .kubernetesNetworkConfig(o.getKubernetesNetworkConfig())
                             .addOns(o.getAddOns())
-                            .admissionControllerOptions(o.getAdmissionControllerOptions());
+                            .admissionControllerOptions(o.getAdmissionControllerOptions())
+                            .persistentVolumeConfig(o.getPersistentVolumeConfig())
+                            .serviceLbConfig(o.getServiceLbConfig());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -120,6 +143,12 @@ public class ClusterCreateOptions {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("admissionControllerOptions")
     AdmissionControllerOptions admissionControllerOptions;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("persistentVolumeConfig")
+    PersistentVolumeConfigDetails persistentVolumeConfig;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("serviceLbConfig")
+    ServiceLbConfigDetails serviceLbConfig;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

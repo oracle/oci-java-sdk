@@ -7,7 +7,7 @@ package com.oracle.bmc.identitydataplane;
 import com.oracle.bmc.identitydataplane.internal.http.*;
 import com.oracle.bmc.identitydataplane.requests.*;
 import com.oracle.bmc.identitydataplane.responses.*;
-import com.oracle.bmc.circuitbreaker.JaxRsCircuitBreaker;
+import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
 import com.oracle.bmc.util.CircuitBreakerUtils;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
@@ -263,10 +263,10 @@ public class DataplaneClient implements Dataplane {
                         ? configuration
                         : com.oracle.bmc.ClientConfiguration.builder().build();
         this.retryConfiguration = clientConfigurationToUse.getRetryConfiguration();
-        JaxRsCircuitBreaker circuitBreaker =
-                CircuitBreakerUtils.getUserDefinedCircuitBreaker(configuration);
-        if (circuitBreaker == null) {
-            circuitBreaker = CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER;
+        CircuitBreakerConfiguration circuitBreakerConfiguration =
+                CircuitBreakerUtils.getUserDefinedCircuitBreakerConfiguration(configuration);
+        if (circuitBreakerConfiguration == null) {
+            circuitBreakerConfiguration = CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER_CONFIGURATION;
         }
         this.client =
                 restClientFactory.create(
@@ -274,7 +274,8 @@ public class DataplaneClient implements Dataplane {
                         requestSigners,
                         clientConfigurationToUse,
                         isNonBufferingApacheClient,
-                        circuitBreaker);
+                        null,
+                        circuitBreakerConfiguration);
 
         if (this.authenticationDetailsProvider instanceof com.oracle.bmc.auth.RegionProvider) {
             com.oracle.bmc.auth.RegionProvider provider =

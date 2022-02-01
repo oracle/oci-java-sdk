@@ -3,6 +3,16 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
+## 2.14.1 - 2022-02-01
+### Added
+- Support for calling Oracle Cloud Infrastructure services in the ap-dcc-canberra-1 region
+- Support for the Console Dashboard service
+- Support for capacity reservation in the Container Engine for Kubernetes service
+- Support for tagging in the Container Engine for Kubernetes service
+- Support for fetching listings by image OCID in the Marketplace service
+- Support for underscores and hyphens in project resource names in the DevOps service
+- Support for cross-region cloning in the Database service
+
 ## 2.14.0 - 2022-01-25
 ### Added
 - Support for OneSubscription services

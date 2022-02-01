@@ -8,7 +8,7 @@ import com.oracle.bmc.marketplace.requests.*;
 import com.oracle.bmc.marketplace.responses.*;
 
 /**
- * Manage applications in Oracle Cloud Infrastructure Marketplace.
+ * Use the Marketplace API to manage applications in Oracle Cloud Infrastructure Marketplace. For more information, see [Overview of Marketplace](https://docs.cloud.oracle.com/Content/Marketplace/Concepts/marketoverview.htm)
  * This service client uses CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER for all the operations by default if no circuit breaker configuration is defined by the user.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181001")

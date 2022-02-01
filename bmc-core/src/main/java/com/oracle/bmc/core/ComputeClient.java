@@ -7,7 +7,7 @@ package com.oracle.bmc.core;
 import com.oracle.bmc.core.internal.http.*;
 import com.oracle.bmc.core.requests.*;
 import com.oracle.bmc.core.responses.*;
-import com.oracle.bmc.circuitbreaker.JaxRsCircuitBreaker;
+import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
 import com.oracle.bmc.util.CircuitBreakerUtils;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
@@ -308,15 +308,16 @@ public class ComputeClient implements Compute {
                         ? configuration
                         : com.oracle.bmc.ClientConfiguration.builder().build();
         this.retryConfiguration = clientConfigurationToUse.getRetryConfiguration();
-        JaxRsCircuitBreaker circuitBreaker =
-                CircuitBreakerUtils.getUserDefinedCircuitBreaker(configuration);
+        CircuitBreakerConfiguration circuitBreakerConfiguration =
+                CircuitBreakerUtils.getUserDefinedCircuitBreakerConfiguration(configuration);
         this.client =
                 restClientFactory.create(
                         defaultRequestSigner,
                         requestSigners,
                         clientConfigurationToUse,
                         isNonBufferingApacheClient,
-                        circuitBreaker);
+                        null,
+                        circuitBreakerConfiguration);
 
         if (executorService == null) {
             // up to 50 (core) threads, time out after 60s idle, all daemon

@@ -7,7 +7,7 @@ package com.oracle.bmc.cims;
 import com.oracle.bmc.cims.internal.http.*;
 import com.oracle.bmc.cims.requests.*;
 import com.oracle.bmc.cims.responses.*;
-import com.oracle.bmc.circuitbreaker.JaxRsCircuitBreaker;
+import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
 import com.oracle.bmc.util.CircuitBreakerUtils;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181231")
@@ -266,10 +266,10 @@ public class IncidentClient implements Incident {
                         ? configuration
                         : com.oracle.bmc.ClientConfiguration.builder().build();
         this.retryConfiguration = clientConfigurationToUse.getRetryConfiguration();
-        JaxRsCircuitBreaker circuitBreaker =
-                CircuitBreakerUtils.getUserDefinedCircuitBreaker(configuration);
-        if (circuitBreaker == null) {
-            circuitBreaker = CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER;
+        CircuitBreakerConfiguration circuitBreakerConfiguration =
+                CircuitBreakerUtils.getUserDefinedCircuitBreakerConfiguration(configuration);
+        if (circuitBreakerConfiguration == null) {
+            circuitBreakerConfiguration = CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER_CONFIGURATION;
         }
         this.client =
                 restClientFactory.create(
@@ -277,7 +277,8 @@ public class IncidentClient implements Incident {
                         requestSigners,
                         clientConfigurationToUse,
                         isNonBufferingApacheClient,
-                        circuitBreaker);
+                        null,
+                        circuitBreakerConfiguration);
 
         this.paginators = new IncidentPaginators(this);
 

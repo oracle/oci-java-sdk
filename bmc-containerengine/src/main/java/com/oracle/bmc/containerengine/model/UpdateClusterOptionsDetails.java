@@ -36,19 +36,42 @@ public class UpdateClusterOptionsDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("persistentVolumeConfig")
+        private PersistentVolumeConfigDetails persistentVolumeConfig;
+
+        public Builder persistentVolumeConfig(
+                PersistentVolumeConfigDetails persistentVolumeConfig) {
+            this.persistentVolumeConfig = persistentVolumeConfig;
+            this.__explicitlySet__.add("persistentVolumeConfig");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("serviceLbConfig")
+        private ServiceLbConfigDetails serviceLbConfig;
+
+        public Builder serviceLbConfig(ServiceLbConfigDetails serviceLbConfig) {
+            this.serviceLbConfig = serviceLbConfig;
+            this.__explicitlySet__.add("serviceLbConfig");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public UpdateClusterOptionsDetails build() {
             UpdateClusterOptionsDetails __instance__ =
-                    new UpdateClusterOptionsDetails(admissionControllerOptions);
+                    new UpdateClusterOptionsDetails(
+                            admissionControllerOptions, persistentVolumeConfig, serviceLbConfig);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(UpdateClusterOptionsDetails o) {
-            Builder copiedBuilder = admissionControllerOptions(o.getAdmissionControllerOptions());
+            Builder copiedBuilder =
+                    admissionControllerOptions(o.getAdmissionControllerOptions())
+                            .persistentVolumeConfig(o.getPersistentVolumeConfig())
+                            .serviceLbConfig(o.getServiceLbConfig());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -67,6 +90,12 @@ public class UpdateClusterOptionsDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("admissionControllerOptions")
     AdmissionControllerOptions admissionControllerOptions;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("persistentVolumeConfig")
+    PersistentVolumeConfigDetails persistentVolumeConfig;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("serviceLbConfig")
+    ServiceLbConfigDetails serviceLbConfig;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

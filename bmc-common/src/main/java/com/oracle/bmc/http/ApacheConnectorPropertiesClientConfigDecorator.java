@@ -112,6 +112,11 @@ public class ApacheConnectorPropertiesClientConfigDecorator implements ClientCon
                     config.getConnectionClosingStrategy());
         }
 
+        if (config.getRequestRetryHandler() != null) {
+            clientConfig.property(
+                    ApacheClientProperties.RETRY_HANDLER, config.getRequestRetryHandler());
+        }
+
         // Disable the default behavior to auto compress and deflate the request/response content based on the
         // content-encoding.
         final RequestConfig requestConfig =

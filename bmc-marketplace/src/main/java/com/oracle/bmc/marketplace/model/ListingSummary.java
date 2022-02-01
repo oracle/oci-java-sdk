@@ -51,6 +51,15 @@ public class ListingSummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("isRoverExportable")
+        private Boolean isRoverExportable;
+
+        public Builder isRoverExportable(Boolean isRoverExportable) {
+            this.isRoverExportable = isRoverExportable;
+            this.__explicitlySet__.add("isRoverExportable");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("tagline")
         private String tagline;
 
@@ -151,6 +160,7 @@ public class ListingSummary {
                             id,
                             name,
                             shortDescription,
+                            isRoverExportable,
                             tagline,
                             icon,
                             packageType,
@@ -171,6 +181,7 @@ public class ListingSummary {
                     id(o.getId())
                             .name(o.getName())
                             .shortDescription(o.getShortDescription())
+                            .isRoverExportable(o.getIsRoverExportable())
                             .tagline(o.getTagline())
                             .icon(o.getIcon())
                             .packageType(o.getPackageType())
@@ -211,6 +222,12 @@ public class ListingSummary {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("shortDescription")
     String shortDescription;
+
+    /**
+     * True if this application is Rover exportable
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isRoverExportable")
+    Boolean isRoverExportable;
 
     /**
      * The tagline of the listing.

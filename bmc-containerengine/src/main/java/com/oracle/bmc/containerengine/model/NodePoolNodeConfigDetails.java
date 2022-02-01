@@ -62,6 +62,25 @@ public class NodePoolNodeConfigDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
+        private java.util.Map<String, String> freeformTags;
+
+        public Builder freeformTags(java.util.Map<String, String> freeformTags) {
+            this.freeformTags = freeformTags;
+            this.__explicitlySet__.add("freeformTags");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
+        private java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+        public Builder definedTags(
+                java.util.Map<String, java.util.Map<String, Object>> definedTags) {
+            this.definedTags = definedTags;
+            this.__explicitlySet__.add("definedTags");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("placementConfigs")
         private java.util.List<NodePoolPlacementConfigDetails> placementConfigs;
 
@@ -82,6 +101,8 @@ public class NodePoolNodeConfigDetails {
                             nsgIds,
                             kmsKeyId,
                             isPvEncryptionInTransitEnabled,
+                            freeformTags,
+                            definedTags,
                             placementConfigs);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
@@ -94,6 +115,8 @@ public class NodePoolNodeConfigDetails {
                             .nsgIds(o.getNsgIds())
                             .kmsKeyId(o.getKmsKeyId())
                             .isPvEncryptionInTransitEnabled(o.getIsPvEncryptionInTransitEnabled())
+                            .freeformTags(o.getFreeformTags())
+                            .definedTags(o.getDefinedTags())
                             .placementConfigs(o.getPlacementConfigs());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
@@ -133,6 +156,24 @@ public class NodePoolNodeConfigDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isPvEncryptionInTransitEnabled")
     Boolean isPvEncryptionInTransitEnabled;
+
+    /**
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Example: {@code {"Department": "Finance"}}
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
+    java.util.Map<String, String> freeformTags;
+
+    /**
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
+    java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
      * The placement configurations for the node pool. Provide one placement

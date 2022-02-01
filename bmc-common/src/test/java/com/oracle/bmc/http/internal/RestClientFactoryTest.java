@@ -9,16 +9,13 @@ import static org.junit.Assert.assertEquals;
 import com.google.common.collect.ImmutableList;
 import com.oracle.bmc.ClientConfiguration;
 import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
-import com.oracle.bmc.helper.EnvironmentVariablesHelper;
+import com.oracle.bmc.circuitbreaker.internal.JaxRsCircuitBreakerImpl;
 import com.oracle.bmc.http.CompositeClientConfigurator;
 import com.oracle.bmc.util.CircuitBreakerUtils;
 import org.glassfish.jersey.client.JerseyClient;
 import org.glassfish.jersey.internal.InternalProperties;
 import org.junit.Assert;
 import org.junit.Test;
-
-import java.util.HashMap;
-import java.util.Map;
 
 public class RestClientFactoryTest {
     @Test
@@ -41,7 +38,7 @@ public class RestClientFactoryTest {
     }
 
     @Test
-    public void validateCircuitBreakerInitialized() {
+    public void validateCircuitBreakerSetUsingCircuitBreakerConfigurationInClientConfiguration() {
         RestClient client =
                 RestClientFactoryBuilder.builder()
                         .build()
@@ -56,6 +53,58 @@ public class RestClientFactoryTest {
     }
 
     @Test
+    public void
+            validateCircuitBreakerNotSetUsingCircuitBreakerConfigurationInClientConfiguration() {
+        RestClient client =
+                RestClientFactoryBuilder.builder()
+                        .build()
+                        .create(
+                                null,
+                                null,
+                                ClientConfiguration.builder()
+                                        .circuitBreakerConfiguration(
+                                                CircuitBreakerUtils
+                                                        .getNoCircuitBreakerConfiguration())
+                                        .build());
+        Assert.assertNull(client.circuitBreaker);
+    }
+
+    @Test
+    public void validateCircuitBreakerSetUsingCircuitBreakerInClientConfiguration() {
+        RestClient client =
+                RestClientFactoryBuilder.builder()
+                        .build()
+                        .create(
+                                null,
+                                null,
+                                ClientConfiguration.builder()
+                                        .circuitBreaker(
+                                                new JaxRsCircuitBreakerImpl(
+                                                        CircuitBreakerConfiguration.builder()
+                                                                .build()))
+                                        .build());
+        Assert.assertNotNull(client.circuitBreaker);
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void validateExceptionWhenBothCircuitBreakerAndCircuitBreakerConfigSet() {
+        RestClient client =
+                RestClientFactoryBuilder.builder()
+                        .build()
+                        .create(
+                                null,
+                                null,
+                                ClientConfiguration.builder()
+                                        .circuitBreaker(
+                                                new JaxRsCircuitBreakerImpl(
+                                                        CircuitBreakerConfiguration.builder()
+                                                                .build()))
+                                        .circuitBreakerConfiguration(
+                                                CircuitBreakerConfiguration.builder().build())
+                                        .build());
+    }
+
+    @Test
     public void validateDefaultCircuitBreakerIsSet() {
         RestClient client =
                 RestClientFactoryBuilder.builder()
@@ -65,19 +114,23 @@ public class RestClientFactoryTest {
                                 null,
                                 ClientConfiguration.builder().build(),
                                 false,
-                                CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER);
+                                null,
+                                CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER_CONFIGURATION);
         Assert.assertNotNull(client.circuitBreaker);
     }
 
     @Test
-    public void validateDefaultCircuitBreakerIsNotSetWhenEnvVariableIsFalse() throws Exception {
-        Map<String, String> newEnvMap = new HashMap<>();
-        newEnvMap.put("OCI_SDK_DEFAULT_CIRCUITBREAKER_ENABLED", "False");
-        EnvironmentVariablesHelper.setEnvironmentVariable(newEnvMap);
+    public void validateNoCircuitBreakerIsSet() {
         RestClient client =
                 RestClientFactoryBuilder.builder()
                         .build()
-                        .create(null, null, ClientConfiguration.builder().build());
+                        .create(
+                                null,
+                                null,
+                                ClientConfiguration.builder().build(),
+                                false,
+                                null,
+                                CircuitBreakerUtils.getNoCircuitBreakerConfiguration());
         Assert.assertNull(client.circuitBreaker);
     }
 }

@@ -114,6 +114,34 @@ public class Node {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
+        private java.util.Map<String, String> freeformTags;
+
+        public Builder freeformTags(java.util.Map<String, String> freeformTags) {
+            this.freeformTags = freeformTags;
+            this.__explicitlySet__.add("freeformTags");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
+        private java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+        public Builder definedTags(
+                java.util.Map<String, java.util.Map<String, Object>> definedTags) {
+            this.definedTags = definedTags;
+            this.__explicitlySet__.add("definedTags");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
+        private java.util.Map<String, java.util.Map<String, Object>> systemTags;
+
+        public Builder systemTags(java.util.Map<String, java.util.Map<String, Object>> systemTags) {
+            this.systemTags = systemTags;
+            this.__explicitlySet__.add("systemTags");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
@@ -148,6 +176,9 @@ public class Node {
                             privateIp,
                             publicIp,
                             nodeError,
+                            freeformTags,
+                            definedTags,
+                            systemTags,
                             lifecycleState,
                             lifecycleDetails);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
@@ -167,6 +198,9 @@ public class Node {
                             .privateIp(o.getPrivateIp())
                             .publicIp(o.getPublicIp())
                             .nodeError(o.getNodeError())
+                            .freeformTags(o.getFreeformTags())
+                            .definedTags(o.getDefinedTags())
+                            .systemTags(o.getSystemTags())
                             .lifecycleState(o.getLifecycleState())
                             .lifecycleDetails(o.getLifecycleDetails());
 
@@ -241,6 +275,32 @@ public class Node {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("nodeError")
     NodeError nodeError;
+
+    /**
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Example: {@code {"Department": "Finance"}}
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
+    java.util.Map<String, String> freeformTags;
+
+    /**
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
+    java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    /**
+     * Usage of system tag keys. These predefined keys are scoped to namespaces.
+     * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
+    java.util.Map<String, java.util.Map<String, Object>> systemTags;
     /**
      * The state of the node.
      **/

@@ -30,6 +30,11 @@ public class ListListingsRequest extends com.oracle.bmc.requests.BmcRequest<java
     private String listingId;
 
     /**
+     * Image ID of the listing
+     */
+    private String imageId;
+
+    /**
      * Limit results to just this publisher.
      */
     private String publisherId;
@@ -320,6 +325,7 @@ public class ListListingsRequest extends com.oracle.bmc.requests.BmcRequest<java
         public Builder copy(ListListingsRequest o) {
             name(o.getName());
             listingId(o.getListingId());
+            imageId(o.getImageId());
             publisherId(o.getPublisherId());
             packageType(o.getPackageType());
             opcRequestId(o.getOpcRequestId());

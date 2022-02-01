@@ -40,4 +40,11 @@ public interface JaxRsCircuitBreaker {
      * @return a supplier which is decorated by the JaxRsCircuitBreaker.
      */
     Supplier<Future<Response>> decorateFuture(Supplier<Future<Response>> supplier);
+
+    /**
+     * Returns the state of this CircuitBreaker.
+     *
+     * @return the state of this CircuitBreaker
+     */
+    CircuitBreakerState getState();
 }

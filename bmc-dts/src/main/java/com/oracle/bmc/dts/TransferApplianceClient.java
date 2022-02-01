@@ -7,7 +7,7 @@ package com.oracle.bmc.dts;
 import com.oracle.bmc.dts.internal.http.*;
 import com.oracle.bmc.dts.requests.*;
 import com.oracle.bmc.dts.responses.*;
-import com.oracle.bmc.circuitbreaker.JaxRsCircuitBreaker;
+import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
 import com.oracle.bmc.util.CircuitBreakerUtils;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 1.0.015")
@@ -306,10 +306,10 @@ public class TransferApplianceClient implements TransferAppliance {
                         ? configuration
                         : com.oracle.bmc.ClientConfiguration.builder().build();
         this.retryConfiguration = clientConfigurationToUse.getRetryConfiguration();
-        JaxRsCircuitBreaker circuitBreaker =
-                CircuitBreakerUtils.getUserDefinedCircuitBreaker(configuration);
-        if (circuitBreaker == null) {
-            circuitBreaker = CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER;
+        CircuitBreakerConfiguration circuitBreakerConfiguration =
+                CircuitBreakerUtils.getUserDefinedCircuitBreakerConfiguration(configuration);
+        if (circuitBreakerConfiguration == null) {
+            circuitBreakerConfiguration = CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER_CONFIGURATION;
         }
         this.client =
                 restClientFactory.create(
@@ -317,7 +317,8 @@ public class TransferApplianceClient implements TransferAppliance {
                         requestSigners,
                         clientConfigurationToUse,
                         isNonBufferingApacheClient,
-                        circuitBreaker);
+                        null,
+                        circuitBreakerConfiguration);
 
         if (executorService == null) {
             // up to 50 (core) threads, time out after 60s idle, all daemon

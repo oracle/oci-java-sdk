@@ -53,6 +53,25 @@ public class UpdateClusterDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
+        private java.util.Map<String, String> freeformTags;
+
+        public Builder freeformTags(java.util.Map<String, String> freeformTags) {
+            this.freeformTags = freeformTags;
+            this.__explicitlySet__.add("freeformTags");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
+        private java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+        public Builder definedTags(
+                java.util.Map<String, java.util.Map<String, Object>> definedTags) {
+            this.definedTags = definedTags;
+            this.__explicitlySet__.add("definedTags");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("imagePolicyConfig")
         private UpdateImagePolicyConfigDetails imagePolicyConfig;
 
@@ -67,7 +86,13 @@ public class UpdateClusterDetails {
 
         public UpdateClusterDetails build() {
             UpdateClusterDetails __instance__ =
-                    new UpdateClusterDetails(name, kubernetesVersion, options, imagePolicyConfig);
+                    new UpdateClusterDetails(
+                            name,
+                            kubernetesVersion,
+                            options,
+                            freeformTags,
+                            definedTags,
+                            imagePolicyConfig);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -78,6 +103,8 @@ public class UpdateClusterDetails {
                     name(o.getName())
                             .kubernetesVersion(o.getKubernetesVersion())
                             .options(o.getOptions())
+                            .freeformTags(o.getFreeformTags())
+                            .definedTags(o.getDefinedTags())
                             .imagePolicyConfig(o.getImagePolicyConfig());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
@@ -106,6 +133,24 @@ public class UpdateClusterDetails {
 
     @com.fasterxml.jackson.annotation.JsonProperty("options")
     UpdateClusterOptionsDetails options;
+
+    /**
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Example: {@code {"Department": "Finance"}}
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
+    java.util.Map<String, String> freeformTags;
+
+    /**
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
+    java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
      * The image verification policy for signature validation. Once a policy is created and enabled with

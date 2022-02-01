@@ -7,7 +7,7 @@ package com.oracle.bmc.streaming;
 import com.oracle.bmc.streaming.internal.http.*;
 import com.oracle.bmc.streaming.requests.*;
 import com.oracle.bmc.streaming.responses.*;
-import com.oracle.bmc.circuitbreaker.JaxRsCircuitBreaker;
+import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
 import com.oracle.bmc.util.CircuitBreakerUtils;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180418")
@@ -263,15 +263,16 @@ public class StreamClient implements Stream {
                         ? configuration
                         : com.oracle.bmc.ClientConfiguration.builder().build();
         this.retryConfiguration = clientConfigurationToUse.getRetryConfiguration();
-        JaxRsCircuitBreaker circuitBreaker =
-                CircuitBreakerUtils.getUserDefinedCircuitBreaker(configuration);
+        CircuitBreakerConfiguration circuitBreakerConfiguration =
+                CircuitBreakerUtils.getUserDefinedCircuitBreakerConfiguration(configuration);
         this.client =
                 restClientFactory.create(
                         defaultRequestSigner,
                         requestSigners,
                         clientConfigurationToUse,
                         isNonBufferingApacheClient,
-                        circuitBreaker);
+                        null,
+                        circuitBreakerConfiguration);
 
         if (endpoint != null) {
             setEndpoint(endpoint);

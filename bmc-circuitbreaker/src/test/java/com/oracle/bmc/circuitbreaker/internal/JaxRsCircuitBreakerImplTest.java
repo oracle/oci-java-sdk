@@ -9,6 +9,7 @@ import static org.mockito.Mockito.mock;
 
 import com.oracle.bmc.circuitbreaker.CallNotAllowedException;
 import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
+import com.oracle.bmc.circuitbreaker.CircuitBreakerState;
 import io.github.resilience4j.circuitbreaker.CircuitBreaker;
 import org.junit.Before;
 import org.junit.Test;
@@ -114,6 +115,7 @@ public class JaxRsCircuitBreakerImplTest {
         assertTrue(callCount >= MIN_NUM_CALLS);
         assertEquals(
                 CircuitBreaker.State.OPEN, circuitBreaker.getInternalCircuitBreaker().getState());
+        assertEquals(CircuitBreakerState.OPEN, circuitBreaker.getState());
     }
 
     @Test
@@ -134,6 +136,7 @@ public class JaxRsCircuitBreakerImplTest {
         assertTrue(callCount >= MIN_NUM_CALLS);
         assertEquals(
                 CircuitBreaker.State.OPEN, circuitBreaker.getInternalCircuitBreaker().getState());
+        assertEquals(CircuitBreakerState.OPEN, circuitBreaker.getState());
     }
 
     @Test
@@ -154,6 +157,7 @@ public class JaxRsCircuitBreakerImplTest {
         assertTrue(callCount >= MIN_NUM_CALLS);
         assertEquals(
                 CircuitBreaker.State.OPEN, circuitBreaker.getInternalCircuitBreaker().getState());
+        assertEquals(CircuitBreakerState.OPEN, circuitBreaker.getState());
     }
 
     @Test
@@ -175,6 +179,7 @@ public class JaxRsCircuitBreakerImplTest {
         assertTrue(callCount >= MIN_NUM_CALLS);
         assertEquals(
                 CircuitBreaker.State.OPEN, circuitBreaker.getInternalCircuitBreaker().getState());
+        assertEquals(CircuitBreakerState.OPEN, circuitBreaker.getState());
     }
 
     @Test
@@ -194,6 +199,7 @@ public class JaxRsCircuitBreakerImplTest {
         assertTrue(callCount >= MIN_NUM_CALLS);
         assertEquals(
                 CircuitBreaker.State.CLOSED, circuitBreaker.getInternalCircuitBreaker().getState());
+        assertEquals(CircuitBreakerState.CLOSED, circuitBreaker.getState());
     }
 
     @Test
@@ -222,6 +228,7 @@ public class JaxRsCircuitBreakerImplTest {
         assertEquals(SLIDING_WINDOW_SIZE * 3, callCount);
         assertEquals(
                 CircuitBreaker.State.CLOSED, circuitBreaker.getInternalCircuitBreaker().getState());
+        assertEquals(CircuitBreakerState.CLOSED, circuitBreaker.getState());
     }
 
     @Test
@@ -258,6 +265,7 @@ public class JaxRsCircuitBreakerImplTest {
         assertTrue(SLIDING_WINDOW_SIZE * 3 > callCount);
         assertEquals(
                 CircuitBreaker.State.OPEN, circuitBreaker.getInternalCircuitBreaker().getState());
+        assertEquals(CircuitBreakerState.OPEN, circuitBreaker.getState());
     }
 
     @Test
@@ -281,6 +289,7 @@ public class JaxRsCircuitBreakerImplTest {
         assertTrue(unavailableCount >= MIN_NUM_CALLS);
         assertEquals(
                 CircuitBreaker.State.OPEN, circuitBreaker.getInternalCircuitBreaker().getState());
+        assertEquals(CircuitBreakerState.OPEN, circuitBreaker.getState());
     }
 
     @Test
@@ -304,6 +313,7 @@ public class JaxRsCircuitBreakerImplTest {
         assertTrue(unavailableCount >= MIN_NUM_CALLS);
         assertEquals(
                 CircuitBreaker.State.CLOSED, circuitBreaker.getInternalCircuitBreaker().getState());
+        assertEquals(CircuitBreakerState.CLOSED, circuitBreaker.getState());
     }
 
     @Test
@@ -341,6 +351,7 @@ public class JaxRsCircuitBreakerImplTest {
         assertTrue(callCount >= MIN_NUM_CALLS);
         assertEquals(
                 CircuitBreaker.State.OPEN, circuitBreaker.getInternalCircuitBreaker().getState());
+        assertEquals(CircuitBreakerState.OPEN, circuitBreaker.getState());
 
         //verify BmcCallNotPermittedException is thrown
         Supplier<Future<Response>> clientCall =
@@ -397,6 +408,7 @@ public class JaxRsCircuitBreakerImplTest {
         assertTrue(callCount >= MIN_NUM_CALLS);
         assertEquals(
                 CircuitBreaker.State.CLOSED, circuitBreaker.getInternalCircuitBreaker().getState());
+        assertEquals(CircuitBreakerState.CLOSED, circuitBreaker.getState());
     }
 
     @Test
@@ -440,6 +452,7 @@ public class JaxRsCircuitBreakerImplTest {
         assertTrue(unavailableCount >= MIN_NUM_CALLS);
         assertEquals(
                 CircuitBreaker.State.OPEN, circuitBreaker.getInternalCircuitBreaker().getState());
+        assertEquals(CircuitBreakerState.OPEN, circuitBreaker.getState());
     }
 
     private static Response.StatusType buildIncorrectStateResponse() {

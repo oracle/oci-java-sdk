@@ -87,6 +87,34 @@ public class Cluster {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
+        private java.util.Map<String, String> freeformTags;
+
+        public Builder freeformTags(java.util.Map<String, String> freeformTags) {
+            this.freeformTags = freeformTags;
+            this.__explicitlySet__.add("freeformTags");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
+        private java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+        public Builder definedTags(
+                java.util.Map<String, java.util.Map<String, Object>> definedTags) {
+            this.definedTags = definedTags;
+            this.__explicitlySet__.add("definedTags");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
+        private java.util.Map<String, java.util.Map<String, Object>> systemTags;
+
+        public Builder systemTags(java.util.Map<String, java.util.Map<String, Object>> systemTags) {
+            this.systemTags = systemTags;
+            this.__explicitlySet__.add("systemTags");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("options")
         private ClusterCreateOptions options;
 
@@ -164,6 +192,9 @@ public class Cluster {
                             vcnId,
                             kubernetesVersion,
                             kmsKeyId,
+                            freeformTags,
+                            definedTags,
+                            systemTags,
                             options,
                             metadata,
                             lifecycleState,
@@ -185,6 +216,9 @@ public class Cluster {
                             .vcnId(o.getVcnId())
                             .kubernetesVersion(o.getKubernetesVersion())
                             .kmsKeyId(o.getKmsKeyId())
+                            .freeformTags(o.getFreeformTags())
+                            .definedTags(o.getDefinedTags())
+                            .systemTags(o.getSystemTags())
                             .options(o.getOptions())
                             .metadata(o.getMetadata())
                             .lifecycleState(o.getLifecycleState())
@@ -247,6 +281,32 @@ public class Cluster {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyId")
     String kmsKeyId;
+
+    /**
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Example: {@code {"Department": "Finance"}}
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
+    java.util.Map<String, String> freeformTags;
+
+    /**
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
+    java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    /**
+     * Usage of system tag keys. These predefined keys are scoped to namespaces.
+     * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
+    java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
     /**
      * Optional attributes for the cluster.

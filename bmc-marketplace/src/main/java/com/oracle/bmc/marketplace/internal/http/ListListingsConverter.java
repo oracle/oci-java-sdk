@@ -48,6 +48,14 @@ public class ListListingsConverter {
                                     request.getListingId()));
         }
 
+        if (request.getImageId() != null) {
+            target =
+                    target.queryParam(
+                            "imageId",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getImageId()));
+        }
+
         if (request.getPublisherId() != null) {
             target =
                     target.queryParam(

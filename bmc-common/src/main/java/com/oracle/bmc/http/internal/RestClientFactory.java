@@ -11,12 +11,13 @@ import com.fasterxml.jackson.databind.ser.FilterProvider;
 import com.fasterxml.jackson.databind.ser.impl.SimpleFilterProvider;
 import com.google.common.annotations.VisibleForTesting;
 import com.oracle.bmc.ClientConfiguration;
+import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
+import com.oracle.bmc.circuitbreaker.NoCircuitBreakerConfiguration;
 import com.oracle.bmc.circuitbreaker.internal.JaxRsCircuitBreakerImpl;
 import com.oracle.bmc.circuitbreaker.JaxRsCircuitBreaker;
 import com.oracle.bmc.http.ClientConfigurator;
 import com.oracle.bmc.http.signing.RequestSigner;
 import com.oracle.bmc.http.signing.SigningStrategy;
-import com.oracle.bmc.util.CircuitBreakerUtils;
 import lombok.Getter;
 import org.glassfish.jersey.client.ClientProperties;
 import org.glassfish.jersey.client.JerseyClientBuilder;
@@ -188,6 +189,16 @@ public class RestClientFactory {
             ClientConfiguration configuration,
             boolean isNonBuffering,
             JaxRsCircuitBreaker circuitBreaker) {
+        if (circuitBreaker == null) {
+            return create(
+                    defaultRequestSigner,
+                    requestSigners,
+                    configuration,
+                    isNonBuffering,
+                    null,
+                    null);
+        }
+
         ClientConfiguration clientConfigurationToUse =
                 configuration != null ? configuration : ClientConfiguration.builder().build();
         Client client =
@@ -197,9 +208,76 @@ public class RestClientFactory {
                         clientConfigurationToUse,
                         this.clientConfigurator);
 
-        if (circuitBreaker == null) {
-            circuitBreaker =
-                    CircuitBreakerUtils.getUserDefinedCircuitBreaker(clientConfigurationToUse);
+        return new RestClient(
+                client,
+                new EntityFactory(),
+                circuitBreaker,
+                isNonBuffering,
+                this.clientConfigurator);
+    }
+
+    /**
+     * Creates a new client that will use the given
+     * {@link com.oracle.bmc.auth.AuthenticationDetailsProvider} and {@link ClientConfiguration}.
+     *
+     * @param defaultRequestSigner
+     *            The default strategy used to sign requests.
+     * @param requestSigners
+     *            The strategies used to sign requests, per signing strategy.
+     * @param configuration
+     *            The client configuration to use, or null for default
+     *            configuration.
+     * @param isNonBuffering
+     *            The boolean value indicating if entities should be buffered.
+     * @param circuitBreakerConfiguration
+     *            The circuit breaker configuration to use.
+     * @return A new RestClient instance.
+     */
+    public RestClient create(
+            RequestSigner defaultRequestSigner,
+            Map<SigningStrategy, RequestSigner> requestSigners,
+            ClientConfiguration configuration,
+            boolean isNonBuffering,
+            JaxRsCircuitBreaker circuitBreaker,
+            CircuitBreakerConfiguration circuitBreakerConfiguration) {
+        if (circuitBreaker != null && circuitBreakerConfiguration != null) {
+            throw new IllegalArgumentException(
+                    "Invalid CircuitBreaker setting. Please provide either CircuitBreaker configuration or CircuitBreaker and not both");
+        }
+
+        ClientConfiguration clientConfigurationToUse =
+                configuration != null ? configuration : ClientConfiguration.builder().build();
+        Client client =
+                createClient(
+                        defaultRequestSigner,
+                        requestSigners,
+                        clientConfigurationToUse,
+                        this.clientConfigurator);
+
+        if (configuration != null
+                && (configuration.getCircuitBreakerConfiguration() != null
+                        && configuration.getCircuitBreaker() != null)) {
+            throw new IllegalArgumentException(
+                    "Invalid CircuitBreaker setting. Please provide either CircuitBreaker configuration or CircuitBreaker and not both");
+        }
+
+        if (configuration != null && configuration.getCircuitBreaker() != null) {
+            circuitBreaker = configuration.getCircuitBreaker();
+        } else if (configuration != null
+                && configuration.getCircuitBreakerConfiguration() != null) {
+            if (configuration.getCircuitBreakerConfiguration()
+                    instanceof NoCircuitBreakerConfiguration) {
+                circuitBreaker = null;
+            } else {
+                circuitBreaker =
+                        new JaxRsCircuitBreakerImpl(configuration.getCircuitBreakerConfiguration());
+            }
+        } else if (circuitBreakerConfiguration != null) {
+            if (circuitBreakerConfiguration instanceof NoCircuitBreakerConfiguration) {
+                circuitBreaker = null;
+            } else {
+                circuitBreaker = new JaxRsCircuitBreakerImpl(circuitBreakerConfiguration);
+            }
         }
 
         return new RestClient(

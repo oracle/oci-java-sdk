@@ -44,12 +44,22 @@ public class NodePoolPlacementConfigDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("capacityReservationId")
+        private String capacityReservationId;
+
+        public Builder capacityReservationId(String capacityReservationId) {
+            this.capacityReservationId = capacityReservationId;
+            this.__explicitlySet__.add("capacityReservationId");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public NodePoolPlacementConfigDetails build() {
             NodePoolPlacementConfigDetails __instance__ =
-                    new NodePoolPlacementConfigDetails(availabilityDomain, subnetId);
+                    new NodePoolPlacementConfigDetails(
+                            availabilityDomain, subnetId, capacityReservationId);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -57,7 +67,9 @@ public class NodePoolPlacementConfigDetails {
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(NodePoolPlacementConfigDetails o) {
             Builder copiedBuilder =
-                    availabilityDomain(o.getAvailabilityDomain()).subnetId(o.getSubnetId());
+                    availabilityDomain(o.getAvailabilityDomain())
+                            .subnetId(o.getSubnetId())
+                            .capacityReservationId(o.getCapacityReservationId());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -84,6 +96,12 @@ public class NodePoolPlacementConfigDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
     String subnetId;
+
+    /**
+     * The OCID of the compute capacity reservation in which to place the compute instance.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("capacityReservationId")
+    String capacityReservationId;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

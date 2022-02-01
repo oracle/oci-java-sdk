@@ -7,7 +7,7 @@ package com.oracle.bmc.certificatesmanagement;
 import com.oracle.bmc.certificatesmanagement.internal.http.*;
 import com.oracle.bmc.certificatesmanagement.requests.*;
 import com.oracle.bmc.certificatesmanagement.responses.*;
-import com.oracle.bmc.circuitbreaker.JaxRsCircuitBreaker;
+import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
 import com.oracle.bmc.util.CircuitBreakerUtils;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210224")
@@ -308,10 +308,10 @@ public class CertificatesManagementClient implements CertificatesManagement {
                         ? configuration
                         : com.oracle.bmc.ClientConfiguration.builder().build();
         this.retryConfiguration = clientConfigurationToUse.getRetryConfiguration();
-        JaxRsCircuitBreaker circuitBreaker =
-                CircuitBreakerUtils.getUserDefinedCircuitBreaker(configuration);
-        if (circuitBreaker == null) {
-            circuitBreaker = CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER;
+        CircuitBreakerConfiguration circuitBreakerConfiguration =
+                CircuitBreakerUtils.getUserDefinedCircuitBreakerConfiguration(configuration);
+        if (circuitBreakerConfiguration == null) {
+            circuitBreakerConfiguration = CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER_CONFIGURATION;
         }
         this.client =
                 restClientFactory.create(
@@ -319,7 +319,8 @@ public class CertificatesManagementClient implements CertificatesManagement {
                         requestSigners,
                         clientConfigurationToUse,
                         isNonBufferingApacheClient,
-                        circuitBreaker);
+                        null,
+                        circuitBreakerConfiguration);
 
         if (executorService == null) {
             // up to 50 (core) threads, time out after 60s idle, all daemon
