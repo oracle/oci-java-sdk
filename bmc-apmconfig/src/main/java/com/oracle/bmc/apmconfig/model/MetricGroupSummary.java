@@ -5,7 +5,8 @@
 package com.oracle.bmc.apmconfig.model;
 
 /**
- * A Metric Group.
+ * A metric group defines a set of metrics to collect from a span. It uses a span filter to specify which spans to
+ * process. The set is then published to a namespace, which is a product level subdivision of metrics.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -191,31 +192,36 @@ public class MetricGroupSummary extends ConfigSummary {
     }
 
     /**
-     * The name of this metric group
+     * The name of the metric group.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     String displayName;
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of a Span Filter. The filterId is mandatory for the creation
-     * of MetricGroups. A filterId will be generated when a Span Filter is created.
+     * of MetricGroups. A filterId is generated when a Span Filter is created.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("filterId")
     String filterId;
 
     /**
-     * The namespace to write the metrics to
+     * The namespace to which the metrics are published. It must be one of several predefined namespaces.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("namespace")
     String namespace;
 
     /**
-     * A list of dimensions for this metric
+     * A list of dimensions for the metric. This variable should not be used.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dimensions")
     java.util.List<Dimension> dimensions;
 
+    /**
+     * The list of metrics in this group.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("metrics")
     java.util.List<Metric> metrics;
 

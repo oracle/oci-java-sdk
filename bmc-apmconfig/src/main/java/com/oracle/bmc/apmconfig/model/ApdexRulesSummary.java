@@ -5,7 +5,7 @@
 package com.oracle.bmc.apmconfig.model;
 
 /**
- * The set of Apdex rules to be used in Apdex computation.
+ * The set of Apdex rules used in Apdex computation.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -155,7 +155,7 @@ public class ApdexRulesSummary extends ConfigSummary {
     java.util.List<Apdex> rules;
 
     /**
-     * The name by which this rule set can be displayed to the user.
+     * The name by which the rule set is displayed to the end user.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     String displayName;

@@ -320,7 +320,7 @@ public class User {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     String name;
     /**
-     * The account status of the User
+     * The status of the user account.
      **/
     @lombok.extern.slf4j.Slf4j
     public enum Status {
@@ -379,7 +379,7 @@ public class User {
         }
     };
     /**
-     * The account status of the User
+     * The status of the user account.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     Status status;
@@ -391,7 +391,7 @@ public class User {
     java.util.Date timeLocked;
 
     /**
-     * The date of expiration of the account
+     * The date and time of the expiration of the user account.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeExpiring")
     java.util.Date timeExpiring;
@@ -409,13 +409,13 @@ public class User {
     String tempTablespace;
 
     /**
-     * The default local temporary tablespace for the User.
+     * The default local temporary tablespace for the user.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("localTempTablespace")
     String localTempTablespace;
 
     /**
-     * The User creation date.
+     * The date and time the user was created.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     java.util.Date timeCreated;
@@ -433,18 +433,18 @@ public class User {
     String consumerGroup;
 
     /**
-     * The external name of User.
+     * The external name of the user.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("externalName")
     String externalName;
 
     /**
-     * The list of versions of the password hashes (also known as "verifiers") existing for the account.
+     * The list of existing versions of the password hashes (also known as "verifiers") for the account.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("passwordVersions")
     String passwordVersions;
     /**
-     * Indicates whether editions have been enabled for the corresponding user (Y) or not (N)
+     * Indicates whether editions have been enabled for the corresponding user (Y) or not (N).
      **/
     @lombok.extern.slf4j.Slf4j
     public enum EditionsEnabled {
@@ -490,12 +490,12 @@ public class User {
         }
     };
     /**
-     * Indicates whether editions have been enabled for the corresponding user (Y) or not (N)
+     * Indicates whether editions have been enabled for the corresponding user (Y) or not (N).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("editionsEnabled")
     EditionsEnabled editionsEnabled;
     /**
-     * The authentication mechanism for the user
+     * The authentication mechanism for the user.
      **/
     @lombok.extern.slf4j.Slf4j
     public enum Authentication {
@@ -543,7 +543,7 @@ public class User {
         }
     };
     /**
-     * The authentication mechanism for the user
+     * The authentication mechanism for the user.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("authentication")
     Authentication authentication;
@@ -655,14 +655,14 @@ public class User {
     Common common;
 
     /**
-     * The time of the last user login.
+     * The date and time of the last user login.
      * This column is not populated when a user connects to the database with administrative privileges, that is, AS { SYSASM | SYSBACKUP | SYSDBA | SYSDG | SYSOPER | SYSRAC | SYSKM }.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeLastLogin")
     java.util.Date timeLastLogin;
     /**
-     * Indicates whether the user was created, and is maintained, by Oracle-supplied scripts (such as catalog.sql or catproc.sql).
+     * Indicates whether the user was created and is maintained by Oracle-supplied scripts (such as catalog.sql or catproc.sql).
      **/
     @lombok.extern.slf4j.Slf4j
     public enum OracleMaintained {
@@ -708,12 +708,12 @@ public class User {
         }
     };
     /**
-     * Indicates whether the user was created, and is maintained, by Oracle-supplied scripts (such as catalog.sql or catproc.sql).
+     * Indicates whether the user was created and is maintained by Oracle-supplied scripts (such as catalog.sql or catproc.sql).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("oracleMaintained")
     OracleMaintained oracleMaintained;
     /**
-     * Indicates whether the user definition was inherited from another container (YES) or not (NO)
+     * Indicates whether the user definition is inherited from another container (YES) or not (NO).
      **/
     @lombok.extern.slf4j.Slf4j
     public enum Inherited {
@@ -759,18 +759,18 @@ public class User {
         }
     };
     /**
-     * Indicates whether the user definition was inherited from another container (YES) or not (NO)
+     * Indicates whether the user definition is inherited from another container (YES) or not (NO).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("inherited")
     Inherited inherited;
 
     /**
-     * The default collation for the user\u2019s schema.
+     * The default collation for the user schema.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("defaultCollation")
     String defaultCollation;
     /**
-     * Indicates whether this user is a common user created by an implicit application (YES) or not (NO)
+     * Indicates whether the user is a common user created by an implicit application (YES) or not (NO).
      **/
     @lombok.extern.slf4j.Slf4j
     public enum Implicit {
@@ -816,12 +816,12 @@ public class User {
         }
     };
     /**
-     * Indicates whether this user is a common user created by an implicit application (YES) or not (NO)
+     * Indicates whether the user is a common user created by an implicit application (YES) or not (NO).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("implicit")
     Implicit implicit;
     /**
-     * In a sharded database, the value in this column indicates whether the user was created with shard DDL enabled.
+     * In a sharded database, indicates whether the user is created with shard DDL enabled (YES) or not (NO).
      **/
     @lombok.extern.slf4j.Slf4j
     public enum AllShared {
@@ -867,7 +867,7 @@ public class User {
         }
     };
     /**
-     * In a sharded database, the value in this column indicates whether the user was created with shard DDL enabled.
+     * In a sharded database, indicates whether the user is created with shard DDL enabled (YES) or not (NO).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("allShared")
     AllShared allShared;
@@ -924,7 +924,7 @@ public class User {
     ExternalShared externalShared;
 
     /**
-     * The date on which the user's password was last set.
+     * The date and time when the user password was last set.
      * This column is populated only when the value of the AUTHENTICATION_TYPE column is PASSWORD. Otherwise, this column is null.
      *
      **/

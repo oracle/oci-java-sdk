@@ -359,6 +359,15 @@ public class Tablespace {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("isDefault")
+        private Boolean isDefault;
+
+        public Builder isDefault(Boolean isDefault) {
+            this.isDefault = isDefault;
+            this.__explicitlySet__.add("isDefault");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("datafiles")
         private java.util.List<Datafile> datafiles;
 
@@ -411,6 +420,7 @@ public class Tablespace {
                             usedSpaceKB,
                             usedPercentAvailable,
                             usedPercentAllocated,
+                            isDefault,
                             datafiles);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
@@ -456,6 +466,7 @@ public class Tablespace {
                             .usedSpaceKB(o.getUsedSpaceKB())
                             .usedPercentAvailable(o.getUsedPercentAvailable())
                             .usedPercentAllocated(o.getUsedPercentAllocated())
+                            .isDefault(o.getIsDefault())
                             .datafiles(o.getDatafiles());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
@@ -478,12 +489,18 @@ public class Tablespace {
     /**
      * The type of tablespace.
      **/
+    @lombok.extern.slf4j.Slf4j
     public enum Type {
         Undo("UNDO"),
         LostWriteProtection("LOST_WRITE_PROTECTION"),
         Permanent("PERMANENT"),
         Temporary("TEMPORARY"),
-        ;
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
 
         private final String value;
         private static java.util.Map<String, Type> map;
@@ -491,7 +508,9 @@ public class Tablespace {
         static {
             map = new java.util.HashMap<>();
             for (Type v : Type.values()) {
-                map.put(v.getValue(), v);
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
             }
         }
 
@@ -509,7 +528,9 @@ public class Tablespace {
             if (map.containsKey(key)) {
                 return map.get(key);
             }
-            throw new IllegalArgumentException("Invalid Type: " + key);
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'Type', returning UnknownEnumValue", key);
+            return UnknownEnumValue;
         }
     };
     /**
@@ -520,11 +541,17 @@ public class Tablespace {
     /**
      * The status of the tablespace.
      **/
+    @lombok.extern.slf4j.Slf4j
     public enum Status {
         Online("ONLINE"),
         Offline("OFFLINE"),
         ReadOnly("READ_ONLY"),
-        ;
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
 
         private final String value;
         private static java.util.Map<String, Status> map;
@@ -532,7 +559,9 @@ public class Tablespace {
         static {
             map = new java.util.HashMap<>();
             for (Status v : Status.values()) {
-                map.put(v.getValue(), v);
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
             }
         }
 
@@ -550,7 +579,10 @@ public class Tablespace {
             if (map.containsKey(key)) {
                 return map.get(key);
             }
-            throw new IllegalArgumentException("Invalid Status: " + key);
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'Status', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
         }
     };
     /**
@@ -567,10 +599,16 @@ public class Tablespace {
     /**
      * The default logging attribute.
      **/
+    @lombok.extern.slf4j.Slf4j
     public enum Logging {
         Logging("LOGGING"),
         Nologging("NOLOGGING"),
-        ;
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
 
         private final String value;
         private static java.util.Map<String, Logging> map;
@@ -578,7 +616,9 @@ public class Tablespace {
         static {
             map = new java.util.HashMap<>();
             for (Logging v : Logging.values()) {
-                map.put(v.getValue(), v);
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
             }
         }
 
@@ -596,7 +636,10 @@ public class Tablespace {
             if (map.containsKey(key)) {
                 return map.get(key);
             }
-            throw new IllegalArgumentException("Invalid Logging: " + key);
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'Logging', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
         }
     };
     /**
@@ -613,10 +656,16 @@ public class Tablespace {
     /**
      * Indicates whether the extents in the tablespace are Locally managed or Dictionary managed.
      **/
+    @lombok.extern.slf4j.Slf4j
     public enum ExtentManagement {
         Local("LOCAL"),
         Dictionary("DICTIONARY"),
-        ;
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
 
         private final String value;
         private static java.util.Map<String, ExtentManagement> map;
@@ -624,7 +673,9 @@ public class Tablespace {
         static {
             map = new java.util.HashMap<>();
             for (ExtentManagement v : ExtentManagement.values()) {
-                map.put(v.getValue(), v);
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
             }
         }
 
@@ -642,7 +693,10 @@ public class Tablespace {
             if (map.containsKey(key)) {
                 return map.get(key);
             }
-            throw new IllegalArgumentException("Invalid ExtentManagement: " + key);
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'ExtentManagement', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
         }
     };
     /**
@@ -653,11 +707,17 @@ public class Tablespace {
     /**
      * The type of extent allocation in effect for the tablespace.
      **/
+    @lombok.extern.slf4j.Slf4j
     public enum AllocationType {
         System("SYSTEM"),
         Uniform("UNIFORM"),
         User("USER"),
-        ;
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
 
         private final String value;
         private static java.util.Map<String, AllocationType> map;
@@ -665,7 +725,9 @@ public class Tablespace {
         static {
             map = new java.util.HashMap<>();
             for (AllocationType v : AllocationType.values()) {
-                map.put(v.getValue(), v);
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
             }
         }
 
@@ -683,7 +745,10 @@ public class Tablespace {
             if (map.containsKey(key)) {
                 return map.get(key);
             }
-            throw new IllegalArgumentException("Invalid AllocationType: " + key);
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'AllocationType', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
         }
     };
     /**
@@ -700,10 +765,16 @@ public class Tablespace {
     /**
      * Indicates whether the free and used segment space in the tablespace is managed using free lists (MANUAL) or bitmaps (AUTO).
      **/
+    @lombok.extern.slf4j.Slf4j
     public enum SegmentSpaceManagement {
         Manual("MANUAL"),
         Auto("AUTO"),
-        ;
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
 
         private final String value;
         private static java.util.Map<String, SegmentSpaceManagement> map;
@@ -711,7 +782,9 @@ public class Tablespace {
         static {
             map = new java.util.HashMap<>();
             for (SegmentSpaceManagement v : SegmentSpaceManagement.values()) {
-                map.put(v.getValue(), v);
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
             }
         }
 
@@ -729,7 +802,10 @@ public class Tablespace {
             if (map.containsKey(key)) {
                 return map.get(key);
             }
-            throw new IllegalArgumentException("Invalid SegmentSpaceManagement: " + key);
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'SegmentSpaceManagement', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
         }
     };
     /**
@@ -740,10 +816,16 @@ public class Tablespace {
     /**
      * Indicates whether default table compression is enabled or disabled.
      **/
+    @lombok.extern.slf4j.Slf4j
     public enum DefaultTableCompression {
         Enabled("ENABLED"),
         Disabled("DISABLED"),
-        ;
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
 
         private final String value;
         private static java.util.Map<String, DefaultTableCompression> map;
@@ -751,7 +833,9 @@ public class Tablespace {
         static {
             map = new java.util.HashMap<>();
             for (DefaultTableCompression v : DefaultTableCompression.values()) {
-                map.put(v.getValue(), v);
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
             }
         }
 
@@ -769,7 +853,10 @@ public class Tablespace {
             if (map.containsKey(key)) {
                 return map.get(key);
             }
-            throw new IllegalArgumentException("Invalid DefaultTableCompression: " + key);
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'DefaultTableCompression', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
         }
     };
     /**
@@ -780,11 +867,17 @@ public class Tablespace {
     /**
      * Indicates whether undo retention guarantee is enabled for the tablespace.
      **/
+    @lombok.extern.slf4j.Slf4j
     public enum Retention {
         Guarantee("GUARANTEE"),
         Noguarantee("NOGUARANTEE"),
         NotApply("NOT_APPLY"),
-        ;
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
 
         private final String value;
         private static java.util.Map<String, Retention> map;
@@ -792,7 +885,9 @@ public class Tablespace {
         static {
             map = new java.util.HashMap<>();
             for (Retention v : Retention.values()) {
-                map.put(v.getValue(), v);
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
             }
         }
 
@@ -810,7 +905,10 @@ public class Tablespace {
             if (map.containsKey(key)) {
                 return map.get(key);
             }
-            throw new IllegalArgumentException("Invalid Retention: " + key);
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'Retention', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
         }
     };
     /**
@@ -827,10 +925,16 @@ public class Tablespace {
     /**
      * Indicates whether predicates are evaluated by Host or by Storage.
      **/
+    @lombok.extern.slf4j.Slf4j
     public enum PredicateEvaluation {
         Host("HOST"),
         Storage("STORAGE"),
-        ;
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
 
         private final String value;
         private static java.util.Map<String, PredicateEvaluation> map;
@@ -838,7 +942,9 @@ public class Tablespace {
         static {
             map = new java.util.HashMap<>();
             for (PredicateEvaluation v : PredicateEvaluation.values()) {
-                map.put(v.getValue(), v);
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
             }
         }
 
@@ -856,7 +962,10 @@ public class Tablespace {
             if (map.containsKey(key)) {
                 return map.get(key);
             }
-            throw new IllegalArgumentException("Invalid PredicateEvaluation: " + key);
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'PredicateEvaluation', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
         }
     };
     /**
@@ -873,6 +982,7 @@ public class Tablespace {
     /**
      * The operation type for which default compression is enabled.
      **/
+    @lombok.extern.slf4j.Slf4j
     public enum CompressFor {
         Basic("BASIC"),
         Advanced("ADVANCED"),
@@ -882,7 +992,12 @@ public class Tablespace {
         ArchiveHigh("ARCHIVE_HIGH"),
         DirectLoadOnly("DIRECT_LOAD_ONLY"),
         ForAllOperations("FOR_ALL_OPERATIONS"),
-        ;
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
 
         private final String value;
         private static java.util.Map<String, CompressFor> map;
@@ -890,7 +1005,9 @@ public class Tablespace {
         static {
             map = new java.util.HashMap<>();
             for (CompressFor v : CompressFor.values()) {
-                map.put(v.getValue(), v);
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
             }
         }
 
@@ -908,7 +1025,10 @@ public class Tablespace {
             if (map.containsKey(key)) {
                 return map.get(key);
             }
-            throw new IllegalArgumentException("Invalid CompressFor: " + key);
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'CompressFor', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
         }
     };
     /**
@@ -919,10 +1039,16 @@ public class Tablespace {
     /**
      * Indicates whether the In-Memory Column Store (IM column store) is by default enabled or disabled for tables in the tablespace.
      **/
+    @lombok.extern.slf4j.Slf4j
     public enum DefaultInMemory {
         Enabled("ENABLED"),
         Disabled("DISABLED"),
-        ;
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
 
         private final String value;
         private static java.util.Map<String, DefaultInMemory> map;
@@ -930,7 +1056,9 @@ public class Tablespace {
         static {
             map = new java.util.HashMap<>();
             for (DefaultInMemory v : DefaultInMemory.values()) {
-                map.put(v.getValue(), v);
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
             }
         }
 
@@ -948,7 +1076,10 @@ public class Tablespace {
             if (map.containsKey(key)) {
                 return map.get(key);
             }
-            throw new IllegalArgumentException("Invalid DefaultInMemory: " + key);
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'DefaultInMemory', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
         }
     };
     /**
@@ -959,13 +1090,19 @@ public class Tablespace {
     /**
      * Indicates the default priority for In-Memory Column Store (IM column store) population for the tablespace.
      **/
+    @lombok.extern.slf4j.Slf4j
     public enum DefaultInMemoryPriority {
         Low("LOW"),
         Medium("MEDIUM"),
         High("HIGH"),
         Critical("CRITICAL"),
         None("NONE"),
-        ;
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
 
         private final String value;
         private static java.util.Map<String, DefaultInMemoryPriority> map;
@@ -973,7 +1110,9 @@ public class Tablespace {
         static {
             map = new java.util.HashMap<>();
             for (DefaultInMemoryPriority v : DefaultInMemoryPriority.values()) {
-                map.put(v.getValue(), v);
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
             }
         }
 
@@ -991,7 +1130,10 @@ public class Tablespace {
             if (map.containsKey(key)) {
                 return map.get(key);
             }
-            throw new IllegalArgumentException("Invalid DefaultInMemoryPriority: " + key);
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'DefaultInMemoryPriority', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
         }
     };
     /**
@@ -1002,12 +1144,18 @@ public class Tablespace {
     /**
      * Indicates how the IM column store is distributed by default for the tablespace in an Oracle Real Application Clusters (Oracle RAC) environment.
      **/
+    @lombok.extern.slf4j.Slf4j
     public enum DefaultInMemoryDistribute {
         Auto("AUTO"),
         ByRowidRange("BY_ROWID_RANGE"),
         ByPartition("BY_PARTITION"),
         BySubpartition("BY_SUBPARTITION"),
-        ;
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
 
         private final String value;
         private static java.util.Map<String, DefaultInMemoryDistribute> map;
@@ -1015,7 +1163,9 @@ public class Tablespace {
         static {
             map = new java.util.HashMap<>();
             for (DefaultInMemoryDistribute v : DefaultInMemoryDistribute.values()) {
-                map.put(v.getValue(), v);
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
             }
         }
 
@@ -1033,7 +1183,10 @@ public class Tablespace {
             if (map.containsKey(key)) {
                 return map.get(key);
             }
-            throw new IllegalArgumentException("Invalid DefaultInMemoryDistribute: " + key);
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'DefaultInMemoryDistribute', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
         }
     };
     /**
@@ -1044,6 +1197,7 @@ public class Tablespace {
     /**
      * Indicates the default compression level for the IM column store for the tablespace.
      **/
+    @lombok.extern.slf4j.Slf4j
     public enum DefaultInMemoryCompression {
         NoMemcompress("NO_MEMCOMPRESS"),
         ForDml("FOR_DML"),
@@ -1051,7 +1205,12 @@ public class Tablespace {
         ForQueryHigh("FOR_QUERY_HIGH"),
         ForCapacityLow("FOR_CAPACITY_LOW"),
         ForCapacityHigh("FOR_CAPACITY_HIGH"),
-        ;
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
 
         private final String value;
         private static java.util.Map<String, DefaultInMemoryCompression> map;
@@ -1059,7 +1218,9 @@ public class Tablespace {
         static {
             map = new java.util.HashMap<>();
             for (DefaultInMemoryCompression v : DefaultInMemoryCompression.values()) {
-                map.put(v.getValue(), v);
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
             }
         }
 
@@ -1077,7 +1238,10 @@ public class Tablespace {
             if (map.containsKey(key)) {
                 return map.get(key);
             }
-            throw new IllegalArgumentException("Invalid DefaultInMemoryCompression: " + key);
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'DefaultInMemoryCompression', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
         }
     };
     /**
@@ -1088,11 +1252,17 @@ public class Tablespace {
     /**
      * Indicates the duplicate setting for the IM column store in an Oracle RAC environment.
      **/
+    @lombok.extern.slf4j.Slf4j
     public enum DefaultInMemoryDuplicate {
         NoDuplicate("NO_DUPLICATE"),
         Duplicate("DUPLICATE"),
         DuplicateAll("DUPLICATE_ALL"),
-        ;
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
 
         private final String value;
         private static java.util.Map<String, DefaultInMemoryDuplicate> map;
@@ -1100,7 +1270,9 @@ public class Tablespace {
         static {
             map = new java.util.HashMap<>();
             for (DefaultInMemoryDuplicate v : DefaultInMemoryDuplicate.values()) {
-                map.put(v.getValue(), v);
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
             }
         }
 
@@ -1118,7 +1290,10 @@ public class Tablespace {
             if (map.containsKey(key)) {
                 return map.get(key);
             }
-            throw new IllegalArgumentException("Invalid DefaultInMemoryDuplicate: " + key);
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'DefaultInMemoryDuplicate', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
         }
     };
     /**
@@ -1129,11 +1304,17 @@ public class Tablespace {
     /**
      * Indicates whether the tablespace is for shared tablespace, or for local temporary tablespace for leaf (read-only) instances, or for local temporary tablespace for all instance types.
      **/
+    @lombok.extern.slf4j.Slf4j
     public enum Shared {
         Shared("SHARED"),
         LocalOnLeaf("LOCAL_ON_LEAF"),
         LocalOnAll("LOCAL_ON_ALL"),
-        ;
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
 
         private final String value;
         private static java.util.Map<String, Shared> map;
@@ -1141,7 +1322,9 @@ public class Tablespace {
         static {
             map = new java.util.HashMap<>();
             for (Shared v : Shared.values()) {
-                map.put(v.getValue(), v);
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
             }
         }
 
@@ -1159,7 +1342,10 @@ public class Tablespace {
             if (map.containsKey(key)) {
                 return map.get(key);
             }
-            throw new IllegalArgumentException("Invalid Shared: " + key);
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'Shared', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
         }
     };
     /**
@@ -1170,10 +1356,16 @@ public class Tablespace {
     /**
      * Indicates whether default index compression is enabled or disabled.
      **/
+    @lombok.extern.slf4j.Slf4j
     public enum DefaultIndexCompression {
         Enabled("ENABLED"),
         Disabled("DISABLED"),
-        ;
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
 
         private final String value;
         private static java.util.Map<String, DefaultIndexCompression> map;
@@ -1181,7 +1373,9 @@ public class Tablespace {
         static {
             map = new java.util.HashMap<>();
             for (DefaultIndexCompression v : DefaultIndexCompression.values()) {
-                map.put(v.getValue(), v);
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
             }
         }
 
@@ -1199,7 +1393,10 @@ public class Tablespace {
             if (map.containsKey(key)) {
                 return map.get(key);
             }
-            throw new IllegalArgumentException("Invalid DefaultIndexCompression: " + key);
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'DefaultIndexCompression', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
         }
     };
     /**
@@ -1210,10 +1407,17 @@ public class Tablespace {
     /**
      * The operation type for which default index compression is enabled.
      **/
+    @lombok.extern.slf4j.Slf4j
     public enum IndexCompressFor {
         AdvancedLow("ADVANCED_LOW"),
         AdvancedHigh("ADVANCED_HIGH"),
-        ;
+        None("NONE"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
 
         private final String value;
         private static java.util.Map<String, IndexCompressFor> map;
@@ -1221,7 +1425,9 @@ public class Tablespace {
         static {
             map = new java.util.HashMap<>();
             for (IndexCompressFor v : IndexCompressFor.values()) {
-                map.put(v.getValue(), v);
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
             }
         }
 
@@ -1239,7 +1445,10 @@ public class Tablespace {
             if (map.containsKey(key)) {
                 return map.get(key);
             }
-            throw new IllegalArgumentException("Invalid IndexCompressFor: " + key);
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'IndexCompressFor', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
         }
     };
     /**
@@ -1256,12 +1465,18 @@ public class Tablespace {
     /**
      * Indicates how the IM column store is populated on various instances by default for the tablespace.
      **/
+    @lombok.extern.slf4j.Slf4j
     public enum DefaultInMemoryService {
         Default("DEFAULT"),
         None("NONE"),
         All("ALL"),
         UserDefined("USER_DEFINED"),
-        ;
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
 
         private final String value;
         private static java.util.Map<String, DefaultInMemoryService> map;
@@ -1269,7 +1484,9 @@ public class Tablespace {
         static {
             map = new java.util.HashMap<>();
             for (DefaultInMemoryService v : DefaultInMemoryService.values()) {
-                map.put(v.getValue(), v);
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
             }
         }
 
@@ -1287,7 +1504,10 @@ public class Tablespace {
             if (map.containsKey(key)) {
                 return map.get(key);
             }
-            throw new IllegalArgumentException("Invalid DefaultInMemoryService: " + key);
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'DefaultInMemoryService', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
         }
     };
     /**
@@ -1304,11 +1524,17 @@ public class Tablespace {
     /**
      * The lost write protection setting for the tablespace.
      **/
+    @lombok.extern.slf4j.Slf4j
     public enum LostWriteProtect {
         Enabled("ENABLED"),
         ProtectOff("PROTECT_OFF"),
         Suspend("SUSPEND"),
-        ;
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
 
         private final String value;
         private static java.util.Map<String, LostWriteProtect> map;
@@ -1316,7 +1542,9 @@ public class Tablespace {
         static {
             map = new java.util.HashMap<>();
             for (LostWriteProtect v : LostWriteProtect.values()) {
-                map.put(v.getValue(), v);
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
             }
         }
 
@@ -1334,7 +1562,10 @@ public class Tablespace {
             if (map.containsKey(key)) {
                 return map.get(key);
             }
-            throw new IllegalArgumentException("Invalid LostWriteProtect: " + key);
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'LostWriteProtect', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
         }
     };
     /**
@@ -1396,6 +1627,12 @@ public class Tablespace {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("usedPercentAllocated")
     Double usedPercentAllocated;
+
+    /**
+     * Indicates whether this is the default tablespace.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isDefault")
+    Boolean isDefault;
 
     /**
      * A list of the data files associated with the tablespace.

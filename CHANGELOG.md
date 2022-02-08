@@ -3,6 +3,17 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
+## 2.15.0 - 2022-02-08
+### Added
+- Support for managing tablespaces in the Database Management service
+- Support for upgrading and managing payment for subscriptions in the Account Management service
+- Support for listing fast launch job configurations in the Data Science service
+
+### Breaking Changes
+- Support for retries enabled by default on all operations in the Application Performance Monitoring service
+- Class `com.oracle.bmc.ospgateway.model.Address` has been removed from the Account Management service
+- Return type of the method `com.oracle.bmc.ospgateway.model.Address getBillToAddress()` has been changed to `com.oracle.bmc.ospgateway.model.BillToAddress` in the model `com.oracle.bmc.ospgateway.model.Invoice` in the Account Management service
+
 ## 2.14.1 - 2022-02-01
 ### Added
 - Support for calling Oracle Cloud Infrastructure services in the ap-dcc-canberra-1 region

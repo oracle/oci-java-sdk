@@ -30,7 +30,7 @@ public class GetSqlExecutionPlanRequest extends com.oracle.bmc.requests.BmcReque
     private Long sqlTuningAdvisorTaskId;
 
     /**
-     * The SQL object id for the SQL tuning task. This is not the [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * The SQL object ID for the SQL tuning task. This is not the [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
      */
     private Long sqlObjectId;
 

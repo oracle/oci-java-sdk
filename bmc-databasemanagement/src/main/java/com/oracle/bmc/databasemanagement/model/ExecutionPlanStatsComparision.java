@@ -5,7 +5,7 @@
 package com.oracle.bmc.databasemanagement.model;
 
 /**
- * The comparision report of SQL execution plans' statistics between the original plan and modified plan.
+ * The comparison report of the SQL execution plan statistics in the original and modified plan.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields

@@ -115,7 +115,7 @@ public class UpdateApdexRulesDetails extends UpdateConfigDetails {
     java.util.List<Apdex> rules;
 
     /**
-     * The name by which this rule set can be displayed to the user.
+     * The name by which the rule set is displayed to the end user.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     String displayName;

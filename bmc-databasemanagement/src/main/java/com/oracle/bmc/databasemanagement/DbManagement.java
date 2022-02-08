@@ -50,6 +50,19 @@ public interface DbManagement extends AutoCloseable {
     void setRegion(String regionId);
 
     /**
+     * Adds data files or temp files to the tablespace.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/AddDataFilesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use AddDataFiles API.
+     */
+    AddDataFilesResponse addDataFiles(AddDataFilesRequest request);
+
+    /**
      * Adds a Managed Database to a specific Managed Database Group.
      * After the database is added, it will be included in the
      * management activities performed on the Managed Database Group.
@@ -179,6 +192,19 @@ public interface DbManagement extends AutoCloseable {
             CreateManagedDatabaseGroupRequest request);
 
     /**
+     * Creates a tablespace within the Managed Database specified by managedDatabaseId.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/CreateTablespaceExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateTablespace API.
+     */
+    CreateTablespaceResponse createTablespace(CreateTablespaceRequest request);
+
+    /**
      * Deletes a specific Database Management private endpoint.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -217,6 +243,19 @@ public interface DbManagement extends AutoCloseable {
      */
     DeleteManagedDatabaseGroupResponse deleteManagedDatabaseGroup(
             DeleteManagedDatabaseGroupRequest request);
+
+    /**
+     * Drops the tablespace specified by tablespaceName within the Managed Database specified by managedDatabaseId.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/DropTablespaceExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DropTablespace API.
+     */
+    DropTablespaceResponse dropTablespace(DropTablespaceRequest request);
 
     /**
      * Gets the AWR report for the specific database.
@@ -381,7 +420,20 @@ public interface DbManagement extends AutoCloseable {
     GetPdbMetricsResponse getPdbMetrics(GetPdbMetricsRequest request);
 
     /**
-     * Gets the details of a specific user for the specified managedDatabaseId and userName.
+     * Gets the details of the tablespace specified by tablespaceName within the Managed Database specified by managedDatabaseId.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/GetTablespaceExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetTablespace API.
+     */
+    GetTablespaceResponse getTablespace(GetTablespaceRequest request);
+
+    /**
+     * Gets the details of the user specified by managedDatabaseId and userName.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -404,6 +456,18 @@ public interface DbManagement extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/GetWorkRequestExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetWorkRequest API.
      */
     GetWorkRequestResponse getWorkRequest(GetWorkRequestRequest request);
+
+    /**
+     * Gets the list of ASM properties for the specified managedDatabaseId.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/ListAsmPropertiesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListAsmProperties API.
+     */
+    ListAsmPropertiesResponse listAsmProperties(ListAsmPropertiesRequest request);
 
     /**
      * Gets the list of databases using a specific Database Management private endpoint.
@@ -444,7 +508,7 @@ public interface DbManagement extends AutoCloseable {
     ListAwrDbsResponse listAwrDbs(ListAwrDbsRequest request);
 
     /**
-     * Gets the list of Consumer Group Privileges granted for the specified user.
+     * Gets the list of consumer group privileges granted to a specific user.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -457,7 +521,7 @@ public interface DbManagement extends AutoCloseable {
             ListConsumerGroupPrivilegesRequest request);
 
     /**
-     * Gets the list of Containers if it does not apply to all containers for the specified user.
+     * Gets the list of containers for a specific user. This is only applicable if ALL_CONTAINERS !='Y'.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -580,7 +644,7 @@ public interface DbManagement extends AutoCloseable {
     ListManagedDatabasesResponse listManagedDatabases(ListManagedDatabasesRequest request);
 
     /**
-     * Gets the list of Object Privileges granted for the specified user.
+     * Gets the list of object privileges granted to a specific user.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -592,7 +656,7 @@ public interface DbManagement extends AutoCloseable {
     ListObjectPrivilegesResponse listObjectPrivileges(ListObjectPrivilegesRequest request);
 
     /**
-     * Gets the list of Users for which the current user acts as proxy.
+     * Gets the list of users on whose behalf the current user acts as proxy.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -604,7 +668,7 @@ public interface DbManagement extends AutoCloseable {
     ListProxiedForUsersResponse listProxiedForUsers(ListProxiedForUsersRequest request);
 
     /**
-     * Gets the list of proxy users for the current User.
+     * Gets the list of proxy users for the current user.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -616,7 +680,7 @@ public interface DbManagement extends AutoCloseable {
     ListProxyUsersResponse listProxyUsers(ListProxyUsersRequest request);
 
     /**
-     * Gets the list of roles granted for the specified user.
+     * Gets the list of roles granted to a specific user.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -628,7 +692,7 @@ public interface DbManagement extends AutoCloseable {
     ListRolesResponse listRoles(ListRolesRequest request);
 
     /**
-     * Gets the list of System Privileges granted for the specified user.
+     * Gets the list of system privileges granted to a specific user.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -703,6 +767,19 @@ public interface DbManagement extends AutoCloseable {
     ListWorkRequestsResponse listWorkRequests(ListWorkRequestsRequest request);
 
     /**
+     * Removes a data file or temp file from the tablespace.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/RemoveDataFileExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RemoveDataFile API.
+     */
+    RemoveDataFileResponse removeDataFile(RemoveDataFileRequest request);
+
+    /**
      * Removes a Managed Database from a Managed Database Group. Any management
      * activities that are currently running on this database will continue to
      * run to completion. However, any activities scheduled to run in the future
@@ -732,6 +809,19 @@ public interface DbManagement extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/ResetDatabaseParametersExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ResetDatabaseParameters API.
      */
     ResetDatabaseParametersResponse resetDatabaseParameters(ResetDatabaseParametersRequest request);
+
+    /**
+     * Resizes a data file or temp file within the tablespace.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/ResizeDataFileExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ResizeDataFile API.
+     */
+    ResizeDataFileResponse resizeDataFile(ResizeDataFileRequest request);
 
     /**
      * Summarizes the AWR CPU resource limits and metrics for the specified database in AWR.
@@ -922,6 +1012,19 @@ public interface DbManagement extends AutoCloseable {
      */
     UpdateManagedDatabaseGroupResponse updateManagedDatabaseGroup(
             UpdateManagedDatabaseGroupRequest request);
+
+    /**
+     * Updates the attributes of the tablespace specified by tablespaceName within the Managed Database specified by managedDatabaseId.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/UpdateTablespaceExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateTablespace API.
+     */
+    UpdateTablespaceResponse updateTablespace(UpdateTablespaceRequest request);
 
     /**
      * Gets the pre-configured waiters available for resources for this service.

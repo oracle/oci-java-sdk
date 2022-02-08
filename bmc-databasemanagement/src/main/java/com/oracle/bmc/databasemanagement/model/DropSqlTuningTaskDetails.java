@@ -5,7 +5,7 @@
 package com.oracle.bmc.databasemanagement.model;
 
 /**
- * Request to drop a SQL tuning task.
+ * The request to drop a SQL tuning task.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -72,9 +72,9 @@ public class DropSqlTuningTaskDetails {
     }
 
     /**
-     * The identifier of the task being dropped. This is not the [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * The identifier of the SQL tuning task being dropped. This is not the [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
      * It can be retrieved from the following endpoint
-     * {@link #listSqlTuningAdvisorTasks(ListSqlTuningAdvisorTasksRequest) listSqlTuningAdvisorTasks}
+     * {@link #listSqlTuningAdvisorTasks(ListSqlTuningAdvisorTasksRequest) listSqlTuningAdvisorTasks}.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("taskId")

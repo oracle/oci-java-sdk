@@ -27,7 +27,7 @@ public class StartSqlTuningTaskRequest
     private String managedDatabaseId;
 
     /**
-     * Detail inputs for starting a SQL tuning task
+     * The detailed inputs required to start a SQL tuning task.
      */
     private com.oracle.bmc.databasemanagement.model.StartSqlTuningTaskDetails
             startSqlTuningTaskDetails;

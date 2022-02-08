@@ -5,7 +5,7 @@
 package com.oracle.bmc.databasemanagement.model;
 
 /**
- * Summary of objectPrivileges.
+ * A summary of object privileges.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -158,7 +158,7 @@ public class ObjectPrivilegeSummary {
     String name;
 
     /**
-     * The type of the object.
+     * The type of object.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("schemaType")
     String schemaType;
@@ -170,12 +170,12 @@ public class ObjectPrivilegeSummary {
     String owner;
 
     /**
-     * The name of the user who performed the grant
+     * The name of the user who granted the object privilege.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("grantor")
     String grantor;
     /**
-     * Indicates whether the privilege was granted with the HIERARCHY OPTION (YES) or not (NO)
+     * Indicates whether the privilege is granted with the HIERARCHY OPTION (YES) or not (NO).
      **/
     @lombok.extern.slf4j.Slf4j
     public enum Hierarchy {
@@ -221,7 +221,7 @@ public class ObjectPrivilegeSummary {
         }
     };
     /**
-     * Indicates whether the privilege was granted with the HIERARCHY OPTION (YES) or not (NO)
+     * Indicates whether the privilege is granted with the HIERARCHY OPTION (YES) or not (NO).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("hierarchy")
     Hierarchy hierarchy;
@@ -232,7 +232,7 @@ public class ObjectPrivilegeSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("object")
     String object;
     /**
-     * Indicates whether the privilege was granted with the GRANT OPTION (YES) or not (NO)
+     * Indicates whether the privilege is granted with the GRANT OPTION (YES) or not (NO).
      **/
     @lombok.extern.slf4j.Slf4j
     public enum GrantOption {
@@ -278,14 +278,14 @@ public class ObjectPrivilegeSummary {
         }
     };
     /**
-     * Indicates whether the privilege was granted with the GRANT OPTION (YES) or not (NO)
+     * Indicates whether the privilege is granted with the GRANT OPTION (YES) or not (NO).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("grantOption")
     GrantOption grantOption;
     /**
-     * Indicates how the grant was made. Possible values:
-     * YES if the role was granted commonly (CONTAINER=ALL was used)
-     * NO if the role was granted locally (CONTAINER=ALL was not used)
+     * Indicates how the object privilege was granted. Possible values:
+     * YES if the role is granted commonly (CONTAINER=ALL is used)
+     * NO if the role is granted locally (CONTAINER=ALL is not used)
      *
      **/
     @lombok.extern.slf4j.Slf4j
@@ -332,15 +332,15 @@ public class ObjectPrivilegeSummary {
         }
     };
     /**
-     * Indicates how the grant was made. Possible values:
-     * YES if the role was granted commonly (CONTAINER=ALL was used)
-     * NO if the role was granted locally (CONTAINER=ALL was not used)
+     * Indicates how the object privilege was granted. Possible values:
+     * YES if the role is granted commonly (CONTAINER=ALL is used)
+     * NO if the role is granted locally (CONTAINER=ALL is not used)
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("common")
     Common common;
     /**
-     * Indicates whether the role grant was inherited from another container (YES) or not (NO)
+     * Indicates whether the granted privilege is inherited from another container (YES) or not (NO).
      **/
     @lombok.extern.slf4j.Slf4j
     public enum Inherited {
@@ -386,7 +386,7 @@ public class ObjectPrivilegeSummary {
         }
     };
     /**
-     * Indicates whether the role grant was inherited from another container (YES) or not (NO)
+     * Indicates whether the granted privilege is inherited from another container (YES) or not (NO).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("inherited")
     Inherited inherited;

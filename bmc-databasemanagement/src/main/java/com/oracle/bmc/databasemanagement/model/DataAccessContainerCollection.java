@@ -5,7 +5,7 @@
 package com.oracle.bmc.databasemanagement.model;
 
 /**
- * A collection of Containers if it does not apply to all containers for the current User.
+ * A collection of specific containers for the current user. This is only applicable if ALL_CONTAINERS !='Y'.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -61,7 +61,7 @@ public class DataAccessContainerCollection {
     }
 
     /**
-     * An array of Container resources.
+     * An array of container resources.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     java.util.List<DataAccessContainerSummary> items;

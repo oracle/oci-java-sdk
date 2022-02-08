@@ -49,6 +49,22 @@ public interface DbManagementAsync extends AutoCloseable {
     void setRegion(String regionId);
 
     /**
+     * Adds data files or temp files to the tablespace.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<AddDataFilesResponse> addDataFiles(
+            AddDataFilesRequest request,
+            com.oracle.bmc.responses.AsyncHandler<AddDataFilesRequest, AddDataFilesResponse>
+                    handler);
+
+    /**
      * Adds a Managed Database to a specific Managed Database Group.
      * After the database is added, it will be included in the
      * management activities performed on the Managed Database Group.
@@ -209,6 +225,22 @@ public interface DbManagementAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Creates a tablespace within the Managed Database specified by managedDatabaseId.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateTablespaceResponse> createTablespace(
+            CreateTablespaceRequest request,
+            com.oracle.bmc.responses.AsyncHandler<CreateTablespaceRequest, CreateTablespaceResponse>
+                    handler);
+
+    /**
      * Deletes a specific Database Management private endpoint.
      *
      * @param request The request object containing the details to send
@@ -256,6 +288,22 @@ public interface DbManagementAsync extends AutoCloseable {
             DeleteManagedDatabaseGroupRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             DeleteManagedDatabaseGroupRequest, DeleteManagedDatabaseGroupResponse>
+                    handler);
+
+    /**
+     * Drops the tablespace specified by tablespaceName within the Managed Database specified by managedDatabaseId.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<DropTablespaceResponse> dropTablespace(
+            DropTablespaceRequest request,
+            com.oracle.bmc.responses.AsyncHandler<DropTablespaceRequest, DropTablespaceResponse>
                     handler);
 
     /**
@@ -464,7 +512,23 @@ public interface DbManagementAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets the details of a specific user for the specified managedDatabaseId and userName.
+     * Gets the details of the tablespace specified by tablespaceName within the Managed Database specified by managedDatabaseId.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetTablespaceResponse> getTablespace(
+            GetTablespaceRequest request,
+            com.oracle.bmc.responses.AsyncHandler<GetTablespaceRequest, GetTablespaceResponse>
+                    handler);
+
+    /**
+     * Gets the details of the user specified by managedDatabaseId and userName.
      *
      *
      * @param request The request object containing the details to send
@@ -491,6 +555,22 @@ public interface DbManagementAsync extends AutoCloseable {
     java.util.concurrent.Future<GetWorkRequestResponse> getWorkRequest(
             GetWorkRequestRequest request,
             com.oracle.bmc.responses.AsyncHandler<GetWorkRequestRequest, GetWorkRequestResponse>
+                    handler);
+
+    /**
+     * Gets the list of ASM properties for the specified managedDatabaseId.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListAsmPropertiesResponse> listAsmProperties(
+            ListAsmPropertiesRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListAsmPropertiesRequest, ListAsmPropertiesResponse>
                     handler);
 
     /**
@@ -542,7 +622,7 @@ public interface DbManagementAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<ListAwrDbsRequest, ListAwrDbsResponse> handler);
 
     /**
-     * Gets the list of Consumer Group Privileges granted for the specified user.
+     * Gets the list of consumer group privileges granted to a specific user.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -558,7 +638,7 @@ public interface DbManagementAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets the list of Containers if it does not apply to all containers for the specified user.
+     * Gets the list of containers for a specific user. This is only applicable if ALL_CONTAINERS !='Y'.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -708,7 +788,7 @@ public interface DbManagementAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets the list of Object Privileges granted for the specified user.
+     * Gets the list of object privileges granted to a specific user.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -724,7 +804,7 @@ public interface DbManagementAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets the list of Users for which the current user acts as proxy.
+     * Gets the list of users on whose behalf the current user acts as proxy.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -740,7 +820,7 @@ public interface DbManagementAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets the list of proxy users for the current User.
+     * Gets the list of proxy users for the current user.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -755,7 +835,7 @@ public interface DbManagementAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets the list of roles granted for the specified user.
+     * Gets the list of roles granted to a specific user.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -769,7 +849,7 @@ public interface DbManagementAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<ListRolesRequest, ListRolesResponse> handler);
 
     /**
-     * Gets the list of System Privileges granted for the specified user.
+     * Gets the list of system privileges granted to a specific user.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -864,6 +944,22 @@ public interface DbManagementAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Removes a data file or temp file from the tablespace.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<RemoveDataFileResponse> removeDataFile(
+            RemoveDataFileRequest request,
+            com.oracle.bmc.responses.AsyncHandler<RemoveDataFileRequest, RemoveDataFileResponse>
+                    handler);
+
+    /**
      * Removes a Managed Database from a Managed Database Group. Any management
      * activities that are currently running on this database will continue to
      * run to completion. However, any activities scheduled to run in the future
@@ -900,6 +996,22 @@ public interface DbManagementAsync extends AutoCloseable {
             ResetDatabaseParametersRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             ResetDatabaseParametersRequest, ResetDatabaseParametersResponse>
+                    handler);
+
+    /**
+     * Resizes a data file or temp file within the tablespace.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ResizeDataFileResponse> resizeDataFile(
+            ResizeDataFileRequest request,
+            com.oracle.bmc.responses.AsyncHandler<ResizeDataFileRequest, ResizeDataFileResponse>
                     handler);
 
     /**
@@ -1140,5 +1252,21 @@ public interface DbManagementAsync extends AutoCloseable {
             UpdateManagedDatabaseGroupRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             UpdateManagedDatabaseGroupRequest, UpdateManagedDatabaseGroupResponse>
+                    handler);
+
+    /**
+     * Updates the attributes of the tablespace specified by tablespaceName within the Managed Database specified by managedDatabaseId.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateTablespaceResponse> updateTablespace(
+            UpdateTablespaceRequest request,
+            com.oracle.bmc.responses.AsyncHandler<UpdateTablespaceRequest, UpdateTablespaceResponse>
                     handler);
 }

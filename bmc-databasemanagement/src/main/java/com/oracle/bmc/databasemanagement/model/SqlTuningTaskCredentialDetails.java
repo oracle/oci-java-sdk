@@ -5,7 +5,7 @@
 package com.oracle.bmc.databasemanagement.model;
 
 /**
- * The credential to be used to connect to the database.
+ * The credential used to connect to the database.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -41,7 +41,7 @@ package com.oracle.bmc.databasemanagement.model;
 public class SqlTuningTaskCredentialDetails {
 
     /**
-     * The user to connect to the database.
+     * The user name used to connect to the database.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("username")
     String username;

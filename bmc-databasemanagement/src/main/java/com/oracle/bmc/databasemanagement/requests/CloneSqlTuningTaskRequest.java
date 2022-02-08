@@ -27,7 +27,7 @@ public class CloneSqlTuningTaskRequest
     private String managedDatabaseId;
 
     /**
-     * Detail inputs for cloning a SQL tuning task
+     * The detailed inputs required to clone a SQL tuning task.
      */
     private com.oracle.bmc.databasemanagement.model.CloneSqlTuningTaskDetails
             cloneSqlTuningTaskDetails;

@@ -5,7 +5,7 @@
 package com.oracle.bmc.databasemanagement.model;
 
 /**
- * The types of credential that can be used to connect to database.
+ * The types of credentials that can be used to connect to the database.
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
 public enum SqlTuningTaskCredentialTypes {

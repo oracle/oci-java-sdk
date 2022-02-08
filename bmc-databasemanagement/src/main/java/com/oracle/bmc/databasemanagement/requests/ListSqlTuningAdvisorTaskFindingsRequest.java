@@ -41,12 +41,16 @@ public class ListSqlTuningAdvisorTaskFindingsRequest
     private Long endExecId;
 
     /**
-     * How far back the API will search for begin and end exec id, if not supplied. Unused if beginExecId and endExecId optional query params are both supplied.
+     * The search period during which the API will search for begin and end exec id, if not supplied.
+     * Unused if beginExecId and endExecId optional query params are both supplied.
+     *
      */
     private SearchPeriod searchPeriod;
 
     /**
-     * How far back the API will search for begin and end exec id, if not supplied. Unused if beginExecId and endExecId optional query params are both supplied.
+     * The search period during which the API will search for begin and end exec id, if not supplied.
+     * Unused if beginExecId and endExecId optional query params are both supplied.
+     *
      **/
     public enum SearchPeriod {
         Last24Hr("LAST_24HR"),
@@ -84,12 +88,12 @@ public class ListSqlTuningAdvisorTaskFindingsRequest
         }
     };
     /**
-     * Filters which findings get shown in the report
+     * The filter used to display specific findings in the report.
      */
     private FindingFilter findingFilter;
 
     /**
-     * Filters which findings get shown in the report
+     * The filter used to display specific findings in the report.
      **/
     public enum FindingFilter {
         None("none"),

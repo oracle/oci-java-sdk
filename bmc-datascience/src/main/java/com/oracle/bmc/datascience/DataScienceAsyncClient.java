@@ -2137,6 +2137,47 @@ public class DataScienceAsyncClient implements DataScienceAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<ListFastLaunchJobConfigsResponse> listFastLaunchJobConfigs(
+            ListFastLaunchJobConfigsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListFastLaunchJobConfigsRequest, ListFastLaunchJobConfigsResponse>
+                    handler) {
+        LOG.trace("Called async listFastLaunchJobConfigs");
+        final ListFastLaunchJobConfigsRequest interceptedRequest =
+                ListFastLaunchJobConfigsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListFastLaunchJobConfigsConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ListFastLaunchJobConfigsResponse>
+                transformer = ListFastLaunchJobConfigsConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListFastLaunchJobConfigsRequest, ListFastLaunchJobConfigsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListFastLaunchJobConfigsRequest, ListFastLaunchJobConfigsResponse>,
+                        java.util.concurrent.Future<ListFastLaunchJobConfigsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListFastLaunchJobConfigsRequest, ListFastLaunchJobConfigsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<ListJobRunsResponse> listJobRuns(
             ListJobRunsRequest request,
             final com.oracle.bmc.responses.AsyncHandler<ListJobRunsRequest, ListJobRunsResponse>

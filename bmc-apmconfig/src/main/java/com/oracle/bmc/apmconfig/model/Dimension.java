@@ -5,7 +5,7 @@
 package com.oracle.bmc.apmconfig.model;
 
 /**
- * A dimension is a label that can be used to describe or group metrics.
+ * A dimension is a label that is used to describe or group metrics.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -69,13 +69,13 @@ public class Dimension {
     }
 
     /**
-     * The dimension name
+     * The name of the dimension.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     String name;
 
     /**
-     * The source to populate the dimension. Must be NULL at the moment.
+     * The source to populate the dimension. This must not be specified.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("valueSource")

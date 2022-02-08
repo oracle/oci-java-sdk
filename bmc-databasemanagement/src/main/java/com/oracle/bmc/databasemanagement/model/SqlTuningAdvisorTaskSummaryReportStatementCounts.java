@@ -5,7 +5,7 @@
 package com.oracle.bmc.databasemanagement.model;
 
 /**
- * The statement counts data for the SQL Tuning Advisor summary report.
+ * The number of statements in the SQL Tuning Advisor summary report.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -94,25 +94,25 @@ public class SqlTuningAdvisorTaskSummaryReportStatementCounts {
     }
 
     /**
-     * The count of distinct SQL statements.
+     * The number of distinct SQL statements.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("distinctSql")
     Integer distinctSql;
 
     /**
-     * The total count of SQL statements.
+     * The total number of SQL statements.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("totalSql")
     Integer totalSql;
 
     /**
-     * The count of distinct SQL statements with findings.
+     * The number of distinct SQL statements with findings.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("findingCount")
     Integer findingCount;
 
     /**
-     * The count of distinct SQL statements with errors.
+     * The number of distinct SQL statements with errors.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("errorCount")
     Integer errorCount;

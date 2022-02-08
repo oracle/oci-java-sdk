@@ -5,7 +5,7 @@
 package com.oracle.bmc.databasemanagement.model;
 
 /**
- * A collection of ConsumerGroupPrivileges granted to the current User.
+ * A collection of consumer group privileges granted to the current user.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -62,7 +62,7 @@ public class ConsumerGroupPrivilegeCollection {
     }
 
     /**
-     * An array of User resources.
+     * An array of consumer group privileges.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     java.util.List<ConsumerGroupPrivilegeSummary> items;

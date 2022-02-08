@@ -5,7 +5,7 @@
 package com.oracle.bmc.databasemanagement.model;
 
 /**
- * The summary for a SQL Tuning Advisor task.
+ * The summary of a SQL Tuning Advisor task.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -185,73 +185,73 @@ public class SqlTuningAdvisorTaskSummary {
     }
 
     /**
-     * Unique identifier of the task. It is not the [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * The unique identifier of the SQL Tuning Advisor task. This is not the [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sqlTuningAdvisorTaskId")
     Long sqlTuningAdvisorTaskId;
 
     /**
-     * The instance id of the task. It is not the [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * The instance ID of the SQL Tuning Advisor task. This is not the [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("instanceId")
     Integer instanceId;
 
     /**
-     * The name of the task.
+     * The name of the SQL Tuning Advisor task.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     String name;
 
     /**
-     * The description of the task.
+     * The description of the SQL Tuning Advisor task.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     String description;
 
     /**
-     * The owner of the task.
+     * The owner of the SQL Tuning Advisor task.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("owner")
     String owner;
 
     /**
-     * Creation date of the task.
+     * The Creation date of the SQL Tuning Advisor task.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     java.util.Date timeCreated;
 
     /**
-     * The status of the task.
+     * The status of the SQL Tuning Advisor task.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("taskStatus")
     SqlTuningTaskStatusTypes taskStatus;
 
     /**
-     * Days to expire the task. If the value equals -1 then the task has no expiration time (UNLIMITED).
+     * The number of days left before the task expires. If the value equals -1, then the task has no expiration time (UNLIMITED).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("daysToExpire")
     Integer daysToExpire;
 
     /**
-     * Start timestamp of task execution.
+     * The start time of the task execution.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeExecutionStarted")
     java.util.Date timeExecutionStarted;
 
     /**
-     * End timestamp of task execution.
+     * The end time of the task execution.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeExecutionEnded")
     java.util.Date timeExecutionEnded;
 
     /**
-     * The total number of SQL statements related to the SQL tuning advisor task.
+     * The total number of SQL statements related to the SQL Tuning Advisor task.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("totalSqlStatements")
     Integer totalSqlStatements;
 
     /**
-     * Number of recommendations produced.
+     * The number of recommendations provided for the SQL Tuning Advisor task.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("recommendationCount")
     Integer recommendationCount;

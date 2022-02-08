@@ -5,7 +5,7 @@
 package com.oracle.bmc.databasemanagement.model;
 
 /**
- * Summary of ContainerDataAccess user
+ * A summary of the ContainerDataAccess user.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -61,7 +61,7 @@ public class DataAccessContainerSummary {
     }
 
     /**
-     * The name of a container included in this attribute if it does not apply to all containers.
+     * The name of the container included in the attribute.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     String name;

@@ -55,11 +55,16 @@ public class Services {
     private static synchronized Service create(
             final String serviceName,
             final String serviceEndpointPrefix,
-            final String serviceEndpointTemplate) {
+            final String serviceEndpointTemplate,
+            final String endpointServiceName) {
         Validate.notBlank(serviceName);
 
         final Service newInstance =
-                new BasicService(serviceName, serviceEndpointPrefix, serviceEndpointTemplate);
+                new BasicService(
+                        serviceName,
+                        serviceEndpointPrefix,
+                        serviceEndpointTemplate,
+                        endpointServiceName);
         if (SERVICE_CACHE.containsKey(serviceName)) {
             Service existing = SERVICE_CACHE.get(serviceName);
             if (existing.equals(newInstance)) {
@@ -82,5 +87,6 @@ public class Services {
         private final String serviceName;
         private final String serviceEndpointPrefix;
         private final String serviceEndpointTemplate;
+        private final String endpointServiceName;
     }
 }

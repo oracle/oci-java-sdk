@@ -153,25 +153,25 @@ public class SqlTuningAdvisorTaskRecommendationSummary {
     }
 
     /**
-     * Unique identifier of the task. It is not the [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * The unique identifier of the task. This is not the [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sqlTuningAdvisorTaskId")
     Long sqlTuningAdvisorTaskId;
 
     /**
-     * Key of the object to which these recommendations apply. It is not the [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * The key of the object to which these recommendations apply. This is not the [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sqlTuningAdvisorTaskObjectId")
     Long sqlTuningAdvisorTaskObjectId;
 
     /**
-     * Unique identifier of the recommendation in the scope of the task.
+     * The unique identifier of the recommendation in the scope of the task.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("recommendationKey")
     Integer recommendationKey;
     /**
-     * Type of recommendation
+     * Type of recommendation.
      **/
     @lombok.extern.slf4j.Slf4j
     public enum RecommendationType {
@@ -222,19 +222,19 @@ public class SqlTuningAdvisorTaskRecommendationSummary {
         }
     };
     /**
-     * Type of recommendation
+     * Type of recommendation.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("recommendationType")
     RecommendationType recommendationType;
 
     /**
-     * Summary of the issue found for the SQL statement.
+     * Summary of the issue found in the SQL statement.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("finding")
     String finding;
 
     /**
-     * Particular recommendation for the finding.
+     * The recommendation for a specific finding.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("recommendation")
     String recommendation;

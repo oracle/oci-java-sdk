@@ -5,7 +5,7 @@
 package com.oracle.bmc.databasemanagement.model;
 
 /**
- * The status types of a SQL tuning advisor task.
+ * The status types of a SQL Tuning Advisor task.
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
 @lombok.extern.slf4j.Slf4j

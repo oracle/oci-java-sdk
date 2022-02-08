@@ -5,7 +5,7 @@
 package com.oracle.bmc.apmconfig.model;
 
 /**
- * The request body used to update the Configuration entity. It must specify the data to update the item with.
+ * The request body used to update the configuration item. It must specify the data to update the item with.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields

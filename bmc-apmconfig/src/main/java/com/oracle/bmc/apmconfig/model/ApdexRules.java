@@ -6,7 +6,7 @@ package com.oracle.bmc.apmconfig.model;
 
 /**
  * The set of Apdex rules to be used in Apdex computation. In the current version, only one rule set can exist in the
- * configuration. This may change in the future.
+ * configuration.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -151,7 +151,7 @@ public class ApdexRules extends Config {
     }
 
     /**
-     * The name by which this rule set can be displayed to the user.
+     * The name by which the rule set is displayed to the end user.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     String displayName;

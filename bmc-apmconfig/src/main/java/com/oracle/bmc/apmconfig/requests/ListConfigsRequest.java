@@ -20,7 +20,7 @@ import com.oracle.bmc.apmconfig.model.*;
 public class ListConfigsRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The APM Domain Id the request is intended for.
+     * The APM Domain ID the request is intended for.
      *
      */
     private String apmDomainId;
@@ -33,14 +33,14 @@ public class ListConfigsRequest extends com.oracle.bmc.requests.BmcRequest<java.
     private String opcRequestId;
 
     /**
-     * A filter to match only configuration items of the given type.
+     * A filter to match configuration items of a given type.
      * Supported values are SPAN_FILTER, METRIC_GROUP, and APDEX.
      *
      */
     private String configType;
 
     /**
-     * A filter to return only resources that match the entire display name given.
+     * A filter to return resources that match the given display name.
      */
     private String displayName;
 
@@ -50,10 +50,8 @@ public class ListConfigsRequest extends com.oracle.bmc.requests.BmcRequest<java.
     private Integer limit;
 
     /**
-     * For list pagination. The maximum number of results per page, or items to return in a paginated
-     * "List" call. For important details about how pagination works, see
-     * [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
-     * <p>
+     * The maximum number of results per page, or items to return in a paginated "List" call. For information on
+     * how pagination works, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      * Example: {@code 50}
      *
      */
@@ -61,21 +59,21 @@ public class ListConfigsRequest extends com.oracle.bmc.requests.BmcRequest<java.
 
     /**
      * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). The displayName sort order
-     * is case sensitive.
+     * is case-sensitive.
      *
      */
     private com.oracle.bmc.apmconfig.model.SortOrders sortOrder;
 
     /**
-     * The field to sort by. You can provide one sort by ({@code sortBy}). Default order for displayName, timeCreated and
-     * timeUpdated is ascending. The displayName sort by is case sensitive.
+     * The field to sort by. You can provide one "sortBy" value. The default order for displayName, timeCreated
+     * and timeUpdated is ascending. The displayName sort by is case-sensitive.
      *
      */
     private SortBy sortBy;
 
     /**
-     * The field to sort by. You can provide one sort by ({@code sortBy}). Default order for displayName, timeCreated and
-     * timeUpdated is ascending. The displayName sort by is case sensitive.
+     * The field to sort by. You can provide one "sortBy" value. The default order for displayName, timeCreated
+     * and timeUpdated is ascending. The displayName sort by is case-sensitive.
      *
      **/
     public enum SortBy {

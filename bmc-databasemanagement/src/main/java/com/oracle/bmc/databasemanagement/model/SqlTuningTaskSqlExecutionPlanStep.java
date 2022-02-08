@@ -5,7 +5,7 @@
 package com.oracle.bmc.databasemanagement.model;
 
 /**
- * A step of a SQL execution plan.
+ * A step in the SQL execution plan.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -372,65 +372,65 @@ public class SqlTuningTaskSqlExecutionPlanStep {
     }
 
     /**
-     * Numerical representation of the execution plan
+     * The numerical representation of the SQL execution plan.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("planHashValue")
     Long planHashValue;
 
     /**
-     * Identification number for this step in the execution plan. It is unique within the execution plan.
-     * It is not the [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * The identification number of a step in the SQL execution plan. This is unique within the SQL execution plan.
+     * This is not the [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("stepId")
     Integer stepId;
 
     /**
-     * ID of the next step that operates on the results of this step.
-     * It is not the [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * The ID of the next step that operates on the results of this step.
+     * This is not the [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("parentStepId")
     Integer parentStepId;
 
     /**
-     * Order of processing for steps with the same parent ID.
+     * The order of processing for steps with the same parent ID.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("position")
     Integer position;
 
     /**
-     * Name of the operation performed at this step
+     * The name of the operation performed at this step.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("operation")
     String operation;
 
     /**
-     * Options used for the operation performed at this step.
+     * The options used for the operation performed at this step.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("options")
     String options;
 
     /**
-     * Current mode of the optimizer, such as all_rows, first_rows_n (where n = 1, 10, 100, 1000 etc).
+     * The current mode of the optimizer, such as all_rows, first_rows_n (where n = 1, 10, 100, 1000, and so on).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("optimizerMode")
     String optimizerMode;
 
     /**
-     * Cost of the current operation estimated by the cost-based optimizer (CBO).
+     * The cost of the current operation estimated by the cost-based optimizer (CBO).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("cost")
     Double cost;
 
     /**
-     * Number of rows returned by the current operation (estimated by the CBO).
+     * The number of rows returned by the current operation (estimated by the CBO).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("cardinality")
     Long cardinality;
 
     /**
-     * Number of bytes returned by the current operation.
+     * The number of bytes returned by the current operation.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("bytes")
     Long bytes;
@@ -448,80 +448,80 @@ public class SqlTuningTaskSqlExecutionPlanStep {
     Double ioCost;
 
     /**
-     * Temporary space usage (in bytes) of the operation (sort or hash-join) as estimated by the CBO.
+     * The temporary space usage (in bytes) of the operation (sort or hash-join) as estimated by the CBO.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("tempSpace")
     Long tempSpace;
 
     /**
-     * Elapsed time (in seconds) of the operation as estimated by the CBO.
+     * The elapsed time (in seconds) of the operation as estimated by the CBO.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("time")
     Long time;
 
     /**
-     * Name of the database link used to reference the object.
+     * The name of the database link used to reference the object.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("objectNode")
     String objectNode;
 
     /**
-     * Owner of the object.
+     * The owner of the object.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("objectOwner")
     String objectOwner;
 
     /**
-     * Name of the object.
+     * The name of the object.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("objectName")
     String objectName;
 
     /**
-     * Numbered position of the object name in the original SQL statement.
+     * The numbered position of the object name in the original SQL statement.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("objectPosition")
     Integer objectPosition;
 
     /**
-     * Descriptive modifier that further describes the type of object.
+     * The descriptive modifier that further describes the type of object.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("objectType")
     String objectType;
 
     /**
-     * A step may get data from a range of partitions of a partitioned object, such table or index,
+     * A step may get data from a range of partitions of a partitioned object, such as table or index,
      * based on predicates and sorting order. The partionStart is the starting partition of the range.
-     * The partitionStop is the ending partition of the range
+     * The partitionStop is the ending partition of the range.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("partitionStart")
     String partitionStart;
 
     /**
-     * A step may get data from a range of partitions of a partitioned object, such table or index,
+     * A step may get data from a range of partitions of a partitioned object, such as table or index,
      * based on predicates and sorting order. The partionStart is the starting partition of the range.
-     * The partitionStop is the ending partition of the range
+     * The partitionStop is the ending partition of the range.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("partitionStop")
     String partitionStop;
 
     /**
-     * The id of the step in the execution plan that has computed the pair of values of the partitionStart and partitionStop
+     * The ID of the step in the execution plan that has computed the pair of values of partitionStart and partitionStop.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("partitionId")
     Integer partitionId;
 
     /**
-     * Place for comments that can be added to the steps of the execution plan.
+     * The place for comments that can be added to the steps of the execution plan.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("remarks")
     String remarks;
 
     /**
-     * Number of index columns with start and stop keys (that is, the number of columns with matching predicates)
+     * Number of index columns with start and stop keys (that is, the number of columns with matching predicates).
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("numberOfSearchColumn")
@@ -540,13 +540,13 @@ public class SqlTuningTaskSqlExecutionPlanStep {
     String otherTag;
 
     /**
-     * Text string identifying the type of the execution plan.
+     * The text string identifying the type of execution plan.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("attribute")
     String attribute;
 
     /**
-     * Predicates used to locate rows in an access structure. For example,
+     * The predicates used to locate rows in an access structure. For example,
      * start or stop predicates for an index range scan.
      *
      **/
@@ -554,7 +554,7 @@ public class SqlTuningTaskSqlExecutionPlanStep {
     String accessPredicates;
 
     /**
-     * Predicates used to filter rows before producing them.
+     * The predicates used to filter rows before producing them.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("filterPredicates")
     String filterPredicates;

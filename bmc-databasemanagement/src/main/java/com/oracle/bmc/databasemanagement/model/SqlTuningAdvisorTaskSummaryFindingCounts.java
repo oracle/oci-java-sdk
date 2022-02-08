@@ -5,7 +5,7 @@
 package com.oracle.bmc.databasemanagement.model;
 
 /**
- * The finding counts data for the SQL Tuning Advisor summary report.
+ * The number of findings in the SQL Tuning Advisor summary report.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -119,37 +119,37 @@ public class SqlTuningAdvisorTaskSummaryFindingCounts {
     }
 
     /**
-     * The count of distinct SQL statements with recommended SQL profiles.
+     * The number of distinct SQL statements with recommended SQL profiles.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("recommendedSqlProfile")
     Integer recommendedSqlProfile;
 
     /**
-     * The count of distinct SQL statements with implemented SQL profiles.
+     * The number of distinct SQL statements with implemented SQL profiles.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("implementedSqlProfile")
     Integer implementedSqlProfile;
 
     /**
-     * The count of distinct SQL statements with index recommendations.
+     * The number of distinct SQL statements with index recommendations.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("index")
     Integer index;
 
     /**
-     * The count of distinct SQL statements with restructure SQL recommendations.
+     * The number of distinct SQL statements with restructured SQL recommendations.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("restructure")
     Integer restructure;
 
     /**
-     * The count of distinct SQL statements with stale/missing optimizer statistics recommendations.
+     * The number of distinct SQL statements with stale or missing optimizer statistics recommendations.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("statistics")
     Integer statistics;
 
     /**
-     * The count of distinct SQL statements with alternative plan recommendations.
+     * The number of distinct SQL statements with alternative plan recommendations.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("alternatePlan")
     Integer alternatePlan;

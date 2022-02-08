@@ -29,6 +29,9 @@ public class EndpointBuilder {
     public static final String DEFAULT_ENDPOINT_TEMPLATE =
             "https://{serviceEndpointPrefix}.{region}.{secondLevelDomain}";
 
+    private static final String ENDPOINT_TEMPLATE_FOR_REGION_WITH_DOT =
+            "https://{endpointServiceName}.{region}";
+
     private static final Map<String, String> OVERRIDE_REGION_IDS = new HashMap<>();
 
     /**
@@ -42,15 +45,62 @@ public class EndpointBuilder {
      */
     public static String createEndpoint(
             @NonNull Service service, @NonNull String regionId, @NonNull Realm realm) {
+        final String regionIdToUse;
+        synchronized (OVERRIDE_REGION_IDS) {
+            regionIdToUse = OVERRIDE_REGION_IDS.getOrDefault(regionId, regionId);
+        }
+
+        // Do not append any other endpoint suffix like '.service.oci.oraclecloud.com` at the end
+        // Ex: If regionId is 'broom6.us.oracle.com', then endpoint should be 'https://{service}.broom6.us.oracle.com'
+        if (StringUtils.isNotBlank(regionId) && regionId.contains(".")) {
+            final String endpoint;
+            if (StringUtils.isNotBlank(service.getEndpointServiceName())) {
+                endpoint =
+                        DefaultEndpointConfiguration.builder(ENDPOINT_TEMPLATE_FOR_REGION_WITH_DOT)
+                                .endpointServiceName(service.getEndpointServiceName())
+                                .regionId(regionIdToUse)
+                                .build();
+                LOG.debug(
+                        "Endpoint created from dotted region {} using endpoint service name {}. Endpoint: {}",
+                        regionIdToUse,
+                        service.getEndpointServiceName(),
+                        endpoint);
+            } else if (StringUtils.isNotBlank(service.getServiceEndpointTemplate())) {
+                String serviceEndpointTemplate = service.getServiceEndpointTemplate();
+                String endpointServiceNameFromTemplate =
+                        getEndpointServiceNameFromTemplate(serviceEndpointTemplate);
+                endpoint =
+                        DefaultEndpointConfiguration.builder(ENDPOINT_TEMPLATE_FOR_REGION_WITH_DOT)
+                                .endpointServiceName(endpointServiceNameFromTemplate)
+                                .regionId(regionIdToUse)
+                                .build();
+                LOG.debug(
+                        "Endpoint created from dotted region {} using endpoint template {}. Endpoint: {}",
+                        regionIdToUse,
+                        ENDPOINT_TEMPLATE_FOR_REGION_WITH_DOT,
+                        endpoint);
+            } else if (StringUtils.isNotBlank(service.getServiceEndpointPrefix())) {
+                endpoint =
+                        DefaultEndpointConfiguration.builder(ENDPOINT_TEMPLATE_FOR_REGION_WITH_DOT)
+                                .endpointServiceName(service.getServiceEndpointPrefix())
+                                .regionId(regionIdToUse)
+                                .build();
+                LOG.debug(
+                        "Endpoint created from dotted region {} using service endpoint prefix {}. Endpoint: {}",
+                        regionIdToUse,
+                        service.getServiceEndpointPrefix(),
+                        endpoint);
+            } else {
+                throw new IllegalArgumentException("Unknown service: " + service.getServiceName());
+            }
+            return endpoint;
+        }
+
         final String endpointTemplateToUse;
         if (StringUtils.isNotBlank(service.getServiceEndpointTemplate())) {
             endpointTemplateToUse = service.getServiceEndpointTemplate();
         } else {
             endpointTemplateToUse = DEFAULT_ENDPOINT_TEMPLATE;
-        }
-        final String regionIdToUse;
-        synchronized (OVERRIDE_REGION_IDS) {
-            regionIdToUse = OVERRIDE_REGION_IDS.getOrDefault(regionId, regionId);
         }
 
         return DefaultEndpointConfiguration.builder(endpointTemplateToUse)
@@ -58,6 +108,19 @@ public class EndpointBuilder {
                 .serviceEndpointPrefix(service.getServiceEndpointPrefix())
                 .secondLevelDomain(realm.getSecondLevelDomain())
                 .build();
+    }
+
+    private static String getEndpointServiceNameFromTemplate(String serviceEndpointTemplate) {
+        int doubleSlashPos = serviceEndpointTemplate.indexOf("//");
+        int dotPos = serviceEndpointTemplate.indexOf(".", doubleSlashPos);
+        if (doubleSlashPos == -1 || dotPos == -1) {
+            throw new IllegalArgumentException(
+                    "The service endpoint template "
+                            + serviceEndpointTemplate
+                            + " is not in the expected format. The expected format is "
+                            + DEFAULT_ENDPOINT_TEMPLATE);
+        }
+        return serviceEndpointTemplate.substring(doubleSlashPos + 2, dotPos);
     }
 
     /**

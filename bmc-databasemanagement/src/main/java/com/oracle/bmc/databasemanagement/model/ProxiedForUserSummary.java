@@ -5,7 +5,7 @@
 package com.oracle.bmc.databasemanagement.model;
 
 /**
- * A collection of Users for which the current user acts as proxy.
+ * A summary of users on whose behalf the current user acts as proxy.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -81,12 +81,12 @@ public class ProxiedForUserSummary {
     }
 
     /**
-     * The name of a proxy user or name of the user who the proxy user can act as
+     * The name of a proxy user or the name of the client user.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     String name;
     /**
-     * Indicates whether the proxy is required to supply the client credentials (YES) or not (NO)
+     * Indicates whether the proxy is required to supply the client credentials (YES) or not (NO).
      **/
     @lombok.extern.slf4j.Slf4j
     public enum Authentication {
@@ -132,12 +132,12 @@ public class ProxiedForUserSummary {
         }
     };
     /**
-     * Indicates whether the proxy is required to supply the client credentials (YES) or not (NO)
+     * Indicates whether the proxy is required to supply the client credentials (YES) or not (NO).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("authentication")
     Authentication authentication;
     /**
-     * Flags associated with the proxy/client pair
+     * The flags associated with the proxy/client pair.
      **/
     @lombok.extern.slf4j.Slf4j
     public enum Flags {
@@ -185,7 +185,7 @@ public class ProxiedForUserSummary {
         }
     };
     /**
-     * Flags associated with the proxy/client pair
+     * The flags associated with the proxy/client pair.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("flags")
     Flags flags;

@@ -5,7 +5,7 @@
 package com.oracle.bmc.databasemanagement.model;
 
 /**
- * Summary of consumerGroupPrivileges.
+ * A summary of consumer group privileges.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -83,12 +83,12 @@ public class ConsumerGroupPrivilegeSummary {
     }
 
     /**
-     * The name of granted consumer group.
+     * The name of the granted consumer group privilege.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     String name;
     /**
-     * Indicates whether the grant was with the GRANT option (YES) or not (NO).
+     * Indicates whether the privilege is granted with the GRANT option (YES) or not (NO).
      **/
     @lombok.extern.slf4j.Slf4j
     public enum GrantOption {
@@ -134,12 +134,12 @@ public class ConsumerGroupPrivilegeSummary {
         }
     };
     /**
-     * Indicates whether the grant was with the GRANT option (YES) or not (NO).
+     * Indicates whether the privilege is granted with the GRANT option (YES) or not (NO).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("grantOption")
     GrantOption grantOption;
     /**
-     * Indicates whether the consumer group is designated as the default for this user or role (YES) or not (NO)
+     * Indicates whether the consumer group is designated as the default for this user or role (YES) or not (NO).
      **/
     @lombok.extern.slf4j.Slf4j
     public enum InitialGroup {
@@ -185,7 +185,7 @@ public class ConsumerGroupPrivilegeSummary {
         }
     };
     /**
-     * Indicates whether the consumer group is designated as the default for this user or role (YES) or not (NO)
+     * Indicates whether the consumer group is designated as the default for this user or role (YES) or not (NO).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("initialGroup")
     InitialGroup initialGroup;
