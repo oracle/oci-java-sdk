@@ -31,6 +31,122 @@ public class DbManagementPaginators {
     private final DbManagement client;
 
     /**
+     * Creates a new iterable which will iterate over the responses received from the listAsmProperties operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListAsmPropertiesResponse> listAsmPropertiesResponseIterator(
+            final ListAsmPropertiesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListAsmPropertiesRequest.Builder, ListAsmPropertiesRequest,
+                ListAsmPropertiesResponse>(
+                new com.google.common.base.Supplier<ListAsmPropertiesRequest.Builder>() {
+                    @Override
+                    public ListAsmPropertiesRequest.Builder get() {
+                        return ListAsmPropertiesRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListAsmPropertiesResponse, String>() {
+                    @Override
+                    public String apply(ListAsmPropertiesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListAsmPropertiesRequest.Builder>,
+                        ListAsmPropertiesRequest>() {
+                    @Override
+                    public ListAsmPropertiesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListAsmPropertiesRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListAsmPropertiesRequest, ListAsmPropertiesResponse>() {
+                    @Override
+                    public ListAsmPropertiesResponse apply(ListAsmPropertiesRequest request) {
+                        return client.listAsmProperties(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.databasemanagement.model.AsmPropertySummary} objects
+     * contained in responses from the listAsmProperties operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.databasemanagement.model.AsmPropertySummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.databasemanagement.model.AsmPropertySummary>
+            listAsmPropertiesRecordIterator(final ListAsmPropertiesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListAsmPropertiesRequest.Builder, ListAsmPropertiesRequest,
+                ListAsmPropertiesResponse,
+                com.oracle.bmc.databasemanagement.model.AsmPropertySummary>(
+                new com.google.common.base.Supplier<ListAsmPropertiesRequest.Builder>() {
+                    @Override
+                    public ListAsmPropertiesRequest.Builder get() {
+                        return ListAsmPropertiesRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListAsmPropertiesResponse, String>() {
+                    @Override
+                    public String apply(ListAsmPropertiesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListAsmPropertiesRequest.Builder>,
+                        ListAsmPropertiesRequest>() {
+                    @Override
+                    public ListAsmPropertiesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListAsmPropertiesRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListAsmPropertiesRequest, ListAsmPropertiesResponse>() {
+                    @Override
+                    public ListAsmPropertiesResponse apply(ListAsmPropertiesRequest request) {
+                        return client.listAsmProperties(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListAsmPropertiesResponse,
+                        java.util.List<
+                                com.oracle.bmc.databasemanagement.model.AsmPropertySummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.databasemanagement.model.AsmPropertySummary>
+                            apply(ListAsmPropertiesResponse response) {
+                        return response.getAsmPropertyCollection().getItems();
+                    }
+                });
+    }
+
+    /**
      * Creates a new iterable which will iterate over the responses received from the listAssociatedDatabases operation. This iterable
      * will fetch more data from the server as needed.
      *

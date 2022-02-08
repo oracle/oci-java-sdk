@@ -133,7 +133,7 @@ public class UserSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     String name;
     /**
-     * The account status of the User
+     * The status of the user account.
      **/
     @lombok.extern.slf4j.Slf4j
     public enum Status {
@@ -192,13 +192,13 @@ public class UserSummary {
         }
     };
     /**
-     * The account status of the User
+     * The status of the user account.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     Status status;
 
     /**
-     * The date of expiration of the account
+     * The date and time of the expiration of the user account.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeExpiring")
     java.util.Date timeExpiring;
@@ -216,7 +216,7 @@ public class UserSummary {
     String tempTablespace;
 
     /**
-     * The User creation date.
+     * The date and time the user was created.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     java.util.Date timeCreated;

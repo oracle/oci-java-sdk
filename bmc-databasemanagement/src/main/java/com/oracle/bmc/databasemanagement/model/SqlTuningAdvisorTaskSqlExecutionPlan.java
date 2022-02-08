@@ -62,7 +62,7 @@ public class SqlTuningAdvisorTaskSqlExecutionPlan {
     }
 
     /**
-     * A SQL execution plan as a list of steps
+     * A SQL execution plan as a list of steps.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("plan")
     java.util.List<SqlTuningTaskSqlExecutionPlanStep> plan;

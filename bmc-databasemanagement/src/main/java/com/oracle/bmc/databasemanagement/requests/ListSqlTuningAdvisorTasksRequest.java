@@ -96,12 +96,12 @@ public class ListSqlTuningAdvisorTasksRequest
     private Integer limit;
 
     /**
-     * The option to sort the SQL Tuning advisor task summary data.
+     * The option to sort the SQL Tuning Advisor task summary data.
      */
     private SortBy sortBy;
 
     /**
-     * The option to sort the SQL Tuning advisor task summary data.
+     * The option to sort the SQL Tuning Advisor task summary data.
      **/
     public enum SortBy {
         Name("NAME"),

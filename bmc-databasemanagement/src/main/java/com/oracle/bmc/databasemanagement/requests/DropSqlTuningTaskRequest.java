@@ -27,7 +27,7 @@ public class DropSqlTuningTaskRequest
     private String managedDatabaseId;
 
     /**
-     * Detail inputs for dropping a SQL tuning task
+     * The detailed inputs required to drop a SQL tuning task.
      */
     private com.oracle.bmc.databasemanagement.model.DropSqlTuningTaskDetails
             dropSqlTuningTaskDetails;

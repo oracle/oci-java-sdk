@@ -5,7 +5,7 @@
 package com.oracle.bmc.databasemanagement.model;
 
 /**
- * User provides a secret OCID, which will be used to retrieve the password to connect to the database.
+ * The OCID of the Secret provided by the user to retrieve the password to connect to the database.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields

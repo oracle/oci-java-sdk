@@ -5,7 +5,7 @@
 package com.oracle.bmc.databasemanagement.model;
 
 /**
- * Request to start a SQL tuning task
+ * The request to start a SQL tuning task.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -152,7 +152,7 @@ public class StartSqlTuningTaskDetails {
     }
 
     /**
-     * The name of the SQL tuning task. The name is unique per user in a database, and it is case sensitive.
+     * The name of the SQL tuning task. The name is unique per user in a database, and it is case-sensitive.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("taskName")
     String taskName;
@@ -173,7 +173,7 @@ public class StartSqlTuningTaskDetails {
     Integer totalTimeLimitInMinutes;
     /**
      * The scope for the SQL tuning task. For LIMITED scope, the SQL profile recommendation
-     * is excluded, so the task is faster. For COMPREHENSIVE scope, the SQL profile recommendation
+     * is excluded, so the task is executed faster. For COMPREHENSIVE scope, the SQL profile recommendation
      * is included.
      *
      **/
@@ -211,7 +211,7 @@ public class StartSqlTuningTaskDetails {
     };
     /**
      * The scope for the SQL tuning task. For LIMITED scope, the SQL profile recommendation
-     * is excluded, so the task is faster. For COMPREHENSIVE scope, the SQL profile recommendation
+     * is excluded, so the task is executed faster. For COMPREHENSIVE scope, the SQL profile recommendation
      * is included.
      *
      **/
@@ -219,27 +219,27 @@ public class StartSqlTuningTaskDetails {
     Scope scope;
 
     /**
-     * The time limit per SQL statement in minutes. This is for task with COMPREHENSIVE scope.
-     * Per statement time limit should not be larger than the total time limit.
+     * The time limit per SQL statement (in minutes). This is for a task with the COMPREHENSIVE scope.
+     * The time limit per SQL statement should not be more than the total time limit.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("statementTimeLimitInMinutes")
     Integer statementTimeLimitInMinutes;
 
     /**
-     * The array of the details of SQL statments on which the tuning is performed.
+     * The array of the details of SQL statement on which tuning is performed.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sqlDetails")
     java.util.List<SqlTuningTaskSqlDetail> sqlDetails;
 
     /**
-     * The start time of the period, in which SQL statements are running.
+     * The start time of the period in which SQL statements are running.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
     java.util.Date timeStarted;
 
     /**
-     * The end time of the period, in which SQL statements are running.
+     * The end time of the period in which SQL statements are running.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeEnded")
     java.util.Date timeEnded;

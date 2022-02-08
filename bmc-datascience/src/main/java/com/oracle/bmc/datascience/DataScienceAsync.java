@@ -682,6 +682,22 @@ public interface DataScienceAsync extends AutoCloseable {
                     handler);
 
     /**
+     * List fast launch capable job configs in the specified compartment.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListFastLaunchJobConfigsResponse> listFastLaunchJobConfigs(
+            ListFastLaunchJobConfigsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListFastLaunchJobConfigsRequest, ListFastLaunchJobConfigsResponse>
+                    handler);
+
+    /**
      * List out job runs.
      *
      * @param request The request object containing the details to send
@@ -910,7 +926,7 @@ public interface DataScienceAsync extends AutoCloseable {
 
     /**
      * Updates the properties of a model deployment. Some of the properties of `modelDeploymentConfigurationDetails` or `CategoryLogDetails` can also be updated with zero down time
-     * when the model deployment\u2019s lifecycle state is ACTIVE or NEEDS_ATTENTION i.e `instanceShapeName`, `instanceCount` and `modelId`, separately `loadBalancerShape` or `CategoryLogDetails`
+     * when the model deployment's lifecycle state is ACTIVE or NEEDS_ATTENTION i.e `instanceShapeName`, `instanceCount` and `modelId`, separately `loadBalancerShape` or `CategoryLogDetails`
      * can also be updated independently. All of the fields can be updated when the deployment is in the INACTIVE lifecycle state. Changes will take effect the next time the model
      * deployment is activated.
      *

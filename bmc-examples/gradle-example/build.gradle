@@ -1,0 +1,34 @@
+plugins {
+    id 'java'
+}
+
+apply plugin: 'java'
+
+// Create a single jar with all dependencies.
+jar {
+    // Name the jar file (not needed).
+    archiveFileName = "GradleExample.jar"
+    manifest {
+        attributes 'Implementation-Title': 'Gradle Example',
+                    'Main-Class': 'ObjectStorageGetNamespaceExample'
+    }
+    from { configurations.compileClasspath.collect { it.isDirectory() ? it : zipTree(it) } }
+    exclude 'META-INF/*.RSA', 'META-INF/*.SF','META-INF/*.DSA'
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+}
+
+dependencies {
+    implementation 'com.oracle.oci.sdk:oci-java-sdk-full:latest.release'
+    // Template for including specific artifacts and an example:
+    // implementation '<Group ID>:<Artifact ID>:<Version>'
+    // implementation 'com.oracle.oci.sdk:oci-java-sdk-common:latest.release'
+}
+
+// Location to find the dependencies.
+repositories {
+    mavenCentral()
+}
+
+version '1.0-SNAPSHOT'
+// Specify Java version.
+java.sourceCompatibility JavaVersion.VERSION_1_8

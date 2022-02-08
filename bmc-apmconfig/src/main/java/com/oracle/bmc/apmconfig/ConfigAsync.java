@@ -8,7 +8,9 @@ import com.oracle.bmc.apmconfig.requests.*;
 import com.oracle.bmc.apmconfig.responses.*;
 
 /**
- * An API for the APM Configuration service. Use this API to query and set APM configuration.
+ * Use the Application Performance Monitoring Configuration API to query and set Application Performance Monitoring
+ * configuration. For more information, see [Application Performance Monitoring](https://docs.oracle.com/iaas/application-performance-monitoring/index.html).
+ *
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210201")
 public interface ConfigAsync extends AutoCloseable {
@@ -46,7 +48,7 @@ public interface ConfigAsync extends AutoCloseable {
     void setRegion(String regionId);
 
     /**
-     * Creates a new Configuration item.
+     * Creates a new configuration item.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -61,7 +63,7 @@ public interface ConfigAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Deletes the specified configuration item
+     * Deletes the configuration item identified by the OCID.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -76,7 +78,7 @@ public interface ConfigAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Get the configuration of the item identified by the OCID.
+     * Gets the configuration item identified by the OCID.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -90,7 +92,7 @@ public interface ConfigAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<GetConfigRequest, GetConfigResponse> handler);
 
     /**
-     * Returns all configured items optionally filtered by configuration type
+     * Returns all configuration items, which can optionally be filtered by configuration type.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -104,7 +106,7 @@ public interface ConfigAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<ListConfigsRequest, ListConfigsResponse> handler);
 
     /**
-     * Updates the item.
+     * Updates the details of the configuration item identified by the OCID.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.

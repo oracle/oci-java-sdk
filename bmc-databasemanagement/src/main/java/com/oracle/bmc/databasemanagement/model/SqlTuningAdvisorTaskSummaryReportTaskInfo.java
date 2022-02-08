@@ -5,7 +5,7 @@
 package com.oracle.bmc.databasemanagement.model;
 
 /**
- * SQL Tuning advisor task general info.
+ * The general information regarding the SQL Tuning Advisor task.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -141,49 +141,49 @@ public class SqlTuningAdvisorTaskSummaryReportTaskInfo {
     }
 
     /**
-     * The SQL Tuning Advisor task id. It is not the [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * The ID of the SQL Tuning Advisor task. This is not the [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     Long id;
 
     /**
-     * The SQL Tuning Advisor task name.
+     * The name of the SQL Tuning Advisor task.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     String name;
 
     /**
-     * The SQL Tuning Advisor task description. Not defined on Auto SQL Tuning tasks.
+     * The description of the SQL Tuning Advisor task. This is not defined for Auto SQL Tuning tasks.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     String description;
 
     /**
-     * The SQL Tuning Advisor task user owner.
+     * The owner of the SQL Tuning Advisor task.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("owner")
     String owner;
 
     /**
-     * The SQL Tuning Advisor task status. Not defined on Auto SQL Tuning tasks.
+     * The status of the SQL Tuning Advisor task. This is not defined for Auto SQL Tuning tasks.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     SqlTuningTaskStatusTypes status;
 
     /**
-     * Start timestamp of task execution.
+     * The start time of the task execution.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
     java.util.Date timeStarted;
 
     /**
-     * End timestamp of task execution.
+     * The end time of the task execution.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeEnded")
     java.util.Date timeEnded;
 
     /**
-     * The total running time in seconds. Not defined on Auto SQL Tuning tasks.
+     * The total running time in seconds. This is not defined for Auto SQL Tuning tasks.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("runningTime")
     Integer runningTime;

@@ -232,9 +232,9 @@ public class Invoice {
         }
 
         @com.fasterxml.jackson.annotation.JsonProperty("billToAddress")
-        private Address billToAddress;
+        private BillToAddress billToAddress;
 
-        public Builder billToAddress(Address billToAddress) {
+        public Builder billToAddress(BillToAddress billToAddress) {
             this.billToAddress = billToAddress;
             this.__explicitlySet__.add("billToAddress");
             return this;
@@ -556,7 +556,7 @@ public class Invoice {
     PaymentDetail lastPaymentDetail;
 
     @com.fasterxml.jackson.annotation.JsonProperty("billToAddress")
-    Address billToAddress;
+    BillToAddress billToAddress;
 
     /**
      * List of subscription identifiers

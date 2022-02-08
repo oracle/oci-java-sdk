@@ -20,13 +20,14 @@ import com.oracle.bmc.apmconfig.model.*;
 public class DeleteConfigRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The APM Domain Id the request is intended for.
+     * The APM Domain ID the request is intended for.
      *
      */
     private String apmDomainId;
 
     /**
-     * The OCID of the ConfiguredItem.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the configuration item.
+     *
      */
     private String configId;
 

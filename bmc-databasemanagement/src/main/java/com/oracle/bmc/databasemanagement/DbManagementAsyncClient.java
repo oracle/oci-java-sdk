@@ -377,6 +377,50 @@ public class DbManagementAsyncClient implements DbManagementAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<AddDataFilesResponse> addDataFiles(
+            AddDataFilesRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<AddDataFilesRequest, AddDataFilesResponse>
+                    handler) {
+        LOG.trace("Called async addDataFiles");
+        final AddDataFilesRequest interceptedRequest =
+                AddDataFilesConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                AddDataFilesConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<javax.ws.rs.core.Response, AddDataFilesResponse>
+                transformer = AddDataFilesConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+
+        com.oracle.bmc.responses.AsyncHandler<AddDataFilesRequest, AddDataFilesResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                AddDataFilesRequest, AddDataFilesResponse>,
+                        java.util.concurrent.Future<AddDataFilesResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getAddDataFilesDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    AddDataFilesRequest, AddDataFilesResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<AddManagedDatabaseToManagedDatabaseGroupResponse>
             addManagedDatabaseToManagedDatabaseGroup(
                     AddManagedDatabaseToManagedDatabaseGroupRequest request,
@@ -780,6 +824,51 @@ public class DbManagementAsyncClient implements DbManagementAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<CreateTablespaceResponse> createTablespace(
+            CreateTablespaceRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            CreateTablespaceRequest, CreateTablespaceResponse>
+                    handler) {
+        LOG.trace("Called async createTablespace");
+        final CreateTablespaceRequest interceptedRequest =
+                CreateTablespaceConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateTablespaceConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateTablespaceResponse>
+                transformer = CreateTablespaceConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+
+        com.oracle.bmc.responses.AsyncHandler<CreateTablespaceRequest, CreateTablespaceResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CreateTablespaceRequest, CreateTablespaceResponse>,
+                        java.util.concurrent.Future<CreateTablespaceResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateTablespaceDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CreateTablespaceRequest, CreateTablespaceResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteDbManagementPrivateEndpointResponse>
             deleteDbManagementPrivateEndpoint(
                     DeleteDbManagementPrivateEndpointRequest request,
@@ -893,6 +982,51 @@ public class DbManagementAsyncClient implements DbManagementAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     DeleteManagedDatabaseGroupRequest, DeleteManagedDatabaseGroupResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<DropTablespaceResponse> dropTablespace(
+            DropTablespaceRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            DropTablespaceRequest, DropTablespaceResponse>
+                    handler) {
+        LOG.trace("Called async dropTablespace");
+        final DropTablespaceRequest interceptedRequest =
+                DropTablespaceConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DropTablespaceConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<javax.ws.rs.core.Response, DropTablespaceResponse>
+                transformer = DropTablespaceConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+
+        com.oracle.bmc.responses.AsyncHandler<DropTablespaceRequest, DropTablespaceResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DropTablespaceRequest, DropTablespaceResponse>,
+                        java.util.concurrent.Future<DropTablespaceResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getDropTablespaceDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DropTablespaceRequest, DropTablespaceResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -1384,6 +1518,44 @@ public class DbManagementAsyncClient implements DbManagementAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<GetTablespaceResponse> getTablespace(
+            GetTablespaceRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<GetTablespaceRequest, GetTablespaceResponse>
+                    handler) {
+        LOG.trace("Called async getTablespace");
+        final GetTablespaceRequest interceptedRequest =
+                GetTablespaceConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetTablespaceConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<javax.ws.rs.core.Response, GetTablespaceResponse>
+                transformer = GetTablespaceConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<GetTablespaceRequest, GetTablespaceResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetTablespaceRequest, GetTablespaceResponse>,
+                        java.util.concurrent.Future<GetTablespaceResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetTablespaceRequest, GetTablespaceResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<GetUserResponse> getUser(
             GetUserRequest request,
             final com.oracle.bmc.responses.AsyncHandler<GetUserRequest, GetUserResponse> handler) {
@@ -1445,6 +1617,45 @@ public class DbManagementAsyncClient implements DbManagementAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     GetWorkRequestRequest, GetWorkRequestResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListAsmPropertiesResponse> listAsmProperties(
+            ListAsmPropertiesRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListAsmPropertiesRequest, ListAsmPropertiesResponse>
+                    handler) {
+        LOG.trace("Called async listAsmProperties");
+        final ListAsmPropertiesRequest interceptedRequest =
+                ListAsmPropertiesConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListAsmPropertiesConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<javax.ws.rs.core.Response, ListAsmPropertiesResponse>
+                transformer = ListAsmPropertiesConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<ListAsmPropertiesRequest, ListAsmPropertiesResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListAsmPropertiesRequest, ListAsmPropertiesResponse>,
+                        java.util.concurrent.Future<ListAsmPropertiesResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListAsmPropertiesRequest, ListAsmPropertiesResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -2339,6 +2550,51 @@ public class DbManagementAsyncClient implements DbManagementAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<RemoveDataFileResponse> removeDataFile(
+            RemoveDataFileRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            RemoveDataFileRequest, RemoveDataFileResponse>
+                    handler) {
+        LOG.trace("Called async removeDataFile");
+        final RemoveDataFileRequest interceptedRequest =
+                RemoveDataFileConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                RemoveDataFileConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<javax.ws.rs.core.Response, RemoveDataFileResponse>
+                transformer = RemoveDataFileConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+
+        com.oracle.bmc.responses.AsyncHandler<RemoveDataFileRequest, RemoveDataFileResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                RemoveDataFileRequest, RemoveDataFileResponse>,
+                        java.util.concurrent.Future<RemoveDataFileResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getRemoveDataFileDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    RemoveDataFileRequest, RemoveDataFileResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<RemoveManagedDatabaseFromManagedDatabaseGroupResponse>
             removeManagedDatabaseFromManagedDatabaseGroup(
                     RemoveManagedDatabaseFromManagedDatabaseGroupRequest request,
@@ -2429,6 +2685,51 @@ public class DbManagementAsyncClient implements DbManagementAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     ResetDatabaseParametersRequest, ResetDatabaseParametersResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ResizeDataFileResponse> resizeDataFile(
+            ResizeDataFileRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ResizeDataFileRequest, ResizeDataFileResponse>
+                    handler) {
+        LOG.trace("Called async resizeDataFile");
+        final ResizeDataFileRequest interceptedRequest =
+                ResizeDataFileConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ResizeDataFileConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<javax.ws.rs.core.Response, ResizeDataFileResponse>
+                transformer = ResizeDataFileConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+
+        com.oracle.bmc.responses.AsyncHandler<ResizeDataFileRequest, ResizeDataFileResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ResizeDataFileRequest, ResizeDataFileResponse>,
+                        java.util.concurrent.Future<ResizeDataFileResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getResizeDataFileDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ResizeDataFileRequest, ResizeDataFileResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -3007,6 +3308,50 @@ public class DbManagementAsyncClient implements DbManagementAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     UpdateManagedDatabaseGroupRequest, UpdateManagedDatabaseGroupResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateTablespaceResponse> updateTablespace(
+            UpdateTablespaceRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            UpdateTablespaceRequest, UpdateTablespaceResponse>
+                    handler) {
+        LOG.trace("Called async updateTablespace");
+        final UpdateTablespaceRequest interceptedRequest =
+                UpdateTablespaceConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateTablespaceConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateTablespaceResponse>
+                transformer = UpdateTablespaceConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<UpdateTablespaceRequest, UpdateTablespaceResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpdateTablespaceRequest, UpdateTablespaceResponse>,
+                        java.util.concurrent.Future<UpdateTablespaceResponse>>
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateTablespaceDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpdateTablespaceRequest, UpdateTablespaceResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,

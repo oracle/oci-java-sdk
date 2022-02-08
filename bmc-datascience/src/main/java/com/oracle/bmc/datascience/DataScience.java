@@ -599,6 +599,19 @@ public interface DataScience extends AutoCloseable {
     HeadModelArtifactResponse headModelArtifact(HeadModelArtifactRequest request);
 
     /**
+     * List fast launch capable job configs in the specified compartment.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datascience/ListFastLaunchJobConfigsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListFastLaunchJobConfigs API.
+     */
+    ListFastLaunchJobConfigsResponse listFastLaunchJobConfigs(
+            ListFastLaunchJobConfigsRequest request);
+
+    /**
      * List out job runs.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -783,7 +796,7 @@ public interface DataScience extends AutoCloseable {
 
     /**
      * Updates the properties of a model deployment. Some of the properties of `modelDeploymentConfigurationDetails` or `CategoryLogDetails` can also be updated with zero down time
-     * when the model deployment\u2019s lifecycle state is ACTIVE or NEEDS_ATTENTION i.e `instanceShapeName`, `instanceCount` and `modelId`, separately `loadBalancerShape` or `CategoryLogDetails`
+     * when the model deployment's lifecycle state is ACTIVE or NEEDS_ATTENTION i.e `instanceShapeName`, `instanceCount` and `modelId`, separately `loadBalancerShape` or `CategoryLogDetails`
      * can also be updated independently. All of the fields can be updated when the deployment is in the INACTIVE lifecycle state. Changes will take effect the next time the model
      * deployment is activated.
      *

@@ -5,7 +5,7 @@
 package com.oracle.bmc.databasemanagement.model;
 
 /**
- * Summary of SystemPrivileges.
+ * A Summary of system privileges.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -93,12 +93,12 @@ public class SystemPrivilegeSummary {
     }
 
     /**
-     * The name of a system privilege
+     * The name of a system privilege.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     String name;
     /**
-     * Indicates whether the grant was with the ADMIN option (YES) or not (NO)
+     * Indicates whether the system privilege is granted with the ADMIN option (YES) or not (NO).
      **/
     @lombok.extern.slf4j.Slf4j
     public enum AdminOption {
@@ -144,14 +144,14 @@ public class SystemPrivilegeSummary {
         }
     };
     /**
-     * Indicates whether the grant was with the ADMIN option (YES) or not (NO)
+     * Indicates whether the system privilege is granted with the ADMIN option (YES) or not (NO).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("adminOption")
     AdminOption adminOption;
     /**
-     * Indicates how the grant was made. Possible values:
-     * YES if the role was granted commonly (CONTAINER=ALL was used)
-     * NO if the role was granted locally (CONTAINER=ALL was not used)
+     * Indicates how the system privilege was granted. Possible values:
+     * YES if the system privilege is granted commonly (CONTAINER=ALL is used)
+     * NO if the system privilege is granted locally (CONTAINER=ALL is not used)
      *
      **/
     @lombok.extern.slf4j.Slf4j
@@ -198,15 +198,15 @@ public class SystemPrivilegeSummary {
         }
     };
     /**
-     * Indicates how the grant was made. Possible values:
-     * YES if the role was granted commonly (CONTAINER=ALL was used)
-     * NO if the role was granted locally (CONTAINER=ALL was not used)
+     * Indicates how the system privilege was granted. Possible values:
+     * YES if the system privilege is granted commonly (CONTAINER=ALL is used)
+     * NO if the system privilege is granted locally (CONTAINER=ALL is not used)
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("common")
     Common common;
     /**
-     * Indicates whether the role grant was inherited from another container (YES) or not (NO)
+     * Indicates whether the granted system privilege is inherited from another container (YES) or not (NO).
      **/
     @lombok.extern.slf4j.Slf4j
     public enum Inherited {
@@ -252,7 +252,7 @@ public class SystemPrivilegeSummary {
         }
     };
     /**
-     * Indicates whether the role grant was inherited from another container (YES) or not (NO)
+     * Indicates whether the granted system privilege is inherited from another container (YES) or not (NO).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("inherited")
     Inherited inherited;

@@ -361,6 +361,15 @@ public class TablespaceSummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("isDefault")
+        private Boolean isDefault;
+
+        public Builder isDefault(Boolean isDefault) {
+            this.isDefault = isDefault;
+            this.__explicitlySet__.add("isDefault");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("datafiles")
         private java.util.List<Datafile> datafiles;
 
@@ -413,6 +422,7 @@ public class TablespaceSummary {
                             usedSpaceKB,
                             usedPercentAvailable,
                             usedPercentAllocated,
+                            isDefault,
                             datafiles);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
@@ -458,6 +468,7 @@ public class TablespaceSummary {
                             .usedSpaceKB(o.getUsedSpaceKB())
                             .usedPercentAvailable(o.getUsedPercentAvailable())
                             .usedPercentAllocated(o.getUsedPercentAllocated())
+                            .isDefault(o.getIsDefault())
                             .datafiles(o.getDatafiles());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
@@ -1402,6 +1413,7 @@ public class TablespaceSummary {
     public enum IndexCompressFor {
         AdvancedLow("ADVANCED_LOW"),
         AdvancedHigh("ADVANCED_HIGH"),
+        None("NONE"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this
@@ -1617,6 +1629,12 @@ public class TablespaceSummary {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("usedPercentAllocated")
     Double usedPercentAllocated;
+
+    /**
+     * Indicates whether this is the default tablespace.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isDefault")
+    Boolean isDefault;
 
     /**
      * A list of the data files associated with the tablespace.

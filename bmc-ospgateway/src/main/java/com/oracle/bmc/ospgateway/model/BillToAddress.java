@@ -17,10 +17,10 @@ package com.oracle.bmc.ospgateway.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20191001")
 @lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
 @lombok.Value
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Address.Builder.class)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = BillToAddress.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 @lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class Address {
+public class BillToAddress {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
@@ -153,9 +153,9 @@ public class Address {
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
-        public Address build() {
-            Address __instance__ =
-                    new Address(
+        public BillToAddress build() {
+            BillToAddress __instance__ =
+                    new BillToAddress(
                             contactName,
                             companyName,
                             addressLine1,
@@ -175,7 +175,7 @@ public class Address {
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(Address o) {
+        public Builder copy(BillToAddress o) {
             Builder copiedBuilder =
                     contactName(o.getContactName())
                             .companyName(o.getCompanyName())

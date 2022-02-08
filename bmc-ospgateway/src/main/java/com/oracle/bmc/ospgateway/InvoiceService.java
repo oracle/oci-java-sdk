@@ -8,7 +8,7 @@ import com.oracle.bmc.ospgateway.requests.*;
 import com.oracle.bmc.ospgateway.responses.*;
 
 /**
- * This site describes all the Rest endpoints of Billing Center Gateway.
+ * This site describes all the Rest endpoints of OSP Gateway.
  * This service client uses CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER for all the operations by default if no circuit breaker configuration is defined by the user.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20191001")

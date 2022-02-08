@@ -5,7 +5,7 @@
 package com.oracle.bmc.apmconfig.model;
 
 /**
- * A configuration item. This item has a number of mutually exclusive properties that can be used to set specific
+ * A configuration item, which has a number of mutually exclusive properties that can be used to set specific
  * portions of the configuration.
  *
  * <br/>
@@ -44,7 +44,7 @@ package com.oracle.bmc.apmconfig.model;
 public class Config {
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the configuration item. An OCID will be generated
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the configuration item. An OCID is generated
      * when the item is created.
      *
      **/

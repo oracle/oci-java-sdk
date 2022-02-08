@@ -5,7 +5,7 @@
 package com.oracle.bmc.databasemanagement.model;
 
 /**
- * Request to clone and run a SQL tuning task. The new task uses same inputs as the one being cloned.
+ * The request to clone and run a SQL tuning task. The new task uses the same inputs as the one being cloned.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -94,15 +94,15 @@ public class CloneSqlTuningTaskDetails {
     }
 
     /**
-     * The name of the SQL tuning task. The name is unique per user in a database, and it is case sensitive.
+     * The name of the SQL tuning task. The name is unique per user in a database, and it is case-sensitive.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("taskName")
     String taskName;
 
     /**
-     * The identifier of the task being cloned. This is not the [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * The identifier of the SQL tuning task being cloned. This is not the [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
      * It can be retrieved from the following endpoint
-     * {@link #listSqlTuningAdvisorTasks(ListSqlTuningAdvisorTasksRequest) listSqlTuningAdvisorTasks}
+     * {@link #listSqlTuningAdvisorTasks(ListSqlTuningAdvisorTasksRequest) listSqlTuningAdvisorTasks}.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("originalTaskId")

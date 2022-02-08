@@ -31,4 +31,11 @@ public interface Service {
      * can still use the same variables.
      */
     String getServiceEndpointTemplate();
+
+    /**
+     * The service endpoint name that will be used only for dotted regions if set by the service.
+     * {service} in "https://{service}.{region}".
+     * The service endpoint template (if specified) will be ignored in this case.
+     */
+    String getEndpointServiceName();
 }

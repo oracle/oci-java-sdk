@@ -5,7 +5,7 @@
 package com.oracle.bmc.databasemanagement.model;
 
 /**
- * The finding benefits data for the SQL Tuning Advisor summary report.
+ * The benefits of the findings in the SQL Tuning Advisor summary report.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -44,21 +44,21 @@ public class SqlTuningAdvisorTaskSummaryFindingBenefits {
             return this;
         }
 
-        @com.fasterxml.jackson.annotation.JsonProperty("dbTimeBeforeImplemented")
-        private Integer dbTimeBeforeImplemented;
-
-        public Builder dbTimeBeforeImplemented(Integer dbTimeBeforeImplemented) {
-            this.dbTimeBeforeImplemented = dbTimeBeforeImplemented;
-            this.__explicitlySet__.add("dbTimeBeforeImplemented");
-            return this;
-        }
-
         @com.fasterxml.jackson.annotation.JsonProperty("dbTimeAfterImplemented")
         private Integer dbTimeAfterImplemented;
 
         public Builder dbTimeAfterImplemented(Integer dbTimeAfterImplemented) {
             this.dbTimeAfterImplemented = dbTimeAfterImplemented;
             this.__explicitlySet__.add("dbTimeAfterImplemented");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("dbTimeBeforeImplemented")
+        private Integer dbTimeBeforeImplemented;
+
+        public Builder dbTimeBeforeImplemented(Integer dbTimeBeforeImplemented) {
+            this.dbTimeBeforeImplemented = dbTimeBeforeImplemented;
+            this.__explicitlySet__.add("dbTimeBeforeImplemented");
             return this;
         }
 
@@ -70,8 +70,8 @@ public class SqlTuningAdvisorTaskSummaryFindingBenefits {
                     new SqlTuningAdvisorTaskSummaryFindingBenefits(
                             dbTimeBeforeRecommended,
                             dbTimeAfterRecommended,
-                            dbTimeBeforeImplemented,
-                            dbTimeAfterImplemented);
+                            dbTimeAfterImplemented,
+                            dbTimeBeforeImplemented);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -81,8 +81,8 @@ public class SqlTuningAdvisorTaskSummaryFindingBenefits {
             Builder copiedBuilder =
                     dbTimeBeforeRecommended(o.getDbTimeBeforeRecommended())
                             .dbTimeAfterRecommended(o.getDbTimeAfterRecommended())
-                            .dbTimeBeforeImplemented(o.getDbTimeBeforeImplemented())
-                            .dbTimeAfterImplemented(o.getDbTimeAfterImplemented());
+                            .dbTimeAfterImplemented(o.getDbTimeAfterImplemented())
+                            .dbTimeBeforeImplemented(o.getDbTimeBeforeImplemented());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -97,28 +97,28 @@ public class SqlTuningAdvisorTaskSummaryFindingBenefits {
     }
 
     /**
-     * The count of Potential database time before SQL recommendations are implemented.
+     * The actual database time of the SQL statements for which SQL Tuning Advisor recommendations are not implemented.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dbTimeBeforeRecommended")
     Integer dbTimeBeforeRecommended;
 
     /**
-     * The count of Potential database time after SQL recommendations are implemented.
+     * The estimated database time of the above SQL statements, if SQL Tuning Advisor recommendations are implemented.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dbTimeAfterRecommended")
     Integer dbTimeAfterRecommended;
 
     /**
-     * The count of database time benefit before SQL recommendations are implemented.
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("dbTimeBeforeImplemented")
-    Integer dbTimeBeforeImplemented;
-
-    /**
-     * The count of database time benefit after SQL recommendations are implemented.
+     * The actual database time of the SQL statements for which SQL Tuning Advisor recommendations are implemented.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dbTimeAfterImplemented")
     Integer dbTimeAfterImplemented;
+
+    /**
+     * The actual database time of the above SQL statements, before SQL Tuning Advisor recommendations are implemented.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("dbTimeBeforeImplemented")
+    Integer dbTimeBeforeImplemented;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

@@ -24,6 +24,7 @@ public class DefaultEndpointConfiguration {
     private static final String REGION_ID_TEMPLATE =
             "{region}"; // not regionId for backwards compatibility
     private static final String SECOND_LEVEL_DOMAIN_TEMPLATE = "{secondLevelDomain}";
+    private static final String ENDPOINT_SERVICE_NAME_TEMPLATE = "{endpointServiceName}";
 
     // the endpoint template that will be used.
     private final String endpointTemplate;
@@ -31,6 +32,7 @@ public class DefaultEndpointConfiguration {
     private String serviceEndpointPrefix;
     private String regionId;
     private String secondLevelDomain;
+    private String endpointServiceName;
 
     /**
      * Creates a new builder starting with the given template.
@@ -75,6 +77,17 @@ public class DefaultEndpointConfiguration {
     }
 
     /**
+     * Sets the endpoint service name, if one.
+     *
+     * @param endpointServiceName The endpoint service name.
+     * @return This builder
+     */
+    public DefaultEndpointConfiguration endpointServiceName(String endpointServiceName) {
+        this.endpointServiceName = endpointServiceName;
+        return this;
+    }
+
+    /**
      * Builds the final endpoint based on the variables provided.
      * @return The endpoint.
      */
@@ -88,6 +101,9 @@ public class DefaultEndpointConfiguration {
         }
         if (secondLevelDomain != null) {
             endpoint = endpoint.replace(SECOND_LEVEL_DOMAIN_TEMPLATE, secondLevelDomain);
+        }
+        if (endpointServiceName != null) {
+            endpoint = endpoint.replace(ENDPOINT_SERVICE_NAME_TEMPLATE, endpointServiceName);
         }
         return endpoint;
     }

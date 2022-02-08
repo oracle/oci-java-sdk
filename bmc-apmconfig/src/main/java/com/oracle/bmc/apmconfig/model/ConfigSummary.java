@@ -5,7 +5,7 @@
 package com.oracle.bmc.apmconfig.model;
 
 /**
- * The request body used to update the Configuration entity. It must specify the data to update the item with.
+ * A description of a configuration item. It specifes all the properties that define the configuration item.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -46,7 +46,7 @@ package com.oracle.bmc.apmconfig.model;
 public class ConfigSummary {
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the configuration item. An OCID will be generated
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the configuration item. An OCID is generated
      * when the item is created.
      *
      **/

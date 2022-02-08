@@ -5,8 +5,8 @@
 package com.oracle.bmc.databasemanagement.model;
 
 /**
- * A summary for all the findings of objects in a tuning task that match a given certain filter.
- * Includes what kind of findings were found, whether benefits were analyzed, and how many benefits can be obtained.
+ * A summary of the findings of the objects in a tuning task that match a given filter.
+ * This includes the kind of findings that were reported, whether the benefits were analyzed, and the number of benefits obtained.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -244,45 +244,45 @@ public class SqlTuningAdvisorTaskFindingSummary {
     }
 
     /**
-     * Unique identifier of the task. It is not the [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * The unique identifier of the SQL Tuning Advisor task. This is not the [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sqlTuningAdvisorTaskId")
     Long sqlTuningAdvisorTaskId;
 
     /**
-     * Key of the object to which these recommendations apply.
-     * It is not the [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * The key of the object to which these recommendations apply.
+     * This is not the [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sqlTuningAdvisorTaskObjectId")
     Long sqlTuningAdvisorTaskObjectId;
 
     /**
-     * Execution id of the analyzed SQL object. It is not the [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * The execution id of the analyzed SQL object. This is not the [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sqlTuningAdvisorTaskObjectExecutionId")
     Long sqlTuningAdvisorTaskObjectExecutionId;
 
     /**
-     * Text of the SQL statement.
+     * The text of the SQL statement.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sqlText")
     String sqlText;
 
     /**
-     * Parsing schema of the object.
+     * The parsing schema of the object.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("parsingSchema")
     String parsingSchema;
 
     /**
-     * Unique key of this SQL statement
+     * The unique key of this SQL statement.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sqlKey")
     String sqlKey;
 
     /**
-     * Time benefit in seconds for the highest-rated finding for this object.
+     * The time benefit (in seconds) for the highest-rated finding for this object.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dbTimeBenefit")
     Float dbTimeBenefit;
@@ -294,55 +294,55 @@ public class SqlTuningAdvisorTaskFindingSummary {
     Integer perExecutionPercentage;
 
     /**
-     * Whether a statistics recommendation was found for this SQL statement.
+     * Indicates whether a statistics recommendation was reported for this SQL statement.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isStatsFindingPresent")
     Boolean isStatsFindingPresent;
 
     /**
-     * Whether a SQL Profile recommendation was found for this SQL statement.
+     * Indicates whether a SQL Profile recommendation was reported for this SQL statement.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isSqlProfileFindingPresent")
     Boolean isSqlProfileFindingPresent;
 
     /**
-     * Whether a SQL Profile recommendation has been implemented for this SQL statement.
+     * Indicates whether a SQL Profile recommendation has been implemented for this SQL statement.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isSqlProfileFindingImplemented")
     Boolean isSqlProfileFindingImplemented;
 
     /**
-     * Whether an index recommendation was found for this SQL statement.
+     * Indicates whether an index recommendation was reported for this SQL statement.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isIndexFindingPresent")
     Boolean isIndexFindingPresent;
 
     /**
-     * Whether a restructure SQL recommendation was found for this SQL statement.
+     * Indicates whether a restructure SQL recommendation was reported for this SQL statement.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isRestructureSqlFindingPresent")
     Boolean isRestructureSqlFindingPresent;
 
     /**
-     * Whether an alternative execution plan was found for this SQL statement.
+     * Indicates whether an alternative execution plan was reported for this SQL statement.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isAlternativePlanFindingPresent")
     Boolean isAlternativePlanFindingPresent;
 
     /**
-     * Whether a miscellaneous finding was found for this SQL statement.
+     * Indicates whether a miscellaneous finding was reported for this SQL statement.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isMiscellaneousFindingPresent")
     Boolean isMiscellaneousFindingPresent;
 
     /**
-     * Whether there is an error in this SQL statement.
+     * Indicates whether there is an error in this SQL statement.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isErrorFindingPresent")
     Boolean isErrorFindingPresent;
 
     /**
-     * Whether the task timed out.
+     * Indicates whether the task timed out.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isTimeoutFindingPresent")
     Boolean isTimeoutFindingPresent;

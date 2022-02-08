@@ -5,7 +5,7 @@
 package com.oracle.bmc.apmconfig.model;
 
 /**
- * A metric. This a quantitative measurement of an entity.
+ * A metric is a quantitative measurement of an entity.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -91,25 +91,25 @@ public class Metric {
     }
 
     /**
-     * The name of the metric
+     * The name of the metric. This must be a known metric name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     String name;
 
     /**
-     * Must be NULL at the moment, and "name" must be a known metric.
+     * This must not be set.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("valueSource")
     String valueSource;
 
     /**
-     * The unit of the metric
+     * The unit of the metric.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("unit")
     String unit;
 
     /**
-     * A description of the metric
+     * A description of the metric.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     String description;

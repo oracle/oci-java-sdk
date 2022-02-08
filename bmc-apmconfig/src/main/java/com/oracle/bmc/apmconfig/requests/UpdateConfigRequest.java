@@ -22,18 +22,19 @@ public class UpdateConfigRequest
                 com.oracle.bmc.apmconfig.model.UpdateConfigDetails> {
 
     /**
-     * The APM Domain Id the request is intended for.
+     * The APM Domain ID the request is intended for.
      *
      */
     private String apmDomainId;
 
     /**
-     * The OCID of the ConfiguredItem.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the configuration item.
+     *
      */
     private String configId;
 
     /**
-     * The data to be updated.
+     * The configuration details to be updated.
      */
     private com.oracle.bmc.apmconfig.model.UpdateConfigDetails updateConfigDetails;
 
@@ -55,8 +56,8 @@ public class UpdateConfigRequest
     private String opcRequestId;
 
     /**
-     * Indicates that this request is a dry-run.
-     * If set to "true", nothing will be modified, only the validation will be performed.
+     * Indicates that the request is a dry run, if set to "true". A dry run request does not modify the
+     * configuration item details and is used only to perform validation on the submitted data.
      *
      */
     private String opcDryRun;

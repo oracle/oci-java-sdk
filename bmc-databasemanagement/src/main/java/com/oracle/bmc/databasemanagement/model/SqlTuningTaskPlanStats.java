@@ -5,7 +5,7 @@
 package com.oracle.bmc.databasemanagement.model;
 
 /**
- * The statistics of an SQL execution plan.
+ * The statistics of a SQL execution plan.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -84,7 +84,7 @@ public class SqlTuningTaskPlanStats {
     }
 
     /**
-     * The type of the plan for the original or the new plan with profile/index etc.
+     * The type of the original or modified plan with profile, index, and so on.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("planType")
     String planType;

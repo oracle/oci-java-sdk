@@ -31,6 +31,124 @@ public class DataSciencePaginators {
     private final DataScience client;
 
     /**
+     * Creates a new iterable which will iterate over the responses received from the listFastLaunchJobConfigs operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListFastLaunchJobConfigsResponse> listFastLaunchJobConfigsResponseIterator(
+            final ListFastLaunchJobConfigsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListFastLaunchJobConfigsRequest.Builder, ListFastLaunchJobConfigsRequest,
+                ListFastLaunchJobConfigsResponse>(
+                new com.google.common.base.Supplier<ListFastLaunchJobConfigsRequest.Builder>() {
+                    @Override
+                    public ListFastLaunchJobConfigsRequest.Builder get() {
+                        return ListFastLaunchJobConfigsRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListFastLaunchJobConfigsResponse, String>() {
+                    @Override
+                    public String apply(ListFastLaunchJobConfigsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListFastLaunchJobConfigsRequest.Builder>,
+                        ListFastLaunchJobConfigsRequest>() {
+                    @Override
+                    public ListFastLaunchJobConfigsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListFastLaunchJobConfigsRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListFastLaunchJobConfigsRequest, ListFastLaunchJobConfigsResponse>() {
+                    @Override
+                    public ListFastLaunchJobConfigsResponse apply(
+                            ListFastLaunchJobConfigsRequest request) {
+                        return client.listFastLaunchJobConfigs(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.datascience.model.FastLaunchJobConfigSummary} objects
+     * contained in responses from the listFastLaunchJobConfigs operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.datascience.model.FastLaunchJobConfigSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.datascience.model.FastLaunchJobConfigSummary>
+            listFastLaunchJobConfigsRecordIterator(final ListFastLaunchJobConfigsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListFastLaunchJobConfigsRequest.Builder, ListFastLaunchJobConfigsRequest,
+                ListFastLaunchJobConfigsResponse,
+                com.oracle.bmc.datascience.model.FastLaunchJobConfigSummary>(
+                new com.google.common.base.Supplier<ListFastLaunchJobConfigsRequest.Builder>() {
+                    @Override
+                    public ListFastLaunchJobConfigsRequest.Builder get() {
+                        return ListFastLaunchJobConfigsRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListFastLaunchJobConfigsResponse, String>() {
+                    @Override
+                    public String apply(ListFastLaunchJobConfigsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListFastLaunchJobConfigsRequest.Builder>,
+                        ListFastLaunchJobConfigsRequest>() {
+                    @Override
+                    public ListFastLaunchJobConfigsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListFastLaunchJobConfigsRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListFastLaunchJobConfigsRequest, ListFastLaunchJobConfigsResponse>() {
+                    @Override
+                    public ListFastLaunchJobConfigsResponse apply(
+                            ListFastLaunchJobConfigsRequest request) {
+                        return client.listFastLaunchJobConfigs(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListFastLaunchJobConfigsResponse,
+                        java.util.List<
+                                com.oracle.bmc.datascience.model.FastLaunchJobConfigSummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.datascience.model.FastLaunchJobConfigSummary>
+                            apply(ListFastLaunchJobConfigsResponse response) {
+                        return response.getItems();
+                    }
+                });
+    }
+
+    /**
      * Creates a new iterable which will iterate over the responses received from the listJobRuns operation. This iterable
      * will fetch more data from the server as needed.
      *

@@ -5,7 +5,7 @@
 package com.oracle.bmc.databasemanagement.model;
 
 /**
- * A collection of proxy users for the current User.
+ * A collection of proxy users for the current user.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -61,7 +61,7 @@ public class ProxyUserCollection {
     }
 
     /**
-     * An array of User resources.
+     * An array of user resources.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     java.util.List<ProxyUserSummary> items;

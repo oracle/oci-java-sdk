@@ -58,6 +58,8 @@ public class RegionTest {
                     .serviceName("RegionTest")
                     .build();
 
+    private static final String REGION_ID_WITH_DOT = "some.customerdomain.com";
+
     @BeforeClass
     public static void init() throws Exception {
 
@@ -640,5 +642,88 @@ public class RegionTest {
                         .serviceEndpointTemplate("https://test.{region}.{secondLevelDomain}")
                         .build();
         Region.formatDefaultRegionEndpoint(svc, "unknown");
+    }
+
+    @Test
+    public void
+            testEndpointForDottedRegionWithEndpointServiceNameAndEndpointTemplateAndEndpointPrefix() {
+        final Service SERVICE =
+                Services.serviceBuilder()
+                        .serviceName("objectstorage")
+                        .serviceEndpointPrefix("objectstorage")
+                        .endpointServiceName("test")
+                        .serviceEndpointTemplate("https://{region}.bar.com")
+                        .build();
+        String endpoint = Region.formatDefaultRegionEndpoint(SERVICE, REGION_ID_WITH_DOT);
+        assertEquals("https://test.some.customerdomain.com", endpoint);
+    }
+
+    @Test
+    public void testEndpointForDottedRegionWithEndpointServiceNameAndWithEndpointPrefix() {
+        final Service SERVICE =
+                Services.serviceBuilder()
+                        .serviceName("analytics")
+                        .serviceEndpointPrefix("analytics")
+                        .endpointServiceName("test")
+                        .build();
+        String endpoint = Region.formatDefaultRegionEndpoint(SERVICE, REGION_ID_WITH_DOT);
+        assertEquals("https://test.some.customerdomain.com", endpoint);
+    }
+
+    @Test
+    public void
+            testEndpointForDottedRegionWithoutEndpointServiceNameAndWithEndpointPrefixAndEndpointTemplate() {
+        final Service SERVICE =
+                Services.serviceBuilder()
+                        .serviceName("blockstorage")
+                        .serviceEndpointPrefix("iaas")
+                        .serviceEndpointTemplate("https://iaas.{region}.{secondLevelDomain}")
+                        .build();
+        String endpoint = Region.formatDefaultRegionEndpoint(SERVICE, REGION_ID_WITH_DOT);
+        assertEquals("https://iaas.some.customerdomain.com", endpoint);
+    }
+
+    @Test
+    public void
+            testEndpointForDottedRegionWithoutEndpointServiceNameAndEndpointTemplateAndWithEndpointPrefix() {
+        final Service SERVICE =
+                Services.serviceBuilder()
+                        .serviceName("identity")
+                        .serviceEndpointPrefix("iam")
+                        .build();
+        String endpoint = Region.formatDefaultRegionEndpoint(SERVICE, REGION_ID_WITH_DOT);
+        assertEquals("https://iam.some.customerdomain.com", endpoint);
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void
+            testEndpointForDottedRegionWithoutEndpointServiceNameAndEndpointTemplateAndWithBlankEndpointPrefix() {
+        final Service SERVICE =
+                Services.serviceBuilder()
+                        .serviceName("datascience")
+                        .serviceEndpointPrefix("")
+                        .build();
+        Region.formatDefaultRegionEndpoint(SERVICE, REGION_ID_WITH_DOT);
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void testEndpointForDottedRegionWithIncorrectEndpointTemplate() {
+        // Service endpoint template with single slash
+        Service SERVICE =
+                Services.serviceBuilder()
+                        .serviceName("bds")
+                        .serviceEndpointPrefix("iaas")
+                        .serviceEndpointTemplate("https:/iaas.{region}.{secondLevelDomain}")
+                        .build();
+        Region.formatDefaultRegionEndpoint(SERVICE, REGION_ID_WITH_DOT);
+
+        // Service endpoint template with no dots
+        SERVICE =
+                Services.serviceBuilder()
+                        .serviceName("core")
+                        .serviceEndpointPrefix("iaas")
+                        .serviceEndpointTemplate("https://iaas{region}{secondLevelDomain}")
+                        .build();
+        Region.formatDefaultRegionEndpoint(SERVICE, REGION_ID_WITH_DOT);
     }
 }
