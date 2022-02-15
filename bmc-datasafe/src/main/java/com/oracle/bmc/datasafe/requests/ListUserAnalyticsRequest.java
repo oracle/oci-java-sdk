@@ -110,7 +110,7 @@ public class ListUserAnalyticsRequest extends com.oracle.bmc.requests.BmcRequest
     private String userName;
 
     /**
-     * A filter to return only items that match the specified target.
+     * A filter to return only items related to a specific target OCID.
      */
     private String targetId;
 

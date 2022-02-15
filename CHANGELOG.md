@@ -3,6 +3,22 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
+## 2.16.0 - 2022-02-15
+### Added
+- Support for the AI Vision service
+- Support for the Threat Intelligence service
+- Support for creation of NoSQL database tables with on-demand throughput capacity in the NoSQL Database Cloud service
+- Support for tagging features in the Oracle Container Engine for Kubernetes (OKE) service
+- Support for trace snapshots in the Application Performance Monitoring service
+- Support for auditing and alerts in the Data Safe service
+- Support for data discovery and data masking in the Data Safe service
+- Support for customized subscriptions and delivery of announcements by email and SMS in the Announcements service
+
+### Breaking Changes
+- Method `public com.oracle.bmc.apmtraces.responses.QueryOldResponse queryOld(com.oracle.bmc.apmtraces.requests.QueryOldRequest)` has been removed in the Application Performance Monitoring service
+- Class `com.oracle.bmc.apmtraces.requests.QueryOldRequest` has been removed in the Application Performance Monitoring service
+- Class `com.oracle.bmc.apmtraces.responses.QueryOldResponse` has been removed in the Application Performance Monitoring service
+
 ## 2.15.0 - 2022-02-08
 ### Added
 - Support for managing tablespaces in the Database Management service

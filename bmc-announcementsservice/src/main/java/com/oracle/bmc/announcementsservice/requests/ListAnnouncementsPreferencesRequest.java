@@ -21,8 +21,7 @@ public class ListAnnouncementsPreferencesRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The OCID of the compartment. Because announcements are specific to a tenancy, this is the
-     * OCID of the root compartment.
+     * The OCID of the compartment.
      *
      */
     private String compartmentId;

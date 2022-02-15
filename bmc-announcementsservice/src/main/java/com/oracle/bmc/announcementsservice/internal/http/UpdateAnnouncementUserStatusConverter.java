@@ -82,11 +82,19 @@ public class UpdateAnnouncementUserStatusConverter {
                                         "Transform function invoked for com.oracle.bmc.announcementsservice.responses.UpdateAnnouncementUserStatusResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
-                                                com.oracle.bmc.http.internal.WithHeaders<Void>>
-                                        responseFn = RESPONSE_CONVERSION_FACTORY.create();
+                                                com.oracle.bmc.http.internal.WithHeaders<
+                                                        com.oracle.bmc.announcementsservice.model
+                                                                .AnnouncementUserStatusDetails>>
+                                        responseFn =
+                                                RESPONSE_CONVERSION_FACTORY.create(
+                                                        com.oracle.bmc.announcementsservice.model
+                                                                        .AnnouncementUserStatusDetails
+                                                                .class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<Void> response =
-                                        responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                com.oracle.bmc.announcementsservice.model
+                                                        .AnnouncementUserStatusDetails>
+                                        response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
@@ -98,6 +106,8 @@ public class UpdateAnnouncementUserStatusConverter {
                                                         .builder()
                                                         .__httpStatusCode__(
                                                                 rawResponse.getStatus());
+
+                                builder.announcementUserStatusDetails(response.getItem());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =

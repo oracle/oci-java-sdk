@@ -5,7 +5,7 @@
 package com.oracle.bmc.apmtraces.model;
 
 /**
- * Summary of the attribute based on which the query results are grouped by.
+ * Summary of the attribute based on which the query results are grouped.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -63,7 +63,7 @@ public class QueryResultsGroupedBySummary {
     }
 
     /**
-     * Column or attribute in the query result which is a group by value.
+     * Column or attribute in the query result, which is a group by value.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("queryResultsGroupedByColumn")

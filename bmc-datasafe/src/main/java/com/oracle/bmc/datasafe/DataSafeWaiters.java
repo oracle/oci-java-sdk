@@ -26,6 +26,612 @@ public class DataSafeWaiters {
      * @param targetState the desired states to wait for. If multiple states are provided then the waiter will return once the resource reaches any of the provided states
      * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
      */
+    public com.oracle.bmc.waiter.Waiter<GetAlertRequest, GetAlertResponse> forAlert(
+            GetAlertRequest request,
+            com.oracle.bmc.datasafe.model.AlertLifecycleState... targetStates) {
+        org.apache.commons.lang3.Validate.notEmpty(
+                targetStates, "At least one targetState must be provided");
+        org.apache.commons.lang3.Validate.noNullElements(
+                targetStates, "Null targetState values are not permitted");
+
+        return forAlert(
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_WAITER, request, targetStates);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param targetState the desired state to wait for
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<GetAlertRequest, GetAlertResponse> forAlert(
+            GetAlertRequest request,
+            com.oracle.bmc.datasafe.model.AlertLifecycleState targetState,
+            com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+            com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
+        org.apache.commons.lang3.Validate.notNull(targetState, "The targetState cannot be null");
+
+        return forAlert(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetState);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @param targetStates the desired states to wait for. The waiter will return once the resource reaches any of the provided states
+     * @return a new {@code Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<GetAlertRequest, GetAlertResponse> forAlert(
+            GetAlertRequest request,
+            com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+            com.oracle.bmc.waiter.DelayStrategy delayStrategy,
+            com.oracle.bmc.datasafe.model.AlertLifecycleState... targetStates) {
+        org.apache.commons.lang3.Validate.notEmpty(
+                targetStates, "At least one targetState must be provided");
+        org.apache.commons.lang3.Validate.noNullElements(
+                targetStates, "Null targetState values are not permitted");
+
+        return forAlert(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetStates);
+    }
+
+    // Helper method to create a new Waiter for Alert.
+    private com.oracle.bmc.waiter.Waiter<GetAlertRequest, GetAlertResponse> forAlert(
+            com.oracle.bmc.waiter.BmcGenericWaiter waiter,
+            final GetAlertRequest request,
+            final com.oracle.bmc.datasafe.model.AlertLifecycleState... targetStates) {
+        final java.util.Set<com.oracle.bmc.datasafe.model.AlertLifecycleState> targetStatesSet =
+                new java.util.HashSet<>(java.util.Arrays.asList(targetStates));
+
+        return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
+                executorService,
+                waiter.toCallable(
+                        com.google.common.base.Suppliers.ofInstance(request),
+                        new com.google.common.base.Function<GetAlertRequest, GetAlertResponse>() {
+                            @Override
+                            public GetAlertResponse apply(GetAlertRequest request) {
+                                return client.getAlert(request);
+                            }
+                        },
+                        new com.google.common.base.Predicate<GetAlertResponse>() {
+                            @Override
+                            public boolean apply(GetAlertResponse response) {
+                                return targetStatesSet.contains(
+                                        response.getAlert().getLifecycleState());
+                            }
+                        },
+                        false),
+                request);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
+     *
+     * @param request the request to send
+     * @param targetState the desired states to wait for. If multiple states are provided then the waiter will return once the resource reaches any of the provided states
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<GetAlertPolicyRequest, GetAlertPolicyResponse>
+            forAlertPolicy(
+                    GetAlertPolicyRequest request,
+                    com.oracle.bmc.datasafe.model.AlertPolicyLifecycleState... targetStates) {
+        org.apache.commons.lang3.Validate.notEmpty(
+                targetStates, "At least one targetState must be provided");
+        org.apache.commons.lang3.Validate.noNullElements(
+                targetStates, "Null targetState values are not permitted");
+
+        return forAlertPolicy(
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_WAITER, request, targetStates);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param targetState the desired state to wait for
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<GetAlertPolicyRequest, GetAlertPolicyResponse>
+            forAlertPolicy(
+                    GetAlertPolicyRequest request,
+                    com.oracle.bmc.datasafe.model.AlertPolicyLifecycleState targetState,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
+        org.apache.commons.lang3.Validate.notNull(targetState, "The targetState cannot be null");
+
+        return forAlertPolicy(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetState);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @param targetStates the desired states to wait for. The waiter will return once the resource reaches any of the provided states
+     * @return a new {@code Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<GetAlertPolicyRequest, GetAlertPolicyResponse>
+            forAlertPolicy(
+                    GetAlertPolicyRequest request,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy,
+                    com.oracle.bmc.datasafe.model.AlertPolicyLifecycleState... targetStates) {
+        org.apache.commons.lang3.Validate.notEmpty(
+                targetStates, "At least one targetState must be provided");
+        org.apache.commons.lang3.Validate.noNullElements(
+                targetStates, "Null targetState values are not permitted");
+
+        return forAlertPolicy(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetStates);
+    }
+
+    // Helper method to create a new Waiter for AlertPolicy.
+    private com.oracle.bmc.waiter.Waiter<GetAlertPolicyRequest, GetAlertPolicyResponse>
+            forAlertPolicy(
+                    com.oracle.bmc.waiter.BmcGenericWaiter waiter,
+                    final GetAlertPolicyRequest request,
+                    final com.oracle.bmc.datasafe.model.AlertPolicyLifecycleState... targetStates) {
+        final java.util.Set<com.oracle.bmc.datasafe.model.AlertPolicyLifecycleState>
+                targetStatesSet = new java.util.HashSet<>(java.util.Arrays.asList(targetStates));
+
+        return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
+                executorService,
+                waiter.toCallable(
+                        com.google.common.base.Suppliers.ofInstance(request),
+                        new com.google.common.base.Function<
+                                GetAlertPolicyRequest, GetAlertPolicyResponse>() {
+                            @Override
+                            public GetAlertPolicyResponse apply(GetAlertPolicyRequest request) {
+                                return client.getAlertPolicy(request);
+                            }
+                        },
+                        new com.google.common.base.Predicate<GetAlertPolicyResponse>() {
+                            @Override
+                            public boolean apply(GetAlertPolicyResponse response) {
+                                return targetStatesSet.contains(
+                                        response.getAlertPolicy().getLifecycleState());
+                            }
+                        },
+                        targetStatesSet.contains(
+                                com.oracle.bmc.datasafe.model.AlertPolicyLifecycleState.Deleted)),
+                request);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
+     *
+     * @param request the request to send
+     * @param targetState the desired states to wait for. If multiple states are provided then the waiter will return once the resource reaches any of the provided states
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<
+                    GetAuditArchiveRetrievalRequest, GetAuditArchiveRetrievalResponse>
+            forAuditArchiveRetrieval(
+                    GetAuditArchiveRetrievalRequest request,
+                    com.oracle.bmc.datasafe.model.AuditArchiveRetrievalLifecycleState...
+                            targetStates) {
+        org.apache.commons.lang3.Validate.notEmpty(
+                targetStates, "At least one targetState must be provided");
+        org.apache.commons.lang3.Validate.noNullElements(
+                targetStates, "Null targetState values are not permitted");
+
+        return forAuditArchiveRetrieval(
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_WAITER, request, targetStates);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param targetState the desired state to wait for
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<
+                    GetAuditArchiveRetrievalRequest, GetAuditArchiveRetrievalResponse>
+            forAuditArchiveRetrieval(
+                    GetAuditArchiveRetrievalRequest request,
+                    com.oracle.bmc.datasafe.model.AuditArchiveRetrievalLifecycleState targetState,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
+        org.apache.commons.lang3.Validate.notNull(targetState, "The targetState cannot be null");
+
+        return forAuditArchiveRetrieval(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetState);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @param targetStates the desired states to wait for. The waiter will return once the resource reaches any of the provided states
+     * @return a new {@code Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<
+                    GetAuditArchiveRetrievalRequest, GetAuditArchiveRetrievalResponse>
+            forAuditArchiveRetrieval(
+                    GetAuditArchiveRetrievalRequest request,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy,
+                    com.oracle.bmc.datasafe.model.AuditArchiveRetrievalLifecycleState...
+                            targetStates) {
+        org.apache.commons.lang3.Validate.notEmpty(
+                targetStates, "At least one targetState must be provided");
+        org.apache.commons.lang3.Validate.noNullElements(
+                targetStates, "Null targetState values are not permitted");
+
+        return forAuditArchiveRetrieval(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetStates);
+    }
+
+    // Helper method to create a new Waiter for AuditArchiveRetrieval.
+    private com.oracle.bmc.waiter.Waiter<
+                    GetAuditArchiveRetrievalRequest, GetAuditArchiveRetrievalResponse>
+            forAuditArchiveRetrieval(
+                    com.oracle.bmc.waiter.BmcGenericWaiter waiter,
+                    final GetAuditArchiveRetrievalRequest request,
+                    final com.oracle.bmc.datasafe.model.AuditArchiveRetrievalLifecycleState...
+                            targetStates) {
+        final java.util.Set<com.oracle.bmc.datasafe.model.AuditArchiveRetrievalLifecycleState>
+                targetStatesSet = new java.util.HashSet<>(java.util.Arrays.asList(targetStates));
+
+        return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
+                executorService,
+                waiter.toCallable(
+                        com.google.common.base.Suppliers.ofInstance(request),
+                        new com.google.common.base.Function<
+                                GetAuditArchiveRetrievalRequest,
+                                GetAuditArchiveRetrievalResponse>() {
+                            @Override
+                            public GetAuditArchiveRetrievalResponse apply(
+                                    GetAuditArchiveRetrievalRequest request) {
+                                return client.getAuditArchiveRetrieval(request);
+                            }
+                        },
+                        new com.google.common.base.Predicate<GetAuditArchiveRetrievalResponse>() {
+                            @Override
+                            public boolean apply(GetAuditArchiveRetrievalResponse response) {
+                                return targetStatesSet.contains(
+                                        response.getAuditArchiveRetrieval().getLifecycleState());
+                            }
+                        },
+                        targetStatesSet.contains(
+                                com.oracle.bmc.datasafe.model.AuditArchiveRetrievalLifecycleState
+                                        .Deleted)),
+                request);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
+     *
+     * @param request the request to send
+     * @param targetState the desired states to wait for. If multiple states are provided then the waiter will return once the resource reaches any of the provided states
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<GetAuditPolicyRequest, GetAuditPolicyResponse>
+            forAuditPolicy(
+                    GetAuditPolicyRequest request,
+                    com.oracle.bmc.datasafe.model.AuditPolicyLifecycleState... targetStates) {
+        org.apache.commons.lang3.Validate.notEmpty(
+                targetStates, "At least one targetState must be provided");
+        org.apache.commons.lang3.Validate.noNullElements(
+                targetStates, "Null targetState values are not permitted");
+
+        return forAuditPolicy(
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_WAITER, request, targetStates);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param targetState the desired state to wait for
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<GetAuditPolicyRequest, GetAuditPolicyResponse>
+            forAuditPolicy(
+                    GetAuditPolicyRequest request,
+                    com.oracle.bmc.datasafe.model.AuditPolicyLifecycleState targetState,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
+        org.apache.commons.lang3.Validate.notNull(targetState, "The targetState cannot be null");
+
+        return forAuditPolicy(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetState);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @param targetStates the desired states to wait for. The waiter will return once the resource reaches any of the provided states
+     * @return a new {@code Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<GetAuditPolicyRequest, GetAuditPolicyResponse>
+            forAuditPolicy(
+                    GetAuditPolicyRequest request,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy,
+                    com.oracle.bmc.datasafe.model.AuditPolicyLifecycleState... targetStates) {
+        org.apache.commons.lang3.Validate.notEmpty(
+                targetStates, "At least one targetState must be provided");
+        org.apache.commons.lang3.Validate.noNullElements(
+                targetStates, "Null targetState values are not permitted");
+
+        return forAuditPolicy(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetStates);
+    }
+
+    // Helper method to create a new Waiter for AuditPolicy.
+    private com.oracle.bmc.waiter.Waiter<GetAuditPolicyRequest, GetAuditPolicyResponse>
+            forAuditPolicy(
+                    com.oracle.bmc.waiter.BmcGenericWaiter waiter,
+                    final GetAuditPolicyRequest request,
+                    final com.oracle.bmc.datasafe.model.AuditPolicyLifecycleState... targetStates) {
+        final java.util.Set<com.oracle.bmc.datasafe.model.AuditPolicyLifecycleState>
+                targetStatesSet = new java.util.HashSet<>(java.util.Arrays.asList(targetStates));
+
+        return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
+                executorService,
+                waiter.toCallable(
+                        com.google.common.base.Suppliers.ofInstance(request),
+                        new com.google.common.base.Function<
+                                GetAuditPolicyRequest, GetAuditPolicyResponse>() {
+                            @Override
+                            public GetAuditPolicyResponse apply(GetAuditPolicyRequest request) {
+                                return client.getAuditPolicy(request);
+                            }
+                        },
+                        new com.google.common.base.Predicate<GetAuditPolicyResponse>() {
+                            @Override
+                            public boolean apply(GetAuditPolicyResponse response) {
+                                return targetStatesSet.contains(
+                                        response.getAuditPolicy().getLifecycleState());
+                            }
+                        },
+                        targetStatesSet.contains(
+                                com.oracle.bmc.datasafe.model.AuditPolicyLifecycleState.Deleted)),
+                request);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
+     *
+     * @param request the request to send
+     * @param targetState the desired states to wait for. If multiple states are provided then the waiter will return once the resource reaches any of the provided states
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<GetAuditProfileRequest, GetAuditProfileResponse>
+            forAuditProfile(
+                    GetAuditProfileRequest request,
+                    com.oracle.bmc.datasafe.model.AuditProfileLifecycleState... targetStates) {
+        org.apache.commons.lang3.Validate.notEmpty(
+                targetStates, "At least one targetState must be provided");
+        org.apache.commons.lang3.Validate.noNullElements(
+                targetStates, "Null targetState values are not permitted");
+
+        return forAuditProfile(
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_WAITER, request, targetStates);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param targetState the desired state to wait for
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<GetAuditProfileRequest, GetAuditProfileResponse>
+            forAuditProfile(
+                    GetAuditProfileRequest request,
+                    com.oracle.bmc.datasafe.model.AuditProfileLifecycleState targetState,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
+        org.apache.commons.lang3.Validate.notNull(targetState, "The targetState cannot be null");
+
+        return forAuditProfile(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetState);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @param targetStates the desired states to wait for. The waiter will return once the resource reaches any of the provided states
+     * @return a new {@code Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<GetAuditProfileRequest, GetAuditProfileResponse>
+            forAuditProfile(
+                    GetAuditProfileRequest request,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy,
+                    com.oracle.bmc.datasafe.model.AuditProfileLifecycleState... targetStates) {
+        org.apache.commons.lang3.Validate.notEmpty(
+                targetStates, "At least one targetState must be provided");
+        org.apache.commons.lang3.Validate.noNullElements(
+                targetStates, "Null targetState values are not permitted");
+
+        return forAuditProfile(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetStates);
+    }
+
+    // Helper method to create a new Waiter for AuditProfile.
+    private com.oracle.bmc.waiter.Waiter<GetAuditProfileRequest, GetAuditProfileResponse>
+            forAuditProfile(
+                    com.oracle.bmc.waiter.BmcGenericWaiter waiter,
+                    final GetAuditProfileRequest request,
+                    final com.oracle.bmc.datasafe.model.AuditProfileLifecycleState...
+                            targetStates) {
+        final java.util.Set<com.oracle.bmc.datasafe.model.AuditProfileLifecycleState>
+                targetStatesSet = new java.util.HashSet<>(java.util.Arrays.asList(targetStates));
+
+        return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
+                executorService,
+                waiter.toCallable(
+                        com.google.common.base.Suppliers.ofInstance(request),
+                        new com.google.common.base.Function<
+                                GetAuditProfileRequest, GetAuditProfileResponse>() {
+                            @Override
+                            public GetAuditProfileResponse apply(GetAuditProfileRequest request) {
+                                return client.getAuditProfile(request);
+                            }
+                        },
+                        new com.google.common.base.Predicate<GetAuditProfileResponse>() {
+                            @Override
+                            public boolean apply(GetAuditProfileResponse response) {
+                                return targetStatesSet.contains(
+                                        response.getAuditProfile().getLifecycleState());
+                            }
+                        },
+                        targetStatesSet.contains(
+                                com.oracle.bmc.datasafe.model.AuditProfileLifecycleState.Deleted)),
+                request);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
+     *
+     * @param request the request to send
+     * @param targetState the desired states to wait for. If multiple states are provided then the waiter will return once the resource reaches any of the provided states
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<GetAuditTrailRequest, GetAuditTrailResponse> forAuditTrail(
+            GetAuditTrailRequest request,
+            com.oracle.bmc.datasafe.model.AuditTrailLifecycleState... targetStates) {
+        org.apache.commons.lang3.Validate.notEmpty(
+                targetStates, "At least one targetState must be provided");
+        org.apache.commons.lang3.Validate.noNullElements(
+                targetStates, "Null targetState values are not permitted");
+
+        return forAuditTrail(
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_WAITER, request, targetStates);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param targetState the desired state to wait for
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<GetAuditTrailRequest, GetAuditTrailResponse> forAuditTrail(
+            GetAuditTrailRequest request,
+            com.oracle.bmc.datasafe.model.AuditTrailLifecycleState targetState,
+            com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+            com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
+        org.apache.commons.lang3.Validate.notNull(targetState, "The targetState cannot be null");
+
+        return forAuditTrail(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetState);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @param targetStates the desired states to wait for. The waiter will return once the resource reaches any of the provided states
+     * @return a new {@code Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<GetAuditTrailRequest, GetAuditTrailResponse> forAuditTrail(
+            GetAuditTrailRequest request,
+            com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+            com.oracle.bmc.waiter.DelayStrategy delayStrategy,
+            com.oracle.bmc.datasafe.model.AuditTrailLifecycleState... targetStates) {
+        org.apache.commons.lang3.Validate.notEmpty(
+                targetStates, "At least one targetState must be provided");
+        org.apache.commons.lang3.Validate.noNullElements(
+                targetStates, "Null targetState values are not permitted");
+
+        return forAuditTrail(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetStates);
+    }
+
+    // Helper method to create a new Waiter for AuditTrail.
+    private com.oracle.bmc.waiter.Waiter<GetAuditTrailRequest, GetAuditTrailResponse> forAuditTrail(
+            com.oracle.bmc.waiter.BmcGenericWaiter waiter,
+            final GetAuditTrailRequest request,
+            final com.oracle.bmc.datasafe.model.AuditTrailLifecycleState... targetStates) {
+        final java.util.Set<com.oracle.bmc.datasafe.model.AuditTrailLifecycleState>
+                targetStatesSet = new java.util.HashSet<>(java.util.Arrays.asList(targetStates));
+
+        return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
+                executorService,
+                waiter.toCallable(
+                        com.google.common.base.Suppliers.ofInstance(request),
+                        new com.google.common.base.Function<
+                                GetAuditTrailRequest, GetAuditTrailResponse>() {
+                            @Override
+                            public GetAuditTrailResponse apply(GetAuditTrailRequest request) {
+                                return client.getAuditTrail(request);
+                            }
+                        },
+                        new com.google.common.base.Predicate<GetAuditTrailResponse>() {
+                            @Override
+                            public boolean apply(GetAuditTrailResponse response) {
+                                return targetStatesSet.contains(
+                                        response.getAuditTrail().getLifecycleState());
+                            }
+                        },
+                        false),
+                request);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
+     *
+     * @param request the request to send
+     * @param targetState the desired states to wait for. If multiple states are provided then the waiter will return once the resource reaches any of the provided states
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
+     */
     public com.oracle.bmc.waiter.Waiter<
                     GetDataSafeConfigurationRequest, GetDataSafeConfigurationResponse>
             forDataSafeConfiguration(
@@ -240,6 +846,415 @@ public class DataSafeWaiters {
      * @param targetState the desired states to wait for. If multiple states are provided then the waiter will return once the resource reaches any of the provided states
      * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
      */
+    public com.oracle.bmc.waiter.Waiter<GetDiscoveryJobRequest, GetDiscoveryJobResponse>
+            forDiscoveryJob(
+                    GetDiscoveryJobRequest request,
+                    com.oracle.bmc.datasafe.model.DiscoveryLifecycleState... targetStates) {
+        org.apache.commons.lang3.Validate.notEmpty(
+                targetStates, "At least one targetState must be provided");
+        org.apache.commons.lang3.Validate.noNullElements(
+                targetStates, "Null targetState values are not permitted");
+
+        return forDiscoveryJob(
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_WAITER, request, targetStates);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param targetState the desired state to wait for
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<GetDiscoveryJobRequest, GetDiscoveryJobResponse>
+            forDiscoveryJob(
+                    GetDiscoveryJobRequest request,
+                    com.oracle.bmc.datasafe.model.DiscoveryLifecycleState targetState,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
+        org.apache.commons.lang3.Validate.notNull(targetState, "The targetState cannot be null");
+
+        return forDiscoveryJob(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetState);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @param targetStates the desired states to wait for. The waiter will return once the resource reaches any of the provided states
+     * @return a new {@code Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<GetDiscoveryJobRequest, GetDiscoveryJobResponse>
+            forDiscoveryJob(
+                    GetDiscoveryJobRequest request,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy,
+                    com.oracle.bmc.datasafe.model.DiscoveryLifecycleState... targetStates) {
+        org.apache.commons.lang3.Validate.notEmpty(
+                targetStates, "At least one targetState must be provided");
+        org.apache.commons.lang3.Validate.noNullElements(
+                targetStates, "Null targetState values are not permitted");
+
+        return forDiscoveryJob(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetStates);
+    }
+
+    // Helper method to create a new Waiter for DiscoveryJob.
+    private com.oracle.bmc.waiter.Waiter<GetDiscoveryJobRequest, GetDiscoveryJobResponse>
+            forDiscoveryJob(
+                    com.oracle.bmc.waiter.BmcGenericWaiter waiter,
+                    final GetDiscoveryJobRequest request,
+                    final com.oracle.bmc.datasafe.model.DiscoveryLifecycleState... targetStates) {
+        final java.util.Set<com.oracle.bmc.datasafe.model.DiscoveryLifecycleState> targetStatesSet =
+                new java.util.HashSet<>(java.util.Arrays.asList(targetStates));
+
+        return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
+                executorService,
+                waiter.toCallable(
+                        com.google.common.base.Suppliers.ofInstance(request),
+                        new com.google.common.base.Function<
+                                GetDiscoveryJobRequest, GetDiscoveryJobResponse>() {
+                            @Override
+                            public GetDiscoveryJobResponse apply(GetDiscoveryJobRequest request) {
+                                return client.getDiscoveryJob(request);
+                            }
+                        },
+                        new com.google.common.base.Predicate<GetDiscoveryJobResponse>() {
+                            @Override
+                            public boolean apply(GetDiscoveryJobResponse response) {
+                                return targetStatesSet.contains(
+                                        response.getDiscoveryJob().getLifecycleState());
+                            }
+                        },
+                        targetStatesSet.contains(
+                                com.oracle.bmc.datasafe.model.DiscoveryLifecycleState.Deleted)),
+                request);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
+     *
+     * @param request the request to send
+     * @param targetState the desired states to wait for. If multiple states are provided then the waiter will return once the resource reaches any of the provided states
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<
+                    GetLibraryMaskingFormatRequest, GetLibraryMaskingFormatResponse>
+            forLibraryMaskingFormat(
+                    GetLibraryMaskingFormatRequest request,
+                    com.oracle.bmc.datasafe.model.MaskingLifecycleState... targetStates) {
+        org.apache.commons.lang3.Validate.notEmpty(
+                targetStates, "At least one targetState must be provided");
+        org.apache.commons.lang3.Validate.noNullElements(
+                targetStates, "Null targetState values are not permitted");
+
+        return forLibraryMaskingFormat(
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_WAITER, request, targetStates);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param targetState the desired state to wait for
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<
+                    GetLibraryMaskingFormatRequest, GetLibraryMaskingFormatResponse>
+            forLibraryMaskingFormat(
+                    GetLibraryMaskingFormatRequest request,
+                    com.oracle.bmc.datasafe.model.MaskingLifecycleState targetState,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
+        org.apache.commons.lang3.Validate.notNull(targetState, "The targetState cannot be null");
+
+        return forLibraryMaskingFormat(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetState);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @param targetStates the desired states to wait for. The waiter will return once the resource reaches any of the provided states
+     * @return a new {@code Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<
+                    GetLibraryMaskingFormatRequest, GetLibraryMaskingFormatResponse>
+            forLibraryMaskingFormat(
+                    GetLibraryMaskingFormatRequest request,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy,
+                    com.oracle.bmc.datasafe.model.MaskingLifecycleState... targetStates) {
+        org.apache.commons.lang3.Validate.notEmpty(
+                targetStates, "At least one targetState must be provided");
+        org.apache.commons.lang3.Validate.noNullElements(
+                targetStates, "Null targetState values are not permitted");
+
+        return forLibraryMaskingFormat(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetStates);
+    }
+
+    // Helper method to create a new Waiter for LibraryMaskingFormat.
+    private com.oracle.bmc.waiter.Waiter<
+                    GetLibraryMaskingFormatRequest, GetLibraryMaskingFormatResponse>
+            forLibraryMaskingFormat(
+                    com.oracle.bmc.waiter.BmcGenericWaiter waiter,
+                    final GetLibraryMaskingFormatRequest request,
+                    final com.oracle.bmc.datasafe.model.MaskingLifecycleState... targetStates) {
+        final java.util.Set<com.oracle.bmc.datasafe.model.MaskingLifecycleState> targetStatesSet =
+                new java.util.HashSet<>(java.util.Arrays.asList(targetStates));
+
+        return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
+                executorService,
+                waiter.toCallable(
+                        com.google.common.base.Suppliers.ofInstance(request),
+                        new com.google.common.base.Function<
+                                GetLibraryMaskingFormatRequest, GetLibraryMaskingFormatResponse>() {
+                            @Override
+                            public GetLibraryMaskingFormatResponse apply(
+                                    GetLibraryMaskingFormatRequest request) {
+                                return client.getLibraryMaskingFormat(request);
+                            }
+                        },
+                        new com.google.common.base.Predicate<GetLibraryMaskingFormatResponse>() {
+                            @Override
+                            public boolean apply(GetLibraryMaskingFormatResponse response) {
+                                return targetStatesSet.contains(
+                                        response.getLibraryMaskingFormat().getLifecycleState());
+                            }
+                        },
+                        targetStatesSet.contains(
+                                com.oracle.bmc.datasafe.model.MaskingLifecycleState.Deleted)),
+                request);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
+     *
+     * @param request the request to send
+     * @param targetState the desired states to wait for. If multiple states are provided then the waiter will return once the resource reaches any of the provided states
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<GetMaskingColumnRequest, GetMaskingColumnResponse>
+            forMaskingColumn(
+                    GetMaskingColumnRequest request,
+                    com.oracle.bmc.datasafe.model.MaskingColumnLifecycleState... targetStates) {
+        org.apache.commons.lang3.Validate.notEmpty(
+                targetStates, "At least one targetState must be provided");
+        org.apache.commons.lang3.Validate.noNullElements(
+                targetStates, "Null targetState values are not permitted");
+
+        return forMaskingColumn(
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_WAITER, request, targetStates);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param targetState the desired state to wait for
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<GetMaskingColumnRequest, GetMaskingColumnResponse>
+            forMaskingColumn(
+                    GetMaskingColumnRequest request,
+                    com.oracle.bmc.datasafe.model.MaskingColumnLifecycleState targetState,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
+        org.apache.commons.lang3.Validate.notNull(targetState, "The targetState cannot be null");
+
+        return forMaskingColumn(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetState);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @param targetStates the desired states to wait for. The waiter will return once the resource reaches any of the provided states
+     * @return a new {@code Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<GetMaskingColumnRequest, GetMaskingColumnResponse>
+            forMaskingColumn(
+                    GetMaskingColumnRequest request,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy,
+                    com.oracle.bmc.datasafe.model.MaskingColumnLifecycleState... targetStates) {
+        org.apache.commons.lang3.Validate.notEmpty(
+                targetStates, "At least one targetState must be provided");
+        org.apache.commons.lang3.Validate.noNullElements(
+                targetStates, "Null targetState values are not permitted");
+
+        return forMaskingColumn(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetStates);
+    }
+
+    // Helper method to create a new Waiter for MaskingColumn.
+    private com.oracle.bmc.waiter.Waiter<GetMaskingColumnRequest, GetMaskingColumnResponse>
+            forMaskingColumn(
+                    com.oracle.bmc.waiter.BmcGenericWaiter waiter,
+                    final GetMaskingColumnRequest request,
+                    final com.oracle.bmc.datasafe.model.MaskingColumnLifecycleState...
+                            targetStates) {
+        final java.util.Set<com.oracle.bmc.datasafe.model.MaskingColumnLifecycleState>
+                targetStatesSet = new java.util.HashSet<>(java.util.Arrays.asList(targetStates));
+
+        return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
+                executorService,
+                waiter.toCallable(
+                        com.google.common.base.Suppliers.ofInstance(request),
+                        new com.google.common.base.Function<
+                                GetMaskingColumnRequest, GetMaskingColumnResponse>() {
+                            @Override
+                            public GetMaskingColumnResponse apply(GetMaskingColumnRequest request) {
+                                return client.getMaskingColumn(request);
+                            }
+                        },
+                        new com.google.common.base.Predicate<GetMaskingColumnResponse>() {
+                            @Override
+                            public boolean apply(GetMaskingColumnResponse response) {
+                                return targetStatesSet.contains(
+                                        response.getMaskingColumn().getLifecycleState());
+                            }
+                        },
+                        false),
+                request);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
+     *
+     * @param request the request to send
+     * @param targetState the desired states to wait for. If multiple states are provided then the waiter will return once the resource reaches any of the provided states
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<GetMaskingPolicyRequest, GetMaskingPolicyResponse>
+            forMaskingPolicy(
+                    GetMaskingPolicyRequest request,
+                    com.oracle.bmc.datasafe.model.MaskingLifecycleState... targetStates) {
+        org.apache.commons.lang3.Validate.notEmpty(
+                targetStates, "At least one targetState must be provided");
+        org.apache.commons.lang3.Validate.noNullElements(
+                targetStates, "Null targetState values are not permitted");
+
+        return forMaskingPolicy(
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_WAITER, request, targetStates);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param targetState the desired state to wait for
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<GetMaskingPolicyRequest, GetMaskingPolicyResponse>
+            forMaskingPolicy(
+                    GetMaskingPolicyRequest request,
+                    com.oracle.bmc.datasafe.model.MaskingLifecycleState targetState,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
+        org.apache.commons.lang3.Validate.notNull(targetState, "The targetState cannot be null");
+
+        return forMaskingPolicy(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetState);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @param targetStates the desired states to wait for. The waiter will return once the resource reaches any of the provided states
+     * @return a new {@code Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<GetMaskingPolicyRequest, GetMaskingPolicyResponse>
+            forMaskingPolicy(
+                    GetMaskingPolicyRequest request,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy,
+                    com.oracle.bmc.datasafe.model.MaskingLifecycleState... targetStates) {
+        org.apache.commons.lang3.Validate.notEmpty(
+                targetStates, "At least one targetState must be provided");
+        org.apache.commons.lang3.Validate.noNullElements(
+                targetStates, "Null targetState values are not permitted");
+
+        return forMaskingPolicy(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetStates);
+    }
+
+    // Helper method to create a new Waiter for MaskingPolicy.
+    private com.oracle.bmc.waiter.Waiter<GetMaskingPolicyRequest, GetMaskingPolicyResponse>
+            forMaskingPolicy(
+                    com.oracle.bmc.waiter.BmcGenericWaiter waiter,
+                    final GetMaskingPolicyRequest request,
+                    final com.oracle.bmc.datasafe.model.MaskingLifecycleState... targetStates) {
+        final java.util.Set<com.oracle.bmc.datasafe.model.MaskingLifecycleState> targetStatesSet =
+                new java.util.HashSet<>(java.util.Arrays.asList(targetStates));
+
+        return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
+                executorService,
+                waiter.toCallable(
+                        com.google.common.base.Suppliers.ofInstance(request),
+                        new com.google.common.base.Function<
+                                GetMaskingPolicyRequest, GetMaskingPolicyResponse>() {
+                            @Override
+                            public GetMaskingPolicyResponse apply(GetMaskingPolicyRequest request) {
+                                return client.getMaskingPolicy(request);
+                            }
+                        },
+                        new com.google.common.base.Predicate<GetMaskingPolicyResponse>() {
+                            @Override
+                            public boolean apply(GetMaskingPolicyResponse response) {
+                                return targetStatesSet.contains(
+                                        response.getMaskingPolicy().getLifecycleState());
+                            }
+                        },
+                        targetStatesSet.contains(
+                                com.oracle.bmc.datasafe.model.MaskingLifecycleState.Deleted)),
+                request);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
+     *
+     * @param request the request to send
+     * @param targetState the desired states to wait for. If multiple states are provided then the waiter will return once the resource reaches any of the provided states
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
+     */
     public com.oracle.bmc.waiter.Waiter<GetOnPremConnectorRequest, GetOnPremConnectorResponse>
             forOnPremConnector(
                     GetOnPremConnectorRequest request,
@@ -332,6 +1347,205 @@ public class DataSafeWaiters {
                         },
                         targetStatesSet.contains(
                                 com.oracle.bmc.datasafe.model.LifecycleState.Deleted)),
+                request);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
+     *
+     * @param request the request to send
+     * @param targetState the desired states to wait for. If multiple states are provided then the waiter will return once the resource reaches any of the provided states
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<GetReportRequest, GetReportResponse> forReport(
+            GetReportRequest request,
+            com.oracle.bmc.datasafe.model.ReportLifecycleState... targetStates) {
+        org.apache.commons.lang3.Validate.notEmpty(
+                targetStates, "At least one targetState must be provided");
+        org.apache.commons.lang3.Validate.noNullElements(
+                targetStates, "Null targetState values are not permitted");
+
+        return forReport(
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_WAITER, request, targetStates);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param targetState the desired state to wait for
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<GetReportRequest, GetReportResponse> forReport(
+            GetReportRequest request,
+            com.oracle.bmc.datasafe.model.ReportLifecycleState targetState,
+            com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+            com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
+        org.apache.commons.lang3.Validate.notNull(targetState, "The targetState cannot be null");
+
+        return forReport(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetState);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @param targetStates the desired states to wait for. The waiter will return once the resource reaches any of the provided states
+     * @return a new {@code Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<GetReportRequest, GetReportResponse> forReport(
+            GetReportRequest request,
+            com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+            com.oracle.bmc.waiter.DelayStrategy delayStrategy,
+            com.oracle.bmc.datasafe.model.ReportLifecycleState... targetStates) {
+        org.apache.commons.lang3.Validate.notEmpty(
+                targetStates, "At least one targetState must be provided");
+        org.apache.commons.lang3.Validate.noNullElements(
+                targetStates, "Null targetState values are not permitted");
+
+        return forReport(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetStates);
+    }
+
+    // Helper method to create a new Waiter for Report.
+    private com.oracle.bmc.waiter.Waiter<GetReportRequest, GetReportResponse> forReport(
+            com.oracle.bmc.waiter.BmcGenericWaiter waiter,
+            final GetReportRequest request,
+            final com.oracle.bmc.datasafe.model.ReportLifecycleState... targetStates) {
+        final java.util.Set<com.oracle.bmc.datasafe.model.ReportLifecycleState> targetStatesSet =
+                new java.util.HashSet<>(java.util.Arrays.asList(targetStates));
+
+        return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
+                executorService,
+                waiter.toCallable(
+                        com.google.common.base.Suppliers.ofInstance(request),
+                        new com.google.common.base.Function<GetReportRequest, GetReportResponse>() {
+                            @Override
+                            public GetReportResponse apply(GetReportRequest request) {
+                                return client.getReport(request);
+                            }
+                        },
+                        new com.google.common.base.Predicate<GetReportResponse>() {
+                            @Override
+                            public boolean apply(GetReportResponse response) {
+                                return targetStatesSet.contains(
+                                        response.getReport().getLifecycleState());
+                            }
+                        },
+                        false),
+                request);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
+     *
+     * @param request the request to send
+     * @param targetState the desired states to wait for. If multiple states are provided then the waiter will return once the resource reaches any of the provided states
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<GetReportDefinitionRequest, GetReportDefinitionResponse>
+            forReportDefinition(
+                    GetReportDefinitionRequest request,
+                    com.oracle.bmc.datasafe.model.ReportDefinitionLifecycleState... targetStates) {
+        org.apache.commons.lang3.Validate.notEmpty(
+                targetStates, "At least one targetState must be provided");
+        org.apache.commons.lang3.Validate.noNullElements(
+                targetStates, "Null targetState values are not permitted");
+
+        return forReportDefinition(
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_WAITER, request, targetStates);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param targetState the desired state to wait for
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<GetReportDefinitionRequest, GetReportDefinitionResponse>
+            forReportDefinition(
+                    GetReportDefinitionRequest request,
+                    com.oracle.bmc.datasafe.model.ReportDefinitionLifecycleState targetState,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
+        org.apache.commons.lang3.Validate.notNull(targetState, "The targetState cannot be null");
+
+        return forReportDefinition(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetState);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @param targetStates the desired states to wait for. The waiter will return once the resource reaches any of the provided states
+     * @return a new {@code Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<GetReportDefinitionRequest, GetReportDefinitionResponse>
+            forReportDefinition(
+                    GetReportDefinitionRequest request,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy,
+                    com.oracle.bmc.datasafe.model.ReportDefinitionLifecycleState... targetStates) {
+        org.apache.commons.lang3.Validate.notEmpty(
+                targetStates, "At least one targetState must be provided");
+        org.apache.commons.lang3.Validate.noNullElements(
+                targetStates, "Null targetState values are not permitted");
+
+        return forReportDefinition(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetStates);
+    }
+
+    // Helper method to create a new Waiter for ReportDefinition.
+    private com.oracle.bmc.waiter.Waiter<GetReportDefinitionRequest, GetReportDefinitionResponse>
+            forReportDefinition(
+                    com.oracle.bmc.waiter.BmcGenericWaiter waiter,
+                    final GetReportDefinitionRequest request,
+                    final com.oracle.bmc.datasafe.model.ReportDefinitionLifecycleState...
+                            targetStates) {
+        final java.util.Set<com.oracle.bmc.datasafe.model.ReportDefinitionLifecycleState>
+                targetStatesSet = new java.util.HashSet<>(java.util.Arrays.asList(targetStates));
+
+        return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
+                executorService,
+                waiter.toCallable(
+                        com.google.common.base.Suppliers.ofInstance(request),
+                        new com.google.common.base.Function<
+                                GetReportDefinitionRequest, GetReportDefinitionResponse>() {
+                            @Override
+                            public GetReportDefinitionResponse apply(
+                                    GetReportDefinitionRequest request) {
+                                return client.getReportDefinition(request);
+                            }
+                        },
+                        new com.google.common.base.Predicate<GetReportDefinitionResponse>() {
+                            @Override
+                            public boolean apply(GetReportDefinitionResponse response) {
+                                return targetStatesSet.contains(
+                                        response.getReportDefinition().getLifecycleState());
+                            }
+                        },
+                        targetStatesSet.contains(
+                                com.oracle.bmc.datasafe.model.ReportDefinitionLifecycleState
+                                        .Deleted)),
                 request);
     }
 
@@ -551,6 +1765,421 @@ public class DataSafeWaiters {
                             }
                         },
                         false),
+                request);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
+     *
+     * @param request the request to send
+     * @param targetState the desired states to wait for. If multiple states are provided then the waiter will return once the resource reaches any of the provided states
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<GetSensitiveColumnRequest, GetSensitiveColumnResponse>
+            forSensitiveColumn(
+                    GetSensitiveColumnRequest request,
+                    com.oracle.bmc.datasafe.model.SensitiveColumnLifecycleState... targetStates) {
+        org.apache.commons.lang3.Validate.notEmpty(
+                targetStates, "At least one targetState must be provided");
+        org.apache.commons.lang3.Validate.noNullElements(
+                targetStates, "Null targetState values are not permitted");
+
+        return forSensitiveColumn(
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_WAITER, request, targetStates);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param targetState the desired state to wait for
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<GetSensitiveColumnRequest, GetSensitiveColumnResponse>
+            forSensitiveColumn(
+                    GetSensitiveColumnRequest request,
+                    com.oracle.bmc.datasafe.model.SensitiveColumnLifecycleState targetState,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
+        org.apache.commons.lang3.Validate.notNull(targetState, "The targetState cannot be null");
+
+        return forSensitiveColumn(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetState);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @param targetStates the desired states to wait for. The waiter will return once the resource reaches any of the provided states
+     * @return a new {@code Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<GetSensitiveColumnRequest, GetSensitiveColumnResponse>
+            forSensitiveColumn(
+                    GetSensitiveColumnRequest request,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy,
+                    com.oracle.bmc.datasafe.model.SensitiveColumnLifecycleState... targetStates) {
+        org.apache.commons.lang3.Validate.notEmpty(
+                targetStates, "At least one targetState must be provided");
+        org.apache.commons.lang3.Validate.noNullElements(
+                targetStates, "Null targetState values are not permitted");
+
+        return forSensitiveColumn(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetStates);
+    }
+
+    // Helper method to create a new Waiter for SensitiveColumn.
+    private com.oracle.bmc.waiter.Waiter<GetSensitiveColumnRequest, GetSensitiveColumnResponse>
+            forSensitiveColumn(
+                    com.oracle.bmc.waiter.BmcGenericWaiter waiter,
+                    final GetSensitiveColumnRequest request,
+                    final com.oracle.bmc.datasafe.model.SensitiveColumnLifecycleState...
+                            targetStates) {
+        final java.util.Set<com.oracle.bmc.datasafe.model.SensitiveColumnLifecycleState>
+                targetStatesSet = new java.util.HashSet<>(java.util.Arrays.asList(targetStates));
+
+        return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
+                executorService,
+                waiter.toCallable(
+                        com.google.common.base.Suppliers.ofInstance(request),
+                        new com.google.common.base.Function<
+                                GetSensitiveColumnRequest, GetSensitiveColumnResponse>() {
+                            @Override
+                            public GetSensitiveColumnResponse apply(
+                                    GetSensitiveColumnRequest request) {
+                                return client.getSensitiveColumn(request);
+                            }
+                        },
+                        new com.google.common.base.Predicate<GetSensitiveColumnResponse>() {
+                            @Override
+                            public boolean apply(GetSensitiveColumnResponse response) {
+                                return targetStatesSet.contains(
+                                        response.getSensitiveColumn().getLifecycleState());
+                            }
+                        },
+                        false),
+                request);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
+     *
+     * @param request the request to send
+     * @param targetState the desired states to wait for. If multiple states are provided then the waiter will return once the resource reaches any of the provided states
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<GetSensitiveDataModelRequest, GetSensitiveDataModelResponse>
+            forSensitiveDataModel(
+                    GetSensitiveDataModelRequest request,
+                    com.oracle.bmc.datasafe.model.DiscoveryLifecycleState... targetStates) {
+        org.apache.commons.lang3.Validate.notEmpty(
+                targetStates, "At least one targetState must be provided");
+        org.apache.commons.lang3.Validate.noNullElements(
+                targetStates, "Null targetState values are not permitted");
+
+        return forSensitiveDataModel(
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_WAITER, request, targetStates);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param targetState the desired state to wait for
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<GetSensitiveDataModelRequest, GetSensitiveDataModelResponse>
+            forSensitiveDataModel(
+                    GetSensitiveDataModelRequest request,
+                    com.oracle.bmc.datasafe.model.DiscoveryLifecycleState targetState,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
+        org.apache.commons.lang3.Validate.notNull(targetState, "The targetState cannot be null");
+
+        return forSensitiveDataModel(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetState);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @param targetStates the desired states to wait for. The waiter will return once the resource reaches any of the provided states
+     * @return a new {@code Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<GetSensitiveDataModelRequest, GetSensitiveDataModelResponse>
+            forSensitiveDataModel(
+                    GetSensitiveDataModelRequest request,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy,
+                    com.oracle.bmc.datasafe.model.DiscoveryLifecycleState... targetStates) {
+        org.apache.commons.lang3.Validate.notEmpty(
+                targetStates, "At least one targetState must be provided");
+        org.apache.commons.lang3.Validate.noNullElements(
+                targetStates, "Null targetState values are not permitted");
+
+        return forSensitiveDataModel(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetStates);
+    }
+
+    // Helper method to create a new Waiter for SensitiveDataModel.
+    private com.oracle.bmc.waiter.Waiter<
+                    GetSensitiveDataModelRequest, GetSensitiveDataModelResponse>
+            forSensitiveDataModel(
+                    com.oracle.bmc.waiter.BmcGenericWaiter waiter,
+                    final GetSensitiveDataModelRequest request,
+                    final com.oracle.bmc.datasafe.model.DiscoveryLifecycleState... targetStates) {
+        final java.util.Set<com.oracle.bmc.datasafe.model.DiscoveryLifecycleState> targetStatesSet =
+                new java.util.HashSet<>(java.util.Arrays.asList(targetStates));
+
+        return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
+                executorService,
+                waiter.toCallable(
+                        com.google.common.base.Suppliers.ofInstance(request),
+                        new com.google.common.base.Function<
+                                GetSensitiveDataModelRequest, GetSensitiveDataModelResponse>() {
+                            @Override
+                            public GetSensitiveDataModelResponse apply(
+                                    GetSensitiveDataModelRequest request) {
+                                return client.getSensitiveDataModel(request);
+                            }
+                        },
+                        new com.google.common.base.Predicate<GetSensitiveDataModelResponse>() {
+                            @Override
+                            public boolean apply(GetSensitiveDataModelResponse response) {
+                                return targetStatesSet.contains(
+                                        response.getSensitiveDataModel().getLifecycleState());
+                            }
+                        },
+                        targetStatesSet.contains(
+                                com.oracle.bmc.datasafe.model.DiscoveryLifecycleState.Deleted)),
+                request);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
+     *
+     * @param request the request to send
+     * @param targetState the desired states to wait for. If multiple states are provided then the waiter will return once the resource reaches any of the provided states
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<GetSensitiveTypeRequest, GetSensitiveTypeResponse>
+            forSensitiveType(
+                    GetSensitiveTypeRequest request,
+                    com.oracle.bmc.datasafe.model.DiscoveryLifecycleState... targetStates) {
+        org.apache.commons.lang3.Validate.notEmpty(
+                targetStates, "At least one targetState must be provided");
+        org.apache.commons.lang3.Validate.noNullElements(
+                targetStates, "Null targetState values are not permitted");
+
+        return forSensitiveType(
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_WAITER, request, targetStates);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param targetState the desired state to wait for
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<GetSensitiveTypeRequest, GetSensitiveTypeResponse>
+            forSensitiveType(
+                    GetSensitiveTypeRequest request,
+                    com.oracle.bmc.datasafe.model.DiscoveryLifecycleState targetState,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
+        org.apache.commons.lang3.Validate.notNull(targetState, "The targetState cannot be null");
+
+        return forSensitiveType(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetState);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @param targetStates the desired states to wait for. The waiter will return once the resource reaches any of the provided states
+     * @return a new {@code Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<GetSensitiveTypeRequest, GetSensitiveTypeResponse>
+            forSensitiveType(
+                    GetSensitiveTypeRequest request,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy,
+                    com.oracle.bmc.datasafe.model.DiscoveryLifecycleState... targetStates) {
+        org.apache.commons.lang3.Validate.notEmpty(
+                targetStates, "At least one targetState must be provided");
+        org.apache.commons.lang3.Validate.noNullElements(
+                targetStates, "Null targetState values are not permitted");
+
+        return forSensitiveType(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetStates);
+    }
+
+    // Helper method to create a new Waiter for SensitiveType.
+    private com.oracle.bmc.waiter.Waiter<GetSensitiveTypeRequest, GetSensitiveTypeResponse>
+            forSensitiveType(
+                    com.oracle.bmc.waiter.BmcGenericWaiter waiter,
+                    final GetSensitiveTypeRequest request,
+                    final com.oracle.bmc.datasafe.model.DiscoveryLifecycleState... targetStates) {
+        final java.util.Set<com.oracle.bmc.datasafe.model.DiscoveryLifecycleState> targetStatesSet =
+                new java.util.HashSet<>(java.util.Arrays.asList(targetStates));
+
+        return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
+                executorService,
+                waiter.toCallable(
+                        com.google.common.base.Suppliers.ofInstance(request),
+                        new com.google.common.base.Function<
+                                GetSensitiveTypeRequest, GetSensitiveTypeResponse>() {
+                            @Override
+                            public GetSensitiveTypeResponse apply(GetSensitiveTypeRequest request) {
+                                return client.getSensitiveType(request);
+                            }
+                        },
+                        new com.google.common.base.Predicate<GetSensitiveTypeResponse>() {
+                            @Override
+                            public boolean apply(GetSensitiveTypeResponse response) {
+                                return targetStatesSet.contains(
+                                        response.getSensitiveType().getLifecycleState());
+                            }
+                        },
+                        targetStatesSet.contains(
+                                com.oracle.bmc.datasafe.model.DiscoveryLifecycleState.Deleted)),
+                request);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
+     *
+     * @param request the request to send
+     * @param targetState the desired states to wait for. If multiple states are provided then the waiter will return once the resource reaches any of the provided states
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<
+                    GetTargetAlertPolicyAssociationRequest, GetTargetAlertPolicyAssociationResponse>
+            forTargetAlertPolicyAssociation(
+                    GetTargetAlertPolicyAssociationRequest request,
+                    com.oracle.bmc.datasafe.model.AlertPolicyLifecycleState... targetStates) {
+        org.apache.commons.lang3.Validate.notEmpty(
+                targetStates, "At least one targetState must be provided");
+        org.apache.commons.lang3.Validate.noNullElements(
+                targetStates, "Null targetState values are not permitted");
+
+        return forTargetAlertPolicyAssociation(
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_WAITER, request, targetStates);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param targetState the desired state to wait for
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<
+                    GetTargetAlertPolicyAssociationRequest, GetTargetAlertPolicyAssociationResponse>
+            forTargetAlertPolicyAssociation(
+                    GetTargetAlertPolicyAssociationRequest request,
+                    com.oracle.bmc.datasafe.model.AlertPolicyLifecycleState targetState,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
+        org.apache.commons.lang3.Validate.notNull(targetState, "The targetState cannot be null");
+
+        return forTargetAlertPolicyAssociation(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetState);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @param targetStates the desired states to wait for. The waiter will return once the resource reaches any of the provided states
+     * @return a new {@code Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<
+                    GetTargetAlertPolicyAssociationRequest, GetTargetAlertPolicyAssociationResponse>
+            forTargetAlertPolicyAssociation(
+                    GetTargetAlertPolicyAssociationRequest request,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy,
+                    com.oracle.bmc.datasafe.model.AlertPolicyLifecycleState... targetStates) {
+        org.apache.commons.lang3.Validate.notEmpty(
+                targetStates, "At least one targetState must be provided");
+        org.apache.commons.lang3.Validate.noNullElements(
+                targetStates, "Null targetState values are not permitted");
+
+        return forTargetAlertPolicyAssociation(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetStates);
+    }
+
+    // Helper method to create a new Waiter for TargetAlertPolicyAssociation.
+    private com.oracle.bmc.waiter.Waiter<
+                    GetTargetAlertPolicyAssociationRequest, GetTargetAlertPolicyAssociationResponse>
+            forTargetAlertPolicyAssociation(
+                    com.oracle.bmc.waiter.BmcGenericWaiter waiter,
+                    final GetTargetAlertPolicyAssociationRequest request,
+                    final com.oracle.bmc.datasafe.model.AlertPolicyLifecycleState... targetStates) {
+        final java.util.Set<com.oracle.bmc.datasafe.model.AlertPolicyLifecycleState>
+                targetStatesSet = new java.util.HashSet<>(java.util.Arrays.asList(targetStates));
+
+        return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
+                executorService,
+                waiter.toCallable(
+                        com.google.common.base.Suppliers.ofInstance(request),
+                        new com.google.common.base.Function<
+                                GetTargetAlertPolicyAssociationRequest,
+                                GetTargetAlertPolicyAssociationResponse>() {
+                            @Override
+                            public GetTargetAlertPolicyAssociationResponse apply(
+                                    GetTargetAlertPolicyAssociationRequest request) {
+                                return client.getTargetAlertPolicyAssociation(request);
+                            }
+                        },
+                        new com.google.common.base.Predicate<
+                                GetTargetAlertPolicyAssociationResponse>() {
+                            @Override
+                            public boolean apply(GetTargetAlertPolicyAssociationResponse response) {
+                                return targetStatesSet.contains(
+                                        response.getTargetAlertPolicyAssociation()
+                                                .getLifecycleState());
+                            }
+                        },
+                        targetStatesSet.contains(
+                                com.oracle.bmc.datasafe.model.AlertPolicyLifecycleState.Deleted)),
                 request);
     }
 

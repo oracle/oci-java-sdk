@@ -8,7 +8,7 @@ import com.oracle.bmc.apmtraces.requests.*;
 import com.oracle.bmc.apmtraces.responses.*;
 
 /**
- * API for APM Trace service. Use this API to query the Traces and associated Spans.
+ * Use the Application Performance Monitoring Trace Explorer API to query traces and associated spans in Trace Explorer. For more information, see [Application Performance Monitoring](https://docs.oracle.com/iaas/application-performance-monitoring/index.html).
  *
  * This service client uses CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER for all the operations by default if no circuit breaker configuration is defined by the user.
  */
@@ -48,7 +48,20 @@ public interface Trace extends AutoCloseable {
     void setRegion(String regionId);
 
     /**
-     * Get the span details identified by spanId
+     * Gets the aggregated snapshot identified by trace ID.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apmtraces/GetAggregatedSnapshotExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetAggregatedSnapshot API.
+     */
+    GetAggregatedSnapshotResponse getAggregatedSnapshot(GetAggregatedSnapshotRequest request);
+
+    /**
+     * Gets the span details identified by spanId.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -61,7 +74,7 @@ public interface Trace extends AutoCloseable {
     GetSpanResponse getSpan(GetSpanRequest request);
 
     /**
-     * Get the trace details identified by traceId
+     * Gets the trace details identified by traceId.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -72,4 +85,17 @@ public interface Trace extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apmtraces/GetTraceExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetTrace API.
      */
     GetTraceResponse getTrace(GetTraceRequest request);
+
+    /**
+     * Gets the trace snapshots data identified by trace ID.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apmtraces/GetTraceSnapshotExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetTraceSnapshot API.
+     */
+    GetTraceSnapshotResponse getTraceSnapshot(GetTraceSnapshotRequest request);
 }

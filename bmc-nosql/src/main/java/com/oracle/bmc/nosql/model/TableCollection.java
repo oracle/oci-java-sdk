@@ -51,12 +51,35 @@ public class TableCollection {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("onDemandCapacityTables")
+        private Integer onDemandCapacityTables;
+
+        public Builder onDemandCapacityTables(Integer onDemandCapacityTables) {
+            this.onDemandCapacityTables = onDemandCapacityTables;
+            this.__explicitlySet__.add("onDemandCapacityTables");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("maxOnDemandCapacityTables")
+        private Integer maxOnDemandCapacityTables;
+
+        public Builder maxOnDemandCapacityTables(Integer maxOnDemandCapacityTables) {
+            this.maxOnDemandCapacityTables = maxOnDemandCapacityTables;
+            this.__explicitlySet__.add("maxOnDemandCapacityTables");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public TableCollection build() {
             TableCollection __instance__ =
-                    new TableCollection(items, maxAutoReclaimableTables, autoReclaimableTables);
+                    new TableCollection(
+                            items,
+                            maxAutoReclaimableTables,
+                            autoReclaimableTables,
+                            onDemandCapacityTables,
+                            maxOnDemandCapacityTables);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -66,7 +89,9 @@ public class TableCollection {
             Builder copiedBuilder =
                     items(o.getItems())
                             .maxAutoReclaimableTables(o.getMaxAutoReclaimableTables())
-                            .autoReclaimableTables(o.getAutoReclaimableTables());
+                            .autoReclaimableTables(o.getAutoReclaimableTables())
+                            .onDemandCapacityTables(o.getOnDemandCapacityTables())
+                            .maxOnDemandCapacityTables(o.getMaxOnDemandCapacityTables());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -97,6 +122,18 @@ public class TableCollection {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("autoReclaimableTables")
     Integer autoReclaimableTables;
+
+    /**
+     * The current number of on demand capacity tables in the tenancy.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("onDemandCapacityTables")
+    Integer onDemandCapacityTables;
+
+    /**
+     * The maximum number of on demand capacity tables allowed in the tenancy.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("maxOnDemandCapacityTables")
+    Integer maxOnDemandCapacityTables;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

@@ -5,7 +5,7 @@
 package com.oracle.bmc.apmtraces.model;
 
 /**
- * A summary of the spans in a trace by service.
+ * Summary of the spans in a trace by service.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -91,14 +91,14 @@ public class TraceServiceSummary {
     String spanServiceName;
 
     /**
-     * Number of spans for serviceName in this trace.
+     * Number of spans for serviceName in the trace.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("totalSpans")
     Long totalSpans;
 
     /**
-     * Number of spans with errorsfor serviceName in this trace.
+     * Number of spans with errors for serviceName in the trace.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("errorSpans")

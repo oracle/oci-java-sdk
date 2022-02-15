@@ -8,7 +8,7 @@ import com.oracle.bmc.apmtraces.requests.*;
 import com.oracle.bmc.apmtraces.responses.*;
 
 /**
- * API for APM Trace service. Use this API to query the Traces and associated Spans.
+ * Use the Application Performance Monitoring Trace Explorer API to query traces and associated spans in Trace Explorer. For more information, see [Application Performance Monitoring](https://docs.oracle.com/iaas/application-performance-monitoring/index.html).
  *
  * This service client uses CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER for all the operations by default if no circuit breaker configuration is defined by the user.
  */
@@ -48,7 +48,7 @@ public interface Query extends AutoCloseable {
     void setRegion(String regionId);
 
     /**
-     * Returns a list of predefined quick pick queries intended to assist the user
+     * Returns a list of predefined Quick Pick queries intended to assist the user
      * to choose a query to run.  There is no sorting applied on the results.
      *
      * @param request The request object containing the details to send
@@ -62,8 +62,8 @@ public interface Query extends AutoCloseable {
     ListQuickPicksResponse listQuickPicks(ListQuickPicksRequest request);
 
     /**
-     * Given a query, constructed according to the APM Defined Query Syntax, retrieves the results - selected attributes,
-     * and aggregations of the queried entity.  Query Results are filtered by the filter criteria specified in the where clause.
+     * Retrieves the results (selected attributes and aggregations) of a query constructed according to the Application Performance Monitoring Defined Query Syntax.
+     * Query results are filtered by the filter criteria specified in the where clause.
      * Further query results are grouped by the attributes specified in the group by clause.  Finally,
      * ordering (asc/desc) is done by the specified attributes in the order by clause.
      *
@@ -76,24 +76,6 @@ public interface Query extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apmtraces/QueryExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use Query API.
      */
     QueryResponse query(QueryRequest request);
-
-    /**
-     * THIS API ENDPOINT WILL BE DEPRECATED AND INSTEAD /queries/actions/runQuery as defined below WILL BE USED GOING FORWARD.  THIS EXISTS JUST
-     * AS A TEMPORARY PLACEHOLDER SO AS TO BE BACKWARDS COMPATIBLE WITH THE UI BETWEEN RELEASE CYCLES.
-     * Given a query, constructed according to the APM Defined Query Syntax, retrieves the results - selected attributes,
-     * and aggregations of the queried entity.  Query Results are filtered by the filter criteria specified in the where clause.
-     * Further query results are grouped by the attributes specified in the group by clause.  Finally,
-     * ordering (asc/desc) is done by the specified attributes in the order by clause.
-     *
-     * @param request The request object containing the details to send
-     * @return A response object containing details about the completed operation
-     * @throws BmcException when an error occurs.
-     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
-     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
-     *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apmtraces/QueryOldExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use QueryOld API.
-     */
-    QueryOldResponse queryOld(QueryOldRequest request);
 
     /**
      * Gets the pre-configured paginators available for list operations in this service which may return multiple

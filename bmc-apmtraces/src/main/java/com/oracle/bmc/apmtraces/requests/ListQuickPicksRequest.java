@@ -20,7 +20,7 @@ import com.oracle.bmc.apmtraces.model.*;
 public class ListQuickPicksRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The APM Domain Id the request is intended for.
+     * The APM Domain ID the request is intended for.
      *
      */
     private String apmDomainId;

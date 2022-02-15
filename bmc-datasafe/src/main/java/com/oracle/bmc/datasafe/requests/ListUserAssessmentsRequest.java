@@ -102,7 +102,7 @@ public class ListUserAssessmentsRequest extends com.oracle.bmc.requests.BmcReque
     private Boolean isBaseline;
 
     /**
-     * A filter to return only items that match the specified target.
+     * A filter to return only items related to a specific target OCID.
      */
     private String targetId;
 
@@ -198,9 +198,9 @@ public class ListUserAssessmentsRequest extends com.oracle.bmc.requests.BmcReque
     private java.util.Date timeCreatedGreaterThanOrEqualTo;
 
     /**
-     * Search for items that were created before a specific date.
+     * Search for resources that were created before a specific date.
      * Specifying this parameter corresponding {@code timeCreatedLessThan}
-     * parameter will retrieve all items created before the
+     * parameter will retrieve all resources created before the
      * specified created date, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as
      * defined by RFC 3339.
      * <p>

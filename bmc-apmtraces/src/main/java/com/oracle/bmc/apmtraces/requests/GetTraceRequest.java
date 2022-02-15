@@ -20,13 +20,13 @@ import com.oracle.bmc.apmtraces.model.*;
 public class GetTraceRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The APM Domain Id the request is intended for.
+     * The APM Domain ID the request is intended for.
      *
      */
     private String apmDomainId;
 
     /**
-     * Unique APM trace identifier(traceId).
+     * Unique Application Performance Monitoring trace identifier (traceId).
      *
      */
     private String traceKey;

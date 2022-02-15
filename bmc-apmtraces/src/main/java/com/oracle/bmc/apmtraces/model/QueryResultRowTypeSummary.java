@@ -5,7 +5,7 @@
 package com.oracle.bmc.apmtraces.model;
 
 /**
- * A summary of the datatype, unit and related metadata of an individual row element of a query result row that is returned.
+ * Summary of the datatype, unit and related metadata of an individual row element of a query result row that is returned.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields

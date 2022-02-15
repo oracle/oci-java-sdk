@@ -51,12 +51,21 @@ public class TableLimits {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("capacityMode")
+        private CapacityMode capacityMode;
+
+        public Builder capacityMode(CapacityMode capacityMode) {
+            this.capacityMode = capacityMode;
+            this.__explicitlySet__.add("capacityMode");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public TableLimits build() {
             TableLimits __instance__ =
-                    new TableLimits(maxReadUnits, maxWriteUnits, maxStorageInGBs);
+                    new TableLimits(maxReadUnits, maxWriteUnits, maxStorageInGBs, capacityMode);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -66,7 +75,8 @@ public class TableLimits {
             Builder copiedBuilder =
                     maxReadUnits(o.getMaxReadUnits())
                             .maxWriteUnits(o.getMaxWriteUnits())
-                            .maxStorageInGBs(o.getMaxStorageInGBs());
+                            .maxStorageInGBs(o.getMaxStorageInGBs())
+                            .capacityMode(o.getCapacityMode());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -97,6 +107,63 @@ public class TableLimits {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("maxStorageInGBs")
     Integer maxStorageInGBs;
+    /**
+     * The capacity mode of the table.  If capacityMode = ON_DEMAND,
+     * maxReadUnits and maxWriteUnits are not used, and both will have
+     * the value of zero.
+     *
+     **/
+    @lombok.extern.slf4j.Slf4j
+    public enum CapacityMode {
+        Provisioned("PROVISIONED"),
+        OnDemand("ON_DEMAND"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private final String value;
+        private static java.util.Map<String, CapacityMode> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (CapacityMode v : CapacityMode.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        CapacityMode(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static CapacityMode create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'CapacityMode', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * The capacity mode of the table.  If capacityMode = ON_DEMAND,
+     * maxReadUnits and maxWriteUnits are not used, and both will have
+     * the value of zero.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("capacityMode")
+    CapacityMode capacityMode;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

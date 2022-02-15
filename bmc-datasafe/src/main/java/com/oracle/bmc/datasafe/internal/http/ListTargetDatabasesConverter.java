@@ -38,6 +38,14 @@ public class ListTargetDatabasesConverter {
                         com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
                                 request.getCompartmentId()));
 
+        if (request.getAssociatedResourceId() != null) {
+            target =
+                    target.queryParam(
+                            "associatedResourceId",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getAssociatedResourceId()));
+        }
+
         if (request.getTargetDatabaseId() != null) {
             target =
                     target.queryParam(

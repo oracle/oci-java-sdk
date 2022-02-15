@@ -8,7 +8,7 @@ import com.oracle.bmc.apmtraces.requests.*;
 import com.oracle.bmc.apmtraces.responses.*;
 
 /**
- * API for APM Trace service. Use this API to query the Traces and associated Spans.
+ * Use the Application Performance Monitoring Trace Explorer API to query traces and associated spans in Trace Explorer. For more information, see [Application Performance Monitoring](https://docs.oracle.com/iaas/application-performance-monitoring/index.html).
  *
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
@@ -47,7 +47,24 @@ public interface TraceAsync extends AutoCloseable {
     void setRegion(String regionId);
 
     /**
-     * Get the span details identified by spanId
+     * Gets the aggregated snapshot identified by trace ID.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetAggregatedSnapshotResponse> getAggregatedSnapshot(
+            GetAggregatedSnapshotRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetAggregatedSnapshotRequest, GetAggregatedSnapshotResponse>
+                    handler);
+
+    /**
+     * Gets the span details identified by spanId.
      *
      *
      * @param request The request object containing the details to send
@@ -62,7 +79,7 @@ public interface TraceAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<GetSpanRequest, GetSpanResponse> handler);
 
     /**
-     * Get the trace details identified by traceId
+     * Gets the trace details identified by traceId.
      *
      *
      * @param request The request object containing the details to send
@@ -75,4 +92,20 @@ public interface TraceAsync extends AutoCloseable {
     java.util.concurrent.Future<GetTraceResponse> getTrace(
             GetTraceRequest request,
             com.oracle.bmc.responses.AsyncHandler<GetTraceRequest, GetTraceResponse> handler);
+
+    /**
+     * Gets the trace snapshots data identified by trace ID.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetTraceSnapshotResponse> getTraceSnapshot(
+            GetTraceSnapshotRequest request,
+            com.oracle.bmc.responses.AsyncHandler<GetTraceSnapshotRequest, GetTraceSnapshotResponse>
+                    handler);
 }

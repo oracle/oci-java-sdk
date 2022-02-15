@@ -177,6 +177,24 @@ public class AnnouncementSummary extends BaseAnnouncement {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("environmentName")
+        private String environmentName;
+
+        public Builder environmentName(String environmentName) {
+            this.environmentName = environmentName;
+            this.__explicitlySet__.add("environmentName");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("platformType")
+        private PlatformType platformType;
+
+        public Builder platformType(PlatformType platformType) {
+            this.platformType = platformType;
+            this.__explicitlySet__.add("platformType");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -198,7 +216,9 @@ public class AnnouncementSummary extends BaseAnnouncement {
                             lifecycleState,
                             isBanner,
                             timeCreated,
-                            timeUpdated);
+                            timeUpdated,
+                            environmentName,
+                            platformType);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -221,7 +241,9 @@ public class AnnouncementSummary extends BaseAnnouncement {
                             .lifecycleState(o.getLifecycleState())
                             .isBanner(o.getIsBanner())
                             .timeCreated(o.getTimeCreated())
-                            .timeUpdated(o.getTimeUpdated());
+                            .timeUpdated(o.getTimeUpdated())
+                            .environmentName(o.getEnvironmentName())
+                            .platformType(o.getPlatformType());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -252,7 +274,9 @@ public class AnnouncementSummary extends BaseAnnouncement {
             LifecycleState lifecycleState,
             Boolean isBanner,
             java.util.Date timeCreated,
-            java.util.Date timeUpdated) {
+            java.util.Date timeUpdated,
+            String environmentName,
+            PlatformType platformType) {
         super(
                 id,
                 referenceTicketNumber,
@@ -269,7 +293,9 @@ public class AnnouncementSummary extends BaseAnnouncement {
                 lifecycleState,
                 isBanner,
                 timeCreated,
-                timeUpdated);
+                timeUpdated,
+                environmentName,
+                platformType);
     }
 
     @com.fasterxml.jackson.annotation.JsonIgnore

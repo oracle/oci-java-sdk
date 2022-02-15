@@ -5,7 +5,7 @@
 package com.oracle.bmc.apmtraces.model;
 
 /**
- * Definition of a log which is a key value pair of log data.
+ * Definition of a log which is a key-value pair of log data.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields

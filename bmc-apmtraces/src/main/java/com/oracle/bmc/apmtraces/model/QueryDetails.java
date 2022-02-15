@@ -5,7 +5,7 @@
 package com.oracle.bmc.apmtraces.model;
 
 /**
- * Request object containing the query to be run against our repository.
+ * Request object containing the query to be run against the trace data.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -60,7 +60,7 @@ public class QueryDetails {
     }
 
     /**
-     * APM defined query string to run against our repository and return results for.
+     * Application Performance Monitoring defined query string that filters and retrieves trace data results.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("queryText")

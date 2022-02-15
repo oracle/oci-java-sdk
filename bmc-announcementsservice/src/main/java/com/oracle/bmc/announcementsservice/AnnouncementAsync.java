@@ -47,6 +47,8 @@ public interface AnnouncementAsync extends AutoCloseable {
 
     /**
      * Gets the details of a specific announcement.
+     * <p>
+     * This call is subject to an Announcements limit that applies to the total number of requests across all read or write operations. Announcements might throttle this call to reject an otherwise valid request when the total rate of operations exceeds 20 requests per second for a given user. The service might also throttle this call to reject an otherwise valid request when the total rate of operations exceeds 100 requests per second for a given tenancy.
      *
      *
      * @param request The request object containing the details to send
@@ -63,6 +65,8 @@ public interface AnnouncementAsync extends AutoCloseable {
 
     /**
      * Gets information about whether a specific announcement was acknowledged by a user.
+     * <p>
+     * This call is subject to an Announcements limit that applies to the total number of requests across all read or write operations. Announcements might throttle this call to reject an otherwise valid request when the total rate of operations exceeds 20 requests per second for a given user. The service might also throttle this call to reject an otherwise valid request when the total rate of operations exceeds 100 requests per second for a given tenancy.
      *
      *
      * @param request The request object containing the details to send
@@ -80,6 +84,8 @@ public interface AnnouncementAsync extends AutoCloseable {
 
     /**
      * Gets a list of announcements for the current tenancy.
+     * <p>
+     * This call is subject to an Announcements limit that applies to the total number of requests across all read or write operations. Announcements might throttle this call to reject an otherwise valid request when the total rate of operations exceeds 20 requests per second for a given user. The service might also throttle this call to reject an otherwise valid request when the total rate of operations exceeds 100 requests per second for a given tenancy.
      *
      *
      * @param request The request object containing the details to send
@@ -97,6 +103,8 @@ public interface AnnouncementAsync extends AutoCloseable {
 
     /**
      * Updates the status of the specified announcement with regard to whether it has been marked as read.
+     * <p>
+     * This call is subject to an Announcements limit that applies to the total number of requests across all read or write operations. Announcements might throttle this call to reject an otherwise valid request when the total rate of operations exceeds 20 requests per second for a given user. The service might also throttle this call to reject an otherwise valid request when the total rate of operations exceeds 100 requests per second for a given tenancy.
      *
      *
      * @param request The request object containing the details to send

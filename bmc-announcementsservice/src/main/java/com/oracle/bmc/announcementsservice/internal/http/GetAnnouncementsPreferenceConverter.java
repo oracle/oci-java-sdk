@@ -115,6 +115,15 @@ public class GetAnnouncementsPreferenceConverter {
                                                     String.class));
                                 }
 
+                                com.google.common.base.Optional<java.util.List<String>> etagHeader =
+                                        com.oracle.bmc.http.internal.HeaderUtils.get(
+                                                headers, "etag");
+                                if (etagHeader.isPresent()) {
+                                    builder.etag(
+                                            com.oracle.bmc.http.internal.HeaderUtils.toValue(
+                                                    "etag", etagHeader.get().get(0), String.class));
+                                }
+
                                 com.oracle.bmc.announcementsservice.responses
                                                 .GetAnnouncementsPreferenceResponse
                                         responseWrapper = builder.build();

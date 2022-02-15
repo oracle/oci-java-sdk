@@ -5,7 +5,7 @@
 package com.oracle.bmc.apmtraces.model;
 
 /**
- * Summary of quick pick query objects that contains the quick pick queries.
+ * Summary of the Quick Pick query objects.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -70,14 +70,14 @@ public class QuickPickSummary {
     }
 
     /**
-     * Quick pick name for the query.
+     * Quick Pick name for the query.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("quickPickName")
     String quickPickName;
 
     /**
-     * Query for the quick pick.
+     * Query for the Quick Pick.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("quickPickQuery")

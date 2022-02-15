@@ -175,6 +175,24 @@ public class Announcement extends BaseAnnouncement {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("environmentName")
+        private String environmentName;
+
+        public Builder environmentName(String environmentName) {
+            this.environmentName = environmentName;
+            this.__explicitlySet__.add("environmentName");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("platformType")
+        private PlatformType platformType;
+
+        public Builder platformType(PlatformType platformType) {
+            this.platformType = platformType;
+            this.__explicitlySet__.add("platformType");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
@@ -224,6 +242,8 @@ public class Announcement extends BaseAnnouncement {
                             isBanner,
                             timeCreated,
                             timeUpdated,
+                            environmentName,
+                            platformType,
                             description,
                             additionalInformation,
                             affectedResources);
@@ -250,6 +270,8 @@ public class Announcement extends BaseAnnouncement {
                             .isBanner(o.getIsBanner())
                             .timeCreated(o.getTimeCreated())
                             .timeUpdated(o.getTimeUpdated())
+                            .environmentName(o.getEnvironmentName())
+                            .platformType(o.getPlatformType())
                             .description(o.getDescription())
                             .additionalInformation(o.getAdditionalInformation())
                             .affectedResources(o.getAffectedResources());
@@ -284,6 +306,8 @@ public class Announcement extends BaseAnnouncement {
             Boolean isBanner,
             java.util.Date timeCreated,
             java.util.Date timeUpdated,
+            String environmentName,
+            PlatformType platformType,
             String description,
             String additionalInformation,
             java.util.List<AffectedResource> affectedResources) {
@@ -303,7 +327,9 @@ public class Announcement extends BaseAnnouncement {
                 lifecycleState,
                 isBanner,
                 timeCreated,
-                timeUpdated);
+                timeUpdated,
+                environmentName,
+                platformType);
         this.description = description;
         this.additionalInformation = additionalInformation;
         this.affectedResources = affectedResources;
