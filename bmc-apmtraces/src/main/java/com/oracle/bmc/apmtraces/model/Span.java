@@ -185,8 +185,8 @@ public class Span {
 
     /**
      * Unique identifier (spanId) for the span.  Note that this field is
-     * defined as spanKey in the API to comply with OCI API fields naming conventions.
-     * The spanKey maps to the spanId in the APM repository.
+     * defined as spanKey in the API and it maps to the spanId in the trace data
+     * in Application Performance Monitoring.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("key")
@@ -228,7 +228,7 @@ public class Span {
     Long durationInMs;
 
     /**
-     * Span name associated with the trace.  This is usually the method or uri of the request.
+     * Span name associated with the trace.  This is usually the method or URI of the request.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("operationName")
@@ -263,7 +263,7 @@ public class Span {
     java.util.List<SpanLogCollection> logs;
 
     /**
-     * Indicates if the span has an error
+     * Indicates if the span has an error.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isError")

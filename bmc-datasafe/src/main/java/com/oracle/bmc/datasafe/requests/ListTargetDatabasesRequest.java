@@ -25,6 +25,11 @@ public class ListTargetDatabasesRequest extends com.oracle.bmc.requests.BmcReque
     private String compartmentId;
 
     /**
+     * A filter to return the target databases that are associated to the resource id passed in as a parameter value.
+     */
+    private String associatedResourceId;
+
+    /**
      * A filter to return the target database that matches the specified OCID.
      */
     private String targetDatabaseId;
@@ -242,6 +247,7 @@ public class ListTargetDatabasesRequest extends com.oracle.bmc.requests.BmcReque
          */
         public Builder copy(ListTargetDatabasesRequest o) {
             compartmentId(o.getCompartmentId());
+            associatedResourceId(o.getAssociatedResourceId());
             targetDatabaseId(o.getTargetDatabaseId());
             displayName(o.getDisplayName());
             lifecycleState(o.getLifecycleState());

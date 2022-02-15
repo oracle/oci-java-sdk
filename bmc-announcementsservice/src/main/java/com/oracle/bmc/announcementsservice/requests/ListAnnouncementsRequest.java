@@ -20,8 +20,7 @@ import com.oracle.bmc.announcementsservice.model.*;
 public class ListAnnouncementsRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The OCID of the compartment. Because announcements are specific to a tenancy, this is the
-     * OCID of the root compartment.
+     * The OCID of the compartment.
      *
      */
     private String compartmentId;
@@ -185,6 +184,61 @@ public class ListAnnouncementsRequest extends com.oracle.bmc.requests.BmcRequest
     private java.util.Date timeOneLatestTime;
 
     /**
+     * A filter to return only announcements that match a specific environment name.
+     */
+    private String environmentName;
+
+    /**
+     * A filter to return only announcements affecting a specific service.
+     */
+    private String service;
+
+    /**
+     * A filter to return only announcements affecting a specific platform.
+     */
+    private PlatformType platformType;
+
+    /**
+     * A filter to return only announcements affecting a specific platform.
+     **/
+    public enum PlatformType {
+        Iaas("IAAS"),
+        Saas("SAAS"),
+        ;
+
+        private final String value;
+        private static java.util.Map<String, PlatformType> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (PlatformType v : PlatformType.values()) {
+                map.put(v.getValue(), v);
+            }
+        }
+
+        PlatformType(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static PlatformType create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            throw new IllegalArgumentException("Invalid PlatformType: " + key);
+        }
+    };
+    /**
+     * Exclude The type of announcement.
+     */
+    private java.util.List<String> excludeAnnouncementTypes;
+
+    /**
      * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about
      * a particular request, please provide the complete request ID.
      *
@@ -197,6 +251,25 @@ public class ListAnnouncementsRequest extends com.oracle.bmc.requests.BmcRequest
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        private java.util.List<String> excludeAnnouncementTypes = null;
+
+        /**
+         * Exclude The type of announcement.
+         * @return this builder instance
+         */
+        public Builder excludeAnnouncementTypes(java.util.List<String> excludeAnnouncementTypes) {
+            this.excludeAnnouncementTypes = excludeAnnouncementTypes;
+            return this;
+        }
+
+        /**
+         * Singular setter. Exclude The type of announcement.
+         * @return this builder instance
+         */
+        public Builder excludeAnnouncementTypes(String singularValue) {
+            return this.excludeAnnouncementTypes(java.util.Arrays.asList(singularValue));
+        }
 
         /**
          * Set the invocation callback for the request to be built.
@@ -236,6 +309,10 @@ public class ListAnnouncementsRequest extends com.oracle.bmc.requests.BmcRequest
             sortOrder(o.getSortOrder());
             timeOneEarliestTime(o.getTimeOneEarliestTime());
             timeOneLatestTime(o.getTimeOneLatestTime());
+            environmentName(o.getEnvironmentName());
+            service(o.getService());
+            platformType(o.getPlatformType());
+            excludeAnnouncementTypes(o.getExcludeAnnouncementTypes());
             opcRequestId(o.getOpcRequestId());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());

@@ -30,9 +30,98 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
     private String operationType;
 
     /**
+     * The field used for sorting. Only one sorting order (sortOrder) can be specified.
+     * The default order for STARTTIME and FINISHTIME is descending.
+     *
+     */
+    private SortBy sortBy;
+
+    /**
+     * The field used for sorting. Only one sorting order (sortOrder) can be specified.
+     * The default order for STARTTIME and FINISHTIME is descending.
+     *
+     **/
+    public enum SortBy {
+        Starttime("STARTTIME"),
+        Finishtime("FINISHTIME"),
+        ;
+
+        private final String value;
+        private static java.util.Map<String, SortBy> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (SortBy v : SortBy.values()) {
+                map.put(v.getValue(), v);
+            }
+        }
+
+        SortBy(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static SortBy create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            throw new IllegalArgumentException("Invalid SortBy: " + key);
+        }
+    };
+    /**
+     * The sort order to use, either ascending (ASC) or descending (DESC).
+     */
+    private SortOrder sortOrder;
+
+    /**
+     * The sort order to use, either ascending (ASC) or descending (DESC).
+     **/
+    public enum SortOrder {
+        Asc("ASC"),
+        Desc("DESC"),
+        ;
+
+        private final String value;
+        private static java.util.Map<String, SortOrder> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (SortOrder v : SortOrder.values()) {
+                map.put(v.getValue(), v);
+            }
+        }
+
+        SortOrder(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static SortOrder create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            throw new IllegalArgumentException("Invalid SortOrder: " + key);
+        }
+    };
+    /**
      * A filter to return only work requests that match the specified resource OCID.
      */
     private String resourceId;
+
+    /**
+     * A filter to return only work requests that are associated to the specified target database OCID.
+     */
+    private String targetDatabaseId;
 
     /**
      * Unique identifier for the request.
@@ -86,7 +175,10 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
         public Builder copy(ListWorkRequestsRequest o) {
             compartmentId(o.getCompartmentId());
             operationType(o.getOperationType());
+            sortBy(o.getSortBy());
+            sortOrder(o.getSortOrder());
             resourceId(o.getResourceId());
+            targetDatabaseId(o.getTargetDatabaseId());
             opcRequestId(o.getOpcRequestId());
             page(o.getPage());
             limit(o.getLimit());

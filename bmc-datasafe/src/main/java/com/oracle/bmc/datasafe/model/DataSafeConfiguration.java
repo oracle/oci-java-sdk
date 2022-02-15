@@ -71,6 +71,24 @@ public class DataSafeConfiguration {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("dataSafeNatGatewayIpAddress")
+        private String dataSafeNatGatewayIpAddress;
+
+        public Builder dataSafeNatGatewayIpAddress(String dataSafeNatGatewayIpAddress) {
+            this.dataSafeNatGatewayIpAddress = dataSafeNatGatewayIpAddress;
+            this.__explicitlySet__.add("dataSafeNatGatewayIpAddress");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("globalSettings")
+        private GlobalSettings globalSettings;
+
+        public Builder globalSettings(GlobalSettings globalSettings) {
+            this.globalSettings = globalSettings;
+            this.__explicitlySet__.add("globalSettings");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
@@ -101,6 +119,8 @@ public class DataSafeConfiguration {
                             compartmentId,
                             timeEnabled,
                             lifecycleState,
+                            dataSafeNatGatewayIpAddress,
+                            globalSettings,
                             freeformTags,
                             definedTags);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
@@ -115,6 +135,8 @@ public class DataSafeConfiguration {
                             .compartmentId(o.getCompartmentId())
                             .timeEnabled(o.getTimeEnabled())
                             .lifecycleState(o.getLifecycleState())
+                            .dataSafeNatGatewayIpAddress(o.getDataSafeNatGatewayIpAddress())
+                            .globalSettings(o.getGlobalSettings())
                             .freeformTags(o.getFreeformTags())
                             .definedTags(o.getDefinedTags());
 
@@ -159,6 +181,16 @@ public class DataSafeConfiguration {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     LifecycleState lifecycleState;
+
+    /**
+     * The Oracle Data Safe's NAT Gateway IP Address.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("dataSafeNatGatewayIpAddress")
+    String dataSafeNatGatewayIpAddress;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("globalSettings")
+    GlobalSettings globalSettings;
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)

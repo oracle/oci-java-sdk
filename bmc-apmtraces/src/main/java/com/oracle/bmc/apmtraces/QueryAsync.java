@@ -8,7 +8,7 @@ import com.oracle.bmc.apmtraces.requests.*;
 import com.oracle.bmc.apmtraces.responses.*;
 
 /**
- * API for APM Trace service. Use this API to query the Traces and associated Spans.
+ * Use the Application Performance Monitoring Trace Explorer API to query traces and associated spans in Trace Explorer. For more information, see [Application Performance Monitoring](https://docs.oracle.com/iaas/application-performance-monitoring/index.html).
  *
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
@@ -47,7 +47,7 @@ public interface QueryAsync extends AutoCloseable {
     void setRegion(String regionId);
 
     /**
-     * Returns a list of predefined quick pick queries intended to assist the user
+     * Returns a list of predefined Quick Pick queries intended to assist the user
      * to choose a query to run.  There is no sorting applied on the results.
      *
      *
@@ -64,8 +64,8 @@ public interface QueryAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Given a query, constructed according to the APM Defined Query Syntax, retrieves the results - selected attributes,
-     * and aggregations of the queried entity.  Query Results are filtered by the filter criteria specified in the where clause.
+     * Retrieves the results (selected attributes and aggregations) of a query constructed according to the Application Performance Monitoring Defined Query Syntax.
+     * Query results are filtered by the filter criteria specified in the where clause.
      * Further query results are grouped by the attributes specified in the group by clause.  Finally,
      * ordering (asc/desc) is done by the specified attributes in the order by clause.
      *
@@ -80,24 +80,4 @@ public interface QueryAsync extends AutoCloseable {
     java.util.concurrent.Future<QueryResponse> query(
             QueryRequest request,
             com.oracle.bmc.responses.AsyncHandler<QueryRequest, QueryResponse> handler);
-
-    /**
-     * THIS API ENDPOINT WILL BE DEPRECATED AND INSTEAD /queries/actions/runQuery as defined below WILL BE USED GOING FORWARD.  THIS EXISTS JUST
-     * AS A TEMPORARY PLACEHOLDER SO AS TO BE BACKWARDS COMPATIBLE WITH THE UI BETWEEN RELEASE CYCLES.
-     * Given a query, constructed according to the APM Defined Query Syntax, retrieves the results - selected attributes,
-     * and aggregations of the queried entity.  Query Results are filtered by the filter criteria specified in the where clause.
-     * Further query results are grouped by the attributes specified in the group by clause.  Finally,
-     * ordering (asc/desc) is done by the specified attributes in the order by clause.
-     *
-     *
-     * @param request The request object containing the details to send
-     * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
-     */
-    java.util.concurrent.Future<QueryOldResponse> queryOld(
-            QueryOldRequest request,
-            com.oracle.bmc.responses.AsyncHandler<QueryOldRequest, QueryOldResponse> handler);
 }

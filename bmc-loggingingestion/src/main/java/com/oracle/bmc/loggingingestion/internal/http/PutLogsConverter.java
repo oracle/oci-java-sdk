@@ -45,7 +45,10 @@ public class PutLogsConverter {
         ib.accept(javax.ws.rs.core.MediaType.APPLICATION_JSON);
 
         if (request.getTimestampOpcAgentProcessing() != null) {
-            ib.header("timestamp-opc-agent-processing", request.getTimestampOpcAgentProcessing());
+            ib.header(
+                    "timestamp-opc-agent-processing",
+                    com.oracle.bmc.http.internal.RFC3339DateFormat.formatRfc3339(
+                            request.getTimestampOpcAgentProcessing(), true));
         }
 
         if (request.getOpcAgentVersion() != null) {

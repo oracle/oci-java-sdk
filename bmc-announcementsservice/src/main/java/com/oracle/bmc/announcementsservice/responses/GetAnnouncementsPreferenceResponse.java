@@ -13,9 +13,17 @@ import com.oracle.bmc.announcementsservice.model.*;
 @lombok.Getter
 public class GetAnnouncementsPreferenceResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
      *
      */
     private String opcRequestId;
+
+    /**
+     * For optimistic concurrency control. See {@code if-match}.
+     *
+     */
+    private String etag;
 
     /**
      * The returned AnnouncementsPreferences instance.
@@ -26,15 +34,18 @@ public class GetAnnouncementsPreferenceResponse extends com.oracle.bmc.responses
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
         "opcRequestId",
+        "etag",
         "announcementsPreferences"
     })
     private GetAnnouncementsPreferenceResponse(
             int __httpStatusCode__,
             String opcRequestId,
+            String etag,
             com.oracle.bmc.announcementsservice.model.AnnouncementsPreferences
                     announcementsPreferences) {
         super(__httpStatusCode__);
         this.opcRequestId = opcRequestId;
+        this.etag = etag;
         this.announcementsPreferences = announcementsPreferences;
     }
 
@@ -53,6 +64,7 @@ public class GetAnnouncementsPreferenceResponse extends com.oracle.bmc.responses
         public Builder copy(GetAnnouncementsPreferenceResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             opcRequestId(o.getOpcRequestId());
+            etag(o.getEtag());
             announcementsPreferences(o.getAnnouncementsPreferences());
 
             return this;
@@ -60,7 +72,7 @@ public class GetAnnouncementsPreferenceResponse extends com.oracle.bmc.responses
 
         public GetAnnouncementsPreferenceResponse build() {
             return new GetAnnouncementsPreferenceResponse(
-                    __httpStatusCode__, opcRequestId, announcementsPreferences);
+                    __httpStatusCode__, opcRequestId, etag, announcementsPreferences);
         }
     }
 }

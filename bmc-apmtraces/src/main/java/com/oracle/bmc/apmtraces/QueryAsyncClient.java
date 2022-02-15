@@ -453,45 +453,4 @@ public class QueryAsyncClient implements QueryAsync {
             return futureSupplier.apply(handlerToUse);
         }
     }
-
-    @Override
-    public java.util.concurrent.Future<QueryOldResponse> queryOld(
-            QueryOldRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<QueryOldRequest, QueryOldResponse>
-                    handler) {
-        LOG.trace("Called async queryOld");
-        final QueryOldRequest interceptedRequest = QueryOldConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                QueryOldConverter.fromRequest(client, interceptedRequest);
-        final com.google.common.base.Function<javax.ws.rs.core.Response, QueryOldResponse>
-                transformer = QueryOldConverter.fromResponse();
-
-        com.oracle.bmc.responses.AsyncHandler<QueryOldRequest, QueryOldResponse> handlerToUse =
-                handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<QueryOldRequest, QueryOldResponse>,
-                        java.util.concurrent.Future<QueryOldResponse>>
-                futureSupplier =
-                        client.postFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getQueryDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    QueryOldRequest, QueryOldResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
-    }
 }

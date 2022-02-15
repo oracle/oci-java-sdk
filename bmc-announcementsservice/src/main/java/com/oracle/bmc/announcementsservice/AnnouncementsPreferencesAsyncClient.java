@@ -31,7 +31,8 @@ public class AnnouncementsPreferencesAsyncClient implements AnnouncementsPrefere
             com.oracle.bmc.Services.serviceBuilder()
                     .serviceName("ANNOUNCEMENTSPREFERENCES")
                     .serviceEndpointPrefix("announcements")
-                    .serviceEndpointTemplate("https://announcements.{region}.{secondLevelDomain}")
+                    .serviceEndpointTemplate(
+                            "https://announcements.{region}.oci.{secondLevelDomain}")
                     .build();
 
     @lombok.Getter(value = lombok.AccessLevel.PACKAGE)

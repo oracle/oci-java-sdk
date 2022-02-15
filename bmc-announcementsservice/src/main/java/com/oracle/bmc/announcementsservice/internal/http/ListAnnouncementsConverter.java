@@ -111,6 +111,39 @@ public class ListAnnouncementsConverter {
                                     request.getTimeOneLatestTime()));
         }
 
+        if (request.getEnvironmentName() != null) {
+            target =
+                    target.queryParam(
+                            "environmentName",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getEnvironmentName()));
+        }
+
+        if (request.getService() != null) {
+            target =
+                    target.queryParam(
+                            "service",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getService()));
+        }
+
+        if (request.getPlatformType() != null) {
+            target =
+                    target.queryParam(
+                            "platformType",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getPlatformType().getValue()));
+        }
+
+        if (request.getExcludeAnnouncementTypes() != null) {
+            target =
+                    com.oracle.bmc.util.internal.HttpUtils.encodeCollectionFormatQueryParam(
+                            target,
+                            "excludeAnnouncementTypes",
+                            request.getExcludeAnnouncementTypes(),
+                            com.oracle.bmc.util.internal.CollectionFormatType.Multi);
+        }
+
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib = target.request();
 
         ib.accept(javax.ws.rs.core.MediaType.APPLICATION_JSON);
@@ -180,6 +213,18 @@ public class ListAnnouncementsConverter {
                                             com.oracle.bmc.http.internal.HeaderUtils.toValue(
                                                     "opc-next-page",
                                                     opcNextPageHeader.get().get(0),
+                                                    String.class));
+                                }
+
+                                com.google.common.base.Optional<java.util.List<String>>
+                                        opcPreviousPageHeader =
+                                                com.oracle.bmc.http.internal.HeaderUtils.get(
+                                                        headers, "opc-previous-page");
+                                if (opcPreviousPageHeader.isPresent()) {
+                                    builder.opcPreviousPage(
+                                            com.oracle.bmc.http.internal.HeaderUtils.toValue(
+                                                    "opc-previous-page",
+                                                    opcPreviousPageHeader.get().get(0),
                                                     String.class));
                                 }
 

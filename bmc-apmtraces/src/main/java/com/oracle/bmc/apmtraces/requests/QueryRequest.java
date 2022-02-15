@@ -21,13 +21,13 @@ public class QueryRequest
         extends com.oracle.bmc.requests.BmcRequest<com.oracle.bmc.apmtraces.model.QueryDetails> {
 
     /**
-     * The APM Domain Id the request is intended for.
+     * The APM Domain ID the request is intended for.
      *
      */
     private String apmDomainId;
 
     /**
-     * Include spans that have a {@code spanStartTime} equal to or greater this value.
+     * Include spans that have a {@code spanStartTime} equal to or greater than this value.
      *
      */
     private java.util.Date timeSpanStartedGreaterThanOrEqualTo;
@@ -39,7 +39,8 @@ public class QueryRequest
     private java.util.Date timeSpanStartedLessThan;
 
     /**
-     * Request body containing the query to be run against our repository.
+     * Request body containing the query to be run against the trace data and to filter and
+     * retrieve trace data results.
      *
      */
     private com.oracle.bmc.apmtraces.model.QueryDetails queryDetails;

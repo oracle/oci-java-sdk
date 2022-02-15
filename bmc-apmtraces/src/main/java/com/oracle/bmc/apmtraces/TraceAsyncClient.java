@@ -377,6 +377,47 @@ public class TraceAsyncClient implements TraceAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<GetAggregatedSnapshotResponse> getAggregatedSnapshot(
+            GetAggregatedSnapshotRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetAggregatedSnapshotRequest, GetAggregatedSnapshotResponse>
+                    handler) {
+        LOG.trace("Called async getAggregatedSnapshot");
+        final GetAggregatedSnapshotRequest interceptedRequest =
+                GetAggregatedSnapshotConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetAggregatedSnapshotConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, GetAggregatedSnapshotResponse>
+                transformer = GetAggregatedSnapshotConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        GetAggregatedSnapshotRequest, GetAggregatedSnapshotResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetAggregatedSnapshotRequest, GetAggregatedSnapshotResponse>,
+                        java.util.concurrent.Future<GetAggregatedSnapshotResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetAggregatedSnapshotRequest, GetAggregatedSnapshotResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<GetSpanResponse> getSpan(
             GetSpanRequest request,
             final com.oracle.bmc.responses.AsyncHandler<GetSpanRequest, GetSpanResponse> handler) {
@@ -435,6 +476,45 @@ public class TraceAsyncClient implements TraceAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     GetTraceRequest, GetTraceResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetTraceSnapshotResponse> getTraceSnapshot(
+            GetTraceSnapshotRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetTraceSnapshotRequest, GetTraceSnapshotResponse>
+                    handler) {
+        LOG.trace("Called async getTraceSnapshot");
+        final GetTraceSnapshotRequest interceptedRequest =
+                GetTraceSnapshotConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetTraceSnapshotConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<javax.ws.rs.core.Response, GetTraceSnapshotResponse>
+                transformer = GetTraceSnapshotConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<GetTraceSnapshotRequest, GetTraceSnapshotResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetTraceSnapshotRequest, GetTraceSnapshotResponse>,
+                        java.util.concurrent.Future<GetTraceSnapshotResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetTraceSnapshotRequest, GetTraceSnapshotResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,

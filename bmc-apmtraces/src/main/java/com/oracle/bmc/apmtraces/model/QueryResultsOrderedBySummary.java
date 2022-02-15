@@ -5,7 +5,7 @@
 package com.oracle.bmc.apmtraces.model;
 
 /**
- * Summary of the sort attribute and order by which the query results are organized.
+ * Summary of the sort and order by attribute based on which the query results are organized.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -74,7 +74,7 @@ public class QueryResultsOrderedBySummary {
     }
 
     /**
-     * Attribute by which the query result is sorted by.
+     * Attribute by which the query results are sorted.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("queryResultsOrderedBy")

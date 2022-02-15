@@ -13,22 +13,37 @@ import com.oracle.bmc.announcementsservice.model.*;
 @lombok.Getter
 public class GetAnnouncementResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
-     * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the complete request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
      */
     private String opcRequestId;
+
+    /**
+     * For optimistic concurrency control. See {@code if-match}.
+     *
+     */
+    private String etag;
 
     /**
      * The returned Announcement instance.
      */
     private com.oracle.bmc.announcementsservice.model.Announcement announcement;
 
-    @java.beans.ConstructorProperties({"__httpStatusCode__", "opcRequestId", "announcement"})
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "opcRequestId",
+        "etag",
+        "announcement"
+    })
     private GetAnnouncementResponse(
             int __httpStatusCode__,
             String opcRequestId,
+            String etag,
             com.oracle.bmc.announcementsservice.model.Announcement announcement) {
         super(__httpStatusCode__);
         this.opcRequestId = opcRequestId;
+        this.etag = etag;
         this.announcement = announcement;
     }
 
@@ -47,13 +62,15 @@ public class GetAnnouncementResponse extends com.oracle.bmc.responses.BmcRespons
         public Builder copy(GetAnnouncementResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             opcRequestId(o.getOpcRequestId());
+            etag(o.getEtag());
             announcement(o.getAnnouncement());
 
             return this;
         }
 
         public GetAnnouncementResponse build() {
-            return new GetAnnouncementResponse(__httpStatusCode__, opcRequestId, announcement);
+            return new GetAnnouncementResponse(
+                    __httpStatusCode__, opcRequestId, etag, announcement);
         }
     }
 }

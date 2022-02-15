@@ -13,9 +13,17 @@ import com.oracle.bmc.announcementsservice.model.*;
 @lombok.Getter
 public class GetAnnouncementUserStatusResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
-     * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the complete request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
      */
     private String opcRequestId;
+
+    /**
+     * For optimistic concurrency control. See {@code if-match}.
+     *
+     */
+    private String etag;
 
     /**
      * The returned AnnouncementUserStatusDetails instance.
@@ -26,15 +34,18 @@ public class GetAnnouncementUserStatusResponse extends com.oracle.bmc.responses.
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
         "opcRequestId",
+        "etag",
         "announcementUserStatusDetails"
     })
     private GetAnnouncementUserStatusResponse(
             int __httpStatusCode__,
             String opcRequestId,
+            String etag,
             com.oracle.bmc.announcementsservice.model.AnnouncementUserStatusDetails
                     announcementUserStatusDetails) {
         super(__httpStatusCode__);
         this.opcRequestId = opcRequestId;
+        this.etag = etag;
         this.announcementUserStatusDetails = announcementUserStatusDetails;
     }
 
@@ -53,6 +64,7 @@ public class GetAnnouncementUserStatusResponse extends com.oracle.bmc.responses.
         public Builder copy(GetAnnouncementUserStatusResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             opcRequestId(o.getOpcRequestId());
+            etag(o.getEtag());
             announcementUserStatusDetails(o.getAnnouncementUserStatusDetails());
 
             return this;
@@ -60,7 +72,7 @@ public class GetAnnouncementUserStatusResponse extends com.oracle.bmc.responses.
 
         public GetAnnouncementUserStatusResponse build() {
             return new GetAnnouncementUserStatusResponse(
-                    __httpStatusCode__, opcRequestId, announcementUserStatusDetails);
+                    __httpStatusCode__, opcRequestId, etag, announcementUserStatusDetails);
         }
     }
 }

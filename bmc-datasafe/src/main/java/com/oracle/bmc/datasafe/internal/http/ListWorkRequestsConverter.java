@@ -46,12 +46,36 @@ public class ListWorkRequestsConverter {
                                     request.getOperationType()));
         }
 
+        if (request.getSortBy() != null) {
+            target =
+                    target.queryParam(
+                            "sortBy",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getSortBy().getValue()));
+        }
+
+        if (request.getSortOrder() != null) {
+            target =
+                    target.queryParam(
+                            "sortOrder",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getSortOrder().getValue()));
+        }
+
         if (request.getResourceId() != null) {
             target =
                     target.queryParam(
                             "resourceId",
                             com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
                                     request.getResourceId()));
+        }
+
+        if (request.getTargetDatabaseId() != null) {
+            target =
+                    target.queryParam(
+                            "targetDatabaseId",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getTargetDatabaseId()));
         }
 
         if (request.getPage() != null) {

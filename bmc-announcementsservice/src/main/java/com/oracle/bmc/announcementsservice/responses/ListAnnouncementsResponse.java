@@ -13,12 +13,24 @@ import com.oracle.bmc.announcementsservice.model.*;
 @lombok.Getter
 public class ListAnnouncementsResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
-     * For pagination of a list of items. When paging through a list, if this header appears in the response, then there are additional items still to get. Include this value as the {@code page} parameter for the subsequent GET request. For information about pagination, see [List Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#List_Pagination).
+     * For pagination of a list of items. When paging through a list, if this header appears in the response,
+     * then a partial list might have been returned. Include this value as the {@code page} parameter for the
+     * subsequent GET request to get the next batch of items.
+     *
      */
     private String opcNextPage;
 
     /**
-     * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the complete request ID.
+     * For pagination of a list of items. Include this value as the {@code page} parameter for the
+     * subsequent GET request to get the previous batch of items.
+     *
+     */
+    private String opcPreviousPage;
+
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
      */
     private String opcRequestId;
 
@@ -31,17 +43,20 @@ public class ListAnnouncementsResponse extends com.oracle.bmc.responses.BmcRespo
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
         "opcNextPage",
+        "opcPreviousPage",
         "opcRequestId",
         "announcementsCollection"
     })
     private ListAnnouncementsResponse(
             int __httpStatusCode__,
             String opcNextPage,
+            String opcPreviousPage,
             String opcRequestId,
             com.oracle.bmc.announcementsservice.model.AnnouncementsCollection
                     announcementsCollection) {
         super(__httpStatusCode__);
         this.opcNextPage = opcNextPage;
+        this.opcPreviousPage = opcPreviousPage;
         this.opcRequestId = opcRequestId;
         this.announcementsCollection = announcementsCollection;
     }
@@ -61,6 +76,7 @@ public class ListAnnouncementsResponse extends com.oracle.bmc.responses.BmcRespo
         public Builder copy(ListAnnouncementsResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             opcNextPage(o.getOpcNextPage());
+            opcPreviousPage(o.getOpcPreviousPage());
             opcRequestId(o.getOpcRequestId());
             announcementsCollection(o.getAnnouncementsCollection());
 
@@ -69,7 +85,11 @@ public class ListAnnouncementsResponse extends com.oracle.bmc.responses.BmcRespo
 
         public ListAnnouncementsResponse build() {
             return new ListAnnouncementsResponse(
-                    __httpStatusCode__, opcNextPage, opcRequestId, announcementsCollection);
+                    __httpStatusCode__,
+                    opcNextPage,
+                    opcPreviousPage,
+                    opcRequestId,
+                    announcementsCollection);
         }
     }
 }

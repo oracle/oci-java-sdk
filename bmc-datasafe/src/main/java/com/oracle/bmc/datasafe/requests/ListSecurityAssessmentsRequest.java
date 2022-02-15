@@ -180,7 +180,7 @@ public class ListSecurityAssessmentsRequest
         }
     };
     /**
-     * A filter to return only items that match the specified target.
+     * A filter to return only items related to a specific target OCID.
      */
     private String targetId;
 
@@ -272,8 +272,8 @@ public class ListSecurityAssessmentsRequest
         }
     };
     /**
-     * A filter to return only security assessments that were created after the specified date and time, as defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-     * Using TimeCreatedGreaterThanOrEqualToQueryParam parameter retrieves all assessments created after that date.
+     * A filter to return only the resources that were created after the specified date and time, as defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * Using TimeCreatedGreaterThanOrEqualToQueryParam parameter retrieves all resources created after that date.
      * <p>
      **Example:** 2016-12-19T16:39:57.600Z
      *
@@ -281,9 +281,9 @@ public class ListSecurityAssessmentsRequest
     private java.util.Date timeCreatedGreaterThanOrEqualTo;
 
     /**
-     * Search for items that were created before a specific date.
+     * Search for resources that were created before a specific date.
      * Specifying this parameter corresponding {@code timeCreatedLessThan}
-     * parameter will retrieve all items created before the
+     * parameter will retrieve all resources created before the
      * specified created date, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as
      * defined by RFC 3339.
      * <p>

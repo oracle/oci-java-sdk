@@ -48,6 +48,8 @@ public interface LogSearch extends AutoCloseable {
 
     /**
      * Submit a query to search logs.
+     * <p>
+     * See [Using the API](https://docs.cloud.oracle.com/Content/Logging/Concepts/using_the_api_searchlogs.htm) for SDK examples.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation

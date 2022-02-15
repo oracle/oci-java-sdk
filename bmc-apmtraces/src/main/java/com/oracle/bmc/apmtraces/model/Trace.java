@@ -251,37 +251,37 @@ public class Trace {
 
     /**
      * Unique identifier (traceId) for the trace that represents the span set.  Note that this field is
-     * defined as traceKey in the API to comply with OCI API fields naming conventions.  The traceKey maps to
-     * the traceId in the APM repository.
+     * defined as traceKey in the API and it maps to the traceId in the trace data in Application Performance
+     * Monitoring.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("key")
     String key;
 
     /**
-     * Root span name associated with the trace. This is usually the flow start operation name.
-     * Null if the root span is not yet completed.
+     * Root span name associated with the trace. This is the flow start operation name.
+     * Null is displayed if the root span is not yet completed.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("rootSpanOperationName")
     String rootSpanOperationName;
 
     /**
-     * Start time of the earliest span in this span collection.
+     * Start time of the earliest span in the span collection.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeEarliestSpanStarted")
     java.util.Date timeEarliestSpanStarted;
 
     /**
-     * End time of the span that most recently ended in this span collection.
+     * End time of the span that most recently ended in the span collection.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeLatestSpanEnded")
     java.util.Date timeLatestSpanEnded;
 
     /**
-     * The number of spans that have been processed by the system for this trace.  Note that there
+     * The number of spans that have been processed by the system for the trace.  Note that there
      * could be additional spans that have not been processed or reported yet if the trace is still
      * in progress.
      *
@@ -290,30 +290,29 @@ public class Trace {
     Integer spanCount;
 
     /**
-     * The number of spans with error that have been processed by the system for this trace.
-     * Note that the number of spans with errors may be less than the total number of actual spans
-     * in this trace.
+     * The number of spans with errors that have been processed by the system for the trace.
+     * Note that the number of spans with errors will be less than or equal to the total number of spans in the trace.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("errorSpanCount")
     Integer errorSpanCount;
 
     /**
-     * Service associated with this trace.
+     * Service associated with the trace.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("rootSpanServiceName")
     String rootSpanServiceName;
 
     /**
-     * Start time of the root span for this span collection.
+     * Start time of the root span for the span collection.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeRootSpanStarted")
     java.util.Date timeRootSpanStarted;
 
     /**
-     * End time of the root span for this span collection.
+     * End time of the root span for the span collection.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeRootSpanEnded")
@@ -334,7 +333,7 @@ public class Trace {
     Integer traceDurationInMs;
 
     /**
-     * Boolean flag that indicates whether the trace errored out.
+     * Boolean flag that indicates whether the trace has an error.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isFault")
@@ -343,7 +342,7 @@ public class Trace {
     /**
      * The status of the trace.
      * The trace statuses are defined as follows:
-     * complete \u2013 a root span has been recorded, but there is no information on the errors.
+     * complete - a root span has been recorded, but there is no information on the errors.
      * success - a complete root span is recorded there is a successful error type and error code - HTTP 200.
      * incomplete - the root span has not yet been received.
      * error - the root span returned with an error. There may or may not be an associated error code or error type.
@@ -367,7 +366,7 @@ public class Trace {
     String traceErrorCode;
 
     /**
-     * A summary of the spans by service
+     * A summary of the spans by service.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("serviceSummaries")

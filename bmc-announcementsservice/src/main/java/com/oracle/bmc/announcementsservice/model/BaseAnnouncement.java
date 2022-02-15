@@ -309,4 +309,53 @@ public class BaseAnnouncement {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     java.util.Date timeUpdated;
+
+    /**
+     * The name of the environment that this announcement pertains to.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("environmentName")
+    String environmentName;
+    /**
+     * The platform type that this announcement pertains to.
+     *
+     **/
+    public enum PlatformType {
+        Iaas("IAAS"),
+        Saas("SAAS"),
+        ;
+
+        private final String value;
+        private static java.util.Map<String, PlatformType> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (PlatformType v : PlatformType.values()) {
+                map.put(v.getValue(), v);
+            }
+        }
+
+        PlatformType(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static PlatformType create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            throw new IllegalArgumentException("Invalid PlatformType: " + key);
+        }
+    };
+    /**
+     * The platform type that this announcement pertains to.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("platformType")
+    PlatformType platformType;
 }

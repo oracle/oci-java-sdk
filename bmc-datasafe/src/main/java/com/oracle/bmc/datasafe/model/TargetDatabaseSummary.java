@@ -80,6 +80,15 @@ public class TargetDatabaseSummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("associatedResourceIds")
+        private java.util.List<String> associatedResourceIds;
+
+        public Builder associatedResourceIds(java.util.List<String> associatedResourceIds) {
+            this.associatedResourceIds = associatedResourceIds;
+            this.__explicitlySet__.add("associatedResourceIds");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
@@ -138,6 +147,7 @@ public class TargetDatabaseSummary {
                             description,
                             infrastructureType,
                             databaseType,
+                            associatedResourceIds,
                             lifecycleState,
                             lifecycleDetails,
                             timeCreated,
@@ -156,6 +166,7 @@ public class TargetDatabaseSummary {
                             .description(o.getDescription())
                             .infrastructureType(o.getInfrastructureType())
                             .databaseType(o.getDatabaseType())
+                            .associatedResourceIds(o.getAssociatedResourceIds())
                             .lifecycleState(o.getLifecycleState())
                             .lifecycleDetails(o.getLifecycleDetails())
                             .timeCreated(o.getTimeCreated())
@@ -209,6 +220,12 @@ public class TargetDatabaseSummary {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("databaseType")
     DatabaseType databaseType;
+
+    /**
+     * The OCIDs of associated resources like Database, Data Safe private endpoint etc.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("associatedResourceIds")
+    java.util.List<String> associatedResourceIds;
 
     /**
      * The current state of the target database in Data Safe.

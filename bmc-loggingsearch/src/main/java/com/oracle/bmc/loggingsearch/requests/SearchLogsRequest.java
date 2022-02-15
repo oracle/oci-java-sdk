@@ -41,7 +41,8 @@ public class SearchLogsRequest
     private Integer limit;
 
     /**
-     * Reserved for future use. Pagination is not supported in this API.
+     * For list pagination. The value of the opc-next-page response header from the previous "Search" call.
+     * For important details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine).
      *
      */
     private String page;
