@@ -5,7 +5,7 @@
 package com.oracle.bmc.core.model;
 
 /**
- * Phase Two Parameters
+ * Allowed phase two parameters.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -84,19 +84,19 @@ public class AllowedPhaseTwoParameters {
     }
 
     /**
-     * Phase Two Encryption Algorithms
+     * Allowed phase two encryption algorithms.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("encryptionAlgorithms")
     java.util.List<String> encryptionAlgorithms;
 
     /**
-     * Phase Two Authentication Algorithms
+     * Allowed phase two authentication algorithms.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("authenticationAlgorithms")
     java.util.List<String> authenticationAlgorithms;
 
     /**
-     * PFS DH Groups
+     * Allowed perfect forward secrecy Diffie-Hellman groups.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("pfsDhGroups")
     java.util.List<String> pfsDhGroups;

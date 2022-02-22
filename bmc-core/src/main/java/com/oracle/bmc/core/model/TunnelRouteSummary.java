@@ -5,7 +5,8 @@
 package com.oracle.bmc.core.model;
 
 /**
- * The routes advertised to the Customer and the routes received from the Customer
+ * A summary of the routes advertised to and received from the on-premises network.
+ *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -103,30 +104,30 @@ public class TunnelRouteSummary {
     }
 
     /**
-     * BGP Network Layer Reachability Information
+     * The BGP network layer reachability information.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("prefix")
     String prefix;
 
     /**
-     * The age of the route
+     * The age of the route.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("age")
     Long age;
 
     /**
-     * Is this the best route
+     * Indicates this is the best route.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isBestPath")
     Boolean isBestPath;
 
     /**
-     * List of ASNs in AS Path
+     * A list of ASNs in AS_Path.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("asPath")
     java.util.List<Integer> asPath;
     /**
-     * Route advertiser
+     * The source of the route advertisement.
      **/
     @lombok.extern.slf4j.Slf4j
     public enum Advertiser {
@@ -172,7 +173,7 @@ public class TunnelRouteSummary {
         }
     };
     /**
-     * Route advertiser
+     * The source of the route advertisement.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("advertiser")
     Advertiser advertiser;

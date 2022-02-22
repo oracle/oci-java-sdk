@@ -164,7 +164,10 @@ public class CreateDataMaskRuleDetails {
     }
 
     /**
-     * Data Mask Rule name
+     * Data mask rule name.
+     * <p>
+     * Avoid entering confidential information.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     String displayName;
@@ -176,7 +179,8 @@ public class CreateDataMaskRuleDetails {
     String compartmentId;
 
     /**
-     * The Data Mask Rule description.
+     * The data mask rule description.
+     * Avoid entering confidential information.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     String description;
@@ -211,6 +215,8 @@ public class CreateDataMaskRuleDetails {
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
      * Example: {@code {"bar-key": "value"}}
+     * <p>
+     * Avoid entering confidential information.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")

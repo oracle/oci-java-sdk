@@ -115,6 +115,15 @@ public class CrossConnectMappingDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("ociLogicalDeviceName")
+        private String ociLogicalDeviceName;
+
+        public Builder ociLogicalDeviceName(String ociLogicalDeviceName) {
+            this.ociLogicalDeviceName = ociLogicalDeviceName;
+            this.__explicitlySet__.add("ociLogicalDeviceName");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -129,7 +138,8 @@ public class CrossConnectMappingDetails {
                             oracleBgpPeeringIpv6,
                             vlan,
                             ipv4BgpStatus,
-                            ipv6BgpStatus);
+                            ipv6BgpStatus,
+                            ociLogicalDeviceName);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -146,7 +156,8 @@ public class CrossConnectMappingDetails {
                             .oracleBgpPeeringIpv6(o.getOracleBgpPeeringIpv6())
                             .vlan(o.getVlan())
                             .ipv4BgpStatus(o.getIpv4BgpStatus())
-                            .ipv6BgpStatus(o.getIpv6BgpStatus());
+                            .ipv6BgpStatus(o.getIpv6BgpStatus())
+                            .ociLogicalDeviceName(o.getOciLogicalDeviceName());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -350,6 +361,13 @@ public class CrossConnectMappingDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("ipv6BgpStatus")
     Ipv6BgpStatus ipv6BgpStatus;
+
+    /**
+     * The FastConnect device that terminates the logical connection.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("ociLogicalDeviceName")
+    String ociLogicalDeviceName;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

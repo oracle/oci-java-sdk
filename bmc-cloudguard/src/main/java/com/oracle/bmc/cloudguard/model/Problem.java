@@ -78,6 +78,51 @@ public class Problem {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("riskScore")
+        private Double riskScore;
+
+        public Builder riskScore(Double riskScore) {
+            this.riskScore = riskScore;
+            this.__explicitlySet__.add("riskScore");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("peakRiskScoreDate")
+        private String peakRiskScoreDate;
+
+        public Builder peakRiskScoreDate(String peakRiskScoreDate) {
+            this.peakRiskScoreDate = peakRiskScoreDate;
+            this.__explicitlySet__.add("peakRiskScoreDate");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("peakRiskScore")
+        private Double peakRiskScore;
+
+        public Builder peakRiskScore(Double peakRiskScore) {
+            this.peakRiskScore = peakRiskScore;
+            this.__explicitlySet__.add("peakRiskScore");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("autoResolveDate")
+        private String autoResolveDate;
+
+        public Builder autoResolveDate(String autoResolveDate) {
+            this.autoResolveDate = autoResolveDate;
+            this.__explicitlySet__.add("autoResolveDate");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("peakRiskScoreLookupPeriodInDays")
+        private Integer peakRiskScoreLookupPeriodInDays;
+
+        public Builder peakRiskScoreLookupPeriodInDays(Integer peakRiskScoreLookupPeriodInDays) {
+            this.peakRiskScoreLookupPeriodInDays = peakRiskScoreLookupPeriodInDays;
+            this.__explicitlySet__.add("peakRiskScoreLookupPeriodInDays");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("resourceId")
         private String resourceId;
 
@@ -216,6 +261,11 @@ public class Problem {
                             region,
                             regions,
                             riskLevel,
+                            riskScore,
+                            peakRiskScoreDate,
+                            peakRiskScore,
+                            autoResolveDate,
+                            peakRiskScoreLookupPeriodInDays,
                             resourceId,
                             resourceName,
                             resourceType,
@@ -243,6 +293,11 @@ public class Problem {
                             .region(o.getRegion())
                             .regions(o.getRegions())
                             .riskLevel(o.getRiskLevel())
+                            .riskScore(o.getRiskScore())
+                            .peakRiskScoreDate(o.getPeakRiskScoreDate())
+                            .peakRiskScore(o.getPeakRiskScore())
+                            .autoResolveDate(o.getAutoResolveDate())
+                            .peakRiskScoreLookupPeriodInDays(o.getPeakRiskScoreLookupPeriodInDays())
                             .resourceId(o.getResourceId())
                             .resourceName(o.getResourceName())
                             .resourceType(o.getResourceType())
@@ -305,6 +360,36 @@ public class Problem {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("riskLevel")
     RiskLevel riskLevel;
+
+    /**
+     * Risk Score for the problem
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("riskScore")
+    Double riskScore;
+
+    /**
+     * The date and time for the peak risk score that is observed. Format defined by RFC3339.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("peakRiskScoreDate")
+    String peakRiskScoreDate;
+
+    /**
+     * Peak risk score for the problem
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("peakRiskScore")
+    Double peakRiskScore;
+
+    /**
+     * The date and time when the problem will be auto resolved. Format defined by RFC3339.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("autoResolveDate")
+    String autoResolveDate;
+
+    /**
+     * Number of days for which peak score is calculated for the problem
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("peakRiskScoreLookupPeriodInDays")
+    Integer peakRiskScoreLookupPeriodInDays;
 
     /**
      * Identifier of the Resource

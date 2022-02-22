@@ -8,7 +8,10 @@ import com.oracle.bmc.cloudguard.requests.*;
 import com.oracle.bmc.cloudguard.responses.*;
 
 /**
- * A description of the Cloud Guard APIs
+ * Use the Cloud Guard API to automate processes that you would otherwise perform through the Cloud Guard Console.
+ *
+ **Note:** You can perform Create, Update, and Delete operations only from the reporting region of your Cloud Guard tenancy. You can perform Read operations from any region.
+ *
  * This service client uses CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER for all the operations by default if no circuit breaker configuration is defined by the user.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")
@@ -391,6 +394,18 @@ public interface CloudGuard extends AutoCloseable {
     GetProblemResponse getProblem(GetProblemRequest request);
 
     /**
+     * Returns resource profile details
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/GetResourceProfileExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetResourceProfile API.
+     */
+    GetResourceProfileResponse getResourceProfile(GetResourceProfileRequest request);
+
+    /**
      * Returns a Responder Execution identified by responderExecutionId
      *
      * @param request The request object containing the details to send
@@ -439,6 +454,18 @@ public interface CloudGuard extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/GetResponderRuleExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetResponderRule API.
      */
     GetResponderRuleResponse getResponderRule(GetResponderRuleRequest request);
+
+    /**
+     * Returns Sighting details
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/GetSightingExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetSighting API.
+     */
+    GetSightingResponse getSighting(GetSightingRequest request);
 
     /**
      * Returns a Target identified by targetId
@@ -662,6 +689,19 @@ public interface CloudGuard extends AutoCloseable {
     ListPoliciesResponse listPolicies(ListPoliciesRequest request);
 
     /**
+     * Returns a list of endpoints associated with a cloud guard problem
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/ListProblemEndpointsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListProblemEndpoints API.
+     */
+    ListProblemEndpointsResponse listProblemEndpoints(ListProblemEndpointsRequest request);
+
+    /**
      * Returns a list of Actions done on CloudGuard Problem
      *
      * @param request The request object containing the details to send
@@ -713,6 +753,58 @@ public interface CloudGuard extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/ListRecommendationsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListRecommendations API.
      */
     ListRecommendationsResponse listRecommendations(ListRecommendationsRequest request);
+
+    /**
+     * Returns a list of endpoints for Cloud Guard resource profile
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/ListResourceProfileEndpointsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListResourceProfileEndpoints API.
+     */
+    ListResourceProfileEndpointsResponse listResourceProfileEndpoints(
+            ListResourceProfileEndpointsRequest request);
+
+    /**
+     * Returns a list of impacted resources for Cloud Guard resource profile
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/ListResourceProfileImpactedResourcesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListResourceProfileImpactedResources API.
+     */
+    ListResourceProfileImpactedResourcesResponse listResourceProfileImpactedResources(
+            ListResourceProfileImpactedResourcesRequest request);
+
+    /**
+     * Returns a list of all resource profiles identified by the Cloud Guard
+     * The ListResourceProfiles operation returns only resource profiles that match the passed filters.
+     * <p>
+     * The ListResourceProfiles operation returns only the resource profiles in `compartmentId` passed.
+     * The parameter `accessLevel` specifies whether to return only those compartments for which the
+     * requestor has INSPECT permissions on at least one resource directly
+     * or indirectly (ACCESSIBLE) (the resource can be in a subcompartment) or to return Not Authorized if
+     * Principal doesn't have access to even one of the child compartments. This is valid only when
+     * `compartmentIdInSubtree` is set to `true`.
+     * <p>
+     * The parameter `compartmentIdInSubtree` applies when you perform ListResourceProfiles on the
+     * `compartmentId` passed and when it is set to true, the entire hierarchy of compartments can be returned.
+     * To get a full list of all compartments and subcompartments in the tenancy (root compartment),
+     * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/ListResourceProfilesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListResourceProfiles API.
+     */
+    ListResourceProfilesResponse listResourceProfiles(ListResourceProfilesRequest request);
 
     /**
      * Returns a list of resource types.
@@ -807,6 +899,69 @@ public interface CloudGuard extends AutoCloseable {
     ListResponderRulesResponse listResponderRules(ListResponderRulesRequest request);
 
     /**
+     * Returns Sighting endpoints details
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/ListSightingEndpointsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListSightingEndpoints API.
+     */
+    ListSightingEndpointsResponse listSightingEndpoints(ListSightingEndpointsRequest request);
+
+    /**
+     * Return a list of Impacted Resources for a CloudGuard Sighting
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/ListSightingImpactedResourcesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListSightingImpactedResources API.
+     */
+    ListSightingImpactedResourcesResponse listSightingImpactedResources(
+            ListSightingImpactedResourcesRequest request);
+
+    /**
+     * Returns a list of all Sightings identified by the Cloud Guard
+     * The ListSightings operation returns only sightings that match the passed filters.
+     * <p>
+     * The parameter `accessLevel` specifies whether to return only those compartments for which the
+     * requestor has INSPECT permissions on at least one resource directly
+     * or indirectly (ACCESSIBLE) (the resource can be in a subcompartment) or to return Not Authorized if
+     * Principal doesn't have access to even one of the child compartments. This is valid only when
+     * `compartmentIdInSubtree` is set to `true`.
+     * <p>
+     * The parameter `compartmentIdInSubtree` applies when you perform ListSightings on the
+     * `compartmentId` passed and when it is set to true, the entire hierarchy of compartments can be returned.
+     * To get a full list of all compartments and subcompartments in the tenancy (root compartment),
+     * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/ListSightingsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListSightings API.
+     */
+    ListSightingsResponse listSightings(ListSightingsRequest request);
+
+    /**
+     * Returns a list of tactics associated with detector rules.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/ListTacticsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListTactics API.
+     */
+    ListTacticsResponse listTactics(ListTacticsRequest request);
+
+    /**
      * Returns a list of DetectorRule associated with DetectorRecipe within a Target.
      *
      * @param request The request object containing the details to send
@@ -885,6 +1040,19 @@ public interface CloudGuard extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/ListTargetsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListTargets API.
      */
     ListTargetsResponse listTargets(ListTargetsRequest request);
+
+    /**
+     * Returns a list of techniques associated with detector rules.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/ListTechniquesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListTechniques API.
+     */
+    ListTechniquesResponse listTechniques(ListTechniquesRequest request);
 
     /**
      * Examines the number of problems related to the resource and the relative severity of those problems.
@@ -1034,6 +1202,20 @@ public interface CloudGuard extends AutoCloseable {
             RequestSummarizedSecurityScoresRequest request);
 
     /**
+     * Summarizes the resource profile risk score top trends for the given time range based on the search filters.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/RequestSummarizedTopTrendResourceProfileRiskScoresExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RequestSummarizedTopTrendResourceProfileRiskScores API.
+     */
+    RequestSummarizedTopTrendResourceProfileRiskScoresResponse
+            requestSummarizedTopTrendResourceProfileRiskScores(
+                    RequestSummarizedTopTrendResourceProfileRiskScoresRequest request);
+
+    /**
      * Returns the number of problems identified by cloud guard, for a given time period.
      * <p>
      * The parameter `accessLevel` specifies whether to return only those compartments for which the
@@ -1057,6 +1239,19 @@ public interface CloudGuard extends AutoCloseable {
      */
     RequestSummarizedTrendProblemsResponse requestSummarizedTrendProblems(
             RequestSummarizedTrendProblemsRequest request);
+
+    /**
+     * Summarizes the resource risk score trend for the given time range based on the search filters.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/RequestSummarizedTrendResourceRiskScoresExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RequestSummarizedTrendResourceRiskScores API.
+     */
+    RequestSummarizedTrendResourceRiskScoresResponse requestSummarizedTrendResourceRiskScores(
+            RequestSummarizedTrendResourceRiskScoresRequest request);
 
     /**
      * Returns the number of remediations performed by Responders, for a given time period.

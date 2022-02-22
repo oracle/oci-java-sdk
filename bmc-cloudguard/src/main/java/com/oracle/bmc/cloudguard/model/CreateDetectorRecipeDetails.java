@@ -132,13 +132,19 @@ public class CreateDetectorRecipeDetails {
     }
 
     /**
-     * DetectorRecipe Display Name
+     * Detector recipe display name.
+     * <p>
+     * Avoid entering confidential information.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     String displayName;
 
     /**
-     * DetectorRecipe Description
+     * Detector recipe description.
+     * <p>
+     * Avoid entering confidential information.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     String description;
@@ -164,6 +170,8 @@ public class CreateDetectorRecipeDetails {
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
      * Example: {@code {"bar-key": "value"}}
+     * <p>
+     * Avoid entering confidential information.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")

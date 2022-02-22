@@ -24,6 +24,7 @@ public enum WorkRequestOperationType {
     CreatePrivateAccessChannel("CREATE_PRIVATE_ACCESS_CHANNEL"),
     UpdatePrivateAccessChannel("UPDATE_PRIVATE_ACCESS_CHANNEL"),
     DeletePrivateAccessChannel("DELETE_PRIVATE_ACCESS_CHANNEL"),
+    UpdateInstanceEncryptionKey("UPDATE_INSTANCE_ENCRYPTION_KEY"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this

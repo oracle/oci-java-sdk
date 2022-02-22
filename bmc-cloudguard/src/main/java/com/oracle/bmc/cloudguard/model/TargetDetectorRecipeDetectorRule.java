@@ -196,19 +196,19 @@ public class TargetDetectorRecipeDetectorRule {
     }
 
     /**
-     * The unique identifier of the detector rule
+     * The unique identifier of the detector rule.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("detectorRuleId")
     String detectorRuleId;
 
     /**
-     * displayName
+     * Display name for TargetDetectorRecipeDetectorRule. information.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     String displayName;
 
     /**
-     * Description for TargetDetectorRecipeDetectorRule
+     * Description for TargetDetectorRecipeDetectorRule. information.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     String description;

@@ -5,7 +5,7 @@
 package com.oracle.bmc.core.model;
 
 /**
- * Ipsec tunnels error details
+ * Details for an error on an IPSec tunnel.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -114,37 +114,37 @@ public class IPSecConnectionTunnelErrorDetails {
     }
 
     /**
-     * unique id generated for each error report
+     * Unique ID generated for each error report.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     String id;
 
     /**
-     * unique code describes error type
+     * Unique code describes the error type.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("errorCode")
     String errorCode;
 
     /**
-     * detailed description of the error
+     * A detailed description of the error.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("errorDescription")
     String errorDescription;
 
     /**
-     * how to resolve the error
+     * Resolution for the error.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("solution")
     String solution;
 
     /**
-     * link to oracle resources
+     * Link to more Oracle resources or relevant documentation.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("ociResourcesLink")
     String ociResourcesLink;
 
     /**
-     * timestamp when error occurred.
+     * Timestamp when the error occurred.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timestamp")
     java.util.Date timestamp;

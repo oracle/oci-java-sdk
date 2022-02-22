@@ -21,7 +21,7 @@ public class ListApmDomainWorkRequestsRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The OCID of the APM domain
+     * The OCID of the APM domain.
      */
     private String apmDomainId;
 

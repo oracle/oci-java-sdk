@@ -8,7 +8,10 @@ import com.oracle.bmc.cloudguard.requests.*;
 import com.oracle.bmc.cloudguard.responses.*;
 
 /**
- * A description of the Cloud Guard APIs
+ * Use the Cloud Guard API to automate processes that you would otherwise perform through the Cloud Guard Console.
+ *
+ **Note:** You can perform Create, Update, and Delete operations only from the reporting region of your Cloud Guard tenancy. You can perform Read operations from any region.
+ *
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")
 public interface CloudGuardAsync extends AutoCloseable {
@@ -485,6 +488,22 @@ public interface CloudGuardAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<GetProblemRequest, GetProblemResponse> handler);
 
     /**
+     * Returns resource profile details
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetResourceProfileResponse> getResourceProfile(
+            GetResourceProfileRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetResourceProfileRequest, GetResourceProfileResponse>
+                    handler);
+
+    /**
      * Returns a Responder Execution identified by responderExecutionId
      *
      *
@@ -549,6 +568,20 @@ public interface CloudGuardAsync extends AutoCloseable {
             GetResponderRuleRequest request,
             com.oracle.bmc.responses.AsyncHandler<GetResponderRuleRequest, GetResponderRuleResponse>
                     handler);
+
+    /**
+     * Returns Sighting details
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetSightingResponse> getSighting(
+            GetSightingRequest request,
+            com.oracle.bmc.responses.AsyncHandler<GetSightingRequest, GetSightingResponse> handler);
 
     /**
      * Returns a Target identified by targetId
@@ -828,6 +861,23 @@ public interface CloudGuardAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Returns a list of endpoints associated with a cloud guard problem
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListProblemEndpointsResponse> listProblemEndpoints(
+            ListProblemEndpointsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListProblemEndpointsRequest, ListProblemEndpointsResponse>
+                    handler);
+
+    /**
      * Returns a list of Actions done on CloudGuard Problem
      *
      *
@@ -889,6 +939,71 @@ public interface CloudGuardAsync extends AutoCloseable {
             ListRecommendationsRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             ListRecommendationsRequest, ListRecommendationsResponse>
+                    handler);
+
+    /**
+     * Returns a list of endpoints for Cloud Guard resource profile
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListResourceProfileEndpointsResponse> listResourceProfileEndpoints(
+            ListResourceProfileEndpointsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListResourceProfileEndpointsRequest,
+                            ListResourceProfileEndpointsResponse>
+                    handler);
+
+    /**
+     * Returns a list of impacted resources for Cloud Guard resource profile
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListResourceProfileImpactedResourcesResponse>
+            listResourceProfileImpactedResources(
+                    ListResourceProfileImpactedResourcesRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ListResourceProfileImpactedResourcesRequest,
+                                    ListResourceProfileImpactedResourcesResponse>
+                            handler);
+
+    /**
+     * Returns a list of all resource profiles identified by the Cloud Guard
+     * The ListResourceProfiles operation returns only resource profiles that match the passed filters.
+     * <p>
+     * The ListResourceProfiles operation returns only the resource profiles in `compartmentId` passed.
+     * The parameter `accessLevel` specifies whether to return only those compartments for which the
+     * requestor has INSPECT permissions on at least one resource directly
+     * or indirectly (ACCESSIBLE) (the resource can be in a subcompartment) or to return Not Authorized if
+     * Principal doesn't have access to even one of the child compartments. This is valid only when
+     * `compartmentIdInSubtree` is set to `true`.
+     * <p>
+     * The parameter `compartmentIdInSubtree` applies when you perform ListResourceProfiles on the
+     * `compartmentId` passed and when it is set to true, the entire hierarchy of compartments can be returned.
+     * To get a full list of all compartments and subcompartments in the tenancy (root compartment),
+     * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListResourceProfilesResponse> listResourceProfiles(
+            ListResourceProfilesRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListResourceProfilesRequest, ListResourceProfilesResponse>
                     handler);
 
     /**
@@ -1009,6 +1124,83 @@ public interface CloudGuardAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Returns Sighting endpoints details
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListSightingEndpointsResponse> listSightingEndpoints(
+            ListSightingEndpointsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListSightingEndpointsRequest, ListSightingEndpointsResponse>
+                    handler);
+
+    /**
+     * Return a list of Impacted Resources for a CloudGuard Sighting
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListSightingImpactedResourcesResponse>
+            listSightingImpactedResources(
+                    ListSightingImpactedResourcesRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ListSightingImpactedResourcesRequest,
+                                    ListSightingImpactedResourcesResponse>
+                            handler);
+
+    /**
+     * Returns a list of all Sightings identified by the Cloud Guard
+     * The ListSightings operation returns only sightings that match the passed filters.
+     * <p>
+     * The parameter `accessLevel` specifies whether to return only those compartments for which the
+     * requestor has INSPECT permissions on at least one resource directly
+     * or indirectly (ACCESSIBLE) (the resource can be in a subcompartment) or to return Not Authorized if
+     * Principal doesn't have access to even one of the child compartments. This is valid only when
+     * `compartmentIdInSubtree` is set to `true`.
+     * <p>
+     * The parameter `compartmentIdInSubtree` applies when you perform ListSightings on the
+     * `compartmentId` passed and when it is set to true, the entire hierarchy of compartments can be returned.
+     * To get a full list of all compartments and subcompartments in the tenancy (root compartment),
+     * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListSightingsResponse> listSightings(
+            ListSightingsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<ListSightingsRequest, ListSightingsResponse>
+                    handler);
+
+    /**
+     * Returns a list of tactics associated with detector rules.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListTacticsResponse> listTactics(
+            ListTacticsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<ListTacticsRequest, ListTacticsResponse> handler);
+
+    /**
      * Returns a list of DetectorRule associated with DetectorRecipe within a Target.
      *
      *
@@ -1105,6 +1297,22 @@ public interface CloudGuardAsync extends AutoCloseable {
     java.util.concurrent.Future<ListTargetsResponse> listTargets(
             ListTargetsRequest request,
             com.oracle.bmc.responses.AsyncHandler<ListTargetsRequest, ListTargetsResponse> handler);
+
+    /**
+     * Returns a list of techniques associated with detector rules.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListTechniquesResponse> listTechniques(
+            ListTechniquesRequest request,
+            com.oracle.bmc.responses.AsyncHandler<ListTechniquesRequest, ListTechniquesResponse>
+                    handler);
 
     /**
      * Examines the number of problems related to the resource and the relative severity of those problems.
@@ -1288,6 +1496,24 @@ public interface CloudGuardAsync extends AutoCloseable {
                             handler);
 
     /**
+     * Summarizes the resource profile risk score top trends for the given time range based on the search filters.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<RequestSummarizedTopTrendResourceProfileRiskScoresResponse>
+            requestSummarizedTopTrendResourceProfileRiskScores(
+                    RequestSummarizedTopTrendResourceProfileRiskScoresRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    RequestSummarizedTopTrendResourceProfileRiskScoresRequest,
+                                    RequestSummarizedTopTrendResourceProfileRiskScoresResponse>
+                            handler);
+
+    /**
      * Returns the number of problems identified by cloud guard, for a given time period.
      * <p>
      * The parameter `accessLevel` specifies whether to return only those compartments for which the
@@ -1315,6 +1541,24 @@ public interface CloudGuardAsync extends AutoCloseable {
                     com.oracle.bmc.responses.AsyncHandler<
                                     RequestSummarizedTrendProblemsRequest,
                                     RequestSummarizedTrendProblemsResponse>
+                            handler);
+
+    /**
+     * Summarizes the resource risk score trend for the given time range based on the search filters.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<RequestSummarizedTrendResourceRiskScoresResponse>
+            requestSummarizedTrendResourceRiskScores(
+                    RequestSummarizedTrendResourceRiskScoresRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    RequestSummarizedTrendResourceRiskScoresRequest,
+                                    RequestSummarizedTrendResourceRiskScoresResponse>
                             handler);
 
     /**

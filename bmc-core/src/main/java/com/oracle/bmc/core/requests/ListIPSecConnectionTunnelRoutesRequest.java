@@ -49,9 +49,9 @@ public class ListIPSecConnectionTunnelRoutesRequest
     private String page;
 
     /**
-     * Specifies the advertiser of the routes. If set to ORACLE, then returns only the
-     * routes advertised by ORACLE, else if set to CUSTOMER, then returns only the
-     * routes advertised by the CUSTOMER.
+     * Specifies the advertiser of the routes. If set to {@code ORACLE}, this returns only the
+     * routes advertised by Oracle. When set to {@code CUSTOMER}, this returns only the
+     * routes advertised by the CPE.
      *
      */
     private com.oracle.bmc.core.model.TunnelRouteSummary.Advertiser advertiser;

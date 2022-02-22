@@ -5,7 +5,7 @@
 package com.oracle.bmc.core.model;
 
 /**
- * Tunnel detail information specific to IPSec phase 1.
+ * IPSec tunnel details specific to ISAKMP phase one.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -177,25 +177,26 @@ public class TunnelPhaseOneDetails {
 
     /**
      * Indicates whether custom phase one configuration is enabled.
+     * If this option is not enabled, default settings are proposed.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isCustomPhaseOneConfig")
     Boolean isCustomPhaseOneConfig;
 
     /**
-     * The total configured lifetime of an IKE security association.
+     * The total configured lifetime of the IKE security association.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifetime")
     Long lifetime;
 
     /**
-     * The lifetime remaining before the key is refreshed.
+     * The remaining lifetime before the key is refreshed.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("remainingLifetime")
     Long remainingLifetime;
 
     /**
-     * Custom authentication algorithm
-     *
+     * The proposed custom authentication algorithm.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("customAuthenticationAlgorithm")
     String customAuthenticationAlgorithm;
@@ -207,8 +208,7 @@ public class TunnelPhaseOneDetails {
     String negotiatedAuthenticationAlgorithm;
 
     /**
-     * Custom encryption algorithm.
-     *
+     * The proposed custom encryption algorithm.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("customEncryptionAlgorithm")
     String customEncryptionAlgorithm;
@@ -220,8 +220,7 @@ public class TunnelPhaseOneDetails {
     String negotiatedEncryptionAlgorithm;
 
     /**
-     * Custom Diffie-Hellman group.
-     *
+     * The proposed custom Diffie-Hellman group.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("customDhGroup")
     String customDhGroup;
@@ -233,7 +232,7 @@ public class TunnelPhaseOneDetails {
     String negotiatedDhGroup;
 
     /**
-     * Indicates whether IKE Phase 1 is established.
+     * Indicates whether IKE phase one is established.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isIkeEstablished")
     Boolean isIkeEstablished;

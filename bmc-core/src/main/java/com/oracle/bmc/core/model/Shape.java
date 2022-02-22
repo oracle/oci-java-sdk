@@ -202,6 +202,70 @@ public class Shape {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("isBilledForStoppedInstance")
+        private Boolean isBilledForStoppedInstance;
+
+        public Builder isBilledForStoppedInstance(Boolean isBilledForStoppedInstance) {
+            this.isBilledForStoppedInstance = isBilledForStoppedInstance;
+            this.__explicitlySet__.add("isBilledForStoppedInstance");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("billingType")
+        private BillingType billingType;
+
+        public Builder billingType(BillingType billingType) {
+            this.billingType = billingType;
+            this.__explicitlySet__.add("billingType");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("quotaNames")
+        private java.util.List<String> quotaNames;
+
+        public Builder quotaNames(java.util.List<String> quotaNames) {
+            this.quotaNames = quotaNames;
+            this.__explicitlySet__.add("quotaNames");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("isSubcore")
+        private Boolean isSubcore;
+
+        public Builder isSubcore(Boolean isSubcore) {
+            this.isSubcore = isSubcore;
+            this.__explicitlySet__.add("isSubcore");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("isFlexible")
+        private Boolean isFlexible;
+
+        public Builder isFlexible(Boolean isFlexible) {
+            this.isFlexible = isFlexible;
+            this.__explicitlySet__.add("isFlexible");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("resizeCompatibleShapes")
+        private java.util.List<String> resizeCompatibleShapes;
+
+        public Builder resizeCompatibleShapes(java.util.List<String> resizeCompatibleShapes) {
+            this.resizeCompatibleShapes = resizeCompatibleShapes;
+            this.__explicitlySet__.add("resizeCompatibleShapes");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("recommendedAlternatives")
+        private java.util.List<ShapeAlternativeObject> recommendedAlternatives;
+
+        public Builder recommendedAlternatives(
+                java.util.List<ShapeAlternativeObject> recommendedAlternatives) {
+            this.recommendedAlternatives = recommendedAlternatives;
+            this.__explicitlySet__.add("recommendedAlternatives");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -226,7 +290,14 @@ public class Shape {
                             memoryOptions,
                             networkingBandwidthOptions,
                             maxVnicAttachmentOptions,
-                            platformConfigOptions);
+                            platformConfigOptions,
+                            isBilledForStoppedInstance,
+                            billingType,
+                            quotaNames,
+                            isSubcore,
+                            isFlexible,
+                            resizeCompatibleShapes,
+                            recommendedAlternatives);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -252,7 +323,14 @@ public class Shape {
                             .memoryOptions(o.getMemoryOptions())
                             .networkingBandwidthOptions(o.getNetworkingBandwidthOptions())
                             .maxVnicAttachmentOptions(o.getMaxVnicAttachmentOptions())
-                            .platformConfigOptions(o.getPlatformConfigOptions());
+                            .platformConfigOptions(o.getPlatformConfigOptions())
+                            .isBilledForStoppedInstance(o.getIsBilledForStoppedInstance())
+                            .billingType(o.getBillingType())
+                            .quotaNames(o.getQuotaNames())
+                            .isSubcore(o.getIsSubcore())
+                            .isFlexible(o.getIsFlexible())
+                            .resizeCompatibleShapes(o.getResizeCompatibleShapes())
+                            .recommendedAlternatives(o.getRecommendedAlternatives());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -432,6 +510,106 @@ public class Shape {
 
     @com.fasterxml.jackson.annotation.JsonProperty("platformConfigOptions")
     ShapePlatformConfigOptions platformConfigOptions;
+
+    /**
+     * Whether billing continues when the instances that use this shape are in the stopped state.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isBilledForStoppedInstance")
+    Boolean isBilledForStoppedInstance;
+    /**
+     * How instances that use this shape are charged.
+     *
+     **/
+    @lombok.extern.slf4j.Slf4j
+    public enum BillingType {
+        AlwaysFree("ALWAYS_FREE"),
+        LimitedFree("LIMITED_FREE"),
+        Paid("PAID"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private final String value;
+        private static java.util.Map<String, BillingType> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (BillingType v : BillingType.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        BillingType(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static BillingType create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'BillingType', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * How instances that use this shape are charged.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("billingType")
+    BillingType billingType;
+
+    /**
+     * The list of of compartment quotas for the shape.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("quotaNames")
+    java.util.List<String> quotaNames;
+
+    /**
+     * Whether the shape supports creating subcore or burstable instances. A [burstable instance](https://docs.cloud.oracle.com/iaas/Content/Compute/References/burstable-instances.htm)
+     * is a virtual machine (VM) instance that provides a baseline level of CPU performance with the ability to burst to a higher level to support occasional
+     * spikes in usage.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isSubcore")
+    Boolean isSubcore;
+
+    /**
+     * Whether the shape supports creating flexible instances. A [flexible shape](https://docs.cloud.oracle.com/iaas/Content/Compute/References/computeshapes.htm#flexible)
+     * is a shape that lets you customize the number of OCPUs and the amount of memory when launching or resizing your instance.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isFlexible")
+    Boolean isFlexible;
+
+    /**
+     * The list of compatible shapes that this shape can be changed to. For more information,
+     * see [Changing the Shape of an Instance](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/resizinginstances.htm).
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("resizeCompatibleShapes")
+    java.util.List<String> resizeCompatibleShapes;
+
+    /**
+     * The list of shapes and shape details (if applicable) that Oracle recommends that you use as an alternative to the current shape.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("recommendedAlternatives")
+    java.util.List<ShapeAlternativeObject> recommendedAlternatives;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

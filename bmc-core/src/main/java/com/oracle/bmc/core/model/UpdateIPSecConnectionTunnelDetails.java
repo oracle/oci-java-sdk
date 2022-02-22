@@ -171,7 +171,7 @@ public class UpdateIPSecConnectionTunnelDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     String displayName;
     /**
-     * The type of routing to use for this tunnel (either BGP dynamic routing or static routing).
+     * The type of routing to use for this tunnel (BGP dynamic routing, static routing, or policy-based routing).
      *
      **/
     public enum Routing {
@@ -208,7 +208,7 @@ public class UpdateIPSecConnectionTunnelDetails {
         }
     };
     /**
-     * The type of routing to use for this tunnel (either BGP dynamic routing or static routing).
+     * The type of routing to use for this tunnel (BGP dynamic routing, static routing, or policy-based routing).
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("routing")
@@ -259,7 +259,8 @@ public class UpdateIPSecConnectionTunnelDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("bgpSessionConfig")
     UpdateIPSecTunnelBgpSessionDetails bgpSessionConfig;
     /**
-     * Whether Oracle side is the initiator for negotiation.
+     * Indicates whether the Oracle end of the IPSec connection is able to initiate starting up the IPSec tunnel.
+     *
      **/
     public enum OracleInitiation {
         InitiatorOrResponder("INITIATOR_OR_RESPONDER"),
@@ -294,12 +295,21 @@ public class UpdateIPSecConnectionTunnelDetails {
         }
     };
     /**
-     * Whether Oracle side is the initiator for negotiation.
+     * Indicates whether the Oracle end of the IPSec connection is able to initiate starting up the IPSec tunnel.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("oracleInitiation")
     OracleInitiation oracleInitiation;
     /**
-     * Whether NAT-T Enabled on the tunnel
+     * By default (the {@code AUTO} setting), IKE sends packets with a source and destination port set to 500,
+     * and when it detects that the port used to forward packets has changed (most likely because a NAT device
+     * is between the CPE device and the Oracle VPN headend) it will try to negotiate the use of NAT-T.
+     * <p>
+     * The {@code ENABLED} option sets the IKE protocol to use port 4500 instead of 500 and forces encapsulating traffic with the ESP protocol inside UDP packets.
+     * <p>
+     * The {@code DISABLED} option directs IKE to completely refuse to negotiate NAT-T
+     * even if it senses there may be a NAT device in use.
+     *
      **/
     public enum NatTranslationEnabled {
         Enabled("ENABLED"),
@@ -335,7 +345,15 @@ public class UpdateIPSecConnectionTunnelDetails {
         }
     };
     /**
-     * Whether NAT-T Enabled on the tunnel
+     * By default (the {@code AUTO} setting), IKE sends packets with a source and destination port set to 500,
+     * and when it detects that the port used to forward packets has changed (most likely because a NAT device
+     * is between the CPE device and the Oracle VPN headend) it will try to negotiate the use of NAT-T.
+     * <p>
+     * The {@code ENABLED} option sets the IKE protocol to use port 4500 instead of 500 and forces encapsulating traffic with the ESP protocol inside UDP packets.
+     * <p>
+     * The {@code DISABLED} option directs IKE to completely refuse to negotiate NAT-T
+     * even if it senses there may be a NAT device in use.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("natTranslationEnabled")
     NatTranslationEnabled natTranslationEnabled;

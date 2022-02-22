@@ -1179,6 +1179,120 @@ public class CloudGuardPaginators {
     }
 
     /**
+     * Creates a new iterable which will iterate over the responses received from the listProblemEndpoints operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListProblemEndpointsResponse> listProblemEndpointsResponseIterator(
+            final ListProblemEndpointsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListProblemEndpointsRequest.Builder, ListProblemEndpointsRequest,
+                ListProblemEndpointsResponse>(
+                new com.google.common.base.Supplier<ListProblemEndpointsRequest.Builder>() {
+                    @Override
+                    public ListProblemEndpointsRequest.Builder get() {
+                        return ListProblemEndpointsRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListProblemEndpointsResponse, String>() {
+                    @Override
+                    public String apply(ListProblemEndpointsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListProblemEndpointsRequest.Builder>,
+                        ListProblemEndpointsRequest>() {
+                    @Override
+                    public ListProblemEndpointsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListProblemEndpointsRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListProblemEndpointsRequest, ListProblemEndpointsResponse>() {
+                    @Override
+                    public ListProblemEndpointsResponse apply(ListProblemEndpointsRequest request) {
+                        return client.listProblemEndpoints(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.cloudguard.model.ProblemEndpointSummary} objects
+     * contained in responses from the listProblemEndpoints operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.cloudguard.model.ProblemEndpointSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.cloudguard.model.ProblemEndpointSummary>
+            listProblemEndpointsRecordIterator(final ListProblemEndpointsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListProblemEndpointsRequest.Builder, ListProblemEndpointsRequest,
+                ListProblemEndpointsResponse,
+                com.oracle.bmc.cloudguard.model.ProblemEndpointSummary>(
+                new com.google.common.base.Supplier<ListProblemEndpointsRequest.Builder>() {
+                    @Override
+                    public ListProblemEndpointsRequest.Builder get() {
+                        return ListProblemEndpointsRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListProblemEndpointsResponse, String>() {
+                    @Override
+                    public String apply(ListProblemEndpointsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListProblemEndpointsRequest.Builder>,
+                        ListProblemEndpointsRequest>() {
+                    @Override
+                    public ListProblemEndpointsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListProblemEndpointsRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListProblemEndpointsRequest, ListProblemEndpointsResponse>() {
+                    @Override
+                    public ListProblemEndpointsResponse apply(ListProblemEndpointsRequest request) {
+                        return client.listProblemEndpoints(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListProblemEndpointsResponse,
+                        java.util.List<com.oracle.bmc.cloudguard.model.ProblemEndpointSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.cloudguard.model.ProblemEndpointSummary>
+                            apply(ListProblemEndpointsResponse response) {
+                        return response.getProblemEndpointCollection().getItems();
+                    }
+                });
+    }
+
+    /**
      * Creates a new iterable which will iterate over the responses received from the listProblemHistories operation. This iterable
      * will fetch more data from the server as needed.
      *
@@ -1511,6 +1625,374 @@ public class CloudGuardPaginators {
                     public java.util.List<com.oracle.bmc.cloudguard.model.RecommendationSummary>
                             apply(ListRecommendationsResponse response) {
                         return response.getRecommendationSummaryCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the listResourceProfileEndpoints operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListResourceProfileEndpointsResponse>
+            listResourceProfileEndpointsResponseIterator(
+                    final ListResourceProfileEndpointsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListResourceProfileEndpointsRequest.Builder, ListResourceProfileEndpointsRequest,
+                ListResourceProfileEndpointsResponse>(
+                new com.google.common.base.Supplier<ListResourceProfileEndpointsRequest.Builder>() {
+                    @Override
+                    public ListResourceProfileEndpointsRequest.Builder get() {
+                        return ListResourceProfileEndpointsRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListResourceProfileEndpointsResponse, String>() {
+                    @Override
+                    public String apply(ListResourceProfileEndpointsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListResourceProfileEndpointsRequest.Builder>,
+                        ListResourceProfileEndpointsRequest>() {
+                    @Override
+                    public ListResourceProfileEndpointsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListResourceProfileEndpointsRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListResourceProfileEndpointsRequest,
+                        ListResourceProfileEndpointsResponse>() {
+                    @Override
+                    public ListResourceProfileEndpointsResponse apply(
+                            ListResourceProfileEndpointsRequest request) {
+                        return client.listResourceProfileEndpoints(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.cloudguard.model.ResourceProfileEndpointSummary} objects
+     * contained in responses from the listResourceProfileEndpoints operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.cloudguard.model.ResourceProfileEndpointSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.cloudguard.model.ResourceProfileEndpointSummary>
+            listResourceProfileEndpointsRecordIterator(
+                    final ListResourceProfileEndpointsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListResourceProfileEndpointsRequest.Builder, ListResourceProfileEndpointsRequest,
+                ListResourceProfileEndpointsResponse,
+                com.oracle.bmc.cloudguard.model.ResourceProfileEndpointSummary>(
+                new com.google.common.base.Supplier<ListResourceProfileEndpointsRequest.Builder>() {
+                    @Override
+                    public ListResourceProfileEndpointsRequest.Builder get() {
+                        return ListResourceProfileEndpointsRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListResourceProfileEndpointsResponse, String>() {
+                    @Override
+                    public String apply(ListResourceProfileEndpointsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListResourceProfileEndpointsRequest.Builder>,
+                        ListResourceProfileEndpointsRequest>() {
+                    @Override
+                    public ListResourceProfileEndpointsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListResourceProfileEndpointsRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListResourceProfileEndpointsRequest,
+                        ListResourceProfileEndpointsResponse>() {
+                    @Override
+                    public ListResourceProfileEndpointsResponse apply(
+                            ListResourceProfileEndpointsRequest request) {
+                        return client.listResourceProfileEndpoints(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListResourceProfileEndpointsResponse,
+                        java.util.List<
+                                com.oracle.bmc.cloudguard.model.ResourceProfileEndpointSummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.cloudguard.model.ResourceProfileEndpointSummary>
+                            apply(ListResourceProfileEndpointsResponse response) {
+                        return response.getResourceProfileEndpointCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the listResourceProfileImpactedResources operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListResourceProfileImpactedResourcesResponse>
+            listResourceProfileImpactedResourcesResponseIterator(
+                    final ListResourceProfileImpactedResourcesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListResourceProfileImpactedResourcesRequest.Builder,
+                ListResourceProfileImpactedResourcesRequest,
+                ListResourceProfileImpactedResourcesResponse>(
+                new com.google.common.base.Supplier<
+                        ListResourceProfileImpactedResourcesRequest.Builder>() {
+                    @Override
+                    public ListResourceProfileImpactedResourcesRequest.Builder get() {
+                        return ListResourceProfileImpactedResourcesRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListResourceProfileImpactedResourcesResponse, String>() {
+                    @Override
+                    public String apply(ListResourceProfileImpactedResourcesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListResourceProfileImpactedResourcesRequest.Builder>,
+                        ListResourceProfileImpactedResourcesRequest>() {
+                    @Override
+                    public ListResourceProfileImpactedResourcesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListResourceProfileImpactedResourcesRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListResourceProfileImpactedResourcesRequest,
+                        ListResourceProfileImpactedResourcesResponse>() {
+                    @Override
+                    public ListResourceProfileImpactedResourcesResponse apply(
+                            ListResourceProfileImpactedResourcesRequest request) {
+                        return client.listResourceProfileImpactedResources(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.cloudguard.model.ResourceProfileImpactedResourceSummary} objects
+     * contained in responses from the listResourceProfileImpactedResources operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.cloudguard.model.ResourceProfileImpactedResourceSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.cloudguard.model.ResourceProfileImpactedResourceSummary>
+            listResourceProfileImpactedResourcesRecordIterator(
+                    final ListResourceProfileImpactedResourcesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListResourceProfileImpactedResourcesRequest.Builder,
+                ListResourceProfileImpactedResourcesRequest,
+                ListResourceProfileImpactedResourcesResponse,
+                com.oracle.bmc.cloudguard.model.ResourceProfileImpactedResourceSummary>(
+                new com.google.common.base.Supplier<
+                        ListResourceProfileImpactedResourcesRequest.Builder>() {
+                    @Override
+                    public ListResourceProfileImpactedResourcesRequest.Builder get() {
+                        return ListResourceProfileImpactedResourcesRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListResourceProfileImpactedResourcesResponse, String>() {
+                    @Override
+                    public String apply(ListResourceProfileImpactedResourcesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListResourceProfileImpactedResourcesRequest.Builder>,
+                        ListResourceProfileImpactedResourcesRequest>() {
+                    @Override
+                    public ListResourceProfileImpactedResourcesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListResourceProfileImpactedResourcesRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListResourceProfileImpactedResourcesRequest,
+                        ListResourceProfileImpactedResourcesResponse>() {
+                    @Override
+                    public ListResourceProfileImpactedResourcesResponse apply(
+                            ListResourceProfileImpactedResourcesRequest request) {
+                        return client.listResourceProfileImpactedResources(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListResourceProfileImpactedResourcesResponse,
+                        java.util.List<
+                                com.oracle.bmc.cloudguard.model
+                                        .ResourceProfileImpactedResourceSummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.cloudguard.model
+                                            .ResourceProfileImpactedResourceSummary>
+                            apply(ListResourceProfileImpactedResourcesResponse response) {
+                        return response.getResourceProfileImpactedResourceCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the listResourceProfiles operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListResourceProfilesResponse> listResourceProfilesResponseIterator(
+            final ListResourceProfilesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListResourceProfilesRequest.Builder, ListResourceProfilesRequest,
+                ListResourceProfilesResponse>(
+                new com.google.common.base.Supplier<ListResourceProfilesRequest.Builder>() {
+                    @Override
+                    public ListResourceProfilesRequest.Builder get() {
+                        return ListResourceProfilesRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListResourceProfilesResponse, String>() {
+                    @Override
+                    public String apply(ListResourceProfilesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListResourceProfilesRequest.Builder>,
+                        ListResourceProfilesRequest>() {
+                    @Override
+                    public ListResourceProfilesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListResourceProfilesRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListResourceProfilesRequest, ListResourceProfilesResponse>() {
+                    @Override
+                    public ListResourceProfilesResponse apply(ListResourceProfilesRequest request) {
+                        return client.listResourceProfiles(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.cloudguard.model.ResourceProfileSummary} objects
+     * contained in responses from the listResourceProfiles operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.cloudguard.model.ResourceProfileSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.cloudguard.model.ResourceProfileSummary>
+            listResourceProfilesRecordIterator(final ListResourceProfilesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListResourceProfilesRequest.Builder, ListResourceProfilesRequest,
+                ListResourceProfilesResponse,
+                com.oracle.bmc.cloudguard.model.ResourceProfileSummary>(
+                new com.google.common.base.Supplier<ListResourceProfilesRequest.Builder>() {
+                    @Override
+                    public ListResourceProfilesRequest.Builder get() {
+                        return ListResourceProfilesRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListResourceProfilesResponse, String>() {
+                    @Override
+                    public String apply(ListResourceProfilesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListResourceProfilesRequest.Builder>,
+                        ListResourceProfilesRequest>() {
+                    @Override
+                    public ListResourceProfilesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListResourceProfilesRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListResourceProfilesRequest, ListResourceProfilesResponse>() {
+                    @Override
+                    public ListResourceProfilesResponse apply(ListResourceProfilesRequest request) {
+                        return client.listResourceProfiles(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListResourceProfilesResponse,
+                        java.util.List<com.oracle.bmc.cloudguard.model.ResourceProfileSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.cloudguard.model.ResourceProfileSummary>
+                            apply(ListResourceProfilesResponse response) {
+                        return response.getResourceProfileCollection().getItems();
                     }
                 });
     }
@@ -2219,6 +2701,469 @@ public class CloudGuardPaginators {
     }
 
     /**
+     * Creates a new iterable which will iterate over the responses received from the listSightingEndpoints operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListSightingEndpointsResponse> listSightingEndpointsResponseIterator(
+            final ListSightingEndpointsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListSightingEndpointsRequest.Builder, ListSightingEndpointsRequest,
+                ListSightingEndpointsResponse>(
+                new com.google.common.base.Supplier<ListSightingEndpointsRequest.Builder>() {
+                    @Override
+                    public ListSightingEndpointsRequest.Builder get() {
+                        return ListSightingEndpointsRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListSightingEndpointsResponse, String>() {
+                    @Override
+                    public String apply(ListSightingEndpointsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListSightingEndpointsRequest.Builder>,
+                        ListSightingEndpointsRequest>() {
+                    @Override
+                    public ListSightingEndpointsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListSightingEndpointsRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListSightingEndpointsRequest, ListSightingEndpointsResponse>() {
+                    @Override
+                    public ListSightingEndpointsResponse apply(
+                            ListSightingEndpointsRequest request) {
+                        return client.listSightingEndpoints(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.cloudguard.model.SightingEndpointSummary} objects
+     * contained in responses from the listSightingEndpoints operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.cloudguard.model.SightingEndpointSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.cloudguard.model.SightingEndpointSummary>
+            listSightingEndpointsRecordIterator(final ListSightingEndpointsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListSightingEndpointsRequest.Builder, ListSightingEndpointsRequest,
+                ListSightingEndpointsResponse,
+                com.oracle.bmc.cloudguard.model.SightingEndpointSummary>(
+                new com.google.common.base.Supplier<ListSightingEndpointsRequest.Builder>() {
+                    @Override
+                    public ListSightingEndpointsRequest.Builder get() {
+                        return ListSightingEndpointsRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListSightingEndpointsResponse, String>() {
+                    @Override
+                    public String apply(ListSightingEndpointsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListSightingEndpointsRequest.Builder>,
+                        ListSightingEndpointsRequest>() {
+                    @Override
+                    public ListSightingEndpointsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListSightingEndpointsRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListSightingEndpointsRequest, ListSightingEndpointsResponse>() {
+                    @Override
+                    public ListSightingEndpointsResponse apply(
+                            ListSightingEndpointsRequest request) {
+                        return client.listSightingEndpoints(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListSightingEndpointsResponse,
+                        java.util.List<com.oracle.bmc.cloudguard.model.SightingEndpointSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.cloudguard.model.SightingEndpointSummary>
+                            apply(ListSightingEndpointsResponse response) {
+                        return response.getSightingEndpointCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the listSightingImpactedResources operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListSightingImpactedResourcesResponse>
+            listSightingImpactedResourcesResponseIterator(
+                    final ListSightingImpactedResourcesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListSightingImpactedResourcesRequest.Builder, ListSightingImpactedResourcesRequest,
+                ListSightingImpactedResourcesResponse>(
+                new com.google.common.base.Supplier<
+                        ListSightingImpactedResourcesRequest.Builder>() {
+                    @Override
+                    public ListSightingImpactedResourcesRequest.Builder get() {
+                        return ListSightingImpactedResourcesRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListSightingImpactedResourcesResponse, String>() {
+                    @Override
+                    public String apply(ListSightingImpactedResourcesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListSightingImpactedResourcesRequest.Builder>,
+                        ListSightingImpactedResourcesRequest>() {
+                    @Override
+                    public ListSightingImpactedResourcesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListSightingImpactedResourcesRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListSightingImpactedResourcesRequest,
+                        ListSightingImpactedResourcesResponse>() {
+                    @Override
+                    public ListSightingImpactedResourcesResponse apply(
+                            ListSightingImpactedResourcesRequest request) {
+                        return client.listSightingImpactedResources(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.cloudguard.model.SightingImpactedResourceSummary} objects
+     * contained in responses from the listSightingImpactedResources operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.cloudguard.model.SightingImpactedResourceSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.cloudguard.model.SightingImpactedResourceSummary>
+            listSightingImpactedResourcesRecordIterator(
+                    final ListSightingImpactedResourcesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListSightingImpactedResourcesRequest.Builder, ListSightingImpactedResourcesRequest,
+                ListSightingImpactedResourcesResponse,
+                com.oracle.bmc.cloudguard.model.SightingImpactedResourceSummary>(
+                new com.google.common.base.Supplier<
+                        ListSightingImpactedResourcesRequest.Builder>() {
+                    @Override
+                    public ListSightingImpactedResourcesRequest.Builder get() {
+                        return ListSightingImpactedResourcesRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListSightingImpactedResourcesResponse, String>() {
+                    @Override
+                    public String apply(ListSightingImpactedResourcesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListSightingImpactedResourcesRequest.Builder>,
+                        ListSightingImpactedResourcesRequest>() {
+                    @Override
+                    public ListSightingImpactedResourcesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListSightingImpactedResourcesRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListSightingImpactedResourcesRequest,
+                        ListSightingImpactedResourcesResponse>() {
+                    @Override
+                    public ListSightingImpactedResourcesResponse apply(
+                            ListSightingImpactedResourcesRequest request) {
+                        return client.listSightingImpactedResources(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListSightingImpactedResourcesResponse,
+                        java.util.List<
+                                com.oracle.bmc.cloudguard.model
+                                        .SightingImpactedResourceSummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.cloudguard.model.SightingImpactedResourceSummary>
+                            apply(ListSightingImpactedResourcesResponse response) {
+                        return response.getSightingImpactedResourceCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the listSightings operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListSightingsResponse> listSightingsResponseIterator(
+            final ListSightingsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListSightingsRequest.Builder, ListSightingsRequest, ListSightingsResponse>(
+                new com.google.common.base.Supplier<ListSightingsRequest.Builder>() {
+                    @Override
+                    public ListSightingsRequest.Builder get() {
+                        return ListSightingsRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListSightingsResponse, String>() {
+                    @Override
+                    public String apply(ListSightingsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListSightingsRequest.Builder>,
+                        ListSightingsRequest>() {
+                    @Override
+                    public ListSightingsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListSightingsRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<ListSightingsRequest, ListSightingsResponse>() {
+                    @Override
+                    public ListSightingsResponse apply(ListSightingsRequest request) {
+                        return client.listSightings(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.cloudguard.model.SightingSummary} objects
+     * contained in responses from the listSightings operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.cloudguard.model.SightingSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.cloudguard.model.SightingSummary> listSightingsRecordIterator(
+            final ListSightingsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListSightingsRequest.Builder, ListSightingsRequest, ListSightingsResponse,
+                com.oracle.bmc.cloudguard.model.SightingSummary>(
+                new com.google.common.base.Supplier<ListSightingsRequest.Builder>() {
+                    @Override
+                    public ListSightingsRequest.Builder get() {
+                        return ListSightingsRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListSightingsResponse, String>() {
+                    @Override
+                    public String apply(ListSightingsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListSightingsRequest.Builder>,
+                        ListSightingsRequest>() {
+                    @Override
+                    public ListSightingsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListSightingsRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<ListSightingsRequest, ListSightingsResponse>() {
+                    @Override
+                    public ListSightingsResponse apply(ListSightingsRequest request) {
+                        return client.listSightings(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListSightingsResponse,
+                        java.util.List<com.oracle.bmc.cloudguard.model.SightingSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.cloudguard.model.SightingSummary> apply(
+                            ListSightingsResponse response) {
+                        return response.getSightingCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the listTactics operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListTacticsResponse> listTacticsResponseIterator(
+            final ListTacticsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListTacticsRequest.Builder, ListTacticsRequest, ListTacticsResponse>(
+                new com.google.common.base.Supplier<ListTacticsRequest.Builder>() {
+                    @Override
+                    public ListTacticsRequest.Builder get() {
+                        return ListTacticsRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListTacticsResponse, String>() {
+                    @Override
+                    public String apply(ListTacticsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListTacticsRequest.Builder>,
+                        ListTacticsRequest>() {
+                    @Override
+                    public ListTacticsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListTacticsRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<ListTacticsRequest, ListTacticsResponse>() {
+                    @Override
+                    public ListTacticsResponse apply(ListTacticsRequest request) {
+                        return client.listTactics(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.cloudguard.model.TacticSummary} objects
+     * contained in responses from the listTactics operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.cloudguard.model.TacticSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.cloudguard.model.TacticSummary> listTacticsRecordIterator(
+            final ListTacticsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListTacticsRequest.Builder, ListTacticsRequest, ListTacticsResponse,
+                com.oracle.bmc.cloudguard.model.TacticSummary>(
+                new com.google.common.base.Supplier<ListTacticsRequest.Builder>() {
+                    @Override
+                    public ListTacticsRequest.Builder get() {
+                        return ListTacticsRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListTacticsResponse, String>() {
+                    @Override
+                    public String apply(ListTacticsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListTacticsRequest.Builder>,
+                        ListTacticsRequest>() {
+                    @Override
+                    public ListTacticsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListTacticsRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<ListTacticsRequest, ListTacticsResponse>() {
+                    @Override
+                    public ListTacticsResponse apply(ListTacticsRequest request) {
+                        return client.listTactics(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListTacticsResponse,
+                        java.util.List<com.oracle.bmc.cloudguard.model.TacticSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.cloudguard.model.TacticSummary> apply(
+                            ListTacticsResponse response) {
+                        return response.getTacticCollection().getItems();
+                    }
+                });
+    }
+
+    /**
      * Creates a new iterable which will iterate over the responses received from the listTargetDetectorRecipeDetectorRules operation. This iterable
      * will fetch more data from the server as needed.
      *
@@ -2825,6 +3770,118 @@ public class CloudGuardPaginators {
                     public java.util.List<com.oracle.bmc.cloudguard.model.TargetSummary> apply(
                             ListTargetsResponse response) {
                         return response.getTargetCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the listTechniques operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListTechniquesResponse> listTechniquesResponseIterator(
+            final ListTechniquesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListTechniquesRequest.Builder, ListTechniquesRequest, ListTechniquesResponse>(
+                new com.google.common.base.Supplier<ListTechniquesRequest.Builder>() {
+                    @Override
+                    public ListTechniquesRequest.Builder get() {
+                        return ListTechniquesRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListTechniquesResponse, String>() {
+                    @Override
+                    public String apply(ListTechniquesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListTechniquesRequest.Builder>,
+                        ListTechniquesRequest>() {
+                    @Override
+                    public ListTechniquesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListTechniquesRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListTechniquesRequest, ListTechniquesResponse>() {
+                    @Override
+                    public ListTechniquesResponse apply(ListTechniquesRequest request) {
+                        return client.listTechniques(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.cloudguard.model.TechniqueSummary} objects
+     * contained in responses from the listTechniques operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.cloudguard.model.TechniqueSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.cloudguard.model.TechniqueSummary> listTechniquesRecordIterator(
+            final ListTechniquesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListTechniquesRequest.Builder, ListTechniquesRequest, ListTechniquesResponse,
+                com.oracle.bmc.cloudguard.model.TechniqueSummary>(
+                new com.google.common.base.Supplier<ListTechniquesRequest.Builder>() {
+                    @Override
+                    public ListTechniquesRequest.Builder get() {
+                        return ListTechniquesRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListTechniquesResponse, String>() {
+                    @Override
+                    public String apply(ListTechniquesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListTechniquesRequest.Builder>,
+                        ListTechniquesRequest>() {
+                    @Override
+                    public ListTechniquesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListTechniquesRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListTechniquesRequest, ListTechniquesResponse>() {
+                    @Override
+                    public ListTechniquesResponse apply(ListTechniquesRequest request) {
+                        return client.listTechniques(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListTechniquesResponse,
+                        java.util.List<com.oracle.bmc.cloudguard.model.TechniqueSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.cloudguard.model.TechniqueSummary> apply(
+                            ListTechniquesResponse response) {
+                        return response.getTechniqueCollection().getItems();
                     }
                 });
     }

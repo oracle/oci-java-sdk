@@ -121,6 +121,24 @@ public class CrossConnectGroup {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("ociPhysicalDeviceName")
+        private String ociPhysicalDeviceName;
+
+        public Builder ociPhysicalDeviceName(String ociPhysicalDeviceName) {
+            this.ociPhysicalDeviceName = ociPhysicalDeviceName;
+            this.__explicitlySet__.add("ociPhysicalDeviceName");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("ociLogicalDeviceName")
+        private String ociLogicalDeviceName;
+
+        public Builder ociLogicalDeviceName(String ociLogicalDeviceName) {
+            this.ociLogicalDeviceName = ociLogicalDeviceName;
+            this.__explicitlySet__.add("ociLogicalDeviceName");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -135,7 +153,9 @@ public class CrossConnectGroup {
                             lifecycleState,
                             customerReferenceName,
                             timeCreated,
-                            macsecProperties);
+                            macsecProperties,
+                            ociPhysicalDeviceName,
+                            ociLogicalDeviceName);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -151,7 +171,9 @@ public class CrossConnectGroup {
                             .lifecycleState(o.getLifecycleState())
                             .customerReferenceName(o.getCustomerReferenceName())
                             .timeCreated(o.getTimeCreated())
-                            .macsecProperties(o.getMacsecProperties());
+                            .macsecProperties(o.getMacsecProperties())
+                            .ociPhysicalDeviceName(o.getOciPhysicalDeviceName())
+                            .ociLogicalDeviceName(o.getOciLogicalDeviceName());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -278,6 +300,21 @@ public class CrossConnectGroup {
 
     @com.fasterxml.jackson.annotation.JsonProperty("macsecProperties")
     MacsecProperties macsecProperties;
+
+    /**
+     * The FastConnect device that terminates the physical connection.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("ociPhysicalDeviceName")
+    String ociPhysicalDeviceName;
+
+    /**
+     * The FastConnect device that terminates the logical connection.
+     * This device might be different than the device that terminates the physical connection.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("ociLogicalDeviceName")
+    String ociLogicalDeviceName;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

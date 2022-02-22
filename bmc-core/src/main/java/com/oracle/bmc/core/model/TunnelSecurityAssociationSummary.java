@@ -5,7 +5,8 @@
 package com.oracle.bmc.core.model;
 
 /**
- * Detailed Tunnel SA
+ * A summary of the IPSec tunnel security association details.
+ *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -104,18 +105,18 @@ public class TunnelSecurityAssociationSummary {
     }
 
     /**
-     * IP and mask of the Partner Subnet for Policy Based VPNs or Static Routes
+     * The IP address and mask of the partner subnet used in policy based VPNs or static routes.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("cpeSubnet")
     String cpeSubnet;
 
     /**
-     * IP and mask of the Local Subnet for Policy Based VPNs or Static Routes
+     * The IP address and mask of the local subnet used in policy based VPNs or static routes.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("oracleSubnet")
     String oracleSubnet;
     /**
-     * Phase 1 Status of the Tunnel
+     * The IPSec tunnel's phase one status.
      **/
     @lombok.extern.slf4j.Slf4j
     public enum TunnelSaStatus {
@@ -165,19 +166,20 @@ public class TunnelSecurityAssociationSummary {
         }
     };
     /**
-     * Phase 1 Status of the Tunnel
+     * The IPSec tunnel's phase one status.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("tunnelSaStatus")
     TunnelSaStatus tunnelSaStatus;
 
     /**
-     * Current state if status is not up, including phase1/phase2 and possible reason for tunnel not up
+     * Current state if the IPSec tunnel status is not {@code UP}, including phase one and phase two details and a possible reason the tunnel is not {@code UP}.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("tunnelSaErrorInfo")
     String tunnelSaErrorInfo;
 
     /**
-     * Seconds in current state
+     * Time in the current state, in seconds.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("time")
     String time;

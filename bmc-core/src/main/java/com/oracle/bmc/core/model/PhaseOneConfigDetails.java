@@ -5,7 +5,7 @@
 package com.oracle.bmc.core.model;
 
 /**
- * Phase 1 Configuration Details
+ * Configuration details for IKE phase one (ISAKMP) configuration parameters.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -108,12 +108,12 @@ public class PhaseOneConfigDetails {
     }
 
     /**
-     * Indicates whether custom phase one configuration is enabled.
+     * Indicates whether custom configuration is enabled for phase one options.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isCustomPhaseOneConfig")
     Boolean isCustomPhaseOneConfig;
     /**
-     * Phase one authentication algorithm supported during tunnel negotiation.
+     * The custom authentication algorithm proposed during phase one tunnel negotiation.
      *
      **/
     public enum AuthenticationAlgorithm {
@@ -150,13 +150,13 @@ public class PhaseOneConfigDetails {
         }
     };
     /**
-     * Phase one authentication algorithm supported during tunnel negotiation.
+     * The custom authentication algorithm proposed during phase one tunnel negotiation.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("authenticationAlgorithm")
     AuthenticationAlgorithm authenticationAlgorithm;
     /**
-     * Phase one encryption algorithm supported during tunnel negotiation.
+     * The custom encryption algorithm proposed during phase one tunnel negotiation.
      *
      **/
     public enum EncryptionAlgorithm {
@@ -193,13 +193,13 @@ public class PhaseOneConfigDetails {
         }
     };
     /**
-     * Phase one encryption algorithm supported during tunnel negotiation.
+     * The custom encryption algorithm proposed during phase one tunnel negotiation.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("encryptionAlgorithm")
     EncryptionAlgorithm encryptionAlgorithm;
     /**
-     * Phase One Diffie Hellman group supported during tunnel negotiation.
+     * The custom Diffie-Hellman group proposed during phase one tunnel negotiation.
      *
      **/
     public enum DiffieHelmanGroup {
@@ -239,14 +239,15 @@ public class PhaseOneConfigDetails {
         }
     };
     /**
-     * Phase One Diffie Hellman group supported during tunnel negotiation.
+     * The custom Diffie-Hellman group proposed during phase one tunnel negotiation.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("diffieHelmanGroup")
     DiffieHelmanGroup diffieHelmanGroup;
 
     /**
-     * IKE session key lifetime in seconds for IPSec phase one.
+     * Internet key association (IKE) session key lifetime in seconds for IPSec phase one. The default is 28800 which is equivalent to 8 hours.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifetimeInSeconds")
     Integer lifetimeInSeconds;

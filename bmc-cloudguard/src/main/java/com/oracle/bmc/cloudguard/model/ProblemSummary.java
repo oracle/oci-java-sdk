@@ -60,6 +60,15 @@ public class ProblemSummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("riskScore")
+        private Double riskScore;
+
+        public Builder riskScore(Double riskScore) {
+            this.riskScore = riskScore;
+            this.__explicitlySet__.add("riskScore");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("resourceId")
         private String resourceId;
 
@@ -178,6 +187,7 @@ public class ProblemSummary {
                             compartmentId,
                             detectorRuleId,
                             riskLevel,
+                            riskScore,
                             resourceId,
                             resourceName,
                             resourceType,
@@ -201,6 +211,7 @@ public class ProblemSummary {
                             .compartmentId(o.getCompartmentId())
                             .detectorRuleId(o.getDetectorRuleId())
                             .riskLevel(o.getRiskLevel())
+                            .riskScore(o.getRiskScore())
                             .resourceId(o.getResourceId())
                             .resourceName(o.getResourceName())
                             .resourceType(o.getResourceType())
@@ -249,6 +260,12 @@ public class ProblemSummary {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("riskLevel")
     RiskLevel riskLevel;
+
+    /**
+     * Risk Score for the problem
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("riskScore")
+    Double riskScore;
 
     /**
      * Identifier of the Resource

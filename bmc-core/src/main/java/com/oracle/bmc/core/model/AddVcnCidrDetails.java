@@ -5,7 +5,7 @@
 package com.oracle.bmc.core.model;
 
 /**
- * Details for adding a CIDR block to a VCN.
+ * Details used to add a CIDR block to a VCN.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in

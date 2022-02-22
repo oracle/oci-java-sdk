@@ -5,7 +5,8 @@
 package com.oracle.bmc.core.model;
 
 /**
- * DPD Configuration Details
+ * These configuration details are used for dead peer detection (DPD). DPD periodically checks the stability of the connection to the customer premises (CPE), and may be used to detect that the link to the CPE has gone down.
+ *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -68,7 +69,8 @@ public class DpdConfig {
     }
 
     /**
-     * dpd mode
+     * This option defines whether DPD can be initiated from the Oracle side of the connection.
+     *
      **/
     public enum DpdMode {
         InitiateAndRespond("INITIATE_AND_RESPOND"),
@@ -103,13 +105,15 @@ public class DpdConfig {
         }
     };
     /**
-     * dpd mode
+     * This option defines whether DPD can be initiated from the Oracle side of the connection.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dpdMode")
     DpdMode dpdMode;
 
     /**
-     * DPD Timeout in seconds.
+     * DPD timeout in seconds. This sets the longest interval between CPE device health messages before the IPSec connection indicates it has lost contact with the CPE. The default is 20 seconds.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dpdTimeoutInSec")
     Integer dpdTimeoutInSec;

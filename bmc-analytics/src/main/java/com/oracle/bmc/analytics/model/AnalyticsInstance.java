@@ -164,6 +164,15 @@ public class AnalyticsInstance {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyId")
+        private String kmsKeyId;
+
+        public Builder kmsKeyId(String kmsKeyId) {
+            this.kmsKeyId = kmsKeyId;
+            this.__explicitlySet__.add("kmsKeyId");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
@@ -203,6 +212,7 @@ public class AnalyticsInstance {
                             serviceUrl,
                             definedTags,
                             freeformTags,
+                            kmsKeyId,
                             timeCreated,
                             timeUpdated);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
@@ -227,6 +237,7 @@ public class AnalyticsInstance {
                             .serviceUrl(o.getServiceUrl())
                             .definedTags(o.getDefinedTags())
                             .freeformTags(o.getFreeformTags())
+                            .kmsKeyId(o.getKmsKeyId())
                             .timeCreated(o.getTimeCreated())
                             .timeUpdated(o.getTimeUpdated());
 
@@ -344,6 +355,13 @@ public class AnalyticsInstance {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     java.util.Map<String, String> freeformTags;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the OCI Vault Key encrypting the customer data stored in this Analytics instance. A null value indicates Oracle managed default encryption.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyId")
+    String kmsKeyId;
 
     /**
      * The date and time the instance was created, in the format defined by RFC3339.
