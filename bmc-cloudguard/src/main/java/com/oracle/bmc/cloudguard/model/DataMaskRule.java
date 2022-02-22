@@ -223,13 +223,13 @@ public class DataMaskRule {
     String id;
 
     /**
-     * Data Mask Rule Identifier, can be renamed
+     * Data Mask Rule Identifier, can be renamed.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     String displayName;
 
     /**
-     * Compartment Identifier where the resource is created
+     * Compartment Identifier where the resource is created.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     String compartmentId;
@@ -288,6 +288,8 @@ public class DataMaskRule {
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
      * Example: {@code {"bar-key": "value"}}
+     * <p>
+     * Avoid entering confidential information.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")

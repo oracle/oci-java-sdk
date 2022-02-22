@@ -125,6 +125,15 @@ public class DetectorRecipeSummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("sourceDataRetention")
+        private Integer sourceDataRetention;
+
+        public Builder sourceDataRetention(Integer sourceDataRetention) {
+            this.sourceDataRetention = sourceDataRetention;
+            this.__explicitlySet__.add("sourceDataRetention");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
@@ -170,6 +179,7 @@ public class DetectorRecipeSummary {
                             timeCreated,
                             timeUpdated,
                             lifecycleState,
+                            sourceDataRetention,
                             freeformTags,
                             definedTags,
                             systemTags);
@@ -191,6 +201,7 @@ public class DetectorRecipeSummary {
                             .timeCreated(o.getTimeCreated())
                             .timeUpdated(o.getTimeUpdated())
                             .lifecycleState(o.getLifecycleState())
+                            .sourceDataRetention(o.getSourceDataRetention())
                             .freeformTags(o.getFreeformTags())
                             .definedTags(o.getDefinedTags())
                             .systemTags(o.getSystemTags());
@@ -274,8 +285,16 @@ public class DetectorRecipeSummary {
     LifecycleState lifecycleState;
 
     /**
+     * The number of days for which source data is retained
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("sourceDataRetention")
+    Integer sourceDataRetention;
+
+    /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
      * Example: {@code {"bar-key": "value"}}
+     * <p>
+     * Avoid entering confidential information.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")

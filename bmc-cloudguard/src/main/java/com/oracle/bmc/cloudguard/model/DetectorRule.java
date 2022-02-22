@@ -206,19 +206,19 @@ public class DetectorRule {
     }
 
     /**
-     * The unique identifier of the detector rule
+     * The unique identifier of the detector rule.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     String id;
 
     /**
-     * displayName
+     * Display name for DetectorRule.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     String displayName;
 
     /**
-     * description for DetectorRule
+     * Description for DetectorRule.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     String description;

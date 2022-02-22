@@ -5,7 +5,7 @@
 package com.oracle.bmc.core.model;
 
 /**
- * Phase 2 Configuration Details
+ * Configuration details for IPSec phase two configuration parameters.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -119,12 +119,12 @@ public class PhaseTwoConfigDetails {
     }
 
     /**
-     * Indicates whether custom phase two configuration is enabled.
+     * Indicates whether custom configuration is enabled for phase two options.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isCustomPhaseTwoConfig")
     Boolean isCustomPhaseTwoConfig;
     /**
-     * Phase two authentication algorithm supported during tunnel negotiation.
+     * The authentication algorithm proposed during phase two tunnel negotiation.
      *
      **/
     public enum AuthenticationAlgorithm {
@@ -160,13 +160,13 @@ public class PhaseTwoConfigDetails {
         }
     };
     /**
-     * Phase two authentication algorithm supported during tunnel negotiation.
+     * The authentication algorithm proposed during phase two tunnel negotiation.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("authenticationAlgorithm")
     AuthenticationAlgorithm authenticationAlgorithm;
     /**
-     * Phase two encryption algorithm supported during tunnel negotiation.
+     * The encryption algorithm proposed during phase two tunnel negotiation.
      *
      **/
     public enum EncryptionAlgorithm {
@@ -206,14 +206,15 @@ public class PhaseTwoConfigDetails {
         }
     };
     /**
-     * Phase two encryption algorithm supported during tunnel negotiation.
+     * The encryption algorithm proposed during phase two tunnel negotiation.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("encryptionAlgorithm")
     EncryptionAlgorithm encryptionAlgorithm;
 
     /**
-     * Lifetime in seconds for IPSec phase two.
+     * Lifetime in seconds for the IPSec session key set in phase two. The default is 3600 which is equivalent to 1 hour.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifetimeInSeconds")
     Integer lifetimeInSeconds;
@@ -224,7 +225,7 @@ public class PhaseTwoConfigDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("isPfsEnabled")
     Boolean isPfsEnabled;
     /**
-     * Diffie-Hellman group used for PFS.
+     * The Diffie-Hellman group used for PFS, if PFS is enabled.
      **/
     public enum PfsDhGroup {
         Group2("GROUP2"),
@@ -263,7 +264,7 @@ public class PhaseTwoConfigDetails {
         }
     };
     /**
-     * Diffie-Hellman group used for PFS.
+     * The Diffie-Hellman group used for PFS, if PFS is enabled.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("pfsDhGroup")
     PfsDhGroup pfsDhGroup;

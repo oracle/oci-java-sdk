@@ -5,8 +5,8 @@
 package com.oracle.bmc.core.model;
 
 /**
- * Information about a single tunnel in an IPSec connection. This object does not include the tunnel's
- * shared secret (pre-shared key). That is in the
+ * Information about a single IPSec tunnel in an IPSec connection. This object does not include the tunnel's
+ * shared secret (pre-shared key), which is found in the
  * {@link IPSecConnectionTunnelSharedSecret} object.
  *
  * <br/>
@@ -278,7 +278,7 @@ public class IPSecConnectionTunnel {
     String id;
 
     /**
-     * The IP address of Oracle's VPN headend.
+     * The IP address of the Oracle VPN headend for the connection.
      * <p>
      * Example: {@code 203.0.113.21}
      *
@@ -287,7 +287,7 @@ public class IPSecConnectionTunnel {
     String vpnIp;
 
     /**
-     * The IP address of the CPE's VPN headend.
+     * The IP address of the CPE device's VPN headend.
      * <p>
      * Example: {@code 203.0.113.22}
      *
@@ -468,7 +468,7 @@ public class IPSecConnectionTunnel {
     @com.fasterxml.jackson.annotation.JsonProperty("encryptionDomainConfig")
     EncryptionDomainConfig encryptionDomainConfig;
     /**
-     * The type of routing used for this tunnel (either BGP dynamic routing or static routing).
+     * The type of routing used for this tunnel (BGP dynamic routing, static routing, or policy-based routing).
      *
      **/
     @lombok.extern.slf4j.Slf4j
@@ -516,14 +516,14 @@ public class IPSecConnectionTunnel {
         }
     };
     /**
-     * The type of routing used for this tunnel (either BGP dynamic routing or static routing).
+     * The type of routing used for this tunnel (BGP dynamic routing, static routing, or policy-based routing).
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("routing")
     Routing routing;
 
     /**
-     * The date and time the IPSec connection tunnel was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * The date and time the IPSec tunnel was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * <p>
      * Example: {@code 2016-08-25T21:10:29.600Z}
      *
@@ -532,7 +532,7 @@ public class IPSecConnectionTunnel {
     java.util.Date timeCreated;
 
     /**
-     * When the status of the tunnel last changed, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * When the status of the IPSec tunnel last changed, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * <p>
      * Example: {@code 2016-08-25T21:10:29.600Z}
      *
@@ -540,7 +540,8 @@ public class IPSecConnectionTunnel {
     @com.fasterxml.jackson.annotation.JsonProperty("timeStatusUpdated")
     java.util.Date timeStatusUpdated;
     /**
-     * Indicates whether Oracle can either initiate the tunnel or respond, or respond only.
+     * Indicates whether Oracle can only respond to a request to start an IPSec tunnel from the CPE device, or both respond to and initiate requests.
+     *
      **/
     @lombok.extern.slf4j.Slf4j
     public enum OracleCanInitiate {
@@ -586,12 +587,24 @@ public class IPSecConnectionTunnel {
         }
     };
     /**
-     * Indicates whether Oracle can either initiate the tunnel or respond, or respond only.
+     * Indicates whether Oracle can only respond to a request to start an IPSec tunnel from the CPE device, or both respond to and initiate requests.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("oracleCanInitiate")
     OracleCanInitiate oracleCanInitiate;
     /**
-     * Whether NAT-T Enabled on the tunnel
+     * By default (the {@code AUTO} setting), IKE sends packets with a source and destination port set to 500,
+     * and when it detects that the port used to forward packets has changed (most likely because a NAT device
+     * is between the CPE device and the Oracle VPN headend) it will try to negotiate the use of NAT-T.
+     * <p>
+     * The {@code ENABLED} option sets the IKE protocol to use port 4500 instead of 500 and forces encapsulating traffic with the ESP protocol inside UDP packets.
+     * <p>
+     * The {@code DISABLED} option directs IKE to completely refuse to negotiate NAT-T
+     * even if it senses there may be a NAT device in use.
+     * <p>
+     *
+     * .
+     *
      **/
     @lombok.extern.slf4j.Slf4j
     public enum NatTranslationEnabled {
@@ -638,12 +651,26 @@ public class IPSecConnectionTunnel {
         }
     };
     /**
-     * Whether NAT-T Enabled on the tunnel
+     * By default (the {@code AUTO} setting), IKE sends packets with a source and destination port set to 500,
+     * and when it detects that the port used to forward packets has changed (most likely because a NAT device
+     * is between the CPE device and the Oracle VPN headend) it will try to negotiate the use of NAT-T.
+     * <p>
+     * The {@code ENABLED} option sets the IKE protocol to use port 4500 instead of 500 and forces encapsulating traffic with the ESP protocol inside UDP packets.
+     * <p>
+     * The {@code DISABLED} option directs IKE to completely refuse to negotiate NAT-T
+     * even if it senses there may be a NAT device in use.
+     * <p>
+     *
+     * .
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("natTranslationEnabled")
     NatTranslationEnabled natTranslationEnabled;
     /**
-     * dpd mode
+     * Dead peer detection (DPD) mode set on the Oracle side of the connection.
+     * This mode sets whether Oracle can only respond to a request from the CPE device to start DPD,
+     * or both respond to and initiate requests.
+     *
      **/
     @lombok.extern.slf4j.Slf4j
     public enum DpdMode {
@@ -689,13 +716,16 @@ public class IPSecConnectionTunnel {
         }
     };
     /**
-     * dpd mode
+     * Dead peer detection (DPD) mode set on the Oracle side of the connection.
+     * This mode sets whether Oracle can only respond to a request from the CPE device to start DPD,
+     * or both respond to and initiate requests.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dpdMode")
     DpdMode dpdMode;
 
     /**
-     * Dead peer detection (DPD) timeout in seconds.
+     * DPD timeout in seconds.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dpdTimeoutInSec")
     Integer dpdTimeoutInSec;

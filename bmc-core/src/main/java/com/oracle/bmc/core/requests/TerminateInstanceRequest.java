@@ -39,6 +39,13 @@ public class TerminateInstanceRequest extends com.oracle.bmc.requests.BmcRequest
      */
     private Boolean preserveBootVolume;
 
+    /**
+     * Specifies whether to delete or preserve the data volumes when terminating an instance.
+     * When set to {@code true}, the boot volume is preserved. The default value is {@code false}.
+     *
+     */
+    private Boolean preserveDataVolumes;
+
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     TerminateInstanceRequest, java.lang.Void> {
@@ -77,6 +84,7 @@ public class TerminateInstanceRequest extends com.oracle.bmc.requests.BmcRequest
             instanceId(o.getInstanceId());
             ifMatch(o.getIfMatch());
             preserveBootVolume(o.getPreserveBootVolume());
+            preserveDataVolumes(o.getPreserveDataVolumes());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;

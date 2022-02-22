@@ -235,6 +235,8 @@ public class InstanceConfigurationCreateVolumeDetails {
      * {@code 10}: Represents Balanced option.
      * <p>
      * {@code 20}: Represents Higher Performance option.
+     * <p>
+     * For performance autotune enabled volumes, It would be the Default(Minimum) VPUs/GB.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("vpusPerGB")

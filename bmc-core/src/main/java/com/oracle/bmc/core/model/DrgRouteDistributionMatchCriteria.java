@@ -6,7 +6,7 @@ package com.oracle.bmc.core.model;
 
 /**
  * The match criteria in a route distribution statement. The match criteria outlines which routes
- * should be imported or exported. Leaving the match criteria empty implies match ALL.
+ * should be imported or exported.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields

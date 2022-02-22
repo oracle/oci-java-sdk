@@ -185,19 +185,19 @@ public class TargetResponderRecipeResponderRule {
     }
 
     /**
-     * Identifier for ResponderRule.
+     * Unique ResponderRule identifier.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("responderRuleId")
     String responderRuleId;
 
     /**
-     * ResponderRule Display Name
+     * ResponderRule display name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     String displayName;
 
     /**
-     * ResponderRule Description
+     * ResponderRule description.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     String description;

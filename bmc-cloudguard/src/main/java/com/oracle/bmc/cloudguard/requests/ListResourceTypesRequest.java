@@ -25,6 +25,11 @@ public class ListResourceTypesRequest extends com.oracle.bmc.requests.BmcRequest
     private String compartmentId;
 
     /**
+     * Detector type
+     */
+    private com.oracle.bmc.cloudguard.model.DetectorEnum detectorId;
+
+    /**
      * The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
      */
     private com.oracle.bmc.cloudguard.model.LifecycleState lifecycleState;
@@ -127,6 +132,7 @@ public class ListResourceTypesRequest extends com.oracle.bmc.requests.BmcRequest
          */
         public Builder copy(ListResourceTypesRequest o) {
             compartmentId(o.getCompartmentId());
+            detectorId(o.getDetectorId());
             lifecycleState(o.getLifecycleState());
             limit(o.getLimit());
             page(o.getPage());

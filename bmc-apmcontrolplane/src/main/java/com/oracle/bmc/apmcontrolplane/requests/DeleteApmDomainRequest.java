@@ -20,7 +20,7 @@ import com.oracle.bmc.apmcontrolplane.model.*;
 public class DeleteApmDomainRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The OCID of the APM domain
+     * The OCID of the APM domain.
      */
     private String apmDomainId;
 

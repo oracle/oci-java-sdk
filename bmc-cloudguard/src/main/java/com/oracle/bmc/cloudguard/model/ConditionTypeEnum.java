@@ -12,6 +12,7 @@ public enum ConditionTypeEnum {
     ActivityCondition("ActivityCondition"),
     SecurityCondition("SecurityCondition"),
     CloudGuardCondition("CloudGuardCondition"),
+    ThreatCondition("ThreatCondition"),
     ;
 
     private final String value;

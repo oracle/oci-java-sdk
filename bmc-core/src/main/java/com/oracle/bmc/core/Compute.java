@@ -1213,6 +1213,9 @@ public interface Compute extends AutoCloseable {
      * To preserve the boot volume associated with the instance, specify `true` for `PreserveBootVolumeQueryParam`.
      * To delete the boot volume when the instance is deleted, specify `false` or do not specify a value for `PreserveBootVolumeQueryParam`.
      * <p>
+     * To preserve data volumes created with the instance, specify `true` for `PreserveDataVolumesQueryParam`.
+     * To delete the data volumes when the instance itself is deleted, specify `false` or do not specify a value for `PreserveDataVolumesQueryParam`.
+     * <p>
      * This is an asynchronous operation. The instance's `lifecycleState` will change to TERMINATING temporarily
      * until the instance is completely removed.
      *

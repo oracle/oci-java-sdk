@@ -127,6 +127,15 @@ public class CreateAnalyticsInstanceDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyId")
+        private String kmsKeyId;
+
+        public Builder kmsKeyId(String kmsKeyId) {
+            this.kmsKeyId = kmsKeyId;
+            this.__explicitlySet__.add("kmsKeyId");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -143,7 +152,8 @@ public class CreateAnalyticsInstanceDetails {
                             networkEndpointDetails,
                             idcsAccessToken,
                             definedTags,
-                            freeformTags);
+                            freeformTags,
+                            kmsKeyId);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -161,7 +171,8 @@ public class CreateAnalyticsInstanceDetails {
                             .networkEndpointDetails(o.getNetworkEndpointDetails())
                             .idcsAccessToken(o.getIdcsAccessToken())
                             .definedTags(o.getDefinedTags())
-                            .freeformTags(o.getFreeformTags());
+                            .freeformTags(o.getFreeformTags())
+                            .kmsKeyId(o.getKmsKeyId());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -249,6 +260,13 @@ public class CreateAnalyticsInstanceDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     java.util.Map<String, String> freeformTags;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the OCI Vault Key encrypting the customer data stored in this Analytics instance. A null value indicates Oracle managed default encryption.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyId")
+    String kmsKeyId;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

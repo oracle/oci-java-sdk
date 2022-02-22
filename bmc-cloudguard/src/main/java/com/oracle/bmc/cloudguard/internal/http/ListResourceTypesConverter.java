@@ -38,6 +38,14 @@ public class ListResourceTypesConverter {
                         com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
                                 request.getCompartmentId()));
 
+        if (request.getDetectorId() != null) {
+            target =
+                    target.queryParam(
+                            "detectorId",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getDetectorId().getValue()));
+        }
+
         if (request.getLifecycleState() != null) {
             target =
                     target.queryParam(

@@ -165,13 +165,13 @@ public class TargetResponderRecipe {
     }
 
     /**
-     * Unique identifier of TargetResponderRecipe that is immutable on creation
+     * Unique identifier of TargetResponderRecipe that can't be changed after creation.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     String id;
 
     /**
-     * Unique identifier for Responder Recipe of which this is an extension
+     * Unique identifier for Responder Recipe of which this is an extension.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("responderRecipeId")
     String responderRecipeId;
@@ -183,13 +183,13 @@ public class TargetResponderRecipe {
     String compartmentId;
 
     /**
-     * ResponderRecipe Identifier Name
+     * ResponderRecipe display name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     String displayName;
 
     /**
-     * ResponderRecipe Description
+     * ResponderRecipe description.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     String description;

@@ -5,7 +5,7 @@
 package com.oracle.bmc.core.model;
 
 /**
- * Oracle offers the ability to Bring Your Own IP (BYOIP), importing public IP addresses that you currently own to Oracle Cloud Infrastructure. A {@code ByoipRange} resource is a record of the imported address block (a BYOIP CIDR block) and also some associated metadata.
+ * Oracle offers the ability to Bring Your Own IP (BYOIP), importing public IP addresses  that you currently own to Oracle Cloud Infrastructure. A {@code ByoipRange} resource is a record of the imported address block (a BYOIP CIDR block) and also some associated metadata.
  * The process used to [Bring Your Own IP](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/BYOIP.htm) is explained in the documentation.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields

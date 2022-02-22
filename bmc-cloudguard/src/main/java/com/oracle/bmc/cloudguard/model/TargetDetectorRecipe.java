@@ -136,6 +136,15 @@ public class TargetDetectorRecipe {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("sourceDataRetention")
+        private Integer sourceDataRetention;
+
+        public Builder sourceDataRetention(Integer sourceDataRetention) {
+            this.sourceDataRetention = sourceDataRetention;
+            this.__explicitlySet__.add("sourceDataRetention");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -153,7 +162,8 @@ public class TargetDetectorRecipe {
                             effectiveDetectorRules,
                             timeCreated,
                             timeUpdated,
-                            lifecycleState);
+                            lifecycleState,
+                            sourceDataRetention);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -172,7 +182,8 @@ public class TargetDetectorRecipe {
                             .effectiveDetectorRules(o.getEffectiveDetectorRules())
                             .timeCreated(o.getTimeCreated())
                             .timeUpdated(o.getTimeUpdated())
-                            .lifecycleState(o.getLifecycleState());
+                            .lifecycleState(o.getLifecycleState())
+                            .sourceDataRetention(o.getSourceDataRetention());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -193,13 +204,13 @@ public class TargetDetectorRecipe {
     String id;
 
     /**
-     * DisplayName of detector recipe
+     * Display name of detector recipe.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     String displayName;
 
     /**
-     * Detector recipe description
+     * Detector recipe description.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     String description;
@@ -257,6 +268,12 @@ public class TargetDetectorRecipe {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     LifecycleState lifecycleState;
+
+    /**
+     * The number of days for which source data is retained
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("sourceDataRetention")
+    Integer sourceDataRetention;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

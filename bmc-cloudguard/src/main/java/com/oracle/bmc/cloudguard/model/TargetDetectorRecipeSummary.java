@@ -125,6 +125,15 @@ public class TargetDetectorRecipeSummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("sourceDataRetention")
+        private Integer sourceDataRetention;
+
+        public Builder sourceDataRetention(Integer sourceDataRetention) {
+            this.sourceDataRetention = sourceDataRetention;
+            this.__explicitlySet__.add("sourceDataRetention");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -141,7 +150,8 @@ public class TargetDetectorRecipeSummary {
                             lifecycleState,
                             timeCreated,
                             timeUpdated,
-                            lifecycleDetails);
+                            lifecycleDetails,
+                            sourceDataRetention);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -159,7 +169,8 @@ public class TargetDetectorRecipeSummary {
                             .lifecycleState(o.getLifecycleState())
                             .timeCreated(o.getTimeCreated())
                             .timeUpdated(o.getTimeUpdated())
-                            .lifecycleDetails(o.getLifecycleDetails());
+                            .lifecycleDetails(o.getLifecycleDetails())
+                            .sourceDataRetention(o.getSourceDataRetention());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -238,6 +249,12 @@ public class TargetDetectorRecipeSummary {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
     String lifecycleDetails;
+
+    /**
+     * The number of days for which source data is retained
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("sourceDataRetention")
+    Integer sourceDataRetention;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

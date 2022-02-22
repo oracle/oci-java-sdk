@@ -1982,7 +1982,7 @@ public interface VirtualNetworkAsync extends AutoCloseable {
                     handler);
 
     /**
-     * The allowed parameters for IKE IPSec
+     * The parameters allowed for IKE IPSec tunnels.
      *
      *
      * @param request The request object containing the details to send
@@ -2368,7 +2368,7 @@ public interface VirtualNetworkAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Get the identified error for the specified IPSec Tunnel ID.
+     * Gets the identified error for the specified IPSec tunnel ID.
      *
      *
      * @param request The request object containing the details to send
@@ -3298,7 +3298,7 @@ public interface VirtualNetworkAsync extends AutoCloseable {
                             handler);
 
     /**
-     * The routes advertised to the Customer and the routes received from the Customer.
+     * The routes advertised to the on-premises network and the routes received from the on-premises network.
      *
      *
      * @param request The request object containing the details to send
@@ -3317,7 +3317,7 @@ public interface VirtualNetworkAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Lists the tunnel Security Associations information for the specified IPSec Tunnel ID.
+     * Lists the tunnel security associations information for the specified IPSec tunnel ID.
      *
      *
      * @param request The request object containing the details to send

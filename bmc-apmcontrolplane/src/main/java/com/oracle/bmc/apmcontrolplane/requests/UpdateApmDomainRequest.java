@@ -22,7 +22,7 @@ public class UpdateApmDomainRequest
                 com.oracle.bmc.apmcontrolplane.model.UpdateApmDomainDetails> {
 
     /**
-     * The OCID of the APM domain
+     * The OCID of the APM domain.
      */
     private String apmDomainId;
 

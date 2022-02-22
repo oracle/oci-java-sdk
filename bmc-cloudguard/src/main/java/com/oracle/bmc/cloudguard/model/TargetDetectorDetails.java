@@ -80,6 +80,33 @@ public class TargetDetectorDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("problemThreshold")
+        private Integer problemThreshold;
+
+        public Builder problemThreshold(Integer problemThreshold) {
+            this.problemThreshold = problemThreshold;
+            this.__explicitlySet__.add("problemThreshold");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("targetTypes")
+        private java.util.List<String> targetTypes;
+
+        public Builder targetTypes(java.util.List<String> targetTypes) {
+            this.targetTypes = targetTypes;
+            this.__explicitlySet__.add("targetTypes");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("sightingTypes")
+        private java.util.List<SightingType> sightingTypes;
+
+        public Builder sightingTypes(java.util.List<SightingType> sightingTypes) {
+            this.sightingTypes = sightingTypes;
+            this.__explicitlySet__.add("sightingTypes");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -91,7 +118,10 @@ public class TargetDetectorDetails {
                             configurations,
                             conditionGroups,
                             labels,
-                            isConfigurationAllowed);
+                            isConfigurationAllowed,
+                            problemThreshold,
+                            targetTypes,
+                            sightingTypes);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -104,7 +134,10 @@ public class TargetDetectorDetails {
                             .configurations(o.getConfigurations())
                             .conditionGroups(o.getConditionGroups())
                             .labels(o.getLabels())
-                            .isConfigurationAllowed(o.getIsConfigurationAllowed());
+                            .isConfigurationAllowed(o.getIsConfigurationAllowed())
+                            .problemThreshold(o.getProblemThreshold())
+                            .targetTypes(o.getTargetTypes())
+                            .sightingTypes(o.getSightingTypes());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -153,6 +186,24 @@ public class TargetDetectorDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isConfigurationAllowed")
     Boolean isConfigurationAllowed;
+
+    /**
+     * Cutover point for an elevated resource Risk Score to create a Problem
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("problemThreshold")
+    Integer problemThreshold;
+
+    /**
+     * List of target types for which the detector rule is applicable
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("targetTypes")
+    java.util.List<String> targetTypes;
+
+    /**
+     * List of sighting types
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("sightingTypes")
+    java.util.List<SightingType> sightingTypes;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

@@ -28,7 +28,7 @@ public class GenerateDataKeysRequest
             generateDataKeysListDetails;
 
     /**
-     * The OCID of the APM domain
+     * The OCID of the APM domain.
      */
     private String apmDomainId;
 

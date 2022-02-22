@@ -22,7 +22,7 @@ public class RemoveDataKeysRequest
                 java.util.List<com.oracle.bmc.apmcontrolplane.model.RemoveDataKeyDetails>> {
 
     /**
-     * The OCID of the APM domain
+     * The OCID of the APM domain.
      */
     private String apmDomainId;
 

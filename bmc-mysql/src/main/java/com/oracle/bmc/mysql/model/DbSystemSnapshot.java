@@ -224,6 +224,15 @@ public class DbSystemSnapshot {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("crashRecovery")
+        private CrashRecoveryStatus crashRecovery;
+
+        public Builder crashRecovery(CrashRecoveryStatus crashRecovery) {
+            this.crashRecovery = crashRecovery;
+            this.__explicitlySet__.add("crashRecovery");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -251,7 +260,8 @@ public class DbSystemSnapshot {
                             endpoints,
                             maintenance,
                             freeformTags,
-                            definedTags);
+                            definedTags,
+                            crashRecovery);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -280,7 +290,8 @@ public class DbSystemSnapshot {
                             .endpoints(o.getEndpoints())
                             .maintenance(o.getMaintenance())
                             .freeformTags(o.getFreeformTags())
-                            .definedTags(o.getDefinedTags());
+                            .definedTags(o.getDefinedTags())
+                            .crashRecovery(o.getCrashRecovery());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -444,6 +455,14 @@ public class DbSystemSnapshot {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    /**
+     * Whether to run the DB System with InnoDB Redo Logs and the Double Write Buffer enabled or disabled,
+     * and whether to enable or disable syncing of the Binary Logs.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("crashRecovery")
+    CrashRecoveryStatus crashRecovery;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

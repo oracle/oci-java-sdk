@@ -362,6 +362,8 @@ public class BootVolume {
      * {@code 10}: Represents Balanced option.
      * <p>
      * {@code 20}: Represents Higher Performance option.
+     * <p>
+     * For performance autotune enabled volumes, It would be the Default(Minimum) VPUs/GB.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("vpusPerGB")
@@ -460,14 +462,15 @@ public class BootVolume {
     String kmsKeyId;
 
     /**
-     * Specifies whether the auto-tune performance is enabled for this boot volume.
+     * Specifies whether the auto-tune performance is enabled for this boot volume. This field is deprecated.
+     * Use the {@code DetachedVolumeAutotunePolicy} instead to enable the volume for detached autotune.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isAutoTuneEnabled")
     Boolean isAutoTuneEnabled;
 
     /**
-     * The number of Volume Performance Units per GB that this boot volume is effectively tuned to when it's idle.
+     * The number of Volume Performance Units per GB that this boot volume is effectively tuned to.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("autoTunedVpusPerGB")
