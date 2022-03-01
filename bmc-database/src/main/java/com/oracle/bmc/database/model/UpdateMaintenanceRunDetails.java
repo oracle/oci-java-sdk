@@ -72,13 +72,57 @@ public class UpdateMaintenanceRunDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("isCustomActionTimeoutEnabled")
+        private Boolean isCustomActionTimeoutEnabled;
+
+        public Builder isCustomActionTimeoutEnabled(Boolean isCustomActionTimeoutEnabled) {
+            this.isCustomActionTimeoutEnabled = isCustomActionTimeoutEnabled;
+            this.__explicitlySet__.add("isCustomActionTimeoutEnabled");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("customActionTimeoutInMins")
+        private Integer customActionTimeoutInMins;
+
+        public Builder customActionTimeoutInMins(Integer customActionTimeoutInMins) {
+            this.customActionTimeoutInMins = customActionTimeoutInMins;
+            this.__explicitlySet__.add("customActionTimeoutInMins");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("currentCustomActionTimeoutInMins")
+        private Integer currentCustomActionTimeoutInMins;
+
+        public Builder currentCustomActionTimeoutInMins(Integer currentCustomActionTimeoutInMins) {
+            this.currentCustomActionTimeoutInMins = currentCustomActionTimeoutInMins;
+            this.__explicitlySet__.add("currentCustomActionTimeoutInMins");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("isResumePatching")
+        private Boolean isResumePatching;
+
+        public Builder isResumePatching(Boolean isResumePatching) {
+            this.isResumePatching = isResumePatching;
+            this.__explicitlySet__.add("isResumePatching");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public UpdateMaintenanceRunDetails build() {
             UpdateMaintenanceRunDetails __instance__ =
                     new UpdateMaintenanceRunDetails(
-                            isEnabled, timeScheduled, isPatchNowEnabled, patchId, patchingMode);
+                            isEnabled,
+                            timeScheduled,
+                            isPatchNowEnabled,
+                            patchId,
+                            patchingMode,
+                            isCustomActionTimeoutEnabled,
+                            customActionTimeoutInMins,
+                            currentCustomActionTimeoutInMins,
+                            isResumePatching);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -90,7 +134,12 @@ public class UpdateMaintenanceRunDetails {
                             .timeScheduled(o.getTimeScheduled())
                             .isPatchNowEnabled(o.getIsPatchNowEnabled())
                             .patchId(o.getPatchId())
-                            .patchingMode(o.getPatchingMode());
+                            .patchingMode(o.getPatchingMode())
+                            .isCustomActionTimeoutEnabled(o.getIsCustomActionTimeoutEnabled())
+                            .customActionTimeoutInMins(o.getCustomActionTimeoutInMins())
+                            .currentCustomActionTimeoutInMins(
+                                    o.getCurrentCustomActionTimeoutInMins())
+                            .isResumePatching(o.getIsResumePatching());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -173,6 +222,32 @@ public class UpdateMaintenanceRunDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("patchingMode")
     PatchingMode patchingMode;
+
+    /**
+     * If true, enables the configuration of a custom action timeout (waiting period) between database servers patching operations.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isCustomActionTimeoutEnabled")
+    Boolean isCustomActionTimeoutEnabled;
+
+    /**
+     * Determines the amount of time the system will wait before the start of each database server patching operation.
+     * Specify a number of minutes from 15 to 120.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("customActionTimeoutInMins")
+    Integer customActionTimeoutInMins;
+
+    /**
+     * The current custom action timeout between the current database servers during waiting state in addition to custom action timeout, from 0 (zero) to 30 minutes.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("currentCustomActionTimeoutInMins")
+    Integer currentCustomActionTimeoutInMins;
+
+    /**
+     * If true, then the patching is resumed and the next component will be patched immediately.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isResumePatching")
+    Boolean isResumePatching;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

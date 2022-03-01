@@ -10313,6 +10313,47 @@ public class DatabaseAsyncClient implements DatabaseAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<ShrinkAutonomousDatabaseResponse> shrinkAutonomousDatabase(
+            ShrinkAutonomousDatabaseRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ShrinkAutonomousDatabaseRequest, ShrinkAutonomousDatabaseResponse>
+                    handler) {
+        LOG.trace("Called async shrinkAutonomousDatabase");
+        final ShrinkAutonomousDatabaseRequest interceptedRequest =
+                ShrinkAutonomousDatabaseConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ShrinkAutonomousDatabaseConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ShrinkAutonomousDatabaseResponse>
+                transformer = ShrinkAutonomousDatabaseConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        ShrinkAutonomousDatabaseRequest, ShrinkAutonomousDatabaseResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ShrinkAutonomousDatabaseRequest, ShrinkAutonomousDatabaseResponse>,
+                        java.util.concurrent.Future<ShrinkAutonomousDatabaseResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ShrinkAutonomousDatabaseRequest, ShrinkAutonomousDatabaseResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<StartAutonomousDatabaseResponse> startAutonomousDatabase(
             StartAutonomousDatabaseRequest request,
             final com.oracle.bmc.responses.AsyncHandler<

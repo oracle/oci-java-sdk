@@ -327,6 +327,15 @@ public class CreateAutonomousDatabaseFromBackupTimestampDetails
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("isAutoScalingForStorageEnabled")
+        private Boolean isAutoScalingForStorageEnabled;
+
+        public Builder isAutoScalingForStorageEnabled(Boolean isAutoScalingForStorageEnabled) {
+            this.isAutoScalingForStorageEnabled = isAutoScalingForStorageEnabled;
+            this.__explicitlySet__.add("isAutoScalingForStorageEnabled");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("autonomousDatabaseId")
         private String autonomousDatabaseId;
 
@@ -392,6 +401,7 @@ public class CreateAutonomousDatabaseFromBackupTimestampDetails
                             isMtlsConnectionRequired,
                             autonomousMaintenanceScheduleType,
                             scheduledOperations,
+                            isAutoScalingForStorageEnabled,
                             autonomousDatabaseId,
                             timestamp,
                             cloneType);
@@ -436,6 +446,7 @@ public class CreateAutonomousDatabaseFromBackupTimestampDetails
                             .autonomousMaintenanceScheduleType(
                                     o.getAutonomousMaintenanceScheduleType())
                             .scheduledOperations(o.getScheduledOperations())
+                            .isAutoScalingForStorageEnabled(o.getIsAutoScalingForStorageEnabled())
                             .autonomousDatabaseId(o.getAutonomousDatabaseId())
                             .timestamp(o.getTimestamp())
                             .cloneType(o.getCloneType());
@@ -486,6 +497,7 @@ public class CreateAutonomousDatabaseFromBackupTimestampDetails
             Boolean isMtlsConnectionRequired,
             AutonomousMaintenanceScheduleType autonomousMaintenanceScheduleType,
             java.util.List<ScheduledOperationDetails> scheduledOperations,
+            Boolean isAutoScalingForStorageEnabled,
             String autonomousDatabaseId,
             java.util.Date timestamp,
             CloneType cloneType) {
@@ -521,7 +533,8 @@ public class CreateAutonomousDatabaseFromBackupTimestampDetails
                 customerContacts,
                 isMtlsConnectionRequired,
                 autonomousMaintenanceScheduleType,
-                scheduledOperations);
+                scheduledOperations,
+                isAutoScalingForStorageEnabled);
         this.autonomousDatabaseId = autonomousDatabaseId;
         this.timestamp = timestamp;
         this.cloneType = cloneType;

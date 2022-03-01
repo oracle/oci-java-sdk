@@ -7668,6 +7668,37 @@ public class DatabaseClient implements Database {
     }
 
     @Override
+    public ShrinkAutonomousDatabaseResponse shrinkAutonomousDatabase(
+            ShrinkAutonomousDatabaseRequest request) {
+        LOG.trace("Called shrinkAutonomousDatabase");
+        final ShrinkAutonomousDatabaseRequest interceptedRequest =
+                ShrinkAutonomousDatabaseConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ShrinkAutonomousDatabaseConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, ShrinkAutonomousDatabaseResponse>
+                transformer = ShrinkAutonomousDatabaseConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public StartAutonomousDatabaseResponse startAutonomousDatabase(
             StartAutonomousDatabaseRequest request) {
         LOG.trace("Called startAutonomousDatabase");

@@ -37,6 +37,10 @@ package com.oracle.bmc.core.model;
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = DrgAttachmentTypeDrgRouteDistributionMatchCriteria.class,
         name = "DRG_ATTACHMENT_TYPE"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = DrgAttachmentMatchAllDrgRouteDistributionMatchCriteria.class,
+        name = "MATCH_ALL"
     )
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
@@ -50,6 +54,7 @@ public class DrgRouteDistributionMatchCriteria {
     public enum MatchType {
         DrgAttachmentType("DRG_ATTACHMENT_TYPE"),
         DrgAttachmentId("DRG_ATTACHMENT_ID"),
+        MatchAll("MATCH_ALL"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this

@@ -145,6 +145,15 @@ public class UpdateExadataInfrastructureDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("isCpsOfflineReportEnabled")
+        private Boolean isCpsOfflineReportEnabled;
+
+        public Builder isCpsOfflineReportEnabled(Boolean isCpsOfflineReportEnabled) {
+            this.isCpsOfflineReportEnabled = isCpsOfflineReportEnabled;
+            this.__explicitlySet__.add("isCpsOfflineReportEnabled");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
@@ -183,6 +192,7 @@ public class UpdateExadataInfrastructureDetails {
                             dnsServer,
                             ntpServer,
                             timeZone,
+                            isCpsOfflineReportEnabled,
                             freeformTags,
                             definedTags);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
@@ -205,6 +215,7 @@ public class UpdateExadataInfrastructureDetails {
                             .dnsServer(o.getDnsServer())
                             .ntpServer(o.getNtpServer())
                             .timeZone(o.getTimeZone())
+                            .isCpsOfflineReportEnabled(o.getIsCpsOfflineReportEnabled())
                             .freeformTags(o.getFreeformTags())
                             .definedTags(o.getDefinedTags());
 
@@ -295,6 +306,15 @@ public class UpdateExadataInfrastructureDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeZone")
     String timeZone;
+
+    /**
+     * Indicates whether cps offline diagnostic report is enabled for this Exadata infrastructure. This will allow a customer to quickly check status themselves and fix problems on their end, saving time and frustration
+     * for both Oracle and the customer when they find the CPS in a disconnected state.You can enable offline diagnostic report during Exadata infrastructure provisioning. You can also disable or enable it at any time
+     * using the UpdateExadatainfrastructure API.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isCpsOfflineReportEnabled")
+    Boolean isCpsOfflineReportEnabled;
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.

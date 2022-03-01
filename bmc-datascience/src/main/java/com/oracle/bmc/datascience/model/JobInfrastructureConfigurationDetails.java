@@ -30,6 +30,10 @@ package com.oracle.bmc.datascience.model;
 )
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = ManagedEgressStandaloneJobInfrastructureConfigurationDetails.class,
+        name = "ME_STANDALONE"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = StandaloneJobInfrastructureConfigurationDetails.class,
         name = "STANDALONE"
     )
@@ -43,6 +47,7 @@ public class JobInfrastructureConfigurationDetails {
     @lombok.extern.slf4j.Slf4j
     public enum JobInfrastructureType {
         Standalone("STANDALONE"),
+        MeStandalone("ME_STANDALONE"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this

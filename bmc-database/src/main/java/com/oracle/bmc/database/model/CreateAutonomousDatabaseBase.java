@@ -460,6 +460,13 @@ public class CreateAutonomousDatabaseBase {
     java.util.List<ScheduledOperationDetails> scheduledOperations;
 
     /**
+     * Indicates if auto scaling is enabled for the Autonomous Database storage. The default value is {@code FALSE}.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isAutoScalingForStorageEnabled")
+    Boolean isAutoScalingForStorageEnabled;
+
+    /**
      * The source of the database: Use {@code NONE} for creating a new Autonomous Database. Use {@code DATABASE} for creating a new Autonomous Database by cloning an existing Autonomous Database. Use {@code CROSS_REGION_DATAGUARD} to create a standby Data Guard database in another region.
      * <p>
      * For Autonomous Databases on [shared Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), the following cloning options are available: Use {@code BACKUP_FROM_ID} for creating a new Autonomous Database from a specified backup. Use {@code BACKUP_FROM_TIMESTAMP} for creating a point-in-time Autonomous Database clone using backups. For more information, see [Cloning and Moving an Autonomous Database](https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/clone-autonomous-database.html#GUID-D771796F-5081-4CFB-A7FF-0F893EABD7BC).

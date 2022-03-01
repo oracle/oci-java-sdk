@@ -64,6 +64,16 @@ public class CreateNotebookSessionDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("notebookSessionConfigDetails")
+        private NotebookSessionConfigDetails notebookSessionConfigDetails;
+
+        public Builder notebookSessionConfigDetails(
+                NotebookSessionConfigDetails notebookSessionConfigDetails) {
+            this.notebookSessionConfigDetails = notebookSessionConfigDetails;
+            this.__explicitlySet__.add("notebookSessionConfigDetails");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
@@ -93,6 +103,7 @@ public class CreateNotebookSessionDetails {
                             projectId,
                             compartmentId,
                             notebookSessionConfigurationDetails,
+                            notebookSessionConfigDetails,
                             freeformTags,
                             definedTags);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
@@ -107,6 +118,7 @@ public class CreateNotebookSessionDetails {
                             .compartmentId(o.getCompartmentId())
                             .notebookSessionConfigurationDetails(
                                     o.getNotebookSessionConfigurationDetails())
+                            .notebookSessionConfigDetails(o.getNotebookSessionConfigDetails())
                             .freeformTags(o.getFreeformTags())
                             .definedTags(o.getDefinedTags());
 
@@ -144,6 +156,9 @@ public class CreateNotebookSessionDetails {
 
     @com.fasterxml.jackson.annotation.JsonProperty("notebookSessionConfigurationDetails")
     NotebookSessionConfigurationDetails notebookSessionConfigurationDetails;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("notebookSessionConfigDetails")
+    NotebookSessionConfigDetails notebookSessionConfigDetails;
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).

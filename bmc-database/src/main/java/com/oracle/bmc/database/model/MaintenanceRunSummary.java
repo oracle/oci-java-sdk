@@ -180,6 +180,106 @@ public class MaintenanceRunSummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("targetDbServerVersion")
+        private String targetDbServerVersion;
+
+        public Builder targetDbServerVersion(String targetDbServerVersion) {
+            this.targetDbServerVersion = targetDbServerVersion;
+            this.__explicitlySet__.add("targetDbServerVersion");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("targetStorageServerVersion")
+        private String targetStorageServerVersion;
+
+        public Builder targetStorageServerVersion(String targetStorageServerVersion) {
+            this.targetStorageServerVersion = targetStorageServerVersion;
+            this.__explicitlySet__.add("targetStorageServerVersion");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("isCustomActionTimeoutEnabled")
+        private Boolean isCustomActionTimeoutEnabled;
+
+        public Builder isCustomActionTimeoutEnabled(Boolean isCustomActionTimeoutEnabled) {
+            this.isCustomActionTimeoutEnabled = isCustomActionTimeoutEnabled;
+            this.__explicitlySet__.add("isCustomActionTimeoutEnabled");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("customActionTimeoutInMins")
+        private Integer customActionTimeoutInMins;
+
+        public Builder customActionTimeoutInMins(Integer customActionTimeoutInMins) {
+            this.customActionTimeoutInMins = customActionTimeoutInMins;
+            this.__explicitlySet__.add("customActionTimeoutInMins");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("currentCustomActionTimeoutInMins")
+        private Integer currentCustomActionTimeoutInMins;
+
+        public Builder currentCustomActionTimeoutInMins(Integer currentCustomActionTimeoutInMins) {
+            this.currentCustomActionTimeoutInMins = currentCustomActionTimeoutInMins;
+            this.__explicitlySet__.add("currentCustomActionTimeoutInMins");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("patchingStatus")
+        private PatchingStatus patchingStatus;
+
+        public Builder patchingStatus(PatchingStatus patchingStatus) {
+            this.patchingStatus = patchingStatus;
+            this.__explicitlySet__.add("patchingStatus");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("patchingStartTime")
+        private java.util.Date patchingStartTime;
+
+        public Builder patchingStartTime(java.util.Date patchingStartTime) {
+            this.patchingStartTime = patchingStartTime;
+            this.__explicitlySet__.add("patchingStartTime");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("patchingEndTime")
+        private java.util.Date patchingEndTime;
+
+        public Builder patchingEndTime(java.util.Date patchingEndTime) {
+            this.patchingEndTime = patchingEndTime;
+            this.__explicitlySet__.add("patchingEndTime");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("estimatedPatchingTime")
+        private EstimatedPatchingTime estimatedPatchingTime;
+
+        public Builder estimatedPatchingTime(EstimatedPatchingTime estimatedPatchingTime) {
+            this.estimatedPatchingTime = estimatedPatchingTime;
+            this.__explicitlySet__.add("estimatedPatchingTime");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("currentPatchingComponent")
+        private String currentPatchingComponent;
+
+        public Builder currentPatchingComponent(String currentPatchingComponent) {
+            this.currentPatchingComponent = currentPatchingComponent;
+            this.__explicitlySet__.add("currentPatchingComponent");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("estimatedComponentPatchingStartTime")
+        private java.util.Date estimatedComponentPatchingStartTime;
+
+        public Builder estimatedComponentPatchingStartTime(
+                java.util.Date estimatedComponentPatchingStartTime) {
+            this.estimatedComponentPatchingStartTime = estimatedComponentPatchingStartTime;
+            this.__explicitlySet__.add("estimatedComponentPatchingStartTime");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -202,7 +302,18 @@ public class MaintenanceRunSummary {
                             maintenanceSubtype,
                             peerMaintenanceRunId,
                             patchingMode,
-                            patchFailureCount);
+                            patchFailureCount,
+                            targetDbServerVersion,
+                            targetStorageServerVersion,
+                            isCustomActionTimeoutEnabled,
+                            customActionTimeoutInMins,
+                            currentCustomActionTimeoutInMins,
+                            patchingStatus,
+                            patchingStartTime,
+                            patchingEndTime,
+                            estimatedPatchingTime,
+                            currentPatchingComponent,
+                            estimatedComponentPatchingStartTime);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -226,7 +337,20 @@ public class MaintenanceRunSummary {
                             .maintenanceSubtype(o.getMaintenanceSubtype())
                             .peerMaintenanceRunId(o.getPeerMaintenanceRunId())
                             .patchingMode(o.getPatchingMode())
-                            .patchFailureCount(o.getPatchFailureCount());
+                            .patchFailureCount(o.getPatchFailureCount())
+                            .targetDbServerVersion(o.getTargetDbServerVersion())
+                            .targetStorageServerVersion(o.getTargetStorageServerVersion())
+                            .isCustomActionTimeoutEnabled(o.getIsCustomActionTimeoutEnabled())
+                            .customActionTimeoutInMins(o.getCustomActionTimeoutInMins())
+                            .currentCustomActionTimeoutInMins(
+                                    o.getCurrentCustomActionTimeoutInMins())
+                            .patchingStatus(o.getPatchingStatus())
+                            .patchingStartTime(o.getPatchingStartTime())
+                            .patchingEndTime(o.getPatchingEndTime())
+                            .estimatedPatchingTime(o.getEstimatedPatchingTime())
+                            .currentPatchingComponent(o.getCurrentPatchingComponent())
+                            .estimatedComponentPatchingStartTime(
+                                    o.getEstimatedComponentPatchingStartTime());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -589,6 +713,117 @@ public class MaintenanceRunSummary {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("patchFailureCount")
     Integer patchFailureCount;
+
+    /**
+     * The target software version for the database server patching operation.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("targetDbServerVersion")
+    String targetDbServerVersion;
+
+    /**
+     * The target Cell version that is to be patched to.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("targetStorageServerVersion")
+    String targetStorageServerVersion;
+
+    /**
+     * If true, enables the configuration of a custom action timeout (waiting period) between database servers patching operations.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isCustomActionTimeoutEnabled")
+    Boolean isCustomActionTimeoutEnabled;
+
+    /**
+     * Determines the amount of time the system will wait before the start of each database server patching operation.
+     * Specify a number of minutes, from 15 to 120.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("customActionTimeoutInMins")
+    Integer customActionTimeoutInMins;
+
+    /**
+     * Extend current custom action timeout between the current database servers during waiting state, from 0 (zero) to 30 minutes.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("currentCustomActionTimeoutInMins")
+    Integer currentCustomActionTimeoutInMins;
+    /**
+     * The status of the patching operation.
+     **/
+    @lombok.extern.slf4j.Slf4j
+    public enum PatchingStatus {
+        Patching("PATCHING"),
+        Waiting("WAITING"),
+        Scheduled("SCHEDULED"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private final String value;
+        private static java.util.Map<String, PatchingStatus> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (PatchingStatus v : PatchingStatus.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        PatchingStatus(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static PatchingStatus create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'PatchingStatus', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * The status of the patching operation.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("patchingStatus")
+    PatchingStatus patchingStatus;
+
+    /**
+     * The time when the patching operation started.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("patchingStartTime")
+    java.util.Date patchingStartTime;
+
+    /**
+     * The time when the patching operation ended.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("patchingEndTime")
+    java.util.Date patchingEndTime;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("estimatedPatchingTime")
+    EstimatedPatchingTime estimatedPatchingTime;
+
+    /**
+     * The name of the current infrastruture component that is getting patched.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("currentPatchingComponent")
+    String currentPatchingComponent;
+
+    /**
+     * The estimated start time of the next infrastruture component patching operation.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("estimatedComponentPatchingStartTime")
+    java.util.Date estimatedComponentPatchingStartTime;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

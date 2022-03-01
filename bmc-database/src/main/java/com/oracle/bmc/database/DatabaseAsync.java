@@ -3977,6 +3977,23 @@ public interface DatabaseAsync extends AutoCloseable {
                             handler);
 
     /**
+     * This operation shrinks the current allocated storage down to the current actual used data storage (actualUsedDataStorageSizeInTBs). The if the base storage value for the database (dataStorageSizeInTBs) is larger than the actualUsedDataStorageSizeInTBs value, you are billed for the base storage value.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ShrinkAutonomousDatabaseResponse> shrinkAutonomousDatabase(
+            ShrinkAutonomousDatabaseRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ShrinkAutonomousDatabaseRequest, ShrinkAutonomousDatabaseResponse>
+                    handler);
+
+    /**
      * Starts the specified Autonomous Database.
      *
      *
