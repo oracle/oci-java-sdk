@@ -160,6 +160,15 @@ public class DbServer {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("dbServerPatchingDetails")
+        private DbServerPatchingDetails dbServerPatchingDetails;
+
+        public Builder dbServerPatchingDetails(DbServerPatchingDetails dbServerPatchingDetails) {
+            this.dbServerPatchingDetails = dbServerPatchingDetails;
+            this.__explicitlySet__.add("dbServerPatchingDetails");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
@@ -200,6 +209,7 @@ public class DbServer {
                             maxMemoryInGBs,
                             maxDbNodeStorageInGBs,
                             timeCreated,
+                            dbServerPatchingDetails,
                             freeformTags,
                             definedTags);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
@@ -224,6 +234,7 @@ public class DbServer {
                             .maxMemoryInGBs(o.getMaxMemoryInGBs())
                             .maxDbNodeStorageInGBs(o.getMaxDbNodeStorageInGBs())
                             .timeCreated(o.getTimeCreated())
+                            .dbServerPatchingDetails(o.getDbServerPatchingDetails())
                             .freeformTags(o.getFreeformTags())
                             .definedTags(o.getDefinedTags());
 
@@ -379,6 +390,9 @@ public class DbServer {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     java.util.Date timeCreated;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("dbServerPatchingDetails")
+    DbServerPatchingDetails dbServerPatchingDetails;
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.

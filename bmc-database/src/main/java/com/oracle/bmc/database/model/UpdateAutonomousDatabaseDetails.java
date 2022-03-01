@@ -305,6 +305,15 @@ public class UpdateAutonomousDatabaseDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("isAutoScalingForStorageEnabled")
+        private Boolean isAutoScalingForStorageEnabled;
+
+        public Builder isAutoScalingForStorageEnabled(Boolean isAutoScalingForStorageEnabled) {
+            this.isAutoScalingForStorageEnabled = isAutoScalingForStorageEnabled;
+            this.__explicitlySet__.add("isAutoScalingForStorageEnabled");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -340,7 +349,8 @@ public class UpdateAutonomousDatabaseDetails {
                             nsgIds,
                             customerContacts,
                             isMtlsConnectionRequired,
-                            scheduledOperations);
+                            scheduledOperations,
+                            isAutoScalingForStorageEnabled);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -377,7 +387,8 @@ public class UpdateAutonomousDatabaseDetails {
                             .nsgIds(o.getNsgIds())
                             .customerContacts(o.getCustomerContacts())
                             .isMtlsConnectionRequired(o.getIsMtlsConnectionRequired())
-                            .scheduledOperations(o.getScheduledOperations());
+                            .scheduledOperations(o.getScheduledOperations())
+                            .isAutoScalingForStorageEnabled(o.getIsAutoScalingForStorageEnabled());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -843,6 +854,13 @@ public class UpdateAutonomousDatabaseDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("scheduledOperations")
     java.util.List<ScheduledOperationDetails> scheduledOperations;
+
+    /**
+     * Indicates if auto scaling is enabled for the Autonomous Database storage. The default value is {@code FALSE}.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isAutoScalingForStorageEnabled")
+    Boolean isAutoScalingForStorageEnabled;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

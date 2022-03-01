@@ -745,6 +745,33 @@ public class AutonomousDatabase {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("isAutoScalingForStorageEnabled")
+        private Boolean isAutoScalingForStorageEnabled;
+
+        public Builder isAutoScalingForStorageEnabled(Boolean isAutoScalingForStorageEnabled) {
+            this.isAutoScalingForStorageEnabled = isAutoScalingForStorageEnabled;
+            this.__explicitlySet__.add("isAutoScalingForStorageEnabled");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("allocatedStorageSizeInTBs")
+        private Double allocatedStorageSizeInTBs;
+
+        public Builder allocatedStorageSizeInTBs(Double allocatedStorageSizeInTBs) {
+            this.allocatedStorageSizeInTBs = allocatedStorageSizeInTBs;
+            this.__explicitlySet__.add("allocatedStorageSizeInTBs");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("actualUsedDataStorageSizeInTBs")
+        private Double actualUsedDataStorageSizeInTBs;
+
+        public Builder actualUsedDataStorageSizeInTBs(Double actualUsedDataStorageSizeInTBs) {
+            this.actualUsedDataStorageSizeInTBs = actualUsedDataStorageSizeInTBs;
+            this.__explicitlySet__.add("actualUsedDataStorageSizeInTBs");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -829,7 +856,10 @@ public class AutonomousDatabase {
                             isReconnectCloneEnabled,
                             timeUntilReconnectCloneEnabled,
                             autonomousMaintenanceScheduleType,
-                            scheduledOperations);
+                            scheduledOperations,
+                            isAutoScalingForStorageEnabled,
+                            allocatedStorageSizeInTBs,
+                            actualUsedDataStorageSizeInTBs);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -918,7 +948,10 @@ public class AutonomousDatabase {
                             .timeUntilReconnectCloneEnabled(o.getTimeUntilReconnectCloneEnabled())
                             .autonomousMaintenanceScheduleType(
                                     o.getAutonomousMaintenanceScheduleType())
-                            .scheduledOperations(o.getScheduledOperations());
+                            .scheduledOperations(o.getScheduledOperations())
+                            .isAutoScalingForStorageEnabled(o.getIsAutoScalingForStorageEnabled())
+                            .allocatedStorageSizeInTBs(o.getAllocatedStorageSizeInTBs())
+                            .actualUsedDataStorageSizeInTBs(o.getActualUsedDataStorageSizeInTBs());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -2155,6 +2188,29 @@ public class AutonomousDatabase {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("scheduledOperations")
     java.util.List<ScheduledOperationDetails> scheduledOperations;
+
+    /**
+     * Indicates if auto scaling is enabled for the Autonomous Database storage. The default value is {@code FALSE}.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isAutoScalingForStorageEnabled")
+    Boolean isAutoScalingForStorageEnabled;
+
+    /**
+     * The amount of storage currently allocated for the database tables and billed for, rounded up. When auto-scaling is not enabled, this value is equal to the {@code dataStorageSizeInTBs} value. You can compare this value to the {@code actualUsedDataStorageSizeInTBs} value to determine if a manual shrink operation is appropriate for your allocated storage.
+     * <p>
+     **Note:** Auto-scaling does not automatically decrease allocated storage when data is deleted from the database.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("allocatedStorageSizeInTBs")
+    Double allocatedStorageSizeInTBs;
+
+    /**
+     * The current amount of storage in use for user and system data, in terabytes (TB).
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("actualUsedDataStorageSizeInTBs")
+    Double actualUsedDataStorageSizeInTBs;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

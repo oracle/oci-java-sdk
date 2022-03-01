@@ -41,19 +41,29 @@ public class VcnDrgAttachmentNetworkUpdateDetails extends DrgAttachmentNetworkUp
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("vcnRouteType")
+        private VcnDrgAttachmentNetworkDetails.VcnRouteType vcnRouteType;
+
+        public Builder vcnRouteType(VcnDrgAttachmentNetworkDetails.VcnRouteType vcnRouteType) {
+            this.vcnRouteType = vcnRouteType;
+            this.__explicitlySet__.add("vcnRouteType");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public VcnDrgAttachmentNetworkUpdateDetails build() {
             VcnDrgAttachmentNetworkUpdateDetails __instance__ =
-                    new VcnDrgAttachmentNetworkUpdateDetails(routeTableId);
+                    new VcnDrgAttachmentNetworkUpdateDetails(routeTableId, vcnRouteType);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(VcnDrgAttachmentNetworkUpdateDetails o) {
-            Builder copiedBuilder = routeTableId(o.getRouteTableId());
+            Builder copiedBuilder =
+                    routeTableId(o.getRouteTableId()).vcnRouteType(o.getVcnRouteType());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -68,9 +78,11 @@ public class VcnDrgAttachmentNetworkUpdateDetails extends DrgAttachmentNetworkUp
     }
 
     @Deprecated
-    public VcnDrgAttachmentNetworkUpdateDetails(String routeTableId) {
+    public VcnDrgAttachmentNetworkUpdateDetails(
+            String routeTableId, VcnDrgAttachmentNetworkDetails.VcnRouteType vcnRouteType) {
         super();
         this.routeTableId = routeTableId;
+        this.vcnRouteType = vcnRouteType;
     }
 
     /**
@@ -84,6 +96,14 @@ public class VcnDrgAttachmentNetworkUpdateDetails extends DrgAttachmentNetworkUp
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("routeTableId")
     String routeTableId;
+
+    /**
+     * Indicates whether the VCN CIDR(s) or the individual Subnet CIDR(s) are imported from the attachment.
+     * Routes from the VCN Ingress Route Table are always imported.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("vcnRouteType")
+    VcnDrgAttachmentNetworkDetails.VcnRouteType vcnRouteType;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

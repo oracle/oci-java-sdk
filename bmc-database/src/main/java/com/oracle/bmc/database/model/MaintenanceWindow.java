@@ -36,6 +36,33 @@ public class MaintenanceWindow {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("patchingMode")
+        private PatchingMode patchingMode;
+
+        public Builder patchingMode(PatchingMode patchingMode) {
+            this.patchingMode = patchingMode;
+            this.__explicitlySet__.add("patchingMode");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("isCustomActionTimeoutEnabled")
+        private Boolean isCustomActionTimeoutEnabled;
+
+        public Builder isCustomActionTimeoutEnabled(Boolean isCustomActionTimeoutEnabled) {
+            this.isCustomActionTimeoutEnabled = isCustomActionTimeoutEnabled;
+            this.__explicitlySet__.add("isCustomActionTimeoutEnabled");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("customActionTimeoutInMins")
+        private Integer customActionTimeoutInMins;
+
+        public Builder customActionTimeoutInMins(Integer customActionTimeoutInMins) {
+            this.customActionTimeoutInMins = customActionTimeoutInMins;
+            this.__explicitlySet__.add("customActionTimeoutInMins");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("months")
         private java.util.List<Month> months;
 
@@ -88,6 +115,9 @@ public class MaintenanceWindow {
             MaintenanceWindow __instance__ =
                     new MaintenanceWindow(
                             preference,
+                            patchingMode,
+                            isCustomActionTimeoutEnabled,
+                            customActionTimeoutInMins,
                             months,
                             weeksOfMonth,
                             daysOfWeek,
@@ -101,6 +131,9 @@ public class MaintenanceWindow {
         public Builder copy(MaintenanceWindow o) {
             Builder copiedBuilder =
                     preference(o.getPreference())
+                            .patchingMode(o.getPatchingMode())
+                            .isCustomActionTimeoutEnabled(o.getIsCustomActionTimeoutEnabled())
+                            .customActionTimeoutInMins(o.getCustomActionTimeoutInMins())
                             .months(o.getMonths())
                             .weeksOfMonth(o.getWeeksOfMonth())
                             .daysOfWeek(o.getDaysOfWeek())
@@ -170,6 +203,77 @@ public class MaintenanceWindow {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("preference")
     Preference preference;
+    /**
+     * Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
+     * <p>
+     *IMPORTANT*: Non-rolling infrastructure patching involves system down time. See [Oracle-Managed Infrastructure Maintenance Updates](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle) for more information.
+     *
+     **/
+    @lombok.extern.slf4j.Slf4j
+    public enum PatchingMode {
+        Rolling("ROLLING"),
+        Nonrolling("NONROLLING"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private final String value;
+        private static java.util.Map<String, PatchingMode> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (PatchingMode v : PatchingMode.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        PatchingMode(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static PatchingMode create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'PatchingMode', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
+     * <p>
+     *IMPORTANT*: Non-rolling infrastructure patching involves system down time. See [Oracle-Managed Infrastructure Maintenance Updates](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle) for more information.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("patchingMode")
+    PatchingMode patchingMode;
+
+    /**
+     * If true, enables the configuration of a custom action timeout (waiting period) between database server patching operations.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isCustomActionTimeoutEnabled")
+    Boolean isCustomActionTimeoutEnabled;
+
+    /**
+     * Determines the amount of time the system will wait before the start of each database server patching operation.
+     * Custom action timeout is in minutes and valid value is between 15 to 120 (inclusive).
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("customActionTimeoutInMins")
+    Integer customActionTimeoutInMins;
 
     /**
      * Months during the year when maintenance should be performed.

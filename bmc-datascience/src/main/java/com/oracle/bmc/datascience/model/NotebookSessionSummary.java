@@ -90,6 +90,16 @@ public class NotebookSessionSummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("notebookSessionConfigDetails")
+        private NotebookSessionConfigDetails notebookSessionConfigDetails;
+
+        public Builder notebookSessionConfigDetails(
+                NotebookSessionConfigDetails notebookSessionConfigDetails) {
+            this.notebookSessionConfigDetails = notebookSessionConfigDetails;
+            this.__explicitlySet__.add("notebookSessionConfigDetails");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("notebookSessionUrl")
         private String notebookSessionUrl;
 
@@ -140,6 +150,7 @@ public class NotebookSessionSummary {
                             createdBy,
                             compartmentId,
                             notebookSessionConfigurationDetails,
+                            notebookSessionConfigDetails,
                             notebookSessionUrl,
                             lifecycleState,
                             freeformTags,
@@ -159,6 +170,7 @@ public class NotebookSessionSummary {
                             .compartmentId(o.getCompartmentId())
                             .notebookSessionConfigurationDetails(
                                     o.getNotebookSessionConfigurationDetails())
+                            .notebookSessionConfigDetails(o.getNotebookSessionConfigDetails())
                             .notebookSessionUrl(o.getNotebookSessionUrl())
                             .lifecycleState(o.getLifecycleState())
                             .freeformTags(o.getFreeformTags())
@@ -218,6 +230,9 @@ public class NotebookSessionSummary {
 
     @com.fasterxml.jackson.annotation.JsonProperty("notebookSessionConfigurationDetails")
     NotebookSessionConfigurationDetails notebookSessionConfigurationDetails;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("notebookSessionConfigDetails")
+    NotebookSessionConfigDetails notebookSessionConfigDetails;
 
     /**
      * The URL to interact with the notebook session.

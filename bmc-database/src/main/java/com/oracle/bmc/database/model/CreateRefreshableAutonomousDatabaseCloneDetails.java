@@ -326,6 +326,15 @@ public class CreateRefreshableAutonomousDatabaseCloneDetails extends CreateAuton
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("isAutoScalingForStorageEnabled")
+        private Boolean isAutoScalingForStorageEnabled;
+
+        public Builder isAutoScalingForStorageEnabled(Boolean isAutoScalingForStorageEnabled) {
+            this.isAutoScalingForStorageEnabled = isAutoScalingForStorageEnabled;
+            this.__explicitlySet__.add("isAutoScalingForStorageEnabled");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("sourceId")
         private String sourceId;
 
@@ -382,6 +391,7 @@ public class CreateRefreshableAutonomousDatabaseCloneDetails extends CreateAuton
                             isMtlsConnectionRequired,
                             autonomousMaintenanceScheduleType,
                             scheduledOperations,
+                            isAutoScalingForStorageEnabled,
                             sourceId,
                             refreshableMode);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
@@ -425,6 +435,7 @@ public class CreateRefreshableAutonomousDatabaseCloneDetails extends CreateAuton
                             .autonomousMaintenanceScheduleType(
                                     o.getAutonomousMaintenanceScheduleType())
                             .scheduledOperations(o.getScheduledOperations())
+                            .isAutoScalingForStorageEnabled(o.getIsAutoScalingForStorageEnabled())
                             .sourceId(o.getSourceId())
                             .refreshableMode(o.getRefreshableMode());
 
@@ -474,6 +485,7 @@ public class CreateRefreshableAutonomousDatabaseCloneDetails extends CreateAuton
             Boolean isMtlsConnectionRequired,
             AutonomousMaintenanceScheduleType autonomousMaintenanceScheduleType,
             java.util.List<ScheduledOperationDetails> scheduledOperations,
+            Boolean isAutoScalingForStorageEnabled,
             String sourceId,
             RefreshableMode refreshableMode) {
         super(
@@ -508,7 +520,8 @@ public class CreateRefreshableAutonomousDatabaseCloneDetails extends CreateAuton
                 customerContacts,
                 isMtlsConnectionRequired,
                 autonomousMaintenanceScheduleType,
-                scheduledOperations);
+                scheduledOperations,
+                isAutoScalingForStorageEnabled);
         this.sourceId = sourceId;
         this.refreshableMode = refreshableMode;
     }

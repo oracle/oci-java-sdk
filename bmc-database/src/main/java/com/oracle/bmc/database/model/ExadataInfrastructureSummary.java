@@ -325,6 +325,24 @@ public class ExadataInfrastructureSummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("storageServerVersion")
+        private String storageServerVersion;
+
+        public Builder storageServerVersion(String storageServerVersion) {
+            this.storageServerVersion = storageServerVersion;
+            this.__explicitlySet__.add("storageServerVersion");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("dbServerVersion")
+        private String dbServerVersion;
+
+        public Builder dbServerVersion(String dbServerVersion) {
+            this.dbServerVersion = dbServerVersion;
+            this.__explicitlySet__.add("dbServerVersion");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("lastMaintenanceRunId")
         private String lastMaintenanceRunId;
 
@@ -340,6 +358,15 @@ public class ExadataInfrastructureSummary {
         public Builder nextMaintenanceRunId(String nextMaintenanceRunId) {
             this.nextMaintenanceRunId = nextMaintenanceRunId;
             this.__explicitlySet__.add("nextMaintenanceRunId");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("isCpsOfflineReportEnabled")
+        private Boolean isCpsOfflineReportEnabled;
+
+        public Builder isCpsOfflineReportEnabled(Boolean isCpsOfflineReportEnabled) {
+            this.isCpsOfflineReportEnabled = isCpsOfflineReportEnabled;
+            this.__explicitlySet__.add("isCpsOfflineReportEnabled");
             return this;
         }
 
@@ -401,8 +428,11 @@ public class ExadataInfrastructureSummary {
                             contacts,
                             maintenanceSLOStatus,
                             maintenanceWindow,
+                            storageServerVersion,
+                            dbServerVersion,
                             lastMaintenanceRunId,
                             nextMaintenanceRunId,
+                            isCpsOfflineReportEnabled,
                             freeformTags,
                             definedTags);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
@@ -445,8 +475,11 @@ public class ExadataInfrastructureSummary {
                             .contacts(o.getContacts())
                             .maintenanceSLOStatus(o.getMaintenanceSLOStatus())
                             .maintenanceWindow(o.getMaintenanceWindow())
+                            .storageServerVersion(o.getStorageServerVersion())
+                            .dbServerVersion(o.getDbServerVersion())
                             .lastMaintenanceRunId(o.getLastMaintenanceRunId())
                             .nextMaintenanceRunId(o.getNextMaintenanceRunId())
+                            .isCpsOfflineReportEnabled(o.getIsCpsOfflineReportEnabled())
                             .freeformTags(o.getFreeformTags())
                             .definedTags(o.getDefinedTags());
 
@@ -759,6 +792,18 @@ public class ExadataInfrastructureSummary {
     MaintenanceWindow maintenanceWindow;
 
     /**
+     * The software version of the storage servers (cells) in the Exadata infrastructure.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("storageServerVersion")
+    String storageServerVersion;
+
+    /**
+     * The software version of the database servers (dom0) in the Exadata infrastructure.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("dbServerVersion")
+    String dbServerVersion;
+
+    /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the last maintenance run.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lastMaintenanceRunId")
@@ -769,6 +814,15 @@ public class ExadataInfrastructureSummary {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("nextMaintenanceRunId")
     String nextMaintenanceRunId;
+
+    /**
+     * Indicates whether cps offline diagnostic report is enabled for this Exadata infrastructure. This will allow a customer to quickly check status themselves and fix problems on their end, saving time and frustration
+     * for both Oracle and the customer when they find the CPS in a disconnected state.You can enable offline diagnostic report during Exadata infrastructure provisioning. You can also disable or enable it at any time
+     * using the UpdateExadatainfrastructure API.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isCpsOfflineReportEnabled")
+    Boolean isCpsOfflineReportEnabled;
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.

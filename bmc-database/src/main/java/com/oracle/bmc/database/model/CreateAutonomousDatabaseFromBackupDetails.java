@@ -326,6 +326,15 @@ public class CreateAutonomousDatabaseFromBackupDetails extends CreateAutonomousD
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("isAutoScalingForStorageEnabled")
+        private Boolean isAutoScalingForStorageEnabled;
+
+        public Builder isAutoScalingForStorageEnabled(Boolean isAutoScalingForStorageEnabled) {
+            this.isAutoScalingForStorageEnabled = isAutoScalingForStorageEnabled;
+            this.__explicitlySet__.add("isAutoScalingForStorageEnabled");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("autonomousDatabaseBackupId")
         private String autonomousDatabaseBackupId;
 
@@ -382,6 +391,7 @@ public class CreateAutonomousDatabaseFromBackupDetails extends CreateAutonomousD
                             isMtlsConnectionRequired,
                             autonomousMaintenanceScheduleType,
                             scheduledOperations,
+                            isAutoScalingForStorageEnabled,
                             autonomousDatabaseBackupId,
                             cloneType);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
@@ -425,6 +435,7 @@ public class CreateAutonomousDatabaseFromBackupDetails extends CreateAutonomousD
                             .autonomousMaintenanceScheduleType(
                                     o.getAutonomousMaintenanceScheduleType())
                             .scheduledOperations(o.getScheduledOperations())
+                            .isAutoScalingForStorageEnabled(o.getIsAutoScalingForStorageEnabled())
                             .autonomousDatabaseBackupId(o.getAutonomousDatabaseBackupId())
                             .cloneType(o.getCloneType());
 
@@ -474,6 +485,7 @@ public class CreateAutonomousDatabaseFromBackupDetails extends CreateAutonomousD
             Boolean isMtlsConnectionRequired,
             AutonomousMaintenanceScheduleType autonomousMaintenanceScheduleType,
             java.util.List<ScheduledOperationDetails> scheduledOperations,
+            Boolean isAutoScalingForStorageEnabled,
             String autonomousDatabaseBackupId,
             CloneType cloneType) {
         super(
@@ -508,7 +520,8 @@ public class CreateAutonomousDatabaseFromBackupDetails extends CreateAutonomousD
                 customerContacts,
                 isMtlsConnectionRequired,
                 autonomousMaintenanceScheduleType,
-                scheduledOperations);
+                scheduledOperations,
+                isAutoScalingForStorageEnabled);
         this.autonomousDatabaseBackupId = autonomousDatabaseBackupId;
         this.cloneType = cloneType;
     }

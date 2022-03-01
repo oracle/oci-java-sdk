@@ -326,6 +326,15 @@ public class CreateAutonomousDatabaseDetails extends CreateAutonomousDatabaseBas
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("isAutoScalingForStorageEnabled")
+        private Boolean isAutoScalingForStorageEnabled;
+
+        public Builder isAutoScalingForStorageEnabled(Boolean isAutoScalingForStorageEnabled) {
+            this.isAutoScalingForStorageEnabled = isAutoScalingForStorageEnabled;
+            this.__explicitlySet__.add("isAutoScalingForStorageEnabled");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -363,7 +372,8 @@ public class CreateAutonomousDatabaseDetails extends CreateAutonomousDatabaseBas
                             customerContacts,
                             isMtlsConnectionRequired,
                             autonomousMaintenanceScheduleType,
-                            scheduledOperations);
+                            scheduledOperations,
+                            isAutoScalingForStorageEnabled);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -404,7 +414,8 @@ public class CreateAutonomousDatabaseDetails extends CreateAutonomousDatabaseBas
                             .isMtlsConnectionRequired(o.getIsMtlsConnectionRequired())
                             .autonomousMaintenanceScheduleType(
                                     o.getAutonomousMaintenanceScheduleType())
-                            .scheduledOperations(o.getScheduledOperations());
+                            .scheduledOperations(o.getScheduledOperations())
+                            .isAutoScalingForStorageEnabled(o.getIsAutoScalingForStorageEnabled());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -451,7 +462,8 @@ public class CreateAutonomousDatabaseDetails extends CreateAutonomousDatabaseBas
             java.util.List<CustomerContact> customerContacts,
             Boolean isMtlsConnectionRequired,
             AutonomousMaintenanceScheduleType autonomousMaintenanceScheduleType,
-            java.util.List<ScheduledOperationDetails> scheduledOperations) {
+            java.util.List<ScheduledOperationDetails> scheduledOperations,
+            Boolean isAutoScalingForStorageEnabled) {
         super(
                 compartmentId,
                 dbName,
@@ -484,7 +496,8 @@ public class CreateAutonomousDatabaseDetails extends CreateAutonomousDatabaseBas
                 customerContacts,
                 isMtlsConnectionRequired,
                 autonomousMaintenanceScheduleType,
-                scheduledOperations);
+                scheduledOperations,
+                isAutoScalingForStorageEnabled);
     }
 
     @com.fasterxml.jackson.annotation.JsonIgnore

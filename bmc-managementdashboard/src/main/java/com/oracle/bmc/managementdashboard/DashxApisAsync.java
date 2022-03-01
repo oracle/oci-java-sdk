@@ -86,9 +86,10 @@ public interface DashxApisAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Creates a new dashboard.  Limit for number of saved searches in a dashboard is 20. Here's an example of how you can use CLI to create a dashboard. For information on the details that must be passed to CREATE, you can use the GET API to obtain the Create.json file:
-     * oci management-dashboard dashboard get --management-dashboard-id  \"ocid1.managementdashboard.oc1..dashboardId1\" --query data > Create.json.
-     * You can then modify the Create.json file by removing the\"id\" attribute and making other required changes, and use the oci management-dashboard dashboard create command.
+     * Creates a new dashboard. Limit for number of saved searches in a dashboard is 20.
+     * Here's an example of how you can use CLI to create a dashboard. For information on the details that must be passed to CREATE, you can use the GET API to obtain the Create.json file:
+     * `oci management-dashboard dashboard get --management-dashboard-id  \"ocid1.managementdashboard.oc1..dashboardId1\" --query data > Create.json.`
+     * You can then modify the Create.json file by removing the `id` attribute and making other required changes, and use the `oci management-dashboard dashboard create` command.
      *
      *
      * @param request The request object containing the details to send
@@ -105,10 +106,10 @@ public interface DashxApisAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Creates a new saved search. Here's an example of how you can use CLI to create a saved search. For information on the details that must be passed to CREATE, you can use the GET API to obtain the Create.json file:
-     * <p>
-     * oci management-dashboard saved-search get --management-saved-search-id ocid1.managementsavedsearch.oc1..savedsearchId1 --query data > Create.json.
-     * You can then modify the Create.json file by removing the \"id\" attribute and making other required changes, and use the oci management-dashboard saved-search create command.
+     * Creates a new saved search.
+     * Here's an example of how you can use CLI to create a saved search. For information on the details that must be passed to CREATE, you can use the GET API to obtain the Create.json file:
+     * `oci management-dashboard saved-search get --management-saved-search-id ocid1.managementsavedsearch.oc1..savedsearchId1 --query data > Create.json`.
+     * You can then modify the Create.json file by removing the `id` attribute and making other required changes, and use the `oci management-dashboard saved-search create` command.
      *
      *
      * @param request The request object containing the details to send
@@ -157,7 +158,10 @@ public interface DashxApisAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Exports an array of dashboards and their saved searches. Export is designed to work with importDashboard. Here's an example of how you can use CLI to export a dashboard. $oci management-dashboard dashboard export --query data --export-dashboard-id \"{\\\"dashboardIds\\\":[\\\"ocid1.managementdashboard.oc1..dashboardId1\\\"]}\"  > dashboards.json
+     * Exports an array of dashboards and their saved searches. Export is designed to work with importDashboard.
+     * Here's an example of how you can use CLI to export a dashboard:
+     * `$oci management-dashboard dashboard export --query data --export-dashboard-id \"{\\\"dashboardIds\\\":[\\\"ocid1.managementdashboard.oc1..dashboardId1\\\"]}\"  > dashboards.json`
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -204,12 +208,12 @@ public interface DashxApisAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Imports an array of dashboards and their saved searches. Here's an example of how you can use CLI to import a dashboard. For information on the details that must be passed to IMPORT, you can use the EXPORT API to obtain the Import.json file:
-     * oci management-dashboard dashboard export --query data --export-dashboard-id \"{\\\"dashboardIds\\\":[\\\"ocid1.managementdashboard.oc1..dashboardId1\\\"]}\"  > Import.json.
-     * Note that import API updates the resource if it already exist, and creates a new resource if it does not exist. To import to a different compartment, edit and change the compartmentId to the desired compartment OCID.
-     * Here is an example of how you can use CLI to do import:
-     * <p>
-     * oci management-dashboard dashboard import --from-json file://Import.json
+     * Imports an array of dashboards and their saved searches.
+     * Here's an example of how you can use CLI to import a dashboard. For information on the details that must be passed to IMPORT, you can use the EXPORT API to obtain the Import.json file:
+     * `oci management-dashboard dashboard export --query data --export-dashboard-id \"{\\\"dashboardIds\\\":[\\\"ocid1.managementdashboard.oc1..dashboardId1\\\"]}\"  > Import.json`.
+     * Note that import API updates the resource if it already exists, and creates a new resource if it does not exist. To import to a different compartment, edit and change the compartmentId to the desired compartment OCID.
+     * Here's an example of how you can use CLI to import:
+     * `oci management-dashboard dashboard import --from-json file://Import.json`
      *
      *
      * @param request The request object containing the details to send

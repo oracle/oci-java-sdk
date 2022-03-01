@@ -50,19 +50,31 @@ public class VcnDrgAttachmentNetworkDetails extends DrgAttachmentNetworkDetails 
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("vcnRouteType")
+        private VcnRouteType vcnRouteType;
+
+        public Builder vcnRouteType(VcnRouteType vcnRouteType) {
+            this.vcnRouteType = vcnRouteType;
+            this.__explicitlySet__.add("vcnRouteType");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public VcnDrgAttachmentNetworkDetails build() {
             VcnDrgAttachmentNetworkDetails __instance__ =
-                    new VcnDrgAttachmentNetworkDetails(id, routeTableId);
+                    new VcnDrgAttachmentNetworkDetails(id, routeTableId, vcnRouteType);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(VcnDrgAttachmentNetworkDetails o) {
-            Builder copiedBuilder = id(o.getId()).routeTableId(o.getRouteTableId());
+            Builder copiedBuilder =
+                    id(o.getId())
+                            .routeTableId(o.getRouteTableId())
+                            .vcnRouteType(o.getVcnRouteType());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -77,9 +89,11 @@ public class VcnDrgAttachmentNetworkDetails extends DrgAttachmentNetworkDetails 
     }
 
     @Deprecated
-    public VcnDrgAttachmentNetworkDetails(String id, String routeTableId) {
+    public VcnDrgAttachmentNetworkDetails(
+            String id, String routeTableId, VcnRouteType vcnRouteType) {
         super(id);
         this.routeTableId = routeTableId;
+        this.vcnRouteType = vcnRouteType;
     }
 
     /**
@@ -93,6 +107,61 @@ public class VcnDrgAttachmentNetworkDetails extends DrgAttachmentNetworkDetails 
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("routeTableId")
     String routeTableId;
+    /**
+     * Indicates whether the VCN CIDR(s) or the individual Subnet CIDR(s) are imported from the attachment.
+     * Routes from the VCN Ingress Route Table are always imported.
+     *
+     **/
+    @lombok.extern.slf4j.Slf4j
+    public enum VcnRouteType {
+        VcnCidrs("VCN_CIDRS"),
+        SubnetCidrs("SUBNET_CIDRS"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private final String value;
+        private static java.util.Map<String, VcnRouteType> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (VcnRouteType v : VcnRouteType.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        VcnRouteType(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static VcnRouteType create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'VcnRouteType', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * Indicates whether the VCN CIDR(s) or the individual Subnet CIDR(s) are imported from the attachment.
+     * Routes from the VCN Ingress Route Table are always imported.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("vcnRouteType")
+    VcnRouteType vcnRouteType;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
