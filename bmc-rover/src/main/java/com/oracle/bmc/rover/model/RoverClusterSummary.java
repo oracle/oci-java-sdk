@@ -71,6 +71,24 @@ public class RoverClusterSummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("clusterSize")
+        private Integer clusterSize;
+
+        public Builder clusterSize(Integer clusterSize) {
+            this.clusterSize = clusterSize;
+            this.__explicitlySet__.add("clusterSize");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("clusterType")
+        private ClusterType clusterType;
+
+        public Builder clusterType(ClusterType clusterType) {
+            this.clusterType = clusterType;
+            this.__explicitlySet__.add("clusterType");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
@@ -128,6 +146,8 @@ public class RoverClusterSummary {
                             displayName,
                             timeCreated,
                             nodes,
+                            clusterSize,
+                            clusterType,
                             lifecycleState,
                             lifecycleStateDetails,
                             freeformTags,
@@ -145,6 +165,8 @@ public class RoverClusterSummary {
                             .displayName(o.getDisplayName())
                             .timeCreated(o.getTimeCreated())
                             .nodes(o.getNodes())
+                            .clusterSize(o.getClusterSize())
+                            .clusterType(o.getClusterType())
                             .lifecycleState(o.getLifecycleState())
                             .lifecycleStateDetails(o.getLifecycleStateDetails())
                             .freeformTags(o.getFreeformTags())
@@ -192,6 +214,18 @@ public class RoverClusterSummary {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("nodes")
     java.util.List<String> nodes;
+
+    /**
+     * Size of the cluster.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("clusterSize")
+    Integer clusterSize;
+
+    /**
+     * Type of cluster.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("clusterType")
+    ClusterType clusterType;
 
     /**
      * The current state of the RoverCluster.

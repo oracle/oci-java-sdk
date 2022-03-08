@@ -102,6 +102,7 @@ public class CreateClusterKubeconfigContentDetails {
         LegacyKubernetes("LEGACY_KUBERNETES"),
         PublicEndpoint("PUBLIC_ENDPOINT"),
         PrivateEndpoint("PRIVATE_ENDPOINT"),
+        VcnHostname("VCN_HOSTNAME"),
         ;
 
         private final String value;

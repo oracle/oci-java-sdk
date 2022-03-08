@@ -52,6 +52,25 @@ public class Connection {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("manualDatabaseSubType")
+        private DatabaseManualConnectionSubTypes manualDatabaseSubType;
+
+        public Builder manualDatabaseSubType(
+                DatabaseManualConnectionSubTypes manualDatabaseSubType) {
+            this.manualDatabaseSubType = manualDatabaseSubType;
+            this.__explicitlySet__.add("manualDatabaseSubType");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("isDedicated")
+        private Boolean isDedicated;
+
+        public Builder isDedicated(Boolean isDedicated) {
+            this.isDedicated = isDedicated;
+            this.__explicitlySet__.add("isDedicated");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
@@ -206,6 +225,8 @@ public class Connection {
                             id,
                             compartmentId,
                             databaseType,
+                            manualDatabaseSubType,
+                            isDedicated,
                             displayName,
                             databaseId,
                             connectDescriptor,
@@ -232,6 +253,8 @@ public class Connection {
                     id(o.getId())
                             .compartmentId(o.getCompartmentId())
                             .databaseType(o.getDatabaseType())
+                            .manualDatabaseSubType(o.getManualDatabaseSubType())
+                            .isDedicated(o.getIsDedicated())
                             .displayName(o.getDisplayName())
                             .databaseId(o.getDatabaseId())
                             .connectDescriptor(o.getConnectDescriptor())
@@ -281,6 +304,20 @@ public class Connection {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("databaseType")
     DatabaseConnectionTypes databaseType;
+
+    /**
+     * Database manual connection subtype. This value can only be specified for manual connections.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("manualDatabaseSubType")
+    DatabaseManualConnectionSubTypes manualDatabaseSubType;
+
+    /**
+     * True if the Autonomous Connection is dedicated. Not provided for Non-Autonomous Connections.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isDedicated")
+    Boolean isDedicated;
 
     /**
      * Database Connection display name identifier.

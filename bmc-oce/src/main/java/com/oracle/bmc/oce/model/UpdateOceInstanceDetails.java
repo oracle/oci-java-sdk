@@ -62,6 +62,15 @@ public class UpdateOceInstanceDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("addOnFeatures")
+        private java.util.List<String> addOnFeatures;
+
+        public Builder addOnFeatures(java.util.List<String> addOnFeatures) {
+            this.addOnFeatures = addOnFeatures;
+            this.__explicitlySet__.add("addOnFeatures");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
@@ -91,6 +100,7 @@ public class UpdateOceInstanceDetails {
                             wafPrimaryDomain,
                             instanceLicenseType,
                             instanceUsageType,
+                            addOnFeatures,
                             freeformTags,
                             definedTags);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
@@ -104,6 +114,7 @@ public class UpdateOceInstanceDetails {
                             .wafPrimaryDomain(o.getWafPrimaryDomain())
                             .instanceLicenseType(o.getInstanceLicenseType())
                             .instanceUsageType(o.getInstanceUsageType())
+                            .addOnFeatures(o.getAddOnFeatures())
                             .freeformTags(o.getFreeformTags())
                             .definedTags(o.getDefinedTags());
 
@@ -176,6 +187,12 @@ public class UpdateOceInstanceDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("instanceUsageType")
     InstanceUsageType instanceUsageType;
+
+    /**
+     * a list of add-on features for the ocm instance
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("addOnFeatures")
+    java.util.List<String> addOnFeatures;
 
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.

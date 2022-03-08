@@ -17,7 +17,6 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.Response.Status;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.ObjectReader;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder;
@@ -42,7 +41,8 @@ import lombok.extern.slf4j.Slf4j;
 @Getter
 @Slf4j
 public class ResponseHelper {
-    private static final ObjectReader STRING_READER = new ObjectMapper().readerFor(String.class);
+    private static final ObjectReader STRING_READER =
+            RestClientFactory.getObjectMapper().readerFor(String.class);
     private static final int MAX_RESPONSE_BUFFER_BYTES = 4096;
     private static final String OPC_REQUEST_ID_HEADER = "opc-request-id";
     private static final Map<Integer, String> DEFAULT_ERROR_MESSAGES = new HashMap<>();

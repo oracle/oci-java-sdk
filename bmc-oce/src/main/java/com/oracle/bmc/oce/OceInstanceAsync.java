@@ -8,7 +8,7 @@ import com.oracle.bmc.oce.requests.*;
 import com.oracle.bmc.oce.responses.*;
 
 /**
- * Oracle Content and Experience is a cloud-based content hub to drive omni-channel content management and accelerate experience delivery
+ * Oracle Content Management is a cloud-based content hub to drive omni-channel content management and accelerate experience delivery
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190912")
 public interface OceInstanceAsync extends AutoCloseable {

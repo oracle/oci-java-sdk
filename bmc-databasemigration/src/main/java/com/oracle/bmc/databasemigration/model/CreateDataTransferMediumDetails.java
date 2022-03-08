@@ -6,7 +6,8 @@ package com.oracle.bmc.databasemigration.model;
 
 /**
  * Data Transfer Medium details for the Migration. If not specified, it will default to Database Link. Only one type
- * of data transfer medium can be specified.
+ * of data transfer medium can be specified, except for the case of Amazon RDS Oracle as source, where Object Storage
+ * Details along with AwsS3Details are required.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -46,12 +47,22 @@ public class CreateDataTransferMediumDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("awsS3Details")
+        private CreateAwsS3Details awsS3Details;
+
+        public Builder awsS3Details(CreateAwsS3Details awsS3Details) {
+            this.awsS3Details = awsS3Details;
+            this.__explicitlySet__.add("awsS3Details");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CreateDataTransferMediumDetails build() {
             CreateDataTransferMediumDetails __instance__ =
-                    new CreateDataTransferMediumDetails(databaseLinkDetails, objectStorageDetails);
+                    new CreateDataTransferMediumDetails(
+                            databaseLinkDetails, objectStorageDetails, awsS3Details);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -60,7 +71,8 @@ public class CreateDataTransferMediumDetails {
         public Builder copy(CreateDataTransferMediumDetails o) {
             Builder copiedBuilder =
                     databaseLinkDetails(o.getDatabaseLinkDetails())
-                            .objectStorageDetails(o.getObjectStorageDetails());
+                            .objectStorageDetails(o.getObjectStorageDetails())
+                            .awsS3Details(o.getAwsS3Details());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -79,6 +91,9 @@ public class CreateDataTransferMediumDetails {
 
     @com.fasterxml.jackson.annotation.JsonProperty("objectStorageDetails")
     CreateObjectStoreBucket objectStorageDetails;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("awsS3Details")
+    CreateAwsS3Details awsS3Details;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

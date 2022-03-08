@@ -54,6 +54,16 @@ public class CreateConnectionDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("manualDatabaseSubType")
+        private DatabaseManualConnectionSubTypes manualDatabaseSubType;
+
+        public Builder manualDatabaseSubType(
+                DatabaseManualConnectionSubTypes manualDatabaseSubType) {
+            this.manualDatabaseSubType = manualDatabaseSubType;
+            this.__explicitlySet__.add("manualDatabaseSubType");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("databaseId")
         private String databaseId;
 
@@ -163,6 +173,7 @@ public class CreateConnectionDetails {
                             compartmentId,
                             displayName,
                             databaseType,
+                            manualDatabaseSubType,
                             databaseId,
                             connectDescriptor,
                             certificateTdn,
@@ -184,6 +195,7 @@ public class CreateConnectionDetails {
                     compartmentId(o.getCompartmentId())
                             .displayName(o.getDisplayName())
                             .databaseType(o.getDatabaseType())
+                            .manualDatabaseSubType(o.getManualDatabaseSubType())
                             .databaseId(o.getDatabaseId())
                             .connectDescriptor(o.getConnectDescriptor())
                             .certificateTdn(o.getCertificateTdn())
@@ -228,6 +240,13 @@ public class CreateConnectionDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("databaseType")
     DatabaseConnectionTypes databaseType;
+
+    /**
+     * Database manual connection subtype. This value can only be specified for manual connections.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("manualDatabaseSubType")
+    DatabaseManualConnectionSubTypes manualDatabaseSubType;
 
     /**
      * The OCID of the cloud database. Required if the database connection type is Autonomous.

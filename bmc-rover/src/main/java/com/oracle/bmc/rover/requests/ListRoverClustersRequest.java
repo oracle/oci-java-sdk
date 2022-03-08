@@ -30,6 +30,11 @@ public class ListRoverClustersRequest extends com.oracle.bmc.requests.BmcRequest
     private String displayName;
 
     /**
+     * A filter to return only Clusters of type matched with the given cluster type.
+     */
+    private com.oracle.bmc.rover.model.ClusterType clusterType;
+
+    /**
      * The maximum number of items to return.
      */
     private Integer limit;
@@ -133,6 +138,7 @@ public class ListRoverClustersRequest extends com.oracle.bmc.requests.BmcRequest
         public Builder copy(ListRoverClustersRequest o) {
             compartmentId(o.getCompartmentId());
             displayName(o.getDisplayName());
+            clusterType(o.getClusterType());
             limit(o.getLimit());
             page(o.getPage());
             lifecycleState(o.getLifecycleState());

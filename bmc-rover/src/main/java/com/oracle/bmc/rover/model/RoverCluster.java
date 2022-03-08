@@ -150,6 +150,42 @@ public class RoverCluster {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("clusterType")
+        private ClusterType clusterType;
+
+        public Builder clusterType(ClusterType clusterType) {
+            this.clusterType = clusterType;
+            this.__explicitlySet__.add("clusterType");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("subscriptionId")
+        private String subscriptionId;
+
+        public Builder subscriptionId(String subscriptionId) {
+            this.subscriptionId = subscriptionId;
+            this.__explicitlySet__.add("subscriptionId");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("exteriorDoorCode")
+        private String exteriorDoorCode;
+
+        public Builder exteriorDoorCode(String exteriorDoorCode) {
+            this.exteriorDoorCode = exteriorDoorCode;
+            this.__explicitlySet__.add("exteriorDoorCode");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("interiorAlarmDisarmCode")
+        private String interiorAlarmDisarmCode;
+
+        public Builder interiorAlarmDisarmCode(String interiorAlarmDisarmCode) {
+            this.interiorAlarmDisarmCode = interiorAlarmDisarmCode;
+            this.__explicitlySet__.add("interiorAlarmDisarmCode");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("superUserPassword")
         private String superUserPassword;
 
@@ -351,6 +387,10 @@ public class RoverCluster {
                             timeCustomerReturned,
                             deliveryTrackingInfo,
                             clusterWorkloads,
+                            clusterType,
+                            subscriptionId,
+                            exteriorDoorCode,
+                            interiorAlarmDisarmCode,
                             superUserPassword,
                             unlockPassphrase,
                             pointOfContact,
@@ -392,6 +432,10 @@ public class RoverCluster {
                             .timeCustomerReturned(o.getTimeCustomerReturned())
                             .deliveryTrackingInfo(o.getDeliveryTrackingInfo())
                             .clusterWorkloads(o.getClusterWorkloads())
+                            .clusterType(o.getClusterType())
+                            .subscriptionId(o.getSubscriptionId())
+                            .exteriorDoorCode(o.getExteriorDoorCode())
+                            .interiorAlarmDisarmCode(o.getInteriorAlarmDisarmCode())
                             .superUserPassword(o.getSuperUserPassword())
                             .unlockPassphrase(o.getUnlockPassphrase())
                             .pointOfContact(o.getPointOfContact())
@@ -505,6 +549,30 @@ public class RoverCluster {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("clusterWorkloads")
     java.util.List<RoverWorkload> clusterWorkloads;
+
+    /**
+     * Type of cluster.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("clusterType")
+    ClusterType clusterType;
+
+    /**
+     * ID provided to customer after successful subscription to Rover Stations.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("subscriptionId")
+    String subscriptionId;
+
+    /**
+     * Service generated code for the exterior trailer door of the trailer.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("exteriorDoorCode")
+    String exteriorDoorCode;
+
+    /**
+     * Service generated code to disarm the interior alarm of the trailer.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("interiorAlarmDisarmCode")
+    String interiorAlarmDisarmCode;
 
     /**
      * Root password for the rover cluster.

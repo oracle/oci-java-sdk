@@ -71,6 +71,15 @@ public class CreateRoverClusterDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("clusterType")
+        private ClusterType clusterType;
+
+        public Builder clusterType(ClusterType clusterType) {
+            this.clusterType = clusterType;
+            this.__explicitlySet__.add("clusterType");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("superUserPassword")
         private String superUserPassword;
 
@@ -149,6 +158,15 @@ public class CreateRoverClusterDetails {
         public Builder oracleShippingTrackingUrl(String oracleShippingTrackingUrl) {
             this.oracleShippingTrackingUrl = oracleShippingTrackingUrl;
             this.__explicitlySet__.add("oracleShippingTrackingUrl");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("subscriptionId")
+        private String subscriptionId;
+
+        public Builder subscriptionId(String subscriptionId) {
+            this.subscriptionId = subscriptionId;
+            this.__explicitlySet__.add("subscriptionId");
             return this;
         }
 
@@ -245,6 +263,7 @@ public class CreateRoverClusterDetails {
                             clusterSize,
                             customerShippingAddress,
                             clusterWorkloads,
+                            clusterType,
                             superUserPassword,
                             enclosureType,
                             unlockPassphrase,
@@ -254,6 +273,7 @@ public class CreateRoverClusterDetails {
                             shippingVendor,
                             timePickupExpected,
                             oracleShippingTrackingUrl,
+                            subscriptionId,
                             lifecycleState,
                             lifecycleStateDetails,
                             isImportRequested,
@@ -275,6 +295,7 @@ public class CreateRoverClusterDetails {
                             .clusterSize(o.getClusterSize())
                             .customerShippingAddress(o.getCustomerShippingAddress())
                             .clusterWorkloads(o.getClusterWorkloads())
+                            .clusterType(o.getClusterType())
                             .superUserPassword(o.getSuperUserPassword())
                             .enclosureType(o.getEnclosureType())
                             .unlockPassphrase(o.getUnlockPassphrase())
@@ -284,6 +305,7 @@ public class CreateRoverClusterDetails {
                             .shippingVendor(o.getShippingVendor())
                             .timePickupExpected(o.getTimePickupExpected())
                             .oracleShippingTrackingUrl(o.getOracleShippingTrackingUrl())
+                            .subscriptionId(o.getSubscriptionId())
                             .lifecycleState(o.getLifecycleState())
                             .lifecycleStateDetails(o.getLifecycleStateDetails())
                             .isImportRequested(o.getIsImportRequested())
@@ -332,6 +354,12 @@ public class CreateRoverClusterDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("clusterWorkloads")
     java.util.List<RoverWorkload> clusterWorkloads;
+
+    /**
+     * Type of cluster.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("clusterType")
+    ClusterType clusterType;
 
     /**
      * Root password for the rover cluster.
@@ -420,6 +448,12 @@ public class CreateRoverClusterDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("oracleShippingTrackingUrl")
     String oracleShippingTrackingUrl;
+
+    /**
+     * ID provided to customer after successful subscription to Rover Stations.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("subscriptionId")
+    String subscriptionId;
 
     /**
      * The current state of the RoverCluster.

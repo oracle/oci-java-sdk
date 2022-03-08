@@ -107,6 +107,15 @@ public class OceInstanceSummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("addOnFeatures")
+        private java.util.List<String> addOnFeatures;
+
+        public Builder addOnFeatures(java.util.List<String> addOnFeatures) {
+            this.addOnFeatures = addOnFeatures;
+            this.__explicitlySet__.add("addOnFeatures");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("objectStorageNamespace")
         private String objectStorageNamespace;
 
@@ -188,6 +197,15 @@ public class OceInstanceSummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
+        private LifecycleDetails lifecycleDetails;
+
+        public Builder lifecycleDetails(LifecycleDetails lifecycleDetails) {
+            this.lifecycleDetails = lifecycleDetails;
+            this.__explicitlySet__.add("lifecycleDetails");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("stateMessage")
         private String stateMessage;
 
@@ -249,6 +267,7 @@ public class OceInstanceSummary {
                             idcsTenancy,
                             tenancyName,
                             instanceUsageType,
+                            addOnFeatures,
                             objectStorageNamespace,
                             adminEmail,
                             upgradeSchedule,
@@ -258,6 +277,7 @@ public class OceInstanceSummary {
                             timeCreated,
                             timeUpdated,
                             lifecycleState,
+                            lifecycleDetails,
                             stateMessage,
                             service,
                             freeformTags,
@@ -279,6 +299,7 @@ public class OceInstanceSummary {
                             .idcsTenancy(o.getIdcsTenancy())
                             .tenancyName(o.getTenancyName())
                             .instanceUsageType(o.getInstanceUsageType())
+                            .addOnFeatures(o.getAddOnFeatures())
                             .objectStorageNamespace(o.getObjectStorageNamespace())
                             .adminEmail(o.getAdminEmail())
                             .upgradeSchedule(o.getUpgradeSchedule())
@@ -288,6 +309,7 @@ public class OceInstanceSummary {
                             .timeCreated(o.getTimeCreated())
                             .timeUpdated(o.getTimeUpdated())
                             .lifecycleState(o.getLifecycleState())
+                            .lifecycleDetails(o.getLifecycleDetails())
                             .stateMessage(o.getStateMessage())
                             .service(o.getService())
                             .freeformTags(o.getFreeformTags())
@@ -406,6 +428,12 @@ public class OceInstanceSummary {
     InstanceUsageType instanceUsageType;
 
     /**
+     * a list of add-on features for the ocm instance
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("addOnFeatures")
+    java.util.List<String> addOnFeatures;
+
+    /**
      * Object Storage Namespace of tenancy
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("objectStorageNamespace")
@@ -499,61 +527,18 @@ public class OceInstanceSummary {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     java.util.Date timeUpdated;
+
     /**
-     * The current state of the file system.
-     **/
-    @lombok.extern.slf4j.Slf4j
-    public enum LifecycleState {
-        Creating("CREATING"),
-        Updating("UPDATING"),
-        Active("ACTIVE"),
-        Deleting("DELETING"),
-        Deleted("DELETED"),
-        Failed("FAILED"),
-
-        /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
-         */
-        UnknownEnumValue(null);
-
-        private final String value;
-        private static java.util.Map<String, LifecycleState> map;
-
-        static {
-            map = new java.util.HashMap<>();
-            for (LifecycleState v : LifecycleState.values()) {
-                if (v != UnknownEnumValue) {
-                    map.put(v.getValue(), v);
-                }
-            }
-        }
-
-        LifecycleState(String value) {
-            this.value = value;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonValue
-        public String getValue() {
-            return value;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonCreator
-        public static LifecycleState create(String key) {
-            if (map.containsKey(key)) {
-                return map.get(key);
-            }
-            LOG.warn(
-                    "Received unknown value '{}' for enum 'LifecycleState', returning UnknownEnumValue",
-                    key);
-            return UnknownEnumValue;
-        }
-    };
-    /**
-     * The current state of the file system.
+     * The current state of the instance lifecycle.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     LifecycleState lifecycleState;
+
+    /**
+     * Details of the current state of the instance lifecycle
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
+    LifecycleDetails lifecycleDetails;
 
     /**
      * An message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.

@@ -138,6 +138,33 @@ public class CreateDatabaseDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyId")
+        private String kmsKeyId;
+
+        public Builder kmsKeyId(String kmsKeyId) {
+            this.kmsKeyId = kmsKeyId;
+            this.__explicitlySet__.add("kmsKeyId");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyVersionId")
+        private String kmsKeyVersionId;
+
+        public Builder kmsKeyVersionId(String kmsKeyVersionId) {
+            this.kmsKeyVersionId = kmsKeyVersionId;
+            this.__explicitlySet__.add("kmsKeyVersionId");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("vaultId")
+        private String vaultId;
+
+        public Builder vaultId(String vaultId) {
+            this.vaultId = vaultId;
+            this.__explicitlySet__.add("vaultId");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("sidPrefix")
         private String sidPrefix;
 
@@ -165,6 +192,9 @@ public class CreateDatabaseDetails {
                             dbBackupConfig,
                             freeformTags,
                             definedTags,
+                            kmsKeyId,
+                            kmsKeyVersionId,
+                            vaultId,
                             sidPrefix);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
@@ -185,6 +215,9 @@ public class CreateDatabaseDetails {
                             .dbBackupConfig(o.getDbBackupConfig())
                             .freeformTags(o.getFreeformTags())
                             .definedTags(o.getDefinedTags())
+                            .kmsKeyId(o.getKmsKeyId())
+                            .kmsKeyVersionId(o.getKmsKeyVersionId())
+                            .vaultId(o.getVaultId())
                             .sidPrefix(o.getSidPrefix());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
@@ -312,6 +345,25 @@ public class CreateDatabaseDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    /**
+     * The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyId")
+    String kmsKeyId;
+
+    /**
+     * The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyVersionId")
+    String kmsKeyVersionId;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("vaultId")
+    String vaultId;
 
     /**
      * Specifies a prefix for the {@code Oracle SID} of the database to be created.

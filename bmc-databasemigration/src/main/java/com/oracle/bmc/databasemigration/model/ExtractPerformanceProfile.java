@@ -5,7 +5,7 @@
 package com.oracle.bmc.databasemigration.model;
 
 /**
- * GoldenGate Extract perfoemance profile
+ * GoldenGate Extract performance profile
  *
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210929")

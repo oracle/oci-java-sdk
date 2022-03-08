@@ -133,6 +133,15 @@ public class ResourceSummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("additionalDetails")
+        private java.util.Map<String, Object> additionalDetails;
+
+        public Builder additionalDetails(java.util.Map<String, Object> additionalDetails) {
+            this.additionalDetails = additionalDetails;
+            this.__explicitlySet__.add("additionalDetails");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -150,7 +159,8 @@ public class ResourceSummary {
                             definedTags,
                             systemTags,
                             searchContext,
-                            identityContext);
+                            identityContext,
+                            additionalDetails);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -169,7 +179,8 @@ public class ResourceSummary {
                             .definedTags(o.getDefinedTags())
                             .systemTags(o.getSystemTags())
                             .searchContext(o.getSearchContext())
-                            .identityContext(o.getIdentityContext());
+                            .identityContext(o.getIdentityContext())
+                            .additionalDetails(o.getAdditionalDetails());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -262,6 +273,18 @@ public class ResourceSummary {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("identityContext")
     java.util.Map<String, Object> identityContext;
+
+    /**
+     * Additional resource attribute fields of this resource that match queries with a return clause, if any.
+     * For example, if you ran a query to find the private IP addresses, public IP addresses, and isPrimary field of
+     * the VNIC attachment on instance resources, that field would be included in the ResourceSummary object as:
+     * {"additionalDetails": {"attachedVnic": [{"publicIP" : "172.110.110.110","privateIP" : "10.10.10.10","isPrimary" : true},
+     * {"publicIP" : "172.110.110.111","privateIP" : "10.10.10.11","isPrimary" : false}]}.
+     * The structure of the additional details attribute fields depends on the matching resource.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("additionalDetails")
+    java.util.Map<String, Object> additionalDetails;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

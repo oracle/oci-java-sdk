@@ -51,12 +51,22 @@ public class ClusterEndpoints {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("vcnHostnameEndpoint")
+        private String vcnHostnameEndpoint;
+
+        public Builder vcnHostnameEndpoint(String vcnHostnameEndpoint) {
+            this.vcnHostnameEndpoint = vcnHostnameEndpoint;
+            this.__explicitlySet__.add("vcnHostnameEndpoint");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ClusterEndpoints build() {
             ClusterEndpoints __instance__ =
-                    new ClusterEndpoints(kubernetes, publicEndpoint, privateEndpoint);
+                    new ClusterEndpoints(
+                            kubernetes, publicEndpoint, privateEndpoint, vcnHostnameEndpoint);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -66,7 +76,8 @@ public class ClusterEndpoints {
             Builder copiedBuilder =
                     kubernetes(o.getKubernetes())
                             .publicEndpoint(o.getPublicEndpoint())
-                            .privateEndpoint(o.getPrivateEndpoint());
+                            .privateEndpoint(o.getPrivateEndpoint())
+                            .vcnHostnameEndpoint(o.getVcnHostnameEndpoint());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -97,6 +108,14 @@ public class ClusterEndpoints {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("privateEndpoint")
     String privateEndpoint;
+
+    /**
+     * The FQDN assigned to the Kubernetes API private endpoint.
+     * Example: 'https://yourVcnHostnameEndpoint'
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("vcnHostnameEndpoint")
+    String vcnHostnameEndpoint;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

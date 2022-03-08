@@ -45,12 +45,22 @@ public class DataTransferMediumDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("awsS3Details")
+        private AwsS3Details awsS3Details;
+
+        public Builder awsS3Details(AwsS3Details awsS3Details) {
+            this.awsS3Details = awsS3Details;
+            this.__explicitlySet__.add("awsS3Details");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public DataTransferMediumDetails build() {
             DataTransferMediumDetails __instance__ =
-                    new DataTransferMediumDetails(databaseLinkDetails, objectStorageDetails);
+                    new DataTransferMediumDetails(
+                            databaseLinkDetails, objectStorageDetails, awsS3Details);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -59,7 +69,8 @@ public class DataTransferMediumDetails {
         public Builder copy(DataTransferMediumDetails o) {
             Builder copiedBuilder =
                     databaseLinkDetails(o.getDatabaseLinkDetails())
-                            .objectStorageDetails(o.getObjectStorageDetails());
+                            .objectStorageDetails(o.getObjectStorageDetails())
+                            .awsS3Details(o.getAwsS3Details());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -78,6 +89,9 @@ public class DataTransferMediumDetails {
 
     @com.fasterxml.jackson.annotation.JsonProperty("objectStorageDetails")
     ObjectStoreBucket objectStorageDetails;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("awsS3Details")
+    AwsS3Details awsS3Details;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

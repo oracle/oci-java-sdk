@@ -45,12 +45,40 @@ public class MigrateVaultKeyDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("vaultId")
+        private String vaultId;
+
+        public Builder vaultId(String vaultId) {
+            this.vaultId = vaultId;
+            this.__explicitlySet__.add("vaultId");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("tdeWalletPassword")
+        private String tdeWalletPassword;
+
+        public Builder tdeWalletPassword(String tdeWalletPassword) {
+            this.tdeWalletPassword = tdeWalletPassword;
+            this.__explicitlySet__.add("tdeWalletPassword");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("adminPassword")
+        private String adminPassword;
+
+        public Builder adminPassword(String adminPassword) {
+            this.adminPassword = adminPassword;
+            this.__explicitlySet__.add("adminPassword");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public MigrateVaultKeyDetails build() {
             MigrateVaultKeyDetails __instance__ =
-                    new MigrateVaultKeyDetails(kmsKeyId, kmsKeyVersionId);
+                    new MigrateVaultKeyDetails(
+                            kmsKeyId, kmsKeyVersionId, vaultId, tdeWalletPassword, adminPassword);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -58,7 +86,11 @@ public class MigrateVaultKeyDetails {
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(MigrateVaultKeyDetails o) {
             Builder copiedBuilder =
-                    kmsKeyId(o.getKmsKeyId()).kmsKeyVersionId(o.getKmsKeyVersionId());
+                    kmsKeyId(o.getKmsKeyId())
+                            .kmsKeyVersionId(o.getKmsKeyVersionId())
+                            .vaultId(o.getVaultId())
+                            .tdeWalletPassword(o.getTdeWalletPassword())
+                            .adminPassword(o.getAdminPassword());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -84,6 +116,24 @@ public class MigrateVaultKeyDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyVersionId")
     String kmsKeyVersionId;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("vaultId")
+    String vaultId;
+
+    /**
+     * The existing TDE wallet password of the database.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("tdeWalletPassword")
+    String tdeWalletPassword;
+
+    /**
+     * The existing admin password of the database.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("adminPassword")
+    String adminPassword;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

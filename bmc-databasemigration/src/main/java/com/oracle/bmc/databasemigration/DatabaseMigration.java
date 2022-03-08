@@ -60,6 +60,19 @@ public interface DatabaseMigration extends AutoCloseable {
     AbortJobResponse abortJob(AbortJobRequest request);
 
     /**
+     * Add excluded/included object to the list.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemigration/AddMigrationObjectsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use AddMigrationObjects API.
+     */
+    AddMigrationObjectsResponse addMigrationObjects(AddMigrationObjectsRequest request);
+
+    /**
      * Used to configure an ODMS Agent Compartment ID.
      *
      * @param request The request object containing the details to send
@@ -338,6 +351,19 @@ public interface DatabaseMigration extends AutoCloseable {
     ListConnectionsResponse listConnections(ListConnectionsRequest request);
 
     /**
+     * List the excluded database objects.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemigration/ListExcludedObjectsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListExcludedObjects API.
+     */
+    ListExcludedObjectsResponse listExcludedObjects(ListExcludedObjectsRequest request);
+
+    /**
      * List the Job Outputs
      *
      * @param request The request object containing the details to send
@@ -377,6 +403,19 @@ public interface DatabaseMigration extends AutoCloseable {
      */
     ListMigrationObjectTypesResponse listMigrationObjectTypes(
             ListMigrationObjectTypesRequest request);
+
+    /**
+     * Display excluded/included objects.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemigration/ListMigrationObjectsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListMigrationObjects API.
+     */
+    ListMigrationObjectsResponse listMigrationObjects(ListMigrationObjectsRequest request);
 
     /**
      * List all Migrations.
@@ -429,6 +468,19 @@ public interface DatabaseMigration extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemigration/ListWorkRequestsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWorkRequests API.
      */
     ListWorkRequestsResponse listWorkRequests(ListWorkRequestsRequest request);
+
+    /**
+     * Remove excluded/included objects.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemigration/RemoveMigrationObjectsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RemoveMigrationObjects API.
+     */
+    RemoveMigrationObjectsResponse removeMigrationObjects(RemoveMigrationObjectsRequest request);
 
     /**
      * Resume a migration Job.

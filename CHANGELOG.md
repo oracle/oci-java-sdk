@@ -3,6 +3,33 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
+## 2.19.0 - 2022-03-08
+### Added
+- Support for the Sales Accelerator license option in the Content Management service
+- Support for VCN hostname cluster endpoints in the Container Engine for Kubernetes service
+- Support for optionally specifying an admin username and password when creating a database system during a restore operation in the MySQL Database service
+- Support for automatic tablespace creation on non-autonomous and autonomous database dedicated targets in the Database Migration service
+- Support for reporting excluded objects based on static exclusion rules and dynamic exclusion settings in the Database Migration service
+- Support for removing, listing, and adding database objects reported by the Cloud Premigration Advisor Tool (CPAT) in the Database Migration service
+- Support for migrating Oracle databases from the AWS RDS service to OCI as autonomous databases, using the AWS S3 service and DBLINK for data transfer, in the Database Migration service
+- Support for querying additional fields of a resource using return clauses in the Search service
+- Support for clusters and station clusters in the Roving Edge Infrastructure service
+- Support for creating database systems and database homes using customer-managed keys in the Database service
+
+### Breaking Changes
+- Parameter 2 of `public com.oracle.bmc.waiter.Waiter forOceInstance(com.oracle.bmc.oce.requests.GetOceInstanceRequest, com.oracle.bmc.oce.model.OceInstance$LifecycleState[])` has changed its type to `com.oracle.bmc.oce.model.LifecycleState[]` in `com.oracle.bmc.oce.OceInstanceWaiters` in the Content Management service
+- Parameter 2 of `public com.oracle.bmc.waiter.Waiter forOceInstance(com.oracle.bmc.oce.requests.GetOceInstanceRequest, com.oracle.bmc.oce.model.OceInstance$LifecycleState, com.oracle.bmc.waiter.TerminationStrategy, com.oracle.bmc.waiter.DelayStrategy)` has changed its type to `com.oracle.bmc.oce.model.LifecycleState` in `com.oracle.bmc.oce.OceInstanceWaiters` in the Content Management service 
+- Parameter 4 of `public com.oracle.bmc.waiter.Waiter forOceInstance(com.oracle.bmc.oce.requests.GetOceInstanceRequest, com.oracle.bmc.waiter.TerminationStrategy, com.oracle.bmc.waiter.DelayStrategy, com.oracle.bmc.oce.model.OceInstance$LifecycleState[])` has changed its type to `com.oracle.bmc.oce.model.LifecycleState[]` in `com.oracle.bmc.oce.OceInstanceWaiters` in the Content Management service
+- Return type of method `public com.oracle.bmc.oce.model.OceInstance$LifecycleState getLifecycleState()` has been changed to `com.oracle.bmc.oce.model.LifecycleState` in the model `com.oracle.bmc.oce.model.OceInstance` in the Content Management service 
+- Class `com.oracle.bmc.oce.model.OceInstance$LifecycleState` has been removed in the Content Management service
+- Return type of method `public com.oracle.bmc.oce.model.OceInstanceSummary$LifecycleState getLifecycleState()` has been changed to `com.oracle.bmc.oce.model.LifecycleState` in the model `com.oracle.bmc.oce.model.OceInstanceSummary` in the Content Management service 
+- Class `com.oracle.bmc.oce.model.OceInstanceSummary$LifecycleState` has been removed in the Content Management service
+- Return type of method `public com.oracle.bmc.oce.requests.ListOceInstancesRequest$LifecycleState getLifecycleState()` has been changed to `com.oracle.bmc.oce.model.LifecycleState` in `com.oracle.bmc.oce.requests.ListOceInstancesRequest` in the Content Management service
+- Class `com.oracle.bmc.oce.requests.ListOceInstancesRequest$LifecycleState` has been removed in the Content Management service
+- Support for retries enabled by default on operations in the Container Engine for Kubernetes service
+- Support for retries enabled by default on operations in the Resource Manager service
+- Support for retries enabled by default on operations in the Search service
+
 ## 2.18.0 - 2022-03-01
 ### Added
 - Support for DRG route distribution statements to be specified with a new match type `MATCH_ALL` for matching criteria in the Networking service
@@ -122,6 +149,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
 ### Breaking Changes
 - Support for retries enabled by default on some operations in the Data Catalog service
+- Support for retries enabled by default on all operations in the Ocvp service
 
 ## 2.11.1 - 2021-12-07
 ### Added

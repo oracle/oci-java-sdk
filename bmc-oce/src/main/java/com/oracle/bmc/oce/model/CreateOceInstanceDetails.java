@@ -98,6 +98,15 @@ public class CreateOceInstanceDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("addOnFeatures")
+        private java.util.List<String> addOnFeatures;
+
+        public Builder addOnFeatures(java.util.List<String> addOnFeatures) {
+            this.addOnFeatures = addOnFeatures;
+            this.__explicitlySet__.add("addOnFeatures");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("objectStorageNamespace")
         private String objectStorageNamespace;
 
@@ -185,6 +194,7 @@ public class CreateOceInstanceDetails {
                             identityStripe,
                             tenancyName,
                             instanceUsageType,
+                            addOnFeatures,
                             objectStorageNamespace,
                             adminEmail,
                             upgradeSchedule,
@@ -208,6 +218,7 @@ public class CreateOceInstanceDetails {
                             .identityStripe(o.getIdentityStripe())
                             .tenancyName(o.getTenancyName())
                             .instanceUsageType(o.getInstanceUsageType())
+                            .addOnFeatures(o.getAddOnFeatures())
                             .objectStorageNamespace(o.getObjectStorageNamespace())
                             .adminEmail(o.getAdminEmail())
                             .upgradeSchedule(o.getUpgradeSchedule())
@@ -307,6 +318,12 @@ public class CreateOceInstanceDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("instanceUsageType")
     InstanceUsageType instanceUsageType;
+
+    /**
+     * a list of add-on features for the ocm instance
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("addOnFeatures")
+    java.util.List<String> addOnFeatures;
 
     /**
      * Object Storage Namespace of Tenancy

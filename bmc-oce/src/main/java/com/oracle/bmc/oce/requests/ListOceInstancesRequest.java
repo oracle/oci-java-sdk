@@ -132,47 +132,8 @@ public class ListOceInstancesRequest extends com.oracle.bmc.requests.BmcRequest<
     /**
      * Filter results on lifecycleState.
      */
-    private LifecycleState lifecycleState;
+    private com.oracle.bmc.oce.model.LifecycleState lifecycleState;
 
-    /**
-     * Filter results on lifecycleState.
-     **/
-    public enum LifecycleState {
-        Creating("CREATING"),
-        Updating("UPDATING"),
-        Active("ACTIVE"),
-        Deleting("DELETING"),
-        Deleted("DELETED"),
-        Failed("FAILED"),
-        ;
-
-        private final String value;
-        private static java.util.Map<String, LifecycleState> map;
-
-        static {
-            map = new java.util.HashMap<>();
-            for (LifecycleState v : LifecycleState.values()) {
-                map.put(v.getValue(), v);
-            }
-        }
-
-        LifecycleState(String value) {
-            this.value = value;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonValue
-        public String getValue() {
-            return value;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonCreator
-        public static LifecycleState create(String key) {
-            if (map.containsKey(key)) {
-                return map.get(key);
-            }
-            throw new IllegalArgumentException("Invalid LifecycleState: " + key);
-        }
-    };
     /**
      * The client request ID for tracing.
      */

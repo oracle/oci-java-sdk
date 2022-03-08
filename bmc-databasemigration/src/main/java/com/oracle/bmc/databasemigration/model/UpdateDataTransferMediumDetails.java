@@ -6,7 +6,8 @@ package com.oracle.bmc.databasemigration.model;
 
 /**
  * Data Transfer Medium details for the Migration.
- * Only one type of data transfer medium can be specified and will replace the stored Data Transfer Medium details.
+ * Only one type of data transfer medium can be specified, except for the case of Amazon RDS Oracle as source,
+ * where Object Storage Details along with AwsS3Details are required.
  * If an empty object is specified, the stored Data Transfer Medium details will be removed.
  *
  * <br/>
@@ -47,12 +48,22 @@ public class UpdateDataTransferMediumDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("awsS3Details")
+        private UpdateAwsS3Details awsS3Details;
+
+        public Builder awsS3Details(UpdateAwsS3Details awsS3Details) {
+            this.awsS3Details = awsS3Details;
+            this.__explicitlySet__.add("awsS3Details");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public UpdateDataTransferMediumDetails build() {
             UpdateDataTransferMediumDetails __instance__ =
-                    new UpdateDataTransferMediumDetails(databaseLinkDetails, objectStorageDetails);
+                    new UpdateDataTransferMediumDetails(
+                            databaseLinkDetails, objectStorageDetails, awsS3Details);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -61,7 +72,8 @@ public class UpdateDataTransferMediumDetails {
         public Builder copy(UpdateDataTransferMediumDetails o) {
             Builder copiedBuilder =
                     databaseLinkDetails(o.getDatabaseLinkDetails())
-                            .objectStorageDetails(o.getObjectStorageDetails());
+                            .objectStorageDetails(o.getObjectStorageDetails())
+                            .awsS3Details(o.getAwsS3Details());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -80,6 +92,9 @@ public class UpdateDataTransferMediumDetails {
 
     @com.fasterxml.jackson.annotation.JsonProperty("objectStorageDetails")
     UpdateObjectStoreBucket objectStorageDetails;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("awsS3Details")
+    UpdateAwsS3Details awsS3Details;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

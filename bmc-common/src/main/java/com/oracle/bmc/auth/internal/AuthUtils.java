@@ -19,6 +19,7 @@ import java.security.interfaces.RSAPublicKey;
 import java.security.spec.RSAPublicKeySpec;
 
 import com.oracle.bmc.auth.exception.InstancePrincipalUnavailableException;
+import com.oracle.bmc.http.internal.RestClientFactory;
 import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.lang3.StringUtils;
 import org.bouncycastle.asn1.ASN1ObjectIdentifier;
@@ -42,7 +43,7 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class AuthUtils {
-    private static final ObjectMapper OBJECT_MAPPER = new ObjectMapper();
+    private static final ObjectMapper OBJECT_MAPPER = RestClientFactory.getObjectMapper();
     private static final char[] HEX_ARRAY = "0123456789ABCDEF".toCharArray();
 
     /**

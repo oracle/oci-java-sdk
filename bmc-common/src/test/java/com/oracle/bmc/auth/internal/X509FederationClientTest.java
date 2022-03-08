@@ -10,6 +10,7 @@ import com.oracle.bmc.auth.X509CertificateSupplier;
 import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
 import com.oracle.bmc.http.ClientConfigurator;
 import com.oracle.bmc.http.internal.RestClient;
+import com.oracle.bmc.http.internal.RestClientFactory;
 import com.oracle.bmc.http.internal.WrappedInvocationBuilder;
 import com.oracle.bmc.model.BmcException;
 import com.oracle.bmc.requests.BmcRequest;
@@ -36,7 +37,6 @@ import java.util.Set;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.mockito.Matchers.anyString;
-import static org.mockito.Matchers.eq;
 import static org.mockito.Matchers.isA;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.times;
@@ -140,14 +140,15 @@ public class X509FederationClientTest {
     public void jacksonCanDeserializeSecurityToken() throws IOException {
         final String strToken = "{\"token\" : \"abcdef\"}";
         // this line will fail on original code if Lombok and Jackson are not at exactly the right versions
-        new ObjectMapper().readValue(strToken, X509FederationClient.SecurityToken.class);
+        RestClientFactory.getObjectMapper()
+                .readValue(strToken, X509FederationClient.SecurityToken.class);
     }
 
     @Test
     public void jacksonCanRoundTripSecurityToken() throws IOException {
         final X509FederationClient.SecurityToken secToken =
                 new X509FederationClient.SecurityToken("abcdef");
-        final ObjectMapper mapper = new ObjectMapper();
+        final ObjectMapper mapper = RestClientFactory.getObjectMapper();
         assertEquals(
                 secToken.getToken(),
                 mapper.readValue(mapper.writeValueAsString(secToken), secToken.getClass())

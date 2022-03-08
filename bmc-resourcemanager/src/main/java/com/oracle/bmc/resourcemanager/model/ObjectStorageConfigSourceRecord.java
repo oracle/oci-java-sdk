@@ -97,7 +97,7 @@ public class ObjectStorageConfigSourceRecord extends ConfigSourceRecord {
 
     /**
      * The name of the bucket's region.
-     * Example: {@code PHX}
+     * Example: {@code us-phoenix-1}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("region")

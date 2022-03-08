@@ -52,6 +52,15 @@ public class DataPumpSettings {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("tablespaceDetails")
+        private TargetTypeTablespaceDetails tablespaceDetails;
+
+        public Builder tablespaceDetails(TargetTypeTablespaceDetails tablespaceDetails) {
+            this.tablespaceDetails = tablespaceDetails;
+            this.__explicitlySet__.add("tablespaceDetails");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("exportDirectoryObject")
         private DirectoryObject exportDirectoryObject;
 
@@ -79,6 +88,7 @@ public class DataPumpSettings {
                             jobMode,
                             dataPumpParameters,
                             metadataRemaps,
+                            tablespaceDetails,
                             exportDirectoryObject,
                             importDirectoryObject);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
@@ -91,6 +101,7 @@ public class DataPumpSettings {
                     jobMode(o.getJobMode())
                             .dataPumpParameters(o.getDataPumpParameters())
                             .metadataRemaps(o.getMetadataRemaps())
+                            .tablespaceDetails(o.getTablespaceDetails())
                             .exportDirectoryObject(o.getExportDirectoryObject())
                             .importDirectoryObject(o.getImportDirectoryObject());
 
@@ -124,6 +135,9 @@ public class DataPumpSettings {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("metadataRemaps")
     java.util.List<MetadataRemap> metadataRemaps;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("tablespaceDetails")
+    TargetTypeTablespaceDetails tablespaceDetails;
 
     @com.fasterxml.jackson.annotation.JsonProperty("exportDirectoryObject")
     DirectoryObject exportDirectoryObject;

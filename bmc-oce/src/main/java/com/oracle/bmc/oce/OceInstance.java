@@ -8,7 +8,7 @@ import com.oracle.bmc.oce.requests.*;
 import com.oracle.bmc.oce.responses.*;
 
 /**
- * Oracle Content and Experience is a cloud-based content hub to drive omni-channel content management and accelerate experience delivery
+ * Oracle Content Management is a cloud-based content hub to drive omni-channel content management and accelerate experience delivery
  * This service client uses CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER for all the operations by default if no circuit breaker configuration is defined by the user.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190912")

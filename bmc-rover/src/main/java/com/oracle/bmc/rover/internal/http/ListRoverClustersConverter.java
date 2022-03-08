@@ -46,6 +46,14 @@ public class ListRoverClustersConverter {
                                     request.getDisplayName()));
         }
 
+        if (request.getClusterType() != null) {
+            target =
+                    target.queryParam(
+                            "clusterType",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getClusterType().getValue()));
+        }
+
         if (request.getLimit() != null) {
             target =
                     target.queryParam(
