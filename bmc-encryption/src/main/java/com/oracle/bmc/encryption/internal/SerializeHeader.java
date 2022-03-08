@@ -14,6 +14,7 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.oracle.bmc.encryption.KmsMasterKey;
 import com.oracle.bmc.encryption.MasterKeyProvider;
+import com.oracle.bmc.http.internal.RestClientFactory;
 import net.minidev.json.JSONObject;
 
 public class SerializeHeader {
@@ -63,7 +64,7 @@ public class SerializeHeader {
 
     private String serializeJsonHeader(EncryptionHeader encryptionHeader) {
         String jsonOutput = null;
-        ObjectMapper objectMapper = new ObjectMapper();
+        ObjectMapper objectMapper = RestClientFactory.getObjectMapper();
         try {
             jsonOutput = objectMapper.writeValueAsString(encryptionHeader);
         } catch (JsonProcessingException e) {
@@ -78,7 +79,7 @@ public class SerializeHeader {
 
     public EncryptionHeader deserializeJsonHeader(byte[] header) {
         EncryptionHeader encryptionHeader;
-        ObjectMapper objectMapper = new ObjectMapper();
+        ObjectMapper objectMapper = RestClientFactory.getObjectMapper();
         try {
             encryptionHeader = objectMapper.readValue(header, EncryptionHeader.class);
         } catch (IOException e) {

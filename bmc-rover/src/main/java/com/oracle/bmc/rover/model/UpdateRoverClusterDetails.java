@@ -143,6 +143,15 @@ public class UpdateRoverClusterDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("subscriptionId")
+        private String subscriptionId;
+
+        public Builder subscriptionId(String subscriptionId) {
+            this.subscriptionId = subscriptionId;
+            this.__explicitlySet__.add("subscriptionId");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("shippingVendor")
         private String shippingVendor;
 
@@ -244,6 +253,7 @@ public class UpdateRoverClusterDetails {
                             pointOfContactPhoneNumber,
                             shippingPreference,
                             oracleShippingTrackingUrl,
+                            subscriptionId,
                             shippingVendor,
                             timePickupExpected,
                             isImportRequested,
@@ -273,6 +283,7 @@ public class UpdateRoverClusterDetails {
                             .pointOfContactPhoneNumber(o.getPointOfContactPhoneNumber())
                             .shippingPreference(o.getShippingPreference())
                             .oracleShippingTrackingUrl(o.getOracleShippingTrackingUrl())
+                            .subscriptionId(o.getSubscriptionId())
                             .shippingVendor(o.getShippingVendor())
                             .timePickupExpected(o.getTimePickupExpected())
                             .isImportRequested(o.getIsImportRequested())
@@ -403,6 +414,12 @@ public class UpdateRoverClusterDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("oracleShippingTrackingUrl")
     String oracleShippingTrackingUrl;
+
+    /**
+     * ID provided to customer after successful subscription to Rover Stations.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("subscriptionId")
+    String subscriptionId;
 
     /**
      * Shipping vendor of choice for orace to customer shipping.

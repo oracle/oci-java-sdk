@@ -61,6 +61,23 @@ public interface DatabaseMigrationAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<AbortJobRequest, AbortJobResponse> handler);
 
     /**
+     * Add excluded/included object to the list.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<AddMigrationObjectsResponse> addMigrationObjects(
+            AddMigrationObjectsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            AddMigrationObjectsRequest, AddMigrationObjectsResponse>
+                    handler);
+
+    /**
      * Used to configure an ODMS Agent Compartment ID.
      *
      *
@@ -400,6 +417,23 @@ public interface DatabaseMigrationAsync extends AutoCloseable {
                     handler);
 
     /**
+     * List the excluded database objects.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListExcludedObjectsResponse> listExcludedObjects(
+            ListExcludedObjectsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListExcludedObjectsRequest, ListExcludedObjectsResponse>
+                    handler);
+
+    /**
      * List the Job Outputs
      *
      *
@@ -446,6 +480,23 @@ public interface DatabaseMigrationAsync extends AutoCloseable {
             ListMigrationObjectTypesRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             ListMigrationObjectTypesRequest, ListMigrationObjectTypesResponse>
+                    handler);
+
+    /**
+     * Display excluded/included objects.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListMigrationObjectsResponse> listMigrationObjects(
+            ListMigrationObjectsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListMigrationObjectsRequest, ListMigrationObjectsResponse>
                     handler);
 
     /**
@@ -512,6 +563,23 @@ public interface DatabaseMigrationAsync extends AutoCloseable {
     java.util.concurrent.Future<ListWorkRequestsResponse> listWorkRequests(
             ListWorkRequestsRequest request,
             com.oracle.bmc.responses.AsyncHandler<ListWorkRequestsRequest, ListWorkRequestsResponse>
+                    handler);
+
+    /**
+     * Remove excluded/included objects.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<RemoveMigrationObjectsResponse> removeMigrationObjects(
+            RemoveMigrationObjectsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            RemoveMigrationObjectsRequest, RemoveMigrationObjectsResponse>
                     handler);
 
     /**

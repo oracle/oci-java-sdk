@@ -60,6 +60,15 @@ public class RoverNodeSummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("nodeType")
+        private NodeType nodeType;
+
+        public Builder nodeType(NodeType nodeType) {
+            this.nodeType = nodeType;
+            this.__explicitlySet__.add("nodeType");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
@@ -134,6 +143,7 @@ public class RoverNodeSummary {
                             compartmentId,
                             clusterId,
                             serialNumber,
+                            nodeType,
                             displayName,
                             timeCreated,
                             lifecycleState,
@@ -152,6 +162,7 @@ public class RoverNodeSummary {
                             .compartmentId(o.getCompartmentId())
                             .clusterId(o.getClusterId())
                             .serialNumber(o.getSerialNumber())
+                            .nodeType(o.getNodeType())
                             .displayName(o.getDisplayName())
                             .timeCreated(o.getTimeCreated())
                             .lifecycleState(o.getLifecycleState())
@@ -195,6 +206,12 @@ public class RoverNodeSummary {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("serialNumber")
     String serialNumber;
+
+    /**
+     * The type of node indicating if it belongs to a cluster
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("nodeType")
+    NodeType nodeType;
 
     /**
      * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.

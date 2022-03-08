@@ -23,13 +23,13 @@ public class OceInstanceWaiters {
      * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
      *
      * @param request the request to send
-     * @param targetStates the desired states to wait for. If multiple states are provided then the waiter will return once the resource reaches any of the provided states
-     * @return a new {@code Waiter} instance
+     * @param targetState the desired states to wait for. If multiple states are provided then the waiter will return once the resource reaches any of the provided states
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
      */
     public com.oracle.bmc.waiter.Waiter<GetOceInstanceRequest, GetOceInstanceResponse>
             forOceInstance(
                     GetOceInstanceRequest request,
-                    com.oracle.bmc.oce.model.OceInstance.LifecycleState... targetStates) {
+                    com.oracle.bmc.oce.model.LifecycleState... targetStates) {
         org.apache.commons.lang3.Validate.notEmpty(
                 targetStates, "At least one targetState must be provided");
         org.apache.commons.lang3.Validate.noNullElements(
@@ -51,7 +51,7 @@ public class OceInstanceWaiters {
     public com.oracle.bmc.waiter.Waiter<GetOceInstanceRequest, GetOceInstanceResponse>
             forOceInstance(
                     GetOceInstanceRequest request,
-                    com.oracle.bmc.oce.model.OceInstance.LifecycleState targetState,
+                    com.oracle.bmc.oce.model.LifecycleState targetState,
                     com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
                     com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
         org.apache.commons.lang3.Validate.notNull(targetState, "The targetState cannot be null");
@@ -69,18 +69,18 @@ public class OceInstanceWaiters {
      * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
      * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
      * @param targetStates the desired states to wait for. The waiter will return once the resource reaches any of the provided states
-     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
+     * @return a new {@code Waiter} instance
      */
     public com.oracle.bmc.waiter.Waiter<GetOceInstanceRequest, GetOceInstanceResponse>
             forOceInstance(
                     GetOceInstanceRequest request,
                     com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
                     com.oracle.bmc.waiter.DelayStrategy delayStrategy,
-                    com.oracle.bmc.oce.model.OceInstance.LifecycleState... targetStates) {
+                    com.oracle.bmc.oce.model.LifecycleState... targetStates) {
         org.apache.commons.lang3.Validate.notEmpty(
-                targetStates, "At least one target state must be provided");
+                targetStates, "At least one targetState must be provided");
         org.apache.commons.lang3.Validate.noNullElements(
-                targetStates, "Null target states are not permitted");
+                targetStates, "Null targetState values are not permitted");
 
         return forOceInstance(
                 com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
@@ -93,8 +93,8 @@ public class OceInstanceWaiters {
             forOceInstance(
                     com.oracle.bmc.waiter.BmcGenericWaiter waiter,
                     final GetOceInstanceRequest request,
-                    final com.oracle.bmc.oce.model.OceInstance.LifecycleState... targetStates) {
-        final java.util.Set<com.oracle.bmc.oce.model.OceInstance.LifecycleState> targetStatesSet =
+                    final com.oracle.bmc.oce.model.LifecycleState... targetStates) {
+        final java.util.Set<com.oracle.bmc.oce.model.LifecycleState> targetStatesSet =
                 new java.util.HashSet<>(java.util.Arrays.asList(targetStates));
 
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
@@ -115,8 +115,7 @@ public class OceInstanceWaiters {
                                         response.getOceInstance().getLifecycleState());
                             }
                         },
-                        targetStatesSet.contains(
-                                com.oracle.bmc.oce.model.OceInstance.LifecycleState.Deleted)),
+                        targetStatesSet.contains(com.oracle.bmc.oce.model.LifecycleState.Deleted)),
                 request);
     }
 

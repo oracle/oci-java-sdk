@@ -12,6 +12,7 @@ package com.oracle.bmc.rover.model;
 public enum NodeType {
     Standalone("STANDALONE"),
     Clustered("CLUSTERED"),
+    Station("STATION"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this

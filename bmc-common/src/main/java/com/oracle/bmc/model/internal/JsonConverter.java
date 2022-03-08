@@ -6,6 +6,7 @@ package com.oracle.bmc.model.internal;
 
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.oracle.bmc.http.internal.RestClientFactory;
 import lombok.NonNull;
 import lombok.extern.slf4j.Slf4j;
 
@@ -19,7 +20,8 @@ public class JsonConverter {
      * Object mapper to support jackson json operations
      */
     private static final ObjectMapper mapper =
-            new ObjectMapper().configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
+            RestClientFactory.getObjectMapper()
+                    .configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
 
     /**
      * Get desired object from the json provided

@@ -367,6 +367,122 @@ public class DatabaseMigrationPaginators {
     }
 
     /**
+     * Creates a new iterable which will iterate over the responses received from the listExcludedObjects operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListExcludedObjectsResponse> listExcludedObjectsResponseIterator(
+            final ListExcludedObjectsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListExcludedObjectsRequest.Builder, ListExcludedObjectsRequest,
+                ListExcludedObjectsResponse>(
+                new com.google.common.base.Supplier<ListExcludedObjectsRequest.Builder>() {
+                    @Override
+                    public ListExcludedObjectsRequest.Builder get() {
+                        return ListExcludedObjectsRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListExcludedObjectsResponse, String>() {
+                    @Override
+                    public String apply(ListExcludedObjectsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListExcludedObjectsRequest.Builder>,
+                        ListExcludedObjectsRequest>() {
+                    @Override
+                    public ListExcludedObjectsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListExcludedObjectsRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListExcludedObjectsRequest, ListExcludedObjectsResponse>() {
+                    @Override
+                    public ListExcludedObjectsResponse apply(ListExcludedObjectsRequest request) {
+                        return client.listExcludedObjects(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.databasemigration.model.ExcludedObjectSummary} objects
+     * contained in responses from the listExcludedObjects operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.databasemigration.model.ExcludedObjectSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.databasemigration.model.ExcludedObjectSummary>
+            listExcludedObjectsRecordIterator(final ListExcludedObjectsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListExcludedObjectsRequest.Builder, ListExcludedObjectsRequest,
+                ListExcludedObjectsResponse,
+                com.oracle.bmc.databasemigration.model.ExcludedObjectSummary>(
+                new com.google.common.base.Supplier<ListExcludedObjectsRequest.Builder>() {
+                    @Override
+                    public ListExcludedObjectsRequest.Builder get() {
+                        return ListExcludedObjectsRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListExcludedObjectsResponse, String>() {
+                    @Override
+                    public String apply(ListExcludedObjectsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListExcludedObjectsRequest.Builder>,
+                        ListExcludedObjectsRequest>() {
+                    @Override
+                    public ListExcludedObjectsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListExcludedObjectsRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListExcludedObjectsRequest, ListExcludedObjectsResponse>() {
+                    @Override
+                    public ListExcludedObjectsResponse apply(ListExcludedObjectsRequest request) {
+                        return client.listExcludedObjects(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListExcludedObjectsResponse,
+                        java.util.List<
+                                com.oracle.bmc.databasemigration.model.ExcludedObjectSummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.databasemigration.model.ExcludedObjectSummary>
+                            apply(ListExcludedObjectsResponse response) {
+                        return response.getExcludedObjectSummaryCollection().getItems();
+                    }
+                });
+    }
+
+    /**
      * Creates a new iterable which will iterate over the responses received from the listJobOutputs operation. This iterable
      * will fetch more data from the server as needed.
      *
@@ -703,6 +819,122 @@ public class DatabaseMigrationPaginators {
                                             .MigrationObjectTypeSummary>
                             apply(ListMigrationObjectTypesResponse response) {
                         return response.getMigrationObjectTypeSummaryCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the listMigrationObjects operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListMigrationObjectsResponse> listMigrationObjectsResponseIterator(
+            final ListMigrationObjectsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListMigrationObjectsRequest.Builder, ListMigrationObjectsRequest,
+                ListMigrationObjectsResponse>(
+                new com.google.common.base.Supplier<ListMigrationObjectsRequest.Builder>() {
+                    @Override
+                    public ListMigrationObjectsRequest.Builder get() {
+                        return ListMigrationObjectsRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListMigrationObjectsResponse, String>() {
+                    @Override
+                    public String apply(ListMigrationObjectsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListMigrationObjectsRequest.Builder>,
+                        ListMigrationObjectsRequest>() {
+                    @Override
+                    public ListMigrationObjectsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListMigrationObjectsRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListMigrationObjectsRequest, ListMigrationObjectsResponse>() {
+                    @Override
+                    public ListMigrationObjectsResponse apply(ListMigrationObjectsRequest request) {
+                        return client.listMigrationObjects(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.databasemigration.model.MigrationObjectSummary} objects
+     * contained in responses from the listMigrationObjects operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.databasemigration.model.MigrationObjectSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.databasemigration.model.MigrationObjectSummary>
+            listMigrationObjectsRecordIterator(final ListMigrationObjectsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListMigrationObjectsRequest.Builder, ListMigrationObjectsRequest,
+                ListMigrationObjectsResponse,
+                com.oracle.bmc.databasemigration.model.MigrationObjectSummary>(
+                new com.google.common.base.Supplier<ListMigrationObjectsRequest.Builder>() {
+                    @Override
+                    public ListMigrationObjectsRequest.Builder get() {
+                        return ListMigrationObjectsRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListMigrationObjectsResponse, String>() {
+                    @Override
+                    public String apply(ListMigrationObjectsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListMigrationObjectsRequest.Builder>,
+                        ListMigrationObjectsRequest>() {
+                    @Override
+                    public ListMigrationObjectsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListMigrationObjectsRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListMigrationObjectsRequest, ListMigrationObjectsResponse>() {
+                    @Override
+                    public ListMigrationObjectsResponse apply(ListMigrationObjectsRequest request) {
+                        return client.listMigrationObjects(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListMigrationObjectsResponse,
+                        java.util.List<
+                                com.oracle.bmc.databasemigration.model.MigrationObjectSummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.databasemigration.model.MigrationObjectSummary>
+                            apply(ListMigrationObjectsResponse response) {
+                        return response.getMigrationObjectCollection().getItems();
                     }
                 });
     }

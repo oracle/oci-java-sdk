@@ -205,6 +205,24 @@ public class Database {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyVersionId")
+        private String kmsKeyVersionId;
+
+        public Builder kmsKeyVersionId(String kmsKeyVersionId) {
+            this.kmsKeyVersionId = kmsKeyVersionId;
+            this.__explicitlySet__.add("kmsKeyVersionId");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("vaultId")
+        private String vaultId;
+
+        public Builder vaultId(String vaultId) {
+            this.vaultId = vaultId;
+            this.__explicitlySet__.add("vaultId");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("sourceDatabasePointInTimeRecoveryTimestamp")
         private java.util.Date sourceDatabasePointInTimeRecoveryTimestamp;
 
@@ -279,6 +297,8 @@ public class Database {
                             definedTags,
                             connectionStrings,
                             kmsKeyId,
+                            kmsKeyVersionId,
+                            vaultId,
                             sourceDatabasePointInTimeRecoveryTimestamp,
                             databaseSoftwareImageId,
                             isCdb,
@@ -311,6 +331,8 @@ public class Database {
                             .definedTags(o.getDefinedTags())
                             .connectionStrings(o.getConnectionStrings())
                             .kmsKeyId(o.getKmsKeyId())
+                            .kmsKeyVersionId(o.getKmsKeyVersionId())
+                            .vaultId(o.getVaultId())
                             .sourceDatabasePointInTimeRecoveryTimestamp(
                                     o.getSourceDatabasePointInTimeRecoveryTimestamp())
                             .databaseSoftwareImageId(o.getDatabaseSoftwareImageId())
@@ -506,6 +528,19 @@ public class Database {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyId")
     String kmsKeyId;
+
+    /**
+     * The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyVersionId")
+    String kmsKeyVersionId;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("vaultId")
+    String vaultId;
 
     /**
      * Point in time recovery timeStamp of the source database at which cloned database system is cloned from the source database system, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339)

@@ -46,6 +46,14 @@ public class ListRoverNodesConverter {
                                     request.getDisplayName()));
         }
 
+        if (request.getNodeType() != null) {
+            target =
+                    target.queryParam(
+                            "nodeType",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getNodeType().getValue()));
+        }
+
         if (request.getLimit() != null) {
             target =
                     target.queryParam(

@@ -4,7 +4,6 @@
  */
 package com.oracle.bmc.http.internal;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.common.collect.ImmutableList;
 import com.oracle.bmc.io.internal.AutoCloseableContentLengthVerifyingInputStream;
 import com.oracle.bmc.io.internal.ContentLengthVerifyingInputStream;
@@ -116,7 +115,8 @@ public class ResponseHelperTest {
         Response response = mock(Response.class);
         Response.StatusType statusInfo = mock(Response.StatusType.class);
         // with embedded quote
-        String jsonEncodedString = new ObjectMapper().writeValueAsString("foo \" bar");
+        String jsonEncodedString =
+                RestClientFactory.getObjectMapper().writeValueAsString("foo \" bar");
         assertEquals("\"foo \\\" bar\"", jsonEncodedString);
 
         Class<String> entityType = String.class;

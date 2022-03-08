@@ -5,7 +5,7 @@
 package com.oracle.bmc.oce.model;
 
 /**
- * license types can be NEW for new oracle content and experience cloud license,
+ * license types can be NEW for new oracle content management cloud license,
  * or BYOL for bring your own license
  *
  **/

@@ -108,7 +108,7 @@ jersey-media-json-jackson
 
 JSR305
 * Copyright © 2007-2009 JSR305 expert group
-* License: GNU Lesser General Public License 3.0
+* License: BSD 3-Clause
 * Source code: https://github.com/findbugsproject/findbugs
 * Project home: http://findbugs.sourceforge.net/
 

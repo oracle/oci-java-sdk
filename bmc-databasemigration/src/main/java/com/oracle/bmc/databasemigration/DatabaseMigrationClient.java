@@ -491,6 +491,39 @@ public class DatabaseMigrationClient implements DatabaseMigration {
     }
 
     @Override
+    public AddMigrationObjectsResponse addMigrationObjects(AddMigrationObjectsRequest request) {
+        LOG.trace("Called addMigrationObjects");
+        final AddMigrationObjectsRequest interceptedRequest =
+                AddMigrationObjectsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                AddMigrationObjectsConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, AddMigrationObjectsResponse>
+                transformer = AddMigrationObjectsConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getAddMigrationObjectsDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public ChangeAgentCompartmentResponse changeAgentCompartment(
             ChangeAgentCompartmentRequest request) {
         LOG.trace("Called changeAgentCompartment");
@@ -1149,6 +1182,35 @@ public class DatabaseMigrationClient implements DatabaseMigration {
     }
 
     @Override
+    public ListExcludedObjectsResponse listExcludedObjects(ListExcludedObjectsRequest request) {
+        LOG.trace("Called listExcludedObjects");
+        final ListExcludedObjectsRequest interceptedRequest =
+                ListExcludedObjectsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListExcludedObjectsConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, ListExcludedObjectsResponse>
+                transformer = ListExcludedObjectsConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public ListJobOutputsResponse listJobOutputs(ListJobOutputsRequest request) {
         LOG.trace("Called listJobOutputs");
         final ListJobOutputsRequest interceptedRequest =
@@ -1215,6 +1277,35 @@ public class DatabaseMigrationClient implements DatabaseMigration {
                 ListMigrationObjectTypesConverter.fromRequest(client, interceptedRequest);
         com.google.common.base.Function<javax.ws.rs.core.Response, ListMigrationObjectTypesResponse>
                 transformer = ListMigrationObjectTypesConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ListMigrationObjectsResponse listMigrationObjects(ListMigrationObjectsRequest request) {
+        LOG.trace("Called listMigrationObjects");
+        final ListMigrationObjectsRequest interceptedRequest =
+                ListMigrationObjectsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListMigrationObjectsConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, ListMigrationObjectsResponse>
+                transformer = ListMigrationObjectsConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
@@ -1347,6 +1438,40 @@ public class DatabaseMigrationClient implements DatabaseMigration {
                             retryRequest,
                             retriedRequest -> {
                                 javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public RemoveMigrationObjectsResponse removeMigrationObjects(
+            RemoveMigrationObjectsRequest request) {
+        LOG.trace("Called removeMigrationObjects");
+        final RemoveMigrationObjectsRequest interceptedRequest =
+                RemoveMigrationObjectsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                RemoveMigrationObjectsConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, RemoveMigrationObjectsResponse>
+                transformer = RemoveMigrationObjectsConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getRemoveMigrationObjectsDetails(),
+                                                retriedRequest);
                                 return transformer.apply(response);
                             });
                 });

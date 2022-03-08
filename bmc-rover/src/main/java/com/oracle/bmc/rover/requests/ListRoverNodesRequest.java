@@ -30,6 +30,11 @@ public class ListRoverNodesRequest extends com.oracle.bmc.requests.BmcRequest<ja
     private String displayName;
 
     /**
+     * A filter to return only Nodes of type matched with the given node type.
+     */
+    private com.oracle.bmc.rover.model.NodeType nodeType;
+
+    /**
      * The maximum number of items to return.
      */
     private Integer limit;
@@ -133,6 +138,7 @@ public class ListRoverNodesRequest extends com.oracle.bmc.requests.BmcRequest<ja
         public Builder copy(ListRoverNodesRequest o) {
             compartmentId(o.getCompartmentId());
             displayName(o.getDisplayName());
+            nodeType(o.getNodeType());
             limit(o.getLimit());
             page(o.getPage());
             lifecycleState(o.getLifecycleState());
