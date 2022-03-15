@@ -659,6 +659,47 @@ public class SddcAsyncClient implements SddcAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<ListSupportedHostShapesResponse> listSupportedHostShapes(
+            ListSupportedHostShapesRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListSupportedHostShapesRequest, ListSupportedHostShapesResponse>
+                    handler) {
+        LOG.trace("Called async listSupportedHostShapes");
+        final ListSupportedHostShapesRequest interceptedRequest =
+                ListSupportedHostShapesConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListSupportedHostShapesConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ListSupportedHostShapesResponse>
+                transformer = ListSupportedHostShapesConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListSupportedHostShapesRequest, ListSupportedHostShapesResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListSupportedHostShapesRequest, ListSupportedHostShapesResponse>,
+                        java.util.concurrent.Future<ListSupportedHostShapesResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListSupportedHostShapesRequest, ListSupportedHostShapesResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<ListSupportedSkusResponse> listSupportedSkus(
             ListSupportedSkusRequest request,
             final com.oracle.bmc.responses.AsyncHandler<

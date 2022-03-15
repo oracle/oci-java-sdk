@@ -479,6 +479,7 @@ public class MaintenanceRun {
         ExadataDbSystem("EXADATA_DB_SYSTEM"),
         CloudExadataInfrastructure("CLOUD_EXADATA_INFRASTRUCTURE"),
         ExaccInfrastructure("EXACC_INFRASTRUCTURE"),
+        AutonomousVmCluster("AUTONOMOUS_VM_CLUSTER"),
         AutonomousDatabase("AUTONOMOUS_DATABASE"),
 
         /**

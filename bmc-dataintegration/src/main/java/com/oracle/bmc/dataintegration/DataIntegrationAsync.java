@@ -63,6 +63,25 @@ public interface DataIntegrationAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Moves a DIS Application to a specified compartment.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ChangeDisApplicationCompartmentResponse>
+            changeDisApplicationCompartment(
+                    ChangeDisApplicationCompartmentRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeDisApplicationCompartmentRequest,
+                                    ChangeDisApplicationCompartmentResponse>
+                            handler);
+
+    /**
      * Creates an application.
      *
      *
@@ -156,6 +175,23 @@ public interface DataIntegrationAsync extends AutoCloseable {
             CreateDataFlowValidationRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             CreateDataFlowValidationRequest, CreateDataFlowValidationResponse>
+                    handler);
+
+    /**
+     * Creates a DIS Application.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateDisApplicationResponse> createDisApplication(
+            CreateDisApplicationRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            CreateDisApplicationRequest, CreateDisApplicationResponse>
                     handler);
 
     /**
@@ -526,6 +562,22 @@ public interface DataIntegrationAsync extends AutoCloseable {
             DeleteDataFlowValidationRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             DeleteDataFlowValidationRequest, DeleteDataFlowValidationResponse>
+                    handler);
+
+    /**
+     * Removes a DIS application using the specified identifier.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteDisApplicationResponse> deleteDisApplication(
+            DeleteDisApplicationRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            DeleteDisApplicationRequest, DeleteDisApplicationResponse>
                     handler);
 
     /**
@@ -918,6 +970,22 @@ public interface DataIntegrationAsync extends AutoCloseable {
             GetDependentObjectRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             GetDependentObjectRequest, GetDependentObjectResponse>
+                    handler);
+
+    /**
+     * Retrieves an application using the specified OCID.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetDisApplicationResponse> getDisApplication(
+            GetDisApplicationRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetDisApplicationRequest, GetDisApplicationResponse>
                     handler);
 
     /**
@@ -1349,6 +1417,22 @@ public interface DataIntegrationAsync extends AutoCloseable {
             ListDependentObjectsRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             ListDependentObjectsRequest, ListDependentObjectsResponse>
+                    handler);
+
+    /**
+     * Retrieves a list of DIS Applications in a compartment and provides options to filter the list.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListDisApplicationsResponse> listDisApplications(
+            ListDisApplicationsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListDisApplicationsRequest, ListDisApplicationsResponse>
                     handler);
 
     /**
@@ -1827,6 +1911,22 @@ public interface DataIntegrationAsync extends AutoCloseable {
     java.util.concurrent.Future<UpdateDataFlowResponse> updateDataFlow(
             UpdateDataFlowRequest request,
             com.oracle.bmc.responses.AsyncHandler<UpdateDataFlowRequest, UpdateDataFlowResponse>
+                    handler);
+
+    /**
+     * Updates a DIS Application.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateDisApplicationResponse> updateDisApplication(
+            UpdateDisApplicationRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            UpdateDisApplicationRequest, UpdateDisApplicationResponse>
                     handler);
 
     /**

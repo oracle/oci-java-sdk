@@ -102,6 +102,15 @@ public class ProxyField extends TypedObject {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("scopeReference")
+        private ScopeReference scopeReference;
+
+        public Builder scopeReference(ScopeReference scopeReference) {
+            this.scopeReference = scopeReference;
+            this.__explicitlySet__.add("scopeReference");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("type")
         private BaseType type;
 
@@ -134,6 +143,7 @@ public class ProxyField extends TypedObject {
                             name,
                             description,
                             scope,
+                            scopeReference,
                             type,
                             labels);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
@@ -151,6 +161,7 @@ public class ProxyField extends TypedObject {
                             .name(o.getName())
                             .description(o.getDescription())
                             .scope(o.getScope())
+                            .scopeReference(o.getScopeReference())
                             .type(o.getType())
                             .labels(o.getLabels());
 
@@ -176,19 +187,24 @@ public class ProxyField extends TypedObject {
             String name,
             String description,
             Object scope,
+            ScopeReference scopeReference,
             BaseType type,
             java.util.List<String> labels) {
         super(key, modelVersion, parentRef, configValues, objectStatus, name, description);
         this.scope = scope;
+        this.scopeReference = scopeReference;
         this.type = type;
         this.labels = labels;
     }
 
     /**
-     * Reference to a typed object. This can be either a key value to an object within the document, a shall referenced to a {@code TypedObject}, or a full {@code TypedObject} definition.
+     * Deprecated - Reference to a typed object. This can be either a key value to an object within the document, a shall referenced to a {@code TypedObject}, or a full {@code TypedObject} definition.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("scope")
     Object scope;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("scopeReference")
+    ScopeReference scopeReference;
 
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     BaseType type;

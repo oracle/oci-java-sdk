@@ -8,7 +8,9 @@ import com.oracle.bmc.managementagent.requests.*;
 import com.oracle.bmc.managementagent.responses.*;
 
 /**
- * API for Management Agent Cloud Service
+ * Use the Management Agent API to manage your infrastructure's management agents, including their plugins and install keys.
+ * For more information, see [Management Agent](https://docs.cloud.oracle.com/iaas/management-agents/index.html).
+ *
  * This service client uses CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER for all the operations by default if no circuit breaker configuration is defined by the user.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200202")
@@ -231,7 +233,8 @@ public interface ManagementAgent extends AutoCloseable {
             ListManagementAgentPluginsRequest request);
 
     /**
-     * Returns a list of Management Agent.
+     * Returns a list of Management Agents.
+     * If no explicit page size limit is specified, it will default to 5000.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation

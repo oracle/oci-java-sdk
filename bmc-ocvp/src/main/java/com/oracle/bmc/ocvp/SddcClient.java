@@ -679,6 +679,36 @@ public class SddcClient implements Sddc {
     }
 
     @Override
+    public ListSupportedHostShapesResponse listSupportedHostShapes(
+            ListSupportedHostShapesRequest request) {
+        LOG.trace("Called listSupportedHostShapes");
+        final ListSupportedHostShapesRequest interceptedRequest =
+                ListSupportedHostShapesConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListSupportedHostShapesConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, ListSupportedHostShapesResponse>
+                transformer = ListSupportedHostShapesConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public ListSupportedSkusResponse listSupportedSkus(ListSupportedSkusRequest request) {
         LOG.trace("Called listSupportedSkus");
         final ListSupportedSkusRequest interceptedRequest =

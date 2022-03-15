@@ -429,6 +429,15 @@ public class Sddc {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("isShieldedInstanceEnabled")
+        private Boolean isShieldedInstanceEnabled;
+
+        public Builder isShieldedInstanceEnabled(Boolean isShieldedInstanceEnabled) {
+            this.isShieldedInstanceEnabled = isShieldedInstanceEnabled;
+            this.__explicitlySet__.add("isShieldedInstanceEnabled");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
@@ -498,6 +507,7 @@ public class Sddc {
                             timeCreated,
                             timeUpdated,
                             lifecycleState,
+                            isShieldedInstanceEnabled,
                             freeformTags,
                             definedTags);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
@@ -551,6 +561,7 @@ public class Sddc {
                             .timeCreated(o.getTimeCreated())
                             .timeUpdated(o.getTimeUpdated())
                             .lifecycleState(o.getLifecycleState())
+                            .isShieldedInstanceEnabled(o.getIsShieldedInstanceEnabled())
                             .freeformTags(o.getFreeformTags())
                             .definedTags(o.getDefinedTags());
 
@@ -1035,6 +1046,13 @@ public class Sddc {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     LifecycleStates lifecycleState;
+
+    /**
+     * Indicates whether shielded instance is enabled at the SDDC level.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isShieldedInstanceEnabled")
+    Boolean isShieldedInstanceEnabled;
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no

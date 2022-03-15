@@ -116,6 +116,15 @@ public class ManagementAgentInstallKeySummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("isUnlimited")
+        private Boolean isUnlimited;
+
+        public Builder isUnlimited(Boolean isUnlimited) {
+            this.isUnlimited = isUnlimited;
+            this.__explicitlySet__.add("isUnlimited");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -131,7 +140,8 @@ public class ManagementAgentInstallKeySummary {
                             lifecycleDetails,
                             timeCreated,
                             timeExpires,
-                            compartmentId);
+                            compartmentId,
+                            isUnlimited);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -148,7 +158,8 @@ public class ManagementAgentInstallKeySummary {
                             .lifecycleDetails(o.getLifecycleDetails())
                             .timeCreated(o.getTimeCreated())
                             .timeExpires(o.getTimeExpires())
-                            .compartmentId(o.getCompartmentId());
+                            .compartmentId(o.getCompartmentId())
+                            .isUnlimited(o.getIsUnlimited());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -221,6 +232,12 @@ public class ManagementAgentInstallKeySummary {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     String compartmentId;
+
+    /**
+     * If set to true, the install key has no expiration date or usage limit. Properties allowedKeyInstallCount and timeExpires are ignored if set to true. Defaults to false.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isUnlimited")
+    Boolean isUnlimited;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

@@ -60,6 +60,20 @@ public interface DataIntegration extends AutoCloseable {
     ChangeCompartmentResponse changeCompartment(ChangeCompartmentRequest request);
 
     /**
+     * Moves a DIS Application to a specified compartment.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/ChangeDisApplicationCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeDisApplicationCompartment API.
+     */
+    ChangeDisApplicationCompartmentResponse changeDisApplicationCompartment(
+            ChangeDisApplicationCompartmentRequest request);
+
+    /**
      * Creates an application.
      *
      * @param request The request object containing the details to send
@@ -135,6 +149,19 @@ public interface DataIntegration extends AutoCloseable {
      */
     CreateDataFlowValidationResponse createDataFlowValidation(
             CreateDataFlowValidationRequest request);
+
+    /**
+     * Creates a DIS Application.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/CreateDisApplicationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateDisApplication API.
+     */
+    CreateDisApplicationResponse createDisApplication(CreateDisApplicationRequest request);
 
     /**
      * Creates the data entity shape using the shape from the data asset.
@@ -429,6 +456,18 @@ public interface DataIntegration extends AutoCloseable {
      */
     DeleteDataFlowValidationResponse deleteDataFlowValidation(
             DeleteDataFlowValidationRequest request);
+
+    /**
+     * Removes a DIS application using the specified identifier.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/DeleteDisApplicationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteDisApplication API.
+     */
+    DeleteDisApplicationResponse deleteDisApplication(DeleteDisApplicationRequest request);
 
     /**
      * Removes a published object using the specified identifier.
@@ -738,6 +777,18 @@ public interface DataIntegration extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/GetDependentObjectExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetDependentObject API.
      */
     GetDependentObjectResponse getDependentObject(GetDependentObjectRequest request);
+
+    /**
+     * Retrieves an application using the specified OCID.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/GetDisApplicationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetDisApplication API.
+     */
+    GetDisApplicationResponse getDisApplication(GetDisApplicationRequest request);
 
     /**
      * Retrieves a publshed object in an task using the specified identifier.
@@ -1081,6 +1132,18 @@ public interface DataIntegration extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/ListDependentObjectsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListDependentObjects API.
      */
     ListDependentObjectsResponse listDependentObjects(ListDependentObjectsRequest request);
+
+    /**
+     * Retrieves a list of DIS Applications in a compartment and provides options to filter the list.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/ListDisApplicationsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListDisApplications API.
+     */
+    ListDisApplicationsResponse listDisApplications(ListDisApplicationsRequest request);
 
     /**
      * Retrieves a lists of external publication validations in a workspace and provides options to filter the list.
@@ -1461,6 +1524,18 @@ public interface DataIntegration extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/UpdateDataFlowExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateDataFlow API.
      */
     UpdateDataFlowResponse updateDataFlow(UpdateDataFlowRequest request);
+
+    /**
+     * Updates a DIS Application.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/UpdateDisApplicationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateDisApplication API.
+     */
+    UpdateDisApplicationResponse updateDisApplication(UpdateDisApplicationRequest request);
 
     /**
      * Updates the external publication object.

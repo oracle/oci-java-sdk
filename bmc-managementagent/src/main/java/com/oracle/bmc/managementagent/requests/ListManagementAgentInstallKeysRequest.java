@@ -26,7 +26,7 @@ public class ListManagementAgentInstallKeysRequest
     private String compartmentId;
 
     /**
-     * if set to true then it fetches install key for all compartments where user has access to else only on the compartment specified.
+     * if set to true then it fetches resources for all compartments where user has access to else only on the compartment specified.
      */
     private Boolean compartmentIdInSubtree;
 
