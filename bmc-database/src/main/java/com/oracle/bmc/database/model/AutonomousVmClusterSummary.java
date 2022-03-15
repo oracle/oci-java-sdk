@@ -144,6 +144,69 @@ public class AutonomousVmClusterSummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("totalContainerDatabases")
+        private Integer totalContainerDatabases;
+
+        public Builder totalContainerDatabases(Integer totalContainerDatabases) {
+            this.totalContainerDatabases = totalContainerDatabases;
+            this.__explicitlySet__.add("totalContainerDatabases");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("memoryPerOracleComputeUnitInGBs")
+        private Integer memoryPerOracleComputeUnitInGBs;
+
+        public Builder memoryPerOracleComputeUnitInGBs(Integer memoryPerOracleComputeUnitInGBs) {
+            this.memoryPerOracleComputeUnitInGBs = memoryPerOracleComputeUnitInGBs;
+            this.__explicitlySet__.add("memoryPerOracleComputeUnitInGBs");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("cpuCoreCountPerNode")
+        private Integer cpuCoreCountPerNode;
+
+        public Builder cpuCoreCountPerNode(Integer cpuCoreCountPerNode) {
+            this.cpuCoreCountPerNode = cpuCoreCountPerNode;
+            this.__explicitlySet__.add("cpuCoreCountPerNode");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("autonomousDataStorageSizeInTBs")
+        private Double autonomousDataStorageSizeInTBs;
+
+        public Builder autonomousDataStorageSizeInTBs(Double autonomousDataStorageSizeInTBs) {
+            this.autonomousDataStorageSizeInTBs = autonomousDataStorageSizeInTBs;
+            this.__explicitlySet__.add("autonomousDataStorageSizeInTBs");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("maintenanceWindow")
+        private MaintenanceWindow maintenanceWindow;
+
+        public Builder maintenanceWindow(MaintenanceWindow maintenanceWindow) {
+            this.maintenanceWindow = maintenanceWindow;
+            this.__explicitlySet__.add("maintenanceWindow");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("lastMaintenanceRunId")
+        private String lastMaintenanceRunId;
+
+        public Builder lastMaintenanceRunId(String lastMaintenanceRunId) {
+            this.lastMaintenanceRunId = lastMaintenanceRunId;
+            this.__explicitlySet__.add("lastMaintenanceRunId");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("nextMaintenanceRunId")
+        private String nextMaintenanceRunId;
+
+        public Builder nextMaintenanceRunId(String nextMaintenanceRunId) {
+            this.nextMaintenanceRunId = nextMaintenanceRunId;
+            this.__explicitlySet__.add("nextMaintenanceRunId");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("memorySizeInGBs")
         private Integer memorySizeInGBs;
 
@@ -236,6 +299,13 @@ public class AutonomousVmClusterSummary {
                             cpusEnabled,
                             ocpusEnabled,
                             availableCpus,
+                            totalContainerDatabases,
+                            memoryPerOracleComputeUnitInGBs,
+                            cpuCoreCountPerNode,
+                            autonomousDataStorageSizeInTBs,
+                            maintenanceWindow,
+                            lastMaintenanceRunId,
+                            nextMaintenanceRunId,
                             memorySizeInGBs,
                             dbNodeStorageSizeInGBs,
                             dataStorageSizeInTBs,
@@ -264,6 +334,13 @@ public class AutonomousVmClusterSummary {
                             .cpusEnabled(o.getCpusEnabled())
                             .ocpusEnabled(o.getOcpusEnabled())
                             .availableCpus(o.getAvailableCpus())
+                            .totalContainerDatabases(o.getTotalContainerDatabases())
+                            .memoryPerOracleComputeUnitInGBs(o.getMemoryPerOracleComputeUnitInGBs())
+                            .cpuCoreCountPerNode(o.getCpuCoreCountPerNode())
+                            .autonomousDataStorageSizeInTBs(o.getAutonomousDataStorageSizeInTBs())
+                            .maintenanceWindow(o.getMaintenanceWindow())
+                            .lastMaintenanceRunId(o.getLastMaintenanceRunId())
+                            .nextMaintenanceRunId(o.getNextMaintenanceRunId())
                             .memorySizeInGBs(o.getMemorySizeInGBs())
                             .dbNodeStorageSizeInGBs(o.getDbNodeStorageSizeInGBs())
                             .dataStorageSizeInTBs(o.getDataStorageSizeInTBs())
@@ -413,6 +490,45 @@ public class AutonomousVmClusterSummary {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("availableCpus")
     Integer availableCpus;
+
+    /**
+     * The total number of Autonomous Container Databases that can be created.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("totalContainerDatabases")
+    Integer totalContainerDatabases;
+
+    /**
+     * The amount of memory (in GBs) enabled per each OCPU core.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("memoryPerOracleComputeUnitInGBs")
+    Integer memoryPerOracleComputeUnitInGBs;
+
+    /**
+     * The number of OCPU cores enabled per VM cluster node.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("cpuCoreCountPerNode")
+    Integer cpuCoreCountPerNode;
+
+    /**
+     * The data disk group size allocated for Autonomous Databases, in TBs.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("autonomousDataStorageSizeInTBs")
+    Double autonomousDataStorageSizeInTBs;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("maintenanceWindow")
+    MaintenanceWindow maintenanceWindow;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the last maintenance run.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("lastMaintenanceRunId")
+    String lastMaintenanceRunId;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the next maintenance run.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("nextMaintenanceRunId")
+    String nextMaintenanceRunId;
 
     /**
      * The memory allocated in GBs.

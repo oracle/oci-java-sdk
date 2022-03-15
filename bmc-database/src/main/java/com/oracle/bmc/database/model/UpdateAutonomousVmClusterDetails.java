@@ -26,6 +26,15 @@ public class UpdateAutonomousVmClusterDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
+        @com.fasterxml.jackson.annotation.JsonProperty("maintenanceWindowDetails")
+        private MaintenanceWindow maintenanceWindowDetails;
+
+        public Builder maintenanceWindowDetails(MaintenanceWindow maintenanceWindowDetails) {
+            this.maintenanceWindowDetails = maintenanceWindowDetails;
+            this.__explicitlySet__.add("maintenanceWindowDetails");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("licenseModel")
         private LicenseModel licenseModel;
 
@@ -59,7 +68,8 @@ public class UpdateAutonomousVmClusterDetails {
 
         public UpdateAutonomousVmClusterDetails build() {
             UpdateAutonomousVmClusterDetails __instance__ =
-                    new UpdateAutonomousVmClusterDetails(licenseModel, freeformTags, definedTags);
+                    new UpdateAutonomousVmClusterDetails(
+                            maintenanceWindowDetails, licenseModel, freeformTags, definedTags);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -67,7 +77,8 @@ public class UpdateAutonomousVmClusterDetails {
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(UpdateAutonomousVmClusterDetails o) {
             Builder copiedBuilder =
-                    licenseModel(o.getLicenseModel())
+                    maintenanceWindowDetails(o.getMaintenanceWindowDetails())
+                            .licenseModel(o.getLicenseModel())
                             .freeformTags(o.getFreeformTags())
                             .definedTags(o.getDefinedTags());
 
@@ -83,6 +94,8 @@ public class UpdateAutonomousVmClusterDetails {
         return new Builder();
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("maintenanceWindowDetails")
+    MaintenanceWindow maintenanceWindowDetails;
     /**
      * The Oracle license model that applies to the Autonomous VM cluster. The default is BRING_YOUR_OWN_LICENSE.
      *

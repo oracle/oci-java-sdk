@@ -93,6 +93,24 @@ public class DirectFieldMap extends FieldMap {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("sourceScopeReference")
+        private ScopeReference sourceScopeReference;
+
+        public Builder sourceScopeReference(ScopeReference sourceScopeReference) {
+            this.sourceScopeReference = sourceScopeReference;
+            this.__explicitlySet__.add("sourceScopeReference");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("targetScopeReference")
+        private ScopeReference targetScopeReference;
+
+        public Builder targetScopeReference(ScopeReference targetScopeReference) {
+            this.targetScopeReference = targetScopeReference;
+            this.__explicitlySet__.add("targetScopeReference");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("objectStatus")
         private Integer objectStatus;
 
@@ -115,6 +133,8 @@ public class DirectFieldMap extends FieldMap {
                             configValues,
                             sourceTypedObject,
                             targetTypedObject,
+                            sourceScopeReference,
+                            targetScopeReference,
                             objectStatus);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
@@ -130,6 +150,8 @@ public class DirectFieldMap extends FieldMap {
                             .configValues(o.getConfigValues())
                             .sourceTypedObject(o.getSourceTypedObject())
                             .targetTypedObject(o.getTargetTypedObject())
+                            .sourceScopeReference(o.getSourceScopeReference())
+                            .targetScopeReference(o.getTargetScopeReference())
                             .objectStatus(o.getObjectStatus());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
@@ -153,6 +175,8 @@ public class DirectFieldMap extends FieldMap {
             ConfigValues configValues,
             String sourceTypedObject,
             String targetTypedObject,
+            ScopeReference sourceScopeReference,
+            ScopeReference targetScopeReference,
             Integer objectStatus) {
         super(description);
         this.key = key;
@@ -161,6 +185,8 @@ public class DirectFieldMap extends FieldMap {
         this.configValues = configValues;
         this.sourceTypedObject = sourceTypedObject;
         this.targetTypedObject = targetTypedObject;
+        this.sourceScopeReference = sourceScopeReference;
+        this.targetScopeReference = targetScopeReference;
         this.objectStatus = objectStatus;
     }
 
@@ -183,16 +209,22 @@ public class DirectFieldMap extends FieldMap {
     ConfigValues configValues;
 
     /**
-     * Reference to a typed object.
+     * Deprecated - Reference to a typed object.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sourceTypedObject")
     String sourceTypedObject;
 
     /**
-     * Reference to a typed object.
+     * Deprecated - Reference to a typed object.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("targetTypedObject")
     String targetTypedObject;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("sourceScopeReference")
+    ScopeReference sourceScopeReference;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("targetScopeReference")
+    ScopeReference targetScopeReference;
 
     /**
      * The status of an object that can be set to value 1 for shallow references across objects, other values reserved.

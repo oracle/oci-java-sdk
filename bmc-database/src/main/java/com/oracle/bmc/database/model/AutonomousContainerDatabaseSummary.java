@@ -300,6 +300,15 @@ public class AutonomousContainerDatabaseSummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("memoryPerOracleComputeUnitInGBs")
+        private Integer memoryPerOracleComputeUnitInGBs;
+
+        public Builder memoryPerOracleComputeUnitInGBs(Integer memoryPerOracleComputeUnitInGBs) {
+            this.memoryPerOracleComputeUnitInGBs = memoryPerOracleComputeUnitInGBs;
+            this.__explicitlySet__.add("memoryPerOracleComputeUnitInGBs");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -335,7 +344,8 @@ public class AutonomousContainerDatabaseSummary {
                             dbVersion,
                             backupConfig,
                             keyStoreId,
-                            keyStoreWalletName);
+                            keyStoreWalletName,
+                            memoryPerOracleComputeUnitInGBs);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -373,7 +383,9 @@ public class AutonomousContainerDatabaseSummary {
                             .dbVersion(o.getDbVersion())
                             .backupConfig(o.getBackupConfig())
                             .keyStoreId(o.getKeyStoreId())
-                            .keyStoreWalletName(o.getKeyStoreWalletName());
+                            .keyStoreWalletName(o.getKeyStoreWalletName())
+                            .memoryPerOracleComputeUnitInGBs(
+                                    o.getMemoryPerOracleComputeUnitInGBs());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -807,6 +819,12 @@ public class AutonomousContainerDatabaseSummary {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("keyStoreWalletName")
     String keyStoreWalletName;
+
+    /**
+     * The amount of memory (in GBs) enabled per each OCPU core in Autonomous VM Cluster.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("memoryPerOracleComputeUnitInGBs")
+    Integer memoryPerOracleComputeUnitInGBs;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

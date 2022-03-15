@@ -89,6 +89,43 @@ public class CreateApplicationDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("displayName")
+        private String displayName;
+
+        public Builder displayName(String displayName) {
+            this.displayName = displayName;
+            this.__explicitlySet__.add("displayName");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
+        private java.util.Map<String, String> freeformTags;
+
+        public Builder freeformTags(java.util.Map<String, String> freeformTags) {
+            this.freeformTags = freeformTags;
+            this.__explicitlySet__.add("freeformTags");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
+        private java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+        public Builder definedTags(
+                java.util.Map<String, java.util.Map<String, Object>> definedTags) {
+            this.definedTags = definedTags;
+            this.__explicitlySet__.add("definedTags");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
+        private LifecycleState lifecycleState;
+
+        public Builder lifecycleState(LifecycleState lifecycleState) {
+            this.lifecycleState = lifecycleState;
+            this.__explicitlySet__.add("lifecycleState");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("sourceApplicationInfo")
         private CreateSourceApplicationInfo sourceApplicationInfo;
 
@@ -120,6 +157,10 @@ public class CreateApplicationDetails {
                             description,
                             objectStatus,
                             identifier,
+                            displayName,
+                            freeformTags,
+                            definedTags,
+                            lifecycleState,
                             sourceApplicationInfo,
                             registryMetadata);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
@@ -136,6 +177,10 @@ public class CreateApplicationDetails {
                             .description(o.getDescription())
                             .objectStatus(o.getObjectStatus())
                             .identifier(o.getIdentifier())
+                            .displayName(o.getDisplayName())
+                            .freeformTags(o.getFreeformTags())
+                            .definedTags(o.getDefinedTags())
+                            .lifecycleState(o.getLifecycleState())
                             .sourceApplicationInfo(o.getSourceApplicationInfo())
                             .registryMetadata(o.getRegistryMetadata());
 
@@ -225,6 +270,72 @@ public class CreateApplicationDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("identifier")
     String identifier;
+
+    /**
+     * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("displayName")
+    String displayName;
+
+    /**
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Example: {@code {"Department": "Finance"}}
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
+    java.util.Map<String, String> freeformTags;
+
+    /**
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
+    java.util.Map<String, java.util.Map<String, Object>> definedTags;
+    /**
+     * The current state of the workspace.
+     **/
+    public enum LifecycleState {
+        Creating("CREATING"),
+        Active("ACTIVE"),
+        Updating("UPDATING"),
+        Deleting("DELETING"),
+        Deleted("DELETED"),
+        Failed("FAILED"),
+        ;
+
+        private final String value;
+        private static java.util.Map<String, LifecycleState> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (LifecycleState v : LifecycleState.values()) {
+                map.put(v.getValue(), v);
+            }
+        }
+
+        LifecycleState(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static LifecycleState create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            throw new IllegalArgumentException("Invalid LifecycleState: " + key);
+        }
+    };
+    /**
+     * The current state of the workspace.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
+    LifecycleState lifecycleState;
 
     @com.fasterxml.jackson.annotation.JsonProperty("sourceApplicationInfo")
     CreateSourceApplicationInfo sourceApplicationInfo;

@@ -19,7 +19,7 @@ import com.oracle.bmc.util.internal.ReflectionUtils;
  * Factory to create Entity instances for POST/PUT/PATCH requests.
  * Takes care of determining the correct type of entity to create.
  */
-class EntityFactory {
+public class EntityFactory {
 
     /**
      * Create an entity for PATCH requests.

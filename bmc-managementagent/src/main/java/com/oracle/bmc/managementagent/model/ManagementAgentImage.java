@@ -53,6 +53,24 @@ public class ManagementAgentImage {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("packageType")
+        private PackageTypes packageType;
+
+        public Builder packageType(PackageTypes packageType) {
+            this.packageType = packageType;
+            this.__explicitlySet__.add("packageType");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("packageArchitectureType")
+        private ArchitectureTypes packageArchitectureType;
+
+        public Builder packageArchitectureType(ArchitectureTypes packageArchitectureType) {
+            this.packageArchitectureType = packageArchitectureType;
+            this.__explicitlySet__.add("packageArchitectureType");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("version")
         private String version;
 
@@ -107,6 +125,8 @@ public class ManagementAgentImage {
                             id,
                             platformType,
                             platformName,
+                            packageType,
+                            packageArchitectureType,
                             version,
                             size,
                             checksum,
@@ -122,6 +142,8 @@ public class ManagementAgentImage {
                     id(o.getId())
                             .platformType(o.getPlatformType())
                             .platformName(o.getPlatformName())
+                            .packageType(o.getPackageType())
+                            .packageArchitectureType(o.getPackageArchitectureType())
                             .version(o.getVersion())
                             .size(o.getSize())
                             .checksum(o.getChecksum())
@@ -157,6 +179,18 @@ public class ManagementAgentImage {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("platformName")
     String platformName;
+
+    /**
+     * The installation package type
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("packageType")
+    PackageTypes packageType;
+
+    /**
+     * The installation package target architecture type
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("packageArchitectureType")
+    ArchitectureTypes packageArchitectureType;
 
     /**
      * Agent image version

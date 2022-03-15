@@ -167,6 +167,15 @@ public class UpdateTaskFromRestTask extends UpdateTaskDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("authConfig")
+        private AuthConfig authConfig;
+
+        public Builder authConfig(AuthConfig authConfig) {
+            this.authConfig = authConfig;
+            this.__explicitlySet__.add("authConfig");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("endpoint")
         private Expression endpoint;
 
@@ -257,6 +266,24 @@ public class UpdateTaskFromRestTask extends UpdateTaskDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("pollRestCallConfig")
+        private PollRestCallConfig pollRestCallConfig;
+
+        public Builder pollRestCallConfig(PollRestCallConfig pollRestCallConfig) {
+            this.pollRestCallConfig = pollRestCallConfig;
+            this.__explicitlySet__.add("pollRestCallConfig");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("typedExpressions")
+        private java.util.List<TypedExpression> typedExpressions;
+
+        public Builder typedExpressions(java.util.List<TypedExpression> typedExpressions) {
+            this.typedExpressions = typedExpressions;
+            this.__explicitlySet__.add("typedExpressions");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -278,6 +305,7 @@ public class UpdateTaskFromRestTask extends UpdateTaskDetails {
                             configProviderDelegate,
                             registryMetadata,
                             authDetails,
+                            authConfig,
                             endpoint,
                             methodType,
                             headers,
@@ -287,7 +315,9 @@ public class UpdateTaskFromRestTask extends UpdateTaskDetails {
                             cancelEndpoint,
                             cancelMethodType,
                             executeRestCallConfig,
-                            cancelRestCallConfig);
+                            cancelRestCallConfig,
+                            pollRestCallConfig,
+                            typedExpressions);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -310,6 +340,7 @@ public class UpdateTaskFromRestTask extends UpdateTaskDetails {
                             .configProviderDelegate(o.getConfigProviderDelegate())
                             .registryMetadata(o.getRegistryMetadata())
                             .authDetails(o.getAuthDetails())
+                            .authConfig(o.getAuthConfig())
                             .endpoint(o.getEndpoint())
                             .methodType(o.getMethodType())
                             .headers(o.getHeaders())
@@ -319,7 +350,9 @@ public class UpdateTaskFromRestTask extends UpdateTaskDetails {
                             .cancelEndpoint(o.getCancelEndpoint())
                             .cancelMethodType(o.getCancelMethodType())
                             .executeRestCallConfig(o.getExecuteRestCallConfig())
-                            .cancelRestCallConfig(o.getCancelRestCallConfig());
+                            .cancelRestCallConfig(o.getCancelRestCallConfig())
+                            .pollRestCallConfig(o.getPollRestCallConfig())
+                            .typedExpressions(o.getTypedExpressions());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -350,6 +383,7 @@ public class UpdateTaskFromRestTask extends UpdateTaskDetails {
             ConfigProvider configProviderDelegate,
             RegistryMetadata registryMetadata,
             AuthDetails authDetails,
+            AuthConfig authConfig,
             Expression endpoint,
             MethodType methodType,
             Object headers,
@@ -359,7 +393,9 @@ public class UpdateTaskFromRestTask extends UpdateTaskDetails {
             Expression cancelEndpoint,
             CancelMethodType cancelMethodType,
             ExecuteRestCallConfig executeRestCallConfig,
-            CancelRestCallConfig cancelRestCallConfig) {
+            CancelRestCallConfig cancelRestCallConfig,
+            PollRestCallConfig pollRestCallConfig,
+            java.util.List<TypedExpression> typedExpressions) {
         super(
                 key,
                 modelVersion,
@@ -376,6 +412,7 @@ public class UpdateTaskFromRestTask extends UpdateTaskDetails {
                 configProviderDelegate,
                 registryMetadata);
         this.authDetails = authDetails;
+        this.authConfig = authConfig;
         this.endpoint = endpoint;
         this.methodType = methodType;
         this.headers = headers;
@@ -386,10 +423,15 @@ public class UpdateTaskFromRestTask extends UpdateTaskDetails {
         this.cancelMethodType = cancelMethodType;
         this.executeRestCallConfig = executeRestCallConfig;
         this.cancelRestCallConfig = cancelRestCallConfig;
+        this.pollRestCallConfig = pollRestCallConfig;
+        this.typedExpressions = typedExpressions;
     }
 
     @com.fasterxml.jackson.annotation.JsonProperty("authDetails")
     AuthDetails authDetails;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("authConfig")
+    AuthConfig authConfig;
 
     @com.fasterxml.jackson.annotation.JsonProperty("endpoint")
     Expression endpoint;
@@ -544,6 +586,15 @@ public class UpdateTaskFromRestTask extends UpdateTaskDetails {
 
     @com.fasterxml.jackson.annotation.JsonProperty("cancelRestCallConfig")
     CancelRestCallConfig cancelRestCallConfig;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("pollRestCallConfig")
+    PollRestCallConfig pollRestCallConfig;
+
+    /**
+     * List of typed expressions.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("typedExpressions")
+    java.util.List<TypedExpression> typedExpressions;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

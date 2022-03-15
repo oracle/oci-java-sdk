@@ -224,6 +224,15 @@ public class CreateSddcDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("isShieldedInstanceEnabled")
+        private Boolean isShieldedInstanceEnabled;
+
+        public Builder isShieldedInstanceEnabled(Boolean isShieldedInstanceEnabled) {
+            this.isShieldedInstanceEnabled = isShieldedInstanceEnabled;
+            this.__explicitlySet__.add("isShieldedInstanceEnabled");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
@@ -271,6 +280,7 @@ public class CreateSddcDetails {
                             nsxEdgeUplink2VlanId,
                             replicationVlanId,
                             provisioningVlanId,
+                            isShieldedInstanceEnabled,
                             freeformTags,
                             definedTags);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
@@ -302,6 +312,7 @@ public class CreateSddcDetails {
                             .nsxEdgeUplink2VlanId(o.getNsxEdgeUplink2VlanId())
                             .replicationVlanId(o.getReplicationVlanId())
                             .provisioningVlanId(o.getProvisioningVlanId())
+                            .isShieldedInstanceEnabled(o.getIsShieldedInstanceEnabled())
                             .freeformTags(o.getFreeformTags())
                             .definedTags(o.getDefinedTags());
 
@@ -501,6 +512,13 @@ public class CreateSddcDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("provisioningVlanId")
     String provisioningVlanId;
+
+    /**
+     * Indicates whether shielded instance is enabled for this SDDC.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isShieldedInstanceEnabled")
+    Boolean isShieldedInstanceEnabled;
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no

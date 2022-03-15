@@ -191,10 +191,10 @@ public class CreateEsxiHostDetails {
     String computeAvailabilityDomain;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the esxi host that
-     * is failed. It is an optional param, when user supplies this param, new Esxi
-     * Host will be created to replace the failed one, and failedEsxiHostId field
-     * will be udpated in the newly created EsxiHost.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the ESXi host that
+     * is failed. This is an optional parameter. If this parameter is specified, a new ESXi
+     * host will be created to replace the failed one, and the {@code failedEsxiHostId} field
+     * will be udpated in the newly created Esxi host.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("failedEsxiHostId")

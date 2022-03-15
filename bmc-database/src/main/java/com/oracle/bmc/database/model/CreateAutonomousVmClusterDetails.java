@@ -90,6 +90,51 @@ public class CreateAutonomousVmClusterDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("totalContainerDatabases")
+        private Integer totalContainerDatabases;
+
+        public Builder totalContainerDatabases(Integer totalContainerDatabases) {
+            this.totalContainerDatabases = totalContainerDatabases;
+            this.__explicitlySet__.add("totalContainerDatabases");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("cpuCoreCountPerNode")
+        private Integer cpuCoreCountPerNode;
+
+        public Builder cpuCoreCountPerNode(Integer cpuCoreCountPerNode) {
+            this.cpuCoreCountPerNode = cpuCoreCountPerNode;
+            this.__explicitlySet__.add("cpuCoreCountPerNode");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("memoryPerOracleComputeUnitInGBs")
+        private Integer memoryPerOracleComputeUnitInGBs;
+
+        public Builder memoryPerOracleComputeUnitInGBs(Integer memoryPerOracleComputeUnitInGBs) {
+            this.memoryPerOracleComputeUnitInGBs = memoryPerOracleComputeUnitInGBs;
+            this.__explicitlySet__.add("memoryPerOracleComputeUnitInGBs");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("autonomousDataStorageSizeInTBs")
+        private Double autonomousDataStorageSizeInTBs;
+
+        public Builder autonomousDataStorageSizeInTBs(Double autonomousDataStorageSizeInTBs) {
+            this.autonomousDataStorageSizeInTBs = autonomousDataStorageSizeInTBs;
+            this.__explicitlySet__.add("autonomousDataStorageSizeInTBs");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("maintenanceWindowDetails")
+        private MaintenanceWindow maintenanceWindowDetails;
+
+        public Builder maintenanceWindowDetails(MaintenanceWindow maintenanceWindowDetails) {
+            this.maintenanceWindowDetails = maintenanceWindowDetails;
+            this.__explicitlySet__.add("maintenanceWindowDetails");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
@@ -122,6 +167,11 @@ public class CreateAutonomousVmClusterDetails {
                             timeZone,
                             isLocalBackupEnabled,
                             licenseModel,
+                            totalContainerDatabases,
+                            cpuCoreCountPerNode,
+                            memoryPerOracleComputeUnitInGBs,
+                            autonomousDataStorageSizeInTBs,
+                            maintenanceWindowDetails,
                             freeformTags,
                             definedTags);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
@@ -138,6 +188,11 @@ public class CreateAutonomousVmClusterDetails {
                             .timeZone(o.getTimeZone())
                             .isLocalBackupEnabled(o.getIsLocalBackupEnabled())
                             .licenseModel(o.getLicenseModel())
+                            .totalContainerDatabases(o.getTotalContainerDatabases())
+                            .cpuCoreCountPerNode(o.getCpuCoreCountPerNode())
+                            .memoryPerOracleComputeUnitInGBs(o.getMemoryPerOracleComputeUnitInGBs())
+                            .autonomousDataStorageSizeInTBs(o.getAutonomousDataStorageSizeInTBs())
+                            .maintenanceWindowDetails(o.getMaintenanceWindowDetails())
                             .freeformTags(o.getFreeformTags())
                             .definedTags(o.getDefinedTags());
 
@@ -231,6 +286,33 @@ public class CreateAutonomousVmClusterDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("licenseModel")
     LicenseModel licenseModel;
+
+    /**
+     * The total number of Autonomous Container Databases that can be created.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("totalContainerDatabases")
+    Integer totalContainerDatabases;
+
+    /**
+     * The number of OCPU cores to enable per VM cluster node.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("cpuCoreCountPerNode")
+    Integer cpuCoreCountPerNode;
+
+    /**
+     * The amount of memory (in GBs) to be enabled per each OCPU core.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("memoryPerOracleComputeUnitInGBs")
+    Integer memoryPerOracleComputeUnitInGBs;
+
+    /**
+     * The data disk group size to be allocated for Autonomous Databases, in TBs.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("autonomousDataStorageSizeInTBs")
+    Double autonomousDataStorageSizeInTBs;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("maintenanceWindowDetails")
+    MaintenanceWindow maintenanceWindowDetails;
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.

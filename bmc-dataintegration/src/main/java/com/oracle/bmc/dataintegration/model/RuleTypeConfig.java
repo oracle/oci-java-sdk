@@ -66,6 +66,15 @@ public class RuleTypeConfig extends DynamicTypeHandler {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("scopeReference")
+        private ScopeReference scopeReference;
+
+        public Builder scopeReference(ScopeReference scopeReference) {
+            this.scopeReference = scopeReference;
+            this.__explicitlySet__.add("scopeReference");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("isOrderByRule")
         private Boolean isOrderByRule;
 
@@ -112,6 +121,7 @@ public class RuleTypeConfig extends DynamicTypeHandler {
                             modelVersion,
                             parentRef,
                             scope,
+                            scopeReference,
                             isOrderByRule,
                             projectionRules,
                             configValues,
@@ -127,6 +137,7 @@ public class RuleTypeConfig extends DynamicTypeHandler {
                             .modelVersion(o.getModelVersion())
                             .parentRef(o.getParentRef())
                             .scope(o.getScope())
+                            .scopeReference(o.getScopeReference())
                             .isOrderByRule(o.getIsOrderByRule())
                             .projectionRules(o.getProjectionRules())
                             .configValues(o.getConfigValues())
@@ -150,6 +161,7 @@ public class RuleTypeConfig extends DynamicTypeHandler {
             String modelVersion,
             ParentReference parentRef,
             Object scope,
+            ScopeReference scopeReference,
             Boolean isOrderByRule,
             java.util.List<ProjectionRule> projectionRules,
             ConfigValues configValues,
@@ -159,6 +171,7 @@ public class RuleTypeConfig extends DynamicTypeHandler {
         this.modelVersion = modelVersion;
         this.parentRef = parentRef;
         this.scope = scope;
+        this.scopeReference = scopeReference;
         this.isOrderByRule = isOrderByRule;
         this.projectionRules = projectionRules;
         this.configValues = configValues;
@@ -181,10 +194,13 @@ public class RuleTypeConfig extends DynamicTypeHandler {
     ParentReference parentRef;
 
     /**
-     * Reference to a typed object, this can be either a key value to an object within the document, a shall referenced to a {@code TypedObject} or a full {@code TypedObject} definition.
+     * Deprecated - Reference to a typed object, this can be either a key value to an object within the document, a shall referenced to a {@code TypedObject} or a full {@code TypedObject} definition.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("scope")
     Object scope;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("scopeReference")
+    ScopeReference scopeReference;
 
     /**
      * Specifies whether it is ordered by rule.

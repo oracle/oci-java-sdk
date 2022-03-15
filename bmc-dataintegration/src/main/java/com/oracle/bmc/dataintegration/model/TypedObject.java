@@ -77,6 +77,10 @@ package com.oracle.bmc.dataintegration.model;
         value = DerivedField.class,
         name = "DERIVED_FIELD"
     ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = TypedExpression.class,
+        name = "TYPED_EXPRESSION"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = FlowPort.class, name = "FLOW_PORT")
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)

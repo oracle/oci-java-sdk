@@ -944,6 +944,122 @@ public class DataIntegrationPaginators {
     }
 
     /**
+     * Creates a new iterable which will iterate over the responses received from the listDisApplications operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListDisApplicationsResponse> listDisApplicationsResponseIterator(
+            final ListDisApplicationsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListDisApplicationsRequest.Builder, ListDisApplicationsRequest,
+                ListDisApplicationsResponse>(
+                new com.google.common.base.Supplier<ListDisApplicationsRequest.Builder>() {
+                    @Override
+                    public ListDisApplicationsRequest.Builder get() {
+                        return ListDisApplicationsRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListDisApplicationsResponse, String>() {
+                    @Override
+                    public String apply(ListDisApplicationsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListDisApplicationsRequest.Builder>,
+                        ListDisApplicationsRequest>() {
+                    @Override
+                    public ListDisApplicationsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListDisApplicationsRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListDisApplicationsRequest, ListDisApplicationsResponse>() {
+                    @Override
+                    public ListDisApplicationsResponse apply(ListDisApplicationsRequest request) {
+                        return client.listDisApplications(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.dataintegration.model.DisApplicationSummary} objects
+     * contained in responses from the listDisApplications operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.dataintegration.model.DisApplicationSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.dataintegration.model.DisApplicationSummary>
+            listDisApplicationsRecordIterator(final ListDisApplicationsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListDisApplicationsRequest.Builder, ListDisApplicationsRequest,
+                ListDisApplicationsResponse,
+                com.oracle.bmc.dataintegration.model.DisApplicationSummary>(
+                new com.google.common.base.Supplier<ListDisApplicationsRequest.Builder>() {
+                    @Override
+                    public ListDisApplicationsRequest.Builder get() {
+                        return ListDisApplicationsRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListDisApplicationsResponse, String>() {
+                    @Override
+                    public String apply(ListDisApplicationsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListDisApplicationsRequest.Builder>,
+                        ListDisApplicationsRequest>() {
+                    @Override
+                    public ListDisApplicationsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListDisApplicationsRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListDisApplicationsRequest, ListDisApplicationsResponse>() {
+                    @Override
+                    public ListDisApplicationsResponse apply(ListDisApplicationsRequest request) {
+                        return client.listDisApplications(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListDisApplicationsResponse,
+                        java.util.List<
+                                com.oracle.bmc.dataintegration.model.DisApplicationSummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.dataintegration.model.DisApplicationSummary>
+                            apply(ListDisApplicationsResponse response) {
+                        return response.getDisApplicationSummaryCollection().getItems();
+                    }
+                });
+    }
+
+    /**
      * Creates a new iterable which will iterate over the responses received from the listExternalPublicationValidations operation. This iterable
      * will fetch more data from the server as needed.
      *

@@ -140,6 +140,122 @@ public class SddcPaginators {
     }
 
     /**
+     * Creates a new iterable which will iterate over the responses received from the listSupportedHostShapes operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListSupportedHostShapesResponse> listSupportedHostShapesResponseIterator(
+            final ListSupportedHostShapesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListSupportedHostShapesRequest.Builder, ListSupportedHostShapesRequest,
+                ListSupportedHostShapesResponse>(
+                new com.google.common.base.Supplier<ListSupportedHostShapesRequest.Builder>() {
+                    @Override
+                    public ListSupportedHostShapesRequest.Builder get() {
+                        return ListSupportedHostShapesRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListSupportedHostShapesResponse, String>() {
+                    @Override
+                    public String apply(ListSupportedHostShapesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListSupportedHostShapesRequest.Builder>,
+                        ListSupportedHostShapesRequest>() {
+                    @Override
+                    public ListSupportedHostShapesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListSupportedHostShapesRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListSupportedHostShapesRequest, ListSupportedHostShapesResponse>() {
+                    @Override
+                    public ListSupportedHostShapesResponse apply(
+                            ListSupportedHostShapesRequest request) {
+                        return client.listSupportedHostShapes(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.ocvp.model.SupportedHostShapeSummary} objects
+     * contained in responses from the listSupportedHostShapes operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.ocvp.model.SupportedHostShapeSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.ocvp.model.SupportedHostShapeSummary>
+            listSupportedHostShapesRecordIterator(final ListSupportedHostShapesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListSupportedHostShapesRequest.Builder, ListSupportedHostShapesRequest,
+                ListSupportedHostShapesResponse,
+                com.oracle.bmc.ocvp.model.SupportedHostShapeSummary>(
+                new com.google.common.base.Supplier<ListSupportedHostShapesRequest.Builder>() {
+                    @Override
+                    public ListSupportedHostShapesRequest.Builder get() {
+                        return ListSupportedHostShapesRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListSupportedHostShapesResponse, String>() {
+                    @Override
+                    public String apply(ListSupportedHostShapesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListSupportedHostShapesRequest.Builder>,
+                        ListSupportedHostShapesRequest>() {
+                    @Override
+                    public ListSupportedHostShapesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListSupportedHostShapesRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListSupportedHostShapesRequest, ListSupportedHostShapesResponse>() {
+                    @Override
+                    public ListSupportedHostShapesResponse apply(
+                            ListSupportedHostShapesRequest request) {
+                        return client.listSupportedHostShapes(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListSupportedHostShapesResponse,
+                        java.util.List<com.oracle.bmc.ocvp.model.SupportedHostShapeSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.ocvp.model.SupportedHostShapeSummary>
+                            apply(ListSupportedHostShapesResponse response) {
+                        return response.getSupportedHostShapeCollection().getItems();
+                    }
+                });
+    }
+
+    /**
      * Creates a new iterable which will iterate over the responses received from the listSupportedSkus operation. This iterable
      * will fetch more data from the server as needed.
      *

@@ -134,6 +134,15 @@ public class ManagementAgentInstallKey {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("isUnlimited")
+        private Boolean isUnlimited;
+
+        public Builder isUnlimited(Boolean isUnlimited) {
+            this.isUnlimited = isUnlimited;
+            this.__explicitlySet__.add("isUnlimited");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -151,7 +160,8 @@ public class ManagementAgentInstallKey {
                             lifecycleDetails,
                             timeExpires,
                             timeCreated,
-                            timeUpdated);
+                            timeUpdated,
+                            isUnlimited);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -170,7 +180,8 @@ public class ManagementAgentInstallKey {
                             .lifecycleDetails(o.getLifecycleDetails())
                             .timeExpires(o.getTimeExpires())
                             .timeCreated(o.getTimeCreated())
-                            .timeUpdated(o.getTimeUpdated());
+                            .timeUpdated(o.getTimeUpdated())
+                            .isUnlimited(o.getIsUnlimited());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -255,6 +266,12 @@ public class ManagementAgentInstallKey {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     java.util.Date timeUpdated;
+
+    /**
+     * If set to true, the install key has no expiration date or usage limit. Defaults to false
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isUnlimited")
+    Boolean isUnlimited;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

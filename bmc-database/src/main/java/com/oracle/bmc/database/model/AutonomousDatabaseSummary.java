@@ -194,6 +194,15 @@ public class AutonomousDatabaseSummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("memoryPerOracleComputeUnitInGBs")
+        private Integer memoryPerOracleComputeUnitInGBs;
+
+        public Builder memoryPerOracleComputeUnitInGBs(Integer memoryPerOracleComputeUnitInGBs) {
+            this.memoryPerOracleComputeUnitInGBs = memoryPerOracleComputeUnitInGBs;
+            this.__explicitlySet__.add("memoryPerOracleComputeUnitInGBs");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("dataStorageSizeInGBs")
         private Integer dataStorageSizeInGBs;
 
@@ -798,6 +807,7 @@ public class AutonomousDatabaseSummary {
                             cpuCoreCount,
                             ocpuCount,
                             dataStorageSizeInTBs,
+                            memoryPerOracleComputeUnitInGBs,
                             dataStorageSizeInGBs,
                             infrastructureType,
                             isDedicated,
@@ -889,6 +899,7 @@ public class AutonomousDatabaseSummary {
                             .cpuCoreCount(o.getCpuCoreCount())
                             .ocpuCount(o.getOcpuCount())
                             .dataStorageSizeInTBs(o.getDataStorageSizeInTBs())
+                            .memoryPerOracleComputeUnitInGBs(o.getMemoryPerOracleComputeUnitInGBs())
                             .dataStorageSizeInGBs(o.getDataStorageSizeInGBs())
                             .infrastructureType(o.getInfrastructureType())
                             .isDedicated(o.getIsDedicated())
@@ -1152,6 +1163,12 @@ public class AutonomousDatabaseSummary {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dataStorageSizeInTBs")
     Integer dataStorageSizeInTBs;
+
+    /**
+     * The amount of memory (in GBs) enabled per each OCPU core in Autonomous VM Cluster.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("memoryPerOracleComputeUnitInGBs")
+    Integer memoryPerOracleComputeUnitInGBs;
 
     /**
      * The quantity of data in the database, in gigabytes.
