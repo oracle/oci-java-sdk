@@ -156,7 +156,7 @@ public class ConnectionDetails {
     Integer port;
 
     /**
-     * Service name used for connection requests.
+     * Database service name used for connection requests.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("serviceName")
     String serviceName;

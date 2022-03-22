@@ -115,6 +115,33 @@ public interface OperationsInsights extends AutoCloseable {
             ChangeHostInsightCompartmentRequest request);
 
     /**
+     * Moves a private endpoint from one compartment to another. When provided, If-Match is checked against ETag values of the resource.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/ChangeOperationsInsightsPrivateEndpointCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeOperationsInsightsPrivateEndpointCompartment API.
+     */
+    ChangeOperationsInsightsPrivateEndpointCompartmentResponse
+            changeOperationsInsightsPrivateEndpointCompartment(
+                    ChangeOperationsInsightsPrivateEndpointCompartmentRequest request);
+
+    /**
+     * Change the connection details of a co-managed  database insight. When provided, If-Match is checked against ETag values of the resource.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/ChangePeComanagedDatabaseInsightExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangePeComanagedDatabaseInsight API.
+     */
+    ChangePeComanagedDatabaseInsightResponse changePeComanagedDatabaseInsight(
+            ChangePeComanagedDatabaseInsightRequest request);
+
+    /**
      * Create a AWR hub resource for the tenant in Operations Insights.
      * This resource will be created in root compartment.
      *
@@ -182,8 +209,24 @@ public interface OperationsInsights extends AutoCloseable {
     CreateHostInsightResponse createHostInsight(CreateHostInsightRequest request);
 
     /**
+     * Create a private endpoint resource for the tenant in Operations Insights.
+     * This resource will be created in customer compartment.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/CreateOperationsInsightsPrivateEndpointExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateOperationsInsightsPrivateEndpoint API.
+     */
+    CreateOperationsInsightsPrivateEndpointResponse createOperationsInsightsPrivateEndpoint(
+            CreateOperationsInsightsPrivateEndpointRequest request);
+
+    /**
      * Create a Operations Insights Warehouse resource for the tenant in Operations Insights. New ADW will be provisioned for this tenant.
-     * There is only expected to be 1 warehouse per tenant. The warehouse is expected to be in the root compartment.
+     * There is only expected to be 1 warehouse per tenant. The warehouse is expected to be in the root compartment. If the 'opsi-warehouse-type'
+     * header is passed to the API, a warehouse resource without ADW or Schema provisioning is created.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -271,6 +314,19 @@ public interface OperationsInsights extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/DeleteHostInsightExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteHostInsight API.
      */
     DeleteHostInsightResponse deleteHostInsight(DeleteHostInsightRequest request);
+
+    /**
+     * Deletes a private endpoint.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/DeleteOperationsInsightsPrivateEndpointExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteOperationsInsightsPrivateEndpoint API.
+     */
+    DeleteOperationsInsightsPrivateEndpointResponse deleteOperationsInsightsPrivateEndpoint(
+            DeleteOperationsInsightsPrivateEndpointRequest request);
 
     /**
      * Deletes an Operations Insights Warehouse. There is only expected to be 1 warehouse per tenant.
@@ -461,6 +517,19 @@ public interface OperationsInsights extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/GetHostInsightExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetHostInsight API.
      */
     GetHostInsightResponse getHostInsight(GetHostInsightRequest request);
+
+    /**
+     * Gets the details of the specified private endpoint.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/GetOperationsInsightsPrivateEndpointExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetOperationsInsightsPrivateEndpoint API.
+     */
+    GetOperationsInsightsPrivateEndpointResponse getOperationsInsightsPrivateEndpoint(
+            GetOperationsInsightsPrivateEndpointRequest request);
 
     /**
      * Gets details of an Operations Insights Warehouse.
@@ -766,6 +835,19 @@ public interface OperationsInsights extends AutoCloseable {
      */
     ListImportableEnterpriseManagerEntitiesResponse listImportableEnterpriseManagerEntities(
             ListImportableEnterpriseManagerEntitiesRequest request);
+
+    /**
+     * Gets a list of Operation Insights private endpoints.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/ListOperationsInsightsPrivateEndpointsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListOperationsInsightsPrivateEndpoints API.
+     */
+    ListOperationsInsightsPrivateEndpointsResponse listOperationsInsightsPrivateEndpoints(
+            ListOperationsInsightsPrivateEndpointsRequest request);
 
     /**
      * Gets a list of Operations Insights Warehouse users. Either compartmentId or id must be specified. All these resources are expected to be in root compartment.
@@ -1440,6 +1522,19 @@ public interface OperationsInsights extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/UpdateHostInsightExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateHostInsight API.
      */
     UpdateHostInsightResponse updateHostInsight(UpdateHostInsightRequest request);
+
+    /**
+     * Updates one or more attributes of the specified private endpoint.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/UpdateOperationsInsightsPrivateEndpointExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateOperationsInsightsPrivateEndpoint API.
+     */
+    UpdateOperationsInsightsPrivateEndpointResponse updateOperationsInsightsPrivateEndpoint(
+            UpdateOperationsInsightsPrivateEndpointRequest request);
 
     /**
      * Updates the configuration of an Operations Insights Warehouse.

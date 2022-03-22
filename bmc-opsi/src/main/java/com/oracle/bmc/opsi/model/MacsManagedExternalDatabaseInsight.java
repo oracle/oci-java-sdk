@@ -150,6 +150,15 @@ public class MacsManagedExternalDatabaseInsight extends DatabaseInsight {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("databaseConnectionStatusDetails")
+        private String databaseConnectionStatusDetails;
+
+        public Builder databaseConnectionStatusDetails(String databaseConnectionStatusDetails) {
+            this.databaseConnectionStatusDetails = databaseConnectionStatusDetails;
+            this.__explicitlySet__.add("databaseConnectionStatusDetails");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("managementAgentId")
         private String managementAgentId;
 
@@ -250,6 +259,7 @@ public class MacsManagedExternalDatabaseInsight extends DatabaseInsight {
                             timeUpdated,
                             lifecycleState,
                             lifecycleDetails,
+                            databaseConnectionStatusDetails,
                             managementAgentId,
                             connectorId,
                             connectionDetails,
@@ -279,6 +289,7 @@ public class MacsManagedExternalDatabaseInsight extends DatabaseInsight {
                             .timeUpdated(o.getTimeUpdated())
                             .lifecycleState(o.getLifecycleState())
                             .lifecycleDetails(o.getLifecycleDetails())
+                            .databaseConnectionStatusDetails(o.getDatabaseConnectionStatusDetails())
                             .managementAgentId(o.getManagementAgentId())
                             .connectorId(o.getConnectorId())
                             .connectionDetails(o.getConnectionDetails())
@@ -316,6 +327,7 @@ public class MacsManagedExternalDatabaseInsight extends DatabaseInsight {
             java.util.Date timeUpdated,
             LifecycleState lifecycleState,
             String lifecycleDetails,
+            String databaseConnectionStatusDetails,
             String managementAgentId,
             String connectorId,
             ConnectionDetails connectionDetails,
@@ -338,7 +350,8 @@ public class MacsManagedExternalDatabaseInsight extends DatabaseInsight {
                 timeCreated,
                 timeUpdated,
                 lifecycleState,
-                lifecycleDetails);
+                lifecycleDetails,
+                databaseConnectionStatusDetails);
         this.managementAgentId = managementAgentId;
         this.connectorId = connectorId;
         this.connectionDetails = connectionDetails;

@@ -244,6 +244,25 @@ public class DeploymentSummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("storageUtilizationInBytes")
+        private Long storageUtilizationInBytes;
+
+        public Builder storageUtilizationInBytes(Long storageUtilizationInBytes) {
+            this.storageUtilizationInBytes = storageUtilizationInBytes;
+            this.__explicitlySet__.add("storageUtilizationInBytes");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("isStorageUtilizationLimitExceeded")
+        private Boolean isStorageUtilizationLimitExceeded;
+
+        public Builder isStorageUtilizationLimitExceeded(
+                Boolean isStorageUtilizationLimitExceeded) {
+            this.isStorageUtilizationLimitExceeded = isStorageUtilizationLimitExceeded;
+            this.__explicitlySet__.add("isStorageUtilizationLimitExceeded");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -273,7 +292,9 @@ public class DeploymentSummary {
                             systemTags,
                             isLatestVersion,
                             timeUpgradeRequired,
-                            deploymentType);
+                            deploymentType,
+                            storageUtilizationInBytes,
+                            isStorageUtilizationLimitExceeded);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -304,7 +325,10 @@ public class DeploymentSummary {
                             .systemTags(o.getSystemTags())
                             .isLatestVersion(o.getIsLatestVersion())
                             .timeUpgradeRequired(o.getTimeUpgradeRequired())
-                            .deploymentType(o.getDeploymentType());
+                            .deploymentType(o.getDeploymentType())
+                            .storageUtilizationInBytes(o.getStorageUtilizationInBytes())
+                            .isStorageUtilizationLimitExceeded(
+                                    o.getIsStorageUtilizationLimitExceeded());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -483,12 +507,25 @@ public class DeploymentSummary {
     java.util.Date timeUpgradeRequired;
 
     /**
-     * The type of deployment, the value determines the exact 'type' of service executed in the Deployment. NOTE: Use of the value OGG is maintained for backward compatibility purposes.  Its use is discouraged
-     *       in favor of the equivalent DATABASE_ORACLE value.
+     * The deployment type.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("deploymentType")
     DeploymentType deploymentType;
+
+    /**
+     * The amount of storage being utilized (in bytes)
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("storageUtilizationInBytes")
+    Long storageUtilizationInBytes;
+
+    /**
+     * Indicator will be true if the amount of storage being utilized exceeds the allowable storage utilization limit.  Exceeding the limit may be an indication of a misconfiguration of the deployment's GoldenGate service.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isStorageUtilizationLimitExceeded")
+    Boolean isStorageUtilizationLimitExceeded;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

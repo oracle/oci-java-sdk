@@ -646,6 +646,85 @@ public class OperationsInsightsClient implements OperationsInsights {
     }
 
     @Override
+    public ChangeOperationsInsightsPrivateEndpointCompartmentResponse
+            changeOperationsInsightsPrivateEndpointCompartment(
+                    ChangeOperationsInsightsPrivateEndpointCompartmentRequest request) {
+        LOG.trace("Called changeOperationsInsightsPrivateEndpointCompartment");
+        final ChangeOperationsInsightsPrivateEndpointCompartmentRequest interceptedRequest =
+                ChangeOperationsInsightsPrivateEndpointCompartmentConverter.interceptRequest(
+                        request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangeOperationsInsightsPrivateEndpointCompartmentConverter.fromRequest(
+                        client, interceptedRequest);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        ChangeOperationsInsightsPrivateEndpointCompartmentResponse>
+                transformer =
+                        ChangeOperationsInsightsPrivateEndpointCompartmentConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getChangeOperationsInsightsPrivateEndpointCompartmentDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ChangePeComanagedDatabaseInsightResponse changePeComanagedDatabaseInsight(
+            ChangePeComanagedDatabaseInsightRequest request) {
+        LOG.trace("Called changePeComanagedDatabaseInsight");
+        final ChangePeComanagedDatabaseInsightRequest interceptedRequest =
+                ChangePeComanagedDatabaseInsightConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangePeComanagedDatabaseInsightConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ChangePeComanagedDatabaseInsightResponse>
+                transformer = ChangePeComanagedDatabaseInsightConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getChangePeComanagedDatabaseInsightDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public CreateAwrHubResponse createAwrHub(CreateAwrHubRequest request) {
         LOG.trace("Called createAwrHub");
         final CreateAwrHubRequest interceptedRequest =
@@ -813,6 +892,44 @@ public class OperationsInsightsClient implements OperationsInsights {
                                         client.post(
                                                 ib,
                                                 retriedRequest.getCreateHostInsightDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public CreateOperationsInsightsPrivateEndpointResponse createOperationsInsightsPrivateEndpoint(
+            CreateOperationsInsightsPrivateEndpointRequest request) {
+        LOG.trace("Called createOperationsInsightsPrivateEndpoint");
+        final CreateOperationsInsightsPrivateEndpointRequest interceptedRequest =
+                CreateOperationsInsightsPrivateEndpointConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateOperationsInsightsPrivateEndpointConverter.fromRequest(
+                        client, interceptedRequest);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, CreateOperationsInsightsPrivateEndpointResponse>
+                transformer = CreateOperationsInsightsPrivateEndpointConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getCreateOperationsInsightsPrivateEndpointDetails(),
                                                 retriedRequest);
                                 return transformer.apply(response);
                             });
@@ -1026,6 +1143,39 @@ public class OperationsInsightsClient implements OperationsInsights {
                 DeleteHostInsightConverter.fromRequest(client, interceptedRequest);
         com.google.common.base.Function<javax.ws.rs.core.Response, DeleteHostInsightResponse>
                 transformer = DeleteHostInsightConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.delete(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public DeleteOperationsInsightsPrivateEndpointResponse deleteOperationsInsightsPrivateEndpoint(
+            DeleteOperationsInsightsPrivateEndpointRequest request) {
+        LOG.trace("Called deleteOperationsInsightsPrivateEndpoint");
+        final DeleteOperationsInsightsPrivateEndpointRequest interceptedRequest =
+                DeleteOperationsInsightsPrivateEndpointConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteOperationsInsightsPrivateEndpointConverter.fromRequest(
+                        client, interceptedRequest);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, DeleteOperationsInsightsPrivateEndpointResponse>
+                transformer = DeleteOperationsInsightsPrivateEndpointConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
@@ -1515,6 +1665,38 @@ public class OperationsInsightsClient implements OperationsInsights {
                 GetHostInsightConverter.fromRequest(client, interceptedRequest);
         com.google.common.base.Function<javax.ws.rs.core.Response, GetHostInsightResponse>
                 transformer = GetHostInsightConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public GetOperationsInsightsPrivateEndpointResponse getOperationsInsightsPrivateEndpoint(
+            GetOperationsInsightsPrivateEndpointRequest request) {
+        LOG.trace("Called getOperationsInsightsPrivateEndpoint");
+        final GetOperationsInsightsPrivateEndpointRequest interceptedRequest =
+                GetOperationsInsightsPrivateEndpointConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetOperationsInsightsPrivateEndpointConverter.fromRequest(
+                        client, interceptedRequest);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, GetOperationsInsightsPrivateEndpointResponse>
+                transformer = GetOperationsInsightsPrivateEndpointConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
@@ -2208,6 +2390,38 @@ public class OperationsInsightsClient implements OperationsInsights {
         com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListImportableEnterpriseManagerEntitiesResponse>
                 transformer = ListImportableEnterpriseManagerEntitiesConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ListOperationsInsightsPrivateEndpointsResponse listOperationsInsightsPrivateEndpoints(
+            ListOperationsInsightsPrivateEndpointsRequest request) {
+        LOG.trace("Called listOperationsInsightsPrivateEndpoints");
+        final ListOperationsInsightsPrivateEndpointsRequest interceptedRequest =
+                ListOperationsInsightsPrivateEndpointsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListOperationsInsightsPrivateEndpointsConverter.fromRequest(
+                        client, interceptedRequest);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ListOperationsInsightsPrivateEndpointsResponse>
+                transformer = ListOperationsInsightsPrivateEndpointsConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
@@ -3658,6 +3872,43 @@ public class OperationsInsightsClient implements OperationsInsights {
                                         client.put(
                                                 ib,
                                                 retriedRequest.getUpdateHostInsightDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public UpdateOperationsInsightsPrivateEndpointResponse updateOperationsInsightsPrivateEndpoint(
+            UpdateOperationsInsightsPrivateEndpointRequest request) {
+        LOG.trace("Called updateOperationsInsightsPrivateEndpoint");
+        final UpdateOperationsInsightsPrivateEndpointRequest interceptedRequest =
+                UpdateOperationsInsightsPrivateEndpointConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateOperationsInsightsPrivateEndpointConverter.fromRequest(
+                        client, interceptedRequest);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, UpdateOperationsInsightsPrivateEndpointResponse>
+                transformer = UpdateOperationsInsightsPrivateEndpointConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.put(
+                                                ib,
+                                                retriedRequest
+                                                        .getUpdateOperationsInsightsPrivateEndpointDetails(),
                                                 retriedRequest);
                                 return transformer.apply(response);
                             });

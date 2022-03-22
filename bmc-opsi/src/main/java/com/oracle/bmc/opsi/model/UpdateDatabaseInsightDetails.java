@@ -37,6 +37,10 @@ package com.oracle.bmc.opsi.model;
         name = "EM_MANAGED_EXTERNAL_DATABASE"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = UpdatePeComanagedDatabaseInsightDetails.class,
+        name = "PE_COMANAGED_DATABASE"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = UpdateAutonomousDatabaseInsightDetails.class,
         name = "AUTONOMOUS_DATABASE"
     )

@@ -260,6 +260,25 @@ public class Deployment {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("storageUtilizationInBytes")
+        private Long storageUtilizationInBytes;
+
+        public Builder storageUtilizationInBytes(Long storageUtilizationInBytes) {
+            this.storageUtilizationInBytes = storageUtilizationInBytes;
+            this.__explicitlySet__.add("storageUtilizationInBytes");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("isStorageUtilizationLimitExceeded")
+        private Boolean isStorageUtilizationLimitExceeded;
+
+        public Builder isStorageUtilizationLimitExceeded(
+                Boolean isStorageUtilizationLimitExceeded) {
+            this.isStorageUtilizationLimitExceeded = isStorageUtilizationLimitExceeded;
+            this.__explicitlySet__.add("isStorageUtilizationLimitExceeded");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("deploymentType")
         private DeploymentType deploymentType;
 
@@ -310,6 +329,8 @@ public class Deployment {
                             systemTags,
                             isLatestVersion,
                             timeUpgradeRequired,
+                            storageUtilizationInBytes,
+                            isStorageUtilizationLimitExceeded,
                             deploymentType,
                             oggData);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
@@ -345,6 +366,9 @@ public class Deployment {
                             .systemTags(o.getSystemTags())
                             .isLatestVersion(o.getIsLatestVersion())
                             .timeUpgradeRequired(o.getTimeUpgradeRequired())
+                            .storageUtilizationInBytes(o.getStorageUtilizationInBytes())
+                            .isStorageUtilizationLimitExceeded(
+                                    o.getIsStorageUtilizationLimitExceeded())
                             .deploymentType(o.getDeploymentType())
                             .oggData(o.getOggData());
 
@@ -546,8 +570,21 @@ public class Deployment {
     java.util.Date timeUpgradeRequired;
 
     /**
-     * The type of deployment, the value determines the exact 'type' of service executed in the Deployment. NOTE: Use of the value OGG is maintained for backward compatibility purposes.  Its use is discouraged
-     *       in favor of the equivalent DATABASE_ORACLE value.
+     * The amount of storage being utilized (in bytes)
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("storageUtilizationInBytes")
+    Long storageUtilizationInBytes;
+
+    /**
+     * Indicator will be true if the amount of storage being utilized exceeds the allowable storage utilization limit.  Exceeding the limit may be an indication of a misconfiguration of the deployment's GoldenGate service.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isStorageUtilizationLimitExceeded")
+    Boolean isStorageUtilizationLimitExceeded;
+
+    /**
+     * The deployment type.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("deploymentType")

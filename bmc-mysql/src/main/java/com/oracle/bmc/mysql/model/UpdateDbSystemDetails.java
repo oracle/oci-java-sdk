@@ -208,6 +208,15 @@ public class UpdateDbSystemDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("deletionPolicy")
+        private UpdateDeletionPolicyDetails deletionPolicy;
+
+        public Builder deletionPolicy(UpdateDeletionPolicyDetails deletionPolicy) {
+            this.deletionPolicy = deletionPolicy;
+            this.__explicitlySet__.add("deletionPolicy");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("crashRecovery")
         private CrashRecoveryStatus crashRecovery;
 
@@ -243,6 +252,7 @@ public class UpdateDbSystemDetails {
                             maintenance,
                             freeformTags,
                             definedTags,
+                            deletionPolicy,
                             crashRecovery);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
@@ -271,6 +281,7 @@ public class UpdateDbSystemDetails {
                             .maintenance(o.getMaintenance())
                             .freeformTags(o.getFreeformTags())
                             .definedTags(o.getDefinedTags())
+                            .deletionPolicy(o.getDeletionPolicy())
                             .crashRecovery(o.getCrashRecovery());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
@@ -446,6 +457,9 @@ public class UpdateDbSystemDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("deletionPolicy")
+    UpdateDeletionPolicyDetails deletionPolicy;
 
     /**
      * Whether to run the DB System with InnoDB Redo Logs and the Double Write Buffer enabled or disabled,

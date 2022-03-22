@@ -178,6 +178,15 @@ public class DbSystemSummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("deletionPolicy")
+        private DeletionPolicyDetails deletionPolicy;
+
+        public Builder deletionPolicy(DeletionPolicyDetails deletionPolicy) {
+            this.deletionPolicy = deletionPolicy;
+            this.__explicitlySet__.add("deletionPolicy");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
@@ -229,6 +238,7 @@ public class DbSystemSummary {
                             mysqlVersion,
                             timeCreated,
                             timeUpdated,
+                            deletionPolicy,
                             freeformTags,
                             definedTags,
                             crashRecovery);
@@ -256,6 +266,7 @@ public class DbSystemSummary {
                             .mysqlVersion(o.getMysqlVersion())
                             .timeCreated(o.getTimeCreated())
                             .timeUpdated(o.getTimeUpdated())
+                            .deletionPolicy(o.getDeletionPolicy())
                             .freeformTags(o.getFreeformTags())
                             .definedTags(o.getDefinedTags())
                             .crashRecovery(o.getCrashRecovery());
@@ -384,6 +395,9 @@ public class DbSystemSummary {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     java.util.Date timeUpdated;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("deletionPolicy")
+    DeletionPolicyDetails deletionPolicy;
 
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.

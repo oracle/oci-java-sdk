@@ -103,6 +103,7 @@ public class ExadataMemberSummary {
         ClusterAsm("CLUSTER_ASM"),
         InfinibandSwitch("INFINIBAND_SWITCH"),
         EthernetSwitch("ETHERNET_SWITCH"),
+        Host("HOST"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this

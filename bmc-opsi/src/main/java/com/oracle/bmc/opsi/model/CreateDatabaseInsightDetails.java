@@ -31,6 +31,10 @@ package com.oracle.bmc.opsi.model;
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = CreateEmManagedExternalDatabaseInsightDetails.class,
         name = "EM_MANAGED_EXTERNAL_DATABASE"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = CreatePeComanagedDatabaseInsightDetails.class,
+        name = "PE_COMANAGED_DATABASE"
     )
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
