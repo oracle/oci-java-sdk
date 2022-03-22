@@ -32,6 +32,10 @@ package com.oracle.bmc.opsi.model;
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = CredentialsBySource.class,
         name = "CREDENTIALS_BY_SOURCE"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = CredentialByVault.class,
+        name = "CREDENTIALS_BY_VAULT"
     )
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
@@ -49,6 +53,7 @@ public class CredentialDetails {
     @lombok.extern.slf4j.Slf4j
     public enum CredentialType {
         CredentialsBySource("CREDENTIALS_BY_SOURCE"),
+        CredentialsByVault("CREDENTIALS_BY_VAULT"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this

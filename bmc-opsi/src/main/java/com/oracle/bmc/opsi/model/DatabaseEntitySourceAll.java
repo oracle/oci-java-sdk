@@ -13,6 +13,7 @@ public enum DatabaseEntitySourceAll {
     AutonomousDatabase("AUTONOMOUS_DATABASE"),
     EmManagedExternalDatabase("EM_MANAGED_EXTERNAL_DATABASE"),
     MacsManagedExternalDatabase("MACS_MANAGED_EXTERNAL_DATABASE"),
+    PeComanagedDatabase("PE_COMANAGED_DATABASE"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this

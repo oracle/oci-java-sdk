@@ -205,6 +205,15 @@ public class DbSystemSnapshot {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("deletionPolicy")
+        private DeletionPolicyDetails deletionPolicy;
+
+        public Builder deletionPolicy(DeletionPolicyDetails deletionPolicy) {
+            this.deletionPolicy = deletionPolicy;
+            this.__explicitlySet__.add("deletionPolicy");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
@@ -259,6 +268,7 @@ public class DbSystemSnapshot {
                             isHighlyAvailable,
                             endpoints,
                             maintenance,
+                            deletionPolicy,
                             freeformTags,
                             definedTags,
                             crashRecovery);
@@ -289,6 +299,7 @@ public class DbSystemSnapshot {
                             .isHighlyAvailable(o.getIsHighlyAvailable())
                             .endpoints(o.getEndpoints())
                             .maintenance(o.getMaintenance())
+                            .deletionPolicy(o.getDeletionPolicy())
                             .freeformTags(o.getFreeformTags())
                             .definedTags(o.getDefinedTags())
                             .crashRecovery(o.getCrashRecovery());
@@ -439,6 +450,9 @@ public class DbSystemSnapshot {
 
     @com.fasterxml.jackson.annotation.JsonProperty("maintenance")
     MaintenanceDetails maintenance;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("deletionPolicy")
+    DeletionPolicyDetails deletionPolicy;
 
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.

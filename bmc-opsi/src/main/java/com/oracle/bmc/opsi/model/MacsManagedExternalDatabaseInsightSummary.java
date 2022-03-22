@@ -186,6 +186,15 @@ public class MacsManagedExternalDatabaseInsightSummary extends DatabaseInsightSu
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("databaseConnectionStatusDetails")
+        private String databaseConnectionStatusDetails;
+
+        public Builder databaseConnectionStatusDetails(String databaseConnectionStatusDetails) {
+            this.databaseConnectionStatusDetails = databaseConnectionStatusDetails;
+            this.__explicitlySet__.add("databaseConnectionStatusDetails");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("databaseResourceType")
         private String databaseResourceType;
 
@@ -236,6 +245,7 @@ public class MacsManagedExternalDatabaseInsightSummary extends DatabaseInsightSu
                             timeUpdated,
                             lifecycleState,
                             lifecycleDetails,
+                            databaseConnectionStatusDetails,
                             databaseResourceType,
                             managementAgentId,
                             connectorId);
@@ -263,6 +273,7 @@ public class MacsManagedExternalDatabaseInsightSummary extends DatabaseInsightSu
                             .timeUpdated(o.getTimeUpdated())
                             .lifecycleState(o.getLifecycleState())
                             .lifecycleDetails(o.getLifecycleDetails())
+                            .databaseConnectionStatusDetails(o.getDatabaseConnectionStatusDetails())
                             .databaseResourceType(o.getDatabaseResourceType())
                             .managementAgentId(o.getManagementAgentId())
                             .connectorId(o.getConnectorId());
@@ -298,6 +309,7 @@ public class MacsManagedExternalDatabaseInsightSummary extends DatabaseInsightSu
             java.util.Date timeUpdated,
             LifecycleState lifecycleState,
             String lifecycleDetails,
+            String databaseConnectionStatusDetails,
             String databaseResourceType,
             String managementAgentId,
             String connectorId) {
@@ -318,7 +330,8 @@ public class MacsManagedExternalDatabaseInsightSummary extends DatabaseInsightSu
                 timeCreated,
                 timeUpdated,
                 lifecycleState,
-                lifecycleDetails);
+                lifecycleDetails,
+                databaseConnectionStatusDetails);
         this.databaseResourceType = databaseResourceType;
         this.managementAgentId = managementAgentId;
         this.connectorId = connectorId;

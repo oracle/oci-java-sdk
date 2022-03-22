@@ -136,6 +136,42 @@ public interface OperationsInsightsAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Moves a private endpoint from one compartment to another. When provided, If-Match is checked against ETag values of the resource.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ChangeOperationsInsightsPrivateEndpointCompartmentResponse>
+            changeOperationsInsightsPrivateEndpointCompartment(
+                    ChangeOperationsInsightsPrivateEndpointCompartmentRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeOperationsInsightsPrivateEndpointCompartmentRequest,
+                                    ChangeOperationsInsightsPrivateEndpointCompartmentResponse>
+                            handler);
+
+    /**
+     * Change the connection details of a co-managed  database insight. When provided, If-Match is checked against ETag values of the resource.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ChangePeComanagedDatabaseInsightResponse>
+            changePeComanagedDatabaseInsight(
+                    ChangePeComanagedDatabaseInsightRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ChangePeComanagedDatabaseInsightRequest,
+                                    ChangePeComanagedDatabaseInsightResponse>
+                            handler);
+
+    /**
      * Create a AWR hub resource for the tenant in Operations Insights.
      * This resource will be created in root compartment.
      *
@@ -223,8 +259,29 @@ public interface OperationsInsightsAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Create a private endpoint resource for the tenant in Operations Insights.
+     * This resource will be created in customer compartment.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateOperationsInsightsPrivateEndpointResponse>
+            createOperationsInsightsPrivateEndpoint(
+                    CreateOperationsInsightsPrivateEndpointRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    CreateOperationsInsightsPrivateEndpointRequest,
+                                    CreateOperationsInsightsPrivateEndpointResponse>
+                            handler);
+
+    /**
      * Create a Operations Insights Warehouse resource for the tenant in Operations Insights. New ADW will be provisioned for this tenant.
-     * There is only expected to be 1 warehouse per tenant. The warehouse is expected to be in the root compartment.
+     * There is only expected to be 1 warehouse per tenant. The warehouse is expected to be in the root compartment. If the 'opsi-warehouse-type'
+     * header is passed to the API, a warehouse resource without ADW or Schema provisioning is created.
      *
      *
      * @param request The request object containing the details to send
@@ -342,6 +399,24 @@ public interface OperationsInsightsAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<
                             DeleteHostInsightRequest, DeleteHostInsightResponse>
                     handler);
+
+    /**
+     * Deletes a private endpoint.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteOperationsInsightsPrivateEndpointResponse>
+            deleteOperationsInsightsPrivateEndpoint(
+                    DeleteOperationsInsightsPrivateEndpointRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    DeleteOperationsInsightsPrivateEndpointRequest,
+                                    DeleteOperationsInsightsPrivateEndpointResponse>
+                            handler);
 
     /**
      * Deletes an Operations Insights Warehouse. There is only expected to be 1 warehouse per tenant.
@@ -590,6 +665,24 @@ public interface OperationsInsightsAsync extends AutoCloseable {
             GetHostInsightRequest request,
             com.oracle.bmc.responses.AsyncHandler<GetHostInsightRequest, GetHostInsightResponse>
                     handler);
+
+    /**
+     * Gets the details of the specified private endpoint.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetOperationsInsightsPrivateEndpointResponse>
+            getOperationsInsightsPrivateEndpoint(
+                    GetOperationsInsightsPrivateEndpointRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    GetOperationsInsightsPrivateEndpointRequest,
+                                    GetOperationsInsightsPrivateEndpointResponse>
+                            handler);
 
     /**
      * Gets details of an Operations Insights Warehouse.
@@ -973,6 +1066,24 @@ public interface OperationsInsightsAsync extends AutoCloseable {
                     com.oracle.bmc.responses.AsyncHandler<
                                     ListImportableEnterpriseManagerEntitiesRequest,
                                     ListImportableEnterpriseManagerEntitiesResponse>
+                            handler);
+
+    /**
+     * Gets a list of Operation Insights private endpoints.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListOperationsInsightsPrivateEndpointsResponse>
+            listOperationsInsightsPrivateEndpoints(
+                    ListOperationsInsightsPrivateEndpointsRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ListOperationsInsightsPrivateEndpointsRequest,
+                                    ListOperationsInsightsPrivateEndpointsResponse>
                             handler);
 
     /**
@@ -1835,6 +1946,24 @@ public interface OperationsInsightsAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<
                             UpdateHostInsightRequest, UpdateHostInsightResponse>
                     handler);
+
+    /**
+     * Updates one or more attributes of the specified private endpoint.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateOperationsInsightsPrivateEndpointResponse>
+            updateOperationsInsightsPrivateEndpoint(
+                    UpdateOperationsInsightsPrivateEndpointRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    UpdateOperationsInsightsPrivateEndpointRequest,
+                                    UpdateOperationsInsightsPrivateEndpointResponse>
+                            handler);
 
     /**
      * Updates the configuration of an Operations Insights Warehouse.

@@ -37,6 +37,10 @@ package com.oracle.bmc.opsi.model;
         name = "MACS_MANAGED_EXTERNAL_DATABASE"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = PeComanagedDatabaseInsight.class,
+        name = "PE_COMANAGED_DATABASE"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = AutonomousDatabaseInsight.class,
         name = "AUTONOMOUS_DATABASE"
     )
@@ -127,4 +131,10 @@ public class DatabaseInsight {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
     String lifecycleDetails;
+
+    /**
+     * A message describing the status of the database connection of this resource. For example, it can be used to provide actionable information about the permission and content validity of the database connection.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("databaseConnectionStatusDetails")
+    String databaseConnectionStatusDetails;
 }

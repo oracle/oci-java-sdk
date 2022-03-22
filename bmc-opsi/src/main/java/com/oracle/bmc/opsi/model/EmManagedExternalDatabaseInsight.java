@@ -150,6 +150,15 @@ public class EmManagedExternalDatabaseInsight extends DatabaseInsight {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("databaseConnectionStatusDetails")
+        private String databaseConnectionStatusDetails;
+
+        public Builder databaseConnectionStatusDetails(String databaseConnectionStatusDetails) {
+            this.databaseConnectionStatusDetails = databaseConnectionStatusDetails;
+            this.__explicitlySet__.add("databaseConnectionStatusDetails");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("enterpriseManagerIdentifier")
         private String enterpriseManagerIdentifier;
 
@@ -233,6 +242,7 @@ public class EmManagedExternalDatabaseInsight extends DatabaseInsight {
                             timeUpdated,
                             lifecycleState,
                             lifecycleDetails,
+                            databaseConnectionStatusDetails,
                             enterpriseManagerIdentifier,
                             enterpriseManagerEntityName,
                             enterpriseManagerEntityType,
@@ -260,6 +270,7 @@ public class EmManagedExternalDatabaseInsight extends DatabaseInsight {
                             .timeUpdated(o.getTimeUpdated())
                             .lifecycleState(o.getLifecycleState())
                             .lifecycleDetails(o.getLifecycleDetails())
+                            .databaseConnectionStatusDetails(o.getDatabaseConnectionStatusDetails())
                             .enterpriseManagerIdentifier(o.getEnterpriseManagerIdentifier())
                             .enterpriseManagerEntityName(o.getEnterpriseManagerEntityName())
                             .enterpriseManagerEntityType(o.getEnterpriseManagerEntityType())
@@ -297,6 +308,7 @@ public class EmManagedExternalDatabaseInsight extends DatabaseInsight {
             java.util.Date timeUpdated,
             LifecycleState lifecycleState,
             String lifecycleDetails,
+            String databaseConnectionStatusDetails,
             String enterpriseManagerIdentifier,
             String enterpriseManagerEntityName,
             String enterpriseManagerEntityType,
@@ -317,7 +329,8 @@ public class EmManagedExternalDatabaseInsight extends DatabaseInsight {
                 timeCreated,
                 timeUpdated,
                 lifecycleState,
-                lifecycleDetails);
+                lifecycleDetails,
+                databaseConnectionStatusDetails);
         this.enterpriseManagerIdentifier = enterpriseManagerIdentifier;
         this.enterpriseManagerEntityName = enterpriseManagerEntityName;
         this.enterpriseManagerEntityType = enterpriseManagerEntityType;

@@ -532,6 +532,127 @@ public class OperationsInsightsWaiters {
      * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
      */
     public com.oracle.bmc.waiter.Waiter<
+                    GetOperationsInsightsPrivateEndpointRequest,
+                    GetOperationsInsightsPrivateEndpointResponse>
+            forOperationsInsightsPrivateEndpoint(
+                    GetOperationsInsightsPrivateEndpointRequest request,
+                    com.oracle.bmc.opsi.model.OperationsInsightsPrivateEndpointLifecycleState...
+                            targetStates) {
+        org.apache.commons.lang3.Validate.notEmpty(
+                targetStates, "At least one targetState must be provided");
+        org.apache.commons.lang3.Validate.noNullElements(
+                targetStates, "Null targetState values are not permitted");
+
+        return forOperationsInsightsPrivateEndpoint(
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_WAITER, request, targetStates);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param targetState the desired state to wait for
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<
+                    GetOperationsInsightsPrivateEndpointRequest,
+                    GetOperationsInsightsPrivateEndpointResponse>
+            forOperationsInsightsPrivateEndpoint(
+                    GetOperationsInsightsPrivateEndpointRequest request,
+                    com.oracle.bmc.opsi.model.OperationsInsightsPrivateEndpointLifecycleState
+                            targetState,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
+        org.apache.commons.lang3.Validate.notNull(targetState, "The targetState cannot be null");
+
+        return forOperationsInsightsPrivateEndpoint(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetState);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @param targetStates the desired states to wait for. The waiter will return once the resource reaches any of the provided states
+     * @return a new {@code Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<
+                    GetOperationsInsightsPrivateEndpointRequest,
+                    GetOperationsInsightsPrivateEndpointResponse>
+            forOperationsInsightsPrivateEndpoint(
+                    GetOperationsInsightsPrivateEndpointRequest request,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy,
+                    com.oracle.bmc.opsi.model.OperationsInsightsPrivateEndpointLifecycleState...
+                            targetStates) {
+        org.apache.commons.lang3.Validate.notEmpty(
+                targetStates, "At least one targetState must be provided");
+        org.apache.commons.lang3.Validate.noNullElements(
+                targetStates, "Null targetState values are not permitted");
+
+        return forOperationsInsightsPrivateEndpoint(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetStates);
+    }
+
+    // Helper method to create a new Waiter for OperationsInsightsPrivateEndpoint.
+    private com.oracle.bmc.waiter.Waiter<
+                    GetOperationsInsightsPrivateEndpointRequest,
+                    GetOperationsInsightsPrivateEndpointResponse>
+            forOperationsInsightsPrivateEndpoint(
+                    com.oracle.bmc.waiter.BmcGenericWaiter waiter,
+                    final GetOperationsInsightsPrivateEndpointRequest request,
+                    final com.oracle.bmc.opsi.model
+                                    .OperationsInsightsPrivateEndpointLifecycleState...
+                            targetStates) {
+        final java.util.Set<
+                        com.oracle.bmc.opsi.model.OperationsInsightsPrivateEndpointLifecycleState>
+                targetStatesSet = new java.util.HashSet<>(java.util.Arrays.asList(targetStates));
+
+        return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
+                executorService,
+                waiter.toCallable(
+                        com.google.common.base.Suppliers.ofInstance(request),
+                        new com.google.common.base.Function<
+                                GetOperationsInsightsPrivateEndpointRequest,
+                                GetOperationsInsightsPrivateEndpointResponse>() {
+                            @Override
+                            public GetOperationsInsightsPrivateEndpointResponse apply(
+                                    GetOperationsInsightsPrivateEndpointRequest request) {
+                                return client.getOperationsInsightsPrivateEndpoint(request);
+                            }
+                        },
+                        new com.google.common.base.Predicate<
+                                GetOperationsInsightsPrivateEndpointResponse>() {
+                            @Override
+                            public boolean apply(
+                                    GetOperationsInsightsPrivateEndpointResponse response) {
+                                return targetStatesSet.contains(
+                                        response.getOperationsInsightsPrivateEndpoint()
+                                                .getLifecycleState());
+                            }
+                        },
+                        targetStatesSet.contains(
+                                com.oracle.bmc.opsi.model
+                                        .OperationsInsightsPrivateEndpointLifecycleState.Deleted)),
+                request);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
+     *
+     * @param request the request to send
+     * @param targetState the desired states to wait for. If multiple states are provided then the waiter will return once the resource reaches any of the provided states
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<
                     GetOperationsInsightsWarehouseRequest, GetOperationsInsightsWarehouseResponse>
             forOperationsInsightsWarehouse(
                     GetOperationsInsightsWarehouseRequest request,

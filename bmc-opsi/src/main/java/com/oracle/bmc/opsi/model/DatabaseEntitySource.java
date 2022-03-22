@@ -10,6 +10,7 @@ package com.oracle.bmc.opsi.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 public enum DatabaseEntitySource {
     EmManagedExternalDatabase("EM_MANAGED_EXTERNAL_DATABASE"),
+    PeComanagedDatabase("PE_COMANAGED_DATABASE"),
     ;
 
     private final String value;

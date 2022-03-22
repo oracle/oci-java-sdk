@@ -186,6 +186,15 @@ public class AutonomousDatabaseInsightSummary extends DatabaseInsightSummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("databaseConnectionStatusDetails")
+        private String databaseConnectionStatusDetails;
+
+        public Builder databaseConnectionStatusDetails(String databaseConnectionStatusDetails) {
+            this.databaseConnectionStatusDetails = databaseConnectionStatusDetails;
+            this.__explicitlySet__.add("databaseConnectionStatusDetails");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("databaseResourceType")
         private String databaseResourceType;
 
@@ -218,6 +227,7 @@ public class AutonomousDatabaseInsightSummary extends DatabaseInsightSummary {
                             timeUpdated,
                             lifecycleState,
                             lifecycleDetails,
+                            databaseConnectionStatusDetails,
                             databaseResourceType);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
@@ -243,6 +253,7 @@ public class AutonomousDatabaseInsightSummary extends DatabaseInsightSummary {
                             .timeUpdated(o.getTimeUpdated())
                             .lifecycleState(o.getLifecycleState())
                             .lifecycleDetails(o.getLifecycleDetails())
+                            .databaseConnectionStatusDetails(o.getDatabaseConnectionStatusDetails())
                             .databaseResourceType(o.getDatabaseResourceType());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
@@ -276,6 +287,7 @@ public class AutonomousDatabaseInsightSummary extends DatabaseInsightSummary {
             java.util.Date timeUpdated,
             LifecycleState lifecycleState,
             String lifecycleDetails,
+            String databaseConnectionStatusDetails,
             String databaseResourceType) {
         super(
                 id,
@@ -294,7 +306,8 @@ public class AutonomousDatabaseInsightSummary extends DatabaseInsightSummary {
                 timeCreated,
                 timeUpdated,
                 lifecycleState,
-                lifecycleDetails);
+                lifecycleDetails,
+                databaseConnectionStatusDetails);
         this.databaseResourceType = databaseResourceType;
     }
 

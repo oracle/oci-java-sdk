@@ -1424,6 +1424,138 @@ public class OperationsInsightsPaginators {
     }
 
     /**
+     * Creates a new iterable which will iterate over the responses received from the listOperationsInsightsPrivateEndpoints operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListOperationsInsightsPrivateEndpointsResponse>
+            listOperationsInsightsPrivateEndpointsResponseIterator(
+                    final ListOperationsInsightsPrivateEndpointsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListOperationsInsightsPrivateEndpointsRequest.Builder,
+                ListOperationsInsightsPrivateEndpointsRequest,
+                ListOperationsInsightsPrivateEndpointsResponse>(
+                new com.google.common.base.Supplier<
+                        ListOperationsInsightsPrivateEndpointsRequest.Builder>() {
+                    @Override
+                    public ListOperationsInsightsPrivateEndpointsRequest.Builder get() {
+                        return ListOperationsInsightsPrivateEndpointsRequest.builder()
+                                .copy(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListOperationsInsightsPrivateEndpointsResponse, String>() {
+                    @Override
+                    public String apply(ListOperationsInsightsPrivateEndpointsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListOperationsInsightsPrivateEndpointsRequest.Builder>,
+                        ListOperationsInsightsPrivateEndpointsRequest>() {
+                    @Override
+                    public ListOperationsInsightsPrivateEndpointsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListOperationsInsightsPrivateEndpointsRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListOperationsInsightsPrivateEndpointsRequest,
+                        ListOperationsInsightsPrivateEndpointsResponse>() {
+                    @Override
+                    public ListOperationsInsightsPrivateEndpointsResponse apply(
+                            ListOperationsInsightsPrivateEndpointsRequest request) {
+                        return client.listOperationsInsightsPrivateEndpoints(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.opsi.model.OperationsInsightsPrivateEndpointSummary} objects
+     * contained in responses from the listOperationsInsightsPrivateEndpoints operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.opsi.model.OperationsInsightsPrivateEndpointSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.opsi.model.OperationsInsightsPrivateEndpointSummary>
+            listOperationsInsightsPrivateEndpointsRecordIterator(
+                    final ListOperationsInsightsPrivateEndpointsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListOperationsInsightsPrivateEndpointsRequest.Builder,
+                ListOperationsInsightsPrivateEndpointsRequest,
+                ListOperationsInsightsPrivateEndpointsResponse,
+                com.oracle.bmc.opsi.model.OperationsInsightsPrivateEndpointSummary>(
+                new com.google.common.base.Supplier<
+                        ListOperationsInsightsPrivateEndpointsRequest.Builder>() {
+                    @Override
+                    public ListOperationsInsightsPrivateEndpointsRequest.Builder get() {
+                        return ListOperationsInsightsPrivateEndpointsRequest.builder()
+                                .copy(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListOperationsInsightsPrivateEndpointsResponse, String>() {
+                    @Override
+                    public String apply(ListOperationsInsightsPrivateEndpointsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListOperationsInsightsPrivateEndpointsRequest.Builder>,
+                        ListOperationsInsightsPrivateEndpointsRequest>() {
+                    @Override
+                    public ListOperationsInsightsPrivateEndpointsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListOperationsInsightsPrivateEndpointsRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListOperationsInsightsPrivateEndpointsRequest,
+                        ListOperationsInsightsPrivateEndpointsResponse>() {
+                    @Override
+                    public ListOperationsInsightsPrivateEndpointsResponse apply(
+                            ListOperationsInsightsPrivateEndpointsRequest request) {
+                        return client.listOperationsInsightsPrivateEndpoints(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListOperationsInsightsPrivateEndpointsResponse,
+                        java.util.List<
+                                com.oracle.bmc.opsi.model
+                                        .OperationsInsightsPrivateEndpointSummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.opsi.model
+                                            .OperationsInsightsPrivateEndpointSummary>
+                            apply(ListOperationsInsightsPrivateEndpointsResponse response) {
+                        return response.getOperationsInsightsPrivateEndpointCollection().getItems();
+                    }
+                });
+    }
+
+    /**
      * Creates a new iterable which will iterate over the responses received from the listOperationsInsightsWarehouseUsers operation. This iterable
      * will fetch more data from the server as needed.
      *

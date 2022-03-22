@@ -634,6 +634,116 @@ public class OperationsInsightsAsyncClient implements OperationsInsightsAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<ChangeOperationsInsightsPrivateEndpointCompartmentResponse>
+            changeOperationsInsightsPrivateEndpointCompartment(
+                    ChangeOperationsInsightsPrivateEndpointCompartmentRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeOperationsInsightsPrivateEndpointCompartmentRequest,
+                                    ChangeOperationsInsightsPrivateEndpointCompartmentResponse>
+                            handler) {
+        LOG.trace("Called async changeOperationsInsightsPrivateEndpointCompartment");
+        final ChangeOperationsInsightsPrivateEndpointCompartmentRequest interceptedRequest =
+                ChangeOperationsInsightsPrivateEndpointCompartmentConverter.interceptRequest(
+                        request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangeOperationsInsightsPrivateEndpointCompartmentConverter.fromRequest(
+                        client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        ChangeOperationsInsightsPrivateEndpointCompartmentResponse>
+                transformer =
+                        ChangeOperationsInsightsPrivateEndpointCompartmentConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        ChangeOperationsInsightsPrivateEndpointCompartmentRequest,
+                        ChangeOperationsInsightsPrivateEndpointCompartmentResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ChangeOperationsInsightsPrivateEndpointCompartmentRequest,
+                                ChangeOperationsInsightsPrivateEndpointCompartmentResponse>,
+                        java.util.concurrent.Future<
+                                ChangeOperationsInsightsPrivateEndpointCompartmentResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest
+                                        .getChangeOperationsInsightsPrivateEndpointCompartmentDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ChangeOperationsInsightsPrivateEndpointCompartmentRequest,
+                    ChangeOperationsInsightsPrivateEndpointCompartmentResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ChangePeComanagedDatabaseInsightResponse>
+            changePeComanagedDatabaseInsight(
+                    ChangePeComanagedDatabaseInsightRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ChangePeComanagedDatabaseInsightRequest,
+                                    ChangePeComanagedDatabaseInsightResponse>
+                            handler) {
+        LOG.trace("Called async changePeComanagedDatabaseInsight");
+        final ChangePeComanagedDatabaseInsightRequest interceptedRequest =
+                ChangePeComanagedDatabaseInsightConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangePeComanagedDatabaseInsightConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ChangePeComanagedDatabaseInsightResponse>
+                transformer = ChangePeComanagedDatabaseInsightConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        ChangePeComanagedDatabaseInsightRequest,
+                        ChangePeComanagedDatabaseInsightResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ChangePeComanagedDatabaseInsightRequest,
+                                ChangePeComanagedDatabaseInsightResponse>,
+                        java.util.concurrent.Future<ChangePeComanagedDatabaseInsightResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getChangePeComanagedDatabaseInsightDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ChangePeComanagedDatabaseInsightRequest,
+                    ChangePeComanagedDatabaseInsightResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateAwrHubResponse> createAwrHub(
             CreateAwrHubRequest request,
             final com.oracle.bmc.responses.AsyncHandler<CreateAwrHubRequest, CreateAwrHubResponse>
@@ -854,6 +964,61 @@ public class OperationsInsightsAsyncClient implements OperationsInsightsAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     CreateHostInsightRequest, CreateHostInsightResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateOperationsInsightsPrivateEndpointResponse>
+            createOperationsInsightsPrivateEndpoint(
+                    CreateOperationsInsightsPrivateEndpointRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    CreateOperationsInsightsPrivateEndpointRequest,
+                                    CreateOperationsInsightsPrivateEndpointResponse>
+                            handler) {
+        LOG.trace("Called async createOperationsInsightsPrivateEndpoint");
+        final CreateOperationsInsightsPrivateEndpointRequest interceptedRequest =
+                CreateOperationsInsightsPrivateEndpointConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateOperationsInsightsPrivateEndpointConverter.fromRequest(
+                        client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, CreateOperationsInsightsPrivateEndpointResponse>
+                transformer = CreateOperationsInsightsPrivateEndpointConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        CreateOperationsInsightsPrivateEndpointRequest,
+                        CreateOperationsInsightsPrivateEndpointResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CreateOperationsInsightsPrivateEndpointRequest,
+                                CreateOperationsInsightsPrivateEndpointResponse>,
+                        java.util.concurrent.Future<
+                                CreateOperationsInsightsPrivateEndpointResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest
+                                        .getCreateOperationsInsightsPrivateEndpointDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CreateOperationsInsightsPrivateEndpointRequest,
+                    CreateOperationsInsightsPrivateEndpointResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -1163,6 +1328,54 @@ public class OperationsInsightsAsyncClient implements OperationsInsightsAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     DeleteHostInsightRequest, DeleteHostInsightResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteOperationsInsightsPrivateEndpointResponse>
+            deleteOperationsInsightsPrivateEndpoint(
+                    DeleteOperationsInsightsPrivateEndpointRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    DeleteOperationsInsightsPrivateEndpointRequest,
+                                    DeleteOperationsInsightsPrivateEndpointResponse>
+                            handler) {
+        LOG.trace("Called async deleteOperationsInsightsPrivateEndpoint");
+        final DeleteOperationsInsightsPrivateEndpointRequest interceptedRequest =
+                DeleteOperationsInsightsPrivateEndpointConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteOperationsInsightsPrivateEndpointConverter.fromRequest(
+                        client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, DeleteOperationsInsightsPrivateEndpointResponse>
+                transformer = DeleteOperationsInsightsPrivateEndpointConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        DeleteOperationsInsightsPrivateEndpointRequest,
+                        DeleteOperationsInsightsPrivateEndpointResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DeleteOperationsInsightsPrivateEndpointRequest,
+                                DeleteOperationsInsightsPrivateEndpointResponse>,
+                        java.util.concurrent.Future<
+                                DeleteOperationsInsightsPrivateEndpointResponse>>
+                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DeleteOperationsInsightsPrivateEndpointRequest,
+                    DeleteOperationsInsightsPrivateEndpointResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -1820,6 +2033,53 @@ public class OperationsInsightsAsyncClient implements OperationsInsightsAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     GetHostInsightRequest, GetHostInsightResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetOperationsInsightsPrivateEndpointResponse>
+            getOperationsInsightsPrivateEndpoint(
+                    GetOperationsInsightsPrivateEndpointRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    GetOperationsInsightsPrivateEndpointRequest,
+                                    GetOperationsInsightsPrivateEndpointResponse>
+                            handler) {
+        LOG.trace("Called async getOperationsInsightsPrivateEndpoint");
+        final GetOperationsInsightsPrivateEndpointRequest interceptedRequest =
+                GetOperationsInsightsPrivateEndpointConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetOperationsInsightsPrivateEndpointConverter.fromRequest(
+                        client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, GetOperationsInsightsPrivateEndpointResponse>
+                transformer = GetOperationsInsightsPrivateEndpointConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        GetOperationsInsightsPrivateEndpointRequest,
+                        GetOperationsInsightsPrivateEndpointResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetOperationsInsightsPrivateEndpointRequest,
+                                GetOperationsInsightsPrivateEndpointResponse>,
+                        java.util.concurrent.Future<GetOperationsInsightsPrivateEndpointResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetOperationsInsightsPrivateEndpointRequest,
+                    GetOperationsInsightsPrivateEndpointResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -2771,6 +3031,53 @@ public class OperationsInsightsAsyncClient implements OperationsInsightsAsync {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     ListImportableEnterpriseManagerEntitiesRequest,
                     ListImportableEnterpriseManagerEntitiesResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListOperationsInsightsPrivateEndpointsResponse>
+            listOperationsInsightsPrivateEndpoints(
+                    ListOperationsInsightsPrivateEndpointsRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListOperationsInsightsPrivateEndpointsRequest,
+                                    ListOperationsInsightsPrivateEndpointsResponse>
+                            handler) {
+        LOG.trace("Called async listOperationsInsightsPrivateEndpoints");
+        final ListOperationsInsightsPrivateEndpointsRequest interceptedRequest =
+                ListOperationsInsightsPrivateEndpointsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListOperationsInsightsPrivateEndpointsConverter.fromRequest(
+                        client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ListOperationsInsightsPrivateEndpointsResponse>
+                transformer = ListOperationsInsightsPrivateEndpointsConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListOperationsInsightsPrivateEndpointsRequest,
+                        ListOperationsInsightsPrivateEndpointsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListOperationsInsightsPrivateEndpointsRequest,
+                                ListOperationsInsightsPrivateEndpointsResponse>,
+                        java.util.concurrent.Future<ListOperationsInsightsPrivateEndpointsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListOperationsInsightsPrivateEndpointsRequest,
+                    ListOperationsInsightsPrivateEndpointsResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -4807,6 +5114,60 @@ public class OperationsInsightsAsyncClient implements OperationsInsightsAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     UpdateHostInsightRequest, UpdateHostInsightResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateOperationsInsightsPrivateEndpointResponse>
+            updateOperationsInsightsPrivateEndpoint(
+                    UpdateOperationsInsightsPrivateEndpointRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    UpdateOperationsInsightsPrivateEndpointRequest,
+                                    UpdateOperationsInsightsPrivateEndpointResponse>
+                            handler) {
+        LOG.trace("Called async updateOperationsInsightsPrivateEndpoint");
+        final UpdateOperationsInsightsPrivateEndpointRequest interceptedRequest =
+                UpdateOperationsInsightsPrivateEndpointConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateOperationsInsightsPrivateEndpointConverter.fromRequest(
+                        client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, UpdateOperationsInsightsPrivateEndpointResponse>
+                transformer = UpdateOperationsInsightsPrivateEndpointConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        UpdateOperationsInsightsPrivateEndpointRequest,
+                        UpdateOperationsInsightsPrivateEndpointResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpdateOperationsInsightsPrivateEndpointRequest,
+                                UpdateOperationsInsightsPrivateEndpointResponse>,
+                        java.util.concurrent.Future<
+                                UpdateOperationsInsightsPrivateEndpointResponse>>
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest
+                                        .getUpdateOperationsInsightsPrivateEndpointDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpdateOperationsInsightsPrivateEndpointRequest,
+                    UpdateOperationsInsightsPrivateEndpointResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,

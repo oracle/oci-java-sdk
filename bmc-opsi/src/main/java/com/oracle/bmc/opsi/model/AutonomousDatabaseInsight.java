@@ -150,6 +150,15 @@ public class AutonomousDatabaseInsight extends DatabaseInsight {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("databaseConnectionStatusDetails")
+        private String databaseConnectionStatusDetails;
+
+        public Builder databaseConnectionStatusDetails(String databaseConnectionStatusDetails) {
+            this.databaseConnectionStatusDetails = databaseConnectionStatusDetails;
+            this.__explicitlySet__.add("databaseConnectionStatusDetails");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("databaseId")
         private String databaseId;
 
@@ -214,6 +223,7 @@ public class AutonomousDatabaseInsight extends DatabaseInsight {
                             timeUpdated,
                             lifecycleState,
                             lifecycleDetails,
+                            databaseConnectionStatusDetails,
                             databaseId,
                             databaseName,
                             databaseDisplayName,
@@ -239,6 +249,7 @@ public class AutonomousDatabaseInsight extends DatabaseInsight {
                             .timeUpdated(o.getTimeUpdated())
                             .lifecycleState(o.getLifecycleState())
                             .lifecycleDetails(o.getLifecycleDetails())
+                            .databaseConnectionStatusDetails(o.getDatabaseConnectionStatusDetails())
                             .databaseId(o.getDatabaseId())
                             .databaseName(o.getDatabaseName())
                             .databaseDisplayName(o.getDatabaseDisplayName())
@@ -272,6 +283,7 @@ public class AutonomousDatabaseInsight extends DatabaseInsight {
             java.util.Date timeUpdated,
             LifecycleState lifecycleState,
             String lifecycleDetails,
+            String databaseConnectionStatusDetails,
             String databaseId,
             String databaseName,
             String databaseDisplayName,
@@ -290,7 +302,8 @@ public class AutonomousDatabaseInsight extends DatabaseInsight {
                 timeCreated,
                 timeUpdated,
                 lifecycleState,
-                lifecycleDetails);
+                lifecycleDetails,
+                databaseConnectionStatusDetails);
         this.databaseId = databaseId;
         this.databaseName = databaseName;
         this.databaseDisplayName = databaseDisplayName;

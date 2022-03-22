@@ -277,6 +277,15 @@ public class DbSystem {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("deletionPolicy")
+        private DeletionPolicyDetails deletionPolicy;
+
+        public Builder deletionPolicy(DeletionPolicyDetails deletionPolicy) {
+            this.deletionPolicy = deletionPolicy;
+            this.__explicitlySet__.add("deletionPolicy");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
@@ -357,6 +366,7 @@ public class DbSystem {
                             lifecycleState,
                             lifecycleDetails,
                             maintenance,
+                            deletionPolicy,
                             timeCreated,
                             timeUpdated,
                             freeformTags,
@@ -397,6 +407,7 @@ public class DbSystem {
                             .lifecycleState(o.getLifecycleState())
                             .lifecycleDetails(o.getLifecycleDetails())
                             .maintenance(o.getMaintenance())
+                            .deletionPolicy(o.getDeletionPolicy())
                             .timeCreated(o.getTimeCreated())
                             .timeUpdated(o.getTimeUpdated())
                             .freeformTags(o.getFreeformTags())
@@ -650,6 +661,9 @@ public class DbSystem {
 
     @com.fasterxml.jackson.annotation.JsonProperty("maintenance")
     MaintenanceDetails maintenance;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("deletionPolicy")
+    DeletionPolicyDetails deletionPolicy;
 
     /**
      * The date and time the DB System was created.
