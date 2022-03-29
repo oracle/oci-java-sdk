@@ -11,6 +11,12 @@ package com.oracle.bmc.marketplace.model;
 @lombok.extern.slf4j.Slf4j
 public enum PricingCurrencyEnum {
     Usd("USD"),
+    Cad("CAD"),
+    Inr("INR"),
+    Gbp("GBP"),
+    Brl("BRL"),
+    Jpy("JPY"),
+    Omr("OMR"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this

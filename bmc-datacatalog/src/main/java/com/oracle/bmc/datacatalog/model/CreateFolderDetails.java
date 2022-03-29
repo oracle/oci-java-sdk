@@ -108,6 +108,15 @@ public class CreateFolderDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("typeKey")
+        private String typeKey;
+
+        public Builder typeKey(String typeKey) {
+            this.typeKey = typeKey;
+            this.__explicitlySet__.add("typeKey");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -122,7 +131,8 @@ public class CreateFolderDetails {
                             parentFolderKey,
                             timeExternal,
                             lastJobKey,
-                            harvestStatus);
+                            harvestStatus,
+                            typeKey);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -138,7 +148,8 @@ public class CreateFolderDetails {
                             .parentFolderKey(o.getParentFolderKey())
                             .timeExternal(o.getTimeExternal())
                             .lastJobKey(o.getLastJobKey())
-                            .harvestStatus(o.getHarvestStatus());
+                            .harvestStatus(o.getHarvestStatus())
+                            .typeKey(o.getTypeKey());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -215,6 +226,12 @@ public class CreateFolderDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("harvestStatus")
     HarvestStatus harvestStatus;
+
+    /**
+     * Type key of the object. Type keys can be found via the '/types' endpoint.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("typeKey")
+    String typeKey;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

@@ -23,6 +23,11 @@ public class GetFileDiffResponse extends com.oracle.bmc.responses.BmcResponse {
     private String opcRequestId;
 
     /**
+     * This API will be deprecated on Wed, 29 Mar 2023 01:00:00 GMT. Please use "/repositories/{repositoryId}/file/diffs"
+     */
+    private String sunset;
+
+    /**
      * The returned FileDiffResponse instance.
      */
     private com.oracle.bmc.devops.model.FileDiffResponse fileDiffResponse;
@@ -31,16 +36,19 @@ public class GetFileDiffResponse extends com.oracle.bmc.responses.BmcResponse {
         "__httpStatusCode__",
         "etag",
         "opcRequestId",
+        "sunset",
         "fileDiffResponse"
     })
     private GetFileDiffResponse(
             int __httpStatusCode__,
             String etag,
             String opcRequestId,
+            String sunset,
             com.oracle.bmc.devops.model.FileDiffResponse fileDiffResponse) {
         super(__httpStatusCode__);
         this.etag = etag;
         this.opcRequestId = opcRequestId;
+        this.sunset = sunset;
         this.fileDiffResponse = fileDiffResponse;
     }
 
@@ -60,6 +68,7 @@ public class GetFileDiffResponse extends com.oracle.bmc.responses.BmcResponse {
             __httpStatusCode__(o.get__httpStatusCode__());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
+            sunset(o.getSunset());
             fileDiffResponse(o.getFileDiffResponse());
 
             return this;
@@ -67,7 +76,7 @@ public class GetFileDiffResponse extends com.oracle.bmc.responses.BmcResponse {
 
         public GetFileDiffResponse build() {
             return new GetFileDiffResponse(
-                    __httpStatusCode__, etag, opcRequestId, fileDiffResponse);
+                    __httpStatusCode__, etag, opcRequestId, sunset, fileDiffResponse);
         }
     }
 }

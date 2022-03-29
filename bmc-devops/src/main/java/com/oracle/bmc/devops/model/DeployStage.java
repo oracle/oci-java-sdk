@@ -29,6 +29,10 @@ package com.oracle.bmc.devops.model;
 )
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = ComputeInstanceGroupBlueGreenTrafficShiftDeployStage.class,
+        name = "COMPUTE_INSTANCE_GROUP_BLUE_GREEN_TRAFFIC_SHIFT"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = LoadBalancerTrafficShiftDeployStage.class,
         name = "LOAD_BALANCER_TRAFFIC_SHIFT"
     ),
@@ -37,12 +41,52 @@ package com.oracle.bmc.devops.model;
         name = "INVOKE_FUNCTION"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = WaitDeployStage.class,
-        name = "WAIT"
+        value = OkeCanaryDeployStage.class,
+        name = "OKE_CANARY_DEPLOYMENT"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = OkeDeployStage.class,
         name = "OKE_DEPLOYMENT"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = OkeCanaryTrafficShiftDeployStage.class,
+        name = "OKE_CANARY_TRAFFIC_SHIFT"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = FunctionDeployStage.class,
+        name = "DEPLOY_FUNCTION"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = OkeBlueGreenDeployStage.class,
+        name = "OKE_BLUE_GREEN_DEPLOYMENT"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = OkeCanaryApprovalDeployStage.class,
+        name = "OKE_CANARY_APPROVAL"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = ComputeInstanceGroupCanaryTrafficShiftDeployStage.class,
+        name = "COMPUTE_INSTANCE_GROUP_CANARY_TRAFFIC_SHIFT"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = ComputeInstanceGroupCanaryApprovalDeployStage.class,
+        name = "COMPUTE_INSTANCE_GROUP_CANARY_APPROVAL"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = WaitDeployStage.class,
+        name = "WAIT"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = ComputeInstanceGroupBlueGreenDeployStage.class,
+        name = "COMPUTE_INSTANCE_GROUP_BLUE_GREEN_DEPLOYMENT"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = ComputeInstanceGroupCanaryDeployStage.class,
+        name = "COMPUTE_INSTANCE_GROUP_CANARY_DEPLOYMENT"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = OkeBlueGreenTrafficShiftDeployStage.class,
+        name = "OKE_BLUE_GREEN_TRAFFIC_SHIFT"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = ManualApprovalDeployStage.class,
@@ -51,10 +95,6 @@ package com.oracle.bmc.devops.model;
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = ComputeInstanceGroupDeployStage.class,
         name = "COMPUTE_INSTANCE_GROUP_ROLLING_DEPLOYMENT"
-    ),
-    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = FunctionDeployStage.class,
-        name = "DEPLOY_FUNCTION"
     )
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
@@ -197,6 +237,17 @@ public class DeployStage {
     public enum DeployStageType {
         Wait("WAIT"),
         ComputeInstanceGroupRollingDeployment("COMPUTE_INSTANCE_GROUP_ROLLING_DEPLOYMENT"),
+        ComputeInstanceGroupBlueGreenDeployment("COMPUTE_INSTANCE_GROUP_BLUE_GREEN_DEPLOYMENT"),
+        ComputeInstanceGroupBlueGreenTrafficShift(
+                "COMPUTE_INSTANCE_GROUP_BLUE_GREEN_TRAFFIC_SHIFT"),
+        ComputeInstanceGroupCanaryDeployment("COMPUTE_INSTANCE_GROUP_CANARY_DEPLOYMENT"),
+        ComputeInstanceGroupCanaryTrafficShift("COMPUTE_INSTANCE_GROUP_CANARY_TRAFFIC_SHIFT"),
+        ComputeInstanceGroupCanaryApproval("COMPUTE_INSTANCE_GROUP_CANARY_APPROVAL"),
+        OkeBlueGreenDeployment("OKE_BLUE_GREEN_DEPLOYMENT"),
+        OkeBlueGreenTrafficShift("OKE_BLUE_GREEN_TRAFFIC_SHIFT"),
+        OkeCanaryDeployment("OKE_CANARY_DEPLOYMENT"),
+        OkeCanaryTrafficShift("OKE_CANARY_TRAFFIC_SHIFT"),
+        OkeCanaryApproval("OKE_CANARY_APPROVAL"),
         OkeDeployment("OKE_DEPLOYMENT"),
         DeployFunction("DEPLOY_FUNCTION"),
         InvokeFunction("INVOKE_FUNCTION"),

@@ -307,13 +307,13 @@ public class OkeDeployStage extends DeployStage {
     String okeClusterDeployEnvironmentId;
 
     /**
-     * List of Kubernetes manifest artifact OCIDs, the manifests should not include any job resource.
+     * List of Kubernetes manifest artifact OCIDs.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("kubernetesManifestDeployArtifactIds")
     java.util.List<String> kubernetesManifestDeployArtifactIds;
 
     /**
-     * Default Namespace to be used for Kubernetes deployment when not specified in the manifest.
+     * Default namespace to be used for Kubernetes deployment when not specified in the manifest.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("namespace")
     String namespace;

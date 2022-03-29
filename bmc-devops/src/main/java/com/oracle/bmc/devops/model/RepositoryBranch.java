@@ -57,6 +57,25 @@ public class RepositoryBranch extends RepositoryRef {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
+        private java.util.Map<String, String> freeformTags;
+
+        public Builder freeformTags(java.util.Map<String, String> freeformTags) {
+            this.freeformTags = freeformTags;
+            this.__explicitlySet__.add("freeformTags");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
+        private java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+        public Builder definedTags(
+                java.util.Map<String, java.util.Map<String, Object>> definedTags) {
+            this.definedTags = definedTags;
+            this.__explicitlySet__.add("definedTags");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("commitId")
         private String commitId;
 
@@ -71,7 +90,13 @@ public class RepositoryBranch extends RepositoryRef {
 
         public RepositoryBranch build() {
             RepositoryBranch __instance__ =
-                    new RepositoryBranch(refName, fullRefName, repositoryId, commitId);
+                    new RepositoryBranch(
+                            refName,
+                            fullRefName,
+                            repositoryId,
+                            freeformTags,
+                            definedTags,
+                            commitId);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -82,6 +107,8 @@ public class RepositoryBranch extends RepositoryRef {
                     refName(o.getRefName())
                             .fullRefName(o.getFullRefName())
                             .repositoryId(o.getRepositoryId())
+                            .freeformTags(o.getFreeformTags())
+                            .definedTags(o.getDefinedTags())
                             .commitId(o.getCommitId());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
@@ -98,8 +125,13 @@ public class RepositoryBranch extends RepositoryRef {
 
     @Deprecated
     public RepositoryBranch(
-            String refName, String fullRefName, String repositoryId, String commitId) {
-        super(refName, fullRefName, repositoryId);
+            String refName,
+            String fullRefName,
+            String repositoryId,
+            java.util.Map<String, String> freeformTags,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            String commitId) {
+        super(refName, fullRefName, repositoryId, freeformTags, definedTags);
         this.commitId = commitId;
     }
 

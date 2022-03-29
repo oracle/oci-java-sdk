@@ -39,6 +39,10 @@ package com.oracle.bmc.devops.model;
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = UpdateDeployPipelineDeploymentDetails.class,
         name = "PIPELINE_DEPLOYMENT"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = UpdateSingleDeployStageRedeploymentDetails.class,
+        name = "SINGLE_STAGE_REDEPLOYMENT"
     )
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)

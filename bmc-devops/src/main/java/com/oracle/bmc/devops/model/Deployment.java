@@ -29,6 +29,10 @@ package com.oracle.bmc.devops.model;
 )
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = SingleDeployStageRedeployment.class,
+        name = "SINGLE_STAGE_REDEPLOYMENT"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = DeployPipelineDeployment.class,
         name = "PIPELINE_DEPLOYMENT"
     ),
@@ -181,13 +185,14 @@ public class Deployment {
     java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
     /**
-     * Specifies type of Deployment
+     * Specifies type of deployment.
      **/
     @lombok.extern.slf4j.Slf4j
     public enum DeploymentType {
         PipelineDeployment("PIPELINE_DEPLOYMENT"),
         PipelineRedeployment("PIPELINE_REDEPLOYMENT"),
         SingleStageDeployment("SINGLE_STAGE_DEPLOYMENT"),
+        SingleStageRedeployment("SINGLE_STAGE_REDEPLOYMENT"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this

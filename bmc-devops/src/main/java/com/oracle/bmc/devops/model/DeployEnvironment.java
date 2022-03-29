@@ -5,7 +5,7 @@
 package com.oracle.bmc.devops.model;
 
 /**
- * The target OCI resources, such as Compute instances, Container Engine for Kubernetes(OKE) clusters, or Function, where artifacts will be deployed.
+ * The target OCI resources, such as Compute instances, Container Engine for Kubernetes(OKE) clusters, or Function, where artifacts are deployed.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -96,6 +96,7 @@ public class DeployEnvironment {
         Deleting("DELETING"),
         Deleted("DELETED"),
         Failed("FAILED"),
+        NeedsAttention("NEEDS_ATTENTION"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this

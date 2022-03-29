@@ -53,12 +53,21 @@ public class LaunchEligibility {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("ineligibilityReason")
+        private IneligibilityReasonEnum ineligibilityReason;
+
+        public Builder ineligibilityReason(IneligibilityReasonEnum ineligibilityReason) {
+            this.ineligibilityReason = ineligibilityReason;
+            this.__explicitlySet__.add("ineligibilityReason");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public LaunchEligibility build() {
             LaunchEligibility __instance__ =
-                    new LaunchEligibility(imageId, isLaunchAllowed, meters);
+                    new LaunchEligibility(imageId, isLaunchAllowed, meters, ineligibilityReason);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -68,7 +77,8 @@ public class LaunchEligibility {
             Builder copiedBuilder =
                     imageId(o.getImageId())
                             .isLaunchAllowed(o.getIsLaunchAllowed())
-                            .meters(o.getMeters());
+                            .meters(o.getMeters())
+                            .ineligibilityReason(o.getIneligibilityReason());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -99,6 +109,12 @@ public class LaunchEligibility {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("meters")
     String meters;
+
+    /**
+     * Reason the account is ineligible to launch paid listings
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("ineligibilityReason")
+    IneligibilityReasonEnum ineligibilityReason;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

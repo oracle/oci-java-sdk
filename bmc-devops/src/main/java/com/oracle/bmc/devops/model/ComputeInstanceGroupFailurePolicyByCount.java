@@ -74,7 +74,7 @@ public class ComputeInstanceGroupFailurePolicyByCount extends ComputeInstanceGro
     }
 
     /**
-     * The threshold count of failed instances in the group, which when reached or exceeded sets the stage as FAILED.
+     * The threshold count of failed instances in the group, which when reached or exceeded sets the stage as Failed.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("failureCount")
     Integer failureCount;

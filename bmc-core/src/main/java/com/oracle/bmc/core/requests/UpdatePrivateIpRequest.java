@@ -22,7 +22,7 @@ public class UpdatePrivateIpRequest
                 com.oracle.bmc.core.model.UpdatePrivateIpDetails> {
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the private IP.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the private IP or IPv6.
      */
     private String privateIpId;
 

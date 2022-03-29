@@ -47,6 +47,14 @@ public class ListWorkRequestsConverter {
                                     request.getId()));
         }
 
+        if (request.getFleetId() != null) {
+            target =
+                    target.queryParam(
+                            "fleetId",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getFleetId()));
+        }
+
         if (request.getPage() != null) {
             target =
                     target.queryParam(

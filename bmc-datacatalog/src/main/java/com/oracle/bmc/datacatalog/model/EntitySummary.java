@@ -189,6 +189,15 @@ public class EntitySummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("objectStorageUrl")
+        private String objectStorageUrl;
+
+        public Builder objectStorageUrl(String objectStorageUrl) {
+            this.objectStorageUrl = objectStorageUrl;
+            this.__explicitlySet__.add("objectStorageUrl");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
@@ -231,6 +240,7 @@ public class EntitySummary {
                             timeUpdated,
                             updatedById,
                             uri,
+                            objectStorageUrl,
                             lifecycleState,
                             properties);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
@@ -258,6 +268,7 @@ public class EntitySummary {
                             .timeUpdated(o.getTimeUpdated())
                             .updatedById(o.getUpdatedById())
                             .uri(o.getUri())
+                            .objectStorageUrl(o.getObjectStorageUrl())
                             .lifecycleState(o.getLifecycleState())
                             .properties(o.getProperties());
 
@@ -387,6 +398,12 @@ public class EntitySummary {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("uri")
     String uri;
+
+    /**
+     * URL of the data entity in the object store.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("objectStorageUrl")
+    String objectStorageUrl;
 
     /**
      * State of the data entity.

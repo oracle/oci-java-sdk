@@ -6,7 +6,7 @@ package com.oracle.bmc.devops.model;
 
 /**
  * A single node in a build pipeline. A stage takes a specific designated action.
- * There are many types of stages such as 'Build' and 'Deliver Artifacts'.
+ * There are many types of stages such as 'BUILD' and 'DELIVER_ARTIFACT'.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -177,7 +177,7 @@ public class BuildPipelineStage {
     java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
     /**
-     * Defines the stage type, which is one of the following: Build, Deliver Artifacts, Wait, and Trigger Deployment.
+     * Defines the stage type, which is one of the following: BUILD, DELIVER_ARTIFACT, WAIT, and TRIGGER_DEPLOYMENT_PIPELINE.
      *
      **/
     @lombok.extern.slf4j.Slf4j

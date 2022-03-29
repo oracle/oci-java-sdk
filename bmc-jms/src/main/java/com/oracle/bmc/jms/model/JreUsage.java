@@ -141,6 +141,16 @@ public class JreUsage {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("approximatePendingWorkRequestCount")
+        private Integer approximatePendingWorkRequestCount;
+
+        public Builder approximatePendingWorkRequestCount(
+                Integer approximatePendingWorkRequestCount) {
+            this.approximatePendingWorkRequestCount = approximatePendingWorkRequestCount;
+            this.__explicitlySet__.add("approximatePendingWorkRequestCount");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("timeStart")
         private java.util.Date timeStart;
 
@@ -196,6 +206,7 @@ public class JreUsage {
                             approximateInstallationCount,
                             approximateApplicationCount,
                             approximateManagedInstanceCount,
+                            approximatePendingWorkRequestCount,
                             timeStart,
                             timeEnd,
                             timeFirstSeen,
@@ -220,6 +231,8 @@ public class JreUsage {
                             .approximateInstallationCount(o.getApproximateInstallationCount())
                             .approximateApplicationCount(o.getApproximateApplicationCount())
                             .approximateManagedInstanceCount(o.getApproximateManagedInstanceCount())
+                            .approximatePendingWorkRequestCount(
+                                    o.getApproximatePendingWorkRequestCount())
                             .timeStart(o.getTimeStart())
                             .timeEnd(o.getTimeEnd())
                             .timeFirstSeen(o.getTimeFirstSeen())
@@ -314,6 +327,12 @@ public class JreUsage {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("approximateManagedInstanceCount")
     Integer approximateManagedInstanceCount;
+
+    /**
+     * The approximate count of work requests working on this Java Runtime.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("approximatePendingWorkRequestCount")
+    Integer approximatePendingWorkRequestCount;
 
     /**
      * Lower bound of the specified time period filter. JMS provides a view of the data that is _per day_. The query uses only the date element of the parameter.

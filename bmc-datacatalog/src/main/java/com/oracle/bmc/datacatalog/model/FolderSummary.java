@@ -128,12 +128,30 @@ public class FolderSummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
+        private java.util.Date timeUpdated;
+
+        public Builder timeUpdated(java.util.Date timeUpdated) {
+            this.timeUpdated = timeUpdated;
+            this.__explicitlySet__.add("timeUpdated");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("uri")
         private String uri;
 
         public Builder uri(String uri) {
             this.uri = uri;
             this.__explicitlySet__.add("uri");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("objectStorageUrl")
+        private String objectStorageUrl;
+
+        public Builder objectStorageUrl(String objectStorageUrl) {
+            this.objectStorageUrl = objectStorageUrl;
+            this.__explicitlySet__.add("objectStorageUrl");
             return this;
         }
 
@@ -163,7 +181,9 @@ public class FolderSummary {
                             externalKey,
                             timeExternal,
                             timeCreated,
+                            timeUpdated,
                             uri,
+                            objectStorageUrl,
                             lifecycleState);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
@@ -183,7 +203,9 @@ public class FolderSummary {
                             .externalKey(o.getExternalKey())
                             .timeExternal(o.getTimeExternal())
                             .timeCreated(o.getTimeCreated())
+                            .timeUpdated(o.getTimeUpdated())
                             .uri(o.getUri())
+                            .objectStorageUrl(o.getObjectStorageUrl())
                             .lifecycleState(o.getLifecycleState());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
@@ -269,10 +291,23 @@ public class FolderSummary {
     java.util.Date timeCreated;
 
     /**
+     * The date and time the folder was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2019-03-25T21:10:29.600Z
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
+    java.util.Date timeUpdated;
+
+    /**
      * URI of the folder resource within the data catalog API.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("uri")
     String uri;
+
+    /**
+     * URL of the folder in the object store.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("objectStorageUrl")
+    String objectStorageUrl;
 
     /**
      * State of the folder.

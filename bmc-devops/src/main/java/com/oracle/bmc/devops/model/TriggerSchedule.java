@@ -70,9 +70,9 @@ public class TriggerSchedule {
 
     /**
      * Different types of trigger schedule:
-     * None - No automated synchronization schedule.
-     * Default - Trigger schedule is every 30 minutes.
-     * Custom - Custom triggering schedule.
+     * NONE - No automated synchronization schedule.
+     * DEFAULT - Trigger schedule is every 30 minutes.
+     * CUSTOM - Custom triggering schedule.
      *
      **/
     @lombok.extern.slf4j.Slf4j
@@ -121,9 +121,9 @@ public class TriggerSchedule {
     };
     /**
      * Different types of trigger schedule:
-     * None - No automated synchronization schedule.
-     * Default - Trigger schedule is every 30 minutes.
-     * Custom - Custom triggering schedule.
+     * NONE - No automated synchronization schedule.
+     * DEFAULT - Trigger schedule is every 30 minutes.
+     * CUSTOM - Custom triggering schedule.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("scheduleType")

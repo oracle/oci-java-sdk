@@ -78,13 +78,27 @@ public class UpdateOkeClusterDeployEnvironmentDetails extends UpdateDeployEnviro
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("networkChannel")
+        private NetworkChannel networkChannel;
+
+        public Builder networkChannel(NetworkChannel networkChannel) {
+            this.networkChannel = networkChannel;
+            this.__explicitlySet__.add("networkChannel");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public UpdateOkeClusterDeployEnvironmentDetails build() {
             UpdateOkeClusterDeployEnvironmentDetails __instance__ =
                     new UpdateOkeClusterDeployEnvironmentDetails(
-                            description, displayName, freeformTags, definedTags, clusterId);
+                            description,
+                            displayName,
+                            freeformTags,
+                            definedTags,
+                            clusterId,
+                            networkChannel);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -96,7 +110,8 @@ public class UpdateOkeClusterDeployEnvironmentDetails extends UpdateDeployEnviro
                             .displayName(o.getDisplayName())
                             .freeformTags(o.getFreeformTags())
                             .definedTags(o.getDefinedTags())
-                            .clusterId(o.getClusterId());
+                            .clusterId(o.getClusterId())
+                            .networkChannel(o.getNetworkChannel());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -116,9 +131,11 @@ public class UpdateOkeClusterDeployEnvironmentDetails extends UpdateDeployEnviro
             String displayName,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
-            String clusterId) {
+            String clusterId,
+            NetworkChannel networkChannel) {
         super(description, displayName, freeformTags, definedTags);
         this.clusterId = clusterId;
+        this.networkChannel = networkChannel;
     }
 
     /**
@@ -126,6 +143,9 @@ public class UpdateOkeClusterDeployEnvironmentDetails extends UpdateDeployEnviro
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("clusterId")
     String clusterId;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("networkChannel")
+    NetworkChannel networkChannel;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

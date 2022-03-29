@@ -105,6 +105,42 @@ public class WorkRequest {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("createdBy")
+        private Principal createdBy;
+
+        public Builder createdBy(Principal createdBy) {
+            this.createdBy = createdBy;
+            this.__explicitlySet__.add("createdBy");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("timeLastUpdated")
+        private java.util.Date timeLastUpdated;
+
+        public Builder timeLastUpdated(java.util.Date timeLastUpdated) {
+            this.timeLastUpdated = timeLastUpdated;
+            this.__explicitlySet__.add("timeLastUpdated");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("totalTaskCount")
+        private Integer totalTaskCount;
+
+        public Builder totalTaskCount(Integer totalTaskCount) {
+            this.totalTaskCount = totalTaskCount;
+            this.__explicitlySet__.add("totalTaskCount");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("completedTaskCount")
+        private Integer completedTaskCount;
+
+        public Builder completedTaskCount(Integer completedTaskCount) {
+            this.completedTaskCount = completedTaskCount;
+            this.__explicitlySet__.add("completedTaskCount");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -119,7 +155,11 @@ public class WorkRequest {
                             percentComplete,
                             timeAccepted,
                             timeStarted,
-                            timeFinished);
+                            timeFinished,
+                            createdBy,
+                            timeLastUpdated,
+                            totalTaskCount,
+                            completedTaskCount);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -135,7 +175,11 @@ public class WorkRequest {
                             .percentComplete(o.getPercentComplete())
                             .timeAccepted(o.getTimeAccepted())
                             .timeStarted(o.getTimeStarted())
-                            .timeFinished(o.getTimeFinished());
+                            .timeFinished(o.getTimeFinished())
+                            .createdBy(o.getCreatedBy())
+                            .timeLastUpdated(o.getTimeLastUpdated())
+                            .totalTaskCount(o.getTotalTaskCount())
+                            .completedTaskCount(o.getCompletedTaskCount());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -209,6 +253,28 @@ public class WorkRequest {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeFinished")
     java.util.Date timeFinished;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("createdBy")
+    Principal createdBy;
+
+    /**
+     * The date and time the work request percentage was last updated. (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("timeLastUpdated")
+    java.util.Date timeLastUpdated;
+
+    /**
+     * The total number of tasks to be executed for this work request.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("totalTaskCount")
+    Integer totalTaskCount;
+
+    /**
+     * The number of tasks had been executed to a terminal state.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("completedTaskCount")
+    Integer completedTaskCount;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

@@ -47,6 +47,18 @@ public interface JavaManagementService extends AutoCloseable {
     void setRegion(String regionId);
 
     /**
+     * Deletes the work request specified by an identifier.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/CancelWorkRequestExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CancelWorkRequest API.
+     */
+    CancelWorkRequestResponse cancelWorkRequest(CancelWorkRequestRequest request);
+
+    /**
      * Move a specified Fleet into the compartment identified in the POST form. When provided, If-Match is checked against ETag values of the resource.
      *
      * @param request The request object containing the details to send
@@ -60,6 +72,19 @@ public interface JavaManagementService extends AutoCloseable {
     ChangeFleetCompartmentResponse changeFleetCompartment(ChangeFleetCompartmentRequest request);
 
     /**
+     * Add a new record to the fleet blocklist.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/CreateBlocklistExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateBlocklist API.
+     */
+    CreateBlocklistResponse createBlocklist(CreateBlocklistRequest request);
+
+    /**
      * Create a new Fleet using the information provided.
      *
      * @param request The request object containing the details to send
@@ -71,6 +96,18 @@ public interface JavaManagementService extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/CreateFleetExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateFleet API.
      */
     CreateFleetResponse createFleet(CreateFleetRequest request);
+
+    /**
+     * Deletes the blocklist record specified by an identifier.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/DeleteBlocklistExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteBlocklist API.
+     */
+    DeleteBlocklistResponse deleteBlocklist(DeleteBlocklistRequest request);
 
     /**
      * Deletes the Fleet specified by an identifier.
@@ -122,6 +159,19 @@ public interface JavaManagementService extends AutoCloseable {
     GetWorkRequestResponse getWorkRequest(GetWorkRequestRequest request);
 
     /**
+     * Returns a list of blocklist entities contained by a fleet.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/ListBlocklistsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListBlocklists API.
+     */
+    ListBlocklistsResponse listBlocklists(ListBlocklistsRequest request);
+
+    /**
      * Returns a list of all the Fleets contained by a compartment. The query parameter `compartmentId`
      * is required unless the query parameter `id` is specified.
      *
@@ -136,6 +186,18 @@ public interface JavaManagementService extends AutoCloseable {
     ListFleetsResponse listFleets(ListFleetsRequest request);
 
     /**
+     * List Java installation sites in a Fleet filtered by query parameters.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/ListInstallationSitesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListInstallationSites API.
+     */
+    ListInstallationSitesResponse listInstallationSites(ListInstallationSitesRequest request);
+
+    /**
      * List Java Runtime usage in a specified host filtered by query parameters.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -146,6 +208,19 @@ public interface JavaManagementService extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/ListJreUsageExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListJreUsage API.
      */
     ListJreUsageResponse listJreUsage(ListJreUsageRequest request);
+
+    /**
+     * Retrieve a (paginated) list of work items for a specified work request.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/ListWorkItemsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWorkItems API.
+     */
+    ListWorkItemsResponse listWorkItems(ListWorkItemsRequest request);
 
     /**
      * Retrieve a (paginated) list of errors for a specified work request.
@@ -174,7 +249,7 @@ public interface JavaManagementService extends AutoCloseable {
     ListWorkRequestLogsResponse listWorkRequestLogs(ListWorkRequestLogsRequest request);
 
     /**
-     * List the work requests in a compartment. The query parameter `compartmentId` is required unless the query parameter `id` is specified.
+     * List the work requests in a compartment. The query parameter `compartmentId` is required unless the query parameter `id` or `fleetId` is specified.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -185,6 +260,19 @@ public interface JavaManagementService extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/ListWorkRequestsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWorkRequests API.
      */
     ListWorkRequestsResponse listWorkRequests(ListWorkRequestsRequest request);
+
+    /**
+     * Remove Java installation sites in a Fleet.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/RemoveFleetInstallationSitesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RemoveFleetInstallationSites API.
+     */
+    RemoveFleetInstallationSitesResponse removeFleetInstallationSites(
+            RemoveFleetInstallationSitesRequest request);
 
     /**
      * List application usage in a Fleet filtered by query parameters.

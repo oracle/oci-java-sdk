@@ -54,6 +54,24 @@ public class UpdateVirtualCircuitDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("bgpAdminState")
+        private BgpAdminState bgpAdminState;
+
+        public Builder bgpAdminState(BgpAdminState bgpAdminState) {
+            this.bgpAdminState = bgpAdminState;
+            this.__explicitlySet__.add("bgpAdminState");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("isBfdEnabled")
+        private Boolean isBfdEnabled;
+
+        public Builder isBfdEnabled(Boolean isBfdEnabled) {
+            this.isBfdEnabled = isBfdEnabled;
+            this.__explicitlySet__.add("isBfdEnabled");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("customerBgpAsn")
         private Integer customerBgpAsn;
 
@@ -154,6 +172,8 @@ public class UpdateVirtualCircuitDetails {
                             bandwidthShapeName,
                             crossConnectMappings,
                             routingPolicy,
+                            bgpAdminState,
+                            isBfdEnabled,
                             customerBgpAsn,
                             customerAsn,
                             definedTags,
@@ -174,6 +194,8 @@ public class UpdateVirtualCircuitDetails {
                     bandwidthShapeName(o.getBandwidthShapeName())
                             .crossConnectMappings(o.getCrossConnectMappings())
                             .routingPolicy(o.getRoutingPolicy())
+                            .bgpAdminState(o.getBgpAdminState())
+                            .isBfdEnabled(o.getIsBfdEnabled())
                             .customerBgpAsn(o.getCustomerBgpAsn())
                             .customerAsn(o.getCustomerAsn())
                             .definedTags(o.getDefinedTags())
@@ -263,6 +285,55 @@ public class UpdateVirtualCircuitDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("routingPolicy")
     java.util.List<RoutingPolicy> routingPolicy;
+    /**
+     * Set to ENABLED to activate the bgp session of virtual circuit, DISABLED to deactivate.
+     *
+     **/
+    public enum BgpAdminState {
+        Enabled("ENABLED"),
+        Disabled("DISABLED"),
+        ;
+
+        private final String value;
+        private static java.util.Map<String, BgpAdminState> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (BgpAdminState v : BgpAdminState.values()) {
+                map.put(v.getValue(), v);
+            }
+        }
+
+        BgpAdminState(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static BgpAdminState create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            throw new IllegalArgumentException("Invalid BgpAdminState: " + key);
+        }
+    };
+    /**
+     * Set to ENABLED to activate the bgp session of virtual circuit, DISABLED to deactivate.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("bgpAdminState")
+    BgpAdminState bgpAdminState;
+
+    /**
+     * Set to true to enable BFD for ipv4 Bgp Peering, false to disable. If not set, default is false
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isBfdEnabled")
+    Boolean isBfdEnabled;
 
     /**
      * Deprecated. Instead use {@code customerAsn}.

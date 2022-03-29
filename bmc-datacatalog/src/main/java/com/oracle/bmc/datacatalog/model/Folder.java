@@ -227,6 +227,15 @@ public class Folder {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("objectStorageUrl")
+        private String objectStorageUrl;
+
+        public Builder objectStorageUrl(String objectStorageUrl) {
+            this.objectStorageUrl = objectStorageUrl;
+            this.__explicitlySet__.add("objectStorageUrl");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -254,7 +263,8 @@ public class Folder {
                             lifecycleState,
                             harvestStatus,
                             lastJobKey,
-                            uri);
+                            uri,
+                            objectStorageUrl);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -283,7 +293,8 @@ public class Folder {
                             .lifecycleState(o.getLifecycleState())
                             .harvestStatus(o.getHarvestStatus())
                             .lastJobKey(o.getLastJobKey())
-                            .uri(o.getUri());
+                            .uri(o.getUri())
+                            .objectStorageUrl(o.getObjectStorageUrl());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -439,6 +450,12 @@ public class Folder {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("uri")
     String uri;
+
+    /**
+     * URL of the folder in the object store.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("objectStorageUrl")
+    String objectStorageUrl;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

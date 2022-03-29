@@ -96,6 +96,16 @@ public class ListingSummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("compatibleArchitectures")
+        private java.util.List<CompatibleArchitectures> compatibleArchitectures;
+
+        public Builder compatibleArchitectures(
+                java.util.List<CompatibleArchitectures> compatibleArchitectures) {
+            this.compatibleArchitectures = compatibleArchitectures;
+            this.__explicitlySet__.add("compatibleArchitectures");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("regions")
         private java.util.List<Region> regions;
 
@@ -165,6 +175,7 @@ public class ListingSummary {
                             icon,
                             packageType,
                             pricingTypes,
+                            compatibleArchitectures,
                             regions,
                             isFeatured,
                             categories,
@@ -186,6 +197,7 @@ public class ListingSummary {
                             .icon(o.getIcon())
                             .packageType(o.getPackageType())
                             .pricingTypes(o.getPricingTypes())
+                            .compatibleArchitectures(o.getCompatibleArchitectures())
                             .regions(o.getRegions())
                             .isFeatured(o.getIsFeatured())
                             .categories(o.getCategories())
@@ -294,6 +306,56 @@ public class ListingSummary {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("pricingTypes")
     java.util.List<PricingTypes> pricingTypes;
+    /**
+     **/
+    @lombok.extern.slf4j.Slf4j
+    public enum CompatibleArchitectures {
+        X86("X86"),
+        Arm("ARM"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private final String value;
+        private static java.util.Map<String, CompatibleArchitectures> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (CompatibleArchitectures v : CompatibleArchitectures.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        CompatibleArchitectures(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static CompatibleArchitectures create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'CompatibleArchitectures', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * The list of compatible architectures supported by the listing
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("compatibleArchitectures")
+    java.util.List<CompatibleArchitectures> compatibleArchitectures;
 
     /**
      * The regions where you can deploy the listing. (Some listings have restrictions that limit their deployment to United States regions only.)

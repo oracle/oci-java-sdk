@@ -41,7 +41,7 @@ package com.oracle.bmc.devops.model;
 public class PutRepositoryRefDetails {
 
     /**
-     * The type of reference (Branch or Tag).
+     * The type of reference (BRANCH or TAG).
      **/
     public enum RefType {
         Branch("BRANCH"),

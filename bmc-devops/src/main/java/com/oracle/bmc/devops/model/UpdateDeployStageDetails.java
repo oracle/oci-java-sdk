@@ -29,28 +29,68 @@ package com.oracle.bmc.devops.model;
 )
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = UpdateOkeDeployStageDetails.class,
-        name = "OKE_DEPLOYMENT"
+        value = UpdateOkeCanaryTrafficShiftDeployStageDetails.class,
+        name = "OKE_CANARY_TRAFFIC_SHIFT"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = UpdateLoadBalancerTrafficShiftDeployStageDetails.class,
-        name = "LOAD_BALANCER_TRAFFIC_SHIFT"
+        value = UpdateOkeCanaryDeployStageDetails.class,
+        name = "OKE_CANARY_DEPLOYMENT"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = UpdateComputeInstanceGroupDeployStageDetails.class,
         name = "COMPUTE_INSTANCE_GROUP_ROLLING_DEPLOYMENT"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = UpdateOkeCanaryApprovalDeployStageDetails.class,
+        name = "OKE_CANARY_APPROVAL"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = UpdateOkeDeployStageDetails.class,
+        name = "OKE_DEPLOYMENT"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = UpdateComputeInstanceGroupCanaryApprovalDeployStageDetails.class,
+        name = "COMPUTE_INSTANCE_GROUP_CANARY_APPROVAL"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = UpdateLoadBalancerTrafficShiftDeployStageDetails.class,
+        name = "LOAD_BALANCER_TRAFFIC_SHIFT"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = UpdateOkeBlueGreenDeployStageDetails.class,
+        name = "OKE_BLUE_GREEN_DEPLOYMENT"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = UpdateWaitDeployStageDetails.class,
         name = "WAIT"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = UpdateOkeBlueGreenTrafficShiftDeployStageDetails.class,
+        name = "OKE_BLUE_GREEN_TRAFFIC_SHIFT"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = UpdateManualApprovalDeployStageDetails.class,
         name = "MANUAL_APPROVAL"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = UpdateComputeInstanceGroupBlueGreenDeployStageDetails.class,
+        name = "COMPUTE_INSTANCE_GROUP_BLUE_GREEN_DEPLOYMENT"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = UpdateComputeInstanceGroupCanaryDeployStageDetails.class,
+        name = "COMPUTE_INSTANCE_GROUP_CANARY_DEPLOYMENT"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = UpdateFunctionDeployStageDetails.class,
         name = "DEPLOY_FUNCTION"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = UpdateComputeInstanceGroupBlueGreenTrafficShiftDeployStageDetails.class,
+        name = "COMPUTE_INSTANCE_GROUP_BLUE_GREEN_TRAFFIC_SHIFT"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = UpdateComputeInstanceGroupCanaryTrafficShiftDeployStageDetails.class,
+        name = "COMPUTE_INSTANCE_GROUP_CANARY_TRAFFIC_SHIFT"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = UpdateInvokeFunctionDeployStageDetails.class,

@@ -5,7 +5,10 @@
 package com.oracle.bmc.devops.model;
 
 /**
- * Specifies config for load balancer traffic shift stages.
+ * Specifies configuration for load balancer traffic shift stages.
+ * The load balancer specified here should be an Application load balancer type.
+ * Network load balancers are not supported.
+ *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
