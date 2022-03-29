@@ -53,6 +53,24 @@ public class CreateFleetDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("inventoryLog")
+        private CustomLog inventoryLog;
+
+        public Builder inventoryLog(CustomLog inventoryLog) {
+            this.inventoryLog = inventoryLog;
+            this.__explicitlySet__.add("inventoryLog");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("operationLog")
+        private CustomLog operationLog;
+
+        public Builder operationLog(CustomLog operationLog) {
+            this.operationLog = operationLog;
+            this.__explicitlySet__.add("operationLog");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
@@ -78,7 +96,13 @@ public class CreateFleetDetails {
         public CreateFleetDetails build() {
             CreateFleetDetails __instance__ =
                     new CreateFleetDetails(
-                            displayName, compartmentId, description, definedTags, freeformTags);
+                            displayName,
+                            compartmentId,
+                            description,
+                            inventoryLog,
+                            operationLog,
+                            definedTags,
+                            freeformTags);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -89,6 +113,8 @@ public class CreateFleetDetails {
                     displayName(o.getDisplayName())
                             .compartmentId(o.getCompartmentId())
                             .description(o.getDescription())
+                            .inventoryLog(o.getInventoryLog())
+                            .operationLog(o.getOperationLog())
                             .definedTags(o.getDefinedTags())
                             .freeformTags(o.getFreeformTags());
 
@@ -121,6 +147,12 @@ public class CreateFleetDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     String description;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("inventoryLog")
+    CustomLog inventoryLog;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("operationLog")
+    CustomLog operationLog;
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.

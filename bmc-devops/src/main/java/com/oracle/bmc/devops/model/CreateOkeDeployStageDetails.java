@@ -5,7 +5,7 @@
 package com.oracle.bmc.devops.model;
 
 /**
- * Specifies the Kubernetes cluster deployment stage.
+ * Specifies the Container Engine for Kubernetes (OKE) cluster deployment stage.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -205,7 +205,7 @@ public class CreateOkeDeployStageDetails extends CreateDeployStageDetails {
     String okeClusterDeployEnvironmentId;
 
     /**
-     * List of Kubernetes manifest artifact OCIDs, the manifests should not include any job resource.
+     * List of Kubernetes manifest artifact OCIDs.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("kubernetesManifestDeployArtifactIds")
     java.util.List<String> kubernetesManifestDeployArtifactIds;

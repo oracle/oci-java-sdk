@@ -23,6 +23,11 @@ public class GetRepositoryFileLinesResponse extends com.oracle.bmc.responses.Bmc
     private String etag;
 
     /**
+     * This API will be deprecated on Wed, 29 Mar 2023 01:00:00 GMT. Please use "/repositories/{repositoryId}/file/lines"
+     */
+    private String sunset;
+
+    /**
      * The returned RepositoryFileLines instance.
      */
     private com.oracle.bmc.devops.model.RepositoryFileLines repositoryFileLines;
@@ -31,16 +36,19 @@ public class GetRepositoryFileLinesResponse extends com.oracle.bmc.responses.Bmc
         "__httpStatusCode__",
         "opcRequestId",
         "etag",
+        "sunset",
         "repositoryFileLines"
     })
     private GetRepositoryFileLinesResponse(
             int __httpStatusCode__,
             String opcRequestId,
             String etag,
+            String sunset,
             com.oracle.bmc.devops.model.RepositoryFileLines repositoryFileLines) {
         super(__httpStatusCode__);
         this.opcRequestId = opcRequestId;
         this.etag = etag;
+        this.sunset = sunset;
         this.repositoryFileLines = repositoryFileLines;
     }
 
@@ -60,6 +68,7 @@ public class GetRepositoryFileLinesResponse extends com.oracle.bmc.responses.Bmc
             __httpStatusCode__(o.get__httpStatusCode__());
             opcRequestId(o.getOpcRequestId());
             etag(o.getEtag());
+            sunset(o.getSunset());
             repositoryFileLines(o.getRepositoryFileLines());
 
             return this;
@@ -67,7 +76,7 @@ public class GetRepositoryFileLinesResponse extends com.oracle.bmc.responses.Bmc
 
         public GetRepositoryFileLinesResponse build() {
             return new GetRepositoryFileLinesResponse(
-                    __httpStatusCode__, opcRequestId, etag, repositoryFileLines);
+                    __httpStatusCode__, opcRequestId, etag, sunset, repositoryFileLines);
         }
     }
 }

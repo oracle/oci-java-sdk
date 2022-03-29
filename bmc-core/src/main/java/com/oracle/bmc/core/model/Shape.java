@@ -83,6 +83,15 @@ public class Shape {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("networkPorts")
+        private Integer networkPorts;
+
+        public Builder networkPorts(Integer networkPorts) {
+            this.networkPorts = networkPorts;
+            this.__explicitlySet__.add("networkPorts");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("networkingBandwidthInGbps")
         private Float networkingBandwidthInGbps;
 
@@ -143,6 +152,24 @@ public class Shape {
         public Builder localDiskDescription(String localDiskDescription) {
             this.localDiskDescription = localDiskDescription;
             this.__explicitlySet__.add("localDiskDescription");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("rdmaPorts")
+        private Integer rdmaPorts;
+
+        public Builder rdmaPorts(Integer rdmaPorts) {
+            this.rdmaPorts = rdmaPorts;
+            this.__explicitlySet__.add("rdmaPorts");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("rdmaBandwidthInGbps")
+        private Integer rdmaBandwidthInGbps;
+
+        public Builder rdmaBandwidthInGbps(Integer rdmaBandwidthInGbps) {
+            this.rdmaBandwidthInGbps = rdmaBandwidthInGbps;
+            this.__explicitlySet__.add("rdmaBandwidthInGbps");
             return this;
         }
 
@@ -278,6 +305,7 @@ public class Shape {
                             processorDescription,
                             ocpus,
                             memoryInGBs,
+                            networkPorts,
                             networkingBandwidthInGbps,
                             maxVnicAttachments,
                             gpus,
@@ -285,6 +313,8 @@ public class Shape {
                             localDisks,
                             localDisksTotalSizeInGBs,
                             localDiskDescription,
+                            rdmaPorts,
+                            rdmaBandwidthInGbps,
                             isLiveMigrationSupported,
                             ocpuOptions,
                             memoryOptions,
@@ -311,6 +341,7 @@ public class Shape {
                             .processorDescription(o.getProcessorDescription())
                             .ocpus(o.getOcpus())
                             .memoryInGBs(o.getMemoryInGBs())
+                            .networkPorts(o.getNetworkPorts())
                             .networkingBandwidthInGbps(o.getNetworkingBandwidthInGbps())
                             .maxVnicAttachments(o.getMaxVnicAttachments())
                             .gpus(o.getGpus())
@@ -318,6 +349,8 @@ public class Shape {
                             .localDisks(o.getLocalDisks())
                             .localDisksTotalSizeInGBs(o.getLocalDisksTotalSizeInGBs())
                             .localDiskDescription(o.getLocalDiskDescription())
+                            .rdmaPorts(o.getRdmaPorts())
+                            .rdmaBandwidthInGbps(o.getRdmaBandwidthInGbps())
                             .isLiveMigrationSupported(o.getIsLiveMigrationSupported())
                             .ocpuOptions(o.getOcpuOptions())
                             .memoryOptions(o.getMemoryOptions())
@@ -435,6 +468,13 @@ public class Shape {
     Float memoryInGBs;
 
     /**
+     * The number of physical network interface card (NIC) ports available for this shape.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("networkPorts")
+    Integer networkPorts;
+
+    /**
      * The networking bandwidth available for this shape, in gigabits per second.
      *
      **/
@@ -488,6 +528,23 @@ public class Shape {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("localDiskDescription")
     String localDiskDescription;
+
+    /**
+     * The number of networking ports available for the remote direct memory access (RDMA) network between nodes in
+     * a high performance computing (HPC) cluster network. If the shape does not support cluster networks, this
+     * value is {@code 0}.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("rdmaPorts")
+    Integer rdmaPorts;
+
+    /**
+     * The networking bandwidth available for the remote direct memory access (RDMA) network for this shape, in
+     * gigabits per second.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("rdmaBandwidthInGbps")
+    Integer rdmaBandwidthInGbps;
 
     /**
      * Whether live migration is supported for this shape.

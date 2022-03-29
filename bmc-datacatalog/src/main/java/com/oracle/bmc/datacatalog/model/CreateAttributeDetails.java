@@ -171,6 +171,15 @@ public class CreateAttributeDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("typeKey")
+        private String typeKey;
+
+        public Builder typeKey(String typeKey) {
+            this.typeKey = typeKey;
+            this.__explicitlySet__.add("typeKey");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("properties")
         private java.util.Map<String, java.util.Map<String, String>> properties;
 
@@ -202,6 +211,7 @@ public class CreateAttributeDetails {
                             externalDatatypeEntityKey,
                             externalParentAttributeKey,
                             customPropertyMembers,
+                            typeKey,
                             properties);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
@@ -226,6 +236,7 @@ public class CreateAttributeDetails {
                             .externalDatatypeEntityKey(o.getExternalDatatypeEntityKey())
                             .externalParentAttributeKey(o.getExternalParentAttributeKey())
                             .customPropertyMembers(o.getCustomPropertyMembers())
+                            .typeKey(o.getTypeKey())
                             .properties(o.getProperties());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
@@ -340,6 +351,12 @@ public class CreateAttributeDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("customPropertyMembers")
     java.util.List<CustomPropertySetUsage> customPropertyMembers;
+
+    /**
+     * Type key of the object. Type keys can be found via the '/types' endpoint.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("typeKey")
+    String typeKey;
 
     /**
      * A map of maps that contains the properties which are specific to the attribute type. Each attribute type

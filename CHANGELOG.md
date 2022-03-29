@@ -3,6 +3,18 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
+## 2.21.0 - 2022-03-29
+### Added
+- Support for returning the number of network ports as part of listing shapes in the Compute service
+- Support for Java runtime removal and custom logs in the Java Management service
+- Support for new parameters for BGP admin state and enabling/disabling BFD in the Networking service
+- Support for private OKE clusters and blue-green deployments in the DevOps service
+- Support for international customers to consume and launch third-party paid listings in the Marketplace service
+- Support for additional fields on entities, attributes, and folders in the Data Catalog service
+
+### Breaking Changes
+- Support for retries by default on operations in the Marketplace service
+
 ## 2.20.0 - 2022-03-22
 ### Added
 - Support for getting the storage utilization of a deployment on deployment list and get operations in the GoldenGate service

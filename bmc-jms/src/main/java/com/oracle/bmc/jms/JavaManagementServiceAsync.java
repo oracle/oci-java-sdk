@@ -46,6 +46,22 @@ public interface JavaManagementServiceAsync extends AutoCloseable {
     void setRegion(String regionId);
 
     /**
+     * Deletes the work request specified by an identifier.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<CancelWorkRequestResponse> cancelWorkRequest(
+            CancelWorkRequestRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            CancelWorkRequestRequest, CancelWorkRequestResponse>
+                    handler);
+
+    /**
      * Move a specified Fleet into the compartment identified in the POST form. When provided, If-Match is checked against ETag values of the resource.
      *
      *
@@ -63,6 +79,22 @@ public interface JavaManagementServiceAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Add a new record to the fleet blocklist.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateBlocklistResponse> createBlocklist(
+            CreateBlocklistRequest request,
+            com.oracle.bmc.responses.AsyncHandler<CreateBlocklistRequest, CreateBlocklistResponse>
+                    handler);
+
+    /**
      * Create a new Fleet using the information provided.
      *
      *
@@ -76,6 +108,21 @@ public interface JavaManagementServiceAsync extends AutoCloseable {
     java.util.concurrent.Future<CreateFleetResponse> createFleet(
             CreateFleetRequest request,
             com.oracle.bmc.responses.AsyncHandler<CreateFleetRequest, CreateFleetResponse> handler);
+
+    /**
+     * Deletes the blocklist record specified by an identifier.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteBlocklistResponse> deleteBlocklist(
+            DeleteBlocklistRequest request,
+            com.oracle.bmc.responses.AsyncHandler<DeleteBlocklistRequest, DeleteBlocklistResponse>
+                    handler);
 
     /**
      * Deletes the Fleet specified by an identifier.
@@ -137,6 +184,22 @@ public interface JavaManagementServiceAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Returns a list of blocklist entities contained by a fleet.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListBlocklistsResponse> listBlocklists(
+            ListBlocklistsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<ListBlocklistsRequest, ListBlocklistsResponse>
+                    handler);
+
+    /**
      * Returns a list of all the Fleets contained by a compartment. The query parameter `compartmentId`
      * is required unless the query parameter `id` is specified.
      *
@@ -153,6 +216,22 @@ public interface JavaManagementServiceAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<ListFleetsRequest, ListFleetsResponse> handler);
 
     /**
+     * List Java installation sites in a Fleet filtered by query parameters.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListInstallationSitesResponse> listInstallationSites(
+            ListInstallationSitesRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListInstallationSitesRequest, ListInstallationSitesResponse>
+                    handler);
+
+    /**
      * List Java Runtime usage in a specified host filtered by query parameters.
      *
      * @param request The request object containing the details to send
@@ -165,6 +244,22 @@ public interface JavaManagementServiceAsync extends AutoCloseable {
     java.util.concurrent.Future<ListJreUsageResponse> listJreUsage(
             ListJreUsageRequest request,
             com.oracle.bmc.responses.AsyncHandler<ListJreUsageRequest, ListJreUsageResponse>
+                    handler);
+
+    /**
+     * Retrieve a (paginated) list of work items for a specified work request.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListWorkItemsResponse> listWorkItems(
+            ListWorkItemsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<ListWorkItemsRequest, ListWorkItemsResponse>
                     handler);
 
     /**
@@ -202,7 +297,7 @@ public interface JavaManagementServiceAsync extends AutoCloseable {
                     handler);
 
     /**
-     * List the work requests in a compartment. The query parameter `compartmentId` is required unless the query parameter `id` is specified.
+     * List the work requests in a compartment. The query parameter `compartmentId` is required unless the query parameter `id` or `fleetId` is specified.
      *
      *
      * @param request The request object containing the details to send
@@ -215,6 +310,23 @@ public interface JavaManagementServiceAsync extends AutoCloseable {
     java.util.concurrent.Future<ListWorkRequestsResponse> listWorkRequests(
             ListWorkRequestsRequest request,
             com.oracle.bmc.responses.AsyncHandler<ListWorkRequestsRequest, ListWorkRequestsResponse>
+                    handler);
+
+    /**
+     * Remove Java installation sites in a Fleet.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<RemoveFleetInstallationSitesResponse> removeFleetInstallationSites(
+            RemoveFleetInstallationSitesRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            RemoveFleetInstallationSitesRequest,
+                            RemoveFleetInstallationSitesResponse>
                     handler);
 
     /**

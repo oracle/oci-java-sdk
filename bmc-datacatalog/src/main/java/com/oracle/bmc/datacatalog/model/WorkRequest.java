@@ -164,6 +164,10 @@ public class WorkRequest {
         MoveCatalogPrivateEndpoint("MOVE_CATALOG_PRIVATE_ENDPOINT"),
         AttachCatalogPrivateEndpoint("ATTACH_CATALOG_PRIVATE_ENDPOINT"),
         DetachCatalogPrivateEndpoint("DETACH_CATALOG_PRIVATE_ENDPOINT"),
+        CreateMetastore("CREATE_METASTORE"),
+        UpdateMetastore("UPDATE_METASTORE"),
+        DeleteMetastore("DELETE_METASTORE"),
+        MoveMetastore("MOVE_METASTORE"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this

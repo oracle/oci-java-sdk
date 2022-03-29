@@ -463,6 +463,36 @@ public class JavaManagementServiceClient implements JavaManagementService {
     }
 
     @Override
+    public CancelWorkRequestResponse cancelWorkRequest(CancelWorkRequestRequest request) {
+        LOG.trace("Called cancelWorkRequest");
+        final CancelWorkRequestRequest interceptedRequest =
+                CancelWorkRequestConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CancelWorkRequestConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, CancelWorkRequestResponse>
+                transformer = CancelWorkRequestConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.delete(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public ChangeFleetCompartmentResponse changeFleetCompartment(
             ChangeFleetCompartmentRequest request) {
         LOG.trace("Called changeFleetCompartment");
@@ -498,6 +528,40 @@ public class JavaManagementServiceClient implements JavaManagementService {
     }
 
     @Override
+    public CreateBlocklistResponse createBlocklist(CreateBlocklistRequest request) {
+        LOG.trace("Called createBlocklist");
+        final CreateBlocklistRequest interceptedRequest =
+                CreateBlocklistConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateBlocklistConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, CreateBlocklistResponse>
+                transformer = CreateBlocklistConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getCreateBlocklistDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public CreateFleetResponse createFleet(CreateFleetRequest request) {
         LOG.trace("Called createFleet");
         final CreateFleetRequest interceptedRequest =
@@ -526,6 +590,36 @@ public class JavaManagementServiceClient implements JavaManagementService {
                                                 ib,
                                                 retriedRequest.getCreateFleetDetails(),
                                                 retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public DeleteBlocklistResponse deleteBlocklist(DeleteBlocklistRequest request) {
+        LOG.trace("Called deleteBlocklist");
+        final DeleteBlocklistRequest interceptedRequest =
+                DeleteBlocklistConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteBlocklistConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteBlocklistResponse>
+                transformer = DeleteBlocklistConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.delete(ib, retriedRequest);
                                 return transformer.apply(response);
                             });
                 });
@@ -650,6 +744,35 @@ public class JavaManagementServiceClient implements JavaManagementService {
     }
 
     @Override
+    public ListBlocklistsResponse listBlocklists(ListBlocklistsRequest request) {
+        LOG.trace("Called listBlocklists");
+        final ListBlocklistsRequest interceptedRequest =
+                ListBlocklistsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListBlocklistsConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, ListBlocklistsResponse>
+                transformer = ListBlocklistsConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public ListFleetsResponse listFleets(ListFleetsRequest request) {
         LOG.trace("Called listFleets");
         final ListFleetsRequest interceptedRequest = ListFleetsConverter.interceptRequest(request);
@@ -657,6 +780,36 @@ public class JavaManagementServiceClient implements JavaManagementService {
                 ListFleetsConverter.fromRequest(client, interceptedRequest);
         com.google.common.base.Function<javax.ws.rs.core.Response, ListFleetsResponse> transformer =
                 ListFleetsConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ListInstallationSitesResponse listInstallationSites(
+            ListInstallationSitesRequest request) {
+        LOG.trace("Called listInstallationSites");
+        final ListInstallationSitesRequest interceptedRequest =
+                ListInstallationSitesConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListInstallationSitesConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, ListInstallationSitesResponse>
+                transformer = ListInstallationSitesConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
@@ -686,6 +839,35 @@ public class JavaManagementServiceClient implements JavaManagementService {
                 ListJreUsageConverter.fromRequest(client, interceptedRequest);
         com.google.common.base.Function<javax.ws.rs.core.Response, ListJreUsageResponse>
                 transformer = ListJreUsageConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ListWorkItemsResponse listWorkItems(ListWorkItemsRequest request) {
+        LOG.trace("Called listWorkItems");
+        final ListWorkItemsRequest interceptedRequest =
+                ListWorkItemsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListWorkItemsConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, ListWorkItemsResponse>
+                transformer = ListWorkItemsConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
@@ -789,6 +971,43 @@ public class JavaManagementServiceClient implements JavaManagementService {
                             retryRequest,
                             retriedRequest -> {
                                 javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public RemoveFleetInstallationSitesResponse removeFleetInstallationSites(
+            RemoveFleetInstallationSitesRequest request) {
+        LOG.trace("Called removeFleetInstallationSites");
+        final RemoveFleetInstallationSitesRequest interceptedRequest =
+                RemoveFleetInstallationSitesConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                RemoveFleetInstallationSitesConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, RemoveFleetInstallationSitesResponse>
+                transformer = RemoveFleetInstallationSitesConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getRemoveFleetInstallationSitesDetails(),
+                                                retriedRequest);
                                 return transformer.apply(response);
                             });
                 });

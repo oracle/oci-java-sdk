@@ -139,6 +139,18 @@ public class GetFileDiffConverter {
                                                     String.class));
                                 }
 
+                                com.google.common.base.Optional<java.util.List<String>>
+                                        sunsetHeader =
+                                                com.oracle.bmc.http.internal.HeaderUtils.get(
+                                                        headers, "Sunset");
+                                if (sunsetHeader.isPresent()) {
+                                    builder.sunset(
+                                            com.oracle.bmc.http.internal.HeaderUtils.toValue(
+                                                    "Sunset",
+                                                    sunsetHeader.get().get(0),
+                                                    String.class));
+                                }
+
                                 com.oracle.bmc.devops.responses.GetFileDiffResponse
                                         responseWrapper = builder.build();
 

@@ -62,7 +62,7 @@ public class ComputeInstanceGroupSelectorCollection {
     }
 
     /**
-     * A list of selectors for the instance group. UNION operator is used for combining the instances selected by each selector.
+     * A list of selectors for the instance group. Union operator is used for combining the instances selected by each selector.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     java.util.List<ComputeInstanceGroupSelector> items;

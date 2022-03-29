@@ -22,7 +22,7 @@ public class CreateDeployStageRequest
                 com.oracle.bmc.devops.model.CreateDeployStageDetails> {
 
     /**
-     * Details for the new DeployStage.
+     * Details for the new deployment stage.
      */
     private com.oracle.bmc.devops.model.CreateDeployStageDetails createDeployStageDetails;
 

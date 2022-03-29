@@ -31,6 +31,11 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
     private String id;
 
     /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the fleet.
+     */
+    private String fleetId;
+
+    /**
      * The client request ID for tracing.
      */
     private String opcRequestId;
@@ -82,6 +87,7 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
         public Builder copy(ListWorkRequestsRequest o) {
             compartmentId(o.getCompartmentId());
             id(o.getId());
+            fleetId(o.getFleetId());
             opcRequestId(o.getOpcRequestId());
             page(o.getPage());
             limit(o.getLimit());

@@ -14,6 +14,8 @@ public enum OperationType {
     DeleteFleet("DELETE_FLEET"),
     MoveFleet("MOVE_FLEET"),
     UpdateFleet("UPDATE_FLEET"),
+    UpdateFleetAgentConfiguration("UPDATE_FLEET_AGENT_CONFIGURATION"),
+    DeleteJavaInstallation("DELETE_JAVA_INSTALLATION"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this

@@ -99,7 +99,7 @@ public class GenericDeployArtifactSource extends DeployArtifactSource {
     }
 
     /**
-     * The OCID of a repository
+     * The OCID of a repository.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("repositoryId")
     String repositoryId;

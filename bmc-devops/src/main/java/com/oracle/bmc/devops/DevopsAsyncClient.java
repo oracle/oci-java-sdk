@@ -2201,6 +2201,84 @@ public class DevopsAsyncClient implements DevopsAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<GetRepoFileDiffResponse> getRepoFileDiff(
+            GetRepoFileDiffRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetRepoFileDiffRequest, GetRepoFileDiffResponse>
+                    handler) {
+        LOG.trace("Called async getRepoFileDiff");
+        final GetRepoFileDiffRequest interceptedRequest =
+                GetRepoFileDiffConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetRepoFileDiffConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<javax.ws.rs.core.Response, GetRepoFileDiffResponse>
+                transformer = GetRepoFileDiffConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<GetRepoFileDiffRequest, GetRepoFileDiffResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetRepoFileDiffRequest, GetRepoFileDiffResponse>,
+                        java.util.concurrent.Future<GetRepoFileDiffResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetRepoFileDiffRequest, GetRepoFileDiffResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetRepoFileLinesResponse> getRepoFileLines(
+            GetRepoFileLinesRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetRepoFileLinesRequest, GetRepoFileLinesResponse>
+                    handler) {
+        LOG.trace("Called async getRepoFileLines");
+        final GetRepoFileLinesRequest interceptedRequest =
+                GetRepoFileLinesConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetRepoFileLinesConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<javax.ws.rs.core.Response, GetRepoFileLinesResponse>
+                transformer = GetRepoFileLinesConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<GetRepoFileLinesRequest, GetRepoFileLinesResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetRepoFileLinesRequest, GetRepoFileLinesResponse>,
+                        java.util.concurrent.Future<GetRepoFileLinesResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetRepoFileLinesRequest, GetRepoFileLinesResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<GetRepositoryResponse> getRepository(
             GetRepositoryRequest request,
             final com.oracle.bmc.responses.AsyncHandler<GetRepositoryRequest, GetRepositoryResponse>

@@ -162,7 +162,7 @@ public class UpdateVolumeDetails {
     /**
      * The number of volume performance units (VPUs) that will be applied to this volume per GB,
      * representing the Block Volume service's elastic performance options.
-     * See [Block Volume Elastic Performance](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeelasticperformance.htm) for more information.
+     * See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
      * <p>
      * Allowed values:
      * <p>
@@ -171,8 +171,10 @@ public class UpdateVolumeDetails {
      * {@code 10}: Represents Balanced option.
      * <p>
      * {@code 20}: Represents Higher Performance option.
+     *
+     *   * {@code 30}-{@code 120}: Represents the Ultra High Performance option.
      * <p>
-     * For performance autotune enabled volumes, It would be the Default(Minimum) VPUs/GB.
+     * For volumes with the auto-tuned performance feature enabled, this is set to the default (minimum) VPUs/GB.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("vpusPerGB")

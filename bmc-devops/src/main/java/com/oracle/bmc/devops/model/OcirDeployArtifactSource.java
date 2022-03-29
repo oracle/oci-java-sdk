@@ -84,7 +84,7 @@ public class OcirDeployArtifactSource extends DeployArtifactSource {
     }
 
     /**
-     * Specifies OCIR Image Path - optionally include tag.
+     * Specifies OCIR image path - optionally include tag.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("imageUri")
     String imageUri;

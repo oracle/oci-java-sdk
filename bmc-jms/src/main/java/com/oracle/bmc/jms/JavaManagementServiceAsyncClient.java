@@ -379,6 +379,45 @@ public class JavaManagementServiceAsyncClient implements JavaManagementServiceAs
     }
 
     @Override
+    public java.util.concurrent.Future<CancelWorkRequestResponse> cancelWorkRequest(
+            CancelWorkRequestRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            CancelWorkRequestRequest, CancelWorkRequestResponse>
+                    handler) {
+        LOG.trace("Called async cancelWorkRequest");
+        final CancelWorkRequestRequest interceptedRequest =
+                CancelWorkRequestConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CancelWorkRequestConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<javax.ws.rs.core.Response, CancelWorkRequestResponse>
+                transformer = CancelWorkRequestConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<CancelWorkRequestRequest, CancelWorkRequestResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CancelWorkRequestRequest, CancelWorkRequestResponse>,
+                        java.util.concurrent.Future<CancelWorkRequestResponse>>
+                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CancelWorkRequestRequest, CancelWorkRequestResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<ChangeFleetCompartmentResponse> changeFleetCompartment(
             ChangeFleetCompartmentRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -426,6 +465,51 @@ public class JavaManagementServiceAsyncClient implements JavaManagementServiceAs
     }
 
     @Override
+    public java.util.concurrent.Future<CreateBlocklistResponse> createBlocklist(
+            CreateBlocklistRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            CreateBlocklistRequest, CreateBlocklistResponse>
+                    handler) {
+        LOG.trace("Called async createBlocklist");
+        final CreateBlocklistRequest interceptedRequest =
+                CreateBlocklistConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateBlocklistConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateBlocklistResponse>
+                transformer = CreateBlocklistConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+
+        com.oracle.bmc.responses.AsyncHandler<CreateBlocklistRequest, CreateBlocklistResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CreateBlocklistRequest, CreateBlocklistResponse>,
+                        java.util.concurrent.Future<CreateBlocklistResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateBlocklistDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CreateBlocklistRequest, CreateBlocklistResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateFleetResponse> createFleet(
             CreateFleetRequest request,
             final com.oracle.bmc.responses.AsyncHandler<CreateFleetRequest, CreateFleetResponse>
@@ -457,6 +541,45 @@ public class JavaManagementServiceAsyncClient implements JavaManagementServiceAs
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     CreateFleetRequest, CreateFleetResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteBlocklistResponse> deleteBlocklist(
+            DeleteBlocklistRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            DeleteBlocklistRequest, DeleteBlocklistResponse>
+                    handler) {
+        LOG.trace("Called async deleteBlocklist");
+        final DeleteBlocklistRequest interceptedRequest =
+                DeleteBlocklistConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteBlocklistConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteBlocklistResponse>
+                transformer = DeleteBlocklistConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<DeleteBlocklistRequest, DeleteBlocklistResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DeleteBlocklistRequest, DeleteBlocklistResponse>,
+                        java.util.concurrent.Future<DeleteBlocklistResponse>>
+                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DeleteBlocklistRequest, DeleteBlocklistResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -627,6 +750,45 @@ public class JavaManagementServiceAsyncClient implements JavaManagementServiceAs
     }
 
     @Override
+    public java.util.concurrent.Future<ListBlocklistsResponse> listBlocklists(
+            ListBlocklistsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListBlocklistsRequest, ListBlocklistsResponse>
+                    handler) {
+        LOG.trace("Called async listBlocklists");
+        final ListBlocklistsRequest interceptedRequest =
+                ListBlocklistsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListBlocklistsConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<javax.ws.rs.core.Response, ListBlocklistsResponse>
+                transformer = ListBlocklistsConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<ListBlocklistsRequest, ListBlocklistsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListBlocklistsRequest, ListBlocklistsResponse>,
+                        java.util.concurrent.Future<ListBlocklistsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListBlocklistsRequest, ListBlocklistsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<ListFleetsResponse> listFleets(
             ListFleetsRequest request,
             final com.oracle.bmc.responses.AsyncHandler<ListFleetsRequest, ListFleetsResponse>
@@ -651,6 +813,47 @@ public class JavaManagementServiceAsyncClient implements JavaManagementServiceAs
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     ListFleetsRequest, ListFleetsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListInstallationSitesResponse> listInstallationSites(
+            ListInstallationSitesRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListInstallationSitesRequest, ListInstallationSitesResponse>
+                    handler) {
+        LOG.trace("Called async listInstallationSites");
+        final ListInstallationSitesRequest interceptedRequest =
+                ListInstallationSitesConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListInstallationSitesConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ListInstallationSitesResponse>
+                transformer = ListInstallationSitesConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListInstallationSitesRequest, ListInstallationSitesResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListInstallationSitesRequest, ListInstallationSitesResponse>,
+                        java.util.concurrent.Future<ListInstallationSitesResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListInstallationSitesRequest, ListInstallationSitesResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -689,6 +892,44 @@ public class JavaManagementServiceAsyncClient implements JavaManagementServiceAs
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     ListJreUsageRequest, ListJreUsageResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListWorkItemsResponse> listWorkItems(
+            ListWorkItemsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<ListWorkItemsRequest, ListWorkItemsResponse>
+                    handler) {
+        LOG.trace("Called async listWorkItems");
+        final ListWorkItemsRequest interceptedRequest =
+                ListWorkItemsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListWorkItemsConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<javax.ws.rs.core.Response, ListWorkItemsResponse>
+                transformer = ListWorkItemsConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<ListWorkItemsRequest, ListWorkItemsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListWorkItemsRequest, ListWorkItemsResponse>,
+                        java.util.concurrent.Future<ListWorkItemsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListWorkItemsRequest, ListWorkItemsResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -810,6 +1051,56 @@ public class JavaManagementServiceAsyncClient implements JavaManagementServiceAs
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     ListWorkRequestsRequest, ListWorkRequestsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<RemoveFleetInstallationSitesResponse>
+            removeFleetInstallationSites(
+                    RemoveFleetInstallationSitesRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    RemoveFleetInstallationSitesRequest,
+                                    RemoveFleetInstallationSitesResponse>
+                            handler) {
+        LOG.trace("Called async removeFleetInstallationSites");
+        final RemoveFleetInstallationSitesRequest interceptedRequest =
+                RemoveFleetInstallationSitesConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                RemoveFleetInstallationSitesConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, RemoveFleetInstallationSitesResponse>
+                transformer = RemoveFleetInstallationSitesConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        RemoveFleetInstallationSitesRequest, RemoveFleetInstallationSitesResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                RemoveFleetInstallationSitesRequest,
+                                RemoveFleetInstallationSitesResponse>,
+                        java.util.concurrent.Future<RemoveFleetInstallationSitesResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getRemoveFleetInstallationSitesDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    RemoveFleetInstallationSitesRequest, RemoveFleetInstallationSitesResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,

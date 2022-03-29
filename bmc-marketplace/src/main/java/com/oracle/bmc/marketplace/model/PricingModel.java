@@ -60,11 +60,21 @@ public class PricingModel {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("internationalMarketPrice")
+        private InternationalMarketPrice internationalMarketPrice;
+
+        public Builder internationalMarketPrice(InternationalMarketPrice internationalMarketPrice) {
+            this.internationalMarketPrice = internationalMarketPrice;
+            this.__explicitlySet__.add("internationalMarketPrice");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public PricingModel build() {
-            PricingModel __instance__ = new PricingModel(type, payGoStrategy, currency, rate);
+            PricingModel __instance__ =
+                    new PricingModel(type, payGoStrategy, currency, rate, internationalMarketPrice);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -75,7 +85,8 @@ public class PricingModel {
                     type(o.getType())
                             .payGoStrategy(o.getPayGoStrategy())
                             .currency(o.getCurrency())
-                            .rate(o.getRate());
+                            .rate(o.getRate())
+                            .internationalMarketPrice(o.getInternationalMarketPrice());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -112,6 +123,9 @@ public class PricingModel {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("rate")
     java.math.BigDecimal rate;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("internationalMarketPrice")
+    InternationalMarketPrice internationalMarketPrice;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

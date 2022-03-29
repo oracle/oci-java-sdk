@@ -5,7 +5,7 @@
 package com.oracle.bmc.devops.model;
 
 /**
- * Specifies the Compute instance group environment. The instances in the group is the combined results of each selectors in the instance group selectors.
+ * Specifies the Compute instance group environment. The combination of instances matching the selectors are included in the instance group.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in

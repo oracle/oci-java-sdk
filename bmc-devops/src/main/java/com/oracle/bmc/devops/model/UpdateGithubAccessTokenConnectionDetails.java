@@ -124,7 +124,7 @@ public class UpdateGithubAccessTokenConnectionDetails extends UpdateConnectionDe
     }
 
     /**
-     * The OCID of personal access token saved in secret store.
+     * OCID of personal access token saved in secret store
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("accessToken")
     String accessToken;

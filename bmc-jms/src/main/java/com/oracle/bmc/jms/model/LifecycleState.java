@@ -15,6 +15,7 @@ public enum LifecycleState {
     Deleted("DELETED"),
     Deleting("DELETING"),
     Failed("FAILED"),
+    NeedsAttention("NEEDS_ATTENTION"),
     Updating("UPDATING"),
 
     /**

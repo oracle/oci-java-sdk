@@ -1840,6 +1840,64 @@ public class DevopsClient implements Devops {
     }
 
     @Override
+    public GetRepoFileDiffResponse getRepoFileDiff(GetRepoFileDiffRequest request) {
+        LOG.trace("Called getRepoFileDiff");
+        final GetRepoFileDiffRequest interceptedRequest =
+                GetRepoFileDiffConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetRepoFileDiffConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, GetRepoFileDiffResponse>
+                transformer = GetRepoFileDiffConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public GetRepoFileLinesResponse getRepoFileLines(GetRepoFileLinesRequest request) {
+        LOG.trace("Called getRepoFileLines");
+        final GetRepoFileLinesRequest interceptedRequest =
+                GetRepoFileLinesConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetRepoFileLinesConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, GetRepoFileLinesResponse>
+                transformer = GetRepoFileLinesConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public GetRepositoryResponse getRepository(GetRepositoryRequest request) {
         LOG.trace("Called getRepository");
         final GetRepositoryRequest interceptedRequest =

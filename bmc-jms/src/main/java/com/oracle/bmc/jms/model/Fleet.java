@@ -97,6 +97,24 @@ public class Fleet {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("inventoryLog")
+        private CustomLog inventoryLog;
+
+        public Builder inventoryLog(CustomLog inventoryLog) {
+            this.inventoryLog = inventoryLog;
+            this.__explicitlySet__.add("inventoryLog");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("operationLog")
+        private CustomLog operationLog;
+
+        public Builder operationLog(CustomLog operationLog) {
+            this.operationLog = operationLog;
+            this.__explicitlySet__.add("operationLog");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
@@ -157,6 +175,8 @@ public class Fleet {
                             approximateInstallationCount,
                             approximateApplicationCount,
                             approximateManagedInstanceCount,
+                            inventoryLog,
+                            operationLog,
                             timeCreated,
                             lifecycleState,
                             definedTags,
@@ -177,6 +197,8 @@ public class Fleet {
                             .approximateInstallationCount(o.getApproximateInstallationCount())
                             .approximateApplicationCount(o.getApproximateApplicationCount())
                             .approximateManagedInstanceCount(o.getApproximateManagedInstanceCount())
+                            .inventoryLog(o.getInventoryLog())
+                            .operationLog(o.getOperationLog())
                             .timeCreated(o.getTimeCreated())
                             .lifecycleState(o.getLifecycleState())
                             .definedTags(o.getDefinedTags())
@@ -251,6 +273,12 @@ public class Fleet {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("approximateManagedInstanceCount")
     Integer approximateManagedInstanceCount;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("inventoryLog")
+    CustomLog inventoryLog;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("operationLog")
+    CustomLog operationLog;
 
     /**
      * The creation date and time of the Fleet (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).

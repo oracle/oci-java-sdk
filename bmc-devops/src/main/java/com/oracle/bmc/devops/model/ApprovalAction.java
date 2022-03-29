@@ -42,18 +42,28 @@ public class ApprovalAction {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("reason")
+        private String reason;
+
+        public Builder reason(String reason) {
+            this.reason = reason;
+            this.__explicitlySet__.add("reason");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ApprovalAction build() {
-            ApprovalAction __instance__ = new ApprovalAction(subjectId, action);
+            ApprovalAction __instance__ = new ApprovalAction(subjectId, action, reason);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(ApprovalAction o) {
-            Builder copiedBuilder = subjectId(o.getSubjectId()).action(o.getAction());
+            Builder copiedBuilder =
+                    subjectId(o.getSubjectId()).action(o.getAction()).reason(o.getReason());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -123,6 +133,12 @@ public class ApprovalAction {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("action")
     Action action;
+
+    /**
+     * The reason for approving or rejecting the deployment.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("reason")
+    String reason;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

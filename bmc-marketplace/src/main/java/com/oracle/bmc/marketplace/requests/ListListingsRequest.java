@@ -30,7 +30,7 @@ public class ListListingsRequest extends com.oracle.bmc.requests.BmcRequest<java
     private String listingId;
 
     /**
-     * Image ID of the listing
+     * The image identifier of the listing.
      */
     private String imageId;
 

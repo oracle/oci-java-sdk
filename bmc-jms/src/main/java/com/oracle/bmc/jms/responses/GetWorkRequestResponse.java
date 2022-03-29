@@ -25,6 +25,12 @@ public class GetWorkRequestResponse extends com.oracle.bmc.responses.BmcResponse
     private Float retryAfter;
 
     /**
+     * For optimistic concurrency control. See {@code if-match}.
+     *
+     */
+    private String etag;
+
+    /**
      * The returned WorkRequest instance.
      */
     private com.oracle.bmc.jms.model.WorkRequest workRequest;
@@ -33,16 +39,19 @@ public class GetWorkRequestResponse extends com.oracle.bmc.responses.BmcResponse
         "__httpStatusCode__",
         "opcRequestId",
         "retryAfter",
+        "etag",
         "workRequest"
     })
     private GetWorkRequestResponse(
             int __httpStatusCode__,
             String opcRequestId,
             Float retryAfter,
+            String etag,
             com.oracle.bmc.jms.model.WorkRequest workRequest) {
         super(__httpStatusCode__);
         this.opcRequestId = opcRequestId;
         this.retryAfter = retryAfter;
+        this.etag = etag;
         this.workRequest = workRequest;
     }
 
@@ -62,6 +71,7 @@ public class GetWorkRequestResponse extends com.oracle.bmc.responses.BmcResponse
             __httpStatusCode__(o.get__httpStatusCode__());
             opcRequestId(o.getOpcRequestId());
             retryAfter(o.getRetryAfter());
+            etag(o.getEtag());
             workRequest(o.getWorkRequest());
 
             return this;
@@ -69,7 +79,7 @@ public class GetWorkRequestResponse extends com.oracle.bmc.responses.BmcResponse
 
         public GetWorkRequestResponse build() {
             return new GetWorkRequestResponse(
-                    __httpStatusCode__, opcRequestId, retryAfter, workRequest);
+                    __httpStatusCode__, opcRequestId, retryAfter, etag, workRequest);
         }
     }
 }

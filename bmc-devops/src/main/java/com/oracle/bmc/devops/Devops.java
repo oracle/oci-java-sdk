@@ -514,7 +514,7 @@ public interface Devops extends AutoCloseable {
     GetDeploymentResponse getDeployment(GetDeploymentRequest request);
 
     /**
-     * Gets the line-by-line difference between files on different commits.
+     * Gets the line-by-line difference between file on different commits. This API will be deprecated on Wed, 29 Mar 2023 01:00:00 GMT as it does not get recognized when filePath has '/'. This will be replaced by \"/repositories/{repositoryId}/file/diffs\"
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -590,6 +590,32 @@ public interface Devops extends AutoCloseable {
     GetRefResponse getRef(GetRefRequest request);
 
     /**
+     * Gets the line-by-line difference between file on different commits.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/GetRepoFileDiffExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetRepoFileDiff API.
+     */
+    GetRepoFileDiffResponse getRepoFileDiff(GetRepoFileDiffRequest request);
+
+    /**
+     * Retrieve lines of a specified file. Supports starting line number and limit.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/GetRepoFileLinesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetRepoFileLines API.
+     */
+    GetRepoFileLinesResponse getRepoFileLines(GetRepoFileLinesRequest request);
+
+    /**
      * Retrieves a repository by identifier.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -616,7 +642,7 @@ public interface Devops extends AutoCloseable {
             GetRepositoryArchiveContentRequest request);
 
     /**
-     * Retrieve lines of a specified file. Supports starting line number and limit.
+     * Retrieve lines of a specified file. Supports starting line number and limit. This API will be deprecated on Wed, 29 Mar 2023 01:00:00 GMT as it does not get recognized when filePath has '/'. This will be replaced by \"/repositories/{repositoryId}/file/lines\"
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
