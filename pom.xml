@@ -34,7 +34,7 @@
   </scm>
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <jackson.version>2.13.1</jackson.version>
+    <jackson.version>2.13.2.1</jackson.version>
     <jersey.version>2.35</jersey.version>
     <apache-httpcomponents.version>4.5.13</apache-httpcomponents.version>
     <guava.version>31.0.1-jre</guava.version>
