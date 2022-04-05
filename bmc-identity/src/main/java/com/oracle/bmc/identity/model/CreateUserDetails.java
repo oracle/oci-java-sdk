@@ -130,6 +130,9 @@ public class CreateUserDetails {
 
     /**
      * The description you assign to the user during creation. Does not have to be unique, and it's changeable.
+     * <p>
+     * (For tenancies that support identity domains) You can have an empty description.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     String description;

@@ -31,19 +31,20 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
 
     /**
      * The field used for sorting. Only one sorting order (sortOrder) can be specified.
-     * The default order for STARTTIME and FINISHTIME is descending.
+     * The default order is descending.
      *
      */
     private SortBy sortBy;
 
     /**
      * The field used for sorting. Only one sorting order (sortOrder) can be specified.
-     * The default order for STARTTIME and FINISHTIME is descending.
+     * The default order is descending.
      *
      **/
     public enum SortBy {
         Starttime("STARTTIME"),
         Finishtime("FINISHTIME"),
+        Acceptedtime("ACCEPTEDTIME"),
         ;
 
         private final String value;

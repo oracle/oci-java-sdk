@@ -63,6 +63,9 @@ public class UpdateCustomerSecretKeyDetails {
 
     /**
      * The description you assign to the secret key. Does not have to be unique, and it's changeable.
+     * <p>
+     * (For tenancies that support identity domains) You can have an empty description.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     String displayName;

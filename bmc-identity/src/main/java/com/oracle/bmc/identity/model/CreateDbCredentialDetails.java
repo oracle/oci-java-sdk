@@ -79,6 +79,8 @@ public class CreateDbCredentialDetails {
 
     /**
      * The description you assign to the DB credentials during creation.
+     * <p>
+     * (For tenancies that support identity domains) You can have an empty description.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")

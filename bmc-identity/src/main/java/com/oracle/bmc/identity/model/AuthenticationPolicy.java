@@ -5,7 +5,7 @@
 package com.oracle.bmc.identity.model;
 
 /**
- * Authentication policy, currently set for the given compartment
+ * Authentication policy, currently set for the given compartment.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields

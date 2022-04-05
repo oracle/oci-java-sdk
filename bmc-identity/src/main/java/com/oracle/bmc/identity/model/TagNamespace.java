@@ -6,7 +6,7 @@ package com.oracle.bmc.identity.model;
 
 /**
  * A managed container for defined tags. A tag namespace is unique in a tenancy. For more information,
- * see [Managing Tags and Tag Namespaces](https://docs.cloud.oracle.com/Content/Identity/Concepts/taggingoverview.htm).
+ * see [Managing Tags and Tag Namespaces](https://docs.cloud.oracle.com/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm).
  * <p>
  **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values
  * using the API.
@@ -200,7 +200,7 @@ public class TagNamespace {
 
     /**
      * Whether the tag namespace is retired.
-     * See [Retiring Key Definitions and Namespace Definitions](https://docs.cloud.oracle.com/Content/Identity/Concepts/taggingoverview.htm#Retiring).
+     * See [Retiring Key Definitions and Namespace Definitions](https://docs.cloud.oracle.com/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm#retiringkeys).
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isRetired")

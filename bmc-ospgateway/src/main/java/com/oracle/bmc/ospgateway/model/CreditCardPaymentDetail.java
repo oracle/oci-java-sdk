@@ -59,12 +59,55 @@ public class CreditCardPaymentDetail extends PaymentDetail {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("nameOnCard")
+        private String nameOnCard;
+
+        public Builder nameOnCard(String nameOnCard) {
+            this.nameOnCard = nameOnCard;
+            this.__explicitlySet__.add("nameOnCard");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("creditCardType")
+        private CreditCardType creditCardType;
+
+        public Builder creditCardType(CreditCardType creditCardType) {
+            this.creditCardType = creditCardType;
+            this.__explicitlySet__.add("creditCardType");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("lastDigits")
+        private String lastDigits;
+
+        public Builder lastDigits(String lastDigits) {
+            this.lastDigits = lastDigits;
+            this.__explicitlySet__.add("lastDigits");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("timeExpiration")
+        private java.util.Date timeExpiration;
+
+        public Builder timeExpiration(java.util.Date timeExpiration) {
+            this.timeExpiration = timeExpiration;
+            this.__explicitlySet__.add("timeExpiration");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CreditCardPaymentDetail build() {
             CreditCardPaymentDetail __instance__ =
-                    new CreditCardPaymentDetail(timePaidOn, paidBy, amountPaid);
+                    new CreditCardPaymentDetail(
+                            timePaidOn,
+                            paidBy,
+                            amountPaid,
+                            nameOnCard,
+                            creditCardType,
+                            lastDigits,
+                            timeExpiration);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -74,7 +117,11 @@ public class CreditCardPaymentDetail extends PaymentDetail {
             Builder copiedBuilder =
                     timePaidOn(o.getTimePaidOn())
                             .paidBy(o.getPaidBy())
-                            .amountPaid(o.getAmountPaid());
+                            .amountPaid(o.getAmountPaid())
+                            .nameOnCard(o.getNameOnCard())
+                            .creditCardType(o.getCreditCardType())
+                            .lastDigits(o.getLastDigits())
+                            .timeExpiration(o.getTimeExpiration());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -90,9 +137,93 @@ public class CreditCardPaymentDetail extends PaymentDetail {
 
     @Deprecated
     public CreditCardPaymentDetail(
-            java.util.Date timePaidOn, String paidBy, java.math.BigDecimal amountPaid) {
+            java.util.Date timePaidOn,
+            String paidBy,
+            java.math.BigDecimal amountPaid,
+            String nameOnCard,
+            CreditCardType creditCardType,
+            String lastDigits,
+            java.util.Date timeExpiration) {
         super(timePaidOn, paidBy, amountPaid);
+        this.nameOnCard = nameOnCard;
+        this.creditCardType = creditCardType;
+        this.lastDigits = lastDigits;
+        this.timeExpiration = timeExpiration;
     }
+
+    /**
+     * Name on the credit card
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("nameOnCard")
+    String nameOnCard;
+    /**
+     * Credit card type
+     **/
+    @lombok.extern.slf4j.Slf4j
+    public enum CreditCardType {
+        Visa("VISA"),
+        Amex("AMEX"),
+        Mastercard("MASTERCARD"),
+        Discover("DISCOVER"),
+        Jcb("JCB"),
+        Diner("DINER"),
+        Elo("ELO"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private final String value;
+        private static java.util.Map<String, CreditCardType> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (CreditCardType v : CreditCardType.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        CreditCardType(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static CreditCardType create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'CreditCardType', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * Credit card type
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("creditCardType")
+    CreditCardType creditCardType;
+
+    /**
+     * Last four digits of the card
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("lastDigits")
+    String lastDigits;
+
+    /**
+     * Expired date of the credit card
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("timeExpiration")
+    java.util.Date timeExpiration;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

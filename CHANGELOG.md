@@ -3,6 +3,18 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
+## 2.22.0 - 2022-04-05
+### Added
+- Fixed the lifecycle state values for target databases in the Data Safe service
+- Support for content length and content type response headers when downloading PDFs in the Account Management service
+- Support for creating Enterprise Manager-based zLinux host targets, creating alarms, and viewing top process analytics in the Operations Insights service
+- Support for diagnostic reboots on VM instances in the Compute service
+
+### Breaking Changes
+- The data type of property `lifecycleState` in request `ListTargetDatabasesRequest` was changed from `com.oracle.bmc.datasafe.model.LifecycleState` to `com.oracle.bmc.datasafe.model.TargetDatabaseLifecycleState` in the Data Safe service
+- The data type of property `lifecycleState` in model `TargetDatabase` was changed from `com.oracle.bmc.datasafe.model.LifecycleState` to `com.oracle.bmc.datasafe.model.TargetDatabaseLifecycleState` in the Data Safe service
+- The data type of property `lifecycleState` in model `TargetDatabaseSummary` was changed from `com.oracle.bmc.datasafe.model.LifecycleState` to `com.oracle.bmc.datasafe.model.TargetDatabaseLifecycleState` in the Data Safe service
+
 ## 2.21.0 - 2022-03-29
 ### Added
 - Support for returning the number of network ports as part of listing shapes in the Compute service

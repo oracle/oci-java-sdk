@@ -34,6 +34,10 @@ package com.oracle.bmc.opsi.model;
         name = "HOST_MEMORY_USAGE"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = HostTopProcesses.class,
+        name = "HOST_TOP_PROCESSES"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = HostCpuUsage.class,
         name = "HOST_CPU_USAGE"
     ),
@@ -61,6 +65,7 @@ public class HostPerformanceMetricGroup {
         HostCpuUsage("HOST_CPU_USAGE"),
         HostMemoryUsage("HOST_MEMORY_USAGE"),
         HostNetworkActivitySummary("HOST_NETWORK_ACTIVITY_SUMMARY"),
+        HostTopProcesses("HOST_TOP_PROCESSES"),
         ;
 
         private final String value;

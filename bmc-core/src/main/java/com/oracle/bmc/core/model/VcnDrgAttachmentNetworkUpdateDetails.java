@@ -98,8 +98,8 @@ public class VcnDrgAttachmentNetworkUpdateDetails extends DrgAttachmentNetworkUp
     String routeTableId;
 
     /**
-     * Indicates whether the VCN CIDR(s) or the individual Subnet CIDR(s) are imported from the attachment.
-     * Routes from the VCN Ingress Route Table are always imported.
+     * Indicates whether the VCN CIDRs or the individual subnet CIDRs are imported from the attachment.
+     * Routes from the VCN ingress route table are always imported.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("vcnRouteType")

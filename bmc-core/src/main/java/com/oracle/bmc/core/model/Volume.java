@@ -404,15 +404,11 @@ public class Volume {
      * <p>
      * Allowed values:
      * <p>
-     * {@code 0}: Represents Lower Cost option.
-     * <p>
      * {@code 10}: Represents Balanced option.
      * <p>
      * {@code 20}: Represents Higher Performance option.
-     *
-     *   * {@code 30}-{@code 120}: Represents the Ultra High Performance option.
      * <p>
-     * For volumes with the auto-tuned performance feature enabled, this is set to the default (minimum) VPUs/GB.
+     * {@code 30}-{@code 120}: Represents the Ultra High Performance option.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("vpusPerGB")
@@ -448,15 +444,14 @@ public class Volume {
     String volumeGroupId;
 
     /**
-     * Specifies whether the auto-tune performance is enabled for this volume. This field is deprecated.
-     * Use the {@code DetachedVolumeAutotunePolicy} instead to enable the volume for detached autotune.
+     * Specifies whether the auto-tune performance is enabled for this boot volume.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isAutoTuneEnabled")
     Boolean isAutoTuneEnabled;
 
     /**
-     * The number of Volume Performance Units per GB that this volume is effectively tuned to.
+     * The number of Volume Performance Units per GB that this volume is effectively tuned to when it's idle.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("autoTunedVpusPerGB")

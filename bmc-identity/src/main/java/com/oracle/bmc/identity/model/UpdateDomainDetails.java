@@ -5,7 +5,7 @@
 package com.oracle.bmc.identity.model;
 
 /**
- * Update domain details
+ * (For tenancies that support identity domains) Update identity domain details.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -105,19 +105,19 @@ public class UpdateDomainDetails {
     }
 
     /**
-     * The domain description
+     * The identity domain description. You can have an empty description.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     String description;
 
     /**
-     * The mutable display name of the domain
+     * The mutable display name of the identity domain.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     String displayName;
 
     /**
-     * Indicates whether domain is hidden on login screen or not.
+     * Indicates whether the identity domain is hidden on the sign-in screen or not.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isHiddenOnLogin")

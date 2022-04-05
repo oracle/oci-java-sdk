@@ -11,7 +11,7 @@ package com.oracle.bmc.identity.model;
  * <p>
  **Note:** The secret key is always an Oracle-generated string; you can't change it to a string of your choice.
  * <p>
- * For more information, see [Managing User Credentials](https://docs.cloud.oracle.com/Content/Identity/Tasks/managingcredentials.htm).
+ * For more information, see [Managing User Credentials](https://docs.cloud.oracle.com/Content/Identity/access/managing-user-credentials.htm).
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields

@@ -21,7 +21,7 @@ public class ListAllowedDomainLicenseTypesRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The domain license type
+     * The license type of the identity domain.
      */
     private String currentLicenseTypeName;
 

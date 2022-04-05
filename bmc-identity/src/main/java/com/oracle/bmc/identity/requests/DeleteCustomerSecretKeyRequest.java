@@ -26,7 +26,7 @@ public class DeleteCustomerSecretKeyRequest
     private String userId;
 
     /**
-     * The OCID of the secret key.
+     * The access token of the secret key.
      */
     private String customerSecretKeyId;
 

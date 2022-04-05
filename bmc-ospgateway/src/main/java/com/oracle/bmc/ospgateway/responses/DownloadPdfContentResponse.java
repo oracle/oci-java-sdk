@@ -25,6 +25,16 @@ public class DownloadPdfContentResponse extends com.oracle.bmc.responses.BmcResp
     private String contentDisposition;
 
     /**
+     * Set the content type to download
+     */
+    private String contentType;
+
+    /**
+     * Set the content length to download
+     */
+    private Integer contentLength;
+
+    /**
      * The returned java.io.InputStream instance.
      */
     private java.io.InputStream inputStream;
@@ -33,16 +43,22 @@ public class DownloadPdfContentResponse extends com.oracle.bmc.responses.BmcResp
         "__httpStatusCode__",
         "opcRequestId",
         "contentDisposition",
+        "contentType",
+        "contentLength",
         "inputStream"
     })
     private DownloadPdfContentResponse(
             int __httpStatusCode__,
             String opcRequestId,
             String contentDisposition,
+            String contentType,
+            Integer contentLength,
             java.io.InputStream inputStream) {
         super(__httpStatusCode__);
         this.opcRequestId = opcRequestId;
         this.contentDisposition = contentDisposition;
+        this.contentType = contentType;
+        this.contentLength = contentLength;
         this.inputStream = inputStream;
     }
 
@@ -62,6 +78,8 @@ public class DownloadPdfContentResponse extends com.oracle.bmc.responses.BmcResp
             __httpStatusCode__(o.get__httpStatusCode__());
             opcRequestId(o.getOpcRequestId());
             contentDisposition(o.getContentDisposition());
+            contentType(o.getContentType());
+            contentLength(o.getContentLength());
             inputStream(o.getInputStream());
 
             return this;
@@ -69,7 +87,12 @@ public class DownloadPdfContentResponse extends com.oracle.bmc.responses.BmcResp
 
         public DownloadPdfContentResponse build() {
             return new DownloadPdfContentResponse(
-                    __httpStatusCode__, opcRequestId, contentDisposition, inputStream);
+                    __httpStatusCode__,
+                    opcRequestId,
+                    contentDisposition,
+                    contentType,
+                    contentLength,
+                    inputStream);
         }
     }
 }

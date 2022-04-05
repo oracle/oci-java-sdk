@@ -50,12 +50,54 @@ public class PaypalPaymentOption extends PaymentOption {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("emailAddress")
+        private String emailAddress;
+
+        public Builder emailAddress(String emailAddress) {
+            this.emailAddress = emailAddress;
+            this.__explicitlySet__.add("emailAddress");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("firstName")
+        private String firstName;
+
+        public Builder firstName(String firstName) {
+            this.firstName = firstName;
+            this.__explicitlySet__.add("firstName");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("lastName")
+        private String lastName;
+
+        public Builder lastName(String lastName) {
+            this.lastName = lastName;
+            this.__explicitlySet__.add("lastName");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("extBillingAgreementId")
+        private String extBillingAgreementId;
+
+        public Builder extBillingAgreementId(String extBillingAgreementId) {
+            this.extBillingAgreementId = extBillingAgreementId;
+            this.__explicitlySet__.add("extBillingAgreementId");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public PaypalPaymentOption build() {
             PaypalPaymentOption __instance__ =
-                    new PaypalPaymentOption(walletInstrumentId, walletTransactionId);
+                    new PaypalPaymentOption(
+                            walletInstrumentId,
+                            walletTransactionId,
+                            emailAddress,
+                            firstName,
+                            lastName,
+                            extBillingAgreementId);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -64,7 +106,11 @@ public class PaypalPaymentOption extends PaymentOption {
         public Builder copy(PaypalPaymentOption o) {
             Builder copiedBuilder =
                     walletInstrumentId(o.getWalletInstrumentId())
-                            .walletTransactionId(o.getWalletTransactionId());
+                            .walletTransactionId(o.getWalletTransactionId())
+                            .emailAddress(o.getEmailAddress())
+                            .firstName(o.getFirstName())
+                            .lastName(o.getLastName())
+                            .extBillingAgreementId(o.getExtBillingAgreementId());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -79,9 +125,43 @@ public class PaypalPaymentOption extends PaymentOption {
     }
 
     @Deprecated
-    public PaypalPaymentOption(String walletInstrumentId, String walletTransactionId) {
+    public PaypalPaymentOption(
+            String walletInstrumentId,
+            String walletTransactionId,
+            String emailAddress,
+            String firstName,
+            String lastName,
+            String extBillingAgreementId) {
         super(walletInstrumentId, walletTransactionId);
+        this.emailAddress = emailAddress;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.extBillingAgreementId = extBillingAgreementId;
     }
+
+    /**
+     * The email address of the paypal user.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("emailAddress")
+    String emailAddress;
+
+    /**
+     * First name of the paypal user.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("firstName")
+    String firstName;
+
+    /**
+     * Last name of the paypal user.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("lastName")
+    String lastName;
+
+    /**
+     * Agreement id for the paypal account.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("extBillingAgreementId")
+    String extBillingAgreementId;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

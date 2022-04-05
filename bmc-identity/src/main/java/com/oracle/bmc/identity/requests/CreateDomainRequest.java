@@ -22,7 +22,7 @@ public class CreateDomainRequest
                 com.oracle.bmc.identity.model.CreateDomainDetails> {
 
     /**
-     * The request object for creating a new domain
+     * The request object for creating a new identity domain.
      */
     private com.oracle.bmc.identity.model.CreateDomainDetails createDomainDetails;
 
