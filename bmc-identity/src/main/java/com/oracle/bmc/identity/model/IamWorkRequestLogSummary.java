@@ -5,7 +5,7 @@
 package com.oracle.bmc.identity.model;
 
 /**
- * The log entity for a IAM work request.
+ * (For tenancies that support identity domains) The log entity for a IAM work request.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields

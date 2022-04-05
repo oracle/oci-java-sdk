@@ -43,7 +43,7 @@ public class ListTargetDatabasesRequest extends com.oracle.bmc.requests.BmcReque
     /**
      * A filter to return the target databases that matches the current state of the target database.
      */
-    private com.oracle.bmc.datasafe.model.LifecycleState lifecycleState;
+    private com.oracle.bmc.datasafe.model.TargetDatabaseLifecycleState lifecycleState;
 
     /**
      * A filter to return target databases that match the database type of the target database.

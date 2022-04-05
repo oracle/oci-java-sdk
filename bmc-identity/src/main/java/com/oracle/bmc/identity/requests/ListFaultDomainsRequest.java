@@ -26,7 +26,7 @@ public class ListFaultDomainsRequest extends com.oracle.bmc.requests.BmcRequest<
     private String compartmentId;
 
     /**
-     * The name of the availibilityDomain.
+     * The name of the availabilityDomain.
      *
      */
     private String availabilityDomain;

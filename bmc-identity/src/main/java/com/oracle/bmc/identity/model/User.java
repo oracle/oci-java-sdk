@@ -10,9 +10,9 @@ package com.oracle.bmc.identity.model;
  * have one or more IAM Service credentials ({@link ApiKey},
  * {@link UIPassword}, {@link SwiftPassword} and
  * {@link AuthToken}).
- * For more information, see [User Credentials](https://docs.cloud.oracle.com/Content/Identity/Concepts/usercredentials.htm)). End users of your
- * application are not typically IAM Service users. For conceptual information about users and other IAM Service
- * components, see [Overview of the IAM Service](https://docs.cloud.oracle.com/Content/Identity/Concepts/overview.htm).
+ * For more information, see [User Credentials](https://docs.cloud.oracle.com/Content/Identity/usercred/usercredentials.htm)). End users of your
+ * application are not typically IAM Service users, but for tenancies that have identity domains, they might be.
+ * For conceptual information about users and other IAM Service components, see [Overview of IAM](https://docs.cloud.oracle.com/Content/Identity/getstarted/identity-domains.htm).
  * <p>
  * These users are created directly within the Oracle Cloud Infrastructure system, via the IAM service.
  * They are different from *federated users*, who authenticate themselves to the Oracle Cloud Infrastructure
@@ -21,7 +21,7 @@ package com.oracle.bmc.identity.model;
  * <p>
  * To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized,
  * talk to an administrator. If you're an administrator who needs to write policies to give users access,
- * see [Getting Started with Policies](https://docs.cloud.oracle.com/Content/Identity/Concepts/policygetstarted.htm).
+ * see [Get Started with Policies](https://docs.cloud.oracle.com/Content/Identity/policiesgs/get-started-with-policies.htm).
  * <p>
  **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values
  * using the API.
@@ -291,6 +291,9 @@ public class User {
 
     /**
      * The description you assign to the user. Does not have to be unique, and it's changeable.
+     * <p>
+     * (For tenancies that support identity domains) You can have an empty description.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     String description;
@@ -298,6 +301,8 @@ public class User {
     /**
      * The email address you assign to the user.
      * The email address must be unique across all users in the tenancy.
+     * <p>
+     * (For tenancies that support identity domains) The email address is required unless the requirement is disabled at the tenancy level.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("email")

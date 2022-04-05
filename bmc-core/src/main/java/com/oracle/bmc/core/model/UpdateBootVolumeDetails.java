@@ -175,18 +175,15 @@ public class UpdateBootVolumeDetails {
      * {@code 10}: Represents Balanced option.
      * <p>
      * {@code 20}: Represents Higher Performance option.
-     *
-     *   * {@code 30}-{@code 120}: Represents the Ultra High Performance option.
      * <p>
-     * For performance autotune enabled volumes, It would be the Default(Minimum) VPUs/GB.
+     * {@code 30}-{@code 120}: Represents the Ultra High Performance option.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("vpusPerGB")
     Long vpusPerGB;
 
     /**
-     * Specifies whether the auto-tune performance is enabled for this boot volume. This field is deprecated.
-     * Use the {@code DetachedVolumeAutotunePolicy} instead to enable the volume for detached autotune.
+     * Specifies whether the auto-tune performance is enabled for this boot volume.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isAutoTuneEnabled")

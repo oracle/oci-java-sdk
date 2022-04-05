@@ -1650,7 +1650,9 @@ public class DataSafeWaiters {
                                         response.getSecurityAssessment().getLifecycleState());
                             }
                         },
-                        false),
+                        targetStatesSet.contains(
+                                com.oracle.bmc.datasafe.model.SecurityAssessmentLifecycleState
+                                        .Deleted)),
                 request);
     }
 
@@ -2193,7 +2195,7 @@ public class DataSafeWaiters {
     public com.oracle.bmc.waiter.Waiter<GetTargetDatabaseRequest, GetTargetDatabaseResponse>
             forTargetDatabase(
                     GetTargetDatabaseRequest request,
-                    com.oracle.bmc.datasafe.model.LifecycleState... targetStates) {
+                    com.oracle.bmc.datasafe.model.TargetDatabaseLifecycleState... targetStates) {
         org.apache.commons.lang3.Validate.notEmpty(
                 targetStates, "At least one targetState must be provided");
         org.apache.commons.lang3.Validate.noNullElements(
@@ -2215,7 +2217,7 @@ public class DataSafeWaiters {
     public com.oracle.bmc.waiter.Waiter<GetTargetDatabaseRequest, GetTargetDatabaseResponse>
             forTargetDatabase(
                     GetTargetDatabaseRequest request,
-                    com.oracle.bmc.datasafe.model.LifecycleState targetState,
+                    com.oracle.bmc.datasafe.model.TargetDatabaseLifecycleState targetState,
                     com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
                     com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
         org.apache.commons.lang3.Validate.notNull(targetState, "The targetState cannot be null");
@@ -2240,7 +2242,7 @@ public class DataSafeWaiters {
                     GetTargetDatabaseRequest request,
                     com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
                     com.oracle.bmc.waiter.DelayStrategy delayStrategy,
-                    com.oracle.bmc.datasafe.model.LifecycleState... targetStates) {
+                    com.oracle.bmc.datasafe.model.TargetDatabaseLifecycleState... targetStates) {
         org.apache.commons.lang3.Validate.notEmpty(
                 targetStates, "At least one targetState must be provided");
         org.apache.commons.lang3.Validate.noNullElements(
@@ -2257,9 +2259,10 @@ public class DataSafeWaiters {
             forTargetDatabase(
                     com.oracle.bmc.waiter.BmcGenericWaiter waiter,
                     final GetTargetDatabaseRequest request,
-                    final com.oracle.bmc.datasafe.model.LifecycleState... targetStates) {
-        final java.util.Set<com.oracle.bmc.datasafe.model.LifecycleState> targetStatesSet =
-                new java.util.HashSet<>(java.util.Arrays.asList(targetStates));
+                    final com.oracle.bmc.datasafe.model.TargetDatabaseLifecycleState...
+                            targetStates) {
+        final java.util.Set<com.oracle.bmc.datasafe.model.TargetDatabaseLifecycleState>
+                targetStatesSet = new java.util.HashSet<>(java.util.Arrays.asList(targetStates));
 
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
@@ -2281,7 +2284,8 @@ public class DataSafeWaiters {
                             }
                         },
                         targetStatesSet.contains(
-                                com.oracle.bmc.datasafe.model.LifecycleState.Deleted)),
+                                com.oracle.bmc.datasafe.model.TargetDatabaseLifecycleState
+                                        .Deleted)),
                 request);
     }
 
@@ -2383,7 +2387,9 @@ public class DataSafeWaiters {
                                         response.getUserAssessment().getLifecycleState());
                             }
                         },
-                        false),
+                        targetStatesSet.contains(
+                                com.oracle.bmc.datasafe.model.UserAssessmentLifecycleState
+                                        .Deleted)),
                 request);
     }
 

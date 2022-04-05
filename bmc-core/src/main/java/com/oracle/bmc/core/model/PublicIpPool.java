@@ -5,7 +5,8 @@
 package com.oracle.bmc.core.model;
 
 /**
- * A public IP pool is a set of public IP addresses represented as one or more IPv4 CIDR blocks. Resources like load balancers and compute instances can be allocated public IP addresses from a public IP pool.
+ * A public IP pool is a set of public IP addresses represented as one or more IPv4 CIDR blocks.      Resources like load balancers and compute instances can be allocated public IP addresses from a public IP pool.
+ *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -141,6 +142,7 @@ public class PublicIpPool {
 
     /**
      * The CIDR blocks added to this pool. This could be all or a portion of a BYOIP CIDR block.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("cidrBlocks")
     java.util.List<String> cidrBlocks;

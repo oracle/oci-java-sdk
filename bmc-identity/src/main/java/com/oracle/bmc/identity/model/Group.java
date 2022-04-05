@@ -7,7 +7,7 @@ package com.oracle.bmc.identity.model;
 /**
  * A collection of users who all need the same type of access to a particular set of resources or compartment.
  * For conceptual information about groups and other IAM Service components, see
- * [Overview of the IAM Service](https://docs.cloud.oracle.com/Content/Identity/Concepts/overview.htm).
+ * [Overview of IAM](https://docs.cloud.oracle.com/Content/Identity/getstarted/identity-domains.htm).
  * <p>
  * If you're federating with an identity provider (IdP), you need to create mappings between the groups
  * defined in the IdP and groups you define in the IAM service. For more information, see
@@ -17,7 +17,7 @@ package com.oracle.bmc.identity.model;
  * <p>
  * To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized,
  * talk to an administrator. If you're an administrator who needs to write policies to give users access,
- * see [Getting Started with Policies](https://docs.cloud.oracle.com/Content/Identity/Concepts/policygetstarted.htm).
+ * see [Get Started with Policies](https://docs.cloud.oracle.com/Content/Identity/policiesgs/get-started-with-policies.htm).
  * <p>
  **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values
  * using the API.
@@ -188,6 +188,9 @@ public class Group {
 
     /**
      * The description you assign to the group. Does not have to be unique, and it's changeable.
+     * <p>
+     * (For tenancies that support identity domains) You can have an empty description.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     String description;

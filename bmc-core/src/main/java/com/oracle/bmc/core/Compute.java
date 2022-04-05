@@ -789,6 +789,8 @@ public interface Compute extends AutoCloseable {
      * <p>
      *
      * <p>
+     * - **DIAGNOSTICREBOOT** - **This feature currently only supports virtual machines** Powers off the VM instance then rebuilds and powers it back on.
+     * <p>
      *
      * For more information about managing instance lifecycle states, see
      * [Stopping and Starting an Instance](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/restartinginstance.htm).

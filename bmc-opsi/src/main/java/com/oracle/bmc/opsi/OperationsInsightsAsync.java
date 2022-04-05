@@ -1733,6 +1733,27 @@ public interface OperationsInsightsAsync extends AutoCloseable {
                             handler);
 
     /**
+     * Returns response with aggregated time series data (timeIntervalstart, timeIntervalEnd, commandArgs, usageData) for top processes.
+     * Data is aggregated for the time period specified and proceses are sorted descendent by the proces metric specified (CPU, MEMORY, VIRTUAL_MEMORY).
+     * HostInsight Id and Process metric must be specified
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<SummarizeHostInsightTopProcessesUsageTrendResponse>
+            summarizeHostInsightTopProcessesUsageTrend(
+                    SummarizeHostInsightTopProcessesUsageTrendRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    SummarizeHostInsightTopProcessesUsageTrendRequest,
+                                    SummarizeHostInsightTopProcessesUsageTrendResponse>
+                            handler);
+
+    /**
      * Gets the details of resources used by an Operations Insights Warehouse.
      * There is only expected to be 1 warehouse per tenant. The warehouse is expected to be in the root compartment.
      *

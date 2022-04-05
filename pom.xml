@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.oracle.oci.sdk</groupId>
   <artifactId>oci-java-sdk</artifactId>
-  <version>2.21.0</version>
+  <version>2.22.0</version>
   <packaging>pom</packaging>
   <name>Oracle Cloud Infrastructure SDK</name>
   <description>This project contains the SDK used for Oracle Cloud Infrastructure</description>
@@ -34,22 +34,22 @@
   </scm>
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <jackson.version>2.12.0</jackson.version>
-    <jersey.version>2.34</jersey.version>
+    <jackson.version>2.13.1</jackson.version>
+    <jersey.version>2.35</jersey.version>
     <apache-httpcomponents.version>4.5.13</apache-httpcomponents.version>
     <guava.version>31.0.1-jre</guava.version>
     <junit.version>4.13.2</junit.version>
     <lombok.version>1.18.20</lombok.version>
     <lombok.maven.version>1.18.20.0</lombok.maven.version>
     <jsr305.version>3.0.2</jsr305.version>
-    <slf4j.version>1.7.29</slf4j.version>
+    <slf4j.version>1.7.33</slf4j.version>
     <jakarta.ws.rs-api.version>2.1.6</jakarta.ws.rs-api.version>
     <commons-codec.version>1.15</commons-codec.version>
     <commons-lang3.version>3.8.1</commons-lang3.version>
     <commons-io.version>2.8.0</commons-io.version>
     <!-- Update resilience4jVersion and io.vavr.version together -->
-    <resilience4jVersion>1.2.0</resilience4jVersion>
-    <io.vavr.version>0.10.2</io.vavr.version>
+    <resilience4jVersion>1.7.1</resilience4jVersion>
+    <io.vavr.version>0.10.4</io.vavr.version>
     <maven-shade-plugin.version>3.1.1</maven-shade-plugin.version>
     <bouncycastle.version>1.70</bouncycastle.version>
     <mockito.version>1.10.19</mockito.version>

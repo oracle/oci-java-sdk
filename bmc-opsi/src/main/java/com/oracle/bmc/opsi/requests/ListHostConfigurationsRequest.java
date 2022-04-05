@@ -45,7 +45,7 @@ public class ListHostConfigurationsRequest
     /**
      * Filter by one or more platform types.
      * Supported platformType(s) for MACS-managed external host insight: [LINUX].
-     * Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS].
+     * Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX].
      *
      */
     private java.util.List<PlatformType> platformType;
@@ -53,13 +53,14 @@ public class ListHostConfigurationsRequest
     /**
      * Filter by one or more platform types.
      * Supported platformType(s) for MACS-managed external host insight: [LINUX].
-     * Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS].
+     * Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX].
      *
      **/
     public enum PlatformType {
         Linux("LINUX"),
         Solaris("SOLARIS"),
         Sunos("SUNOS"),
+        Zlinux("ZLINUX"),
         ;
 
         private final String value;
@@ -259,7 +260,7 @@ public class ListHostConfigurationsRequest
         /**
          * Filter by one or more platform types.
          * Supported platformType(s) for MACS-managed external host insight: [LINUX].
-         * Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS].
+         * Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX].
          *
          * @return this builder instance
          */
@@ -271,7 +272,7 @@ public class ListHostConfigurationsRequest
         /**
          * Singular setter. Filter by one or more platform types.
          * Supported platformType(s) for MACS-managed external host insight: [LINUX].
-         * Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS].
+         * Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX].
          *
          * @return this builder instance
          */

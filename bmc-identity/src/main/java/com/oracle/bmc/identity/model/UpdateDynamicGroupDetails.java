@@ -96,13 +96,16 @@ public class UpdateDynamicGroupDetails {
 
     /**
      * The description you assign to the dynamic group. Does not have to be unique, and it's changeable.
+     * <p>
+     * (For tenancies that support identity domains) You can have an empty description.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     String description;
 
     /**
      * The matching rule to dynamically match an instance certificate to this dynamic group.
-     * For rule syntax, see [Managing Dynamic Groups](https://docs.cloud.oracle.com/Content/Identity/Tasks/managingdynamicgroups.htm).
+     * For rule syntax, see [Managing Dynamic Groups](https://docs.cloud.oracle.com/Content/Identity/dynamicgroups/managingdynamicgroups.htm).
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("matchingRule")

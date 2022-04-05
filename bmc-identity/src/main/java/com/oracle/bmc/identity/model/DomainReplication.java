@@ -5,7 +5,7 @@
 package com.oracle.bmc.identity.model;
 
 /**
- * Domain replication states.
+ * (For tenancies that support identity domains) Identity domain replication states.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -84,19 +84,19 @@ public class DomainReplication {
     }
 
     /**
-     * Version number indicating the value of kievTxnId, starting from which, the domain replication events need to be returned.
+     * The version number indicating the value of kievTxnId, starting from which the identity domain replication events need to be returned.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("opcWaterMark")
     java.math.BigDecimal opcWaterMark;
 
     /**
-     * Custom value defining the order of records with same kievTxnId
+     * A custom value defining the order of records with the same kievTxnId.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("txnSeqNumber")
     java.math.BigDecimal txnSeqNumber;
 
     /**
-     * The domain's replication state
+     * The identity domain's replication state.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("domainReplicationStates")
     java.util.List<DomainReplicationStates> domainReplicationStates;

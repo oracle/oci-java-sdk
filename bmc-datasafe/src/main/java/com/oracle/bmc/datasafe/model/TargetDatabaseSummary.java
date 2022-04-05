@@ -90,9 +90,9 @@ public class TargetDatabaseSummary {
         }
 
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-        private LifecycleState lifecycleState;
+        private TargetDatabaseLifecycleState lifecycleState;
 
-        public Builder lifecycleState(LifecycleState lifecycleState) {
+        public Builder lifecycleState(TargetDatabaseLifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
@@ -231,7 +231,7 @@ public class TargetDatabaseSummary {
      * The current state of the target database in Data Safe.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-    LifecycleState lifecycleState;
+    TargetDatabaseLifecycleState lifecycleState;
 
     /**
      * Details about the current state of the target database in Data Safe.

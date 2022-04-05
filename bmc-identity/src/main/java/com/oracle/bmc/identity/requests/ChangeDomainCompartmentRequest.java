@@ -22,12 +22,12 @@ public class ChangeDomainCompartmentRequest
                 com.oracle.bmc.identity.model.ChangeDomainCompartmentDetails> {
 
     /**
-     * The OCID of the domain
+     * The OCID of the identity domain.
      */
     private String domainId;
 
     /**
-     * the request object for moving compartment of a domain
+     * The request object for moving the identity domain to a different compartment.
      */
     private com.oracle.bmc.identity.model.ChangeDomainCompartmentDetails
             changeDomainCompartmentDetails;

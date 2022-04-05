@@ -59,12 +59,31 @@ public class PaypalPaymentDetail extends PaymentDetail {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("paypalId")
+        private String paypalId;
+
+        public Builder paypalId(String paypalId) {
+            this.paypalId = paypalId;
+            this.__explicitlySet__.add("paypalId");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("paypalReference")
+        private String paypalReference;
+
+        public Builder paypalReference(String paypalReference) {
+            this.paypalReference = paypalReference;
+            this.__explicitlySet__.add("paypalReference");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public PaypalPaymentDetail build() {
             PaypalPaymentDetail __instance__ =
-                    new PaypalPaymentDetail(timePaidOn, paidBy, amountPaid);
+                    new PaypalPaymentDetail(
+                            timePaidOn, paidBy, amountPaid, paypalId, paypalReference);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -74,7 +93,9 @@ public class PaypalPaymentDetail extends PaymentDetail {
             Builder copiedBuilder =
                     timePaidOn(o.getTimePaidOn())
                             .paidBy(o.getPaidBy())
-                            .amountPaid(o.getAmountPaid());
+                            .amountPaid(o.getAmountPaid())
+                            .paypalId(o.getPaypalId())
+                            .paypalReference(o.getPaypalReference());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -90,9 +111,27 @@ public class PaypalPaymentDetail extends PaymentDetail {
 
     @Deprecated
     public PaypalPaymentDetail(
-            java.util.Date timePaidOn, String paidBy, java.math.BigDecimal amountPaid) {
+            java.util.Date timePaidOn,
+            String paidBy,
+            java.math.BigDecimal amountPaid,
+            String paypalId,
+            String paypalReference) {
         super(timePaidOn, paidBy, amountPaid);
+        this.paypalId = paypalId;
+        this.paypalReference = paypalReference;
     }
+
+    /**
+     * The id (email address) of the paypal payment
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("paypalId")
+    String paypalId;
+
+    /**
+     * paypal payment reference
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("paypalReference")
+    String paypalReference;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

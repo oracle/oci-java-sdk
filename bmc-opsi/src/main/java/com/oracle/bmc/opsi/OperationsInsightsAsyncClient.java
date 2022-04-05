@@ -4585,6 +4585,55 @@ public class OperationsInsightsAsyncClient implements OperationsInsightsAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<SummarizeHostInsightTopProcessesUsageTrendResponse>
+            summarizeHostInsightTopProcessesUsageTrend(
+                    SummarizeHostInsightTopProcessesUsageTrendRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    SummarizeHostInsightTopProcessesUsageTrendRequest,
+                                    SummarizeHostInsightTopProcessesUsageTrendResponse>
+                            handler) {
+        LOG.trace("Called async summarizeHostInsightTopProcessesUsageTrend");
+        final SummarizeHostInsightTopProcessesUsageTrendRequest interceptedRequest =
+                SummarizeHostInsightTopProcessesUsageTrendConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                SummarizeHostInsightTopProcessesUsageTrendConverter.fromRequest(
+                        client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        SummarizeHostInsightTopProcessesUsageTrendResponse>
+                transformer = SummarizeHostInsightTopProcessesUsageTrendConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        SummarizeHostInsightTopProcessesUsageTrendRequest,
+                        SummarizeHostInsightTopProcessesUsageTrendResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                SummarizeHostInsightTopProcessesUsageTrendRequest,
+                                SummarizeHostInsightTopProcessesUsageTrendResponse>,
+                        java.util.concurrent.Future<
+                                SummarizeHostInsightTopProcessesUsageTrendResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    SummarizeHostInsightTopProcessesUsageTrendRequest,
+                    SummarizeHostInsightTopProcessesUsageTrendResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<SummarizeOperationsInsightsWarehouseResourceUsageResponse>
             summarizeOperationsInsightsWarehouseResourceUsage(
                     SummarizeOperationsInsightsWarehouseResourceUsageRequest request,

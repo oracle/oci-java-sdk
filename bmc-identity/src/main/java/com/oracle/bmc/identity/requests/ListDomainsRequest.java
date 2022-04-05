@@ -26,32 +26,32 @@ public class ListDomainsRequest extends com.oracle.bmc.requests.BmcRequest<java.
     private String compartmentId;
 
     /**
-     * The mutable display name of the domain
+     * The mutable display name of the identity domain.
      */
     private String displayName;
 
     /**
-     * The region agnostic domain URL
+     * The region-agnostic identity domain URL.
      */
     private String url;
 
     /**
-     * The region specific domain URL
+     * The region-specific identity domain URL.
      */
     private String homeRegionUrl;
 
     /**
-     * The domain type
+     * The identity domain type.
      */
     private String type;
 
     /**
-     * The domain license type
+     * The license type of the identity domain.
      */
     private String licenseType;
 
     /**
-     * Indicate if the domain is visible at login screen or not
+     * Indicates whether or not the identity domain is visible at the sign-in screen.
      */
     private Boolean isHiddenOnLogin;
 
@@ -181,7 +181,7 @@ public class ListDomainsRequest extends com.oracle.bmc.requests.BmcRequest<java.
     private String opcRequestId;
 
     /**
-     * A filter to only return resources that match the given lifecycle state.  The state value is case-insensitive.
+     * A filter to only return resources that match the given lifecycle state. The state value is case-insensitive.
      *
      */
     private com.oracle.bmc.identity.model.Domain.LifecycleState lifecycleState;

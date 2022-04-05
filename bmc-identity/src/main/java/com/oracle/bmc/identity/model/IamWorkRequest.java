@@ -5,7 +5,8 @@
 package com.oracle.bmc.identity.model;
 
 /**
- * A IAM work request object that allows users to track Asynchronous API status.
+ * (For tenancies that support identity domains) An IAM work request object that allows users to track the status of asynchronous API requests.
+ *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -212,7 +213,7 @@ public class IamWorkRequest {
     @com.fasterxml.jackson.annotation.JsonProperty("operationType")
     OperationType operationType;
     /**
-     * Status of the work request
+     * The status of the work request.
      **/
     @lombok.extern.slf4j.Slf4j
     public enum Status {
@@ -262,7 +263,7 @@ public class IamWorkRequest {
         }
     };
     /**
-     * Status of the work request
+     * The status of the work request.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     Status status;

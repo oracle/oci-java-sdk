@@ -22,12 +22,12 @@ public class ChangeDomainLicenseTypeRequest
                 com.oracle.bmc.identity.model.ChangeDomainLicenseTypeDetails> {
 
     /**
-     * The OCID of the domain
+     * The OCID of the identity domain.
      */
     private String domainId;
 
     /**
-     * the request object for domain license type update
+     * The request object for an update to the license type of the identity domain.
      */
     private com.oracle.bmc.identity.model.ChangeDomainLicenseTypeDetails
             changeDomainLicenseTypeDetails;

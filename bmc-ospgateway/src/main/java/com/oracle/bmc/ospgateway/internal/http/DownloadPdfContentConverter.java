@@ -129,6 +129,30 @@ public class DownloadPdfContentConverter {
                                                     String.class));
                                 }
 
+                                com.google.common.base.Optional<java.util.List<String>>
+                                        contentTypeHeader =
+                                                com.oracle.bmc.http.internal.HeaderUtils.get(
+                                                        headers, "Content-Type");
+                                if (contentTypeHeader.isPresent()) {
+                                    builder.contentType(
+                                            com.oracle.bmc.http.internal.HeaderUtils.toValue(
+                                                    "Content-Type",
+                                                    contentTypeHeader.get().get(0),
+                                                    String.class));
+                                }
+
+                                com.google.common.base.Optional<java.util.List<String>>
+                                        contentLengthHeader =
+                                                com.oracle.bmc.http.internal.HeaderUtils.get(
+                                                        headers, "Content-Length");
+                                if (contentLengthHeader.isPresent()) {
+                                    builder.contentLength(
+                                            com.oracle.bmc.http.internal.HeaderUtils.toValue(
+                                                    "Content-Length",
+                                                    contentLengthHeader.get().get(0),
+                                                    Integer.class));
+                                }
+
                                 com.oracle.bmc.ospgateway.responses.DownloadPdfContentResponse
                                         responseWrapper = builder.build();
 

@@ -12,7 +12,7 @@ package com.oracle.bmc.identity.model;
  **Note:** The credential set is always an Oracle-generated SMTP user name and password pair;
  * you cannot designate the SMTP user name or the SMTP password.
  * <p>
- * For more information, see [Managing User Credentials](https://docs.cloud.oracle.com/Content/Identity/Tasks/managingcredentials.htm#SMTP).
+ * For more information, see [Managing User Credentials](https://docs.cloud.oracle.com/Content/Identity/access/managing-user-credentials.htm#SMTP).
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -185,6 +185,9 @@ public class SmtpCredential {
 
     /**
      * The description you assign to the SMTP credential. Does not have to be unique, and it's changeable.
+     * <p>
+     * (For tenancies that support identity domains) You can have an empty description.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     String description;

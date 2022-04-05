@@ -5,7 +5,7 @@
 package com.oracle.bmc.identity.model;
 
 /**
- * Network policy, Consists of a list of Network Source ids.
+ * Network policy, which consists of a list of network source IDs.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields

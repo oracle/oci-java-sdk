@@ -280,7 +280,7 @@ public class MacsManagedExternalHostInsightSummary extends HostInsightSummary {
     /**
      * Platform type.
      * Supported platformType(s) for MACS-managed external host insight: [LINUX].
-     * Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS].
+     * Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX].
      *
      **/
     @lombok.extern.slf4j.Slf4j
@@ -288,6 +288,7 @@ public class MacsManagedExternalHostInsightSummary extends HostInsightSummary {
         Linux("LINUX"),
         Solaris("SOLARIS"),
         Sunos("SUNOS"),
+        Zlinux("ZLINUX"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this
@@ -330,7 +331,7 @@ public class MacsManagedExternalHostInsightSummary extends HostInsightSummary {
     /**
      * Platform type.
      * Supported platformType(s) for MACS-managed external host insight: [LINUX].
-     * Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS].
+     * Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX].
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("platformType")

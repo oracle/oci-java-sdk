@@ -50,12 +50,54 @@ public class CreditCardPaymentOption extends PaymentOption {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("creditCardType")
+        private CreditCardType creditCardType;
+
+        public Builder creditCardType(CreditCardType creditCardType) {
+            this.creditCardType = creditCardType;
+            this.__explicitlySet__.add("creditCardType");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("lastDigits")
+        private String lastDigits;
+
+        public Builder lastDigits(String lastDigits) {
+            this.lastDigits = lastDigits;
+            this.__explicitlySet__.add("lastDigits");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("nameOnCard")
+        private String nameOnCard;
+
+        public Builder nameOnCard(String nameOnCard) {
+            this.nameOnCard = nameOnCard;
+            this.__explicitlySet__.add("nameOnCard");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("timeExpiration")
+        private java.util.Date timeExpiration;
+
+        public Builder timeExpiration(java.util.Date timeExpiration) {
+            this.timeExpiration = timeExpiration;
+            this.__explicitlySet__.add("timeExpiration");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CreditCardPaymentOption build() {
             CreditCardPaymentOption __instance__ =
-                    new CreditCardPaymentOption(walletInstrumentId, walletTransactionId);
+                    new CreditCardPaymentOption(
+                            walletInstrumentId,
+                            walletTransactionId,
+                            creditCardType,
+                            lastDigits,
+                            nameOnCard,
+                            timeExpiration);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -64,7 +106,11 @@ public class CreditCardPaymentOption extends PaymentOption {
         public Builder copy(CreditCardPaymentOption o) {
             Builder copiedBuilder =
                     walletInstrumentId(o.getWalletInstrumentId())
-                            .walletTransactionId(o.getWalletTransactionId());
+                            .walletTransactionId(o.getWalletTransactionId())
+                            .creditCardType(o.getCreditCardType())
+                            .lastDigits(o.getLastDigits())
+                            .nameOnCard(o.getNameOnCard())
+                            .timeExpiration(o.getTimeExpiration());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -79,9 +125,43 @@ public class CreditCardPaymentOption extends PaymentOption {
     }
 
     @Deprecated
-    public CreditCardPaymentOption(String walletInstrumentId, String walletTransactionId) {
+    public CreditCardPaymentOption(
+            String walletInstrumentId,
+            String walletTransactionId,
+            CreditCardType creditCardType,
+            String lastDigits,
+            String nameOnCard,
+            java.util.Date timeExpiration) {
         super(walletInstrumentId, walletTransactionId);
+        this.creditCardType = creditCardType;
+        this.lastDigits = lastDigits;
+        this.nameOnCard = nameOnCard;
+        this.timeExpiration = timeExpiration;
     }
+
+    /**
+     * Credit card type.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("creditCardType")
+    CreditCardType creditCardType;
+
+    /**
+     * Last four digits of the card.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("lastDigits")
+    String lastDigits;
+
+    /**
+     * Name on the credit card.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("nameOnCard")
+    String nameOnCard;
+
+    /**
+     * Expired date of the credit card.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("timeExpiration")
+    java.util.Date timeExpiration;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

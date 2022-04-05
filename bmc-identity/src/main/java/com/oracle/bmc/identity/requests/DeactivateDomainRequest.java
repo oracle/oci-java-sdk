@@ -20,7 +20,7 @@ import com.oracle.bmc.identity.model.*;
 public class DeactivateDomainRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The OCID of the domain
+     * The OCID of the identity domain.
      */
     private String domainId;
 

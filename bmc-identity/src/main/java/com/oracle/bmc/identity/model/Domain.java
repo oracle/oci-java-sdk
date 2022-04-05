@@ -5,7 +5,8 @@
 package com.oracle.bmc.identity.model;
 
 /**
- * Properties for a Domain
+ * (For tenancies that support identity domains) Properties for an identity domain. An identity domain is used to manage users and groups, integration standards, external identities, and secure application integration through Oracle Single Sign-on (SSO) configuration.
+ *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -228,43 +229,43 @@ public class Domain {
     }
 
     /**
-     * The OCID of the domain
+     * The OCID of the identity domain.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     String id;
 
     /**
-     * The OCID of the compartment containing the domain.
+     * The OCID of the compartment containing the identity domain.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     String compartmentId;
 
     /**
-     * The mutable display name of the domain
+     * The mutable display name of the identity domain.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     String displayName;
 
     /**
-     * The domain descripition
+     * The identity domain description. You can have an empty description.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     String description;
 
     /**
-     * Region agnostic domain URL.
+     * Region-agnostic identity domain URL.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("url")
     String url;
 
     /**
-     * Region specific domain URL.
+     * Region-specific identity domain URL.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("homeRegionUrl")
     String homeRegionUrl;
 
     /**
-     * The home region for the domain.
+     * The home region for the identity domain.
      * See [Regions and Availability Domains](https://docs.cloud.oracle.com/Content/General/Concepts/regions.htm)
      * for the full list of supported region names.
      * <p>
@@ -275,7 +276,7 @@ public class Domain {
     String homeRegion;
 
     /**
-     * The regions domain is replication to.
+     * The regions where replicas of the identity domain exist.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("replicaRegions")
     java.util.List<ReplicatedRegionDetails> replicaRegions;
@@ -333,20 +334,20 @@ public class Domain {
     Type type;
 
     /**
-     * The License type of Domain
+     * The license type of the identity domain.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("licenseType")
     String licenseType;
 
     /**
-     * Indicates whether domain is hidden on login screen or not.
+     * Indicates whether the identity domain is hidden on the sign-in screen or not.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isHiddenOnLogin")
     Boolean isHiddenOnLogin;
 
     /**
-     * Date and time the domain was created, in the format defined by RFC3339.
+     * Date and time the identity domain was created, in the format defined by RFC3339.
      * <p>
      * Example: {@code 2016-08-25T21:10:29.600Z}
      *
@@ -409,7 +410,7 @@ public class Domain {
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     LifecycleState lifecycleState;
     /**
-     * Any additional details about the current state of the Domain.
+     * Any additional details about the current state of the identity domain.
      *
      **/
     @lombok.extern.slf4j.Slf4j
@@ -457,7 +458,7 @@ public class Domain {
         }
     };
     /**
-     * Any additional details about the current state of the Domain.
+     * Any additional details about the current state of the identity domain.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")

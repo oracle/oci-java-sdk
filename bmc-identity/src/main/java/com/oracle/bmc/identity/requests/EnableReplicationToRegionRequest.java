@@ -22,12 +22,12 @@ public class EnableReplicationToRegionRequest
                 com.oracle.bmc.identity.model.EnableReplicationToRegionDetails> {
 
     /**
-     * The OCID of the domain
+     * The OCID of the identity domain.
      */
     private String domainId;
 
     /**
-     * the request object for region we are replicating domain region
+     * The request object for replicating the identity domain to another region.
      */
     private com.oracle.bmc.identity.model.EnableReplicationToRegionDetails
             enableReplicationToRegionDetails;

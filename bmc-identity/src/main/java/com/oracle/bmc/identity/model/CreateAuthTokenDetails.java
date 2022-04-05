@@ -62,6 +62,8 @@ public class CreateAuthTokenDetails {
 
     /**
      * The description you assign to the auth token during creation. Does not have to be unique, and it's changeable.
+     * <p>
+     * (For tenancies that support identity domains) You can have an empty description.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")

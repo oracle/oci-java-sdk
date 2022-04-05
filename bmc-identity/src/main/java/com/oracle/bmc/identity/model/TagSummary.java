@@ -208,7 +208,7 @@ public class TagSummary {
 
     /**
      * Whether the tag is retired.
-     * See [Retiring Key Definitions and Namespace Definitions](https://docs.cloud.oracle.com/Content/Identity/Concepts/taggingoverview.htm#Retiring).
+     * See [Retiring Key Definitions and Namespace Definitions](https://docs.cloud.oracle.com/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm#retiringkeys).
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isRetired")

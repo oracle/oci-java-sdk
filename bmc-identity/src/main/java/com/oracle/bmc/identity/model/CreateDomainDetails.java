@@ -5,7 +5,7 @@
 package com.oracle.bmc.identity.model;
 
 /**
- * Create a domain details
+ * (For tenancies that support identity domains) Details for creating an identity domain.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -208,19 +208,19 @@ public class CreateDomainDetails {
     }
 
     /**
-     * The OCID of the Compartment where domain is created
+     * The OCID of the compartment where the identity domain is created.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     String compartmentId;
 
     /**
-     * The mutable display name of the domain.
+     * The mutable display name of the identity domain.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     String displayName;
 
     /**
-     * Domain entity description
+     * The identity domain description. You can have an empty description.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     String description;
@@ -236,54 +236,52 @@ public class CreateDomainDetails {
     String homeRegion;
 
     /**
-     * The License type of Domain
+     * The license type of the identity domain.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("licenseType")
     String licenseType;
 
     /**
-     * Indicates whether domain is hidden on login screen or not.
+     * Indicates whether the identity domain is hidden on the sign-in screen or not.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isHiddenOnLogin")
     Boolean isHiddenOnLogin;
 
     /**
-     * The admin first name
+     * The administrator's first name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("adminFirstName")
     String adminFirstName;
 
     /**
-     * The admin last name
+     * The administrator's last name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("adminLastName")
     String adminLastName;
 
     /**
-     * The admin user name
+     * The administrator's user name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("adminUserName")
     String adminUserName;
 
     /**
-     * The admin email address
+     * The administrator's email address.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("adminEmail")
     String adminEmail;
 
     /**
-     * Indicates if admin user created in IDCS stripe would like to receive notification like welcome email
-     * or not.
-     * Required field only if admin information is provided, otherwise optional.
+     * Indicates whether or not the administrator user created in the IDCS stripe would like to receive notifications like a welcome email.
+     * This field is required only if admin information is provided. This field is otherwise optional.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isNotificationBypassed")
     Boolean isNotificationBypassed;
 
     /**
-     * Optional field to indicate whether users in the domain are required to have a primary email address or not
-     * Defaults to true
+     * Optional field to indicate whether users in the identity domain are required to have a primary email address or not. The default is true.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isPrimaryEmailRequired")

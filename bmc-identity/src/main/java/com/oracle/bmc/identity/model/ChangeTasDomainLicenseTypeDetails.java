@@ -5,7 +5,7 @@
 package com.oracle.bmc.identity.model;
 
 /**
- * Update domain license type
+ * (For tenancies that support identity domains) Update the identity domain license type.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -62,7 +62,7 @@ public class ChangeTasDomainLicenseTypeDetails {
     }
 
     /**
-     * The License type of Domain
+     * The license type of the identity domain.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("licenseType")
     String licenseType;

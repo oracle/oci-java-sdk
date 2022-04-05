@@ -5,7 +5,8 @@
 package com.oracle.bmc.identity.model;
 
 /**
- * An error encountered while executing an operation that is tracked by a IAM work request.
+ * (For tenancies that support identity domains) An error encountered while executing an operation that is tracked by a IAM work request.
+ *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in

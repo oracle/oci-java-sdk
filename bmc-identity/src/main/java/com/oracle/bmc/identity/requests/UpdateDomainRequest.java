@@ -22,12 +22,12 @@ public class UpdateDomainRequest
                 com.oracle.bmc.identity.model.UpdateDomainDetails> {
 
     /**
-     * The OCID of the domain
+     * The OCID of the identity domain.
      */
     private String domainId;
 
     /**
-     * Request object for updating the Domain.
+     * Request object for updating the identity domain.
      */
     private com.oracle.bmc.identity.model.UpdateDomainDetails updateDomainDetails;
 

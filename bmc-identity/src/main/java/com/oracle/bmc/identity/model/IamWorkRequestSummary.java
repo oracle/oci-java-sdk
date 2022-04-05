@@ -5,7 +5,7 @@
 package com.oracle.bmc.identity.model;
 
 /**
- * The IAM work request summary. Tracks the status of the asynchronous operations.
+ * (For tenancies that support identity domains) The IAM work request summary. Tracks the status of asynchronous operations.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -215,7 +215,7 @@ public class IamWorkRequestSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("operationType")
     OperationType operationType;
     /**
-     * Status of the work request
+     * The status of the work request.
      **/
     @lombok.extern.slf4j.Slf4j
     public enum Status {
@@ -265,7 +265,7 @@ public class IamWorkRequestSummary {
         }
     };
     /**
-     * Status of the work request
+     * The status of the work request.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     Status status;

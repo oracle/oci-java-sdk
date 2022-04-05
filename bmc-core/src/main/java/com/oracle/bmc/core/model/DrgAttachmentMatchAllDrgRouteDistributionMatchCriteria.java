@@ -5,7 +5,7 @@
 package com.oracle.bmc.core.model;
 
 /**
- * No match criteria is applied.
+ * All routes are imported or exported.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields

@@ -5,7 +5,7 @@
 package com.oracle.bmc.identity.model;
 
 /**
- * Domain replication replication log for all domains for a given region
+ * (For tenancies that support identity domains) The identity domain replication log for all identity domains for a given region.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -83,12 +83,12 @@ public class DomainReplicationStates {
     }
 
     /**
-     * The OCID of the domain
+     * The OCID of the identity domain.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("domainId")
     String domainId;
     /**
-     * The IDCS replicated region state
+     * The IDCS-replicated region state.
      *
      **/
     public enum State {
@@ -127,14 +127,14 @@ public class DomainReplicationStates {
         }
     };
     /**
-     * The IDCS replicated region state
+     * The IDCS-replicated region state.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("state")
     State state;
 
     /**
-     * The replica region for domain.
+     * The replica region for the identity domain.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("replicaRegion")
     String replicaRegion;

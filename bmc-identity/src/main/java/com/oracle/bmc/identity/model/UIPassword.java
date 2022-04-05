@@ -8,7 +8,7 @@ package com.oracle.bmc.identity.model;
  * A text password that enables a user to sign in to the Console, the user interface for interacting with Oracle
  * Cloud Infrastructure.
  * <p>
- * For more information about user credentials, see [User Credentials](https://docs.cloud.oracle.com/Content/Identity/Concepts/usercredentials.htm).
+ * For more information about user credentials, see [User Credentials](https://docs.cloud.oracle.com/Content/Identity/usercred/usercredentials.htm).
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields

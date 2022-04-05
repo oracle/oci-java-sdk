@@ -5,7 +5,7 @@
 package com.oracle.bmc.identity.model;
 
 /**
- * Properties for a region where a domain is replicated too.
+ * (For tenancies that support identity domains) Properties for a region where a replica for the identity domain exists.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -88,12 +88,12 @@ public class ReplicatedRegionDetails {
     String region;
 
     /**
-     * Region agnostic domain URL.
+     * Region-agnostic identity domain URL.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("url")
     String url;
     /**
-     * The IDCS replicated region state
+     * The IDCS-replicated region state.
      *
      **/
     @lombok.extern.slf4j.Slf4j
@@ -143,7 +143,7 @@ public class ReplicatedRegionDetails {
         }
     };
     /**
-     * The IDCS replicated region state
+     * The IDCS-replicated region state.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("state")
