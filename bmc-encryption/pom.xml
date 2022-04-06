@@ -35,4 +35,5 @@
       <artifactId>json-smart</artifactId>
     </dependency>
   </dependencies>
+
 </project>
