@@ -14,29 +14,11 @@
   <description>This project adds support for the RestEasyClientConfigurator for the Java SDK</description>
   <url>https://docs.cloud.oracle.com/Content/API/SDKDocs/javasdk.htm</url>
 
-
   <dependencies>
-    <!-- https://mvnrepository.com/artifact/org.jboss.resteasy/resteasy-client -->
     <dependency>
       <groupId>org.jboss.resteasy</groupId>
-      <artifactId>resteasy-client</artifactId>
-      <version>4.5.9.Final</version>
+      <artifactId>resteasy-core</artifactId>
     </dependency>
-
-    <dependency>
-      <groupId>org.jboss.resteasy</groupId>
-      <artifactId>resteasy-jaxrs</artifactId>
-      <version>3.15.1.Final</version>
-    </dependency>
-
-    <!-- Resteasy-JaxRs transitive dependencies that are resolved to a newer version to fix
-        known security vulnerabilities -->
-    <dependency>
-      <groupId>org.apache.httpcomponents</groupId>
-      <artifactId>httpclient</artifactId>
-      <version>${apache-httpcomponents.version}</version>
-    </dependency>
-
     <dependency>
       <groupId>com.oracle.oci.sdk</groupId>
       <artifactId>oci-java-sdk-common</artifactId>
