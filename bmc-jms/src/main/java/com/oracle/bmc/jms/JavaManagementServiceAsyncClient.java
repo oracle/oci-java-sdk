@@ -391,6 +391,11 @@ public class JavaManagementServiceAsyncClient implements JavaManagementServiceAs
                 CancelWorkRequestConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, CancelWorkRequestResponse>
                 transformer = CancelWorkRequestConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "JavaManagementService",
+                "CancelWorkRequest",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/jms/20210610/WorkRequest/CancelWorkRequest");
 
         com.oracle.bmc.responses.AsyncHandler<CancelWorkRequestRequest, CancelWorkRequestResponse>
                 handlerToUse = handler;
@@ -432,6 +437,11 @@ public class JavaManagementServiceAsyncClient implements JavaManagementServiceAs
                         javax.ws.rs.core.Response, ChangeFleetCompartmentResponse>
                 transformer = ChangeFleetCompartmentConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "JavaManagementService",
+                "ChangeFleetCompartment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/jms/20210610/Fleet/ChangeFleetCompartment");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeFleetCompartmentRequest, ChangeFleetCompartmentResponse>
@@ -478,6 +488,11 @@ public class JavaManagementServiceAsyncClient implements JavaManagementServiceAs
         final com.google.common.base.Function<javax.ws.rs.core.Response, CreateBlocklistResponse>
                 transformer = CreateBlocklistConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "JavaManagementService",
+                "CreateBlocklist",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/jms/20210610/Blocklist/CreateBlocklist");
 
         com.oracle.bmc.responses.AsyncHandler<CreateBlocklistRequest, CreateBlocklistResponse>
                 handlerToUse = handler;
@@ -522,6 +537,11 @@ public class JavaManagementServiceAsyncClient implements JavaManagementServiceAs
         final com.google.common.base.Function<javax.ws.rs.core.Response, CreateFleetResponse>
                 transformer = CreateFleetConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "JavaManagementService",
+                "CreateFleet",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/jms/20210610/Fleet/CreateFleet");
 
         com.oracle.bmc.responses.AsyncHandler<CreateFleetRequest, CreateFleetResponse>
                 handlerToUse = handler;
@@ -566,6 +586,11 @@ public class JavaManagementServiceAsyncClient implements JavaManagementServiceAs
                 DeleteBlocklistConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteBlocklistResponse>
                 transformer = DeleteBlocklistConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "JavaManagementService",
+                "DeleteBlocklist",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/jms/20210610/Blocklist/DeleteBlocklist");
 
         com.oracle.bmc.responses.AsyncHandler<DeleteBlocklistRequest, DeleteBlocklistResponse>
                 handlerToUse = handler;
@@ -604,6 +629,11 @@ public class JavaManagementServiceAsyncClient implements JavaManagementServiceAs
                 DeleteFleetConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteFleetResponse>
                 transformer = DeleteFleetConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "JavaManagementService",
+                "DeleteFleet",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/jms/20210610/Fleet/DeleteFleet");
 
         com.oracle.bmc.responses.AsyncHandler<DeleteFleetRequest, DeleteFleetResponse>
                 handlerToUse = handler;
@@ -641,6 +671,11 @@ public class JavaManagementServiceAsyncClient implements JavaManagementServiceAs
                 GetFleetConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetFleetResponse>
                 transformer = GetFleetConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "JavaManagementService",
+                "GetFleet",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/jms/20210610/Fleet/GetFleet");
 
         com.oracle.bmc.responses.AsyncHandler<GetFleetRequest, GetFleetResponse> handlerToUse =
                 handler;
@@ -682,6 +717,11 @@ public class JavaManagementServiceAsyncClient implements JavaManagementServiceAs
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetFleetAgentConfigurationResponse>
                 transformer = GetFleetAgentConfigurationConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "JavaManagementService",
+                "GetFleetAgentConfiguration",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/jms/20210610/FleetAgentConfiguration/GetFleetAgentConfiguration");
 
         com.oracle.bmc.responses.AsyncHandler<
                         GetFleetAgentConfigurationRequest, GetFleetAgentConfigurationResponse>
@@ -723,6 +763,11 @@ public class JavaManagementServiceAsyncClient implements JavaManagementServiceAs
                 GetWorkRequestConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetWorkRequestResponse>
                 transformer = GetWorkRequestConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "JavaManagementService",
+                "GetWorkRequest",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/jms/20210610/WorkRequest/GetWorkRequest");
 
         com.oracle.bmc.responses.AsyncHandler<GetWorkRequestRequest, GetWorkRequestResponse>
                 handlerToUse = handler;
@@ -762,6 +807,11 @@ public class JavaManagementServiceAsyncClient implements JavaManagementServiceAs
                 ListBlocklistsConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListBlocklistsResponse>
                 transformer = ListBlocklistsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "JavaManagementService",
+                "ListBlocklists",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/jms/20210610/Blocklist/ListBlocklists");
 
         com.oracle.bmc.responses.AsyncHandler<ListBlocklistsRequest, ListBlocklistsResponse>
                 handlerToUse = handler;
@@ -799,6 +849,11 @@ public class JavaManagementServiceAsyncClient implements JavaManagementServiceAs
                 ListFleetsConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListFleetsResponse>
                 transformer = ListFleetsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "JavaManagementService",
+                "ListFleets",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/jms/20210610/Fleet/ListFleets");
 
         com.oracle.bmc.responses.AsyncHandler<ListFleetsRequest, ListFleetsResponse> handlerToUse =
                 handler;
@@ -839,6 +894,11 @@ public class JavaManagementServiceAsyncClient implements JavaManagementServiceAs
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListInstallationSitesResponse>
                 transformer = ListInstallationSitesConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "JavaManagementService",
+                "ListInstallationSites",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/jms/20210610/InstallationSiteSummary/ListInstallationSites");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListInstallationSitesRequest, ListInstallationSitesResponse>
@@ -878,6 +938,11 @@ public class JavaManagementServiceAsyncClient implements JavaManagementServiceAs
                 ListJreUsageConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListJreUsageResponse>
                 transformer = ListJreUsageConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "JavaManagementService",
+                "ListJreUsage",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/jms/20210610/JreUsage/ListJreUsage");
 
         com.oracle.bmc.responses.AsyncHandler<ListJreUsageRequest, ListJreUsageResponse>
                 handlerToUse = handler;
@@ -916,6 +981,11 @@ public class JavaManagementServiceAsyncClient implements JavaManagementServiceAs
                 ListWorkItemsConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListWorkItemsResponse>
                 transformer = ListWorkItemsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "JavaManagementService",
+                "ListWorkItems",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/jms/20210610/WorkItemSummary/ListWorkItems");
 
         com.oracle.bmc.responses.AsyncHandler<ListWorkItemsRequest, ListWorkItemsResponse>
                 handlerToUse = handler;
@@ -956,6 +1026,11 @@ public class JavaManagementServiceAsyncClient implements JavaManagementServiceAs
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListWorkRequestErrorsResponse>
                 transformer = ListWorkRequestErrorsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "JavaManagementService",
+                "ListWorkRequestErrors",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/jms/20210610/WorkRequestError/ListWorkRequestErrors");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListWorkRequestErrorsRequest, ListWorkRequestErrorsResponse>
@@ -997,6 +1072,11 @@ public class JavaManagementServiceAsyncClient implements JavaManagementServiceAs
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListWorkRequestLogsResponse>
                 transformer = ListWorkRequestLogsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "JavaManagementService",
+                "ListWorkRequestLogs",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/jms/20210610/WorkRequestLogEntry/ListWorkRequestLogs");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListWorkRequestLogsRequest, ListWorkRequestLogsResponse>
@@ -1037,6 +1117,11 @@ public class JavaManagementServiceAsyncClient implements JavaManagementServiceAs
                 ListWorkRequestsConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListWorkRequestsResponse>
                 transformer = ListWorkRequestsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "JavaManagementService",
+                "ListWorkRequests",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/jms/20210610/WorkRequest/ListWorkRequests");
 
         com.oracle.bmc.responses.AsyncHandler<ListWorkRequestsRequest, ListWorkRequestsResponse>
                 handlerToUse = handler;
@@ -1080,6 +1165,11 @@ public class JavaManagementServiceAsyncClient implements JavaManagementServiceAs
                         javax.ws.rs.core.Response, RemoveFleetInstallationSitesResponse>
                 transformer = RemoveFleetInstallationSitesConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "JavaManagementService",
+                "RemoveFleetInstallationSites",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/jms/20210610/InstallationSiteSummary/RemoveFleetInstallationSites");
 
         com.oracle.bmc.responses.AsyncHandler<
                         RemoveFleetInstallationSitesRequest, RemoveFleetInstallationSitesResponse>
@@ -1127,6 +1217,11 @@ public class JavaManagementServiceAsyncClient implements JavaManagementServiceAs
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, SummarizeApplicationUsageResponse>
                 transformer = SummarizeApplicationUsageConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "JavaManagementService",
+                "SummarizeApplicationUsage",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/jms/20210610/ApplicationUsage/SummarizeApplicationUsage");
 
         com.oracle.bmc.responses.AsyncHandler<
                         SummarizeApplicationUsageRequest, SummarizeApplicationUsageResponse>
@@ -1171,6 +1266,11 @@ public class JavaManagementServiceAsyncClient implements JavaManagementServiceAs
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, SummarizeInstallationUsageResponse>
                 transformer = SummarizeInstallationUsageConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "JavaManagementService",
+                "SummarizeInstallationUsage",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/jms/20210610/InstallationUsage/SummarizeInstallationUsage");
 
         com.oracle.bmc.responses.AsyncHandler<
                         SummarizeInstallationUsageRequest, SummarizeInstallationUsageResponse>
@@ -1212,6 +1312,11 @@ public class JavaManagementServiceAsyncClient implements JavaManagementServiceAs
                 SummarizeJreUsageConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, SummarizeJreUsageResponse>
                 transformer = SummarizeJreUsageConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "JavaManagementService",
+                "SummarizeJreUsage",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/jms/20210610/JreUsage/SummarizeJreUsage");
 
         com.oracle.bmc.responses.AsyncHandler<SummarizeJreUsageRequest, SummarizeJreUsageResponse>
                 handlerToUse = handler;
@@ -1254,6 +1359,11 @@ public class JavaManagementServiceAsyncClient implements JavaManagementServiceAs
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, SummarizeManagedInstanceUsageResponse>
                 transformer = SummarizeManagedInstanceUsageConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "JavaManagementService",
+                "SummarizeManagedInstanceUsage",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/jms/20210610/ManagedInstanceUsage/SummarizeManagedInstanceUsage");
 
         com.oracle.bmc.responses.AsyncHandler<
                         SummarizeManagedInstanceUsageRequest, SummarizeManagedInstanceUsageResponse>
@@ -1298,6 +1408,11 @@ public class JavaManagementServiceAsyncClient implements JavaManagementServiceAs
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, SummarizeResourceInventoryResponse>
                 transformer = SummarizeResourceInventoryConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "JavaManagementService",
+                "SummarizeResourceInventory",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/jms/20210610/Fleet/SummarizeResourceInventory");
 
         com.oracle.bmc.responses.AsyncHandler<
                         SummarizeResourceInventoryRequest, SummarizeResourceInventoryResponse>
@@ -1338,6 +1453,11 @@ public class JavaManagementServiceAsyncClient implements JavaManagementServiceAs
                 UpdateFleetConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateFleetResponse>
                 transformer = UpdateFleetConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "JavaManagementService",
+                "UpdateFleet",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/jms/20210610/Fleet/UpdateFleet");
 
         com.oracle.bmc.responses.AsyncHandler<UpdateFleetRequest, UpdateFleetResponse>
                 handlerToUse = handler;
@@ -1385,6 +1505,11 @@ public class JavaManagementServiceAsyncClient implements JavaManagementServiceAs
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, UpdateFleetAgentConfigurationResponse>
                 transformer = UpdateFleetAgentConfigurationConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "JavaManagementService",
+                "UpdateFleetAgentConfiguration",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/jms/20210610/FleetAgentConfiguration/UpdateFleetAgentConfiguration");
 
         com.oracle.bmc.responses.AsyncHandler<
                         UpdateFleetAgentConfigurationRequest, UpdateFleetAgentConfigurationResponse>

@@ -401,6 +401,11 @@ public class AnnouncementClient implements Announcement {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Announcement",
+                "GetAnnouncement",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/announcements/0.0.1/Announcement/GetAnnouncement");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -432,6 +437,11 @@ public class AnnouncementClient implements Announcement {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Announcement",
+                "GetAnnouncementUserStatus",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/announcements/0.0.1/AnnouncementUserStatusDetails/GetAnnouncementUserStatus");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -461,6 +471,11 @@ public class AnnouncementClient implements Announcement {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Announcement",
+                "ListAnnouncements",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/announcements/0.0.1/AnnouncementsCollection/ListAnnouncements");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -492,6 +507,11 @@ public class AnnouncementClient implements Announcement {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Announcement",
+                "UpdateAnnouncementUserStatus",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/announcements/0.0.1/AnnouncementUserStatusDetails/UpdateAnnouncementUserStatus");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {

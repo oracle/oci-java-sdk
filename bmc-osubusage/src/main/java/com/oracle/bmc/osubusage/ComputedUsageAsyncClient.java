@@ -389,6 +389,8 @@ public class ComputedUsageAsyncClient implements ComputedUsageAsync {
                 GetComputedUsageConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetComputedUsageResponse>
                 transformer = GetComputedUsageConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ComputedUsage", "GetComputedUsage", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<GetComputedUsageRequest, GetComputedUsageResponse>
                 handlerToUse = handler;
@@ -431,6 +433,8 @@ public class ComputedUsageAsyncClient implements ComputedUsageAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListComputedUsageAggregatedsResponse>
                 transformer = ListComputedUsageAggregatedsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ComputedUsage", "ListComputedUsageAggregateds", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListComputedUsageAggregatedsRequest, ListComputedUsageAggregatedsResponse>
@@ -472,6 +476,8 @@ public class ComputedUsageAsyncClient implements ComputedUsageAsync {
                 ListComputedUsagesConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListComputedUsagesResponse>
                 transformer = ListComputedUsagesConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ComputedUsage", "ListComputedUsages", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<ListComputedUsagesRequest, ListComputedUsagesResponse>
                 handlerToUse = handler;

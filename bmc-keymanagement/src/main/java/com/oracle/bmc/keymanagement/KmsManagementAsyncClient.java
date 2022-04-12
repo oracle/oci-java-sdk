@@ -317,6 +317,8 @@ public class KmsManagementAsyncClient implements KmsManagementAsync {
         final com.google.common.base.Function<javax.ws.rs.core.Response, BackupKeyResponse>
                 transformer = BackupKeyConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "KmsManagement", "BackupKey", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<BackupKeyRequest, BackupKeyResponse> handlerToUse =
                 handler;
@@ -361,6 +363,8 @@ public class KmsManagementAsyncClient implements KmsManagementAsync {
         final com.google.common.base.Function<javax.ws.rs.core.Response, CancelKeyDeletionResponse>
                 transformer = CancelKeyDeletionConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "KmsManagement", "CancelKeyDeletion", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<CancelKeyDeletionRequest, CancelKeyDeletionResponse>
                 handlerToUse = handler;
@@ -402,6 +406,8 @@ public class KmsManagementAsyncClient implements KmsManagementAsync {
                         javax.ws.rs.core.Response, CancelKeyVersionDeletionResponse>
                 transformer = CancelKeyVersionDeletionConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "KmsManagement", "CancelKeyVersionDeletion", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<
                         CancelKeyVersionDeletionRequest, CancelKeyVersionDeletionResponse>
@@ -444,6 +450,8 @@ public class KmsManagementAsyncClient implements KmsManagementAsync {
                         javax.ws.rs.core.Response, ChangeKeyCompartmentResponse>
                 transformer = ChangeKeyCompartmentConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "KmsManagement", "ChangeKeyCompartment", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeKeyCompartmentRequest, ChangeKeyCompartmentResponse>
@@ -488,6 +496,8 @@ public class KmsManagementAsyncClient implements KmsManagementAsync {
         final com.google.common.base.Function<javax.ws.rs.core.Response, CreateKeyResponse>
                 transformer = CreateKeyConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "KmsManagement", "CreateKey", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<CreateKeyRequest, CreateKeyResponse> handlerToUse =
                 handler;
@@ -532,6 +542,8 @@ public class KmsManagementAsyncClient implements KmsManagementAsync {
         final com.google.common.base.Function<javax.ws.rs.core.Response, CreateKeyVersionResponse>
                 transformer = CreateKeyVersionConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "KmsManagement", "CreateKeyVersion", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<CreateKeyVersionRequest, CreateKeyVersionResponse>
                 handlerToUse = handler;
@@ -570,6 +582,8 @@ public class KmsManagementAsyncClient implements KmsManagementAsync {
         final com.google.common.base.Function<javax.ws.rs.core.Response, DisableKeyResponse>
                 transformer = DisableKeyConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "KmsManagement", "DisableKey", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<DisableKeyRequest, DisableKeyResponse> handlerToUse =
                 handler;
@@ -608,6 +622,8 @@ public class KmsManagementAsyncClient implements KmsManagementAsync {
         final com.google.common.base.Function<javax.ws.rs.core.Response, EnableKeyResponse>
                 transformer = EnableKeyConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "KmsManagement", "EnableKey", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<EnableKeyRequest, EnableKeyResponse> handlerToUse =
                 handler;
@@ -643,6 +659,8 @@ public class KmsManagementAsyncClient implements KmsManagementAsync {
                 GetKeyConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetKeyResponse>
                 transformer = GetKeyConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "KmsManagement", "GetKey", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<GetKeyRequest, GetKeyResponse> handlerToUse = handler;
 
@@ -679,6 +697,8 @@ public class KmsManagementAsyncClient implements KmsManagementAsync {
                 GetKeyVersionConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetKeyVersionResponse>
                 transformer = GetKeyVersionConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "KmsManagement", "GetKeyVersion", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<GetKeyVersionRequest, GetKeyVersionResponse>
                 handlerToUse = handler;
@@ -719,6 +739,8 @@ public class KmsManagementAsyncClient implements KmsManagementAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetReplicationStatusResponse>
                 transformer = GetReplicationStatusConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "KmsManagement", "GetReplicationStatus", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<
                         GetReplicationStatusRequest, GetReplicationStatusResponse>
@@ -759,6 +781,8 @@ public class KmsManagementAsyncClient implements KmsManagementAsync {
                 GetWrappingKeyConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetWrappingKeyResponse>
                 transformer = GetWrappingKeyConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "KmsManagement", "GetWrappingKey", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<GetWrappingKeyRequest, GetWrappingKeyResponse>
                 handlerToUse = handler;
@@ -797,6 +821,8 @@ public class KmsManagementAsyncClient implements KmsManagementAsync {
         final com.google.common.base.Function<javax.ws.rs.core.Response, ImportKeyResponse>
                 transformer = ImportKeyConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "KmsManagement", "ImportKey", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<ImportKeyRequest, ImportKeyResponse> handlerToUse =
                 handler;
@@ -841,6 +867,8 @@ public class KmsManagementAsyncClient implements KmsManagementAsync {
         final com.google.common.base.Function<javax.ws.rs.core.Response, ImportKeyVersionResponse>
                 transformer = ImportKeyVersionConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "KmsManagement", "ImportKeyVersion", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<ImportKeyVersionRequest, ImportKeyVersionResponse>
                 handlerToUse = handler;
@@ -885,6 +913,8 @@ public class KmsManagementAsyncClient implements KmsManagementAsync {
                 ListKeyVersionsConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListKeyVersionsResponse>
                 transformer = ListKeyVersionsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "KmsManagement", "ListKeyVersions", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<ListKeyVersionsRequest, ListKeyVersionsResponse>
                 handlerToUse = handler;
@@ -922,6 +952,8 @@ public class KmsManagementAsyncClient implements KmsManagementAsync {
                 ListKeysConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListKeysResponse>
                 transformer = ListKeysConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "KmsManagement", "ListKeys", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<ListKeysRequest, ListKeysResponse> handlerToUse =
                 handler;
@@ -968,6 +1000,8 @@ public class KmsManagementAsyncClient implements KmsManagementAsync {
         final com.google.common.base.Function<javax.ws.rs.core.Response, RestoreKeyFromFileResponse>
                 transformer = RestoreKeyFromFileConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "KmsManagement", "RestoreKeyFromFile", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<RestoreKeyFromFileRequest, RestoreKeyFromFileResponse>
                 handlerToUse =
@@ -1019,6 +1053,8 @@ public class KmsManagementAsyncClient implements KmsManagementAsync {
                         javax.ws.rs.core.Response, RestoreKeyFromObjectStoreResponse>
                 transformer = RestoreKeyFromObjectStoreConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "KmsManagement", "RestoreKeyFromObjectStore", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<
                         RestoreKeyFromObjectStoreRequest, RestoreKeyFromObjectStoreResponse>
@@ -1067,6 +1103,8 @@ public class KmsManagementAsyncClient implements KmsManagementAsync {
                         javax.ws.rs.core.Response, ScheduleKeyDeletionResponse>
                 transformer = ScheduleKeyDeletionConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "KmsManagement", "ScheduleKeyDeletion", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ScheduleKeyDeletionRequest, ScheduleKeyDeletionResponse>
@@ -1116,6 +1154,8 @@ public class KmsManagementAsyncClient implements KmsManagementAsync {
                         javax.ws.rs.core.Response, ScheduleKeyVersionDeletionResponse>
                 transformer = ScheduleKeyVersionDeletionConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "KmsManagement", "ScheduleKeyVersionDeletion", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ScheduleKeyVersionDeletionRequest, ScheduleKeyVersionDeletionResponse>
@@ -1160,6 +1200,8 @@ public class KmsManagementAsyncClient implements KmsManagementAsync {
                 UpdateKeyConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateKeyResponse>
                 transformer = UpdateKeyConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "KmsManagement", "UpdateKey", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<UpdateKeyRequest, UpdateKeyResponse> handlerToUse =
                 handler;

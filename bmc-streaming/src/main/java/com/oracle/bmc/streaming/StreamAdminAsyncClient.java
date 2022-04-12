@@ -392,6 +392,11 @@ public class StreamAdminAsyncClient implements StreamAdminAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ChangeConnectHarnessCompartmentResponse>
                 transformer = ChangeConnectHarnessCompartmentConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "StreamAdmin",
+                "ChangeConnectHarnessCompartment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/streaming/20180418/ConnectHarness/ChangeConnectHarnessCompartment");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeConnectHarnessCompartmentRequest,
@@ -441,6 +446,11 @@ public class StreamAdminAsyncClient implements StreamAdminAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ChangeStreamCompartmentResponse>
                 transformer = ChangeStreamCompartmentConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "StreamAdmin",
+                "ChangeStreamCompartment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/streaming/20180418/Stream/ChangeStreamCompartment");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeStreamCompartmentRequest, ChangeStreamCompartmentResponse>
@@ -489,6 +499,11 @@ public class StreamAdminAsyncClient implements StreamAdminAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ChangeStreamPoolCompartmentResponse>
                 transformer = ChangeStreamPoolCompartmentConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "StreamAdmin",
+                "ChangeStreamPoolCompartment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/streaming/20180418/StreamPool/ChangeStreamPoolCompartment");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeStreamPoolCompartmentRequest, ChangeStreamPoolCompartmentResponse>
@@ -537,6 +552,11 @@ public class StreamAdminAsyncClient implements StreamAdminAsync {
                         javax.ws.rs.core.Response, CreateConnectHarnessResponse>
                 transformer = CreateConnectHarnessConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "StreamAdmin",
+                "CreateConnectHarness",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/streaming/20180418/ConnectHarness/CreateConnectHarness");
 
         com.oracle.bmc.responses.AsyncHandler<
                         CreateConnectHarnessRequest, CreateConnectHarnessResponse>
@@ -581,6 +601,11 @@ public class StreamAdminAsyncClient implements StreamAdminAsync {
                 CreateStreamConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, CreateStreamResponse>
                 transformer = CreateStreamConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "StreamAdmin",
+                "CreateStream",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/streaming/20180418/Stream/CreateStream");
 
         com.oracle.bmc.responses.AsyncHandler<CreateStreamRequest, CreateStreamResponse>
                 handlerToUse = handler;
@@ -626,6 +651,11 @@ public class StreamAdminAsyncClient implements StreamAdminAsync {
         final com.google.common.base.Function<javax.ws.rs.core.Response, CreateStreamPoolResponse>
                 transformer = CreateStreamPoolConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "StreamAdmin",
+                "CreateStreamPool",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/streaming/20180418/StreamPool/CreateStreamPool");
 
         com.oracle.bmc.responses.AsyncHandler<CreateStreamPoolRequest, CreateStreamPoolResponse>
                 handlerToUse = handler;
@@ -671,6 +701,11 @@ public class StreamAdminAsyncClient implements StreamAdminAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, DeleteConnectHarnessResponse>
                 transformer = DeleteConnectHarnessConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "StreamAdmin",
+                "DeleteConnectHarness",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/streaming/20180418/ConnectHarness/DeleteConnectHarness");
 
         com.oracle.bmc.responses.AsyncHandler<
                         DeleteConnectHarnessRequest, DeleteConnectHarnessResponse>
@@ -710,6 +745,11 @@ public class StreamAdminAsyncClient implements StreamAdminAsync {
                 DeleteStreamConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteStreamResponse>
                 transformer = DeleteStreamConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "StreamAdmin",
+                "DeleteStream",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/streaming/20180418/Stream/DeleteStream");
 
         com.oracle.bmc.responses.AsyncHandler<DeleteStreamRequest, DeleteStreamResponse>
                 handlerToUse = handler;
@@ -749,6 +789,11 @@ public class StreamAdminAsyncClient implements StreamAdminAsync {
                 DeleteStreamPoolConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteStreamPoolResponse>
                 transformer = DeleteStreamPoolConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "StreamAdmin",
+                "DeleteStreamPool",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/streaming/20180418/StreamPool/DeleteStreamPool");
 
         com.oracle.bmc.responses.AsyncHandler<DeleteStreamPoolRequest, DeleteStreamPoolResponse>
                 handlerToUse = handler;
@@ -788,6 +833,11 @@ public class StreamAdminAsyncClient implements StreamAdminAsync {
                 GetConnectHarnessConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetConnectHarnessResponse>
                 transformer = GetConnectHarnessConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "StreamAdmin",
+                "GetConnectHarness",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/streaming/20180418/ConnectHarness/GetConnectHarness");
 
         com.oracle.bmc.responses.AsyncHandler<GetConnectHarnessRequest, GetConnectHarnessResponse>
                 handlerToUse = handler;
@@ -825,6 +875,11 @@ public class StreamAdminAsyncClient implements StreamAdminAsync {
                 GetStreamConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetStreamResponse>
                 transformer = GetStreamConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "StreamAdmin",
+                "GetStream",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/streaming/20180418/Stream/GetStream");
 
         com.oracle.bmc.responses.AsyncHandler<GetStreamRequest, GetStreamResponse> handlerToUse =
                 handler;
@@ -862,6 +917,11 @@ public class StreamAdminAsyncClient implements StreamAdminAsync {
                 GetStreamPoolConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetStreamPoolResponse>
                 transformer = GetStreamPoolConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "StreamAdmin",
+                "GetStreamPool",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/streaming/20180418/StreamPool/GetStreamPool");
 
         com.oracle.bmc.responses.AsyncHandler<GetStreamPoolRequest, GetStreamPoolResponse>
                 handlerToUse = handler;
@@ -902,6 +962,11 @@ public class StreamAdminAsyncClient implements StreamAdminAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListConnectHarnessesResponse>
                 transformer = ListConnectHarnessesConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "StreamAdmin",
+                "ListConnectHarnesses",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/streaming/20180418/ConnectHarnessSummary/ListConnectHarnesses");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListConnectHarnessesRequest, ListConnectHarnessesResponse>
@@ -942,6 +1007,11 @@ public class StreamAdminAsyncClient implements StreamAdminAsync {
                 ListStreamPoolsConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListStreamPoolsResponse>
                 transformer = ListStreamPoolsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "StreamAdmin",
+                "ListStreamPools",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/streaming/20180418/StreamPoolSummary/ListStreamPools");
 
         com.oracle.bmc.responses.AsyncHandler<ListStreamPoolsRequest, ListStreamPoolsResponse>
                 handlerToUse = handler;
@@ -980,6 +1050,11 @@ public class StreamAdminAsyncClient implements StreamAdminAsync {
                 ListStreamsConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListStreamsResponse>
                 transformer = ListStreamsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "StreamAdmin",
+                "ListStreams",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/streaming/20180418/StreamSummary/ListStreams");
 
         com.oracle.bmc.responses.AsyncHandler<ListStreamsRequest, ListStreamsResponse>
                 handlerToUse = handler;
@@ -1020,6 +1095,11 @@ public class StreamAdminAsyncClient implements StreamAdminAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, UpdateConnectHarnessResponse>
                 transformer = UpdateConnectHarnessConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "StreamAdmin",
+                "UpdateConnectHarness",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/streaming/20180418/ConnectHarness/UpdateConnectHarness");
 
         com.oracle.bmc.responses.AsyncHandler<
                         UpdateConnectHarnessRequest, UpdateConnectHarnessResponse>
@@ -1064,6 +1144,11 @@ public class StreamAdminAsyncClient implements StreamAdminAsync {
                 UpdateStreamConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateStreamResponse>
                 transformer = UpdateStreamConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "StreamAdmin",
+                "UpdateStream",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/streaming/20180418/Stream/UpdateStream");
 
         com.oracle.bmc.responses.AsyncHandler<UpdateStreamRequest, UpdateStreamResponse>
                 handlerToUse = handler;
@@ -1108,6 +1193,11 @@ public class StreamAdminAsyncClient implements StreamAdminAsync {
                 UpdateStreamPoolConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateStreamPoolResponse>
                 transformer = UpdateStreamPoolConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "StreamAdmin",
+                "UpdateStreamPool",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/streaming/20180418/StreamPool/UpdateStreamPool");
 
         com.oracle.bmc.responses.AsyncHandler<UpdateStreamPoolRequest, UpdateStreamPoolResponse>
                 handlerToUse = handler;

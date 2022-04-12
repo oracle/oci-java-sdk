@@ -399,6 +399,11 @@ public class AIServiceLanguageClient implements AIServiceLanguage {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "AIServiceLanguage",
+                "BatchDetectDominantLanguage",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/language/20210101/BatchDetectDominantLanguage/BatchDetectDominantLanguage");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -435,6 +440,11 @@ public class AIServiceLanguageClient implements AIServiceLanguage {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "AIServiceLanguage",
+                "BatchDetectLanguageEntities",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/language/20210101/BatchDetectLanguageEntities/BatchDetectLanguageEntities");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -471,6 +481,11 @@ public class AIServiceLanguageClient implements AIServiceLanguage {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "AIServiceLanguage",
+                "BatchDetectLanguageKeyPhrases",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/language/20210101/BatchDetectLanguageKeyPhrases/BatchDetectLanguageKeyPhrases");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -507,6 +522,11 @@ public class AIServiceLanguageClient implements AIServiceLanguage {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "AIServiceLanguage",
+                "BatchDetectLanguageSentiments",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/language/20210101/BatchDetectLanguageSentiments/BatchDetectLanguageSentiments");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -544,6 +564,11 @@ public class AIServiceLanguageClient implements AIServiceLanguage {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "AIServiceLanguage",
+                "BatchDetectLanguageTextClassification",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/language/20210101/BatchDetectLanguageTextClassification/BatchDetectLanguageTextClassification");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -579,6 +604,11 @@ public class AIServiceLanguageClient implements AIServiceLanguage {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "AIServiceLanguage",
+                "DetectDominantLanguage",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/language/20210101/DetectDominantLanguage/DetectDominantLanguage");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -613,6 +643,11 @@ public class AIServiceLanguageClient implements AIServiceLanguage {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "AIServiceLanguage",
+                "DetectLanguageEntities",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/language/20210101/DetectLanguageEntities/DetectLanguageEntities");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -647,6 +682,11 @@ public class AIServiceLanguageClient implements AIServiceLanguage {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "AIServiceLanguage",
+                "DetectLanguageKeyPhrases",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/language/20210101/DetectLanguageKeyPhrases/DetectLanguageKeyPhrases");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -681,6 +721,11 @@ public class AIServiceLanguageClient implements AIServiceLanguage {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "AIServiceLanguage",
+                "DetectLanguageSentiments",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/language/20210101/DetectLanguageSentiments/DetectLanguageSentiments");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -716,6 +761,11 @@ public class AIServiceLanguageClient implements AIServiceLanguage {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "AIServiceLanguage",
+                "DetectLanguageTextClassification",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/language/20210101/DetectLanguageTextClassification/DetectLanguageTextClassification");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {

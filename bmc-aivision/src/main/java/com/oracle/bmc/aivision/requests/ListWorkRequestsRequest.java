@@ -30,7 +30,7 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
     private String workRequestId;
 
     /**
-     * A filter to return only resources their lifecycleState matches the given OperationStatus.
+     * A filter to return only resources whose lifecycleState matches the given OperationStatus.
      */
     private com.oracle.bmc.aivision.model.OperationStatus status;
 
@@ -60,13 +60,13 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
     private com.oracle.bmc.aivision.model.SortOrder sortOrder;
 
     /**
-     * The field to sort by. Only one sort order may be provided. Default order for timeAccepted is descending.
+     * The field to sort by. Only one sort order may be provided. The default order for timeAccepted is descending.
      *
      */
     private SortBy sortBy;
 
     /**
-     * The field to sort by. Only one sort order may be provided. Default order for timeAccepted is descending.
+     * The field to sort by. Only one sort order may be provided. The default order for timeAccepted is descending.
      *
      **/
     public enum SortBy {

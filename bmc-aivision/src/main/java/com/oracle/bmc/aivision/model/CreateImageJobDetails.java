@@ -5,7 +5,7 @@
 package com.oracle.bmc.aivision.model;
 
 /**
- * Details about the batch image analysis.
+ * The details of the batch image analysis.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -122,7 +122,7 @@ public class CreateImageJobDetails {
     InputLocation inputLocation;
 
     /**
-     * List of image analysis types requested.
+     * The list of requested image analysis types.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("features")
     java.util.List<ImageFeature> features;
@@ -131,19 +131,19 @@ public class CreateImageJobDetails {
     OutputLocation outputLocation;
 
     /**
-     * Compartment identifier from the requester.
+     * The compartment identifier from the requester.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     String compartmentId;
 
     /**
-     * Image job display name.
+     * The image job display name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     String displayName;
 
     /**
-     * Whether to generate a Zip file containing the results.
+     * Whether or not to generate a ZIP file containing the results.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isZipOutputEnabled")
     Boolean isZipOutputEnabled;

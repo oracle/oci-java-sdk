@@ -400,6 +400,11 @@ public class AuditClient implements Audit {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Audit",
+                "GetConfiguration",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/audit/20190901/Configuration/GetConfiguration");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -428,6 +433,11 @@ public class AuditClient implements Audit {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Audit",
+                "ListEvents",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/audit/20190901/AuditEvent/ListEvents");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -457,6 +467,11 @@ public class AuditClient implements Audit {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Audit",
+                "UpdateConfiguration",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/audit/20190901/Configuration/UpdateConfiguration");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {

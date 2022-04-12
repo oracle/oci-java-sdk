@@ -17,7 +17,9 @@ import com.oracle.bmc.core.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
-public class AddIpv6VcnCidrRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
+public class AddIpv6VcnCidrRequest
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.core.model.AddVcnIpv6CidrDetails> {
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
@@ -49,9 +51,25 @@ public class AddIpv6VcnCidrRequest extends com.oracle.bmc.requests.BmcRequest<ja
      */
     private String ifMatch;
 
+    /**
+     * Details object for adding an IPv6 VCN CIDR.
+     *
+     */
+    private com.oracle.bmc.core.model.AddVcnIpv6CidrDetails addVcnIpv6CidrDetails;
+
+    /**
+     * Alternative accessor for the body parameter.
+     * @return body parameter
+     */
+    @Override
+    @com.oracle.bmc.InternalSdk
+    public com.oracle.bmc.core.model.AddVcnIpv6CidrDetails getBody$() {
+        return addVcnIpv6CidrDetails;
+    }
+
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    AddIpv6VcnCidrRequest, java.lang.Void> {
+                    AddIpv6VcnCidrRequest, com.oracle.bmc.core.model.AddVcnIpv6CidrDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -88,6 +106,7 @@ public class AddIpv6VcnCidrRequest extends com.oracle.bmc.requests.BmcRequest<ja
             opcRequestId(o.getOpcRequestId());
             opcRetryToken(o.getOpcRetryToken());
             ifMatch(o.getIfMatch());
+            addVcnIpv6CidrDetails(o.getAddVcnIpv6CidrDetails());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -108,6 +127,17 @@ public class AddIpv6VcnCidrRequest extends com.oracle.bmc.requests.BmcRequest<ja
             request.setInvocationCallback(invocationCallback);
             request.setRetryConfiguration(retryConfiguration);
             return request;
+        }
+
+        /**
+         * Alternative setter for the body parameter.
+         * @param body the body parameter
+         * @return this builder instance
+         */
+        @com.oracle.bmc.InternalSdk
+        public Builder body$(com.oracle.bmc.core.model.AddVcnIpv6CidrDetails body) {
+            addVcnIpv6CidrDetails(body);
+            return this;
         }
     }
 }

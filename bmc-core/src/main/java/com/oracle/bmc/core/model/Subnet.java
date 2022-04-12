@@ -124,6 +124,15 @@ public class Subnet {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("ipv6CidrBlocks")
+        private java.util.List<String> ipv6CidrBlocks;
+
+        public Builder ipv6CidrBlocks(java.util.List<String> ipv6CidrBlocks) {
+            this.ipv6CidrBlocks = ipv6CidrBlocks;
+            this.__explicitlySet__.add("ipv6CidrBlocks");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("ipv6VirtualRouterIp")
         private String ipv6VirtualRouterIp;
 
@@ -239,6 +248,7 @@ public class Subnet {
                             freeformTags,
                             id,
                             ipv6CidrBlock,
+                            ipv6CidrBlocks,
                             ipv6VirtualRouterIp,
                             lifecycleState,
                             prohibitInternetIngress,
@@ -267,6 +277,7 @@ public class Subnet {
                             .freeformTags(o.getFreeformTags())
                             .id(o.getId())
                             .ipv6CidrBlock(o.getIpv6CidrBlock())
+                            .ipv6CidrBlocks(o.getIpv6CidrBlocks())
                             .ipv6VirtualRouterIp(o.getIpv6VirtualRouterIp())
                             .lifecycleState(o.getLifecycleState())
                             .prohibitInternetIngress(o.getProhibitInternetIngress())
@@ -385,6 +396,13 @@ public class Subnet {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("ipv6CidrBlock")
     String ipv6CidrBlock;
+
+    /**
+     * The list of all IPv6 CIDR blocks (Oracle allocated IPv6 GUA, ULA or private IPv6 CIDR blocks, BYOIPv6 CIDR blocks) for the subnet.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("ipv6CidrBlocks")
+    java.util.List<String> ipv6CidrBlocks;
 
     /**
      * For an IPv6-enabled subnet, this is the IPv6 address of the virtual router.

@@ -5,12 +5,14 @@
 package com.oracle.bmc.auth.internal;
 
 import java.net.URI;
+import java.time.Duration;
 import java.util.List;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Function;
 import com.google.common.base.Preconditions;
+import com.oracle.bmc.auth.ProvidesConfigurableRefresh;
 import com.oracle.bmc.auth.SessionKeySupplier;
 import com.oracle.bmc.auth.X509CertificateSupplier;
 import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
@@ -37,6 +39,7 @@ import java.security.cert.CertificateException;
 import java.security.cert.X509Certificate;
 import java.security.interfaces.RSAPublicKey;
 import java.util.HashSet;
+import java.util.Optional;
 import java.util.Set;
 
 /**
@@ -44,7 +47,7 @@ import java.util.Set;
  * passing along a temporary public key that is bounded to the the security token, and the leaf certificate.
  */
 @Slf4j
-public class X509FederationClient implements FederationClient {
+public class X509FederationClient implements FederationClient, ProvidesConfigurableRefresh {
     private static final Function<Response, WithHeaders<SecurityToken>> SECURITY_TOKEN_FN =
             new ResponseConversionFunctionFactory().create(SecurityToken.class);
     private static final String DEFAULT_PURPOSE = "DEFAULT";
@@ -138,7 +141,7 @@ public class X509FederationClient implements FederationClient {
             return securityTokenAdapter.getSecurityToken();
         }
 
-        return refreshAndGetSecurityTokenInner(true);
+        return refreshAndGetSecurityTokenInner(true, Optional.empty());
     }
 
     /**
@@ -148,23 +151,27 @@ public class X509FederationClient implements FederationClient {
      */
     @Override
     public String getStringClaim(String key) {
-        refreshAndGetSecurityTokenInner(true);
+        refreshAndGetSecurityTokenInner(true, Optional.empty());
         return securityTokenAdapter.getStringClaim(key);
     }
 
     @Override
     public String refreshAndGetSecurityToken() {
-        return refreshAndGetSecurityTokenInner(false);
+        return refreshAndGetSecurityTokenInner(false, Optional.empty());
     }
 
-    private String refreshAndGetSecurityTokenInner(final boolean doFinalTokenValidityCheck) {
+    private String refreshAndGetSecurityTokenInner(
+            final boolean doFinalTokenValidityCheck, Optional<Duration> time) {
         // Since this client will be used in a multi-threaded environment (from within a service API),
         // this needs to be synchronized to make sure multiple calls are not updating the security token at the same time.
         // This should not be a blocking/dead-locked call. The worst I can see at this point is that the auth service does
         // not respond and this call times out, throwing exception
         synchronized (this) {
             // Check again to see if the JWT is still invalid, unless we want to skip that check
-            if (!doFinalTokenValidityCheck || !securityTokenAdapter.isValid()) {
+            if (!doFinalTokenValidityCheck
+                    || (time.isPresent()
+                            ? (!securityTokenAdapter.isValid(time))
+                            : (!securityTokenAdapter.isValid()))) {
                 LOG.info("Refreshing session keys.");
                 sessionKeySupplier.refreshKeys();
 
@@ -314,6 +321,11 @@ public class X509FederationClient implements FederationClient {
             }
         }
         throw lastException;
+    }
+
+    @Override
+    public String refreshAndGetSecurityTokenIfExpiringWithin(Duration time) {
+        return refreshAndGetSecurityTokenInner(false, Optional.of(time));
     }
 
     @EqualsAndHashCode(callSuper = false)

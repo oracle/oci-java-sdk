@@ -389,6 +389,8 @@ public class ChannelsAsyncClient implements ChannelsAsync {
         final com.google.common.base.Function<javax.ws.rs.core.Response, CreateChannelResponse>
                 transformer = CreateChannelConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Channels", "CreateChannel", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<CreateChannelRequest, CreateChannelResponse>
                 handlerToUse = handler;
@@ -432,6 +434,11 @@ public class ChannelsAsyncClient implements ChannelsAsync {
                 DeleteChannelConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteChannelResponse>
                 transformer = DeleteChannelConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Channels",
+                "DeleteChannel",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/Channel/DeleteChannel");
 
         com.oracle.bmc.responses.AsyncHandler<DeleteChannelRequest, DeleteChannelResponse>
                 handlerToUse = handler;
@@ -469,6 +476,11 @@ public class ChannelsAsyncClient implements ChannelsAsync {
                 GetChannelConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetChannelResponse>
                 transformer = GetChannelConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Channels",
+                "GetChannel",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/Channel/GetChannel");
 
         com.oracle.bmc.responses.AsyncHandler<GetChannelRequest, GetChannelResponse> handlerToUse =
                 handler;
@@ -507,6 +519,11 @@ public class ChannelsAsyncClient implements ChannelsAsync {
                 ListChannelsConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListChannelsResponse>
                 transformer = ListChannelsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Channels",
+                "ListChannels",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/ChannelSummary/ListChannels");
 
         com.oracle.bmc.responses.AsyncHandler<ListChannelsRequest, ListChannelsResponse>
                 handlerToUse = handler;
@@ -546,6 +563,11 @@ public class ChannelsAsyncClient implements ChannelsAsync {
         final com.google.common.base.Function<javax.ws.rs.core.Response, ResetChannelResponse>
                 transformer = ResetChannelConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Channels",
+                "ResetChannel",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/Channel/ResetChannel");
 
         com.oracle.bmc.responses.AsyncHandler<ResetChannelRequest, ResetChannelResponse>
                 handlerToUse = handler;
@@ -585,6 +607,11 @@ public class ChannelsAsyncClient implements ChannelsAsync {
         final com.google.common.base.Function<javax.ws.rs.core.Response, ResumeChannelResponse>
                 transformer = ResumeChannelConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Channels",
+                "ResumeChannel",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/Channel/ResumeChannel");
 
         com.oracle.bmc.responses.AsyncHandler<ResumeChannelRequest, ResumeChannelResponse>
                 handlerToUse = handler;
@@ -624,6 +651,11 @@ public class ChannelsAsyncClient implements ChannelsAsync {
         final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateChannelResponse>
                 transformer = UpdateChannelConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Channels",
+                "UpdateChannel",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/Channel/UpdateChannel");
 
         com.oracle.bmc.responses.AsyncHandler<UpdateChannelRequest, UpdateChannelResponse>
                 handlerToUse = handler;

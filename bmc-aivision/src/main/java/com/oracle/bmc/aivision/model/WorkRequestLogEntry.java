@@ -70,7 +70,7 @@ public class WorkRequestLogEntry {
     }
 
     /**
-     * Human-readable log message.
+     * A human-readable log message.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("message")
     String message;

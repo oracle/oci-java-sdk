@@ -5,7 +5,7 @@
 package com.oracle.bmc.aivision.model;
 
 /**
- * Results of a workRequest search.
+ * The results of a workRequest search.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -61,7 +61,7 @@ public class WorkRequestSummaryCollection {
     }
 
     /**
-     * List of workRequestSummary objects.
+     * The list of workRequestSummary objects.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     java.util.List<WorkRequestSummary> items;

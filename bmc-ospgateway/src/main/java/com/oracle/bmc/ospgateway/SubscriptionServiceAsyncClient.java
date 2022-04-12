@@ -394,6 +394,11 @@ public class SubscriptionServiceAsyncClient implements SubscriptionServiceAsync 
                         javax.ws.rs.core.Response, AuthorizeSubscriptionPaymentResponse>
                 transformer = AuthorizeSubscriptionPaymentConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "SubscriptionService",
+                "AuthorizeSubscriptionPayment",
+                ib.getRequestUri().toString(),
+                "");
 
         com.oracle.bmc.responses.AsyncHandler<
                         AuthorizeSubscriptionPaymentRequest, AuthorizeSubscriptionPaymentResponse>
@@ -440,6 +445,8 @@ public class SubscriptionServiceAsyncClient implements SubscriptionServiceAsync 
                 GetSubscriptionConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetSubscriptionResponse>
                 transformer = GetSubscriptionConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "SubscriptionService", "GetSubscription", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<GetSubscriptionRequest, GetSubscriptionResponse>
                 handlerToUse = handler;
@@ -479,6 +486,8 @@ public class SubscriptionServiceAsyncClient implements SubscriptionServiceAsync 
                 ListSubscriptionsConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListSubscriptionsResponse>
                 transformer = ListSubscriptionsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "SubscriptionService", "ListSubscriptions", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<ListSubscriptionsRequest, ListSubscriptionsResponse>
                 handlerToUse = handler;
@@ -519,6 +528,8 @@ public class SubscriptionServiceAsyncClient implements SubscriptionServiceAsync 
         final com.google.common.base.Function<javax.ws.rs.core.Response, PaySubscriptionResponse>
                 transformer = PaySubscriptionConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "SubscriptionService", "PaySubscription", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<PaySubscriptionRequest, PaySubscriptionResponse>
                 handlerToUse = handler;
@@ -563,6 +574,8 @@ public class SubscriptionServiceAsyncClient implements SubscriptionServiceAsync 
                 UpdateSubscriptionConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateSubscriptionResponse>
                 transformer = UpdateSubscriptionConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "SubscriptionService", "UpdateSubscription", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<UpdateSubscriptionRequest, UpdateSubscriptionResponse>
                 handlerToUse = handler;

@@ -391,6 +391,8 @@ public class AppmgmtControlAsyncClient implements AppmgmtControlAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ActivateMonitoringPluginResponse>
                 transformer = ActivateMonitoringPluginConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "AppmgmtControl", "ActivateMonitoringPlugin", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ActivateMonitoringPluginRequest, ActivateMonitoringPluginResponse>
@@ -432,6 +434,8 @@ public class AppmgmtControlAsyncClient implements AppmgmtControlAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetMonitoredInstanceResponse>
                 transformer = GetMonitoredInstanceConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "AppmgmtControl", "GetMonitoredInstance", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<
                         GetMonitoredInstanceRequest, GetMonitoredInstanceResponse>
@@ -472,6 +476,8 @@ public class AppmgmtControlAsyncClient implements AppmgmtControlAsync {
                 GetWorkRequestConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetWorkRequestResponse>
                 transformer = GetWorkRequestConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "AppmgmtControl", "GetWorkRequest", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<GetWorkRequestRequest, GetWorkRequestResponse>
                 handlerToUse = handler;
@@ -512,6 +518,8 @@ public class AppmgmtControlAsyncClient implements AppmgmtControlAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListMonitoredInstancesResponse>
                 transformer = ListMonitoredInstancesConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "AppmgmtControl", "ListMonitoredInstances", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListMonitoredInstancesRequest, ListMonitoredInstancesResponse>
@@ -553,6 +561,8 @@ public class AppmgmtControlAsyncClient implements AppmgmtControlAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListWorkRequestErrorsResponse>
                 transformer = ListWorkRequestErrorsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "AppmgmtControl", "ListWorkRequestErrors", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListWorkRequestErrorsRequest, ListWorkRequestErrorsResponse>
@@ -594,6 +604,8 @@ public class AppmgmtControlAsyncClient implements AppmgmtControlAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListWorkRequestLogsResponse>
                 transformer = ListWorkRequestLogsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "AppmgmtControl", "ListWorkRequestLogs", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListWorkRequestLogsRequest, ListWorkRequestLogsResponse>
@@ -634,6 +646,8 @@ public class AppmgmtControlAsyncClient implements AppmgmtControlAsync {
                 ListWorkRequestsConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListWorkRequestsResponse>
                 transformer = ListWorkRequestsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "AppmgmtControl", "ListWorkRequests", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<ListWorkRequestsRequest, ListWorkRequestsResponse>
                 handlerToUse = handler;
@@ -677,6 +691,8 @@ public class AppmgmtControlAsyncClient implements AppmgmtControlAsync {
                         javax.ws.rs.core.Response, PublishTopProcessesMetricsResponse>
                 transformer = PublishTopProcessesMetricsConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "AppmgmtControl", "PublishTopProcessesMetrics", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<
                         PublishTopProcessesMetricsRequest, PublishTopProcessesMetricsResponse>

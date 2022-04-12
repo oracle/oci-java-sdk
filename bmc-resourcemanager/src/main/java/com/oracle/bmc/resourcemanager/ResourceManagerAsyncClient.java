@@ -388,6 +388,11 @@ public class ResourceManagerAsyncClient implements ResourceManagerAsync {
                 CancelJobConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, CancelJobResponse>
                 transformer = CancelJobConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ResourceManager",
+                "CancelJob",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/Job/CancelJob");
 
         com.oracle.bmc.responses.AsyncHandler<CancelJobRequest, CancelJobResponse> handlerToUse =
                 handler;
@@ -432,6 +437,11 @@ public class ResourceManagerAsyncClient implements ResourceManagerAsync {
                         ChangeConfigurationSourceProviderCompartmentResponse>
                 transformer = ChangeConfigurationSourceProviderCompartmentConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ResourceManager",
+                "ChangeConfigurationSourceProviderCompartment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/ConfigurationSourceProvider/ChangeConfigurationSourceProviderCompartment");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeConfigurationSourceProviderCompartmentRequest,
@@ -484,6 +494,11 @@ public class ResourceManagerAsyncClient implements ResourceManagerAsync {
                         javax.ws.rs.core.Response, ChangeStackCompartmentResponse>
                 transformer = ChangeStackCompartmentConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ResourceManager",
+                "ChangeStackCompartment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/Stack/ChangeStackCompartment");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeStackCompartmentRequest, ChangeStackCompartmentResponse>
@@ -531,6 +546,11 @@ public class ResourceManagerAsyncClient implements ResourceManagerAsync {
                         javax.ws.rs.core.Response, ChangeTemplateCompartmentResponse>
                 transformer = ChangeTemplateCompartmentConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ResourceManager",
+                "ChangeTemplateCompartment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/Template/ChangeTemplateCompartment");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeTemplateCompartmentRequest, ChangeTemplateCompartmentResponse>
@@ -581,6 +601,11 @@ public class ResourceManagerAsyncClient implements ResourceManagerAsync {
                         javax.ws.rs.core.Response, CreateConfigurationSourceProviderResponse>
                 transformer = CreateConfigurationSourceProviderConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ResourceManager",
+                "CreateConfigurationSourceProvider",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/ConfigurationSourceProvider/CreateConfigurationSourceProvider");
 
         com.oracle.bmc.responses.AsyncHandler<
                         CreateConfigurationSourceProviderRequest,
@@ -628,6 +653,11 @@ public class ResourceManagerAsyncClient implements ResourceManagerAsync {
         final com.google.common.base.Function<javax.ws.rs.core.Response, CreateJobResponse>
                 transformer = CreateJobConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ResourceManager",
+                "CreateJob",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/Job/CreateJob");
 
         com.oracle.bmc.responses.AsyncHandler<CreateJobRequest, CreateJobResponse> handlerToUse =
                 handler;
@@ -671,6 +701,11 @@ public class ResourceManagerAsyncClient implements ResourceManagerAsync {
         final com.google.common.base.Function<javax.ws.rs.core.Response, CreateStackResponse>
                 transformer = CreateStackConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ResourceManager",
+                "CreateStack",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/Stack/CreateStack");
 
         com.oracle.bmc.responses.AsyncHandler<CreateStackRequest, CreateStackResponse>
                 handlerToUse = handler;
@@ -716,6 +751,11 @@ public class ResourceManagerAsyncClient implements ResourceManagerAsync {
         final com.google.common.base.Function<javax.ws.rs.core.Response, CreateTemplateResponse>
                 transformer = CreateTemplateConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ResourceManager",
+                "CreateTemplate",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/Template/CreateTemplate");
 
         com.oracle.bmc.responses.AsyncHandler<CreateTemplateRequest, CreateTemplateResponse>
                 handlerToUse = handler;
@@ -763,6 +803,11 @@ public class ResourceManagerAsyncClient implements ResourceManagerAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, DeleteConfigurationSourceProviderResponse>
                 transformer = DeleteConfigurationSourceProviderConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ResourceManager",
+                "DeleteConfigurationSourceProvider",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/ConfigurationSourceProvider/DeleteConfigurationSourceProvider");
 
         com.oracle.bmc.responses.AsyncHandler<
                         DeleteConfigurationSourceProviderRequest,
@@ -805,6 +850,11 @@ public class ResourceManagerAsyncClient implements ResourceManagerAsync {
                 DeleteStackConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteStackResponse>
                 transformer = DeleteStackConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ResourceManager",
+                "DeleteStack",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/Stack/DeleteStack");
 
         com.oracle.bmc.responses.AsyncHandler<DeleteStackRequest, DeleteStackResponse>
                 handlerToUse = handler;
@@ -844,6 +894,11 @@ public class ResourceManagerAsyncClient implements ResourceManagerAsync {
                 DeleteTemplateConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteTemplateResponse>
                 transformer = DeleteTemplateConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ResourceManager",
+                "DeleteTemplate",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/Template/DeleteTemplate");
 
         com.oracle.bmc.responses.AsyncHandler<DeleteTemplateRequest, DeleteTemplateResponse>
                 handlerToUse = handler;
@@ -884,6 +939,11 @@ public class ResourceManagerAsyncClient implements ResourceManagerAsync {
         final com.google.common.base.Function<javax.ws.rs.core.Response, DetectStackDriftResponse>
                 transformer = DetectStackDriftConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ResourceManager",
+                "DetectStackDrift",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/Stack/DetectStackDrift");
 
         com.oracle.bmc.responses.AsyncHandler<DetectStackDriftRequest, DetectStackDriftResponse>
                 handlerToUse = handler;
@@ -931,6 +991,11 @@ public class ResourceManagerAsyncClient implements ResourceManagerAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetConfigurationSourceProviderResponse>
                 transformer = GetConfigurationSourceProviderConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ResourceManager",
+                "GetConfigurationSourceProvider",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/ConfigurationSourceProvider/GetConfigurationSourceProvider");
 
         com.oracle.bmc.responses.AsyncHandler<
                         GetConfigurationSourceProviderRequest,
@@ -970,6 +1035,11 @@ public class ResourceManagerAsyncClient implements ResourceManagerAsync {
                 GetJobConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetJobResponse>
                 transformer = GetJobConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ResourceManager",
+                "GetJob",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/Job/GetJob");
 
         com.oracle.bmc.responses.AsyncHandler<GetJobRequest, GetJobResponse> handlerToUse = handler;
 
@@ -1008,6 +1078,11 @@ public class ResourceManagerAsyncClient implements ResourceManagerAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetJobDetailedLogContentResponse>
                 transformer = GetJobDetailedLogContentConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ResourceManager",
+                "GetJobDetailedLogContent",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/Job/GetJobDetailedLogContent");
 
         com.oracle.bmc.responses.AsyncHandler<
                         GetJobDetailedLogContentRequest, GetJobDetailedLogContentResponse>
@@ -1046,6 +1121,11 @@ public class ResourceManagerAsyncClient implements ResourceManagerAsync {
                 GetJobLogsConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetJobLogsResponse>
                 transformer = GetJobLogsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ResourceManager",
+                "GetJobLogs",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/Job/GetJobLogs");
 
         com.oracle.bmc.responses.AsyncHandler<GetJobLogsRequest, GetJobLogsResponse> handlerToUse =
                 handler;
@@ -1085,6 +1165,11 @@ public class ResourceManagerAsyncClient implements ResourceManagerAsync {
                 GetJobLogsContentConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetJobLogsContentResponse>
                 transformer = GetJobLogsContentConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ResourceManager",
+                "GetJobLogsContent",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/Job/GetJobLogsContent");
 
         com.oracle.bmc.responses.AsyncHandler<GetJobLogsContentRequest, GetJobLogsContentResponse>
                 handlerToUse = handler;
@@ -1134,6 +1219,11 @@ public class ResourceManagerAsyncClient implements ResourceManagerAsync {
                 GetJobTfConfigConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetJobTfConfigResponse>
                 transformer = GetJobTfConfigConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ResourceManager",
+                "GetJobTfConfig",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/Job/GetJobTfConfig");
 
         com.oracle.bmc.responses.AsyncHandler<GetJobTfConfigRequest, GetJobTfConfigResponse>
                 handlerToUse = handler;
@@ -1182,6 +1272,11 @@ public class ResourceManagerAsyncClient implements ResourceManagerAsync {
                 GetJobTfStateConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetJobTfStateResponse>
                 transformer = GetJobTfStateConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ResourceManager",
+                "GetJobTfState",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/Job/GetJobTfState");
 
         com.oracle.bmc.responses.AsyncHandler<GetJobTfStateRequest, GetJobTfStateResponse>
                 handlerToUse = handler;
@@ -1219,6 +1314,11 @@ public class ResourceManagerAsyncClient implements ResourceManagerAsync {
                 GetStackConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetStackResponse>
                 transformer = GetStackConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ResourceManager",
+                "GetStack",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/Stack/GetStack");
 
         com.oracle.bmc.responses.AsyncHandler<GetStackRequest, GetStackResponse> handlerToUse =
                 handler;
@@ -1267,6 +1367,11 @@ public class ResourceManagerAsyncClient implements ResourceManagerAsync {
                 GetStackTfConfigConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetStackTfConfigResponse>
                 transformer = GetStackTfConfigConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ResourceManager",
+                "GetStackTfConfig",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/Stack/GetStackTfConfig");
 
         com.oracle.bmc.responses.AsyncHandler<GetStackTfConfigRequest, GetStackTfConfigResponse>
                 handlerToUse = handler;
@@ -1316,6 +1421,11 @@ public class ResourceManagerAsyncClient implements ResourceManagerAsync {
                 GetStackTfStateConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetStackTfStateResponse>
                 transformer = GetStackTfStateConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ResourceManager",
+                "GetStackTfState",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/Stack/GetStackTfState");
 
         com.oracle.bmc.responses.AsyncHandler<GetStackTfStateRequest, GetStackTfStateResponse>
                 handlerToUse = handler;
@@ -1354,6 +1464,11 @@ public class ResourceManagerAsyncClient implements ResourceManagerAsync {
                 GetTemplateConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetTemplateResponse>
                 transformer = GetTemplateConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ResourceManager",
+                "GetTemplate",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/Template/GetTemplate");
 
         com.oracle.bmc.responses.AsyncHandler<GetTemplateRequest, GetTemplateResponse>
                 handlerToUse = handler;
@@ -1403,6 +1518,11 @@ public class ResourceManagerAsyncClient implements ResourceManagerAsync {
                 GetTemplateLogoConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetTemplateLogoResponse>
                 transformer = GetTemplateLogoConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ResourceManager",
+                "GetTemplateLogo",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/Template/GetTemplateLogo");
 
         com.oracle.bmc.responses.AsyncHandler<GetTemplateLogoRequest, GetTemplateLogoResponse>
                 handlerToUse = handler;
@@ -1453,6 +1573,11 @@ public class ResourceManagerAsyncClient implements ResourceManagerAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetTemplateTfConfigResponse>
                 transformer = GetTemplateTfConfigConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ResourceManager",
+                "GetTemplateTfConfig",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/Template/GetTemplateTfConfig");
 
         com.oracle.bmc.responses.AsyncHandler<
                         GetTemplateTfConfigRequest, GetTemplateTfConfigResponse>
@@ -1493,6 +1618,11 @@ public class ResourceManagerAsyncClient implements ResourceManagerAsync {
                 GetWorkRequestConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetWorkRequestResponse>
                 transformer = GetWorkRequestConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ResourceManager",
+                "GetWorkRequest",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/WorkRequest/GetWorkRequest");
 
         com.oracle.bmc.responses.AsyncHandler<GetWorkRequestRequest, GetWorkRequestResponse>
                 handlerToUse = handler;
@@ -1535,6 +1665,11 @@ public class ResourceManagerAsyncClient implements ResourceManagerAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListConfigurationSourceProvidersResponse>
                 transformer = ListConfigurationSourceProvidersConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ResourceManager",
+                "ListConfigurationSourceProviders",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/ConfigurationSourceProviderSummary/ListConfigurationSourceProviders");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListConfigurationSourceProvidersRequest,
@@ -1576,6 +1711,11 @@ public class ResourceManagerAsyncClient implements ResourceManagerAsync {
                 ListJobsConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListJobsResponse>
                 transformer = ListJobsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ResourceManager",
+                "ListJobs",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/JobSummary/ListJobs");
 
         com.oracle.bmc.responses.AsyncHandler<ListJobsRequest, ListJobsResponse> handlerToUse =
                 handler;
@@ -1617,6 +1757,11 @@ public class ResourceManagerAsyncClient implements ResourceManagerAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListResourceDiscoveryServicesResponse>
                 transformer = ListResourceDiscoveryServicesConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ResourceManager",
+                "ListResourceDiscoveryServices",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/Stack/ListResourceDiscoveryServices");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListResourceDiscoveryServicesRequest, ListResourceDiscoveryServicesResponse>
@@ -1661,6 +1806,11 @@ public class ResourceManagerAsyncClient implements ResourceManagerAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListStackResourceDriftDetailsResponse>
                 transformer = ListStackResourceDriftDetailsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ResourceManager",
+                "ListStackResourceDriftDetails",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/StackResourceDriftSummary/ListStackResourceDriftDetails");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListStackResourceDriftDetailsRequest, ListStackResourceDriftDetailsResponse>
@@ -1700,6 +1850,11 @@ public class ResourceManagerAsyncClient implements ResourceManagerAsync {
                 ListStacksConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListStacksResponse>
                 transformer = ListStacksConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ResourceManager",
+                "ListStacks",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/StackSummary/ListStacks");
 
         com.oracle.bmc.responses.AsyncHandler<ListStacksRequest, ListStacksResponse> handlerToUse =
                 handler;
@@ -1740,6 +1895,11 @@ public class ResourceManagerAsyncClient implements ResourceManagerAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListTemplateCategoriesResponse>
                 transformer = ListTemplateCategoriesConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ResourceManager",
+                "ListTemplateCategories",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/TemplateCategorySummary/ListTemplateCategories");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListTemplateCategoriesRequest, ListTemplateCategoriesResponse>
@@ -1779,6 +1939,11 @@ public class ResourceManagerAsyncClient implements ResourceManagerAsync {
                 ListTemplatesConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListTemplatesResponse>
                 transformer = ListTemplatesConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ResourceManager",
+                "ListTemplates",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/Template/ListTemplates");
 
         com.oracle.bmc.responses.AsyncHandler<ListTemplatesRequest, ListTemplatesResponse>
                 handlerToUse = handler;
@@ -1819,6 +1984,11 @@ public class ResourceManagerAsyncClient implements ResourceManagerAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListTerraformVersionsResponse>
                 transformer = ListTerraformVersionsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ResourceManager",
+                "ListTerraformVersions",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/Stack/ListTerraformVersions");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListTerraformVersionsRequest, ListTerraformVersionsResponse>
@@ -1860,6 +2030,11 @@ public class ResourceManagerAsyncClient implements ResourceManagerAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListWorkRequestErrorsResponse>
                 transformer = ListWorkRequestErrorsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ResourceManager",
+                "ListWorkRequestErrors",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/WorkRequest/ListWorkRequestErrors");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListWorkRequestErrorsRequest, ListWorkRequestErrorsResponse>
@@ -1901,6 +2076,11 @@ public class ResourceManagerAsyncClient implements ResourceManagerAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListWorkRequestLogsResponse>
                 transformer = ListWorkRequestLogsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ResourceManager",
+                "ListWorkRequestLogs",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/WorkRequest/ListWorkRequestLogs");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListWorkRequestLogsRequest, ListWorkRequestLogsResponse>
@@ -1941,6 +2121,11 @@ public class ResourceManagerAsyncClient implements ResourceManagerAsync {
                 ListWorkRequestsConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListWorkRequestsResponse>
                 transformer = ListWorkRequestsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ResourceManager",
+                "ListWorkRequests",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/WorkRequest/ListWorkRequests");
 
         com.oracle.bmc.responses.AsyncHandler<ListWorkRequestsRequest, ListWorkRequestsResponse>
                 handlerToUse = handler;
@@ -1983,6 +2168,11 @@ public class ResourceManagerAsyncClient implements ResourceManagerAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, UpdateConfigurationSourceProviderResponse>
                 transformer = UpdateConfigurationSourceProviderConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ResourceManager",
+                "UpdateConfigurationSourceProvider",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/ConfigurationSourceProvider/UpdateConfigurationSourceProvider");
 
         com.oracle.bmc.responses.AsyncHandler<
                         UpdateConfigurationSourceProviderRequest,
@@ -2029,6 +2219,11 @@ public class ResourceManagerAsyncClient implements ResourceManagerAsync {
                 UpdateJobConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateJobResponse>
                 transformer = UpdateJobConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ResourceManager",
+                "UpdateJob",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/Job/UpdateJob");
 
         com.oracle.bmc.responses.AsyncHandler<UpdateJobRequest, UpdateJobResponse> handlerToUse =
                 handler;
@@ -2071,6 +2266,11 @@ public class ResourceManagerAsyncClient implements ResourceManagerAsync {
                 UpdateStackConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateStackResponse>
                 transformer = UpdateStackConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ResourceManager",
+                "UpdateStack",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/Stack/UpdateStack");
 
         com.oracle.bmc.responses.AsyncHandler<UpdateStackRequest, UpdateStackResponse>
                 handlerToUse = handler;
@@ -2115,6 +2315,11 @@ public class ResourceManagerAsyncClient implements ResourceManagerAsync {
                 UpdateTemplateConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateTemplateResponse>
                 transformer = UpdateTemplateConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ResourceManager",
+                "UpdateTemplate",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/Template/UpdateTemplate");
 
         com.oracle.bmc.responses.AsyncHandler<UpdateTemplateRequest, UpdateTemplateResponse>
                 handlerToUse = handler;

@@ -5,7 +5,7 @@
 package com.oracle.bmc.aivision.model;
 
 /**
- * Type of document analysis.
+ * The type of document analysis.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -53,8 +53,8 @@ package com.oracle.bmc.aivision.model;
 public class DocumentFeature {
 
     /**
-     * Type of document analysis requested
-     * Allowed values are:
+     * The type of document analysis requested.
+     * The allowed values are:
      * - {@code LANGUAGE_CLASSIFICATION}: Detect the language.
      * - {@code TEXT_DETECTION}: Recognize text.
      * - {@code TABLE_DETECTION}: Detect and extract data in tables.

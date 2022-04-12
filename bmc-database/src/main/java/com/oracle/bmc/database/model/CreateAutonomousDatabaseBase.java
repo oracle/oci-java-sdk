@@ -194,7 +194,8 @@ public class CreateAutonomousDatabaseBase {
     String vaultId;
 
     /**
-     * The password must be between 12 and 30 characters long, and must contain at least 1 uppercase, 1 lowercase, and 1 numeric character. It cannot contain the double quote symbol (") or the username "admin", regardless of casing.
+     * **Important** The {@code adminPassword} must be specified for all Autonomous Databases except for refreshable clones. The password must be between 12 and 30 characters long, and must contain at least 1 uppercase, 1 lowercase, and 1 numeric character. It cannot contain the double quote symbol (") or the username "admin", regardless of casing.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("adminPassword")
     String adminPassword;
@@ -335,9 +336,7 @@ public class CreateAutonomousDatabaseBase {
     java.util.List<String> standbyWhitelistedIps;
 
     /**
-     * Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to
-     * Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
-     *
+     * Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isDataGuardEnabled")
     Boolean isDataGuardEnabled;
@@ -465,6 +464,20 @@ public class CreateAutonomousDatabaseBase {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isAutoScalingForStorageEnabled")
     Boolean isAutoScalingForStorageEnabled;
+
+    /**
+     * The number of Max OCPU cores to be made available to the autonomous database with auto scaling of cpu enabled.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("maxCpuCoreCount")
+    Integer maxCpuCoreCount;
+
+    /**
+     * The Oracle Database Edition that applies to the Autonomous databases.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("databaseEdition")
+    AutonomousDatabaseSummary.DatabaseEdition databaseEdition;
 
     /**
      * The source of the database: Use {@code NONE} for creating a new Autonomous Database. Use {@code DATABASE} for creating a new Autonomous Database by cloning an existing Autonomous Database. Use {@code CROSS_REGION_DATAGUARD} to create a standby Data Guard database in another region.

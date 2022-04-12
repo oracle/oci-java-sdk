@@ -41,7 +41,7 @@ package com.oracle.bmc.aivision.model;
 public class Dataset {
 
     /**
-     * Type of the dataset based on where it is stored.
+     * The dataset type, based on where it is stored.
      **/
     @lombok.extern.slf4j.Slf4j
     public enum DatasetType {

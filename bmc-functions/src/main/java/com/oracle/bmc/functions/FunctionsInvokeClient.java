@@ -415,6 +415,11 @@ public class FunctionsInvokeClient implements FunctionsInvoke {
                     com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                             interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
             com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+            com.oracle.bmc.ServiceDetails.setServiceDetails(
+                    "FunctionsInvoke",
+                    "InvokeFunction",
+                    ib.getRequestUri().toString(),
+                    "https://docs.oracle.com/iaas/api/#/en/functions/20181201/Function/InvokeFunction");
             return retrier.execute(
                     interceptedRequest,
                     retryRequest -> {

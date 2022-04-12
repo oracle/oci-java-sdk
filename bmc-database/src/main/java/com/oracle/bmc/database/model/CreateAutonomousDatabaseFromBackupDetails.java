@@ -335,6 +335,24 @@ public class CreateAutonomousDatabaseFromBackupDetails extends CreateAutonomousD
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("maxCpuCoreCount")
+        private Integer maxCpuCoreCount;
+
+        public Builder maxCpuCoreCount(Integer maxCpuCoreCount) {
+            this.maxCpuCoreCount = maxCpuCoreCount;
+            this.__explicitlySet__.add("maxCpuCoreCount");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("databaseEdition")
+        private AutonomousDatabaseSummary.DatabaseEdition databaseEdition;
+
+        public Builder databaseEdition(AutonomousDatabaseSummary.DatabaseEdition databaseEdition) {
+            this.databaseEdition = databaseEdition;
+            this.__explicitlySet__.add("databaseEdition");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("autonomousDatabaseBackupId")
         private String autonomousDatabaseBackupId;
 
@@ -392,6 +410,8 @@ public class CreateAutonomousDatabaseFromBackupDetails extends CreateAutonomousD
                             autonomousMaintenanceScheduleType,
                             scheduledOperations,
                             isAutoScalingForStorageEnabled,
+                            maxCpuCoreCount,
+                            databaseEdition,
                             autonomousDatabaseBackupId,
                             cloneType);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
@@ -436,6 +456,8 @@ public class CreateAutonomousDatabaseFromBackupDetails extends CreateAutonomousD
                                     o.getAutonomousMaintenanceScheduleType())
                             .scheduledOperations(o.getScheduledOperations())
                             .isAutoScalingForStorageEnabled(o.getIsAutoScalingForStorageEnabled())
+                            .maxCpuCoreCount(o.getMaxCpuCoreCount())
+                            .databaseEdition(o.getDatabaseEdition())
                             .autonomousDatabaseBackupId(o.getAutonomousDatabaseBackupId())
                             .cloneType(o.getCloneType());
 
@@ -486,6 +508,8 @@ public class CreateAutonomousDatabaseFromBackupDetails extends CreateAutonomousD
             AutonomousMaintenanceScheduleType autonomousMaintenanceScheduleType,
             java.util.List<ScheduledOperationDetails> scheduledOperations,
             Boolean isAutoScalingForStorageEnabled,
+            Integer maxCpuCoreCount,
+            AutonomousDatabaseSummary.DatabaseEdition databaseEdition,
             String autonomousDatabaseBackupId,
             CloneType cloneType) {
         super(
@@ -521,7 +545,9 @@ public class CreateAutonomousDatabaseFromBackupDetails extends CreateAutonomousD
                 isMtlsConnectionRequired,
                 autonomousMaintenanceScheduleType,
                 scheduledOperations,
-                isAutoScalingForStorageEnabled);
+                isAutoScalingForStorageEnabled,
+                maxCpuCoreCount,
+                databaseEdition);
         this.autonomousDatabaseBackupId = autonomousDatabaseBackupId;
         this.cloneType = cloneType;
     }

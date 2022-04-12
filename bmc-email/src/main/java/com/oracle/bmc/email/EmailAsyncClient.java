@@ -393,6 +393,11 @@ public class EmailAsyncClient implements EmailAsync {
                         javax.ws.rs.core.Response, ChangeEmailDomainCompartmentResponse>
                 transformer = ChangeEmailDomainCompartmentConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Email",
+                "ChangeEmailDomainCompartment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/emaildelivery/20170907/EmailDomain/ChangeEmailDomainCompartment");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeEmailDomainCompartmentRequest, ChangeEmailDomainCompartmentResponse>
@@ -440,6 +445,11 @@ public class EmailAsyncClient implements EmailAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ChangeSenderCompartmentResponse>
                 transformer = ChangeSenderCompartmentConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Email",
+                "ChangeSenderCompartment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/emaildelivery/20170907/Sender/ChangeSenderCompartment");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeSenderCompartmentRequest, ChangeSenderCompartmentResponse>
@@ -484,6 +494,11 @@ public class EmailAsyncClient implements EmailAsync {
         final com.google.common.base.Function<javax.ws.rs.core.Response, CreateDkimResponse>
                 transformer = CreateDkimConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Email",
+                "CreateDkim",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/emaildelivery/20170907/Dkim/CreateDkim");
 
         com.oracle.bmc.responses.AsyncHandler<CreateDkimRequest, CreateDkimResponse> handlerToUse =
                 handler;
@@ -529,6 +544,11 @@ public class EmailAsyncClient implements EmailAsync {
         final com.google.common.base.Function<javax.ws.rs.core.Response, CreateEmailDomainResponse>
                 transformer = CreateEmailDomainConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Email",
+                "CreateEmailDomain",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/emaildelivery/20170907/EmailDomain/CreateEmailDomain");
 
         com.oracle.bmc.responses.AsyncHandler<CreateEmailDomainRequest, CreateEmailDomainResponse>
                 handlerToUse = handler;
@@ -572,6 +592,11 @@ public class EmailAsyncClient implements EmailAsync {
                 CreateSenderConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, CreateSenderResponse>
                 transformer = CreateSenderConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Email",
+                "CreateSender",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/emaildelivery/20170907/Sender/CreateSender");
 
         com.oracle.bmc.responses.AsyncHandler<CreateSenderRequest, CreateSenderResponse>
                 handlerToUse = handler;
@@ -616,6 +641,11 @@ public class EmailAsyncClient implements EmailAsync {
                 CreateSuppressionConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, CreateSuppressionResponse>
                 transformer = CreateSuppressionConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Email",
+                "CreateSuppression",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/emaildelivery/20170907/Suppression/CreateSuppression");
 
         com.oracle.bmc.responses.AsyncHandler<CreateSuppressionRequest, CreateSuppressionResponse>
                 handlerToUse = handler;
@@ -658,6 +688,11 @@ public class EmailAsyncClient implements EmailAsync {
                 DeleteDkimConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteDkimResponse>
                 transformer = DeleteDkimConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Email",
+                "DeleteDkim",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/emaildelivery/20170907/Dkim/DeleteDkim");
 
         com.oracle.bmc.responses.AsyncHandler<DeleteDkimRequest, DeleteDkimResponse> handlerToUse =
                 handler;
@@ -697,6 +732,11 @@ public class EmailAsyncClient implements EmailAsync {
                 DeleteEmailDomainConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteEmailDomainResponse>
                 transformer = DeleteEmailDomainConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Email",
+                "DeleteEmailDomain",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/emaildelivery/20170907/EmailDomain/DeleteEmailDomain");
 
         com.oracle.bmc.responses.AsyncHandler<DeleteEmailDomainRequest, DeleteEmailDomainResponse>
                 handlerToUse = handler;
@@ -735,6 +775,11 @@ public class EmailAsyncClient implements EmailAsync {
                 DeleteSenderConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteSenderResponse>
                 transformer = DeleteSenderConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Email",
+                "DeleteSender",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/emaildelivery/20170907/Sender/DeleteSender");
 
         com.oracle.bmc.responses.AsyncHandler<DeleteSenderRequest, DeleteSenderResponse>
                 handlerToUse = handler;
@@ -774,6 +819,11 @@ public class EmailAsyncClient implements EmailAsync {
                 DeleteSuppressionConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteSuppressionResponse>
                 transformer = DeleteSuppressionConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Email",
+                "DeleteSuppression",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/emaildelivery/20170907/Suppression/DeleteSuppression");
 
         com.oracle.bmc.responses.AsyncHandler<DeleteSuppressionRequest, DeleteSuppressionResponse>
                 handlerToUse = handler;
@@ -810,6 +860,11 @@ public class EmailAsyncClient implements EmailAsync {
                 GetDkimConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetDkimResponse>
                 transformer = GetDkimConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Email",
+                "GetDkim",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/emaildelivery/20170907/Dkim/GetDkim");
 
         com.oracle.bmc.responses.AsyncHandler<GetDkimRequest, GetDkimResponse> handlerToUse =
                 handler;
@@ -848,6 +903,11 @@ public class EmailAsyncClient implements EmailAsync {
                 GetEmailDomainConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetEmailDomainResponse>
                 transformer = GetEmailDomainConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Email",
+                "GetEmailDomain",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/emaildelivery/20170907/EmailDomain/GetEmailDomain");
 
         com.oracle.bmc.responses.AsyncHandler<GetEmailDomainRequest, GetEmailDomainResponse>
                 handlerToUse = handler;
@@ -885,6 +945,11 @@ public class EmailAsyncClient implements EmailAsync {
                 GetSenderConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetSenderResponse>
                 transformer = GetSenderConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Email",
+                "GetSender",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/emaildelivery/20170907/Sender/GetSender");
 
         com.oracle.bmc.responses.AsyncHandler<GetSenderRequest, GetSenderResponse> handlerToUse =
                 handler;
@@ -923,6 +988,11 @@ public class EmailAsyncClient implements EmailAsync {
                 GetSuppressionConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetSuppressionResponse>
                 transformer = GetSuppressionConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Email",
+                "GetSuppression",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/emaildelivery/20170907/Suppression/GetSuppression");
 
         com.oracle.bmc.responses.AsyncHandler<GetSuppressionRequest, GetSuppressionResponse>
                 handlerToUse = handler;
@@ -962,6 +1032,11 @@ public class EmailAsyncClient implements EmailAsync {
                 GetWorkRequestConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetWorkRequestResponse>
                 transformer = GetWorkRequestConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Email",
+                "GetWorkRequest",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/emaildelivery/20170907/WorkRequest/GetWorkRequest");
 
         com.oracle.bmc.responses.AsyncHandler<GetWorkRequestRequest, GetWorkRequestResponse>
                 handlerToUse = handler;
@@ -999,6 +1074,11 @@ public class EmailAsyncClient implements EmailAsync {
                 ListDkimsConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListDkimsResponse>
                 transformer = ListDkimsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Email",
+                "ListDkims",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/emaildelivery/20170907/Dkim/ListDkims");
 
         com.oracle.bmc.responses.AsyncHandler<ListDkimsRequest, ListDkimsResponse> handlerToUse =
                 handler;
@@ -1037,6 +1117,11 @@ public class EmailAsyncClient implements EmailAsync {
                 ListEmailDomainsConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListEmailDomainsResponse>
                 transformer = ListEmailDomainsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Email",
+                "ListEmailDomains",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/emaildelivery/20170907/EmailDomain/ListEmailDomains");
 
         com.oracle.bmc.responses.AsyncHandler<ListEmailDomainsRequest, ListEmailDomainsResponse>
                 handlerToUse = handler;
@@ -1075,6 +1160,11 @@ public class EmailAsyncClient implements EmailAsync {
                 ListSendersConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListSendersResponse>
                 transformer = ListSendersConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Email",
+                "ListSenders",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/emaildelivery/20170907/Sender/ListSenders");
 
         com.oracle.bmc.responses.AsyncHandler<ListSendersRequest, ListSendersResponse>
                 handlerToUse = handler;
@@ -1114,6 +1204,11 @@ public class EmailAsyncClient implements EmailAsync {
                 ListSuppressionsConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListSuppressionsResponse>
                 transformer = ListSuppressionsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Email",
+                "ListSuppressions",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/emaildelivery/20170907/Suppression/ListSuppressions");
 
         com.oracle.bmc.responses.AsyncHandler<ListSuppressionsRequest, ListSuppressionsResponse>
                 handlerToUse = handler;
@@ -1154,6 +1249,11 @@ public class EmailAsyncClient implements EmailAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListWorkRequestErrorsResponse>
                 transformer = ListWorkRequestErrorsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Email",
+                "ListWorkRequestErrors",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/emaildelivery/20170907/WorkRequestErrorCollection/ListWorkRequestErrors");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListWorkRequestErrorsRequest, ListWorkRequestErrorsResponse>
@@ -1195,6 +1295,11 @@ public class EmailAsyncClient implements EmailAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListWorkRequestLogsResponse>
                 transformer = ListWorkRequestLogsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Email",
+                "ListWorkRequestLogs",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/emaildelivery/20170907/WorkRequestLogEntryCollection/ListWorkRequestLogs");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListWorkRequestLogsRequest, ListWorkRequestLogsResponse>
@@ -1235,6 +1340,11 @@ public class EmailAsyncClient implements EmailAsync {
                 ListWorkRequestsConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListWorkRequestsResponse>
                 transformer = ListWorkRequestsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Email",
+                "ListWorkRequests",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/emaildelivery/20170907/WorkRequestSummaryCollection/ListWorkRequests");
 
         com.oracle.bmc.responses.AsyncHandler<ListWorkRequestsRequest, ListWorkRequestsResponse>
                 handlerToUse = handler;
@@ -1272,6 +1382,11 @@ public class EmailAsyncClient implements EmailAsync {
                 UpdateDkimConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateDkimResponse>
                 transformer = UpdateDkimConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Email",
+                "UpdateDkim",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/emaildelivery/20170907/Dkim/UpdateDkim");
 
         com.oracle.bmc.responses.AsyncHandler<UpdateDkimRequest, UpdateDkimResponse> handlerToUse =
                 handler;
@@ -1316,6 +1431,11 @@ public class EmailAsyncClient implements EmailAsync {
                 UpdateEmailDomainConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateEmailDomainResponse>
                 transformer = UpdateEmailDomainConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Email",
+                "UpdateEmailDomain",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/emaildelivery/20170907/EmailDomain/UpdateEmailDomain");
 
         com.oracle.bmc.responses.AsyncHandler<UpdateEmailDomainRequest, UpdateEmailDomainResponse>
                 handlerToUse = handler;
@@ -1359,6 +1479,11 @@ public class EmailAsyncClient implements EmailAsync {
                 UpdateSenderConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateSenderResponse>
                 transformer = UpdateSenderConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Email",
+                "UpdateSender",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/emaildelivery/20170907/Sender/UpdateSender");
 
         com.oracle.bmc.responses.AsyncHandler<UpdateSenderRequest, UpdateSenderResponse>
                 handlerToUse = handler;

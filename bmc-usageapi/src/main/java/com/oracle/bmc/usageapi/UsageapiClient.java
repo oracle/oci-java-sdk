@@ -401,6 +401,11 @@ public class UsageapiClient implements Usageapi {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Usageapi",
+                "CreateCustomTable",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/usage/20200107/CustomTable/CreateCustomTable");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -435,6 +440,11 @@ public class UsageapiClient implements Usageapi {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Usageapi",
+                "CreateQuery",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/usage/20200107/Query/CreateQuery");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -468,6 +478,11 @@ public class UsageapiClient implements Usageapi {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Usageapi",
+                "DeleteCustomTable",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/usage/20200107/CustomTable/DeleteCustomTable");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -498,6 +513,11 @@ public class UsageapiClient implements Usageapi {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Usageapi",
+                "DeleteQuery",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/usage/20200107/Query/DeleteQuery");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -528,6 +548,11 @@ public class UsageapiClient implements Usageapi {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Usageapi",
+                "GetCustomTable",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/usage/20200107/CustomTable/GetCustomTable");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -556,6 +581,11 @@ public class UsageapiClient implements Usageapi {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Usageapi",
+                "GetQuery",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/usage/20200107/Query/GetQuery");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -585,6 +615,11 @@ public class UsageapiClient implements Usageapi {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Usageapi",
+                "ListCustomTables",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/usage/20200107/CustomTable/ListCustomTables");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -614,6 +649,11 @@ public class UsageapiClient implements Usageapi {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Usageapi",
+                "ListQueries",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/usage/20200107/Query/ListQueries");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -645,6 +685,11 @@ public class UsageapiClient implements Usageapi {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Usageapi",
+                "RequestSummarizedConfigurations",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/usage/20200107/Configuration/RequestSummarizedConfigurations");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -675,6 +720,11 @@ public class UsageapiClient implements Usageapi {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Usageapi",
+                "RequestSummarizedUsages",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/usage/20200107/UsageSummary/RequestSummarizedUsages");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -708,6 +758,11 @@ public class UsageapiClient implements Usageapi {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Usageapi",
+                "UpdateCustomTable",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/usage/20200107/CustomTable/UpdateCustomTable");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -741,6 +796,11 @@ public class UsageapiClient implements Usageapi {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Usageapi",
+                "UpdateQuery",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/usage/20200107/Query/UpdateQuery");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {

@@ -5,7 +5,7 @@
 package com.oracle.bmc.aivision.model;
 
 /**
- * Type of image analysis.
+ * The type of image analysis.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -45,8 +45,8 @@ package com.oracle.bmc.aivision.model;
 public class ImageFeature {
 
     /**
-     * Type of image analysis requested.
-     * Allowed values are:
+     * The type of image analysis requested.
+     * The allowed values are:
      * - {@code IMAGE_CLASSIFICATION}: Label the image.
      * - {@code OBJECT_DETECTION}: Identify objects in the image with bounding boxes.
      * - {@code TEXT_DETECTION}: Recognize text in the image.

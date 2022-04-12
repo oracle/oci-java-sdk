@@ -407,6 +407,11 @@ public class FunctionsInvokeAsyncClient implements FunctionsInvokeAsync {
                 InvokeFunctionConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, InvokeFunctionResponse>
                 transformer = InvokeFunctionConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "FunctionsInvoke",
+                "InvokeFunction",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/functions/20181201/Function/InvokeFunction");
 
         com.oracle.bmc.responses.AsyncHandler<InvokeFunctionRequest, InvokeFunctionResponse>
                 handlerToUse =

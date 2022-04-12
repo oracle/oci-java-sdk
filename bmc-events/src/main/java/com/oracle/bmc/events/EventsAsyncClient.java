@@ -391,6 +391,11 @@ public class EventsAsyncClient implements EventsAsync {
                         javax.ws.rs.core.Response, ChangeRuleCompartmentResponse>
                 transformer = ChangeRuleCompartmentConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Events",
+                "ChangeRuleCompartment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/events/20181201/Rule/ChangeRuleCompartment");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeRuleCompartmentRequest, ChangeRuleCompartmentResponse>
@@ -435,6 +440,11 @@ public class EventsAsyncClient implements EventsAsync {
         final com.google.common.base.Function<javax.ws.rs.core.Response, CreateRuleResponse>
                 transformer = CreateRuleConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Events",
+                "CreateRule",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/events/20181201/Rule/CreateRule");
 
         com.oracle.bmc.responses.AsyncHandler<CreateRuleRequest, CreateRuleResponse> handlerToUse =
                 handler;
@@ -477,6 +487,11 @@ public class EventsAsyncClient implements EventsAsync {
                 DeleteRuleConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteRuleResponse>
                 transformer = DeleteRuleConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Events",
+                "DeleteRule",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/events/20181201/Rule/DeleteRule");
 
         com.oracle.bmc.responses.AsyncHandler<DeleteRuleRequest, DeleteRuleResponse> handlerToUse =
                 handler;
@@ -513,6 +528,11 @@ public class EventsAsyncClient implements EventsAsync {
                 GetRuleConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetRuleResponse>
                 transformer = GetRuleConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Events",
+                "GetRule",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/events/20181201/Rule/GetRule");
 
         com.oracle.bmc.responses.AsyncHandler<GetRuleRequest, GetRuleResponse> handlerToUse =
                 handler;
@@ -549,6 +569,11 @@ public class EventsAsyncClient implements EventsAsync {
                 ListRulesConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListRulesResponse>
                 transformer = ListRulesConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Events",
+                "ListRules",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/events/20181201/RuleSummary/ListRules");
 
         com.oracle.bmc.responses.AsyncHandler<ListRulesRequest, ListRulesResponse> handlerToUse =
                 handler;
@@ -585,6 +610,11 @@ public class EventsAsyncClient implements EventsAsync {
                 UpdateRuleConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateRuleResponse>
                 transformer = UpdateRuleConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Events",
+                "UpdateRule",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/events/20181201/Rule/UpdateRule");
 
         com.oracle.bmc.responses.AsyncHandler<UpdateRuleRequest, UpdateRuleResponse> handlerToUse =
                 handler;

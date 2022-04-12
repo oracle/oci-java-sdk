@@ -389,6 +389,11 @@ public class QuotasAsyncClient implements QuotasAsync {
         final com.google.common.base.Function<javax.ws.rs.core.Response, CreateQuotaResponse>
                 transformer = CreateQuotaConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Quotas",
+                "CreateQuota",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/limits/20181025/Quota/CreateQuota");
 
         com.oracle.bmc.responses.AsyncHandler<CreateQuotaRequest, CreateQuotaResponse>
                 handlerToUse = handler;
@@ -432,6 +437,11 @@ public class QuotasAsyncClient implements QuotasAsync {
                 DeleteQuotaConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteQuotaResponse>
                 transformer = DeleteQuotaConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Quotas",
+                "DeleteQuota",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/limits/20181025/Quota/DeleteQuota");
 
         com.oracle.bmc.responses.AsyncHandler<DeleteQuotaRequest, DeleteQuotaResponse>
                 handlerToUse = handler;
@@ -469,6 +479,11 @@ public class QuotasAsyncClient implements QuotasAsync {
                 GetQuotaConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetQuotaResponse>
                 transformer = GetQuotaConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Quotas",
+                "GetQuota",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/limits/20181025/Quota/GetQuota");
 
         com.oracle.bmc.responses.AsyncHandler<GetQuotaRequest, GetQuotaResponse> handlerToUse =
                 handler;
@@ -505,6 +520,11 @@ public class QuotasAsyncClient implements QuotasAsync {
                 ListQuotasConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListQuotasResponse>
                 transformer = ListQuotasConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Quotas",
+                "ListQuotas",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/limits/20181025/QuotaSummary/ListQuotas");
 
         com.oracle.bmc.responses.AsyncHandler<ListQuotasRequest, ListQuotasResponse> handlerToUse =
                 handler;
@@ -543,6 +563,11 @@ public class QuotasAsyncClient implements QuotasAsync {
                 UpdateQuotaConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateQuotaResponse>
                 transformer = UpdateQuotaConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Quotas",
+                "UpdateQuota",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/limits/20181025/Quota/UpdateQuota");
 
         com.oracle.bmc.responses.AsyncHandler<UpdateQuotaRequest, UpdateQuotaResponse>
                 handlerToUse = handler;

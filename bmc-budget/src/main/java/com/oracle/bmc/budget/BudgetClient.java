@@ -475,6 +475,11 @@ public class BudgetClient implements Budget {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Budget",
+                "CreateAlertRule",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/budgets/20190111/AlertRule/CreateAlertRule");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -509,6 +514,11 @@ public class BudgetClient implements Budget {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Budget",
+                "CreateBudget",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/budgets/20190111/Budget/CreateBudget");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -542,6 +552,11 @@ public class BudgetClient implements Budget {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Budget",
+                "DeleteAlertRule",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/budgets/20190111/AlertRule/DeleteAlertRule");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -572,6 +587,11 @@ public class BudgetClient implements Budget {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Budget",
+                "DeleteBudget",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/budgets/20190111/Budget/DeleteBudget");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -602,6 +622,11 @@ public class BudgetClient implements Budget {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Budget",
+                "GetAlertRule",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/budgets/20190111/AlertRule/GetAlertRule");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -630,6 +655,11 @@ public class BudgetClient implements Budget {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Budget",
+                "GetBudget",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/budgets/20190111/Budget/GetBudget");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -659,6 +689,11 @@ public class BudgetClient implements Budget {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Budget",
+                "ListAlertRules",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/budgets/20190111/AlertRuleSummary/ListAlertRules");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -688,6 +723,11 @@ public class BudgetClient implements Budget {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Budget",
+                "ListBudgets",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/budgets/20190111/BudgetSummary/ListBudgets");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -717,6 +757,11 @@ public class BudgetClient implements Budget {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Budget",
+                "UpdateAlertRule",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/budgets/20190111/AlertRule/UpdateAlertRule");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -750,6 +795,11 @@ public class BudgetClient implements Budget {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Budget",
+                "UpdateBudget",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/budgets/20190111/Budget/UpdateBudget");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {

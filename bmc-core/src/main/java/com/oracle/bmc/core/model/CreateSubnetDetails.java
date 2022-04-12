@@ -108,6 +108,15 @@ public class CreateSubnetDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("ipv6CidrBlocks")
+        private java.util.List<String> ipv6CidrBlocks;
+
+        public Builder ipv6CidrBlocks(java.util.List<String> ipv6CidrBlocks) {
+            this.ipv6CidrBlocks = ipv6CidrBlocks;
+            this.__explicitlySet__.add("ipv6CidrBlocks");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("prohibitInternetIngress")
         private Boolean prohibitInternetIngress;
 
@@ -168,6 +177,7 @@ public class CreateSubnetDetails {
                             dnsLabel,
                             freeformTags,
                             ipv6CidrBlock,
+                            ipv6CidrBlocks,
                             prohibitInternetIngress,
                             prohibitPublicIpOnVnic,
                             routeTableId,
@@ -189,6 +199,7 @@ public class CreateSubnetDetails {
                             .dnsLabel(o.getDnsLabel())
                             .freeformTags(o.getFreeformTags())
                             .ipv6CidrBlock(o.getIpv6CidrBlock())
+                            .ipv6CidrBlocks(o.getIpv6CidrBlocks())
                             .prohibitInternetIngress(o.getProhibitInternetIngress())
                             .prohibitPublicIpOnVnic(o.getProhibitPublicIpOnVnic())
                             .routeTableId(o.getRouteTableId())
@@ -312,6 +323,16 @@ public class CreateSubnetDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("ipv6CidrBlock")
     String ipv6CidrBlock;
+
+    /**
+     * The list of all IPv6 CIDR blocks (Oracle allocated IPv6 GUA, ULA or private IPv6 CIDR blocks, BYOIPv6 CIDR blocks) for the subnet that meets the following criteria:
+     * - The CIDR blocks must be valid.
+     * - Multiple CIDR blocks must not overlap each other or the on-premises network CIDR block.
+     * - The number of CIDR blocks must not exceed the limit of IPv6 CIDR blocks allowed to a subnet.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("ipv6CidrBlocks")
+    java.util.List<String> ipv6CidrBlocks;
 
     /**
      * Whether to disallow ingress internet traffic to VNICs within this subnet. Defaults to false.

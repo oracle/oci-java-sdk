@@ -5,7 +5,7 @@
 package com.oracle.bmc.aivision.model;
 
 /**
- * Details about the batch document analysis.
+ * The batch document analysis details.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -144,7 +144,7 @@ public class CreateDocumentJobDetails {
     InputLocation inputLocation;
 
     /**
-     * List of document analysis types requested.
+     * The list of requested document analysis types.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("features")
     java.util.List<DocumentFeature> features;
@@ -153,19 +153,19 @@ public class CreateDocumentJobDetails {
     OutputLocation outputLocation;
 
     /**
-     * Compartment identifier from the requester.
+     * The compartment identifier from the requester.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     String compartmentId;
 
     /**
-     * Document job display name.
+     * The document job display name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     String displayName;
 
     /**
-     * Language of the document, abbreviated according to ISO 639-2.
+     * The language of the document, abbreviated according to ISO 639-2.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("language")
     DocumentLanguage language;
@@ -177,7 +177,7 @@ public class CreateDocumentJobDetails {
     DocumentType documentType;
 
     /**
-     * Whether to generate a Zip file containing the results.
+     * Whether or not to generate a ZIP file containing the results.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isZipOutputEnabled")
     Boolean isZipOutputEnabled;

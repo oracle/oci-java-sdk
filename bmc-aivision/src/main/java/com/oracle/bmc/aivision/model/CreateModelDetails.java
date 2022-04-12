@@ -5,7 +5,7 @@
 package com.oracle.bmc.aivision.model;
 
 /**
- * Information needed to create a new model.
+ * The information needed to create a new model.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -197,43 +197,43 @@ public class CreateModelDetails {
     }
 
     /**
-     * Human-friendly name for the model, which can be changed.
+     * A human-friendly name for the model, which can be changed.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     String displayName;
 
     /**
-     * Optional description of the model.
+     * An optional description of the model.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     String description;
 
     /**
-     * Model version
+     * The model version
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("modelVersion")
     String modelVersion;
 
     /**
-     * What type of Vision model this is.
+     * Which type of Vision model this is.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("modelType")
     Model.ModelType modelType;
 
     /**
-     * Compartment identifier.
+     * The compartment identifier.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     String compartmentId;
 
     /**
-     * Set to true when experimenting with a new model type or dataset so model training is quick, with a predefined low number of passes through the training data.
+     * Set to true when experimenting with a new model type or dataset, so the model training is quick, with a predefined low number of passes through the training data.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isQuickMode")
     Boolean isQuickMode;
 
     /**
-     * Maximum model training duration in hours, expressed as a decimal fraction.
+     * The maximum model training duration in hours, expressed as a decimal fraction.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("maxTrainingDurationInHours")
     Double maxTrainingDurationInHours;
@@ -248,14 +248,14 @@ public class CreateModelDetails {
     Dataset validationDataset;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project which contains the model.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project that contains the model.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("projectId")
     String projectId;
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-     * Example: {@code {"bar-key": "value"}}
+     * A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only.
+     * For example: {@code {"bar-key": "value"}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
@@ -263,7 +263,7 @@ public class CreateModelDetails {
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     * For example: {@code {"foo-namespace": {"bar-key": "value"}}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")

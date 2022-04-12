@@ -476,6 +476,11 @@ public class DataCatalogClient implements DataCatalog {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataCatalog",
+                "AddDataSelectorPatterns",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/DataAsset/AddDataSelectorPatterns");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -511,6 +516,11 @@ public class DataCatalogClient implements DataCatalog {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataCatalog",
+                "AssociateCustomProperty",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/Type/AssociateCustomProperty");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -547,6 +557,11 @@ public class DataCatalogClient implements DataCatalog {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataCatalog",
+                "AttachCatalogPrivateEndpoint",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/Catalog/AttachCatalogPrivateEndpoint");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -582,6 +597,11 @@ public class DataCatalogClient implements DataCatalog {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataCatalog",
+                "ChangeCatalogCompartment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/Catalog/ChangeCatalogCompartment");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -618,6 +638,11 @@ public class DataCatalogClient implements DataCatalog {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataCatalog",
+                "ChangeCatalogPrivateEndpointCompartment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/CatalogPrivateEndpoint/ChangeCatalogPrivateEndpointCompartment");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -654,6 +679,11 @@ public class DataCatalogClient implements DataCatalog {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataCatalog",
+                "ChangeMetastoreCompartment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/Metastore/ChangeMetastoreCompartment");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -689,6 +719,11 @@ public class DataCatalogClient implements DataCatalog {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataCatalog",
+                "CreateAttribute",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/Attribute/CreateAttribute");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -723,6 +758,11 @@ public class DataCatalogClient implements DataCatalog {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataCatalog",
+                "CreateAttributeTag",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/AttributeTag/CreateAttributeTag");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -757,6 +797,11 @@ public class DataCatalogClient implements DataCatalog {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataCatalog",
+                "CreateCatalog",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/Catalog/CreateCatalog");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -793,6 +838,11 @@ public class DataCatalogClient implements DataCatalog {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataCatalog",
+                "CreateCatalogPrivateEndpoint",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/CatalogPrivateEndpoint/CreateCatalogPrivateEndpoint");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -828,6 +878,11 @@ public class DataCatalogClient implements DataCatalog {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataCatalog",
+                "CreateConnection",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/Connection/CreateConnection");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -862,6 +917,11 @@ public class DataCatalogClient implements DataCatalog {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataCatalog",
+                "CreateCustomProperty",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/CustomProperty/CreateCustomProperty");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -896,6 +956,11 @@ public class DataCatalogClient implements DataCatalog {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataCatalog",
+                "CreateDataAsset",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/DataAsset/CreateDataAsset");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -930,6 +995,11 @@ public class DataCatalogClient implements DataCatalog {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataCatalog",
+                "CreateDataAssetTag",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/DataAssetTag/CreateDataAssetTag");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -964,6 +1034,11 @@ public class DataCatalogClient implements DataCatalog {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataCatalog",
+                "CreateEntity",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/Entity/CreateEntity");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -998,6 +1073,11 @@ public class DataCatalogClient implements DataCatalog {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataCatalog",
+                "CreateEntityTag",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/EntityTag/CreateEntityTag");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1032,6 +1112,11 @@ public class DataCatalogClient implements DataCatalog {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataCatalog",
+                "CreateFolder",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/Folder/CreateFolder");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1066,6 +1151,11 @@ public class DataCatalogClient implements DataCatalog {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataCatalog",
+                "CreateFolderTag",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/FolderTag/CreateFolderTag");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1100,6 +1190,11 @@ public class DataCatalogClient implements DataCatalog {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataCatalog",
+                "CreateGlossary",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/Glossary/CreateGlossary");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1133,6 +1228,11 @@ public class DataCatalogClient implements DataCatalog {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataCatalog",
+                "CreateJob",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/Job/CreateJob");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1167,6 +1267,11 @@ public class DataCatalogClient implements DataCatalog {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataCatalog",
+                "CreateJobDefinition",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/JobDefinition/CreateJobDefinition");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1201,6 +1306,11 @@ public class DataCatalogClient implements DataCatalog {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataCatalog",
+                "CreateJobExecution",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/JobExecution/CreateJobExecution");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1235,6 +1345,11 @@ public class DataCatalogClient implements DataCatalog {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataCatalog",
+                "CreateMetastore",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/Metastore/CreateMetastore");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1269,6 +1384,11 @@ public class DataCatalogClient implements DataCatalog {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataCatalog",
+                "CreateNamespace",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/Namespace/CreateNamespace");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1303,6 +1423,11 @@ public class DataCatalogClient implements DataCatalog {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataCatalog",
+                "CreatePattern",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/Pattern/CreatePattern");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1336,6 +1461,11 @@ public class DataCatalogClient implements DataCatalog {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataCatalog",
+                "CreateTerm",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/Term/CreateTerm");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1371,6 +1501,11 @@ public class DataCatalogClient implements DataCatalog {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataCatalog",
+                "CreateTermRelationship",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/TermRelationship/CreateTermRelationship");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1404,6 +1539,11 @@ public class DataCatalogClient implements DataCatalog {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataCatalog",
+                "DeleteAttribute",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/Attribute/DeleteAttribute");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1434,6 +1574,11 @@ public class DataCatalogClient implements DataCatalog {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataCatalog",
+                "DeleteAttributeTag",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/AttributeTag/DeleteAttributeTag");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1464,6 +1609,11 @@ public class DataCatalogClient implements DataCatalog {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataCatalog",
+                "DeleteCatalog",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/Catalog/DeleteCatalog");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1496,6 +1646,11 @@ public class DataCatalogClient implements DataCatalog {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataCatalog",
+                "DeleteCatalogPrivateEndpoint",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/CatalogPrivateEndpoint/DeleteCatalogPrivateEndpoint");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1526,6 +1681,11 @@ public class DataCatalogClient implements DataCatalog {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataCatalog",
+                "DeleteConnection",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/Connection/DeleteConnection");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1556,6 +1716,11 @@ public class DataCatalogClient implements DataCatalog {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataCatalog",
+                "DeleteCustomProperty",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/CustomProperty/DeleteCustomProperty");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1586,6 +1751,11 @@ public class DataCatalogClient implements DataCatalog {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataCatalog",
+                "DeleteDataAsset",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/DataAsset/DeleteDataAsset");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1616,6 +1786,11 @@ public class DataCatalogClient implements DataCatalog {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataCatalog",
+                "DeleteDataAssetTag",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/DataAssetTag/DeleteDataAssetTag");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1646,6 +1821,11 @@ public class DataCatalogClient implements DataCatalog {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataCatalog",
+                "DeleteEntity",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/Entity/DeleteEntity");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1676,6 +1856,11 @@ public class DataCatalogClient implements DataCatalog {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataCatalog",
+                "DeleteEntityTag",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/EntityTag/DeleteEntityTag");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1706,6 +1891,11 @@ public class DataCatalogClient implements DataCatalog {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataCatalog",
+                "DeleteFolder",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/Folder/DeleteFolder");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1736,6 +1926,11 @@ public class DataCatalogClient implements DataCatalog {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataCatalog",
+                "DeleteFolderTag",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/FolderTag/DeleteFolderTag");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1766,6 +1961,11 @@ public class DataCatalogClient implements DataCatalog {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataCatalog",
+                "DeleteGlossary",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/Glossary/DeleteGlossary");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1795,6 +1995,11 @@ public class DataCatalogClient implements DataCatalog {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataCatalog",
+                "DeleteJob",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/Job/DeleteJob");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1825,6 +2030,11 @@ public class DataCatalogClient implements DataCatalog {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataCatalog",
+                "DeleteJobDefinition",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/JobDefinition/DeleteJobDefinition");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1855,6 +2065,11 @@ public class DataCatalogClient implements DataCatalog {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataCatalog",
+                "DeleteMetastore",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/Metastore/DeleteMetastore");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1885,6 +2100,11 @@ public class DataCatalogClient implements DataCatalog {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataCatalog",
+                "DeleteNamespace",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/Namespace/DeleteNamespace");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1915,6 +2135,11 @@ public class DataCatalogClient implements DataCatalog {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataCatalog",
+                "DeletePattern",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/Pattern/DeletePattern");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1944,6 +2169,11 @@ public class DataCatalogClient implements DataCatalog {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataCatalog",
+                "DeleteTerm",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/Term/DeleteTerm");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1975,6 +2205,11 @@ public class DataCatalogClient implements DataCatalog {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataCatalog",
+                "DeleteTermRelationship",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/TermRelationship/DeleteTermRelationship");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2007,6 +2242,11 @@ public class DataCatalogClient implements DataCatalog {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataCatalog",
+                "DetachCatalogPrivateEndpoint",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/Catalog/DetachCatalogPrivateEndpoint");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2044,6 +2284,11 @@ public class DataCatalogClient implements DataCatalog {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataCatalog",
+                "DisassociateCustomProperty",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/Type/DisassociateCustomProperty");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2080,6 +2325,11 @@ public class DataCatalogClient implements DataCatalog {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataCatalog",
+                "ExpandTreeForGlossary",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/Glossary/ExpandTreeForGlossary");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2111,6 +2361,11 @@ public class DataCatalogClient implements DataCatalog {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataCatalog",
+                "ExportGlossary",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/Glossary/ExportGlossary");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2141,6 +2396,11 @@ public class DataCatalogClient implements DataCatalog {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataCatalog",
+                "GetAttribute",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/Attribute/GetAttribute");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2170,6 +2430,11 @@ public class DataCatalogClient implements DataCatalog {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataCatalog",
+                "GetAttributeTag",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/AttributeTag/GetAttributeTag");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2198,6 +2463,11 @@ public class DataCatalogClient implements DataCatalog {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataCatalog",
+                "GetCatalog",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/Catalog/GetCatalog");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2229,6 +2499,11 @@ public class DataCatalogClient implements DataCatalog {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataCatalog",
+                "GetCatalogPrivateEndpoint",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/CatalogPrivateEndpoint/GetCatalogPrivateEndpoint");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2258,6 +2533,11 @@ public class DataCatalogClient implements DataCatalog {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataCatalog",
+                "GetConnection",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/Connection/GetConnection");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2287,6 +2567,11 @@ public class DataCatalogClient implements DataCatalog {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataCatalog",
+                "GetCustomProperty",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/CustomProperty/GetCustomProperty");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2316,6 +2601,11 @@ public class DataCatalogClient implements DataCatalog {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataCatalog",
+                "GetDataAsset",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/DataAsset/GetDataAsset");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2345,6 +2635,11 @@ public class DataCatalogClient implements DataCatalog {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataCatalog",
+                "GetDataAssetTag",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/DataAssetTag/GetDataAssetTag");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2373,6 +2668,11 @@ public class DataCatalogClient implements DataCatalog {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataCatalog",
+                "GetEntity",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/Entity/GetEntity");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2402,6 +2702,11 @@ public class DataCatalogClient implements DataCatalog {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataCatalog",
+                "GetEntityTag",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/EntityTag/GetEntityTag");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2430,6 +2735,11 @@ public class DataCatalogClient implements DataCatalog {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataCatalog",
+                "GetFolder",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/Folder/GetFolder");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2459,6 +2769,11 @@ public class DataCatalogClient implements DataCatalog {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataCatalog",
+                "GetFolderTag",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/FolderTag/GetFolderTag");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2488,6 +2803,11 @@ public class DataCatalogClient implements DataCatalog {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataCatalog",
+                "GetGlossary",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/Glossary/GetGlossary");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2516,6 +2836,11 @@ public class DataCatalogClient implements DataCatalog {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataCatalog",
+                "GetJob",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/Job/GetJob");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2545,6 +2870,11 @@ public class DataCatalogClient implements DataCatalog {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataCatalog",
+                "GetJobDefinition",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/JobDefinition/GetJobDefinition");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2574,6 +2904,11 @@ public class DataCatalogClient implements DataCatalog {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataCatalog",
+                "GetJobExecution",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/JobExecution/GetJobExecution");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2602,6 +2937,11 @@ public class DataCatalogClient implements DataCatalog {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataCatalog",
+                "GetJobLog",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/JobLog/GetJobLog");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2631,6 +2971,11 @@ public class DataCatalogClient implements DataCatalog {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataCatalog",
+                "GetJobMetrics",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/JobMetric/GetJobMetrics");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2660,6 +3005,11 @@ public class DataCatalogClient implements DataCatalog {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataCatalog",
+                "GetMetastore",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/Metastore/GetMetastore");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2689,6 +3039,11 @@ public class DataCatalogClient implements DataCatalog {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataCatalog",
+                "GetNamespace",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/Namespace/GetNamespace");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2717,6 +3072,11 @@ public class DataCatalogClient implements DataCatalog {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataCatalog",
+                "GetPattern",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/Pattern/GetPattern");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2745,6 +3105,11 @@ public class DataCatalogClient implements DataCatalog {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataCatalog",
+                "GetTerm",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/Term/GetTerm");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2774,6 +3139,11 @@ public class DataCatalogClient implements DataCatalog {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataCatalog",
+                "GetTermRelationship",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/TermRelationship/GetTermRelationship");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2802,6 +3172,11 @@ public class DataCatalogClient implements DataCatalog {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataCatalog",
+                "GetType",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/Type/GetType");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2831,6 +3206,11 @@ public class DataCatalogClient implements DataCatalog {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataCatalog",
+                "GetWorkRequest",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/WorkRequest/GetWorkRequest");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2861,6 +3241,11 @@ public class DataCatalogClient implements DataCatalog {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataCatalog",
+                "ImportConnection",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/DataAsset/ImportConnection");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2895,6 +3280,11 @@ public class DataCatalogClient implements DataCatalog {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataCatalog",
+                "ImportDataAsset",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/DataAsset/ImportDataAsset");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2929,6 +3319,11 @@ public class DataCatalogClient implements DataCatalog {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataCatalog",
+                "ImportGlossary",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/Glossary/ImportGlossary");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2964,6 +3359,11 @@ public class DataCatalogClient implements DataCatalog {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataCatalog",
+                "ListAggregatedPhysicalEntities",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/Entity/ListAggregatedPhysicalEntities");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2994,6 +3394,11 @@ public class DataCatalogClient implements DataCatalog {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataCatalog",
+                "ListAttributeTags",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/AttributeTagCollection/ListAttributeTags");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3023,6 +3428,11 @@ public class DataCatalogClient implements DataCatalog {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataCatalog",
+                "ListAttributes",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/AttributeCollection/ListAttributes");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3054,6 +3464,11 @@ public class DataCatalogClient implements DataCatalog {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataCatalog",
+                "ListCatalogPrivateEndpoints",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/CatalogPrivateEndpointSummary/ListCatalogPrivateEndpoints");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3083,6 +3498,11 @@ public class DataCatalogClient implements DataCatalog {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataCatalog",
+                "ListCatalogs",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/CatalogSummary/ListCatalogs");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3112,6 +3532,11 @@ public class DataCatalogClient implements DataCatalog {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataCatalog",
+                "ListConnections",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/ConnectionCollection/ListConnections");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3141,6 +3566,11 @@ public class DataCatalogClient implements DataCatalog {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataCatalog",
+                "ListCustomProperties",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/CustomProperty/ListCustomProperties");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3170,6 +3600,11 @@ public class DataCatalogClient implements DataCatalog {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataCatalog",
+                "ListDataAssetTags",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/DataAssetTagCollection/ListDataAssetTags");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3199,6 +3634,11 @@ public class DataCatalogClient implements DataCatalog {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataCatalog",
+                "ListDataAssets",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/DataAssetCollection/ListDataAssets");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3231,6 +3671,11 @@ public class DataCatalogClient implements DataCatalog {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataCatalog",
+                "ListDerivedLogicalEntities",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/Pattern/ListDerivedLogicalEntities");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3261,6 +3706,11 @@ public class DataCatalogClient implements DataCatalog {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataCatalog",
+                "ListEntities",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/Entity/ListEntities");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3290,6 +3740,11 @@ public class DataCatalogClient implements DataCatalog {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataCatalog",
+                "ListEntityTags",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/EntityTagCollection/ListEntityTags");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3319,6 +3774,11 @@ public class DataCatalogClient implements DataCatalog {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataCatalog",
+                "ListFolderTags",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/FolderTagCollection/ListFolderTags");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3348,6 +3808,11 @@ public class DataCatalogClient implements DataCatalog {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataCatalog",
+                "ListFolders",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/FolderCollection/ListFolders");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3377,6 +3842,11 @@ public class DataCatalogClient implements DataCatalog {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataCatalog",
+                "ListGlossaries",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/Glossary/ListGlossaries");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3406,6 +3876,11 @@ public class DataCatalogClient implements DataCatalog {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataCatalog",
+                "ListJobDefinitions",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/JobDefinitionCollection/ListJobDefinitions");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3435,6 +3910,11 @@ public class DataCatalogClient implements DataCatalog {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataCatalog",
+                "ListJobExecutions",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/JobExecutionCollection/ListJobExecutions");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3464,6 +3944,11 @@ public class DataCatalogClient implements DataCatalog {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataCatalog",
+                "ListJobLogs",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/JobLogCollection/ListJobLogs");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3493,6 +3978,11 @@ public class DataCatalogClient implements DataCatalog {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataCatalog",
+                "ListJobMetrics",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/JobMetricCollection/ListJobMetrics");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3521,6 +4011,11 @@ public class DataCatalogClient implements DataCatalog {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataCatalog",
+                "ListJobs",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/JobCollection/ListJobs");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3550,6 +4045,11 @@ public class DataCatalogClient implements DataCatalog {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataCatalog",
+                "ListMetastores",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/MetastoreSummary/ListMetastores");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3579,6 +4079,11 @@ public class DataCatalogClient implements DataCatalog {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataCatalog",
+                "ListNamespaces",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/Namespace/ListNamespaces");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3608,6 +4113,11 @@ public class DataCatalogClient implements DataCatalog {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataCatalog",
+                "ListPatterns",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/Pattern/ListPatterns");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3636,6 +4146,11 @@ public class DataCatalogClient implements DataCatalog {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataCatalog",
+                "ListRules",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/RuleSummary/ListRules");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3664,6 +4179,11 @@ public class DataCatalogClient implements DataCatalog {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataCatalog",
+                "ListTags",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/Term/ListTags");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3694,6 +4214,11 @@ public class DataCatalogClient implements DataCatalog {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataCatalog",
+                "ListTermRelationships",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/TermRelationship/ListTermRelationships");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3722,6 +4247,11 @@ public class DataCatalogClient implements DataCatalog {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataCatalog",
+                "ListTerms",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/Term/ListTerms");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3750,6 +4280,11 @@ public class DataCatalogClient implements DataCatalog {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataCatalog",
+                "ListTypes",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/TypeCollection/ListTypes");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3780,6 +4315,11 @@ public class DataCatalogClient implements DataCatalog {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataCatalog",
+                "ListWorkRequestErrors",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/WorkRequestError/ListWorkRequestErrors");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3809,6 +4349,11 @@ public class DataCatalogClient implements DataCatalog {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataCatalog",
+                "ListWorkRequestLogs",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/WorkRequestLog/ListWorkRequestLogs");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3838,6 +4383,11 @@ public class DataCatalogClient implements DataCatalog {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataCatalog",
+                "ListWorkRequests",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/WorkRequest/ListWorkRequests");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3867,6 +4417,11 @@ public class DataCatalogClient implements DataCatalog {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataCatalog",
+                "ObjectStats",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/Catalog/ObjectStats");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3898,6 +4453,11 @@ public class DataCatalogClient implements DataCatalog {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataCatalog",
+                "ParseConnection",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/DataAsset/ParseConnection");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3932,6 +4492,11 @@ public class DataCatalogClient implements DataCatalog {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataCatalog",
+                "ProcessRecommendation",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/Catalog/ProcessRecommendation");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3965,6 +4530,11 @@ public class DataCatalogClient implements DataCatalog {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataCatalog",
+                "Recommendations",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/Catalog/Recommendations");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3998,6 +4568,11 @@ public class DataCatalogClient implements DataCatalog {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataCatalog",
+                "RemoveDataSelectorPatterns",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/DataAsset/RemoveDataSelectorPatterns");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -4031,6 +4606,11 @@ public class DataCatalogClient implements DataCatalog {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataCatalog",
+                "SearchCriteria",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/SearchResult/SearchCriteria");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -4064,6 +4644,11 @@ public class DataCatalogClient implements DataCatalog {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataCatalog",
+                "SuggestMatches",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/SuggestResults/SuggestMatches");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -4107,6 +4692,11 @@ public class DataCatalogClient implements DataCatalog {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataCatalog",
+                "SynchronousExportDataAsset",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/DataAsset/SynchronousExportDataAsset");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -4142,6 +4732,11 @@ public class DataCatalogClient implements DataCatalog {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataCatalog",
+                "TestConnection",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/Connection/TestConnection");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -4172,6 +4767,11 @@ public class DataCatalogClient implements DataCatalog {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataCatalog",
+                "UpdateAttribute",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/Attribute/UpdateAttribute");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -4205,6 +4805,11 @@ public class DataCatalogClient implements DataCatalog {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataCatalog",
+                "UpdateCatalog",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/Catalog/UpdateCatalog");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -4240,6 +4845,11 @@ public class DataCatalogClient implements DataCatalog {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataCatalog",
+                "UpdateCatalogPrivateEndpoint",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/CatalogPrivateEndpoint/UpdateCatalogPrivateEndpoint");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -4274,6 +4884,11 @@ public class DataCatalogClient implements DataCatalog {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataCatalog",
+                "UpdateConnection",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/Connection/UpdateConnection");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -4307,6 +4922,11 @@ public class DataCatalogClient implements DataCatalog {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataCatalog",
+                "UpdateCustomProperty",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/CustomProperty/UpdateCustomProperty");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -4340,6 +4960,11 @@ public class DataCatalogClient implements DataCatalog {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataCatalog",
+                "UpdateDataAsset",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/DataAsset/UpdateDataAsset");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -4373,6 +4998,11 @@ public class DataCatalogClient implements DataCatalog {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataCatalog",
+                "UpdateEntity",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/Entity/UpdateEntity");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -4406,6 +5036,11 @@ public class DataCatalogClient implements DataCatalog {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataCatalog",
+                "UpdateFolder",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/Folder/UpdateFolder");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -4439,6 +5074,11 @@ public class DataCatalogClient implements DataCatalog {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataCatalog",
+                "UpdateGlossary",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/Glossary/UpdateGlossary");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -4471,6 +5111,11 @@ public class DataCatalogClient implements DataCatalog {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataCatalog",
+                "UpdateJob",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/Job/UpdateJob");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -4504,6 +5149,11 @@ public class DataCatalogClient implements DataCatalog {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataCatalog",
+                "UpdateJobDefinition",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/JobDefinition/UpdateJobDefinition");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -4537,6 +5187,11 @@ public class DataCatalogClient implements DataCatalog {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataCatalog",
+                "UpdateMetastore",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/Metastore/UpdateMetastore");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -4570,6 +5225,11 @@ public class DataCatalogClient implements DataCatalog {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataCatalog",
+                "UpdateNamespace",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/Namespace/UpdateNamespace");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -4603,6 +5263,11 @@ public class DataCatalogClient implements DataCatalog {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataCatalog",
+                "UpdatePattern",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/Pattern/UpdatePattern");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -4635,6 +5300,11 @@ public class DataCatalogClient implements DataCatalog {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataCatalog",
+                "UpdateTerm",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/Term/UpdateTerm");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -4669,6 +5339,11 @@ public class DataCatalogClient implements DataCatalog {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataCatalog",
+                "UpdateTermRelationship",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/TermRelationship/UpdateTermRelationship");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -4703,6 +5378,11 @@ public class DataCatalogClient implements DataCatalog {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataCatalog",
+                "UploadCredentials",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/Connection/UploadCredentials");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -4735,6 +5415,11 @@ public class DataCatalogClient implements DataCatalog {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataCatalog",
+                "Users",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/Catalog/Users");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -4766,6 +5451,11 @@ public class DataCatalogClient implements DataCatalog {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataCatalog",
+                "ValidateConnection",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/DataAsset/ValidateConnection");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -4800,6 +5490,11 @@ public class DataCatalogClient implements DataCatalog {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataCatalog",
+                "ValidatePattern",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/Pattern/ValidatePattern");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {

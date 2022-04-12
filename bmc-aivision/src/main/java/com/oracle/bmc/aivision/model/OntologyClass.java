@@ -80,19 +80,19 @@ public class OntologyClass {
     }
 
     /**
-     * Name of the label.
+     * The label name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     String name;
 
     /**
-     * Parents of the label.
+     * The label parents.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("parentNames")
     java.util.List<String> parentNames;
 
     /**
-     * Synonyms of the label.
+     * The label synonyms.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("synonymNames")
     java.util.List<String> synonymNames;

@@ -475,6 +475,11 @@ public class SddcClient implements Sddc {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Sddc",
+                "CancelDowngradeHcx",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/vmware/20200501/Sddc/CancelDowngradeHcx");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -507,6 +512,11 @@ public class SddcClient implements Sddc {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Sddc",
+                "ChangeSddcCompartment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/vmware/20200501/Sddc/ChangeSddcCompartment");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -540,6 +550,11 @@ public class SddcClient implements Sddc {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Sddc",
+                "CreateSddc",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/vmware/20200501/Sddc/CreateSddc");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -572,6 +587,11 @@ public class SddcClient implements Sddc {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Sddc",
+                "DeleteSddc",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/vmware/20200501/Sddc/DeleteSddc");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -603,6 +623,11 @@ public class SddcClient implements Sddc {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Sddc",
+                "DowngradeHcx",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/vmware/20200501/Sddc/DowngradeHcx");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -635,6 +660,11 @@ public class SddcClient implements Sddc {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Sddc",
+                "GetSddc",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/vmware/20200501/Sddc/GetSddc");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -663,6 +693,11 @@ public class SddcClient implements Sddc {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Sddc",
+                "ListSddcs",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/vmware/20200501/SddcSummary/ListSddcs");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -693,6 +728,11 @@ public class SddcClient implements Sddc {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Sddc",
+                "ListSupportedHostShapes",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapeSummary/ListSupportedHostShapes");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -722,6 +762,11 @@ public class SddcClient implements Sddc {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Sddc",
+                "ListSupportedSkus",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -754,6 +799,11 @@ public class SddcClient implements Sddc {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Sddc",
+                "ListSupportedVmwareSoftwareVersions",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/vmware/20200501/SupportedVmwareSoftwareVersionSummary/ListSupportedVmwareSoftwareVersions");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -785,6 +835,11 @@ public class SddcClient implements Sddc {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Sddc",
+                "RefreshHcxLicenseStatus",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/vmware/20200501/Sddc/RefreshHcxLicenseStatus");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -814,6 +869,11 @@ public class SddcClient implements Sddc {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Sddc",
+                "UpdateSddc",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/vmware/20200501/Sddc/UpdateSddc");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -847,6 +907,11 @@ public class SddcClient implements Sddc {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Sddc",
+                "UpgradeHcx",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/vmware/20200501/Sddc/UpgradeHcx");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {

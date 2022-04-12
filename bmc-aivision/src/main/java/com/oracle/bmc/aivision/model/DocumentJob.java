@@ -5,7 +5,7 @@
 package com.oracle.bmc.aivision.model;
 
 /**
- * Job details for a batch document analysis.
+ * The job details for a batch document analysis.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -216,7 +216,7 @@ public class DocumentJob {
     }
 
     /**
-     * Job id.
+     * The job id.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     String id;
@@ -228,25 +228,25 @@ public class DocumentJob {
     String compartmentId;
 
     /**
-     * Document job display name.
+     * The document job display name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     String displayName;
 
     /**
-     * List of document analysis types requested.
+     * The list of requested document analysis types.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("features")
     java.util.List<DocumentFeature> features;
 
     /**
-     * Language of the document, abbreviated according to ISO 639-2.
+     * The document language, abbreviated according to ISO 639-2.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("language")
     DocumentLanguage language;
 
     /**
-     * The type of documents.
+     * The type of document.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("documentType")
     DocumentType documentType;
@@ -255,25 +255,25 @@ public class DocumentJob {
     InputLocation inputLocation;
 
     /**
-     * Job accepted time.
+     * The job acceptance time.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeAccepted")
     java.util.Date timeAccepted;
 
     /**
-     * Job started time.
+     * The job start time.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
     java.util.Date timeStarted;
 
     /**
-     * Job finished time.
+     * The job finish time.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeFinished")
     java.util.Date timeFinished;
 
     /**
-     * How much progress the operation has made, vs the total amount of work that must be performed.
+     * How much progress the operation has made, compared to the total amount of work to be performed.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("percentComplete")
     Float percentComplete;
@@ -337,12 +337,12 @@ public class DocumentJob {
     LifecycleState lifecycleState;
 
     /**
-     * Whether to generate a Zip file containing the results.
+     * Whether or not to generate a ZIP file containing the results.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isZipOutputEnabled")
     Boolean isZipOutputEnabled;
     /**
-     * Detailed status of FAILED state.
+     * The detailed status of FAILED state.
      **/
     @lombok.extern.slf4j.Slf4j
     public enum LifecycleDetails {
@@ -388,7 +388,7 @@ public class DocumentJob {
         }
     };
     /**
-     * Detailed status of FAILED state.
+     * The detailed status of FAILED state.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
     LifecycleDetails lifecycleDetails;

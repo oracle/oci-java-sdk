@@ -5,7 +5,7 @@
 package com.oracle.bmc.aivision.model;
 
 /**
- * Name of a form field.
+ * The name of a form field.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -90,13 +90,13 @@ public class FieldName {
     }
 
     /**
-     * Name of the field.
+     * The name of the field.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     String name;
 
     /**
-     * Confidence score between 0 to 1.
+     * The confidence score between 0 and 1.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("confidence")
     Float confidence;
@@ -105,7 +105,7 @@ public class FieldName {
     BoundingPolygon boundingPolygon;
 
     /**
-     * Indexes of the words in the field name.
+     * The indexes of the words in the field name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("wordIndexes")
     java.util.List<Integer> wordIndexes;

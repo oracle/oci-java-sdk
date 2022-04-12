@@ -8,6 +8,7 @@ import com.google.common.base.Preconditions;
 import com.google.protobuf.ByteString;
 import com.google.protobuf.InvalidProtocolBufferException;
 import com.oracle.bmc.auth.BasicAuthenticationDetailsProvider;
+import com.oracle.bmc.auth.ConfigurableRefreshOnNotAuthenticatedProvider;
 import com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider;
 import com.oracle.bmc.http.signing.internal.PEMFileRSAPrivateKeySupplier;
 import com.oracle.bmc.http.signing.internal.SignatureSigner;
@@ -19,6 +20,7 @@ import java.io.InputStream;
 import java.nio.ByteBuffer;
 import java.nio.charset.StandardCharsets;
 import java.security.interfaces.RSAPrivateKey;
+import java.time.Duration;
 import java.time.OffsetDateTime;
 import java.util.Collection;
 import java.util.Collections;
@@ -100,8 +102,9 @@ public class OciSaslClient implements SaslClient {
         // we need to protect its access while we generate and retrieve a new private key
         synchronized (authProvider) {
             // Get a new token for each new key exchange to prevent stale keys
-            if (authProvider instanceof RefreshableOnNotAuthenticatedProvider) {
-                ((RefreshableOnNotAuthenticatedProvider) authProvider).refresh();
+            if (authProvider instanceof ConfigurableRefreshOnNotAuthenticatedProvider) {
+                ((ConfigurableRefreshOnNotAuthenticatedProvider) authProvider)
+                        .refreshIfExpiringWithin(Duration.ofMinutes(5));
             }
 
             InputStream inputStream = null;

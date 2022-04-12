@@ -395,6 +395,11 @@ public class AutoScalingAsyncClient implements AutoScalingAsync {
                         ChangeAutoScalingConfigurationCompartmentResponse>
                 transformer = ChangeAutoScalingConfigurationCompartmentConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "AutoScaling",
+                "ChangeAutoScalingConfigurationCompartment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/autoscaling/20181001/AutoScalingConfiguration/ChangeAutoScalingConfigurationCompartment");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeAutoScalingConfigurationCompartmentRequest,
@@ -448,6 +453,11 @@ public class AutoScalingAsyncClient implements AutoScalingAsync {
                         javax.ws.rs.core.Response, CreateAutoScalingConfigurationResponse>
                 transformer = CreateAutoScalingConfigurationConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "AutoScaling",
+                "CreateAutoScalingConfiguration",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/autoscaling/20181001/AutoScalingConfiguration/CreateAutoScalingConfiguration");
 
         com.oracle.bmc.responses.AsyncHandler<
                         CreateAutoScalingConfigurationRequest,
@@ -497,6 +507,11 @@ public class AutoScalingAsyncClient implements AutoScalingAsync {
                         javax.ws.rs.core.Response, CreateAutoScalingPolicyResponse>
                 transformer = CreateAutoScalingPolicyConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "AutoScaling",
+                "CreateAutoScalingPolicy",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/autoscaling/20181001/AutoScalingPolicy/CreateAutoScalingPolicy");
 
         com.oracle.bmc.responses.AsyncHandler<
                         CreateAutoScalingPolicyRequest, CreateAutoScalingPolicyResponse>
@@ -545,6 +560,11 @@ public class AutoScalingAsyncClient implements AutoScalingAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, DeleteAutoScalingConfigurationResponse>
                 transformer = DeleteAutoScalingConfigurationConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "AutoScaling",
+                "DeleteAutoScalingConfiguration",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/autoscaling/20181001/AutoScalingConfiguration/DeleteAutoScalingConfiguration");
 
         com.oracle.bmc.responses.AsyncHandler<
                         DeleteAutoScalingConfigurationRequest,
@@ -588,6 +608,11 @@ public class AutoScalingAsyncClient implements AutoScalingAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, DeleteAutoScalingPolicyResponse>
                 transformer = DeleteAutoScalingPolicyConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "AutoScaling",
+                "DeleteAutoScalingPolicy",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/autoscaling/20181001/AutoScalingPolicy/DeleteAutoScalingPolicy");
 
         com.oracle.bmc.responses.AsyncHandler<
                         DeleteAutoScalingPolicyRequest, DeleteAutoScalingPolicyResponse>
@@ -631,6 +656,11 @@ public class AutoScalingAsyncClient implements AutoScalingAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetAutoScalingConfigurationResponse>
                 transformer = GetAutoScalingConfigurationConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "AutoScaling",
+                "GetAutoScalingConfiguration",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/autoscaling/20181001/AutoScalingConfiguration/GetAutoScalingConfiguration");
 
         com.oracle.bmc.responses.AsyncHandler<
                         GetAutoScalingConfigurationRequest, GetAutoScalingConfigurationResponse>
@@ -673,6 +703,11 @@ public class AutoScalingAsyncClient implements AutoScalingAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetAutoScalingPolicyResponse>
                 transformer = GetAutoScalingPolicyConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "AutoScaling",
+                "GetAutoScalingPolicy",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/autoscaling/20181001/AutoScalingPolicy/GetAutoScalingPolicy");
 
         com.oracle.bmc.responses.AsyncHandler<
                         GetAutoScalingPolicyRequest, GetAutoScalingPolicyResponse>
@@ -716,6 +751,11 @@ public class AutoScalingAsyncClient implements AutoScalingAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListAutoScalingConfigurationsResponse>
                 transformer = ListAutoScalingConfigurationsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "AutoScaling",
+                "ListAutoScalingConfigurations",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/autoscaling/20181001/AutoScalingConfigurationSummary/ListAutoScalingConfigurations");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListAutoScalingConfigurationsRequest, ListAutoScalingConfigurationsResponse>
@@ -758,6 +798,11 @@ public class AutoScalingAsyncClient implements AutoScalingAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListAutoScalingPoliciesResponse>
                 transformer = ListAutoScalingPoliciesConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "AutoScaling",
+                "ListAutoScalingPolicies",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/autoscaling/20181001/AutoScalingPolicySummary/ListAutoScalingPolicies");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListAutoScalingPoliciesRequest, ListAutoScalingPoliciesResponse>
@@ -802,6 +847,11 @@ public class AutoScalingAsyncClient implements AutoScalingAsync {
                         javax.ws.rs.core.Response, UpdateAutoScalingConfigurationResponse>
                 transformer = UpdateAutoScalingConfigurationConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "AutoScaling",
+                "UpdateAutoScalingConfiguration",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/autoscaling/20181001/AutoScalingConfiguration/UpdateAutoScalingConfiguration");
 
         com.oracle.bmc.responses.AsyncHandler<
                         UpdateAutoScalingConfigurationRequest,
@@ -851,6 +901,11 @@ public class AutoScalingAsyncClient implements AutoScalingAsync {
                         javax.ws.rs.core.Response, UpdateAutoScalingPolicyResponse>
                 transformer = UpdateAutoScalingPolicyConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "AutoScaling",
+                "UpdateAutoScalingPolicy",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/autoscaling/20181001/AutoScalingPolicy/UpdateAutoScalingPolicy");
 
         com.oracle.bmc.responses.AsyncHandler<
                         UpdateAutoScalingPolicyRequest, UpdateAutoScalingPolicyResponse>

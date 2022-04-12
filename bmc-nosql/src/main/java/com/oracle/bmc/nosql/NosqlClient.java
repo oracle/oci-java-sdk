@@ -476,6 +476,11 @@ public class NosqlClient implements Nosql {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Nosql",
+                "ChangeTableCompartment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/nosql-database/20190828/Table/ChangeTableCompartment");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -510,6 +515,11 @@ public class NosqlClient implements Nosql {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Nosql",
+                "CreateIndex",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/nosql-database/20190828/Index/CreateIndex");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -544,6 +554,11 @@ public class NosqlClient implements Nosql {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Nosql",
+                "CreateTable",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/nosql-database/20190828/Table/CreateTable");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -577,6 +592,11 @@ public class NosqlClient implements Nosql {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Nosql",
+                "DeleteIndex",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/nosql-database/20190828/Index/DeleteIndex");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -606,6 +626,11 @@ public class NosqlClient implements Nosql {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Nosql",
+                "DeleteRow",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/nosql-database/20190828/Row/DeleteRow");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -636,6 +661,11 @@ public class NosqlClient implements Nosql {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Nosql",
+                "DeleteTable",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/nosql-database/20190828/Table/DeleteTable");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -666,6 +696,11 @@ public class NosqlClient implements Nosql {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Nosql",
+                "DeleteWorkRequest",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/nosql-database/20190828/WorkRequest/DeleteWorkRequest");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -695,6 +730,11 @@ public class NosqlClient implements Nosql {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Nosql",
+                "GetIndex",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/nosql-database/20190828/Index/GetIndex");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -723,6 +763,11 @@ public class NosqlClient implements Nosql {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Nosql",
+                "GetRow",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/nosql-database/20190828/Row/GetRow");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -751,6 +796,11 @@ public class NosqlClient implements Nosql {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Nosql",
+                "GetTable",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/nosql-database/20190828/Table/GetTable");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -780,6 +830,11 @@ public class NosqlClient implements Nosql {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Nosql",
+                "GetWorkRequest",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/nosql-database/20190828/WorkRequest/GetWorkRequest");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -809,6 +864,11 @@ public class NosqlClient implements Nosql {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Nosql",
+                "ListIndexes",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/nosql-database/20190828/Index/ListIndexes");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -838,6 +898,11 @@ public class NosqlClient implements Nosql {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Nosql",
+                "ListTableUsage",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/nosql-database/20190828/Table/ListTableUsage");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -866,6 +931,11 @@ public class NosqlClient implements Nosql {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Nosql",
+                "ListTables",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/nosql-database/20190828/Table/ListTables");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -896,6 +966,11 @@ public class NosqlClient implements Nosql {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Nosql",
+                "ListWorkRequestErrors",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/nosql-database/20190828/WorkRequest/ListWorkRequestErrors");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -925,6 +1000,11 @@ public class NosqlClient implements Nosql {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Nosql",
+                "ListWorkRequestLogs",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/nosql-database/20190828/WorkRequest/ListWorkRequestLogs");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -954,6 +1034,11 @@ public class NosqlClient implements Nosql {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Nosql",
+                "ListWorkRequests",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/nosql-database/20190828/WorkRequest/ListWorkRequests");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -983,6 +1068,11 @@ public class NosqlClient implements Nosql {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Nosql",
+                "PrepareStatement",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/nosql-database/20190828/QueryResultCollection/PrepareStatement");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1011,6 +1101,11 @@ public class NosqlClient implements Nosql {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Nosql",
+                "Query",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/nosql-database/20190828/QueryResultCollection/Query");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1044,6 +1139,11 @@ public class NosqlClient implements Nosql {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Nosql",
+                "SummarizeStatement",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/nosql-database/20190828/QueryResultCollection/SummarizeStatement");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1072,6 +1172,11 @@ public class NosqlClient implements Nosql {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Nosql",
+                "UpdateRow",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/nosql-database/20190828/Row/UpdateRow");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1105,6 +1210,11 @@ public class NosqlClient implements Nosql {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Nosql",
+                "UpdateTable",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/nosql-database/20190828/Table/UpdateTable");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {

@@ -80,19 +80,19 @@ public class ObjectLocation {
     }
 
     /**
-     * Object Storage namespace name.
+     * The Object Storage namespace name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("namespaceName")
     String namespaceName;
 
     /**
-     * Object Storage bucket name.
+     * The Object Storage bucket name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("bucketName")
     String bucketName;
 
     /**
-     * Object Storage object name.
+     * The Object Storage object name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("objectName")
     String objectName;

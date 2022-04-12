@@ -391,6 +391,11 @@ public class ServiceManagerProxyAsyncClient implements ServiceManagerProxyAsync 
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetServiceEnvironmentResponse>
                 transformer = GetServiceEnvironmentConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ServiceManagerProxy",
+                "GetServiceEnvironment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/smp/20210914/ServiceEnvironment/GetServiceEnvironment");
 
         com.oracle.bmc.responses.AsyncHandler<
                         GetServiceEnvironmentRequest, GetServiceEnvironmentResponse>
@@ -432,6 +437,11 @@ public class ServiceManagerProxyAsyncClient implements ServiceManagerProxyAsync 
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListServiceEnvironmentsResponse>
                 transformer = ListServiceEnvironmentsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ServiceManagerProxy",
+                "ListServiceEnvironments",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/smp/20210914/ServiceEnvironment/ListServiceEnvironments");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListServiceEnvironmentsRequest, ListServiceEnvironmentsResponse>

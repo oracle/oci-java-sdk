@@ -396,6 +396,11 @@ public class AccountClient implements Account {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Account",
+                "GetLaunchEligibility",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/marketplace/20181001/LaunchEligibility/GetLaunchEligibility");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -428,6 +433,11 @@ public class AccountClient implements Account {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Account",
+                "GetThirdPartyPaidListingEligibility",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/marketplace/20181001/ThirdPartyPaidListingEligibility/GetThirdPartyPaidListingEligibility");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {

@@ -478,6 +478,11 @@ public class NotificationDataPlaneClient implements NotificationDataPlane {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "NotificationDataPlane",
+                "ChangeSubscriptionCompartment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/notification/20181201/Subscription/ChangeSubscriptionCompartment");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -513,6 +518,11 @@ public class NotificationDataPlaneClient implements NotificationDataPlane {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "NotificationDataPlane",
+                "CreateSubscription",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/notification/20181201/Subscription/CreateSubscription");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -546,6 +556,11 @@ public class NotificationDataPlaneClient implements NotificationDataPlane {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "NotificationDataPlane",
+                "DeleteSubscription",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/notification/20181201/Subscription/DeleteSubscription");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -577,6 +592,11 @@ public class NotificationDataPlaneClient implements NotificationDataPlane {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "NotificationDataPlane",
+                "GetConfirmSubscription",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/notification/20181201/Subscription/GetConfirmSubscription");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -606,6 +626,11 @@ public class NotificationDataPlaneClient implements NotificationDataPlane {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "NotificationDataPlane",
+                "GetSubscription",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/notification/20181201/Subscription/GetSubscription");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -635,6 +660,11 @@ public class NotificationDataPlaneClient implements NotificationDataPlane {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "NotificationDataPlane",
+                "GetUnsubscription",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/notification/20181201/Subscription/GetUnsubscription");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -664,6 +694,11 @@ public class NotificationDataPlaneClient implements NotificationDataPlane {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "NotificationDataPlane",
+                "ListSubscriptions",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/notification/20181201/Subscription/ListSubscriptions");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -693,6 +728,11 @@ public class NotificationDataPlaneClient implements NotificationDataPlane {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "NotificationDataPlane",
+                "PublishMessage",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/notification/20181201/NotificationTopic/PublishMessage");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -728,6 +768,11 @@ public class NotificationDataPlaneClient implements NotificationDataPlane {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "NotificationDataPlane",
+                "ResendSubscriptionConfirmation",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/notification/20181201/Subscription/ResendSubscriptionConfirmation");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -758,6 +803,11 @@ public class NotificationDataPlaneClient implements NotificationDataPlane {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "NotificationDataPlane",
+                "UpdateSubscription",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/notification/20181201/Subscription/UpdateSubscription");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {

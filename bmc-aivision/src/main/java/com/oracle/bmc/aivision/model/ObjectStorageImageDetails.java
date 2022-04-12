@@ -5,7 +5,7 @@
 package com.oracle.bmc.aivision.model;
 
 /**
- * Image residing in OCI Object Storage.
+ * The image residing in OCI Object Storage.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -97,19 +97,19 @@ public class ObjectStorageImageDetails extends ImageDetails {
     }
 
     /**
-     * Object Storage namespace.
+     * The Object Storage namespace.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("namespaceName")
     String namespaceName;
 
     /**
-     * Object Storage bucket name.
+     * The Object Storage bucket name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("bucketName")
     String bucketName;
 
     /**
-     * Object Storage object name.
+     * The Object Storage object name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("objectName")
     String objectName;

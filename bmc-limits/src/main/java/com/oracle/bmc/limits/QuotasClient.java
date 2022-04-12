@@ -475,6 +475,11 @@ public class QuotasClient implements Quotas {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Quotas",
+                "CreateQuota",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/limits/20181025/Quota/CreateQuota");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -508,6 +513,11 @@ public class QuotasClient implements Quotas {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Quotas",
+                "DeleteQuota",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/limits/20181025/Quota/DeleteQuota");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -537,6 +547,11 @@ public class QuotasClient implements Quotas {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Quotas",
+                "GetQuota",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/limits/20181025/Quota/GetQuota");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -565,6 +580,11 @@ public class QuotasClient implements Quotas {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Quotas",
+                "ListQuotas",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/limits/20181025/QuotaSummary/ListQuotas");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -594,6 +614,11 @@ public class QuotasClient implements Quotas {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Quotas",
+                "UpdateQuota",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/limits/20181025/Quota/UpdateQuota");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {

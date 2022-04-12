@@ -390,6 +390,11 @@ public class AnnouncementAsyncClient implements AnnouncementAsync {
                 GetAnnouncementConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetAnnouncementResponse>
                 transformer = GetAnnouncementConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Announcement",
+                "GetAnnouncement",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/announcements/0.0.1/Announcement/GetAnnouncement");
 
         com.oracle.bmc.responses.AsyncHandler<GetAnnouncementRequest, GetAnnouncementResponse>
                 handlerToUse = handler;
@@ -430,6 +435,11 @@ public class AnnouncementAsyncClient implements AnnouncementAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetAnnouncementUserStatusResponse>
                 transformer = GetAnnouncementUserStatusConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Announcement",
+                "GetAnnouncementUserStatus",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/announcements/0.0.1/AnnouncementUserStatusDetails/GetAnnouncementUserStatus");
 
         com.oracle.bmc.responses.AsyncHandler<
                         GetAnnouncementUserStatusRequest, GetAnnouncementUserStatusResponse>
@@ -471,6 +481,11 @@ public class AnnouncementAsyncClient implements AnnouncementAsync {
                 ListAnnouncementsConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListAnnouncementsResponse>
                 transformer = ListAnnouncementsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Announcement",
+                "ListAnnouncements",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/announcements/0.0.1/AnnouncementsCollection/ListAnnouncements");
 
         com.oracle.bmc.responses.AsyncHandler<ListAnnouncementsRequest, ListAnnouncementsResponse>
                 handlerToUse = handler;
@@ -513,6 +528,11 @@ public class AnnouncementAsyncClient implements AnnouncementAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, UpdateAnnouncementUserStatusResponse>
                 transformer = UpdateAnnouncementUserStatusConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Announcement",
+                "UpdateAnnouncementUserStatus",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/announcements/0.0.1/AnnouncementUserStatusDetails/UpdateAnnouncementUserStatus");
 
         com.oracle.bmc.responses.AsyncHandler<
                         UpdateAnnouncementUserStatusRequest, UpdateAnnouncementUserStatusResponse>

@@ -476,6 +476,11 @@ public class DataLabelingClient implements DataLabeling {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataLabeling",
+                "CreateAnnotation",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/datalabeling-dp/20211001/Annotation/CreateAnnotation");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -510,6 +515,11 @@ public class DataLabelingClient implements DataLabeling {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataLabeling",
+                "CreateRecord",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/datalabeling-dp/20211001/Record/CreateRecord");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -543,6 +553,11 @@ public class DataLabelingClient implements DataLabeling {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataLabeling",
+                "DeleteAnnotation",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/datalabeling-dp/20211001/Annotation/DeleteAnnotation");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -573,6 +588,11 @@ public class DataLabelingClient implements DataLabeling {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataLabeling",
+                "DeleteRecord",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/datalabeling-dp/20211001/Record/DeleteRecord");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -603,6 +623,11 @@ public class DataLabelingClient implements DataLabeling {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataLabeling",
+                "GetAnnotation",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/datalabeling-dp/20211001/Annotation/GetAnnotation");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -631,6 +656,11 @@ public class DataLabelingClient implements DataLabeling {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataLabeling",
+                "GetDataset",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/datalabeling-dp/20211001/Dataset/GetDataset");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -659,6 +689,11 @@ public class DataLabelingClient implements DataLabeling {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataLabeling",
+                "GetRecord",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/datalabeling-dp/20211001/Record/GetRecord");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -698,6 +733,11 @@ public class DataLabelingClient implements DataLabeling {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataLabeling",
+                "GetRecordContent",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/datalabeling-dp/20211001/Record/GetRecordContent");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -738,6 +778,11 @@ public class DataLabelingClient implements DataLabeling {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataLabeling",
+                "GetRecordPreviewContent",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/datalabeling-dp/20211001/Record/GetRecordPreviewContent");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -767,6 +812,11 @@ public class DataLabelingClient implements DataLabeling {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataLabeling",
+                "ListAnnotations",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/datalabeling-dp/20211001/AnnotationCollection/ListAnnotations");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -796,6 +846,11 @@ public class DataLabelingClient implements DataLabeling {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataLabeling",
+                "ListRecords",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/datalabeling-dp/20211001/RecordCollection/ListRecords");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -827,6 +882,11 @@ public class DataLabelingClient implements DataLabeling {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataLabeling",
+                "SummarizeAnnotationAnalytics",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/datalabeling-dp/20211001/AnnotationAnalyticsAggregationCollection/SummarizeAnnotationAnalytics");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -857,6 +917,11 @@ public class DataLabelingClient implements DataLabeling {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataLabeling",
+                "SummarizeRecordAnalytics",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/datalabeling-dp/20211001/RecordAnalyticsAggregationCollection/SummarizeRecordAnalytics");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -886,6 +951,11 @@ public class DataLabelingClient implements DataLabeling {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataLabeling",
+                "UpdateAnnotation",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/datalabeling-dp/20211001/Annotation/UpdateAnnotation");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -919,6 +989,11 @@ public class DataLabelingClient implements DataLabeling {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataLabeling",
+                "UpdateRecord",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/datalabeling-dp/20211001/Record/UpdateRecord");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {

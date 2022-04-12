@@ -188,7 +188,7 @@ public class LaunchDbSystemBase {
     String domain;
 
     /**
-     * The number of CPU cores to enable for a bare metal or Exadata DB system. The valid values depend on the specified shape:
+     * The number of CPU cores to enable for a bare metal or Exadata DB system or AMD VMDB Systems. The valid values depend on the specified shape:
      * <p>
      * - BM.DenseIO1.36 - Specify a multiple of 2, from 2 to 36.
      * - BM.DenseIO2.52 - Specify a multiple of 2, from 2 to 52.
@@ -199,8 +199,9 @@ public class LaunchDbSystemBase {
      * - Exadata.Quarter2.92 - Specify a multiple of 2, from 0 to 92.
      * - Exadata.Half2.184 - Specify a multiple of 4, from 0 to 184.
      * - Exadata.Full2.368 - Specify a multiple of 8, from 0 to 368.
+     * - VM.Standard.E4.Flex - Specify any thing from 1 to 64.
      * <p>
-     * This parameter is not used for virtual machine DB systems because virtual machine DB systems have a set number of cores for each shape.
+     * This parameter is not used for INTEL virtual machine DB systems because virtual machine DB systems have a set number of cores for each shape.
      * For information about the number of cores for a virtual machine DB system shape, see [Virtual Machine DB Systems](https://docs.cloud.oracle.com/Content/Database/Concepts/overview.htm#virtualmachine)
      *
      **/

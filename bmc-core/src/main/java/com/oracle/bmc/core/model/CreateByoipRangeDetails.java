@@ -44,6 +44,15 @@ public class CreateByoipRangeDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("ipv6CidrBlock")
+        private String ipv6CidrBlock;
+
+        public Builder ipv6CidrBlock(String ipv6CidrBlock) {
+            this.ipv6CidrBlock = ipv6CidrBlock;
+            this.__explicitlySet__.add("ipv6CidrBlock");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
@@ -78,7 +87,12 @@ public class CreateByoipRangeDetails {
         public CreateByoipRangeDetails build() {
             CreateByoipRangeDetails __instance__ =
                     new CreateByoipRangeDetails(
-                            cidrBlock, compartmentId, definedTags, displayName, freeformTags);
+                            cidrBlock,
+                            compartmentId,
+                            ipv6CidrBlock,
+                            definedTags,
+                            displayName,
+                            freeformTags);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -88,6 +102,7 @@ public class CreateByoipRangeDetails {
             Builder copiedBuilder =
                     cidrBlock(o.getCidrBlock())
                             .compartmentId(o.getCompartmentId())
+                            .ipv6CidrBlock(o.getIpv6CidrBlock())
                             .definedTags(o.getDefinedTags())
                             .displayName(o.getDisplayName())
                             .freeformTags(o.getFreeformTags());
@@ -118,6 +133,13 @@ public class CreateByoipRangeDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     String compartmentId;
+
+    /**
+     * The BYOIPv6 CIDR block. You can assign some or all of it to a VCN after it is validated.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("ipv6CidrBlock")
+    String ipv6CidrBlock;
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a

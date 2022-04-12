@@ -474,6 +474,11 @@ public class DatabaseMigrationClient implements DatabaseMigration {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DatabaseMigration",
+                "AbortJob",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database-migration/20210929/Job/AbortJob");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -504,6 +509,11 @@ public class DatabaseMigrationClient implements DatabaseMigration {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DatabaseMigration",
+                "AddMigrationObjects",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database-migration/20210929/Migration/AddMigrationObjects");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -539,6 +549,11 @@ public class DatabaseMigrationClient implements DatabaseMigration {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DatabaseMigration",
+                "ChangeAgentCompartment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database-migration/20210929/Agent/ChangeAgentCompartment");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -575,6 +590,11 @@ public class DatabaseMigrationClient implements DatabaseMigration {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DatabaseMigration",
+                "ChangeConnectionCompartment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database-migration/20210929/Connection/ChangeConnectionCompartment");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -612,6 +632,11 @@ public class DatabaseMigrationClient implements DatabaseMigration {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DatabaseMigration",
+                "ChangeMigrationCompartment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database-migration/20210929/Migration/ChangeMigrationCompartment");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -647,6 +672,11 @@ public class DatabaseMigrationClient implements DatabaseMigration {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DatabaseMigration",
+                "CloneMigration",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database-migration/20210929/Migration/CloneMigration");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -681,6 +711,8 @@ public class DatabaseMigrationClient implements DatabaseMigration {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DatabaseMigration", "CreateConnection", ib.getRequestUri().toString(), "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -715,6 +747,8 @@ public class DatabaseMigrationClient implements DatabaseMigration {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DatabaseMigration", "CreateMigration", ib.getRequestUri().toString(), "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -748,6 +782,11 @@ public class DatabaseMigrationClient implements DatabaseMigration {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DatabaseMigration",
+                "DeleteAgent",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database-migration/20210929/Agent/DeleteAgent");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -778,6 +817,11 @@ public class DatabaseMigrationClient implements DatabaseMigration {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DatabaseMigration",
+                "DeleteConnection",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database-migration/20210929/Connection/DeleteConnection");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -807,6 +851,11 @@ public class DatabaseMigrationClient implements DatabaseMigration {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DatabaseMigration",
+                "DeleteJob",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database-migration/20210929/Job/DeleteJob");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -837,6 +886,11 @@ public class DatabaseMigrationClient implements DatabaseMigration {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DatabaseMigration",
+                "DeleteMigration",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database-migration/20210929/Migration/DeleteMigration");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -868,6 +922,11 @@ public class DatabaseMigrationClient implements DatabaseMigration {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DatabaseMigration",
+                "EvaluateMigration",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database-migration/20210929/Job/EvaluateMigration");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -898,6 +957,11 @@ public class DatabaseMigrationClient implements DatabaseMigration {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DatabaseMigration",
+                "GetAdvisorReport",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database-migration/20210929/Job/GetAdvisorReport");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -926,6 +990,11 @@ public class DatabaseMigrationClient implements DatabaseMigration {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DatabaseMigration",
+                "GetAgent",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database-migration/20210929/Agent/GetAgent");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -955,6 +1024,11 @@ public class DatabaseMigrationClient implements DatabaseMigration {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DatabaseMigration",
+                "GetConnection",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database-migration/20210929/Connection/GetConnection");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -983,6 +1057,11 @@ public class DatabaseMigrationClient implements DatabaseMigration {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DatabaseMigration",
+                "GetJob",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database-migration/20210929/Job/GetJob");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1022,6 +1101,11 @@ public class DatabaseMigrationClient implements DatabaseMigration {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DatabaseMigration",
+                "GetJobOutputContent",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database-migration/20210929/Job/GetJobOutputContent");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1051,6 +1135,11 @@ public class DatabaseMigrationClient implements DatabaseMigration {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DatabaseMigration",
+                "GetMigration",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database-migration/20210929/Migration/GetMigration");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1080,6 +1169,11 @@ public class DatabaseMigrationClient implements DatabaseMigration {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DatabaseMigration",
+                "GetWorkRequest",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database-migration/20210929/WorkRequest/GetWorkRequest");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1109,6 +1203,11 @@ public class DatabaseMigrationClient implements DatabaseMigration {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DatabaseMigration",
+                "ListAgentImages",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database-migration/20210929/AgentImageSummary/ListAgentImages");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1137,6 +1236,11 @@ public class DatabaseMigrationClient implements DatabaseMigration {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DatabaseMigration",
+                "ListAgents",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database-migration/20210929/AgentSummary/ListAgents");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1166,6 +1270,11 @@ public class DatabaseMigrationClient implements DatabaseMigration {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DatabaseMigration",
+                "ListConnections",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database-migration/20210929/ConnectionSummary/ListConnections");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1195,6 +1304,11 @@ public class DatabaseMigrationClient implements DatabaseMigration {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DatabaseMigration",
+                "ListExcludedObjects",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database-migration/20210929/ExcludedObjectSummary/ListExcludedObjects");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1224,6 +1338,11 @@ public class DatabaseMigrationClient implements DatabaseMigration {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DatabaseMigration",
+                "ListJobOutputs",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database-migration/20210929/JobOutputSummary/ListJobOutputs");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1252,6 +1371,11 @@ public class DatabaseMigrationClient implements DatabaseMigration {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DatabaseMigration",
+                "ListJobs",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database-migration/20210929/JobSummary/ListJobs");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1282,6 +1406,11 @@ public class DatabaseMigrationClient implements DatabaseMigration {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DatabaseMigration",
+                "ListMigrationObjectTypes",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database-migration/20210929/MigrationObjectTypeSummary/ListMigrationObjectTypes");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1311,6 +1440,11 @@ public class DatabaseMigrationClient implements DatabaseMigration {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DatabaseMigration",
+                "ListMigrationObjects",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database-migration/20210929/MigrationObjectCollection/ListMigrationObjects");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1340,6 +1474,11 @@ public class DatabaseMigrationClient implements DatabaseMigration {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DatabaseMigration",
+                "ListMigrations",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database-migration/20210929/MigrationSummary/ListMigrations");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1370,6 +1509,11 @@ public class DatabaseMigrationClient implements DatabaseMigration {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DatabaseMigration",
+                "ListWorkRequestErrors",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database-migration/20210929/WorkRequestError/ListWorkRequestErrors");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1399,6 +1543,11 @@ public class DatabaseMigrationClient implements DatabaseMigration {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DatabaseMigration",
+                "ListWorkRequestLogs",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database-migration/20210929/WorkRequestLogEntry/ListWorkRequestLogs");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1428,6 +1577,11 @@ public class DatabaseMigrationClient implements DatabaseMigration {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DatabaseMigration",
+                "ListWorkRequests",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database-migration/20210929/WorkRequestSummary/ListWorkRequests");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1458,6 +1612,11 @@ public class DatabaseMigrationClient implements DatabaseMigration {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DatabaseMigration",
+                "RemoveMigrationObjects",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database-migration/20210929/Migration/RemoveMigrationObjects");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1491,6 +1650,11 @@ public class DatabaseMigrationClient implements DatabaseMigration {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DatabaseMigration",
+                "ResumeJob",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database-migration/20210929/Job/ResumeJob");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1525,6 +1689,11 @@ public class DatabaseMigrationClient implements DatabaseMigration {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DatabaseMigration",
+                "RetrieveSupportedPhases",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database-migration/20210929/Migration/RetrieveSupportedPhases");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1556,6 +1725,11 @@ public class DatabaseMigrationClient implements DatabaseMigration {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DatabaseMigration",
+                "StartMigration",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database-migration/20210929/Job/StartMigration");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1590,6 +1764,11 @@ public class DatabaseMigrationClient implements DatabaseMigration {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DatabaseMigration",
+                "UpdateAgent",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database-migration/20210929/Agent/UpdateAgent");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1623,6 +1802,11 @@ public class DatabaseMigrationClient implements DatabaseMigration {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DatabaseMigration",
+                "UpdateConnection",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database-migration/20210929/Connection/UpdateConnection");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1655,6 +1839,11 @@ public class DatabaseMigrationClient implements DatabaseMigration {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DatabaseMigration",
+                "UpdateJob",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database-migration/20210929/Job/UpdateJob");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1688,6 +1877,11 @@ public class DatabaseMigrationClient implements DatabaseMigration {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DatabaseMigration",
+                "UpdateMigration",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database-migration/20210929/Migration/UpdateMigration");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {

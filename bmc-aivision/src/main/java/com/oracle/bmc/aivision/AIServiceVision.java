@@ -8,7 +8,7 @@ import com.oracle.bmc.aivision.requests.*;
 import com.oracle.bmc.aivision.responses.*;
 
 /**
- * A description of the VisionService API.
+ * Using Vision, you can upload images to detect and classify objects in them. If you have lots of images, you can process them in batch using asynchronous API endpoints. Vision's features are thematically split between Document AI for document-centric images, and Image Analysis for object and scene-based images. Pretrained models and custom models are supported.
  * This service client uses CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER for all the operations by default if no circuit breaker configuration is defined by the user.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220125")
@@ -73,7 +73,7 @@ public interface AIServiceVision extends AutoCloseable {
     AnalyzeImageResponse analyzeImage(AnalyzeImageRequest request);
 
     /**
-     * Cancel a batch document job.
+     * Cancel a document batch job.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -86,7 +86,7 @@ public interface AIServiceVision extends AutoCloseable {
     CancelDocumentJobResponse cancelDocumentJob(CancelDocumentJobRequest request);
 
     /**
-     * Cancel a batch image job.
+     * Cancel an image batch job.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -99,7 +99,7 @@ public interface AIServiceVision extends AutoCloseable {
     CancelImageJobResponse cancelImageJob(CancelImageJobRequest request);
 
     /**
-     * Cancel work request with the given ID.
+     * Cancel the work request with the given ID.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -111,7 +111,7 @@ public interface AIServiceVision extends AutoCloseable {
     CancelWorkRequestResponse cancelWorkRequest(CancelWorkRequestRequest request);
 
     /**
-     * Moves a model from one compartment to another. When provided, If-Match is checked against ETag values of the resource.
+     * Moves a model from one compartment to another. When provided, If-Match is checked against the ETag values of the resource.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -123,7 +123,7 @@ public interface AIServiceVision extends AutoCloseable {
     ChangeModelCompartmentResponse changeModelCompartment(ChangeModelCompartmentRequest request);
 
     /**
-     * Moves a project from one compartment to another. When provided, If-Match is checked against ETag values of the resource.
+     * Move a project from one compartment to another. When provided, If-Match is checked against the ETag values of the resource.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -136,7 +136,7 @@ public interface AIServiceVision extends AutoCloseable {
             ChangeProjectCompartmentRequest request);
 
     /**
-     * Create a batch document analysis job
+     * Create a document analysis batch job.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -149,7 +149,7 @@ public interface AIServiceVision extends AutoCloseable {
     CreateDocumentJobResponse createDocumentJob(CreateDocumentJobRequest request);
 
     /**
-     * Create a batch image analysis job.
+     * Create an image analysis batch job.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -162,7 +162,7 @@ public interface AIServiceVision extends AutoCloseable {
     CreateImageJobResponse createImageJob(CreateImageJobRequest request);
 
     /**
-     * Creates a new model.
+     * Create a new model.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -175,7 +175,7 @@ public interface AIServiceVision extends AutoCloseable {
     CreateModelResponse createModel(CreateModelRequest request);
 
     /**
-     * Creates a new project.
+     * Create a new project.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -188,7 +188,7 @@ public interface AIServiceVision extends AutoCloseable {
     CreateProjectResponse createProject(CreateProjectRequest request);
 
     /**
-     * Deletes a model by identifier.
+     * Delete a model by identifier.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -200,7 +200,7 @@ public interface AIServiceVision extends AutoCloseable {
     DeleteModelResponse deleteModel(DeleteModelRequest request);
 
     /**
-     * Deletes a project by identifier.
+     * Delete a project by identifier.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -212,7 +212,7 @@ public interface AIServiceVision extends AutoCloseable {
     DeleteProjectResponse deleteProject(DeleteProjectRequest request);
 
     /**
-     * Get details of a batch document job.
+     * Get details of a document batch job.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -225,7 +225,7 @@ public interface AIServiceVision extends AutoCloseable {
     GetDocumentJobResponse getDocumentJob(GetDocumentJobRequest request);
 
     /**
-     * Get details of a batch image job.
+     * Get details of an image batch job.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -238,7 +238,7 @@ public interface AIServiceVision extends AutoCloseable {
     GetImageJobResponse getImageJob(GetImageJobRequest request);
 
     /**
-     * Gets a model by identifier.
+     * Get a model by identifier.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -250,7 +250,7 @@ public interface AIServiceVision extends AutoCloseable {
     GetModelResponse getModel(GetModelRequest request);
 
     /**
-     * Gets a project by identifier.
+     * Get a project by identifier.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -300,7 +300,7 @@ public interface AIServiceVision extends AutoCloseable {
     ListProjectsResponse listProjects(ListProjectsRequest request);
 
     /**
-     * Return a (paginated) list of errors for a given work request.
+     * Returns a (paginated) list of errors for a given work request.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -339,7 +339,7 @@ public interface AIServiceVision extends AutoCloseable {
     ListWorkRequestsResponse listWorkRequests(ListWorkRequestsRequest request);
 
     /**
-     * Updates model metadata.
+     * Updates the model metadata.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -351,7 +351,7 @@ public interface AIServiceVision extends AutoCloseable {
     UpdateModelResponse updateModel(UpdateModelRequest request);
 
     /**
-     * Updates project metadata.
+     * Update the project metadata.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.

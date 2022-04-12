@@ -781,6 +781,24 @@ public class AutonomousDatabase {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("maxCpuCoreCount")
+        private Integer maxCpuCoreCount;
+
+        public Builder maxCpuCoreCount(Integer maxCpuCoreCount) {
+            this.maxCpuCoreCount = maxCpuCoreCount;
+            this.__explicitlySet__.add("maxCpuCoreCount");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("databaseEdition")
+        private DatabaseEdition databaseEdition;
+
+        public Builder databaseEdition(DatabaseEdition databaseEdition) {
+            this.databaseEdition = databaseEdition;
+            this.__explicitlySet__.add("databaseEdition");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -869,7 +887,9 @@ public class AutonomousDatabase {
                             scheduledOperations,
                             isAutoScalingForStorageEnabled,
                             allocatedStorageSizeInTBs,
-                            actualUsedDataStorageSizeInTBs);
+                            actualUsedDataStorageSizeInTBs,
+                            maxCpuCoreCount,
+                            databaseEdition);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -962,7 +982,9 @@ public class AutonomousDatabase {
                             .scheduledOperations(o.getScheduledOperations())
                             .isAutoScalingForStorageEnabled(o.getIsAutoScalingForStorageEnabled())
                             .allocatedStorageSizeInTBs(o.getAllocatedStorageSizeInTBs())
-                            .actualUsedDataStorageSizeInTBs(o.getActualUsedDataStorageSizeInTBs());
+                            .actualUsedDataStorageSizeInTBs(o.getActualUsedDataStorageSizeInTBs())
+                            .maxCpuCoreCount(o.getMaxCpuCoreCount())
+                            .databaseEdition(o.getDatabaseEdition());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -1958,9 +1980,7 @@ public class AutonomousDatabase {
     java.util.Date timeOfLastFailover;
 
     /**
-     * Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to
-     * Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
-     *
+     * Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isDataGuardEnabled")
     Boolean isDataGuardEnabled;
@@ -2228,6 +2248,66 @@ public class AutonomousDatabase {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("actualUsedDataStorageSizeInTBs")
     Double actualUsedDataStorageSizeInTBs;
+
+    /**
+     * The number of Max OCPU cores to be made available to the autonomous database with auto scaling of cpu enabled.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("maxCpuCoreCount")
+    Integer maxCpuCoreCount;
+    /**
+     * The Oracle Database Edition that applies to the Autonomous databases.
+     *
+     **/
+    @lombok.extern.slf4j.Slf4j
+    public enum DatabaseEdition {
+        StandardEdition("STANDARD_EDITION"),
+        EnterpriseEdition("ENTERPRISE_EDITION"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private final String value;
+        private static java.util.Map<String, DatabaseEdition> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (DatabaseEdition v : DatabaseEdition.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        DatabaseEdition(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static DatabaseEdition create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'DatabaseEdition', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * The Oracle Database Edition that applies to the Autonomous databases.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("databaseEdition")
+    DatabaseEdition databaseEdition;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

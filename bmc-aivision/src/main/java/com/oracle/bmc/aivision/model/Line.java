@@ -5,7 +5,7 @@
 package com.oracle.bmc.aivision.model;
 
 /**
- * Line of text.
+ * The line of text.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -90,13 +90,13 @@ public class Line {
     }
 
     /**
-     * Text recognized.
+     * The text recognized.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("text")
     String text;
 
     /**
-     * Confidence score between 0 to 1.
+     * The confidence score between 0 and 1.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("confidence")
     Float confidence;
@@ -105,7 +105,7 @@ public class Line {
     BoundingPolygon boundingPolygon;
 
     /**
-     * Array of words.
+     * The array of words.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("wordIndexes")
     java.util.List<Integer> wordIndexes;

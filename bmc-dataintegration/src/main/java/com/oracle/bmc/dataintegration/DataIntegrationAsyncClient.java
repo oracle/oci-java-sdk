@@ -392,6 +392,11 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
         final com.google.common.base.Function<javax.ws.rs.core.Response, ChangeCompartmentResponse>
                 transformer = ChangeCompartmentConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "ChangeCompartment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Workspace/ChangeCompartment");
 
         com.oracle.bmc.responses.AsyncHandler<ChangeCompartmentRequest, ChangeCompartmentResponse>
                 handlerToUse = handler;
@@ -440,6 +445,11 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
                         javax.ws.rs.core.Response, ChangeDisApplicationCompartmentResponse>
                 transformer = ChangeDisApplicationCompartmentConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "ChangeDisApplicationCompartment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/DisApplication/ChangeDisApplicationCompartment");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeDisApplicationCompartmentRequest,
@@ -489,6 +499,11 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
         final com.google.common.base.Function<javax.ws.rs.core.Response, CreateApplicationResponse>
                 transformer = CreateApplicationConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "CreateApplication",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Application/CreateApplication");
 
         com.oracle.bmc.responses.AsyncHandler<CreateApplicationRequest, CreateApplicationResponse>
                 handlerToUse = handler;
@@ -534,6 +549,11 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
         final com.google.common.base.Function<javax.ws.rs.core.Response, CreateConnectionResponse>
                 transformer = CreateConnectionConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "CreateConnection",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Connection/CreateConnection");
 
         com.oracle.bmc.responses.AsyncHandler<CreateConnectionRequest, CreateConnectionResponse>
                 handlerToUse = handler;
@@ -582,6 +602,11 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
                         javax.ws.rs.core.Response, CreateConnectionValidationResponse>
                 transformer = CreateConnectionValidationConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "CreateConnectionValidation",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/ConnectionValidation/CreateConnectionValidation");
 
         com.oracle.bmc.responses.AsyncHandler<
                         CreateConnectionValidationRequest, CreateConnectionValidationResponse>
@@ -629,6 +654,11 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
         final com.google.common.base.Function<javax.ws.rs.core.Response, CreateDataAssetResponse>
                 transformer = CreateDataAssetConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "CreateDataAsset",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/DataAsset/CreateDataAsset");
 
         com.oracle.bmc.responses.AsyncHandler<CreateDataAssetRequest, CreateDataAssetResponse>
                 handlerToUse = handler;
@@ -674,6 +704,11 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
         final com.google.common.base.Function<javax.ws.rs.core.Response, CreateDataFlowResponse>
                 transformer = CreateDataFlowConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "CreateDataFlow",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/DataFlow/CreateDataFlow");
 
         com.oracle.bmc.responses.AsyncHandler<CreateDataFlowRequest, CreateDataFlowResponse>
                 handlerToUse = handler;
@@ -720,6 +755,11 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
                         javax.ws.rs.core.Response, CreateDataFlowValidationResponse>
                 transformer = CreateDataFlowValidationConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "CreateDataFlowValidation",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/DataFlowValidation/CreateDataFlowValidation");
 
         com.oracle.bmc.responses.AsyncHandler<
                         CreateDataFlowValidationRequest, CreateDataFlowValidationResponse>
@@ -767,6 +807,11 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
                         javax.ws.rs.core.Response, CreateDisApplicationResponse>
                 transformer = CreateDisApplicationConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "CreateDisApplication",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/DisApplication/CreateDisApplication");
 
         com.oracle.bmc.responses.AsyncHandler<
                         CreateDisApplicationRequest, CreateDisApplicationResponse>
@@ -813,6 +858,11 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
         final com.google.common.base.Function<javax.ws.rs.core.Response, CreateEntityShapeResponse>
                 transformer = CreateEntityShapeConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "CreateEntityShape",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/DataEntity/CreateEntityShape");
 
         com.oracle.bmc.responses.AsyncHandler<CreateEntityShapeRequest, CreateEntityShapeResponse>
                 handlerToUse = handler;
@@ -859,6 +909,11 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
                         javax.ws.rs.core.Response, CreateExternalPublicationResponse>
                 transformer = CreateExternalPublicationConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "CreateExternalPublication",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/ExternalPublication/CreateExternalPublication");
 
         com.oracle.bmc.responses.AsyncHandler<
                         CreateExternalPublicationRequest, CreateExternalPublicationResponse>
@@ -910,6 +965,11 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
                         javax.ws.rs.core.Response, CreateExternalPublicationValidationResponse>
                 transformer = CreateExternalPublicationValidationConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "CreateExternalPublicationValidation",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/ExternalPublicationValidation/CreateExternalPublicationValidation");
 
         com.oracle.bmc.responses.AsyncHandler<
                         CreateExternalPublicationValidationRequest,
@@ -958,6 +1018,11 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
         final com.google.common.base.Function<javax.ws.rs.core.Response, CreateFolderResponse>
                 transformer = CreateFolderConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "CreateFolder",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Folder/CreateFolder");
 
         com.oracle.bmc.responses.AsyncHandler<CreateFolderRequest, CreateFolderResponse>
                 handlerToUse = handler;
@@ -1004,6 +1069,11 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
                         javax.ws.rs.core.Response, CreateFunctionLibraryResponse>
                 transformer = CreateFunctionLibraryConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "CreateFunctionLibrary",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/FunctionLibrary/CreateFunctionLibrary");
 
         com.oracle.bmc.responses.AsyncHandler<
                         CreateFunctionLibraryRequest, CreateFunctionLibraryResponse>
@@ -1049,6 +1119,11 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
         final com.google.common.base.Function<javax.ws.rs.core.Response, CreatePatchResponse>
                 transformer = CreatePatchConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "CreatePatch",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Application/CreatePatch");
 
         com.oracle.bmc.responses.AsyncHandler<CreatePatchRequest, CreatePatchResponse>
                 handlerToUse = handler;
@@ -1094,6 +1169,11 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
         final com.google.common.base.Function<javax.ws.rs.core.Response, CreatePipelineResponse>
                 transformer = CreatePipelineConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "CreatePipeline",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Pipeline/CreatePipeline");
 
         com.oracle.bmc.responses.AsyncHandler<CreatePipelineRequest, CreatePipelineResponse>
                 handlerToUse = handler;
@@ -1140,6 +1220,11 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
                         javax.ws.rs.core.Response, CreatePipelineValidationResponse>
                 transformer = CreatePipelineValidationConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "CreatePipelineValidation",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/PipelineValidation/CreatePipelineValidation");
 
         com.oracle.bmc.responses.AsyncHandler<
                         CreatePipelineValidationRequest, CreatePipelineValidationResponse>
@@ -1185,6 +1270,11 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
         final com.google.common.base.Function<javax.ws.rs.core.Response, CreateProjectResponse>
                 transformer = CreateProjectConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "CreateProject",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Project/CreateProject");
 
         com.oracle.bmc.responses.AsyncHandler<CreateProjectRequest, CreateProjectResponse>
                 handlerToUse = handler;
@@ -1230,6 +1320,11 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
         final com.google.common.base.Function<javax.ws.rs.core.Response, CreateScheduleResponse>
                 transformer = CreateScheduleConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "CreateSchedule",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Schedule/CreateSchedule");
 
         com.oracle.bmc.responses.AsyncHandler<CreateScheduleRequest, CreateScheduleResponse>
                 handlerToUse = handler;
@@ -1273,6 +1368,11 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
         final com.google.common.base.Function<javax.ws.rs.core.Response, CreateTaskResponse>
                 transformer = CreateTaskConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "CreateTask",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Task/CreateTask");
 
         com.oracle.bmc.responses.AsyncHandler<CreateTaskRequest, CreateTaskResponse> handlerToUse =
                 handler;
@@ -1317,6 +1417,11 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
         final com.google.common.base.Function<javax.ws.rs.core.Response, CreateTaskRunResponse>
                 transformer = CreateTaskRunConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "CreateTaskRun",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/TaskRun/CreateTaskRun");
 
         com.oracle.bmc.responses.AsyncHandler<CreateTaskRunRequest, CreateTaskRunResponse>
                 handlerToUse = handler;
@@ -1362,6 +1467,11 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
         final com.google.common.base.Function<javax.ws.rs.core.Response, CreateTaskScheduleResponse>
                 transformer = CreateTaskScheduleConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "CreateTaskSchedule",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/TaskSchedule/CreateTaskSchedule");
 
         com.oracle.bmc.responses.AsyncHandler<CreateTaskScheduleRequest, CreateTaskScheduleResponse>
                 handlerToUse = handler;
@@ -1408,6 +1518,11 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
                         javax.ws.rs.core.Response, CreateTaskValidationResponse>
                 transformer = CreateTaskValidationConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "CreateTaskValidation",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/TaskValidation/CreateTaskValidation");
 
         com.oracle.bmc.responses.AsyncHandler<
                         CreateTaskValidationRequest, CreateTaskValidationResponse>
@@ -1455,6 +1570,11 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
                         javax.ws.rs.core.Response, CreateUserDefinedFunctionResponse>
                 transformer = CreateUserDefinedFunctionConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "CreateUserDefinedFunction",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/UserDefinedFunction/CreateUserDefinedFunction");
 
         com.oracle.bmc.responses.AsyncHandler<
                         CreateUserDefinedFunctionRequest, CreateUserDefinedFunctionResponse>
@@ -1506,6 +1626,11 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
                         javax.ws.rs.core.Response, CreateUserDefinedFunctionValidationResponse>
                 transformer = CreateUserDefinedFunctionValidationConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "CreateUserDefinedFunctionValidation",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/UserDefinedFunctionValidation/CreateUserDefinedFunctionValidation");
 
         com.oracle.bmc.responses.AsyncHandler<
                         CreateUserDefinedFunctionValidationRequest,
@@ -1555,6 +1680,11 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
         final com.google.common.base.Function<javax.ws.rs.core.Response, CreateWorkspaceResponse>
                 transformer = CreateWorkspaceConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "CreateWorkspace",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Workspace/CreateWorkspace");
 
         com.oracle.bmc.responses.AsyncHandler<CreateWorkspaceRequest, CreateWorkspaceResponse>
                 handlerToUse = handler;
@@ -1599,6 +1729,11 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
                 DeleteApplicationConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteApplicationResponse>
                 transformer = DeleteApplicationConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "DeleteApplication",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Application/DeleteApplication");
 
         com.oracle.bmc.responses.AsyncHandler<DeleteApplicationRequest, DeleteApplicationResponse>
                 handlerToUse = handler;
@@ -1638,6 +1773,11 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
                 DeleteConnectionConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteConnectionResponse>
                 transformer = DeleteConnectionConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "DeleteConnection",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Connection/DeleteConnection");
 
         com.oracle.bmc.responses.AsyncHandler<DeleteConnectionRequest, DeleteConnectionResponse>
                 handlerToUse = handler;
@@ -1680,6 +1820,11 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, DeleteConnectionValidationResponse>
                 transformer = DeleteConnectionValidationConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "DeleteConnectionValidation",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/ConnectionValidation/DeleteConnectionValidation");
 
         com.oracle.bmc.responses.AsyncHandler<
                         DeleteConnectionValidationRequest, DeleteConnectionValidationResponse>
@@ -1721,6 +1866,11 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
                 DeleteDataAssetConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteDataAssetResponse>
                 transformer = DeleteDataAssetConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "DeleteDataAsset",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/DataAsset/DeleteDataAsset");
 
         com.oracle.bmc.responses.AsyncHandler<DeleteDataAssetRequest, DeleteDataAssetResponse>
                 handlerToUse = handler;
@@ -1760,6 +1910,11 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
                 DeleteDataFlowConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteDataFlowResponse>
                 transformer = DeleteDataFlowConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "DeleteDataFlow",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/DataFlow/DeleteDataFlow");
 
         com.oracle.bmc.responses.AsyncHandler<DeleteDataFlowRequest, DeleteDataFlowResponse>
                 handlerToUse = handler;
@@ -1800,6 +1955,11 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, DeleteDataFlowValidationResponse>
                 transformer = DeleteDataFlowValidationConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "DeleteDataFlowValidation",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/DataFlowValidation/DeleteDataFlowValidation");
 
         com.oracle.bmc.responses.AsyncHandler<
                         DeleteDataFlowValidationRequest, DeleteDataFlowValidationResponse>
@@ -1841,6 +2001,11 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, DeleteDisApplicationResponse>
                 transformer = DeleteDisApplicationConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "DeleteDisApplication",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/DisApplication/DeleteDisApplication");
 
         com.oracle.bmc.responses.AsyncHandler<
                         DeleteDisApplicationRequest, DeleteDisApplicationResponse>
@@ -1882,6 +2047,11 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, DeleteExternalPublicationResponse>
                 transformer = DeleteExternalPublicationConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "DeleteExternalPublication",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/ExternalPublication/DeleteExternalPublication");
 
         com.oracle.bmc.responses.AsyncHandler<
                         DeleteExternalPublicationRequest, DeleteExternalPublicationResponse>
@@ -1927,6 +2097,11 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, DeleteExternalPublicationValidationResponse>
                 transformer = DeleteExternalPublicationValidationConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "DeleteExternalPublicationValidation",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/ExternalPublicationValidation/DeleteExternalPublicationValidation");
 
         com.oracle.bmc.responses.AsyncHandler<
                         DeleteExternalPublicationValidationRequest,
@@ -1969,6 +2144,11 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
                 DeleteFolderConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteFolderResponse>
                 transformer = DeleteFolderConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "DeleteFolder",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Folder/DeleteFolder");
 
         com.oracle.bmc.responses.AsyncHandler<DeleteFolderRequest, DeleteFolderResponse>
                 handlerToUse = handler;
@@ -2009,6 +2189,11 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, DeleteFunctionLibraryResponse>
                 transformer = DeleteFunctionLibraryConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "DeleteFunctionLibrary",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/FunctionLibrary/DeleteFunctionLibrary");
 
         com.oracle.bmc.responses.AsyncHandler<
                         DeleteFunctionLibraryRequest, DeleteFunctionLibraryResponse>
@@ -2048,6 +2233,11 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
                 DeletePatchConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, DeletePatchResponse>
                 transformer = DeletePatchConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "DeletePatch",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Application/DeletePatch");
 
         com.oracle.bmc.responses.AsyncHandler<DeletePatchRequest, DeletePatchResponse>
                 handlerToUse = handler;
@@ -2087,6 +2277,11 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
                 DeletePipelineConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, DeletePipelineResponse>
                 transformer = DeletePipelineConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "DeletePipeline",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Pipeline/DeletePipeline");
 
         com.oracle.bmc.responses.AsyncHandler<DeletePipelineRequest, DeletePipelineResponse>
                 handlerToUse = handler;
@@ -2127,6 +2322,11 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, DeletePipelineValidationResponse>
                 transformer = DeletePipelineValidationConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "DeletePipelineValidation",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/PipelineValidation/DeletePipelineValidation");
 
         com.oracle.bmc.responses.AsyncHandler<
                         DeletePipelineValidationRequest, DeletePipelineValidationResponse>
@@ -2166,6 +2366,11 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
                 DeleteProjectConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteProjectResponse>
                 transformer = DeleteProjectConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "DeleteProject",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Project/DeleteProject");
 
         com.oracle.bmc.responses.AsyncHandler<DeleteProjectRequest, DeleteProjectResponse>
                 handlerToUse = handler;
@@ -2205,6 +2410,11 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
                 DeleteScheduleConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteScheduleResponse>
                 transformer = DeleteScheduleConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "DeleteSchedule",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Schedule/DeleteSchedule");
 
         com.oracle.bmc.responses.AsyncHandler<DeleteScheduleRequest, DeleteScheduleResponse>
                 handlerToUse = handler;
@@ -2242,6 +2452,11 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
                 DeleteTaskConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteTaskResponse>
                 transformer = DeleteTaskConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "DeleteTask",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Task/DeleteTask");
 
         com.oracle.bmc.responses.AsyncHandler<DeleteTaskRequest, DeleteTaskResponse> handlerToUse =
                 handler;
@@ -2280,6 +2495,11 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
                 DeleteTaskRunConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteTaskRunResponse>
                 transformer = DeleteTaskRunConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "DeleteTaskRun",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/TaskRun/DeleteTaskRun");
 
         com.oracle.bmc.responses.AsyncHandler<DeleteTaskRunRequest, DeleteTaskRunResponse>
                 handlerToUse = handler;
@@ -2319,6 +2539,11 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
                 DeleteTaskScheduleConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteTaskScheduleResponse>
                 transformer = DeleteTaskScheduleConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "DeleteTaskSchedule",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/TaskSchedule/DeleteTaskSchedule");
 
         com.oracle.bmc.responses.AsyncHandler<DeleteTaskScheduleRequest, DeleteTaskScheduleResponse>
                 handlerToUse = handler;
@@ -2359,6 +2584,11 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, DeleteTaskValidationResponse>
                 transformer = DeleteTaskValidationConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "DeleteTaskValidation",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/TaskValidation/DeleteTaskValidation");
 
         com.oracle.bmc.responses.AsyncHandler<
                         DeleteTaskValidationRequest, DeleteTaskValidationResponse>
@@ -2400,6 +2630,11 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, DeleteUserDefinedFunctionResponse>
                 transformer = DeleteUserDefinedFunctionConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "DeleteUserDefinedFunction",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/UserDefinedFunction/DeleteUserDefinedFunction");
 
         com.oracle.bmc.responses.AsyncHandler<
                         DeleteUserDefinedFunctionRequest, DeleteUserDefinedFunctionResponse>
@@ -2445,6 +2680,11 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, DeleteUserDefinedFunctionValidationResponse>
                 transformer = DeleteUserDefinedFunctionValidationConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "DeleteUserDefinedFunctionValidation",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/UserDefinedFunctionValidation/DeleteUserDefinedFunctionValidation");
 
         com.oracle.bmc.responses.AsyncHandler<
                         DeleteUserDefinedFunctionValidationRequest,
@@ -2488,6 +2728,11 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
                 DeleteWorkspaceConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteWorkspaceResponse>
                 transformer = DeleteWorkspaceConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "DeleteWorkspace",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Workspace/DeleteWorkspace");
 
         com.oracle.bmc.responses.AsyncHandler<DeleteWorkspaceRequest, DeleteWorkspaceResponse>
                 handlerToUse = handler;
@@ -2527,6 +2772,11 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
                 GetApplicationConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetApplicationResponse>
                 transformer = GetApplicationConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "GetApplication",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Application/GetApplication");
 
         com.oracle.bmc.responses.AsyncHandler<GetApplicationRequest, GetApplicationResponse>
                 handlerToUse = handler;
@@ -2565,6 +2815,11 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
                 GetConnectionConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetConnectionResponse>
                 transformer = GetConnectionConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "GetConnection",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Connection/GetConnection");
 
         com.oracle.bmc.responses.AsyncHandler<GetConnectionRequest, GetConnectionResponse>
                 handlerToUse = handler;
@@ -2605,6 +2860,11 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetConnectionValidationResponse>
                 transformer = GetConnectionValidationConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "GetConnectionValidation",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/ConnectionValidation/GetConnectionValidation");
 
         com.oracle.bmc.responses.AsyncHandler<
                         GetConnectionValidationRequest, GetConnectionValidationResponse>
@@ -2645,6 +2905,11 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
                 GetCountStatisticConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetCountStatisticResponse>
                 transformer = GetCountStatisticConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "GetCountStatistic",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Project/GetCountStatistic");
 
         com.oracle.bmc.responses.AsyncHandler<GetCountStatisticRequest, GetCountStatisticResponse>
                 handlerToUse = handler;
@@ -2683,6 +2948,11 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
                 GetDataAssetConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetDataAssetResponse>
                 transformer = GetDataAssetConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "GetDataAsset",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/DataAsset/GetDataAsset");
 
         com.oracle.bmc.responses.AsyncHandler<GetDataAssetRequest, GetDataAssetResponse>
                 handlerToUse = handler;
@@ -2721,6 +2991,11 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
                 GetDataEntityConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetDataEntityResponse>
                 transformer = GetDataEntityConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "GetDataEntity",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/DataEntity/GetDataEntity");
 
         com.oracle.bmc.responses.AsyncHandler<GetDataEntityRequest, GetDataEntityResponse>
                 handlerToUse = handler;
@@ -2759,6 +3034,11 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
                 GetDataFlowConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetDataFlowResponse>
                 transformer = GetDataFlowConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "GetDataFlow",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/DataFlow/GetDataFlow");
 
         com.oracle.bmc.responses.AsyncHandler<GetDataFlowRequest, GetDataFlowResponse>
                 handlerToUse = handler;
@@ -2799,6 +3079,11 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetDataFlowValidationResponse>
                 transformer = GetDataFlowValidationConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "GetDataFlowValidation",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/DataFlowValidation/GetDataFlowValidation");
 
         com.oracle.bmc.responses.AsyncHandler<
                         GetDataFlowValidationRequest, GetDataFlowValidationResponse>
@@ -2839,6 +3124,11 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
                 GetDependentObjectConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetDependentObjectResponse>
                 transformer = GetDependentObjectConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "GetDependentObject",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Application/GetDependentObject");
 
         com.oracle.bmc.responses.AsyncHandler<GetDependentObjectRequest, GetDependentObjectResponse>
                 handlerToUse = handler;
@@ -2878,6 +3168,11 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
                 GetDisApplicationConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetDisApplicationResponse>
                 transformer = GetDisApplicationConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "GetDisApplication",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/DisApplication/GetDisApplication");
 
         com.oracle.bmc.responses.AsyncHandler<GetDisApplicationRequest, GetDisApplicationResponse>
                 handlerToUse = handler;
@@ -2918,6 +3213,11 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetExternalPublicationResponse>
                 transformer = GetExternalPublicationConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "GetExternalPublication",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/ExternalPublication/GetExternalPublication");
 
         com.oracle.bmc.responses.AsyncHandler<
                         GetExternalPublicationRequest, GetExternalPublicationResponse>
@@ -2961,6 +3261,11 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetExternalPublicationValidationResponse>
                 transformer = GetExternalPublicationValidationConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "GetExternalPublicationValidation",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/ExternalPublicationValidation/GetExternalPublicationValidation");
 
         com.oracle.bmc.responses.AsyncHandler<
                         GetExternalPublicationValidationRequest,
@@ -3002,6 +3307,11 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
                 GetFolderConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetFolderResponse>
                 transformer = GetFolderConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "GetFolder",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Folder/GetFolder");
 
         com.oracle.bmc.responses.AsyncHandler<GetFolderRequest, GetFolderResponse> handlerToUse =
                 handler;
@@ -3040,6 +3350,11 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
                 GetFunctionLibraryConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetFunctionLibraryResponse>
                 transformer = GetFunctionLibraryConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "GetFunctionLibrary",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/FunctionLibrary/GetFunctionLibrary");
 
         com.oracle.bmc.responses.AsyncHandler<GetFunctionLibraryRequest, GetFunctionLibraryResponse>
                 handlerToUse = handler;
@@ -3077,6 +3392,11 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
                 GetPatchConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetPatchResponse>
                 transformer = GetPatchConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "GetPatch",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Application/GetPatch");
 
         com.oracle.bmc.responses.AsyncHandler<GetPatchRequest, GetPatchResponse> handlerToUse =
                 handler;
@@ -3114,6 +3434,11 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
                 GetPipelineConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetPipelineResponse>
                 transformer = GetPipelineConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "GetPipeline",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Pipeline/GetPipeline");
 
         com.oracle.bmc.responses.AsyncHandler<GetPipelineRequest, GetPipelineResponse>
                 handlerToUse = handler;
@@ -3154,6 +3479,11 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetPipelineValidationResponse>
                 transformer = GetPipelineValidationConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "GetPipelineValidation",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/PipelineValidation/GetPipelineValidation");
 
         com.oracle.bmc.responses.AsyncHandler<
                         GetPipelineValidationRequest, GetPipelineValidationResponse>
@@ -3192,6 +3522,11 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
                 GetProjectConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetProjectResponse>
                 transformer = GetProjectConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "GetProject",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Project/GetProject");
 
         com.oracle.bmc.responses.AsyncHandler<GetProjectRequest, GetProjectResponse> handlerToUse =
                 handler;
@@ -3231,6 +3566,11 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
                 GetPublishedObjectConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetPublishedObjectResponse>
                 transformer = GetPublishedObjectConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "GetPublishedObject",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Application/GetPublishedObject");
 
         com.oracle.bmc.responses.AsyncHandler<GetPublishedObjectRequest, GetPublishedObjectResponse>
                 handlerToUse = handler;
@@ -3269,6 +3609,11 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
                 GetReferenceConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetReferenceResponse>
                 transformer = GetReferenceConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "GetReference",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Reference/GetReference");
 
         com.oracle.bmc.responses.AsyncHandler<GetReferenceRequest, GetReferenceResponse>
                 handlerToUse = handler;
@@ -3307,6 +3652,11 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
                 GetScheduleConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetScheduleResponse>
                 transformer = GetScheduleConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "GetSchedule",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Schedule/GetSchedule");
 
         com.oracle.bmc.responses.AsyncHandler<GetScheduleRequest, GetScheduleResponse>
                 handlerToUse = handler;
@@ -3344,6 +3694,11 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
                 GetSchemaConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetSchemaResponse>
                 transformer = GetSchemaConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "GetSchema",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Schema/GetSchema");
 
         com.oracle.bmc.responses.AsyncHandler<GetSchemaRequest, GetSchemaResponse> handlerToUse =
                 handler;
@@ -3379,6 +3734,11 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
                 GetTaskConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetTaskResponse>
                 transformer = GetTaskConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "GetTask",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Task/GetTask");
 
         com.oracle.bmc.responses.AsyncHandler<GetTaskRequest, GetTaskResponse> handlerToUse =
                 handler;
@@ -3415,6 +3775,11 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
                 GetTaskRunConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetTaskRunResponse>
                 transformer = GetTaskRunConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "GetTaskRun",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/TaskRun/GetTaskRun");
 
         com.oracle.bmc.responses.AsyncHandler<GetTaskRunRequest, GetTaskRunResponse> handlerToUse =
                 handler;
@@ -3454,6 +3819,11 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
                 GetTaskScheduleConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetTaskScheduleResponse>
                 transformer = GetTaskScheduleConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "GetTaskSchedule",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/TaskSchedule/GetTaskSchedule");
 
         com.oracle.bmc.responses.AsyncHandler<GetTaskScheduleRequest, GetTaskScheduleResponse>
                 handlerToUse = handler;
@@ -3493,6 +3863,11 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
                 GetTaskValidationConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetTaskValidationResponse>
                 transformer = GetTaskValidationConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "GetTaskValidation",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/TaskValidation/GetTaskValidation");
 
         com.oracle.bmc.responses.AsyncHandler<GetTaskValidationRequest, GetTaskValidationResponse>
                 handlerToUse = handler;
@@ -3533,6 +3908,11 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetUserDefinedFunctionResponse>
                 transformer = GetUserDefinedFunctionConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "GetUserDefinedFunction",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/UserDefinedFunction/GetUserDefinedFunction");
 
         com.oracle.bmc.responses.AsyncHandler<
                         GetUserDefinedFunctionRequest, GetUserDefinedFunctionResponse>
@@ -3576,6 +3956,11 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetUserDefinedFunctionValidationResponse>
                 transformer = GetUserDefinedFunctionValidationConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "GetUserDefinedFunctionValidation",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/UserDefinedFunctionValidation/GetUserDefinedFunctionValidation");
 
         com.oracle.bmc.responses.AsyncHandler<
                         GetUserDefinedFunctionValidationRequest,
@@ -3619,6 +4004,11 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
                 GetWorkRequestConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetWorkRequestResponse>
                 transformer = GetWorkRequestConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "GetWorkRequest",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/WorkRequest/GetWorkRequest");
 
         com.oracle.bmc.responses.AsyncHandler<GetWorkRequestRequest, GetWorkRequestResponse>
                 handlerToUse = handler;
@@ -3657,6 +4047,11 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
                 GetWorkspaceConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetWorkspaceResponse>
                 transformer = GetWorkspaceConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "GetWorkspace",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Workspace/GetWorkspace");
 
         com.oracle.bmc.responses.AsyncHandler<GetWorkspaceRequest, GetWorkspaceResponse>
                 handlerToUse = handler;
@@ -3696,6 +4091,11 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
                 ListApplicationsConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListApplicationsResponse>
                 transformer = ListApplicationsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "ListApplications",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Application/ListApplications");
 
         com.oracle.bmc.responses.AsyncHandler<ListApplicationsRequest, ListApplicationsResponse>
                 handlerToUse = handler;
@@ -3736,6 +4136,11 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListConnectionValidationsResponse>
                 transformer = ListConnectionValidationsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "ListConnectionValidations",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/ConnectionValidation/ListConnectionValidations");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListConnectionValidationsRequest, ListConnectionValidationsResponse>
@@ -3777,6 +4182,11 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
                 ListConnectionsConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListConnectionsResponse>
                 transformer = ListConnectionsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "ListConnections",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Connection/ListConnections");
 
         com.oracle.bmc.responses.AsyncHandler<ListConnectionsRequest, ListConnectionsResponse>
                 handlerToUse = handler;
@@ -3816,6 +4226,11 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
                 ListDataAssetsConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListDataAssetsResponse>
                 transformer = ListDataAssetsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "ListDataAssets",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/DataAsset/ListDataAssets");
 
         com.oracle.bmc.responses.AsyncHandler<ListDataAssetsRequest, ListDataAssetsResponse>
                 handlerToUse = handler;
@@ -3855,6 +4270,11 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
                 ListDataEntitiesConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListDataEntitiesResponse>
                 transformer = ListDataEntitiesConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "ListDataEntities",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/DataEntity/ListDataEntities");
 
         com.oracle.bmc.responses.AsyncHandler<ListDataEntitiesRequest, ListDataEntitiesResponse>
                 handlerToUse = handler;
@@ -3895,6 +4315,11 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListDataFlowValidationsResponse>
                 transformer = ListDataFlowValidationsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "ListDataFlowValidations",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/DataFlowValidation/ListDataFlowValidations");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListDataFlowValidationsRequest, ListDataFlowValidationsResponse>
@@ -3934,6 +4359,11 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
                 ListDataFlowsConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListDataFlowsResponse>
                 transformer = ListDataFlowsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "ListDataFlows",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/DataFlow/ListDataFlows");
 
         com.oracle.bmc.responses.AsyncHandler<ListDataFlowsRequest, ListDataFlowsResponse>
                 handlerToUse = handler;
@@ -3974,6 +4404,11 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListDependentObjectsResponse>
                 transformer = ListDependentObjectsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "ListDependentObjects",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Application/ListDependentObjects");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListDependentObjectsRequest, ListDependentObjectsResponse>
@@ -4015,6 +4450,11 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListDisApplicationsResponse>
                 transformer = ListDisApplicationsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "ListDisApplications",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/DisApplication/ListDisApplications");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListDisApplicationsRequest, ListDisApplicationsResponse>
@@ -4058,6 +4498,11 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListExternalPublicationValidationsResponse>
                 transformer = ListExternalPublicationValidationsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "ListExternalPublicationValidations",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/ExternalPublicationValidation/ListExternalPublicationValidations");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListExternalPublicationValidationsRequest,
@@ -4102,6 +4547,11 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListExternalPublicationsResponse>
                 transformer = ListExternalPublicationsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "ListExternalPublications",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/ExternalPublication/ListExternalPublications");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListExternalPublicationsRequest, ListExternalPublicationsResponse>
@@ -4141,6 +4591,11 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
                 ListFoldersConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListFoldersResponse>
                 transformer = ListFoldersConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "ListFolders",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Folder/ListFolders");
 
         com.oracle.bmc.responses.AsyncHandler<ListFoldersRequest, ListFoldersResponse>
                 handlerToUse = handler;
@@ -4181,6 +4636,11 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListFunctionLibrariesResponse>
                 transformer = ListFunctionLibrariesConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "ListFunctionLibraries",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/FunctionLibrary/ListFunctionLibraries");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListFunctionLibrariesRequest, ListFunctionLibrariesResponse>
@@ -4221,6 +4681,11 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
                 ListPatchChangesConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListPatchChangesResponse>
                 transformer = ListPatchChangesConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "ListPatchChanges",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Application/ListPatchChanges");
 
         com.oracle.bmc.responses.AsyncHandler<ListPatchChangesRequest, ListPatchChangesResponse>
                 handlerToUse = handler;
@@ -4259,6 +4724,11 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
                 ListPatchesConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListPatchesResponse>
                 transformer = ListPatchesConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "ListPatches",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Application/ListPatches");
 
         com.oracle.bmc.responses.AsyncHandler<ListPatchesRequest, ListPatchesResponse>
                 handlerToUse = handler;
@@ -4299,6 +4769,11 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListPipelineValidationsResponse>
                 transformer = ListPipelineValidationsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "ListPipelineValidations",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/PipelineValidation/ListPipelineValidations");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListPipelineValidationsRequest, ListPipelineValidationsResponse>
@@ -4338,6 +4813,11 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
                 ListPipelinesConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListPipelinesResponse>
                 transformer = ListPipelinesConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "ListPipelines",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Pipeline/ListPipelines");
 
         com.oracle.bmc.responses.AsyncHandler<ListPipelinesRequest, ListPipelinesResponse>
                 handlerToUse = handler;
@@ -4376,6 +4856,11 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
                 ListProjectsConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListProjectsResponse>
                 transformer = ListProjectsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "ListProjects",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Project/ListProjects");
 
         com.oracle.bmc.responses.AsyncHandler<ListProjectsRequest, ListProjectsResponse>
                 handlerToUse = handler;
@@ -4416,6 +4901,11 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListPublishedObjectsResponse>
                 transformer = ListPublishedObjectsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "ListPublishedObjects",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Application/ListPublishedObjects");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListPublishedObjectsRequest, ListPublishedObjectsResponse>
@@ -4456,6 +4946,11 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
                 ListReferencesConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListReferencesResponse>
                 transformer = ListReferencesConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "ListReferences",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Reference/ListReferences");
 
         com.oracle.bmc.responses.AsyncHandler<ListReferencesRequest, ListReferencesResponse>
                 handlerToUse = handler;
@@ -4494,6 +4989,11 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
                 ListSchedulesConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListSchedulesResponse>
                 transformer = ListSchedulesConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "ListSchedules",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Schedule/ListSchedules");
 
         com.oracle.bmc.responses.AsyncHandler<ListSchedulesRequest, ListSchedulesResponse>
                 handlerToUse = handler;
@@ -4532,6 +5032,11 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
                 ListSchemasConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListSchemasResponse>
                 transformer = ListSchemasConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "ListSchemas",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Schema/ListSchemas");
 
         com.oracle.bmc.responses.AsyncHandler<ListSchemasRequest, ListSchemasResponse>
                 handlerToUse = handler;
@@ -4571,6 +5076,11 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
                 ListTaskRunLogsConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListTaskRunLogsResponse>
                 transformer = ListTaskRunLogsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "ListTaskRunLogs",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/TaskRunLogSummary/ListTaskRunLogs");
 
         com.oracle.bmc.responses.AsyncHandler<ListTaskRunLogsRequest, ListTaskRunLogsResponse>
                 handlerToUse = handler;
@@ -4609,6 +5119,11 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
                 ListTaskRunsConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListTaskRunsResponse>
                 transformer = ListTaskRunsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "ListTaskRuns",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/TaskRun/ListTaskRuns");
 
         com.oracle.bmc.responses.AsyncHandler<ListTaskRunsRequest, ListTaskRunsResponse>
                 handlerToUse = handler;
@@ -4648,6 +5163,11 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
                 ListTaskSchedulesConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListTaskSchedulesResponse>
                 transformer = ListTaskSchedulesConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "ListTaskSchedules",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/TaskSchedule/ListTaskSchedules");
 
         com.oracle.bmc.responses.AsyncHandler<ListTaskSchedulesRequest, ListTaskSchedulesResponse>
                 handlerToUse = handler;
@@ -4688,6 +5208,11 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListTaskValidationsResponse>
                 transformer = ListTaskValidationsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "ListTaskValidations",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/TaskValidation/ListTaskValidations");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListTaskValidationsRequest, ListTaskValidationsResponse>
@@ -4726,6 +5251,11 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
                 ListTasksConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListTasksResponse>
                 transformer = ListTasksConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "ListTasks",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Task/ListTasks");
 
         com.oracle.bmc.responses.AsyncHandler<ListTasksRequest, ListTasksResponse> handlerToUse =
                 handler;
@@ -4767,6 +5297,11 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListUserDefinedFunctionValidationsResponse>
                 transformer = ListUserDefinedFunctionValidationsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "ListUserDefinedFunctionValidations",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/UserDefinedFunctionValidation/ListUserDefinedFunctionValidations");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListUserDefinedFunctionValidationsRequest,
@@ -4811,6 +5346,11 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListUserDefinedFunctionsResponse>
                 transformer = ListUserDefinedFunctionsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "ListUserDefinedFunctions",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/UserDefinedFunction/ListUserDefinedFunctions");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListUserDefinedFunctionsRequest, ListUserDefinedFunctionsResponse>
@@ -4852,6 +5392,11 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListWorkRequestErrorsResponse>
                 transformer = ListWorkRequestErrorsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "ListWorkRequestErrors",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/WorkRequest/ListWorkRequestErrors");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListWorkRequestErrorsRequest, ListWorkRequestErrorsResponse>
@@ -4893,6 +5438,11 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListWorkRequestLogsResponse>
                 transformer = ListWorkRequestLogsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "ListWorkRequestLogs",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/WorkRequest/ListWorkRequestLogs");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListWorkRequestLogsRequest, ListWorkRequestLogsResponse>
@@ -4933,6 +5483,11 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
                 ListWorkRequestsConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListWorkRequestsResponse>
                 transformer = ListWorkRequestsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "ListWorkRequests",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/WorkRequest/ListWorkRequests");
 
         com.oracle.bmc.responses.AsyncHandler<ListWorkRequestsRequest, ListWorkRequestsResponse>
                 handlerToUse = handler;
@@ -4972,6 +5527,11 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
                 ListWorkspacesConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListWorkspacesResponse>
                 transformer = ListWorkspacesConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "ListWorkspaces",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Workspace/ListWorkspaces");
 
         com.oracle.bmc.responses.AsyncHandler<ListWorkspacesRequest, ListWorkspacesResponse>
                 handlerToUse = handler;
@@ -5012,6 +5572,11 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
         final com.google.common.base.Function<javax.ws.rs.core.Response, StartWorkspaceResponse>
                 transformer = StartWorkspaceConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "StartWorkspace",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Workspace/StartWorkspace");
 
         com.oracle.bmc.responses.AsyncHandler<StartWorkspaceRequest, StartWorkspaceResponse>
                 handlerToUse = handler;
@@ -5051,6 +5616,11 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
         final com.google.common.base.Function<javax.ws.rs.core.Response, StopWorkspaceResponse>
                 transformer = StopWorkspaceConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "StopWorkspace",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Workspace/StopWorkspace");
 
         com.oracle.bmc.responses.AsyncHandler<StopWorkspaceRequest, StopWorkspaceResponse>
                 handlerToUse = handler;
@@ -5090,6 +5660,11 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
                 UpdateApplicationConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateApplicationResponse>
                 transformer = UpdateApplicationConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "UpdateApplication",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Application/UpdateApplication");
 
         com.oracle.bmc.responses.AsyncHandler<UpdateApplicationRequest, UpdateApplicationResponse>
                 handlerToUse = handler;
@@ -5134,6 +5709,11 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
                 UpdateConnectionConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateConnectionResponse>
                 transformer = UpdateConnectionConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "UpdateConnection",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Connection/UpdateConnection");
 
         com.oracle.bmc.responses.AsyncHandler<UpdateConnectionRequest, UpdateConnectionResponse>
                 handlerToUse = handler;
@@ -5178,6 +5758,11 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
                 UpdateDataAssetConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateDataAssetResponse>
                 transformer = UpdateDataAssetConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "UpdateDataAsset",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/DataAsset/UpdateDataAsset");
 
         com.oracle.bmc.responses.AsyncHandler<UpdateDataAssetRequest, UpdateDataAssetResponse>
                 handlerToUse = handler;
@@ -5222,6 +5807,11 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
                 UpdateDataFlowConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateDataFlowResponse>
                 transformer = UpdateDataFlowConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "UpdateDataFlow",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/DataFlow/UpdateDataFlow");
 
         com.oracle.bmc.responses.AsyncHandler<UpdateDataFlowRequest, UpdateDataFlowResponse>
                 handlerToUse = handler;
@@ -5267,6 +5857,11 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, UpdateDisApplicationResponse>
                 transformer = UpdateDisApplicationConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "UpdateDisApplication",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/DisApplication/UpdateDisApplication");
 
         com.oracle.bmc.responses.AsyncHandler<
                         UpdateDisApplicationRequest, UpdateDisApplicationResponse>
@@ -5313,6 +5908,11 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, UpdateExternalPublicationResponse>
                 transformer = UpdateExternalPublicationConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "UpdateExternalPublication",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/ExternalPublication/UpdateExternalPublication");
 
         com.oracle.bmc.responses.AsyncHandler<
                         UpdateExternalPublicationRequest, UpdateExternalPublicationResponse>
@@ -5358,6 +5958,11 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
                 UpdateFolderConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateFolderResponse>
                 transformer = UpdateFolderConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "UpdateFolder",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Folder/UpdateFolder");
 
         com.oracle.bmc.responses.AsyncHandler<UpdateFolderRequest, UpdateFolderResponse>
                 handlerToUse = handler;
@@ -5403,6 +6008,11 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, UpdateFunctionLibraryResponse>
                 transformer = UpdateFunctionLibraryConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "UpdateFunctionLibrary",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/FunctionLibrary/UpdateFunctionLibrary");
 
         com.oracle.bmc.responses.AsyncHandler<
                         UpdateFunctionLibraryRequest, UpdateFunctionLibraryResponse>
@@ -5448,6 +6058,11 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
                 UpdatePipelineConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, UpdatePipelineResponse>
                 transformer = UpdatePipelineConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "UpdatePipeline",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Pipeline/UpdatePipeline");
 
         com.oracle.bmc.responses.AsyncHandler<UpdatePipelineRequest, UpdatePipelineResponse>
                 handlerToUse = handler;
@@ -5491,6 +6106,11 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
                 UpdateProjectConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateProjectResponse>
                 transformer = UpdateProjectConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "UpdateProject",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Project/UpdateProject");
 
         com.oracle.bmc.responses.AsyncHandler<UpdateProjectRequest, UpdateProjectResponse>
                 handlerToUse = handler;
@@ -5536,6 +6156,11 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
         final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateReferenceResponse>
                 transformer = UpdateReferenceConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "UpdateReference",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Reference/UpdateReference");
 
         com.oracle.bmc.responses.AsyncHandler<UpdateReferenceRequest, UpdateReferenceResponse>
                 handlerToUse = handler;
@@ -5580,6 +6205,11 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
                 UpdateScheduleConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateScheduleResponse>
                 transformer = UpdateScheduleConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "UpdateSchedule",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Schedule/UpdateSchedule");
 
         com.oracle.bmc.responses.AsyncHandler<UpdateScheduleRequest, UpdateScheduleResponse>
                 handlerToUse = handler;
@@ -5622,6 +6252,11 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
                 UpdateTaskConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateTaskResponse>
                 transformer = UpdateTaskConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "UpdateTask",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Task/UpdateTask");
 
         com.oracle.bmc.responses.AsyncHandler<UpdateTaskRequest, UpdateTaskResponse> handlerToUse =
                 handler;
@@ -5665,6 +6300,11 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
                 UpdateTaskRunConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateTaskRunResponse>
                 transformer = UpdateTaskRunConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "UpdateTaskRun",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/TaskRun/UpdateTaskRun");
 
         com.oracle.bmc.responses.AsyncHandler<UpdateTaskRunRequest, UpdateTaskRunResponse>
                 handlerToUse = handler;
@@ -5709,6 +6349,11 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
                 UpdateTaskScheduleConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateTaskScheduleResponse>
                 transformer = UpdateTaskScheduleConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "UpdateTaskSchedule",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/TaskSchedule/UpdateTaskSchedule");
 
         com.oracle.bmc.responses.AsyncHandler<UpdateTaskScheduleRequest, UpdateTaskScheduleResponse>
                 handlerToUse = handler;
@@ -5754,6 +6399,11 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, UpdateUserDefinedFunctionResponse>
                 transformer = UpdateUserDefinedFunctionConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "UpdateUserDefinedFunction",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/UserDefinedFunction/UpdateUserDefinedFunction");
 
         com.oracle.bmc.responses.AsyncHandler<
                         UpdateUserDefinedFunctionRequest, UpdateUserDefinedFunctionResponse>
@@ -5800,6 +6450,11 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
                 UpdateWorkspaceConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateWorkspaceResponse>
                 transformer = UpdateWorkspaceConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "UpdateWorkspace",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Workspace/UpdateWorkspace");
 
         com.oracle.bmc.responses.AsyncHandler<UpdateWorkspaceRequest, UpdateWorkspaceResponse>
                 handlerToUse = handler;

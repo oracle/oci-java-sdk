@@ -51,6 +51,33 @@ public class CreateVcnDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("ipv6PrivateCidrBlocks")
+        private java.util.List<String> ipv6PrivateCidrBlocks;
+
+        public Builder ipv6PrivateCidrBlocks(java.util.List<String> ipv6PrivateCidrBlocks) {
+            this.ipv6PrivateCidrBlocks = ipv6PrivateCidrBlocks;
+            this.__explicitlySet__.add("ipv6PrivateCidrBlocks");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("isOracleGuaAllocationEnabled")
+        private Boolean isOracleGuaAllocationEnabled;
+
+        public Builder isOracleGuaAllocationEnabled(Boolean isOracleGuaAllocationEnabled) {
+            this.isOracleGuaAllocationEnabled = isOracleGuaAllocationEnabled;
+            this.__explicitlySet__.add("isOracleGuaAllocationEnabled");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("byoipv6CidrDetails")
+        private java.util.List<Byoipv6CidrDetails> byoipv6CidrDetails;
+
+        public Builder byoipv6CidrDetails(java.util.List<Byoipv6CidrDetails> byoipv6CidrDetails) {
+            this.byoipv6CidrDetails = byoipv6CidrDetails;
+            this.__explicitlySet__.add("byoipv6CidrDetails");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
@@ -106,6 +133,9 @@ public class CreateVcnDetails {
                             cidrBlock,
                             cidrBlocks,
                             compartmentId,
+                            ipv6PrivateCidrBlocks,
+                            isOracleGuaAllocationEnabled,
+                            byoipv6CidrDetails,
                             definedTags,
                             displayName,
                             dnsLabel,
@@ -121,6 +151,9 @@ public class CreateVcnDetails {
                     cidrBlock(o.getCidrBlock())
                             .cidrBlocks(o.getCidrBlocks())
                             .compartmentId(o.getCompartmentId())
+                            .ipv6PrivateCidrBlocks(o.getIpv6PrivateCidrBlocks())
+                            .isOracleGuaAllocationEnabled(o.getIsOracleGuaAllocationEnabled())
+                            .byoipv6CidrDetails(o.getByoipv6CidrDetails())
                             .definedTags(o.getDefinedTags())
                             .displayName(o.getDisplayName())
                             .dnsLabel(o.getDnsLabel())
@@ -164,6 +197,33 @@ public class CreateVcnDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     String compartmentId;
+
+    /**
+     * The list of one or more ULA or Private IPv6 CIDR blocks for the vcn that meets the following criteria:
+     * - The CIDR blocks must be valid.
+     * - Multiple CIDR blocks must not overlap each other or the on-premises network CIDR block.
+     * - The number of CIDR blocks must not exceed the limit of IPv6 CIDR blocks allowed to a vcn.
+     * <p>
+     **Important:** Do *not* specify a value for {@code ipv6CidrBlock}. Use this parameter instead.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("ipv6PrivateCidrBlocks")
+    java.util.List<String> ipv6PrivateCidrBlocks;
+
+    /**
+     * Specifies whether to skip Oracle allocated IPv6 GUA. By default, Oracle will allocate one GUA of /56
+     * size for an IPv6 enabled VCN.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isOracleGuaAllocationEnabled")
+    Boolean isOracleGuaAllocationEnabled;
+
+    /**
+     * The list of BYOIPv6 OCIDs and BYOIPv6 CIDR blocks required to create a VCN that uses BYOIPv6 ranges.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("byoipv6CidrDetails")
+    java.util.List<Byoipv6CidrDetails> byoipv6CidrDetails;
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a
@@ -217,6 +277,7 @@ public class CreateVcnDetails {
     /**
      * Whether IPv6 is enabled for the VCN. Default is {@code false}.
      * If enabled, Oracle will assign the VCN a IPv6 /56 CIDR block.
+     * You may skip having Oracle allocate the VCN a IPv6 /56 CIDR block by setting isOracleGuaAllocationEnabled to {@code false}.
      * For important details about IPv6 addressing in a VCN, see [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
      * <p>
      * Example: {@code true}

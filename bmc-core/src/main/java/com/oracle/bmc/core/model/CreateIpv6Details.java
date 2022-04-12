@@ -72,13 +72,27 @@ public class CreateIpv6Details {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("ipv6SubnetCidr")
+        private String ipv6SubnetCidr;
+
+        public Builder ipv6SubnetCidr(String ipv6SubnetCidr) {
+            this.ipv6SubnetCidr = ipv6SubnetCidr;
+            this.__explicitlySet__.add("ipv6SubnetCidr");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CreateIpv6Details build() {
             CreateIpv6Details __instance__ =
                     new CreateIpv6Details(
-                            definedTags, displayName, freeformTags, ipAddress, vnicId);
+                            definedTags,
+                            displayName,
+                            freeformTags,
+                            ipAddress,
+                            vnicId,
+                            ipv6SubnetCidr);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -90,7 +104,8 @@ public class CreateIpv6Details {
                             .displayName(o.getDisplayName())
                             .freeformTags(o.getFreeformTags())
                             .ipAddress(o.getIpAddress())
-                            .vnicId(o.getVnicId());
+                            .vnicId(o.getVnicId())
+                            .ipv6SubnetCidr(o.getIpv6SubnetCidr());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -151,6 +166,13 @@ public class CreateIpv6Details {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("vnicId")
     String vnicId;
+
+    /**
+     * The IPv6 CIDR allocated to the subnet. This is required if more than one IPv6 CIDR exists on the subnet.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("ipv6SubnetCidr")
+    String ipv6SubnetCidr;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

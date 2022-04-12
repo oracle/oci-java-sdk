@@ -392,6 +392,11 @@ public class OsManagementAsyncClient implements OsManagementAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, AddPackagesToSoftwareSourceResponse>
                 transformer = AddPackagesToSoftwareSourceConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "OsManagement",
+                "AddPackagesToSoftwareSource",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/SoftwareSource/AddPackagesToSoftwareSource");
 
         com.oracle.bmc.responses.AsyncHandler<
                         AddPackagesToSoftwareSourceRequest, AddPackagesToSoftwareSourceResponse>
@@ -444,6 +449,11 @@ public class OsManagementAsyncClient implements OsManagementAsync {
                         AttachChildSoftwareSourceToManagedInstanceResponse>
                 transformer = AttachChildSoftwareSourceToManagedInstanceConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "OsManagement",
+                "AttachChildSoftwareSourceToManagedInstance",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstance/AttachChildSoftwareSourceToManagedInstance");
 
         com.oracle.bmc.responses.AsyncHandler<
                         AttachChildSoftwareSourceToManagedInstanceRequest,
@@ -500,6 +510,11 @@ public class OsManagementAsyncClient implements OsManagementAsync {
                         AttachManagedInstanceToManagedInstanceGroupResponse>
                 transformer = AttachManagedInstanceToManagedInstanceGroupConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "OsManagement",
+                "AttachManagedInstanceToManagedInstanceGroup",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstanceGroup/AttachManagedInstanceToManagedInstanceGroup");
 
         com.oracle.bmc.responses.AsyncHandler<
                         AttachManagedInstanceToManagedInstanceGroupRequest,
@@ -550,6 +565,11 @@ public class OsManagementAsyncClient implements OsManagementAsync {
                         AttachParentSoftwareSourceToManagedInstanceResponse>
                 transformer = AttachParentSoftwareSourceToManagedInstanceConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "OsManagement",
+                "AttachParentSoftwareSourceToManagedInstance",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstance/AttachParentSoftwareSourceToManagedInstance");
 
         com.oracle.bmc.responses.AsyncHandler<
                         AttachParentSoftwareSourceToManagedInstanceRequest,
@@ -605,6 +625,11 @@ public class OsManagementAsyncClient implements OsManagementAsync {
                         javax.ws.rs.core.Response, ChangeManagedInstanceGroupCompartmentResponse>
                 transformer = ChangeManagedInstanceGroupCompartmentConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "OsManagement",
+                "ChangeManagedInstanceGroupCompartment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstanceGroup/ChangeManagedInstanceGroupCompartment");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeManagedInstanceGroupCompartmentRequest,
@@ -658,6 +683,11 @@ public class OsManagementAsyncClient implements OsManagementAsync {
                         javax.ws.rs.core.Response, ChangeScheduledJobCompartmentResponse>
                 transformer = ChangeScheduledJobCompartmentConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "OsManagement",
+                "ChangeScheduledJobCompartment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ScheduledJob/ChangeScheduledJobCompartment");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeScheduledJobCompartmentRequest, ChangeScheduledJobCompartmentResponse>
@@ -708,6 +738,11 @@ public class OsManagementAsyncClient implements OsManagementAsync {
                         javax.ws.rs.core.Response, ChangeSoftwareSourceCompartmentResponse>
                 transformer = ChangeSoftwareSourceCompartmentConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "OsManagement",
+                "ChangeSoftwareSourceCompartment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/SoftwareSource/ChangeSoftwareSourceCompartment");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeSoftwareSourceCompartmentRequest,
@@ -760,6 +795,11 @@ public class OsManagementAsyncClient implements OsManagementAsync {
                         javax.ws.rs.core.Response, CreateManagedInstanceGroupResponse>
                 transformer = CreateManagedInstanceGroupConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "OsManagement",
+                "CreateManagedInstanceGroup",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstanceGroup/CreateManagedInstanceGroup");
 
         com.oracle.bmc.responses.AsyncHandler<
                         CreateManagedInstanceGroupRequest, CreateManagedInstanceGroupResponse>
@@ -807,6 +847,11 @@ public class OsManagementAsyncClient implements OsManagementAsync {
         final com.google.common.base.Function<javax.ws.rs.core.Response, CreateScheduledJobResponse>
                 transformer = CreateScheduledJobConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "OsManagement",
+                "CreateScheduledJob",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ScheduledJob/CreateScheduledJob");
 
         com.oracle.bmc.responses.AsyncHandler<CreateScheduledJobRequest, CreateScheduledJobResponse>
                 handlerToUse = handler;
@@ -853,6 +898,11 @@ public class OsManagementAsyncClient implements OsManagementAsync {
                         javax.ws.rs.core.Response, CreateSoftwareSourceResponse>
                 transformer = CreateSoftwareSourceConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "OsManagement",
+                "CreateSoftwareSource",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/SoftwareSource/CreateSoftwareSource");
 
         com.oracle.bmc.responses.AsyncHandler<
                         CreateSoftwareSourceRequest, CreateSoftwareSourceResponse>
@@ -901,6 +951,11 @@ public class OsManagementAsyncClient implements OsManagementAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, DeleteManagedInstanceGroupResponse>
                 transformer = DeleteManagedInstanceGroupConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "OsManagement",
+                "DeleteManagedInstanceGroup",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstanceGroup/DeleteManagedInstanceGroup");
 
         com.oracle.bmc.responses.AsyncHandler<
                         DeleteManagedInstanceGroupRequest, DeleteManagedInstanceGroupResponse>
@@ -942,6 +997,11 @@ public class OsManagementAsyncClient implements OsManagementAsync {
                 DeleteScheduledJobConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteScheduledJobResponse>
                 transformer = DeleteScheduledJobConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "OsManagement",
+                "DeleteScheduledJob",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ScheduledJob/DeleteScheduledJob");
 
         com.oracle.bmc.responses.AsyncHandler<DeleteScheduledJobRequest, DeleteScheduledJobResponse>
                 handlerToUse = handler;
@@ -982,6 +1042,11 @@ public class OsManagementAsyncClient implements OsManagementAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, DeleteSoftwareSourceResponse>
                 transformer = DeleteSoftwareSourceConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "OsManagement",
+                "DeleteSoftwareSource",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/SoftwareSource/DeleteSoftwareSource");
 
         com.oracle.bmc.responses.AsyncHandler<
                         DeleteSoftwareSourceRequest, DeleteSoftwareSourceResponse>
@@ -1028,6 +1093,11 @@ public class OsManagementAsyncClient implements OsManagementAsync {
                         DetachChildSoftwareSourceFromManagedInstanceResponse>
                 transformer = DetachChildSoftwareSourceFromManagedInstanceConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "OsManagement",
+                "DetachChildSoftwareSourceFromManagedInstance",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstance/DetachChildSoftwareSourceFromManagedInstance");
 
         com.oracle.bmc.responses.AsyncHandler<
                         DetachChildSoftwareSourceFromManagedInstanceRequest,
@@ -1084,6 +1154,11 @@ public class OsManagementAsyncClient implements OsManagementAsync {
                         DetachManagedInstanceFromManagedInstanceGroupResponse>
                 transformer = DetachManagedInstanceFromManagedInstanceGroupConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "OsManagement",
+                "DetachManagedInstanceFromManagedInstanceGroup",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstanceGroup/DetachManagedInstanceFromManagedInstanceGroup");
 
         com.oracle.bmc.responses.AsyncHandler<
                         DetachManagedInstanceFromManagedInstanceGroupRequest,
@@ -1134,6 +1209,11 @@ public class OsManagementAsyncClient implements OsManagementAsync {
                         DetachParentSoftwareSourceFromManagedInstanceResponse>
                 transformer = DetachParentSoftwareSourceFromManagedInstanceConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "OsManagement",
+                "DetachParentSoftwareSourceFromManagedInstance",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstance/DetachParentSoftwareSourceFromManagedInstance");
 
         com.oracle.bmc.responses.AsyncHandler<
                         DetachParentSoftwareSourceFromManagedInstanceRequest,
@@ -1182,6 +1262,11 @@ public class OsManagementAsyncClient implements OsManagementAsync {
                 GetErratumConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetErratumResponse>
                 transformer = GetErratumConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "OsManagement",
+                "GetErratum",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/Erratum/GetErratum");
 
         com.oracle.bmc.responses.AsyncHandler<GetErratumRequest, GetErratumResponse> handlerToUse =
                 handler;
@@ -1221,6 +1306,11 @@ public class OsManagementAsyncClient implements OsManagementAsync {
                 GetManagedInstanceConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetManagedInstanceResponse>
                 transformer = GetManagedInstanceConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "OsManagement",
+                "GetManagedInstance",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstance/GetManagedInstance");
 
         com.oracle.bmc.responses.AsyncHandler<GetManagedInstanceRequest, GetManagedInstanceResponse>
                 handlerToUse = handler;
@@ -1261,6 +1351,11 @@ public class OsManagementAsyncClient implements OsManagementAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetManagedInstanceGroupResponse>
                 transformer = GetManagedInstanceGroupConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "OsManagement",
+                "GetManagedInstanceGroup",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstanceGroup/GetManagedInstanceGroup");
 
         com.oracle.bmc.responses.AsyncHandler<
                         GetManagedInstanceGroupRequest, GetManagedInstanceGroupResponse>
@@ -1301,6 +1396,11 @@ public class OsManagementAsyncClient implements OsManagementAsync {
                 GetScheduledJobConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetScheduledJobResponse>
                 transformer = GetScheduledJobConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "OsManagement",
+                "GetScheduledJob",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ScheduledJob/GetScheduledJob");
 
         com.oracle.bmc.responses.AsyncHandler<GetScheduledJobRequest, GetScheduledJobResponse>
                 handlerToUse = handler;
@@ -1340,6 +1440,11 @@ public class OsManagementAsyncClient implements OsManagementAsync {
                 GetSoftwarePackageConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetSoftwarePackageResponse>
                 transformer = GetSoftwarePackageConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "OsManagement",
+                "GetSoftwarePackage",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/SoftwareSource/GetSoftwarePackage");
 
         com.oracle.bmc.responses.AsyncHandler<GetSoftwarePackageRequest, GetSoftwarePackageResponse>
                 handlerToUse = handler;
@@ -1379,6 +1484,11 @@ public class OsManagementAsyncClient implements OsManagementAsync {
                 GetSoftwareSourceConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetSoftwareSourceResponse>
                 transformer = GetSoftwareSourceConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "OsManagement",
+                "GetSoftwareSource",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/SoftwareSource/GetSoftwareSource");
 
         com.oracle.bmc.responses.AsyncHandler<GetSoftwareSourceRequest, GetSoftwareSourceResponse>
                 handlerToUse = handler;
@@ -1418,6 +1528,11 @@ public class OsManagementAsyncClient implements OsManagementAsync {
                 GetWindowsUpdateConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetWindowsUpdateResponse>
                 transformer = GetWindowsUpdateConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "OsManagement",
+                "GetWindowsUpdate",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/WindowsUpdate/GetWindowsUpdate");
 
         com.oracle.bmc.responses.AsyncHandler<GetWindowsUpdateRequest, GetWindowsUpdateResponse>
                 handlerToUse = handler;
@@ -1457,6 +1572,11 @@ public class OsManagementAsyncClient implements OsManagementAsync {
                 GetWorkRequestConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetWorkRequestResponse>
                 transformer = GetWorkRequestConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "OsManagement",
+                "GetWorkRequest",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/WorkRequest/GetWorkRequest");
 
         com.oracle.bmc.responses.AsyncHandler<GetWorkRequestRequest, GetWorkRequestResponse>
                 handlerToUse = handler;
@@ -1502,6 +1622,11 @@ public class OsManagementAsyncClient implements OsManagementAsync {
                         InstallAllPackageUpdatesOnManagedInstanceResponse>
                 transformer = InstallAllPackageUpdatesOnManagedInstanceConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "OsManagement",
+                "InstallAllPackageUpdatesOnManagedInstance",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstance/InstallAllPackageUpdatesOnManagedInstance");
 
         com.oracle.bmc.responses.AsyncHandler<
                         InstallAllPackageUpdatesOnManagedInstanceRequest,
@@ -1551,6 +1676,11 @@ public class OsManagementAsyncClient implements OsManagementAsync {
                         javax.ws.rs.core.Response, InstallAllUpdatesOnManagedInstanceGroupResponse>
                 transformer = InstallAllUpdatesOnManagedInstanceGroupConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "OsManagement",
+                "InstallAllUpdatesOnManagedInstanceGroup",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstanceGroup/InstallAllUpdatesOnManagedInstanceGroup");
 
         com.oracle.bmc.responses.AsyncHandler<
                         InstallAllUpdatesOnManagedInstanceGroupRequest,
@@ -1601,6 +1731,11 @@ public class OsManagementAsyncClient implements OsManagementAsync {
                         InstallAllWindowsUpdatesOnManagedInstanceResponse>
                 transformer = InstallAllWindowsUpdatesOnManagedInstanceConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "OsManagement",
+                "InstallAllWindowsUpdatesOnManagedInstance",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstance/InstallAllWindowsUpdatesOnManagedInstance");
 
         com.oracle.bmc.responses.AsyncHandler<
                         InstallAllWindowsUpdatesOnManagedInstanceRequest,
@@ -1649,6 +1784,11 @@ public class OsManagementAsyncClient implements OsManagementAsync {
                         javax.ws.rs.core.Response, InstallPackageOnManagedInstanceResponse>
                 transformer = InstallPackageOnManagedInstanceConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "OsManagement",
+                "InstallPackageOnManagedInstance",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstance/InstallPackageOnManagedInstance");
 
         com.oracle.bmc.responses.AsyncHandler<
                         InstallPackageOnManagedInstanceRequest,
@@ -1697,6 +1837,11 @@ public class OsManagementAsyncClient implements OsManagementAsync {
                         javax.ws.rs.core.Response, InstallPackageUpdateOnManagedInstanceResponse>
                 transformer = InstallPackageUpdateOnManagedInstanceConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "OsManagement",
+                "InstallPackageUpdateOnManagedInstance",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstance/InstallPackageUpdateOnManagedInstance");
 
         com.oracle.bmc.responses.AsyncHandler<
                         InstallPackageUpdateOnManagedInstanceRequest,
@@ -1745,6 +1890,11 @@ public class OsManagementAsyncClient implements OsManagementAsync {
                         javax.ws.rs.core.Response, InstallWindowsUpdateOnManagedInstanceResponse>
                 transformer = InstallWindowsUpdateOnManagedInstanceConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "OsManagement",
+                "InstallWindowsUpdateOnManagedInstance",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstance/InstallWindowsUpdateOnManagedInstance");
 
         com.oracle.bmc.responses.AsyncHandler<
                         InstallWindowsUpdateOnManagedInstanceRequest,
@@ -1792,6 +1942,11 @@ public class OsManagementAsyncClient implements OsManagementAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListAvailablePackagesForManagedInstanceResponse>
                 transformer = ListAvailablePackagesForManagedInstanceConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "OsManagement",
+                "ListAvailablePackagesForManagedInstance",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstance/ListAvailablePackagesForManagedInstance");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListAvailablePackagesForManagedInstanceRequest,
@@ -1842,6 +1997,11 @@ public class OsManagementAsyncClient implements OsManagementAsync {
                         ListAvailableSoftwareSourcesForManagedInstanceResponse>
                 transformer =
                         ListAvailableSoftwareSourcesForManagedInstanceConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "OsManagement",
+                "ListAvailableSoftwareSourcesForManagedInstance",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstance/ListAvailableSoftwareSourcesForManagedInstance");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListAvailableSoftwareSourcesForManagedInstanceRequest,
@@ -1890,6 +2050,11 @@ public class OsManagementAsyncClient implements OsManagementAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListAvailableUpdatesForManagedInstanceResponse>
                 transformer = ListAvailableUpdatesForManagedInstanceConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "OsManagement",
+                "ListAvailableUpdatesForManagedInstance",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstance/ListAvailableUpdatesForManagedInstance");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListAvailableUpdatesForManagedInstanceRequest,
@@ -1938,6 +2103,11 @@ public class OsManagementAsyncClient implements OsManagementAsync {
                         javax.ws.rs.core.Response,
                         ListAvailableWindowsUpdatesForManagedInstanceResponse>
                 transformer = ListAvailableWindowsUpdatesForManagedInstanceConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "OsManagement",
+                "ListAvailableWindowsUpdatesForManagedInstance",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstance/ListAvailableWindowsUpdatesForManagedInstance");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListAvailableWindowsUpdatesForManagedInstanceRequest,
@@ -1980,6 +2150,11 @@ public class OsManagementAsyncClient implements OsManagementAsync {
                 ListErrataConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListErrataResponse>
                 transformer = ListErrataConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "OsManagement",
+                "ListErrata",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ErratumSummary/ListErrata");
 
         com.oracle.bmc.responses.AsyncHandler<ListErrataRequest, ListErrataResponse> handlerToUse =
                 handler;
@@ -2020,6 +2195,11 @@ public class OsManagementAsyncClient implements OsManagementAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListManagedInstanceErrataResponse>
                 transformer = ListManagedInstanceErrataConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "OsManagement",
+                "ListManagedInstanceErrata",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstance/ListManagedInstanceErrata");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListManagedInstanceErrataRequest, ListManagedInstanceErrataResponse>
@@ -2062,6 +2242,11 @@ public class OsManagementAsyncClient implements OsManagementAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListManagedInstanceGroupsResponse>
                 transformer = ListManagedInstanceGroupsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "OsManagement",
+                "ListManagedInstanceGroups",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstanceGroupSummary/ListManagedInstanceGroups");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListManagedInstanceGroupsRequest, ListManagedInstanceGroupsResponse>
@@ -2104,6 +2289,11 @@ public class OsManagementAsyncClient implements OsManagementAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListManagedInstancesResponse>
                 transformer = ListManagedInstancesConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "OsManagement",
+                "ListManagedInstances",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstanceSummary/ListManagedInstances");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListManagedInstancesRequest, ListManagedInstancesResponse>
@@ -2148,6 +2338,11 @@ public class OsManagementAsyncClient implements OsManagementAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListPackagesInstalledOnManagedInstanceResponse>
                 transformer = ListPackagesInstalledOnManagedInstanceConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "OsManagement",
+                "ListPackagesInstalledOnManagedInstance",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstance/ListPackagesInstalledOnManagedInstance");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListPackagesInstalledOnManagedInstanceRequest,
@@ -2191,6 +2386,11 @@ public class OsManagementAsyncClient implements OsManagementAsync {
                 ListScheduledJobsConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListScheduledJobsResponse>
                 transformer = ListScheduledJobsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "OsManagement",
+                "ListScheduledJobs",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ScheduledJob/ListScheduledJobs");
 
         com.oracle.bmc.responses.AsyncHandler<ListScheduledJobsRequest, ListScheduledJobsResponse>
                 handlerToUse = handler;
@@ -2233,6 +2433,11 @@ public class OsManagementAsyncClient implements OsManagementAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListSoftwareSourcePackagesResponse>
                 transformer = ListSoftwareSourcePackagesConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "OsManagement",
+                "ListSoftwareSourcePackages",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/SoftwareSource/ListSoftwareSourcePackages");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListSoftwareSourcePackagesRequest, ListSoftwareSourcePackagesResponse>
@@ -2275,6 +2480,11 @@ public class OsManagementAsyncClient implements OsManagementAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListSoftwareSourcesResponse>
                 transformer = ListSoftwareSourcesConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "OsManagement",
+                "ListSoftwareSources",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/SoftwareSourceSummary/ListSoftwareSources");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListSoftwareSourcesRequest, ListSoftwareSourcesResponse>
@@ -2316,6 +2526,11 @@ public class OsManagementAsyncClient implements OsManagementAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListUpcomingScheduledJobsResponse>
                 transformer = ListUpcomingScheduledJobsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "OsManagement",
+                "ListUpcomingScheduledJobs",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ScheduledJob/ListUpcomingScheduledJobs");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListUpcomingScheduledJobsRequest, ListUpcomingScheduledJobsResponse>
@@ -2357,6 +2572,11 @@ public class OsManagementAsyncClient implements OsManagementAsync {
                 ListWindowsUpdatesConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListWindowsUpdatesResponse>
                 transformer = ListWindowsUpdatesConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "OsManagement",
+                "ListWindowsUpdates",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/WindowsUpdateSummary/ListWindowsUpdates");
 
         com.oracle.bmc.responses.AsyncHandler<ListWindowsUpdatesRequest, ListWindowsUpdatesResponse>
                 handlerToUse = handler;
@@ -2401,6 +2621,11 @@ public class OsManagementAsyncClient implements OsManagementAsync {
                         javax.ws.rs.core.Response,
                         ListWindowsUpdatesInstalledOnManagedInstanceResponse>
                 transformer = ListWindowsUpdatesInstalledOnManagedInstanceConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "OsManagement",
+                "ListWindowsUpdatesInstalledOnManagedInstance",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstance/ListWindowsUpdatesInstalledOnManagedInstance");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListWindowsUpdatesInstalledOnManagedInstanceRequest,
@@ -2446,6 +2671,11 @@ public class OsManagementAsyncClient implements OsManagementAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListWorkRequestErrorsResponse>
                 transformer = ListWorkRequestErrorsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "OsManagement",
+                "ListWorkRequestErrors",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/WorkRequest/ListWorkRequestErrors");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListWorkRequestErrorsRequest, ListWorkRequestErrorsResponse>
@@ -2487,6 +2717,11 @@ public class OsManagementAsyncClient implements OsManagementAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListWorkRequestLogsResponse>
                 transformer = ListWorkRequestLogsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "OsManagement",
+                "ListWorkRequestLogs",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/WorkRequest/ListWorkRequestLogs");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListWorkRequestLogsRequest, ListWorkRequestLogsResponse>
@@ -2527,6 +2762,11 @@ public class OsManagementAsyncClient implements OsManagementAsync {
                 ListWorkRequestsConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListWorkRequestsResponse>
                 transformer = ListWorkRequestsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "OsManagement",
+                "ListWorkRequests",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/WorkRequestSummary/ListWorkRequests");
 
         com.oracle.bmc.responses.AsyncHandler<ListWorkRequestsRequest, ListWorkRequestsResponse>
                 handlerToUse = handler;
@@ -2570,6 +2810,11 @@ public class OsManagementAsyncClient implements OsManagementAsync {
                         javax.ws.rs.core.Response, RemovePackageFromManagedInstanceResponse>
                 transformer = RemovePackageFromManagedInstanceConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "OsManagement",
+                "RemovePackageFromManagedInstance",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstance/RemovePackageFromManagedInstance");
 
         com.oracle.bmc.responses.AsyncHandler<
                         RemovePackageFromManagedInstanceRequest,
@@ -2616,6 +2861,11 @@ public class OsManagementAsyncClient implements OsManagementAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, RemovePackagesFromSoftwareSourceResponse>
                 transformer = RemovePackagesFromSoftwareSourceConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "OsManagement",
+                "RemovePackagesFromSoftwareSource",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/SoftwareSource/RemovePackagesFromSoftwareSource");
 
         com.oracle.bmc.responses.AsyncHandler<
                         RemovePackagesFromSoftwareSourceRequest,
@@ -2665,6 +2915,11 @@ public class OsManagementAsyncClient implements OsManagementAsync {
         final com.google.common.base.Function<javax.ws.rs.core.Response, RunScheduledJobNowResponse>
                 transformer = RunScheduledJobNowConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "OsManagement",
+                "RunScheduledJobNow",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ScheduledJob/RunScheduledJobNow");
 
         com.oracle.bmc.responses.AsyncHandler<RunScheduledJobNowRequest, RunScheduledJobNowResponse>
                 handlerToUse = handler;
@@ -2705,6 +2960,11 @@ public class OsManagementAsyncClient implements OsManagementAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, SearchSoftwarePackagesResponse>
                 transformer = SearchSoftwarePackagesConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "OsManagement",
+                "SearchSoftwarePackages",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/SoftwareSource/SearchSoftwarePackages");
 
         com.oracle.bmc.responses.AsyncHandler<
                         SearchSoftwarePackagesRequest, SearchSoftwarePackagesResponse>
@@ -2749,6 +3009,11 @@ public class OsManagementAsyncClient implements OsManagementAsync {
                         javax.ws.rs.core.Response, SkipNextScheduledJobExecutionResponse>
                 transformer = SkipNextScheduledJobExecutionConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "OsManagement",
+                "SkipNextScheduledJobExecution",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ScheduledJob/SkipNextScheduledJobExecution");
 
         com.oracle.bmc.responses.AsyncHandler<
                         SkipNextScheduledJobExecutionRequest, SkipNextScheduledJobExecutionResponse>
@@ -2791,6 +3056,11 @@ public class OsManagementAsyncClient implements OsManagementAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, UpdateManagedInstanceResponse>
                 transformer = UpdateManagedInstanceConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "OsManagement",
+                "UpdateManagedInstance",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/UpdateManagedInstanceDetails/UpdateManagedInstance");
 
         com.oracle.bmc.responses.AsyncHandler<
                         UpdateManagedInstanceRequest, UpdateManagedInstanceResponse>
@@ -2839,6 +3109,11 @@ public class OsManagementAsyncClient implements OsManagementAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, UpdateManagedInstanceGroupResponse>
                 transformer = UpdateManagedInstanceGroupConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "OsManagement",
+                "UpdateManagedInstanceGroup",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstanceGroup/UpdateManagedInstanceGroup");
 
         com.oracle.bmc.responses.AsyncHandler<
                         UpdateManagedInstanceGroupRequest, UpdateManagedInstanceGroupResponse>
@@ -2885,6 +3160,11 @@ public class OsManagementAsyncClient implements OsManagementAsync {
                 UpdateScheduledJobConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateScheduledJobResponse>
                 transformer = UpdateScheduledJobConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "OsManagement",
+                "UpdateScheduledJob",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ScheduledJob/UpdateScheduledJob");
 
         com.oracle.bmc.responses.AsyncHandler<UpdateScheduledJobRequest, UpdateScheduledJobResponse>
                 handlerToUse = handler;
@@ -2930,6 +3210,11 @@ public class OsManagementAsyncClient implements OsManagementAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, UpdateSoftwareSourceResponse>
                 transformer = UpdateSoftwareSourceConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "OsManagement",
+                "UpdateSoftwareSource",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/SoftwareSource/UpdateSoftwareSource");
 
         com.oracle.bmc.responses.AsyncHandler<
                         UpdateSoftwareSourceRequest, UpdateSoftwareSourceResponse>

@@ -393,6 +393,11 @@ public class DataConnectivityManagementAsyncClient implements DataConnectivityMa
                         javax.ws.rs.core.Response, ChangeEndpointCompartmentResponse>
                 transformer = ChangeEndpointCompartmentConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataConnectivityManagement",
+                "ChangeEndpointCompartment",
+                ib.getRequestUri().toString(),
+                "");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeEndpointCompartmentRequest, ChangeEndpointCompartmentResponse>
@@ -441,6 +446,11 @@ public class DataConnectivityManagementAsyncClient implements DataConnectivityMa
                         javax.ws.rs.core.Response, ChangeRegistryCompartmentResponse>
                 transformer = ChangeRegistryCompartmentConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataConnectivityManagement",
+                "ChangeRegistryCompartment",
+                ib.getRequestUri().toString(),
+                "");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeRegistryCompartmentRequest, ChangeRegistryCompartmentResponse>
@@ -489,6 +499,11 @@ public class DataConnectivityManagementAsyncClient implements DataConnectivityMa
                         javax.ws.rs.core.Response, CreateAttachDataAssetResponse>
                 transformer = CreateAttachDataAssetConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataConnectivityManagement",
+                "CreateAttachDataAsset",
+                ib.getRequestUri().toString(),
+                "");
 
         com.oracle.bmc.responses.AsyncHandler<
                         CreateAttachDataAssetRequest, CreateAttachDataAssetResponse>
@@ -535,6 +550,11 @@ public class DataConnectivityManagementAsyncClient implements DataConnectivityMa
         final com.google.common.base.Function<javax.ws.rs.core.Response, CreateConnectionResponse>
                 transformer = CreateConnectionConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataConnectivityManagement",
+                "CreateConnection",
+                ib.getRequestUri().toString(),
+                "");
 
         com.oracle.bmc.responses.AsyncHandler<CreateConnectionRequest, CreateConnectionResponse>
                 handlerToUse = handler;
@@ -583,6 +603,11 @@ public class DataConnectivityManagementAsyncClient implements DataConnectivityMa
                         javax.ws.rs.core.Response, CreateConnectionValidationResponse>
                 transformer = CreateConnectionValidationConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataConnectivityManagement",
+                "CreateConnectionValidation",
+                ib.getRequestUri().toString(),
+                "");
 
         com.oracle.bmc.responses.AsyncHandler<
                         CreateConnectionValidationRequest, CreateConnectionValidationResponse>
@@ -633,6 +658,11 @@ public class DataConnectivityManagementAsyncClient implements DataConnectivityMa
                         javax.ws.rs.core.Response, CreateConnectivityValidationResponse>
                 transformer = CreateConnectivityValidationConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataConnectivityManagement",
+                "CreateConnectivityValidation",
+                ib.getRequestUri().toString(),
+                "");
 
         com.oracle.bmc.responses.AsyncHandler<
                         CreateConnectivityValidationRequest, CreateConnectivityValidationResponse>
@@ -680,6 +710,8 @@ public class DataConnectivityManagementAsyncClient implements DataConnectivityMa
         final com.google.common.base.Function<javax.ws.rs.core.Response, CreateDataAssetResponse>
                 transformer = CreateDataAssetConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataConnectivityManagement", "CreateDataAsset", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<CreateDataAssetRequest, CreateDataAssetResponse>
                 handlerToUse = handler;
@@ -725,6 +757,11 @@ public class DataConnectivityManagementAsyncClient implements DataConnectivityMa
         final com.google.common.base.Function<javax.ws.rs.core.Response, CreateDataPreviewResponse>
                 transformer = CreateDataPreviewConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataConnectivityManagement",
+                "CreateDataPreview",
+                ib.getRequestUri().toString(),
+                "");
 
         com.oracle.bmc.responses.AsyncHandler<CreateDataPreviewRequest, CreateDataPreviewResponse>
                 handlerToUse = handler;
@@ -770,6 +807,11 @@ public class DataConnectivityManagementAsyncClient implements DataConnectivityMa
         final com.google.common.base.Function<javax.ws.rs.core.Response, CreateDataProfileResponse>
                 transformer = CreateDataProfileConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataConnectivityManagement",
+                "CreateDataProfile",
+                ib.getRequestUri().toString(),
+                "");
 
         com.oracle.bmc.responses.AsyncHandler<CreateDataProfileRequest, CreateDataProfileResponse>
                 handlerToUse = handler;
@@ -816,6 +858,11 @@ public class DataConnectivityManagementAsyncClient implements DataConnectivityMa
                         javax.ws.rs.core.Response, CreateDeReferenceArtifactResponse>
                 transformer = CreateDeReferenceArtifactConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataConnectivityManagement",
+                "CreateDeReferenceArtifact",
+                ib.getRequestUri().toString(),
+                "");
 
         com.oracle.bmc.responses.AsyncHandler<
                         CreateDeReferenceArtifactRequest, CreateDeReferenceArtifactResponse>
@@ -864,6 +911,11 @@ public class DataConnectivityManagementAsyncClient implements DataConnectivityMa
                         javax.ws.rs.core.Response, CreateDetachDataAssetResponse>
                 transformer = CreateDetachDataAssetConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataConnectivityManagement",
+                "CreateDetachDataAsset",
+                ib.getRequestUri().toString(),
+                "");
 
         com.oracle.bmc.responses.AsyncHandler<
                         CreateDetachDataAssetRequest, CreateDetachDataAssetResponse>
@@ -910,6 +962,8 @@ public class DataConnectivityManagementAsyncClient implements DataConnectivityMa
         final com.google.common.base.Function<javax.ws.rs.core.Response, CreateEndpointResponse>
                 transformer = CreateEndpointConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataConnectivityManagement", "CreateEndpoint", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<CreateEndpointRequest, CreateEndpointResponse>
                 handlerToUse = handler;
@@ -955,6 +1009,11 @@ public class DataConnectivityManagementAsyncClient implements DataConnectivityMa
         final com.google.common.base.Function<javax.ws.rs.core.Response, CreateEntityShapeResponse>
                 transformer = CreateEntityShapeConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataConnectivityManagement",
+                "CreateEntityShape",
+                ib.getRequestUri().toString(),
+                "");
 
         com.oracle.bmc.responses.AsyncHandler<CreateEntityShapeRequest, CreateEntityShapeResponse>
                 handlerToUse = handler;
@@ -1001,6 +1060,11 @@ public class DataConnectivityManagementAsyncClient implements DataConnectivityMa
                         javax.ws.rs.core.Response, CreateExecuteOperationJobResponse>
                 transformer = CreateExecuteOperationJobConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataConnectivityManagement",
+                "CreateExecuteOperationJob",
+                ib.getRequestUri().toString(),
+                "");
 
         com.oracle.bmc.responses.AsyncHandler<
                         CreateExecuteOperationJobRequest, CreateExecuteOperationJobResponse>
@@ -1047,6 +1111,8 @@ public class DataConnectivityManagementAsyncClient implements DataConnectivityMa
         final com.google.common.base.Function<javax.ws.rs.core.Response, CreateFolderResponse>
                 transformer = CreateFolderConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataConnectivityManagement", "CreateFolder", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<CreateFolderRequest, CreateFolderResponse>
                 handlerToUse = handler;
@@ -1093,6 +1159,11 @@ public class DataConnectivityManagementAsyncClient implements DataConnectivityMa
                         javax.ws.rs.core.Response, CreateFullPushDownTaskResponse>
                 transformer = CreateFullPushDownTaskConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataConnectivityManagement",
+                "CreateFullPushDownTask",
+                ib.getRequestUri().toString(),
+                "");
 
         com.oracle.bmc.responses.AsyncHandler<
                         CreateFullPushDownTaskRequest, CreateFullPushDownTaskResponse>
@@ -1140,6 +1211,11 @@ public class DataConnectivityManagementAsyncClient implements DataConnectivityMa
                         javax.ws.rs.core.Response, CreateReferenceArtifactResponse>
                 transformer = CreateReferenceArtifactConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataConnectivityManagement",
+                "CreateReferenceArtifact",
+                ib.getRequestUri().toString(),
+                "");
 
         com.oracle.bmc.responses.AsyncHandler<
                         CreateReferenceArtifactRequest, CreateReferenceArtifactResponse>
@@ -1186,6 +1262,8 @@ public class DataConnectivityManagementAsyncClient implements DataConnectivityMa
         final com.google.common.base.Function<javax.ws.rs.core.Response, CreateRegistryResponse>
                 transformer = CreateRegistryConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataConnectivityManagement", "CreateRegistry", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<CreateRegistryRequest, CreateRegistryResponse>
                 handlerToUse = handler;
@@ -1234,6 +1312,11 @@ public class DataConnectivityManagementAsyncClient implements DataConnectivityMa
                         javax.ws.rs.core.Response, CreateTestNetworkConnectivityResponse>
                 transformer = CreateTestNetworkConnectivityConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataConnectivityManagement",
+                "CreateTestNetworkConnectivity",
+                ib.getRequestUri().toString(),
+                "");
 
         com.oracle.bmc.responses.AsyncHandler<
                         CreateTestNetworkConnectivityRequest, CreateTestNetworkConnectivityResponse>
@@ -1280,6 +1363,11 @@ public class DataConnectivityManagementAsyncClient implements DataConnectivityMa
                 DeleteConnectionConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteConnectionResponse>
                 transformer = DeleteConnectionConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataConnectivityManagement",
+                "DeleteConnection",
+                ib.getRequestUri().toString(),
+                "");
 
         com.oracle.bmc.responses.AsyncHandler<DeleteConnectionRequest, DeleteConnectionResponse>
                 handlerToUse = handler;
@@ -1322,6 +1410,11 @@ public class DataConnectivityManagementAsyncClient implements DataConnectivityMa
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, DeleteConnectionValidationResponse>
                 transformer = DeleteConnectionValidationConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataConnectivityManagement",
+                "DeleteConnectionValidation",
+                ib.getRequestUri().toString(),
+                "");
 
         com.oracle.bmc.responses.AsyncHandler<
                         DeleteConnectionValidationRequest, DeleteConnectionValidationResponse>
@@ -1363,6 +1456,8 @@ public class DataConnectivityManagementAsyncClient implements DataConnectivityMa
                 DeleteDataAssetConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteDataAssetResponse>
                 transformer = DeleteDataAssetConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataConnectivityManagement", "DeleteDataAsset", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<DeleteDataAssetRequest, DeleteDataAssetResponse>
                 handlerToUse = handler;
@@ -1402,6 +1497,8 @@ public class DataConnectivityManagementAsyncClient implements DataConnectivityMa
                 DeleteEndpointConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteEndpointResponse>
                 transformer = DeleteEndpointConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataConnectivityManagement", "DeleteEndpoint", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<DeleteEndpointRequest, DeleteEndpointResponse>
                 handlerToUse = handler;
@@ -1440,6 +1537,8 @@ public class DataConnectivityManagementAsyncClient implements DataConnectivityMa
                 DeleteFolderConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteFolderResponse>
                 transformer = DeleteFolderConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataConnectivityManagement", "DeleteFolder", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<DeleteFolderRequest, DeleteFolderResponse>
                 handlerToUse = handler;
@@ -1482,6 +1581,11 @@ public class DataConnectivityManagementAsyncClient implements DataConnectivityMa
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, DeleteNetworkConnectivityStatusResponse>
                 transformer = DeleteNetworkConnectivityStatusConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataConnectivityManagement",
+                "DeleteNetworkConnectivityStatus",
+                ib.getRequestUri().toString(),
+                "");
 
         com.oracle.bmc.responses.AsyncHandler<
                         DeleteNetworkConnectivityStatusRequest,
@@ -1525,6 +1629,8 @@ public class DataConnectivityManagementAsyncClient implements DataConnectivityMa
                 DeleteRegistryConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteRegistryResponse>
                 transformer = DeleteRegistryConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataConnectivityManagement", "DeleteRegistry", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<DeleteRegistryRequest, DeleteRegistryResponse>
                 handlerToUse = handler;
@@ -1563,6 +1669,8 @@ public class DataConnectivityManagementAsyncClient implements DataConnectivityMa
                 GetConnectionConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetConnectionResponse>
                 transformer = GetConnectionConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataConnectivityManagement", "GetConnection", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<GetConnectionRequest, GetConnectionResponse>
                 handlerToUse = handler;
@@ -1603,6 +1711,11 @@ public class DataConnectivityManagementAsyncClient implements DataConnectivityMa
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetConnectionValidationResponse>
                 transformer = GetConnectionValidationConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataConnectivityManagement",
+                "GetConnectionValidation",
+                ib.getRequestUri().toString(),
+                "");
 
         com.oracle.bmc.responses.AsyncHandler<
                         GetConnectionValidationRequest, GetConnectionValidationResponse>
@@ -1642,6 +1755,8 @@ public class DataConnectivityManagementAsyncClient implements DataConnectivityMa
                 GetDataAssetConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetDataAssetResponse>
                 transformer = GetDataAssetConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataConnectivityManagement", "GetDataAsset", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<GetDataAssetRequest, GetDataAssetResponse>
                 handlerToUse = handler;
@@ -1680,6 +1795,8 @@ public class DataConnectivityManagementAsyncClient implements DataConnectivityMa
                 GetDataEntityConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetDataEntityResponse>
                 transformer = GetDataEntityConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataConnectivityManagement", "GetDataEntity", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<GetDataEntityRequest, GetDataEntityResponse>
                 handlerToUse = handler;
@@ -1718,6 +1835,8 @@ public class DataConnectivityManagementAsyncClient implements DataConnectivityMa
                 GetEndpointConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetEndpointResponse>
                 transformer = GetEndpointConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataConnectivityManagement", "GetEndpoint", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<GetEndpointRequest, GetEndpointResponse>
                 handlerToUse = handler;
@@ -1758,6 +1877,11 @@ public class DataConnectivityManagementAsyncClient implements DataConnectivityMa
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetExecuteOperationJobResponse>
                 transformer = GetExecuteOperationJobConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataConnectivityManagement",
+                "GetExecuteOperationJob",
+                ib.getRequestUri().toString(),
+                "");
 
         com.oracle.bmc.responses.AsyncHandler<
                         GetExecuteOperationJobRequest, GetExecuteOperationJobResponse>
@@ -1796,6 +1920,8 @@ public class DataConnectivityManagementAsyncClient implements DataConnectivityMa
                 GetFolderConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetFolderResponse>
                 transformer = GetFolderConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataConnectivityManagement", "GetFolder", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<GetFolderRequest, GetFolderResponse> handlerToUse =
                 handler;
@@ -1838,6 +1964,11 @@ public class DataConnectivityManagementAsyncClient implements DataConnectivityMa
                         javax.ws.rs.core.Response, GetNetworkConnectivityStatusResponse>
                 transformer = GetNetworkConnectivityStatusConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataConnectivityManagement",
+                "GetNetworkConnectivityStatus",
+                ib.getRequestUri().toString(),
+                "");
 
         com.oracle.bmc.responses.AsyncHandler<
                         GetNetworkConnectivityStatusRequest, GetNetworkConnectivityStatusResponse>
@@ -1878,6 +2009,8 @@ public class DataConnectivityManagementAsyncClient implements DataConnectivityMa
                 GetOperationConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetOperationResponse>
                 transformer = GetOperationConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataConnectivityManagement", "GetOperation", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<GetOperationRequest, GetOperationResponse>
                 handlerToUse = handler;
@@ -1916,6 +2049,8 @@ public class DataConnectivityManagementAsyncClient implements DataConnectivityMa
                 GetRegistryConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetRegistryResponse>
                 transformer = GetRegistryConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataConnectivityManagement", "GetRegistry", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<GetRegistryRequest, GetRegistryResponse>
                 handlerToUse = handler;
@@ -1953,6 +2088,8 @@ public class DataConnectivityManagementAsyncClient implements DataConnectivityMa
                 GetSchemaConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetSchemaResponse>
                 transformer = GetSchemaConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataConnectivityManagement", "GetSchema", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<GetSchemaRequest, GetSchemaResponse> handlerToUse =
                 handler;
@@ -1988,6 +2125,8 @@ public class DataConnectivityManagementAsyncClient implements DataConnectivityMa
                 GetTypeConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetTypeResponse>
                 transformer = GetTypeConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataConnectivityManagement", "GetType", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<GetTypeRequest, GetTypeResponse> handlerToUse =
                 handler;
@@ -2026,6 +2165,8 @@ public class DataConnectivityManagementAsyncClient implements DataConnectivityMa
                 GetWorkRequestConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetWorkRequestResponse>
                 transformer = GetWorkRequestConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataConnectivityManagement", "GetWorkRequest", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<GetWorkRequestRequest, GetWorkRequestResponse>
                 handlerToUse = handler;
@@ -2066,6 +2207,11 @@ public class DataConnectivityManagementAsyncClient implements DataConnectivityMa
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListConnectionValidationsResponse>
                 transformer = ListConnectionValidationsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataConnectivityManagement",
+                "ListConnectionValidations",
+                ib.getRequestUri().toString(),
+                "");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListConnectionValidationsRequest, ListConnectionValidationsResponse>
@@ -2107,6 +2253,8 @@ public class DataConnectivityManagementAsyncClient implements DataConnectivityMa
                 ListConnectionsConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListConnectionsResponse>
                 transformer = ListConnectionsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataConnectivityManagement", "ListConnections", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<ListConnectionsRequest, ListConnectionsResponse>
                 handlerToUse = handler;
@@ -2146,6 +2294,8 @@ public class DataConnectivityManagementAsyncClient implements DataConnectivityMa
                 ListDataAssetsConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListDataAssetsResponse>
                 transformer = ListDataAssetsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataConnectivityManagement", "ListDataAssets", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<ListDataAssetsRequest, ListDataAssetsResponse>
                 handlerToUse = handler;
@@ -2185,6 +2335,11 @@ public class DataConnectivityManagementAsyncClient implements DataConnectivityMa
                 ListDataEntitiesConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListDataEntitiesResponse>
                 transformer = ListDataEntitiesConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataConnectivityManagement",
+                "ListDataEntities",
+                ib.getRequestUri().toString(),
+                "");
 
         com.oracle.bmc.responses.AsyncHandler<ListDataEntitiesRequest, ListDataEntitiesResponse>
                 handlerToUse = handler;
@@ -2223,6 +2378,8 @@ public class DataConnectivityManagementAsyncClient implements DataConnectivityMa
                 ListEndpointsConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListEndpointsResponse>
                 transformer = ListEndpointsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataConnectivityManagement", "ListEndpoints", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<ListEndpointsRequest, ListEndpointsResponse>
                 handlerToUse = handler;
@@ -2261,6 +2418,8 @@ public class DataConnectivityManagementAsyncClient implements DataConnectivityMa
                 ListFoldersConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListFoldersResponse>
                 transformer = ListFoldersConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataConnectivityManagement", "ListFolders", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<ListFoldersRequest, ListFoldersResponse>
                 handlerToUse = handler;
@@ -2300,6 +2459,8 @@ public class DataConnectivityManagementAsyncClient implements DataConnectivityMa
                 ListOperationsConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListOperationsResponse>
                 transformer = ListOperationsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataConnectivityManagement", "ListOperations", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<ListOperationsRequest, ListOperationsResponse>
                 handlerToUse = handler;
@@ -2340,6 +2501,11 @@ public class DataConnectivityManagementAsyncClient implements DataConnectivityMa
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListReferenceArtifactsResponse>
                 transformer = ListReferenceArtifactsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataConnectivityManagement",
+                "ListReferenceArtifacts",
+                ib.getRequestUri().toString(),
+                "");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListReferenceArtifactsRequest, ListReferenceArtifactsResponse>
@@ -2380,6 +2546,8 @@ public class DataConnectivityManagementAsyncClient implements DataConnectivityMa
                 ListRegistriesConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListRegistriesResponse>
                 transformer = ListRegistriesConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataConnectivityManagement", "ListRegistries", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<ListRegistriesRequest, ListRegistriesResponse>
                 handlerToUse = handler;
@@ -2418,6 +2586,8 @@ public class DataConnectivityManagementAsyncClient implements DataConnectivityMa
                 ListSchemasConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListSchemasResponse>
                 transformer = ListSchemasConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataConnectivityManagement", "ListSchemas", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<ListSchemasRequest, ListSchemasResponse>
                 handlerToUse = handler;
@@ -2455,6 +2625,8 @@ public class DataConnectivityManagementAsyncClient implements DataConnectivityMa
                 ListTypesConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListTypesResponse>
                 transformer = ListTypesConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataConnectivityManagement", "ListTypes", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<ListTypesRequest, ListTypesResponse> handlerToUse =
                 handler;
@@ -2494,6 +2666,11 @@ public class DataConnectivityManagementAsyncClient implements DataConnectivityMa
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListWorkRequestErrorsResponse>
                 transformer = ListWorkRequestErrorsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataConnectivityManagement",
+                "ListWorkRequestErrors",
+                ib.getRequestUri().toString(),
+                "");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListWorkRequestErrorsRequest, ListWorkRequestErrorsResponse>
@@ -2535,6 +2712,11 @@ public class DataConnectivityManagementAsyncClient implements DataConnectivityMa
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListWorkRequestLogsResponse>
                 transformer = ListWorkRequestLogsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataConnectivityManagement",
+                "ListWorkRequestLogs",
+                ib.getRequestUri().toString(),
+                "");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListWorkRequestLogsRequest, ListWorkRequestLogsResponse>
@@ -2575,6 +2757,11 @@ public class DataConnectivityManagementAsyncClient implements DataConnectivityMa
                 ListWorkRequestsConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListWorkRequestsResponse>
                 transformer = ListWorkRequestsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataConnectivityManagement",
+                "ListWorkRequests",
+                ib.getRequestUri().toString(),
+                "");
 
         com.oracle.bmc.responses.AsyncHandler<ListWorkRequestsRequest, ListWorkRequestsResponse>
                 handlerToUse = handler;
@@ -2614,6 +2801,11 @@ public class DataConnectivityManagementAsyncClient implements DataConnectivityMa
                 UpdateConnectionConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateConnectionResponse>
                 transformer = UpdateConnectionConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataConnectivityManagement",
+                "UpdateConnection",
+                ib.getRequestUri().toString(),
+                "");
 
         com.oracle.bmc.responses.AsyncHandler<UpdateConnectionRequest, UpdateConnectionResponse>
                 handlerToUse = handler;
@@ -2658,6 +2850,8 @@ public class DataConnectivityManagementAsyncClient implements DataConnectivityMa
                 UpdateDataAssetConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateDataAssetResponse>
                 transformer = UpdateDataAssetConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataConnectivityManagement", "UpdateDataAsset", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<UpdateDataAssetRequest, UpdateDataAssetResponse>
                 handlerToUse = handler;
@@ -2702,6 +2896,8 @@ public class DataConnectivityManagementAsyncClient implements DataConnectivityMa
                 UpdateEndpointConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateEndpointResponse>
                 transformer = UpdateEndpointConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataConnectivityManagement", "UpdateEndpoint", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<UpdateEndpointRequest, UpdateEndpointResponse>
                 handlerToUse = handler;
@@ -2745,6 +2941,8 @@ public class DataConnectivityManagementAsyncClient implements DataConnectivityMa
                 UpdateFolderConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateFolderResponse>
                 transformer = UpdateFolderConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataConnectivityManagement", "UpdateFolder", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<UpdateFolderRequest, UpdateFolderResponse>
                 handlerToUse = handler;
@@ -2789,6 +2987,8 @@ public class DataConnectivityManagementAsyncClient implements DataConnectivityMa
                 UpdateRegistryConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateRegistryResponse>
                 transformer = UpdateRegistryConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataConnectivityManagement", "UpdateRegistry", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<UpdateRegistryRequest, UpdateRegistryResponse>
                 handlerToUse = handler;
@@ -2838,6 +3038,11 @@ public class DataConnectivityManagementAsyncClient implements DataConnectivityMa
                         javax.ws.rs.core.Response, ValidateDataAssetNetworkReachablityResponse>
                 transformer = ValidateDataAssetNetworkReachablityConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataConnectivityManagement",
+                "ValidateDataAssetNetworkReachablity",
+                ib.getRequestUri().toString(),
+                "");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ValidateDataAssetNetworkReachablityRequest,

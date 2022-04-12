@@ -3,6 +3,17 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
+## 2.23.0 - 2022-04-12
+### Added
+- Support for bringing your own IPv6 addresses in the Networking service
+- Support for specifying database edition and maximum CPU core count when creating or updating an autonomous database in the Database service
+- Support for enabling and disabling data collection options when creating or updating Exadata Cloud at Customer VM clusters in the Database service
+
+
+### Breaking Changes
+- Support for retries by default on operations in the Identity service
+- Support for retries by default on operations in the Operations Insights service
+
 ## 2.22.0 - 2022-04-05
 ### Added
 - Fixed the lifecycle state values for target databases in the Data Safe service

@@ -394,6 +394,11 @@ public class ArtifactsAsyncClient implements ArtifactsAsync {
                         javax.ws.rs.core.Response, ChangeContainerRepositoryCompartmentResponse>
                 transformer = ChangeContainerRepositoryCompartmentConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Artifacts",
+                "ChangeContainerRepositoryCompartment",
+                ib.getRequestUri().toString(),
+                "");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeContainerRepositoryCompartmentRequest,
@@ -446,6 +451,8 @@ public class ArtifactsAsyncClient implements ArtifactsAsync {
                         javax.ws.rs.core.Response, ChangeRepositoryCompartmentResponse>
                 transformer = ChangeRepositoryCompartmentConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Artifacts", "ChangeRepositoryCompartment", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeRepositoryCompartmentRequest, ChangeRepositoryCompartmentResponse>
@@ -496,6 +503,8 @@ public class ArtifactsAsyncClient implements ArtifactsAsync {
                         javax.ws.rs.core.Response, CreateContainerImageSignatureResponse>
                 transformer = CreateContainerImageSignatureConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Artifacts", "CreateContainerImageSignature", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<
                         CreateContainerImageSignatureRequest, CreateContainerImageSignatureResponse>
@@ -544,6 +553,8 @@ public class ArtifactsAsyncClient implements ArtifactsAsync {
                         javax.ws.rs.core.Response, CreateContainerRepositoryResponse>
                 transformer = CreateContainerRepositoryConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Artifacts", "CreateContainerRepository", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<
                         CreateContainerRepositoryRequest, CreateContainerRepositoryResponse>
@@ -591,6 +602,8 @@ public class ArtifactsAsyncClient implements ArtifactsAsync {
         final com.google.common.base.Function<javax.ws.rs.core.Response, CreateRepositoryResponse>
                 transformer = CreateRepositoryConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Artifacts", "CreateRepository", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<CreateRepositoryRequest, CreateRepositoryResponse>
                 handlerToUse = handler;
@@ -636,6 +649,8 @@ public class ArtifactsAsyncClient implements ArtifactsAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, DeleteContainerImageResponse>
                 transformer = DeleteContainerImageConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Artifacts", "DeleteContainerImage", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<
                         DeleteContainerImageRequest, DeleteContainerImageResponse>
@@ -679,6 +694,8 @@ public class ArtifactsAsyncClient implements ArtifactsAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, DeleteContainerImageSignatureResponse>
                 transformer = DeleteContainerImageSignatureConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Artifacts", "DeleteContainerImageSignature", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<
                         DeleteContainerImageSignatureRequest, DeleteContainerImageSignatureResponse>
@@ -721,6 +738,8 @@ public class ArtifactsAsyncClient implements ArtifactsAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, DeleteContainerRepositoryResponse>
                 transformer = DeleteContainerRepositoryConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Artifacts", "DeleteContainerRepository", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<
                         DeleteContainerRepositoryRequest, DeleteContainerRepositoryResponse>
@@ -763,6 +782,8 @@ public class ArtifactsAsyncClient implements ArtifactsAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, DeleteGenericArtifactResponse>
                 transformer = DeleteGenericArtifactConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Artifacts", "DeleteGenericArtifact", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<
                         DeleteGenericArtifactRequest, DeleteGenericArtifactResponse>
@@ -806,6 +827,8 @@ public class ArtifactsAsyncClient implements ArtifactsAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, DeleteGenericArtifactByPathResponse>
                 transformer = DeleteGenericArtifactByPathConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Artifacts", "DeleteGenericArtifactByPath", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<
                         DeleteGenericArtifactByPathRequest, DeleteGenericArtifactByPathResponse>
@@ -847,6 +870,8 @@ public class ArtifactsAsyncClient implements ArtifactsAsync {
                 DeleteRepositoryConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteRepositoryResponse>
                 transformer = DeleteRepositoryConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Artifacts", "DeleteRepository", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<DeleteRepositoryRequest, DeleteRepositoryResponse>
                 handlerToUse = handler;
@@ -887,6 +912,8 @@ public class ArtifactsAsyncClient implements ArtifactsAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetContainerConfigurationResponse>
                 transformer = GetContainerConfigurationConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Artifacts", "GetContainerConfiguration", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<
                         GetContainerConfigurationRequest, GetContainerConfigurationResponse>
@@ -928,6 +955,8 @@ public class ArtifactsAsyncClient implements ArtifactsAsync {
                 GetContainerImageConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetContainerImageResponse>
                 transformer = GetContainerImageConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Artifacts", "GetContainerImage", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<GetContainerImageRequest, GetContainerImageResponse>
                 handlerToUse = handler;
@@ -970,6 +999,8 @@ public class ArtifactsAsyncClient implements ArtifactsAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetContainerImageSignatureResponse>
                 transformer = GetContainerImageSignatureConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Artifacts", "GetContainerImageSignature", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<
                         GetContainerImageSignatureRequest, GetContainerImageSignatureResponse>
@@ -1012,6 +1043,8 @@ public class ArtifactsAsyncClient implements ArtifactsAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetContainerRepositoryResponse>
                 transformer = GetContainerRepositoryConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Artifacts", "GetContainerRepository", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<
                         GetContainerRepositoryRequest, GetContainerRepositoryResponse>
@@ -1052,6 +1085,8 @@ public class ArtifactsAsyncClient implements ArtifactsAsync {
                 GetGenericArtifactConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetGenericArtifactResponse>
                 transformer = GetGenericArtifactConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Artifacts", "GetGenericArtifact", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<GetGenericArtifactRequest, GetGenericArtifactResponse>
                 handlerToUse = handler;
@@ -1092,6 +1127,8 @@ public class ArtifactsAsyncClient implements ArtifactsAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetGenericArtifactByPathResponse>
                 transformer = GetGenericArtifactByPathConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Artifacts", "GetGenericArtifactByPath", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<
                         GetGenericArtifactByPathRequest, GetGenericArtifactByPathResponse>
@@ -1131,6 +1168,8 @@ public class ArtifactsAsyncClient implements ArtifactsAsync {
                 GetRepositoryConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetRepositoryResponse>
                 transformer = GetRepositoryConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Artifacts", "GetRepository", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<GetRepositoryRequest, GetRepositoryResponse>
                 handlerToUse = handler;
@@ -1173,6 +1212,8 @@ public class ArtifactsAsyncClient implements ArtifactsAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListContainerImageSignaturesResponse>
                 transformer = ListContainerImageSignaturesConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Artifacts", "ListContainerImageSignatures", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListContainerImageSignaturesRequest, ListContainerImageSignaturesResponse>
@@ -1215,6 +1256,8 @@ public class ArtifactsAsyncClient implements ArtifactsAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListContainerImagesResponse>
                 transformer = ListContainerImagesConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Artifacts", "ListContainerImages", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListContainerImagesRequest, ListContainerImagesResponse>
@@ -1256,6 +1299,8 @@ public class ArtifactsAsyncClient implements ArtifactsAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListContainerRepositoriesResponse>
                 transformer = ListContainerRepositoriesConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Artifacts", "ListContainerRepositories", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListContainerRepositoriesRequest, ListContainerRepositoriesResponse>
@@ -1298,6 +1343,8 @@ public class ArtifactsAsyncClient implements ArtifactsAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListGenericArtifactsResponse>
                 transformer = ListGenericArtifactsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Artifacts", "ListGenericArtifacts", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListGenericArtifactsRequest, ListGenericArtifactsResponse>
@@ -1338,6 +1385,8 @@ public class ArtifactsAsyncClient implements ArtifactsAsync {
                 ListRepositoriesConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListRepositoriesResponse>
                 transformer = ListRepositoriesConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Artifacts", "ListRepositories", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<ListRepositoriesRequest, ListRepositoriesResponse>
                 handlerToUse = handler;
@@ -1379,6 +1428,8 @@ public class ArtifactsAsyncClient implements ArtifactsAsync {
                         javax.ws.rs.core.Response, RemoveContainerVersionResponse>
                 transformer = RemoveContainerVersionConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Artifacts", "RemoveContainerVersion", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<
                         RemoveContainerVersionRequest, RemoveContainerVersionResponse>
@@ -1426,6 +1477,8 @@ public class ArtifactsAsyncClient implements ArtifactsAsync {
                         javax.ws.rs.core.Response, RestoreContainerImageResponse>
                 transformer = RestoreContainerImageConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Artifacts", "RestoreContainerImage", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<
                         RestoreContainerImageRequest, RestoreContainerImageResponse>
@@ -1474,6 +1527,8 @@ public class ArtifactsAsyncClient implements ArtifactsAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, UpdateContainerConfigurationResponse>
                 transformer = UpdateContainerConfigurationConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Artifacts", "UpdateContainerConfiguration", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<
                         UpdateContainerConfigurationRequest, UpdateContainerConfigurationResponse>
@@ -1521,6 +1576,8 @@ public class ArtifactsAsyncClient implements ArtifactsAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, UpdateContainerRepositoryResponse>
                 transformer = UpdateContainerRepositoryConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Artifacts", "UpdateContainerRepository", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<
                         UpdateContainerRepositoryRequest, UpdateContainerRepositoryResponse>
@@ -1568,6 +1625,8 @@ public class ArtifactsAsyncClient implements ArtifactsAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, UpdateGenericArtifactResponse>
                 transformer = UpdateGenericArtifactConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Artifacts", "UpdateGenericArtifact", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<
                         UpdateGenericArtifactRequest, UpdateGenericArtifactResponse>
@@ -1616,6 +1675,8 @@ public class ArtifactsAsyncClient implements ArtifactsAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, UpdateGenericArtifactByPathResponse>
                 transformer = UpdateGenericArtifactByPathConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Artifacts", "UpdateGenericArtifactByPath", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<
                         UpdateGenericArtifactByPathRequest, UpdateGenericArtifactByPathResponse>
@@ -1662,6 +1723,8 @@ public class ArtifactsAsyncClient implements ArtifactsAsync {
                 UpdateRepositoryConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateRepositoryResponse>
                 transformer = UpdateRepositoryConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Artifacts", "UpdateRepository", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<UpdateRepositoryRequest, UpdateRepositoryResponse>
                 handlerToUse = handler;

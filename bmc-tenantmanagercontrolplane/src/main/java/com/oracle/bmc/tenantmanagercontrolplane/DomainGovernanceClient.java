@@ -477,6 +477,11 @@ public class DomainGovernanceClient implements DomainGovernance {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DomainGovernance",
+                "CreateDomainGovernance",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/DomainGovernance/CreateDomainGovernance");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -511,6 +516,11 @@ public class DomainGovernanceClient implements DomainGovernance {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DomainGovernance",
+                "DeleteDomainGovernance",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/DomainGovernance/DeleteDomainGovernance");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -541,6 +551,11 @@ public class DomainGovernanceClient implements DomainGovernance {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DomainGovernance",
+                "GetDomainGovernance",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/DomainGovernance/GetDomainGovernance");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -571,6 +586,11 @@ public class DomainGovernanceClient implements DomainGovernance {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DomainGovernance",
+                "ListDomainGovernances",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/DomainGovernance/ListDomainGovernances");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -601,6 +621,11 @@ public class DomainGovernanceClient implements DomainGovernance {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DomainGovernance",
+                "UpdateDomainGovernance",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/DomainGovernance/UpdateDomainGovernance");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {

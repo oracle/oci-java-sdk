@@ -5,7 +5,7 @@
 package com.oracle.bmc.aivision.model;
 
 /**
- * Image analysis results.
+ * The image analysis results.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -141,19 +141,19 @@ public class AnalyzeImageResult {
     }
 
     /**
-     * Detected objects.
+     * The detected objects.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("imageObjects")
     java.util.List<ImageObject> imageObjects;
 
     /**
-     * Image classification labels.
+     * The image classification labels.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("labels")
     java.util.List<Label> labels;
 
     /**
-     * ontologyClasses of image labels.
+     * The ontologyClasses of image labels.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("ontologyClasses")
     java.util.List<OntologyClass> ontologyClasses;
@@ -162,25 +162,25 @@ public class AnalyzeImageResult {
     ImageText imageText;
 
     /**
-     * Image classification model version.
+     * The image classification model version.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("imageClassificationModelVersion")
     String imageClassificationModelVersion;
 
     /**
-     * Object detection model version.
+     * The object detection model version.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("objectDetectionModelVersion")
     String objectDetectionModelVersion;
 
     /**
-     * Text detection model version.
+     * The text detection model version.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("textDetectionModelVersion")
     String textDetectionModelVersion;
 
     /**
-     * Errors encountered during image analysis.
+     * The errors encountered during image analysis.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("errors")
     java.util.List<ProcessingError> errors;

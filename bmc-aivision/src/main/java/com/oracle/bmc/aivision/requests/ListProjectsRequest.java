@@ -25,7 +25,7 @@ public class ListProjectsRequest extends com.oracle.bmc.requests.BmcRequest<java
     private String compartmentId;
 
     /**
-     * Filter to match projects with the given lifecycleState.
+     * The filter to match projects with the given lifecycleState.
      */
     private com.oracle.bmc.aivision.model.Project.LifecycleState lifecycleState;
 
@@ -35,7 +35,7 @@ public class ListProjectsRequest extends com.oracle.bmc.requests.BmcRequest<java
     private String displayName;
 
     /**
-     * Filter to find the project with the given identifier.
+     * The filter to find the project with the given identifier.
      */
     private String id;
 
@@ -55,13 +55,13 @@ public class ListProjectsRequest extends com.oracle.bmc.requests.BmcRequest<java
     private com.oracle.bmc.aivision.model.SortOrder sortOrder;
 
     /**
-     * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for displayName is ascending.
+     * The field to sort by. Only one sort order may be provided. The default order for timeCreated is descending. The default order for displayName is ascending.
      *
      */
     private SortBy sortBy;
 
     /**
-     * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for displayName is ascending.
+     * The field to sort by. Only one sort order may be provided. The default order for timeCreated is descending. The default order for displayName is ascending.
      *
      **/
     public enum SortBy {

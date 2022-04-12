@@ -475,6 +475,11 @@ public class EsxiHostClient implements EsxiHost {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "EsxiHost",
+                "CreateEsxiHost",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/vmware/20200501/EsxiHost/CreateEsxiHost");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -508,6 +513,11 @@ public class EsxiHostClient implements EsxiHost {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "EsxiHost",
+                "DeleteEsxiHost",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/vmware/20200501/EsxiHost/DeleteEsxiHost");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -538,6 +548,11 @@ public class EsxiHostClient implements EsxiHost {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "EsxiHost",
+                "GetEsxiHost",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/vmware/20200501/EsxiHost/GetEsxiHost");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -567,6 +582,11 @@ public class EsxiHostClient implements EsxiHost {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "EsxiHost",
+                "ListEsxiHosts",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/vmware/20200501/EsxiHostSummary/ListEsxiHosts");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -596,6 +616,11 @@ public class EsxiHostClient implements EsxiHost {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "EsxiHost",
+                "UpdateEsxiHost",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/vmware/20200501/EsxiHost/UpdateEsxiHost");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {

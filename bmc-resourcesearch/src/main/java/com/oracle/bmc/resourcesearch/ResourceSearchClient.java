@@ -400,6 +400,11 @@ public class ResourceSearchClient implements ResourceSearch {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ResourceSearch",
+                "GetResourceType",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/search/20180409/ResourceType/GetResourceType");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -429,6 +434,11 @@ public class ResourceSearchClient implements ResourceSearch {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ResourceSearch",
+                "ListResourceTypes",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/search/20180409/ResourceType/ListResourceTypes");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -458,6 +468,11 @@ public class ResourceSearchClient implements ResourceSearch {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ResourceSearch",
+                "SearchResources",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/search/20180409/ResourceSummary/SearchResources");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {

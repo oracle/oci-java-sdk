@@ -390,6 +390,11 @@ public class BudgetAsyncClient implements BudgetAsync {
         final com.google.common.base.Function<javax.ws.rs.core.Response, CreateAlertRuleResponse>
                 transformer = CreateAlertRuleConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Budget",
+                "CreateAlertRule",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/budgets/20190111/AlertRule/CreateAlertRule");
 
         com.oracle.bmc.responses.AsyncHandler<CreateAlertRuleRequest, CreateAlertRuleResponse>
                 handlerToUse = handler;
@@ -434,6 +439,11 @@ public class BudgetAsyncClient implements BudgetAsync {
         final com.google.common.base.Function<javax.ws.rs.core.Response, CreateBudgetResponse>
                 transformer = CreateBudgetConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Budget",
+                "CreateBudget",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/budgets/20190111/Budget/CreateBudget");
 
         com.oracle.bmc.responses.AsyncHandler<CreateBudgetRequest, CreateBudgetResponse>
                 handlerToUse = handler;
@@ -478,6 +488,11 @@ public class BudgetAsyncClient implements BudgetAsync {
                 DeleteAlertRuleConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteAlertRuleResponse>
                 transformer = DeleteAlertRuleConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Budget",
+                "DeleteAlertRule",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/budgets/20190111/AlertRule/DeleteAlertRule");
 
         com.oracle.bmc.responses.AsyncHandler<DeleteAlertRuleRequest, DeleteAlertRuleResponse>
                 handlerToUse = handler;
@@ -516,6 +531,11 @@ public class BudgetAsyncClient implements BudgetAsync {
                 DeleteBudgetConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteBudgetResponse>
                 transformer = DeleteBudgetConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Budget",
+                "DeleteBudget",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/budgets/20190111/Budget/DeleteBudget");
 
         com.oracle.bmc.responses.AsyncHandler<DeleteBudgetRequest, DeleteBudgetResponse>
                 handlerToUse = handler;
@@ -554,6 +574,11 @@ public class BudgetAsyncClient implements BudgetAsync {
                 GetAlertRuleConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetAlertRuleResponse>
                 transformer = GetAlertRuleConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Budget",
+                "GetAlertRule",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/budgets/20190111/AlertRule/GetAlertRule");
 
         com.oracle.bmc.responses.AsyncHandler<GetAlertRuleRequest, GetAlertRuleResponse>
                 handlerToUse = handler;
@@ -591,6 +616,11 @@ public class BudgetAsyncClient implements BudgetAsync {
                 GetBudgetConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetBudgetResponse>
                 transformer = GetBudgetConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Budget",
+                "GetBudget",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/budgets/20190111/Budget/GetBudget");
 
         com.oracle.bmc.responses.AsyncHandler<GetBudgetRequest, GetBudgetResponse> handlerToUse =
                 handler;
@@ -629,6 +659,11 @@ public class BudgetAsyncClient implements BudgetAsync {
                 ListAlertRulesConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListAlertRulesResponse>
                 transformer = ListAlertRulesConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Budget",
+                "ListAlertRules",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/budgets/20190111/AlertRuleSummary/ListAlertRules");
 
         com.oracle.bmc.responses.AsyncHandler<ListAlertRulesRequest, ListAlertRulesResponse>
                 handlerToUse = handler;
@@ -667,6 +702,11 @@ public class BudgetAsyncClient implements BudgetAsync {
                 ListBudgetsConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListBudgetsResponse>
                 transformer = ListBudgetsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Budget",
+                "ListBudgets",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/budgets/20190111/BudgetSummary/ListBudgets");
 
         com.oracle.bmc.responses.AsyncHandler<ListBudgetsRequest, ListBudgetsResponse>
                 handlerToUse = handler;
@@ -706,6 +746,11 @@ public class BudgetAsyncClient implements BudgetAsync {
                 UpdateAlertRuleConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateAlertRuleResponse>
                 transformer = UpdateAlertRuleConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Budget",
+                "UpdateAlertRule",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/budgets/20190111/AlertRule/UpdateAlertRule");
 
         com.oracle.bmc.responses.AsyncHandler<UpdateAlertRuleRequest, UpdateAlertRuleResponse>
                 handlerToUse = handler;
@@ -749,6 +794,11 @@ public class BudgetAsyncClient implements BudgetAsync {
                 UpdateBudgetConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateBudgetResponse>
                 transformer = UpdateBudgetConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Budget",
+                "UpdateBudget",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/budgets/20190111/Budget/UpdateBudget");
 
         com.oracle.bmc.responses.AsyncHandler<UpdateBudgetRequest, UpdateBudgetResponse>
                 handlerToUse = handler;

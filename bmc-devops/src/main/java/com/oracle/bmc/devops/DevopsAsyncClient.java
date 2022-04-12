@@ -390,6 +390,11 @@ public class DevopsAsyncClient implements DevopsAsync {
         final com.google.common.base.Function<javax.ws.rs.core.Response, ApproveDeploymentResponse>
                 transformer = ApproveDeploymentConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Devops",
+                "ApproveDeployment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Deployment/ApproveDeployment");
 
         com.oracle.bmc.responses.AsyncHandler<ApproveDeploymentRequest, ApproveDeploymentResponse>
                 handlerToUse = handler;
@@ -435,6 +440,11 @@ public class DevopsAsyncClient implements DevopsAsync {
         final com.google.common.base.Function<javax.ws.rs.core.Response, CancelBuildRunResponse>
                 transformer = CancelBuildRunConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Devops",
+                "CancelBuildRun",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/BuildRun/CancelBuildRun");
 
         com.oracle.bmc.responses.AsyncHandler<CancelBuildRunRequest, CancelBuildRunResponse>
                 handlerToUse = handler;
@@ -480,6 +490,11 @@ public class DevopsAsyncClient implements DevopsAsync {
         final com.google.common.base.Function<javax.ws.rs.core.Response, CancelDeploymentResponse>
                 transformer = CancelDeploymentConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Devops",
+                "CancelDeployment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Deployment/CancelDeployment");
 
         com.oracle.bmc.responses.AsyncHandler<CancelDeploymentRequest, CancelDeploymentResponse>
                 handlerToUse = handler;
@@ -526,6 +541,11 @@ public class DevopsAsyncClient implements DevopsAsync {
                         javax.ws.rs.core.Response, ChangeProjectCompartmentResponse>
                 transformer = ChangeProjectCompartmentConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Devops",
+                "ChangeProjectCompartment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Project/ChangeProjectCompartment");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeProjectCompartmentRequest, ChangeProjectCompartmentResponse>
@@ -573,6 +593,11 @@ public class DevopsAsyncClient implements DevopsAsync {
                         javax.ws.rs.core.Response, CreateBuildPipelineResponse>
                 transformer = CreateBuildPipelineConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Devops",
+                "CreateBuildPipeline",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/BuildPipeline/CreateBuildPipeline");
 
         com.oracle.bmc.responses.AsyncHandler<
                         CreateBuildPipelineRequest, CreateBuildPipelineResponse>
@@ -620,6 +645,11 @@ public class DevopsAsyncClient implements DevopsAsync {
                         javax.ws.rs.core.Response, CreateBuildPipelineStageResponse>
                 transformer = CreateBuildPipelineStageConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Devops",
+                "CreateBuildPipelineStage",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/BuildPipelineStage/CreateBuildPipelineStage");
 
         com.oracle.bmc.responses.AsyncHandler<
                         CreateBuildPipelineStageRequest, CreateBuildPipelineStageResponse>
@@ -666,6 +696,11 @@ public class DevopsAsyncClient implements DevopsAsync {
         final com.google.common.base.Function<javax.ws.rs.core.Response, CreateBuildRunResponse>
                 transformer = CreateBuildRunConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Devops",
+                "CreateBuildRun",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/BuildRun/CreateBuildRun");
 
         com.oracle.bmc.responses.AsyncHandler<CreateBuildRunRequest, CreateBuildRunResponse>
                 handlerToUse = handler;
@@ -711,6 +746,11 @@ public class DevopsAsyncClient implements DevopsAsync {
         final com.google.common.base.Function<javax.ws.rs.core.Response, CreateConnectionResponse>
                 transformer = CreateConnectionConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Devops",
+                "CreateConnection",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Connection/CreateConnection");
 
         com.oracle.bmc.responses.AsyncHandler<CreateConnectionRequest, CreateConnectionResponse>
                 handlerToUse = handler;
@@ -757,6 +797,11 @@ public class DevopsAsyncClient implements DevopsAsync {
                         javax.ws.rs.core.Response, CreateDeployArtifactResponse>
                 transformer = CreateDeployArtifactConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Devops",
+                "CreateDeployArtifact",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/DeployArtifact/CreateDeployArtifact");
 
         com.oracle.bmc.responses.AsyncHandler<
                         CreateDeployArtifactRequest, CreateDeployArtifactResponse>
@@ -804,6 +849,11 @@ public class DevopsAsyncClient implements DevopsAsync {
                         javax.ws.rs.core.Response, CreateDeployEnvironmentResponse>
                 transformer = CreateDeployEnvironmentConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Devops",
+                "CreateDeployEnvironment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/DeployEnvironment/CreateDeployEnvironment");
 
         com.oracle.bmc.responses.AsyncHandler<
                         CreateDeployEnvironmentRequest, CreateDeployEnvironmentResponse>
@@ -851,6 +901,11 @@ public class DevopsAsyncClient implements DevopsAsync {
                         javax.ws.rs.core.Response, CreateDeployPipelineResponse>
                 transformer = CreateDeployPipelineConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Devops",
+                "CreateDeployPipeline",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/DeployPipeline/CreateDeployPipeline");
 
         com.oracle.bmc.responses.AsyncHandler<
                         CreateDeployPipelineRequest, CreateDeployPipelineResponse>
@@ -897,6 +952,11 @@ public class DevopsAsyncClient implements DevopsAsync {
         final com.google.common.base.Function<javax.ws.rs.core.Response, CreateDeployStageResponse>
                 transformer = CreateDeployStageConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Devops",
+                "CreateDeployStage",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/DeployStage/CreateDeployStage");
 
         com.oracle.bmc.responses.AsyncHandler<CreateDeployStageRequest, CreateDeployStageResponse>
                 handlerToUse = handler;
@@ -942,6 +1002,11 @@ public class DevopsAsyncClient implements DevopsAsync {
         final com.google.common.base.Function<javax.ws.rs.core.Response, CreateDeploymentResponse>
                 transformer = CreateDeploymentConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Devops",
+                "CreateDeployment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Deployment/CreateDeployment");
 
         com.oracle.bmc.responses.AsyncHandler<CreateDeploymentRequest, CreateDeploymentResponse>
                 handlerToUse = handler;
@@ -986,6 +1051,11 @@ public class DevopsAsyncClient implements DevopsAsync {
         final com.google.common.base.Function<javax.ws.rs.core.Response, CreateProjectResponse>
                 transformer = CreateProjectConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Devops",
+                "CreateProject",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Project/CreateProject");
 
         com.oracle.bmc.responses.AsyncHandler<CreateProjectRequest, CreateProjectResponse>
                 handlerToUse = handler;
@@ -1031,6 +1101,11 @@ public class DevopsAsyncClient implements DevopsAsync {
         final com.google.common.base.Function<javax.ws.rs.core.Response, CreateRepositoryResponse>
                 transformer = CreateRepositoryConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Devops",
+                "CreateRepository",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Repository/CreateRepository");
 
         com.oracle.bmc.responses.AsyncHandler<CreateRepositoryRequest, CreateRepositoryResponse>
                 handlerToUse = handler;
@@ -1075,6 +1150,11 @@ public class DevopsAsyncClient implements DevopsAsync {
         final com.google.common.base.Function<javax.ws.rs.core.Response, CreateTriggerResponse>
                 transformer = CreateTriggerConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Devops",
+                "CreateTrigger",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Trigger/CreateTrigger");
 
         com.oracle.bmc.responses.AsyncHandler<CreateTriggerRequest, CreateTriggerResponse>
                 handlerToUse = handler;
@@ -1120,6 +1200,11 @@ public class DevopsAsyncClient implements DevopsAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, DeleteBuildPipelineResponse>
                 transformer = DeleteBuildPipelineConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Devops",
+                "DeleteBuildPipeline",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/BuildPipeline/DeleteBuildPipeline");
 
         com.oracle.bmc.responses.AsyncHandler<
                         DeleteBuildPipelineRequest, DeleteBuildPipelineResponse>
@@ -1161,6 +1246,11 @@ public class DevopsAsyncClient implements DevopsAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, DeleteBuildPipelineStageResponse>
                 transformer = DeleteBuildPipelineStageConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Devops",
+                "DeleteBuildPipelineStage",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/BuildPipelineStage/DeleteBuildPipelineStage");
 
         com.oracle.bmc.responses.AsyncHandler<
                         DeleteBuildPipelineStageRequest, DeleteBuildPipelineStageResponse>
@@ -1201,6 +1291,11 @@ public class DevopsAsyncClient implements DevopsAsync {
                 DeleteConnectionConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteConnectionResponse>
                 transformer = DeleteConnectionConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Devops",
+                "DeleteConnection",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Connection/DeleteConnection");
 
         com.oracle.bmc.responses.AsyncHandler<DeleteConnectionRequest, DeleteConnectionResponse>
                 handlerToUse = handler;
@@ -1241,6 +1336,11 @@ public class DevopsAsyncClient implements DevopsAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, DeleteDeployArtifactResponse>
                 transformer = DeleteDeployArtifactConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Devops",
+                "DeleteDeployArtifact",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/DeployArtifact/DeleteDeployArtifact");
 
         com.oracle.bmc.responses.AsyncHandler<
                         DeleteDeployArtifactRequest, DeleteDeployArtifactResponse>
@@ -1282,6 +1382,11 @@ public class DevopsAsyncClient implements DevopsAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, DeleteDeployEnvironmentResponse>
                 transformer = DeleteDeployEnvironmentConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Devops",
+                "DeleteDeployEnvironment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/DeployEnvironment/DeleteDeployEnvironment");
 
         com.oracle.bmc.responses.AsyncHandler<
                         DeleteDeployEnvironmentRequest, DeleteDeployEnvironmentResponse>
@@ -1323,6 +1428,11 @@ public class DevopsAsyncClient implements DevopsAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, DeleteDeployPipelineResponse>
                 transformer = DeleteDeployPipelineConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Devops",
+                "DeleteDeployPipeline",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/DeployPipeline/DeleteDeployPipeline");
 
         com.oracle.bmc.responses.AsyncHandler<
                         DeleteDeployPipelineRequest, DeleteDeployPipelineResponse>
@@ -1363,6 +1473,11 @@ public class DevopsAsyncClient implements DevopsAsync {
                 DeleteDeployStageConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteDeployStageResponse>
                 transformer = DeleteDeployStageConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Devops",
+                "DeleteDeployStage",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/DeployStage/DeleteDeployStage");
 
         com.oracle.bmc.responses.AsyncHandler<DeleteDeployStageRequest, DeleteDeployStageResponse>
                 handlerToUse = handler;
@@ -1401,6 +1516,11 @@ public class DevopsAsyncClient implements DevopsAsync {
                 DeleteProjectConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteProjectResponse>
                 transformer = DeleteProjectConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Devops",
+                "DeleteProject",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Project/DeleteProject");
 
         com.oracle.bmc.responses.AsyncHandler<DeleteProjectRequest, DeleteProjectResponse>
                 handlerToUse = handler;
@@ -1439,6 +1559,11 @@ public class DevopsAsyncClient implements DevopsAsync {
         final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteRefResponse>
                 transformer = DeleteRefConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Devops",
+                "DeleteRef",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Repository/DeleteRef");
 
         com.oracle.bmc.responses.AsyncHandler<DeleteRefRequest, DeleteRefResponse> handlerToUse =
                 handler;
@@ -1477,6 +1602,11 @@ public class DevopsAsyncClient implements DevopsAsync {
                 DeleteRepositoryConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteRepositoryResponse>
                 transformer = DeleteRepositoryConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Devops",
+                "DeleteRepository",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Repository/DeleteRepository");
 
         com.oracle.bmc.responses.AsyncHandler<DeleteRepositoryRequest, DeleteRepositoryResponse>
                 handlerToUse = handler;
@@ -1515,6 +1645,11 @@ public class DevopsAsyncClient implements DevopsAsync {
                 DeleteTriggerConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteTriggerResponse>
                 transformer = DeleteTriggerConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Devops",
+                "DeleteTrigger",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Trigger/DeleteTrigger");
 
         com.oracle.bmc.responses.AsyncHandler<DeleteTriggerRequest, DeleteTriggerResponse>
                 handlerToUse = handler;
@@ -1554,6 +1689,11 @@ public class DevopsAsyncClient implements DevopsAsync {
                 GetBuildPipelineConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetBuildPipelineResponse>
                 transformer = GetBuildPipelineConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Devops",
+                "GetBuildPipeline",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/BuildPipeline/GetBuildPipeline");
 
         com.oracle.bmc.responses.AsyncHandler<GetBuildPipelineRequest, GetBuildPipelineResponse>
                 handlerToUse = handler;
@@ -1594,6 +1734,11 @@ public class DevopsAsyncClient implements DevopsAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetBuildPipelineStageResponse>
                 transformer = GetBuildPipelineStageConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Devops",
+                "GetBuildPipelineStage",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/BuildPipelineStage/GetBuildPipelineStage");
 
         com.oracle.bmc.responses.AsyncHandler<
                         GetBuildPipelineStageRequest, GetBuildPipelineStageResponse>
@@ -1633,6 +1778,11 @@ public class DevopsAsyncClient implements DevopsAsync {
                 GetBuildRunConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetBuildRunResponse>
                 transformer = GetBuildRunConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Devops",
+                "GetBuildRun",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/BuildRun/GetBuildRun");
 
         com.oracle.bmc.responses.AsyncHandler<GetBuildRunRequest, GetBuildRunResponse>
                 handlerToUse = handler;
@@ -1670,6 +1820,11 @@ public class DevopsAsyncClient implements DevopsAsync {
                 GetCommitConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetCommitResponse>
                 transformer = GetCommitConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Devops",
+                "GetCommit",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Repository/GetCommit");
 
         com.oracle.bmc.responses.AsyncHandler<GetCommitRequest, GetCommitResponse> handlerToUse =
                 handler;
@@ -1707,6 +1862,11 @@ public class DevopsAsyncClient implements DevopsAsync {
                 GetCommitDiffConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetCommitDiffResponse>
                 transformer = GetCommitDiffConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Devops",
+                "GetCommitDiff",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Repository/GetCommitDiff");
 
         com.oracle.bmc.responses.AsyncHandler<GetCommitDiffRequest, GetCommitDiffResponse>
                 handlerToUse = handler;
@@ -1745,6 +1905,11 @@ public class DevopsAsyncClient implements DevopsAsync {
                 GetConnectionConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetConnectionResponse>
                 transformer = GetConnectionConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Devops",
+                "GetConnection",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Connection/GetConnection");
 
         com.oracle.bmc.responses.AsyncHandler<GetConnectionRequest, GetConnectionResponse>
                 handlerToUse = handler;
@@ -1784,6 +1949,11 @@ public class DevopsAsyncClient implements DevopsAsync {
                 GetDeployArtifactConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetDeployArtifactResponse>
                 transformer = GetDeployArtifactConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Devops",
+                "GetDeployArtifact",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/DeployArtifact/GetDeployArtifact");
 
         com.oracle.bmc.responses.AsyncHandler<GetDeployArtifactRequest, GetDeployArtifactResponse>
                 handlerToUse = handler;
@@ -1824,6 +1994,11 @@ public class DevopsAsyncClient implements DevopsAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetDeployEnvironmentResponse>
                 transformer = GetDeployEnvironmentConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Devops",
+                "GetDeployEnvironment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/DeployEnvironment/GetDeployEnvironment");
 
         com.oracle.bmc.responses.AsyncHandler<
                         GetDeployEnvironmentRequest, GetDeployEnvironmentResponse>
@@ -1864,6 +2039,11 @@ public class DevopsAsyncClient implements DevopsAsync {
                 GetDeployPipelineConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetDeployPipelineResponse>
                 transformer = GetDeployPipelineConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Devops",
+                "GetDeployPipeline",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/DeployPipeline/GetDeployPipeline");
 
         com.oracle.bmc.responses.AsyncHandler<GetDeployPipelineRequest, GetDeployPipelineResponse>
                 handlerToUse = handler;
@@ -1903,6 +2083,11 @@ public class DevopsAsyncClient implements DevopsAsync {
                 GetDeployStageConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetDeployStageResponse>
                 transformer = GetDeployStageConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Devops",
+                "GetDeployStage",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/DeployStage/GetDeployStage");
 
         com.oracle.bmc.responses.AsyncHandler<GetDeployStageRequest, GetDeployStageResponse>
                 handlerToUse = handler;
@@ -1941,6 +2126,11 @@ public class DevopsAsyncClient implements DevopsAsync {
                 GetDeploymentConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetDeploymentResponse>
                 transformer = GetDeploymentConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Devops",
+                "GetDeployment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Deployment/GetDeployment");
 
         com.oracle.bmc.responses.AsyncHandler<GetDeploymentRequest, GetDeploymentResponse>
                 handlerToUse = handler;
@@ -1979,6 +2169,11 @@ public class DevopsAsyncClient implements DevopsAsync {
                 GetFileDiffConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetFileDiffResponse>
                 transformer = GetFileDiffConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Devops",
+                "GetFileDiff",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Repository/GetFileDiff");
 
         com.oracle.bmc.responses.AsyncHandler<GetFileDiffRequest, GetFileDiffResponse>
                 handlerToUse = handler;
@@ -2018,6 +2213,11 @@ public class DevopsAsyncClient implements DevopsAsync {
                 GetMirrorRecordConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetMirrorRecordResponse>
                 transformer = GetMirrorRecordConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Devops",
+                "GetMirrorRecord",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Repository/GetMirrorRecord");
 
         com.oracle.bmc.responses.AsyncHandler<GetMirrorRecordRequest, GetMirrorRecordResponse>
                 handlerToUse = handler;
@@ -2055,6 +2255,11 @@ public class DevopsAsyncClient implements DevopsAsync {
                 GetObjectConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetObjectResponse>
                 transformer = GetObjectConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Devops",
+                "GetObject",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/RepositoryObject/GetObject");
 
         com.oracle.bmc.responses.AsyncHandler<GetObjectRequest, GetObjectResponse> handlerToUse =
                 handler;
@@ -2103,6 +2308,11 @@ public class DevopsAsyncClient implements DevopsAsync {
                 GetObjectContentConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetObjectContentResponse>
                 transformer = GetObjectContentConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Devops",
+                "GetObjectContent",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Repository/GetObjectContent");
 
         com.oracle.bmc.responses.AsyncHandler<GetObjectContentRequest, GetObjectContentResponse>
                 handlerToUse = handler;
@@ -2140,6 +2350,11 @@ public class DevopsAsyncClient implements DevopsAsync {
                 GetProjectConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetProjectResponse>
                 transformer = GetProjectConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Devops",
+                "GetProject",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Project/GetProject");
 
         com.oracle.bmc.responses.AsyncHandler<GetProjectRequest, GetProjectResponse> handlerToUse =
                 handler;
@@ -2176,6 +2391,11 @@ public class DevopsAsyncClient implements DevopsAsync {
                 GetRefConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetRefResponse>
                 transformer = GetRefConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Devops",
+                "GetRef",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Repository/GetRef");
 
         com.oracle.bmc.responses.AsyncHandler<GetRefRequest, GetRefResponse> handlerToUse = handler;
 
@@ -2213,6 +2433,11 @@ public class DevopsAsyncClient implements DevopsAsync {
                 GetRepoFileDiffConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetRepoFileDiffResponse>
                 transformer = GetRepoFileDiffConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Devops",
+                "GetRepoFileDiff",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Repository/GetRepoFileDiff");
 
         com.oracle.bmc.responses.AsyncHandler<GetRepoFileDiffRequest, GetRepoFileDiffResponse>
                 handlerToUse = handler;
@@ -2252,6 +2477,11 @@ public class DevopsAsyncClient implements DevopsAsync {
                 GetRepoFileLinesConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetRepoFileLinesResponse>
                 transformer = GetRepoFileLinesConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Devops",
+                "GetRepoFileLines",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Repository/GetRepoFileLines");
 
         com.oracle.bmc.responses.AsyncHandler<GetRepoFileLinesRequest, GetRepoFileLinesResponse>
                 handlerToUse = handler;
@@ -2290,6 +2520,11 @@ public class DevopsAsyncClient implements DevopsAsync {
                 GetRepositoryConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetRepositoryResponse>
                 transformer = GetRepositoryConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Devops",
+                "GetRepository",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Repository/GetRepository");
 
         com.oracle.bmc.responses.AsyncHandler<GetRepositoryRequest, GetRepositoryResponse>
                 handlerToUse = handler;
@@ -2342,6 +2577,11 @@ public class DevopsAsyncClient implements DevopsAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetRepositoryArchiveContentResponse>
                 transformer = GetRepositoryArchiveContentConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Devops",
+                "GetRepositoryArchiveContent",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Repository/GetRepositoryArchiveContent");
 
         com.oracle.bmc.responses.AsyncHandler<
                         GetRepositoryArchiveContentRequest, GetRepositoryArchiveContentResponse>
@@ -2384,6 +2624,11 @@ public class DevopsAsyncClient implements DevopsAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetRepositoryFileLinesResponse>
                 transformer = GetRepositoryFileLinesConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Devops",
+                "GetRepositoryFileLines",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Repository/GetRepositoryFileLines");
 
         com.oracle.bmc.responses.AsyncHandler<
                         GetRepositoryFileLinesRequest, GetRepositoryFileLinesResponse>
@@ -2422,6 +2667,11 @@ public class DevopsAsyncClient implements DevopsAsync {
                 GetTriggerConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetTriggerResponse>
                 transformer = GetTriggerConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Devops",
+                "GetTrigger",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Trigger/GetTrigger");
 
         com.oracle.bmc.responses.AsyncHandler<GetTriggerRequest, GetTriggerResponse> handlerToUse =
                 handler;
@@ -2461,6 +2711,11 @@ public class DevopsAsyncClient implements DevopsAsync {
                 GetWorkRequestConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetWorkRequestResponse>
                 transformer = GetWorkRequestConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Devops",
+                "GetWorkRequest",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/WorkRequest/GetWorkRequest");
 
         com.oracle.bmc.responses.AsyncHandler<GetWorkRequestRequest, GetWorkRequestResponse>
                 handlerToUse = handler;
@@ -2499,6 +2754,11 @@ public class DevopsAsyncClient implements DevopsAsync {
                 ListAuthorsConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListAuthorsResponse>
                 transformer = ListAuthorsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Devops",
+                "ListAuthors",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Repository/ListAuthors");
 
         com.oracle.bmc.responses.AsyncHandler<ListAuthorsRequest, ListAuthorsResponse>
                 handlerToUse = handler;
@@ -2539,6 +2799,11 @@ public class DevopsAsyncClient implements DevopsAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListBuildPipelineStagesResponse>
                 transformer = ListBuildPipelineStagesConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Devops",
+                "ListBuildPipelineStages",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/BuildPipelineStageSummary/ListBuildPipelineStages");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListBuildPipelineStagesRequest, ListBuildPipelineStagesResponse>
@@ -2579,6 +2844,11 @@ public class DevopsAsyncClient implements DevopsAsync {
                 ListBuildPipelinesConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListBuildPipelinesResponse>
                 transformer = ListBuildPipelinesConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Devops",
+                "ListBuildPipelines",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/BuildPipelineCollection/ListBuildPipelines");
 
         com.oracle.bmc.responses.AsyncHandler<ListBuildPipelinesRequest, ListBuildPipelinesResponse>
                 handlerToUse = handler;
@@ -2617,6 +2887,11 @@ public class DevopsAsyncClient implements DevopsAsync {
                 ListBuildRunsConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListBuildRunsResponse>
                 transformer = ListBuildRunsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Devops",
+                "ListBuildRuns",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/BuildRunSummary/ListBuildRuns");
 
         com.oracle.bmc.responses.AsyncHandler<ListBuildRunsRequest, ListBuildRunsResponse>
                 handlerToUse = handler;
@@ -2656,6 +2931,11 @@ public class DevopsAsyncClient implements DevopsAsync {
                 ListCommitDiffsConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListCommitDiffsResponse>
                 transformer = ListCommitDiffsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Devops",
+                "ListCommitDiffs",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Repository/ListCommitDiffs");
 
         com.oracle.bmc.responses.AsyncHandler<ListCommitDiffsRequest, ListCommitDiffsResponse>
                 handlerToUse = handler;
@@ -2694,6 +2974,11 @@ public class DevopsAsyncClient implements DevopsAsync {
                 ListCommitsConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListCommitsResponse>
                 transformer = ListCommitsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Devops",
+                "ListCommits",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/RepositoryCommit/ListCommits");
 
         com.oracle.bmc.responses.AsyncHandler<ListCommitsRequest, ListCommitsResponse>
                 handlerToUse = handler;
@@ -2733,6 +3018,11 @@ public class DevopsAsyncClient implements DevopsAsync {
                 ListConnectionsConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListConnectionsResponse>
                 transformer = ListConnectionsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Devops",
+                "ListConnections",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/ConnectionCollection/ListConnections");
 
         com.oracle.bmc.responses.AsyncHandler<ListConnectionsRequest, ListConnectionsResponse>
                 handlerToUse = handler;
@@ -2773,6 +3063,11 @@ public class DevopsAsyncClient implements DevopsAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListDeployArtifactsResponse>
                 transformer = ListDeployArtifactsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Devops",
+                "ListDeployArtifacts",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/DeployArtifactSummary/ListDeployArtifacts");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListDeployArtifactsRequest, ListDeployArtifactsResponse>
@@ -2814,6 +3109,11 @@ public class DevopsAsyncClient implements DevopsAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListDeployEnvironmentsResponse>
                 transformer = ListDeployEnvironmentsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Devops",
+                "ListDeployEnvironments",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/DeployEnvironmentSummary/ListDeployEnvironments");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListDeployEnvironmentsRequest, ListDeployEnvironmentsResponse>
@@ -2855,6 +3155,11 @@ public class DevopsAsyncClient implements DevopsAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListDeployPipelinesResponse>
                 transformer = ListDeployPipelinesConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Devops",
+                "ListDeployPipelines",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/DeployPipelineSummary/ListDeployPipelines");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListDeployPipelinesRequest, ListDeployPipelinesResponse>
@@ -2895,6 +3200,11 @@ public class DevopsAsyncClient implements DevopsAsync {
                 ListDeployStagesConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListDeployStagesResponse>
                 transformer = ListDeployStagesConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Devops",
+                "ListDeployStages",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/DeployStageSummary/ListDeployStages");
 
         com.oracle.bmc.responses.AsyncHandler<ListDeployStagesRequest, ListDeployStagesResponse>
                 handlerToUse = handler;
@@ -2934,6 +3244,11 @@ public class DevopsAsyncClient implements DevopsAsync {
                 ListDeploymentsConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListDeploymentsResponse>
                 transformer = ListDeploymentsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Devops",
+                "ListDeployments",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/DeploymentSummary/ListDeployments");
 
         com.oracle.bmc.responses.AsyncHandler<ListDeploymentsRequest, ListDeploymentsResponse>
                 handlerToUse = handler;
@@ -2973,6 +3288,11 @@ public class DevopsAsyncClient implements DevopsAsync {
                 ListMirrorRecordsConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListMirrorRecordsResponse>
                 transformer = ListMirrorRecordsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Devops",
+                "ListMirrorRecords",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Repository/ListMirrorRecords");
 
         com.oracle.bmc.responses.AsyncHandler<ListMirrorRecordsRequest, ListMirrorRecordsResponse>
                 handlerToUse = handler;
@@ -3010,6 +3330,11 @@ public class DevopsAsyncClient implements DevopsAsync {
                 ListPathsConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListPathsResponse>
                 transformer = ListPathsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Devops",
+                "ListPaths",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/RepositoryPathSummary/ListPaths");
 
         com.oracle.bmc.responses.AsyncHandler<ListPathsRequest, ListPathsResponse> handlerToUse =
                 handler;
@@ -3047,6 +3372,11 @@ public class DevopsAsyncClient implements DevopsAsync {
                 ListProjectsConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListProjectsResponse>
                 transformer = ListProjectsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Devops",
+                "ListProjects",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/ProjectSummary/ListProjects");
 
         com.oracle.bmc.responses.AsyncHandler<ListProjectsRequest, ListProjectsResponse>
                 handlerToUse = handler;
@@ -3084,6 +3414,11 @@ public class DevopsAsyncClient implements DevopsAsync {
                 ListRefsConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListRefsResponse>
                 transformer = ListRefsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Devops",
+                "ListRefs",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/RepositoryRef/ListRefs");
 
         com.oracle.bmc.responses.AsyncHandler<ListRefsRequest, ListRefsResponse> handlerToUse =
                 handler;
@@ -3122,6 +3457,11 @@ public class DevopsAsyncClient implements DevopsAsync {
                 ListRepositoriesConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListRepositoriesResponse>
                 transformer = ListRepositoriesConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Devops",
+                "ListRepositories",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Repository/ListRepositories");
 
         com.oracle.bmc.responses.AsyncHandler<ListRepositoriesRequest, ListRepositoriesResponse>
                 handlerToUse = handler;
@@ -3160,6 +3500,11 @@ public class DevopsAsyncClient implements DevopsAsync {
                 ListTriggersConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListTriggersResponse>
                 transformer = ListTriggersConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Devops",
+                "ListTriggers",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/TriggerCollection/ListTriggers");
 
         com.oracle.bmc.responses.AsyncHandler<ListTriggersRequest, ListTriggersResponse>
                 handlerToUse = handler;
@@ -3200,6 +3545,11 @@ public class DevopsAsyncClient implements DevopsAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListWorkRequestErrorsResponse>
                 transformer = ListWorkRequestErrorsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Devops",
+                "ListWorkRequestErrors",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/WorkRequestError/ListWorkRequestErrors");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListWorkRequestErrorsRequest, ListWorkRequestErrorsResponse>
@@ -3241,6 +3591,11 @@ public class DevopsAsyncClient implements DevopsAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListWorkRequestLogsResponse>
                 transformer = ListWorkRequestLogsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Devops",
+                "ListWorkRequestLogs",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/WorkRequestLogEntry/ListWorkRequestLogs");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListWorkRequestLogsRequest, ListWorkRequestLogsResponse>
@@ -3281,6 +3636,11 @@ public class DevopsAsyncClient implements DevopsAsync {
                 ListWorkRequestsConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListWorkRequestsResponse>
                 transformer = ListWorkRequestsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Devops",
+                "ListWorkRequests",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/WorkRequest/ListWorkRequests");
 
         com.oracle.bmc.responses.AsyncHandler<ListWorkRequestsRequest, ListWorkRequestsResponse>
                 handlerToUse = handler;
@@ -3320,6 +3680,11 @@ public class DevopsAsyncClient implements DevopsAsync {
                 MirrorRepositoryConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, MirrorRepositoryResponse>
                 transformer = MirrorRepositoryConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Devops",
+                "MirrorRepository",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Repository/MirrorRepository");
 
         com.oracle.bmc.responses.AsyncHandler<MirrorRepositoryRequest, MirrorRepositoryResponse>
                 handlerToUse = handler;
@@ -3360,6 +3725,11 @@ public class DevopsAsyncClient implements DevopsAsync {
         final com.google.common.base.Function<javax.ws.rs.core.Response, PutRepositoryRefResponse>
                 transformer = PutRepositoryRefConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Devops",
+                "PutRepositoryRef",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Repository/PutRepositoryRef");
 
         com.oracle.bmc.responses.AsyncHandler<PutRepositoryRefRequest, PutRepositoryRefResponse>
                 handlerToUse = handler;
@@ -3405,6 +3775,11 @@ public class DevopsAsyncClient implements DevopsAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, UpdateBuildPipelineResponse>
                 transformer = UpdateBuildPipelineConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Devops",
+                "UpdateBuildPipeline",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/BuildPipeline/UpdateBuildPipeline");
 
         com.oracle.bmc.responses.AsyncHandler<
                         UpdateBuildPipelineRequest, UpdateBuildPipelineResponse>
@@ -3451,6 +3826,11 @@ public class DevopsAsyncClient implements DevopsAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, UpdateBuildPipelineStageResponse>
                 transformer = UpdateBuildPipelineStageConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Devops",
+                "UpdateBuildPipelineStage",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/BuildPipelineStage/UpdateBuildPipelineStage");
 
         com.oracle.bmc.responses.AsyncHandler<
                         UpdateBuildPipelineStageRequest, UpdateBuildPipelineStageResponse>
@@ -3496,6 +3876,11 @@ public class DevopsAsyncClient implements DevopsAsync {
                 UpdateBuildRunConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateBuildRunResponse>
                 transformer = UpdateBuildRunConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Devops",
+                "UpdateBuildRun",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/BuildRun/UpdateBuildRun");
 
         com.oracle.bmc.responses.AsyncHandler<UpdateBuildRunRequest, UpdateBuildRunResponse>
                 handlerToUse = handler;
@@ -3540,6 +3925,11 @@ public class DevopsAsyncClient implements DevopsAsync {
                 UpdateConnectionConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateConnectionResponse>
                 transformer = UpdateConnectionConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Devops",
+                "UpdateConnection",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Connection/UpdateConnection");
 
         com.oracle.bmc.responses.AsyncHandler<UpdateConnectionRequest, UpdateConnectionResponse>
                 handlerToUse = handler;
@@ -3585,6 +3975,11 @@ public class DevopsAsyncClient implements DevopsAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, UpdateDeployArtifactResponse>
                 transformer = UpdateDeployArtifactConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Devops",
+                "UpdateDeployArtifact",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/DeployArtifact/UpdateDeployArtifact");
 
         com.oracle.bmc.responses.AsyncHandler<
                         UpdateDeployArtifactRequest, UpdateDeployArtifactResponse>
@@ -3631,6 +4026,11 @@ public class DevopsAsyncClient implements DevopsAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, UpdateDeployEnvironmentResponse>
                 transformer = UpdateDeployEnvironmentConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Devops",
+                "UpdateDeployEnvironment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/DeployEnvironment/UpdateDeployEnvironment");
 
         com.oracle.bmc.responses.AsyncHandler<
                         UpdateDeployEnvironmentRequest, UpdateDeployEnvironmentResponse>
@@ -3677,6 +4077,11 @@ public class DevopsAsyncClient implements DevopsAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, UpdateDeployPipelineResponse>
                 transformer = UpdateDeployPipelineConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Devops",
+                "UpdateDeployPipeline",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/DeployPipeline/UpdateDeployPipeline");
 
         com.oracle.bmc.responses.AsyncHandler<
                         UpdateDeployPipelineRequest, UpdateDeployPipelineResponse>
@@ -3722,6 +4127,11 @@ public class DevopsAsyncClient implements DevopsAsync {
                 UpdateDeployStageConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateDeployStageResponse>
                 transformer = UpdateDeployStageConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Devops",
+                "UpdateDeployStage",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/DeployStage/UpdateDeployStage");
 
         com.oracle.bmc.responses.AsyncHandler<UpdateDeployStageRequest, UpdateDeployStageResponse>
                 handlerToUse = handler;
@@ -3766,6 +4176,11 @@ public class DevopsAsyncClient implements DevopsAsync {
                 UpdateDeploymentConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateDeploymentResponse>
                 transformer = UpdateDeploymentConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Devops",
+                "UpdateDeployment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Deployment/UpdateDeployment");
 
         com.oracle.bmc.responses.AsyncHandler<UpdateDeploymentRequest, UpdateDeploymentResponse>
                 handlerToUse = handler;
@@ -3809,6 +4224,11 @@ public class DevopsAsyncClient implements DevopsAsync {
                 UpdateProjectConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateProjectResponse>
                 transformer = UpdateProjectConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Devops",
+                "UpdateProject",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Project/UpdateProject");
 
         com.oracle.bmc.responses.AsyncHandler<UpdateProjectRequest, UpdateProjectResponse>
                 handlerToUse = handler;
@@ -3853,6 +4273,11 @@ public class DevopsAsyncClient implements DevopsAsync {
                 UpdateRepositoryConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateRepositoryResponse>
                 transformer = UpdateRepositoryConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Devops",
+                "UpdateRepository",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Repository/UpdateRepository");
 
         com.oracle.bmc.responses.AsyncHandler<UpdateRepositoryRequest, UpdateRepositoryResponse>
                 handlerToUse = handler;
@@ -3896,6 +4321,11 @@ public class DevopsAsyncClient implements DevopsAsync {
                 UpdateTriggerConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateTriggerResponse>
                 transformer = UpdateTriggerConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Devops",
+                "UpdateTrigger",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Trigger/UpdateTrigger");
 
         com.oracle.bmc.responses.AsyncHandler<UpdateTriggerRequest, UpdateTriggerResponse>
                 handlerToUse = handler;

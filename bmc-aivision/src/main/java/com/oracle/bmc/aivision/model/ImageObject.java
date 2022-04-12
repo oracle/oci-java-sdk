@@ -5,7 +5,7 @@
 package com.oracle.bmc.aivision.model;
 
 /**
- * Detected object in image.
+ * The object detected in an image.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -80,13 +80,13 @@ public class ImageObject {
     }
 
     /**
-     * Object category name. Every value returned by the pre-deployed model will be in English.
+     * The object category name. Every value returned by the pre-deployed model is in English.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     String name;
 
     /**
-     * Confidence score between 0 to 1.
+     * The confidence score, between 0 and 1.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("confidence")
     Float confidence;

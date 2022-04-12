@@ -86,6 +86,23 @@ public interface VirtualNetworkAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Add an IPv6 CIDR to a subnet.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<AddIpv6SubnetCidrResponse> addIpv6SubnetCidr(
+            AddIpv6SubnetCidrRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            AddIpv6SubnetCidrRequest, AddIpv6SubnetCidrResponse>
+                    handler);
+
+    /**
      * Add an IPv6 CIDR to a VCN. The VCN size is always /56 and assigned by Oracle.
      * Once added the IPv6 CIDR block cannot be removed or modified.
      *
@@ -3876,6 +3893,40 @@ public interface VirtualNetworkAsync extends AutoCloseable {
                                     RemoveImportDrgRouteDistributionRequest,
                                     RemoveImportDrgRouteDistributionResponse>
                             handler);
+
+    /**
+     * Remove an IPv6 CIDR from a subnet. At least one IPv6 CIDR should remain.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<RemoveIpv6SubnetCidrResponse> removeIpv6SubnetCidr(
+            RemoveIpv6SubnetCidrRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            RemoveIpv6SubnetCidrRequest, RemoveIpv6SubnetCidrResponse>
+                    handler);
+
+    /**
+     * Removing an existing IPv6 CIDR from a VCN.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<RemoveIpv6VcnCidrResponse> removeIpv6VcnCidr(
+            RemoveIpv6VcnCidrRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            RemoveIpv6VcnCidrRequest, RemoveIpv6VcnCidrResponse>
+                    handler);
 
     /**
      * Removes one or more security rules from the specified network security group.

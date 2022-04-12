@@ -5,7 +5,7 @@
 package com.oracle.bmc.aivision.model;
 
 /**
- * Identifying the type of the document.
+ * Identifying the document type.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -90,7 +90,7 @@ public class DocumentClassificationFeature extends DocumentFeature {
     Integer maxResults;
 
     /**
-     * Custom model id.
+     * The custom model ID.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("modelId")
     String modelId;

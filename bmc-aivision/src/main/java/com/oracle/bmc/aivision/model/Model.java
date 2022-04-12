@@ -349,25 +349,25 @@ public class Model {
     }
 
     /**
-     * Unique identifier that is immutable after creation.
+     * A unique identifier that is immutable after creation.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     String id;
 
     /**
-     * Human-friendly name for the model, which can be changed.
+     * A human-friendly name for the model, which can be changed.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     String displayName;
 
     /**
-     * Optional description of the model.
+     * An optional description of the model.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     String description;
 
     /**
-     * Compartment identifier.
+     * The compartment identifier.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     String compartmentId;
@@ -424,19 +424,19 @@ public class Model {
     ModelType modelType;
 
     /**
-     * Set to true when experimenting with a new model type or dataset so model training is quick, with a predefined low number of passes through the training data.
+     * Set to true when experimenting with a new model type or dataset, so model training is quick, with a predefined low number of passes through the training data.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isQuickMode")
     Boolean isQuickMode;
 
     /**
-     * Maximum model training duration in hours, expressed as a decimal fraction.
+     * The maximum model training duration in hours, expressed as a decimal fraction.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("maxTrainingDurationInHours")
     Double maxTrainingDurationInHours;
 
     /**
-     * Total hours actually used for model training.
+     * The total hours actually used for model training.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("trainedDurationInHours")
     Double trainedDurationInHours;
@@ -457,7 +457,7 @@ public class Model {
     String modelVersion;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project which contains the model.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project that contains the model.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("projectId")
     String projectId;
@@ -474,7 +474,7 @@ public class Model {
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     java.util.Date timeUpdated;
     /**
-     * Current state of the model.
+     * The current state of the model.
      **/
     @lombok.extern.slf4j.Slf4j
     public enum LifecycleState {
@@ -524,19 +524,19 @@ public class Model {
         }
     };
     /**
-     * Current state of the model.
+     * The current state of the model.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     LifecycleState lifecycleState;
 
     /**
-     * A message describing the current state in more detail which can provide actionable information if training failed.
+     * A message describing the current state in more detail, that can provide actionable information if training failed.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
     String lifecycleDetails;
 
     /**
-     * Precision of the trained model.
+     * The precision of the trained model.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("precision")
     Float precision;
@@ -548,38 +548,38 @@ public class Model {
     Float recall;
 
     /**
-     * Mean average precision of the trained model.
+     * The mean average precision of the trained model.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("averagePrecision")
     Float averagePrecision;
 
     /**
-     * Intersection over union threshold used for calculating precision and recall.
+     * The intersection over the union threshold used for calculating precision and recall.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("confidenceThreshold")
     Float confidenceThreshold;
 
     /**
-     * Number of images in the dataset used to train, validate, and test the model.
+     * The number of images in the dataset used to train, validate, and test the model.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("totalImageCount")
     Integer totalImageCount;
 
     /**
-     * Number of images set aside for evaluating model performance metrics after training.
+     * The number of images set aside for evaluating model performance metrics after training.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("testImageCount")
     Integer testImageCount;
 
     /**
-     * Complete set of per-label metrics for successfully trained model.
+     * The complete set of per-label metrics for successfully trained models.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("metrics")
     String metrics;
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-     * Example: {@code {"bar-key": "value"}}
+     * A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only.
+     * For example: {@code {"bar-key": "value"}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
@@ -587,7 +587,7 @@ public class Model {
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     * For example: {@code {"foo-namespace": {"bar-key": "value"}}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
@@ -595,7 +595,7 @@ public class Model {
 
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces.
-     * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+     * For example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("systemTags")

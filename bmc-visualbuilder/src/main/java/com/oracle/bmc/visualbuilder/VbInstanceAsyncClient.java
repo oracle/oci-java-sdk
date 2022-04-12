@@ -394,6 +394,11 @@ public class VbInstanceAsyncClient implements VbInstanceAsync {
                         javax.ws.rs.core.Response, ChangeVbInstanceCompartmentResponse>
                 transformer = ChangeVbInstanceCompartmentConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VbInstance",
+                "ChangeVbInstanceCompartment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/visual-builder/20210601/VbInstance/ChangeVbInstanceCompartment");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeVbInstanceCompartmentRequest, ChangeVbInstanceCompartmentResponse>
@@ -441,6 +446,11 @@ public class VbInstanceAsyncClient implements VbInstanceAsync {
         final com.google.common.base.Function<javax.ws.rs.core.Response, CreateVbInstanceResponse>
                 transformer = CreateVbInstanceConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VbInstance",
+                "CreateVbInstance",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/visual-builder/20210601/VbInstance/CreateVbInstance");
 
         com.oracle.bmc.responses.AsyncHandler<CreateVbInstanceRequest, CreateVbInstanceResponse>
                 handlerToUse = handler;
@@ -485,6 +495,11 @@ public class VbInstanceAsyncClient implements VbInstanceAsync {
                 DeleteVbInstanceConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteVbInstanceResponse>
                 transformer = DeleteVbInstanceConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VbInstance",
+                "DeleteVbInstance",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/visual-builder/20210601/VbInstance/DeleteVbInstance");
 
         com.oracle.bmc.responses.AsyncHandler<DeleteVbInstanceRequest, DeleteVbInstanceResponse>
                 handlerToUse = handler;
@@ -523,6 +538,11 @@ public class VbInstanceAsyncClient implements VbInstanceAsync {
                 GetVbInstanceConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetVbInstanceResponse>
                 transformer = GetVbInstanceConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VbInstance",
+                "GetVbInstance",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/visual-builder/20210601/VbInstance/GetVbInstance");
 
         com.oracle.bmc.responses.AsyncHandler<GetVbInstanceRequest, GetVbInstanceResponse>
                 handlerToUse = handler;
@@ -562,6 +582,11 @@ public class VbInstanceAsyncClient implements VbInstanceAsync {
                 GetWorkRequestConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetWorkRequestResponse>
                 transformer = GetWorkRequestConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VbInstance",
+                "GetWorkRequest",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/visual-builder/20210601/WorkRequest/GetWorkRequest");
 
         com.oracle.bmc.responses.AsyncHandler<GetWorkRequestRequest, GetWorkRequestResponse>
                 handlerToUse = handler;
@@ -601,6 +626,11 @@ public class VbInstanceAsyncClient implements VbInstanceAsync {
                 ListVbInstancesConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListVbInstancesResponse>
                 transformer = ListVbInstancesConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VbInstance",
+                "ListVbInstances",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/visual-builder/20210601/VbInstanceSummaryCollection/ListVbInstances");
 
         com.oracle.bmc.responses.AsyncHandler<ListVbInstancesRequest, ListVbInstancesResponse>
                 handlerToUse = handler;
@@ -641,6 +671,11 @@ public class VbInstanceAsyncClient implements VbInstanceAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListWorkRequestErrorsResponse>
                 transformer = ListWorkRequestErrorsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VbInstance",
+                "ListWorkRequestErrors",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/visual-builder/20210601/WorkRequestErrorCollection/ListWorkRequestErrors");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListWorkRequestErrorsRequest, ListWorkRequestErrorsResponse>
@@ -682,6 +717,11 @@ public class VbInstanceAsyncClient implements VbInstanceAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListWorkRequestLogsResponse>
                 transformer = ListWorkRequestLogsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VbInstance",
+                "ListWorkRequestLogs",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/visual-builder/20210601/WorkRequestLogEntryCollection/ListWorkRequestLogs");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListWorkRequestLogsRequest, ListWorkRequestLogsResponse>
@@ -722,6 +762,11 @@ public class VbInstanceAsyncClient implements VbInstanceAsync {
                 ListWorkRequestsConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListWorkRequestsResponse>
                 transformer = ListWorkRequestsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VbInstance",
+                "ListWorkRequests",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/visual-builder/20210601/WorkRequestSummaryCollection/ListWorkRequests");
 
         com.oracle.bmc.responses.AsyncHandler<ListWorkRequestsRequest, ListWorkRequestsResponse>
                 handlerToUse = handler;
@@ -765,6 +810,11 @@ public class VbInstanceAsyncClient implements VbInstanceAsync {
                         javax.ws.rs.core.Response, RequestSummarizedApplicationsResponse>
                 transformer = RequestSummarizedApplicationsConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VbInstance",
+                "RequestSummarizedApplications",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/visual-builder/20210601/ApplicationSummaryCollection/RequestSummarizedApplications");
 
         com.oracle.bmc.responses.AsyncHandler<
                         RequestSummarizedApplicationsRequest, RequestSummarizedApplicationsResponse>
@@ -812,6 +862,11 @@ public class VbInstanceAsyncClient implements VbInstanceAsync {
         final com.google.common.base.Function<javax.ws.rs.core.Response, StartVbInstanceResponse>
                 transformer = StartVbInstanceConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VbInstance",
+                "StartVbInstance",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/visual-builder/20210601/VbInstance/StartVbInstance");
 
         com.oracle.bmc.responses.AsyncHandler<StartVbInstanceRequest, StartVbInstanceResponse>
                 handlerToUse = handler;
@@ -852,6 +907,11 @@ public class VbInstanceAsyncClient implements VbInstanceAsync {
         final com.google.common.base.Function<javax.ws.rs.core.Response, StopVbInstanceResponse>
                 transformer = StopVbInstanceConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VbInstance",
+                "StopVbInstance",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/visual-builder/20210601/VbInstance/StopVbInstance");
 
         com.oracle.bmc.responses.AsyncHandler<StopVbInstanceRequest, StopVbInstanceResponse>
                 handlerToUse = handler;
@@ -891,6 +951,11 @@ public class VbInstanceAsyncClient implements VbInstanceAsync {
                 UpdateVbInstanceConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateVbInstanceResponse>
                 transformer = UpdateVbInstanceConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VbInstance",
+                "UpdateVbInstance",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/visual-builder/20210601/VbInstance/UpdateVbInstance");
 
         com.oracle.bmc.responses.AsyncHandler<UpdateVbInstanceRequest, UpdateVbInstanceResponse>
                 handlerToUse = handler;

@@ -111,25 +111,25 @@ public class Cell {
     }
 
     /**
-     * Text recognized in the cell.
+     * The text recognized in the cell.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("text")
     String text;
 
     /**
-     * Index of the cell inside the row.
+     * The index of the cell inside the row.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("rowIndex")
     Integer rowIndex;
 
     /**
-     * Index of the cell inside the column.
+     * The index of the cell inside the column.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("columnIndex")
     Integer columnIndex;
 
     /**
-     * Confidence score between 0 to 1.
+     * The confidence score between 0 and 1.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("confidence")
     Float confidence;
@@ -138,7 +138,7 @@ public class Cell {
     BoundingPolygon boundingPolygon;
 
     /**
-     * Words detected in the cell.
+     * The words detected in the cell.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("wordIndexes")
     java.util.List<Integer> wordIndexes;

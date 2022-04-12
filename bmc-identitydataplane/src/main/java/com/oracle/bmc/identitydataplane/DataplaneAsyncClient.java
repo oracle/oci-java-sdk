@@ -390,6 +390,8 @@ public class DataplaneAsyncClient implements DataplaneAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GenerateScopedAccessTokenResponse>
                 transformer = GenerateScopedAccessTokenConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Dataplane", "GenerateScopedAccessToken", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<
                         GenerateScopedAccessTokenRequest, GenerateScopedAccessTokenResponse>

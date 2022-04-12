@@ -479,6 +479,11 @@ public class DashxApisClient implements DashxApis {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DashxApis",
+                "ChangeManagementDashboardsCompartment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/managementdashboard/20200901/ManagementDashboard/ChangeManagementDashboardsCompartment");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -518,6 +523,11 @@ public class DashxApisClient implements DashxApis {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DashxApis",
+                "ChangeManagementSavedSearchesCompartment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/managementdashboard/20200901/ManagementSavedSearch/ChangeManagementSavedSearchesCompartment");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -555,6 +565,11 @@ public class DashxApisClient implements DashxApis {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DashxApis",
+                "CreateManagementDashboard",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/managementdashboard/20200901/ManagementDashboard/CreateManagementDashboard");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -592,6 +607,11 @@ public class DashxApisClient implements DashxApis {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DashxApis",
+                "CreateManagementSavedSearch",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/managementdashboard/20200901/ManagementSavedSearch/CreateManagementSavedSearch");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -628,6 +648,11 @@ public class DashxApisClient implements DashxApis {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DashxApis",
+                "DeleteManagementDashboard",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/managementdashboard/20200901/ManagementDashboard/DeleteManagementDashboard");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -660,6 +685,11 @@ public class DashxApisClient implements DashxApis {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DashxApis",
+                "DeleteManagementSavedSearch",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/managementdashboard/20200901/ManagementSavedSearch/DeleteManagementSavedSearch");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -691,6 +721,11 @@ public class DashxApisClient implements DashxApis {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DashxApis",
+                "ExportDashboard",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/managementdashboard/20200901/ManagementDashboardImportDetails/ExportDashboard");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -722,6 +757,11 @@ public class DashxApisClient implements DashxApis {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DashxApis",
+                "GetManagementDashboard",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/managementdashboard/20200901/ManagementDashboard/GetManagementDashboard");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -753,6 +793,11 @@ public class DashxApisClient implements DashxApis {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DashxApis",
+                "GetManagementSavedSearch",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/managementdashboard/20200901/ManagementSavedSearch/GetManagementSavedSearch");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -783,6 +828,11 @@ public class DashxApisClient implements DashxApis {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DashxApis",
+                "ImportDashboard",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/managementdashboard/20200901/ManagementDashboardImportDetails/ImportDashboard");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -818,6 +868,11 @@ public class DashxApisClient implements DashxApis {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DashxApis",
+                "ListManagementDashboards",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/managementdashboard/20200901/ManagementDashboard/ListManagementDashboards");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -849,6 +904,11 @@ public class DashxApisClient implements DashxApis {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DashxApis",
+                "ListManagementSavedSearches",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/managementdashboard/20200901/ManagementSavedSearch/ListManagementSavedSearches");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -881,6 +941,11 @@ public class DashxApisClient implements DashxApis {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DashxApis",
+                "UpdateManagementDashboard",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/managementdashboard/20200901/ManagementDashboard/UpdateManagementDashboard");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -918,6 +983,11 @@ public class DashxApisClient implements DashxApis {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DashxApis",
+                "UpdateManagementSavedSearch",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/managementdashboard/20200901/ManagementSavedSearch/UpdateManagementSavedSearch");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {

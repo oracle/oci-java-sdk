@@ -22,7 +22,7 @@ public class AnalyzeDocumentRequest
                 com.oracle.bmc.aivision.model.AnalyzeDocumentDetails> {
 
     /**
-     * Details about how to analyze a document.
+     * The details of how to analyze a document.
      */
     private com.oracle.bmc.aivision.model.AnalyzeDocumentDetails analyzeDocumentDetails;
 

@@ -3958,7 +3958,7 @@ public interface DatabaseAsync extends AutoCloseable {
 
     /**
      * Scans for pluggable databases in the specified external container database.
-     * This operation will return un-registered pluggable databases in the `GetWorkRequest` operation.
+     * This operation will return un-registered pluggable databases in the {@link #getWorkRequest(GetWorkRequestRequest, Consumer, Consumer) getWorkRequest} operation.
      *
      *
      * @param request The request object containing the details to send

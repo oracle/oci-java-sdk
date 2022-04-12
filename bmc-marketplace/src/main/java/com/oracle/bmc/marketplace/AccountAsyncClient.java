@@ -390,6 +390,11 @@ public class AccountAsyncClient implements AccountAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetLaunchEligibilityResponse>
                 transformer = GetLaunchEligibilityConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Account",
+                "GetLaunchEligibility",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/marketplace/20181001/LaunchEligibility/GetLaunchEligibility");
 
         com.oracle.bmc.responses.AsyncHandler<
                         GetLaunchEligibilityRequest, GetLaunchEligibilityResponse>
@@ -434,6 +439,11 @@ public class AccountAsyncClient implements AccountAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetThirdPartyPaidListingEligibilityResponse>
                 transformer = GetThirdPartyPaidListingEligibilityConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Account",
+                "GetThirdPartyPaidListingEligibility",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/marketplace/20181001/ThirdPartyPaidListingEligibility/GetThirdPartyPaidListingEligibility");
 
         com.oracle.bmc.responses.AsyncHandler<
                         GetThirdPartyPaidListingEligibilityRequest,

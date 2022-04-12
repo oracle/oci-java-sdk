@@ -393,6 +393,11 @@ public class FunctionsManagementAsyncClient implements FunctionsManagementAsync 
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ChangeApplicationCompartmentResponse>
                 transformer = ChangeApplicationCompartmentConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "FunctionsManagement",
+                "ChangeApplicationCompartment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/functions/20181201/Application/ChangeApplicationCompartment");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeApplicationCompartmentRequest, ChangeApplicationCompartmentResponse>
@@ -439,6 +444,11 @@ public class FunctionsManagementAsyncClient implements FunctionsManagementAsync 
                 CreateApplicationConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, CreateApplicationResponse>
                 transformer = CreateApplicationConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "FunctionsManagement",
+                "CreateApplication",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/functions/20181201/Application/CreateApplication");
 
         com.oracle.bmc.responses.AsyncHandler<CreateApplicationRequest, CreateApplicationResponse>
                 handlerToUse = handler;
@@ -483,6 +493,11 @@ public class FunctionsManagementAsyncClient implements FunctionsManagementAsync 
                 CreateFunctionConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, CreateFunctionResponse>
                 transformer = CreateFunctionConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "FunctionsManagement",
+                "CreateFunction",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/functions/20181201/Function/CreateFunction");
 
         com.oracle.bmc.responses.AsyncHandler<CreateFunctionRequest, CreateFunctionResponse>
                 handlerToUse = handler;
@@ -527,6 +542,11 @@ public class FunctionsManagementAsyncClient implements FunctionsManagementAsync 
                 DeleteApplicationConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteApplicationResponse>
                 transformer = DeleteApplicationConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "FunctionsManagement",
+                "DeleteApplication",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/functions/20181201/Application/DeleteApplication");
 
         com.oracle.bmc.responses.AsyncHandler<DeleteApplicationRequest, DeleteApplicationResponse>
                 handlerToUse = handler;
@@ -566,6 +586,11 @@ public class FunctionsManagementAsyncClient implements FunctionsManagementAsync 
                 DeleteFunctionConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteFunctionResponse>
                 transformer = DeleteFunctionConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "FunctionsManagement",
+                "DeleteFunction",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/functions/20181201/Function/DeleteFunction");
 
         com.oracle.bmc.responses.AsyncHandler<DeleteFunctionRequest, DeleteFunctionResponse>
                 handlerToUse = handler;
@@ -605,6 +630,11 @@ public class FunctionsManagementAsyncClient implements FunctionsManagementAsync 
                 GetApplicationConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetApplicationResponse>
                 transformer = GetApplicationConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "FunctionsManagement",
+                "GetApplication",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/functions/20181201/Application/GetApplication");
 
         com.oracle.bmc.responses.AsyncHandler<GetApplicationRequest, GetApplicationResponse>
                 handlerToUse = handler;
@@ -643,6 +673,11 @@ public class FunctionsManagementAsyncClient implements FunctionsManagementAsync 
                 GetFunctionConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetFunctionResponse>
                 transformer = GetFunctionConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "FunctionsManagement",
+                "GetFunction",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/functions/20181201/Function/GetFunction");
 
         com.oracle.bmc.responses.AsyncHandler<GetFunctionRequest, GetFunctionResponse>
                 handlerToUse = handler;
@@ -682,6 +717,11 @@ public class FunctionsManagementAsyncClient implements FunctionsManagementAsync 
                 ListApplicationsConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListApplicationsResponse>
                 transformer = ListApplicationsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "FunctionsManagement",
+                "ListApplications",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/functions/20181201/ApplicationSummary/ListApplications");
 
         com.oracle.bmc.responses.AsyncHandler<ListApplicationsRequest, ListApplicationsResponse>
                 handlerToUse = handler;
@@ -720,6 +760,11 @@ public class FunctionsManagementAsyncClient implements FunctionsManagementAsync 
                 ListFunctionsConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListFunctionsResponse>
                 transformer = ListFunctionsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "FunctionsManagement",
+                "ListFunctions",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/functions/20181201/FunctionSummary/ListFunctions");
 
         com.oracle.bmc.responses.AsyncHandler<ListFunctionsRequest, ListFunctionsResponse>
                 handlerToUse = handler;
@@ -759,6 +804,11 @@ public class FunctionsManagementAsyncClient implements FunctionsManagementAsync 
                 UpdateApplicationConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateApplicationResponse>
                 transformer = UpdateApplicationConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "FunctionsManagement",
+                "UpdateApplication",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/functions/20181201/Application/UpdateApplication");
 
         com.oracle.bmc.responses.AsyncHandler<UpdateApplicationRequest, UpdateApplicationResponse>
                 handlerToUse = handler;
@@ -803,6 +853,11 @@ public class FunctionsManagementAsyncClient implements FunctionsManagementAsync 
                 UpdateFunctionConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateFunctionResponse>
                 transformer = UpdateFunctionConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "FunctionsManagement",
+                "UpdateFunction",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/functions/20181201/Function/UpdateFunction");
 
         com.oracle.bmc.responses.AsyncHandler<UpdateFunctionRequest, UpdateFunctionResponse>
                 handlerToUse = handler;

@@ -393,6 +393,11 @@ public class MarketplaceAsyncClient implements MarketplaceAsync {
                         javax.ws.rs.core.Response, ChangePublicationCompartmentResponse>
                 transformer = ChangePublicationCompartmentConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Marketplace",
+                "ChangePublicationCompartment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/marketplace/20181001/Publication/ChangePublicationCompartment");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ChangePublicationCompartmentRequest, ChangePublicationCompartmentResponse>
@@ -441,6 +446,11 @@ public class MarketplaceAsyncClient implements MarketplaceAsync {
                         javax.ws.rs.core.Response, CreateAcceptedAgreementResponse>
                 transformer = CreateAcceptedAgreementConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Marketplace",
+                "CreateAcceptedAgreement",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/marketplace/20181001/AcceptedAgreement/CreateAcceptedAgreement");
 
         com.oracle.bmc.responses.AsyncHandler<
                         CreateAcceptedAgreementRequest, CreateAcceptedAgreementResponse>
@@ -487,6 +497,11 @@ public class MarketplaceAsyncClient implements MarketplaceAsync {
         final com.google.common.base.Function<javax.ws.rs.core.Response, CreatePublicationResponse>
                 transformer = CreatePublicationConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Marketplace",
+                "CreatePublication",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/marketplace/20181001/Publication/CreatePublication");
 
         com.oracle.bmc.responses.AsyncHandler<CreatePublicationRequest, CreatePublicationResponse>
                 handlerToUse = handler;
@@ -532,6 +547,11 @@ public class MarketplaceAsyncClient implements MarketplaceAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, DeleteAcceptedAgreementResponse>
                 transformer = DeleteAcceptedAgreementConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Marketplace",
+                "DeleteAcceptedAgreement",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/marketplace/20181001/AcceptedAgreement/DeleteAcceptedAgreement");
 
         com.oracle.bmc.responses.AsyncHandler<
                         DeleteAcceptedAgreementRequest, DeleteAcceptedAgreementResponse>
@@ -572,6 +592,11 @@ public class MarketplaceAsyncClient implements MarketplaceAsync {
                 DeletePublicationConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, DeletePublicationResponse>
                 transformer = DeletePublicationConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Marketplace",
+                "DeletePublication",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/marketplace/20181001/Publication/DeletePublication");
 
         com.oracle.bmc.responses.AsyncHandler<DeletePublicationRequest, DeletePublicationResponse>
                 handlerToUse = handler;
@@ -612,6 +637,11 @@ public class MarketplaceAsyncClient implements MarketplaceAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetAcceptedAgreementResponse>
                 transformer = GetAcceptedAgreementConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Marketplace",
+                "GetAcceptedAgreement",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/marketplace/20181001/AcceptedAgreement/GetAcceptedAgreement");
 
         com.oracle.bmc.responses.AsyncHandler<
                         GetAcceptedAgreementRequest, GetAcceptedAgreementResponse>
@@ -651,6 +681,11 @@ public class MarketplaceAsyncClient implements MarketplaceAsync {
                 GetAgreementConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetAgreementResponse>
                 transformer = GetAgreementConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Marketplace",
+                "GetAgreement",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/marketplace/20181001/Agreement/GetAgreement");
 
         com.oracle.bmc.responses.AsyncHandler<GetAgreementRequest, GetAgreementResponse>
                 handlerToUse = handler;
@@ -688,6 +723,11 @@ public class MarketplaceAsyncClient implements MarketplaceAsync {
                 GetListingConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetListingResponse>
                 transformer = GetListingConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Marketplace",
+                "GetListing",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/marketplace/20181001/Listing/GetListing");
 
         com.oracle.bmc.responses.AsyncHandler<GetListingRequest, GetListingResponse> handlerToUse =
                 handler;
@@ -725,6 +765,11 @@ public class MarketplaceAsyncClient implements MarketplaceAsync {
                 GetPackageConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetPackageResponse>
                 transformer = GetPackageConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Marketplace",
+                "GetPackage",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/marketplace/20181001/ListingPackage/GetPackage");
 
         com.oracle.bmc.responses.AsyncHandler<GetPackageRequest, GetPackageResponse> handlerToUse =
                 handler;
@@ -764,6 +809,11 @@ public class MarketplaceAsyncClient implements MarketplaceAsync {
                 GetPublicationConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetPublicationResponse>
                 transformer = GetPublicationConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Marketplace",
+                "GetPublication",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/marketplace/20181001/Publication/GetPublication");
 
         com.oracle.bmc.responses.AsyncHandler<GetPublicationRequest, GetPublicationResponse>
                 handlerToUse = handler;
@@ -804,6 +854,11 @@ public class MarketplaceAsyncClient implements MarketplaceAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetPublicationPackageResponse>
                 transformer = GetPublicationPackageConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Marketplace",
+                "GetPublicationPackage",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/marketplace/20181001/PublicationPackage/GetPublicationPackage");
 
         com.oracle.bmc.responses.AsyncHandler<
                         GetPublicationPackageRequest, GetPublicationPackageResponse>
@@ -845,6 +900,11 @@ public class MarketplaceAsyncClient implements MarketplaceAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListAcceptedAgreementsResponse>
                 transformer = ListAcceptedAgreementsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Marketplace",
+                "ListAcceptedAgreements",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/marketplace/20181001/AcceptedAgreementSummary/ListAcceptedAgreements");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListAcceptedAgreementsRequest, ListAcceptedAgreementsResponse>
@@ -885,6 +945,11 @@ public class MarketplaceAsyncClient implements MarketplaceAsync {
                 ListAgreementsConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListAgreementsResponse>
                 transformer = ListAgreementsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Marketplace",
+                "ListAgreements",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/marketplace/20181001/AgreementSummary/ListAgreements");
 
         com.oracle.bmc.responses.AsyncHandler<ListAgreementsRequest, ListAgreementsResponse>
                 handlerToUse = handler;
@@ -924,6 +989,11 @@ public class MarketplaceAsyncClient implements MarketplaceAsync {
                 ListCategoriesConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListCategoriesResponse>
                 transformer = ListCategoriesConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Marketplace",
+                "ListCategories",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/marketplace/20181001/CategorySummary/ListCategories");
 
         com.oracle.bmc.responses.AsyncHandler<ListCategoriesRequest, ListCategoriesResponse>
                 handlerToUse = handler;
@@ -962,6 +1032,11 @@ public class MarketplaceAsyncClient implements MarketplaceAsync {
                 ListListingsConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListListingsResponse>
                 transformer = ListListingsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Marketplace",
+                "ListListings",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/marketplace/20181001/ListingSummary/ListListings");
 
         com.oracle.bmc.responses.AsyncHandler<ListListingsRequest, ListListingsResponse>
                 handlerToUse = handler;
@@ -1000,6 +1075,11 @@ public class MarketplaceAsyncClient implements MarketplaceAsync {
                 ListPackagesConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListPackagesResponse>
                 transformer = ListPackagesConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Marketplace",
+                "ListPackages",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/marketplace/20181001/ListingPackageSummary/ListPackages");
 
         com.oracle.bmc.responses.AsyncHandler<ListPackagesRequest, ListPackagesResponse>
                 handlerToUse = handler;
@@ -1040,6 +1120,11 @@ public class MarketplaceAsyncClient implements MarketplaceAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListPublicationPackagesResponse>
                 transformer = ListPublicationPackagesConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Marketplace",
+                "ListPublicationPackages",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/marketplace/20181001/PublicationPackageSummary/ListPublicationPackages");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListPublicationPackagesRequest, ListPublicationPackagesResponse>
@@ -1080,6 +1165,11 @@ public class MarketplaceAsyncClient implements MarketplaceAsync {
                 ListPublicationsConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListPublicationsResponse>
                 transformer = ListPublicationsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Marketplace",
+                "ListPublications",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/marketplace/20181001/PublicationSummary/ListPublications");
 
         com.oracle.bmc.responses.AsyncHandler<ListPublicationsRequest, ListPublicationsResponse>
                 handlerToUse = handler;
@@ -1119,6 +1209,11 @@ public class MarketplaceAsyncClient implements MarketplaceAsync {
                 ListPublishersConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListPublishersResponse>
                 transformer = ListPublishersConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Marketplace",
+                "ListPublishers",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/marketplace/20181001/PublisherSummary/ListPublishers");
 
         com.oracle.bmc.responses.AsyncHandler<ListPublishersRequest, ListPublishersResponse>
                 handlerToUse = handler;
@@ -1158,6 +1253,11 @@ public class MarketplaceAsyncClient implements MarketplaceAsync {
                 ListReportTypesConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListReportTypesResponse>
                 transformer = ListReportTypesConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Marketplace",
+                "ListReportTypes",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/marketplace/20181001/ReportTypeCollection/ListReportTypes");
 
         com.oracle.bmc.responses.AsyncHandler<ListReportTypesRequest, ListReportTypesResponse>
                 handlerToUse = handler;
@@ -1196,6 +1296,11 @@ public class MarketplaceAsyncClient implements MarketplaceAsync {
                 ListReportsConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListReportsResponse>
                 transformer = ListReportsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Marketplace",
+                "ListReports",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/marketplace/20181001/ReportCollection/ListReports");
 
         com.oracle.bmc.responses.AsyncHandler<ListReportsRequest, ListReportsResponse>
                 handlerToUse = handler;
@@ -1233,6 +1338,11 @@ public class MarketplaceAsyncClient implements MarketplaceAsync {
                 ListTaxesConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListTaxesResponse>
                 transformer = ListTaxesConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Marketplace",
+                "ListTaxes",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/marketplace/20181001/TaxSummary/ListTaxes");
 
         com.oracle.bmc.responses.AsyncHandler<ListTaxesRequest, ListTaxesResponse> handlerToUse =
                 handler;
@@ -1271,6 +1381,11 @@ public class MarketplaceAsyncClient implements MarketplaceAsync {
                 SearchListingsConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, SearchListingsResponse>
                 transformer = SearchListingsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Marketplace",
+                "SearchListings",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/marketplace/20181001/ListingSummary/SearchListings");
 
         com.oracle.bmc.responses.AsyncHandler<SearchListingsRequest, SearchListingsResponse>
                 handlerToUse = handler;
@@ -1317,6 +1432,11 @@ public class MarketplaceAsyncClient implements MarketplaceAsync {
                         javax.ws.rs.core.Response, UpdateAcceptedAgreementResponse>
                 transformer = UpdateAcceptedAgreementConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Marketplace",
+                "UpdateAcceptedAgreement",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/marketplace/20181001/AcceptedAgreement/UpdateAcceptedAgreement");
 
         com.oracle.bmc.responses.AsyncHandler<
                         UpdateAcceptedAgreementRequest, UpdateAcceptedAgreementResponse>
@@ -1363,6 +1483,11 @@ public class MarketplaceAsyncClient implements MarketplaceAsync {
         final com.google.common.base.Function<javax.ws.rs.core.Response, UpdatePublicationResponse>
                 transformer = UpdatePublicationConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Marketplace",
+                "UpdatePublication",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/marketplace/20181001/Publication/UpdatePublication");
 
         com.oracle.bmc.responses.AsyncHandler<UpdatePublicationRequest, UpdatePublicationResponse>
                 handlerToUse = handler;

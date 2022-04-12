@@ -335,6 +335,24 @@ public class CreateAutonomousDatabaseDetails extends CreateAutonomousDatabaseBas
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("maxCpuCoreCount")
+        private Integer maxCpuCoreCount;
+
+        public Builder maxCpuCoreCount(Integer maxCpuCoreCount) {
+            this.maxCpuCoreCount = maxCpuCoreCount;
+            this.__explicitlySet__.add("maxCpuCoreCount");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("databaseEdition")
+        private AutonomousDatabaseSummary.DatabaseEdition databaseEdition;
+
+        public Builder databaseEdition(AutonomousDatabaseSummary.DatabaseEdition databaseEdition) {
+            this.databaseEdition = databaseEdition;
+            this.__explicitlySet__.add("databaseEdition");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -373,7 +391,9 @@ public class CreateAutonomousDatabaseDetails extends CreateAutonomousDatabaseBas
                             isMtlsConnectionRequired,
                             autonomousMaintenanceScheduleType,
                             scheduledOperations,
-                            isAutoScalingForStorageEnabled);
+                            isAutoScalingForStorageEnabled,
+                            maxCpuCoreCount,
+                            databaseEdition);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -415,7 +435,9 @@ public class CreateAutonomousDatabaseDetails extends CreateAutonomousDatabaseBas
                             .autonomousMaintenanceScheduleType(
                                     o.getAutonomousMaintenanceScheduleType())
                             .scheduledOperations(o.getScheduledOperations())
-                            .isAutoScalingForStorageEnabled(o.getIsAutoScalingForStorageEnabled());
+                            .isAutoScalingForStorageEnabled(o.getIsAutoScalingForStorageEnabled())
+                            .maxCpuCoreCount(o.getMaxCpuCoreCount())
+                            .databaseEdition(o.getDatabaseEdition());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -463,7 +485,9 @@ public class CreateAutonomousDatabaseDetails extends CreateAutonomousDatabaseBas
             Boolean isMtlsConnectionRequired,
             AutonomousMaintenanceScheduleType autonomousMaintenanceScheduleType,
             java.util.List<ScheduledOperationDetails> scheduledOperations,
-            Boolean isAutoScalingForStorageEnabled) {
+            Boolean isAutoScalingForStorageEnabled,
+            Integer maxCpuCoreCount,
+            AutonomousDatabaseSummary.DatabaseEdition databaseEdition) {
         super(
                 compartmentId,
                 dbName,
@@ -497,7 +521,9 @@ public class CreateAutonomousDatabaseDetails extends CreateAutonomousDatabaseBas
                 isMtlsConnectionRequired,
                 autonomousMaintenanceScheduleType,
                 scheduledOperations,
-                isAutoScalingForStorageEnabled);
+                isAutoScalingForStorageEnabled,
+                maxCpuCoreCount,
+                databaseEdition);
     }
 
     @com.fasterxml.jackson.annotation.JsonIgnore

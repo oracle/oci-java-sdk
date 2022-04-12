@@ -390,6 +390,8 @@ public class SecretsAsyncClient implements SecretsAsync {
                 GetSecretBundleConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetSecretBundleResponse>
                 transformer = GetSecretBundleConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Secrets", "GetSecretBundle", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<GetSecretBundleRequest, GetSecretBundleResponse>
                 handlerToUse = handler;
@@ -430,6 +432,8 @@ public class SecretsAsyncClient implements SecretsAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetSecretBundleByNameResponse>
                 transformer = GetSecretBundleByNameConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Secrets", "GetSecretBundleByName", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<
                         GetSecretBundleByNameRequest, GetSecretBundleByNameResponse>
@@ -471,6 +475,8 @@ public class SecretsAsyncClient implements SecretsAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListSecretBundleVersionsResponse>
                 transformer = ListSecretBundleVersionsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Secrets", "ListSecretBundleVersions", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListSecretBundleVersionsRequest, ListSecretBundleVersionsResponse>

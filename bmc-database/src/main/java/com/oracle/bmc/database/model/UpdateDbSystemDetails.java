@@ -189,7 +189,7 @@ public class UpdateDbSystemDetails {
     }
 
     /**
-     * The new number of CPU cores to set for the DB system. Not applicable for virtual machine DB systems.
+     * The new number of CPU cores to set for the DB system. Not applicable for INTEL based virtual machine DB systems.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("cpuCoreCount")
     Integer cpuCoreCount;

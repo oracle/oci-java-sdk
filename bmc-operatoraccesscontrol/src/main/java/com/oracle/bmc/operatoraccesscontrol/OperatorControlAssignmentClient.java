@@ -482,6 +482,11 @@ public class OperatorControlAssignmentClient implements OperatorControlAssignmen
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "OperatorControlAssignment",
+                "ChangeOperatorControlAssignmentCompartment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/operatoraccesscontrol/20200630/OperatorControlAssignment/ChangeOperatorControlAssignmentCompartment");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -519,6 +524,11 @@ public class OperatorControlAssignmentClient implements OperatorControlAssignmen
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "OperatorControlAssignment",
+                "CreateOperatorControlAssignment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/operatoraccesscontrol/20200630/OperatorControlAssignment/CreateOperatorControlAssignment");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -555,6 +565,11 @@ public class OperatorControlAssignmentClient implements OperatorControlAssignmen
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "OperatorControlAssignment",
+                "DeleteOperatorControlAssignment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/operatoraccesscontrol/20200630/OperatorControlAssignment/DeleteOperatorControlAssignment");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -587,6 +602,11 @@ public class OperatorControlAssignmentClient implements OperatorControlAssignmen
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "OperatorControlAssignment",
+                "GetOperatorControlAssignment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/operatoraccesscontrol/20200630/OperatorControlAssignment/GetOperatorControlAssignment");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -618,6 +638,11 @@ public class OperatorControlAssignmentClient implements OperatorControlAssignmen
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "OperatorControlAssignment",
+                "ListOperatorControlAssignments",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/operatoraccesscontrol/20200630/OperatorControlAssignment/ListOperatorControlAssignments");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -649,6 +674,11 @@ public class OperatorControlAssignmentClient implements OperatorControlAssignmen
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "OperatorControlAssignment",
+                "UpdateOperatorControlAssignment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/operatoraccesscontrol/20200630/OperatorControlAssignment/UpdateOperatorControlAssignment");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {

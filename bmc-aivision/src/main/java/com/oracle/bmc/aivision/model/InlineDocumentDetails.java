@@ -5,7 +5,7 @@
 package com.oracle.bmc.aivision.model;
 
 /**
- * Document incorporated in the request payload.
+ * The document incorporated in the request payload.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -73,7 +73,7 @@ public class InlineDocumentDetails extends DocumentDetails {
     }
 
     /**
-     * Document raw data.
+     * Raw document data.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("data")
     byte[] data;

@@ -410,6 +410,11 @@ public class GenericArtifactsContentClient implements GenericArtifactsContent {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "GenericArtifactsContent",
+                "GetGenericArtifactContent",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/generic/20160918/GenericArtifact/GetGenericArtifactContent");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -451,6 +456,11 @@ public class GenericArtifactsContentClient implements GenericArtifactsContent {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "GenericArtifactsContent",
+                "GetGenericArtifactContentByPath",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/generic/20160918/GenericArtifact/GetGenericArtifactContentByPath");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -496,6 +506,11 @@ public class GenericArtifactsContentClient implements GenericArtifactsContent {
                     com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                             interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
             com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+            com.oracle.bmc.ServiceDetails.setServiceDetails(
+                    "GenericArtifactsContent",
+                    "PutGenericArtifactContentByPath",
+                    ib.getRequestUri().toString(),
+                    "https://docs.oracle.com/iaas/api/#/en/generic/20160918/GenericArtifact/PutGenericArtifactContentByPath");
             return retrier.execute(
                     interceptedRequest,
                     retryRequest -> {

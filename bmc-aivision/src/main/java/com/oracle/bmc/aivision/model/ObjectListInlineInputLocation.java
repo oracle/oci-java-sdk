@@ -74,7 +74,7 @@ public class ObjectListInlineInputLocation extends InputLocation {
     }
 
     /**
-     * List of ObjectLocations.
+     * The list of ObjectLocations.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("objectLocations")
     java.util.List<ObjectLocation> objectLocations;

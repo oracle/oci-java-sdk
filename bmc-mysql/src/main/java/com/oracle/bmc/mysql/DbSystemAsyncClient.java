@@ -391,6 +391,11 @@ public class DbSystemAsyncClient implements DbSystemAsync {
                         javax.ws.rs.core.Response, AddAnalyticsClusterResponse>
                 transformer = AddAnalyticsClusterConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DbSystem",
+                "AddAnalyticsCluster",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/AnalyticsCluster/AddAnalyticsCluster");
 
         com.oracle.bmc.responses.AsyncHandler<
                         AddAnalyticsClusterRequest, AddAnalyticsClusterResponse>
@@ -437,6 +442,11 @@ public class DbSystemAsyncClient implements DbSystemAsync {
         final com.google.common.base.Function<javax.ws.rs.core.Response, AddHeatWaveClusterResponse>
                 transformer = AddHeatWaveClusterConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DbSystem",
+                "AddHeatWaveCluster",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/HeatWaveCluster/AddHeatWaveCluster");
 
         com.oracle.bmc.responses.AsyncHandler<AddHeatWaveClusterRequest, AddHeatWaveClusterResponse>
                 handlerToUse = handler;
@@ -482,6 +492,8 @@ public class DbSystemAsyncClient implements DbSystemAsync {
         final com.google.common.base.Function<javax.ws.rs.core.Response, CreateDbSystemResponse>
                 transformer = CreateDbSystemConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DbSystem", "CreateDbSystem", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<CreateDbSystemRequest, CreateDbSystemResponse>
                 handlerToUse = handler;
@@ -527,6 +539,11 @@ public class DbSystemAsyncClient implements DbSystemAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, DeleteAnalyticsClusterResponse>
                 transformer = DeleteAnalyticsClusterConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DbSystem",
+                "DeleteAnalyticsCluster",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/AnalyticsCluster/DeleteAnalyticsCluster");
 
         com.oracle.bmc.responses.AsyncHandler<
                         DeleteAnalyticsClusterRequest, DeleteAnalyticsClusterResponse>
@@ -567,6 +584,11 @@ public class DbSystemAsyncClient implements DbSystemAsync {
                 DeleteDbSystemConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteDbSystemResponse>
                 transformer = DeleteDbSystemConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DbSystem",
+                "DeleteDbSystem",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/DbSystem/DeleteDbSystem");
 
         com.oracle.bmc.responses.AsyncHandler<DeleteDbSystemRequest, DeleteDbSystemResponse>
                 handlerToUse = handler;
@@ -607,6 +629,11 @@ public class DbSystemAsyncClient implements DbSystemAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, DeleteHeatWaveClusterResponse>
                 transformer = DeleteHeatWaveClusterConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DbSystem",
+                "DeleteHeatWaveCluster",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/HeatWaveCluster/DeleteHeatWaveCluster");
 
         com.oracle.bmc.responses.AsyncHandler<
                         DeleteHeatWaveClusterRequest, DeleteHeatWaveClusterResponse>
@@ -652,6 +679,11 @@ public class DbSystemAsyncClient implements DbSystemAsync {
                         javax.ws.rs.core.Response, GenerateAnalyticsClusterMemoryEstimateResponse>
                 transformer = GenerateAnalyticsClusterMemoryEstimateConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DbSystem",
+                "GenerateAnalyticsClusterMemoryEstimate",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/AnalyticsClusterMemoryEstimate/GenerateAnalyticsClusterMemoryEstimate");
 
         com.oracle.bmc.responses.AsyncHandler<
                         GenerateAnalyticsClusterMemoryEstimateRequest,
@@ -700,6 +732,11 @@ public class DbSystemAsyncClient implements DbSystemAsync {
                         javax.ws.rs.core.Response, GenerateHeatWaveClusterMemoryEstimateResponse>
                 transformer = GenerateHeatWaveClusterMemoryEstimateConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DbSystem",
+                "GenerateHeatWaveClusterMemoryEstimate",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/HeatWaveClusterMemoryEstimate/GenerateHeatWaveClusterMemoryEstimate");
 
         com.oracle.bmc.responses.AsyncHandler<
                         GenerateHeatWaveClusterMemoryEstimateRequest,
@@ -744,6 +781,11 @@ public class DbSystemAsyncClient implements DbSystemAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetAnalyticsClusterResponse>
                 transformer = GetAnalyticsClusterConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DbSystem",
+                "GetAnalyticsCluster",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/AnalyticsCluster/GetAnalyticsCluster");
 
         com.oracle.bmc.responses.AsyncHandler<
                         GetAnalyticsClusterRequest, GetAnalyticsClusterResponse>
@@ -787,6 +829,11 @@ public class DbSystemAsyncClient implements DbSystemAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetAnalyticsClusterMemoryEstimateResponse>
                 transformer = GetAnalyticsClusterMemoryEstimateConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DbSystem",
+                "GetAnalyticsClusterMemoryEstimate",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/AnalyticsClusterMemoryEstimate/GetAnalyticsClusterMemoryEstimate");
 
         com.oracle.bmc.responses.AsyncHandler<
                         GetAnalyticsClusterMemoryEstimateRequest,
@@ -829,6 +876,11 @@ public class DbSystemAsyncClient implements DbSystemAsync {
                 GetDbSystemConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetDbSystemResponse>
                 transformer = GetDbSystemConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DbSystem",
+                "GetDbSystem",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/DbSystem/GetDbSystem");
 
         com.oracle.bmc.responses.AsyncHandler<GetDbSystemRequest, GetDbSystemResponse>
                 handlerToUse = handler;
@@ -868,6 +920,11 @@ public class DbSystemAsyncClient implements DbSystemAsync {
                 GetHeatWaveClusterConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetHeatWaveClusterResponse>
                 transformer = GetHeatWaveClusterConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DbSystem",
+                "GetHeatWaveCluster",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/HeatWaveCluster/GetHeatWaveCluster");
 
         com.oracle.bmc.responses.AsyncHandler<GetHeatWaveClusterRequest, GetHeatWaveClusterResponse>
                 handlerToUse = handler;
@@ -910,6 +967,11 @@ public class DbSystemAsyncClient implements DbSystemAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetHeatWaveClusterMemoryEstimateResponse>
                 transformer = GetHeatWaveClusterMemoryEstimateConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DbSystem",
+                "GetHeatWaveClusterMemoryEstimate",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/HeatWaveClusterMemoryEstimate/GetHeatWaveClusterMemoryEstimate");
 
         com.oracle.bmc.responses.AsyncHandler<
                         GetHeatWaveClusterMemoryEstimateRequest,
@@ -952,6 +1014,11 @@ public class DbSystemAsyncClient implements DbSystemAsync {
                 ListDbSystemsConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListDbSystemsResponse>
                 transformer = ListDbSystemsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DbSystem",
+                "ListDbSystems",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/DbSystemSummary/ListDbSystems");
 
         com.oracle.bmc.responses.AsyncHandler<ListDbSystemsRequest, ListDbSystemsResponse>
                 handlerToUse = handler;
@@ -993,6 +1060,11 @@ public class DbSystemAsyncClient implements DbSystemAsync {
                         javax.ws.rs.core.Response, RestartAnalyticsClusterResponse>
                 transformer = RestartAnalyticsClusterConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DbSystem",
+                "RestartAnalyticsCluster",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/AnalyticsCluster/RestartAnalyticsCluster");
 
         com.oracle.bmc.responses.AsyncHandler<
                         RestartAnalyticsClusterRequest, RestartAnalyticsClusterResponse>
@@ -1034,6 +1106,11 @@ public class DbSystemAsyncClient implements DbSystemAsync {
         final com.google.common.base.Function<javax.ws.rs.core.Response, RestartDbSystemResponse>
                 transformer = RestartDbSystemConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DbSystem",
+                "RestartDbSystem",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/DbSystem/RestartDbSystem");
 
         com.oracle.bmc.responses.AsyncHandler<RestartDbSystemRequest, RestartDbSystemResponse>
                 handlerToUse = handler;
@@ -1080,6 +1157,11 @@ public class DbSystemAsyncClient implements DbSystemAsync {
                         javax.ws.rs.core.Response, RestartHeatWaveClusterResponse>
                 transformer = RestartHeatWaveClusterConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DbSystem",
+                "RestartHeatWaveCluster",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/HeatWaveCluster/RestartHeatWaveCluster");
 
         com.oracle.bmc.responses.AsyncHandler<
                         RestartHeatWaveClusterRequest, RestartHeatWaveClusterResponse>
@@ -1122,6 +1204,11 @@ public class DbSystemAsyncClient implements DbSystemAsync {
                         javax.ws.rs.core.Response, StartAnalyticsClusterResponse>
                 transformer = StartAnalyticsClusterConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DbSystem",
+                "StartAnalyticsCluster",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/AnalyticsCluster/StartAnalyticsCluster");
 
         com.oracle.bmc.responses.AsyncHandler<
                         StartAnalyticsClusterRequest, StartAnalyticsClusterResponse>
@@ -1162,6 +1249,11 @@ public class DbSystemAsyncClient implements DbSystemAsync {
         final com.google.common.base.Function<javax.ws.rs.core.Response, StartDbSystemResponse>
                 transformer = StartDbSystemConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DbSystem",
+                "StartDbSystem",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/DbSystem/StartDbSystem");
 
         com.oracle.bmc.responses.AsyncHandler<StartDbSystemRequest, StartDbSystemResponse>
                 handlerToUse = handler;
@@ -1203,6 +1295,11 @@ public class DbSystemAsyncClient implements DbSystemAsync {
                         javax.ws.rs.core.Response, StartHeatWaveClusterResponse>
                 transformer = StartHeatWaveClusterConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DbSystem",
+                "StartHeatWaveCluster",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/HeatWaveCluster/StartHeatWaveCluster");
 
         com.oracle.bmc.responses.AsyncHandler<
                         StartHeatWaveClusterRequest, StartHeatWaveClusterResponse>
@@ -1245,6 +1342,11 @@ public class DbSystemAsyncClient implements DbSystemAsync {
                         javax.ws.rs.core.Response, StopAnalyticsClusterResponse>
                 transformer = StopAnalyticsClusterConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DbSystem",
+                "StopAnalyticsCluster",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/AnalyticsCluster/StopAnalyticsCluster");
 
         com.oracle.bmc.responses.AsyncHandler<
                         StopAnalyticsClusterRequest, StopAnalyticsClusterResponse>
@@ -1285,6 +1387,11 @@ public class DbSystemAsyncClient implements DbSystemAsync {
         final com.google.common.base.Function<javax.ws.rs.core.Response, StopDbSystemResponse>
                 transformer = StopDbSystemConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DbSystem",
+                "StopDbSystem",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/DbSystem/StopDbSystem");
 
         com.oracle.bmc.responses.AsyncHandler<StopDbSystemRequest, StopDbSystemResponse>
                 handlerToUse = handler;
@@ -1331,6 +1438,11 @@ public class DbSystemAsyncClient implements DbSystemAsync {
                         javax.ws.rs.core.Response, StopHeatWaveClusterResponse>
                 transformer = StopHeatWaveClusterConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DbSystem",
+                "StopHeatWaveCluster",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/HeatWaveCluster/StopHeatWaveCluster");
 
         com.oracle.bmc.responses.AsyncHandler<
                         StopHeatWaveClusterRequest, StopHeatWaveClusterResponse>
@@ -1372,6 +1484,11 @@ public class DbSystemAsyncClient implements DbSystemAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, UpdateAnalyticsClusterResponse>
                 transformer = UpdateAnalyticsClusterConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DbSystem",
+                "UpdateAnalyticsCluster",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/AnalyticsCluster/UpdateAnalyticsCluster");
 
         com.oracle.bmc.responses.AsyncHandler<
                         UpdateAnalyticsClusterRequest, UpdateAnalyticsClusterResponse>
@@ -1417,6 +1534,11 @@ public class DbSystemAsyncClient implements DbSystemAsync {
                 UpdateDbSystemConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateDbSystemResponse>
                 transformer = UpdateDbSystemConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DbSystem",
+                "UpdateDbSystem",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/DbSystem/UpdateDbSystem");
 
         com.oracle.bmc.responses.AsyncHandler<UpdateDbSystemRequest, UpdateDbSystemResponse>
                 handlerToUse = handler;
@@ -1462,6 +1584,11 @@ public class DbSystemAsyncClient implements DbSystemAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, UpdateHeatWaveClusterResponse>
                 transformer = UpdateHeatWaveClusterConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DbSystem",
+                "UpdateHeatWaveCluster",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/HeatWaveCluster/UpdateHeatWaveCluster");
 
         com.oracle.bmc.responses.AsyncHandler<
                         UpdateHeatWaveClusterRequest, UpdateHeatWaveClusterResponse>

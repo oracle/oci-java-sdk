@@ -22,12 +22,12 @@ public class UpdateProjectRequest
                 com.oracle.bmc.aivision.model.UpdateProjectDetails> {
 
     /**
-     * unique project identifier.
+     * A unique project identifier.
      */
     private String projectId;
 
     /**
-     * Project metadata to be updated.
+     * The project metadata to be updated.
      */
     private com.oracle.bmc.aivision.model.UpdateProjectDetails updateProjectDetails;
 

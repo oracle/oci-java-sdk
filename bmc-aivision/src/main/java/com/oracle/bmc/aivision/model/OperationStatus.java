@@ -5,7 +5,7 @@
 package com.oracle.bmc.aivision.model;
 
 /**
- * Possible operation status.
+ * Possible operation statuses.
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220125")
 @lombok.extern.slf4j.Slf4j

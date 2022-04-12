@@ -7,6 +7,9 @@ package com.oracle.bmc.auth;
 import com.oracle.bmc.Region;
 import com.oracle.bmc.auth.internal.FederationClient;
 import lombok.Getter;
+import lombok.extern.slf4j.Slf4j;
+
+import java.time.Duration;
 
 /**
  * Implementation of {@link BasicAuthenticationDetailsProvider} that integrates
@@ -16,10 +19,12 @@ import lombok.Getter;
  * Also uses {@link AuthCachingPolicy} to disable caching (as the values for signing requests
  * may be rotated periodically).
  */
+@Slf4j
 @AuthCachingPolicy(cacheKeyId = false, cachePrivateKey = false)
 public class InstancePrincipalsAuthenticationDetailsProvider
         extends AbstractRequestingAuthenticationDetailsProvider
-        implements RegionProvider, RefreshableOnNotAuthenticatedProvider<String> {
+        implements RegionProvider, RefreshableOnNotAuthenticatedProvider<String>,
+                ConfigurableRefreshOnNotAuthenticatedProvider<String> {
 
     @Getter(onMethod = @__({@Override}))
     private final Region region;
@@ -57,6 +62,15 @@ public class InstancePrincipalsAuthenticationDetailsProvider
         return this.federationClient.refreshAndGetSecurityToken();
     }
 
+    @Override
+    public String refreshIfExpiringWithin(Duration time) {
+        if (this.federationClient instanceof ProvidesConfigurableRefresh) {
+            return ((ProvidesConfigurableRefresh) this.federationClient)
+                    .refreshAndGetSecurityTokenIfExpiringWithin(time);
+        }
+        return this.federationClient.refreshAndGetSecurityToken();
+    }
+
     /**
      * Builder for InstancePrincipalsAuthenticationDetailsProviderBuilder.
      */
@@ -74,6 +88,9 @@ public class InstancePrincipalsAuthenticationDetailsProvider
 
         @Override
         public InstancePrincipalsAuthenticationDetailsProvider build() {
+            LOG.info(
+                    "Instance principals authentication can only be used on OCI compute instances. Please confirm this code is running on an OCI compute instance.\n"
+                            + "See https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/callingservicesfrominstances.htm for more info.");
             autoDetectUsingMetadataUrl();
 
             return super.build();
@@ -82,7 +99,7 @@ public class InstancePrincipalsAuthenticationDetailsProvider
         @Override
         public InstancePrincipalsAuthenticationDetailsProviderBuilder federationEndpoint(
                 String federationEndpoint) {
-            // do not remove this method.  due to compile time resolution, older generated
+            // Do not remove this method. Due to compile time resolution, older generated
             // clients will bind to this, not the one in the superclass
             return super.federationEndpoint(federationEndpoint);
         }
@@ -90,7 +107,7 @@ public class InstancePrincipalsAuthenticationDetailsProvider
         @Override
         public InstancePrincipalsAuthenticationDetailsProviderBuilder leafCertificateSupplier(
                 X509CertificateSupplier leafCertificateSupplier) {
-            // do not remove this method.  due to compile time resolution, older generated
+            // Do not remove this method. Due to compile time resolution, older generated
             // clients will bind to this, not the one in the superclass
             return super.leafCertificateSupplier(leafCertificateSupplier);
         }

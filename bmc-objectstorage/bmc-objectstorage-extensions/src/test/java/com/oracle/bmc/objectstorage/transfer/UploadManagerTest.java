@@ -58,6 +58,7 @@ import org.powermock.modules.junit4.PowerMockRunner;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.net.URI;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -527,6 +528,9 @@ public class UploadManagerTest {
 
         WrappedInvocationBuilder mockInvocationBuilder = mock(WrappedInvocationBuilder.class);
         when(mockBaseTarget.request()).thenReturn(mockInvocationBuilder);
+
+        URI testURI = new URI("https://objectstorage.test-region.test.domain/");
+        when(mockInvocationBuilder.getRequestUri()).thenReturn(testURI);
 
         final AtomicInteger onProgressCallbackCount = new AtomicInteger();
 

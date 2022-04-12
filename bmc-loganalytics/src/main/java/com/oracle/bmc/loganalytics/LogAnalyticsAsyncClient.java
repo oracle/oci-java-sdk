@@ -392,6 +392,11 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
                         javax.ws.rs.core.Response, AddEntityAssociationResponse>
                 transformer = AddEntityAssociationConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "AddEntityAssociation",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsEntity/AddEntityAssociation");
 
         com.oracle.bmc.responses.AsyncHandler<
                         AddEntityAssociationRequest, AddEntityAssociationResponse>
@@ -439,6 +444,11 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
                         javax.ws.rs.core.Response, AddSourceEventTypesResponse>
                 transformer = AddSourceEventTypesConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "AddSourceEventTypes",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsSource/AddSourceEventTypes");
 
         com.oracle.bmc.responses.AsyncHandler<
                         AddSourceEventTypesRequest, AddSourceEventTypesResponse>
@@ -492,6 +502,11 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
         final com.google.common.base.Function<javax.ws.rs.core.Response, AppendLookupDataResponse>
                 transformer = AppendLookupDataConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "AppendLookupData",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsLookup/AppendLookupData");
 
         com.oracle.bmc.responses.AsyncHandler<AppendLookupDataRequest, AppendLookupDataResponse>
                 handlerToUse =
@@ -541,6 +556,11 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
                 BatchGetBasicInfoConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, BatchGetBasicInfoResponse>
                 transformer = BatchGetBasicInfoConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "BatchGetBasicInfo",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsLabel/BatchGetBasicInfo");
 
         com.oracle.bmc.responses.AsyncHandler<BatchGetBasicInfoRequest, BatchGetBasicInfoResponse>
                 handlerToUse = handler;
@@ -586,6 +606,11 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, CancelQueryWorkRequestResponse>
                 transformer = CancelQueryWorkRequestConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "CancelQueryWorkRequest",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/QueryWorkRequest/CancelQueryWorkRequest");
 
         com.oracle.bmc.responses.AsyncHandler<
                         CancelQueryWorkRequestRequest, CancelQueryWorkRequestResponse>
@@ -631,6 +656,11 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
                         javax.ws.rs.core.Response, ChangeLogAnalyticsEmBridgeCompartmentResponse>
                 transformer = ChangeLogAnalyticsEmBridgeCompartmentConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "ChangeLogAnalyticsEmBridgeCompartment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsEmBridge/ChangeLogAnalyticsEmBridgeCompartment");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeLogAnalyticsEmBridgeCompartmentRequest,
@@ -685,6 +715,11 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
                         javax.ws.rs.core.Response, ChangeLogAnalyticsEntityCompartmentResponse>
                 transformer = ChangeLogAnalyticsEntityCompartmentConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "ChangeLogAnalyticsEntityCompartment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsEntity/ChangeLogAnalyticsEntityCompartment");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeLogAnalyticsEntityCompartmentRequest,
@@ -738,6 +773,11 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
                         javax.ws.rs.core.Response, ChangeLogAnalyticsLogGroupCompartmentResponse>
                 transformer = ChangeLogAnalyticsLogGroupCompartmentConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "ChangeLogAnalyticsLogGroupCompartment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsLogGroup/ChangeLogAnalyticsLogGroupCompartment");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeLogAnalyticsLogGroupCompartmentRequest,
@@ -794,6 +834,11 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
                         ChangeLogAnalyticsObjectCollectionRuleCompartmentResponse>
                 transformer =
                         ChangeLogAnalyticsObjectCollectionRuleCompartmentConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "ChangeLogAnalyticsObjectCollectionRuleCompartment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsObjectCollectionRule/ChangeLogAnalyticsObjectCollectionRuleCompartment");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeLogAnalyticsObjectCollectionRuleCompartmentRequest,
@@ -848,6 +893,11 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
                         javax.ws.rs.core.Response, ChangeScheduledTaskCompartmentResponse>
                 transformer = ChangeScheduledTaskCompartmentConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "ChangeScheduledTaskCompartment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/ScheduledTask/ChangeScheduledTaskCompartment");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeScheduledTaskCompartmentRequest,
@@ -893,6 +943,11 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
         final com.google.common.base.Function<javax.ws.rs.core.Response, CleanResponse>
                 transformer = CleanConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "Clean",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/ScheduledTask/Clean");
 
         com.oracle.bmc.responses.AsyncHandler<CleanRequest, CleanResponse> handlerToUse = handler;
 
@@ -930,6 +985,11 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
                 CompareContentConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, CompareContentResponse>
                 transformer = CompareContentConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "CompareContent",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/QueryDetails/CompareContent");
 
         com.oracle.bmc.responses.AsyncHandler<CompareContentRequest, CompareContentResponse>
                 handlerToUse = handler;
@@ -978,6 +1038,11 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
                         javax.ws.rs.core.Response, CreateLogAnalyticsEmBridgeResponse>
                 transformer = CreateLogAnalyticsEmBridgeConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "CreateLogAnalyticsEmBridge",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsEmBridge/CreateLogAnalyticsEmBridge");
 
         com.oracle.bmc.responses.AsyncHandler<
                         CreateLogAnalyticsEmBridgeRequest, CreateLogAnalyticsEmBridgeResponse>
@@ -1026,6 +1091,11 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
                         javax.ws.rs.core.Response, CreateLogAnalyticsEntityResponse>
                 transformer = CreateLogAnalyticsEntityConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "CreateLogAnalyticsEntity",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsEntity/CreateLogAnalyticsEntity");
 
         com.oracle.bmc.responses.AsyncHandler<
                         CreateLogAnalyticsEntityRequest, CreateLogAnalyticsEntityResponse>
@@ -1075,6 +1145,11 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
                         javax.ws.rs.core.Response, CreateLogAnalyticsEntityTypeResponse>
                 transformer = CreateLogAnalyticsEntityTypeConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "CreateLogAnalyticsEntityType",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsEntityType/CreateLogAnalyticsEntityType");
 
         com.oracle.bmc.responses.AsyncHandler<
                         CreateLogAnalyticsEntityTypeRequest, CreateLogAnalyticsEntityTypeResponse>
@@ -1125,6 +1200,11 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
                         javax.ws.rs.core.Response, CreateLogAnalyticsLogGroupResponse>
                 transformer = CreateLogAnalyticsLogGroupConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "CreateLogAnalyticsLogGroup",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsLogGroup/CreateLogAnalyticsLogGroup");
 
         com.oracle.bmc.responses.AsyncHandler<
                         CreateLogAnalyticsLogGroupRequest, CreateLogAnalyticsLogGroupResponse>
@@ -1175,6 +1255,11 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, CreateLogAnalyticsObjectCollectionRuleResponse>
                 transformer = CreateLogAnalyticsObjectCollectionRuleConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "CreateLogAnalyticsObjectCollectionRule",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsObjectCollectionRule/CreateLogAnalyticsObjectCollectionRule");
 
         com.oracle.bmc.responses.AsyncHandler<
                         CreateLogAnalyticsObjectCollectionRuleRequest,
@@ -1226,6 +1311,11 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
                         javax.ws.rs.core.Response, CreateScheduledTaskResponse>
                 transformer = CreateScheduledTaskConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "CreateScheduledTask",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/ScheduledTask/CreateScheduledTask");
 
         com.oracle.bmc.responses.AsyncHandler<
                         CreateScheduledTaskRequest, CreateScheduledTaskResponse>
@@ -1272,6 +1362,11 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
         final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteAssociationsResponse>
                 transformer = DeleteAssociationsConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "DeleteAssociations",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsAssociation/DeleteAssociations");
 
         com.oracle.bmc.responses.AsyncHandler<DeleteAssociationsRequest, DeleteAssociationsResponse>
                 handlerToUse = handler;
@@ -1316,6 +1411,11 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
         final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteFieldResponse>
                 transformer = DeleteFieldConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "DeleteField",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsField/DeleteField");
 
         com.oracle.bmc.responses.AsyncHandler<DeleteFieldRequest, DeleteFieldResponse>
                 handlerToUse = handler;
@@ -1355,6 +1455,11 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
         final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteLabelResponse>
                 transformer = DeleteLabelConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "DeleteLabel",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsLabel/DeleteLabel");
 
         com.oracle.bmc.responses.AsyncHandler<DeleteLabelRequest, DeleteLabelResponse>
                 handlerToUse = handler;
@@ -1397,6 +1502,11 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, DeleteLogAnalyticsEmBridgeResponse>
                 transformer = DeleteLogAnalyticsEmBridgeConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "DeleteLogAnalyticsEmBridge",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsEmBridge/DeleteLogAnalyticsEmBridge");
 
         com.oracle.bmc.responses.AsyncHandler<
                         DeleteLogAnalyticsEmBridgeRequest, DeleteLogAnalyticsEmBridgeResponse>
@@ -1439,6 +1549,11 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, DeleteLogAnalyticsEntityResponse>
                 transformer = DeleteLogAnalyticsEntityConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "DeleteLogAnalyticsEntity",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsEntity/DeleteLogAnalyticsEntity");
 
         com.oracle.bmc.responses.AsyncHandler<
                         DeleteLogAnalyticsEntityRequest, DeleteLogAnalyticsEntityResponse>
@@ -1482,6 +1597,11 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, DeleteLogAnalyticsEntityTypeResponse>
                 transformer = DeleteLogAnalyticsEntityTypeConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "DeleteLogAnalyticsEntityType",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsEntityType/DeleteLogAnalyticsEntityType");
 
         com.oracle.bmc.responses.AsyncHandler<
                         DeleteLogAnalyticsEntityTypeRequest, DeleteLogAnalyticsEntityTypeResponse>
@@ -1526,6 +1646,11 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, DeleteLogAnalyticsLogGroupResponse>
                 transformer = DeleteLogAnalyticsLogGroupConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "DeleteLogAnalyticsLogGroup",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsLogGroup/DeleteLogAnalyticsLogGroup");
 
         com.oracle.bmc.responses.AsyncHandler<
                         DeleteLogAnalyticsLogGroupRequest, DeleteLogAnalyticsLogGroupResponse>
@@ -1571,6 +1696,11 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, DeleteLogAnalyticsObjectCollectionRuleResponse>
                 transformer = DeleteLogAnalyticsObjectCollectionRuleConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "DeleteLogAnalyticsObjectCollectionRule",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsObjectCollectionRule/DeleteLogAnalyticsObjectCollectionRule");
 
         com.oracle.bmc.responses.AsyncHandler<
                         DeleteLogAnalyticsObjectCollectionRuleRequest,
@@ -1614,6 +1744,11 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
         final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteLookupResponse>
                 transformer = DeleteLookupConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "DeleteLookup",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsLookup/DeleteLookup");
 
         com.oracle.bmc.responses.AsyncHandler<DeleteLookupRequest, DeleteLookupResponse>
                 handlerToUse = handler;
@@ -1653,6 +1788,11 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
         final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteParserResponse>
                 transformer = DeleteParserConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "DeleteParser",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsParser/DeleteParser");
 
         com.oracle.bmc.responses.AsyncHandler<DeleteParserRequest, DeleteParserResponse>
                 handlerToUse = handler;
@@ -1693,6 +1833,11 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, DeleteScheduledTaskResponse>
                 transformer = DeleteScheduledTaskConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "DeleteScheduledTask",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/ScheduledTask/DeleteScheduledTask");
 
         com.oracle.bmc.responses.AsyncHandler<
                         DeleteScheduledTaskRequest, DeleteScheduledTaskResponse>
@@ -1733,6 +1878,11 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
         final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteSourceResponse>
                 transformer = DeleteSourceConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "DeleteSource",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsSource/DeleteSource");
 
         com.oracle.bmc.responses.AsyncHandler<DeleteSourceRequest, DeleteSourceResponse>
                 handlerToUse = handler;
@@ -1771,6 +1921,11 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
                 DeleteUploadConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteUploadResponse>
                 transformer = DeleteUploadConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "DeleteUpload",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/Upload/DeleteUpload");
 
         com.oracle.bmc.responses.AsyncHandler<DeleteUploadRequest, DeleteUploadResponse>
                 handlerToUse = handler;
@@ -1810,6 +1965,11 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
                 DeleteUploadFileConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteUploadFileResponse>
                 transformer = DeleteUploadFileConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "DeleteUploadFile",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/Upload/DeleteUploadFile");
 
         com.oracle.bmc.responses.AsyncHandler<DeleteUploadFileRequest, DeleteUploadFileResponse>
                 handlerToUse = handler;
@@ -1850,6 +2010,11 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, DeleteUploadWarningResponse>
                 transformer = DeleteUploadWarningConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "DeleteUploadWarning",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/Upload/DeleteUploadWarning");
 
         com.oracle.bmc.responses.AsyncHandler<
                         DeleteUploadWarningRequest, DeleteUploadWarningResponse>
@@ -1890,6 +2055,11 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
                 DisableArchivingConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, DisableArchivingResponse>
                 transformer = DisableArchivingConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "DisableArchiving",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/Storage/DisableArchiving");
 
         com.oracle.bmc.responses.AsyncHandler<DisableArchivingRequest, DisableArchivingResponse>
                 handlerToUse = handler;
@@ -1931,6 +2101,11 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
                         javax.ws.rs.core.Response, DisableAutoAssociationResponse>
                 transformer = DisableAutoAssociationConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "DisableAutoAssociation",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsSource/DisableAutoAssociation");
 
         com.oracle.bmc.responses.AsyncHandler<
                         DisableAutoAssociationRequest, DisableAutoAssociationResponse>
@@ -1978,6 +2153,11 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
                         javax.ws.rs.core.Response, DisableSourceEventTypesResponse>
                 transformer = DisableSourceEventTypesConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "DisableSourceEventTypes",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsSource/DisableSourceEventTypes");
 
         com.oracle.bmc.responses.AsyncHandler<
                         DisableSourceEventTypesRequest, DisableSourceEventTypesResponse>
@@ -2023,6 +2203,11 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
                 EnableArchivingConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, EnableArchivingResponse>
                 transformer = EnableArchivingConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "EnableArchiving",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/Storage/EnableArchiving");
 
         com.oracle.bmc.responses.AsyncHandler<EnableArchivingRequest, EnableArchivingResponse>
                 handlerToUse = handler;
@@ -2064,6 +2249,11 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
                         javax.ws.rs.core.Response, EnableAutoAssociationResponse>
                 transformer = EnableAutoAssociationConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "EnableAutoAssociation",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsSource/EnableAutoAssociation");
 
         com.oracle.bmc.responses.AsyncHandler<
                         EnableAutoAssociationRequest, EnableAutoAssociationResponse>
@@ -2111,6 +2301,11 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
                         javax.ws.rs.core.Response, EnableSourceEventTypesResponse>
                 transformer = EnableSourceEventTypesConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "EnableSourceEventTypes",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsSource/EnableSourceEventTypes");
 
         com.oracle.bmc.responses.AsyncHandler<
                         EnableSourceEventTypesRequest, EnableSourceEventTypesResponse>
@@ -2158,6 +2353,11 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
                         javax.ws.rs.core.Response, EstimatePurgeDataSizeResponse>
                 transformer = EstimatePurgeDataSizeConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "EstimatePurgeDataSize",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/Storage/EstimatePurgeDataSize");
 
         com.oracle.bmc.responses.AsyncHandler<
                         EstimatePurgeDataSizeRequest, EstimatePurgeDataSizeResponse>
@@ -2204,6 +2404,11 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, EstimateRecallDataSizeResponse>
                 transformer = EstimateRecallDataSizeConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "EstimateRecallDataSize",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/Storage/EstimateRecallDataSize");
 
         com.oracle.bmc.responses.AsyncHandler<
                         EstimateRecallDataSizeRequest, EstimateRecallDataSizeResponse>
@@ -2250,6 +2455,11 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, EstimateReleaseDataSizeResponse>
                 transformer = EstimateReleaseDataSizeConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "EstimateReleaseDataSize",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/Storage/EstimateReleaseDataSize");
 
         com.oracle.bmc.responses.AsyncHandler<
                         EstimateReleaseDataSizeRequest, EstimateReleaseDataSizeResponse>
@@ -2307,6 +2517,8 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
                         javax.ws.rs.core.Response, ExportCustomContentResponse>
                 transformer = ExportCustomContentConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics", "ExportCustomContent", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ExportCustomContentRequest, ExportCustomContentResponse>
@@ -2362,6 +2574,11 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
                 ExportQueryResultConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ExportQueryResultResponse>
                 transformer = ExportQueryResultConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "ExportQueryResult",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/QueryDetails/ExportQueryResult");
 
         com.oracle.bmc.responses.AsyncHandler<ExportQueryResultRequest, ExportQueryResultResponse>
                 handlerToUse = handler;
@@ -2410,6 +2627,11 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
                         javax.ws.rs.core.Response, ExtractStructuredLogFieldPathsResponse>
                 transformer = ExtractStructuredLogFieldPathsConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "ExtractStructuredLogFieldPaths",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsParser/ExtractStructuredLogFieldPaths");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ExtractStructuredLogFieldPathsRequest,
@@ -2461,6 +2683,11 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
                         javax.ws.rs.core.Response, ExtractStructuredLogHeaderPathsResponse>
                 transformer = ExtractStructuredLogHeaderPathsConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "ExtractStructuredLogHeaderPaths",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsParser/ExtractStructuredLogHeaderPaths");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ExtractStructuredLogHeaderPathsRequest,
@@ -2506,6 +2733,11 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
                 FilterConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, FilterResponse>
                 transformer = FilterConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "Filter",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/QueryDetails/Filter");
 
         com.oracle.bmc.responses.AsyncHandler<FilterRequest, FilterResponse> handlerToUse = handler;
 
@@ -2549,6 +2781,11 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetAssociationSummaryResponse>
                 transformer = GetAssociationSummaryConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "GetAssociationSummary",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsAssociation/GetAssociationSummary");
 
         com.oracle.bmc.responses.AsyncHandler<
                         GetAssociationSummaryRequest, GetAssociationSummaryResponse>
@@ -2588,6 +2825,11 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
                 GetCategoryConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetCategoryResponse>
                 transformer = GetCategoryConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "GetCategory",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsCategory/GetCategory");
 
         com.oracle.bmc.responses.AsyncHandler<GetCategoryRequest, GetCategoryResponse>
                 handlerToUse = handler;
@@ -2628,6 +2870,11 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetColumnNamesResponse>
                 transformer = GetColumnNamesConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "GetColumnNames",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsSource/GetColumnNames");
 
         com.oracle.bmc.responses.AsyncHandler<GetColumnNamesRequest, GetColumnNamesResponse>
                 handlerToUse = handler;
@@ -2668,6 +2915,11 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetConfigWorkRequestResponse>
                 transformer = GetConfigWorkRequestConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "GetConfigWorkRequest",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsConfigWorkRequest/GetConfigWorkRequest");
 
         com.oracle.bmc.responses.AsyncHandler<
                         GetConfigWorkRequestRequest, GetConfigWorkRequestResponse>
@@ -2706,6 +2958,11 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
                 GetFieldConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetFieldResponse>
                 transformer = GetFieldConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "GetField",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsField/GetField");
 
         com.oracle.bmc.responses.AsyncHandler<GetFieldRequest, GetFieldResponse> handlerToUse =
                 handler;
@@ -2744,6 +3001,11 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
                 GetFieldsSummaryConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetFieldsSummaryResponse>
                 transformer = GetFieldsSummaryConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "GetFieldsSummary",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsField/GetFieldsSummary");
 
         com.oracle.bmc.responses.AsyncHandler<GetFieldsSummaryRequest, GetFieldsSummaryResponse>
                 handlerToUse = handler;
@@ -2781,6 +3043,11 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
                 GetLabelConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetLabelResponse>
                 transformer = GetLabelConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "GetLabel",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsLabel/GetLabel");
 
         com.oracle.bmc.responses.AsyncHandler<GetLabelRequest, GetLabelResponse> handlerToUse =
                 handler;
@@ -2819,6 +3086,11 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
                 GetLabelSummaryConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetLabelSummaryResponse>
                 transformer = GetLabelSummaryConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "GetLabelSummary",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsLabel/GetLabelSummary");
 
         com.oracle.bmc.responses.AsyncHandler<GetLabelSummaryRequest, GetLabelSummaryResponse>
                 handlerToUse = handler;
@@ -2859,6 +3131,11 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetLogAnalyticsEmBridgeResponse>
                 transformer = GetLogAnalyticsEmBridgeConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "GetLogAnalyticsEmBridge",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsEmBridge/GetLogAnalyticsEmBridge");
 
         com.oracle.bmc.responses.AsyncHandler<
                         GetLogAnalyticsEmBridgeRequest, GetLogAnalyticsEmBridgeResponse>
@@ -2902,6 +3179,11 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetLogAnalyticsEmBridgeSummaryResponse>
                 transformer = GetLogAnalyticsEmBridgeSummaryConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "GetLogAnalyticsEmBridgeSummary",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsEmBridge/GetLogAnalyticsEmBridgeSummary");
 
         com.oracle.bmc.responses.AsyncHandler<
                         GetLogAnalyticsEmBridgeSummaryRequest,
@@ -2947,6 +3229,11 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetLogAnalyticsEntitiesSummaryResponse>
                 transformer = GetLogAnalyticsEntitiesSummaryConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "GetLogAnalyticsEntitiesSummary",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsEntity/GetLogAnalyticsEntitiesSummary");
 
         com.oracle.bmc.responses.AsyncHandler<
                         GetLogAnalyticsEntitiesSummaryRequest,
@@ -2990,6 +3277,11 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetLogAnalyticsEntityResponse>
                 transformer = GetLogAnalyticsEntityConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "GetLogAnalyticsEntity",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsEntity/GetLogAnalyticsEntity");
 
         com.oracle.bmc.responses.AsyncHandler<
                         GetLogAnalyticsEntityRequest, GetLogAnalyticsEntityResponse>
@@ -3031,6 +3323,11 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetLogAnalyticsEntityTypeResponse>
                 transformer = GetLogAnalyticsEntityTypeConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "GetLogAnalyticsEntityType",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsEntityType/GetLogAnalyticsEntityType");
 
         com.oracle.bmc.responses.AsyncHandler<
                         GetLogAnalyticsEntityTypeRequest, GetLogAnalyticsEntityTypeResponse>
@@ -3073,6 +3370,11 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetLogAnalyticsLogGroupResponse>
                 transformer = GetLogAnalyticsLogGroupConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "GetLogAnalyticsLogGroup",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsLogGroup/GetLogAnalyticsLogGroup");
 
         com.oracle.bmc.responses.AsyncHandler<
                         GetLogAnalyticsLogGroupRequest, GetLogAnalyticsLogGroupResponse>
@@ -3116,6 +3418,11 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetLogAnalyticsLogGroupsSummaryResponse>
                 transformer = GetLogAnalyticsLogGroupsSummaryConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "GetLogAnalyticsLogGroupsSummary",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsLogGroup/GetLogAnalyticsLogGroupsSummary");
 
         com.oracle.bmc.responses.AsyncHandler<
                         GetLogAnalyticsLogGroupsSummaryRequest,
@@ -3163,6 +3470,11 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetLogAnalyticsObjectCollectionRuleResponse>
                 transformer = GetLogAnalyticsObjectCollectionRuleConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "GetLogAnalyticsObjectCollectionRule",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsObjectCollectionRule/GetLogAnalyticsObjectCollectionRule");
 
         com.oracle.bmc.responses.AsyncHandler<
                         GetLogAnalyticsObjectCollectionRuleRequest,
@@ -3206,6 +3518,11 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
                 GetLogSetsCountConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetLogSetsCountResponse>
                 transformer = GetLogSetsCountConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "GetLogSetsCount",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/Storage/GetLogSetsCount");
 
         com.oracle.bmc.responses.AsyncHandler<GetLogSetsCountRequest, GetLogSetsCountResponse>
                 handlerToUse = handler;
@@ -3243,6 +3560,11 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
                 GetLookupConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetLookupResponse>
                 transformer = GetLookupConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "GetLookup",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsLookup/GetLookup");
 
         com.oracle.bmc.responses.AsyncHandler<GetLookupRequest, GetLookupResponse> handlerToUse =
                 handler;
@@ -3281,6 +3603,11 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
                 GetLookupSummaryConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetLookupSummaryResponse>
                 transformer = GetLookupSummaryConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "GetLookupSummary",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsLookup/GetLookupSummary");
 
         com.oracle.bmc.responses.AsyncHandler<GetLookupSummaryRequest, GetLookupSummaryResponse>
                 handlerToUse = handler;
@@ -3319,6 +3646,11 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
                 GetNamespaceConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetNamespaceResponse>
                 transformer = GetNamespaceConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "GetNamespace",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/Namespace/GetNamespace");
 
         com.oracle.bmc.responses.AsyncHandler<GetNamespaceRequest, GetNamespaceResponse>
                 handlerToUse = handler;
@@ -3356,6 +3688,11 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
                 GetParserConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetParserResponse>
                 transformer = GetParserConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "GetParser",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsParser/GetParser");
 
         com.oracle.bmc.responses.AsyncHandler<GetParserRequest, GetParserResponse> handlerToUse =
                 handler;
@@ -3394,6 +3731,11 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
                 GetParserSummaryConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetParserSummaryResponse>
                 transformer = GetParserSummaryConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "GetParserSummary",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsParser/GetParserSummary");
 
         com.oracle.bmc.responses.AsyncHandler<GetParserSummaryRequest, GetParserSummaryResponse>
                 handlerToUse = handler;
@@ -3433,6 +3775,11 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
                 GetPreferencesConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetPreferencesResponse>
                 transformer = GetPreferencesConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "GetPreferences",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsPreference/GetPreferences");
 
         com.oracle.bmc.responses.AsyncHandler<GetPreferencesRequest, GetPreferencesResponse>
                 handlerToUse = handler;
@@ -3472,6 +3819,11 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
                 GetQueryResultConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetQueryResultResponse>
                 transformer = GetQueryResultConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "GetQueryResult",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/QueryDetails/GetQueryResult");
 
         com.oracle.bmc.responses.AsyncHandler<GetQueryResultRequest, GetQueryResultResponse>
                 handlerToUse = handler;
@@ -3512,6 +3864,11 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetQueryWorkRequestResponse>
                 transformer = GetQueryWorkRequestConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "GetQueryWorkRequest",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/QueryWorkRequest/GetQueryWorkRequest");
 
         com.oracle.bmc.responses.AsyncHandler<
                         GetQueryWorkRequestRequest, GetQueryWorkRequestResponse>
@@ -3552,6 +3909,11 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
                 GetScheduledTaskConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetScheduledTaskResponse>
                 transformer = GetScheduledTaskConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "GetScheduledTask",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/ScheduledTask/GetScheduledTask");
 
         com.oracle.bmc.responses.AsyncHandler<GetScheduledTaskRequest, GetScheduledTaskResponse>
                 handlerToUse = handler;
@@ -3589,6 +3951,11 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
                 GetSourceConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetSourceResponse>
                 transformer = GetSourceConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "GetSource",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsSource/GetSource");
 
         com.oracle.bmc.responses.AsyncHandler<GetSourceRequest, GetSourceResponse> handlerToUse =
                 handler;
@@ -3627,6 +3994,11 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
                 GetSourceSummaryConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetSourceSummaryResponse>
                 transformer = GetSourceSummaryConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "GetSourceSummary",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsSource/GetSourceSummary");
 
         com.oracle.bmc.responses.AsyncHandler<GetSourceSummaryRequest, GetSourceSummaryResponse>
                 handlerToUse = handler;
@@ -3664,6 +4036,11 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
                 GetStorageConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetStorageResponse>
                 transformer = GetStorageConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "GetStorage",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/Storage/GetStorage");
 
         com.oracle.bmc.responses.AsyncHandler<GetStorageRequest, GetStorageResponse> handlerToUse =
                 handler;
@@ -3703,6 +4080,11 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
                 GetStorageUsageConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetStorageUsageResponse>
                 transformer = GetStorageUsageConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "GetStorageUsage",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/Storage/GetStorageUsage");
 
         com.oracle.bmc.responses.AsyncHandler<GetStorageUsageRequest, GetStorageUsageResponse>
                 handlerToUse = handler;
@@ -3743,6 +4125,11 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetStorageWorkRequestResponse>
                 transformer = GetStorageWorkRequestConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "GetStorageWorkRequest",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/Storage/GetStorageWorkRequest");
 
         com.oracle.bmc.responses.AsyncHandler<
                         GetStorageWorkRequestRequest, GetStorageWorkRequestResponse>
@@ -3784,6 +4171,11 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetUnprocessedDataBucketResponse>
                 transformer = GetUnprocessedDataBucketConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "GetUnprocessedDataBucket",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/Upload/GetUnprocessedDataBucket");
 
         com.oracle.bmc.responses.AsyncHandler<
                         GetUnprocessedDataBucketRequest, GetUnprocessedDataBucketResponse>
@@ -3822,6 +4214,11 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
                 GetUploadConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetUploadResponse>
                 transformer = GetUploadConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "GetUpload",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/Upload/GetUpload");
 
         com.oracle.bmc.responses.AsyncHandler<GetUploadRequest, GetUploadResponse> handlerToUse =
                 handler;
@@ -3860,6 +4257,11 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
                 GetWorkRequestConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetWorkRequestResponse>
                 transformer = GetWorkRequestConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "GetWorkRequest",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/WorkRequest/GetWorkRequest");
 
         com.oracle.bmc.responses.AsyncHandler<GetWorkRequestRequest, GetWorkRequestResponse>
                 handlerToUse = handler;
@@ -3908,6 +4310,11 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
                         javax.ws.rs.core.Response, ImportCustomContentResponse>
                 transformer = ImportCustomContentConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "ImportCustomContent",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsImportCustomContent/ImportCustomContent");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ImportCustomContentRequest, ImportCustomContentResponse>
@@ -3959,6 +4366,11 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListAssociableEntitiesResponse>
                 transformer = ListAssociableEntitiesConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "ListAssociableEntities",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsSource/ListAssociableEntities");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListAssociableEntitiesRequest, ListAssociableEntitiesResponse>
@@ -4000,6 +4412,11 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListAssociatedEntitiesResponse>
                 transformer = ListAssociatedEntitiesConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "ListAssociatedEntities",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsAssociation/ListAssociatedEntities");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListAssociatedEntitiesRequest, ListAssociatedEntitiesResponse>
@@ -4041,6 +4458,11 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListAutoAssociationsResponse>
                 transformer = ListAutoAssociationsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "ListAutoAssociations",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsSource/ListAutoAssociations");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListAutoAssociationsRequest, ListAutoAssociationsResponse>
@@ -4081,6 +4503,11 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
                 ListCategoriesConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListCategoriesResponse>
                 transformer = ListCategoriesConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "ListCategories",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsCategory/ListCategories");
 
         com.oracle.bmc.responses.AsyncHandler<ListCategoriesRequest, ListCategoriesResponse>
                 handlerToUse = handler;
@@ -4121,6 +4548,11 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListConfigWorkRequestsResponse>
                 transformer = ListConfigWorkRequestsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "ListConfigWorkRequests",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsConfigWorkRequest/ListConfigWorkRequests");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListConfigWorkRequestsRequest, ListConfigWorkRequestsResponse>
@@ -4162,6 +4594,11 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListEntityAssociationsResponse>
                 transformer = ListEntityAssociationsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "ListEntityAssociations",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsEntity/ListEntityAssociations");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListEntityAssociationsRequest, ListEntityAssociationsResponse>
@@ -4205,6 +4642,11 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListEntitySourceAssociationsResponse>
                 transformer = ListEntitySourceAssociationsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "ListEntitySourceAssociations",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsAssociation/ListEntitySourceAssociations");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListEntitySourceAssociationsRequest, ListEntitySourceAssociationsResponse>
@@ -4244,6 +4686,11 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
                 ListFieldsConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListFieldsResponse>
                 transformer = ListFieldsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "ListFields",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsField/ListFields");
 
         com.oracle.bmc.responses.AsyncHandler<ListFieldsRequest, ListFieldsResponse> handlerToUse =
                 handler;
@@ -4284,6 +4731,11 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListLabelPrioritiesResponse>
                 transformer = ListLabelPrioritiesConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "ListLabelPriorities",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsLabel/ListLabelPriorities");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListLabelPrioritiesRequest, ListLabelPrioritiesResponse>
@@ -4325,6 +4777,11 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListLabelSourceDetailsResponse>
                 transformer = ListLabelSourceDetailsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "ListLabelSourceDetails",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsLabel/ListLabelSourceDetails");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListLabelSourceDetailsRequest, ListLabelSourceDetailsResponse>
@@ -4363,6 +4820,11 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
                 ListLabelsConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListLabelsResponse>
                 transformer = ListLabelsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "ListLabels",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsLabel/ListLabels");
 
         com.oracle.bmc.responses.AsyncHandler<ListLabelsRequest, ListLabelsResponse> handlerToUse =
                 handler;
@@ -4403,6 +4865,11 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListLogAnalyticsEmBridgesResponse>
                 transformer = ListLogAnalyticsEmBridgesConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "ListLogAnalyticsEmBridges",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsEmBridge/ListLogAnalyticsEmBridges");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListLogAnalyticsEmBridgesRequest, ListLogAnalyticsEmBridgesResponse>
@@ -4445,6 +4912,11 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListLogAnalyticsEntitiesResponse>
                 transformer = ListLogAnalyticsEntitiesConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "ListLogAnalyticsEntities",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsEntity/ListLogAnalyticsEntities");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListLogAnalyticsEntitiesRequest, ListLogAnalyticsEntitiesResponse>
@@ -4488,6 +4960,11 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListLogAnalyticsEntityTopologyResponse>
                 transformer = ListLogAnalyticsEntityTopologyConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "ListLogAnalyticsEntityTopology",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsEntitySummary/ListLogAnalyticsEntityTopology");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListLogAnalyticsEntityTopologyRequest,
@@ -4533,6 +5010,11 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListLogAnalyticsEntityTypesResponse>
                 transformer = ListLogAnalyticsEntityTypesConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "ListLogAnalyticsEntityTypes",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsEntityType/ListLogAnalyticsEntityTypes");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListLogAnalyticsEntityTypesRequest, ListLogAnalyticsEntityTypesResponse>
@@ -4575,6 +5057,11 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListLogAnalyticsLogGroupsResponse>
                 transformer = ListLogAnalyticsLogGroupsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "ListLogAnalyticsLogGroups",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsLogGroup/ListLogAnalyticsLogGroups");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListLogAnalyticsLogGroupsRequest, ListLogAnalyticsLogGroupsResponse>
@@ -4620,6 +5107,11 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListLogAnalyticsObjectCollectionRulesResponse>
                 transformer = ListLogAnalyticsObjectCollectionRulesConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "ListLogAnalyticsObjectCollectionRules",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsObjectCollectionRule/ListLogAnalyticsObjectCollectionRules");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListLogAnalyticsObjectCollectionRulesRequest,
@@ -4662,6 +5154,11 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
                 ListLogSetsConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListLogSetsResponse>
                 transformer = ListLogSetsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "ListLogSets",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/Storage/ListLogSets");
 
         com.oracle.bmc.responses.AsyncHandler<ListLogSetsRequest, ListLogSetsResponse>
                 handlerToUse = handler;
@@ -4700,6 +5197,11 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
                 ListLookupsConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListLookupsResponse>
                 transformer = ListLookupsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "ListLookups",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsLookup/ListLookups");
 
         com.oracle.bmc.responses.AsyncHandler<ListLookupsRequest, ListLookupsResponse>
                 handlerToUse = handler;
@@ -4740,6 +5242,11 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListMetaSourceTypesResponse>
                 transformer = ListMetaSourceTypesConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "ListMetaSourceTypes",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsSource/ListMetaSourceTypes");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListMetaSourceTypesRequest, ListMetaSourceTypesResponse>
@@ -4780,6 +5287,11 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
                 ListNamespacesConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListNamespacesResponse>
                 transformer = ListNamespacesConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "ListNamespaces",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/Namespace/ListNamespaces");
 
         com.oracle.bmc.responses.AsyncHandler<ListNamespacesRequest, ListNamespacesResponse>
                 handlerToUse = handler;
@@ -4820,6 +5332,11 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListParserFunctionsResponse>
                 transformer = ListParserFunctionsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "ListParserFunctions",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsParser/ListParserFunctions");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListParserFunctionsRequest, ListParserFunctionsResponse>
@@ -4861,6 +5378,11 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListParserMetaPluginsResponse>
                 transformer = ListParserMetaPluginsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "ListParserMetaPlugins",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsParser/ListParserMetaPlugins");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListParserMetaPluginsRequest, ListParserMetaPluginsResponse>
@@ -4900,6 +5422,11 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
                 ListParsersConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListParsersResponse>
                 transformer = ListParsersConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "ListParsers",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsParser/ListParsers");
 
         com.oracle.bmc.responses.AsyncHandler<ListParsersRequest, ListParsersResponse>
                 handlerToUse = handler;
@@ -4940,6 +5467,11 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListQueryWorkRequestsResponse>
                 transformer = ListQueryWorkRequestsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "ListQueryWorkRequests",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/QueryWorkRequest/ListQueryWorkRequests");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListQueryWorkRequestsRequest, ListQueryWorkRequestsResponse>
@@ -4980,6 +5512,11 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
                 ListRecalledDataConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListRecalledDataResponse>
                 transformer = ListRecalledDataConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "ListRecalledData",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/Storage/ListRecalledData");
 
         com.oracle.bmc.responses.AsyncHandler<ListRecalledDataRequest, ListRecalledDataResponse>
                 handlerToUse = handler;
@@ -5020,6 +5557,11 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListResourceCategoriesResponse>
                 transformer = ListResourceCategoriesConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "ListResourceCategories",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsCategory/ListResourceCategories");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListResourceCategoriesRequest, ListResourceCategoriesResponse>
@@ -5060,6 +5602,11 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
                 ListScheduledTasksConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListScheduledTasksResponse>
                 transformer = ListScheduledTasksConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "ListScheduledTasks",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/ScheduledTask/ListScheduledTasks");
 
         com.oracle.bmc.responses.AsyncHandler<ListScheduledTasksRequest, ListScheduledTasksResponse>
                 handlerToUse = handler;
@@ -5100,6 +5647,11 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListSourceAssociationsResponse>
                 transformer = ListSourceAssociationsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "ListSourceAssociations",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsAssociation/ListSourceAssociations");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListSourceAssociationsRequest, ListSourceAssociationsResponse>
@@ -5141,6 +5693,11 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListSourceEventTypesResponse>
                 transformer = ListSourceEventTypesConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "ListSourceEventTypes",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsSource/ListSourceEventTypes");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListSourceEventTypesRequest, ListSourceEventTypesResponse>
@@ -5184,6 +5741,11 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListSourceExtendedFieldDefinitionsResponse>
                 transformer = ListSourceExtendedFieldDefinitionsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "ListSourceExtendedFieldDefinitions",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsSource/ListSourceExtendedFieldDefinitions");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListSourceExtendedFieldDefinitionsRequest,
@@ -5228,6 +5790,11 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListSourceLabelOperatorsResponse>
                 transformer = ListSourceLabelOperatorsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "ListSourceLabelOperators",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsSource/ListSourceLabelOperators");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListSourceLabelOperatorsRequest, ListSourceLabelOperatorsResponse>
@@ -5269,6 +5836,11 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListSourceMetaFunctionsResponse>
                 transformer = ListSourceMetaFunctionsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "ListSourceMetaFunctions",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsSource/ListSourceMetaFunctions");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListSourceMetaFunctionsRequest, ListSourceMetaFunctionsResponse>
@@ -5309,6 +5881,11 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
                 ListSourcePatternsConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListSourcePatternsResponse>
                 transformer = ListSourcePatternsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "ListSourcePatterns",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsSource/ListSourcePatterns");
 
         com.oracle.bmc.responses.AsyncHandler<ListSourcePatternsRequest, ListSourcePatternsResponse>
                 handlerToUse = handler;
@@ -5347,6 +5924,11 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
                 ListSourcesConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListSourcesResponse>
                 transformer = ListSourcesConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "ListSources",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsSource/ListSources");
 
         com.oracle.bmc.responses.AsyncHandler<ListSourcesRequest, ListSourcesResponse>
                 handlerToUse = handler;
@@ -5389,6 +5971,11 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListStorageWorkRequestErrorsResponse>
                 transformer = ListStorageWorkRequestErrorsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "ListStorageWorkRequestErrors",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/Storage/ListStorageWorkRequestErrors");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListStorageWorkRequestErrorsRequest, ListStorageWorkRequestErrorsResponse>
@@ -5431,6 +6018,11 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListStorageWorkRequestsResponse>
                 transformer = ListStorageWorkRequestsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "ListStorageWorkRequests",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/Storage/ListStorageWorkRequests");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListStorageWorkRequestsRequest, ListStorageWorkRequestsResponse>
@@ -5474,6 +6066,11 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListSupportedCharEncodingsResponse>
                 transformer = ListSupportedCharEncodingsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "ListSupportedCharEncodings",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/CharEncodingCollection/ListSupportedCharEncodings");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListSupportedCharEncodingsRequest, ListSupportedCharEncodingsResponse>
@@ -5516,6 +6113,11 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListSupportedTimezonesResponse>
                 transformer = ListSupportedTimezonesConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "ListSupportedTimezones",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/TimezoneCollection/ListSupportedTimezones");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListSupportedTimezonesRequest, ListSupportedTimezonesResponse>
@@ -5556,6 +6158,11 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
                 ListUploadFilesConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListUploadFilesResponse>
                 transformer = ListUploadFilesConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "ListUploadFiles",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/Upload/ListUploadFiles");
 
         com.oracle.bmc.responses.AsyncHandler<ListUploadFilesRequest, ListUploadFilesResponse>
                 handlerToUse = handler;
@@ -5595,6 +6202,11 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
                 ListUploadWarningsConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListUploadWarningsResponse>
                 transformer = ListUploadWarningsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "ListUploadWarnings",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/Upload/ListUploadWarnings");
 
         com.oracle.bmc.responses.AsyncHandler<ListUploadWarningsRequest, ListUploadWarningsResponse>
                 handlerToUse = handler;
@@ -5633,6 +6245,11 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
                 ListUploadsConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListUploadsResponse>
                 transformer = ListUploadsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "ListUploads",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/Upload/ListUploads");
 
         com.oracle.bmc.responses.AsyncHandler<ListUploadsRequest, ListUploadsResponse>
                 handlerToUse = handler;
@@ -5671,6 +6288,11 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
                 ListWarningsConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListWarningsResponse>
                 transformer = ListWarningsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "ListWarnings",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsWarning/ListWarnings");
 
         com.oracle.bmc.responses.AsyncHandler<ListWarningsRequest, ListWarningsResponse>
                 handlerToUse = handler;
@@ -5711,6 +6333,11 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListWorkRequestErrorsResponse>
                 transformer = ListWorkRequestErrorsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "ListWorkRequestErrors",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/WorkRequestError/ListWorkRequestErrors");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListWorkRequestErrorsRequest, ListWorkRequestErrorsResponse>
@@ -5752,6 +6379,11 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListWorkRequestLogsResponse>
                 transformer = ListWorkRequestLogsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "ListWorkRequestLogs",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/WorkRequestLog/ListWorkRequestLogs");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListWorkRequestLogsRequest, ListWorkRequestLogsResponse>
@@ -5792,6 +6424,11 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
                 ListWorkRequestsConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListWorkRequestsResponse>
                 transformer = ListWorkRequestsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "ListWorkRequests",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/WorkRequest/ListWorkRequests");
 
         com.oracle.bmc.responses.AsyncHandler<ListWorkRequestsRequest, ListWorkRequestsResponse>
                 handlerToUse = handler;
@@ -5832,6 +6469,11 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
         final com.google.common.base.Function<javax.ws.rs.core.Response, OffboardNamespaceResponse>
                 transformer = OffboardNamespaceConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "OffboardNamespace",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/Namespace/OffboardNamespace");
 
         com.oracle.bmc.responses.AsyncHandler<OffboardNamespaceRequest, OffboardNamespaceResponse>
                 handlerToUse = handler;
@@ -5872,6 +6514,11 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
         final com.google.common.base.Function<javax.ws.rs.core.Response, OnboardNamespaceResponse>
                 transformer = OnboardNamespaceConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "OnboardNamespace",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/Namespace/OnboardNamespace");
 
         com.oracle.bmc.responses.AsyncHandler<OnboardNamespaceRequest, OnboardNamespaceResponse>
                 handlerToUse = handler;
@@ -5909,6 +6556,11 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
                 ParseQueryConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ParseQueryResponse>
                 transformer = ParseQueryConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "ParseQuery",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/QueryDetails/ParseQuery");
 
         com.oracle.bmc.responses.AsyncHandler<ParseQueryRequest, ParseQueryResponse> handlerToUse =
                 handler;
@@ -5953,6 +6605,11 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
                 PauseScheduledTaskConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, PauseScheduledTaskResponse>
                 transformer = PauseScheduledTaskConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "PauseScheduledTask",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/ScheduledTask/PauseScheduledTask");
 
         com.oracle.bmc.responses.AsyncHandler<PauseScheduledTaskRequest, PauseScheduledTaskResponse>
                 handlerToUse = handler;
@@ -5993,6 +6650,11 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
         final com.google.common.base.Function<javax.ws.rs.core.Response, PurgeStorageDataResponse>
                 transformer = PurgeStorageDataConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "PurgeStorageData",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/Storage/PurgeStorageData");
 
         com.oracle.bmc.responses.AsyncHandler<PurgeStorageDataRequest, PurgeStorageDataResponse>
                 handlerToUse = handler;
@@ -6040,6 +6702,11 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, PutQueryWorkRequestBackgroundResponse>
                 transformer = PutQueryWorkRequestBackgroundConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "PutQueryWorkRequestBackground",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/QueryWorkRequest/PutQueryWorkRequestBackground");
 
         com.oracle.bmc.responses.AsyncHandler<
                         PutQueryWorkRequestBackgroundRequest, PutQueryWorkRequestBackgroundResponse>
@@ -6078,6 +6745,11 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
                 QueryConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, QueryResponse>
                 transformer = QueryConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "Query",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/QueryDetails/Query");
 
         com.oracle.bmc.responses.AsyncHandler<QueryRequest, QueryResponse> handlerToUse = handler;
 
@@ -6121,6 +6793,11 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
         final com.google.common.base.Function<javax.ws.rs.core.Response, RecallArchivedDataResponse>
                 transformer = RecallArchivedDataConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "RecallArchivedData",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/Storage/RecallArchivedData");
 
         com.oracle.bmc.responses.AsyncHandler<RecallArchivedDataRequest, RecallArchivedDataResponse>
                 handlerToUse = handler;
@@ -6173,6 +6850,11 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
         final com.google.common.base.Function<javax.ws.rs.core.Response, RegisterLookupResponse>
                 transformer = RegisterLookupConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "RegisterLookup",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsLookup/RegisterLookup");
 
         com.oracle.bmc.responses.AsyncHandler<RegisterLookupRequest, RegisterLookupResponse>
                 handlerToUse =
@@ -6224,6 +6906,11 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
                         javax.ws.rs.core.Response, ReleaseRecalledDataResponse>
                 transformer = ReleaseRecalledDataConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "ReleaseRecalledData",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/Storage/ReleaseRecalledData");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ReleaseRecalledDataRequest, ReleaseRecalledDataResponse>
@@ -6271,6 +6958,11 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
                         javax.ws.rs.core.Response, RemoveEntityAssociationsResponse>
                 transformer = RemoveEntityAssociationsConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "RemoveEntityAssociations",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsEntity/RemoveEntityAssociations");
 
         com.oracle.bmc.responses.AsyncHandler<
                         RemoveEntityAssociationsRequest, RemoveEntityAssociationsResponse>
@@ -6317,6 +7009,11 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
         final com.google.common.base.Function<javax.ws.rs.core.Response, RemovePreferencesResponse>
                 transformer = RemovePreferencesConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "RemovePreferences",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsPreference/RemovePreferences");
 
         com.oracle.bmc.responses.AsyncHandler<RemovePreferencesRequest, RemovePreferencesResponse>
                 handlerToUse = handler;
@@ -6362,6 +7059,11 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, RemoveResourceCategoriesResponse>
                 transformer = RemoveResourceCategoriesConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "RemoveResourceCategories",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsCategory/RemoveResourceCategories");
 
         com.oracle.bmc.responses.AsyncHandler<
                         RemoveResourceCategoriesRequest, RemoveResourceCategoriesResponse>
@@ -6409,6 +7111,11 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
                         javax.ws.rs.core.Response, RemoveSourceEventTypesResponse>
                 transformer = RemoveSourceEventTypesConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "RemoveSourceEventTypes",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsSource/RemoveSourceEventTypes");
 
         com.oracle.bmc.responses.AsyncHandler<
                         RemoveSourceEventTypesRequest, RemoveSourceEventTypesResponse>
@@ -6455,6 +7162,11 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ResumeScheduledTaskResponse>
                 transformer = ResumeScheduledTaskConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "ResumeScheduledTask",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/ScheduledTask/ResumeScheduledTask");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ResumeScheduledTaskRequest, ResumeScheduledTaskResponse>
@@ -6493,6 +7205,11 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
         final com.google.common.base.Function<javax.ws.rs.core.Response, RunResponse> transformer =
                 RunConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "Run",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/ScheduledTask/Run");
 
         com.oracle.bmc.responses.AsyncHandler<RunRequest, RunResponse> handlerToUse = handler;
 
@@ -6531,6 +7248,11 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, SetUnprocessedDataBucketResponse>
                 transformer = SetUnprocessedDataBucketConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "SetUnprocessedDataBucket",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/Upload/SetUnprocessedDataBucket");
 
         com.oracle.bmc.responses.AsyncHandler<
                         SetUnprocessedDataBucketRequest, SetUnprocessedDataBucketResponse>
@@ -6568,6 +7290,11 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
                 SuggestConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, SuggestResponse>
                 transformer = SuggestConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "Suggest",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/QueryDetails/Suggest");
 
         com.oracle.bmc.responses.AsyncHandler<SuggestRequest, SuggestResponse> handlerToUse =
                 handler;
@@ -6612,6 +7339,11 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
         final com.google.common.base.Function<javax.ws.rs.core.Response, SuppressWarningResponse>
                 transformer = SuppressWarningConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "SuppressWarning",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsWarning/SuppressWarning");
 
         com.oracle.bmc.responses.AsyncHandler<SuppressWarningRequest, SuppressWarningResponse>
                 handlerToUse = handler;
@@ -6655,6 +7387,11 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
         final com.google.common.base.Function<javax.ws.rs.core.Response, TestParserResponse>
                 transformer = TestParserConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "TestParser",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsParser/TestParser");
 
         com.oracle.bmc.responses.AsyncHandler<TestParserRequest, TestParserResponse> handlerToUse =
                 handler;
@@ -6700,6 +7437,11 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
         final com.google.common.base.Function<javax.ws.rs.core.Response, UnsuppressWarningResponse>
                 transformer = UnsuppressWarningConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "UnsuppressWarning",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsWarning/UnsuppressWarning");
 
         com.oracle.bmc.responses.AsyncHandler<UnsuppressWarningRequest, UnsuppressWarningResponse>
                 handlerToUse = handler;
@@ -6747,6 +7489,11 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, UpdateLogAnalyticsEmBridgeResponse>
                 transformer = UpdateLogAnalyticsEmBridgeConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "UpdateLogAnalyticsEmBridge",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsEmBridge/UpdateLogAnalyticsEmBridge");
 
         com.oracle.bmc.responses.AsyncHandler<
                         UpdateLogAnalyticsEmBridgeRequest, UpdateLogAnalyticsEmBridgeResponse>
@@ -6794,6 +7541,11 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, UpdateLogAnalyticsEntityResponse>
                 transformer = UpdateLogAnalyticsEntityConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "UpdateLogAnalyticsEntity",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsEntity/UpdateLogAnalyticsEntity");
 
         com.oracle.bmc.responses.AsyncHandler<
                         UpdateLogAnalyticsEntityRequest, UpdateLogAnalyticsEntityResponse>
@@ -6842,6 +7594,11 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, UpdateLogAnalyticsEntityTypeResponse>
                 transformer = UpdateLogAnalyticsEntityTypeConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "UpdateLogAnalyticsEntityType",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsEntityType/UpdateLogAnalyticsEntityType");
 
         com.oracle.bmc.responses.AsyncHandler<
                         UpdateLogAnalyticsEntityTypeRequest, UpdateLogAnalyticsEntityTypeResponse>
@@ -6891,6 +7648,11 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, UpdateLogAnalyticsLogGroupResponse>
                 transformer = UpdateLogAnalyticsLogGroupConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "UpdateLogAnalyticsLogGroup",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsLogGroup/UpdateLogAnalyticsLogGroup");
 
         com.oracle.bmc.responses.AsyncHandler<
                         UpdateLogAnalyticsLogGroupRequest, UpdateLogAnalyticsLogGroupResponse>
@@ -6941,6 +7703,11 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, UpdateLogAnalyticsObjectCollectionRuleResponse>
                 transformer = UpdateLogAnalyticsObjectCollectionRuleConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "UpdateLogAnalyticsObjectCollectionRule",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsObjectCollectionRule/UpdateLogAnalyticsObjectCollectionRule");
 
         com.oracle.bmc.responses.AsyncHandler<
                         UpdateLogAnalyticsObjectCollectionRuleRequest,
@@ -6990,6 +7757,11 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
         final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateLookupResponse>
                 transformer = UpdateLookupConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "UpdateLookup",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsLookup/UpdateLookup");
 
         com.oracle.bmc.responses.AsyncHandler<UpdateLookupRequest, UpdateLookupResponse>
                 handlerToUse = handler;
@@ -7042,6 +7814,11 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
         final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateLookupDataResponse>
                 transformer = UpdateLookupDataConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "UpdateLookupData",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsLookup/UpdateLookupData");
 
         com.oracle.bmc.responses.AsyncHandler<UpdateLookupDataRequest, UpdateLookupDataResponse>
                 handlerToUse =
@@ -7092,6 +7869,11 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
         final com.google.common.base.Function<javax.ws.rs.core.Response, UpdatePreferencesResponse>
                 transformer = UpdatePreferencesConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "UpdatePreferences",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsPreference/UpdatePreferences");
 
         com.oracle.bmc.responses.AsyncHandler<UpdatePreferencesRequest, UpdatePreferencesResponse>
                 handlerToUse = handler;
@@ -7137,6 +7919,11 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, UpdateResourceCategoriesResponse>
                 transformer = UpdateResourceCategoriesConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "UpdateResourceCategories",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsCategory/UpdateResourceCategories");
 
         com.oracle.bmc.responses.AsyncHandler<
                         UpdateResourceCategoriesRequest, UpdateResourceCategoriesResponse>
@@ -7183,6 +7970,11 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, UpdateScheduledTaskResponse>
                 transformer = UpdateScheduledTaskConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "UpdateScheduledTask",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/ScheduledTask/UpdateScheduledTask");
 
         com.oracle.bmc.responses.AsyncHandler<
                         UpdateScheduledTaskRequest, UpdateScheduledTaskResponse>
@@ -7227,6 +8019,11 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
                 UpdateStorageConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateStorageResponse>
                 transformer = UpdateStorageConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "UpdateStorage",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/Storage/UpdateStorage");
 
         com.oracle.bmc.responses.AsyncHandler<UpdateStorageRequest, UpdateStorageResponse>
                 handlerToUse = handler;
@@ -7284,6 +8081,11 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
                 com.oracle.bmc.http.internal.AuthnClientFilter.SIGNING_STRATEGY_PROPERTY_NAME,
                 com.oracle.bmc.http.signing.SigningStrategy.EXCLUDE_BODY);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "UploadLogEventsFile",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/Upload/UploadLogEventsFile");
 
         com.oracle.bmc.responses.AsyncHandler<
                         UploadLogEventsFileRequest, UploadLogEventsFileResponse>
@@ -7345,6 +8147,11 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
                 com.oracle.bmc.http.internal.AuthnClientFilter.SIGNING_STRATEGY_PROPERTY_NAME,
                 com.oracle.bmc.http.signing.SigningStrategy.EXCLUDE_BODY);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "UploadLogFile",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/Upload/UploadLogFile");
 
         com.oracle.bmc.responses.AsyncHandler<UploadLogFileRequest, UploadLogFileResponse>
                 handlerToUse =
@@ -7395,6 +8202,11 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
         final com.google.common.base.Function<javax.ws.rs.core.Response, UpsertAssociationsResponse>
                 transformer = UpsertAssociationsConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "UpsertAssociations",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsAssociation/UpsertAssociations");
 
         com.oracle.bmc.responses.AsyncHandler<UpsertAssociationsRequest, UpsertAssociationsResponse>
                 handlerToUse = handler;
@@ -7439,6 +8251,11 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
         final com.google.common.base.Function<javax.ws.rs.core.Response, UpsertFieldResponse>
                 transformer = UpsertFieldConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "UpsertField",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsField/UpsertField");
 
         com.oracle.bmc.responses.AsyncHandler<UpsertFieldRequest, UpsertFieldResponse>
                 handlerToUse = handler;
@@ -7483,6 +8300,11 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
         final com.google.common.base.Function<javax.ws.rs.core.Response, UpsertLabelResponse>
                 transformer = UpsertLabelConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "UpsertLabel",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsLabel/UpsertLabel");
 
         com.oracle.bmc.responses.AsyncHandler<UpsertLabelRequest, UpsertLabelResponse>
                 handlerToUse = handler;
@@ -7527,6 +8349,11 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
         final com.google.common.base.Function<javax.ws.rs.core.Response, UpsertParserResponse>
                 transformer = UpsertParserConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "UpsertParser",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsParser/UpsertParser");
 
         com.oracle.bmc.responses.AsyncHandler<UpsertParserRequest, UpsertParserResponse>
                 handlerToUse = handler;
@@ -7571,6 +8398,11 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
         final com.google.common.base.Function<javax.ws.rs.core.Response, UpsertSourceResponse>
                 transformer = UpsertSourceConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "UpsertSource",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsSource/UpsertSource");
 
         com.oracle.bmc.responses.AsyncHandler<UpsertSourceRequest, UpsertSourceResponse>
                 handlerToUse = handler;
@@ -7619,6 +8451,11 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
                         javax.ws.rs.core.Response, ValidateAssociationParametersResponse>
                 transformer = ValidateAssociationParametersConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "ValidateAssociationParameters",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsAssociation/ValidateAssociationParameters");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ValidateAssociationParametersRequest, ValidateAssociationParametersResponse>
@@ -7664,6 +8501,11 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
                 ValidateFileConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ValidateFileResponse>
                 transformer = ValidateFileConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "ValidateFile",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/Upload/ValidateFile");
 
         com.oracle.bmc.responses.AsyncHandler<ValidateFileRequest, ValidateFileResponse>
                 handlerToUse = handler;
@@ -7704,6 +8546,11 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
         final com.google.common.base.Function<javax.ws.rs.core.Response, ValidateSourceResponse>
                 transformer = ValidateSourceConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "ValidateSource",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsSource/ValidateSource");
 
         com.oracle.bmc.responses.AsyncHandler<ValidateSourceRequest, ValidateSourceResponse>
                 handlerToUse = handler;
@@ -7752,6 +8599,11 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
                         javax.ws.rs.core.Response, ValidateSourceExtendedFieldDetailsResponse>
                 transformer = ValidateSourceExtendedFieldDetailsConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "ValidateSourceExtendedFieldDetails",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsSource/ValidateSourceExtendedFieldDetails");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ValidateSourceExtendedFieldDetailsRequest,
@@ -7801,6 +8653,11 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ValidateSourceMappingResponse>
                 transformer = ValidateSourceMappingConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "ValidateSourceMapping",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/Upload/ValidateSourceMapping");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ValidateSourceMappingRequest, ValidateSourceMappingResponse>
@@ -7839,6 +8696,11 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
         final com.google.common.base.Function<javax.ws.rs.core.Response, VerifyResponse>
                 transformer = VerifyConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "Verify",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/ScheduledTask/Verify");
 
         com.oracle.bmc.responses.AsyncHandler<VerifyRequest, VerifyResponse> handlerToUse = handler;
 

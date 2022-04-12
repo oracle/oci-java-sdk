@@ -477,6 +477,11 @@ public class MarketplaceClient implements Marketplace {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Marketplace",
+                "ChangePublicationCompartment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/marketplace/20181001/Publication/ChangePublicationCompartment");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -513,6 +518,11 @@ public class MarketplaceClient implements Marketplace {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Marketplace",
+                "CreateAcceptedAgreement",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/marketplace/20181001/AcceptedAgreement/CreateAcceptedAgreement");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -547,6 +557,11 @@ public class MarketplaceClient implements Marketplace {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Marketplace",
+                "CreatePublication",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/marketplace/20181001/Publication/CreatePublication");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -581,6 +596,11 @@ public class MarketplaceClient implements Marketplace {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Marketplace",
+                "DeleteAcceptedAgreement",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/marketplace/20181001/AcceptedAgreement/DeleteAcceptedAgreement");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -611,6 +631,11 @@ public class MarketplaceClient implements Marketplace {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Marketplace",
+                "DeletePublication",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/marketplace/20181001/Publication/DeletePublication");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -641,6 +666,11 @@ public class MarketplaceClient implements Marketplace {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Marketplace",
+                "GetAcceptedAgreement",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/marketplace/20181001/AcceptedAgreement/GetAcceptedAgreement");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -670,6 +700,11 @@ public class MarketplaceClient implements Marketplace {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Marketplace",
+                "GetAgreement",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/marketplace/20181001/Agreement/GetAgreement");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -698,6 +733,11 @@ public class MarketplaceClient implements Marketplace {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Marketplace",
+                "GetListing",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/marketplace/20181001/Listing/GetListing");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -726,6 +766,11 @@ public class MarketplaceClient implements Marketplace {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Marketplace",
+                "GetPackage",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/marketplace/20181001/ListingPackage/GetPackage");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -755,6 +800,11 @@ public class MarketplaceClient implements Marketplace {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Marketplace",
+                "GetPublication",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/marketplace/20181001/Publication/GetPublication");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -785,6 +835,11 @@ public class MarketplaceClient implements Marketplace {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Marketplace",
+                "GetPublicationPackage",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/marketplace/20181001/PublicationPackage/GetPublicationPackage");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -815,6 +870,11 @@ public class MarketplaceClient implements Marketplace {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Marketplace",
+                "ListAcceptedAgreements",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/marketplace/20181001/AcceptedAgreementSummary/ListAcceptedAgreements");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -844,6 +904,11 @@ public class MarketplaceClient implements Marketplace {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Marketplace",
+                "ListAgreements",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/marketplace/20181001/AgreementSummary/ListAgreements");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -873,6 +938,11 @@ public class MarketplaceClient implements Marketplace {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Marketplace",
+                "ListCategories",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/marketplace/20181001/CategorySummary/ListCategories");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -902,6 +972,11 @@ public class MarketplaceClient implements Marketplace {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Marketplace",
+                "ListListings",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/marketplace/20181001/ListingSummary/ListListings");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -931,6 +1006,11 @@ public class MarketplaceClient implements Marketplace {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Marketplace",
+                "ListPackages",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/marketplace/20181001/ListingPackageSummary/ListPackages");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -961,6 +1041,11 @@ public class MarketplaceClient implements Marketplace {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Marketplace",
+                "ListPublicationPackages",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/marketplace/20181001/PublicationPackageSummary/ListPublicationPackages");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -990,6 +1075,11 @@ public class MarketplaceClient implements Marketplace {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Marketplace",
+                "ListPublications",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/marketplace/20181001/PublicationSummary/ListPublications");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1019,6 +1109,11 @@ public class MarketplaceClient implements Marketplace {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Marketplace",
+                "ListPublishers",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/marketplace/20181001/PublisherSummary/ListPublishers");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1048,6 +1143,11 @@ public class MarketplaceClient implements Marketplace {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Marketplace",
+                "ListReportTypes",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/marketplace/20181001/ReportTypeCollection/ListReportTypes");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1077,6 +1177,11 @@ public class MarketplaceClient implements Marketplace {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Marketplace",
+                "ListReports",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/marketplace/20181001/ReportCollection/ListReports");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1105,6 +1210,11 @@ public class MarketplaceClient implements Marketplace {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Marketplace",
+                "ListTaxes",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/marketplace/20181001/TaxSummary/ListTaxes");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1134,6 +1244,11 @@ public class MarketplaceClient implements Marketplace {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Marketplace",
+                "SearchListings",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/marketplace/20181001/ListingSummary/SearchListings");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1169,6 +1284,11 @@ public class MarketplaceClient implements Marketplace {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Marketplace",
+                "UpdateAcceptedAgreement",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/marketplace/20181001/AcceptedAgreement/UpdateAcceptedAgreement");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1203,6 +1323,11 @@ public class MarketplaceClient implements Marketplace {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Marketplace",
+                "UpdatePublication",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/marketplace/20181001/Publication/UpdatePublication");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {

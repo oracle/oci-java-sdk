@@ -393,6 +393,11 @@ public class WafAsyncClient implements WafAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ChangeNetworkAddressListCompartmentResponse>
                 transformer = ChangeNetworkAddressListCompartmentConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Waf",
+                "ChangeNetworkAddressListCompartment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/waf/20210930/NetworkAddressList/ChangeNetworkAddressListCompartment");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeNetworkAddressListCompartmentRequest,
@@ -444,6 +449,11 @@ public class WafAsyncClient implements WafAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ChangeWebAppFirewallCompartmentResponse>
                 transformer = ChangeWebAppFirewallCompartmentConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Waf",
+                "ChangeWebAppFirewallCompartment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/waf/20210930/WebAppFirewall/ChangeWebAppFirewallCompartment");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeWebAppFirewallCompartmentRequest,
@@ -496,6 +506,11 @@ public class WafAsyncClient implements WafAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ChangeWebAppFirewallPolicyCompartmentResponse>
                 transformer = ChangeWebAppFirewallPolicyCompartmentConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Waf",
+                "ChangeWebAppFirewallPolicyCompartment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/waf/20210930/WebAppFirewallPolicy/ChangeWebAppFirewallPolicyCompartment");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeWebAppFirewallPolicyCompartmentRequest,
@@ -547,6 +562,11 @@ public class WafAsyncClient implements WafAsync {
                         javax.ws.rs.core.Response, CreateNetworkAddressListResponse>
                 transformer = CreateNetworkAddressListConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Waf",
+                "CreateNetworkAddressList",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/waf/20210930/NetworkAddressList/CreateNetworkAddressList");
 
         com.oracle.bmc.responses.AsyncHandler<
                         CreateNetworkAddressListRequest, CreateNetworkAddressListResponse>
@@ -594,6 +614,11 @@ public class WafAsyncClient implements WafAsync {
                         javax.ws.rs.core.Response, CreateWebAppFirewallResponse>
                 transformer = CreateWebAppFirewallConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Waf",
+                "CreateWebAppFirewall",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/waf/20210930/WebAppFirewall/CreateWebAppFirewall");
 
         com.oracle.bmc.responses.AsyncHandler<
                         CreateWebAppFirewallRequest, CreateWebAppFirewallResponse>
@@ -643,6 +668,11 @@ public class WafAsyncClient implements WafAsync {
                         javax.ws.rs.core.Response, CreateWebAppFirewallPolicyResponse>
                 transformer = CreateWebAppFirewallPolicyConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Waf",
+                "CreateWebAppFirewallPolicy",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/waf/20210930/WebAppFirewallPolicy/CreateWebAppFirewallPolicy");
 
         com.oracle.bmc.responses.AsyncHandler<
                         CreateWebAppFirewallPolicyRequest, CreateWebAppFirewallPolicyResponse>
@@ -690,6 +720,11 @@ public class WafAsyncClient implements WafAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, DeleteNetworkAddressListResponse>
                 transformer = DeleteNetworkAddressListConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Waf",
+                "DeleteNetworkAddressList",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/waf/20210930/NetworkAddressList/DeleteNetworkAddressList");
 
         com.oracle.bmc.responses.AsyncHandler<
                         DeleteNetworkAddressListRequest, DeleteNetworkAddressListResponse>
@@ -731,6 +766,11 @@ public class WafAsyncClient implements WafAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, DeleteWebAppFirewallResponse>
                 transformer = DeleteWebAppFirewallConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Waf",
+                "DeleteWebAppFirewall",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/waf/20210930/WebAppFirewall/DeleteWebAppFirewall");
 
         com.oracle.bmc.responses.AsyncHandler<
                         DeleteWebAppFirewallRequest, DeleteWebAppFirewallResponse>
@@ -774,6 +814,11 @@ public class WafAsyncClient implements WafAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, DeleteWebAppFirewallPolicyResponse>
                 transformer = DeleteWebAppFirewallPolicyConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Waf",
+                "DeleteWebAppFirewallPolicy",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/waf/20210930/WebAppFirewallPolicy/DeleteWebAppFirewallPolicy");
 
         com.oracle.bmc.responses.AsyncHandler<
                         DeleteWebAppFirewallPolicyRequest, DeleteWebAppFirewallPolicyResponse>
@@ -816,6 +861,11 @@ public class WafAsyncClient implements WafAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetNetworkAddressListResponse>
                 transformer = GetNetworkAddressListConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Waf",
+                "GetNetworkAddressList",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/waf/20210930/NetworkAddressList/GetNetworkAddressList");
 
         com.oracle.bmc.responses.AsyncHandler<
                         GetNetworkAddressListRequest, GetNetworkAddressListResponse>
@@ -856,6 +906,11 @@ public class WafAsyncClient implements WafAsync {
                 GetWebAppFirewallConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetWebAppFirewallResponse>
                 transformer = GetWebAppFirewallConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Waf",
+                "GetWebAppFirewall",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/waf/20210930/WebAppFirewall/GetWebAppFirewall");
 
         com.oracle.bmc.responses.AsyncHandler<GetWebAppFirewallRequest, GetWebAppFirewallResponse>
                 handlerToUse = handler;
@@ -896,6 +951,11 @@ public class WafAsyncClient implements WafAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetWebAppFirewallPolicyResponse>
                 transformer = GetWebAppFirewallPolicyConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Waf",
+                "GetWebAppFirewallPolicy",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/waf/20210930/WebAppFirewallPolicy/GetWebAppFirewallPolicy");
 
         com.oracle.bmc.responses.AsyncHandler<
                         GetWebAppFirewallPolicyRequest, GetWebAppFirewallPolicyResponse>
@@ -936,6 +996,11 @@ public class WafAsyncClient implements WafAsync {
                 GetWorkRequestConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetWorkRequestResponse>
                 transformer = GetWorkRequestConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Waf",
+                "GetWorkRequest",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/waf/20210930/WorkRequest/GetWorkRequest");
 
         com.oracle.bmc.responses.AsyncHandler<GetWorkRequestRequest, GetWorkRequestResponse>
                 handlerToUse = handler;
@@ -976,6 +1041,11 @@ public class WafAsyncClient implements WafAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListNetworkAddressListsResponse>
                 transformer = ListNetworkAddressListsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Waf",
+                "ListNetworkAddressLists",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/waf/20210930/NetworkAddressList/ListNetworkAddressLists");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListNetworkAddressListsRequest, ListNetworkAddressListsResponse>
@@ -1019,6 +1089,11 @@ public class WafAsyncClient implements WafAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListProtectionCapabilitiesResponse>
                 transformer = ListProtectionCapabilitiesConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Waf",
+                "ListProtectionCapabilities",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/waf/20210930/ProtectionCapability/ListProtectionCapabilities");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListProtectionCapabilitiesRequest, ListProtectionCapabilitiesResponse>
@@ -1063,6 +1138,11 @@ public class WafAsyncClient implements WafAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListProtectionCapabilityGroupTagsResponse>
                 transformer = ListProtectionCapabilityGroupTagsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Waf",
+                "ListProtectionCapabilityGroupTags",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/waf/20210930/ProtectionCapability/ListProtectionCapabilityGroupTags");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListProtectionCapabilityGroupTagsRequest,
@@ -1109,6 +1189,11 @@ public class WafAsyncClient implements WafAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListWebAppFirewallPoliciesResponse>
                 transformer = ListWebAppFirewallPoliciesConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Waf",
+                "ListWebAppFirewallPolicies",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/waf/20210930/WebAppFirewallPolicy/ListWebAppFirewallPolicies");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListWebAppFirewallPoliciesRequest, ListWebAppFirewallPoliciesResponse>
@@ -1151,6 +1236,11 @@ public class WafAsyncClient implements WafAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListWebAppFirewallsResponse>
                 transformer = ListWebAppFirewallsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Waf",
+                "ListWebAppFirewalls",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/waf/20210930/WebAppFirewall/ListWebAppFirewalls");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListWebAppFirewallsRequest, ListWebAppFirewallsResponse>
@@ -1192,6 +1282,11 @@ public class WafAsyncClient implements WafAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListWorkRequestErrorsResponse>
                 transformer = ListWorkRequestErrorsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Waf",
+                "ListWorkRequestErrors",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/waf/20210930/WorkRequestError/ListWorkRequestErrors");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListWorkRequestErrorsRequest, ListWorkRequestErrorsResponse>
@@ -1233,6 +1328,11 @@ public class WafAsyncClient implements WafAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListWorkRequestLogsResponse>
                 transformer = ListWorkRequestLogsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Waf",
+                "ListWorkRequestLogs",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/waf/20210930/WorkRequestLogEntry/ListWorkRequestLogs");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListWorkRequestLogsRequest, ListWorkRequestLogsResponse>
@@ -1273,6 +1373,11 @@ public class WafAsyncClient implements WafAsync {
                 ListWorkRequestsConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListWorkRequestsResponse>
                 transformer = ListWorkRequestsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Waf",
+                "ListWorkRequests",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/waf/20210930/WorkRequest/ListWorkRequests");
 
         com.oracle.bmc.responses.AsyncHandler<ListWorkRequestsRequest, ListWorkRequestsResponse>
                 handlerToUse = handler;
@@ -1313,6 +1418,11 @@ public class WafAsyncClient implements WafAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, UpdateNetworkAddressListResponse>
                 transformer = UpdateNetworkAddressListConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Waf",
+                "UpdateNetworkAddressList",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/waf/20210930/NetworkAddressList/UpdateNetworkAddressList");
 
         com.oracle.bmc.responses.AsyncHandler<
                         UpdateNetworkAddressListRequest, UpdateNetworkAddressListResponse>
@@ -1359,6 +1469,11 @@ public class WafAsyncClient implements WafAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, UpdateWebAppFirewallResponse>
                 transformer = UpdateWebAppFirewallConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Waf",
+                "UpdateWebAppFirewall",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/waf/20210930/WebAppFirewall/UpdateWebAppFirewall");
 
         com.oracle.bmc.responses.AsyncHandler<
                         UpdateWebAppFirewallRequest, UpdateWebAppFirewallResponse>
@@ -1407,6 +1522,11 @@ public class WafAsyncClient implements WafAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, UpdateWebAppFirewallPolicyResponse>
                 transformer = UpdateWebAppFirewallPolicyConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Waf",
+                "UpdateWebAppFirewallPolicy",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/waf/20210930/WebAppFirewallPolicy/UpdateWebAppFirewallPolicy");
 
         com.oracle.bmc.responses.AsyncHandler<
                         UpdateWebAppFirewallPolicyRequest, UpdateWebAppFirewallPolicyResponse>

@@ -389,6 +389,8 @@ public class ThreatintelAsyncClient implements ThreatintelAsync {
                 GetIndicatorConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetIndicatorResponse>
                 transformer = GetIndicatorConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Threatintel", "GetIndicator", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<GetIndicatorRequest, GetIndicatorResponse>
                 handlerToUse = handler;
@@ -429,6 +431,8 @@ public class ThreatintelAsyncClient implements ThreatintelAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListIndicatorCountsResponse>
                 transformer = ListIndicatorCountsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Threatintel", "ListIndicatorCounts", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListIndicatorCountsRequest, ListIndicatorCountsResponse>
@@ -469,6 +473,8 @@ public class ThreatintelAsyncClient implements ThreatintelAsync {
                 ListIndicatorsConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListIndicatorsResponse>
                 transformer = ListIndicatorsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Threatintel", "ListIndicators", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<ListIndicatorsRequest, ListIndicatorsResponse>
                 handlerToUse = handler;
@@ -508,6 +514,8 @@ public class ThreatintelAsyncClient implements ThreatintelAsync {
                 ListThreatTypesConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListThreatTypesResponse>
                 transformer = ListThreatTypesConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Threatintel", "ListThreatTypes", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<ListThreatTypesRequest, ListThreatTypesResponse>
                 handlerToUse = handler;

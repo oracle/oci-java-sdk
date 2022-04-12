@@ -5,7 +5,7 @@
 package com.oracle.bmc.core.model;
 
 /**
- * Oracle offers the ability to Bring Your Own IP (BYOIP), importing public IP addresses  that you currently own to Oracle Cloud Infrastructure. A {@code ByoipRange} resource is a record of the imported address block (a BYOIP CIDR block) and also some associated metadata.
+ * Oracle offers the ability to Bring Your Own IP (BYOIP), importing public IP addresses or IPv6 addresses that you currently own to Oracle Cloud Infrastructure. A {@code ByoipRange} resource is a record of the imported address block (a BYOIP CIDR block) and also some associated metadata.
  * The process used to [Bring Your Own IP](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/BYOIP.htm) is explained in the documentation.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -25,6 +25,16 @@ public class ByoipRange {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
+        @com.fasterxml.jackson.annotation.JsonProperty("byoipRangeVcnIpv6Allocations")
+        private java.util.List<ByoipRangeVcnIpv6AllocationSummary> byoipRangeVcnIpv6Allocations;
+
+        public Builder byoipRangeVcnIpv6Allocations(
+                java.util.List<ByoipRangeVcnIpv6AllocationSummary> byoipRangeVcnIpv6Allocations) {
+            this.byoipRangeVcnIpv6Allocations = byoipRangeVcnIpv6Allocations;
+            this.__explicitlySet__.add("byoipRangeVcnIpv6Allocations");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("cidrBlock")
         private String cidrBlock;
 
@@ -77,6 +87,15 @@ public class ByoipRange {
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("ipv6CidrBlock")
+        private String ipv6CidrBlock;
+
+        public Builder ipv6CidrBlock(String ipv6CidrBlock) {
+            this.ipv6CidrBlock = ipv6CidrBlock;
+            this.__explicitlySet__.add("ipv6CidrBlock");
             return this;
         }
 
@@ -149,12 +168,14 @@ public class ByoipRange {
         public ByoipRange build() {
             ByoipRange __instance__ =
                     new ByoipRange(
+                            byoipRangeVcnIpv6Allocations,
                             cidrBlock,
                             compartmentId,
                             definedTags,
                             displayName,
                             freeformTags,
                             id,
+                            ipv6CidrBlock,
                             lifecycleDetails,
                             lifecycleState,
                             timeCreated,
@@ -169,12 +190,14 @@ public class ByoipRange {
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(ByoipRange o) {
             Builder copiedBuilder =
-                    cidrBlock(o.getCidrBlock())
+                    byoipRangeVcnIpv6Allocations(o.getByoipRangeVcnIpv6Allocations())
+                            .cidrBlock(o.getCidrBlock())
                             .compartmentId(o.getCompartmentId())
                             .definedTags(o.getDefinedTags())
                             .displayName(o.getDisplayName())
                             .freeformTags(o.getFreeformTags())
                             .id(o.getId())
+                            .ipv6CidrBlock(o.getIpv6CidrBlock())
                             .lifecycleDetails(o.getLifecycleDetails())
                             .lifecycleState(o.getLifecycleState())
                             .timeCreated(o.getTimeCreated())
@@ -194,6 +217,13 @@ public class ByoipRange {
     public static Builder builder() {
         return new Builder();
     }
+
+    /**
+     * A list of {@code ByoipRangeVcnIpv6AllocationSummary} objects.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("byoipRangeVcnIpv6Allocations")
+    java.util.List<ByoipRangeVcnIpv6AllocationSummary> byoipRangeVcnIpv6Allocations;
 
     /**
      * The public IPv4 CIDR block being imported from on-premises to the Oracle cloud.
@@ -241,6 +271,15 @@ public class ByoipRange {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     String id;
+
+    /**
+     * The IPv6 CIDR block being imported to the Oracle cloud. This CIDR block must be /48 or larger, and can be subdivided into sub-ranges used
+     * across multiple VCNs. A BYOIPv6 prefix can be also assigned across multiple VCNs, and each VCN must be /64 or larger. You may specify
+     * a ULA or private IPv6 prefix of /64 or larger to use in the VCN. IPv6-enabled subnets will remain a fixed /64 in size.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("ipv6CidrBlock")
+    String ipv6CidrBlock;
     /**
      * The {@code ByoipRange} resource's current status.
      **/

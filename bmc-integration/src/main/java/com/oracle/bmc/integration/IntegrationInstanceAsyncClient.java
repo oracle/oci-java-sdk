@@ -395,6 +395,11 @@ public class IntegrationInstanceAsyncClient implements IntegrationInstanceAsync 
                         javax.ws.rs.core.Response, ChangeIntegrationInstanceCompartmentResponse>
                 transformer = ChangeIntegrationInstanceCompartmentConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "IntegrationInstance",
+                "ChangeIntegrationInstanceCompartment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/integration/20190131/IntegrationInstance/ChangeIntegrationInstanceCompartment");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeIntegrationInstanceCompartmentRequest,
@@ -448,6 +453,11 @@ public class IntegrationInstanceAsyncClient implements IntegrationInstanceAsync 
                         javax.ws.rs.core.Response, ChangeIntegrationInstanceNetworkEndpointResponse>
                 transformer = ChangeIntegrationInstanceNetworkEndpointConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "IntegrationInstance",
+                "ChangeIntegrationInstanceNetworkEndpoint",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/integration/20190131/IntegrationInstance/ChangeIntegrationInstanceNetworkEndpoint");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeIntegrationInstanceNetworkEndpointRequest,
@@ -500,6 +510,11 @@ public class IntegrationInstanceAsyncClient implements IntegrationInstanceAsync 
                         javax.ws.rs.core.Response, CreateIntegrationInstanceResponse>
                 transformer = CreateIntegrationInstanceConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "IntegrationInstance",
+                "CreateIntegrationInstance",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/integration/20190131/IntegrationInstance/CreateIntegrationInstance");
 
         com.oracle.bmc.responses.AsyncHandler<
                         CreateIntegrationInstanceRequest, CreateIntegrationInstanceResponse>
@@ -547,6 +562,11 @@ public class IntegrationInstanceAsyncClient implements IntegrationInstanceAsync 
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, DeleteIntegrationInstanceResponse>
                 transformer = DeleteIntegrationInstanceConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "IntegrationInstance",
+                "DeleteIntegrationInstance",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/integration/20190131/IntegrationInstance/DeleteIntegrationInstance");
 
         com.oracle.bmc.responses.AsyncHandler<
                         DeleteIntegrationInstanceRequest, DeleteIntegrationInstanceResponse>
@@ -589,6 +609,11 @@ public class IntegrationInstanceAsyncClient implements IntegrationInstanceAsync 
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetIntegrationInstanceResponse>
                 transformer = GetIntegrationInstanceConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "IntegrationInstance",
+                "GetIntegrationInstance",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/integration/20190131/IntegrationInstance/GetIntegrationInstance");
 
         com.oracle.bmc.responses.AsyncHandler<
                         GetIntegrationInstanceRequest, GetIntegrationInstanceResponse>
@@ -629,6 +654,11 @@ public class IntegrationInstanceAsyncClient implements IntegrationInstanceAsync 
                 GetWorkRequestConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetWorkRequestResponse>
                 transformer = GetWorkRequestConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "IntegrationInstance",
+                "GetWorkRequest",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/integration/20190131/WorkRequest/GetWorkRequest");
 
         com.oracle.bmc.responses.AsyncHandler<GetWorkRequestRequest, GetWorkRequestResponse>
                 handlerToUse = handler;
@@ -669,6 +699,11 @@ public class IntegrationInstanceAsyncClient implements IntegrationInstanceAsync 
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListIntegrationInstancesResponse>
                 transformer = ListIntegrationInstancesConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "IntegrationInstance",
+                "ListIntegrationInstances",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/integration/20190131/IntegrationInstanceSummary/ListIntegrationInstances");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListIntegrationInstancesRequest, ListIntegrationInstancesResponse>
@@ -710,6 +745,11 @@ public class IntegrationInstanceAsyncClient implements IntegrationInstanceAsync 
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListWorkRequestErrorsResponse>
                 transformer = ListWorkRequestErrorsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "IntegrationInstance",
+                "ListWorkRequestErrors",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/integration/20190131/WorkRequestError/ListWorkRequestErrors");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListWorkRequestErrorsRequest, ListWorkRequestErrorsResponse>
@@ -751,6 +791,11 @@ public class IntegrationInstanceAsyncClient implements IntegrationInstanceAsync 
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListWorkRequestLogsResponse>
                 transformer = ListWorkRequestLogsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "IntegrationInstance",
+                "ListWorkRequestLogs",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/integration/20190131/WorkRequestLogEntry/ListWorkRequestLogs");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListWorkRequestLogsRequest, ListWorkRequestLogsResponse>
@@ -791,6 +836,11 @@ public class IntegrationInstanceAsyncClient implements IntegrationInstanceAsync 
                 ListWorkRequestsConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListWorkRequestsResponse>
                 transformer = ListWorkRequestsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "IntegrationInstance",
+                "ListWorkRequests",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/integration/20190131/WorkRequestSummary/ListWorkRequests");
 
         com.oracle.bmc.responses.AsyncHandler<ListWorkRequestsRequest, ListWorkRequestsResponse>
                 handlerToUse = handler;
@@ -832,6 +882,11 @@ public class IntegrationInstanceAsyncClient implements IntegrationInstanceAsync 
                         javax.ws.rs.core.Response, StartIntegrationInstanceResponse>
                 transformer = StartIntegrationInstanceConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "IntegrationInstance",
+                "StartIntegrationInstance",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/integration/20190131/IntegrationInstance/StartIntegrationInstance");
 
         com.oracle.bmc.responses.AsyncHandler<
                         StartIntegrationInstanceRequest, StartIntegrationInstanceResponse>
@@ -874,6 +929,11 @@ public class IntegrationInstanceAsyncClient implements IntegrationInstanceAsync 
                         javax.ws.rs.core.Response, StopIntegrationInstanceResponse>
                 transformer = StopIntegrationInstanceConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "IntegrationInstance",
+                "StopIntegrationInstance",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/integration/20190131/IntegrationInstance/StopIntegrationInstance");
 
         com.oracle.bmc.responses.AsyncHandler<
                         StopIntegrationInstanceRequest, StopIntegrationInstanceResponse>
@@ -915,6 +975,11 @@ public class IntegrationInstanceAsyncClient implements IntegrationInstanceAsync 
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, UpdateIntegrationInstanceResponse>
                 transformer = UpdateIntegrationInstanceConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "IntegrationInstance",
+                "UpdateIntegrationInstance",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/integration/20190131/IntegrationInstance/UpdateIntegrationInstance");
 
         com.oracle.bmc.responses.AsyncHandler<
                         UpdateIntegrationInstanceRequest, UpdateIntegrationInstanceResponse>

@@ -476,6 +476,11 @@ public class MonitoringClient implements Monitoring {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Monitoring",
+                "ChangeAlarmCompartment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/monitoring/20180401/Alarm/ChangeAlarmCompartment");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -510,6 +515,11 @@ public class MonitoringClient implements Monitoring {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Monitoring",
+                "CreateAlarm",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/monitoring/20180401/Alarm/CreateAlarm");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -543,6 +553,11 @@ public class MonitoringClient implements Monitoring {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Monitoring",
+                "DeleteAlarm",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/monitoring/20180401/Alarm/DeleteAlarm");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -572,6 +587,11 @@ public class MonitoringClient implements Monitoring {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Monitoring",
+                "GetAlarm",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/monitoring/20180401/Alarm/GetAlarm");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -601,6 +621,11 @@ public class MonitoringClient implements Monitoring {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Monitoring",
+                "GetAlarmHistory",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/monitoring/20180401/AlarmHistoryCollection/GetAlarmHistory");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -629,6 +654,11 @@ public class MonitoringClient implements Monitoring {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Monitoring",
+                "ListAlarms",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/monitoring/20180401/AlarmSummary/ListAlarms");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -658,6 +688,11 @@ public class MonitoringClient implements Monitoring {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Monitoring",
+                "ListAlarmsStatus",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/monitoring/20180401/AlarmStatusSummary/ListAlarmsStatus");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -687,6 +722,11 @@ public class MonitoringClient implements Monitoring {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Monitoring",
+                "ListMetrics",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/monitoring/20180401/Metric/ListMetrics");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -720,6 +760,11 @@ public class MonitoringClient implements Monitoring {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Monitoring",
+                "PostMetricData",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/monitoring/20180401/MetricData/PostMetricData");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -754,6 +799,11 @@ public class MonitoringClient implements Monitoring {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Monitoring",
+                "RemoveAlarmSuppression",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/monitoring/20180401/Suppression/RemoveAlarmSuppression");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -784,6 +834,11 @@ public class MonitoringClient implements Monitoring {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Monitoring",
+                "SummarizeMetricsData",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/monitoring/20180401/MetricData/SummarizeMetricsData");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -817,6 +872,11 @@ public class MonitoringClient implements Monitoring {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Monitoring",
+                "UpdateAlarm",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/monitoring/20180401/Alarm/UpdateAlarm");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {

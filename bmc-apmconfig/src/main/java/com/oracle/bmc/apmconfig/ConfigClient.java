@@ -401,6 +401,11 @@ public class ConfigClient implements Config {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Config",
+                "CreateConfig",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/apm-config/20210201/Config/CreateConfig");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -434,6 +439,11 @@ public class ConfigClient implements Config {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Config",
+                "DeleteConfig",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/apm-config/20210201/Config/DeleteConfig");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -463,6 +473,11 @@ public class ConfigClient implements Config {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Config",
+                "GetConfig",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/apm-config/20210201/Config/GetConfig");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -492,6 +507,11 @@ public class ConfigClient implements Config {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Config",
+                "ListConfigs",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/apm-config/20210201/ConfigCollection/ListConfigs");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -521,6 +541,11 @@ public class ConfigClient implements Config {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Config",
+                "UpdateConfig",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/apm-config/20210201/Config/UpdateConfig");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {

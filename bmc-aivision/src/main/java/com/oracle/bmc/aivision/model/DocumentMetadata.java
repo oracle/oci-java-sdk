@@ -5,7 +5,7 @@
 package com.oracle.bmc.aivision.model;
 
 /**
- * Document information.
+ * The document information.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -68,13 +68,13 @@ public class DocumentMetadata {
     }
 
     /**
-     * Number of pages in the document.
+     * Teh number of pages in the document.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("pageCount")
     Integer pageCount;
 
     /**
-     * Result data format.
+     * The result data format.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("mimeType")
     String mimeType;

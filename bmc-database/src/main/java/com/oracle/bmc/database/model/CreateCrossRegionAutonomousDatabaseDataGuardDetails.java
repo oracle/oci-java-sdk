@@ -373,6 +373,24 @@ public class CreateCrossRegionAutonomousDatabaseDataGuardDetails
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("maxCpuCoreCount")
+        private Integer maxCpuCoreCount;
+
+        public Builder maxCpuCoreCount(Integer maxCpuCoreCount) {
+            this.maxCpuCoreCount = maxCpuCoreCount;
+            this.__explicitlySet__.add("maxCpuCoreCount");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("databaseEdition")
+        private AutonomousDatabaseSummary.DatabaseEdition databaseEdition;
+
+        public Builder databaseEdition(AutonomousDatabaseSummary.DatabaseEdition databaseEdition) {
+            this.databaseEdition = databaseEdition;
+            this.__explicitlySet__.add("databaseEdition");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("sourceId")
         private String sourceId;
 
@@ -421,6 +439,8 @@ public class CreateCrossRegionAutonomousDatabaseDataGuardDetails
                             autonomousMaintenanceScheduleType,
                             scheduledOperations,
                             isAutoScalingForStorageEnabled,
+                            maxCpuCoreCount,
+                            databaseEdition,
                             sourceId);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
@@ -464,6 +484,8 @@ public class CreateCrossRegionAutonomousDatabaseDataGuardDetails
                                     o.getAutonomousMaintenanceScheduleType())
                             .scheduledOperations(o.getScheduledOperations())
                             .isAutoScalingForStorageEnabled(o.getIsAutoScalingForStorageEnabled())
+                            .maxCpuCoreCount(o.getMaxCpuCoreCount())
+                            .databaseEdition(o.getDatabaseEdition())
                             .sourceId(o.getSourceId());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
@@ -513,6 +535,8 @@ public class CreateCrossRegionAutonomousDatabaseDataGuardDetails
             AutonomousMaintenanceScheduleType autonomousMaintenanceScheduleType,
             java.util.List<ScheduledOperationDetails> scheduledOperations,
             Boolean isAutoScalingForStorageEnabled,
+            Integer maxCpuCoreCount,
+            AutonomousDatabaseSummary.DatabaseEdition databaseEdition,
             String sourceId) {
         super(
                 compartmentId,
@@ -547,7 +571,9 @@ public class CreateCrossRegionAutonomousDatabaseDataGuardDetails
                 isMtlsConnectionRequired,
                 autonomousMaintenanceScheduleType,
                 scheduledOperations,
-                isAutoScalingForStorageEnabled);
+                isAutoScalingForStorageEnabled,
+                maxCpuCoreCount,
+                databaseEdition);
         this.sourceId = sourceId;
     }
 

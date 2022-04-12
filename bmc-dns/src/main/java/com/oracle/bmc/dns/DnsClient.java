@@ -477,6 +477,11 @@ public class DnsClient implements Dns {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Dns",
+                "ChangeResolverCompartment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/dns/20180115/Resolver/ChangeResolverCompartment");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -514,6 +519,11 @@ public class DnsClient implements Dns {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Dns",
+                "ChangeSteeringPolicyCompartment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/dns/20180115/SteeringPolicy/ChangeSteeringPolicyCompartment");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -550,6 +560,11 @@ public class DnsClient implements Dns {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Dns",
+                "ChangeTsigKeyCompartment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/dns/20180115/TsigKey/ChangeTsigKeyCompartment");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -585,6 +600,11 @@ public class DnsClient implements Dns {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Dns",
+                "ChangeViewCompartment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/dns/20180115/View/ChangeViewCompartment");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -620,6 +640,11 @@ public class DnsClient implements Dns {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Dns",
+                "ChangeZoneCompartment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/dns/20180115/Zone/ChangeZoneCompartment");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -655,6 +680,8 @@ public class DnsClient implements Dns {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Dns", "CreateResolverEndpoint", ib.getRequestUri().toString(), "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -689,6 +716,8 @@ public class DnsClient implements Dns {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Dns", "CreateSteeringPolicy", ib.getRequestUri().toString(), "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -725,6 +754,8 @@ public class DnsClient implements Dns {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Dns", "CreateSteeringPolicyAttachment", ib.getRequestUri().toString(), "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -759,6 +790,8 @@ public class DnsClient implements Dns {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Dns", "CreateTsigKey", ib.getRequestUri().toString(), "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -792,6 +825,8 @@ public class DnsClient implements Dns {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Dns", "CreateView", ib.getRequestUri().toString(), "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -824,6 +859,8 @@ public class DnsClient implements Dns {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Dns", "CreateZone", ib.getRequestUri().toString(), "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -857,6 +894,11 @@ public class DnsClient implements Dns {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Dns",
+                "DeleteDomainRecords",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/dns/20180115/Records/DeleteDomainRecords");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -887,6 +929,8 @@ public class DnsClient implements Dns {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Dns", "DeleteRRSet", ib.getRequestUri().toString(), "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -918,6 +962,11 @@ public class DnsClient implements Dns {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Dns",
+                "DeleteResolverEndpoint",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/dns/20180115/ResolverEndpoint/DeleteResolverEndpoint");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -948,6 +997,8 @@ public class DnsClient implements Dns {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Dns", "DeleteSteeringPolicy", ib.getRequestUri().toString(), "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -980,6 +1031,8 @@ public class DnsClient implements Dns {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Dns", "DeleteSteeringPolicyAttachment", ib.getRequestUri().toString(), "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1010,6 +1063,8 @@ public class DnsClient implements Dns {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Dns", "DeleteTsigKey", ib.getRequestUri().toString(), "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1039,6 +1094,11 @@ public class DnsClient implements Dns {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Dns",
+                "DeleteView",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/dns/20180115/View/DeleteView");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1068,6 +1128,8 @@ public class DnsClient implements Dns {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Dns", "DeleteZone", ib.getRequestUri().toString(), "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1098,6 +1160,11 @@ public class DnsClient implements Dns {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Dns",
+                "GetDomainRecords",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/dns/20180115/Records/GetDomainRecords");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1126,6 +1193,11 @@ public class DnsClient implements Dns {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Dns",
+                "GetRRSet",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/dns/20180115/RRSet/GetRRSet");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1155,6 +1227,11 @@ public class DnsClient implements Dns {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Dns",
+                "GetResolver",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/dns/20180115/Resolver/GetResolver");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1184,6 +1261,11 @@ public class DnsClient implements Dns {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Dns",
+                "GetResolverEndpoint",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/dns/20180115/ResolverEndpoint/GetResolverEndpoint");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1213,6 +1295,11 @@ public class DnsClient implements Dns {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Dns",
+                "GetSteeringPolicy",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/dns/20180115/SteeringPolicy/GetSteeringPolicy");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1244,6 +1331,11 @@ public class DnsClient implements Dns {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Dns",
+                "GetSteeringPolicyAttachment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/dns/20180115/SteeringPolicyAttachment/GetSteeringPolicyAttachment");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1272,6 +1364,11 @@ public class DnsClient implements Dns {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Dns",
+                "GetTsigKey",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/dns/20180115/TsigKey/GetTsigKey");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1300,6 +1397,11 @@ public class DnsClient implements Dns {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Dns",
+                "GetView",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/dns/20180115/View/GetView");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1328,6 +1430,11 @@ public class DnsClient implements Dns {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Dns",
+                "GetZone",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/dns/20180115/Zone/GetZone");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1367,6 +1474,11 @@ public class DnsClient implements Dns {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Dns",
+                "GetZoneContent",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/dns/20180115/Zone/GetZoneContent");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1396,6 +1508,11 @@ public class DnsClient implements Dns {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Dns",
+                "GetZoneRecords",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/dns/20180115/Records/GetZoneRecords");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1426,6 +1543,11 @@ public class DnsClient implements Dns {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Dns",
+                "ListResolverEndpoints",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/dns/20180115/ResolverEndpoint/ListResolverEndpoints");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1455,6 +1577,11 @@ public class DnsClient implements Dns {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Dns",
+                "ListResolvers",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/dns/20180115/Resolver/ListResolvers");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1484,6 +1611,11 @@ public class DnsClient implements Dns {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Dns",
+                "ListSteeringPolicies",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/dns/20180115/SteeringPolicy/ListSteeringPolicies");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1515,6 +1647,11 @@ public class DnsClient implements Dns {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Dns",
+                "ListSteeringPolicyAttachments",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/dns/20180115/SteeringPolicyAttachment/ListSteeringPolicyAttachments");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1544,6 +1681,11 @@ public class DnsClient implements Dns {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Dns",
+                "ListTsigKeys",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/dns/20180115/TsigKey/ListTsigKeys");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1572,6 +1714,11 @@ public class DnsClient implements Dns {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Dns",
+                "ListViews",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/dns/20180115/View/ListViews");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1602,6 +1749,11 @@ public class DnsClient implements Dns {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Dns",
+                "ListZoneTransferServers",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/dns/20180115/ZoneTransferServer/ListZoneTransferServers");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1630,6 +1782,11 @@ public class DnsClient implements Dns {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Dns",
+                "ListZones",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/dns/20180115/Zone/ListZones");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1659,6 +1816,11 @@ public class DnsClient implements Dns {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Dns",
+                "PatchDomainRecords",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/dns/20180115/Records/PatchDomainRecords");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1691,6 +1853,11 @@ public class DnsClient implements Dns {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Dns",
+                "PatchRRSet",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/dns/20180115/RRSet/PatchRRSet");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1724,6 +1891,11 @@ public class DnsClient implements Dns {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Dns",
+                "PatchZoneRecords",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/dns/20180115/Records/PatchZoneRecords");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1757,6 +1929,11 @@ public class DnsClient implements Dns {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Dns",
+                "UpdateDomainRecords",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/dns/20180115/Records/UpdateDomainRecords");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1790,6 +1967,11 @@ public class DnsClient implements Dns {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Dns",
+                "UpdateRRSet",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/dns/20180115/RRSet/UpdateRRSet");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1823,6 +2005,11 @@ public class DnsClient implements Dns {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Dns",
+                "UpdateResolver",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/dns/20180115/Resolver/UpdateResolver");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1857,6 +2044,11 @@ public class DnsClient implements Dns {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Dns",
+                "UpdateResolverEndpoint",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/dns/20180115/ResolverEndpoint/UpdateResolverEndpoint");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1890,6 +2082,11 @@ public class DnsClient implements Dns {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Dns",
+                "UpdateSteeringPolicy",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/dns/20180115/SteeringPolicy/UpdateSteeringPolicy");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1925,6 +2122,11 @@ public class DnsClient implements Dns {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Dns",
+                "UpdateSteeringPolicyAttachment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/dns/20180115/SteeringPolicyAttachment/UpdateSteeringPolicyAttachment");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1959,6 +2161,11 @@ public class DnsClient implements Dns {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Dns",
+                "UpdateTsigKey",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/dns/20180115/TsigKey/UpdateTsigKey");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1991,6 +2198,11 @@ public class DnsClient implements Dns {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Dns",
+                "UpdateView",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/dns/20180115/View/UpdateView");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2023,6 +2235,11 @@ public class DnsClient implements Dns {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Dns",
+                "UpdateZone",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/dns/20180115/Zone/UpdateZone");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2056,6 +2273,11 @@ public class DnsClient implements Dns {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Dns",
+                "UpdateZoneRecords",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/dns/20180115/Records/UpdateZoneRecords");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {

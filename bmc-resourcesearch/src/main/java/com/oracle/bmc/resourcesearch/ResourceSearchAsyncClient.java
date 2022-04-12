@@ -390,6 +390,11 @@ public class ResourceSearchAsyncClient implements ResourceSearchAsync {
                 GetResourceTypeConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetResourceTypeResponse>
                 transformer = GetResourceTypeConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ResourceSearch",
+                "GetResourceType",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/search/20180409/ResourceType/GetResourceType");
 
         com.oracle.bmc.responses.AsyncHandler<GetResourceTypeRequest, GetResourceTypeResponse>
                 handlerToUse = handler;
@@ -429,6 +434,11 @@ public class ResourceSearchAsyncClient implements ResourceSearchAsync {
                 ListResourceTypesConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListResourceTypesResponse>
                 transformer = ListResourceTypesConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ResourceSearch",
+                "ListResourceTypes",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/search/20180409/ResourceType/ListResourceTypes");
 
         com.oracle.bmc.responses.AsyncHandler<ListResourceTypesRequest, ListResourceTypesResponse>
                 handlerToUse = handler;
@@ -468,6 +478,11 @@ public class ResourceSearchAsyncClient implements ResourceSearchAsync {
                 SearchResourcesConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, SearchResourcesResponse>
                 transformer = SearchResourcesConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ResourceSearch",
+                "SearchResources",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/search/20180409/ResourceSummary/SearchResources");
 
         com.oracle.bmc.responses.AsyncHandler<SearchResourcesRequest, SearchResourcesResponse>
                 handlerToUse = handler;

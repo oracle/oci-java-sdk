@@ -391,6 +391,11 @@ public class ApplicationMigrationAsyncClient implements ApplicationMigrationAsyn
                 CancelWorkRequestConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, CancelWorkRequestResponse>
                 transformer = CancelWorkRequestConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ApplicationMigration",
+                "CancelWorkRequest",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/applicationmigration/20191031/WorkRequest/CancelWorkRequest");
 
         com.oracle.bmc.responses.AsyncHandler<CancelWorkRequestRequest, CancelWorkRequestResponse>
                 handlerToUse = handler;
@@ -434,6 +439,11 @@ public class ApplicationMigrationAsyncClient implements ApplicationMigrationAsyn
                         javax.ws.rs.core.Response, ChangeMigrationCompartmentResponse>
                 transformer = ChangeMigrationCompartmentConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ApplicationMigration",
+                "ChangeMigrationCompartment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/applicationmigration/20191031/Migration/ChangeMigrationCompartment");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeMigrationCompartmentRequest, ChangeMigrationCompartmentResponse>
@@ -482,6 +492,11 @@ public class ApplicationMigrationAsyncClient implements ApplicationMigrationAsyn
                         javax.ws.rs.core.Response, ChangeSourceCompartmentResponse>
                 transformer = ChangeSourceCompartmentConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ApplicationMigration",
+                "ChangeSourceCompartment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/applicationmigration/20191031/Source/ChangeSourceCompartment");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeSourceCompartmentRequest, ChangeSourceCompartmentResponse>
@@ -528,6 +543,8 @@ public class ApplicationMigrationAsyncClient implements ApplicationMigrationAsyn
         final com.google.common.base.Function<javax.ws.rs.core.Response, CreateMigrationResponse>
                 transformer = CreateMigrationConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ApplicationMigration", "CreateMigration", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<CreateMigrationRequest, CreateMigrationResponse>
                 handlerToUse = handler;
@@ -572,6 +589,8 @@ public class ApplicationMigrationAsyncClient implements ApplicationMigrationAsyn
         final com.google.common.base.Function<javax.ws.rs.core.Response, CreateSourceResponse>
                 transformer = CreateSourceConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ApplicationMigration", "CreateSource", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<CreateSourceRequest, CreateSourceResponse>
                 handlerToUse = handler;
@@ -616,6 +635,11 @@ public class ApplicationMigrationAsyncClient implements ApplicationMigrationAsyn
                 DeleteMigrationConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteMigrationResponse>
                 transformer = DeleteMigrationConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ApplicationMigration",
+                "DeleteMigration",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/applicationmigration/20191031/Migration/DeleteMigration");
 
         com.oracle.bmc.responses.AsyncHandler<DeleteMigrationRequest, DeleteMigrationResponse>
                 handlerToUse = handler;
@@ -654,6 +678,11 @@ public class ApplicationMigrationAsyncClient implements ApplicationMigrationAsyn
                 DeleteSourceConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteSourceResponse>
                 transformer = DeleteSourceConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ApplicationMigration",
+                "DeleteSource",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/applicationmigration/20191031/Source/DeleteSource");
 
         com.oracle.bmc.responses.AsyncHandler<DeleteSourceRequest, DeleteSourceResponse>
                 handlerToUse = handler;
@@ -692,6 +721,11 @@ public class ApplicationMigrationAsyncClient implements ApplicationMigrationAsyn
                 GetMigrationConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetMigrationResponse>
                 transformer = GetMigrationConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ApplicationMigration",
+                "GetMigration",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/applicationmigration/20191031/Migration/GetMigration");
 
         com.oracle.bmc.responses.AsyncHandler<GetMigrationRequest, GetMigrationResponse>
                 handlerToUse = handler;
@@ -729,6 +763,11 @@ public class ApplicationMigrationAsyncClient implements ApplicationMigrationAsyn
                 GetSourceConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetSourceResponse>
                 transformer = GetSourceConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ApplicationMigration",
+                "GetSource",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/applicationmigration/20191031/Source/GetSource");
 
         com.oracle.bmc.responses.AsyncHandler<GetSourceRequest, GetSourceResponse> handlerToUse =
                 handler;
@@ -767,6 +806,11 @@ public class ApplicationMigrationAsyncClient implements ApplicationMigrationAsyn
                 GetWorkRequestConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetWorkRequestResponse>
                 transformer = GetWorkRequestConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ApplicationMigration",
+                "GetWorkRequest",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/applicationmigration/20191031/WorkRequest/GetWorkRequest");
 
         com.oracle.bmc.responses.AsyncHandler<GetWorkRequestRequest, GetWorkRequestResponse>
                 handlerToUse = handler;
@@ -806,6 +850,11 @@ public class ApplicationMigrationAsyncClient implements ApplicationMigrationAsyn
                 ListMigrationsConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListMigrationsResponse>
                 transformer = ListMigrationsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ApplicationMigration",
+                "ListMigrations",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/applicationmigration/20191031/MigrationSummary/ListMigrations");
 
         com.oracle.bmc.responses.AsyncHandler<ListMigrationsRequest, ListMigrationsResponse>
                 handlerToUse = handler;
@@ -846,6 +895,11 @@ public class ApplicationMigrationAsyncClient implements ApplicationMigrationAsyn
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListSourceApplicationsResponse>
                 transformer = ListSourceApplicationsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ApplicationMigration",
+                "ListSourceApplications",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/applicationmigration/20191031/SourceApplicationSummary/ListSourceApplications");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListSourceApplicationsRequest, ListSourceApplicationsResponse>
@@ -885,6 +939,11 @@ public class ApplicationMigrationAsyncClient implements ApplicationMigrationAsyn
                 ListSourcesConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListSourcesResponse>
                 transformer = ListSourcesConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ApplicationMigration",
+                "ListSources",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/applicationmigration/20191031/SourceSummary/ListSources");
 
         com.oracle.bmc.responses.AsyncHandler<ListSourcesRequest, ListSourcesResponse>
                 handlerToUse = handler;
@@ -925,6 +984,11 @@ public class ApplicationMigrationAsyncClient implements ApplicationMigrationAsyn
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListWorkRequestErrorsResponse>
                 transformer = ListWorkRequestErrorsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ApplicationMigration",
+                "ListWorkRequestErrors",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/applicationmigration/20191031/WorkRequestError/ListWorkRequestErrors");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListWorkRequestErrorsRequest, ListWorkRequestErrorsResponse>
@@ -966,6 +1030,11 @@ public class ApplicationMigrationAsyncClient implements ApplicationMigrationAsyn
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListWorkRequestLogsResponse>
                 transformer = ListWorkRequestLogsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ApplicationMigration",
+                "ListWorkRequestLogs",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/applicationmigration/20191031/WorkRequestLogEntry/ListWorkRequestLogs");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListWorkRequestLogsRequest, ListWorkRequestLogsResponse>
@@ -1006,6 +1075,11 @@ public class ApplicationMigrationAsyncClient implements ApplicationMigrationAsyn
                 ListWorkRequestsConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListWorkRequestsResponse>
                 transformer = ListWorkRequestsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ApplicationMigration",
+                "ListWorkRequests",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/applicationmigration/20191031/WorkRequestSummary/ListWorkRequests");
 
         com.oracle.bmc.responses.AsyncHandler<ListWorkRequestsRequest, ListWorkRequestsResponse>
                 handlerToUse = handler;
@@ -1046,6 +1120,11 @@ public class ApplicationMigrationAsyncClient implements ApplicationMigrationAsyn
         final com.google.common.base.Function<javax.ws.rs.core.Response, MigrateApplicationResponse>
                 transformer = MigrateApplicationConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ApplicationMigration",
+                "MigrateApplication",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/applicationmigration/20191031/Migration/MigrateApplication");
 
         com.oracle.bmc.responses.AsyncHandler<MigrateApplicationRequest, MigrateApplicationResponse>
                 handlerToUse = handler;
@@ -1086,6 +1165,11 @@ public class ApplicationMigrationAsyncClient implements ApplicationMigrationAsyn
         final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateMigrationResponse>
                 transformer = UpdateMigrationConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ApplicationMigration",
+                "UpdateMigration",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/applicationmigration/20191031/Migration/UpdateMigration");
 
         com.oracle.bmc.responses.AsyncHandler<UpdateMigrationRequest, UpdateMigrationResponse>
                 handlerToUse = handler;
@@ -1129,6 +1213,11 @@ public class ApplicationMigrationAsyncClient implements ApplicationMigrationAsyn
                 UpdateSourceConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateSourceResponse>
                 transformer = UpdateSourceConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ApplicationMigration",
+                "UpdateSource",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/applicationmigration/20191031/Source/UpdateSource");
 
         com.oracle.bmc.responses.AsyncHandler<UpdateSourceRequest, UpdateSourceResponse>
                 handlerToUse = handler;

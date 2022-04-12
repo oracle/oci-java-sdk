@@ -5,7 +5,7 @@
 package com.oracle.bmc.aivision.model;
 
 /**
- * Details about how to analyze a document.
+ * The details of how to analyze a document.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -119,7 +119,7 @@ public class AnalyzeDocumentDetails {
     }
 
     /**
-     * Types of document analysis requested.
+     * The types of document analysis requested.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("features")
     java.util.List<DocumentFeature> features;
@@ -137,13 +137,13 @@ public class AnalyzeDocumentDetails {
     OutputLocation outputLocation;
 
     /**
-     * Language of the document, abbreviated according to ISO 639-2.
+     * The document language, abbreviated according to ISO 639-2.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("language")
     DocumentLanguage language;
 
     /**
-     * The type of document.
+     * The document type.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("documentType")
     DocumentType documentType;

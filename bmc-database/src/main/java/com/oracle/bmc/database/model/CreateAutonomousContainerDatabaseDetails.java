@@ -411,13 +411,15 @@ public class CreateAutonomousContainerDatabaseDetails {
     ServiceLevelAgreementType serviceLevelAgreementType;
 
     /**
-     * The OCID of the Autonomous Exadata Infrastructure.
+     * **No longer used.** This parameter is no longer used for Autonomous Database on dedicated Exadata infrasture. Specify a {@code cloudAutonomousVmClusterId} instead. Using this parameter will cause the operation to fail.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("autonomousExadataInfrastructureId")
     String autonomousExadataInfrastructureId;
 
     /**
-     * The OCID of the peer Autonomous Exadata Infrastructure for Autonomous Data Guard.
+     * *No longer used.* This parameter is no longer used for Autonomous Database on dedicated Exadata infrasture. Specify a {@code peerCloudAutonomousVmClusterId} instead. Using this parameter will cause the operation to fail.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("peerAutonomousExadataInfrastructureId")
     String peerAutonomousExadataInfrastructureId;

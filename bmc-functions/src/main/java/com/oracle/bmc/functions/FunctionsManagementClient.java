@@ -477,6 +477,11 @@ public class FunctionsManagementClient implements FunctionsManagement {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "FunctionsManagement",
+                "ChangeApplicationCompartment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/functions/20181201/Application/ChangeApplicationCompartment");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -511,6 +516,11 @@ public class FunctionsManagementClient implements FunctionsManagement {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "FunctionsManagement",
+                "CreateApplication",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/functions/20181201/Application/CreateApplication");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -544,6 +554,11 @@ public class FunctionsManagementClient implements FunctionsManagement {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "FunctionsManagement",
+                "CreateFunction",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/functions/20181201/Function/CreateFunction");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -577,6 +592,11 @@ public class FunctionsManagementClient implements FunctionsManagement {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "FunctionsManagement",
+                "DeleteApplication",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/functions/20181201/Application/DeleteApplication");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -607,6 +627,11 @@ public class FunctionsManagementClient implements FunctionsManagement {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "FunctionsManagement",
+                "DeleteFunction",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/functions/20181201/Function/DeleteFunction");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -637,6 +662,11 @@ public class FunctionsManagementClient implements FunctionsManagement {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "FunctionsManagement",
+                "GetApplication",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/functions/20181201/Application/GetApplication");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -666,6 +696,11 @@ public class FunctionsManagementClient implements FunctionsManagement {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "FunctionsManagement",
+                "GetFunction",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/functions/20181201/Function/GetFunction");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -695,6 +730,11 @@ public class FunctionsManagementClient implements FunctionsManagement {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "FunctionsManagement",
+                "ListApplications",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/functions/20181201/ApplicationSummary/ListApplications");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -724,6 +764,11 @@ public class FunctionsManagementClient implements FunctionsManagement {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "FunctionsManagement",
+                "ListFunctions",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/functions/20181201/FunctionSummary/ListFunctions");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -753,6 +798,11 @@ public class FunctionsManagementClient implements FunctionsManagement {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "FunctionsManagement",
+                "UpdateApplication",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/functions/20181201/Application/UpdateApplication");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -786,6 +836,11 @@ public class FunctionsManagementClient implements FunctionsManagement {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "FunctionsManagement",
+                "UpdateFunction",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/functions/20181201/Function/UpdateFunction");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {

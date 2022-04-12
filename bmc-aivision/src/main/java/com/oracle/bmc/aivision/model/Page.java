@@ -140,7 +140,7 @@ public class Page {
     }
 
     /**
-     * Document page number.
+     * The document page number.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("pageNumber")
     Integer pageNumber;
@@ -161,25 +161,25 @@ public class Page {
     java.util.List<DetectedLanguage> detectedLanguages;
 
     /**
-     * Words detected on the page.
+     * The words detected on the page.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("words")
     java.util.List<Word> words;
 
     /**
-     * Text lines detected on the page.
+     * The lines of text detected on the page.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lines")
     java.util.List<Line> lines;
 
     /**
-     * Tables detected on the page.
+     * The tables detected on the page.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("tables")
     java.util.List<Table> tables;
 
     /**
-     * Form fields detected on the page.
+     * The form fields detected on the page.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("documentFields")
     java.util.List<DocumentField> documentFields;

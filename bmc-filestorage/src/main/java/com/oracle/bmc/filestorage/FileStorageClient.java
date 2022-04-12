@@ -476,6 +476,11 @@ public class FileStorageClient implements FileStorage {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "FileStorage",
+                "ChangeFileSystemCompartment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/FileSystem/ChangeFileSystemCompartment");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -512,6 +517,11 @@ public class FileStorageClient implements FileStorage {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "FileStorage",
+                "ChangeMountTargetCompartment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/MountTarget/ChangeMountTargetCompartment");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -547,6 +557,11 @@ public class FileStorageClient implements FileStorage {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "FileStorage",
+                "CreateExport",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/Export/CreateExport");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -581,6 +596,11 @@ public class FileStorageClient implements FileStorage {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "FileStorage",
+                "CreateFileSystem",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/FileSystem/CreateFileSystem");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -615,6 +635,11 @@ public class FileStorageClient implements FileStorage {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "FileStorage",
+                "CreateMountTarget",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/MountTarget/CreateMountTarget");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -649,6 +674,11 @@ public class FileStorageClient implements FileStorage {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "FileStorage",
+                "CreateSnapshot",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/Snapshot/CreateSnapshot");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -682,6 +712,11 @@ public class FileStorageClient implements FileStorage {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "FileStorage",
+                "DeleteExport",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/Export/DeleteExport");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -712,6 +747,11 @@ public class FileStorageClient implements FileStorage {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "FileStorage",
+                "DeleteFileSystem",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/FileSystem/DeleteFileSystem");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -742,6 +782,11 @@ public class FileStorageClient implements FileStorage {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "FileStorage",
+                "DeleteMountTarget",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/MountTarget/DeleteMountTarget");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -772,6 +817,11 @@ public class FileStorageClient implements FileStorage {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "FileStorage",
+                "DeleteSnapshot",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/Snapshot/DeleteSnapshot");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -801,6 +851,11 @@ public class FileStorageClient implements FileStorage {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "FileStorage",
+                "GetExport",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/Export/GetExport");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -830,6 +885,11 @@ public class FileStorageClient implements FileStorage {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "FileStorage",
+                "GetExportSet",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/ExportSet/GetExportSet");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -859,6 +919,11 @@ public class FileStorageClient implements FileStorage {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "FileStorage",
+                "GetFileSystem",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/FileSystem/GetFileSystem");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -888,6 +953,11 @@ public class FileStorageClient implements FileStorage {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "FileStorage",
+                "GetMountTarget",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/MountTarget/GetMountTarget");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -917,6 +987,11 @@ public class FileStorageClient implements FileStorage {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "FileStorage",
+                "GetSnapshot",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/Snapshot/GetSnapshot");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -946,6 +1021,11 @@ public class FileStorageClient implements FileStorage {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "FileStorage",
+                "ListExportSets",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/ExportSetSummary/ListExportSets");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -975,6 +1055,11 @@ public class FileStorageClient implements FileStorage {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "FileStorage",
+                "ListExports",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/ExportSummary/ListExports");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1004,6 +1089,11 @@ public class FileStorageClient implements FileStorage {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "FileStorage",
+                "ListFileSystems",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/FileSystemSummary/ListFileSystems");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1033,6 +1123,11 @@ public class FileStorageClient implements FileStorage {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "FileStorage",
+                "ListMountTargets",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/MountTargetSummary/ListMountTargets");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1062,6 +1157,11 @@ public class FileStorageClient implements FileStorage {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "FileStorage",
+                "ListSnapshots",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/SnapshotSummary/ListSnapshots");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1091,6 +1191,11 @@ public class FileStorageClient implements FileStorage {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "FileStorage",
+                "UpdateExport",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/Export/UpdateExport");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1124,6 +1229,11 @@ public class FileStorageClient implements FileStorage {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "FileStorage",
+                "UpdateExportSet",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/ExportSet/UpdateExportSet");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1157,6 +1267,11 @@ public class FileStorageClient implements FileStorage {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "FileStorage",
+                "UpdateFileSystem",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/FileSystem/UpdateFileSystem");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1190,6 +1305,11 @@ public class FileStorageClient implements FileStorage {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "FileStorage",
+                "UpdateMountTarget",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/MountTarget/UpdateMountTarget");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1223,6 +1343,11 @@ public class FileStorageClient implements FileStorage {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "FileStorage",
+                "UpdateSnapshot",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/Snapshot/UpdateSnapshot");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {

@@ -6,6 +6,9 @@ package com.oracle.bmc.auth.internal;
 
 import java.security.interfaces.RSAPublicKey;
 import java.text.ParseException;
+import java.time.Duration;
+import java.time.Instant;
+import java.time.temporal.ChronoUnit;
 import java.util.Date;
 
 import com.google.common.base.Optional;
@@ -51,6 +54,14 @@ class SecurityTokenAdapter {
      * @return true if valid
      */
     boolean isValid() {
+        return isValid(java.util.Optional.empty());
+    }
+
+    /**
+     * Checks to see if the current token is still valid after reducing buffer time
+     * @return true if valid
+     */
+    boolean isValid(java.util.Optional<Duration> time) {
         if (jwt == null) {
             LOG.debug("Security token is not valid.");
             return false;
@@ -60,7 +71,8 @@ class SecurityTokenAdapter {
             Date exp = jwt.getExpirationTime();
             if (exp != null) {
                 // Make sure the token is not expired
-                if (exp.after(new Date())) {
+                final Duration bufferTime = time.isPresent() ? time.get() : Duration.ZERO;
+                if (exp.toInstant().minus(bufferTime).isAfter(Instant.now())) {
                     LOG.debug("Security token is not expired");
 
                     // Next compare the public key inside the JWT is the same

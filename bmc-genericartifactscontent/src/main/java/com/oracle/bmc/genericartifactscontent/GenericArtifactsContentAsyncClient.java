@@ -402,6 +402,11 @@ public class GenericArtifactsContentAsyncClient implements GenericArtifactsConte
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetGenericArtifactContentResponse>
                 transformer = GetGenericArtifactContentConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "GenericArtifactsContent",
+                "GetGenericArtifactContent",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/generic/20160918/GenericArtifact/GetGenericArtifactContent");
 
         com.oracle.bmc.responses.AsyncHandler<
                         GetGenericArtifactContentRequest, GetGenericArtifactContentResponse>
@@ -456,6 +461,11 @@ public class GenericArtifactsContentAsyncClient implements GenericArtifactsConte
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetGenericArtifactContentByPathResponse>
                 transformer = GetGenericArtifactContentByPathConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "GenericArtifactsContent",
+                "GetGenericArtifactContentByPath",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/generic/20160918/GenericArtifact/GetGenericArtifactContentByPath");
 
         com.oracle.bmc.responses.AsyncHandler<
                         GetGenericArtifactContentByPathRequest,
@@ -513,6 +523,11 @@ public class GenericArtifactsContentAsyncClient implements GenericArtifactsConte
         ib.property(
                 com.oracle.bmc.http.internal.AuthnClientFilter.SIGNING_STRATEGY_PROPERTY_NAME,
                 com.oracle.bmc.http.signing.SigningStrategy.EXCLUDE_BODY);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "GenericArtifactsContent",
+                "PutGenericArtifactContentByPath",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/generic/20160918/GenericArtifact/PutGenericArtifactContentByPath");
 
         com.oracle.bmc.responses.AsyncHandler<
                         PutGenericArtifactContentByPathRequest,

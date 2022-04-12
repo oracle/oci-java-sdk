@@ -401,6 +401,11 @@ public class PluginClient implements Plugin {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Plugin",
+                "GetInstanceAgentPlugin",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/instanceagent/20180530/Plugin/GetInstanceAgentPlugin");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -431,6 +436,11 @@ public class PluginClient implements Plugin {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Plugin",
+                "ListInstanceAgentPlugins",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/instanceagent/20180530/Plugin/ListInstanceAgentPlugins");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
