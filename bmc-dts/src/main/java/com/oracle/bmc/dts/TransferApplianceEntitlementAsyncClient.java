@@ -395,6 +395,11 @@ public class TransferApplianceEntitlementAsyncClient implements TransferApplianc
                         javax.ws.rs.core.Response, CreateTransferApplianceEntitlementResponse>
                 transformer = CreateTransferApplianceEntitlementConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "TransferApplianceEntitlement",
+                "CreateTransferApplianceEntitlement",
+                ib.getRequestUri().toString(),
+                "");
 
         com.oracle.bmc.responses.AsyncHandler<
                         CreateTransferApplianceEntitlementRequest,
@@ -447,6 +452,11 @@ public class TransferApplianceEntitlementAsyncClient implements TransferApplianc
                         javax.ws.rs.core.Response, GetTransferApplianceEntitlementResponse>
                 transformer = GetTransferApplianceEntitlementConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "TransferApplianceEntitlement",
+                "GetTransferApplianceEntitlement",
+                ib.getRequestUri().toString(),
+                "");
 
         com.oracle.bmc.responses.AsyncHandler<
                         GetTransferApplianceEntitlementRequest,
@@ -493,6 +503,11 @@ public class TransferApplianceEntitlementAsyncClient implements TransferApplianc
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListTransferApplianceEntitlementResponse>
                 transformer = ListTransferApplianceEntitlementConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "TransferApplianceEntitlement",
+                "ListTransferApplianceEntitlement",
+                ib.getRequestUri().toString(),
+                "");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListTransferApplianceEntitlementRequest,

@@ -477,6 +477,11 @@ public class RoverEntitlementClient implements RoverEntitlement {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "RoverEntitlement",
+                "ChangeRoverEntitlementCompartment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/rover/20201210/RoverEntitlement/ChangeRoverEntitlementCompartment");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -513,6 +518,11 @@ public class RoverEntitlementClient implements RoverEntitlement {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "RoverEntitlement",
+                "CreateRoverEntitlement",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/rover/20201210/RoverEntitlement/CreateRoverEntitlement");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -548,6 +558,11 @@ public class RoverEntitlementClient implements RoverEntitlement {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "RoverEntitlement",
+                "DeleteRoverEntitlement",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/rover/20201210/RoverEntitlement/DeleteRoverEntitlement");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -579,6 +594,11 @@ public class RoverEntitlementClient implements RoverEntitlement {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "RoverEntitlement",
+                "GetRoverEntitlement",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/rover/20201210/RoverEntitlement/GetRoverEntitlement");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -609,6 +629,11 @@ public class RoverEntitlementClient implements RoverEntitlement {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "RoverEntitlement",
+                "ListRoverEntitlements",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/rover/20201210/RoverEntitlement/ListRoverEntitlements");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -639,6 +664,11 @@ public class RoverEntitlementClient implements RoverEntitlement {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "RoverEntitlement",
+                "UpdateRoverEntitlement",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/rover/20201210/RoverCluster/UpdateRoverEntitlement");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {

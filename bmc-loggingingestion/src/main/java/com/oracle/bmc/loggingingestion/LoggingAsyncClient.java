@@ -387,6 +387,11 @@ public class LoggingAsyncClient implements LoggingAsync {
                 PutLogsConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, PutLogsResponse>
                 transformer = PutLogsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Logging",
+                "PutLogs",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logging-dataplane/20200831/LogEntry/PutLogs");
 
         com.oracle.bmc.responses.AsyncHandler<PutLogsRequest, PutLogsResponse> handlerToUse =
                 handler;

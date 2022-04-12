@@ -476,6 +476,11 @@ public class DbBackupsClient implements DbBackups {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DbBackups",
+                "ChangeBackupCompartment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/Backup/ChangeBackupCompartment");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -510,6 +515,11 @@ public class DbBackupsClient implements DbBackups {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DbBackups",
+                "CreateBackup",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/Backup/CreateBackup");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -543,6 +553,11 @@ public class DbBackupsClient implements DbBackups {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DbBackups",
+                "DeleteBackup",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/Backup/DeleteBackup");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -572,6 +587,11 @@ public class DbBackupsClient implements DbBackups {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DbBackups",
+                "GetBackup",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/Backup/GetBackup");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -601,6 +621,11 @@ public class DbBackupsClient implements DbBackups {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DbBackups",
+                "ListBackups",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/BackupSummary/ListBackups");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -630,6 +655,11 @@ public class DbBackupsClient implements DbBackups {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DbBackups",
+                "UpdateBackup",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/Backup/UpdateBackup");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {

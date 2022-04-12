@@ -393,6 +393,11 @@ public class LoadBalancerAsyncClient implements LoadBalancerAsync {
                         javax.ws.rs.core.Response, ChangeLoadBalancerCompartmentResponse>
                 transformer = ChangeLoadBalancerCompartmentConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LoadBalancer",
+                "ChangeLoadBalancerCompartment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/loadbalancer/20170115/LoadBalancer/ChangeLoadBalancerCompartment");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeLoadBalancerCompartmentRequest, ChangeLoadBalancerCompartmentResponse>
@@ -439,6 +444,8 @@ public class LoadBalancerAsyncClient implements LoadBalancerAsync {
         final com.google.common.base.Function<javax.ws.rs.core.Response, CreateBackendResponse>
                 transformer = CreateBackendConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LoadBalancer", "CreateBackend", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<CreateBackendRequest, CreateBackendResponse>
                 handlerToUse = handler;
@@ -484,6 +491,8 @@ public class LoadBalancerAsyncClient implements LoadBalancerAsync {
         final com.google.common.base.Function<javax.ws.rs.core.Response, CreateBackendSetResponse>
                 transformer = CreateBackendSetConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LoadBalancer", "CreateBackendSet", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<CreateBackendSetRequest, CreateBackendSetResponse>
                 handlerToUse = handler;
@@ -529,6 +538,8 @@ public class LoadBalancerAsyncClient implements LoadBalancerAsync {
         final com.google.common.base.Function<javax.ws.rs.core.Response, CreateCertificateResponse>
                 transformer = CreateCertificateConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LoadBalancer", "CreateCertificate", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<CreateCertificateRequest, CreateCertificateResponse>
                 handlerToUse = handler;
@@ -574,6 +585,8 @@ public class LoadBalancerAsyncClient implements LoadBalancerAsync {
         final com.google.common.base.Function<javax.ws.rs.core.Response, CreateHostnameResponse>
                 transformer = CreateHostnameConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LoadBalancer", "CreateHostname", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<CreateHostnameRequest, CreateHostnameResponse>
                 handlerToUse = handler;
@@ -619,6 +632,8 @@ public class LoadBalancerAsyncClient implements LoadBalancerAsync {
         final com.google.common.base.Function<javax.ws.rs.core.Response, CreateListenerResponse>
                 transformer = CreateListenerConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LoadBalancer", "CreateListener", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<CreateListenerRequest, CreateListenerResponse>
                 handlerToUse = handler;
@@ -664,6 +679,8 @@ public class LoadBalancerAsyncClient implements LoadBalancerAsync {
         final com.google.common.base.Function<javax.ws.rs.core.Response, CreateLoadBalancerResponse>
                 transformer = CreateLoadBalancerConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LoadBalancer", "CreateLoadBalancer", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<CreateLoadBalancerRequest, CreateLoadBalancerResponse>
                 handlerToUse = handler;
@@ -709,6 +726,8 @@ public class LoadBalancerAsyncClient implements LoadBalancerAsync {
         final com.google.common.base.Function<javax.ws.rs.core.Response, CreatePathRouteSetResponse>
                 transformer = CreatePathRouteSetConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LoadBalancer", "CreatePathRouteSet", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<CreatePathRouteSetRequest, CreatePathRouteSetResponse>
                 handlerToUse = handler;
@@ -755,6 +774,8 @@ public class LoadBalancerAsyncClient implements LoadBalancerAsync {
                         javax.ws.rs.core.Response, CreateRoutingPolicyResponse>
                 transformer = CreateRoutingPolicyConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LoadBalancer", "CreateRoutingPolicy", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<
                         CreateRoutingPolicyRequest, CreateRoutingPolicyResponse>
@@ -799,6 +820,8 @@ public class LoadBalancerAsyncClient implements LoadBalancerAsync {
                 CreateRuleSetConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, CreateRuleSetResponse>
                 transformer = CreateRuleSetConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LoadBalancer", "CreateRuleSet", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<CreateRuleSetRequest, CreateRuleSetResponse>
                 handlerToUse = handler;
@@ -845,6 +868,8 @@ public class LoadBalancerAsyncClient implements LoadBalancerAsync {
                         javax.ws.rs.core.Response, CreateSSLCipherSuiteResponse>
                 transformer = CreateSSLCipherSuiteConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LoadBalancer", "CreateSSLCipherSuite", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<
                         CreateSSLCipherSuiteRequest, CreateSSLCipherSuiteResponse>
@@ -889,6 +914,8 @@ public class LoadBalancerAsyncClient implements LoadBalancerAsync {
                 DeleteBackendConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteBackendResponse>
                 transformer = DeleteBackendConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LoadBalancer", "DeleteBackend", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<DeleteBackendRequest, DeleteBackendResponse>
                 handlerToUse = handler;
@@ -928,6 +955,8 @@ public class LoadBalancerAsyncClient implements LoadBalancerAsync {
                 DeleteBackendSetConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteBackendSetResponse>
                 transformer = DeleteBackendSetConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LoadBalancer", "DeleteBackendSet", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<DeleteBackendSetRequest, DeleteBackendSetResponse>
                 handlerToUse = handler;
@@ -967,6 +996,8 @@ public class LoadBalancerAsyncClient implements LoadBalancerAsync {
                 DeleteCertificateConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteCertificateResponse>
                 transformer = DeleteCertificateConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LoadBalancer", "DeleteCertificate", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<DeleteCertificateRequest, DeleteCertificateResponse>
                 handlerToUse = handler;
@@ -1006,6 +1037,8 @@ public class LoadBalancerAsyncClient implements LoadBalancerAsync {
                 DeleteHostnameConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteHostnameResponse>
                 transformer = DeleteHostnameConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LoadBalancer", "DeleteHostname", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<DeleteHostnameRequest, DeleteHostnameResponse>
                 handlerToUse = handler;
@@ -1045,6 +1078,8 @@ public class LoadBalancerAsyncClient implements LoadBalancerAsync {
                 DeleteListenerConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteListenerResponse>
                 transformer = DeleteListenerConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LoadBalancer", "DeleteListener", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<DeleteListenerRequest, DeleteListenerResponse>
                 handlerToUse = handler;
@@ -1084,6 +1119,8 @@ public class LoadBalancerAsyncClient implements LoadBalancerAsync {
                 DeleteLoadBalancerConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteLoadBalancerResponse>
                 transformer = DeleteLoadBalancerConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LoadBalancer", "DeleteLoadBalancer", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<DeleteLoadBalancerRequest, DeleteLoadBalancerResponse>
                 handlerToUse = handler;
@@ -1123,6 +1160,8 @@ public class LoadBalancerAsyncClient implements LoadBalancerAsync {
                 DeletePathRouteSetConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, DeletePathRouteSetResponse>
                 transformer = DeletePathRouteSetConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LoadBalancer", "DeletePathRouteSet", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<DeletePathRouteSetRequest, DeletePathRouteSetResponse>
                 handlerToUse = handler;
@@ -1163,6 +1202,8 @@ public class LoadBalancerAsyncClient implements LoadBalancerAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, DeleteRoutingPolicyResponse>
                 transformer = DeleteRoutingPolicyConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LoadBalancer", "DeleteRoutingPolicy", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<
                         DeleteRoutingPolicyRequest, DeleteRoutingPolicyResponse>
@@ -1202,6 +1243,8 @@ public class LoadBalancerAsyncClient implements LoadBalancerAsync {
                 DeleteRuleSetConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteRuleSetResponse>
                 transformer = DeleteRuleSetConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LoadBalancer", "DeleteRuleSet", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<DeleteRuleSetRequest, DeleteRuleSetResponse>
                 handlerToUse = handler;
@@ -1242,6 +1285,8 @@ public class LoadBalancerAsyncClient implements LoadBalancerAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, DeleteSSLCipherSuiteResponse>
                 transformer = DeleteSSLCipherSuiteConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LoadBalancer", "DeleteSSLCipherSuite", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<
                         DeleteSSLCipherSuiteRequest, DeleteSSLCipherSuiteResponse>
@@ -1280,6 +1325,11 @@ public class LoadBalancerAsyncClient implements LoadBalancerAsync {
                 GetBackendConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetBackendResponse>
                 transformer = GetBackendConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LoadBalancer",
+                "GetBackend",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/loadbalancer/20170115/Backend/GetBackend");
 
         com.oracle.bmc.responses.AsyncHandler<GetBackendRequest, GetBackendResponse> handlerToUse =
                 handler;
@@ -1319,6 +1369,11 @@ public class LoadBalancerAsyncClient implements LoadBalancerAsync {
                 GetBackendHealthConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetBackendHealthResponse>
                 transformer = GetBackendHealthConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LoadBalancer",
+                "GetBackendHealth",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/loadbalancer/20170115/BackendHealth/GetBackendHealth");
 
         com.oracle.bmc.responses.AsyncHandler<GetBackendHealthRequest, GetBackendHealthResponse>
                 handlerToUse = handler;
@@ -1357,6 +1412,11 @@ public class LoadBalancerAsyncClient implements LoadBalancerAsync {
                 GetBackendSetConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetBackendSetResponse>
                 transformer = GetBackendSetConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LoadBalancer",
+                "GetBackendSet",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/loadbalancer/20170115/BackendSet/GetBackendSet");
 
         com.oracle.bmc.responses.AsyncHandler<GetBackendSetRequest, GetBackendSetResponse>
                 handlerToUse = handler;
@@ -1397,6 +1457,11 @@ public class LoadBalancerAsyncClient implements LoadBalancerAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetBackendSetHealthResponse>
                 transformer = GetBackendSetHealthConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LoadBalancer",
+                "GetBackendSetHealth",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/loadbalancer/20170115/BackendSetHealth/GetBackendSetHealth");
 
         com.oracle.bmc.responses.AsyncHandler<
                         GetBackendSetHealthRequest, GetBackendSetHealthResponse>
@@ -1437,6 +1502,11 @@ public class LoadBalancerAsyncClient implements LoadBalancerAsync {
                 GetHealthCheckerConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetHealthCheckerResponse>
                 transformer = GetHealthCheckerConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LoadBalancer",
+                "GetHealthChecker",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/loadbalancer/20170115/HealthChecker/GetHealthChecker");
 
         com.oracle.bmc.responses.AsyncHandler<GetHealthCheckerRequest, GetHealthCheckerResponse>
                 handlerToUse = handler;
@@ -1475,6 +1545,11 @@ public class LoadBalancerAsyncClient implements LoadBalancerAsync {
                 GetHostnameConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetHostnameResponse>
                 transformer = GetHostnameConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LoadBalancer",
+                "GetHostname",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/loadbalancer/20170115/Hostname/GetHostname");
 
         com.oracle.bmc.responses.AsyncHandler<GetHostnameRequest, GetHostnameResponse>
                 handlerToUse = handler;
@@ -1514,6 +1589,11 @@ public class LoadBalancerAsyncClient implements LoadBalancerAsync {
                 GetLoadBalancerConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetLoadBalancerResponse>
                 transformer = GetLoadBalancerConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LoadBalancer",
+                "GetLoadBalancer",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/loadbalancer/20170115/LoadBalancer/GetLoadBalancer");
 
         com.oracle.bmc.responses.AsyncHandler<GetLoadBalancerRequest, GetLoadBalancerResponse>
                 handlerToUse = handler;
@@ -1554,6 +1634,11 @@ public class LoadBalancerAsyncClient implements LoadBalancerAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetLoadBalancerHealthResponse>
                 transformer = GetLoadBalancerHealthConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LoadBalancer",
+                "GetLoadBalancerHealth",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/loadbalancer/20170115/LoadBalancerHealth/GetLoadBalancerHealth");
 
         com.oracle.bmc.responses.AsyncHandler<
                         GetLoadBalancerHealthRequest, GetLoadBalancerHealthResponse>
@@ -1594,6 +1679,11 @@ public class LoadBalancerAsyncClient implements LoadBalancerAsync {
                 GetPathRouteSetConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetPathRouteSetResponse>
                 transformer = GetPathRouteSetConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LoadBalancer",
+                "GetPathRouteSet",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/loadbalancer/20170115/PathRouteSet/GetPathRouteSet");
 
         com.oracle.bmc.responses.AsyncHandler<GetPathRouteSetRequest, GetPathRouteSetResponse>
                 handlerToUse = handler;
@@ -1633,6 +1723,11 @@ public class LoadBalancerAsyncClient implements LoadBalancerAsync {
                 GetRoutingPolicyConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetRoutingPolicyResponse>
                 transformer = GetRoutingPolicyConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LoadBalancer",
+                "GetRoutingPolicy",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/loadbalancer/20170115/RoutingPolicy/GetRoutingPolicy");
 
         com.oracle.bmc.responses.AsyncHandler<GetRoutingPolicyRequest, GetRoutingPolicyResponse>
                 handlerToUse = handler;
@@ -1670,6 +1765,11 @@ public class LoadBalancerAsyncClient implements LoadBalancerAsync {
                 GetRuleSetConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetRuleSetResponse>
                 transformer = GetRuleSetConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LoadBalancer",
+                "GetRuleSet",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/loadbalancer/20170115/RuleSet/GetRuleSet");
 
         com.oracle.bmc.responses.AsyncHandler<GetRuleSetRequest, GetRuleSetResponse> handlerToUse =
                 handler;
@@ -1709,6 +1809,11 @@ public class LoadBalancerAsyncClient implements LoadBalancerAsync {
                 GetSSLCipherSuiteConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetSSLCipherSuiteResponse>
                 transformer = GetSSLCipherSuiteConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LoadBalancer",
+                "GetSSLCipherSuite",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/loadbalancer/20170115/SSLCipherSuite/GetSSLCipherSuite");
 
         com.oracle.bmc.responses.AsyncHandler<GetSSLCipherSuiteRequest, GetSSLCipherSuiteResponse>
                 handlerToUse = handler;
@@ -1748,6 +1853,11 @@ public class LoadBalancerAsyncClient implements LoadBalancerAsync {
                 GetWorkRequestConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetWorkRequestResponse>
                 transformer = GetWorkRequestConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LoadBalancer",
+                "GetWorkRequest",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/loadbalancer/20170115/WorkRequest/GetWorkRequest");
 
         com.oracle.bmc.responses.AsyncHandler<GetWorkRequestRequest, GetWorkRequestResponse>
                 handlerToUse = handler;
@@ -1787,6 +1897,11 @@ public class LoadBalancerAsyncClient implements LoadBalancerAsync {
                 ListBackendSetsConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListBackendSetsResponse>
                 transformer = ListBackendSetsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LoadBalancer",
+                "ListBackendSets",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/loadbalancer/20170115/BackendSet/ListBackendSets");
 
         com.oracle.bmc.responses.AsyncHandler<ListBackendSetsRequest, ListBackendSetsResponse>
                 handlerToUse = handler;
@@ -1825,6 +1940,11 @@ public class LoadBalancerAsyncClient implements LoadBalancerAsync {
                 ListBackendsConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListBackendsResponse>
                 transformer = ListBackendsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LoadBalancer",
+                "ListBackends",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/loadbalancer/20170115/Backend/ListBackends");
 
         com.oracle.bmc.responses.AsyncHandler<ListBackendsRequest, ListBackendsResponse>
                 handlerToUse = handler;
@@ -1864,6 +1984,11 @@ public class LoadBalancerAsyncClient implements LoadBalancerAsync {
                 ListCertificatesConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListCertificatesResponse>
                 transformer = ListCertificatesConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LoadBalancer",
+                "ListCertificates",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/loadbalancer/20170115/Certificate/ListCertificates");
 
         com.oracle.bmc.responses.AsyncHandler<ListCertificatesRequest, ListCertificatesResponse>
                 handlerToUse = handler;
@@ -1902,6 +2027,11 @@ public class LoadBalancerAsyncClient implements LoadBalancerAsync {
                 ListHostnamesConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListHostnamesResponse>
                 transformer = ListHostnamesConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LoadBalancer",
+                "ListHostnames",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/loadbalancer/20170115/Hostname/ListHostnames");
 
         com.oracle.bmc.responses.AsyncHandler<ListHostnamesRequest, ListHostnamesResponse>
                 handlerToUse = handler;
@@ -1941,6 +2071,11 @@ public class LoadBalancerAsyncClient implements LoadBalancerAsync {
                 ListListenerRulesConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListListenerRulesResponse>
                 transformer = ListListenerRulesConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LoadBalancer",
+                "ListListenerRules",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/loadbalancer/20170115/ListenerRuleSummary/ListListenerRules");
 
         com.oracle.bmc.responses.AsyncHandler<ListListenerRulesRequest, ListListenerRulesResponse>
                 handlerToUse = handler;
@@ -1981,6 +2116,11 @@ public class LoadBalancerAsyncClient implements LoadBalancerAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListLoadBalancerHealthsResponse>
                 transformer = ListLoadBalancerHealthsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LoadBalancer",
+                "ListLoadBalancerHealths",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/loadbalancer/20170115/LoadBalancerHealthSummary/ListLoadBalancerHealths");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListLoadBalancerHealthsRequest, ListLoadBalancerHealthsResponse>
@@ -2021,6 +2161,11 @@ public class LoadBalancerAsyncClient implements LoadBalancerAsync {
                 ListLoadBalancersConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListLoadBalancersResponse>
                 transformer = ListLoadBalancersConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LoadBalancer",
+                "ListLoadBalancers",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/loadbalancer/20170115/LoadBalancer/ListLoadBalancers");
 
         com.oracle.bmc.responses.AsyncHandler<ListLoadBalancersRequest, ListLoadBalancersResponse>
                 handlerToUse = handler;
@@ -2060,6 +2205,11 @@ public class LoadBalancerAsyncClient implements LoadBalancerAsync {
                 ListPathRouteSetsConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListPathRouteSetsResponse>
                 transformer = ListPathRouteSetsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LoadBalancer",
+                "ListPathRouteSets",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/loadbalancer/20170115/PathRouteSet/ListPathRouteSets");
 
         com.oracle.bmc.responses.AsyncHandler<ListPathRouteSetsRequest, ListPathRouteSetsResponse>
                 handlerToUse = handler;
@@ -2098,6 +2248,11 @@ public class LoadBalancerAsyncClient implements LoadBalancerAsync {
                 ListPoliciesConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListPoliciesResponse>
                 transformer = ListPoliciesConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LoadBalancer",
+                "ListPolicies",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/loadbalancer/20170115/LoadBalancerPolicy/ListPolicies");
 
         com.oracle.bmc.responses.AsyncHandler<ListPoliciesRequest, ListPoliciesResponse>
                 handlerToUse = handler;
@@ -2136,6 +2291,11 @@ public class LoadBalancerAsyncClient implements LoadBalancerAsync {
                 ListProtocolsConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListProtocolsResponse>
                 transformer = ListProtocolsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LoadBalancer",
+                "ListProtocols",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/loadbalancer/20170115/LoadBalancerProtocol/ListProtocols");
 
         com.oracle.bmc.responses.AsyncHandler<ListProtocolsRequest, ListProtocolsResponse>
                 handlerToUse = handler;
@@ -2176,6 +2336,11 @@ public class LoadBalancerAsyncClient implements LoadBalancerAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListRoutingPoliciesResponse>
                 transformer = ListRoutingPoliciesConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LoadBalancer",
+                "ListRoutingPolicies",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/loadbalancer/20170115/RoutingPolicy/ListRoutingPolicies");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListRoutingPoliciesRequest, ListRoutingPoliciesResponse>
@@ -2215,6 +2380,11 @@ public class LoadBalancerAsyncClient implements LoadBalancerAsync {
                 ListRuleSetsConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListRuleSetsResponse>
                 transformer = ListRuleSetsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LoadBalancer",
+                "ListRuleSets",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/loadbalancer/20170115/RuleSet/ListRuleSets");
 
         com.oracle.bmc.responses.AsyncHandler<ListRuleSetsRequest, ListRuleSetsResponse>
                 handlerToUse = handler;
@@ -2255,6 +2425,11 @@ public class LoadBalancerAsyncClient implements LoadBalancerAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListSSLCipherSuitesResponse>
                 transformer = ListSSLCipherSuitesConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LoadBalancer",
+                "ListSSLCipherSuites",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/loadbalancer/20170115/SSLCipherSuite/ListSSLCipherSuites");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListSSLCipherSuitesRequest, ListSSLCipherSuitesResponse>
@@ -2293,6 +2468,11 @@ public class LoadBalancerAsyncClient implements LoadBalancerAsync {
                 ListShapesConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListShapesResponse>
                 transformer = ListShapesConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LoadBalancer",
+                "ListShapes",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/loadbalancer/20170115/LoadBalancerShape/ListShapes");
 
         com.oracle.bmc.responses.AsyncHandler<ListShapesRequest, ListShapesResponse> handlerToUse =
                 handler;
@@ -2332,6 +2512,11 @@ public class LoadBalancerAsyncClient implements LoadBalancerAsync {
                 ListWorkRequestsConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListWorkRequestsResponse>
                 transformer = ListWorkRequestsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LoadBalancer",
+                "ListWorkRequests",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/loadbalancer/20170115/WorkRequest/ListWorkRequests");
 
         com.oracle.bmc.responses.AsyncHandler<ListWorkRequestsRequest, ListWorkRequestsResponse>
                 handlerToUse = handler;
@@ -2371,6 +2556,8 @@ public class LoadBalancerAsyncClient implements LoadBalancerAsync {
         final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateBackendResponse>
                 transformer = UpdateBackendConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LoadBalancer", "UpdateBackend", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<UpdateBackendRequest, UpdateBackendResponse>
                 handlerToUse = handler;
@@ -2416,6 +2603,8 @@ public class LoadBalancerAsyncClient implements LoadBalancerAsync {
         final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateBackendSetResponse>
                 transformer = UpdateBackendSetConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LoadBalancer", "UpdateBackendSet", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<UpdateBackendSetRequest, UpdateBackendSetResponse>
                 handlerToUse = handler;
@@ -2462,6 +2651,8 @@ public class LoadBalancerAsyncClient implements LoadBalancerAsync {
                         javax.ws.rs.core.Response, UpdateHealthCheckerResponse>
                 transformer = UpdateHealthCheckerConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LoadBalancer", "UpdateHealthChecker", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<
                         UpdateHealthCheckerRequest, UpdateHealthCheckerResponse>
@@ -2507,6 +2698,8 @@ public class LoadBalancerAsyncClient implements LoadBalancerAsync {
                 UpdateHostnameConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateHostnameResponse>
                 transformer = UpdateHostnameConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LoadBalancer", "UpdateHostname", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<UpdateHostnameRequest, UpdateHostnameResponse>
                 handlerToUse = handler;
@@ -2552,6 +2745,8 @@ public class LoadBalancerAsyncClient implements LoadBalancerAsync {
         final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateListenerResponse>
                 transformer = UpdateListenerConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LoadBalancer", "UpdateListener", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<UpdateListenerRequest, UpdateListenerResponse>
                 handlerToUse = handler;
@@ -2597,6 +2792,8 @@ public class LoadBalancerAsyncClient implements LoadBalancerAsync {
         final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateLoadBalancerResponse>
                 transformer = UpdateLoadBalancerConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LoadBalancer", "UpdateLoadBalancer", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<UpdateLoadBalancerRequest, UpdateLoadBalancerResponse>
                 handlerToUse = handler;
@@ -2643,6 +2840,11 @@ public class LoadBalancerAsyncClient implements LoadBalancerAsync {
                         javax.ws.rs.core.Response, UpdateLoadBalancerShapeResponse>
                 transformer = UpdateLoadBalancerShapeConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LoadBalancer",
+                "UpdateLoadBalancerShape",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/loadbalancer/20170115/LoadBalancer/UpdateLoadBalancerShape");
 
         com.oracle.bmc.responses.AsyncHandler<
                         UpdateLoadBalancerShapeRequest, UpdateLoadBalancerShapeResponse>
@@ -2692,6 +2894,11 @@ public class LoadBalancerAsyncClient implements LoadBalancerAsync {
                         javax.ws.rs.core.Response, UpdateNetworkSecurityGroupsResponse>
                 transformer = UpdateNetworkSecurityGroupsConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LoadBalancer",
+                "UpdateNetworkSecurityGroups",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/loadbalancer/20170115/NetworkSecurityGroups/UpdateNetworkSecurityGroups");
 
         com.oracle.bmc.responses.AsyncHandler<
                         UpdateNetworkSecurityGroupsRequest, UpdateNetworkSecurityGroupsResponse>
@@ -2739,6 +2946,8 @@ public class LoadBalancerAsyncClient implements LoadBalancerAsync {
         final com.google.common.base.Function<javax.ws.rs.core.Response, UpdatePathRouteSetResponse>
                 transformer = UpdatePathRouteSetConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LoadBalancer", "UpdatePathRouteSet", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<UpdatePathRouteSetRequest, UpdatePathRouteSetResponse>
                 handlerToUse = handler;
@@ -2785,6 +2994,8 @@ public class LoadBalancerAsyncClient implements LoadBalancerAsync {
                         javax.ws.rs.core.Response, UpdateRoutingPolicyResponse>
                 transformer = UpdateRoutingPolicyConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LoadBalancer", "UpdateRoutingPolicy", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<
                         UpdateRoutingPolicyRequest, UpdateRoutingPolicyResponse>
@@ -2829,6 +3040,8 @@ public class LoadBalancerAsyncClient implements LoadBalancerAsync {
                 UpdateRuleSetConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateRuleSetResponse>
                 transformer = UpdateRuleSetConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LoadBalancer", "UpdateRuleSet", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<UpdateRuleSetRequest, UpdateRuleSetResponse>
                 handlerToUse = handler;
@@ -2875,6 +3088,8 @@ public class LoadBalancerAsyncClient implements LoadBalancerAsync {
                         javax.ws.rs.core.Response, UpdateSSLCipherSuiteResponse>
                 transformer = UpdateSSLCipherSuiteConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LoadBalancer", "UpdateSSLCipherSuite", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<
                         UpdateSSLCipherSuiteRequest, UpdateSSLCipherSuiteResponse>

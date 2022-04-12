@@ -5,7 +5,7 @@
 package com.oracle.bmc.aivision.model;
 
 /**
- * A label describing an image. Every label returned by the pre-deployed model will be in English.
+ * A label describing an image. Every label returned by the pre-deployed model is in English.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -68,13 +68,13 @@ public class Label {
     }
 
     /**
-     * Classification catagory label name.
+     * The classification catagory label name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     String name;
 
     /**
-     * Confidence score between 0 to 1.
+     * The confidence score between 0 and 1.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("confidence")
     Float confidence;

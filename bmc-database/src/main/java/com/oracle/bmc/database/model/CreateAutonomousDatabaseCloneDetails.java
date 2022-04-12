@@ -335,6 +335,24 @@ public class CreateAutonomousDatabaseCloneDetails extends CreateAutonomousDataba
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("maxCpuCoreCount")
+        private Integer maxCpuCoreCount;
+
+        public Builder maxCpuCoreCount(Integer maxCpuCoreCount) {
+            this.maxCpuCoreCount = maxCpuCoreCount;
+            this.__explicitlySet__.add("maxCpuCoreCount");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("databaseEdition")
+        private AutonomousDatabaseSummary.DatabaseEdition databaseEdition;
+
+        public Builder databaseEdition(AutonomousDatabaseSummary.DatabaseEdition databaseEdition) {
+            this.databaseEdition = databaseEdition;
+            this.__explicitlySet__.add("databaseEdition");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("sourceId")
         private String sourceId;
 
@@ -392,6 +410,8 @@ public class CreateAutonomousDatabaseCloneDetails extends CreateAutonomousDataba
                             autonomousMaintenanceScheduleType,
                             scheduledOperations,
                             isAutoScalingForStorageEnabled,
+                            maxCpuCoreCount,
+                            databaseEdition,
                             sourceId,
                             cloneType);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
@@ -436,6 +456,8 @@ public class CreateAutonomousDatabaseCloneDetails extends CreateAutonomousDataba
                                     o.getAutonomousMaintenanceScheduleType())
                             .scheduledOperations(o.getScheduledOperations())
                             .isAutoScalingForStorageEnabled(o.getIsAutoScalingForStorageEnabled())
+                            .maxCpuCoreCount(o.getMaxCpuCoreCount())
+                            .databaseEdition(o.getDatabaseEdition())
                             .sourceId(o.getSourceId())
                             .cloneType(o.getCloneType());
 
@@ -486,6 +508,8 @@ public class CreateAutonomousDatabaseCloneDetails extends CreateAutonomousDataba
             AutonomousMaintenanceScheduleType autonomousMaintenanceScheduleType,
             java.util.List<ScheduledOperationDetails> scheduledOperations,
             Boolean isAutoScalingForStorageEnabled,
+            Integer maxCpuCoreCount,
+            AutonomousDatabaseSummary.DatabaseEdition databaseEdition,
             String sourceId,
             CloneType cloneType) {
         super(
@@ -521,7 +545,9 @@ public class CreateAutonomousDatabaseCloneDetails extends CreateAutonomousDataba
                 isMtlsConnectionRequired,
                 autonomousMaintenanceScheduleType,
                 scheduledOperations,
-                isAutoScalingForStorageEnabled);
+                isAutoScalingForStorageEnabled,
+                maxCpuCoreCount,
+                databaseEdition);
         this.sourceId = sourceId;
         this.cloneType = cloneType;
     }

@@ -390,6 +390,8 @@ public class VaultsAsyncClient implements VaultsAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, CancelSecretDeletionResponse>
                 transformer = CancelSecretDeletionConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Vaults", "CancelSecretDeletion", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<
                         CancelSecretDeletionRequest, CancelSecretDeletionResponse>
@@ -433,6 +435,8 @@ public class VaultsAsyncClient implements VaultsAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, CancelSecretVersionDeletionResponse>
                 transformer = CancelSecretVersionDeletionConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Vaults", "CancelSecretVersionDeletion", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<
                         CancelSecretVersionDeletionRequest, CancelSecretVersionDeletionResponse>
@@ -476,6 +480,8 @@ public class VaultsAsyncClient implements VaultsAsync {
                         javax.ws.rs.core.Response, ChangeSecretCompartmentResponse>
                 transformer = ChangeSecretCompartmentConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Vaults", "ChangeSecretCompartment", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeSecretCompartmentRequest, ChangeSecretCompartmentResponse>
@@ -521,6 +527,8 @@ public class VaultsAsyncClient implements VaultsAsync {
         final com.google.common.base.Function<javax.ws.rs.core.Response, CreateSecretResponse>
                 transformer = CreateSecretConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Vaults", "CreateSecret", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<CreateSecretRequest, CreateSecretResponse>
                 handlerToUse = handler;
@@ -563,6 +571,8 @@ public class VaultsAsyncClient implements VaultsAsync {
                 GetSecretConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetSecretResponse>
                 transformer = GetSecretConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Vaults", "GetSecret", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<GetSecretRequest, GetSecretResponse> handlerToUse =
                 handler;
@@ -601,6 +611,8 @@ public class VaultsAsyncClient implements VaultsAsync {
                 GetSecretVersionConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetSecretVersionResponse>
                 transformer = GetSecretVersionConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Vaults", "GetSecretVersion", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<GetSecretVersionRequest, GetSecretVersionResponse>
                 handlerToUse = handler;
@@ -640,6 +652,8 @@ public class VaultsAsyncClient implements VaultsAsync {
                 ListSecretVersionsConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListSecretVersionsResponse>
                 transformer = ListSecretVersionsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Vaults", "ListSecretVersions", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<ListSecretVersionsRequest, ListSecretVersionsResponse>
                 handlerToUse = handler;
@@ -678,6 +692,8 @@ public class VaultsAsyncClient implements VaultsAsync {
                 ListSecretsConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListSecretsResponse>
                 transformer = ListSecretsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Vaults", "ListSecrets", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<ListSecretsRequest, ListSecretsResponse>
                 handlerToUse = handler;
@@ -718,6 +734,8 @@ public class VaultsAsyncClient implements VaultsAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ScheduleSecretDeletionResponse>
                 transformer = ScheduleSecretDeletionConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Vaults", "ScheduleSecretDeletion", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ScheduleSecretDeletionRequest, ScheduleSecretDeletionResponse>
@@ -766,6 +784,8 @@ public class VaultsAsyncClient implements VaultsAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ScheduleSecretVersionDeletionResponse>
                 transformer = ScheduleSecretVersionDeletionConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Vaults", "ScheduleSecretVersionDeletion", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ScheduleSecretVersionDeletionRequest, ScheduleSecretVersionDeletionResponse>
@@ -811,6 +831,8 @@ public class VaultsAsyncClient implements VaultsAsync {
                 UpdateSecretConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateSecretResponse>
                 transformer = UpdateSecretConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Vaults", "UpdateSecret", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<UpdateSecretRequest, UpdateSecretResponse>
                 handlerToUse = handler;

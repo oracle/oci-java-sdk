@@ -336,6 +336,24 @@ public class CreateAutonomousDatabaseFromBackupTimestampDetails
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("maxCpuCoreCount")
+        private Integer maxCpuCoreCount;
+
+        public Builder maxCpuCoreCount(Integer maxCpuCoreCount) {
+            this.maxCpuCoreCount = maxCpuCoreCount;
+            this.__explicitlySet__.add("maxCpuCoreCount");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("databaseEdition")
+        private AutonomousDatabaseSummary.DatabaseEdition databaseEdition;
+
+        public Builder databaseEdition(AutonomousDatabaseSummary.DatabaseEdition databaseEdition) {
+            this.databaseEdition = databaseEdition;
+            this.__explicitlySet__.add("databaseEdition");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("autonomousDatabaseId")
         private String autonomousDatabaseId;
 
@@ -402,6 +420,8 @@ public class CreateAutonomousDatabaseFromBackupTimestampDetails
                             autonomousMaintenanceScheduleType,
                             scheduledOperations,
                             isAutoScalingForStorageEnabled,
+                            maxCpuCoreCount,
+                            databaseEdition,
                             autonomousDatabaseId,
                             timestamp,
                             cloneType);
@@ -447,6 +467,8 @@ public class CreateAutonomousDatabaseFromBackupTimestampDetails
                                     o.getAutonomousMaintenanceScheduleType())
                             .scheduledOperations(o.getScheduledOperations())
                             .isAutoScalingForStorageEnabled(o.getIsAutoScalingForStorageEnabled())
+                            .maxCpuCoreCount(o.getMaxCpuCoreCount())
+                            .databaseEdition(o.getDatabaseEdition())
                             .autonomousDatabaseId(o.getAutonomousDatabaseId())
                             .timestamp(o.getTimestamp())
                             .cloneType(o.getCloneType());
@@ -498,6 +520,8 @@ public class CreateAutonomousDatabaseFromBackupTimestampDetails
             AutonomousMaintenanceScheduleType autonomousMaintenanceScheduleType,
             java.util.List<ScheduledOperationDetails> scheduledOperations,
             Boolean isAutoScalingForStorageEnabled,
+            Integer maxCpuCoreCount,
+            AutonomousDatabaseSummary.DatabaseEdition databaseEdition,
             String autonomousDatabaseId,
             java.util.Date timestamp,
             CloneType cloneType) {
@@ -534,7 +558,9 @@ public class CreateAutonomousDatabaseFromBackupTimestampDetails
                 isMtlsConnectionRequired,
                 autonomousMaintenanceScheduleType,
                 scheduledOperations,
-                isAutoScalingForStorageEnabled);
+                isAutoScalingForStorageEnabled,
+                maxCpuCoreCount,
+                databaseEdition);
         this.autonomousDatabaseId = autonomousDatabaseId;
         this.timestamp = timestamp;
         this.cloneType = cloneType;

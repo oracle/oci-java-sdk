@@ -473,6 +473,11 @@ public class TransferPackageClient implements TransferPackage {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "TransferPackage",
+                "AttachDevicesToTransferPackage",
+                ib.getRequestUri().toString(),
+                "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -508,6 +513,8 @@ public class TransferPackageClient implements TransferPackage {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "TransferPackage", "CreateTransferPackage", ib.getRequestUri().toString(), "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -542,6 +549,8 @@ public class TransferPackageClient implements TransferPackage {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "TransferPackage", "DeleteTransferPackage", ib.getRequestUri().toString(), "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -574,6 +583,11 @@ public class TransferPackageClient implements TransferPackage {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "TransferPackage",
+                "DetachDevicesFromTransferPackage",
+                ib.getRequestUri().toString(),
+                "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -607,6 +621,8 @@ public class TransferPackageClient implements TransferPackage {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "TransferPackage", "GetTransferPackage", ib.getRequestUri().toString(), "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -636,6 +652,8 @@ public class TransferPackageClient implements TransferPackage {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "TransferPackage", "ListTransferPackages", ib.getRequestUri().toString(), "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -666,6 +684,8 @@ public class TransferPackageClient implements TransferPackage {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "TransferPackage", "UpdateTransferPackage", ib.getRequestUri().toString(), "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {

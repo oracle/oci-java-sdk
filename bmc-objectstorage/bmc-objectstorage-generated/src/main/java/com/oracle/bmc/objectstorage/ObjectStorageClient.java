@@ -476,6 +476,11 @@ public class ObjectStorageClient implements ObjectStorage {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ObjectStorage",
+                "AbortMultipartUpload",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/MultipartUpload/AbortMultipartUpload");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -506,6 +511,11 @@ public class ObjectStorageClient implements ObjectStorage {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ObjectStorage",
+                "CancelWorkRequest",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/WorkRequest/CancelWorkRequest");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -537,6 +547,11 @@ public class ObjectStorageClient implements ObjectStorage {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ObjectStorage",
+                "CommitMultipartUpload",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/MultipartUpload/CommitMultipartUpload");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -569,6 +584,11 @@ public class ObjectStorageClient implements ObjectStorage {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ObjectStorage",
+                "CopyObject",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/Object/CopyObject");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -602,6 +622,11 @@ public class ObjectStorageClient implements ObjectStorage {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ObjectStorage",
+                "CreateBucket",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/Bucket/CreateBucket");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -636,6 +661,11 @@ public class ObjectStorageClient implements ObjectStorage {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ObjectStorage",
+                "CreateMultipartUpload",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/MultipartUpload/CreateMultipartUpload");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -671,6 +701,11 @@ public class ObjectStorageClient implements ObjectStorage {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ObjectStorage",
+                "CreatePreauthenticatedRequest",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/PreauthenticatedRequest/CreatePreauthenticatedRequest");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -706,6 +741,11 @@ public class ObjectStorageClient implements ObjectStorage {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ObjectStorage",
+                "CreateReplicationPolicy",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/Replication/CreateReplicationPolicy");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -739,6 +779,11 @@ public class ObjectStorageClient implements ObjectStorage {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ObjectStorage",
+                "CreateRetentionRule",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/RetentionRule/CreateRetentionRule");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -772,6 +817,11 @@ public class ObjectStorageClient implements ObjectStorage {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ObjectStorage",
+                "DeleteBucket",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/Bucket/DeleteBucket");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -802,6 +852,11 @@ public class ObjectStorageClient implements ObjectStorage {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ObjectStorage",
+                "DeleteObject",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/Object/DeleteObject");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -834,6 +889,11 @@ public class ObjectStorageClient implements ObjectStorage {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ObjectStorage",
+                "DeleteObjectLifecyclePolicy",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/ObjectLifecyclePolicy/DeleteObjectLifecyclePolicy");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -866,6 +926,11 @@ public class ObjectStorageClient implements ObjectStorage {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ObjectStorage",
+                "DeletePreauthenticatedRequest",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/PreauthenticatedRequest/DeletePreauthenticatedRequest");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -897,6 +962,11 @@ public class ObjectStorageClient implements ObjectStorage {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ObjectStorage",
+                "DeleteReplicationPolicy",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/Replication/DeleteReplicationPolicy");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -927,6 +997,11 @@ public class ObjectStorageClient implements ObjectStorage {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ObjectStorage",
+                "DeleteRetentionRule",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/RetentionRule/DeleteRetentionRule");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -956,6 +1031,11 @@ public class ObjectStorageClient implements ObjectStorage {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ObjectStorage",
+                "GetBucket",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/Bucket/GetBucket");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -985,6 +1065,11 @@ public class ObjectStorageClient implements ObjectStorage {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ObjectStorage",
+                "GetNamespace",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/Namespace/GetNamespace");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1014,6 +1099,11 @@ public class ObjectStorageClient implements ObjectStorage {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ObjectStorage",
+                "GetNamespaceMetadata",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/Namespace/GetNamespaceMetadata");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1052,6 +1142,11 @@ public class ObjectStorageClient implements ObjectStorage {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ObjectStorage",
+                "GetObject",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/Object/GetObject");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1082,6 +1177,11 @@ public class ObjectStorageClient implements ObjectStorage {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ObjectStorage",
+                "GetObjectLifecyclePolicy",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/ObjectLifecyclePolicy/GetObjectLifecyclePolicy");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1113,6 +1213,11 @@ public class ObjectStorageClient implements ObjectStorage {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ObjectStorage",
+                "GetPreauthenticatedRequest",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/PreauthenticatedRequest/GetPreauthenticatedRequest");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1142,6 +1247,11 @@ public class ObjectStorageClient implements ObjectStorage {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ObjectStorage",
+                "GetReplicationPolicy",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/Replication/GetReplicationPolicy");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1171,6 +1281,11 @@ public class ObjectStorageClient implements ObjectStorage {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ObjectStorage",
+                "GetRetentionRule",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/RetentionRule/GetRetentionRule");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1200,6 +1315,11 @@ public class ObjectStorageClient implements ObjectStorage {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ObjectStorage",
+                "GetWorkRequest",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/WorkRequest/GetWorkRequest");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1228,6 +1348,11 @@ public class ObjectStorageClient implements ObjectStorage {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ObjectStorage",
+                "HeadBucket",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/Bucket/HeadBucket");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1257,6 +1382,11 @@ public class ObjectStorageClient implements ObjectStorage {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ObjectStorage",
+                "HeadObject",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/Object/HeadObject");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1287,6 +1417,11 @@ public class ObjectStorageClient implements ObjectStorage {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ObjectStorage",
+                "ListBuckets",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/Bucket/ListBuckets");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1317,6 +1452,11 @@ public class ObjectStorageClient implements ObjectStorage {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ObjectStorage",
+                "ListMultipartUploadParts",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/MultipartUpload/ListMultipartUploadParts");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1346,6 +1486,11 @@ public class ObjectStorageClient implements ObjectStorage {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ObjectStorage",
+                "ListMultipartUploads",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/MultipartUpload/ListMultipartUploads");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1375,6 +1520,11 @@ public class ObjectStorageClient implements ObjectStorage {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ObjectStorage",
+                "ListObjectVersions",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/Object/ListObjectVersions");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1404,6 +1554,11 @@ public class ObjectStorageClient implements ObjectStorage {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ObjectStorage",
+                "ListObjects",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/Object/ListObjects");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1435,6 +1590,11 @@ public class ObjectStorageClient implements ObjectStorage {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ObjectStorage",
+                "ListPreauthenticatedRequests",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/PreauthenticatedRequest/ListPreauthenticatedRequests");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1465,6 +1625,11 @@ public class ObjectStorageClient implements ObjectStorage {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ObjectStorage",
+                "ListReplicationPolicies",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/Replication/ListReplicationPolicies");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1495,6 +1660,11 @@ public class ObjectStorageClient implements ObjectStorage {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ObjectStorage",
+                "ListReplicationSources",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/Replication/ListReplicationSources");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1524,6 +1694,11 @@ public class ObjectStorageClient implements ObjectStorage {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ObjectStorage",
+                "ListRetentionRules",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/RetentionRule/ListRetentionRules");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1554,6 +1729,11 @@ public class ObjectStorageClient implements ObjectStorage {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ObjectStorage",
+                "ListWorkRequestErrors",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/WorkRequestError/ListWorkRequestErrors");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1583,6 +1763,11 @@ public class ObjectStorageClient implements ObjectStorage {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ObjectStorage",
+                "ListWorkRequestLogs",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/WorkRequestLogEntry/ListWorkRequestLogs");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1612,6 +1797,11 @@ public class ObjectStorageClient implements ObjectStorage {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ObjectStorage",
+                "ListWorkRequests",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/WorkRequest/ListWorkRequests");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1641,6 +1831,11 @@ public class ObjectStorageClient implements ObjectStorage {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ObjectStorage",
+                "MakeBucketWritable",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/Replication/MakeBucketWritable");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1684,6 +1879,11 @@ public class ObjectStorageClient implements ObjectStorage {
                     com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                             interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
             com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+            com.oracle.bmc.ServiceDetails.setServiceDetails(
+                    "ObjectStorage",
+                    "PutObject",
+                    ib.getRequestUri().toString(),
+                    "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/Object/PutObject");
             return retrier.execute(
                     interceptedRequest,
                     retryRequest -> {
@@ -1737,6 +1937,11 @@ public class ObjectStorageClient implements ObjectStorage {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ObjectStorage",
+                "PutObjectLifecyclePolicy",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/ObjectLifecyclePolicy/PutObjectLifecyclePolicy");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1770,6 +1975,11 @@ public class ObjectStorageClient implements ObjectStorage {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ObjectStorage",
+                "ReencryptBucket",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/Bucket/ReencryptBucket");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1800,6 +2010,11 @@ public class ObjectStorageClient implements ObjectStorage {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ObjectStorage",
+                "ReencryptObject",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/Object/ReencryptObject");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1833,6 +2048,11 @@ public class ObjectStorageClient implements ObjectStorage {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ObjectStorage",
+                "RenameObject",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/Object/RenameObject");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1866,6 +2086,11 @@ public class ObjectStorageClient implements ObjectStorage {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ObjectStorage",
+                "RestoreObjects",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/Object/RestoreObjects");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1899,6 +2124,11 @@ public class ObjectStorageClient implements ObjectStorage {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ObjectStorage",
+                "UpdateBucket",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/Bucket/UpdateBucket");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1933,6 +2163,11 @@ public class ObjectStorageClient implements ObjectStorage {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ObjectStorage",
+                "UpdateNamespaceMetadata",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/Namespace/UpdateNamespaceMetadata");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1967,6 +2202,11 @@ public class ObjectStorageClient implements ObjectStorage {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ObjectStorage",
+                "UpdateObjectStorageTier",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/Object/UpdateObjectStorageTier");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2000,6 +2240,11 @@ public class ObjectStorageClient implements ObjectStorage {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ObjectStorage",
+                "UpdateRetentionRule",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/RetentionRule/UpdateRetentionRule");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2046,6 +2291,11 @@ public class ObjectStorageClient implements ObjectStorage {
                     com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                             interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
             com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+            com.oracle.bmc.ServiceDetails.setServiceDetails(
+                    "ObjectStorage",
+                    "UploadPart",
+                    ib.getRequestUri().toString(),
+                    "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/MultipartUpload/UploadPart");
             return retrier.execute(
                     interceptedRequest,
                     retryRequest -> {

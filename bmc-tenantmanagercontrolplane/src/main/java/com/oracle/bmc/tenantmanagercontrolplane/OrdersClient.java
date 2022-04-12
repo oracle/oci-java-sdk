@@ -398,6 +398,11 @@ public class OrdersClient implements Orders {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Orders",
+                "ActivateOrder",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/Order/ActivateOrder");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -430,6 +435,11 @@ public class OrdersClient implements Orders {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Orders",
+                "GetOrder",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/Order/GetOrder");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {

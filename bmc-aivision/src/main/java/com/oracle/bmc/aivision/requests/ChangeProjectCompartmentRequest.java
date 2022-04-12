@@ -22,7 +22,7 @@ public class ChangeProjectCompartmentRequest
                 com.oracle.bmc.aivision.model.ChangeProjectCompartmentDetails> {
 
     /**
-     * unique project identifier.
+     * A unique project identifier.
      */
     private String projectId;
 

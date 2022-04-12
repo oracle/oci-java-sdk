@@ -389,6 +389,11 @@ public class ConfigAsyncClient implements ConfigAsync {
         final com.google.common.base.Function<javax.ws.rs.core.Response, CreateConfigResponse>
                 transformer = CreateConfigConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Config",
+                "CreateConfig",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/apm-config/20210201/Config/CreateConfig");
 
         com.oracle.bmc.responses.AsyncHandler<CreateConfigRequest, CreateConfigResponse>
                 handlerToUse = handler;
@@ -432,6 +437,11 @@ public class ConfigAsyncClient implements ConfigAsync {
                 DeleteConfigConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteConfigResponse>
                 transformer = DeleteConfigConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Config",
+                "DeleteConfig",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/apm-config/20210201/Config/DeleteConfig");
 
         com.oracle.bmc.responses.AsyncHandler<DeleteConfigRequest, DeleteConfigResponse>
                 handlerToUse = handler;
@@ -469,6 +479,11 @@ public class ConfigAsyncClient implements ConfigAsync {
                 GetConfigConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetConfigResponse>
                 transformer = GetConfigConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Config",
+                "GetConfig",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/apm-config/20210201/Config/GetConfig");
 
         com.oracle.bmc.responses.AsyncHandler<GetConfigRequest, GetConfigResponse> handlerToUse =
                 handler;
@@ -506,6 +521,11 @@ public class ConfigAsyncClient implements ConfigAsync {
                 ListConfigsConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListConfigsResponse>
                 transformer = ListConfigsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Config",
+                "ListConfigs",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/apm-config/20210201/ConfigCollection/ListConfigs");
 
         com.oracle.bmc.responses.AsyncHandler<ListConfigsRequest, ListConfigsResponse>
                 handlerToUse = handler;
@@ -544,6 +564,11 @@ public class ConfigAsyncClient implements ConfigAsync {
                 UpdateConfigConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateConfigResponse>
                 transformer = UpdateConfigConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Config",
+                "UpdateConfig",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/apm-config/20210201/Config/UpdateConfig");
 
         com.oracle.bmc.responses.AsyncHandler<UpdateConfigRequest, UpdateConfigResponse>
                 handlerToUse = handler;

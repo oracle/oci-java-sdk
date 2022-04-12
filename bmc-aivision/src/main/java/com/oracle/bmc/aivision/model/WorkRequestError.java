@@ -86,7 +86,7 @@ public class WorkRequestError {
     String code;
 
     /**
-     * A human readable description of the issue encountered.
+     * A human-readable description of the issue encountered.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("message")
     String message;

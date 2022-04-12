@@ -401,6 +401,11 @@ public class IncidentClient implements Incident {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Incident",
+                "CreateIncident",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/incidentmanagement/20181231/Incident/CreateIncident");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -434,6 +439,11 @@ public class IncidentClient implements Incident {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Incident",
+                "GetIncident",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/incidentmanagement/20181231/Incident/GetIncident");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -462,6 +472,11 @@ public class IncidentClient implements Incident {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Incident",
+                "GetStatus",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/incidentmanagement/20181231/Status/GetStatus");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -493,6 +508,11 @@ public class IncidentClient implements Incident {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Incident",
+                "ListIncidentResourceTypes",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/incidentmanagement/20181231/IncidentResourceType/ListIncidentResourceTypes");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -522,6 +542,11 @@ public class IncidentClient implements Incident {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Incident",
+                "ListIncidents",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/incidentmanagement/20181231/IncidentSummary/ListIncidents");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -551,6 +576,11 @@ public class IncidentClient implements Incident {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Incident",
+                "UpdateIncident",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/incidentmanagement/20181231/UpdateIncident/UpdateIncident");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -584,6 +614,11 @@ public class IncidentClient implements Incident {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Incident",
+                "ValidateUser",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/incidentmanagement/20181231/ValidationResponse/ValidateUser");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {

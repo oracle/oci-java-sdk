@@ -475,6 +475,8 @@ public class KmsVaultClient implements KmsVault {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "KmsVault", "BackupVault", ib.getRequestUri().toString(), "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -509,6 +511,8 @@ public class KmsVaultClient implements KmsVault {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "KmsVault", "CancelVaultDeletion", ib.getRequestUri().toString(), "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -541,6 +545,8 @@ public class KmsVaultClient implements KmsVault {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "KmsVault", "ChangeVaultCompartment", ib.getRequestUri().toString(), "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -575,6 +581,8 @@ public class KmsVaultClient implements KmsVault {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "KmsVault", "CreateVault", ib.getRequestUri().toString(), "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -609,6 +617,8 @@ public class KmsVaultClient implements KmsVault {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "KmsVault", "CreateVaultReplica", ib.getRequestUri().toString(), "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -643,6 +653,8 @@ public class KmsVaultClient implements KmsVault {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "KmsVault", "DeleteVaultReplica", ib.getRequestUri().toString(), "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -675,6 +687,8 @@ public class KmsVaultClient implements KmsVault {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "KmsVault", "GetVault", ib.getRequestUri().toString(), "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -704,6 +718,8 @@ public class KmsVaultClient implements KmsVault {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "KmsVault", "GetVaultUsage", ib.getRequestUri().toString(), "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -734,6 +750,8 @@ public class KmsVaultClient implements KmsVault {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "KmsVault", "ListVaultReplicas", ib.getRequestUri().toString(), "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -762,6 +780,8 @@ public class KmsVaultClient implements KmsVault {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "KmsVault", "ListVaults", ib.getRequestUri().toString(), "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -801,6 +821,8 @@ public class KmsVaultClient implements KmsVault {
                             interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
             com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
             com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+            com.oracle.bmc.ServiceDetails.setServiceDetails(
+                    "KmsVault", "RestoreVaultFromFile", ib.getRequestUri().toString(), "");
             return retrier.execute(
                     interceptedRequest,
                     retryRequest -> {
@@ -860,6 +882,8 @@ public class KmsVaultClient implements KmsVault {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "KmsVault", "RestoreVaultFromObjectStore", ib.getRequestUri().toString(), "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -896,6 +920,8 @@ public class KmsVaultClient implements KmsVault {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "KmsVault", "ScheduleVaultDeletion", ib.getRequestUri().toString(), "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -929,6 +955,8 @@ public class KmsVaultClient implements KmsVault {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "KmsVault", "UpdateVault", ib.getRequestUri().toString(), "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {

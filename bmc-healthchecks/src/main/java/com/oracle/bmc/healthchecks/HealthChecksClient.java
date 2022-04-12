@@ -404,6 +404,11 @@ public class HealthChecksClient implements HealthChecks {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "HealthChecks",
+                "ChangeHttpMonitorCompartment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/healthchecks/20180501/HttpMonitor/ChangeHttpMonitorCompartment");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -441,6 +446,11 @@ public class HealthChecksClient implements HealthChecks {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "HealthChecks",
+                "ChangePingMonitorCompartment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/healthchecks/20180501/PingMonitor/ChangePingMonitorCompartment");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -476,6 +486,11 @@ public class HealthChecksClient implements HealthChecks {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "HealthChecks",
+                "CreateHttpMonitor",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/healthchecks/20180501/HttpMonitor/CreateHttpMonitor");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -510,6 +525,11 @@ public class HealthChecksClient implements HealthChecks {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "HealthChecks",
+                "CreateOnDemandHttpProbe",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/healthchecks/20180501/HttpProbe/CreateOnDemandHttpProbe");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -544,6 +564,11 @@ public class HealthChecksClient implements HealthChecks {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "HealthChecks",
+                "CreateOnDemandPingProbe",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/healthchecks/20180501/PingProbe/CreateOnDemandPingProbe");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -578,6 +603,11 @@ public class HealthChecksClient implements HealthChecks {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "HealthChecks",
+                "CreatePingMonitor",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/healthchecks/20180501/PingMonitor/CreatePingMonitor");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -611,6 +641,11 @@ public class HealthChecksClient implements HealthChecks {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "HealthChecks",
+                "DeleteHttpMonitor",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/healthchecks/20180501/HttpMonitor/DeleteHttpMonitor");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -641,6 +676,11 @@ public class HealthChecksClient implements HealthChecks {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "HealthChecks",
+                "DeletePingMonitor",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/healthchecks/20180501/PingMonitor/DeletePingMonitor");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -671,6 +711,11 @@ public class HealthChecksClient implements HealthChecks {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "HealthChecks",
+                "GetHttpMonitor",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/healthchecks/20180501/HttpMonitor/GetHttpMonitor");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -700,6 +745,11 @@ public class HealthChecksClient implements HealthChecks {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "HealthChecks",
+                "GetPingMonitor",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/healthchecks/20180501/PingMonitor/GetPingMonitor");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -731,6 +781,11 @@ public class HealthChecksClient implements HealthChecks {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "HealthChecks",
+                "ListHealthChecksVantagePoints",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/healthchecks/20180501/HealthChecksVantagePointSummary/ListHealthChecksVantagePoints");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -760,6 +815,11 @@ public class HealthChecksClient implements HealthChecks {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "HealthChecks",
+                "ListHttpMonitors",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/healthchecks/20180501/HttpMonitorSummary/ListHttpMonitors");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -789,6 +849,11 @@ public class HealthChecksClient implements HealthChecks {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "HealthChecks",
+                "ListHttpProbeResults",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/healthchecks/20180501/HttpProbeResultSummary/ListHttpProbeResults");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -818,6 +883,11 @@ public class HealthChecksClient implements HealthChecks {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "HealthChecks",
+                "ListPingMonitors",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/healthchecks/20180501/PingMonitorSummary/ListPingMonitors");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -847,6 +917,11 @@ public class HealthChecksClient implements HealthChecks {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "HealthChecks",
+                "ListPingProbeResults",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/healthchecks/20180501/PingProbeResultSummary/ListPingProbeResults");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -876,6 +951,11 @@ public class HealthChecksClient implements HealthChecks {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "HealthChecks",
+                "UpdateHttpMonitor",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/healthchecks/20180501/HttpMonitor/UpdateHttpMonitor");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -909,6 +989,11 @@ public class HealthChecksClient implements HealthChecks {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "HealthChecks",
+                "UpdatePingMonitor",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/healthchecks/20180501/PingMonitor/UpdatePingMonitor");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {

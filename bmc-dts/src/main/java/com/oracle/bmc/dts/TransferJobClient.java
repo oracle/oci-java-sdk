@@ -478,6 +478,8 @@ public class TransferJobClient implements TransferJob {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "TransferJob", "ChangeTransferJobCompartment", ib.getRequestUri().toString(), "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -513,6 +515,8 @@ public class TransferJobClient implements TransferJob {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "TransferJob", "CreateTransferJob", ib.getRequestUri().toString(), "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -546,6 +550,8 @@ public class TransferJobClient implements TransferJob {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "TransferJob", "DeleteTransferJob", ib.getRequestUri().toString(), "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -576,6 +582,8 @@ public class TransferJobClient implements TransferJob {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "TransferJob", "GetTransferJob", ib.getRequestUri().toString(), "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -605,6 +613,8 @@ public class TransferJobClient implements TransferJob {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "TransferJob", "ListTransferJobs", ib.getRequestUri().toString(), "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -634,6 +644,8 @@ public class TransferJobClient implements TransferJob {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "TransferJob", "UpdateTransferJob", ib.getRequestUri().toString(), "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {

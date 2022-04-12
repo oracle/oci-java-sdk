@@ -477,6 +477,11 @@ public class DataFlowClient implements DataFlow {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataFlow",
+                "ChangeApplicationCompartment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-flow/20200129/Application/ChangeApplicationCompartment");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -513,6 +518,11 @@ public class DataFlowClient implements DataFlow {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataFlow",
+                "ChangePrivateEndpointCompartment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-flow/20200129/PrivateEndpoint/ChangePrivateEndpointCompartment");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -548,6 +558,11 @@ public class DataFlowClient implements DataFlow {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataFlow",
+                "ChangeRunCompartment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-flow/20200129/Run/ChangeRunCompartment");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -582,6 +597,11 @@ public class DataFlowClient implements DataFlow {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataFlow",
+                "CreateApplication",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-flow/20200129/Application/CreateApplication");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -617,6 +637,8 @@ public class DataFlowClient implements DataFlow {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataFlow", "CreatePrivateEndpoint", ib.getRequestUri().toString(), "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -650,6 +672,11 @@ public class DataFlowClient implements DataFlow {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataFlow",
+                "CreateRun",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-flow/20200129/Run/CreateRun");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -683,6 +710,11 @@ public class DataFlowClient implements DataFlow {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataFlow",
+                "DeleteApplication",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-flow/20200129/Application/DeleteApplication");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -714,6 +746,11 @@ public class DataFlowClient implements DataFlow {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataFlow",
+                "DeletePrivateEndpoint",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-flow/20200129/PrivateEndpoint/DeletePrivateEndpoint");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -743,6 +780,11 @@ public class DataFlowClient implements DataFlow {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataFlow",
+                "DeleteRun",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-flow/20200129/Run/DeleteRun");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -773,6 +815,11 @@ public class DataFlowClient implements DataFlow {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataFlow",
+                "GetApplication",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-flow/20200129/Application/GetApplication");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -802,6 +849,11 @@ public class DataFlowClient implements DataFlow {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataFlow",
+                "GetPrivateEndpoint",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-flow/20200129/PrivateEndpoint/GetPrivateEndpoint");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -830,6 +882,11 @@ public class DataFlowClient implements DataFlow {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataFlow",
+                "GetRun",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-flow/20200129/Run/GetRun");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -868,6 +925,11 @@ public class DataFlowClient implements DataFlow {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataFlow",
+                "GetRunLog",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-flow/20200129/Run/GetRunLog");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -897,6 +959,11 @@ public class DataFlowClient implements DataFlow {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataFlow",
+                "GetWorkRequest",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-flow/20200129/WorkRequest/GetWorkRequest");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -926,6 +993,11 @@ public class DataFlowClient implements DataFlow {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataFlow",
+                "ListApplications",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-flow/20200129/ApplicationSummary/ListApplications");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -955,6 +1027,11 @@ public class DataFlowClient implements DataFlow {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataFlow",
+                "ListPrivateEndpoints",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-flow/20200129/PrivateEndpoint/ListPrivateEndpoints");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -984,6 +1061,11 @@ public class DataFlowClient implements DataFlow {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataFlow",
+                "ListRunLogs",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-flow/20200129/RunLogSummary/ListRunLogs");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1012,6 +1094,11 @@ public class DataFlowClient implements DataFlow {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataFlow",
+                "ListRuns",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-flow/20200129/RunSummary/ListRuns");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1042,6 +1129,11 @@ public class DataFlowClient implements DataFlow {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataFlow",
+                "ListWorkRequestErrors",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-flow/20200129/WorkRequestError/ListWorkRequestErrors");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1071,6 +1163,11 @@ public class DataFlowClient implements DataFlow {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataFlow",
+                "ListWorkRequestLogs",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-flow/20200129/WorkRequestLog/ListWorkRequestLogs");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1100,6 +1197,11 @@ public class DataFlowClient implements DataFlow {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataFlow",
+                "ListWorkRequests",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-flow/20200129/WorkRequest/ListWorkRequests");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1129,6 +1231,11 @@ public class DataFlowClient implements DataFlow {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataFlow",
+                "UpdateApplication",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-flow/20200129/Application/UpdateApplication");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1163,6 +1270,11 @@ public class DataFlowClient implements DataFlow {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataFlow",
+                "UpdatePrivateEndpoint",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-flow/20200129/PrivateEndpoint/UpdatePrivateEndpoint");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1195,6 +1307,11 @@ public class DataFlowClient implements DataFlow {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataFlow",
+                "UpdateRun",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-flow/20200129/Run/UpdateRun");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {

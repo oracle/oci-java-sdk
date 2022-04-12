@@ -8,6 +8,7 @@ import com.google.common.base.Function;
 import com.google.common.base.Preconditions;
 import com.oracle.bmc.ClientConfiguration;
 import com.oracle.bmc.auth.BasicAuthenticationDetailsProvider;
+import com.oracle.bmc.auth.ProvidesConfigurableRefresh;
 import com.oracle.bmc.auth.SessionKeySupplier;
 import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
 import com.oracle.bmc.http.ClientConfigurator;
@@ -26,14 +27,17 @@ import lombok.extern.slf4j.Slf4j;
 import javax.ws.rs.client.Invocation;
 import javax.ws.rs.core.Response;
 import java.net.URI;
+import java.time.Duration;
 import java.util.Collections;
+import java.util.Optional;
 
 /**
  * This class gets a security token from the auth service by signing the request with a PKI issued leaf certificate,
  * passing along a temporary public key that is bounded to the the security token, and the leaf certificate.
  */
 @Slf4j
-public abstract class AbstractFederationClient implements FederationClient {
+public abstract class AbstractFederationClient
+        implements FederationClient, ProvidesConfigurableRefresh {
     protected static final Function<Response, WithHeaders<X509FederationClient.SecurityToken>>
             SECURITY_TOKEN_FN =
                     new ResponseConversionFunctionFactory()
@@ -99,7 +103,7 @@ public abstract class AbstractFederationClient implements FederationClient {
             return securityTokenAdapter.getSecurityToken();
         }
 
-        return refreshAndGetSecurityTokenInner(true);
+        return refreshAndGetSecurityTokenInner(true, Optional.empty());
     }
 
     /**
@@ -110,7 +114,18 @@ public abstract class AbstractFederationClient implements FederationClient {
      */
     @Override
     public String refreshAndGetSecurityToken() {
-        return refreshAndGetSecurityTokenInner(false);
+        return refreshAndGetSecurityTokenInner(false, Optional.empty());
+    }
+
+    /**
+     * Gets a security token from the federation endpoint. This will always retrieve
+     * a new token from the federation endpoint and does not use a cached token.
+     *
+     * @return A security token that can be used to authenticate requests.
+     */
+    @Override
+    public String refreshAndGetSecurityTokenIfExpiringWithin(Duration time) {
+        return refreshAndGetSecurityTokenInner(false, Optional.of(time));
     }
 
     protected Response makeCall(
@@ -131,14 +146,18 @@ public abstract class AbstractFederationClient implements FederationClient {
         return makeCallInner(wrappedIb, null);
     }
 
-    private String refreshAndGetSecurityTokenInner(final boolean doFinalTokenValidityCheck) {
+    private String refreshAndGetSecurityTokenInner(
+            final boolean doFinalTokenValidityCheck, Optional<Duration> time) {
         // Since this client will be used in a multi-threaded environment (from within a service API),
         // this needs to be synchronized to make sure multiple calls are not updating the security token at the same time.
         // This should not be a blocking/dead-locked call. The worst I can see at this point is that the auth service does
         // not respond and this call times out, throwing exception
         synchronized (this) {
             // Check again to see if the JWT is still invalid, unless we want to skip that check
-            if (!doFinalTokenValidityCheck || !securityTokenAdapter.isValid()) {
+            if (!doFinalTokenValidityCheck
+                    || (time.isPresent()
+                            ? (!securityTokenAdapter.isValid(time))
+                            : (!securityTokenAdapter.isValid()))) {
                 LOG.info("Refreshing session keys.");
                 sessionKeySupplier.refreshKeys();
 

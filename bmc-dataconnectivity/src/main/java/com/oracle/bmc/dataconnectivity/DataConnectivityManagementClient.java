@@ -479,6 +479,11 @@ public class DataConnectivityManagementClient implements DataConnectivityManagem
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataConnectivityManagement",
+                "ChangeEndpointCompartment",
+                ib.getRequestUri().toString(),
+                "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -516,6 +521,11 @@ public class DataConnectivityManagementClient implements DataConnectivityManagem
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataConnectivityManagement",
+                "ChangeRegistryCompartment",
+                ib.getRequestUri().toString(),
+                "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -552,6 +562,11 @@ public class DataConnectivityManagementClient implements DataConnectivityManagem
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataConnectivityManagement",
+                "CreateAttachDataAsset",
+                ib.getRequestUri().toString(),
+                "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -586,6 +601,11 @@ public class DataConnectivityManagementClient implements DataConnectivityManagem
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataConnectivityManagement",
+                "CreateConnection",
+                ib.getRequestUri().toString(),
+                "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -622,6 +642,11 @@ public class DataConnectivityManagementClient implements DataConnectivityManagem
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataConnectivityManagement",
+                "CreateConnectionValidation",
+                ib.getRequestUri().toString(),
+                "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -659,6 +684,11 @@ public class DataConnectivityManagementClient implements DataConnectivityManagem
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataConnectivityManagement",
+                "CreateConnectivityValidation",
+                ib.getRequestUri().toString(),
+                "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -694,6 +724,8 @@ public class DataConnectivityManagementClient implements DataConnectivityManagem
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataConnectivityManagement", "CreateDataAsset", ib.getRequestUri().toString(), "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -728,6 +760,11 @@ public class DataConnectivityManagementClient implements DataConnectivityManagem
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataConnectivityManagement",
+                "CreateDataPreview",
+                ib.getRequestUri().toString(),
+                "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -762,6 +799,11 @@ public class DataConnectivityManagementClient implements DataConnectivityManagem
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataConnectivityManagement",
+                "CreateDataProfile",
+                ib.getRequestUri().toString(),
+                "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -798,6 +840,11 @@ public class DataConnectivityManagementClient implements DataConnectivityManagem
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataConnectivityManagement",
+                "CreateDeReferenceArtifact",
+                ib.getRequestUri().toString(),
+                "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -834,6 +881,11 @@ public class DataConnectivityManagementClient implements DataConnectivityManagem
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataConnectivityManagement",
+                "CreateDetachDataAsset",
+                ib.getRequestUri().toString(),
+                "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -868,6 +920,8 @@ public class DataConnectivityManagementClient implements DataConnectivityManagem
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataConnectivityManagement", "CreateEndpoint", ib.getRequestUri().toString(), "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -902,6 +956,11 @@ public class DataConnectivityManagementClient implements DataConnectivityManagem
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataConnectivityManagement",
+                "CreateEntityShape",
+                ib.getRequestUri().toString(),
+                "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -938,6 +997,11 @@ public class DataConnectivityManagementClient implements DataConnectivityManagem
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataConnectivityManagement",
+                "CreateExecuteOperationJob",
+                ib.getRequestUri().toString(),
+                "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -973,6 +1037,8 @@ public class DataConnectivityManagementClient implements DataConnectivityManagem
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataConnectivityManagement", "CreateFolder", ib.getRequestUri().toString(), "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1008,6 +1074,11 @@ public class DataConnectivityManagementClient implements DataConnectivityManagem
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataConnectivityManagement",
+                "CreateFullPushDownTask",
+                ib.getRequestUri().toString(),
+                "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1043,6 +1114,11 @@ public class DataConnectivityManagementClient implements DataConnectivityManagem
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataConnectivityManagement",
+                "CreateReferenceArtifact",
+                ib.getRequestUri().toString(),
+                "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1077,6 +1153,8 @@ public class DataConnectivityManagementClient implements DataConnectivityManagem
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataConnectivityManagement", "CreateRegistry", ib.getRequestUri().toString(), "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1113,6 +1191,11 @@ public class DataConnectivityManagementClient implements DataConnectivityManagem
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataConnectivityManagement",
+                "CreateTestNetworkConnectivity",
+                ib.getRequestUri().toString(),
+                "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1147,6 +1230,11 @@ public class DataConnectivityManagementClient implements DataConnectivityManagem
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataConnectivityManagement",
+                "DeleteConnection",
+                ib.getRequestUri().toString(),
+                "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1179,6 +1267,11 @@ public class DataConnectivityManagementClient implements DataConnectivityManagem
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataConnectivityManagement",
+                "DeleteConnectionValidation",
+                ib.getRequestUri().toString(),
+                "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1209,6 +1302,8 @@ public class DataConnectivityManagementClient implements DataConnectivityManagem
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataConnectivityManagement", "DeleteDataAsset", ib.getRequestUri().toString(), "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1239,6 +1334,8 @@ public class DataConnectivityManagementClient implements DataConnectivityManagem
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataConnectivityManagement", "DeleteEndpoint", ib.getRequestUri().toString(), "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1269,6 +1366,8 @@ public class DataConnectivityManagementClient implements DataConnectivityManagem
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataConnectivityManagement", "DeleteFolder", ib.getRequestUri().toString(), "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1301,6 +1400,11 @@ public class DataConnectivityManagementClient implements DataConnectivityManagem
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataConnectivityManagement",
+                "DeleteNetworkConnectivityStatus",
+                ib.getRequestUri().toString(),
+                "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1331,6 +1435,8 @@ public class DataConnectivityManagementClient implements DataConnectivityManagem
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataConnectivityManagement", "DeleteRegistry", ib.getRequestUri().toString(), "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1361,6 +1467,8 @@ public class DataConnectivityManagementClient implements DataConnectivityManagem
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataConnectivityManagement", "GetConnection", ib.getRequestUri().toString(), "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1391,6 +1499,11 @@ public class DataConnectivityManagementClient implements DataConnectivityManagem
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataConnectivityManagement",
+                "GetConnectionValidation",
+                ib.getRequestUri().toString(),
+                "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1420,6 +1533,8 @@ public class DataConnectivityManagementClient implements DataConnectivityManagem
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataConnectivityManagement", "GetDataAsset", ib.getRequestUri().toString(), "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1449,6 +1564,8 @@ public class DataConnectivityManagementClient implements DataConnectivityManagem
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataConnectivityManagement", "GetDataEntity", ib.getRequestUri().toString(), "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1478,6 +1595,8 @@ public class DataConnectivityManagementClient implements DataConnectivityManagem
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataConnectivityManagement", "GetEndpoint", ib.getRequestUri().toString(), "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1508,6 +1627,11 @@ public class DataConnectivityManagementClient implements DataConnectivityManagem
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataConnectivityManagement",
+                "GetExecuteOperationJob",
+                ib.getRequestUri().toString(),
+                "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1536,6 +1660,8 @@ public class DataConnectivityManagementClient implements DataConnectivityManagem
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataConnectivityManagement", "GetFolder", ib.getRequestUri().toString(), "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1568,6 +1694,11 @@ public class DataConnectivityManagementClient implements DataConnectivityManagem
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataConnectivityManagement",
+                "GetNetworkConnectivityStatus",
+                ib.getRequestUri().toString(),
+                "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1597,6 +1728,8 @@ public class DataConnectivityManagementClient implements DataConnectivityManagem
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataConnectivityManagement", "GetOperation", ib.getRequestUri().toString(), "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1626,6 +1759,8 @@ public class DataConnectivityManagementClient implements DataConnectivityManagem
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataConnectivityManagement", "GetRegistry", ib.getRequestUri().toString(), "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1654,6 +1789,8 @@ public class DataConnectivityManagementClient implements DataConnectivityManagem
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataConnectivityManagement", "GetSchema", ib.getRequestUri().toString(), "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1682,6 +1819,8 @@ public class DataConnectivityManagementClient implements DataConnectivityManagem
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataConnectivityManagement", "GetType", ib.getRequestUri().toString(), "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1711,6 +1850,8 @@ public class DataConnectivityManagementClient implements DataConnectivityManagem
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataConnectivityManagement", "GetWorkRequest", ib.getRequestUri().toString(), "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1742,6 +1883,11 @@ public class DataConnectivityManagementClient implements DataConnectivityManagem
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataConnectivityManagement",
+                "ListConnectionValidations",
+                ib.getRequestUri().toString(),
+                "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1771,6 +1917,8 @@ public class DataConnectivityManagementClient implements DataConnectivityManagem
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataConnectivityManagement", "ListConnections", ib.getRequestUri().toString(), "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1800,6 +1948,8 @@ public class DataConnectivityManagementClient implements DataConnectivityManagem
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataConnectivityManagement", "ListDataAssets", ib.getRequestUri().toString(), "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1829,6 +1979,11 @@ public class DataConnectivityManagementClient implements DataConnectivityManagem
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataConnectivityManagement",
+                "ListDataEntities",
+                ib.getRequestUri().toString(),
+                "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1858,6 +2013,8 @@ public class DataConnectivityManagementClient implements DataConnectivityManagem
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataConnectivityManagement", "ListEndpoints", ib.getRequestUri().toString(), "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1887,6 +2044,8 @@ public class DataConnectivityManagementClient implements DataConnectivityManagem
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataConnectivityManagement", "ListFolders", ib.getRequestUri().toString(), "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1916,6 +2075,8 @@ public class DataConnectivityManagementClient implements DataConnectivityManagem
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataConnectivityManagement", "ListOperations", ib.getRequestUri().toString(), "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1946,6 +2107,11 @@ public class DataConnectivityManagementClient implements DataConnectivityManagem
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataConnectivityManagement",
+                "ListReferenceArtifacts",
+                ib.getRequestUri().toString(),
+                "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1975,6 +2141,8 @@ public class DataConnectivityManagementClient implements DataConnectivityManagem
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataConnectivityManagement", "ListRegistries", ib.getRequestUri().toString(), "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2004,6 +2172,8 @@ public class DataConnectivityManagementClient implements DataConnectivityManagem
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataConnectivityManagement", "ListSchemas", ib.getRequestUri().toString(), "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2032,6 +2202,8 @@ public class DataConnectivityManagementClient implements DataConnectivityManagem
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataConnectivityManagement", "ListTypes", ib.getRequestUri().toString(), "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2062,6 +2234,11 @@ public class DataConnectivityManagementClient implements DataConnectivityManagem
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataConnectivityManagement",
+                "ListWorkRequestErrors",
+                ib.getRequestUri().toString(),
+                "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2091,6 +2268,11 @@ public class DataConnectivityManagementClient implements DataConnectivityManagem
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataConnectivityManagement",
+                "ListWorkRequestLogs",
+                ib.getRequestUri().toString(),
+                "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2120,6 +2302,11 @@ public class DataConnectivityManagementClient implements DataConnectivityManagem
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataConnectivityManagement",
+                "ListWorkRequests",
+                ib.getRequestUri().toString(),
+                "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2149,6 +2336,11 @@ public class DataConnectivityManagementClient implements DataConnectivityManagem
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataConnectivityManagement",
+                "UpdateConnection",
+                ib.getRequestUri().toString(),
+                "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2182,6 +2374,8 @@ public class DataConnectivityManagementClient implements DataConnectivityManagem
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataConnectivityManagement", "UpdateDataAsset", ib.getRequestUri().toString(), "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2215,6 +2409,8 @@ public class DataConnectivityManagementClient implements DataConnectivityManagem
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataConnectivityManagement", "UpdateEndpoint", ib.getRequestUri().toString(), "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2248,6 +2444,8 @@ public class DataConnectivityManagementClient implements DataConnectivityManagem
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataConnectivityManagement", "UpdateFolder", ib.getRequestUri().toString(), "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2281,6 +2479,8 @@ public class DataConnectivityManagementClient implements DataConnectivityManagem
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataConnectivityManagement", "UpdateRegistry", ib.getRequestUri().toString(), "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2318,6 +2518,11 @@ public class DataConnectivityManagementClient implements DataConnectivityManagem
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataConnectivityManagement",
+                "ValidateDataAssetNetworkReachablity",
+                ib.getRequestUri().toString(),
+                "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {

@@ -395,6 +395,11 @@ public class OrganizationAsyncClient implements OrganizationAsync {
                         javax.ws.rs.core.Response, ApproveOrganizationTenancyForTransferResponse>
                 transformer = ApproveOrganizationTenancyForTransferConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Organization",
+                "ApproveOrganizationTenancyForTransfer",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/OrganizationTenancy/ApproveOrganizationTenancyForTransfer");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ApproveOrganizationTenancyForTransferRequest,
@@ -439,6 +444,8 @@ public class OrganizationAsyncClient implements OrganizationAsync {
         final com.google.common.base.Function<javax.ws.rs.core.Response, CreateChildTenancyResponse>
                 transformer = CreateChildTenancyConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Organization", "CreateChildTenancy", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<CreateChildTenancyRequest, CreateChildTenancyResponse>
                 handlerToUse = handler;
@@ -485,6 +492,11 @@ public class OrganizationAsyncClient implements OrganizationAsync {
                         javax.ws.rs.core.Response, DeleteOrganizationTenancyResponse>
                 transformer = DeleteOrganizationTenancyConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Organization",
+                "DeleteOrganizationTenancy",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/OrganizationTenancy/DeleteOrganizationTenancy");
 
         com.oracle.bmc.responses.AsyncHandler<
                         DeleteOrganizationTenancyRequest, DeleteOrganizationTenancyResponse>
@@ -526,6 +538,11 @@ public class OrganizationAsyncClient implements OrganizationAsync {
                 GetOrganizationConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetOrganizationResponse>
                 transformer = GetOrganizationConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Organization",
+                "GetOrganization",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/Organization/GetOrganization");
 
         com.oracle.bmc.responses.AsyncHandler<GetOrganizationRequest, GetOrganizationResponse>
                 handlerToUse = handler;
@@ -566,6 +583,11 @@ public class OrganizationAsyncClient implements OrganizationAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetOrganizationTenancyResponse>
                 transformer = GetOrganizationTenancyConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Organization",
+                "GetOrganizationTenancy",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/OrganizationTenancy/GetOrganizationTenancy");
 
         com.oracle.bmc.responses.AsyncHandler<
                         GetOrganizationTenancyRequest, GetOrganizationTenancyResponse>
@@ -607,6 +629,11 @@ public class OrganizationAsyncClient implements OrganizationAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListOrganizationTenanciesResponse>
                 transformer = ListOrganizationTenanciesConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Organization",
+                "ListOrganizationTenancies",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/Organization/ListOrganizationTenancies");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListOrganizationTenanciesRequest, ListOrganizationTenanciesResponse>
@@ -648,6 +675,11 @@ public class OrganizationAsyncClient implements OrganizationAsync {
                 ListOrganizationsConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListOrganizationsResponse>
                 transformer = ListOrganizationsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Organization",
+                "ListOrganizations",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/Organization/ListOrganizations");
 
         com.oracle.bmc.responses.AsyncHandler<ListOrganizationsRequest, ListOrganizationsResponse>
                 handlerToUse = handler;
@@ -692,6 +724,11 @@ public class OrganizationAsyncClient implements OrganizationAsync {
                         javax.ws.rs.core.Response, UnapproveOrganizationTenancyForTransferResponse>
                 transformer = UnapproveOrganizationTenancyForTransferConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Organization",
+                "UnapproveOrganizationTenancyForTransfer",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/OrganizationTenancy/UnapproveOrganizationTenancyForTransfer");
 
         com.oracle.bmc.responses.AsyncHandler<
                         UnapproveOrganizationTenancyForTransferRequest,
@@ -737,6 +774,11 @@ public class OrganizationAsyncClient implements OrganizationAsync {
         final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateOrganizationResponse>
                 transformer = UpdateOrganizationConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Organization",
+                "UpdateOrganization",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/Organization/UpdateOrganization");
 
         com.oracle.bmc.responses.AsyncHandler<UpdateOrganizationRequest, UpdateOrganizationResponse>
                 handlerToUse = handler;

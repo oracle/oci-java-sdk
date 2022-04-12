@@ -5,7 +5,7 @@
 package com.oracle.bmc.aivision.model;
 
 /**
- * Date field value.
+ * The date field value.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -118,7 +118,7 @@ public class ValueDate extends FieldValue {
     }
 
     /**
-     * Date field value as yyyy-mm-dd.
+     * The date field value as yyyy-mm-dd.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("value")
     java.util.Date value;

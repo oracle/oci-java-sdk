@@ -393,6 +393,11 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, AddDrgRouteDistributionStatementsResponse>
                 transformer = AddDrgRouteDistributionStatementsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "AddDrgRouteDistributionStatements",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DrgRouteDistributionStatement/AddDrgRouteDistributionStatements");
 
         com.oracle.bmc.responses.AsyncHandler<
                         AddDrgRouteDistributionStatementsRequest,
@@ -442,6 +447,11 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
         final com.google.common.base.Function<javax.ws.rs.core.Response, AddDrgRouteRulesResponse>
                 transformer = AddDrgRouteRulesConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "AddDrgRouteRules",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DrgRouteRule/AddDrgRouteRules");
 
         com.oracle.bmc.responses.AsyncHandler<AddDrgRouteRulesRequest, AddDrgRouteRulesResponse>
                 handlerToUse = handler;
@@ -474,6 +484,56 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<AddIpv6SubnetCidrResponse> addIpv6SubnetCidr(
+            AddIpv6SubnetCidrRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            AddIpv6SubnetCidrRequest, AddIpv6SubnetCidrResponse>
+                    handler) {
+        LOG.trace("Called async addIpv6SubnetCidr");
+        final AddIpv6SubnetCidrRequest interceptedRequest =
+                AddIpv6SubnetCidrConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                AddIpv6SubnetCidrConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<javax.ws.rs.core.Response, AddIpv6SubnetCidrResponse>
+                transformer = AddIpv6SubnetCidrConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "AddIpv6SubnetCidr",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Subnet/AddIpv6SubnetCidr");
+
+        com.oracle.bmc.responses.AsyncHandler<AddIpv6SubnetCidrRequest, AddIpv6SubnetCidrResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                AddIpv6SubnetCidrRequest, AddIpv6SubnetCidrResponse>,
+                        java.util.concurrent.Future<AddIpv6SubnetCidrResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getAddSubnetIpv6CidrDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    AddIpv6SubnetCidrRequest, AddIpv6SubnetCidrResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<AddIpv6VcnCidrResponse> addIpv6VcnCidr(
             AddIpv6VcnCidrRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -487,6 +547,11 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
         final com.google.common.base.Function<javax.ws.rs.core.Response, AddIpv6VcnCidrResponse>
                 transformer = AddIpv6VcnCidrConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "AddIpv6VcnCidr",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Vcn/AddIpv6VcnCidr");
 
         com.oracle.bmc.responses.AsyncHandler<AddIpv6VcnCidrRequest, AddIpv6VcnCidrResponse>
                 handlerToUse = handler;
@@ -495,7 +560,12 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 AddIpv6VcnCidrRequest, AddIpv6VcnCidrResponse>,
                         java.util.concurrent.Future<AddIpv6VcnCidrResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getAddVcnIpv6CidrDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -530,6 +600,11 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, AddNetworkSecurityGroupSecurityRulesResponse>
                 transformer = AddNetworkSecurityGroupSecurityRulesConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "AddNetworkSecurityGroupSecurityRules",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/SecurityRule/AddNetworkSecurityGroupSecurityRules");
 
         com.oracle.bmc.responses.AsyncHandler<
                         AddNetworkSecurityGroupSecurityRulesRequest,
@@ -580,6 +655,11 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                         javax.ws.rs.core.Response, AddPublicIpPoolCapacityResponse>
                 transformer = AddPublicIpPoolCapacityConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "AddPublicIpPoolCapacity",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/PublicIpPool/AddPublicIpPoolCapacity");
 
         com.oracle.bmc.responses.AsyncHandler<
                         AddPublicIpPoolCapacityRequest, AddPublicIpPoolCapacityResponse>
@@ -624,6 +704,11 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
         final com.google.common.base.Function<javax.ws.rs.core.Response, AddVcnCidrResponse>
                 transformer = AddVcnCidrConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "AddVcnCidr",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Vcn/AddVcnCidr");
 
         com.oracle.bmc.responses.AsyncHandler<AddVcnCidrRequest, AddVcnCidrResponse> handlerToUse =
                 handler;
@@ -669,6 +754,11 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, AdvertiseByoipRangeResponse>
                 transformer = AdvertiseByoipRangeConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "AdvertiseByoipRange",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ByoipRange/AdvertiseByoipRange");
 
         com.oracle.bmc.responses.AsyncHandler<
                         AdvertiseByoipRangeRequest, AdvertiseByoipRangeResponse>
@@ -709,6 +799,11 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                 AttachServiceIdConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, AttachServiceIdResponse>
                 transformer = AttachServiceIdConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "AttachServiceId",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ServiceGateway/AttachServiceId");
 
         com.oracle.bmc.responses.AsyncHandler<AttachServiceIdRequest, AttachServiceIdResponse>
                 handlerToUse = handler;
@@ -757,6 +852,11 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, BulkAddVirtualCircuitPublicPrefixesResponse>
                 transformer = BulkAddVirtualCircuitPublicPrefixesConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "BulkAddVirtualCircuitPublicPrefixes",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VirtualCircuitPublicPrefix/BulkAddVirtualCircuitPublicPrefixes");
 
         com.oracle.bmc.responses.AsyncHandler<
                         BulkAddVirtualCircuitPublicPrefixesRequest,
@@ -809,6 +909,11 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, BulkDeleteVirtualCircuitPublicPrefixesResponse>
                 transformer = BulkDeleteVirtualCircuitPublicPrefixesConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "BulkDeleteVirtualCircuitPublicPrefixes",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VirtualCircuitPublicPrefix/BulkDeleteVirtualCircuitPublicPrefixes");
 
         com.oracle.bmc.responses.AsyncHandler<
                         BulkDeleteVirtualCircuitPublicPrefixesRequest,
@@ -862,6 +967,11 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                         javax.ws.rs.core.Response, ChangeByoipRangeCompartmentResponse>
                 transformer = ChangeByoipRangeCompartmentConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "ChangeByoipRangeCompartment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ByoipRange/ChangeByoipRangeCompartment");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeByoipRangeCompartmentRequest, ChangeByoipRangeCompartmentResponse>
@@ -910,6 +1020,11 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                         javax.ws.rs.core.Response, ChangeCpeCompartmentResponse>
                 transformer = ChangeCpeCompartmentConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "ChangeCpeCompartment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Cpe/ChangeCpeCompartment");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeCpeCompartmentRequest, ChangeCpeCompartmentResponse>
@@ -959,6 +1074,11 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                         javax.ws.rs.core.Response, ChangeCrossConnectCompartmentResponse>
                 transformer = ChangeCrossConnectCompartmentConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "ChangeCrossConnectCompartment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/CrossConnect/ChangeCrossConnectCompartment");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeCrossConnectCompartmentRequest, ChangeCrossConnectCompartmentResponse>
@@ -1009,6 +1129,11 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                         javax.ws.rs.core.Response, ChangeCrossConnectGroupCompartmentResponse>
                 transformer = ChangeCrossConnectGroupCompartmentConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "ChangeCrossConnectGroupCompartment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/CrossConnectGroup/ChangeCrossConnectGroupCompartment");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeCrossConnectGroupCompartmentRequest,
@@ -1061,6 +1186,11 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                         javax.ws.rs.core.Response, ChangeDhcpOptionsCompartmentResponse>
                 transformer = ChangeDhcpOptionsCompartmentConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "ChangeDhcpOptionsCompartment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DhcpOptions/ChangeDhcpOptionsCompartment");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeDhcpOptionsCompartmentRequest, ChangeDhcpOptionsCompartmentResponse>
@@ -1109,6 +1239,11 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                         javax.ws.rs.core.Response, ChangeDrgCompartmentResponse>
                 transformer = ChangeDrgCompartmentConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "ChangeDrgCompartment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Drg/ChangeDrgCompartment");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeDrgCompartmentRequest, ChangeDrgCompartmentResponse>
@@ -1158,6 +1293,11 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                         javax.ws.rs.core.Response, ChangeIPSecConnectionCompartmentResponse>
                 transformer = ChangeIPSecConnectionCompartmentConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "ChangeIPSecConnectionCompartment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/IPSecConnection/ChangeIPSecConnectionCompartment");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeIPSecConnectionCompartmentRequest,
@@ -1210,6 +1350,11 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                         javax.ws.rs.core.Response, ChangeInternetGatewayCompartmentResponse>
                 transformer = ChangeInternetGatewayCompartmentConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "ChangeInternetGatewayCompartment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InternetGateway/ChangeInternetGatewayCompartment");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeInternetGatewayCompartmentRequest,
@@ -1263,6 +1408,11 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                         javax.ws.rs.core.Response, ChangeLocalPeeringGatewayCompartmentResponse>
                 transformer = ChangeLocalPeeringGatewayCompartmentConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "ChangeLocalPeeringGatewayCompartment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/LocalPeeringGateway/ChangeLocalPeeringGatewayCompartment");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeLocalPeeringGatewayCompartmentRequest,
@@ -1315,6 +1465,11 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                         javax.ws.rs.core.Response, ChangeNatGatewayCompartmentResponse>
                 transformer = ChangeNatGatewayCompartmentConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "ChangeNatGatewayCompartment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/NatGateway/ChangeNatGatewayCompartment");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeNatGatewayCompartmentRequest, ChangeNatGatewayCompartmentResponse>
@@ -1366,6 +1521,11 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                         javax.ws.rs.core.Response, ChangeNetworkSecurityGroupCompartmentResponse>
                 transformer = ChangeNetworkSecurityGroupCompartmentConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "ChangeNetworkSecurityGroupCompartment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/ChangeNetworkSecurityGroupCompartment");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeNetworkSecurityGroupCompartmentRequest,
@@ -1417,6 +1577,11 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                         javax.ws.rs.core.Response, ChangePublicIpCompartmentResponse>
                 transformer = ChangePublicIpCompartmentConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "ChangePublicIpCompartment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/PublicIp/ChangePublicIpCompartment");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ChangePublicIpCompartmentRequest, ChangePublicIpCompartmentResponse>
@@ -1467,6 +1632,11 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                         javax.ws.rs.core.Response, ChangePublicIpPoolCompartmentResponse>
                 transformer = ChangePublicIpPoolCompartmentConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "ChangePublicIpPoolCompartment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/PublicIpPool/ChangePublicIpPoolCompartment");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ChangePublicIpPoolCompartmentRequest, ChangePublicIpPoolCompartmentResponse>
@@ -1518,6 +1688,11 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                         javax.ws.rs.core.Response, ChangeRemotePeeringConnectionCompartmentResponse>
                 transformer = ChangeRemotePeeringConnectionCompartmentConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "ChangeRemotePeeringConnectionCompartment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/RemotePeeringConnection/ChangeRemotePeeringConnectionCompartment");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeRemotePeeringConnectionCompartmentRequest,
@@ -1572,6 +1747,11 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                         javax.ws.rs.core.Response, ChangeRouteTableCompartmentResponse>
                 transformer = ChangeRouteTableCompartmentConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "ChangeRouteTableCompartment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/RouteTable/ChangeRouteTableCompartment");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeRouteTableCompartmentRequest, ChangeRouteTableCompartmentResponse>
@@ -1622,6 +1802,11 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                         javax.ws.rs.core.Response, ChangeSecurityListCompartmentResponse>
                 transformer = ChangeSecurityListCompartmentConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "ChangeSecurityListCompartment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/SecurityList/ChangeSecurityListCompartment");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeSecurityListCompartmentRequest, ChangeSecurityListCompartmentResponse>
@@ -1672,6 +1857,11 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                         javax.ws.rs.core.Response, ChangeServiceGatewayCompartmentResponse>
                 transformer = ChangeServiceGatewayCompartmentConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "ChangeServiceGatewayCompartment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ServiceGateway/ChangeServiceGatewayCompartment");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeServiceGatewayCompartmentRequest,
@@ -1722,6 +1912,11 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                         javax.ws.rs.core.Response, ChangeSubnetCompartmentResponse>
                 transformer = ChangeSubnetCompartmentConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "ChangeSubnetCompartment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Subnet/ChangeSubnetCompartment");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeSubnetCompartmentRequest, ChangeSubnetCompartmentResponse>
@@ -1769,6 +1964,11 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                         javax.ws.rs.core.Response, ChangeVcnCompartmentResponse>
                 transformer = ChangeVcnCompartmentConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "ChangeVcnCompartment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Vcn/ChangeVcnCompartment");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeVcnCompartmentRequest, ChangeVcnCompartmentResponse>
@@ -1818,6 +2018,11 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                         javax.ws.rs.core.Response, ChangeVirtualCircuitCompartmentResponse>
                 transformer = ChangeVirtualCircuitCompartmentConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "ChangeVirtualCircuitCompartment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VirtualCircuit/ChangeVirtualCircuitCompartment");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeVirtualCircuitCompartmentRequest,
@@ -1868,6 +2073,11 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                         javax.ws.rs.core.Response, ChangeVlanCompartmentResponse>
                 transformer = ChangeVlanCompartmentConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "ChangeVlanCompartment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Vlan/ChangeVlanCompartment");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeVlanCompartmentRequest, ChangeVlanCompartmentResponse>
@@ -1916,6 +2126,11 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ConnectLocalPeeringGatewaysResponse>
                 transformer = ConnectLocalPeeringGatewaysConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "ConnectLocalPeeringGateways",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/LocalPeeringGateway/ConnectLocalPeeringGateways");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ConnectLocalPeeringGatewaysRequest, ConnectLocalPeeringGatewaysResponse>
@@ -1965,6 +2180,11 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ConnectRemotePeeringConnectionsResponse>
                 transformer = ConnectRemotePeeringConnectionsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "ConnectRemotePeeringConnections",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/RemotePeeringConnection/ConnectRemotePeeringConnections");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ConnectRemotePeeringConnectionsRequest,
@@ -2014,6 +2234,11 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
         final com.google.common.base.Function<javax.ws.rs.core.Response, CreateByoipRangeResponse>
                 transformer = CreateByoipRangeConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "CreateByoipRange",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ByoipRange/CreateByoipRange");
 
         com.oracle.bmc.responses.AsyncHandler<CreateByoipRangeRequest, CreateByoipRangeResponse>
                 handlerToUse = handler;
@@ -2057,6 +2282,11 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
         final com.google.common.base.Function<javax.ws.rs.core.Response, CreateCpeResponse>
                 transformer = CreateCpeConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "CreateCpe",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Cpe/CreateCpe");
 
         com.oracle.bmc.responses.AsyncHandler<CreateCpeRequest, CreateCpeResponse> handlerToUse =
                 handler;
@@ -2101,6 +2331,11 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
         final com.google.common.base.Function<javax.ws.rs.core.Response, CreateCrossConnectResponse>
                 transformer = CreateCrossConnectConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "CreateCrossConnect",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/CrossConnect/CreateCrossConnect");
 
         com.oracle.bmc.responses.AsyncHandler<CreateCrossConnectRequest, CreateCrossConnectResponse>
                 handlerToUse = handler;
@@ -2147,6 +2382,11 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                         javax.ws.rs.core.Response, CreateCrossConnectGroupResponse>
                 transformer = CreateCrossConnectGroupConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "CreateCrossConnectGroup",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/CrossConnectGroup/CreateCrossConnectGroup");
 
         com.oracle.bmc.responses.AsyncHandler<
                         CreateCrossConnectGroupRequest, CreateCrossConnectGroupResponse>
@@ -2193,6 +2433,11 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
         final com.google.common.base.Function<javax.ws.rs.core.Response, CreateDhcpOptionsResponse>
                 transformer = CreateDhcpOptionsConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "CreateDhcpOptions",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DhcpOptions/CreateDhcpOptions");
 
         com.oracle.bmc.responses.AsyncHandler<CreateDhcpOptionsRequest, CreateDhcpOptionsResponse>
                 handlerToUse = handler;
@@ -2236,6 +2481,11 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
         final com.google.common.base.Function<javax.ws.rs.core.Response, CreateDrgResponse>
                 transformer = CreateDrgConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "CreateDrg",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Drg/CreateDrg");
 
         com.oracle.bmc.responses.AsyncHandler<CreateDrgRequest, CreateDrgResponse> handlerToUse =
                 handler;
@@ -2281,6 +2531,11 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                         javax.ws.rs.core.Response, CreateDrgAttachmentResponse>
                 transformer = CreateDrgAttachmentConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "CreateDrgAttachment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DrgAttachment/CreateDrgAttachment");
 
         com.oracle.bmc.responses.AsyncHandler<
                         CreateDrgAttachmentRequest, CreateDrgAttachmentResponse>
@@ -2330,6 +2585,11 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                         javax.ws.rs.core.Response, CreateDrgRouteDistributionResponse>
                 transformer = CreateDrgRouteDistributionConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "CreateDrgRouteDistribution",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DrgRouteDistribution/CreateDrgRouteDistribution");
 
         com.oracle.bmc.responses.AsyncHandler<
                         CreateDrgRouteDistributionRequest, CreateDrgRouteDistributionResponse>
@@ -2378,6 +2638,11 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                         javax.ws.rs.core.Response, CreateDrgRouteTableResponse>
                 transformer = CreateDrgRouteTableConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "CreateDrgRouteTable",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DrgRouteTable/CreateDrgRouteTable");
 
         com.oracle.bmc.responses.AsyncHandler<
                         CreateDrgRouteTableRequest, CreateDrgRouteTableResponse>
@@ -2425,6 +2690,11 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                         javax.ws.rs.core.Response, CreateIPSecConnectionResponse>
                 transformer = CreateIPSecConnectionConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "CreateIPSecConnection",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/IPSecConnection/CreateIPSecConnection");
 
         com.oracle.bmc.responses.AsyncHandler<
                         CreateIPSecConnectionRequest, CreateIPSecConnectionResponse>
@@ -2472,6 +2742,11 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                         javax.ws.rs.core.Response, CreateInternetGatewayResponse>
                 transformer = CreateInternetGatewayConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "CreateInternetGateway",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InternetGateway/CreateInternetGateway");
 
         com.oracle.bmc.responses.AsyncHandler<
                         CreateInternetGatewayRequest, CreateInternetGatewayResponse>
@@ -2516,6 +2791,11 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
         final com.google.common.base.Function<javax.ws.rs.core.Response, CreateIpv6Response>
                 transformer = CreateIpv6Converter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "CreateIpv6",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Ipv6/CreateIpv6");
 
         com.oracle.bmc.responses.AsyncHandler<CreateIpv6Request, CreateIpv6Response> handlerToUse =
                 handler;
@@ -2562,6 +2842,11 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                         javax.ws.rs.core.Response, CreateLocalPeeringGatewayResponse>
                 transformer = CreateLocalPeeringGatewayConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "CreateLocalPeeringGateway",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/LocalPeeringGateway/CreateLocalPeeringGateway");
 
         com.oracle.bmc.responses.AsyncHandler<
                         CreateLocalPeeringGatewayRequest, CreateLocalPeeringGatewayResponse>
@@ -2609,6 +2894,11 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
         final com.google.common.base.Function<javax.ws.rs.core.Response, CreateNatGatewayResponse>
                 transformer = CreateNatGatewayConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "CreateNatGateway",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/NatGateway/CreateNatGateway");
 
         com.oracle.bmc.responses.AsyncHandler<CreateNatGatewayRequest, CreateNatGatewayResponse>
                 handlerToUse = handler;
@@ -2657,6 +2947,11 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                         javax.ws.rs.core.Response, CreateNetworkSecurityGroupResponse>
                 transformer = CreateNetworkSecurityGroupConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "CreateNetworkSecurityGroup",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/CreateNetworkSecurityGroup");
 
         com.oracle.bmc.responses.AsyncHandler<
                         CreateNetworkSecurityGroupRequest, CreateNetworkSecurityGroupResponse>
@@ -2704,6 +2999,11 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
         final com.google.common.base.Function<javax.ws.rs.core.Response, CreatePrivateIpResponse>
                 transformer = CreatePrivateIpConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "CreatePrivateIp",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/PrivateIp/CreatePrivateIp");
 
         com.oracle.bmc.responses.AsyncHandler<CreatePrivateIpRequest, CreatePrivateIpResponse>
                 handlerToUse = handler;
@@ -2749,6 +3049,11 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
         final com.google.common.base.Function<javax.ws.rs.core.Response, CreatePublicIpResponse>
                 transformer = CreatePublicIpConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "CreatePublicIp",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/PublicIp/CreatePublicIp");
 
         com.oracle.bmc.responses.AsyncHandler<CreatePublicIpRequest, CreatePublicIpResponse>
                 handlerToUse = handler;
@@ -2794,6 +3099,11 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
         final com.google.common.base.Function<javax.ws.rs.core.Response, CreatePublicIpPoolResponse>
                 transformer = CreatePublicIpPoolConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "CreatePublicIpPool",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/PublicIpPool/CreatePublicIpPool");
 
         com.oracle.bmc.responses.AsyncHandler<CreatePublicIpPoolRequest, CreatePublicIpPoolResponse>
                 handlerToUse = handler;
@@ -2842,6 +3152,11 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                         javax.ws.rs.core.Response, CreateRemotePeeringConnectionResponse>
                 transformer = CreateRemotePeeringConnectionConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "CreateRemotePeeringConnection",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/RemotePeeringConnection/CreateRemotePeeringConnection");
 
         com.oracle.bmc.responses.AsyncHandler<
                         CreateRemotePeeringConnectionRequest, CreateRemotePeeringConnectionResponse>
@@ -2889,6 +3204,11 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
         final com.google.common.base.Function<javax.ws.rs.core.Response, CreateRouteTableResponse>
                 transformer = CreateRouteTableConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "CreateRouteTable",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/RouteTable/CreateRouteTable");
 
         com.oracle.bmc.responses.AsyncHandler<CreateRouteTableRequest, CreateRouteTableResponse>
                 handlerToUse = handler;
@@ -2934,6 +3254,11 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
         final com.google.common.base.Function<javax.ws.rs.core.Response, CreateSecurityListResponse>
                 transformer = CreateSecurityListConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "CreateSecurityList",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/SecurityList/CreateSecurityList");
 
         com.oracle.bmc.responses.AsyncHandler<CreateSecurityListRequest, CreateSecurityListResponse>
                 handlerToUse = handler;
@@ -2980,6 +3305,11 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                         javax.ws.rs.core.Response, CreateServiceGatewayResponse>
                 transformer = CreateServiceGatewayConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "CreateServiceGateway",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ServiceGateway/CreateServiceGateway");
 
         com.oracle.bmc.responses.AsyncHandler<
                         CreateServiceGatewayRequest, CreateServiceGatewayResponse>
@@ -3025,6 +3355,11 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
         final com.google.common.base.Function<javax.ws.rs.core.Response, CreateSubnetResponse>
                 transformer = CreateSubnetConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "CreateSubnet",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Subnet/CreateSubnet");
 
         com.oracle.bmc.responses.AsyncHandler<CreateSubnetRequest, CreateSubnetResponse>
                 handlerToUse = handler;
@@ -3068,6 +3403,11 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
         final com.google.common.base.Function<javax.ws.rs.core.Response, CreateVcnResponse>
                 transformer = CreateVcnConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "CreateVcn",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Vcn/CreateVcn");
 
         com.oracle.bmc.responses.AsyncHandler<CreateVcnRequest, CreateVcnResponse> handlerToUse =
                 handler;
@@ -3113,6 +3453,11 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                         javax.ws.rs.core.Response, CreateVirtualCircuitResponse>
                 transformer = CreateVirtualCircuitConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "CreateVirtualCircuit",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VirtualCircuit/CreateVirtualCircuit");
 
         com.oracle.bmc.responses.AsyncHandler<
                         CreateVirtualCircuitRequest, CreateVirtualCircuitResponse>
@@ -3157,6 +3502,11 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
         final com.google.common.base.Function<javax.ws.rs.core.Response, CreateVlanResponse>
                 transformer = CreateVlanConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "CreateVlan",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Vlan/CreateVlan");
 
         com.oracle.bmc.responses.AsyncHandler<CreateVlanRequest, CreateVlanResponse> handlerToUse =
                 handler;
@@ -3201,6 +3551,11 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                 DeleteByoipRangeConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteByoipRangeResponse>
                 transformer = DeleteByoipRangeConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "DeleteByoipRange",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ByoipRange/DeleteByoipRange");
 
         com.oracle.bmc.responses.AsyncHandler<DeleteByoipRangeRequest, DeleteByoipRangeResponse>
                 handlerToUse = handler;
@@ -3238,6 +3593,8 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                 DeleteCpeConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteCpeResponse>
                 transformer = DeleteCpeConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork", "DeleteCpe", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<DeleteCpeRequest, DeleteCpeResponse> handlerToUse =
                 handler;
@@ -3276,6 +3633,8 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                 DeleteCrossConnectConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteCrossConnectResponse>
                 transformer = DeleteCrossConnectConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork", "DeleteCrossConnect", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<DeleteCrossConnectRequest, DeleteCrossConnectResponse>
                 handlerToUse = handler;
@@ -3316,6 +3675,8 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, DeleteCrossConnectGroupResponse>
                 transformer = DeleteCrossConnectGroupConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork", "DeleteCrossConnectGroup", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<
                         DeleteCrossConnectGroupRequest, DeleteCrossConnectGroupResponse>
@@ -3356,6 +3717,8 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                 DeleteDhcpOptionsConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteDhcpOptionsResponse>
                 transformer = DeleteDhcpOptionsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork", "DeleteDhcpOptions", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<DeleteDhcpOptionsRequest, DeleteDhcpOptionsResponse>
                 handlerToUse = handler;
@@ -3393,6 +3756,8 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                 DeleteDrgConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteDrgResponse>
                 transformer = DeleteDrgConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork", "DeleteDrg", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<DeleteDrgRequest, DeleteDrgResponse> handlerToUse =
                 handler;
@@ -3432,6 +3797,8 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, DeleteDrgAttachmentResponse>
                 transformer = DeleteDrgAttachmentConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork", "DeleteDrgAttachment", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<
                         DeleteDrgAttachmentRequest, DeleteDrgAttachmentResponse>
@@ -3475,6 +3842,11 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, DeleteDrgRouteDistributionResponse>
                 transformer = DeleteDrgRouteDistributionConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "DeleteDrgRouteDistribution",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DrgRouteDistributionStatement/DeleteDrgRouteDistribution");
 
         com.oracle.bmc.responses.AsyncHandler<
                         DeleteDrgRouteDistributionRequest, DeleteDrgRouteDistributionResponse>
@@ -3517,6 +3889,11 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, DeleteDrgRouteTableResponse>
                 transformer = DeleteDrgRouteTableConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "DeleteDrgRouteTable",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InternalPublicIp/DeleteDrgRouteTable");
 
         com.oracle.bmc.responses.AsyncHandler<
                         DeleteDrgRouteTableRequest, DeleteDrgRouteTableResponse>
@@ -3558,6 +3935,8 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, DeleteIPSecConnectionResponse>
                 transformer = DeleteIPSecConnectionConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork", "DeleteIPSecConnection", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<
                         DeleteIPSecConnectionRequest, DeleteIPSecConnectionResponse>
@@ -3599,6 +3978,8 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, DeleteInternetGatewayResponse>
                 transformer = DeleteInternetGatewayConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork", "DeleteInternetGateway", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<
                         DeleteInternetGatewayRequest, DeleteInternetGatewayResponse>
@@ -3637,6 +4018,8 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                 DeleteIpv6Converter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteIpv6Response>
                 transformer = DeleteIpv6Converter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork", "DeleteIpv6", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<DeleteIpv6Request, DeleteIpv6Response> handlerToUse =
                 handler;
@@ -3677,6 +4060,8 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, DeleteLocalPeeringGatewayResponse>
                 transformer = DeleteLocalPeeringGatewayConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork", "DeleteLocalPeeringGateway", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<
                         DeleteLocalPeeringGatewayRequest, DeleteLocalPeeringGatewayResponse>
@@ -3718,6 +4103,8 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                 DeleteNatGatewayConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteNatGatewayResponse>
                 transformer = DeleteNatGatewayConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork", "DeleteNatGateway", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<DeleteNatGatewayRequest, DeleteNatGatewayResponse>
                 handlerToUse = handler;
@@ -3760,6 +4147,11 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, DeleteNetworkSecurityGroupResponse>
                 transformer = DeleteNetworkSecurityGroupConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "DeleteNetworkSecurityGroup",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/DeleteNetworkSecurityGroup");
 
         com.oracle.bmc.responses.AsyncHandler<
                         DeleteNetworkSecurityGroupRequest, DeleteNetworkSecurityGroupResponse>
@@ -3801,6 +4193,8 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                 DeletePrivateIpConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, DeletePrivateIpResponse>
                 transformer = DeletePrivateIpConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork", "DeletePrivateIp", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<DeletePrivateIpRequest, DeletePrivateIpResponse>
                 handlerToUse = handler;
@@ -3840,6 +4234,8 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                 DeletePublicIpConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, DeletePublicIpResponse>
                 transformer = DeletePublicIpConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork", "DeletePublicIp", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<DeletePublicIpRequest, DeletePublicIpResponse>
                 handlerToUse = handler;
@@ -3879,6 +4275,11 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                 DeletePublicIpPoolConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, DeletePublicIpPoolResponse>
                 transformer = DeletePublicIpPoolConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "DeletePublicIpPool",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/PublicIpPool/DeletePublicIpPool");
 
         com.oracle.bmc.responses.AsyncHandler<DeletePublicIpPoolRequest, DeletePublicIpPoolResponse>
                 handlerToUse = handler;
@@ -3921,6 +4322,11 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, DeleteRemotePeeringConnectionResponse>
                 transformer = DeleteRemotePeeringConnectionConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "DeleteRemotePeeringConnection",
+                ib.getRequestUri().toString(),
+                "");
 
         com.oracle.bmc.responses.AsyncHandler<
                         DeleteRemotePeeringConnectionRequest, DeleteRemotePeeringConnectionResponse>
@@ -3962,6 +4368,8 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                 DeleteRouteTableConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteRouteTableResponse>
                 transformer = DeleteRouteTableConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork", "DeleteRouteTable", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<DeleteRouteTableRequest, DeleteRouteTableResponse>
                 handlerToUse = handler;
@@ -4001,6 +4409,8 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                 DeleteSecurityListConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteSecurityListResponse>
                 transformer = DeleteSecurityListConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork", "DeleteSecurityList", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<DeleteSecurityListRequest, DeleteSecurityListResponse>
                 handlerToUse = handler;
@@ -4041,6 +4451,8 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, DeleteServiceGatewayResponse>
                 transformer = DeleteServiceGatewayConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork", "DeleteServiceGateway", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<
                         DeleteServiceGatewayRequest, DeleteServiceGatewayResponse>
@@ -4080,6 +4492,8 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                 DeleteSubnetConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteSubnetResponse>
                 transformer = DeleteSubnetConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork", "DeleteSubnet", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<DeleteSubnetRequest, DeleteSubnetResponse>
                 handlerToUse = handler;
@@ -4117,6 +4531,8 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                 DeleteVcnConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteVcnResponse>
                 transformer = DeleteVcnConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork", "DeleteVcn", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<DeleteVcnRequest, DeleteVcnResponse> handlerToUse =
                 handler;
@@ -4156,6 +4572,8 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, DeleteVirtualCircuitResponse>
                 transformer = DeleteVirtualCircuitConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork", "DeleteVirtualCircuit", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<
                         DeleteVirtualCircuitRequest, DeleteVirtualCircuitResponse>
@@ -4194,6 +4612,11 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                 DeleteVlanConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteVlanResponse>
                 transformer = DeleteVlanConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "DeleteVlan",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Vlan/DeleteVlan");
 
         com.oracle.bmc.responses.AsyncHandler<DeleteVlanRequest, DeleteVlanResponse> handlerToUse =
                 handler;
@@ -4233,6 +4656,11 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                 DetachServiceIdConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, DetachServiceIdResponse>
                 transformer = DetachServiceIdConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "DetachServiceId",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ServiceGateway/DetachServiceId");
 
         com.oracle.bmc.responses.AsyncHandler<DetachServiceIdRequest, DetachServiceIdResponse>
                 handlerToUse = handler;
@@ -4278,6 +4706,11 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetAllDrgAttachmentsResponse>
                 transformer = GetAllDrgAttachmentsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "GetAllDrgAttachments",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Drg/GetAllDrgAttachments");
 
         com.oracle.bmc.responses.AsyncHandler<
                         GetAllDrgAttachmentsRequest, GetAllDrgAttachmentsResponse>
@@ -4321,6 +4754,11 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetAllowedIkeIPSecParametersResponse>
                 transformer = GetAllowedIkeIPSecParametersConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "GetAllowedIkeIPSecParameters",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/AllowedIkeIPSecParameters/GetAllowedIkeIPSecParameters");
 
         com.oracle.bmc.responses.AsyncHandler<
                         GetAllowedIkeIPSecParametersRequest, GetAllowedIkeIPSecParametersResponse>
@@ -4361,6 +4799,11 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                 GetByoipRangeConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetByoipRangeResponse>
                 transformer = GetByoipRangeConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "GetByoipRange",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ByoipRange/GetByoipRange");
 
         com.oracle.bmc.responses.AsyncHandler<GetByoipRangeRequest, GetByoipRangeResponse>
                 handlerToUse = handler;
@@ -4397,6 +4840,11 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                 GetCpeConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetCpeResponse>
                 transformer = GetCpeConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "GetCpe",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Cpe/GetCpe");
 
         com.oracle.bmc.responses.AsyncHandler<GetCpeRequest, GetCpeResponse> handlerToUse = handler;
 
@@ -4445,6 +4893,11 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetCpeDeviceConfigContentResponse>
                 transformer = GetCpeDeviceConfigContentConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "GetCpeDeviceConfigContent",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Cpe/GetCpeDeviceConfigContent");
 
         com.oracle.bmc.responses.AsyncHandler<
                         GetCpeDeviceConfigContentRequest, GetCpeDeviceConfigContentResponse>
@@ -4486,6 +4939,11 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                 GetCpeDeviceShapeConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetCpeDeviceShapeResponse>
                 transformer = GetCpeDeviceShapeConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "GetCpeDeviceShape",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/CpeDeviceShapeDetail/GetCpeDeviceShape");
 
         com.oracle.bmc.responses.AsyncHandler<GetCpeDeviceShapeRequest, GetCpeDeviceShapeResponse>
                 handlerToUse = handler;
@@ -4525,6 +4983,11 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                 GetCrossConnectConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetCrossConnectResponse>
                 transformer = GetCrossConnectConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "GetCrossConnect",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/CrossConnect/GetCrossConnect");
 
         com.oracle.bmc.responses.AsyncHandler<GetCrossConnectRequest, GetCrossConnectResponse>
                 handlerToUse = handler;
@@ -4565,6 +5028,11 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetCrossConnectGroupResponse>
                 transformer = GetCrossConnectGroupConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "GetCrossConnectGroup",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/CrossConnectGroup/GetCrossConnectGroup");
 
         com.oracle.bmc.responses.AsyncHandler<
                         GetCrossConnectGroupRequest, GetCrossConnectGroupResponse>
@@ -4608,6 +5076,11 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetCrossConnectLetterOfAuthorityResponse>
                 transformer = GetCrossConnectLetterOfAuthorityConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "GetCrossConnectLetterOfAuthority",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/LetterOfAuthority/GetCrossConnectLetterOfAuthority");
 
         com.oracle.bmc.responses.AsyncHandler<
                         GetCrossConnectLetterOfAuthorityRequest,
@@ -4652,6 +5125,11 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetCrossConnectStatusResponse>
                 transformer = GetCrossConnectStatusConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "GetCrossConnectStatus",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/CrossConnectStatus/GetCrossConnectStatus");
 
         com.oracle.bmc.responses.AsyncHandler<
                         GetCrossConnectStatusRequest, GetCrossConnectStatusResponse>
@@ -4692,6 +5170,11 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                 GetDhcpOptionsConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetDhcpOptionsResponse>
                 transformer = GetDhcpOptionsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "GetDhcpOptions",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DhcpOptions/GetDhcpOptions");
 
         com.oracle.bmc.responses.AsyncHandler<GetDhcpOptionsRequest, GetDhcpOptionsResponse>
                 handlerToUse = handler;
@@ -4728,6 +5211,11 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                 GetDrgConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetDrgResponse>
                 transformer = GetDrgConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "GetDrg",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Drg/GetDrg");
 
         com.oracle.bmc.responses.AsyncHandler<GetDrgRequest, GetDrgResponse> handlerToUse = handler;
 
@@ -4765,6 +5253,11 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                 GetDrgAttachmentConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetDrgAttachmentResponse>
                 transformer = GetDrgAttachmentConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "GetDrgAttachment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DrgAttachment/GetDrgAttachment");
 
         com.oracle.bmc.responses.AsyncHandler<GetDrgAttachmentRequest, GetDrgAttachmentResponse>
                 handlerToUse = handler;
@@ -4805,6 +5298,11 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetDrgRedundancyStatusResponse>
                 transformer = GetDrgRedundancyStatusConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "GetDrgRedundancyStatus",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DrgRedundancyStatus/GetDrgRedundancyStatus");
 
         com.oracle.bmc.responses.AsyncHandler<
                         GetDrgRedundancyStatusRequest, GetDrgRedundancyStatusResponse>
@@ -4846,6 +5344,11 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetDrgRouteDistributionResponse>
                 transformer = GetDrgRouteDistributionConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "GetDrgRouteDistribution",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DrgRouteDistribution/GetDrgRouteDistribution");
 
         com.oracle.bmc.responses.AsyncHandler<
                         GetDrgRouteDistributionRequest, GetDrgRouteDistributionResponse>
@@ -4886,6 +5389,11 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                 GetDrgRouteTableConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetDrgRouteTableResponse>
                 transformer = GetDrgRouteTableConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "GetDrgRouteTable",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DrgRouteTable/GetDrgRouteTable");
 
         com.oracle.bmc.responses.AsyncHandler<GetDrgRouteTableRequest, GetDrgRouteTableResponse>
                 handlerToUse = handler;
@@ -4928,6 +5436,11 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetFastConnectProviderServiceResponse>
                 transformer = GetFastConnectProviderServiceConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "GetFastConnectProviderService",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/FastConnectProviderService/GetFastConnectProviderService");
 
         com.oracle.bmc.responses.AsyncHandler<
                         GetFastConnectProviderServiceRequest, GetFastConnectProviderServiceResponse>
@@ -4972,6 +5485,11 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetFastConnectProviderServiceKeyResponse>
                 transformer = GetFastConnectProviderServiceKeyConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "GetFastConnectProviderServiceKey",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/FastConnectProviderServiceKey/GetFastConnectProviderServiceKey");
 
         com.oracle.bmc.responses.AsyncHandler<
                         GetFastConnectProviderServiceKeyRequest,
@@ -5015,6 +5533,11 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                 GetIPSecConnectionConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetIPSecConnectionResponse>
                 transformer = GetIPSecConnectionConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "GetIPSecConnection",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/IPSecConnection/GetIPSecConnection");
 
         com.oracle.bmc.responses.AsyncHandler<GetIPSecConnectionRequest, GetIPSecConnectionResponse>
                 handlerToUse = handler;
@@ -5057,6 +5580,11 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetIPSecConnectionDeviceConfigResponse>
                 transformer = GetIPSecConnectionDeviceConfigConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "GetIPSecConnectionDeviceConfig",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/IPSecConnectionDeviceConfig/GetIPSecConnectionDeviceConfig");
 
         com.oracle.bmc.responses.AsyncHandler<
                         GetIPSecConnectionDeviceConfigRequest,
@@ -5102,6 +5630,11 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetIPSecConnectionDeviceStatusResponse>
                 transformer = GetIPSecConnectionDeviceStatusConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "GetIPSecConnectionDeviceStatus",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/IPSecConnectionDeviceStatus/GetIPSecConnectionDeviceStatus");
 
         com.oracle.bmc.responses.AsyncHandler<
                         GetIPSecConnectionDeviceStatusRequest,
@@ -5145,6 +5678,11 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetIPSecConnectionTunnelResponse>
                 transformer = GetIPSecConnectionTunnelConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "GetIPSecConnectionTunnel",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/IPSecConnectionTunnel/GetIPSecConnectionTunnel");
 
         com.oracle.bmc.responses.AsyncHandler<
                         GetIPSecConnectionTunnelRequest, GetIPSecConnectionTunnelResponse>
@@ -5188,6 +5726,11 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetIPSecConnectionTunnelErrorResponse>
                 transformer = GetIPSecConnectionTunnelErrorConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "GetIPSecConnectionTunnelError",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/IPSecConnectionTunnelErrorDetails/GetIPSecConnectionTunnelError");
 
         com.oracle.bmc.responses.AsyncHandler<
                         GetIPSecConnectionTunnelErrorRequest, GetIPSecConnectionTunnelErrorResponse>
@@ -5233,6 +5776,11 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetIPSecConnectionTunnelSharedSecretResponse>
                 transformer = GetIPSecConnectionTunnelSharedSecretConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "GetIPSecConnectionTunnelSharedSecret",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/IPSecConnectionTunnelSharedSecret/GetIPSecConnectionTunnelSharedSecret");
 
         com.oracle.bmc.responses.AsyncHandler<
                         GetIPSecConnectionTunnelSharedSecretRequest,
@@ -5276,6 +5824,11 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                 GetInternetGatewayConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetInternetGatewayResponse>
                 transformer = GetInternetGatewayConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "GetInternetGateway",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InternetGateway/GetInternetGateway");
 
         com.oracle.bmc.responses.AsyncHandler<GetInternetGatewayRequest, GetInternetGatewayResponse>
                 handlerToUse = handler;
@@ -5328,6 +5881,11 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetIpsecCpeDeviceConfigContentResponse>
                 transformer = GetIpsecCpeDeviceConfigContentConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "GetIpsecCpeDeviceConfigContent",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/IPSecConnection/GetIpsecCpeDeviceConfigContent");
 
         com.oracle.bmc.responses.AsyncHandler<
                         GetIpsecCpeDeviceConfigContentRequest,
@@ -5367,6 +5925,11 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                 GetIpv6Converter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetIpv6Response>
                 transformer = GetIpv6Converter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "GetIpv6",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Ipv6/GetIpv6");
 
         com.oracle.bmc.responses.AsyncHandler<GetIpv6Request, GetIpv6Response> handlerToUse =
                 handler;
@@ -5406,6 +5969,11 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetLocalPeeringGatewayResponse>
                 transformer = GetLocalPeeringGatewayConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "GetLocalPeeringGateway",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/LocalPeeringGateway/GetLocalPeeringGateway");
 
         com.oracle.bmc.responses.AsyncHandler<
                         GetLocalPeeringGatewayRequest, GetLocalPeeringGatewayResponse>
@@ -5445,6 +6013,11 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                 GetNatGatewayConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetNatGatewayResponse>
                 transformer = GetNatGatewayConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "GetNatGateway",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/NatGateway/GetNatGateway");
 
         com.oracle.bmc.responses.AsyncHandler<GetNatGatewayRequest, GetNatGatewayResponse>
                 handlerToUse = handler;
@@ -5485,6 +6058,11 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetNetworkSecurityGroupResponse>
                 transformer = GetNetworkSecurityGroupConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "GetNetworkSecurityGroup",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/GetNetworkSecurityGroup");
 
         com.oracle.bmc.responses.AsyncHandler<
                         GetNetworkSecurityGroupRequest, GetNetworkSecurityGroupResponse>
@@ -5526,6 +6104,11 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetNetworkingTopologyResponse>
                 transformer = GetNetworkingTopologyConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "GetNetworkingTopology",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/NetworkingTopology/GetNetworkingTopology");
 
         com.oracle.bmc.responses.AsyncHandler<
                         GetNetworkingTopologyRequest, GetNetworkingTopologyResponse>
@@ -5565,6 +6148,11 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                 GetPrivateIpConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetPrivateIpResponse>
                 transformer = GetPrivateIpConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "GetPrivateIp",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/PrivateIp/GetPrivateIp");
 
         com.oracle.bmc.responses.AsyncHandler<GetPrivateIpRequest, GetPrivateIpResponse>
                 handlerToUse = handler;
@@ -5603,6 +6191,11 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                 GetPublicIpConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetPublicIpResponse>
                 transformer = GetPublicIpConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "GetPublicIp",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/PublicIp/GetPublicIp");
 
         com.oracle.bmc.responses.AsyncHandler<GetPublicIpRequest, GetPublicIpResponse>
                 handlerToUse = handler;
@@ -5643,6 +6236,11 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetPublicIpByIpAddressResponse>
                 transformer = GetPublicIpByIpAddressConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "GetPublicIpByIpAddress",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/PublicIp/GetPublicIpByIpAddress");
 
         com.oracle.bmc.responses.AsyncHandler<
                         GetPublicIpByIpAddressRequest, GetPublicIpByIpAddressResponse>
@@ -5689,6 +6287,11 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetPublicIpByPrivateIpIdResponse>
                 transformer = GetPublicIpByPrivateIpIdConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "GetPublicIpByPrivateIpId",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/PublicIp/GetPublicIpByPrivateIpId");
 
         com.oracle.bmc.responses.AsyncHandler<
                         GetPublicIpByPrivateIpIdRequest, GetPublicIpByPrivateIpIdResponse>
@@ -5734,6 +6337,11 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                 GetPublicIpPoolConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetPublicIpPoolResponse>
                 transformer = GetPublicIpPoolConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "GetPublicIpPool",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/PublicIpPool/GetPublicIpPool");
 
         com.oracle.bmc.responses.AsyncHandler<GetPublicIpPoolRequest, GetPublicIpPoolResponse>
                 handlerToUse = handler;
@@ -5776,6 +6384,11 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetRemotePeeringConnectionResponse>
                 transformer = GetRemotePeeringConnectionConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "GetRemotePeeringConnection",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/RemotePeeringConnection/GetRemotePeeringConnection");
 
         com.oracle.bmc.responses.AsyncHandler<
                         GetRemotePeeringConnectionRequest, GetRemotePeeringConnectionResponse>
@@ -5816,6 +6429,11 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                 GetRouteTableConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetRouteTableResponse>
                 transformer = GetRouteTableConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "GetRouteTable",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/RouteTable/GetRouteTable");
 
         com.oracle.bmc.responses.AsyncHandler<GetRouteTableRequest, GetRouteTableResponse>
                 handlerToUse = handler;
@@ -5855,6 +6473,11 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                 GetSecurityListConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetSecurityListResponse>
                 transformer = GetSecurityListConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "GetSecurityList",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/SecurityList/GetSecurityList");
 
         com.oracle.bmc.responses.AsyncHandler<GetSecurityListRequest, GetSecurityListResponse>
                 handlerToUse = handler;
@@ -5892,6 +6515,11 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                 GetServiceConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetServiceResponse>
                 transformer = GetServiceConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "GetService",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Service/GetService");
 
         com.oracle.bmc.responses.AsyncHandler<GetServiceRequest, GetServiceResponse> handlerToUse =
                 handler;
@@ -5931,6 +6559,11 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                 GetServiceGatewayConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetServiceGatewayResponse>
                 transformer = GetServiceGatewayConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "GetServiceGateway",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ServiceGateway/GetServiceGateway");
 
         com.oracle.bmc.responses.AsyncHandler<GetServiceGatewayRequest, GetServiceGatewayResponse>
                 handlerToUse = handler;
@@ -5968,6 +6601,11 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                 GetSubnetConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetSubnetResponse>
                 transformer = GetSubnetConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "GetSubnet",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Subnet/GetSubnet");
 
         com.oracle.bmc.responses.AsyncHandler<GetSubnetRequest, GetSubnetResponse> handlerToUse =
                 handler;
@@ -6006,6 +6644,11 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                 GetSubnetTopologyConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetSubnetTopologyResponse>
                 transformer = GetSubnetTopologyConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "GetSubnetTopology",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/SubnetTopology/GetSubnetTopology");
 
         com.oracle.bmc.responses.AsyncHandler<GetSubnetTopologyRequest, GetSubnetTopologyResponse>
                 handlerToUse = handler;
@@ -6046,6 +6689,11 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetTunnelCpeDeviceConfigResponse>
                 transformer = GetTunnelCpeDeviceConfigConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "GetTunnelCpeDeviceConfig",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/TunnelCpeDeviceConfig/GetTunnelCpeDeviceConfig");
 
         com.oracle.bmc.responses.AsyncHandler<
                         GetTunnelCpeDeviceConfigRequest, GetTunnelCpeDeviceConfigResponse>
@@ -6099,6 +6747,11 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetTunnelCpeDeviceConfigContentResponse>
                 transformer = GetTunnelCpeDeviceConfigContentConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "GetTunnelCpeDeviceConfigContent",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/TunnelCpeDeviceConfig/GetTunnelCpeDeviceConfigContent");
 
         com.oracle.bmc.responses.AsyncHandler<
                         GetTunnelCpeDeviceConfigContentRequest,
@@ -6142,6 +6795,11 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                 GetUpgradeStatusConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetUpgradeStatusResponse>
                 transformer = GetUpgradeStatusConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "GetUpgradeStatus",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Drg/GetUpgradeStatus");
 
         com.oracle.bmc.responses.AsyncHandler<GetUpgradeStatusRequest, GetUpgradeStatusResponse>
                 handlerToUse = handler;
@@ -6178,6 +6836,11 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                 GetVcnConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetVcnResponse>
                 transformer = GetVcnConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "GetVcn",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Vcn/GetVcn");
 
         com.oracle.bmc.responses.AsyncHandler<GetVcnRequest, GetVcnResponse> handlerToUse = handler;
 
@@ -6218,6 +6881,11 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetVcnDnsResolverAssociationResponse>
                 transformer = GetVcnDnsResolverAssociationConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "GetVcnDnsResolverAssociation",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VcnDnsResolverAssociation/GetVcnDnsResolverAssociation");
 
         com.oracle.bmc.responses.AsyncHandler<
                         GetVcnDnsResolverAssociationRequest, GetVcnDnsResolverAssociationResponse>
@@ -6259,6 +6927,11 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                 GetVcnTopologyConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetVcnTopologyResponse>
                 transformer = GetVcnTopologyConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "GetVcnTopology",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VcnTopology/GetVcnTopology");
 
         com.oracle.bmc.responses.AsyncHandler<GetVcnTopologyRequest, GetVcnTopologyResponse>
                 handlerToUse = handler;
@@ -6298,6 +6971,11 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                 GetVirtualCircuitConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetVirtualCircuitResponse>
                 transformer = GetVirtualCircuitConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "GetVirtualCircuit",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VirtualCircuit/GetVirtualCircuit");
 
         com.oracle.bmc.responses.AsyncHandler<GetVirtualCircuitRequest, GetVirtualCircuitResponse>
                 handlerToUse = handler;
@@ -6334,6 +7012,11 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                 GetVlanConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetVlanResponse>
                 transformer = GetVlanConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "GetVlan",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Vlan/GetVlan");
 
         com.oracle.bmc.responses.AsyncHandler<GetVlanRequest, GetVlanResponse> handlerToUse =
                 handler;
@@ -6369,6 +7052,11 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                 GetVnicConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetVnicResponse>
                 transformer = GetVnicConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "GetVnic",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Vnic/GetVnic");
 
         com.oracle.bmc.responses.AsyncHandler<GetVnicRequest, GetVnicResponse> handlerToUse =
                 handler;
@@ -6411,6 +7099,11 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListAllowedPeerRegionsForRemotePeeringResponse>
                 transformer = ListAllowedPeerRegionsForRemotePeeringConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "ListAllowedPeerRegionsForRemotePeering",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/PeerRegionForRemotePeering/ListAllowedPeerRegionsForRemotePeering");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListAllowedPeerRegionsForRemotePeeringRequest,
@@ -6455,6 +7148,11 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListByoipAllocatedRangesResponse>
                 transformer = ListByoipAllocatedRangesConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "ListByoipAllocatedRanges",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ByoipAllocatedRangeSummary/ListByoipAllocatedRanges");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListByoipAllocatedRangesRequest, ListByoipAllocatedRangesResponse>
@@ -6495,6 +7193,11 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                 ListByoipRangesConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListByoipRangesResponse>
                 transformer = ListByoipRangesConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "ListByoipRanges",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ByoipRange/ListByoipRanges");
 
         com.oracle.bmc.responses.AsyncHandler<ListByoipRangesRequest, ListByoipRangesResponse>
                 handlerToUse = handler;
@@ -6535,6 +7238,11 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListCpeDeviceShapesResponse>
                 transformer = ListCpeDeviceShapesConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "ListCpeDeviceShapes",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/CpeDeviceShapeSummary/ListCpeDeviceShapes");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListCpeDeviceShapesRequest, ListCpeDeviceShapesResponse>
@@ -6573,6 +7281,11 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                 ListCpesConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListCpesResponse>
                 transformer = ListCpesConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "ListCpes",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Cpe/ListCpes");
 
         com.oracle.bmc.responses.AsyncHandler<ListCpesRequest, ListCpesResponse> handlerToUse =
                 handler;
@@ -6612,6 +7325,11 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListCrossConnectGroupsResponse>
                 transformer = ListCrossConnectGroupsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "ListCrossConnectGroups",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/CrossConnectGroup/ListCrossConnectGroups");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListCrossConnectGroupsRequest, ListCrossConnectGroupsResponse>
@@ -6653,6 +7371,11 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListCrossConnectLocationsResponse>
                 transformer = ListCrossConnectLocationsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "ListCrossConnectLocations",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/CrossConnectLocation/ListCrossConnectLocations");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListCrossConnectLocationsRequest, ListCrossConnectLocationsResponse>
@@ -6695,6 +7418,11 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListCrossConnectMappingsResponse>
                 transformer = ListCrossConnectMappingsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "ListCrossConnectMappings",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/CrossConnectMappingDetailsCollection/ListCrossConnectMappings");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListCrossConnectMappingsRequest, ListCrossConnectMappingsResponse>
@@ -6735,6 +7463,11 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                 ListCrossConnectsConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListCrossConnectsResponse>
                 transformer = ListCrossConnectsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "ListCrossConnects",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/CrossConnect/ListCrossConnects");
 
         com.oracle.bmc.responses.AsyncHandler<ListCrossConnectsRequest, ListCrossConnectsResponse>
                 handlerToUse = handler;
@@ -6777,6 +7510,11 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListCrossconnectPortSpeedShapesResponse>
                 transformer = ListCrossconnectPortSpeedShapesConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "ListCrossconnectPortSpeedShapes",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/CrossConnectPortSpeedShape/ListCrossconnectPortSpeedShapes");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListCrossconnectPortSpeedShapesRequest,
@@ -6820,6 +7558,11 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                 ListDhcpOptionsConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListDhcpOptionsResponse>
                 transformer = ListDhcpOptionsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "ListDhcpOptions",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DhcpOptions/ListDhcpOptions");
 
         com.oracle.bmc.responses.AsyncHandler<ListDhcpOptionsRequest, ListDhcpOptionsResponse>
                 handlerToUse = handler;
@@ -6859,6 +7602,11 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                 ListDrgAttachmentsConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListDrgAttachmentsResponse>
                 transformer = ListDrgAttachmentsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "ListDrgAttachments",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DrgAttachment/ListDrgAttachments");
 
         com.oracle.bmc.responses.AsyncHandler<ListDrgAttachmentsRequest, ListDrgAttachmentsResponse>
                 handlerToUse = handler;
@@ -6901,6 +7649,11 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListDrgRouteDistributionStatementsResponse>
                 transformer = ListDrgRouteDistributionStatementsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "ListDrgRouteDistributionStatements",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DrgRouteDistributionStatement/ListDrgRouteDistributionStatements");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListDrgRouteDistributionStatementsRequest,
@@ -6945,6 +7698,11 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListDrgRouteDistributionsResponse>
                 transformer = ListDrgRouteDistributionsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "ListDrgRouteDistributions",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DrgRouteDistribution/ListDrgRouteDistributions");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListDrgRouteDistributionsRequest, ListDrgRouteDistributionsResponse>
@@ -6986,6 +7744,11 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                 ListDrgRouteRulesConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListDrgRouteRulesResponse>
                 transformer = ListDrgRouteRulesConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "ListDrgRouteRules",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DrgRouteRule/ListDrgRouteRules");
 
         com.oracle.bmc.responses.AsyncHandler<ListDrgRouteRulesRequest, ListDrgRouteRulesResponse>
                 handlerToUse = handler;
@@ -7025,6 +7788,11 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                 ListDrgRouteTablesConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListDrgRouteTablesResponse>
                 transformer = ListDrgRouteTablesConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "ListDrgRouteTables",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DrgRouteTable/ListDrgRouteTables");
 
         com.oracle.bmc.responses.AsyncHandler<ListDrgRouteTablesRequest, ListDrgRouteTablesResponse>
                 handlerToUse = handler;
@@ -7062,6 +7830,11 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                 ListDrgsConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListDrgsResponse>
                 transformer = ListDrgsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "ListDrgs",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Drg/ListDrgs");
 
         com.oracle.bmc.responses.AsyncHandler<ListDrgsRequest, ListDrgsResponse> handlerToUse =
                 handler;
@@ -7103,6 +7876,11 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListFastConnectProviderServicesResponse>
                 transformer = ListFastConnectProviderServicesConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "ListFastConnectProviderServices",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/FastConnectProviderService/ListFastConnectProviderServices");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListFastConnectProviderServicesRequest,
@@ -7154,6 +7932,11 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                 transformer =
                         ListFastConnectProviderVirtualCircuitBandwidthShapesConverter
                                 .fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "ListFastConnectProviderVirtualCircuitBandwidthShapes",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/FastConnectProviderService/ListFastConnectProviderVirtualCircuitBandwidthShapes");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListFastConnectProviderVirtualCircuitBandwidthShapesRequest,
@@ -7201,6 +7984,11 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListIPSecConnectionTunnelRoutesResponse>
                 transformer = ListIPSecConnectionTunnelRoutesConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "ListIPSecConnectionTunnelRoutes",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/TunnelRouteSummary/ListIPSecConnectionTunnelRoutes");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListIPSecConnectionTunnelRoutesRequest,
@@ -7249,6 +8037,11 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                         javax.ws.rs.core.Response,
                         ListIPSecConnectionTunnelSecurityAssociationsResponse>
                 transformer = ListIPSecConnectionTunnelSecurityAssociationsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "ListIPSecConnectionTunnelSecurityAssociations",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/TunnelSecurityAssociationSummary/ListIPSecConnectionTunnelSecurityAssociations");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListIPSecConnectionTunnelSecurityAssociationsRequest,
@@ -7296,6 +8089,11 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListIPSecConnectionTunnelsResponse>
                 transformer = ListIPSecConnectionTunnelsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "ListIPSecConnectionTunnels",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/IPSecConnectionTunnel/ListIPSecConnectionTunnels");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListIPSecConnectionTunnelsRequest, ListIPSecConnectionTunnelsResponse>
@@ -7338,6 +8136,11 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListIPSecConnectionsResponse>
                 transformer = ListIPSecConnectionsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "ListIPSecConnections",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/IPSecConnection/ListIPSecConnections");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListIPSecConnectionsRequest, ListIPSecConnectionsResponse>
@@ -7379,6 +8182,11 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListInternetGatewaysResponse>
                 transformer = ListInternetGatewaysConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "ListInternetGateways",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InternetGateway/ListInternetGateways");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListInternetGatewaysRequest, ListInternetGatewaysResponse>
@@ -7417,6 +8225,11 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                 ListIpv6sConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListIpv6sResponse>
                 transformer = ListIpv6sConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "ListIpv6s",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Ipv6/ListIpv6s");
 
         com.oracle.bmc.responses.AsyncHandler<ListIpv6sRequest, ListIpv6sResponse> handlerToUse =
                 handler;
@@ -7456,6 +8269,11 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListLocalPeeringGatewaysResponse>
                 transformer = ListLocalPeeringGatewaysConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "ListLocalPeeringGateways",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/LocalPeeringGateway/ListLocalPeeringGateways");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListLocalPeeringGatewaysRequest, ListLocalPeeringGatewaysResponse>
@@ -7496,6 +8314,11 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                 ListNatGatewaysConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListNatGatewaysResponse>
                 transformer = ListNatGatewaysConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "ListNatGateways",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/NatGateway/ListNatGateways");
 
         com.oracle.bmc.responses.AsyncHandler<ListNatGatewaysRequest, ListNatGatewaysResponse>
                 handlerToUse = handler;
@@ -7539,6 +8362,11 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListNetworkSecurityGroupSecurityRulesResponse>
                 transformer = ListNetworkSecurityGroupSecurityRulesConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "ListNetworkSecurityGroupSecurityRules",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/SecurityRule/ListNetworkSecurityGroupSecurityRules");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListNetworkSecurityGroupSecurityRulesRequest,
@@ -7585,6 +8413,11 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListNetworkSecurityGroupVnicsResponse>
                 transformer = ListNetworkSecurityGroupVnicsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "ListNetworkSecurityGroupVnics",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroupVnic/ListNetworkSecurityGroupVnics");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListNetworkSecurityGroupVnicsRequest, ListNetworkSecurityGroupVnicsResponse>
@@ -7627,6 +8460,11 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListNetworkSecurityGroupsResponse>
                 transformer = ListNetworkSecurityGroupsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "ListNetworkSecurityGroups",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/ListNetworkSecurityGroups");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListNetworkSecurityGroupsRequest, ListNetworkSecurityGroupsResponse>
@@ -7668,6 +8506,11 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                 ListPrivateIpsConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListPrivateIpsResponse>
                 transformer = ListPrivateIpsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "ListPrivateIps",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/PrivateIp/ListPrivateIps");
 
         com.oracle.bmc.responses.AsyncHandler<ListPrivateIpsRequest, ListPrivateIpsResponse>
                 handlerToUse = handler;
@@ -7707,6 +8550,11 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                 ListPublicIpPoolsConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListPublicIpPoolsResponse>
                 transformer = ListPublicIpPoolsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "ListPublicIpPools",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/PublicIpPool/ListPublicIpPools");
 
         com.oracle.bmc.responses.AsyncHandler<ListPublicIpPoolsRequest, ListPublicIpPoolsResponse>
                 handlerToUse = handler;
@@ -7745,6 +8593,11 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                 ListPublicIpsConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListPublicIpsResponse>
                 transformer = ListPublicIpsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "ListPublicIps",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/PublicIp/ListPublicIps");
 
         com.oracle.bmc.responses.AsyncHandler<ListPublicIpsRequest, ListPublicIpsResponse>
                 handlerToUse = handler;
@@ -7787,6 +8640,11 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListRemotePeeringConnectionsResponse>
                 transformer = ListRemotePeeringConnectionsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "ListRemotePeeringConnections",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/RemotePeeringConnection/ListRemotePeeringConnections");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListRemotePeeringConnectionsRequest, ListRemotePeeringConnectionsResponse>
@@ -7828,6 +8686,11 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                 ListRouteTablesConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListRouteTablesResponse>
                 transformer = ListRouteTablesConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "ListRouteTables",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/RouteTable/ListRouteTables");
 
         com.oracle.bmc.responses.AsyncHandler<ListRouteTablesRequest, ListRouteTablesResponse>
                 handlerToUse = handler;
@@ -7867,6 +8730,11 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                 ListSecurityListsConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListSecurityListsResponse>
                 transformer = ListSecurityListsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "ListSecurityLists",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/SecurityList/ListSecurityLists");
 
         com.oracle.bmc.responses.AsyncHandler<ListSecurityListsRequest, ListSecurityListsResponse>
                 handlerToUse = handler;
@@ -7907,6 +8775,11 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListServiceGatewaysResponse>
                 transformer = ListServiceGatewaysConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "ListServiceGateways",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ServiceGateway/ListServiceGateways");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListServiceGatewaysRequest, ListServiceGatewaysResponse>
@@ -7946,6 +8819,11 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                 ListServicesConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListServicesResponse>
                 transformer = ListServicesConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "ListServices",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Service/ListServices");
 
         com.oracle.bmc.responses.AsyncHandler<ListServicesRequest, ListServicesResponse>
                 handlerToUse = handler;
@@ -7984,6 +8862,11 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                 ListSubnetsConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListSubnetsResponse>
                 transformer = ListSubnetsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "ListSubnets",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Subnet/ListSubnets");
 
         com.oracle.bmc.responses.AsyncHandler<ListSubnetsRequest, ListSubnetsResponse>
                 handlerToUse = handler;
@@ -8021,6 +8904,11 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                 ListVcnsConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListVcnsResponse>
                 transformer = ListVcnsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "ListVcns",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Vcn/ListVcns");
 
         com.oracle.bmc.responses.AsyncHandler<ListVcnsRequest, ListVcnsResponse> handlerToUse =
                 handler;
@@ -8062,6 +8950,11 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListVirtualCircuitBandwidthShapesResponse>
                 transformer = ListVirtualCircuitBandwidthShapesConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "ListVirtualCircuitBandwidthShapes",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VirtualCircuitBandwidthShape/ListVirtualCircuitBandwidthShapes");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListVirtualCircuitBandwidthShapesRequest,
@@ -8108,6 +9001,11 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListVirtualCircuitPublicPrefixesResponse>
                 transformer = ListVirtualCircuitPublicPrefixesConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "ListVirtualCircuitPublicPrefixes",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VirtualCircuitPublicPrefix/ListVirtualCircuitPublicPrefixes");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListVirtualCircuitPublicPrefixesRequest,
@@ -8152,6 +9050,11 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListVirtualCircuitsResponse>
                 transformer = ListVirtualCircuitsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "ListVirtualCircuits",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VirtualCircuit/ListVirtualCircuits");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListVirtualCircuitsRequest, ListVirtualCircuitsResponse>
@@ -8190,6 +9093,11 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                 ListVlansConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListVlansResponse>
                 transformer = ListVlansConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "ListVlans",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Vlan/ListVlans");
 
         com.oracle.bmc.responses.AsyncHandler<ListVlansRequest, ListVlansResponse> handlerToUse =
                 handler;
@@ -8228,6 +9136,11 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
         final com.google.common.base.Function<javax.ws.rs.core.Response, ModifyVcnCidrResponse>
                 transformer = ModifyVcnCidrConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "ModifyVcnCidr",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Vcn/ModifyVcnCidr");
 
         com.oracle.bmc.responses.AsyncHandler<ModifyVcnCidrRequest, ModifyVcnCidrResponse>
                 handlerToUse = handler;
@@ -8276,6 +9189,11 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, RemoveDrgRouteDistributionStatementsResponse>
                 transformer = RemoveDrgRouteDistributionStatementsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "RemoveDrgRouteDistributionStatements",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DrgRouteDistributionStatement/RemoveDrgRouteDistributionStatements");
 
         com.oracle.bmc.responses.AsyncHandler<
                         RemoveDrgRouteDistributionStatementsRequest,
@@ -8325,6 +9243,11 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, RemoveDrgRouteRulesResponse>
                 transformer = RemoveDrgRouteRulesConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "RemoveDrgRouteRules",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DrgRouteRule/RemoveDrgRouteRules");
 
         com.oracle.bmc.responses.AsyncHandler<
                         RemoveDrgRouteRulesRequest, RemoveDrgRouteRulesResponse>
@@ -8373,6 +9296,11 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, RemoveExportDrgRouteDistributionResponse>
                 transformer = RemoveExportDrgRouteDistributionConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "RemoveExportDrgRouteDistribution",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DrgAttachment/RemoveExportDrgRouteDistribution");
 
         com.oracle.bmc.responses.AsyncHandler<
                         RemoveExportDrgRouteDistributionRequest,
@@ -8419,6 +9347,11 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, RemoveImportDrgRouteDistributionResponse>
                 transformer = RemoveImportDrgRouteDistributionConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "RemoveImportDrgRouteDistribution",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DrgRouteTable/RemoveImportDrgRouteDistribution");
 
         com.oracle.bmc.responses.AsyncHandler<
                         RemoveImportDrgRouteDistributionRequest,
@@ -8450,6 +9383,108 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<RemoveIpv6SubnetCidrResponse> removeIpv6SubnetCidr(
+            RemoveIpv6SubnetCidrRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            RemoveIpv6SubnetCidrRequest, RemoveIpv6SubnetCidrResponse>
+                    handler) {
+        LOG.trace("Called async removeIpv6SubnetCidr");
+        final RemoveIpv6SubnetCidrRequest interceptedRequest =
+                RemoveIpv6SubnetCidrConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                RemoveIpv6SubnetCidrConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, RemoveIpv6SubnetCidrResponse>
+                transformer = RemoveIpv6SubnetCidrConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "RemoveIpv6SubnetCidr",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Subnet/RemoveIpv6SubnetCidr");
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        RemoveIpv6SubnetCidrRequest, RemoveIpv6SubnetCidrResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                RemoveIpv6SubnetCidrRequest, RemoveIpv6SubnetCidrResponse>,
+                        java.util.concurrent.Future<RemoveIpv6SubnetCidrResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getRemoveSubnetIpv6CidrDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    RemoveIpv6SubnetCidrRequest, RemoveIpv6SubnetCidrResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<RemoveIpv6VcnCidrResponse> removeIpv6VcnCidr(
+            RemoveIpv6VcnCidrRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            RemoveIpv6VcnCidrRequest, RemoveIpv6VcnCidrResponse>
+                    handler) {
+        LOG.trace("Called async removeIpv6VcnCidr");
+        final RemoveIpv6VcnCidrRequest interceptedRequest =
+                RemoveIpv6VcnCidrConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                RemoveIpv6VcnCidrConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<javax.ws.rs.core.Response, RemoveIpv6VcnCidrResponse>
+                transformer = RemoveIpv6VcnCidrConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "RemoveIpv6VcnCidr",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Vcn/RemoveIpv6VcnCidr");
+
+        com.oracle.bmc.responses.AsyncHandler<RemoveIpv6VcnCidrRequest, RemoveIpv6VcnCidrResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                RemoveIpv6VcnCidrRequest, RemoveIpv6VcnCidrResponse>,
+                        java.util.concurrent.Future<RemoveIpv6VcnCidrResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getRemoveVcnIpv6CidrDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    RemoveIpv6VcnCidrRequest, RemoveIpv6VcnCidrResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<RemoveNetworkSecurityGroupSecurityRulesResponse>
             removeNetworkSecurityGroupSecurityRules(
                     RemoveNetworkSecurityGroupSecurityRulesRequest request,
@@ -8466,6 +9501,11 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, RemoveNetworkSecurityGroupSecurityRulesResponse>
                 transformer = RemoveNetworkSecurityGroupSecurityRulesConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "RemoveNetworkSecurityGroupSecurityRules",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/SecurityRule/RemoveNetworkSecurityGroupSecurityRules");
 
         com.oracle.bmc.responses.AsyncHandler<
                         RemoveNetworkSecurityGroupSecurityRulesRequest,
@@ -8520,6 +9560,11 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                         javax.ws.rs.core.Response, RemovePublicIpPoolCapacityResponse>
                 transformer = RemovePublicIpPoolCapacityConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "RemovePublicIpPoolCapacity",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/PublicIpPool/RemovePublicIpPoolCapacity");
 
         com.oracle.bmc.responses.AsyncHandler<
                         RemovePublicIpPoolCapacityRequest, RemovePublicIpPoolCapacityResponse>
@@ -8566,6 +9611,11 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
         final com.google.common.base.Function<javax.ws.rs.core.Response, RemoveVcnCidrResponse>
                 transformer = RemoveVcnCidrConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "RemoveVcnCidr",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Vcn/RemoveVcnCidr");
 
         com.oracle.bmc.responses.AsyncHandler<RemoveVcnCidrRequest, RemoveVcnCidrResponse>
                 handlerToUse = handler;
@@ -8610,6 +9660,11 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                 UpdateByoipRangeConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateByoipRangeResponse>
                 transformer = UpdateByoipRangeConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "UpdateByoipRange",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ByoipRange/UpdateByoipRange");
 
         com.oracle.bmc.responses.AsyncHandler<UpdateByoipRangeRequest, UpdateByoipRangeResponse>
                 handlerToUse = handler;
@@ -8652,6 +9707,11 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                 UpdateCpeConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateCpeResponse>
                 transformer = UpdateCpeConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "UpdateCpe",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Cpe/UpdateCpe");
 
         com.oracle.bmc.responses.AsyncHandler<UpdateCpeRequest, UpdateCpeResponse> handlerToUse =
                 handler;
@@ -8695,6 +9755,11 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                 UpdateCrossConnectConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateCrossConnectResponse>
                 transformer = UpdateCrossConnectConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "UpdateCrossConnect",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/CrossConnect/UpdateCrossConnect");
 
         com.oracle.bmc.responses.AsyncHandler<UpdateCrossConnectRequest, UpdateCrossConnectResponse>
                 handlerToUse = handler;
@@ -8740,6 +9805,11 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, UpdateCrossConnectGroupResponse>
                 transformer = UpdateCrossConnectGroupConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "UpdateCrossConnectGroup",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/CrossConnectGroup/UpdateCrossConnectGroup");
 
         com.oracle.bmc.responses.AsyncHandler<
                         UpdateCrossConnectGroupRequest, UpdateCrossConnectGroupResponse>
@@ -8785,6 +9855,11 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                 UpdateDhcpOptionsConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateDhcpOptionsResponse>
                 transformer = UpdateDhcpOptionsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "UpdateDhcpOptions",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DhcpOptions/UpdateDhcpOptions");
 
         com.oracle.bmc.responses.AsyncHandler<UpdateDhcpOptionsRequest, UpdateDhcpOptionsResponse>
                 handlerToUse = handler;
@@ -8827,6 +9902,11 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                 UpdateDrgConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateDrgResponse>
                 transformer = UpdateDrgConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "UpdateDrg",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Drg/UpdateDrg");
 
         com.oracle.bmc.responses.AsyncHandler<UpdateDrgRequest, UpdateDrgResponse> handlerToUse =
                 handler;
@@ -8871,6 +9951,11 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, UpdateDrgAttachmentResponse>
                 transformer = UpdateDrgAttachmentConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "UpdateDrgAttachment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DrgAttachment/UpdateDrgAttachment");
 
         com.oracle.bmc.responses.AsyncHandler<
                         UpdateDrgAttachmentRequest, UpdateDrgAttachmentResponse>
@@ -8919,6 +10004,11 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, UpdateDrgRouteDistributionResponse>
                 transformer = UpdateDrgRouteDistributionConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "UpdateDrgRouteDistribution",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DrgRouteDistribution/UpdateDrgRouteDistribution");
 
         com.oracle.bmc.responses.AsyncHandler<
                         UpdateDrgRouteDistributionRequest, UpdateDrgRouteDistributionResponse>
@@ -8969,6 +10059,11 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, UpdateDrgRouteDistributionStatementsResponse>
                 transformer = UpdateDrgRouteDistributionStatementsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "UpdateDrgRouteDistributionStatements",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DrgRouteDistributionStatement/UpdateDrgRouteDistributionStatements");
 
         com.oracle.bmc.responses.AsyncHandler<
                         UpdateDrgRouteDistributionStatementsRequest,
@@ -9018,6 +10113,11 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, UpdateDrgRouteRulesResponse>
                 transformer = UpdateDrgRouteRulesConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "UpdateDrgRouteRules",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DrgRouteRule/UpdateDrgRouteRules");
 
         com.oracle.bmc.responses.AsyncHandler<
                         UpdateDrgRouteRulesRequest, UpdateDrgRouteRulesResponse>
@@ -9064,6 +10164,11 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, UpdateDrgRouteTableResponse>
                 transformer = UpdateDrgRouteTableConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "UpdateDrgRouteTable",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DrgRouteTable/UpdateDrgRouteTable");
 
         com.oracle.bmc.responses.AsyncHandler<
                         UpdateDrgRouteTableRequest, UpdateDrgRouteTableResponse>
@@ -9110,6 +10215,11 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, UpdateIPSecConnectionResponse>
                 transformer = UpdateIPSecConnectionConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "UpdateIPSecConnection",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/IPSecConnection/UpdateIPSecConnection");
 
         com.oracle.bmc.responses.AsyncHandler<
                         UpdateIPSecConnectionRequest, UpdateIPSecConnectionResponse>
@@ -9158,6 +10268,11 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, UpdateIPSecConnectionTunnelResponse>
                 transformer = UpdateIPSecConnectionTunnelConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "UpdateIPSecConnectionTunnel",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/IPSecConnectionTunnel/UpdateIPSecConnectionTunnel");
 
         com.oracle.bmc.responses.AsyncHandler<
                         UpdateIPSecConnectionTunnelRequest, UpdateIPSecConnectionTunnelResponse>
@@ -9208,6 +10323,11 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, UpdateIPSecConnectionTunnelSharedSecretResponse>
                 transformer = UpdateIPSecConnectionTunnelSharedSecretConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "UpdateIPSecConnectionTunnelSharedSecret",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/IPSecConnectionTunnelSharedSecret/UpdateIPSecConnectionTunnelSharedSecret");
 
         com.oracle.bmc.responses.AsyncHandler<
                         UpdateIPSecConnectionTunnelSharedSecretRequest,
@@ -9259,6 +10379,11 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, UpdateInternetGatewayResponse>
                 transformer = UpdateInternetGatewayConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "UpdateInternetGateway",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InternetGateway/UpdateInternetGateway");
 
         com.oracle.bmc.responses.AsyncHandler<
                         UpdateInternetGatewayRequest, UpdateInternetGatewayResponse>
@@ -9302,6 +10427,11 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                 UpdateIpv6Converter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateIpv6Response>
                 transformer = UpdateIpv6Converter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "UpdateIpv6",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Ipv6/UpdateIpv6");
 
         com.oracle.bmc.responses.AsyncHandler<UpdateIpv6Request, UpdateIpv6Response> handlerToUse =
                 handler;
@@ -9347,6 +10477,11 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, UpdateLocalPeeringGatewayResponse>
                 transformer = UpdateLocalPeeringGatewayConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "UpdateLocalPeeringGateway",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/LocalPeeringGateway/UpdateLocalPeeringGateway");
 
         com.oracle.bmc.responses.AsyncHandler<
                         UpdateLocalPeeringGatewayRequest, UpdateLocalPeeringGatewayResponse>
@@ -9393,6 +10528,11 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                 UpdateNatGatewayConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateNatGatewayResponse>
                 transformer = UpdateNatGatewayConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "UpdateNatGateway",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/NatGateway/UpdateNatGateway");
 
         com.oracle.bmc.responses.AsyncHandler<UpdateNatGatewayRequest, UpdateNatGatewayResponse>
                 handlerToUse = handler;
@@ -9440,6 +10580,11 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, UpdateNetworkSecurityGroupResponse>
                 transformer = UpdateNetworkSecurityGroupConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "UpdateNetworkSecurityGroup",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/UpdateNetworkSecurityGroup");
 
         com.oracle.bmc.responses.AsyncHandler<
                         UpdateNetworkSecurityGroupRequest, UpdateNetworkSecurityGroupResponse>
@@ -9490,6 +10635,11 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, UpdateNetworkSecurityGroupSecurityRulesResponse>
                 transformer = UpdateNetworkSecurityGroupSecurityRulesConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "UpdateNetworkSecurityGroupSecurityRules",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/SecurityRule/UpdateNetworkSecurityGroupSecurityRules");
 
         com.oracle.bmc.responses.AsyncHandler<
                         UpdateNetworkSecurityGroupSecurityRulesRequest,
@@ -9540,6 +10690,11 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                 UpdatePrivateIpConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, UpdatePrivateIpResponse>
                 transformer = UpdatePrivateIpConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "UpdatePrivateIp",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/PrivateIp/UpdatePrivateIp");
 
         com.oracle.bmc.responses.AsyncHandler<UpdatePrivateIpRequest, UpdatePrivateIpResponse>
                 handlerToUse = handler;
@@ -9584,6 +10739,11 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                 UpdatePublicIpConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, UpdatePublicIpResponse>
                 transformer = UpdatePublicIpConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "UpdatePublicIp",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/PublicIp/UpdatePublicIp");
 
         com.oracle.bmc.responses.AsyncHandler<UpdatePublicIpRequest, UpdatePublicIpResponse>
                 handlerToUse = handler;
@@ -9628,6 +10788,11 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                 UpdatePublicIpPoolConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, UpdatePublicIpPoolResponse>
                 transformer = UpdatePublicIpPoolConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "UpdatePublicIpPool",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/PublicIpPool/UpdatePublicIpPool");
 
         com.oracle.bmc.responses.AsyncHandler<UpdatePublicIpPoolRequest, UpdatePublicIpPoolResponse>
                 handlerToUse = handler;
@@ -9675,6 +10840,11 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, UpdateRemotePeeringConnectionResponse>
                 transformer = UpdateRemotePeeringConnectionConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "UpdateRemotePeeringConnection",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/RemotePeeringConnection/UpdateRemotePeeringConnection");
 
         com.oracle.bmc.responses.AsyncHandler<
                         UpdateRemotePeeringConnectionRequest, UpdateRemotePeeringConnectionResponse>
@@ -9721,6 +10891,11 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                 UpdateRouteTableConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateRouteTableResponse>
                 transformer = UpdateRouteTableConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "UpdateRouteTable",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/RouteTable/UpdateRouteTable");
 
         com.oracle.bmc.responses.AsyncHandler<UpdateRouteTableRequest, UpdateRouteTableResponse>
                 handlerToUse = handler;
@@ -9765,6 +10940,11 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                 UpdateSecurityListConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateSecurityListResponse>
                 transformer = UpdateSecurityListConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "UpdateSecurityList",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/SecurityList/UpdateSecurityList");
 
         com.oracle.bmc.responses.AsyncHandler<UpdateSecurityListRequest, UpdateSecurityListResponse>
                 handlerToUse = handler;
@@ -9810,6 +10990,11 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, UpdateServiceGatewayResponse>
                 transformer = UpdateServiceGatewayConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "UpdateServiceGateway",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ServiceGateway/UpdateServiceGateway");
 
         com.oracle.bmc.responses.AsyncHandler<
                         UpdateServiceGatewayRequest, UpdateServiceGatewayResponse>
@@ -9854,6 +11039,11 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                 UpdateSubnetConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateSubnetResponse>
                 transformer = UpdateSubnetConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "UpdateSubnet",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Subnet/UpdateSubnet");
 
         com.oracle.bmc.responses.AsyncHandler<UpdateSubnetRequest, UpdateSubnetResponse>
                 handlerToUse = handler;
@@ -9902,6 +11092,11 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                         javax.ws.rs.core.Response, UpdateTunnelCpeDeviceConfigResponse>
                 transformer = UpdateTunnelCpeDeviceConfigConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "UpdateTunnelCpeDeviceConfig",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/TunnelCpeDeviceConfig/UpdateTunnelCpeDeviceConfig");
 
         com.oracle.bmc.responses.AsyncHandler<
                         UpdateTunnelCpeDeviceConfigRequest, UpdateTunnelCpeDeviceConfigResponse>
@@ -9946,6 +11141,11 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                 UpdateVcnConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateVcnResponse>
                 transformer = UpdateVcnConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "UpdateVcn",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Vcn/UpdateVcn");
 
         com.oracle.bmc.responses.AsyncHandler<UpdateVcnRequest, UpdateVcnResponse> handlerToUse =
                 handler;
@@ -9990,6 +11190,11 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, UpdateVirtualCircuitResponse>
                 transformer = UpdateVirtualCircuitConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "UpdateVirtualCircuit",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VirtualCircuit/UpdateVirtualCircuit");
 
         com.oracle.bmc.responses.AsyncHandler<
                         UpdateVirtualCircuitRequest, UpdateVirtualCircuitResponse>
@@ -10033,6 +11238,11 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                 UpdateVlanConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateVlanResponse>
                 transformer = UpdateVlanConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "UpdateVlan",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Vlan/UpdateVlan");
 
         com.oracle.bmc.responses.AsyncHandler<UpdateVlanRequest, UpdateVlanResponse> handlerToUse =
                 handler;
@@ -10075,6 +11285,11 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                 UpdateVnicConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateVnicResponse>
                 transformer = UpdateVnicConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "UpdateVnic",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Vnic/UpdateVnic");
 
         com.oracle.bmc.responses.AsyncHandler<UpdateVnicRequest, UpdateVnicResponse> handlerToUse =
                 handler;
@@ -10118,6 +11333,11 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
         final com.google.common.base.Function<javax.ws.rs.core.Response, UpgradeDrgResponse>
                 transformer = UpgradeDrgConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "UpgradeDrg",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Drg/UpgradeDrg");
 
         com.oracle.bmc.responses.AsyncHandler<UpgradeDrgRequest, UpgradeDrgResponse> handlerToUse =
                 handler;
@@ -10157,6 +11377,11 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                 ValidateByoipRangeConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ValidateByoipRangeResponse>
                 transformer = ValidateByoipRangeConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "ValidateByoipRange",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ByoipRange/ValidateByoipRange");
 
         com.oracle.bmc.responses.AsyncHandler<ValidateByoipRangeRequest, ValidateByoipRangeResponse>
                 handlerToUse = handler;
@@ -10196,6 +11421,11 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                 WithdrawByoipRangeConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, WithdrawByoipRangeResponse>
                 transformer = WithdrawByoipRangeConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "WithdrawByoipRange",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ByoipRange/WithdrawByoipRange");
 
         com.oracle.bmc.responses.AsyncHandler<WithdrawByoipRangeRequest, WithdrawByoipRangeResponse>
                 handlerToUse = handler;

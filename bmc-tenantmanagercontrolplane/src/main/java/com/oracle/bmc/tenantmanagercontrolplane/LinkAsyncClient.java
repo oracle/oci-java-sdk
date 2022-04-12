@@ -388,6 +388,11 @@ public class LinkAsyncClient implements LinkAsync {
                 DeleteLinkConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteLinkResponse>
                 transformer = DeleteLinkConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Link",
+                "DeleteLink",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/Link/DeleteLink");
 
         com.oracle.bmc.responses.AsyncHandler<DeleteLinkRequest, DeleteLinkResponse> handlerToUse =
                 handler;
@@ -424,6 +429,11 @@ public class LinkAsyncClient implements LinkAsync {
                 GetLinkConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetLinkResponse>
                 transformer = GetLinkConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Link",
+                "GetLink",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/Link/GetLink");
 
         com.oracle.bmc.responses.AsyncHandler<GetLinkRequest, GetLinkResponse> handlerToUse =
                 handler;
@@ -460,6 +470,11 @@ public class LinkAsyncClient implements LinkAsync {
                 ListLinksConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListLinksResponse>
                 transformer = ListLinksConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Link",
+                "ListLinks",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/Link/ListLinks");
 
         com.oracle.bmc.responses.AsyncHandler<ListLinksRequest, ListLinksResponse> handlerToUse =
                 handler;

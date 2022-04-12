@@ -394,6 +394,11 @@ public class DatabaseToolsAsyncClient implements DatabaseToolsAsync {
                         javax.ws.rs.core.Response, ChangeDatabaseToolsConnectionCompartmentResponse>
                 transformer = ChangeDatabaseToolsConnectionCompartmentConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DatabaseTools",
+                "ChangeDatabaseToolsConnectionCompartment",
+                ib.getRequestUri().toString(),
+                "");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeDatabaseToolsConnectionCompartmentRequest,
@@ -450,6 +455,11 @@ public class DatabaseToolsAsyncClient implements DatabaseToolsAsync {
                         ChangeDatabaseToolsPrivateEndpointCompartmentResponse>
                 transformer = ChangeDatabaseToolsPrivateEndpointCompartmentConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DatabaseTools",
+                "ChangeDatabaseToolsPrivateEndpointCompartment",
+                ib.getRequestUri().toString(),
+                "");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeDatabaseToolsPrivateEndpointCompartmentRequest,
@@ -504,6 +514,11 @@ public class DatabaseToolsAsyncClient implements DatabaseToolsAsync {
                         javax.ws.rs.core.Response, CreateDatabaseToolsConnectionResponse>
                 transformer = CreateDatabaseToolsConnectionConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DatabaseTools",
+                "CreateDatabaseToolsConnection",
+                ib.getRequestUri().toString(),
+                "");
 
         com.oracle.bmc.responses.AsyncHandler<
                         CreateDatabaseToolsConnectionRequest, CreateDatabaseToolsConnectionResponse>
@@ -554,6 +569,11 @@ public class DatabaseToolsAsyncClient implements DatabaseToolsAsync {
                         javax.ws.rs.core.Response, CreateDatabaseToolsPrivateEndpointResponse>
                 transformer = CreateDatabaseToolsPrivateEndpointConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DatabaseTools",
+                "CreateDatabaseToolsPrivateEndpoint",
+                ib.getRequestUri().toString(),
+                "");
 
         com.oracle.bmc.responses.AsyncHandler<
                         CreateDatabaseToolsPrivateEndpointRequest,
@@ -605,6 +625,11 @@ public class DatabaseToolsAsyncClient implements DatabaseToolsAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, DeleteDatabaseToolsConnectionResponse>
                 transformer = DeleteDatabaseToolsConnectionConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DatabaseTools",
+                "DeleteDatabaseToolsConnection",
+                ib.getRequestUri().toString(),
+                "");
 
         com.oracle.bmc.responses.AsyncHandler<
                         DeleteDatabaseToolsConnectionRequest, DeleteDatabaseToolsConnectionResponse>
@@ -649,6 +674,11 @@ public class DatabaseToolsAsyncClient implements DatabaseToolsAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, DeleteDatabaseToolsPrivateEndpointResponse>
                 transformer = DeleteDatabaseToolsPrivateEndpointConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DatabaseTools",
+                "DeleteDatabaseToolsPrivateEndpoint",
+                ib.getRequestUri().toString(),
+                "");
 
         com.oracle.bmc.responses.AsyncHandler<
                         DeleteDatabaseToolsPrivateEndpointRequest,
@@ -695,6 +725,8 @@ public class DatabaseToolsAsyncClient implements DatabaseToolsAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetDatabaseToolsConnectionResponse>
                 transformer = GetDatabaseToolsConnectionConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DatabaseTools", "GetDatabaseToolsConnection", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<
                         GetDatabaseToolsConnectionRequest, GetDatabaseToolsConnectionResponse>
@@ -739,6 +771,11 @@ public class DatabaseToolsAsyncClient implements DatabaseToolsAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetDatabaseToolsEndpointServiceResponse>
                 transformer = GetDatabaseToolsEndpointServiceConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DatabaseTools",
+                "GetDatabaseToolsEndpointService",
+                ib.getRequestUri().toString(),
+                "");
 
         com.oracle.bmc.responses.AsyncHandler<
                         GetDatabaseToolsEndpointServiceRequest,
@@ -785,6 +822,11 @@ public class DatabaseToolsAsyncClient implements DatabaseToolsAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetDatabaseToolsPrivateEndpointResponse>
                 transformer = GetDatabaseToolsPrivateEndpointConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DatabaseTools",
+                "GetDatabaseToolsPrivateEndpoint",
+                ib.getRequestUri().toString(),
+                "");
 
         com.oracle.bmc.responses.AsyncHandler<
                         GetDatabaseToolsPrivateEndpointRequest,
@@ -828,6 +870,8 @@ public class DatabaseToolsAsyncClient implements DatabaseToolsAsync {
                 GetWorkRequestConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetWorkRequestResponse>
                 transformer = GetWorkRequestConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DatabaseTools", "GetWorkRequest", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<GetWorkRequestRequest, GetWorkRequestResponse>
                 handlerToUse = handler;
@@ -870,6 +914,8 @@ public class DatabaseToolsAsyncClient implements DatabaseToolsAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListDatabaseToolsConnectionsResponse>
                 transformer = ListDatabaseToolsConnectionsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DatabaseTools", "ListDatabaseToolsConnections", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListDatabaseToolsConnectionsRequest, ListDatabaseToolsConnectionsResponse>
@@ -914,6 +960,11 @@ public class DatabaseToolsAsyncClient implements DatabaseToolsAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListDatabaseToolsEndpointServicesResponse>
                 transformer = ListDatabaseToolsEndpointServicesConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DatabaseTools",
+                "ListDatabaseToolsEndpointServices",
+                ib.getRequestUri().toString(),
+                "");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListDatabaseToolsEndpointServicesRequest,
@@ -960,6 +1011,11 @@ public class DatabaseToolsAsyncClient implements DatabaseToolsAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListDatabaseToolsPrivateEndpointsResponse>
                 transformer = ListDatabaseToolsPrivateEndpointsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DatabaseTools",
+                "ListDatabaseToolsPrivateEndpoints",
+                ib.getRequestUri().toString(),
+                "");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListDatabaseToolsPrivateEndpointsRequest,
@@ -1004,6 +1060,8 @@ public class DatabaseToolsAsyncClient implements DatabaseToolsAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListWorkRequestErrorsResponse>
                 transformer = ListWorkRequestErrorsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DatabaseTools", "ListWorkRequestErrors", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListWorkRequestErrorsRequest, ListWorkRequestErrorsResponse>
@@ -1045,6 +1103,8 @@ public class DatabaseToolsAsyncClient implements DatabaseToolsAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListWorkRequestLogsResponse>
                 transformer = ListWorkRequestLogsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DatabaseTools", "ListWorkRequestLogs", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListWorkRequestLogsRequest, ListWorkRequestLogsResponse>
@@ -1085,6 +1145,8 @@ public class DatabaseToolsAsyncClient implements DatabaseToolsAsync {
                 ListWorkRequestsConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListWorkRequestsResponse>
                 transformer = ListWorkRequestsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DatabaseTools", "ListWorkRequests", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<ListWorkRequestsRequest, ListWorkRequestsResponse>
                 handlerToUse = handler;
@@ -1127,6 +1189,11 @@ public class DatabaseToolsAsyncClient implements DatabaseToolsAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, UpdateDatabaseToolsConnectionResponse>
                 transformer = UpdateDatabaseToolsConnectionConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DatabaseTools",
+                "UpdateDatabaseToolsConnection",
+                ib.getRequestUri().toString(),
+                "");
 
         com.oracle.bmc.responses.AsyncHandler<
                         UpdateDatabaseToolsConnectionRequest, UpdateDatabaseToolsConnectionResponse>
@@ -1176,6 +1243,11 @@ public class DatabaseToolsAsyncClient implements DatabaseToolsAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, UpdateDatabaseToolsPrivateEndpointResponse>
                 transformer = UpdateDatabaseToolsPrivateEndpointConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DatabaseTools",
+                "UpdateDatabaseToolsPrivateEndpoint",
+                ib.getRequestUri().toString(),
+                "");
 
         com.oracle.bmc.responses.AsyncHandler<
                         UpdateDatabaseToolsPrivateEndpointRequest,
@@ -1227,6 +1299,11 @@ public class DatabaseToolsAsyncClient implements DatabaseToolsAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ValidateDatabaseToolsConnectionResponse>
                 transformer = ValidateDatabaseToolsConnectionConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DatabaseTools",
+                "ValidateDatabaseToolsConnection",
+                ib.getRequestUri().toString(),
+                "");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ValidateDatabaseToolsConnectionRequest,

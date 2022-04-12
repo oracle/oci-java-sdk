@@ -401,6 +401,11 @@ public class EventClient implements Event {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Event",
+                "DeleteEventContent",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/EventContent/DeleteEventContent");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -430,6 +435,11 @@ public class EventClient implements Event {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Event",
+                "GetEvent",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/Event/GetEvent");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -469,6 +479,8 @@ public class EventClient implements Event {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Event", "GetEventContent", ib.getRequestUri().toString(), "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -498,6 +510,11 @@ public class EventClient implements Event {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Event",
+                "GetEventReport",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/EventReport/GetEventReport");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -526,6 +543,11 @@ public class EventClient implements Event {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Event",
+                "ListEvents",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/EventCollection/ListEvents");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -555,6 +577,11 @@ public class EventClient implements Event {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Event",
+                "ListRelatedEvents",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/RelatedEventCollection/ListRelatedEvents");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -584,6 +611,11 @@ public class EventClient implements Event {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Event",
+                "UpdateEvent",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/Event/UpdateEvent");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -618,6 +650,11 @@ public class EventClient implements Event {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Event",
+                "UploadEventContent",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/EventContent/UploadEventContent");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {

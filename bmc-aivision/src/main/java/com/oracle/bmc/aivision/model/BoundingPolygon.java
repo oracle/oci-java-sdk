@@ -5,7 +5,7 @@
 package com.oracle.bmc.aivision.model;
 
 /**
- * Object bounding polygon box.
+ * The object-bounding polygon box.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -60,7 +60,7 @@ public class BoundingPolygon {
 
     /**
      * An array of normalized points defining the polygon's perimeter, with an implicit segment between subsequent points and between the first and last point.
-     * Rectangles are defined with four points, e.g. {@code [{"x": 0, "y": 0}, {"x": 1, "y": 0}, {"x": 1, "y": 0.5}, {"x": 0, "y": 0.5}]} represents the top half of an image.
+     * Rectangles are defined with four points. For example, {@code [{"x": 0, "y": 0}, {"x": 1, "y": 0}, {"x": 1, "y": 0.5}, {"x": 0, "y": 0.5}]} represents the top half of an image.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("normalizedVertices")

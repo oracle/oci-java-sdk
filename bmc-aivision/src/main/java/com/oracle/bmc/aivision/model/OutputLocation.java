@@ -5,7 +5,7 @@
 package com.oracle.bmc.aivision.model;
 
 /**
- * OCI Object Storage Location.
+ * The Object Storage Location.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -80,19 +80,19 @@ public class OutputLocation {
     }
 
     /**
-     * Object Storage namespace.
+     * The Object Storage namespace.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("namespaceName")
     String namespaceName;
 
     /**
-     * Object Storage bucket name.
+     * The Object Storage bucket name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("bucketName")
     String bucketName;
 
     /**
-     * Object Storage folder name.
+     * The Object Storage folder name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("prefix")
     String prefix;

@@ -5,7 +5,7 @@
 package com.oracle.bmc.aivision.model;
 
 /**
- * Details about a document to analyze.
+ * The details of a document to analyze.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -41,9 +41,9 @@ package com.oracle.bmc.aivision.model;
 public class DocumentDetails {
 
     /**
-     * The location of document data.
-     * Allowed values are:
-     * - {@code INLINE}: Data is included directly in the request payload.
+     * The location of the document data.
+     * The allowed values are:
+     * - {@code INLINE}: The data is included directly in the request payload.
      * - {@code OBJECT_STORAGE}: The document is in OCI Object Storage.
      *
      **/

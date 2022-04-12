@@ -5,7 +5,7 @@
 package com.oracle.bmc.aivision.model;
 
 /**
- * Width and height of a page.
+ * The width and height of a page.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -77,18 +77,18 @@ public class Dimensions {
     }
 
     /**
-     * Width of a page.
+     * the width of a page.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("width")
     Double width;
 
     /**
-     * Height of a page.
+     * The height of a page.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("height")
     Double height;
     /**
-     * Unit of length.
+     * The unit of length.
      **/
     @lombok.extern.slf4j.Slf4j
     public enum Unit {
@@ -133,7 +133,7 @@ public class Dimensions {
         }
     };
     /**
-     * Unit of length.
+     * The unit of length.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("unit")
     Unit unit;

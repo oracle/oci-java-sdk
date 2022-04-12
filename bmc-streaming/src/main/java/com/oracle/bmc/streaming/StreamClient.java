@@ -322,6 +322,11 @@ public class StreamClient implements Stream {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Stream",
+                "ConsumerCommit",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/streaming/20180418/Group/ConsumerCommit");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -352,6 +357,11 @@ public class StreamClient implements Stream {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Stream",
+                "ConsumerHeartbeat",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/streaming/20180418/Group/ConsumerHeartbeat");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -382,6 +392,11 @@ public class StreamClient implements Stream {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Stream",
+                "CreateCursor",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/streaming/20180418/Cursor/CreateCursor");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -415,6 +430,11 @@ public class StreamClient implements Stream {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Stream",
+                "CreateGroupCursor",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/streaming/20180418/Cursor/CreateGroupCursor");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -447,6 +467,11 @@ public class StreamClient implements Stream {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Stream",
+                "GetGroup",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/streaming/20180418/Group/GetGroup");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -476,6 +501,11 @@ public class StreamClient implements Stream {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Stream",
+                "GetMessages",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/streaming/20180418/Message/GetMessages");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -509,6 +539,11 @@ public class StreamClient implements Stream {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Stream",
+                "PutMessages",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/streaming/20180418/Message/PutMessages");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -542,6 +577,11 @@ public class StreamClient implements Stream {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Stream",
+                "UpdateGroup",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/streaming/20180418/Group/UpdateGroup");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {

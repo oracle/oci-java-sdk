@@ -477,6 +477,11 @@ public class ContainerEngineClient implements ContainerEngine {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ContainerEngine",
+                "ClusterMigrateToNativeVcn",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/Cluster/ClusterMigrateToNativeVcn");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -512,6 +517,11 @@ public class ContainerEngineClient implements ContainerEngine {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ContainerEngine",
+                "CreateCluster",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/Cluster/CreateCluster");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -555,6 +565,11 @@ public class ContainerEngineClient implements ContainerEngine {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ContainerEngine",
+                "CreateKubeconfig",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/Cluster/CreateKubeconfig");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -590,6 +605,11 @@ public class ContainerEngineClient implements ContainerEngine {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ContainerEngine",
+                "CreateNodePool",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/NodePool/CreateNodePool");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -623,6 +643,11 @@ public class ContainerEngineClient implements ContainerEngine {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ContainerEngine",
+                "DeleteCluster",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/Cluster/DeleteCluster");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -653,6 +678,11 @@ public class ContainerEngineClient implements ContainerEngine {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ContainerEngine",
+                "DeleteNodePool",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/NodePool/DeleteNodePool");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -683,6 +713,11 @@ public class ContainerEngineClient implements ContainerEngine {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ContainerEngine",
+                "DeleteWorkRequest",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/WorkRequest/DeleteWorkRequest");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -712,6 +747,11 @@ public class ContainerEngineClient implements ContainerEngine {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ContainerEngine",
+                "GetCluster",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/Cluster/GetCluster");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -743,6 +783,11 @@ public class ContainerEngineClient implements ContainerEngine {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ContainerEngine",
+                "GetClusterMigrateToNativeVcnStatus",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/ClusterMigrateToNativeVcnStatus/GetClusterMigrateToNativeVcnStatus");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -772,6 +817,11 @@ public class ContainerEngineClient implements ContainerEngine {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ContainerEngine",
+                "GetClusterOptions",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/ClusterOptions/GetClusterOptions");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -801,6 +851,11 @@ public class ContainerEngineClient implements ContainerEngine {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ContainerEngine",
+                "GetNodePool",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/NodePool/GetNodePool");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -830,6 +885,11 @@ public class ContainerEngineClient implements ContainerEngine {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ContainerEngine",
+                "GetNodePoolOptions",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/NodePoolOptions/GetNodePoolOptions");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -859,6 +919,11 @@ public class ContainerEngineClient implements ContainerEngine {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ContainerEngine",
+                "GetWorkRequest",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/WorkRequest/GetWorkRequest");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -888,6 +953,11 @@ public class ContainerEngineClient implements ContainerEngine {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ContainerEngine",
+                "ListClusters",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/ClusterSummary/ListClusters");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -917,6 +987,11 @@ public class ContainerEngineClient implements ContainerEngine {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ContainerEngine",
+                "ListNodePools",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/NodePoolSummary/ListNodePools");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -947,6 +1022,11 @@ public class ContainerEngineClient implements ContainerEngine {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ContainerEngine",
+                "ListWorkRequestErrors",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/WorkRequestError/ListWorkRequestErrors");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -976,6 +1056,11 @@ public class ContainerEngineClient implements ContainerEngine {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ContainerEngine",
+                "ListWorkRequestLogs",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/WorkRequestLogEntry/ListWorkRequestLogs");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1005,6 +1090,11 @@ public class ContainerEngineClient implements ContainerEngine {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ContainerEngine",
+                "ListWorkRequests",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/WorkRequestSummary/ListWorkRequests");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1034,6 +1124,11 @@ public class ContainerEngineClient implements ContainerEngine {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ContainerEngine",
+                "UpdateCluster",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/Cluster/UpdateCluster");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1069,6 +1164,11 @@ public class ContainerEngineClient implements ContainerEngine {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ContainerEngine",
+                "UpdateClusterEndpointConfig",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/Cluster/UpdateClusterEndpointConfig");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1103,6 +1203,11 @@ public class ContainerEngineClient implements ContainerEngine {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ContainerEngine",
+                "UpdateNodePool",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/NodePool/UpdateNodePool");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {

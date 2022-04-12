@@ -30,7 +30,7 @@ public class ListModelsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
     private String projectId;
 
     /**
-     * Filter to match models with the given lifecycleState.
+     * The filter to match models with the given lifecycleState.
      */
     private com.oracle.bmc.aivision.model.Model.LifecycleState lifecycleState;
 
@@ -40,7 +40,7 @@ public class ListModelsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
     private String displayName;
 
     /**
-     * Filter to find the model with the given identifier.
+     * The filter to find the model with the given identifier.
      */
     private String id;
 
@@ -60,13 +60,13 @@ public class ListModelsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
     private com.oracle.bmc.aivision.model.SortOrder sortOrder;
 
     /**
-     * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for displayName is ascending.
+     * The field to sort by. Only one sort order may be provided. The default order for timeCreated is descending. The default order for displayName is ascending.
      *
      */
     private SortBy sortBy;
 
     /**
-     * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for displayName is ascending.
+     * The field to sort by. Only one sort order may be provided. The default order for timeCreated is descending. The default order for displayName is ascending.
      *
      **/
     public enum SortBy {

@@ -478,6 +478,11 @@ public class BlockstorageClient implements Blockstorage {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Blockstorage",
+                "ChangeBootVolumeBackupCompartment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/BootVolumeBackup/ChangeBootVolumeBackupCompartment");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -514,6 +519,11 @@ public class BlockstorageClient implements Blockstorage {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Blockstorage",
+                "ChangeBootVolumeCompartment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/BootVolume/ChangeBootVolumeCompartment");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -550,6 +560,11 @@ public class BlockstorageClient implements Blockstorage {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Blockstorage",
+                "ChangeVolumeBackupCompartment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VolumeBackup/ChangeVolumeBackupCompartment");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -585,6 +600,11 @@ public class BlockstorageClient implements Blockstorage {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Blockstorage",
+                "ChangeVolumeCompartment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Volume/ChangeVolumeCompartment");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -620,6 +640,11 @@ public class BlockstorageClient implements Blockstorage {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Blockstorage",
+                "ChangeVolumeGroupBackupCompartment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VolumeGroupBackup/ChangeVolumeGroupBackupCompartment");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -656,6 +681,11 @@ public class BlockstorageClient implements Blockstorage {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Blockstorage",
+                "ChangeVolumeGroupCompartment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VolumeGroup/ChangeVolumeGroupCompartment");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -691,6 +721,11 @@ public class BlockstorageClient implements Blockstorage {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Blockstorage",
+                "CopyBootVolumeBackup",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/BootVolumeBackup/CopyBootVolumeBackup");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -725,6 +760,11 @@ public class BlockstorageClient implements Blockstorage {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Blockstorage",
+                "CopyVolumeBackup",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VolumeBackup/CopyVolumeBackup");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -760,6 +800,11 @@ public class BlockstorageClient implements Blockstorage {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Blockstorage",
+                "CopyVolumeGroupBackup",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VolumeGroupBackup/CopyVolumeGroupBackup");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -794,6 +839,11 @@ public class BlockstorageClient implements Blockstorage {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Blockstorage",
+                "CreateBootVolume",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/BootVolume/CreateBootVolume");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -829,6 +879,11 @@ public class BlockstorageClient implements Blockstorage {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Blockstorage",
+                "CreateBootVolumeBackup",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/BootVolumeBackup/CreateBootVolumeBackup");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -863,6 +918,11 @@ public class BlockstorageClient implements Blockstorage {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Blockstorage",
+                "CreateVolume",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Volume/CreateVolume");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -897,6 +957,11 @@ public class BlockstorageClient implements Blockstorage {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Blockstorage",
+                "CreateVolumeBackup",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VolumeBackup/CreateVolumeBackup");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -932,6 +997,11 @@ public class BlockstorageClient implements Blockstorage {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Blockstorage",
+                "CreateVolumeBackupPolicy",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VolumeBackupPolicy/CreateVolumeBackupPolicy");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -967,6 +1037,11 @@ public class BlockstorageClient implements Blockstorage {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Blockstorage",
+                "CreateVolumeBackupPolicyAssignment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VolumeBackupPolicyAssignment/CreateVolumeBackupPolicyAssignment");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1002,6 +1077,11 @@ public class BlockstorageClient implements Blockstorage {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Blockstorage",
+                "CreateVolumeGroup",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VolumeGroup/CreateVolumeGroup");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1037,6 +1117,11 @@ public class BlockstorageClient implements Blockstorage {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Blockstorage",
+                "CreateVolumeGroupBackup",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VolumeGroupBackup/CreateVolumeGroupBackup");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1070,6 +1155,8 @@ public class BlockstorageClient implements Blockstorage {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Blockstorage", "DeleteBootVolume", ib.getRequestUri().toString(), "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1101,6 +1188,8 @@ public class BlockstorageClient implements Blockstorage {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Blockstorage", "DeleteBootVolumeBackup", ib.getRequestUri().toString(), "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1132,6 +1221,8 @@ public class BlockstorageClient implements Blockstorage {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Blockstorage", "DeleteBootVolumeKmsKey", ib.getRequestUri().toString(), "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1162,6 +1253,8 @@ public class BlockstorageClient implements Blockstorage {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Blockstorage", "DeleteVolume", ib.getRequestUri().toString(), "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1192,6 +1285,8 @@ public class BlockstorageClient implements Blockstorage {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Blockstorage", "DeleteVolumeBackup", ib.getRequestUri().toString(), "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1223,6 +1318,8 @@ public class BlockstorageClient implements Blockstorage {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Blockstorage", "DeleteVolumeBackupPolicy", ib.getRequestUri().toString(), "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1255,6 +1352,11 @@ public class BlockstorageClient implements Blockstorage {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Blockstorage",
+                "DeleteVolumeBackupPolicyAssignment",
+                ib.getRequestUri().toString(),
+                "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1285,6 +1387,8 @@ public class BlockstorageClient implements Blockstorage {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Blockstorage", "DeleteVolumeGroup", ib.getRequestUri().toString(), "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1316,6 +1420,8 @@ public class BlockstorageClient implements Blockstorage {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Blockstorage", "DeleteVolumeGroupBackup", ib.getRequestUri().toString(), "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1346,6 +1452,8 @@ public class BlockstorageClient implements Blockstorage {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Blockstorage", "DeleteVolumeKmsKey", ib.getRequestUri().toString(), "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1377,6 +1485,11 @@ public class BlockstorageClient implements Blockstorage {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Blockstorage",
+                "GetBlockVolumeReplica",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/BlockVolumeReplica/GetBlockVolumeReplica");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1406,6 +1519,11 @@ public class BlockstorageClient implements Blockstorage {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Blockstorage",
+                "GetBootVolume",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/BootVolume/GetBootVolume");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1435,6 +1553,11 @@ public class BlockstorageClient implements Blockstorage {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Blockstorage",
+                "GetBootVolumeBackup",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/BootVolumeBackup/GetBootVolumeBackup");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1464,6 +1587,11 @@ public class BlockstorageClient implements Blockstorage {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Blockstorage",
+                "GetBootVolumeKmsKey",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/BootVolumeKmsKey/GetBootVolumeKmsKey");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1493,6 +1621,11 @@ public class BlockstorageClient implements Blockstorage {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Blockstorage",
+                "GetBootVolumeReplica",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/BootVolumeReplica/GetBootVolumeReplica");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1521,6 +1654,11 @@ public class BlockstorageClient implements Blockstorage {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Blockstorage",
+                "GetVolume",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Volume/GetVolume");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1550,6 +1688,11 @@ public class BlockstorageClient implements Blockstorage {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Blockstorage",
+                "GetVolumeBackup",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VolumeBackup/GetVolumeBackup");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1580,6 +1723,11 @@ public class BlockstorageClient implements Blockstorage {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Blockstorage",
+                "GetVolumeBackupPolicy",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VolumeBackupPolicy/GetVolumeBackupPolicy");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1612,6 +1760,11 @@ public class BlockstorageClient implements Blockstorage {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Blockstorage",
+                "GetVolumeBackupPolicyAssetAssignment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VolumeBackupPolicyAssignment/GetVolumeBackupPolicyAssetAssignment");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1643,6 +1796,11 @@ public class BlockstorageClient implements Blockstorage {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Blockstorage",
+                "GetVolumeBackupPolicyAssignment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VolumeBackupPolicyAssignment/GetVolumeBackupPolicyAssignment");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1672,6 +1830,11 @@ public class BlockstorageClient implements Blockstorage {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Blockstorage",
+                "GetVolumeGroup",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VolumeGroup/GetVolumeGroup");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1701,6 +1864,11 @@ public class BlockstorageClient implements Blockstorage {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Blockstorage",
+                "GetVolumeGroupBackup",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VolumeGroupBackup/GetVolumeGroupBackup");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1731,6 +1899,11 @@ public class BlockstorageClient implements Blockstorage {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Blockstorage",
+                "GetVolumeGroupReplica",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VolumeGroupReplica/GetVolumeGroupReplica");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1760,6 +1933,11 @@ public class BlockstorageClient implements Blockstorage {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Blockstorage",
+                "GetVolumeKmsKey",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VolumeKmsKey/GetVolumeKmsKey");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1790,6 +1968,11 @@ public class BlockstorageClient implements Blockstorage {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Blockstorage",
+                "ListBlockVolumeReplicas",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/BlockVolumeReplica/ListBlockVolumeReplicas");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1820,6 +2003,11 @@ public class BlockstorageClient implements Blockstorage {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Blockstorage",
+                "ListBootVolumeBackups",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/BootVolumeBackup/ListBootVolumeBackups");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1850,6 +2038,11 @@ public class BlockstorageClient implements Blockstorage {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Blockstorage",
+                "ListBootVolumeReplicas",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/BootVolumeReplica/ListBootVolumeReplicas");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1879,6 +2072,11 @@ public class BlockstorageClient implements Blockstorage {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Blockstorage",
+                "ListBootVolumes",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/BootVolume/ListBootVolumes");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1909,6 +2107,11 @@ public class BlockstorageClient implements Blockstorage {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Blockstorage",
+                "ListVolumeBackupPolicies",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VolumeBackupPolicy/ListVolumeBackupPolicies");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1938,6 +2141,11 @@ public class BlockstorageClient implements Blockstorage {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Blockstorage",
+                "ListVolumeBackups",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VolumeBackup/ListVolumeBackups");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1968,6 +2176,11 @@ public class BlockstorageClient implements Blockstorage {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Blockstorage",
+                "ListVolumeGroupBackups",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VolumeGroupBackup/ListVolumeGroupBackups");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1998,6 +2211,11 @@ public class BlockstorageClient implements Blockstorage {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Blockstorage",
+                "ListVolumeGroupReplicas",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VolumeGroupReplica/ListVolumeGroupReplicas");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2027,6 +2245,11 @@ public class BlockstorageClient implements Blockstorage {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Blockstorage",
+                "ListVolumeGroups",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VolumeGroup/ListVolumeGroups");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2056,6 +2279,11 @@ public class BlockstorageClient implements Blockstorage {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Blockstorage",
+                "ListVolumes",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Volume/ListVolumes");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2085,6 +2313,11 @@ public class BlockstorageClient implements Blockstorage {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Blockstorage",
+                "UpdateBootVolume",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/BootVolume/UpdateBootVolume");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2119,6 +2352,11 @@ public class BlockstorageClient implements Blockstorage {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Blockstorage",
+                "UpdateBootVolumeBackup",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/BootVolumeBackup/UpdateBootVolumeBackup");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2153,6 +2391,11 @@ public class BlockstorageClient implements Blockstorage {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Blockstorage",
+                "UpdateBootVolumeKmsKey",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/BootVolumeKmsKey/UpdateBootVolumeKmsKey");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2186,6 +2429,11 @@ public class BlockstorageClient implements Blockstorage {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Blockstorage",
+                "UpdateVolume",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Volume/UpdateVolume");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2219,6 +2467,11 @@ public class BlockstorageClient implements Blockstorage {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Blockstorage",
+                "UpdateVolumeBackup",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VolumeBackup/UpdateVolumeBackup");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2254,6 +2507,11 @@ public class BlockstorageClient implements Blockstorage {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Blockstorage",
+                "UpdateVolumeBackupPolicy",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VolumeBackupPolicy/UpdateVolumeBackupPolicy");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2287,6 +2545,11 @@ public class BlockstorageClient implements Blockstorage {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Blockstorage",
+                "UpdateVolumeGroup",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VolumeGroup/UpdateVolumeGroup");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2321,6 +2584,11 @@ public class BlockstorageClient implements Blockstorage {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Blockstorage",
+                "UpdateVolumeGroupBackup",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VolumeGroupBackup/UpdateVolumeGroupBackup");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2354,6 +2622,11 @@ public class BlockstorageClient implements Blockstorage {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Blockstorage",
+                "UpdateVolumeKmsKey",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VolumeKmsKey/UpdateVolumeKmsKey");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {

@@ -5,7 +5,7 @@
 package com.oracle.bmc.aivision.model;
 
 /**
- * Value of a form field.
+ * The value of a form field.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -46,13 +46,13 @@ package com.oracle.bmc.aivision.model;
 public class FieldValue {
 
     /**
-     * Detected text of a field.
+     * The detected text of a field.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("text")
     String text;
 
     /**
-     * Confidence score between 0 to 1.
+     * The confidence score between 0 and 1.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("confidence")
     Float confidence;
@@ -61,13 +61,13 @@ public class FieldValue {
     BoundingPolygon boundingPolygon;
 
     /**
-     * Indexes of the words in the field value.
+     * The indexes of the words in the field value.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("wordIndexes")
     java.util.List<Integer> wordIndexes;
 
     /**
-     * Type of data detected.
+     * The type of data detected.
      *
      **/
     @lombok.extern.slf4j.Slf4j

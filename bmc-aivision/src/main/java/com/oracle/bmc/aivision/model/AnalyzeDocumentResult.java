@@ -5,7 +5,7 @@
 package com.oracle.bmc.aivision.model;
 
 /**
- * Document analysis results.
+ * The document analysis results.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -182,7 +182,7 @@ public class AnalyzeDocumentResult {
     DocumentMetadata documentMetadata;
 
     /**
-     * Array of Page.
+     * The array of a Page.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("pages")
     java.util.List<Page> pages;
@@ -200,43 +200,43 @@ public class AnalyzeDocumentResult {
     java.util.List<DetectedLanguage> detectedLanguages;
 
     /**
-     * Document classification model version.
+     * The document classification model version.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("documentClassificationModelVersion")
     String documentClassificationModelVersion;
 
     /**
-     * Document language classification model version.
+     * The document language classification model version.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("languageClassificationModelVersion")
     String languageClassificationModelVersion;
 
     /**
-     * Document text detection model version.
+     * The document text detection model version.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("textDetectionModelVersion")
     String textDetectionModelVersion;
 
     /**
-     * Document keyValue detection model version.
+     * The document keyValue detection model version.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("keyValueDetectionModelVersion")
     String keyValueDetectionModelVersion;
 
     /**
-     * Document table detection model version.
+     * The document table detection model version.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("tableDetectionModelVersion")
     String tableDetectionModelVersion;
 
     /**
-     * Errors encountered during document analysis.
+     * The errors encountered during document analysis.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("errors")
     java.util.List<ProcessingError> errors;
 
     /**
-     * Generated searchable PDF file.
+     * The searchable PDF file that was generated.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("searchablePdf")
     byte[] searchablePdf;

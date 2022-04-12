@@ -478,6 +478,11 @@ public class BdsClient implements Bds {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Bds",
+                "ActivateBdsMetastoreConfiguration",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsMetastoreConfiguration/ActivateBdsMetastoreConfiguration");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -515,6 +520,11 @@ public class BdsClient implements Bds {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Bds",
+                "AddAutoScalingConfiguration",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsInstance/AddAutoScalingConfiguration");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -550,6 +560,11 @@ public class BdsClient implements Bds {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Bds",
+                "AddBlockStorage",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsInstance/AddBlockStorage");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -584,6 +599,11 @@ public class BdsClient implements Bds {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Bds",
+                "AddCloudSql",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsInstance/AddCloudSql");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -618,6 +638,11 @@ public class BdsClient implements Bds {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Bds",
+                "AddWorkerNodes",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsInstance/AddWorkerNodes");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -654,6 +679,11 @@ public class BdsClient implements Bds {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Bds",
+                "ChangeBdsInstanceCompartment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsInstance/ChangeBdsInstanceCompartment");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -689,6 +719,11 @@ public class BdsClient implements Bds {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Bds",
+                "ChangeShape",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsInstance/ChangeShape");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -723,6 +758,11 @@ public class BdsClient implements Bds {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Bds",
+                "CreateBdsApiKey",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsApiKey/CreateBdsApiKey");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -757,6 +797,11 @@ public class BdsClient implements Bds {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Bds",
+                "CreateBdsInstance",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsInstance/CreateBdsInstance");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -793,6 +838,11 @@ public class BdsClient implements Bds {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Bds",
+                "CreateBdsMetastoreConfiguration",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsMetastoreConfiguration/CreateBdsMetastoreConfiguration");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -827,6 +877,11 @@ public class BdsClient implements Bds {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Bds",
+                "DeleteBdsApiKey",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsApiKey/DeleteBdsApiKey");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -857,6 +912,11 @@ public class BdsClient implements Bds {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Bds",
+                "DeleteBdsInstance",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsInstance/DeleteBdsInstance");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -889,6 +949,11 @@ public class BdsClient implements Bds {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Bds",
+                "DeleteBdsMetastoreConfiguration",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsMetastoreConfiguration/DeleteBdsMetastoreConfiguration");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -921,6 +986,11 @@ public class BdsClient implements Bds {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Bds",
+                "GetAutoScalingConfiguration",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsInstance/GetAutoScalingConfiguration");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -950,6 +1020,11 @@ public class BdsClient implements Bds {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Bds",
+                "GetBdsApiKey",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsApiKey/GetBdsApiKey");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -979,6 +1054,11 @@ public class BdsClient implements Bds {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Bds",
+                "GetBdsInstance",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsInstance/GetBdsInstance");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1010,6 +1090,11 @@ public class BdsClient implements Bds {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Bds",
+                "GetBdsMetastoreConfiguration",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsMetastoreConfiguration/GetBdsMetastoreConfiguration");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1039,6 +1124,11 @@ public class BdsClient implements Bds {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Bds",
+                "GetWorkRequest",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/WorkRequest/GetWorkRequest");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1070,6 +1160,11 @@ public class BdsClient implements Bds {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Bds",
+                "ListAutoScalingConfigurations",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsInstance/ListAutoScalingConfigurations");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1099,6 +1194,11 @@ public class BdsClient implements Bds {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Bds",
+                "ListBdsApiKeys",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsApiKey/ListBdsApiKeys");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1128,6 +1228,11 @@ public class BdsClient implements Bds {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Bds",
+                "ListBdsInstances",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsInstanceSummary/ListBdsInstances");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1159,6 +1264,11 @@ public class BdsClient implements Bds {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Bds",
+                "ListBdsMetastoreConfigurations",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsMetastoreConfiguration/ListBdsMetastoreConfigurations");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1189,6 +1299,11 @@ public class BdsClient implements Bds {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Bds",
+                "ListWorkRequestErrors",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/WorkRequestError/ListWorkRequestErrors");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1218,6 +1333,11 @@ public class BdsClient implements Bds {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Bds",
+                "ListWorkRequestLogs",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/WorkRequestLogEntry/ListWorkRequestLogs");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1247,6 +1367,11 @@ public class BdsClient implements Bds {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Bds",
+                "ListWorkRequests",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/WorkRequest/ListWorkRequests");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1279,6 +1404,11 @@ public class BdsClient implements Bds {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Bds",
+                "RemoveAutoScalingConfiguration",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsInstance/RemoveAutoScalingConfiguration");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1314,6 +1444,11 @@ public class BdsClient implements Bds {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Bds",
+                "RemoveCloudSql",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsInstance/RemoveCloudSql");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1348,6 +1483,11 @@ public class BdsClient implements Bds {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Bds",
+                "RestartNode",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsInstance/RestartNode");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1383,6 +1523,11 @@ public class BdsClient implements Bds {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Bds",
+                "TestBdsMetastoreConfiguration",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsMetastoreConfiguration/TestBdsMetastoreConfiguration");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1419,6 +1564,11 @@ public class BdsClient implements Bds {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Bds",
+                "TestBdsObjectStorageConnection",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsApiKey/TestBdsObjectStorageConnection");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1456,6 +1606,11 @@ public class BdsClient implements Bds {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Bds",
+                "UpdateAutoScalingConfiguration",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsInstance/UpdateAutoScalingConfiguration");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1490,6 +1645,11 @@ public class BdsClient implements Bds {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Bds",
+                "UpdateBdsInstance",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsInstance/UpdateBdsInstance");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1525,6 +1685,11 @@ public class BdsClient implements Bds {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Bds",
+                "UpdateBdsMetastoreConfiguration",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsMetastoreConfiguration/UpdateBdsMetastoreConfiguration");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {

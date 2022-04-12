@@ -476,6 +476,11 @@ public class OptimizerClient implements Optimizer {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Optimizer",
+                "BulkApplyRecommendations",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/advisor/20200606/Recommendation/BulkApplyRecommendations");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -510,6 +515,11 @@ public class OptimizerClient implements Optimizer {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Optimizer",
+                "CreateProfile",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/advisor/20200606/Profile/CreateProfile");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -543,6 +553,11 @@ public class OptimizerClient implements Optimizer {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Optimizer",
+                "DeleteProfile",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/advisor/20200606/Profile/DeleteProfile");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -574,6 +589,11 @@ public class OptimizerClient implements Optimizer {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Optimizer",
+                "FilterResourceActions",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/advisor/20200606/ResourceActionSummary/FilterResourceActions");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -607,6 +627,11 @@ public class OptimizerClient implements Optimizer {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Optimizer",
+                "GetCategory",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/advisor/20200606/Category/GetCategory");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -636,6 +661,11 @@ public class OptimizerClient implements Optimizer {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Optimizer",
+                "GetEnrollmentStatus",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/advisor/20200606/EnrollmentStatus/GetEnrollmentStatus");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -664,6 +694,11 @@ public class OptimizerClient implements Optimizer {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Optimizer",
+                "GetProfile",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/advisor/20200606/Profile/GetProfile");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -693,6 +728,11 @@ public class OptimizerClient implements Optimizer {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Optimizer",
+                "GetRecommendation",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/advisor/20200606/Recommendation/GetRecommendation");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -722,6 +762,11 @@ public class OptimizerClient implements Optimizer {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Optimizer",
+                "GetResourceAction",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/advisor/20200606/ResourceAction/GetResourceAction");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -751,6 +796,11 @@ public class OptimizerClient implements Optimizer {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Optimizer",
+                "GetWorkRequest",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/advisor/20200606/WorkRequest/GetWorkRequest");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -780,6 +830,11 @@ public class OptimizerClient implements Optimizer {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Optimizer",
+                "ListCategories",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/advisor/20200606/CategorySummary/ListCategories");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -810,6 +865,11 @@ public class OptimizerClient implements Optimizer {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Optimizer",
+                "ListEnrollmentStatuses",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/advisor/20200606/EnrollmentStatusSummary/ListEnrollmentStatuses");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -839,6 +899,11 @@ public class OptimizerClient implements Optimizer {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Optimizer",
+                "ListHistories",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/advisor/20200606/HistorySummary/ListHistories");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -868,6 +933,11 @@ public class OptimizerClient implements Optimizer {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Optimizer",
+                "ListProfileLevels",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/advisor/20200606/ProfileLevelSummary/ListProfileLevels");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -897,6 +967,11 @@ public class OptimizerClient implements Optimizer {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Optimizer",
+                "ListProfiles",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/advisor/20200606/ProfileSummary/ListProfiles");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -928,6 +1003,11 @@ public class OptimizerClient implements Optimizer {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Optimizer",
+                "ListRecommendationStrategies",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/advisor/20200606/RecommendationStrategySummary/ListRecommendationStrategies");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -957,6 +1037,11 @@ public class OptimizerClient implements Optimizer {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Optimizer",
+                "ListRecommendations",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/advisor/20200606/RecommendationSummary/ListRecommendations");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -988,6 +1073,11 @@ public class OptimizerClient implements Optimizer {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Optimizer",
+                "ListResourceActionQueryableFields",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/advisor/20200606/QueryableFieldSummary/ListResourceActionQueryableFields");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1017,6 +1107,11 @@ public class OptimizerClient implements Optimizer {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Optimizer",
+                "ListResourceActions",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/advisor/20200606/ResourceActionSummary/ListResourceActions");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1047,6 +1142,11 @@ public class OptimizerClient implements Optimizer {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Optimizer",
+                "ListWorkRequestErrors",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/advisor/20200606/WorkRequestError/ListWorkRequestErrors");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1076,6 +1176,11 @@ public class OptimizerClient implements Optimizer {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Optimizer",
+                "ListWorkRequestLogs",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/advisor/20200606/WorkRequestLogEntry/ListWorkRequestLogs");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1105,6 +1210,11 @@ public class OptimizerClient implements Optimizer {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Optimizer",
+                "ListWorkRequests",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/advisor/20200606/WorkRequest/ListWorkRequests");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1135,6 +1245,11 @@ public class OptimizerClient implements Optimizer {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Optimizer",
+                "UpdateEnrollmentStatus",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/advisor/20200606/EnrollmentStatus/UpdateEnrollmentStatus");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1168,6 +1283,11 @@ public class OptimizerClient implements Optimizer {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Optimizer",
+                "UpdateProfile",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/advisor/20200606/Profile/UpdateProfile");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1201,6 +1321,11 @@ public class OptimizerClient implements Optimizer {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Optimizer",
+                "UpdateRecommendation",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/advisor/20200606/Recommendation/UpdateRecommendation");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1234,6 +1359,11 @@ public class OptimizerClient implements Optimizer {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Optimizer",
+                "UpdateResourceAction",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/advisor/20200606/ResourceAction/UpdateResourceAction");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {

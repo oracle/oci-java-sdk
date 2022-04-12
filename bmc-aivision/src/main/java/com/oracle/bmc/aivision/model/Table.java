@@ -5,7 +5,7 @@
 package com.oracle.bmc.aivision.model;
 
 /**
- * Table extracted from a document.
+ * The table extracted from a document.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -128,37 +128,37 @@ public class Table {
     }
 
     /**
-     * Number of rows.
+     * The number of rows.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("rowCount")
     Integer rowCount;
 
     /**
-     * Number of columns.
+     * The number of columns.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("columnCount")
     Integer columnCount;
 
     /**
-     * Header rows.
+     * The header rows.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("headerRows")
     java.util.List<TableRow> headerRows;
 
     /**
-     * Body rows.
+     * The body rows.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("bodyRows")
     java.util.List<TableRow> bodyRows;
 
     /**
-     * Footer rows.
+     * the footer rows.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("footerRows")
     java.util.List<TableRow> footerRows;
 
     /**
-     * Confidence score between 0 to 1.
+     * The confidence score between 0 and 1.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("confidence")
     Float confidence;

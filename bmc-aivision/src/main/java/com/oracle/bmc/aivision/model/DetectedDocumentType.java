@@ -5,7 +5,7 @@
 package com.oracle.bmc.aivision.model;
 
 /**
- * Detected document type.
+ * The detected document type.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -70,13 +70,13 @@ public class DetectedDocumentType {
     }
 
     /**
-     * Type of the document.
+     * The document type.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("documentType")
     String documentType;
 
     /**
-     * Confidence score between 0 to 1.
+     * The confidence score between 0 and 1.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("confidence")
     Float confidence;

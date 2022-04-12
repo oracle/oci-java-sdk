@@ -393,6 +393,8 @@ public class OceInstanceAsyncClient implements OceInstanceAsync {
                         javax.ws.rs.core.Response, ChangeOceInstanceCompartmentResponse>
                 transformer = ChangeOceInstanceCompartmentConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "OceInstance", "ChangeOceInstanceCompartment", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeOceInstanceCompartmentRequest, ChangeOceInstanceCompartmentResponse>
@@ -440,6 +442,8 @@ public class OceInstanceAsyncClient implements OceInstanceAsync {
         final com.google.common.base.Function<javax.ws.rs.core.Response, CreateOceInstanceResponse>
                 transformer = CreateOceInstanceConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "OceInstance", "CreateOceInstance", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<CreateOceInstanceRequest, CreateOceInstanceResponse>
                 handlerToUse = handler;
@@ -484,6 +488,8 @@ public class OceInstanceAsyncClient implements OceInstanceAsync {
                 DeleteOceInstanceConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteOceInstanceResponse>
                 transformer = DeleteOceInstanceConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "OceInstance", "DeleteOceInstance", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<DeleteOceInstanceRequest, DeleteOceInstanceResponse>
                 handlerToUse = handler;
@@ -523,6 +529,8 @@ public class OceInstanceAsyncClient implements OceInstanceAsync {
                 GetOceInstanceConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetOceInstanceResponse>
                 transformer = GetOceInstanceConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "OceInstance", "GetOceInstance", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<GetOceInstanceRequest, GetOceInstanceResponse>
                 handlerToUse = handler;
@@ -562,6 +570,8 @@ public class OceInstanceAsyncClient implements OceInstanceAsync {
                 GetWorkRequestConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetWorkRequestResponse>
                 transformer = GetWorkRequestConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "OceInstance", "GetWorkRequest", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<GetWorkRequestRequest, GetWorkRequestResponse>
                 handlerToUse = handler;
@@ -601,6 +611,8 @@ public class OceInstanceAsyncClient implements OceInstanceAsync {
                 ListOceInstancesConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListOceInstancesResponse>
                 transformer = ListOceInstancesConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "OceInstance", "ListOceInstances", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<ListOceInstancesRequest, ListOceInstancesResponse>
                 handlerToUse = handler;
@@ -641,6 +653,8 @@ public class OceInstanceAsyncClient implements OceInstanceAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListWorkRequestErrorsResponse>
                 transformer = ListWorkRequestErrorsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "OceInstance", "ListWorkRequestErrors", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListWorkRequestErrorsRequest, ListWorkRequestErrorsResponse>
@@ -682,6 +696,8 @@ public class OceInstanceAsyncClient implements OceInstanceAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListWorkRequestLogsResponse>
                 transformer = ListWorkRequestLogsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "OceInstance", "ListWorkRequestLogs", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListWorkRequestLogsRequest, ListWorkRequestLogsResponse>
@@ -722,6 +738,8 @@ public class OceInstanceAsyncClient implements OceInstanceAsync {
                 ListWorkRequestsConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListWorkRequestsResponse>
                 transformer = ListWorkRequestsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "OceInstance", "ListWorkRequests", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<ListWorkRequestsRequest, ListWorkRequestsResponse>
                 handlerToUse = handler;
@@ -761,6 +779,8 @@ public class OceInstanceAsyncClient implements OceInstanceAsync {
                 UpdateOceInstanceConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateOceInstanceResponse>
                 transformer = UpdateOceInstanceConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "OceInstance", "UpdateOceInstance", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<UpdateOceInstanceRequest, UpdateOceInstanceResponse>
                 handlerToUse = handler;

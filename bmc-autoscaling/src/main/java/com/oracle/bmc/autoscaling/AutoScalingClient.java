@@ -406,6 +406,11 @@ public class AutoScalingClient implements AutoScaling {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "AutoScaling",
+                "ChangeAutoScalingConfigurationCompartment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/autoscaling/20181001/AutoScalingConfiguration/ChangeAutoScalingConfigurationCompartment");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -442,6 +447,11 @@ public class AutoScalingClient implements AutoScaling {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "AutoScaling",
+                "CreateAutoScalingConfiguration",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/autoscaling/20181001/AutoScalingConfiguration/CreateAutoScalingConfiguration");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -478,6 +488,11 @@ public class AutoScalingClient implements AutoScaling {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "AutoScaling",
+                "CreateAutoScalingPolicy",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/autoscaling/20181001/AutoScalingPolicy/CreateAutoScalingPolicy");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -513,6 +528,11 @@ public class AutoScalingClient implements AutoScaling {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "AutoScaling",
+                "DeleteAutoScalingConfiguration",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/autoscaling/20181001/AutoScalingConfiguration/DeleteAutoScalingConfiguration");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -544,6 +564,11 @@ public class AutoScalingClient implements AutoScaling {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "AutoScaling",
+                "DeleteAutoScalingPolicy",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/autoscaling/20181001/AutoScalingPolicy/DeleteAutoScalingPolicy");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -576,6 +601,11 @@ public class AutoScalingClient implements AutoScaling {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "AutoScaling",
+                "GetAutoScalingConfiguration",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/autoscaling/20181001/AutoScalingConfiguration/GetAutoScalingConfiguration");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -605,6 +635,11 @@ public class AutoScalingClient implements AutoScaling {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "AutoScaling",
+                "GetAutoScalingPolicy",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/autoscaling/20181001/AutoScalingPolicy/GetAutoScalingPolicy");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -636,6 +671,11 @@ public class AutoScalingClient implements AutoScaling {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "AutoScaling",
+                "ListAutoScalingConfigurations",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/autoscaling/20181001/AutoScalingConfigurationSummary/ListAutoScalingConfigurations");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -666,6 +706,11 @@ public class AutoScalingClient implements AutoScaling {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "AutoScaling",
+                "ListAutoScalingPolicies",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/autoscaling/20181001/AutoScalingPolicySummary/ListAutoScalingPolicies");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -698,6 +743,11 @@ public class AutoScalingClient implements AutoScaling {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "AutoScaling",
+                "UpdateAutoScalingConfiguration",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/autoscaling/20181001/AutoScalingConfiguration/UpdateAutoScalingConfiguration");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -734,6 +784,11 @@ public class AutoScalingClient implements AutoScaling {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "AutoScaling",
+                "UpdateAutoScalingPolicy",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/autoscaling/20181001/AutoScalingPolicy/UpdateAutoScalingPolicy");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {

@@ -5,7 +5,7 @@
 package com.oracle.bmc.aivision.model;
 
 /**
- * A description of workrequest status.
+ * The workrequest status details.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -150,19 +150,19 @@ public class WorkRequest {
     }
 
     /**
-     * Type of the work request.
+     * The type of work request.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("operationType")
     OperationType operationType;
 
     /**
-     * Status of current work request.
+     * The status of the current work request.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     OperationStatus status;
 
     /**
-     * The id of the work request.
+     * The ID of the work request.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     String id;
@@ -182,7 +182,7 @@ public class WorkRequest {
     java.util.List<WorkRequestResource> resources;
 
     /**
-     * Percentage of the request completed.
+     * The percentage of the request completed.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("percentComplete")
     Float percentComplete;

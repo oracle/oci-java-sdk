@@ -35,6 +35,8 @@ public class ConfigFileAuthenticationDetailsProvider
     private final static String OCI_REGION_ENV_VAR_NAME = "OCI_REGION";
     private final BasicConfigFileAuthenticationProvider delegate;
     private final Region region;
+    private final static String CONFIG_FILE_DEBUG_INFORMATION_LOG =
+            "\nFor more information about OCI configuration file and how to get required information, see https://docs.oracle.com/en-us/iaas/Content/API/Concepts/sdkconfig.htm";
 
     /**
      * Creates a new instance using the config file at the default location,
@@ -100,7 +102,8 @@ public class ConfigFileAuthenticationDetailsProvider
                 region = Region.fromRegionId(regionId);
             } catch (IllegalArgumentException e) {
                 LOG.warn(
-                        "Found regionId '{}' in config file or OCI_REGION env variable, but not supported by this version of the SDK",
+                        "Found regionId '{}' in config file or OCI_REGION env variable, but not supported by this version of the SDK"
+                                + CONFIG_FILE_DEBUG_INFORMATION_LOG,
                         regionId,
                         e);
                 // Proceed by assuming the region id in the config file belongs to OC1 realm.
@@ -178,15 +181,20 @@ public class ConfigFileAuthenticationDetailsProvider
         private ConfigFileSimpleAuthenticationDetailsProvider(ConfigFile configFile) {
             String fingerprint =
                     Preconditions.checkNotNull(
-                            configFile.get("fingerprint"), "missing fingerprint in config");
+                            configFile.get("fingerprint"),
+                            "Missing fingerprint in config." + CONFIG_FILE_DEBUG_INFORMATION_LOG);
             String tenantId =
                     Preconditions.checkNotNull(
-                            configFile.get("tenancy"), "missing tenancy in config");
+                            configFile.get("tenancy"),
+                            "Missing tenancy in config." + CONFIG_FILE_DEBUG_INFORMATION_LOG);
             String userId =
-                    Preconditions.checkNotNull(configFile.get("user"), "missing user in config");
+                    Preconditions.checkNotNull(
+                            configFile.get("user"),
+                            "Missing user in config." + CONFIG_FILE_DEBUG_INFORMATION_LOG);
             String pemFilePath =
                     Preconditions.checkNotNull(
-                            configFile.get("key_file"), "missing key_file in config");
+                            configFile.get("key_file"),
+                            "Missing key_file in config." + CONFIG_FILE_DEBUG_INFORMATION_LOG);
             // pass phrase is optional
             String passPhrase = configFile.get("pass_phrase");
 

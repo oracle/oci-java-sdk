@@ -476,6 +476,11 @@ public class DataIntegrationClient implements DataIntegration {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "ChangeCompartment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Workspace/ChangeCompartment");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -512,6 +517,11 @@ public class DataIntegrationClient implements DataIntegration {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "ChangeDisApplicationCompartment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/DisApplication/ChangeDisApplicationCompartment");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -547,6 +557,11 @@ public class DataIntegrationClient implements DataIntegration {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "CreateApplication",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Application/CreateApplication");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -581,6 +596,11 @@ public class DataIntegrationClient implements DataIntegration {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "CreateConnection",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Connection/CreateConnection");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -617,6 +637,11 @@ public class DataIntegrationClient implements DataIntegration {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "CreateConnectionValidation",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/ConnectionValidation/CreateConnectionValidation");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -652,6 +677,11 @@ public class DataIntegrationClient implements DataIntegration {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "CreateDataAsset",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/DataAsset/CreateDataAsset");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -686,6 +716,11 @@ public class DataIntegrationClient implements DataIntegration {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "CreateDataFlow",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/DataFlow/CreateDataFlow");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -721,6 +756,11 @@ public class DataIntegrationClient implements DataIntegration {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "CreateDataFlowValidation",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/DataFlowValidation/CreateDataFlowValidation");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -755,6 +795,11 @@ public class DataIntegrationClient implements DataIntegration {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "CreateDisApplication",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/DisApplication/CreateDisApplication");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -789,6 +834,11 @@ public class DataIntegrationClient implements DataIntegration {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "CreateEntityShape",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/DataEntity/CreateEntityShape");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -825,6 +875,11 @@ public class DataIntegrationClient implements DataIntegration {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "CreateExternalPublication",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/ExternalPublication/CreateExternalPublication");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -863,6 +918,11 @@ public class DataIntegrationClient implements DataIntegration {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "CreateExternalPublicationValidation",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/ExternalPublicationValidation/CreateExternalPublicationValidation");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -898,6 +958,11 @@ public class DataIntegrationClient implements DataIntegration {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "CreateFolder",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Folder/CreateFolder");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -933,6 +998,11 @@ public class DataIntegrationClient implements DataIntegration {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "CreateFunctionLibrary",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/FunctionLibrary/CreateFunctionLibrary");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -967,6 +1037,11 @@ public class DataIntegrationClient implements DataIntegration {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "CreatePatch",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Application/CreatePatch");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1001,6 +1076,11 @@ public class DataIntegrationClient implements DataIntegration {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "CreatePipeline",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Pipeline/CreatePipeline");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1036,6 +1116,11 @@ public class DataIntegrationClient implements DataIntegration {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "CreatePipelineValidation",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/PipelineValidation/CreatePipelineValidation");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1070,6 +1155,11 @@ public class DataIntegrationClient implements DataIntegration {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "CreateProject",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Project/CreateProject");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1104,6 +1194,11 @@ public class DataIntegrationClient implements DataIntegration {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "CreateSchedule",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Schedule/CreateSchedule");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1137,6 +1232,11 @@ public class DataIntegrationClient implements DataIntegration {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "CreateTask",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Task/CreateTask");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1171,6 +1271,11 @@ public class DataIntegrationClient implements DataIntegration {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "CreateTaskRun",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/TaskRun/CreateTaskRun");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1205,6 +1310,11 @@ public class DataIntegrationClient implements DataIntegration {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "CreateTaskSchedule",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/TaskSchedule/CreateTaskSchedule");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1239,6 +1349,11 @@ public class DataIntegrationClient implements DataIntegration {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "CreateTaskValidation",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/TaskValidation/CreateTaskValidation");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1275,6 +1390,11 @@ public class DataIntegrationClient implements DataIntegration {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "CreateUserDefinedFunction",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/UserDefinedFunction/CreateUserDefinedFunction");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1313,6 +1433,11 @@ public class DataIntegrationClient implements DataIntegration {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "CreateUserDefinedFunctionValidation",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/UserDefinedFunctionValidation/CreateUserDefinedFunctionValidation");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1348,6 +1473,11 @@ public class DataIntegrationClient implements DataIntegration {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "CreateWorkspace",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Workspace/CreateWorkspace");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1381,6 +1511,11 @@ public class DataIntegrationClient implements DataIntegration {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "DeleteApplication",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Application/DeleteApplication");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1411,6 +1546,11 @@ public class DataIntegrationClient implements DataIntegration {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "DeleteConnection",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Connection/DeleteConnection");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1443,6 +1583,11 @@ public class DataIntegrationClient implements DataIntegration {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "DeleteConnectionValidation",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/ConnectionValidation/DeleteConnectionValidation");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1473,6 +1618,11 @@ public class DataIntegrationClient implements DataIntegration {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "DeleteDataAsset",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/DataAsset/DeleteDataAsset");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1503,6 +1653,11 @@ public class DataIntegrationClient implements DataIntegration {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "DeleteDataFlow",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/DataFlow/DeleteDataFlow");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1534,6 +1689,11 @@ public class DataIntegrationClient implements DataIntegration {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "DeleteDataFlowValidation",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/DataFlowValidation/DeleteDataFlowValidation");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1564,6 +1724,11 @@ public class DataIntegrationClient implements DataIntegration {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "DeleteDisApplication",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/DisApplication/DeleteDisApplication");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1596,6 +1761,11 @@ public class DataIntegrationClient implements DataIntegration {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "DeleteExternalPublication",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/ExternalPublication/DeleteExternalPublication");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1629,6 +1799,11 @@ public class DataIntegrationClient implements DataIntegration {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "DeleteExternalPublicationValidation",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/ExternalPublicationValidation/DeleteExternalPublicationValidation");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1659,6 +1834,11 @@ public class DataIntegrationClient implements DataIntegration {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "DeleteFolder",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Folder/DeleteFolder");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1690,6 +1870,11 @@ public class DataIntegrationClient implements DataIntegration {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "DeleteFunctionLibrary",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/FunctionLibrary/DeleteFunctionLibrary");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1720,6 +1905,11 @@ public class DataIntegrationClient implements DataIntegration {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "DeletePatch",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Application/DeletePatch");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1750,6 +1940,11 @@ public class DataIntegrationClient implements DataIntegration {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "DeletePipeline",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Pipeline/DeletePipeline");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1781,6 +1976,11 @@ public class DataIntegrationClient implements DataIntegration {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "DeletePipelineValidation",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/PipelineValidation/DeletePipelineValidation");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1811,6 +2011,11 @@ public class DataIntegrationClient implements DataIntegration {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "DeleteProject",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Project/DeleteProject");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1841,6 +2046,11 @@ public class DataIntegrationClient implements DataIntegration {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "DeleteSchedule",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Schedule/DeleteSchedule");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1870,6 +2080,11 @@ public class DataIntegrationClient implements DataIntegration {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "DeleteTask",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Task/DeleteTask");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1900,6 +2115,11 @@ public class DataIntegrationClient implements DataIntegration {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "DeleteTaskRun",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/TaskRun/DeleteTaskRun");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1930,6 +2150,11 @@ public class DataIntegrationClient implements DataIntegration {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "DeleteTaskSchedule",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/TaskSchedule/DeleteTaskSchedule");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1960,6 +2185,11 @@ public class DataIntegrationClient implements DataIntegration {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "DeleteTaskValidation",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/TaskValidation/DeleteTaskValidation");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1992,6 +2222,11 @@ public class DataIntegrationClient implements DataIntegration {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "DeleteUserDefinedFunction",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/UserDefinedFunction/DeleteUserDefinedFunction");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2025,6 +2260,11 @@ public class DataIntegrationClient implements DataIntegration {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "DeleteUserDefinedFunctionValidation",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/UserDefinedFunctionValidation/DeleteUserDefinedFunctionValidation");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2055,6 +2295,11 @@ public class DataIntegrationClient implements DataIntegration {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "DeleteWorkspace",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Workspace/DeleteWorkspace");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2085,6 +2330,11 @@ public class DataIntegrationClient implements DataIntegration {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "GetApplication",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Application/GetApplication");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2114,6 +2364,11 @@ public class DataIntegrationClient implements DataIntegration {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "GetConnection",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Connection/GetConnection");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2144,6 +2399,11 @@ public class DataIntegrationClient implements DataIntegration {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "GetConnectionValidation",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/ConnectionValidation/GetConnectionValidation");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2173,6 +2433,11 @@ public class DataIntegrationClient implements DataIntegration {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "GetCountStatistic",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Project/GetCountStatistic");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2202,6 +2467,11 @@ public class DataIntegrationClient implements DataIntegration {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "GetDataAsset",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/DataAsset/GetDataAsset");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2231,6 +2501,11 @@ public class DataIntegrationClient implements DataIntegration {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "GetDataEntity",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/DataEntity/GetDataEntity");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2260,6 +2535,11 @@ public class DataIntegrationClient implements DataIntegration {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "GetDataFlow",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/DataFlow/GetDataFlow");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2290,6 +2570,11 @@ public class DataIntegrationClient implements DataIntegration {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "GetDataFlowValidation",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/DataFlowValidation/GetDataFlowValidation");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2319,6 +2604,11 @@ public class DataIntegrationClient implements DataIntegration {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "GetDependentObject",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Application/GetDependentObject");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2348,6 +2638,11 @@ public class DataIntegrationClient implements DataIntegration {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "GetDisApplication",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/DisApplication/GetDisApplication");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2378,6 +2673,11 @@ public class DataIntegrationClient implements DataIntegration {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "GetExternalPublication",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/ExternalPublication/GetExternalPublication");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2409,6 +2709,11 @@ public class DataIntegrationClient implements DataIntegration {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "GetExternalPublicationValidation",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/ExternalPublicationValidation/GetExternalPublicationValidation");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2437,6 +2742,11 @@ public class DataIntegrationClient implements DataIntegration {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "GetFolder",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Folder/GetFolder");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2466,6 +2776,11 @@ public class DataIntegrationClient implements DataIntegration {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "GetFunctionLibrary",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/FunctionLibrary/GetFunctionLibrary");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2494,6 +2809,11 @@ public class DataIntegrationClient implements DataIntegration {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "GetPatch",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Application/GetPatch");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2523,6 +2843,11 @@ public class DataIntegrationClient implements DataIntegration {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "GetPipeline",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Pipeline/GetPipeline");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2553,6 +2878,11 @@ public class DataIntegrationClient implements DataIntegration {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "GetPipelineValidation",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/PipelineValidation/GetPipelineValidation");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2581,6 +2911,11 @@ public class DataIntegrationClient implements DataIntegration {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "GetProject",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Project/GetProject");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2610,6 +2945,11 @@ public class DataIntegrationClient implements DataIntegration {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "GetPublishedObject",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Application/GetPublishedObject");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2639,6 +2979,11 @@ public class DataIntegrationClient implements DataIntegration {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "GetReference",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Reference/GetReference");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2668,6 +3013,11 @@ public class DataIntegrationClient implements DataIntegration {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "GetSchedule",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Schedule/GetSchedule");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2696,6 +3046,11 @@ public class DataIntegrationClient implements DataIntegration {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "GetSchema",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Schema/GetSchema");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2724,6 +3079,11 @@ public class DataIntegrationClient implements DataIntegration {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "GetTask",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Task/GetTask");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2752,6 +3112,11 @@ public class DataIntegrationClient implements DataIntegration {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "GetTaskRun",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/TaskRun/GetTaskRun");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2781,6 +3146,11 @@ public class DataIntegrationClient implements DataIntegration {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "GetTaskSchedule",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/TaskSchedule/GetTaskSchedule");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2810,6 +3180,11 @@ public class DataIntegrationClient implements DataIntegration {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "GetTaskValidation",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/TaskValidation/GetTaskValidation");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2840,6 +3215,11 @@ public class DataIntegrationClient implements DataIntegration {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "GetUserDefinedFunction",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/UserDefinedFunction/GetUserDefinedFunction");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2871,6 +3251,11 @@ public class DataIntegrationClient implements DataIntegration {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "GetUserDefinedFunctionValidation",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/UserDefinedFunctionValidation/GetUserDefinedFunctionValidation");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2900,6 +3285,11 @@ public class DataIntegrationClient implements DataIntegration {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "GetWorkRequest",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/WorkRequest/GetWorkRequest");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2929,6 +3319,11 @@ public class DataIntegrationClient implements DataIntegration {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "GetWorkspace",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Workspace/GetWorkspace");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2958,6 +3353,11 @@ public class DataIntegrationClient implements DataIntegration {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "ListApplications",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Application/ListApplications");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2989,6 +3389,11 @@ public class DataIntegrationClient implements DataIntegration {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "ListConnectionValidations",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/ConnectionValidation/ListConnectionValidations");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3018,6 +3423,11 @@ public class DataIntegrationClient implements DataIntegration {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "ListConnections",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Connection/ListConnections");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3047,6 +3457,11 @@ public class DataIntegrationClient implements DataIntegration {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "ListDataAssets",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/DataAsset/ListDataAssets");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3076,6 +3491,11 @@ public class DataIntegrationClient implements DataIntegration {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "ListDataEntities",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/DataEntity/ListDataEntities");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3106,6 +3526,11 @@ public class DataIntegrationClient implements DataIntegration {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "ListDataFlowValidations",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/DataFlowValidation/ListDataFlowValidations");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3135,6 +3560,11 @@ public class DataIntegrationClient implements DataIntegration {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "ListDataFlows",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/DataFlow/ListDataFlows");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3164,6 +3594,11 @@ public class DataIntegrationClient implements DataIntegration {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "ListDependentObjects",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Application/ListDependentObjects");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3193,6 +3628,11 @@ public class DataIntegrationClient implements DataIntegration {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "ListDisApplications",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/DisApplication/ListDisApplications");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3224,6 +3664,11 @@ public class DataIntegrationClient implements DataIntegration {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "ListExternalPublicationValidations",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/ExternalPublicationValidation/ListExternalPublicationValidations");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3254,6 +3699,11 @@ public class DataIntegrationClient implements DataIntegration {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "ListExternalPublications",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/ExternalPublication/ListExternalPublications");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3283,6 +3733,11 @@ public class DataIntegrationClient implements DataIntegration {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "ListFolders",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Folder/ListFolders");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3313,6 +3768,11 @@ public class DataIntegrationClient implements DataIntegration {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "ListFunctionLibraries",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/FunctionLibrary/ListFunctionLibraries");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3342,6 +3802,11 @@ public class DataIntegrationClient implements DataIntegration {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "ListPatchChanges",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Application/ListPatchChanges");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3371,6 +3836,11 @@ public class DataIntegrationClient implements DataIntegration {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "ListPatches",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Application/ListPatches");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3401,6 +3871,11 @@ public class DataIntegrationClient implements DataIntegration {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "ListPipelineValidations",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/PipelineValidation/ListPipelineValidations");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3430,6 +3905,11 @@ public class DataIntegrationClient implements DataIntegration {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "ListPipelines",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Pipeline/ListPipelines");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3459,6 +3939,11 @@ public class DataIntegrationClient implements DataIntegration {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "ListProjects",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Project/ListProjects");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3488,6 +3973,11 @@ public class DataIntegrationClient implements DataIntegration {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "ListPublishedObjects",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Application/ListPublishedObjects");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3517,6 +4007,11 @@ public class DataIntegrationClient implements DataIntegration {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "ListReferences",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Reference/ListReferences");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3546,6 +4041,11 @@ public class DataIntegrationClient implements DataIntegration {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "ListSchedules",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Schedule/ListSchedules");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3575,6 +4075,11 @@ public class DataIntegrationClient implements DataIntegration {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "ListSchemas",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Schema/ListSchemas");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3604,6 +4109,11 @@ public class DataIntegrationClient implements DataIntegration {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "ListTaskRunLogs",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/TaskRunLogSummary/ListTaskRunLogs");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3633,6 +4143,11 @@ public class DataIntegrationClient implements DataIntegration {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "ListTaskRuns",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/TaskRun/ListTaskRuns");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3662,6 +4177,11 @@ public class DataIntegrationClient implements DataIntegration {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "ListTaskSchedules",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/TaskSchedule/ListTaskSchedules");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3691,6 +4211,11 @@ public class DataIntegrationClient implements DataIntegration {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "ListTaskValidations",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/TaskValidation/ListTaskValidations");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3719,6 +4244,11 @@ public class DataIntegrationClient implements DataIntegration {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "ListTasks",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Task/ListTasks");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3750,6 +4280,11 @@ public class DataIntegrationClient implements DataIntegration {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "ListUserDefinedFunctionValidations",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/UserDefinedFunctionValidation/ListUserDefinedFunctionValidations");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3780,6 +4315,11 @@ public class DataIntegrationClient implements DataIntegration {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "ListUserDefinedFunctions",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/UserDefinedFunction/ListUserDefinedFunctions");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3810,6 +4350,11 @@ public class DataIntegrationClient implements DataIntegration {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "ListWorkRequestErrors",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/WorkRequest/ListWorkRequestErrors");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3839,6 +4384,11 @@ public class DataIntegrationClient implements DataIntegration {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "ListWorkRequestLogs",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/WorkRequest/ListWorkRequestLogs");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3868,6 +4418,11 @@ public class DataIntegrationClient implements DataIntegration {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "ListWorkRequests",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/WorkRequest/ListWorkRequests");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3897,6 +4452,11 @@ public class DataIntegrationClient implements DataIntegration {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "ListWorkspaces",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Workspace/ListWorkspaces");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3927,6 +4487,11 @@ public class DataIntegrationClient implements DataIntegration {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "StartWorkspace",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Workspace/StartWorkspace");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3958,6 +4523,11 @@ public class DataIntegrationClient implements DataIntegration {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "StopWorkspace",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Workspace/StopWorkspace");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3988,6 +4558,11 @@ public class DataIntegrationClient implements DataIntegration {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "UpdateApplication",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Application/UpdateApplication");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -4021,6 +4596,11 @@ public class DataIntegrationClient implements DataIntegration {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "UpdateConnection",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Connection/UpdateConnection");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -4054,6 +4634,11 @@ public class DataIntegrationClient implements DataIntegration {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "UpdateDataAsset",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/DataAsset/UpdateDataAsset");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -4087,6 +4672,11 @@ public class DataIntegrationClient implements DataIntegration {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "UpdateDataFlow",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/DataFlow/UpdateDataFlow");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -4120,6 +4710,11 @@ public class DataIntegrationClient implements DataIntegration {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "UpdateDisApplication",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/DisApplication/UpdateDisApplication");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -4155,6 +4750,11 @@ public class DataIntegrationClient implements DataIntegration {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "UpdateExternalPublication",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/ExternalPublication/UpdateExternalPublication");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -4189,6 +4789,11 @@ public class DataIntegrationClient implements DataIntegration {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "UpdateFolder",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Folder/UpdateFolder");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -4223,6 +4828,11 @@ public class DataIntegrationClient implements DataIntegration {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "UpdateFunctionLibrary",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/FunctionLibrary/UpdateFunctionLibrary");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -4256,6 +4866,11 @@ public class DataIntegrationClient implements DataIntegration {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "UpdatePipeline",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Pipeline/UpdatePipeline");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -4289,6 +4904,11 @@ public class DataIntegrationClient implements DataIntegration {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "UpdateProject",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Project/UpdateProject");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -4323,6 +4943,11 @@ public class DataIntegrationClient implements DataIntegration {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "UpdateReference",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Reference/UpdateReference");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -4356,6 +4981,11 @@ public class DataIntegrationClient implements DataIntegration {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "UpdateSchedule",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Schedule/UpdateSchedule");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -4388,6 +5018,11 @@ public class DataIntegrationClient implements DataIntegration {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "UpdateTask",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Task/UpdateTask");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -4421,6 +5056,11 @@ public class DataIntegrationClient implements DataIntegration {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "UpdateTaskRun",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/TaskRun/UpdateTaskRun");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -4454,6 +5094,11 @@ public class DataIntegrationClient implements DataIntegration {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "UpdateTaskSchedule",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/TaskSchedule/UpdateTaskSchedule");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -4489,6 +5134,11 @@ public class DataIntegrationClient implements DataIntegration {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "UpdateUserDefinedFunction",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/UserDefinedFunction/UpdateUserDefinedFunction");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -4523,6 +5173,11 @@ public class DataIntegrationClient implements DataIntegration {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataIntegration",
+                "UpdateWorkspace",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Workspace/UpdateWorkspace");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {

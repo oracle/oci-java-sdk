@@ -479,6 +479,11 @@ public class OrganizationClient implements Organization {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Organization",
+                "ApproveOrganizationTenancyForTransfer",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/OrganizationTenancy/ApproveOrganizationTenancyForTransfer");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -510,6 +515,8 @@ public class OrganizationClient implements Organization {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Organization", "CreateChildTenancy", ib.getRequestUri().toString(), "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -546,6 +553,11 @@ public class OrganizationClient implements Organization {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Organization",
+                "DeleteOrganizationTenancy",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/OrganizationTenancy/DeleteOrganizationTenancy");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -576,6 +588,11 @@ public class OrganizationClient implements Organization {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Organization",
+                "GetOrganization",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/Organization/GetOrganization");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -606,6 +623,11 @@ public class OrganizationClient implements Organization {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Organization",
+                "GetOrganizationTenancy",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/OrganizationTenancy/GetOrganizationTenancy");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -637,6 +659,11 @@ public class OrganizationClient implements Organization {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Organization",
+                "ListOrganizationTenancies",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/Organization/ListOrganizationTenancies");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -666,6 +693,11 @@ public class OrganizationClient implements Organization {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Organization",
+                "ListOrganizations",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/Organization/ListOrganizations");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -699,6 +731,11 @@ public class OrganizationClient implements Organization {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Organization",
+                "UnapproveOrganizationTenancyForTransfer",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/OrganizationTenancy/UnapproveOrganizationTenancyForTransfer");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -730,6 +767,11 @@ public class OrganizationClient implements Organization {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Organization",
+                "UpdateOrganization",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/Organization/UpdateOrganization");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {

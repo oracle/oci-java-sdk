@@ -476,6 +476,11 @@ public class LogAnalyticsClient implements LogAnalytics {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "AddEntityAssociation",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsEntity/AddEntityAssociation");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -510,6 +515,11 @@ public class LogAnalyticsClient implements LogAnalytics {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "AddSourceEventTypes",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsSource/AddSourceEventTypes");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -553,6 +563,11 @@ public class LogAnalyticsClient implements LogAnalytics {
                             interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
             com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
             com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+            com.oracle.bmc.ServiceDetails.setServiceDetails(
+                    "LogAnalytics",
+                    "AppendLookupData",
+                    ib.getRequestUri().toString(),
+                    "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsLookup/AppendLookupData");
             return retrier.execute(
                     interceptedRequest,
                     retryRequest -> {
@@ -607,6 +622,11 @@ public class LogAnalyticsClient implements LogAnalytics {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "BatchGetBasicInfo",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsLabel/BatchGetBasicInfo");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -641,6 +661,11 @@ public class LogAnalyticsClient implements LogAnalytics {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "CancelQueryWorkRequest",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/QueryWorkRequest/CancelQueryWorkRequest");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -675,6 +700,11 @@ public class LogAnalyticsClient implements LogAnalytics {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "ChangeLogAnalyticsEmBridgeCompartment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsEmBridge/ChangeLogAnalyticsEmBridgeCompartment");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -713,6 +743,11 @@ public class LogAnalyticsClient implements LogAnalytics {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "ChangeLogAnalyticsEntityCompartment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsEntity/ChangeLogAnalyticsEntityCompartment");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -751,6 +786,11 @@ public class LogAnalyticsClient implements LogAnalytics {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "ChangeLogAnalyticsLogGroupCompartment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsLogGroup/ChangeLogAnalyticsLogGroupCompartment");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -792,6 +832,11 @@ public class LogAnalyticsClient implements LogAnalytics {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "ChangeLogAnalyticsObjectCollectionRuleCompartment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsObjectCollectionRule/ChangeLogAnalyticsObjectCollectionRuleCompartment");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -829,6 +874,11 @@ public class LogAnalyticsClient implements LogAnalytics {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "ChangeScheduledTaskCompartment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/ScheduledTask/ChangeScheduledTaskCompartment");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -863,6 +913,11 @@ public class LogAnalyticsClient implements LogAnalytics {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "Clean",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/ScheduledTask/Clean");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -893,6 +948,11 @@ public class LogAnalyticsClient implements LogAnalytics {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "CompareContent",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/QueryDetails/CompareContent");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -929,6 +989,11 @@ public class LogAnalyticsClient implements LogAnalytics {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "CreateLogAnalyticsEmBridge",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsEmBridge/CreateLogAnalyticsEmBridge");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -965,6 +1030,11 @@ public class LogAnalyticsClient implements LogAnalytics {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "CreateLogAnalyticsEntity",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsEntity/CreateLogAnalyticsEntity");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1001,6 +1071,11 @@ public class LogAnalyticsClient implements LogAnalytics {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "CreateLogAnalyticsEntityType",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsEntityType/CreateLogAnalyticsEntityType");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1038,6 +1113,11 @@ public class LogAnalyticsClient implements LogAnalytics {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "CreateLogAnalyticsLogGroup",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsLogGroup/CreateLogAnalyticsLogGroup");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1075,6 +1155,11 @@ public class LogAnalyticsClient implements LogAnalytics {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "CreateLogAnalyticsObjectCollectionRule",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsObjectCollectionRule/CreateLogAnalyticsObjectCollectionRule");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1110,6 +1195,11 @@ public class LogAnalyticsClient implements LogAnalytics {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "CreateScheduledTask",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/ScheduledTask/CreateScheduledTask");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1144,6 +1234,11 @@ public class LogAnalyticsClient implements LogAnalytics {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "DeleteAssociations",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsAssociation/DeleteAssociations");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1179,6 +1274,11 @@ public class LogAnalyticsClient implements LogAnalytics {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "DeleteField",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsField/DeleteField");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1210,6 +1310,11 @@ public class LogAnalyticsClient implements LogAnalytics {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "DeleteLabel",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsLabel/DeleteLabel");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1242,6 +1347,11 @@ public class LogAnalyticsClient implements LogAnalytics {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "DeleteLogAnalyticsEmBridge",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsEmBridge/DeleteLogAnalyticsEmBridge");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1273,6 +1383,11 @@ public class LogAnalyticsClient implements LogAnalytics {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "DeleteLogAnalyticsEntity",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsEntity/DeleteLogAnalyticsEntity");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1305,6 +1420,11 @@ public class LogAnalyticsClient implements LogAnalytics {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "DeleteLogAnalyticsEntityType",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsEntityType/DeleteLogAnalyticsEntityType");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1337,6 +1457,11 @@ public class LogAnalyticsClient implements LogAnalytics {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "DeleteLogAnalyticsLogGroup",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsLogGroup/DeleteLogAnalyticsLogGroup");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1370,6 +1495,11 @@ public class LogAnalyticsClient implements LogAnalytics {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "DeleteLogAnalyticsObjectCollectionRule",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsObjectCollectionRule/DeleteLogAnalyticsObjectCollectionRule");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1401,6 +1531,11 @@ public class LogAnalyticsClient implements LogAnalytics {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "DeleteLookup",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsLookup/DeleteLookup");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1432,6 +1567,11 @@ public class LogAnalyticsClient implements LogAnalytics {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "DeleteParser",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsParser/DeleteParser");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1462,6 +1602,11 @@ public class LogAnalyticsClient implements LogAnalytics {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "DeleteScheduledTask",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/ScheduledTask/DeleteScheduledTask");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1493,6 +1638,11 @@ public class LogAnalyticsClient implements LogAnalytics {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "DeleteSource",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsSource/DeleteSource");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1523,6 +1673,11 @@ public class LogAnalyticsClient implements LogAnalytics {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "DeleteUpload",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/Upload/DeleteUpload");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1553,6 +1708,11 @@ public class LogAnalyticsClient implements LogAnalytics {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "DeleteUploadFile",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/Upload/DeleteUploadFile");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1583,6 +1743,11 @@ public class LogAnalyticsClient implements LogAnalytics {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "DeleteUploadWarning",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/Upload/DeleteUploadWarning");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1613,6 +1778,11 @@ public class LogAnalyticsClient implements LogAnalytics {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "DisableArchiving",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/Storage/DisableArchiving");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1645,6 +1815,11 @@ public class LogAnalyticsClient implements LogAnalytics {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "DisableAutoAssociation",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsSource/DisableAutoAssociation");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1680,6 +1855,11 @@ public class LogAnalyticsClient implements LogAnalytics {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "DisableSourceEventTypes",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsSource/DisableSourceEventTypes");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1713,6 +1893,11 @@ public class LogAnalyticsClient implements LogAnalytics {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "EnableArchiving",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/Storage/EnableArchiving");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1745,6 +1930,11 @@ public class LogAnalyticsClient implements LogAnalytics {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "EnableAutoAssociation",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsSource/EnableAutoAssociation");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1780,6 +1970,11 @@ public class LogAnalyticsClient implements LogAnalytics {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "EnableSourceEventTypes",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsSource/EnableSourceEventTypes");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1815,6 +2010,11 @@ public class LogAnalyticsClient implements LogAnalytics {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "EstimatePurgeDataSize",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/Storage/EstimatePurgeDataSize");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1849,6 +2049,11 @@ public class LogAnalyticsClient implements LogAnalytics {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "EstimateRecallDataSize",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/Storage/EstimateRecallDataSize");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1883,6 +2088,11 @@ public class LogAnalyticsClient implements LogAnalytics {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "EstimateReleaseDataSize",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/Storage/EstimateReleaseDataSize");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1927,6 +2137,8 @@ public class LogAnalyticsClient implements LogAnalytics {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics", "ExportCustomContent", ib.getRequestUri().toString(), "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1970,6 +2182,11 @@ public class LogAnalyticsClient implements LogAnalytics {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "ExportQueryResult",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/QueryDetails/ExportQueryResult");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2006,6 +2223,11 @@ public class LogAnalyticsClient implements LogAnalytics {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "ExtractStructuredLogFieldPaths",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsParser/ExtractStructuredLogFieldPaths");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2042,6 +2264,11 @@ public class LogAnalyticsClient implements LogAnalytics {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "ExtractStructuredLogHeaderPaths",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsParser/ExtractStructuredLogHeaderPaths");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2074,6 +2301,11 @@ public class LogAnalyticsClient implements LogAnalytics {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "Filter",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/QueryDetails/Filter");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2108,6 +2340,11 @@ public class LogAnalyticsClient implements LogAnalytics {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "GetAssociationSummary",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsAssociation/GetAssociationSummary");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2137,6 +2374,11 @@ public class LogAnalyticsClient implements LogAnalytics {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "GetCategory",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsCategory/GetCategory");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2167,6 +2409,11 @@ public class LogAnalyticsClient implements LogAnalytics {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "GetColumnNames",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsSource/GetColumnNames");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2196,6 +2443,11 @@ public class LogAnalyticsClient implements LogAnalytics {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "GetConfigWorkRequest",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsConfigWorkRequest/GetConfigWorkRequest");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2224,6 +2476,11 @@ public class LogAnalyticsClient implements LogAnalytics {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "GetField",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsField/GetField");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2253,6 +2510,11 @@ public class LogAnalyticsClient implements LogAnalytics {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "GetFieldsSummary",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsField/GetFieldsSummary");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2281,6 +2543,11 @@ public class LogAnalyticsClient implements LogAnalytics {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "GetLabel",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsLabel/GetLabel");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2310,6 +2577,11 @@ public class LogAnalyticsClient implements LogAnalytics {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "GetLabelSummary",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsLabel/GetLabelSummary");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2340,6 +2612,11 @@ public class LogAnalyticsClient implements LogAnalytics {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "GetLogAnalyticsEmBridge",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsEmBridge/GetLogAnalyticsEmBridge");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2371,6 +2648,11 @@ public class LogAnalyticsClient implements LogAnalytics {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "GetLogAnalyticsEmBridgeSummary",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsEmBridge/GetLogAnalyticsEmBridgeSummary");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2402,6 +2684,11 @@ public class LogAnalyticsClient implements LogAnalytics {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "GetLogAnalyticsEntitiesSummary",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsEntity/GetLogAnalyticsEntitiesSummary");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2432,6 +2719,11 @@ public class LogAnalyticsClient implements LogAnalytics {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "GetLogAnalyticsEntity",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsEntity/GetLogAnalyticsEntity");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2463,6 +2755,11 @@ public class LogAnalyticsClient implements LogAnalytics {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "GetLogAnalyticsEntityType",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsEntityType/GetLogAnalyticsEntityType");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2493,6 +2790,11 @@ public class LogAnalyticsClient implements LogAnalytics {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "GetLogAnalyticsLogGroup",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsLogGroup/GetLogAnalyticsLogGroup");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2524,6 +2826,11 @@ public class LogAnalyticsClient implements LogAnalytics {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "GetLogAnalyticsLogGroupsSummary",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsLogGroup/GetLogAnalyticsLogGroupsSummary");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2556,6 +2863,11 @@ public class LogAnalyticsClient implements LogAnalytics {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "GetLogAnalyticsObjectCollectionRule",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsObjectCollectionRule/GetLogAnalyticsObjectCollectionRule");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2585,6 +2897,11 @@ public class LogAnalyticsClient implements LogAnalytics {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "GetLogSetsCount",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/Storage/GetLogSetsCount");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2613,6 +2930,11 @@ public class LogAnalyticsClient implements LogAnalytics {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "GetLookup",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsLookup/GetLookup");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2642,6 +2964,11 @@ public class LogAnalyticsClient implements LogAnalytics {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "GetLookupSummary",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsLookup/GetLookupSummary");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2671,6 +2998,11 @@ public class LogAnalyticsClient implements LogAnalytics {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "GetNamespace",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/Namespace/GetNamespace");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2699,6 +3031,11 @@ public class LogAnalyticsClient implements LogAnalytics {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "GetParser",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsParser/GetParser");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2728,6 +3065,11 @@ public class LogAnalyticsClient implements LogAnalytics {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "GetParserSummary",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsParser/GetParserSummary");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2757,6 +3099,11 @@ public class LogAnalyticsClient implements LogAnalytics {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "GetPreferences",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsPreference/GetPreferences");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2786,6 +3133,11 @@ public class LogAnalyticsClient implements LogAnalytics {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "GetQueryResult",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/QueryDetails/GetQueryResult");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2815,6 +3167,11 @@ public class LogAnalyticsClient implements LogAnalytics {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "GetQueryWorkRequest",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/QueryWorkRequest/GetQueryWorkRequest");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2844,6 +3201,11 @@ public class LogAnalyticsClient implements LogAnalytics {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "GetScheduledTask",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/ScheduledTask/GetScheduledTask");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2872,6 +3234,11 @@ public class LogAnalyticsClient implements LogAnalytics {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "GetSource",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsSource/GetSource");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2901,6 +3268,11 @@ public class LogAnalyticsClient implements LogAnalytics {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "GetSourceSummary",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsSource/GetSourceSummary");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2929,6 +3301,11 @@ public class LogAnalyticsClient implements LogAnalytics {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "GetStorage",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/Storage/GetStorage");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2958,6 +3335,11 @@ public class LogAnalyticsClient implements LogAnalytics {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "GetStorageUsage",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/Storage/GetStorageUsage");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2988,6 +3370,11 @@ public class LogAnalyticsClient implements LogAnalytics {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "GetStorageWorkRequest",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/Storage/GetStorageWorkRequest");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3018,6 +3405,11 @@ public class LogAnalyticsClient implements LogAnalytics {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "GetUnprocessedDataBucket",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/Upload/GetUnprocessedDataBucket");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3046,6 +3438,11 @@ public class LogAnalyticsClient implements LogAnalytics {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "GetUpload",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/Upload/GetUpload");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3075,6 +3472,11 @@ public class LogAnalyticsClient implements LogAnalytics {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "GetWorkRequest",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/WorkRequest/GetWorkRequest");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3114,6 +3516,11 @@ public class LogAnalyticsClient implements LogAnalytics {
                             interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
             com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
             com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+            com.oracle.bmc.ServiceDetails.setServiceDetails(
+                    "LogAnalytics",
+                    "ImportCustomContent",
+                    ib.getRequestUri().toString(),
+                    "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsImportCustomContent/ImportCustomContent");
             return retrier.execute(
                     interceptedRequest,
                     retryRequest -> {
@@ -3171,6 +3578,11 @@ public class LogAnalyticsClient implements LogAnalytics {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "ListAssociableEntities",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsSource/ListAssociableEntities");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3201,6 +3613,11 @@ public class LogAnalyticsClient implements LogAnalytics {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "ListAssociatedEntities",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsAssociation/ListAssociatedEntities");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3230,6 +3647,11 @@ public class LogAnalyticsClient implements LogAnalytics {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "ListAutoAssociations",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsSource/ListAutoAssociations");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3259,6 +3681,11 @@ public class LogAnalyticsClient implements LogAnalytics {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "ListCategories",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsCategory/ListCategories");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3289,6 +3716,11 @@ public class LogAnalyticsClient implements LogAnalytics {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "ListConfigWorkRequests",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsConfigWorkRequest/ListConfigWorkRequests");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3319,6 +3751,11 @@ public class LogAnalyticsClient implements LogAnalytics {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "ListEntityAssociations",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsEntity/ListEntityAssociations");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3350,6 +3787,11 @@ public class LogAnalyticsClient implements LogAnalytics {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "ListEntitySourceAssociations",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsAssociation/ListEntitySourceAssociations");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3378,6 +3820,11 @@ public class LogAnalyticsClient implements LogAnalytics {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "ListFields",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsField/ListFields");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3407,6 +3854,11 @@ public class LogAnalyticsClient implements LogAnalytics {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "ListLabelPriorities",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsLabel/ListLabelPriorities");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3437,6 +3889,11 @@ public class LogAnalyticsClient implements LogAnalytics {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "ListLabelSourceDetails",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsLabel/ListLabelSourceDetails");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3465,6 +3922,11 @@ public class LogAnalyticsClient implements LogAnalytics {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "ListLabels",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsLabel/ListLabels");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3496,6 +3958,11 @@ public class LogAnalyticsClient implements LogAnalytics {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "ListLogAnalyticsEmBridges",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsEmBridge/ListLogAnalyticsEmBridges");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3526,6 +3993,11 @@ public class LogAnalyticsClient implements LogAnalytics {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "ListLogAnalyticsEntities",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsEntity/ListLogAnalyticsEntities");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3557,6 +4029,11 @@ public class LogAnalyticsClient implements LogAnalytics {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "ListLogAnalyticsEntityTopology",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsEntitySummary/ListLogAnalyticsEntityTopology");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3588,6 +4065,11 @@ public class LogAnalyticsClient implements LogAnalytics {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "ListLogAnalyticsEntityTypes",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsEntityType/ListLogAnalyticsEntityTypes");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3619,6 +4101,11 @@ public class LogAnalyticsClient implements LogAnalytics {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "ListLogAnalyticsLogGroups",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsLogGroup/ListLogAnalyticsLogGroups");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3651,6 +4138,11 @@ public class LogAnalyticsClient implements LogAnalytics {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "ListLogAnalyticsObjectCollectionRules",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsObjectCollectionRule/ListLogAnalyticsObjectCollectionRules");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3680,6 +4172,11 @@ public class LogAnalyticsClient implements LogAnalytics {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "ListLogSets",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/Storage/ListLogSets");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3709,6 +4206,11 @@ public class LogAnalyticsClient implements LogAnalytics {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "ListLookups",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsLookup/ListLookups");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3738,6 +4240,11 @@ public class LogAnalyticsClient implements LogAnalytics {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "ListMetaSourceTypes",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsSource/ListMetaSourceTypes");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3767,6 +4274,11 @@ public class LogAnalyticsClient implements LogAnalytics {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "ListNamespaces",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/Namespace/ListNamespaces");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3796,6 +4308,11 @@ public class LogAnalyticsClient implements LogAnalytics {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "ListParserFunctions",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsParser/ListParserFunctions");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3826,6 +4343,11 @@ public class LogAnalyticsClient implements LogAnalytics {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "ListParserMetaPlugins",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsParser/ListParserMetaPlugins");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3855,6 +4377,11 @@ public class LogAnalyticsClient implements LogAnalytics {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "ListParsers",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsParser/ListParsers");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3885,6 +4412,11 @@ public class LogAnalyticsClient implements LogAnalytics {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "ListQueryWorkRequests",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/QueryWorkRequest/ListQueryWorkRequests");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3914,6 +4446,11 @@ public class LogAnalyticsClient implements LogAnalytics {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "ListRecalledData",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/Storage/ListRecalledData");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3944,6 +4481,11 @@ public class LogAnalyticsClient implements LogAnalytics {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "ListResourceCategories",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsCategory/ListResourceCategories");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3973,6 +4515,11 @@ public class LogAnalyticsClient implements LogAnalytics {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "ListScheduledTasks",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/ScheduledTask/ListScheduledTasks");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -4003,6 +4550,11 @@ public class LogAnalyticsClient implements LogAnalytics {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "ListSourceAssociations",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsAssociation/ListSourceAssociations");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -4032,6 +4584,11 @@ public class LogAnalyticsClient implements LogAnalytics {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "ListSourceEventTypes",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsSource/ListSourceEventTypes");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -4063,6 +4620,11 @@ public class LogAnalyticsClient implements LogAnalytics {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "ListSourceExtendedFieldDefinitions",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsSource/ListSourceExtendedFieldDefinitions");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -4093,6 +4655,11 @@ public class LogAnalyticsClient implements LogAnalytics {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "ListSourceLabelOperators",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsSource/ListSourceLabelOperators");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -4123,6 +4690,11 @@ public class LogAnalyticsClient implements LogAnalytics {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "ListSourceMetaFunctions",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsSource/ListSourceMetaFunctions");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -4152,6 +4724,11 @@ public class LogAnalyticsClient implements LogAnalytics {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "ListSourcePatterns",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsSource/ListSourcePatterns");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -4181,6 +4758,11 @@ public class LogAnalyticsClient implements LogAnalytics {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "ListSources",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsSource/ListSources");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -4212,6 +4794,11 @@ public class LogAnalyticsClient implements LogAnalytics {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "ListStorageWorkRequestErrors",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/Storage/ListStorageWorkRequestErrors");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -4242,6 +4829,11 @@ public class LogAnalyticsClient implements LogAnalytics {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "ListStorageWorkRequests",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/Storage/ListStorageWorkRequests");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -4273,6 +4865,11 @@ public class LogAnalyticsClient implements LogAnalytics {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "ListSupportedCharEncodings",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/CharEncodingCollection/ListSupportedCharEncodings");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -4303,6 +4900,11 @@ public class LogAnalyticsClient implements LogAnalytics {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "ListSupportedTimezones",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/TimezoneCollection/ListSupportedTimezones");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -4332,6 +4934,11 @@ public class LogAnalyticsClient implements LogAnalytics {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "ListUploadFiles",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/Upload/ListUploadFiles");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -4361,6 +4968,11 @@ public class LogAnalyticsClient implements LogAnalytics {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "ListUploadWarnings",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/Upload/ListUploadWarnings");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -4390,6 +5002,11 @@ public class LogAnalyticsClient implements LogAnalytics {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "ListUploads",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/Upload/ListUploads");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -4419,6 +5036,11 @@ public class LogAnalyticsClient implements LogAnalytics {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "ListWarnings",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsWarning/ListWarnings");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -4449,6 +5071,11 @@ public class LogAnalyticsClient implements LogAnalytics {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "ListWorkRequestErrors",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/WorkRequestError/ListWorkRequestErrors");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -4478,6 +5105,11 @@ public class LogAnalyticsClient implements LogAnalytics {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "ListWorkRequestLogs",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/WorkRequestLog/ListWorkRequestLogs");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -4507,6 +5139,11 @@ public class LogAnalyticsClient implements LogAnalytics {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "ListWorkRequests",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/WorkRequest/ListWorkRequests");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -4537,6 +5174,11 @@ public class LogAnalyticsClient implements LogAnalytics {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "OffboardNamespace",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/Namespace/OffboardNamespace");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -4568,6 +5210,11 @@ public class LogAnalyticsClient implements LogAnalytics {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "OnboardNamespace",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/Namespace/OnboardNamespace");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -4597,6 +5244,11 @@ public class LogAnalyticsClient implements LogAnalytics {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "ParseQuery",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/QueryDetails/ParseQuery");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -4630,6 +5282,11 @@ public class LogAnalyticsClient implements LogAnalytics {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "PauseScheduledTask",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/ScheduledTask/PauseScheduledTask");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -4661,6 +5318,11 @@ public class LogAnalyticsClient implements LogAnalytics {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "PurgeStorageData",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/Storage/PurgeStorageData");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -4696,6 +5358,11 @@ public class LogAnalyticsClient implements LogAnalytics {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "PutQueryWorkRequestBackground",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/QueryWorkRequest/PutQueryWorkRequestBackground");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -4724,6 +5391,11 @@ public class LogAnalyticsClient implements LogAnalytics {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "Query",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/QueryDetails/Query");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -4758,6 +5430,11 @@ public class LogAnalyticsClient implements LogAnalytics {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "RecallArchivedData",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/Storage/RecallArchivedData");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -4801,6 +5478,11 @@ public class LogAnalyticsClient implements LogAnalytics {
                             interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
             com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
             com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+            com.oracle.bmc.ServiceDetails.setServiceDetails(
+                    "LogAnalytics",
+                    "RegisterLookup",
+                    ib.getRequestUri().toString(),
+                    "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsLookup/RegisterLookup");
             return retrier.execute(
                     interceptedRequest,
                     retryRequest -> {
@@ -4858,6 +5540,11 @@ public class LogAnalyticsClient implements LogAnalytics {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "ReleaseRecalledData",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/Storage/ReleaseRecalledData");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -4893,6 +5580,11 @@ public class LogAnalyticsClient implements LogAnalytics {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "RemoveEntityAssociations",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsEntity/RemoveEntityAssociations");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -4927,6 +5619,11 @@ public class LogAnalyticsClient implements LogAnalytics {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "RemovePreferences",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsPreference/RemovePreferences");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -4961,6 +5658,11 @@ public class LogAnalyticsClient implements LogAnalytics {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "RemoveResourceCategories",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsCategory/RemoveResourceCategories");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -4996,6 +5698,11 @@ public class LogAnalyticsClient implements LogAnalytics {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "RemoveSourceEventTypes",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsSource/RemoveSourceEventTypes");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -5029,6 +5736,11 @@ public class LogAnalyticsClient implements LogAnalytics {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "ResumeScheduledTask",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/ScheduledTask/ResumeScheduledTask");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -5059,6 +5771,11 @@ public class LogAnalyticsClient implements LogAnalytics {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "Run",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/ScheduledTask/Run");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -5090,6 +5807,11 @@ public class LogAnalyticsClient implements LogAnalytics {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "SetUnprocessedDataBucket",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/Upload/SetUnprocessedDataBucket");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -5119,6 +5841,11 @@ public class LogAnalyticsClient implements LogAnalytics {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "Suggest",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/QueryDetails/Suggest");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -5153,6 +5880,11 @@ public class LogAnalyticsClient implements LogAnalytics {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "SuppressWarning",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsWarning/SuppressWarning");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -5186,6 +5918,11 @@ public class LogAnalyticsClient implements LogAnalytics {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "TestParser",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsParser/TestParser");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -5220,6 +5957,11 @@ public class LogAnalyticsClient implements LogAnalytics {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "UnsuppressWarning",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsWarning/UnsuppressWarning");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -5255,6 +5997,11 @@ public class LogAnalyticsClient implements LogAnalytics {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "UpdateLogAnalyticsEmBridge",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsEmBridge/UpdateLogAnalyticsEmBridge");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -5290,6 +6037,11 @@ public class LogAnalyticsClient implements LogAnalytics {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "UpdateLogAnalyticsEntity",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsEntity/UpdateLogAnalyticsEntity");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -5325,6 +6077,11 @@ public class LogAnalyticsClient implements LogAnalytics {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "UpdateLogAnalyticsEntityType",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsEntityType/UpdateLogAnalyticsEntityType");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -5361,6 +6118,11 @@ public class LogAnalyticsClient implements LogAnalytics {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "UpdateLogAnalyticsLogGroup",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsLogGroup/UpdateLogAnalyticsLogGroup");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -5398,6 +6160,11 @@ public class LogAnalyticsClient implements LogAnalytics {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "UpdateLogAnalyticsObjectCollectionRule",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsObjectCollectionRule/UpdateLogAnalyticsObjectCollectionRule");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -5433,6 +6200,11 @@ public class LogAnalyticsClient implements LogAnalytics {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "UpdateLookup",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsLookup/UpdateLookup");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -5476,6 +6248,11 @@ public class LogAnalyticsClient implements LogAnalytics {
                             interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
             com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
             com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+            com.oracle.bmc.ServiceDetails.setServiceDetails(
+                    "LogAnalytics",
+                    "UpdateLookupData",
+                    ib.getRequestUri().toString(),
+                    "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsLookup/UpdateLookupData");
             return retrier.execute(
                     interceptedRequest,
                     retryRequest -> {
@@ -5531,6 +6308,11 @@ public class LogAnalyticsClient implements LogAnalytics {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "UpdatePreferences",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsPreference/UpdatePreferences");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -5565,6 +6347,11 @@ public class LogAnalyticsClient implements LogAnalytics {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "UpdateResourceCategories",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsCategory/UpdateResourceCategories");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -5598,6 +6385,11 @@ public class LogAnalyticsClient implements LogAnalytics {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "UpdateScheduledTask",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/ScheduledTask/UpdateScheduledTask");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -5631,6 +6423,11 @@ public class LogAnalyticsClient implements LogAnalytics {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "UpdateStorage",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/Storage/UpdateStorage");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -5678,6 +6475,11 @@ public class LogAnalyticsClient implements LogAnalytics {
                             interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
             com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
             com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+            com.oracle.bmc.ServiceDetails.setServiceDetails(
+                    "LogAnalytics",
+                    "UploadLogEventsFile",
+                    ib.getRequestUri().toString(),
+                    "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/Upload/UploadLogEventsFile");
             return retrier.execute(
                     interceptedRequest,
                     retryRequest -> {
@@ -5748,6 +6550,11 @@ public class LogAnalyticsClient implements LogAnalytics {
                             interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
             com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
             com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+            com.oracle.bmc.ServiceDetails.setServiceDetails(
+                    "LogAnalytics",
+                    "UploadLogFile",
+                    ib.getRequestUri().toString(),
+                    "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/Upload/UploadLogFile");
             return retrier.execute(
                     interceptedRequest,
                     retryRequest -> {
@@ -5803,6 +6610,11 @@ public class LogAnalyticsClient implements LogAnalytics {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "UpsertAssociations",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsAssociation/UpsertAssociations");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -5838,6 +6650,11 @@ public class LogAnalyticsClient implements LogAnalytics {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "UpsertField",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsField/UpsertField");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -5872,6 +6689,11 @@ public class LogAnalyticsClient implements LogAnalytics {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "UpsertLabel",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsLabel/UpsertLabel");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -5906,6 +6728,11 @@ public class LogAnalyticsClient implements LogAnalytics {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "UpsertParser",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsParser/UpsertParser");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -5940,6 +6767,11 @@ public class LogAnalyticsClient implements LogAnalytics {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "UpsertSource",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsSource/UpsertSource");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -5976,6 +6808,11 @@ public class LogAnalyticsClient implements LogAnalytics {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "ValidateAssociationParameters",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsAssociation/ValidateAssociationParameters");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -6010,6 +6847,11 @@ public class LogAnalyticsClient implements LogAnalytics {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "ValidateFile",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/Upload/ValidateFile");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -6041,6 +6883,11 @@ public class LogAnalyticsClient implements LogAnalytics {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "ValidateSource",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsSource/ValidateSource");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -6077,6 +6924,11 @@ public class LogAnalyticsClient implements LogAnalytics {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "ValidateSourceExtendedFieldDetails",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsSource/ValidateSourceExtendedFieldDetails");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -6111,6 +6963,11 @@ public class LogAnalyticsClient implements LogAnalytics {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "ValidateSourceMapping",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/Upload/ValidateSourceMapping");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -6141,6 +6998,11 @@ public class LogAnalyticsClient implements LogAnalytics {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogAnalytics",
+                "Verify",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/ScheduledTask/Verify");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {

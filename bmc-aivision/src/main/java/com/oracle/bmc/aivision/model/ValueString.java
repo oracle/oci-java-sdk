@@ -5,7 +5,7 @@
 package com.oracle.bmc.aivision.model;
 
 /**
- * String field value.
+ * The string field value.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -118,7 +118,7 @@ public class ValueString extends FieldValue {
     }
 
     /**
-     * String text.
+     * The string text.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("value")
     String value;

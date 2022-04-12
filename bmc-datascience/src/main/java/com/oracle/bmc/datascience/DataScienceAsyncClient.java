@@ -388,6 +388,11 @@ public class DataScienceAsyncClient implements DataScienceAsync {
                 ActivateModelConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ActivateModelResponse>
                 transformer = ActivateModelConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataScience",
+                "ActivateModel",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/Model/ActivateModel");
 
         com.oracle.bmc.responses.AsyncHandler<ActivateModelRequest, ActivateModelResponse>
                 handlerToUse = handler;
@@ -428,6 +433,11 @@ public class DataScienceAsyncClient implements DataScienceAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ActivateModelDeploymentResponse>
                 transformer = ActivateModelDeploymentConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataScience",
+                "ActivateModelDeployment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/ModelDeployment/ActivateModelDeployment");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ActivateModelDeploymentRequest, ActivateModelDeploymentResponse>
@@ -469,6 +479,11 @@ public class DataScienceAsyncClient implements DataScienceAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ActivateNotebookSessionResponse>
                 transformer = ActivateNotebookSessionConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataScience",
+                "ActivateNotebookSession",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/NotebookSession/ActivateNotebookSession");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ActivateNotebookSessionRequest, ActivateNotebookSessionResponse>
@@ -508,6 +523,11 @@ public class DataScienceAsyncClient implements DataScienceAsync {
                 CancelJobRunConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, CancelJobRunResponse>
                 transformer = CancelJobRunConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataScience",
+                "CancelJobRun",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/JobRun/CancelJobRun");
 
         com.oracle.bmc.responses.AsyncHandler<CancelJobRunRequest, CancelJobRunResponse>
                 handlerToUse = handler;
@@ -547,6 +567,11 @@ public class DataScienceAsyncClient implements DataScienceAsync {
                 CancelWorkRequestConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, CancelWorkRequestResponse>
                 transformer = CancelWorkRequestConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataScience",
+                "CancelWorkRequest",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/WorkRequest/CancelWorkRequest");
 
         com.oracle.bmc.responses.AsyncHandler<CancelWorkRequestRequest, CancelWorkRequestResponse>
                 handlerToUse = handler;
@@ -587,6 +612,11 @@ public class DataScienceAsyncClient implements DataScienceAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ChangeJobCompartmentResponse>
                 transformer = ChangeJobCompartmentConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataScience",
+                "ChangeJobCompartment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/Job/ChangeJobCompartment");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeJobCompartmentRequest, ChangeJobCompartmentResponse>
@@ -633,6 +663,11 @@ public class DataScienceAsyncClient implements DataScienceAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ChangeJobRunCompartmentResponse>
                 transformer = ChangeJobRunCompartmentConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataScience",
+                "ChangeJobRunCompartment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/JobRun/ChangeJobRunCompartment");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeJobRunCompartmentRequest, ChangeJobRunCompartmentResponse>
@@ -680,6 +715,11 @@ public class DataScienceAsyncClient implements DataScienceAsync {
                         javax.ws.rs.core.Response, ChangeModelCompartmentResponse>
                 transformer = ChangeModelCompartmentConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataScience",
+                "ChangeModelCompartment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/Model/ChangeModelCompartment");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeModelCompartmentRequest, ChangeModelCompartmentResponse>
@@ -729,6 +769,11 @@ public class DataScienceAsyncClient implements DataScienceAsync {
                         javax.ws.rs.core.Response, ChangeModelDeploymentCompartmentResponse>
                 transformer = ChangeModelDeploymentCompartmentConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataScience",
+                "ChangeModelDeploymentCompartment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/ModelDeployment/ChangeModelDeploymentCompartment");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeModelDeploymentCompartmentRequest,
@@ -781,6 +826,11 @@ public class DataScienceAsyncClient implements DataScienceAsync {
                         javax.ws.rs.core.Response, ChangeNotebookSessionCompartmentResponse>
                 transformer = ChangeNotebookSessionCompartmentConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataScience",
+                "ChangeNotebookSessionCompartment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/NotebookSession/ChangeNotebookSessionCompartment");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeNotebookSessionCompartmentRequest,
@@ -831,6 +881,11 @@ public class DataScienceAsyncClient implements DataScienceAsync {
                         javax.ws.rs.core.Response, ChangeProjectCompartmentResponse>
                 transformer = ChangeProjectCompartmentConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataScience",
+                "ChangeProjectCompartment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/Project/ChangeProjectCompartment");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeProjectCompartmentRequest, ChangeProjectCompartmentResponse>
@@ -875,6 +930,11 @@ public class DataScienceAsyncClient implements DataScienceAsync {
         final com.google.common.base.Function<javax.ws.rs.core.Response, CreateJobResponse>
                 transformer = CreateJobConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataScience",
+                "CreateJob",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/Job/CreateJob");
 
         com.oracle.bmc.responses.AsyncHandler<CreateJobRequest, CreateJobResponse> handlerToUse =
                 handler;
@@ -930,6 +990,11 @@ public class DataScienceAsyncClient implements DataScienceAsync {
                 com.oracle.bmc.http.internal.AuthnClientFilter.SIGNING_STRATEGY_PROPERTY_NAME,
                 com.oracle.bmc.http.signing.SigningStrategy.EXCLUDE_BODY);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataScience",
+                "CreateJobArtifact",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/Job/CreateJobArtifact");
 
         com.oracle.bmc.responses.AsyncHandler<CreateJobArtifactRequest, CreateJobArtifactResponse>
                 handlerToUse =
@@ -979,6 +1044,11 @@ public class DataScienceAsyncClient implements DataScienceAsync {
         final com.google.common.base.Function<javax.ws.rs.core.Response, CreateJobRunResponse>
                 transformer = CreateJobRunConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataScience",
+                "CreateJobRun",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/JobRun/CreateJobRun");
 
         com.oracle.bmc.responses.AsyncHandler<CreateJobRunRequest, CreateJobRunResponse>
                 handlerToUse = handler;
@@ -1023,6 +1093,11 @@ public class DataScienceAsyncClient implements DataScienceAsync {
         final com.google.common.base.Function<javax.ws.rs.core.Response, CreateModelResponse>
                 transformer = CreateModelConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataScience",
+                "CreateModel",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/Model/CreateModel");
 
         com.oracle.bmc.responses.AsyncHandler<CreateModelRequest, CreateModelResponse>
                 handlerToUse = handler;
@@ -1080,6 +1155,11 @@ public class DataScienceAsyncClient implements DataScienceAsync {
                 com.oracle.bmc.http.internal.AuthnClientFilter.SIGNING_STRATEGY_PROPERTY_NAME,
                 com.oracle.bmc.http.signing.SigningStrategy.EXCLUDE_BODY);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataScience",
+                "CreateModelArtifact",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/Model/CreateModelArtifact");
 
         com.oracle.bmc.responses.AsyncHandler<
                         CreateModelArtifactRequest, CreateModelArtifactResponse>
@@ -1132,6 +1212,11 @@ public class DataScienceAsyncClient implements DataScienceAsync {
                         javax.ws.rs.core.Response, CreateModelDeploymentResponse>
                 transformer = CreateModelDeploymentConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataScience",
+                "CreateModelDeployment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/ModelDeployment/CreateModelDeployment");
 
         com.oracle.bmc.responses.AsyncHandler<
                         CreateModelDeploymentRequest, CreateModelDeploymentResponse>
@@ -1179,6 +1264,11 @@ public class DataScienceAsyncClient implements DataScienceAsync {
                         javax.ws.rs.core.Response, CreateModelProvenanceResponse>
                 transformer = CreateModelProvenanceConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataScience",
+                "CreateModelProvenance",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/Model/CreateModelProvenance");
 
         com.oracle.bmc.responses.AsyncHandler<
                         CreateModelProvenanceRequest, CreateModelProvenanceResponse>
@@ -1226,6 +1316,11 @@ public class DataScienceAsyncClient implements DataScienceAsync {
                         javax.ws.rs.core.Response, CreateNotebookSessionResponse>
                 transformer = CreateNotebookSessionConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataScience",
+                "CreateNotebookSession",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/NotebookSession/CreateNotebookSession");
 
         com.oracle.bmc.responses.AsyncHandler<
                         CreateNotebookSessionRequest, CreateNotebookSessionResponse>
@@ -1271,6 +1366,11 @@ public class DataScienceAsyncClient implements DataScienceAsync {
         final com.google.common.base.Function<javax.ws.rs.core.Response, CreateProjectResponse>
                 transformer = CreateProjectConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataScience",
+                "CreateProject",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/Project/CreateProject");
 
         com.oracle.bmc.responses.AsyncHandler<CreateProjectRequest, CreateProjectResponse>
                 handlerToUse = handler;
@@ -1315,6 +1415,11 @@ public class DataScienceAsyncClient implements DataScienceAsync {
                 DeactivateModelConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, DeactivateModelResponse>
                 transformer = DeactivateModelConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataScience",
+                "DeactivateModel",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/Model/DeactivateModel");
 
         com.oracle.bmc.responses.AsyncHandler<DeactivateModelRequest, DeactivateModelResponse>
                 handlerToUse = handler;
@@ -1355,6 +1460,11 @@ public class DataScienceAsyncClient implements DataScienceAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, DeactivateModelDeploymentResponse>
                 transformer = DeactivateModelDeploymentConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataScience",
+                "DeactivateModelDeployment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/ModelDeployment/DeactivateModelDeployment");
 
         com.oracle.bmc.responses.AsyncHandler<
                         DeactivateModelDeploymentRequest, DeactivateModelDeploymentResponse>
@@ -1397,6 +1507,11 @@ public class DataScienceAsyncClient implements DataScienceAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, DeactivateNotebookSessionResponse>
                 transformer = DeactivateNotebookSessionConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataScience",
+                "DeactivateNotebookSession",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/NotebookSession/DeactivateNotebookSession");
 
         com.oracle.bmc.responses.AsyncHandler<
                         DeactivateNotebookSessionRequest, DeactivateNotebookSessionResponse>
@@ -1436,6 +1551,11 @@ public class DataScienceAsyncClient implements DataScienceAsync {
                 DeleteJobConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteJobResponse>
                 transformer = DeleteJobConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataScience",
+                "DeleteJob",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/Job/DeleteJob");
 
         com.oracle.bmc.responses.AsyncHandler<DeleteJobRequest, DeleteJobResponse> handlerToUse =
                 handler;
@@ -1473,6 +1593,11 @@ public class DataScienceAsyncClient implements DataScienceAsync {
                 DeleteJobRunConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteJobRunResponse>
                 transformer = DeleteJobRunConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataScience",
+                "DeleteJobRun",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/JobRun/DeleteJobRun");
 
         com.oracle.bmc.responses.AsyncHandler<DeleteJobRunRequest, DeleteJobRunResponse>
                 handlerToUse = handler;
@@ -1511,6 +1636,11 @@ public class DataScienceAsyncClient implements DataScienceAsync {
                 DeleteModelConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteModelResponse>
                 transformer = DeleteModelConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataScience",
+                "DeleteModel",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/Model/DeleteModel");
 
         com.oracle.bmc.responses.AsyncHandler<DeleteModelRequest, DeleteModelResponse>
                 handlerToUse = handler;
@@ -1551,6 +1681,11 @@ public class DataScienceAsyncClient implements DataScienceAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, DeleteModelDeploymentResponse>
                 transformer = DeleteModelDeploymentConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataScience",
+                "DeleteModelDeployment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/ModelDeployment/DeleteModelDeployment");
 
         com.oracle.bmc.responses.AsyncHandler<
                         DeleteModelDeploymentRequest, DeleteModelDeploymentResponse>
@@ -1592,6 +1727,11 @@ public class DataScienceAsyncClient implements DataScienceAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, DeleteNotebookSessionResponse>
                 transformer = DeleteNotebookSessionConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataScience",
+                "DeleteNotebookSession",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/NotebookSession/DeleteNotebookSession");
 
         com.oracle.bmc.responses.AsyncHandler<
                         DeleteNotebookSessionRequest, DeleteNotebookSessionResponse>
@@ -1631,6 +1771,11 @@ public class DataScienceAsyncClient implements DataScienceAsync {
                 DeleteProjectConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteProjectResponse>
                 transformer = DeleteProjectConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataScience",
+                "DeleteProject",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/Project/DeleteProject");
 
         com.oracle.bmc.responses.AsyncHandler<DeleteProjectRequest, DeleteProjectResponse>
                 handlerToUse = handler;
@@ -1667,6 +1812,11 @@ public class DataScienceAsyncClient implements DataScienceAsync {
                 GetJobConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetJobResponse>
                 transformer = GetJobConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataScience",
+                "GetJob",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/Job/GetJob");
 
         com.oracle.bmc.responses.AsyncHandler<GetJobRequest, GetJobResponse> handlerToUse = handler;
 
@@ -1715,6 +1865,11 @@ public class DataScienceAsyncClient implements DataScienceAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetJobArtifactContentResponse>
                 transformer = GetJobArtifactContentConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataScience",
+                "GetJobArtifactContent",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/Job/GetJobArtifactContent");
 
         com.oracle.bmc.responses.AsyncHandler<
                         GetJobArtifactContentRequest, GetJobArtifactContentResponse>
@@ -1753,6 +1908,11 @@ public class DataScienceAsyncClient implements DataScienceAsync {
                 GetJobRunConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetJobRunResponse>
                 transformer = GetJobRunConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataScience",
+                "GetJobRun",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/JobRun/GetJobRun");
 
         com.oracle.bmc.responses.AsyncHandler<GetJobRunRequest, GetJobRunResponse> handlerToUse =
                 handler;
@@ -1789,6 +1949,11 @@ public class DataScienceAsyncClient implements DataScienceAsync {
                 GetModelConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetModelResponse>
                 transformer = GetModelConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataScience",
+                "GetModel",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/Model/GetModel");
 
         com.oracle.bmc.responses.AsyncHandler<GetModelRequest, GetModelResponse> handlerToUse =
                 handler;
@@ -1838,6 +2003,11 @@ public class DataScienceAsyncClient implements DataScienceAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetModelArtifactContentResponse>
                 transformer = GetModelArtifactContentConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataScience",
+                "GetModelArtifactContent",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/Model/GetModelArtifactContent");
 
         com.oracle.bmc.responses.AsyncHandler<
                         GetModelArtifactContentRequest, GetModelArtifactContentResponse>
@@ -1878,6 +2048,11 @@ public class DataScienceAsyncClient implements DataScienceAsync {
                 GetModelDeploymentConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetModelDeploymentResponse>
                 transformer = GetModelDeploymentConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataScience",
+                "GetModelDeployment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/ModelDeployment/GetModelDeployment");
 
         com.oracle.bmc.responses.AsyncHandler<GetModelDeploymentRequest, GetModelDeploymentResponse>
                 handlerToUse = handler;
@@ -1917,6 +2092,11 @@ public class DataScienceAsyncClient implements DataScienceAsync {
                 GetModelProvenanceConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetModelProvenanceResponse>
                 transformer = GetModelProvenanceConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataScience",
+                "GetModelProvenance",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/Model/GetModelProvenance");
 
         com.oracle.bmc.responses.AsyncHandler<GetModelProvenanceRequest, GetModelProvenanceResponse>
                 handlerToUse = handler;
@@ -1956,6 +2136,11 @@ public class DataScienceAsyncClient implements DataScienceAsync {
                 GetNotebookSessionConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetNotebookSessionResponse>
                 transformer = GetNotebookSessionConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataScience",
+                "GetNotebookSession",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/NotebookSession/GetNotebookSession");
 
         com.oracle.bmc.responses.AsyncHandler<GetNotebookSessionRequest, GetNotebookSessionResponse>
                 handlerToUse = handler;
@@ -1993,6 +2178,11 @@ public class DataScienceAsyncClient implements DataScienceAsync {
                 GetProjectConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetProjectResponse>
                 transformer = GetProjectConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataScience",
+                "GetProject",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/Project/GetProject");
 
         com.oracle.bmc.responses.AsyncHandler<GetProjectRequest, GetProjectResponse> handlerToUse =
                 handler;
@@ -2032,6 +2222,11 @@ public class DataScienceAsyncClient implements DataScienceAsync {
                 GetWorkRequestConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetWorkRequestResponse>
                 transformer = GetWorkRequestConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataScience",
+                "GetWorkRequest",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/WorkRequest/GetWorkRequest");
 
         com.oracle.bmc.responses.AsyncHandler<GetWorkRequestRequest, GetWorkRequestResponse>
                 handlerToUse = handler;
@@ -2071,6 +2266,11 @@ public class DataScienceAsyncClient implements DataScienceAsync {
                 HeadJobArtifactConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, HeadJobArtifactResponse>
                 transformer = HeadJobArtifactConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataScience",
+                "HeadJobArtifact",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/Job/HeadJobArtifact");
 
         com.oracle.bmc.responses.AsyncHandler<HeadJobArtifactRequest, HeadJobArtifactResponse>
                 handlerToUse = handler;
@@ -2110,6 +2310,11 @@ public class DataScienceAsyncClient implements DataScienceAsync {
                 HeadModelArtifactConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, HeadModelArtifactResponse>
                 transformer = HeadModelArtifactConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataScience",
+                "HeadModelArtifact",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/Model/HeadModelArtifact");
 
         com.oracle.bmc.responses.AsyncHandler<HeadModelArtifactRequest, HeadModelArtifactResponse>
                 handlerToUse = handler;
@@ -2150,6 +2355,11 @@ public class DataScienceAsyncClient implements DataScienceAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListFastLaunchJobConfigsResponse>
                 transformer = ListFastLaunchJobConfigsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataScience",
+                "ListFastLaunchJobConfigs",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/FastLaunchJobConfigSummary/ListFastLaunchJobConfigs");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListFastLaunchJobConfigsRequest, ListFastLaunchJobConfigsResponse>
@@ -2189,6 +2399,11 @@ public class DataScienceAsyncClient implements DataScienceAsync {
                 ListJobRunsConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListJobRunsResponse>
                 transformer = ListJobRunsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataScience",
+                "ListJobRuns",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/JobRunSummary/ListJobRuns");
 
         com.oracle.bmc.responses.AsyncHandler<ListJobRunsRequest, ListJobRunsResponse>
                 handlerToUse = handler;
@@ -2227,6 +2442,11 @@ public class DataScienceAsyncClient implements DataScienceAsync {
                 ListJobShapesConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListJobShapesResponse>
                 transformer = ListJobShapesConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataScience",
+                "ListJobShapes",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/JobShapeSummary/ListJobShapes");
 
         com.oracle.bmc.responses.AsyncHandler<ListJobShapesRequest, ListJobShapesResponse>
                 handlerToUse = handler;
@@ -2264,6 +2484,11 @@ public class DataScienceAsyncClient implements DataScienceAsync {
                 ListJobsConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListJobsResponse>
                 transformer = ListJobsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataScience",
+                "ListJobs",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/JobSummary/ListJobs");
 
         com.oracle.bmc.responses.AsyncHandler<ListJobsRequest, ListJobsResponse> handlerToUse =
                 handler;
@@ -2303,6 +2528,11 @@ public class DataScienceAsyncClient implements DataScienceAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListModelDeploymentShapesResponse>
                 transformer = ListModelDeploymentShapesConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataScience",
+                "ListModelDeploymentShapes",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/ModelDeploymentShapeSummary/ListModelDeploymentShapes");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListModelDeploymentShapesRequest, ListModelDeploymentShapesResponse>
@@ -2345,6 +2575,11 @@ public class DataScienceAsyncClient implements DataScienceAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListModelDeploymentsResponse>
                 transformer = ListModelDeploymentsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataScience",
+                "ListModelDeployments",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/ModelDeploymentSummary/ListModelDeployments");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListModelDeploymentsRequest, ListModelDeploymentsResponse>
@@ -2383,6 +2618,11 @@ public class DataScienceAsyncClient implements DataScienceAsync {
                 ListModelsConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListModelsResponse>
                 transformer = ListModelsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataScience",
+                "ListModels",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/ModelSummary/ListModels");
 
         com.oracle.bmc.responses.AsyncHandler<ListModelsRequest, ListModelsResponse> handlerToUse =
                 handler;
@@ -2423,6 +2663,11 @@ public class DataScienceAsyncClient implements DataScienceAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListNotebookSessionShapesResponse>
                 transformer = ListNotebookSessionShapesConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataScience",
+                "ListNotebookSessionShapes",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/NotebookSessionShapeSummary/ListNotebookSessionShapes");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListNotebookSessionShapesRequest, ListNotebookSessionShapesResponse>
@@ -2465,6 +2710,11 @@ public class DataScienceAsyncClient implements DataScienceAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListNotebookSessionsResponse>
                 transformer = ListNotebookSessionsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataScience",
+                "ListNotebookSessions",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/NotebookSessionSummary/ListNotebookSessions");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListNotebookSessionsRequest, ListNotebookSessionsResponse>
@@ -2504,6 +2754,11 @@ public class DataScienceAsyncClient implements DataScienceAsync {
                 ListProjectsConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListProjectsResponse>
                 transformer = ListProjectsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataScience",
+                "ListProjects",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/ProjectSummary/ListProjects");
 
         com.oracle.bmc.responses.AsyncHandler<ListProjectsRequest, ListProjectsResponse>
                 handlerToUse = handler;
@@ -2544,6 +2799,11 @@ public class DataScienceAsyncClient implements DataScienceAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListWorkRequestErrorsResponse>
                 transformer = ListWorkRequestErrorsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataScience",
+                "ListWorkRequestErrors",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/WorkRequest/ListWorkRequestErrors");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListWorkRequestErrorsRequest, ListWorkRequestErrorsResponse>
@@ -2585,6 +2845,11 @@ public class DataScienceAsyncClient implements DataScienceAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListWorkRequestLogsResponse>
                 transformer = ListWorkRequestLogsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataScience",
+                "ListWorkRequestLogs",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/WorkRequest/ListWorkRequestLogs");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListWorkRequestLogsRequest, ListWorkRequestLogsResponse>
@@ -2625,6 +2890,11 @@ public class DataScienceAsyncClient implements DataScienceAsync {
                 ListWorkRequestsConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListWorkRequestsResponse>
                 transformer = ListWorkRequestsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataScience",
+                "ListWorkRequests",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/WorkRequestSummary/ListWorkRequests");
 
         com.oracle.bmc.responses.AsyncHandler<ListWorkRequestsRequest, ListWorkRequestsResponse>
                 handlerToUse = handler;
@@ -2662,6 +2932,11 @@ public class DataScienceAsyncClient implements DataScienceAsync {
                 UpdateJobConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateJobResponse>
                 transformer = UpdateJobConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataScience",
+                "UpdateJob",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/Job/UpdateJob");
 
         com.oracle.bmc.responses.AsyncHandler<UpdateJobRequest, UpdateJobResponse> handlerToUse =
                 handler;
@@ -2704,6 +2979,11 @@ public class DataScienceAsyncClient implements DataScienceAsync {
                 UpdateJobRunConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateJobRunResponse>
                 transformer = UpdateJobRunConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataScience",
+                "UpdateJobRun",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/JobRun/UpdateJobRun");
 
         com.oracle.bmc.responses.AsyncHandler<UpdateJobRunRequest, UpdateJobRunResponse>
                 handlerToUse = handler;
@@ -2747,6 +3027,11 @@ public class DataScienceAsyncClient implements DataScienceAsync {
                 UpdateModelConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateModelResponse>
                 transformer = UpdateModelConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataScience",
+                "UpdateModel",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/Model/UpdateModel");
 
         com.oracle.bmc.responses.AsyncHandler<UpdateModelRequest, UpdateModelResponse>
                 handlerToUse = handler;
@@ -2792,6 +3077,11 @@ public class DataScienceAsyncClient implements DataScienceAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, UpdateModelDeploymentResponse>
                 transformer = UpdateModelDeploymentConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataScience",
+                "UpdateModelDeployment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/ModelDeployment/UpdateModelDeployment");
 
         com.oracle.bmc.responses.AsyncHandler<
                         UpdateModelDeploymentRequest, UpdateModelDeploymentResponse>
@@ -2838,6 +3128,11 @@ public class DataScienceAsyncClient implements DataScienceAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, UpdateModelProvenanceResponse>
                 transformer = UpdateModelProvenanceConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataScience",
+                "UpdateModelProvenance",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/Model/UpdateModelProvenance");
 
         com.oracle.bmc.responses.AsyncHandler<
                         UpdateModelProvenanceRequest, UpdateModelProvenanceResponse>
@@ -2884,6 +3179,11 @@ public class DataScienceAsyncClient implements DataScienceAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, UpdateNotebookSessionResponse>
                 transformer = UpdateNotebookSessionConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataScience",
+                "UpdateNotebookSession",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/NotebookSession/UpdateNotebookSession");
 
         com.oracle.bmc.responses.AsyncHandler<
                         UpdateNotebookSessionRequest, UpdateNotebookSessionResponse>
@@ -2928,6 +3228,11 @@ public class DataScienceAsyncClient implements DataScienceAsync {
                 UpdateProjectConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateProjectResponse>
                 transformer = UpdateProjectConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataScience",
+                "UpdateProject",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/Project/UpdateProject");
 
         com.oracle.bmc.responses.AsyncHandler<UpdateProjectRequest, UpdateProjectResponse>
                 handlerToUse = handler;

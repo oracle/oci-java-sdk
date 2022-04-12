@@ -400,6 +400,8 @@ public class InvoiceServiceAsyncClient implements InvoiceServiceAsync {
                 DownloadPdfContentConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, DownloadPdfContentResponse>
                 transformer = DownloadPdfContentConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "InvoiceService", "DownloadPdfContent", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<DownloadPdfContentRequest, DownloadPdfContentResponse>
                 handlerToUse = handler;
@@ -437,6 +439,8 @@ public class InvoiceServiceAsyncClient implements InvoiceServiceAsync {
                 GetInvoiceConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetInvoiceResponse>
                 transformer = GetInvoiceConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "InvoiceService", "GetInvoice", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<GetInvoiceRequest, GetInvoiceResponse> handlerToUse =
                 handler;
@@ -476,6 +480,8 @@ public class InvoiceServiceAsyncClient implements InvoiceServiceAsync {
                 ListInvoiceLinesConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListInvoiceLinesResponse>
                 transformer = ListInvoiceLinesConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "InvoiceService", "ListInvoiceLines", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<ListInvoiceLinesRequest, ListInvoiceLinesResponse>
                 handlerToUse = handler;
@@ -514,6 +520,8 @@ public class InvoiceServiceAsyncClient implements InvoiceServiceAsync {
                 ListInvoicesConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListInvoicesResponse>
                 transformer = ListInvoicesConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "InvoiceService", "ListInvoices", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<ListInvoicesRequest, ListInvoicesResponse>
                 handlerToUse = handler;
@@ -552,6 +560,8 @@ public class InvoiceServiceAsyncClient implements InvoiceServiceAsync {
         final com.google.common.base.Function<javax.ws.rs.core.Response, PayInvoiceResponse>
                 transformer = PayInvoiceConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "InvoiceService", "PayInvoice", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<PayInvoiceRequest, PayInvoiceResponse> handlerToUse =
                 handler;

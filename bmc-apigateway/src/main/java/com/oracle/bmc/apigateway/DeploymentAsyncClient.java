@@ -393,6 +393,11 @@ public class DeploymentAsyncClient implements DeploymentAsync {
                         javax.ws.rs.core.Response, ChangeDeploymentCompartmentResponse>
                 transformer = ChangeDeploymentCompartmentConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Deployment",
+                "ChangeDeploymentCompartment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/api-gateway/20190501/Deployment/ChangeDeploymentCompartment");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeDeploymentCompartmentRequest, ChangeDeploymentCompartmentResponse>
@@ -440,6 +445,8 @@ public class DeploymentAsyncClient implements DeploymentAsync {
         final com.google.common.base.Function<javax.ws.rs.core.Response, CreateDeploymentResponse>
                 transformer = CreateDeploymentConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Deployment", "CreateDeployment", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<CreateDeploymentRequest, CreateDeploymentResponse>
                 handlerToUse = handler;
@@ -484,6 +491,11 @@ public class DeploymentAsyncClient implements DeploymentAsync {
                 DeleteDeploymentConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteDeploymentResponse>
                 transformer = DeleteDeploymentConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Deployment",
+                "DeleteDeployment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/api-gateway/20190501/Deployment/DeleteDeployment");
 
         com.oracle.bmc.responses.AsyncHandler<DeleteDeploymentRequest, DeleteDeploymentResponse>
                 handlerToUse = handler;
@@ -522,6 +534,11 @@ public class DeploymentAsyncClient implements DeploymentAsync {
                 GetDeploymentConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetDeploymentResponse>
                 transformer = GetDeploymentConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Deployment",
+                "GetDeployment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/api-gateway/20190501/Deployment/GetDeployment");
 
         com.oracle.bmc.responses.AsyncHandler<GetDeploymentRequest, GetDeploymentResponse>
                 handlerToUse = handler;
@@ -561,6 +578,11 @@ public class DeploymentAsyncClient implements DeploymentAsync {
                 ListDeploymentsConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListDeploymentsResponse>
                 transformer = ListDeploymentsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Deployment",
+                "ListDeployments",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/api-gateway/20190501/DeploymentSummary/ListDeployments");
 
         com.oracle.bmc.responses.AsyncHandler<ListDeploymentsRequest, ListDeploymentsResponse>
                 handlerToUse = handler;
@@ -600,6 +622,11 @@ public class DeploymentAsyncClient implements DeploymentAsync {
                 UpdateDeploymentConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateDeploymentResponse>
                 transformer = UpdateDeploymentConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Deployment",
+                "UpdateDeployment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/api-gateway/20190501/Deployment/UpdateDeployment");
 
         com.oracle.bmc.responses.AsyncHandler<UpdateDeploymentRequest, UpdateDeploymentResponse>
                 handlerToUse = handler;

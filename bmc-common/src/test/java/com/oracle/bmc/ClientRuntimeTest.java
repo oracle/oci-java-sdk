@@ -17,11 +17,6 @@ public class ClientRuntimeTest {
     // This test checks the values of all the parameters used to form the user agent.
     @Test
     public void checkUserAgentParameters() throws Exception {
-        Map<String, String> newEnvMap = new HashMap<>();
-        newEnvMap.put("OCI_SDK_APPEND_USER_AGENT", "test-env-var");
-        EnvironmentVariablesHelper.setEnvironmentVariable(newEnvMap);
-        String clientUserAgent = "foobar";
-        ClientRuntime.setClientUserAgent(clientUserAgent);
         String userAgent = ClientRuntime.getRuntime().getUserAgent();
         assertTrue(userAgent.contains(ClientRuntime.getRuntime().getClientInfo()));
         assertTrue(userAgent.contains(System.getProperty("os.name")));
@@ -29,7 +24,5 @@ public class ClientRuntimeTest {
         assertTrue(userAgent.contains(System.getProperty("java.version")));
         assertTrue(userAgent.contains(System.getProperty("java.vm.name")));
         assertTrue(userAgent.contains(System.getProperty("java.vm.version")));
-        assertTrue(userAgent.contains(clientUserAgent));
-        assertTrue(userAgent.endsWith(System.getenv("OCI_SDK_APPEND_USER_AGENT")));
     }
 }

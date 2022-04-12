@@ -30,6 +30,24 @@ public class Vcn {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
+        @com.fasterxml.jackson.annotation.JsonProperty("byoipv6CidrBlocks")
+        private java.util.List<String> byoipv6CidrBlocks;
+
+        public Builder byoipv6CidrBlocks(java.util.List<String> byoipv6CidrBlocks) {
+            this.byoipv6CidrBlocks = byoipv6CidrBlocks;
+            this.__explicitlySet__.add("byoipv6CidrBlocks");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("ipv6PrivateCidrBlocks")
+        private java.util.List<String> ipv6PrivateCidrBlocks;
+
+        public Builder ipv6PrivateCidrBlocks(java.util.List<String> ipv6PrivateCidrBlocks) {
+            this.ipv6PrivateCidrBlocks = ipv6PrivateCidrBlocks;
+            this.__explicitlySet__.add("ipv6PrivateCidrBlocks");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("cidrBlock")
         private String cidrBlock;
 
@@ -172,6 +190,8 @@ public class Vcn {
         public Vcn build() {
             Vcn __instance__ =
                     new Vcn(
+                            byoipv6CidrBlocks,
+                            ipv6PrivateCidrBlocks,
                             cidrBlock,
                             cidrBlocks,
                             compartmentId,
@@ -194,7 +214,9 @@ public class Vcn {
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(Vcn o) {
             Builder copiedBuilder =
-                    cidrBlock(o.getCidrBlock())
+                    byoipv6CidrBlocks(o.getByoipv6CidrBlocks())
+                            .ipv6PrivateCidrBlocks(o.getIpv6PrivateCidrBlocks())
+                            .cidrBlock(o.getCidrBlock())
                             .cidrBlocks(o.getCidrBlocks())
                             .compartmentId(o.getCompartmentId())
                             .defaultDhcpOptionsId(o.getDefaultDhcpOptionsId())
@@ -221,6 +243,20 @@ public class Vcn {
     public static Builder builder() {
         return new Builder();
     }
+
+    /**
+     * The list of BYOIPv6 CIDR blocks required to create a VCN that uses BYOIPv6 ranges.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("byoipv6CidrBlocks")
+    java.util.List<String> byoipv6CidrBlocks;
+
+    /**
+     * For an IPv6-enabled VCN, this is the list of Private IPv6 CIDR blocks for the VCN's IP address space.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("ipv6PrivateCidrBlocks")
+    java.util.List<String> ipv6PrivateCidrBlocks;
 
     /**
      * Deprecated. The first CIDR IP address from cidrBlocks.

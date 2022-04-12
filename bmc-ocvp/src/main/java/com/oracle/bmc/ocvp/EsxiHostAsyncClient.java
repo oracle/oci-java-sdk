@@ -390,6 +390,11 @@ public class EsxiHostAsyncClient implements EsxiHostAsync {
         final com.google.common.base.Function<javax.ws.rs.core.Response, CreateEsxiHostResponse>
                 transformer = CreateEsxiHostConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "EsxiHost",
+                "CreateEsxiHost",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/vmware/20200501/EsxiHost/CreateEsxiHost");
 
         com.oracle.bmc.responses.AsyncHandler<CreateEsxiHostRequest, CreateEsxiHostResponse>
                 handlerToUse = handler;
@@ -434,6 +439,11 @@ public class EsxiHostAsyncClient implements EsxiHostAsync {
                 DeleteEsxiHostConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteEsxiHostResponse>
                 transformer = DeleteEsxiHostConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "EsxiHost",
+                "DeleteEsxiHost",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/vmware/20200501/EsxiHost/DeleteEsxiHost");
 
         com.oracle.bmc.responses.AsyncHandler<DeleteEsxiHostRequest, DeleteEsxiHostResponse>
                 handlerToUse = handler;
@@ -472,6 +482,11 @@ public class EsxiHostAsyncClient implements EsxiHostAsync {
                 GetEsxiHostConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetEsxiHostResponse>
                 transformer = GetEsxiHostConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "EsxiHost",
+                "GetEsxiHost",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/vmware/20200501/EsxiHost/GetEsxiHost");
 
         com.oracle.bmc.responses.AsyncHandler<GetEsxiHostRequest, GetEsxiHostResponse>
                 handlerToUse = handler;
@@ -510,6 +525,11 @@ public class EsxiHostAsyncClient implements EsxiHostAsync {
                 ListEsxiHostsConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListEsxiHostsResponse>
                 transformer = ListEsxiHostsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "EsxiHost",
+                "ListEsxiHosts",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/vmware/20200501/EsxiHostSummary/ListEsxiHosts");
 
         com.oracle.bmc.responses.AsyncHandler<ListEsxiHostsRequest, ListEsxiHostsResponse>
                 handlerToUse = handler;
@@ -549,6 +569,11 @@ public class EsxiHostAsyncClient implements EsxiHostAsync {
                 UpdateEsxiHostConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateEsxiHostResponse>
                 transformer = UpdateEsxiHostConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "EsxiHost",
+                "UpdateEsxiHost",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/vmware/20200501/EsxiHost/UpdateEsxiHost");
 
         com.oracle.bmc.responses.AsyncHandler<UpdateEsxiHostRequest, UpdateEsxiHostResponse>
                 handlerToUse = handler;

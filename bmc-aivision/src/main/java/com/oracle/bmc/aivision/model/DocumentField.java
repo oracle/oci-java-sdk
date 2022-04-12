@@ -91,7 +91,7 @@ public class DocumentField {
     }
 
     /**
-     * Field type.
+     * The field type.
      **/
     @lombok.extern.slf4j.Slf4j
     public enum FieldType {
@@ -139,7 +139,7 @@ public class DocumentField {
         }
     };
     /**
-     * Field type.
+     * The field type.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("fieldType")
     FieldType fieldType;

@@ -276,6 +276,8 @@ public class CreateVolumeDetails {
      * <p>
      * Allowed values:
      * <p>
+     * {@code 0}: Represents Lower Cost option.
+     * <p>
      * {@code 10}: Represents Balanced option.
      * <p>
      * {@code 20}: Represents Higher Performance option.
@@ -313,7 +315,7 @@ public class CreateVolumeDetails {
     String volumeBackupId;
 
     /**
-     * Specifies whether the auto-tune performance is enabled for this boot volume.
+     * Specifies whether the auto-tune performance is enabled for this volume.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isAutoTuneEnabled")

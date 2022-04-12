@@ -22,6 +22,7 @@ import com.oracle.bmc.util.internal.NameUtils;
 import lombok.Getter;
 
 import java.io.File;
+import java.time.Duration;
 
 /**
  * This constructs a default implementation of the {@link ResourcePrincipalAuthenticationDetailsProvider}, constructed
@@ -69,7 +70,8 @@ import java.io.File;
 @AuthCachingPolicy(cacheKeyId = false, cachePrivateKey = false)
 public class ResourcePrincipalAuthenticationDetailsProvider
         extends AbstractRequestingAuthenticationDetailsProvider
-        implements RegionProvider, RefreshableOnNotAuthenticatedProvider<String> {
+        implements RegionProvider, RefreshableOnNotAuthenticatedProvider<String>,
+                ConfigurableRefreshOnNotAuthenticatedProvider<String> {
 
     final static String OCI_RESOURCE_PRINCIPAL_VERSION = "OCI_RESOURCE_PRINCIPAL_VERSION";
     final static String RP_VERSION_2_2 = "2.2";
@@ -84,6 +86,9 @@ public class ResourcePrincipalAuthenticationDetailsProvider
             "OCI_RESOURCE_PRINCIPAL_RPT_ENDPOINT";
     private static final String OCI_RESOURCE_PRINCIPAL_RPST_ENDPOINT =
             "OCI_RESOURCE_PRINCIPAL_RPST_ENDPOINT";
+    private static final String RP_DEBUG_INFORMATION_LOG =
+            "\nResource principals authentication can only be used in certain OCI services. Please check that the OCI service you're running this code from supports Resource principals."
+                    + "\nSee https://docs.oracle.com/en-us/iaas/Content/API/Concepts/sdk_authentication_methods.htm#sdk_authentication_methods_resource_principal for more info.";
 
     /**
      * Returns the region where the java code using resource principal authentication is running at
@@ -143,6 +148,20 @@ public class ResourcePrincipalAuthenticationDetailsProvider
      */
     @Override
     public String refresh() {
+        return federationClient.refreshAndGetSecurityToken();
+    }
+
+    /**
+     * Refreshes the authentication data used by the provider
+     *
+     * @return the refreshed authentication data
+     */
+    @Override
+    public String refreshIfExpiringWithin(Duration time) {
+        if (federationClient instanceof ProvidesConfigurableRefresh) {
+            return ((ProvidesConfigurableRefresh) federationClient)
+                    .refreshAndGetSecurityTokenIfExpiringWithin(time);
+        }
         return federationClient.refreshAndGetSecurityToken();
     }
 
@@ -243,14 +262,14 @@ public class ResourcePrincipalAuthenticationDetailsProvider
          * accordingly.
          */
         public ResourcePrincipalAuthenticationDetailsProvider build() {
-            final String OciResourcePrincipalVersion =
+            final String ociResourcePrincipalVersion =
                     System.getenv(OCI_RESOURCE_PRINCIPAL_VERSION);
-            if (OciResourcePrincipalVersion == null) {
+            if (ociResourcePrincipalVersion == null) {
                 throw new IllegalArgumentException(
                         OCI_RESOURCE_PRINCIPAL_VERSION + " environment variable missing");
             }
 
-            switch (OciResourcePrincipalVersion) {
+            switch (ociResourcePrincipalVersion) {
                 case RP_VERSION_2_2:
                     final String ociResourcePrincipalPrivateKey =
                             System.getenv(OCI_RESOURCE_PRINCIPAL_PRIVATE_PEM);
@@ -278,7 +297,9 @@ public class ResourcePrincipalAuthenticationDetailsProvider
                             ociResourcePrincipalRptEndpoint, ociResourcePrincipalRpstEndpoint);
                 default:
                     throw new IllegalArgumentException(
-                            OCI_RESOURCE_PRINCIPAL_VERSION + " has unknown value");
+                            OCI_RESOURCE_PRINCIPAL_VERSION
+                                    + " has unknown value."
+                                    + RP_DEBUG_INFORMATION_LOG);
             }
         }
 
@@ -298,20 +319,25 @@ public class ResourcePrincipalAuthenticationDetailsProvider
 
             if (ociResourcePrincipalPrivateKey == null) {
                 throw new IllegalArgumentException(
-                        OCI_RESOURCE_PRINCIPAL_PRIVATE_PEM + " " + inputType + " missing");
+                        OCI_RESOURCE_PRINCIPAL_PRIVATE_PEM
+                                + " "
+                                + inputType
+                                + " missing."
+                                + RP_DEBUG_INFORMATION_LOG);
             }
             if (new File(ociResourcePrincipalPrivateKey).isAbsolute()) {
                 if (ociResourcePrincipalPassphrase != null
                         && !new File(ociResourcePrincipalPassphrase).isAbsolute()) {
                     throw new IllegalArgumentException(
-                            "cannot mix path and constant settings for "
+                            "Cannot mix path and constant settings for "
                                     + OCI_RESOURCE_PRINCIPAL_PRIVATE_PEM
                                     + " "
                                     + ociResourcePrincipalPrivateKey
                                     + " and "
                                     + OCI_RESOURCE_PRINCIPAL_PRIVATE_PEM_PASSPHRASE
                                     + " "
-                                    + ociResourcePrincipalPassphrase);
+                                    + ociResourcePrincipalPassphrase
+                                    + RP_DEBUG_INFORMATION_LOG);
                 }
                 sessionKeySupplier =
                         new FileBasedKeySupplier(
@@ -330,7 +356,11 @@ public class ResourcePrincipalAuthenticationDetailsProvider
 
             if (ociResourcePrincipalRPST == null) {
                 throw new IllegalArgumentException(
-                        OCI_RESOURCE_PRINCIPAL_RPST + " " + inputType + " missing");
+                        OCI_RESOURCE_PRINCIPAL_RPST
+                                + " "
+                                + inputType
+                                + " missing."
+                                + RP_DEBUG_INFORMATION_LOG);
             }
             if (new File(ociResourcePrincipalRPST).isAbsolute()) {
                 federationClient =
@@ -344,7 +374,11 @@ public class ResourcePrincipalAuthenticationDetailsProvider
 
             if (ociResourcePrincipalRegion == null) {
                 throw new IllegalArgumentException(
-                        OCI_RESOURCE_PRINCIPAL_REGION_ENV_VAR_NAME + " " + inputType + " missing");
+                        OCI_RESOURCE_PRINCIPAL_REGION_ENV_VAR_NAME
+                                + " "
+                                + inputType
+                                + " missing."
+                                + RP_DEBUG_INFORMATION_LOG);
             } else {
                 region =
                         Region.valueOf(

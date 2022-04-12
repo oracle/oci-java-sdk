@@ -476,6 +476,11 @@ public class StreamAdminClient implements StreamAdmin {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "StreamAdmin",
+                "ChangeConnectHarnessCompartment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/streaming/20180418/ConnectHarness/ChangeConnectHarnessCompartment");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -511,6 +516,11 @@ public class StreamAdminClient implements StreamAdmin {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "StreamAdmin",
+                "ChangeStreamCompartment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/streaming/20180418/Stream/ChangeStreamCompartment");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -546,6 +556,11 @@ public class StreamAdminClient implements StreamAdmin {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "StreamAdmin",
+                "ChangeStreamPoolCompartment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/streaming/20180418/StreamPool/ChangeStreamPoolCompartment");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -581,6 +596,11 @@ public class StreamAdminClient implements StreamAdmin {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "StreamAdmin",
+                "CreateConnectHarness",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/streaming/20180418/ConnectHarness/CreateConnectHarness");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -614,6 +634,11 @@ public class StreamAdminClient implements StreamAdmin {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "StreamAdmin",
+                "CreateStream",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/streaming/20180418/Stream/CreateStream");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -648,6 +673,11 @@ public class StreamAdminClient implements StreamAdmin {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "StreamAdmin",
+                "CreateStreamPool",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/streaming/20180418/StreamPool/CreateStreamPool");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -681,6 +711,11 @@ public class StreamAdminClient implements StreamAdmin {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "StreamAdmin",
+                "DeleteConnectHarness",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/streaming/20180418/ConnectHarness/DeleteConnectHarness");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -711,6 +746,11 @@ public class StreamAdminClient implements StreamAdmin {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "StreamAdmin",
+                "DeleteStream",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/streaming/20180418/Stream/DeleteStream");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -741,6 +781,11 @@ public class StreamAdminClient implements StreamAdmin {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "StreamAdmin",
+                "DeleteStreamPool",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/streaming/20180418/StreamPool/DeleteStreamPool");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -771,6 +816,11 @@ public class StreamAdminClient implements StreamAdmin {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "StreamAdmin",
+                "GetConnectHarness",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/streaming/20180418/ConnectHarness/GetConnectHarness");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -799,6 +849,11 @@ public class StreamAdminClient implements StreamAdmin {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "StreamAdmin",
+                "GetStream",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/streaming/20180418/Stream/GetStream");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -828,6 +883,11 @@ public class StreamAdminClient implements StreamAdmin {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "StreamAdmin",
+                "GetStreamPool",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/streaming/20180418/StreamPool/GetStreamPool");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -857,6 +917,11 @@ public class StreamAdminClient implements StreamAdmin {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "StreamAdmin",
+                "ListConnectHarnesses",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/streaming/20180418/ConnectHarnessSummary/ListConnectHarnesses");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -886,6 +951,11 @@ public class StreamAdminClient implements StreamAdmin {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "StreamAdmin",
+                "ListStreamPools",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/streaming/20180418/StreamPoolSummary/ListStreamPools");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -915,6 +985,11 @@ public class StreamAdminClient implements StreamAdmin {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "StreamAdmin",
+                "ListStreams",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/streaming/20180418/StreamSummary/ListStreams");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -944,6 +1019,11 @@ public class StreamAdminClient implements StreamAdmin {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "StreamAdmin",
+                "UpdateConnectHarness",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/streaming/20180418/ConnectHarness/UpdateConnectHarness");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -977,6 +1057,11 @@ public class StreamAdminClient implements StreamAdmin {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "StreamAdmin",
+                "UpdateStream",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/streaming/20180418/Stream/UpdateStream");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1010,6 +1095,11 @@ public class StreamAdminClient implements StreamAdmin {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "StreamAdmin",
+                "UpdateStreamPool",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/streaming/20180418/StreamPool/UpdateStreamPool");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {

@@ -5,7 +5,7 @@
 package com.oracle.bmc.aivision.model;
 
 /**
- * Error in document processing.
+ * The error in document processing.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -68,13 +68,13 @@ public class ProcessingError {
     }
 
     /**
-     * Error code.
+     * The error code.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("code")
     String code;
 
     /**
-     * Error message.
+     * The error message.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("message")
     String message;

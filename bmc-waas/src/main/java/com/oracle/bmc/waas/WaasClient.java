@@ -475,6 +475,11 @@ public class WaasClient implements Waas {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Waas",
+                "AcceptRecommendations",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/waas/20181116/Recommendation/AcceptRecommendations");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -509,6 +514,11 @@ public class WaasClient implements Waas {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Waas",
+                "CancelWorkRequest",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/waas/20181116/WorkRequest/CancelWorkRequest");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -542,6 +552,11 @@ public class WaasClient implements Waas {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Waas",
+                "ChangeAddressListCompartment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/waas/20181116/AddressList/ChangeAddressListCompartment");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -579,6 +594,11 @@ public class WaasClient implements Waas {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Waas",
+                "ChangeCertificateCompartment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/waas/20181116/Certificate/ChangeCertificateCompartment");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -617,6 +637,11 @@ public class WaasClient implements Waas {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Waas",
+                "ChangeCustomProtectionRuleCompartment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/waas/20181116/CustomProtectionRule/ChangeCustomProtectionRuleCompartment");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -654,6 +679,11 @@ public class WaasClient implements Waas {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Waas",
+                "ChangeWaasPolicyCompartment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/waas/20181116/WaasPolicy/ChangeWaasPolicyCompartment");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -689,6 +719,11 @@ public class WaasClient implements Waas {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Waas",
+                "CreateAddressList",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/waas/20181116/AddressList/CreateAddressList");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -723,6 +758,11 @@ public class WaasClient implements Waas {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Waas",
+                "CreateCertificate",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/waas/20181116/Certificate/CreateCertificate");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -759,6 +799,11 @@ public class WaasClient implements Waas {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Waas",
+                "CreateCustomProtectionRule",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/waas/20181116/CustomProtectionRule/CreateCustomProtectionRule");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -794,6 +839,11 @@ public class WaasClient implements Waas {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Waas",
+                "CreateWaasPolicy",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/waas/20181116/WaasPolicy/CreateWaasPolicy");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -828,6 +878,11 @@ public class WaasClient implements Waas {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Waas",
+                "DeleteAddressList",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/waas/20181116/AddressList/DeleteAddressList");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -859,6 +914,11 @@ public class WaasClient implements Waas {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Waas",
+                "DeleteCertificate",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/waas/20181116/Certificate/DeleteCertificate");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -892,6 +952,11 @@ public class WaasClient implements Waas {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Waas",
+                "DeleteCustomProtectionRule",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/waas/20181116/CustomProtectionRule/DeleteCustomProtectionRule");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -923,6 +988,11 @@ public class WaasClient implements Waas {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Waas",
+                "DeleteWaasPolicy",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/waas/20181116/WaasPolicy/DeleteWaasPolicy");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -953,6 +1023,11 @@ public class WaasClient implements Waas {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Waas",
+                "GetAddressList",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/waas/20181116/AddressList/GetAddressList");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -982,6 +1057,11 @@ public class WaasClient implements Waas {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Waas",
+                "GetCertificate",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/waas/20181116/Certificate/GetCertificate");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1012,6 +1092,11 @@ public class WaasClient implements Waas {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Waas",
+                "GetCustomProtectionRule",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/waas/20181116/CustomProtectionRule/GetCustomProtectionRule");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1043,6 +1128,11 @@ public class WaasClient implements Waas {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Waas",
+                "GetDeviceFingerprintChallenge",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/waas/20181116/DeviceFingerprintChallenge/GetDeviceFingerprintChallenge");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1074,6 +1164,11 @@ public class WaasClient implements Waas {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Waas",
+                "GetHumanInteractionChallenge",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/waas/20181116/HumanInteractionChallenge/GetHumanInteractionChallenge");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1103,6 +1198,11 @@ public class WaasClient implements Waas {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Waas",
+                "GetJsChallenge",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/waas/20181116/JsChallenge/GetJsChallenge");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1132,6 +1232,11 @@ public class WaasClient implements Waas {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Waas",
+                "GetPolicyConfig",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/waas/20181116/PolicyConfig/GetPolicyConfig");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1161,6 +1266,11 @@ public class WaasClient implements Waas {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Waas",
+                "GetProtectionRule",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/waas/20181116/ProtectionRule/GetProtectionRule");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1191,6 +1301,11 @@ public class WaasClient implements Waas {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Waas",
+                "GetProtectionSettings",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/waas/20181116/ProtectionSettings/GetProtectionSettings");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1220,6 +1335,11 @@ public class WaasClient implements Waas {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Waas",
+                "GetWaasPolicy",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/waas/20181116/WaasPolicy/GetWaasPolicy");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1251,6 +1371,11 @@ public class WaasClient implements Waas {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Waas",
+                "GetWafAddressRateLimiting",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/waas/20181116/AddressRateLimiting/GetWafAddressRateLimiting");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1280,6 +1405,11 @@ public class WaasClient implements Waas {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Waas",
+                "GetWafConfig",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/waas/20181116/WafConfig/GetWafConfig");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1309,6 +1439,11 @@ public class WaasClient implements Waas {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Waas",
+                "GetWorkRequest",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/waas/20181116/WorkRequest/GetWorkRequest");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1338,6 +1473,11 @@ public class WaasClient implements Waas {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Waas",
+                "ListAccessRules",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/waas/20181116/AccessRule/ListAccessRules");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1367,6 +1507,11 @@ public class WaasClient implements Waas {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Waas",
+                "ListAddressLists",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/waas/20181116/AddressList/ListAddressLists");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1396,6 +1541,11 @@ public class WaasClient implements Waas {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Waas",
+                "ListCachingRules",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/waas/20181116/CachingRuleSummary/ListCachingRules");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1425,6 +1575,11 @@ public class WaasClient implements Waas {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Waas",
+                "ListCaptchas",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/waas/20181116/Captcha/ListCaptchas");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1454,6 +1609,11 @@ public class WaasClient implements Waas {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Waas",
+                "ListCertificates",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/waas/20181116/CertificateSummary/ListCertificates");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1485,6 +1645,11 @@ public class WaasClient implements Waas {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Waas",
+                "ListCustomProtectionRules",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/waas/20181116/CustomProtectionRule/ListCustomProtectionRules");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1514,6 +1679,11 @@ public class WaasClient implements Waas {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Waas",
+                "ListEdgeSubnets",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/waas/20181116/EdgeSubnet/ListEdgeSubnets");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1543,6 +1713,11 @@ public class WaasClient implements Waas {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Waas",
+                "ListGoodBots",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/waas/20181116/GoodBot/ListGoodBots");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1572,6 +1747,11 @@ public class WaasClient implements Waas {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Waas",
+                "ListProtectionRules",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/waas/20181116/ProtectionRule/ListProtectionRules");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1601,6 +1781,11 @@ public class WaasClient implements Waas {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Waas",
+                "ListRecommendations",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/waas/20181116/Recommendation/ListRecommendations");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1630,6 +1815,11 @@ public class WaasClient implements Waas {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Waas",
+                "ListThreatFeeds",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/waas/20181116/ThreatFeed/ListThreatFeeds");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1659,6 +1849,11 @@ public class WaasClient implements Waas {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Waas",
+                "ListWaasPolicies",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/waas/20181116/WaasPolicy/ListWaasPolicies");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1691,6 +1886,11 @@ public class WaasClient implements Waas {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Waas",
+                "ListWaasPolicyCustomProtectionRules",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/waas/20181116/CustomProtectionRule/ListWaasPolicyCustomProtectionRules");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1721,6 +1921,11 @@ public class WaasClient implements Waas {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Waas",
+                "ListWafBlockedRequests",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/waas/20181116/WafBlockedRequest/ListWafBlockedRequests");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1750,6 +1955,11 @@ public class WaasClient implements Waas {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Waas",
+                "ListWafLogs",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/waas/20181116/WafLog/ListWafLogs");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1779,6 +1989,11 @@ public class WaasClient implements Waas {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Waas",
+                "ListWafRequests",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/waas/20181116/WafRequest/ListWafRequests");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1808,6 +2023,11 @@ public class WaasClient implements Waas {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Waas",
+                "ListWafTraffic",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/waas/20181116/WafTrafficDatum/ListWafTraffic");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1837,6 +2057,11 @@ public class WaasClient implements Waas {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Waas",
+                "ListWhitelists",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/waas/20181116/Whitelist/ListWhitelists");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1866,6 +2091,11 @@ public class WaasClient implements Waas {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Waas",
+                "ListWorkRequests",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/waas/20181116/WorkRequestSummary/ListWorkRequests");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1894,6 +2124,11 @@ public class WaasClient implements Waas {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Waas",
+                "PurgeCache",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/waas/20181116/PurgeCache/PurgeCache");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1926,6 +2161,11 @@ public class WaasClient implements Waas {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Waas",
+                "UpdateAccessRules",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/waas/20181116/AccessRule/UpdateAccessRules");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1959,6 +2199,11 @@ public class WaasClient implements Waas {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Waas",
+                "UpdateAddressList",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/waas/20181116/AddressList/UpdateAddressList");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1993,6 +2238,11 @@ public class WaasClient implements Waas {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Waas",
+                "UpdateCachingRules",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/waas/20181116/CachingRule/UpdateCachingRules");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2027,6 +2277,11 @@ public class WaasClient implements Waas {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Waas",
+                "UpdateCaptchas",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/waas/20181116/Captcha/UpdateCaptchas");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2058,6 +2313,11 @@ public class WaasClient implements Waas {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Waas",
+                "UpdateCertificate",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/waas/20181116/Certificate/UpdateCertificate");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2094,6 +2354,11 @@ public class WaasClient implements Waas {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Waas",
+                "UpdateCustomProtectionRule",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/waas/20181116/CustomProtectionRule/UpdateCustomProtectionRule");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2131,6 +2396,11 @@ public class WaasClient implements Waas {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Waas",
+                "UpdateDeviceFingerprintChallenge",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/waas/20181116/DeviceFingerprintChallenge/UpdateDeviceFingerprintChallenge");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2166,6 +2436,11 @@ public class WaasClient implements Waas {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Waas",
+                "UpdateGoodBots",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/waas/20181116/GoodBot/UpdateGoodBots");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2200,6 +2475,11 @@ public class WaasClient implements Waas {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Waas",
+                "UpdateHumanInteractionChallenge",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/waas/20181116/HumanInteractionChallenge/UpdateHumanInteractionChallenge");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2235,6 +2515,11 @@ public class WaasClient implements Waas {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Waas",
+                "UpdateJsChallenge",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/waas/20181116/JsChallenge/UpdateJsChallenge");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2269,6 +2554,11 @@ public class WaasClient implements Waas {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Waas",
+                "UpdatePolicyConfig",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/waas/20181116/PolicyConfig/UpdatePolicyConfig");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2303,6 +2593,11 @@ public class WaasClient implements Waas {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Waas",
+                "UpdateProtectionRules",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/waas/20181116/ProtectionRule/UpdateProtectionRules");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2338,6 +2633,11 @@ public class WaasClient implements Waas {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Waas",
+                "UpdateProtectionSettings",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/waas/20181116/ProtectionSettings/UpdateProtectionSettings");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2371,6 +2671,11 @@ public class WaasClient implements Waas {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Waas",
+                "UpdateThreatFeeds",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/waas/20181116/ThreatFeed/UpdateThreatFeeds");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2405,6 +2710,11 @@ public class WaasClient implements Waas {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Waas",
+                "UpdateWaasPolicy",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/waas/20181116/WaasPolicy/UpdateWaasPolicy");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2442,6 +2752,11 @@ public class WaasClient implements Waas {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Waas",
+                "UpdateWaasPolicyCustomProtectionRules",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/waas/20181116/CustomProtectionRule/UpdateWaasPolicyCustomProtectionRules");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2479,6 +2794,11 @@ public class WaasClient implements Waas {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Waas",
+                "UpdateWafAddressRateLimiting",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/waas/20181116/AddressRateLimiting/UpdateWafAddressRateLimiting");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2514,6 +2834,11 @@ public class WaasClient implements Waas {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Waas",
+                "UpdateWafConfig",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/waas/20181116/WafConfig/UpdateWafConfig");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2548,6 +2873,11 @@ public class WaasClient implements Waas {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Waas",
+                "UpdateWhitelists",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/waas/20181116/Whitelist/UpdateWhitelists");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {

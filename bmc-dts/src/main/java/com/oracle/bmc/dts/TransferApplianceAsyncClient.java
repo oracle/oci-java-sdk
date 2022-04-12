@@ -393,6 +393,8 @@ public class TransferApplianceAsyncClient implements TransferApplianceAsync {
                         javax.ws.rs.core.Response, CreateTransferApplianceResponse>
                 transformer = CreateTransferApplianceConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "TransferAppliance", "CreateTransferAppliance", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<
                         CreateTransferApplianceRequest, CreateTransferApplianceResponse>
@@ -442,6 +444,11 @@ public class TransferApplianceAsyncClient implements TransferApplianceAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, CreateTransferApplianceAdminCredentialsResponse>
                 transformer = CreateTransferApplianceAdminCredentialsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "TransferAppliance",
+                "CreateTransferApplianceAdminCredentials",
+                ib.getRequestUri().toString(),
+                "");
 
         com.oracle.bmc.responses.AsyncHandler<
                         CreateTransferApplianceAdminCredentialsRequest,
@@ -492,6 +499,8 @@ public class TransferApplianceAsyncClient implements TransferApplianceAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, DeleteTransferApplianceResponse>
                 transformer = DeleteTransferApplianceConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "TransferAppliance", "DeleteTransferAppliance", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<
                         DeleteTransferApplianceRequest, DeleteTransferApplianceResponse>
@@ -533,6 +542,8 @@ public class TransferApplianceAsyncClient implements TransferApplianceAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetTransferApplianceResponse>
                 transformer = GetTransferApplianceConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "TransferAppliance", "GetTransferAppliance", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<
                         GetTransferApplianceRequest, GetTransferApplianceResponse>
@@ -580,6 +591,11 @@ public class TransferApplianceAsyncClient implements TransferApplianceAsync {
                         GetTransferApplianceCertificateAuthorityCertificateResponse>
                 transformer =
                         GetTransferApplianceCertificateAuthorityCertificateConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "TransferAppliance",
+                "GetTransferApplianceCertificateAuthorityCertificate",
+                ib.getRequestUri().toString(),
+                "");
 
         com.oracle.bmc.responses.AsyncHandler<
                         GetTransferApplianceCertificateAuthorityCertificateRequest,
@@ -628,6 +644,11 @@ public class TransferApplianceAsyncClient implements TransferApplianceAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetTransferApplianceEncryptionPassphraseResponse>
                 transformer = GetTransferApplianceEncryptionPassphraseConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "TransferAppliance",
+                "GetTransferApplianceEncryptionPassphrase",
+                ib.getRequestUri().toString(),
+                "");
 
         com.oracle.bmc.responses.AsyncHandler<
                         GetTransferApplianceEncryptionPassphraseRequest,
@@ -673,6 +694,8 @@ public class TransferApplianceAsyncClient implements TransferApplianceAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListTransferAppliancesResponse>
                 transformer = ListTransferAppliancesConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "TransferAppliance", "ListTransferAppliances", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListTransferAppliancesRequest, ListTransferAppliancesResponse>
@@ -714,6 +737,8 @@ public class TransferApplianceAsyncClient implements TransferApplianceAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, UpdateTransferApplianceResponse>
                 transformer = UpdateTransferApplianceConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "TransferAppliance", "UpdateTransferAppliance", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<
                         UpdateTransferApplianceRequest, UpdateTransferApplianceResponse>

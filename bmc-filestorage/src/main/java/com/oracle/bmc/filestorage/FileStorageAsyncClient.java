@@ -392,6 +392,11 @@ public class FileStorageAsyncClient implements FileStorageAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ChangeFileSystemCompartmentResponse>
                 transformer = ChangeFileSystemCompartmentConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "FileStorage",
+                "ChangeFileSystemCompartment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/FileSystem/ChangeFileSystemCompartment");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeFileSystemCompartmentRequest, ChangeFileSystemCompartmentResponse>
@@ -441,6 +446,11 @@ public class FileStorageAsyncClient implements FileStorageAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ChangeMountTargetCompartmentResponse>
                 transformer = ChangeMountTargetCompartmentConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "FileStorage",
+                "ChangeMountTargetCompartment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/MountTarget/ChangeMountTargetCompartment");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeMountTargetCompartmentRequest, ChangeMountTargetCompartmentResponse>
@@ -487,6 +497,11 @@ public class FileStorageAsyncClient implements FileStorageAsync {
         final com.google.common.base.Function<javax.ws.rs.core.Response, CreateExportResponse>
                 transformer = CreateExportConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "FileStorage",
+                "CreateExport",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/Export/CreateExport");
 
         com.oracle.bmc.responses.AsyncHandler<CreateExportRequest, CreateExportResponse>
                 handlerToUse = handler;
@@ -532,6 +547,11 @@ public class FileStorageAsyncClient implements FileStorageAsync {
         final com.google.common.base.Function<javax.ws.rs.core.Response, CreateFileSystemResponse>
                 transformer = CreateFileSystemConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "FileStorage",
+                "CreateFileSystem",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/FileSystem/CreateFileSystem");
 
         com.oracle.bmc.responses.AsyncHandler<CreateFileSystemRequest, CreateFileSystemResponse>
                 handlerToUse = handler;
@@ -577,6 +597,11 @@ public class FileStorageAsyncClient implements FileStorageAsync {
         final com.google.common.base.Function<javax.ws.rs.core.Response, CreateMountTargetResponse>
                 transformer = CreateMountTargetConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "FileStorage",
+                "CreateMountTarget",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/MountTarget/CreateMountTarget");
 
         com.oracle.bmc.responses.AsyncHandler<CreateMountTargetRequest, CreateMountTargetResponse>
                 handlerToUse = handler;
@@ -622,6 +647,11 @@ public class FileStorageAsyncClient implements FileStorageAsync {
         final com.google.common.base.Function<javax.ws.rs.core.Response, CreateSnapshotResponse>
                 transformer = CreateSnapshotConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "FileStorage",
+                "CreateSnapshot",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/Snapshot/CreateSnapshot");
 
         com.oracle.bmc.responses.AsyncHandler<CreateSnapshotRequest, CreateSnapshotResponse>
                 handlerToUse = handler;
@@ -665,6 +695,11 @@ public class FileStorageAsyncClient implements FileStorageAsync {
                 DeleteExportConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteExportResponse>
                 transformer = DeleteExportConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "FileStorage",
+                "DeleteExport",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/Export/DeleteExport");
 
         com.oracle.bmc.responses.AsyncHandler<DeleteExportRequest, DeleteExportResponse>
                 handlerToUse = handler;
@@ -704,6 +739,11 @@ public class FileStorageAsyncClient implements FileStorageAsync {
                 DeleteFileSystemConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteFileSystemResponse>
                 transformer = DeleteFileSystemConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "FileStorage",
+                "DeleteFileSystem",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/FileSystem/DeleteFileSystem");
 
         com.oracle.bmc.responses.AsyncHandler<DeleteFileSystemRequest, DeleteFileSystemResponse>
                 handlerToUse = handler;
@@ -743,6 +783,11 @@ public class FileStorageAsyncClient implements FileStorageAsync {
                 DeleteMountTargetConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteMountTargetResponse>
                 transformer = DeleteMountTargetConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "FileStorage",
+                "DeleteMountTarget",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/MountTarget/DeleteMountTarget");
 
         com.oracle.bmc.responses.AsyncHandler<DeleteMountTargetRequest, DeleteMountTargetResponse>
                 handlerToUse = handler;
@@ -782,6 +827,11 @@ public class FileStorageAsyncClient implements FileStorageAsync {
                 DeleteSnapshotConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteSnapshotResponse>
                 transformer = DeleteSnapshotConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "FileStorage",
+                "DeleteSnapshot",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/Snapshot/DeleteSnapshot");
 
         com.oracle.bmc.responses.AsyncHandler<DeleteSnapshotRequest, DeleteSnapshotResponse>
                 handlerToUse = handler;
@@ -819,6 +869,11 @@ public class FileStorageAsyncClient implements FileStorageAsync {
                 GetExportConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetExportResponse>
                 transformer = GetExportConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "FileStorage",
+                "GetExport",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/Export/GetExport");
 
         com.oracle.bmc.responses.AsyncHandler<GetExportRequest, GetExportResponse> handlerToUse =
                 handler;
@@ -856,6 +911,11 @@ public class FileStorageAsyncClient implements FileStorageAsync {
                 GetExportSetConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetExportSetResponse>
                 transformer = GetExportSetConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "FileStorage",
+                "GetExportSet",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/ExportSet/GetExportSet");
 
         com.oracle.bmc.responses.AsyncHandler<GetExportSetRequest, GetExportSetResponse>
                 handlerToUse = handler;
@@ -894,6 +954,11 @@ public class FileStorageAsyncClient implements FileStorageAsync {
                 GetFileSystemConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetFileSystemResponse>
                 transformer = GetFileSystemConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "FileStorage",
+                "GetFileSystem",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/FileSystem/GetFileSystem");
 
         com.oracle.bmc.responses.AsyncHandler<GetFileSystemRequest, GetFileSystemResponse>
                 handlerToUse = handler;
@@ -933,6 +998,11 @@ public class FileStorageAsyncClient implements FileStorageAsync {
                 GetMountTargetConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetMountTargetResponse>
                 transformer = GetMountTargetConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "FileStorage",
+                "GetMountTarget",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/MountTarget/GetMountTarget");
 
         com.oracle.bmc.responses.AsyncHandler<GetMountTargetRequest, GetMountTargetResponse>
                 handlerToUse = handler;
@@ -971,6 +1041,11 @@ public class FileStorageAsyncClient implements FileStorageAsync {
                 GetSnapshotConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetSnapshotResponse>
                 transformer = GetSnapshotConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "FileStorage",
+                "GetSnapshot",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/Snapshot/GetSnapshot");
 
         com.oracle.bmc.responses.AsyncHandler<GetSnapshotRequest, GetSnapshotResponse>
                 handlerToUse = handler;
@@ -1010,6 +1085,11 @@ public class FileStorageAsyncClient implements FileStorageAsync {
                 ListExportSetsConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListExportSetsResponse>
                 transformer = ListExportSetsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "FileStorage",
+                "ListExportSets",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/ExportSetSummary/ListExportSets");
 
         com.oracle.bmc.responses.AsyncHandler<ListExportSetsRequest, ListExportSetsResponse>
                 handlerToUse = handler;
@@ -1048,6 +1128,11 @@ public class FileStorageAsyncClient implements FileStorageAsync {
                 ListExportsConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListExportsResponse>
                 transformer = ListExportsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "FileStorage",
+                "ListExports",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/ExportSummary/ListExports");
 
         com.oracle.bmc.responses.AsyncHandler<ListExportsRequest, ListExportsResponse>
                 handlerToUse = handler;
@@ -1087,6 +1172,11 @@ public class FileStorageAsyncClient implements FileStorageAsync {
                 ListFileSystemsConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListFileSystemsResponse>
                 transformer = ListFileSystemsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "FileStorage",
+                "ListFileSystems",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/FileSystemSummary/ListFileSystems");
 
         com.oracle.bmc.responses.AsyncHandler<ListFileSystemsRequest, ListFileSystemsResponse>
                 handlerToUse = handler;
@@ -1126,6 +1216,11 @@ public class FileStorageAsyncClient implements FileStorageAsync {
                 ListMountTargetsConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListMountTargetsResponse>
                 transformer = ListMountTargetsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "FileStorage",
+                "ListMountTargets",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/MountTargetSummary/ListMountTargets");
 
         com.oracle.bmc.responses.AsyncHandler<ListMountTargetsRequest, ListMountTargetsResponse>
                 handlerToUse = handler;
@@ -1164,6 +1259,11 @@ public class FileStorageAsyncClient implements FileStorageAsync {
                 ListSnapshotsConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListSnapshotsResponse>
                 transformer = ListSnapshotsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "FileStorage",
+                "ListSnapshots",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/SnapshotSummary/ListSnapshots");
 
         com.oracle.bmc.responses.AsyncHandler<ListSnapshotsRequest, ListSnapshotsResponse>
                 handlerToUse = handler;
@@ -1202,6 +1302,11 @@ public class FileStorageAsyncClient implements FileStorageAsync {
                 UpdateExportConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateExportResponse>
                 transformer = UpdateExportConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "FileStorage",
+                "UpdateExport",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/Export/UpdateExport");
 
         com.oracle.bmc.responses.AsyncHandler<UpdateExportRequest, UpdateExportResponse>
                 handlerToUse = handler;
@@ -1246,6 +1351,11 @@ public class FileStorageAsyncClient implements FileStorageAsync {
                 UpdateExportSetConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateExportSetResponse>
                 transformer = UpdateExportSetConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "FileStorage",
+                "UpdateExportSet",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/ExportSet/UpdateExportSet");
 
         com.oracle.bmc.responses.AsyncHandler<UpdateExportSetRequest, UpdateExportSetResponse>
                 handlerToUse = handler;
@@ -1290,6 +1400,11 @@ public class FileStorageAsyncClient implements FileStorageAsync {
                 UpdateFileSystemConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateFileSystemResponse>
                 transformer = UpdateFileSystemConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "FileStorage",
+                "UpdateFileSystem",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/FileSystem/UpdateFileSystem");
 
         com.oracle.bmc.responses.AsyncHandler<UpdateFileSystemRequest, UpdateFileSystemResponse>
                 handlerToUse = handler;
@@ -1334,6 +1449,11 @@ public class FileStorageAsyncClient implements FileStorageAsync {
                 UpdateMountTargetConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateMountTargetResponse>
                 transformer = UpdateMountTargetConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "FileStorage",
+                "UpdateMountTarget",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/MountTarget/UpdateMountTarget");
 
         com.oracle.bmc.responses.AsyncHandler<UpdateMountTargetRequest, UpdateMountTargetResponse>
                 handlerToUse = handler;
@@ -1378,6 +1498,11 @@ public class FileStorageAsyncClient implements FileStorageAsync {
                 UpdateSnapshotConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateSnapshotResponse>
                 transformer = UpdateSnapshotConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "FileStorage",
+                "UpdateSnapshot",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/Snapshot/UpdateSnapshot");
 
         com.oracle.bmc.responses.AsyncHandler<UpdateSnapshotRequest, UpdateSnapshotResponse>
                 handlerToUse = handler;

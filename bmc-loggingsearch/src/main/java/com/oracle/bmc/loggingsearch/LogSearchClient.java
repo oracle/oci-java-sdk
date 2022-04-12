@@ -395,6 +395,11 @@ public class LogSearchClient implements LogSearch {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogSearch",
+                "SearchLogs",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logging-search/20190909/SearchResult/SearchLogs");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {

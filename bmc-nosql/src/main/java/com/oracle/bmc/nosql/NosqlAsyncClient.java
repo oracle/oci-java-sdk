@@ -391,6 +391,11 @@ public class NosqlAsyncClient implements NosqlAsync {
                         javax.ws.rs.core.Response, ChangeTableCompartmentResponse>
                 transformer = ChangeTableCompartmentConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Nosql",
+                "ChangeTableCompartment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/nosql-database/20190828/Table/ChangeTableCompartment");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeTableCompartmentRequest, ChangeTableCompartmentResponse>
@@ -436,6 +441,11 @@ public class NosqlAsyncClient implements NosqlAsync {
         final com.google.common.base.Function<javax.ws.rs.core.Response, CreateIndexResponse>
                 transformer = CreateIndexConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Nosql",
+                "CreateIndex",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/nosql-database/20190828/Index/CreateIndex");
 
         com.oracle.bmc.responses.AsyncHandler<CreateIndexRequest, CreateIndexResponse>
                 handlerToUse = handler;
@@ -480,6 +490,11 @@ public class NosqlAsyncClient implements NosqlAsync {
         final com.google.common.base.Function<javax.ws.rs.core.Response, CreateTableResponse>
                 transformer = CreateTableConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Nosql",
+                "CreateTable",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/nosql-database/20190828/Table/CreateTable");
 
         com.oracle.bmc.responses.AsyncHandler<CreateTableRequest, CreateTableResponse>
                 handlerToUse = handler;
@@ -523,6 +538,11 @@ public class NosqlAsyncClient implements NosqlAsync {
                 DeleteIndexConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteIndexResponse>
                 transformer = DeleteIndexConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Nosql",
+                "DeleteIndex",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/nosql-database/20190828/Index/DeleteIndex");
 
         com.oracle.bmc.responses.AsyncHandler<DeleteIndexRequest, DeleteIndexResponse>
                 handlerToUse = handler;
@@ -560,6 +580,11 @@ public class NosqlAsyncClient implements NosqlAsync {
                 DeleteRowConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteRowResponse>
                 transformer = DeleteRowConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Nosql",
+                "DeleteRow",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/nosql-database/20190828/Row/DeleteRow");
 
         com.oracle.bmc.responses.AsyncHandler<DeleteRowRequest, DeleteRowResponse> handlerToUse =
                 handler;
@@ -597,6 +622,11 @@ public class NosqlAsyncClient implements NosqlAsync {
                 DeleteTableConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteTableResponse>
                 transformer = DeleteTableConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Nosql",
+                "DeleteTable",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/nosql-database/20190828/Table/DeleteTable");
 
         com.oracle.bmc.responses.AsyncHandler<DeleteTableRequest, DeleteTableResponse>
                 handlerToUse = handler;
@@ -636,6 +666,11 @@ public class NosqlAsyncClient implements NosqlAsync {
                 DeleteWorkRequestConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteWorkRequestResponse>
                 transformer = DeleteWorkRequestConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Nosql",
+                "DeleteWorkRequest",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/nosql-database/20190828/WorkRequest/DeleteWorkRequest");
 
         com.oracle.bmc.responses.AsyncHandler<DeleteWorkRequestRequest, DeleteWorkRequestResponse>
                 handlerToUse = handler;
@@ -673,6 +708,11 @@ public class NosqlAsyncClient implements NosqlAsync {
                 GetIndexConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetIndexResponse>
                 transformer = GetIndexConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Nosql",
+                "GetIndex",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/nosql-database/20190828/Index/GetIndex");
 
         com.oracle.bmc.responses.AsyncHandler<GetIndexRequest, GetIndexResponse> handlerToUse =
                 handler;
@@ -708,6 +748,11 @@ public class NosqlAsyncClient implements NosqlAsync {
                 GetRowConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetRowResponse>
                 transformer = GetRowConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Nosql",
+                "GetRow",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/nosql-database/20190828/Row/GetRow");
 
         com.oracle.bmc.responses.AsyncHandler<GetRowRequest, GetRowResponse> handlerToUse = handler;
 
@@ -743,6 +788,11 @@ public class NosqlAsyncClient implements NosqlAsync {
                 GetTableConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetTableResponse>
                 transformer = GetTableConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Nosql",
+                "GetTable",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/nosql-database/20190828/Table/GetTable");
 
         com.oracle.bmc.responses.AsyncHandler<GetTableRequest, GetTableResponse> handlerToUse =
                 handler;
@@ -781,6 +831,11 @@ public class NosqlAsyncClient implements NosqlAsync {
                 GetWorkRequestConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetWorkRequestResponse>
                 transformer = GetWorkRequestConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Nosql",
+                "GetWorkRequest",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/nosql-database/20190828/WorkRequest/GetWorkRequest");
 
         com.oracle.bmc.responses.AsyncHandler<GetWorkRequestRequest, GetWorkRequestResponse>
                 handlerToUse = handler;
@@ -819,6 +874,11 @@ public class NosqlAsyncClient implements NosqlAsync {
                 ListIndexesConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListIndexesResponse>
                 transformer = ListIndexesConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Nosql",
+                "ListIndexes",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/nosql-database/20190828/Index/ListIndexes");
 
         com.oracle.bmc.responses.AsyncHandler<ListIndexesRequest, ListIndexesResponse>
                 handlerToUse = handler;
@@ -858,6 +918,11 @@ public class NosqlAsyncClient implements NosqlAsync {
                 ListTableUsageConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListTableUsageResponse>
                 transformer = ListTableUsageConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Nosql",
+                "ListTableUsage",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/nosql-database/20190828/Table/ListTableUsage");
 
         com.oracle.bmc.responses.AsyncHandler<ListTableUsageRequest, ListTableUsageResponse>
                 handlerToUse = handler;
@@ -895,6 +960,11 @@ public class NosqlAsyncClient implements NosqlAsync {
                 ListTablesConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListTablesResponse>
                 transformer = ListTablesConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Nosql",
+                "ListTables",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/nosql-database/20190828/Table/ListTables");
 
         com.oracle.bmc.responses.AsyncHandler<ListTablesRequest, ListTablesResponse> handlerToUse =
                 handler;
@@ -935,6 +1005,11 @@ public class NosqlAsyncClient implements NosqlAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListWorkRequestErrorsResponse>
                 transformer = ListWorkRequestErrorsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Nosql",
+                "ListWorkRequestErrors",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/nosql-database/20190828/WorkRequest/ListWorkRequestErrors");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListWorkRequestErrorsRequest, ListWorkRequestErrorsResponse>
@@ -976,6 +1051,11 @@ public class NosqlAsyncClient implements NosqlAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListWorkRequestLogsResponse>
                 transformer = ListWorkRequestLogsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Nosql",
+                "ListWorkRequestLogs",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/nosql-database/20190828/WorkRequest/ListWorkRequestLogs");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListWorkRequestLogsRequest, ListWorkRequestLogsResponse>
@@ -1016,6 +1096,11 @@ public class NosqlAsyncClient implements NosqlAsync {
                 ListWorkRequestsConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListWorkRequestsResponse>
                 transformer = ListWorkRequestsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Nosql",
+                "ListWorkRequests",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/nosql-database/20190828/WorkRequest/ListWorkRequests");
 
         com.oracle.bmc.responses.AsyncHandler<ListWorkRequestsRequest, ListWorkRequestsResponse>
                 handlerToUse = handler;
@@ -1055,6 +1140,11 @@ public class NosqlAsyncClient implements NosqlAsync {
                 PrepareStatementConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, PrepareStatementResponse>
                 transformer = PrepareStatementConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Nosql",
+                "PrepareStatement",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/nosql-database/20190828/QueryResultCollection/PrepareStatement");
 
         com.oracle.bmc.responses.AsyncHandler<PrepareStatementRequest, PrepareStatementResponse>
                 handlerToUse = handler;
@@ -1091,6 +1181,11 @@ public class NosqlAsyncClient implements NosqlAsync {
                 QueryConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, QueryResponse>
                 transformer = QueryConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Nosql",
+                "Query",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/nosql-database/20190828/QueryResultCollection/Query");
 
         com.oracle.bmc.responses.AsyncHandler<QueryRequest, QueryResponse> handlerToUse = handler;
 
@@ -1133,6 +1228,11 @@ public class NosqlAsyncClient implements NosqlAsync {
                 SummarizeStatementConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, SummarizeStatementResponse>
                 transformer = SummarizeStatementConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Nosql",
+                "SummarizeStatement",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/nosql-database/20190828/QueryResultCollection/SummarizeStatement");
 
         com.oracle.bmc.responses.AsyncHandler<SummarizeStatementRequest, SummarizeStatementResponse>
                 handlerToUse = handler;
@@ -1170,6 +1270,11 @@ public class NosqlAsyncClient implements NosqlAsync {
                 UpdateRowConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateRowResponse>
                 transformer = UpdateRowConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Nosql",
+                "UpdateRow",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/nosql-database/20190828/Row/UpdateRow");
 
         com.oracle.bmc.responses.AsyncHandler<UpdateRowRequest, UpdateRowResponse> handlerToUse =
                 handler;
@@ -1212,6 +1317,11 @@ public class NosqlAsyncClient implements NosqlAsync {
                 UpdateTableConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateTableResponse>
                 transformer = UpdateTableConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Nosql",
+                "UpdateTable",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/nosql-database/20190828/Table/UpdateTable");
 
         com.oracle.bmc.responses.AsyncHandler<UpdateTableRequest, UpdateTableResponse>
                 handlerToUse = handler;

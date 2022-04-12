@@ -20,7 +20,7 @@ import com.oracle.bmc.aivision.model.*;
 public class DeleteModelRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * unique model identifier.
+     * A unique model identifier.
      */
     private String modelId;
 

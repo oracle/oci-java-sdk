@@ -396,6 +396,11 @@ public class UserClient implements User {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "User",
+                "CreateUser",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/incidentmanagement/20181231/User/CreateUser");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {

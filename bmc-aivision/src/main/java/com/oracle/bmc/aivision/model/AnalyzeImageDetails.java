@@ -5,7 +5,7 @@
 package com.oracle.bmc.aivision.model;
 
 /**
- * Details about how to analyze an image.
+ * The details of how to analyze an image.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -83,7 +83,7 @@ public class AnalyzeImageDetails {
     }
 
     /**
-     * Types of image analysis.
+     * The types of image analysis.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("features")
     java.util.List<ImageFeature> features;
@@ -92,7 +92,7 @@ public class AnalyzeImageDetails {
     ImageDetails image;
 
     /**
-     * The ocid of the compartment that calls the API.
+     * The OCID of the compartment that calls the API.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     String compartmentId;

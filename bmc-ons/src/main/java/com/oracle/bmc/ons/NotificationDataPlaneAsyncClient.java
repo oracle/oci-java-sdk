@@ -394,6 +394,11 @@ public class NotificationDataPlaneAsyncClient implements NotificationDataPlaneAs
                         javax.ws.rs.core.Response, ChangeSubscriptionCompartmentResponse>
                 transformer = ChangeSubscriptionCompartmentConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "NotificationDataPlane",
+                "ChangeSubscriptionCompartment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/notification/20181201/Subscription/ChangeSubscriptionCompartment");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeSubscriptionCompartmentRequest, ChangeSubscriptionCompartmentResponse>
@@ -441,6 +446,11 @@ public class NotificationDataPlaneAsyncClient implements NotificationDataPlaneAs
         final com.google.common.base.Function<javax.ws.rs.core.Response, CreateSubscriptionResponse>
                 transformer = CreateSubscriptionConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "NotificationDataPlane",
+                "CreateSubscription",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/notification/20181201/Subscription/CreateSubscription");
 
         com.oracle.bmc.responses.AsyncHandler<CreateSubscriptionRequest, CreateSubscriptionResponse>
                 handlerToUse = handler;
@@ -485,6 +495,11 @@ public class NotificationDataPlaneAsyncClient implements NotificationDataPlaneAs
                 DeleteSubscriptionConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteSubscriptionResponse>
                 transformer = DeleteSubscriptionConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "NotificationDataPlane",
+                "DeleteSubscription",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/notification/20181201/Subscription/DeleteSubscription");
 
         com.oracle.bmc.responses.AsyncHandler<DeleteSubscriptionRequest, DeleteSubscriptionResponse>
                 handlerToUse = handler;
@@ -525,6 +540,11 @@ public class NotificationDataPlaneAsyncClient implements NotificationDataPlaneAs
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetConfirmSubscriptionResponse>
                 transformer = GetConfirmSubscriptionConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "NotificationDataPlane",
+                "GetConfirmSubscription",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/notification/20181201/Subscription/GetConfirmSubscription");
 
         com.oracle.bmc.responses.AsyncHandler<
                         GetConfirmSubscriptionRequest, GetConfirmSubscriptionResponse>
@@ -565,6 +585,11 @@ public class NotificationDataPlaneAsyncClient implements NotificationDataPlaneAs
                 GetSubscriptionConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetSubscriptionResponse>
                 transformer = GetSubscriptionConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "NotificationDataPlane",
+                "GetSubscription",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/notification/20181201/Subscription/GetSubscription");
 
         com.oracle.bmc.responses.AsyncHandler<GetSubscriptionRequest, GetSubscriptionResponse>
                 handlerToUse = handler;
@@ -604,6 +629,11 @@ public class NotificationDataPlaneAsyncClient implements NotificationDataPlaneAs
                 GetUnsubscriptionConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetUnsubscriptionResponse>
                 transformer = GetUnsubscriptionConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "NotificationDataPlane",
+                "GetUnsubscription",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/notification/20181201/Subscription/GetUnsubscription");
 
         com.oracle.bmc.responses.AsyncHandler<GetUnsubscriptionRequest, GetUnsubscriptionResponse>
                 handlerToUse = handler;
@@ -643,6 +673,11 @@ public class NotificationDataPlaneAsyncClient implements NotificationDataPlaneAs
                 ListSubscriptionsConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListSubscriptionsResponse>
                 transformer = ListSubscriptionsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "NotificationDataPlane",
+                "ListSubscriptions",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/notification/20181201/Subscription/ListSubscriptions");
 
         com.oracle.bmc.responses.AsyncHandler<ListSubscriptionsRequest, ListSubscriptionsResponse>
                 handlerToUse = handler;
@@ -682,6 +717,11 @@ public class NotificationDataPlaneAsyncClient implements NotificationDataPlaneAs
                 PublishMessageConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, PublishMessageResponse>
                 transformer = PublishMessageConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "NotificationDataPlane",
+                "PublishMessage",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/notification/20181201/NotificationTopic/PublishMessage");
 
         com.oracle.bmc.responses.AsyncHandler<PublishMessageRequest, PublishMessageResponse>
                 handlerToUse = handler;
@@ -729,6 +769,11 @@ public class NotificationDataPlaneAsyncClient implements NotificationDataPlaneAs
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ResendSubscriptionConfirmationResponse>
                 transformer = ResendSubscriptionConfirmationConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "NotificationDataPlane",
+                "ResendSubscriptionConfirmation",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/notification/20181201/Subscription/ResendSubscriptionConfirmation");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ResendSubscriptionConfirmationRequest,
@@ -771,6 +816,11 @@ public class NotificationDataPlaneAsyncClient implements NotificationDataPlaneAs
                 UpdateSubscriptionConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateSubscriptionResponse>
                 transformer = UpdateSubscriptionConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "NotificationDataPlane",
+                "UpdateSubscription",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/notification/20181201/Subscription/UpdateSubscription");
 
         com.oracle.bmc.responses.AsyncHandler<UpdateSubscriptionRequest, UpdateSubscriptionResponse>
                 handlerToUse = handler;

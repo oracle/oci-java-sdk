@@ -5,7 +5,7 @@
 package com.oracle.bmc.aivision.model;
 
 /**
- * Language detected in a document.
+ * The language detected in a document.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -68,13 +68,13 @@ public class DetectedLanguage {
     }
 
     /**
-     * Language of the document, abbreviated according to ISO 639-2.
+     * The language of the document, abbreviated according to ISO 639-2.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("languageCode")
     DocumentLanguage languageCode;
 
     /**
-     * Confidence score between 0 to 1.
+     * The confidence score between 0 and 1.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("confidence")
     Float confidence;

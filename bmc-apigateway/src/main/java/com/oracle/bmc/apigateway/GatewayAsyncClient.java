@@ -391,6 +391,11 @@ public class GatewayAsyncClient implements GatewayAsync {
                         javax.ws.rs.core.Response, ChangeGatewayCompartmentResponse>
                 transformer = ChangeGatewayCompartmentConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Gateway",
+                "ChangeGatewayCompartment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/api-gateway/20190501/Gateway/ChangeGatewayCompartment");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeGatewayCompartmentRequest, ChangeGatewayCompartmentResponse>
@@ -436,6 +441,8 @@ public class GatewayAsyncClient implements GatewayAsync {
         final com.google.common.base.Function<javax.ws.rs.core.Response, CreateGatewayResponse>
                 transformer = CreateGatewayConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Gateway", "CreateGateway", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<CreateGatewayRequest, CreateGatewayResponse>
                 handlerToUse = handler;
@@ -479,6 +486,11 @@ public class GatewayAsyncClient implements GatewayAsync {
                 DeleteGatewayConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteGatewayResponse>
                 transformer = DeleteGatewayConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Gateway",
+                "DeleteGateway",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/api-gateway/20190501/Gateway/DeleteGateway");
 
         com.oracle.bmc.responses.AsyncHandler<DeleteGatewayRequest, DeleteGatewayResponse>
                 handlerToUse = handler;
@@ -516,6 +528,11 @@ public class GatewayAsyncClient implements GatewayAsync {
                 GetGatewayConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetGatewayResponse>
                 transformer = GetGatewayConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Gateway",
+                "GetGateway",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/api-gateway/20190501/Gateway/GetGateway");
 
         com.oracle.bmc.responses.AsyncHandler<GetGatewayRequest, GetGatewayResponse> handlerToUse =
                 handler;
@@ -554,6 +571,11 @@ public class GatewayAsyncClient implements GatewayAsync {
                 ListGatewaysConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListGatewaysResponse>
                 transformer = ListGatewaysConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Gateway",
+                "ListGateways",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/api-gateway/20190501/GatewaySummary/ListGateways");
 
         com.oracle.bmc.responses.AsyncHandler<ListGatewaysRequest, ListGatewaysResponse>
                 handlerToUse = handler;
@@ -592,6 +614,11 @@ public class GatewayAsyncClient implements GatewayAsync {
                 UpdateGatewayConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateGatewayResponse>
                 transformer = UpdateGatewayConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Gateway",
+                "UpdateGateway",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/api-gateway/20190501/Gateway/UpdateGateway");
 
         com.oracle.bmc.responses.AsyncHandler<UpdateGatewayRequest, UpdateGatewayResponse>
                 handlerToUse = handler;

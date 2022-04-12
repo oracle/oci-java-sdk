@@ -5,7 +5,7 @@
 package com.oracle.bmc.aivision.model;
 
 /**
- * The location of the input(s).
+ * The location of the inputs.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -37,8 +37,8 @@ package com.oracle.bmc.aivision.model;
 public class InputLocation {
 
     /**
-     * The type of input location
-     * Allowed values are:
+     * The type of input location.
+     * The allowed values are:
      * - {@code OBJECT_LIST_INLINE_INPUT_LOCATION}: A list of object locations in Object Storage.
      *
      **/

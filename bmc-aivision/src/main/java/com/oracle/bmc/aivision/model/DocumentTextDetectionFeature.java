@@ -74,7 +74,7 @@ public class DocumentTextDetectionFeature extends DocumentFeature {
     }
 
     /**
-     * Whether to generate a searchable PDF file.
+     * Whether or not to generate a searchable PDF file.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("generateSearchablePdf")
     Boolean generateSearchablePdf;

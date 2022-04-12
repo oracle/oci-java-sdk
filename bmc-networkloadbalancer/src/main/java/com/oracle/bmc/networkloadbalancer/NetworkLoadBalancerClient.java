@@ -480,6 +480,11 @@ public class NetworkLoadBalancerClient implements NetworkLoadBalancer {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "NetworkLoadBalancer",
+                "ChangeNetworkLoadBalancerCompartment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/networkloadbalancer/20200501/NetworkLoadBalancer/ChangeNetworkLoadBalancerCompartment");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -515,6 +520,11 @@ public class NetworkLoadBalancerClient implements NetworkLoadBalancer {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "NetworkLoadBalancer",
+                "CreateBackend",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/networkloadbalancer/20200501/Backend/CreateBackend");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -549,6 +559,11 @@ public class NetworkLoadBalancerClient implements NetworkLoadBalancer {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "NetworkLoadBalancer",
+                "CreateBackendSet",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/networkloadbalancer/20200501/BackendSet/CreateBackendSet");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -583,6 +598,11 @@ public class NetworkLoadBalancerClient implements NetworkLoadBalancer {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "NetworkLoadBalancer",
+                "CreateListener",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/networkloadbalancer/20200501/Listener/CreateListener");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -619,6 +639,11 @@ public class NetworkLoadBalancerClient implements NetworkLoadBalancer {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "NetworkLoadBalancer",
+                "CreateNetworkLoadBalancer",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/networkloadbalancer/20200501/NetworkLoadBalancer/CreateNetworkLoadBalancer");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -653,6 +678,11 @@ public class NetworkLoadBalancerClient implements NetworkLoadBalancer {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "NetworkLoadBalancer",
+                "DeleteBackend",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/networkloadbalancer/20200501/Backend/DeleteBackend");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -683,6 +713,11 @@ public class NetworkLoadBalancerClient implements NetworkLoadBalancer {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "NetworkLoadBalancer",
+                "DeleteBackendSet",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/networkloadbalancer/20200501/BackendSet/DeleteBackendSet");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -713,6 +748,11 @@ public class NetworkLoadBalancerClient implements NetworkLoadBalancer {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "NetworkLoadBalancer",
+                "DeleteListener",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/networkloadbalancer/20200501/Listener/DeleteListener");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -745,6 +785,11 @@ public class NetworkLoadBalancerClient implements NetworkLoadBalancer {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "NetworkLoadBalancer",
+                "DeleteNetworkLoadBalancer",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/networkloadbalancer/20200501/NetworkLoadBalancer/DeleteNetworkLoadBalancer");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -774,6 +819,11 @@ public class NetworkLoadBalancerClient implements NetworkLoadBalancer {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "NetworkLoadBalancer",
+                "GetBackend",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/networkloadbalancer/20200501/Backend/GetBackend");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -803,6 +853,11 @@ public class NetworkLoadBalancerClient implements NetworkLoadBalancer {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "NetworkLoadBalancer",
+                "GetBackendHealth",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/networkloadbalancer/20200501/BackendHealth/GetBackendHealth");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -832,6 +887,11 @@ public class NetworkLoadBalancerClient implements NetworkLoadBalancer {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "NetworkLoadBalancer",
+                "GetBackendSet",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/networkloadbalancer/20200501/BackendSet/GetBackendSet");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -861,6 +921,11 @@ public class NetworkLoadBalancerClient implements NetworkLoadBalancer {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "NetworkLoadBalancer",
+                "GetBackendSetHealth",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/networkloadbalancer/20200501/BackendSetHealth/GetBackendSetHealth");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -891,6 +956,11 @@ public class NetworkLoadBalancerClient implements NetworkLoadBalancer {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "NetworkLoadBalancer",
+                "GetHealthChecker",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/networkloadbalancer/20200501/HealthChecker/GetHealthChecker");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -920,6 +990,11 @@ public class NetworkLoadBalancerClient implements NetworkLoadBalancer {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "NetworkLoadBalancer",
+                "GetListener",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/networkloadbalancer/20200501/Listener/GetListener");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -950,6 +1025,11 @@ public class NetworkLoadBalancerClient implements NetworkLoadBalancer {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "NetworkLoadBalancer",
+                "GetNetworkLoadBalancer",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/networkloadbalancer/20200501/NetworkLoadBalancer/GetNetworkLoadBalancer");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -981,6 +1061,11 @@ public class NetworkLoadBalancerClient implements NetworkLoadBalancer {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "NetworkLoadBalancer",
+                "GetNetworkLoadBalancerHealth",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/networkloadbalancer/20200501/NetworkLoadBalancerHealth/GetNetworkLoadBalancerHealth");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1010,6 +1095,11 @@ public class NetworkLoadBalancerClient implements NetworkLoadBalancer {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "NetworkLoadBalancer",
+                "GetWorkRequest",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/networkloadbalancer/20200501/WorkRequest/GetWorkRequest");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1039,6 +1129,11 @@ public class NetworkLoadBalancerClient implements NetworkLoadBalancer {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "NetworkLoadBalancer",
+                "ListBackendSets",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/networkloadbalancer/20200501/BackendSetSummary/ListBackendSets");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1068,6 +1163,11 @@ public class NetworkLoadBalancerClient implements NetworkLoadBalancer {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "NetworkLoadBalancer",
+                "ListBackends",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/networkloadbalancer/20200501/BackendSummary/ListBackends");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1097,6 +1197,11 @@ public class NetworkLoadBalancerClient implements NetworkLoadBalancer {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "NetworkLoadBalancer",
+                "ListListeners",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/networkloadbalancer/20200501/ListenerSummary/ListListeners");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1128,6 +1233,11 @@ public class NetworkLoadBalancerClient implements NetworkLoadBalancer {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "NetworkLoadBalancer",
+                "ListNetworkLoadBalancerHealths",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/networkloadbalancer/20200501/NetworkLoadBalancerHealth/ListNetworkLoadBalancerHealths");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1158,6 +1268,11 @@ public class NetworkLoadBalancerClient implements NetworkLoadBalancer {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "NetworkLoadBalancer",
+                "ListNetworkLoadBalancers",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/networkloadbalancer/20200501/NetworkLoadBalancer/ListNetworkLoadBalancers");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1189,6 +1304,11 @@ public class NetworkLoadBalancerClient implements NetworkLoadBalancer {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "NetworkLoadBalancer",
+                "ListNetworkLoadBalancersPolicies",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/networkloadbalancer/20200501/NetworkLoadBalancingPolicy/ListNetworkLoadBalancersPolicies");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1220,6 +1340,11 @@ public class NetworkLoadBalancerClient implements NetworkLoadBalancer {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "NetworkLoadBalancer",
+                "ListNetworkLoadBalancersProtocols",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/networkloadbalancer/20200501/ListenerProtocols/ListNetworkLoadBalancersProtocols");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1250,6 +1375,11 @@ public class NetworkLoadBalancerClient implements NetworkLoadBalancer {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "NetworkLoadBalancer",
+                "ListWorkRequestErrors",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/networkloadbalancer/20200501/WorkRequestError/ListWorkRequestErrors");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1279,6 +1409,11 @@ public class NetworkLoadBalancerClient implements NetworkLoadBalancer {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "NetworkLoadBalancer",
+                "ListWorkRequestLogs",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/networkloadbalancer/20200501/WorkRequestLogEntry/ListWorkRequestLogs");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1308,6 +1443,11 @@ public class NetworkLoadBalancerClient implements NetworkLoadBalancer {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "NetworkLoadBalancer",
+                "ListWorkRequests",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/networkloadbalancer/20200501/WorkRequest/ListWorkRequests");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1338,6 +1478,11 @@ public class NetworkLoadBalancerClient implements NetworkLoadBalancer {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "NetworkLoadBalancer",
+                "UpdateBackend",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/networkloadbalancer/20200501/Backend/UpdateBackend");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1372,6 +1517,11 @@ public class NetworkLoadBalancerClient implements NetworkLoadBalancer {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "NetworkLoadBalancer",
+                "UpdateBackendSet",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/networkloadbalancer/20200501/BackendSet/UpdateBackendSet");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1406,6 +1556,11 @@ public class NetworkLoadBalancerClient implements NetworkLoadBalancer {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "NetworkLoadBalancer",
+                "UpdateHealthChecker",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/networkloadbalancer/20200501/HealthChecker/UpdateHealthChecker");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1440,6 +1595,11 @@ public class NetworkLoadBalancerClient implements NetworkLoadBalancer {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "NetworkLoadBalancer",
+                "UpdateListener",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/networkloadbalancer/20200501/Listener/UpdateListener");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1475,6 +1635,11 @@ public class NetworkLoadBalancerClient implements NetworkLoadBalancer {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "NetworkLoadBalancer",
+                "UpdateNetworkLoadBalancer",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/networkloadbalancer/20200501/NetworkLoadBalancer/UpdateNetworkLoadBalancer");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1512,6 +1677,11 @@ public class NetworkLoadBalancerClient implements NetworkLoadBalancer {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "NetworkLoadBalancer",
+                "UpdateNetworkSecurityGroups",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/networkloadbalancer/20200501/NetworkLoadBalancer/UpdateNetworkSecurityGroups");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {

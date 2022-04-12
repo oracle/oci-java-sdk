@@ -4,7 +4,13 @@
  */
 package com.oracle.bmc.model;
 
+import com.oracle.bmc.ClientRuntime;
+import com.oracle.bmc.ServiceDetails;
+import com.oracle.bmc.http.internal.RFC3339DateFormat;
 import lombok.Getter;
+import org.apache.commons.lang3.StringUtils;
+
+import java.util.Date;
 
 public class BmcException extends RuntimeException {
     /**
@@ -18,12 +24,12 @@ public class BmcException extends RuntimeException {
     @Getter private final int statusCode;
 
     /**
-     * Service specific code returned.  Null if the client timed out or failed to get a response from the service.
+     * Service specific code returned. Null if the client timed out or failed to get a response from the service.
      */
     @Getter private final String serviceCode;
 
     /**
-     * Flag to indicate that the request timed out.  Status code and service code should not be used if this is true.
+     * Flag to indicate that the request timed out. Status code and service code should not be used if this is true.
      */
     @Getter private final boolean timeout;
 
@@ -84,12 +90,42 @@ public class BmcException extends RuntimeException {
                                 + this.opcRequestId
                                 + ")"
                         : "";
+
+        String targetService =
+                (statusCode == 401 && serviceCode.equals("NotAuthenticated"))
+                        ? "Identity"
+                        : ServiceDetails.getServiceName();
+        String timestamp = RFC3339DateFormat.formatRfc3339(new Date(), true);
+        String clientVersion = ClientRuntime.getRuntime().getClientInfo();
+        String errorTroubleshootingLink =
+                String.format(
+                        "https://docs.oracle.com/en-us/iaas/Content/API/References/apierrors.htm#apierrors_%s__%s_%s",
+                        statusCode,
+                        statusCode,
+                        StringUtils.isNotBlank(serviceCode) ? serviceCode.toLowerCase() : "");
+
         return String.format(
-                "(%s, %s, %s) %s%s",
+                "Error returned by %s operation in %s service."
+                        + "(%s, %s, %s) %s%s"
+                        + "\nTimestamp: %s"
+                        + "\nClient version: %s"
+                        + "\nRequest Endpoint: %s"
+                        + "\nTroubleshooting Tips: See %s for more information about resolving this error"
+                        + "\nAlso see %s for details on this operation's requirements."
+                        + "\nTo get more info on the failing request, you can enable debug level logs as mentioned in `Using SLF4J for Logging section` in https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconfig.htm."
+                        + "\nIf you are unable to resolve this %s issue, please contact Oracle support and provide them this full error message.",
+                ServiceDetails.getOperationName(),
+                targetService,
                 statusCode,
                 serviceCode,
                 timeout,
                 super.getMessage(),
-                requestId);
+                requestId,
+                timestamp,
+                clientVersion,
+                ServiceDetails.getRequestEndpoint(),
+                errorTroubleshootingLink,
+                ServiceDetails.getApiReferenceLink(),
+                targetService);
     }
 }

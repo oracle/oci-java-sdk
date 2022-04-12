@@ -390,6 +390,11 @@ public class ApmSyntheticAsyncClient implements ApmSyntheticAsync {
         final com.google.common.base.Function<javax.ws.rs.core.Response, CreateMonitorResponse>
                 transformer = CreateMonitorConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ApmSynthetic",
+                "CreateMonitor",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/apm-synthetic-monitoring/20200630/Monitor/CreateMonitor");
 
         com.oracle.bmc.responses.AsyncHandler<CreateMonitorRequest, CreateMonitorResponse>
                 handlerToUse = handler;
@@ -434,6 +439,11 @@ public class ApmSyntheticAsyncClient implements ApmSyntheticAsync {
         final com.google.common.base.Function<javax.ws.rs.core.Response, CreateScriptResponse>
                 transformer = CreateScriptConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ApmSynthetic",
+                "CreateScript",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/apm-synthetic-monitoring/20200630/Script/CreateScript");
 
         com.oracle.bmc.responses.AsyncHandler<CreateScriptRequest, CreateScriptResponse>
                 handlerToUse = handler;
@@ -477,6 +487,11 @@ public class ApmSyntheticAsyncClient implements ApmSyntheticAsync {
                 DeleteMonitorConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteMonitorResponse>
                 transformer = DeleteMonitorConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ApmSynthetic",
+                "DeleteMonitor",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/apm-synthetic-monitoring/20200630/Monitor/DeleteMonitor");
 
         com.oracle.bmc.responses.AsyncHandler<DeleteMonitorRequest, DeleteMonitorResponse>
                 handlerToUse = handler;
@@ -515,6 +530,11 @@ public class ApmSyntheticAsyncClient implements ApmSyntheticAsync {
                 DeleteScriptConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteScriptResponse>
                 transformer = DeleteScriptConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ApmSynthetic",
+                "DeleteScript",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/apm-synthetic-monitoring/20200630/Script/DeleteScript");
 
         com.oracle.bmc.responses.AsyncHandler<DeleteScriptRequest, DeleteScriptResponse>
                 handlerToUse = handler;
@@ -552,6 +572,11 @@ public class ApmSyntheticAsyncClient implements ApmSyntheticAsync {
                 GetMonitorConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetMonitorResponse>
                 transformer = GetMonitorConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ApmSynthetic",
+                "GetMonitor",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/apm-synthetic-monitoring/20200630/Monitor/GetMonitor");
 
         com.oracle.bmc.responses.AsyncHandler<GetMonitorRequest, GetMonitorResponse> handlerToUse =
                 handler;
@@ -591,6 +616,11 @@ public class ApmSyntheticAsyncClient implements ApmSyntheticAsync {
                 GetMonitorResultConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetMonitorResultResponse>
                 transformer = GetMonitorResultConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ApmSynthetic",
+                "GetMonitorResult",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/apm-synthetic-monitoring/20200630/MonitorResult/GetMonitorResult");
 
         com.oracle.bmc.responses.AsyncHandler<GetMonitorResultRequest, GetMonitorResultResponse>
                 handlerToUse = handler;
@@ -628,6 +658,11 @@ public class ApmSyntheticAsyncClient implements ApmSyntheticAsync {
                 GetScriptConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetScriptResponse>
                 transformer = GetScriptConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ApmSynthetic",
+                "GetScript",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/apm-synthetic-monitoring/20200630/Script/GetScript");
 
         com.oracle.bmc.responses.AsyncHandler<GetScriptRequest, GetScriptResponse> handlerToUse =
                 handler;
@@ -665,6 +700,11 @@ public class ApmSyntheticAsyncClient implements ApmSyntheticAsync {
                 ListMonitorsConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListMonitorsResponse>
                 transformer = ListMonitorsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ApmSynthetic",
+                "ListMonitors",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/apm-synthetic-monitoring/20200630/MonitorCollection/ListMonitors");
 
         com.oracle.bmc.responses.AsyncHandler<ListMonitorsRequest, ListMonitorsResponse>
                 handlerToUse = handler;
@@ -705,6 +745,11 @@ public class ApmSyntheticAsyncClient implements ApmSyntheticAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListPublicVantagePointsResponse>
                 transformer = ListPublicVantagePointsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ApmSynthetic",
+                "ListPublicVantagePoints",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/apm-synthetic-monitoring/20200630/PublicVantagePointCollection/ListPublicVantagePoints");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListPublicVantagePointsRequest, ListPublicVantagePointsResponse>
@@ -744,6 +789,11 @@ public class ApmSyntheticAsyncClient implements ApmSyntheticAsync {
                 ListScriptsConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListScriptsResponse>
                 transformer = ListScriptsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ApmSynthetic",
+                "ListScripts",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/apm-synthetic-monitoring/20200630/ScriptCollection/ListScripts");
 
         com.oracle.bmc.responses.AsyncHandler<ListScriptsRequest, ListScriptsResponse>
                 handlerToUse = handler;
@@ -782,6 +832,11 @@ public class ApmSyntheticAsyncClient implements ApmSyntheticAsync {
                 UpdateMonitorConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateMonitorResponse>
                 transformer = UpdateMonitorConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ApmSynthetic",
+                "UpdateMonitor",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/apm-synthetic-monitoring/20200630/Monitor/UpdateMonitor");
 
         com.oracle.bmc.responses.AsyncHandler<UpdateMonitorRequest, UpdateMonitorResponse>
                 handlerToUse = handler;
@@ -825,6 +880,11 @@ public class ApmSyntheticAsyncClient implements ApmSyntheticAsync {
                 UpdateScriptConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateScriptResponse>
                 transformer = UpdateScriptConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ApmSynthetic",
+                "UpdateScript",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/apm-synthetic-monitoring/20200630/Script/UpdateScript");
 
         com.oracle.bmc.responses.AsyncHandler<UpdateScriptRequest, UpdateScriptResponse>
                 handlerToUse = handler;

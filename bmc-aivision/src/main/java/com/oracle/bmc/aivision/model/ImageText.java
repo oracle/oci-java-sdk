@@ -5,7 +5,7 @@
 package com.oracle.bmc.aivision.model;
 
 /**
- * Detected text.
+ * The detected text.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -68,13 +68,13 @@ public class ImageText {
     }
 
     /**
-     * Words recognized in the image.
+     * The words recognized in an image.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("words")
     java.util.List<Word> words;
 
     /**
-     * Lines of text recognized in the image.
+     * The lines of text recognized in an image.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lines")
     java.util.List<Line> lines;

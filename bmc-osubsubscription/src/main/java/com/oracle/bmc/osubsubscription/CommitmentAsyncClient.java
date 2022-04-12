@@ -388,6 +388,8 @@ public class CommitmentAsyncClient implements CommitmentAsync {
                 GetCommitmentConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetCommitmentResponse>
                 transformer = GetCommitmentConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Commitment", "GetCommitment", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<GetCommitmentRequest, GetCommitmentResponse>
                 handlerToUse = handler;
@@ -427,6 +429,8 @@ public class CommitmentAsyncClient implements CommitmentAsync {
                 ListCommitmentsConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListCommitmentsResponse>
                 transformer = ListCommitmentsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Commitment", "ListCommitments", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<ListCommitmentsRequest, ListCommitmentsResponse>
                 handlerToUse = handler;

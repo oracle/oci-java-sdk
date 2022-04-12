@@ -393,6 +393,11 @@ public class OrganizationSubscriptionAsyncClient implements OrganizationSubscrip
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListOrganizationSubscriptionsResponse>
                 transformer = ListOrganizationSubscriptionsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "OrganizationSubscription",
+                "ListOrganizationSubscriptions",
+                ib.getRequestUri().toString(),
+                "");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListOrganizationSubscriptionsRequest, ListOrganizationSubscriptionsResponse>

@@ -391,6 +391,11 @@ public class DataSafeAsyncClient implements DataSafeAsync {
                         javax.ws.rs.core.Response, ActivateTargetDatabaseResponse>
                 transformer = ActivateTargetDatabaseConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataSafe",
+                "ActivateTargetDatabase",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/TargetDatabase/ActivateTargetDatabase");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ActivateTargetDatabaseRequest, ActivateTargetDatabaseResponse>
@@ -437,6 +442,11 @@ public class DataSafeAsyncClient implements DataSafeAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, AddMaskingColumnsFromSdmResponse>
                 transformer = AddMaskingColumnsFromSdmConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataSafe",
+                "AddMaskingColumnsFromSdm",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/MaskingPolicy/AddMaskingColumnsFromSdm");
 
         com.oracle.bmc.responses.AsyncHandler<
                         AddMaskingColumnsFromSdmRequest, AddMaskingColumnsFromSdmResponse>
@@ -478,6 +488,11 @@ public class DataSafeAsyncClient implements DataSafeAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ApplyDiscoveryJobResultsResponse>
                 transformer = ApplyDiscoveryJobResultsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataSafe",
+                "ApplyDiscoveryJobResults",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SensitiveDataModel/ApplyDiscoveryJobResults");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ApplyDiscoveryJobResultsRequest, ApplyDiscoveryJobResultsResponse>
@@ -527,6 +542,11 @@ public class DataSafeAsyncClient implements DataSafeAsync {
                         javax.ws.rs.core.Response, CalculateAuditVolumeAvailableResponse>
                 transformer = CalculateAuditVolumeAvailableConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataSafe",
+                "CalculateAuditVolumeAvailable",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/AuditProfile/CalculateAuditVolumeAvailable");
 
         com.oracle.bmc.responses.AsyncHandler<
                         CalculateAuditVolumeAvailableRequest, CalculateAuditVolumeAvailableResponse>
@@ -577,6 +597,11 @@ public class DataSafeAsyncClient implements DataSafeAsync {
                         javax.ws.rs.core.Response, CalculateAuditVolumeCollectedResponse>
                 transformer = CalculateAuditVolumeCollectedConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataSafe",
+                "CalculateAuditVolumeCollected",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/AuditProfile/CalculateAuditVolumeCollected");
 
         com.oracle.bmc.responses.AsyncHandler<
                         CalculateAuditVolumeCollectedRequest, CalculateAuditVolumeCollectedResponse>
@@ -624,6 +649,11 @@ public class DataSafeAsyncClient implements DataSafeAsync {
         final com.google.common.base.Function<javax.ws.rs.core.Response, CancelWorkRequestResponse>
                 transformer = CancelWorkRequestConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataSafe",
+                "CancelWorkRequest",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/WorkRequest/CancelWorkRequest");
 
         com.oracle.bmc.responses.AsyncHandler<CancelWorkRequestRequest, CancelWorkRequestResponse>
                 handlerToUse = handler;
@@ -665,6 +695,11 @@ public class DataSafeAsyncClient implements DataSafeAsync {
                         javax.ws.rs.core.Response, ChangeAlertCompartmentResponse>
                 transformer = ChangeAlertCompartmentConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataSafe",
+                "ChangeAlertCompartment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/Alert/ChangeAlertCompartment");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeAlertCompartmentRequest, ChangeAlertCompartmentResponse>
@@ -715,6 +750,11 @@ public class DataSafeAsyncClient implements DataSafeAsync {
                         javax.ws.rs.core.Response, ChangeAuditArchiveRetrievalCompartmentResponse>
                 transformer = ChangeAuditArchiveRetrievalCompartmentConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataSafe",
+                "ChangeAuditArchiveRetrievalCompartment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/AuditArchiveRetrieval/ChangeAuditArchiveRetrievalCompartment");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeAuditArchiveRetrievalCompartmentRequest,
@@ -768,6 +808,11 @@ public class DataSafeAsyncClient implements DataSafeAsync {
                         javax.ws.rs.core.Response, ChangeAuditPolicyCompartmentResponse>
                 transformer = ChangeAuditPolicyCompartmentConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataSafe",
+                "ChangeAuditPolicyCompartment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/AuditPolicy/ChangeAuditPolicyCompartment");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeAuditPolicyCompartmentRequest, ChangeAuditPolicyCompartmentResponse>
@@ -818,6 +863,11 @@ public class DataSafeAsyncClient implements DataSafeAsync {
                         javax.ws.rs.core.Response, ChangeAuditProfileCompartmentResponse>
                 transformer = ChangeAuditProfileCompartmentConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataSafe",
+                "ChangeAuditProfileCompartment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/AuditProfile/ChangeAuditProfileCompartment");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeAuditProfileCompartmentRequest, ChangeAuditProfileCompartmentResponse>
@@ -868,6 +918,11 @@ public class DataSafeAsyncClient implements DataSafeAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ChangeDataSafePrivateEndpointCompartmentResponse>
                 transformer = ChangeDataSafePrivateEndpointCompartmentConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataSafe",
+                "ChangeDataSafePrivateEndpointCompartment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/DataSafePrivateEndpoint/ChangeDataSafePrivateEndpointCompartment");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeDataSafePrivateEndpointCompartmentRequest,
@@ -922,6 +977,11 @@ public class DataSafeAsyncClient implements DataSafeAsync {
                         javax.ws.rs.core.Response, ChangeDiscoveryJobCompartmentResponse>
                 transformer = ChangeDiscoveryJobCompartmentConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataSafe",
+                "ChangeDiscoveryJobCompartment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/DiscoveryJob/ChangeDiscoveryJobCompartment");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeDiscoveryJobCompartmentRequest, ChangeDiscoveryJobCompartmentResponse>
@@ -973,6 +1033,11 @@ public class DataSafeAsyncClient implements DataSafeAsync {
                         javax.ws.rs.core.Response, ChangeLibraryMaskingFormatCompartmentResponse>
                 transformer = ChangeLibraryMaskingFormatCompartmentConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataSafe",
+                "ChangeLibraryMaskingFormatCompartment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/LibraryMaskingFormat/ChangeLibraryMaskingFormatCompartment");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeLibraryMaskingFormatCompartmentRequest,
@@ -1026,6 +1091,11 @@ public class DataSafeAsyncClient implements DataSafeAsync {
                         javax.ws.rs.core.Response, ChangeMaskingPolicyCompartmentResponse>
                 transformer = ChangeMaskingPolicyCompartmentConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataSafe",
+                "ChangeMaskingPolicyCompartment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/MaskingPolicy/ChangeMaskingPolicyCompartment");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeMaskingPolicyCompartmentRequest,
@@ -1077,6 +1147,11 @@ public class DataSafeAsyncClient implements DataSafeAsync {
                         javax.ws.rs.core.Response, ChangeOnPremConnectorCompartmentResponse>
                 transformer = ChangeOnPremConnectorCompartmentConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataSafe",
+                "ChangeOnPremConnectorCompartment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/OnPremConnector/ChangeOnPremConnectorCompartment");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeOnPremConnectorCompartmentRequest,
@@ -1127,6 +1202,11 @@ public class DataSafeAsyncClient implements DataSafeAsync {
                         javax.ws.rs.core.Response, ChangeReportCompartmentResponse>
                 transformer = ChangeReportCompartmentConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataSafe",
+                "ChangeReportCompartment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/Report/ChangeReportCompartment");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeReportCompartmentRequest, ChangeReportCompartmentResponse>
@@ -1176,6 +1256,11 @@ public class DataSafeAsyncClient implements DataSafeAsync {
                         javax.ws.rs.core.Response, ChangeReportDefinitionCompartmentResponse>
                 transformer = ChangeReportDefinitionCompartmentConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataSafe",
+                "ChangeReportDefinitionCompartment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/ReportDefinition/ChangeReportDefinitionCompartment");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeReportDefinitionCompartmentRequest,
@@ -1225,6 +1310,11 @@ public class DataSafeAsyncClient implements DataSafeAsync {
         final com.google.common.base.Function<javax.ws.rs.core.Response, ChangeRetentionResponse>
                 transformer = ChangeRetentionConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataSafe",
+                "ChangeRetention",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/AuditProfile/ChangeRetention");
 
         com.oracle.bmc.responses.AsyncHandler<ChangeRetentionRequest, ChangeRetentionResponse>
                 handlerToUse = handler;
@@ -1274,6 +1364,11 @@ public class DataSafeAsyncClient implements DataSafeAsync {
                         javax.ws.rs.core.Response, ChangeSecurityAssessmentCompartmentResponse>
                 transformer = ChangeSecurityAssessmentCompartmentConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataSafe",
+                "ChangeSecurityAssessmentCompartment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SecurityAssessment/ChangeSecurityAssessmentCompartment");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeSecurityAssessmentCompartmentRequest,
@@ -1327,6 +1422,11 @@ public class DataSafeAsyncClient implements DataSafeAsync {
                         javax.ws.rs.core.Response, ChangeSensitiveDataModelCompartmentResponse>
                 transformer = ChangeSensitiveDataModelCompartmentConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataSafe",
+                "ChangeSensitiveDataModelCompartment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SensitiveDataModel/ChangeSensitiveDataModelCompartment");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeSensitiveDataModelCompartmentRequest,
@@ -1379,6 +1479,11 @@ public class DataSafeAsyncClient implements DataSafeAsync {
                         javax.ws.rs.core.Response, ChangeSensitiveTypeCompartmentResponse>
                 transformer = ChangeSensitiveTypeCompartmentConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataSafe",
+                "ChangeSensitiveTypeCompartment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SensitiveType/ChangeSensitiveTypeCompartment");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeSensitiveTypeCompartmentRequest,
@@ -1432,6 +1537,11 @@ public class DataSafeAsyncClient implements DataSafeAsync {
                         ChangeTargetAlertPolicyAssociationCompartmentResponse>
                 transformer = ChangeTargetAlertPolicyAssociationCompartmentConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataSafe",
+                "ChangeTargetAlertPolicyAssociationCompartment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/TargetAlertPolicyAssociation/ChangeTargetAlertPolicyAssociationCompartment");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeTargetAlertPolicyAssociationCompartmentRequest,
@@ -1486,6 +1596,11 @@ public class DataSafeAsyncClient implements DataSafeAsync {
                         javax.ws.rs.core.Response, ChangeTargetDatabaseCompartmentResponse>
                 transformer = ChangeTargetDatabaseCompartmentConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataSafe",
+                "ChangeTargetDatabaseCompartment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/TargetDatabase/ChangeTargetDatabaseCompartment");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeTargetDatabaseCompartmentRequest,
@@ -1538,6 +1653,11 @@ public class DataSafeAsyncClient implements DataSafeAsync {
                         javax.ws.rs.core.Response, ChangeUserAssessmentCompartmentResponse>
                 transformer = ChangeUserAssessmentCompartmentConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataSafe",
+                "ChangeUserAssessmentCompartment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/UserAssessment/ChangeUserAssessmentCompartment");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeUserAssessmentCompartmentRequest,
@@ -1588,6 +1708,11 @@ public class DataSafeAsyncClient implements DataSafeAsync {
                         javax.ws.rs.core.Response, CompareSecurityAssessmentResponse>
                 transformer = CompareSecurityAssessmentConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataSafe",
+                "CompareSecurityAssessment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SecurityAssessment/CompareSecurityAssessment");
 
         com.oracle.bmc.responses.AsyncHandler<
                         CompareSecurityAssessmentRequest, CompareSecurityAssessmentResponse>
@@ -1636,6 +1761,11 @@ public class DataSafeAsyncClient implements DataSafeAsync {
                         javax.ws.rs.core.Response, CompareUserAssessmentResponse>
                 transformer = CompareUserAssessmentConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataSafe",
+                "CompareUserAssessment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/UserAssessment/CompareUserAssessment");
 
         com.oracle.bmc.responses.AsyncHandler<
                         CompareUserAssessmentRequest, CompareUserAssessmentResponse>
@@ -1685,6 +1815,8 @@ public class DataSafeAsyncClient implements DataSafeAsync {
                         javax.ws.rs.core.Response, CreateAuditArchiveRetrievalResponse>
                 transformer = CreateAuditArchiveRetrievalConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataSafe", "CreateAuditArchiveRetrieval", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<
                         CreateAuditArchiveRetrievalRequest, CreateAuditArchiveRetrievalResponse>
@@ -1735,6 +1867,11 @@ public class DataSafeAsyncClient implements DataSafeAsync {
                         javax.ws.rs.core.Response, CreateDataSafePrivateEndpointResponse>
                 transformer = CreateDataSafePrivateEndpointConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataSafe",
+                "CreateDataSafePrivateEndpoint",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/DataSafePrivateEndpoint/CreateDataSafePrivateEndpoint");
 
         com.oracle.bmc.responses.AsyncHandler<
                         CreateDataSafePrivateEndpointRequest, CreateDataSafePrivateEndpointResponse>
@@ -1782,6 +1919,8 @@ public class DataSafeAsyncClient implements DataSafeAsync {
         final com.google.common.base.Function<javax.ws.rs.core.Response, CreateDiscoveryJobResponse>
                 transformer = CreateDiscoveryJobConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataSafe", "CreateDiscoveryJob", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<CreateDiscoveryJobRequest, CreateDiscoveryJobResponse>
                 handlerToUse = handler;
@@ -1830,6 +1969,11 @@ public class DataSafeAsyncClient implements DataSafeAsync {
                         javax.ws.rs.core.Response, CreateLibraryMaskingFormatResponse>
                 transformer = CreateLibraryMaskingFormatConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataSafe",
+                "CreateLibraryMaskingFormat",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/LibraryMaskingFormat/CreateLibraryMaskingFormat");
 
         com.oracle.bmc.responses.AsyncHandler<
                         CreateLibraryMaskingFormatRequest, CreateLibraryMaskingFormatResponse>
@@ -1878,6 +2022,11 @@ public class DataSafeAsyncClient implements DataSafeAsync {
                         javax.ws.rs.core.Response, CreateMaskingColumnResponse>
                 transformer = CreateMaskingColumnConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataSafe",
+                "CreateMaskingColumn",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/MaskingColumn/CreateMaskingColumn");
 
         com.oracle.bmc.responses.AsyncHandler<
                         CreateMaskingColumnRequest, CreateMaskingColumnResponse>
@@ -1925,6 +2074,11 @@ public class DataSafeAsyncClient implements DataSafeAsync {
                         javax.ws.rs.core.Response, CreateMaskingPolicyResponse>
                 transformer = CreateMaskingPolicyConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataSafe",
+                "CreateMaskingPolicy",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/MaskingPolicy/CreateMaskingPolicy");
 
         com.oracle.bmc.responses.AsyncHandler<
                         CreateMaskingPolicyRequest, CreateMaskingPolicyResponse>
@@ -1972,6 +2126,11 @@ public class DataSafeAsyncClient implements DataSafeAsync {
                         javax.ws.rs.core.Response, CreateOnPremConnectorResponse>
                 transformer = CreateOnPremConnectorConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataSafe",
+                "CreateOnPremConnector",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/OnPremConnector/CreateOnPremConnector");
 
         com.oracle.bmc.responses.AsyncHandler<
                         CreateOnPremConnectorRequest, CreateOnPremConnectorResponse>
@@ -2019,6 +2178,11 @@ public class DataSafeAsyncClient implements DataSafeAsync {
                         javax.ws.rs.core.Response, CreateReportDefinitionResponse>
                 transformer = CreateReportDefinitionConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataSafe",
+                "CreateReportDefinition",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/ReportDefinition/CreateReportDefinition");
 
         com.oracle.bmc.responses.AsyncHandler<
                         CreateReportDefinitionRequest, CreateReportDefinitionResponse>
@@ -2066,6 +2230,11 @@ public class DataSafeAsyncClient implements DataSafeAsync {
                         javax.ws.rs.core.Response, CreateSecurityAssessmentResponse>
                 transformer = CreateSecurityAssessmentConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataSafe",
+                "CreateSecurityAssessment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SecurityAssessment/CreateSecurityAssessment");
 
         com.oracle.bmc.responses.AsyncHandler<
                         CreateSecurityAssessmentRequest, CreateSecurityAssessmentResponse>
@@ -2113,6 +2282,11 @@ public class DataSafeAsyncClient implements DataSafeAsync {
                         javax.ws.rs.core.Response, CreateSensitiveColumnResponse>
                 transformer = CreateSensitiveColumnConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataSafe",
+                "CreateSensitiveColumn",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SensitiveColumn/CreateSensitiveColumn");
 
         com.oracle.bmc.responses.AsyncHandler<
                         CreateSensitiveColumnRequest, CreateSensitiveColumnResponse>
@@ -2160,6 +2334,11 @@ public class DataSafeAsyncClient implements DataSafeAsync {
                         javax.ws.rs.core.Response, CreateSensitiveDataModelResponse>
                 transformer = CreateSensitiveDataModelConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataSafe",
+                "CreateSensitiveDataModel",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SensitiveDataModel/CreateSensitiveDataModel");
 
         com.oracle.bmc.responses.AsyncHandler<
                         CreateSensitiveDataModelRequest, CreateSensitiveDataModelResponse>
@@ -2207,6 +2386,8 @@ public class DataSafeAsyncClient implements DataSafeAsync {
                         javax.ws.rs.core.Response, CreateSensitiveTypeResponse>
                 transformer = CreateSensitiveTypeConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataSafe", "CreateSensitiveType", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<
                         CreateSensitiveTypeRequest, CreateSensitiveTypeResponse>
@@ -2256,6 +2437,11 @@ public class DataSafeAsyncClient implements DataSafeAsync {
                         javax.ws.rs.core.Response, CreateTargetAlertPolicyAssociationResponse>
                 transformer = CreateTargetAlertPolicyAssociationConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataSafe",
+                "CreateTargetAlertPolicyAssociation",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/TargetAlertPolicyAssociation/CreateTargetAlertPolicyAssociation");
 
         com.oracle.bmc.responses.AsyncHandler<
                         CreateTargetAlertPolicyAssociationRequest,
@@ -2306,6 +2492,11 @@ public class DataSafeAsyncClient implements DataSafeAsync {
                         javax.ws.rs.core.Response, CreateTargetDatabaseResponse>
                 transformer = CreateTargetDatabaseConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataSafe",
+                "CreateTargetDatabase",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/TargetDatabase/CreateTargetDatabase");
 
         com.oracle.bmc.responses.AsyncHandler<
                         CreateTargetDatabaseRequest, CreateTargetDatabaseResponse>
@@ -2353,6 +2544,11 @@ public class DataSafeAsyncClient implements DataSafeAsync {
                         javax.ws.rs.core.Response, CreateUserAssessmentResponse>
                 transformer = CreateUserAssessmentConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataSafe",
+                "CreateUserAssessment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/UserAssessment/CreateUserAssessment");
 
         com.oracle.bmc.responses.AsyncHandler<
                         CreateUserAssessmentRequest, CreateUserAssessmentResponse>
@@ -2400,6 +2596,11 @@ public class DataSafeAsyncClient implements DataSafeAsync {
                         javax.ws.rs.core.Response, DeactivateTargetDatabaseResponse>
                 transformer = DeactivateTargetDatabaseConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataSafe",
+                "DeactivateTargetDatabase",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/TargetDatabase/DeactivateTargetDatabase");
 
         com.oracle.bmc.responses.AsyncHandler<
                         DeactivateTargetDatabaseRequest, DeactivateTargetDatabaseResponse>
@@ -2443,6 +2644,11 @@ public class DataSafeAsyncClient implements DataSafeAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, DeleteAuditArchiveRetrievalResponse>
                 transformer = DeleteAuditArchiveRetrievalConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataSafe",
+                "DeleteAuditArchiveRetrieval",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/AuditArchiveRetrieval/DeleteAuditArchiveRetrieval");
 
         com.oracle.bmc.responses.AsyncHandler<
                         DeleteAuditArchiveRetrievalRequest, DeleteAuditArchiveRetrievalResponse>
@@ -2484,6 +2690,11 @@ public class DataSafeAsyncClient implements DataSafeAsync {
                 DeleteAuditTrailConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteAuditTrailResponse>
                 transformer = DeleteAuditTrailConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataSafe",
+                "DeleteAuditTrail",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/AuditTrail/DeleteAuditTrail");
 
         com.oracle.bmc.responses.AsyncHandler<DeleteAuditTrailRequest, DeleteAuditTrailResponse>
                 handlerToUse = handler;
@@ -2526,6 +2737,11 @@ public class DataSafeAsyncClient implements DataSafeAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, DeleteDataSafePrivateEndpointResponse>
                 transformer = DeleteDataSafePrivateEndpointConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataSafe",
+                "DeleteDataSafePrivateEndpoint",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/DataSafePrivateEndpoint/DeleteDataSafePrivateEndpoint");
 
         com.oracle.bmc.responses.AsyncHandler<
                         DeleteDataSafePrivateEndpointRequest, DeleteDataSafePrivateEndpointResponse>
@@ -2567,6 +2783,11 @@ public class DataSafeAsyncClient implements DataSafeAsync {
                 DeleteDiscoveryJobConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteDiscoveryJobResponse>
                 transformer = DeleteDiscoveryJobConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataSafe",
+                "DeleteDiscoveryJob",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/DiscoveryJob/DeleteDiscoveryJob");
 
         com.oracle.bmc.responses.AsyncHandler<DeleteDiscoveryJobRequest, DeleteDiscoveryJobResponse>
                 handlerToUse = handler;
@@ -2607,6 +2828,11 @@ public class DataSafeAsyncClient implements DataSafeAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, DeleteDiscoveryJobResultResponse>
                 transformer = DeleteDiscoveryJobResultConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataSafe",
+                "DeleteDiscoveryJobResult",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/DiscoveryJobResult/DeleteDiscoveryJobResult");
 
         com.oracle.bmc.responses.AsyncHandler<
                         DeleteDiscoveryJobResultRequest, DeleteDiscoveryJobResultResponse>
@@ -2650,6 +2876,11 @@ public class DataSafeAsyncClient implements DataSafeAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, DeleteLibraryMaskingFormatResponse>
                 transformer = DeleteLibraryMaskingFormatConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataSafe",
+                "DeleteLibraryMaskingFormat",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/LibraryMaskingFormat/DeleteLibraryMaskingFormat");
 
         com.oracle.bmc.responses.AsyncHandler<
                         DeleteLibraryMaskingFormatRequest, DeleteLibraryMaskingFormatResponse>
@@ -2692,6 +2923,11 @@ public class DataSafeAsyncClient implements DataSafeAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, DeleteMaskingColumnResponse>
                 transformer = DeleteMaskingColumnConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataSafe",
+                "DeleteMaskingColumn",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/MaskingColumn/DeleteMaskingColumn");
 
         com.oracle.bmc.responses.AsyncHandler<
                         DeleteMaskingColumnRequest, DeleteMaskingColumnResponse>
@@ -2733,6 +2969,11 @@ public class DataSafeAsyncClient implements DataSafeAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, DeleteMaskingPolicyResponse>
                 transformer = DeleteMaskingPolicyConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataSafe",
+                "DeleteMaskingPolicy",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/MaskingPolicy/DeleteMaskingPolicy");
 
         com.oracle.bmc.responses.AsyncHandler<
                         DeleteMaskingPolicyRequest, DeleteMaskingPolicyResponse>
@@ -2774,6 +3015,11 @@ public class DataSafeAsyncClient implements DataSafeAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, DeleteOnPremConnectorResponse>
                 transformer = DeleteOnPremConnectorConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataSafe",
+                "DeleteOnPremConnector",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/OnPremConnector/DeleteOnPremConnector");
 
         com.oracle.bmc.responses.AsyncHandler<
                         DeleteOnPremConnectorRequest, DeleteOnPremConnectorResponse>
@@ -2815,6 +3061,11 @@ public class DataSafeAsyncClient implements DataSafeAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, DeleteReportDefinitionResponse>
                 transformer = DeleteReportDefinitionConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataSafe",
+                "DeleteReportDefinition",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/ReportDefinition/DeleteReportDefinition");
 
         com.oracle.bmc.responses.AsyncHandler<
                         DeleteReportDefinitionRequest, DeleteReportDefinitionResponse>
@@ -2856,6 +3107,11 @@ public class DataSafeAsyncClient implements DataSafeAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, DeleteSecurityAssessmentResponse>
                 transformer = DeleteSecurityAssessmentConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataSafe",
+                "DeleteSecurityAssessment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SecurityAssessment/DeleteSecurityAssessment");
 
         com.oracle.bmc.responses.AsyncHandler<
                         DeleteSecurityAssessmentRequest, DeleteSecurityAssessmentResponse>
@@ -2897,6 +3153,11 @@ public class DataSafeAsyncClient implements DataSafeAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, DeleteSensitiveColumnResponse>
                 transformer = DeleteSensitiveColumnConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataSafe",
+                "DeleteSensitiveColumn",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SensitiveColumn/DeleteSensitiveColumn");
 
         com.oracle.bmc.responses.AsyncHandler<
                         DeleteSensitiveColumnRequest, DeleteSensitiveColumnResponse>
@@ -2938,6 +3199,11 @@ public class DataSafeAsyncClient implements DataSafeAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, DeleteSensitiveDataModelResponse>
                 transformer = DeleteSensitiveDataModelConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataSafe",
+                "DeleteSensitiveDataModel",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SensitiveDataModel/DeleteSensitiveDataModel");
 
         com.oracle.bmc.responses.AsyncHandler<
                         DeleteSensitiveDataModelRequest, DeleteSensitiveDataModelResponse>
@@ -2979,6 +3245,11 @@ public class DataSafeAsyncClient implements DataSafeAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, DeleteSensitiveTypeResponse>
                 transformer = DeleteSensitiveTypeConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataSafe",
+                "DeleteSensitiveType",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SensitiveType/DeleteSensitiveType");
 
         com.oracle.bmc.responses.AsyncHandler<
                         DeleteSensitiveTypeRequest, DeleteSensitiveTypeResponse>
@@ -3022,6 +3293,11 @@ public class DataSafeAsyncClient implements DataSafeAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, DeleteTargetAlertPolicyAssociationResponse>
                 transformer = DeleteTargetAlertPolicyAssociationConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataSafe",
+                "DeleteTargetAlertPolicyAssociation",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/TargetAlertPolicyAssociation/DeleteTargetAlertPolicyAssociation");
 
         com.oracle.bmc.responses.AsyncHandler<
                         DeleteTargetAlertPolicyAssociationRequest,
@@ -3066,6 +3342,11 @@ public class DataSafeAsyncClient implements DataSafeAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, DeleteTargetDatabaseResponse>
                 transformer = DeleteTargetDatabaseConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataSafe",
+                "DeleteTargetDatabase",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/TargetDatabase/DeleteTargetDatabase");
 
         com.oracle.bmc.responses.AsyncHandler<
                         DeleteTargetDatabaseRequest, DeleteTargetDatabaseResponse>
@@ -3107,6 +3388,11 @@ public class DataSafeAsyncClient implements DataSafeAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, DeleteUserAssessmentResponse>
                 transformer = DeleteUserAssessmentConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataSafe",
+                "DeleteUserAssessment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/UserAssessment/DeleteUserAssessment");
 
         com.oracle.bmc.responses.AsyncHandler<
                         DeleteUserAssessmentRequest, DeleteUserAssessmentResponse>
@@ -3149,6 +3435,11 @@ public class DataSafeAsyncClient implements DataSafeAsync {
                         javax.ws.rs.core.Response, DiscoverAuditTrailsResponse>
                 transformer = DiscoverAuditTrailsConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataSafe",
+                "DiscoverAuditTrails",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/AuditProfile/DiscoverAuditTrails");
 
         com.oracle.bmc.responses.AsyncHandler<
                         DiscoverAuditTrailsRequest, DiscoverAuditTrailsResponse>
@@ -3200,6 +3491,11 @@ public class DataSafeAsyncClient implements DataSafeAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, DownloadDiscoveryReportResponse>
                 transformer = DownloadDiscoveryReportConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataSafe",
+                "DownloadDiscoveryReport",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SensitiveDataModel/DownloadDiscoveryReport");
 
         com.oracle.bmc.responses.AsyncHandler<
                         DownloadDiscoveryReportRequest, DownloadDiscoveryReportResponse>
@@ -3255,6 +3551,11 @@ public class DataSafeAsyncClient implements DataSafeAsync {
                 DownloadMaskingLogConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, DownloadMaskingLogResponse>
                 transformer = DownloadMaskingLogConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataSafe",
+                "DownloadMaskingLog",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/MaskingPolicy/DownloadMaskingLog");
 
         com.oracle.bmc.responses.AsyncHandler<DownloadMaskingLogRequest, DownloadMaskingLogResponse>
                 handlerToUse = handler;
@@ -3310,6 +3611,11 @@ public class DataSafeAsyncClient implements DataSafeAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, DownloadMaskingPolicyResponse>
                 transformer = DownloadMaskingPolicyConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataSafe",
+                "DownloadMaskingPolicy",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/MaskingPolicy/DownloadMaskingPolicy");
 
         com.oracle.bmc.responses.AsyncHandler<
                         DownloadMaskingPolicyRequest, DownloadMaskingPolicyResponse>
@@ -3366,6 +3672,11 @@ public class DataSafeAsyncClient implements DataSafeAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, DownloadMaskingReportResponse>
                 transformer = DownloadMaskingReportConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataSafe",
+                "DownloadMaskingReport",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/MaskingPolicy/DownloadMaskingReport");
 
         com.oracle.bmc.responses.AsyncHandler<
                         DownloadMaskingReportRequest, DownloadMaskingReportResponse>
@@ -3423,6 +3734,11 @@ public class DataSafeAsyncClient implements DataSafeAsync {
                         javax.ws.rs.core.Response, DownloadPrivilegeScriptResponse>
                 transformer = DownloadPrivilegeScriptConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataSafe",
+                "DownloadPrivilegeScript",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/TargetDatabase/DownloadPrivilegeScript");
 
         com.oracle.bmc.responses.AsyncHandler<
                         DownloadPrivilegeScriptRequest, DownloadPrivilegeScriptResponse>
@@ -3477,6 +3793,11 @@ public class DataSafeAsyncClient implements DataSafeAsync {
                         javax.ws.rs.core.Response, DownloadSecurityAssessmentReportResponse>
                 transformer = DownloadSecurityAssessmentReportConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataSafe",
+                "DownloadSecurityAssessmentReport",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SecurityAssessment/DownloadSecurityAssessmentReport");
 
         com.oracle.bmc.responses.AsyncHandler<
                         DownloadSecurityAssessmentReportRequest,
@@ -3538,6 +3859,11 @@ public class DataSafeAsyncClient implements DataSafeAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, DownloadSensitiveDataModelResponse>
                 transformer = DownloadSensitiveDataModelConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataSafe",
+                "DownloadSensitiveDataModel",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SensitiveDataModel/DownloadSensitiveDataModel");
 
         com.oracle.bmc.responses.AsyncHandler<
                         DownloadSensitiveDataModelRequest, DownloadSensitiveDataModelResponse>
@@ -3598,6 +3924,11 @@ public class DataSafeAsyncClient implements DataSafeAsync {
                         javax.ws.rs.core.Response, DownloadUserAssessmentReportResponse>
                 transformer = DownloadUserAssessmentReportConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataSafe",
+                "DownloadUserAssessmentReport",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/UserAssessment/DownloadUserAssessmentReport");
 
         com.oracle.bmc.responses.AsyncHandler<
                         DownloadUserAssessmentReportRequest, DownloadUserAssessmentReportResponse>
@@ -3647,6 +3978,11 @@ public class DataSafeAsyncClient implements DataSafeAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, EnableDataSafeConfigurationResponse>
                 transformer = EnableDataSafeConfigurationConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataSafe",
+                "EnableDataSafeConfiguration",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/DataSafeConfiguration/EnableDataSafeConfiguration");
 
         com.oracle.bmc.responses.AsyncHandler<
                         EnableDataSafeConfigurationRequest, EnableDataSafeConfigurationResponse>
@@ -3696,6 +4032,11 @@ public class DataSafeAsyncClient implements DataSafeAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GenerateDiscoveryReportForDownloadResponse>
                 transformer = GenerateDiscoveryReportForDownloadConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataSafe",
+                "GenerateDiscoveryReportForDownload",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SensitiveDataModel/GenerateDiscoveryReportForDownload");
 
         com.oracle.bmc.responses.AsyncHandler<
                         GenerateDiscoveryReportForDownloadRequest,
@@ -3747,6 +4088,11 @@ public class DataSafeAsyncClient implements DataSafeAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GenerateMaskingPolicyForDownloadResponse>
                 transformer = GenerateMaskingPolicyForDownloadConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataSafe",
+                "GenerateMaskingPolicyForDownload",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/MaskingPolicy/GenerateMaskingPolicyForDownload");
 
         com.oracle.bmc.responses.AsyncHandler<
                         GenerateMaskingPolicyForDownloadRequest,
@@ -3798,6 +4144,11 @@ public class DataSafeAsyncClient implements DataSafeAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GenerateMaskingReportForDownloadResponse>
                 transformer = GenerateMaskingReportForDownloadConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataSafe",
+                "GenerateMaskingReportForDownload",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/MaskingPolicy/GenerateMaskingReportForDownload");
 
         com.oracle.bmc.responses.AsyncHandler<
                         GenerateMaskingReportForDownloadRequest,
@@ -3861,6 +4212,11 @@ public class DataSafeAsyncClient implements DataSafeAsync {
                         javax.ws.rs.core.Response, GenerateOnPremConnectorConfigurationResponse>
                 transformer = GenerateOnPremConnectorConfigurationConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataSafe",
+                "GenerateOnPremConnectorConfiguration",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/OnPremConnector/GenerateOnPremConnectorConfiguration");
 
         com.oracle.bmc.responses.AsyncHandler<
                         GenerateOnPremConnectorConfigurationRequest,
@@ -3910,6 +4266,11 @@ public class DataSafeAsyncClient implements DataSafeAsync {
         final com.google.common.base.Function<javax.ws.rs.core.Response, GenerateReportResponse>
                 transformer = GenerateReportConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataSafe",
+                "GenerateReport",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/ReportDefinition/GenerateReport");
 
         com.oracle.bmc.responses.AsyncHandler<GenerateReportRequest, GenerateReportResponse>
                 handlerToUse = handler;
@@ -3958,6 +4319,11 @@ public class DataSafeAsyncClient implements DataSafeAsync {
                         javax.ws.rs.core.Response, GenerateSecurityAssessmentReportResponse>
                 transformer = GenerateSecurityAssessmentReportConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataSafe",
+                "GenerateSecurityAssessmentReport",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SecurityAssessment/GenerateSecurityAssessmentReport");
 
         com.oracle.bmc.responses.AsyncHandler<
                         GenerateSecurityAssessmentReportRequest,
@@ -4010,6 +4376,11 @@ public class DataSafeAsyncClient implements DataSafeAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GenerateSensitiveDataModelForDownloadResponse>
                 transformer = GenerateSensitiveDataModelForDownloadConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataSafe",
+                "GenerateSensitiveDataModelForDownload",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SensitiveDataModel/GenerateSensitiveDataModelForDownload");
 
         com.oracle.bmc.responses.AsyncHandler<
                         GenerateSensitiveDataModelForDownloadRequest,
@@ -4063,6 +4434,11 @@ public class DataSafeAsyncClient implements DataSafeAsync {
                         javax.ws.rs.core.Response, GenerateUserAssessmentReportResponse>
                 transformer = GenerateUserAssessmentReportConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataSafe",
+                "GenerateUserAssessmentReport",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/UserAssessment/GenerateUserAssessmentReport");
 
         com.oracle.bmc.responses.AsyncHandler<
                         GenerateUserAssessmentReportRequest, GenerateUserAssessmentReportResponse>
@@ -4107,6 +4483,11 @@ public class DataSafeAsyncClient implements DataSafeAsync {
                 GetAlertConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetAlertResponse>
                 transformer = GetAlertConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataSafe",
+                "GetAlert",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/Alert/GetAlert");
 
         com.oracle.bmc.responses.AsyncHandler<GetAlertRequest, GetAlertResponse> handlerToUse =
                 handler;
@@ -4145,6 +4526,11 @@ public class DataSafeAsyncClient implements DataSafeAsync {
                 GetAlertPolicyConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetAlertPolicyResponse>
                 transformer = GetAlertPolicyConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataSafe",
+                "GetAlertPolicy",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/AlertPolicy/GetAlertPolicy");
 
         com.oracle.bmc.responses.AsyncHandler<GetAlertPolicyRequest, GetAlertPolicyResponse>
                 handlerToUse = handler;
@@ -4185,6 +4571,11 @@ public class DataSafeAsyncClient implements DataSafeAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetAuditArchiveRetrievalResponse>
                 transformer = GetAuditArchiveRetrievalConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataSafe",
+                "GetAuditArchiveRetrieval",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/AuditArchiveRetrieval/GetAuditArchiveRetrieval");
 
         com.oracle.bmc.responses.AsyncHandler<
                         GetAuditArchiveRetrievalRequest, GetAuditArchiveRetrievalResponse>
@@ -4225,6 +4616,11 @@ public class DataSafeAsyncClient implements DataSafeAsync {
                 GetAuditPolicyConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetAuditPolicyResponse>
                 transformer = GetAuditPolicyConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataSafe",
+                "GetAuditPolicy",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/AuditPolicy/GetAuditPolicy");
 
         com.oracle.bmc.responses.AsyncHandler<GetAuditPolicyRequest, GetAuditPolicyResponse>
                 handlerToUse = handler;
@@ -4264,6 +4660,11 @@ public class DataSafeAsyncClient implements DataSafeAsync {
                 GetAuditProfileConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetAuditProfileResponse>
                 transformer = GetAuditProfileConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataSafe",
+                "GetAuditProfile",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/AuditProfile/GetAuditProfile");
 
         com.oracle.bmc.responses.AsyncHandler<GetAuditProfileRequest, GetAuditProfileResponse>
                 handlerToUse = handler;
@@ -4302,6 +4703,11 @@ public class DataSafeAsyncClient implements DataSafeAsync {
                 GetAuditTrailConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetAuditTrailResponse>
                 transformer = GetAuditTrailConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataSafe",
+                "GetAuditTrail",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/AuditTrail/GetAuditTrail");
 
         com.oracle.bmc.responses.AsyncHandler<GetAuditTrailRequest, GetAuditTrailResponse>
                 handlerToUse = handler;
@@ -4344,6 +4750,11 @@ public class DataSafeAsyncClient implements DataSafeAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetCompatibleFormatsForDataTypesResponse>
                 transformer = GetCompatibleFormatsForDataTypesConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataSafe",
+                "GetCompatibleFormatsForDataTypes",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/MaskingColumn/GetCompatibleFormatsForDataTypes");
 
         com.oracle.bmc.responses.AsyncHandler<
                         GetCompatibleFormatsForDataTypesRequest,
@@ -4391,6 +4802,11 @@ public class DataSafeAsyncClient implements DataSafeAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetCompatibleFormatsForSensitiveTypesResponse>
                 transformer = GetCompatibleFormatsForSensitiveTypesConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataSafe",
+                "GetCompatibleFormatsForSensitiveTypes",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/MaskingColumn/GetCompatibleFormatsForSensitiveTypes");
 
         com.oracle.bmc.responses.AsyncHandler<
                         GetCompatibleFormatsForSensitiveTypesRequest,
@@ -4435,6 +4851,11 @@ public class DataSafeAsyncClient implements DataSafeAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetDataSafeConfigurationResponse>
                 transformer = GetDataSafeConfigurationConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataSafe",
+                "GetDataSafeConfiguration",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/DataSafeConfiguration/GetDataSafeConfiguration");
 
         com.oracle.bmc.responses.AsyncHandler<
                         GetDataSafeConfigurationRequest, GetDataSafeConfigurationResponse>
@@ -4478,6 +4899,11 @@ public class DataSafeAsyncClient implements DataSafeAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetDataSafePrivateEndpointResponse>
                 transformer = GetDataSafePrivateEndpointConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataSafe",
+                "GetDataSafePrivateEndpoint",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/DataSafePrivateEndpoint/GetDataSafePrivateEndpoint");
 
         com.oracle.bmc.responses.AsyncHandler<
                         GetDataSafePrivateEndpointRequest, GetDataSafePrivateEndpointResponse>
@@ -4519,6 +4945,11 @@ public class DataSafeAsyncClient implements DataSafeAsync {
                 GetDiscoveryJobConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetDiscoveryJobResponse>
                 transformer = GetDiscoveryJobConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataSafe",
+                "GetDiscoveryJob",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/DiscoveryJob/GetDiscoveryJob");
 
         com.oracle.bmc.responses.AsyncHandler<GetDiscoveryJobRequest, GetDiscoveryJobResponse>
                 handlerToUse = handler;
@@ -4559,6 +4990,11 @@ public class DataSafeAsyncClient implements DataSafeAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetDiscoveryJobResultResponse>
                 transformer = GetDiscoveryJobResultConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataSafe",
+                "GetDiscoveryJobResult",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/DiscoveryJobResult/GetDiscoveryJobResult");
 
         com.oracle.bmc.responses.AsyncHandler<
                         GetDiscoveryJobResultRequest, GetDiscoveryJobResultResponse>
@@ -4600,6 +5036,11 @@ public class DataSafeAsyncClient implements DataSafeAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetLibraryMaskingFormatResponse>
                 transformer = GetLibraryMaskingFormatConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataSafe",
+                "GetLibraryMaskingFormat",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/LibraryMaskingFormat/GetLibraryMaskingFormat");
 
         com.oracle.bmc.responses.AsyncHandler<
                         GetLibraryMaskingFormatRequest, GetLibraryMaskingFormatResponse>
@@ -4640,6 +5081,11 @@ public class DataSafeAsyncClient implements DataSafeAsync {
                 GetMaskingColumnConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetMaskingColumnResponse>
                 transformer = GetMaskingColumnConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataSafe",
+                "GetMaskingColumn",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/MaskingColumn/GetMaskingColumn");
 
         com.oracle.bmc.responses.AsyncHandler<GetMaskingColumnRequest, GetMaskingColumnResponse>
                 handlerToUse = handler;
@@ -4679,6 +5125,11 @@ public class DataSafeAsyncClient implements DataSafeAsync {
                 GetMaskingPolicyConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetMaskingPolicyResponse>
                 transformer = GetMaskingPolicyConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataSafe",
+                "GetMaskingPolicy",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/MaskingPolicy/GetMaskingPolicy");
 
         com.oracle.bmc.responses.AsyncHandler<GetMaskingPolicyRequest, GetMaskingPolicyResponse>
                 handlerToUse = handler;
@@ -4718,6 +5169,11 @@ public class DataSafeAsyncClient implements DataSafeAsync {
                 GetMaskingReportConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetMaskingReportResponse>
                 transformer = GetMaskingReportConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataSafe",
+                "GetMaskingReport",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/MaskingReport/GetMaskingReport");
 
         com.oracle.bmc.responses.AsyncHandler<GetMaskingReportRequest, GetMaskingReportResponse>
                 handlerToUse = handler;
@@ -4757,6 +5213,11 @@ public class DataSafeAsyncClient implements DataSafeAsync {
                 GetOnPremConnectorConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetOnPremConnectorResponse>
                 transformer = GetOnPremConnectorConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataSafe",
+                "GetOnPremConnector",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/OnPremConnector/GetOnPremConnector");
 
         com.oracle.bmc.responses.AsyncHandler<GetOnPremConnectorRequest, GetOnPremConnectorResponse>
                 handlerToUse = handler;
@@ -4794,6 +5255,11 @@ public class DataSafeAsyncClient implements DataSafeAsync {
                 GetReportConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetReportResponse>
                 transformer = GetReportConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataSafe",
+                "GetReport",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/Report/GetReport");
 
         com.oracle.bmc.responses.AsyncHandler<GetReportRequest, GetReportResponse> handlerToUse =
                 handler;
@@ -4842,6 +5308,11 @@ public class DataSafeAsyncClient implements DataSafeAsync {
                 GetReportContentConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetReportContentResponse>
                 transformer = GetReportContentConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataSafe",
+                "GetReportContent",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/Report/GetReportContent");
 
         com.oracle.bmc.responses.AsyncHandler<GetReportContentRequest, GetReportContentResponse>
                 handlerToUse = handler;
@@ -4882,6 +5353,11 @@ public class DataSafeAsyncClient implements DataSafeAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetReportDefinitionResponse>
                 transformer = GetReportDefinitionConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataSafe",
+                "GetReportDefinition",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/ReportDefinition/GetReportDefinition");
 
         com.oracle.bmc.responses.AsyncHandler<
                         GetReportDefinitionRequest, GetReportDefinitionResponse>
@@ -4923,6 +5399,11 @@ public class DataSafeAsyncClient implements DataSafeAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetSecurityAssessmentResponse>
                 transformer = GetSecurityAssessmentConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataSafe",
+                "GetSecurityAssessment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SecurityAssessment/GetSecurityAssessment");
 
         com.oracle.bmc.responses.AsyncHandler<
                         GetSecurityAssessmentRequest, GetSecurityAssessmentResponse>
@@ -4966,6 +5447,11 @@ public class DataSafeAsyncClient implements DataSafeAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetSecurityAssessmentComparisonResponse>
                 transformer = GetSecurityAssessmentComparisonConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataSafe",
+                "GetSecurityAssessmentComparison",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SecurityAssessment/GetSecurityAssessmentComparison");
 
         com.oracle.bmc.responses.AsyncHandler<
                         GetSecurityAssessmentComparisonRequest,
@@ -5009,6 +5495,11 @@ public class DataSafeAsyncClient implements DataSafeAsync {
                 GetSensitiveColumnConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetSensitiveColumnResponse>
                 transformer = GetSensitiveColumnConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataSafe",
+                "GetSensitiveColumn",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SensitiveColumn/GetSensitiveColumn");
 
         com.oracle.bmc.responses.AsyncHandler<GetSensitiveColumnRequest, GetSensitiveColumnResponse>
                 handlerToUse = handler;
@@ -5049,6 +5540,11 @@ public class DataSafeAsyncClient implements DataSafeAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetSensitiveDataModelResponse>
                 transformer = GetSensitiveDataModelConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataSafe",
+                "GetSensitiveDataModel",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SensitiveDataModel/GetSensitiveDataModel");
 
         com.oracle.bmc.responses.AsyncHandler<
                         GetSensitiveDataModelRequest, GetSensitiveDataModelResponse>
@@ -5089,6 +5585,11 @@ public class DataSafeAsyncClient implements DataSafeAsync {
                 GetSensitiveTypeConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetSensitiveTypeResponse>
                 transformer = GetSensitiveTypeConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataSafe",
+                "GetSensitiveType",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SensitiveType/GetSensitiveType");
 
         com.oracle.bmc.responses.AsyncHandler<GetSensitiveTypeRequest, GetSensitiveTypeResponse>
                 handlerToUse = handler;
@@ -5131,6 +5632,11 @@ public class DataSafeAsyncClient implements DataSafeAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetTargetAlertPolicyAssociationResponse>
                 transformer = GetTargetAlertPolicyAssociationConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataSafe",
+                "GetTargetAlertPolicyAssociation",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/TargetAlertPolicyAssociation/GetTargetAlertPolicyAssociation");
 
         com.oracle.bmc.responses.AsyncHandler<
                         GetTargetAlertPolicyAssociationRequest,
@@ -5174,6 +5680,11 @@ public class DataSafeAsyncClient implements DataSafeAsync {
                 GetTargetDatabaseConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetTargetDatabaseResponse>
                 transformer = GetTargetDatabaseConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataSafe",
+                "GetTargetDatabase",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/TargetDatabase/GetTargetDatabase");
 
         com.oracle.bmc.responses.AsyncHandler<GetTargetDatabaseRequest, GetTargetDatabaseResponse>
                 handlerToUse = handler;
@@ -5213,6 +5724,11 @@ public class DataSafeAsyncClient implements DataSafeAsync {
                 GetUserAssessmentConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetUserAssessmentResponse>
                 transformer = GetUserAssessmentConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataSafe",
+                "GetUserAssessment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/UserAssessment/GetUserAssessment");
 
         com.oracle.bmc.responses.AsyncHandler<GetUserAssessmentRequest, GetUserAssessmentResponse>
                 handlerToUse = handler;
@@ -5255,6 +5771,11 @@ public class DataSafeAsyncClient implements DataSafeAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetUserAssessmentComparisonResponse>
                 transformer = GetUserAssessmentComparisonConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataSafe",
+                "GetUserAssessmentComparison",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/UserAssessment/GetUserAssessmentComparison");
 
         com.oracle.bmc.responses.AsyncHandler<
                         GetUserAssessmentComparisonRequest, GetUserAssessmentComparisonResponse>
@@ -5296,6 +5817,11 @@ public class DataSafeAsyncClient implements DataSafeAsync {
                 GetWorkRequestConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetWorkRequestResponse>
                 transformer = GetWorkRequestConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataSafe",
+                "GetWorkRequest",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/WorkRequest/GetWorkRequest");
 
         com.oracle.bmc.responses.AsyncHandler<GetWorkRequestRequest, GetWorkRequestResponse>
                 handlerToUse = handler;
@@ -5336,6 +5862,11 @@ public class DataSafeAsyncClient implements DataSafeAsync {
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListAlertAnalyticsResponse>
                 transformer = ListAlertAnalyticsConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataSafe",
+                "ListAlertAnalytics",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/AlertSummary/ListAlertAnalytics");
 
         com.oracle.bmc.responses.AsyncHandler<ListAlertAnalyticsRequest, ListAlertAnalyticsResponse>
                 handlerToUse = handler;
@@ -5375,6 +5906,11 @@ public class DataSafeAsyncClient implements DataSafeAsync {
                 ListAlertPoliciesConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListAlertPoliciesResponse>
                 transformer = ListAlertPoliciesConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataSafe",
+                "ListAlertPolicies",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/AlertPolicy/ListAlertPolicies");
 
         com.oracle.bmc.responses.AsyncHandler<ListAlertPoliciesRequest, ListAlertPoliciesResponse>
                 handlerToUse = handler;
@@ -5415,6 +5951,11 @@ public class DataSafeAsyncClient implements DataSafeAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListAlertPolicyRulesResponse>
                 transformer = ListAlertPolicyRulesConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataSafe",
+                "ListAlertPolicyRules",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/AlertPolicy/ListAlertPolicyRules");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListAlertPolicyRulesRequest, ListAlertPolicyRulesResponse>
@@ -5453,6 +5994,11 @@ public class DataSafeAsyncClient implements DataSafeAsync {
                 ListAlertsConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListAlertsResponse>
                 transformer = ListAlertsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataSafe",
+                "ListAlerts",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/AlertSummary/ListAlerts");
 
         com.oracle.bmc.responses.AsyncHandler<ListAlertsRequest, ListAlertsResponse> handlerToUse =
                 handler;
@@ -5495,6 +6041,11 @@ public class DataSafeAsyncClient implements DataSafeAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListAuditArchiveRetrievalsResponse>
                 transformer = ListAuditArchiveRetrievalsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataSafe",
+                "ListAuditArchiveRetrievals",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/AuditArchiveRetrieval/ListAuditArchiveRetrievals");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListAuditArchiveRetrievalsRequest, ListAuditArchiveRetrievalsResponse>
@@ -5538,6 +6089,11 @@ public class DataSafeAsyncClient implements DataSafeAsync {
                         javax.ws.rs.core.Response, ListAuditEventAnalyticsResponse>
                 transformer = ListAuditEventAnalyticsConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataSafe",
+                "ListAuditEventAnalytics",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/AuditEventSummary/ListAuditEventAnalytics");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListAuditEventAnalyticsRequest, ListAuditEventAnalyticsResponse>
@@ -5578,6 +6134,11 @@ public class DataSafeAsyncClient implements DataSafeAsync {
                 ListAuditEventsConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListAuditEventsResponse>
                 transformer = ListAuditEventsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataSafe",
+                "ListAuditEvents",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/AuditEventSummary/ListAuditEvents");
 
         com.oracle.bmc.responses.AsyncHandler<ListAuditEventsRequest, ListAuditEventsResponse>
                 handlerToUse = handler;
@@ -5617,6 +6178,11 @@ public class DataSafeAsyncClient implements DataSafeAsync {
                 ListAuditPoliciesConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListAuditPoliciesResponse>
                 transformer = ListAuditPoliciesConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataSafe",
+                "ListAuditPolicies",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/AuditPolicyCollection/ListAuditPolicies");
 
         com.oracle.bmc.responses.AsyncHandler<ListAuditPoliciesRequest, ListAuditPoliciesResponse>
                 handlerToUse = handler;
@@ -5657,6 +6223,11 @@ public class DataSafeAsyncClient implements DataSafeAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListAuditProfileAnalyticsResponse>
                 transformer = ListAuditProfileAnalyticsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataSafe",
+                "ListAuditProfileAnalytics",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/AuditProfileAnalyticCollection/ListAuditProfileAnalytics");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListAuditProfileAnalyticsRequest, ListAuditProfileAnalyticsResponse>
@@ -5698,6 +6269,11 @@ public class DataSafeAsyncClient implements DataSafeAsync {
                 ListAuditProfilesConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListAuditProfilesResponse>
                 transformer = ListAuditProfilesConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataSafe",
+                "ListAuditProfiles",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/AuditProfile/ListAuditProfiles");
 
         com.oracle.bmc.responses.AsyncHandler<ListAuditProfilesRequest, ListAuditProfilesResponse>
                 handlerToUse = handler;
@@ -5738,6 +6314,11 @@ public class DataSafeAsyncClient implements DataSafeAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListAuditTrailAnalyticsResponse>
                 transformer = ListAuditTrailAnalyticsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataSafe",
+                "ListAuditTrailAnalytics",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/AuditTrailAnalyticCollection/ListAuditTrailAnalytics");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListAuditTrailAnalyticsRequest, ListAuditTrailAnalyticsResponse>
@@ -5778,6 +6359,11 @@ public class DataSafeAsyncClient implements DataSafeAsync {
                 ListAuditTrailsConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListAuditTrailsResponse>
                 transformer = ListAuditTrailsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataSafe",
+                "ListAuditTrails",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/AuditTrail/ListAuditTrails");
 
         com.oracle.bmc.responses.AsyncHandler<ListAuditTrailsRequest, ListAuditTrailsResponse>
                 handlerToUse = handler;
@@ -5818,6 +6404,11 @@ public class DataSafeAsyncClient implements DataSafeAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListAvailableAuditVolumesResponse>
                 transformer = ListAvailableAuditVolumesConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataSafe",
+                "ListAvailableAuditVolumes",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/AuditProfile/ListAvailableAuditVolumes");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListAvailableAuditVolumesRequest, ListAvailableAuditVolumesResponse>
@@ -5860,6 +6451,11 @@ public class DataSafeAsyncClient implements DataSafeAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListCollectedAuditVolumesResponse>
                 transformer = ListCollectedAuditVolumesConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataSafe",
+                "ListCollectedAuditVolumes",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/AuditProfile/ListCollectedAuditVolumes");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListCollectedAuditVolumesRequest, ListCollectedAuditVolumesResponse>
@@ -5900,6 +6496,11 @@ public class DataSafeAsyncClient implements DataSafeAsync {
                 ListColumnsConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListColumnsResponse>
                 transformer = ListColumnsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataSafe",
+                "ListColumns",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/TargetDatabase/ListColumns");
 
         com.oracle.bmc.responses.AsyncHandler<ListColumnsRequest, ListColumnsResponse>
                 handlerToUse = handler;
@@ -5942,6 +6543,11 @@ public class DataSafeAsyncClient implements DataSafeAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListDataSafePrivateEndpointsResponse>
                 transformer = ListDataSafePrivateEndpointsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataSafe",
+                "ListDataSafePrivateEndpoints",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/DataSafePrivateEndpointSummary/ListDataSafePrivateEndpoints");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListDataSafePrivateEndpointsRequest, ListDataSafePrivateEndpointsResponse>
@@ -5984,6 +6590,11 @@ public class DataSafeAsyncClient implements DataSafeAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListDiscoveryAnalyticsResponse>
                 transformer = ListDiscoveryAnalyticsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataSafe",
+                "ListDiscoveryAnalytics",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SensitiveDataModel/ListDiscoveryAnalytics");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListDiscoveryAnalyticsRequest, ListDiscoveryAnalyticsResponse>
@@ -6025,6 +6636,11 @@ public class DataSafeAsyncClient implements DataSafeAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListDiscoveryJobResultsResponse>
                 transformer = ListDiscoveryJobResultsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataSafe",
+                "ListDiscoveryJobResults",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/DiscoveryJob/ListDiscoveryJobResults");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListDiscoveryJobResultsRequest, ListDiscoveryJobResultsResponse>
@@ -6065,6 +6681,11 @@ public class DataSafeAsyncClient implements DataSafeAsync {
                 ListDiscoveryJobsConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListDiscoveryJobsResponse>
                 transformer = ListDiscoveryJobsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataSafe",
+                "ListDiscoveryJobs",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/DiscoveryJob/ListDiscoveryJobs");
 
         com.oracle.bmc.responses.AsyncHandler<ListDiscoveryJobsRequest, ListDiscoveryJobsResponse>
                 handlerToUse = handler;
@@ -6103,6 +6724,11 @@ public class DataSafeAsyncClient implements DataSafeAsync {
                 ListFindingsConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListFindingsResponse>
                 transformer = ListFindingsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataSafe",
+                "ListFindings",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SecurityAssessment/ListFindings");
 
         com.oracle.bmc.responses.AsyncHandler<ListFindingsRequest, ListFindingsResponse>
                 handlerToUse = handler;
@@ -6140,6 +6766,11 @@ public class DataSafeAsyncClient implements DataSafeAsync {
                 ListGrantsConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListGrantsResponse>
                 transformer = ListGrantsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataSafe",
+                "ListGrants",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/UserAssessment/ListGrants");
 
         com.oracle.bmc.responses.AsyncHandler<ListGrantsRequest, ListGrantsResponse> handlerToUse =
                 handler;
@@ -6180,6 +6811,11 @@ public class DataSafeAsyncClient implements DataSafeAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListLibraryMaskingFormatsResponse>
                 transformer = ListLibraryMaskingFormatsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataSafe",
+                "ListLibraryMaskingFormats",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/LibraryMaskingFormatSummary/ListLibraryMaskingFormats");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListLibraryMaskingFormatsRequest, ListLibraryMaskingFormatsResponse>
@@ -6221,6 +6857,11 @@ public class DataSafeAsyncClient implements DataSafeAsync {
                 ListMaskedColumnsConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListMaskedColumnsResponse>
                 transformer = ListMaskedColumnsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataSafe",
+                "ListMaskedColumns",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/MaskedColumnSummary/ListMaskedColumns");
 
         com.oracle.bmc.responses.AsyncHandler<ListMaskedColumnsRequest, ListMaskedColumnsResponse>
                 handlerToUse = handler;
@@ -6261,6 +6902,11 @@ public class DataSafeAsyncClient implements DataSafeAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListMaskingAnalyticsResponse>
                 transformer = ListMaskingAnalyticsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataSafe",
+                "ListMaskingAnalytics",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/MaskingPolicy/ListMaskingAnalytics");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListMaskingAnalyticsRequest, ListMaskingAnalyticsResponse>
@@ -6301,6 +6947,11 @@ public class DataSafeAsyncClient implements DataSafeAsync {
                 ListMaskingColumnsConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListMaskingColumnsResponse>
                 transformer = ListMaskingColumnsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataSafe",
+                "ListMaskingColumns",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/MaskingColumn/ListMaskingColumns");
 
         com.oracle.bmc.responses.AsyncHandler<ListMaskingColumnsRequest, ListMaskingColumnsResponse>
                 handlerToUse = handler;
@@ -6341,6 +6992,11 @@ public class DataSafeAsyncClient implements DataSafeAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListMaskingPoliciesResponse>
                 transformer = ListMaskingPoliciesConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataSafe",
+                "ListMaskingPolicies",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/MaskingPolicy/ListMaskingPolicies");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListMaskingPoliciesRequest, ListMaskingPoliciesResponse>
@@ -6381,6 +7037,11 @@ public class DataSafeAsyncClient implements DataSafeAsync {
                 ListMaskingReportsConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListMaskingReportsResponse>
                 transformer = ListMaskingReportsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataSafe",
+                "ListMaskingReports",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/MaskingPolicy/ListMaskingReports");
 
         com.oracle.bmc.responses.AsyncHandler<ListMaskingReportsRequest, ListMaskingReportsResponse>
                 handlerToUse = handler;
@@ -6421,6 +7082,11 @@ public class DataSafeAsyncClient implements DataSafeAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListOnPremConnectorsResponse>
                 transformer = ListOnPremConnectorsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataSafe",
+                "ListOnPremConnectors",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/OnPremConnectorSummary/ListOnPremConnectors");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListOnPremConnectorsRequest, ListOnPremConnectorsResponse>
@@ -6462,6 +7128,11 @@ public class DataSafeAsyncClient implements DataSafeAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListReportDefinitionsResponse>
                 transformer = ListReportDefinitionsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataSafe",
+                "ListReportDefinitions",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/ReportDefinition/ListReportDefinitions");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListReportDefinitionsRequest, ListReportDefinitionsResponse>
@@ -6501,6 +7172,11 @@ public class DataSafeAsyncClient implements DataSafeAsync {
                 ListReportsConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListReportsResponse>
                 transformer = ListReportsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataSafe",
+                "ListReports",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/ReportSummary/ListReports");
 
         com.oracle.bmc.responses.AsyncHandler<ListReportsRequest, ListReportsResponse>
                 handlerToUse = handler;
@@ -6538,6 +7214,11 @@ public class DataSafeAsyncClient implements DataSafeAsync {
                 ListRolesConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListRolesResponse>
                 transformer = ListRolesConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataSafe",
+                "ListRoles",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/TargetDatabase/ListRoles");
 
         com.oracle.bmc.responses.AsyncHandler<ListRolesRequest, ListRolesResponse> handlerToUse =
                 handler;
@@ -6575,6 +7256,11 @@ public class DataSafeAsyncClient implements DataSafeAsync {
                 ListSchemasConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListSchemasResponse>
                 transformer = ListSchemasConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataSafe",
+                "ListSchemas",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/TargetDatabase/ListSchemas");
 
         com.oracle.bmc.responses.AsyncHandler<ListSchemasRequest, ListSchemasResponse>
                 handlerToUse = handler;
@@ -6615,6 +7301,11 @@ public class DataSafeAsyncClient implements DataSafeAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListSecurityAssessmentsResponse>
                 transformer = ListSecurityAssessmentsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataSafe",
+                "ListSecurityAssessments",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SecurityAssessmentSummary/ListSecurityAssessments");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListSecurityAssessmentsRequest, ListSecurityAssessmentsResponse>
@@ -6656,6 +7347,11 @@ public class DataSafeAsyncClient implements DataSafeAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListSensitiveColumnsResponse>
                 transformer = ListSensitiveColumnsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataSafe",
+                "ListSensitiveColumns",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SensitiveColumn/ListSensitiveColumns");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListSensitiveColumnsRequest, ListSensitiveColumnsResponse>
@@ -6697,6 +7393,11 @@ public class DataSafeAsyncClient implements DataSafeAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListSensitiveDataModelsResponse>
                 transformer = ListSensitiveDataModelsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataSafe",
+                "ListSensitiveDataModels",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SensitiveDataModel/ListSensitiveDataModels");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListSensitiveDataModelsRequest, ListSensitiveDataModelsResponse>
@@ -6737,6 +7438,11 @@ public class DataSafeAsyncClient implements DataSafeAsync {
                 ListSensitiveTypesConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListSensitiveTypesResponse>
                 transformer = ListSensitiveTypesConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataSafe",
+                "ListSensitiveTypes",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SensitiveType/ListSensitiveTypes");
 
         com.oracle.bmc.responses.AsyncHandler<ListSensitiveTypesRequest, ListSensitiveTypesResponse>
                 handlerToUse = handler;
@@ -6774,6 +7480,11 @@ public class DataSafeAsyncClient implements DataSafeAsync {
                 ListTablesConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListTablesResponse>
                 transformer = ListTablesConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataSafe",
+                "ListTables",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/TargetDatabase/ListTables");
 
         com.oracle.bmc.responses.AsyncHandler<ListTablesRequest, ListTablesResponse> handlerToUse =
                 handler;
@@ -6816,6 +7527,11 @@ public class DataSafeAsyncClient implements DataSafeAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListTargetAlertPolicyAssociationsResponse>
                 transformer = ListTargetAlertPolicyAssociationsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataSafe",
+                "ListTargetAlertPolicyAssociations",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/TargetAlertPolicyAssociationSummary/ListTargetAlertPolicyAssociations");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListTargetAlertPolicyAssociationsRequest,
@@ -6860,6 +7576,11 @@ public class DataSafeAsyncClient implements DataSafeAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListTargetDatabasesResponse>
                 transformer = ListTargetDatabasesConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataSafe",
+                "ListTargetDatabases",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/TargetDatabaseSummary/ListTargetDatabases");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListTargetDatabasesRequest, ListTargetDatabasesResponse>
@@ -6900,6 +7621,11 @@ public class DataSafeAsyncClient implements DataSafeAsync {
                 ListUserAnalyticsConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListUserAnalyticsResponse>
                 transformer = ListUserAnalyticsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataSafe",
+                "ListUserAnalytics",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/UserAssessment/ListUserAnalytics");
 
         com.oracle.bmc.responses.AsyncHandler<ListUserAnalyticsRequest, ListUserAnalyticsResponse>
                 handlerToUse = handler;
@@ -6940,6 +7666,11 @@ public class DataSafeAsyncClient implements DataSafeAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListUserAssessmentsResponse>
                 transformer = ListUserAssessmentsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataSafe",
+                "ListUserAssessments",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/UserAssessmentSummary/ListUserAssessments");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListUserAssessmentsRequest, ListUserAssessmentsResponse>
@@ -6978,6 +7709,11 @@ public class DataSafeAsyncClient implements DataSafeAsync {
                 ListUsersConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListUsersResponse>
                 transformer = ListUsersConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataSafe",
+                "ListUsers",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/UserAssessment/ListUsers");
 
         com.oracle.bmc.responses.AsyncHandler<ListUsersRequest, ListUsersResponse> handlerToUse =
                 handler;
@@ -7017,6 +7753,11 @@ public class DataSafeAsyncClient implements DataSafeAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListWorkRequestErrorsResponse>
                 transformer = ListWorkRequestErrorsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataSafe",
+                "ListWorkRequestErrors",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/WorkRequestError/ListWorkRequestErrors");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListWorkRequestErrorsRequest, ListWorkRequestErrorsResponse>
@@ -7058,6 +7799,11 @@ public class DataSafeAsyncClient implements DataSafeAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListWorkRequestLogsResponse>
                 transformer = ListWorkRequestLogsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataSafe",
+                "ListWorkRequestLogs",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/WorkRequestLogEntry/ListWorkRequestLogs");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListWorkRequestLogsRequest, ListWorkRequestLogsResponse>
@@ -7098,6 +7844,11 @@ public class DataSafeAsyncClient implements DataSafeAsync {
                 ListWorkRequestsConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListWorkRequestsResponse>
                 transformer = ListWorkRequestsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataSafe",
+                "ListWorkRequests",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/WorkRequestSummary/ListWorkRequests");
 
         com.oracle.bmc.responses.AsyncHandler<ListWorkRequestsRequest, ListWorkRequestsResponse>
                 handlerToUse = handler;
@@ -7135,6 +7886,11 @@ public class DataSafeAsyncClient implements DataSafeAsync {
                 MaskDataConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, MaskDataResponse>
                 transformer = MaskDataConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataSafe",
+                "MaskData",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/MaskingPolicy/MaskData");
 
         com.oracle.bmc.responses.AsyncHandler<MaskDataRequest, MaskDataResponse> handlerToUse =
                 handler;
@@ -7180,6 +7936,11 @@ public class DataSafeAsyncClient implements DataSafeAsync {
                         javax.ws.rs.core.Response, ModifyGlobalSettingsResponse>
                 transformer = ModifyGlobalSettingsConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataSafe",
+                "ModifyGlobalSettings",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/DataSafeConfiguration/ModifyGlobalSettings");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ModifyGlobalSettingsRequest, ModifyGlobalSettingsResponse>
@@ -7224,6 +7985,11 @@ public class DataSafeAsyncClient implements DataSafeAsync {
                 PatchAlertsConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, PatchAlertsResponse>
                 transformer = PatchAlertsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataSafe",
+                "PatchAlerts",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/Alert/PatchAlerts");
 
         com.oracle.bmc.responses.AsyncHandler<PatchAlertsRequest, PatchAlertsResponse>
                 handlerToUse = handler;
@@ -7269,6 +8035,11 @@ public class DataSafeAsyncClient implements DataSafeAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, PatchDiscoveryJobResultsResponse>
                 transformer = PatchDiscoveryJobResultsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataSafe",
+                "PatchDiscoveryJobResults",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/DiscoveryJob/PatchDiscoveryJobResults");
 
         com.oracle.bmc.responses.AsyncHandler<
                         PatchDiscoveryJobResultsRequest, PatchDiscoveryJobResultsResponse>
@@ -7315,6 +8086,11 @@ public class DataSafeAsyncClient implements DataSafeAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, PatchMaskingColumnsResponse>
                 transformer = PatchMaskingColumnsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataSafe",
+                "PatchMaskingColumns",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/MaskingColumn/PatchMaskingColumns");
 
         com.oracle.bmc.responses.AsyncHandler<
                         PatchMaskingColumnsRequest, PatchMaskingColumnsResponse>
@@ -7361,6 +8137,11 @@ public class DataSafeAsyncClient implements DataSafeAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, PatchSensitiveColumnsResponse>
                 transformer = PatchSensitiveColumnsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataSafe",
+                "PatchSensitiveColumns",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SensitiveColumn/PatchSensitiveColumns");
 
         com.oracle.bmc.responses.AsyncHandler<
                         PatchSensitiveColumnsRequest, PatchSensitiveColumnsResponse>
@@ -7408,6 +8189,11 @@ public class DataSafeAsyncClient implements DataSafeAsync {
                         javax.ws.rs.core.Response, ProvisionAuditPolicyResponse>
                 transformer = ProvisionAuditPolicyConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataSafe",
+                "ProvisionAuditPolicy",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/AuditPolicy/ProvisionAuditPolicy");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ProvisionAuditPolicyRequest, ProvisionAuditPolicyResponse>
@@ -7455,6 +8241,11 @@ public class DataSafeAsyncClient implements DataSafeAsync {
                         javax.ws.rs.core.Response, RefreshSecurityAssessmentResponse>
                 transformer = RefreshSecurityAssessmentConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataSafe",
+                "RefreshSecurityAssessment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SecurityAssessment/RefreshSecurityAssessment");
 
         com.oracle.bmc.responses.AsyncHandler<
                         RefreshSecurityAssessmentRequest, RefreshSecurityAssessmentResponse>
@@ -7503,6 +8294,11 @@ public class DataSafeAsyncClient implements DataSafeAsync {
                         javax.ws.rs.core.Response, RefreshUserAssessmentResponse>
                 transformer = RefreshUserAssessmentConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataSafe",
+                "RefreshUserAssessment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/UserAssessment/RefreshUserAssessment");
 
         com.oracle.bmc.responses.AsyncHandler<
                         RefreshUserAssessmentRequest, RefreshUserAssessmentResponse>
@@ -7548,6 +8344,11 @@ public class DataSafeAsyncClient implements DataSafeAsync {
                 ResumeAuditTrailConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ResumeAuditTrailResponse>
                 transformer = ResumeAuditTrailConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataSafe",
+                "ResumeAuditTrail",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/AuditTrail/ResumeAuditTrail");
 
         com.oracle.bmc.responses.AsyncHandler<ResumeAuditTrailRequest, ResumeAuditTrailResponse>
                 handlerToUse = handler;
@@ -7588,6 +8389,11 @@ public class DataSafeAsyncClient implements DataSafeAsync {
         final com.google.common.base.Function<javax.ws.rs.core.Response, ResumeWorkRequestResponse>
                 transformer = ResumeWorkRequestConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataSafe",
+                "ResumeWorkRequest",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/WorkRequest/ResumeWorkRequest");
 
         com.oracle.bmc.responses.AsyncHandler<ResumeWorkRequestRequest, ResumeWorkRequestResponse>
                 handlerToUse = handler;
@@ -7629,6 +8435,11 @@ public class DataSafeAsyncClient implements DataSafeAsync {
                         javax.ws.rs.core.Response, RetrieveAuditPoliciesResponse>
                 transformer = RetrieveAuditPoliciesConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataSafe",
+                "RetrieveAuditPolicies",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/AuditPolicy/RetrieveAuditPolicies");
 
         com.oracle.bmc.responses.AsyncHandler<
                         RetrieveAuditPoliciesRequest, RetrieveAuditPoliciesResponse>
@@ -7673,6 +8484,11 @@ public class DataSafeAsyncClient implements DataSafeAsync {
                         javax.ws.rs.core.Response, SetSecurityAssessmentBaselineResponse>
                 transformer = SetSecurityAssessmentBaselineConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataSafe",
+                "SetSecurityAssessmentBaseline",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SecurityAssessment/SetSecurityAssessmentBaseline");
 
         com.oracle.bmc.responses.AsyncHandler<
                         SetSecurityAssessmentBaselineRequest, SetSecurityAssessmentBaselineResponse>
@@ -7721,6 +8537,11 @@ public class DataSafeAsyncClient implements DataSafeAsync {
                         javax.ws.rs.core.Response, SetUserAssessmentBaselineResponse>
                 transformer = SetUserAssessmentBaselineConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataSafe",
+                "SetUserAssessmentBaseline",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/UserAssessment/SetUserAssessmentBaseline");
 
         com.oracle.bmc.responses.AsyncHandler<
                         SetUserAssessmentBaselineRequest, SetUserAssessmentBaselineResponse>
@@ -7768,6 +8589,11 @@ public class DataSafeAsyncClient implements DataSafeAsync {
         final com.google.common.base.Function<javax.ws.rs.core.Response, StartAuditTrailResponse>
                 transformer = StartAuditTrailConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataSafe",
+                "StartAuditTrail",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/AuditTrail/StartAuditTrail");
 
         com.oracle.bmc.responses.AsyncHandler<StartAuditTrailRequest, StartAuditTrailResponse>
                 handlerToUse = handler;
@@ -7812,6 +8638,11 @@ public class DataSafeAsyncClient implements DataSafeAsync {
                 StopAuditTrailConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, StopAuditTrailResponse>
                 transformer = StopAuditTrailConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataSafe",
+                "StopAuditTrail",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/AuditTrail/StopAuditTrail");
 
         com.oracle.bmc.responses.AsyncHandler<StopAuditTrailRequest, StopAuditTrailResponse>
                 handlerToUse = handler;
@@ -7852,6 +8683,11 @@ public class DataSafeAsyncClient implements DataSafeAsync {
         final com.google.common.base.Function<javax.ws.rs.core.Response, SuspendWorkRequestResponse>
                 transformer = SuspendWorkRequestConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataSafe",
+                "SuspendWorkRequest",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/WorkRequest/SuspendWorkRequest");
 
         com.oracle.bmc.responses.AsyncHandler<SuspendWorkRequestRequest, SuspendWorkRequestResponse>
                 handlerToUse = handler;
@@ -7895,6 +8731,11 @@ public class DataSafeAsyncClient implements DataSafeAsync {
                         javax.ws.rs.core.Response, UnsetSecurityAssessmentBaselineResponse>
                 transformer = UnsetSecurityAssessmentBaselineConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataSafe",
+                "UnsetSecurityAssessmentBaseline",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SecurityAssessment/UnsetSecurityAssessmentBaseline");
 
         com.oracle.bmc.responses.AsyncHandler<
                         UnsetSecurityAssessmentBaselineRequest,
@@ -7942,6 +8783,11 @@ public class DataSafeAsyncClient implements DataSafeAsync {
                         javax.ws.rs.core.Response, UnsetUserAssessmentBaselineResponse>
                 transformer = UnsetUserAssessmentBaselineConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataSafe",
+                "UnsetUserAssessmentBaseline",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/UserAssessment/UnsetUserAssessmentBaseline");
 
         com.oracle.bmc.responses.AsyncHandler<
                         UnsetUserAssessmentBaselineRequest, UnsetUserAssessmentBaselineResponse>
@@ -7982,6 +8828,11 @@ public class DataSafeAsyncClient implements DataSafeAsync {
                 UpdateAlertConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateAlertResponse>
                 transformer = UpdateAlertConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataSafe",
+                "UpdateAlert",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/Alert/UpdateAlert");
 
         com.oracle.bmc.responses.AsyncHandler<UpdateAlertRequest, UpdateAlertResponse>
                 handlerToUse = handler;
@@ -8029,6 +8880,11 @@ public class DataSafeAsyncClient implements DataSafeAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, UpdateAuditArchiveRetrievalResponse>
                 transformer = UpdateAuditArchiveRetrievalConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataSafe",
+                "UpdateAuditArchiveRetrieval",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/AuditArchiveRetrieval/UpdateAuditArchiveRetrieval");
 
         com.oracle.bmc.responses.AsyncHandler<
                         UpdateAuditArchiveRetrievalRequest, UpdateAuditArchiveRetrievalResponse>
@@ -8075,6 +8931,11 @@ public class DataSafeAsyncClient implements DataSafeAsync {
                 UpdateAuditPolicyConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateAuditPolicyResponse>
                 transformer = UpdateAuditPolicyConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataSafe",
+                "UpdateAuditPolicy",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/AuditPolicy/UpdateAuditPolicy");
 
         com.oracle.bmc.responses.AsyncHandler<UpdateAuditPolicyRequest, UpdateAuditPolicyResponse>
                 handlerToUse = handler;
@@ -8119,6 +8980,11 @@ public class DataSafeAsyncClient implements DataSafeAsync {
                 UpdateAuditProfileConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateAuditProfileResponse>
                 transformer = UpdateAuditProfileConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataSafe",
+                "UpdateAuditProfile",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/AuditProfile/UpdateAuditProfile");
 
         com.oracle.bmc.responses.AsyncHandler<UpdateAuditProfileRequest, UpdateAuditProfileResponse>
                 handlerToUse = handler;
@@ -8163,6 +9029,11 @@ public class DataSafeAsyncClient implements DataSafeAsync {
                 UpdateAuditTrailConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateAuditTrailResponse>
                 transformer = UpdateAuditTrailConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataSafe",
+                "UpdateAuditTrail",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/AuditTrail/UpdateAuditTrail");
 
         com.oracle.bmc.responses.AsyncHandler<UpdateAuditTrailRequest, UpdateAuditTrailResponse>
                 handlerToUse = handler;
@@ -8210,6 +9081,11 @@ public class DataSafeAsyncClient implements DataSafeAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, UpdateDataSafePrivateEndpointResponse>
                 transformer = UpdateDataSafePrivateEndpointConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataSafe",
+                "UpdateDataSafePrivateEndpoint",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/DataSafePrivateEndpoint/UpdateDataSafePrivateEndpoint");
 
         com.oracle.bmc.responses.AsyncHandler<
                         UpdateDataSafePrivateEndpointRequest, UpdateDataSafePrivateEndpointResponse>
@@ -8259,6 +9135,11 @@ public class DataSafeAsyncClient implements DataSafeAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, UpdateLibraryMaskingFormatResponse>
                 transformer = UpdateLibraryMaskingFormatConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataSafe",
+                "UpdateLibraryMaskingFormat",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/LibraryMaskingFormat/UpdateLibraryMaskingFormat");
 
         com.oracle.bmc.responses.AsyncHandler<
                         UpdateLibraryMaskingFormatRequest, UpdateLibraryMaskingFormatResponse>
@@ -8306,6 +9187,11 @@ public class DataSafeAsyncClient implements DataSafeAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, UpdateMaskingColumnResponse>
                 transformer = UpdateMaskingColumnConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataSafe",
+                "UpdateMaskingColumn",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/MaskingColumn/UpdateMaskingColumn");
 
         com.oracle.bmc.responses.AsyncHandler<
                         UpdateMaskingColumnRequest, UpdateMaskingColumnResponse>
@@ -8352,6 +9238,11 @@ public class DataSafeAsyncClient implements DataSafeAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, UpdateMaskingPolicyResponse>
                 transformer = UpdateMaskingPolicyConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataSafe",
+                "UpdateMaskingPolicy",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/MaskingPolicy/UpdateMaskingPolicy");
 
         com.oracle.bmc.responses.AsyncHandler<
                         UpdateMaskingPolicyRequest, UpdateMaskingPolicyResponse>
@@ -8398,6 +9289,11 @@ public class DataSafeAsyncClient implements DataSafeAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, UpdateOnPremConnectorResponse>
                 transformer = UpdateOnPremConnectorConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataSafe",
+                "UpdateOnPremConnector",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/OnPremConnector/UpdateOnPremConnector");
 
         com.oracle.bmc.responses.AsyncHandler<
                         UpdateOnPremConnectorRequest, UpdateOnPremConnectorResponse>
@@ -8447,6 +9343,11 @@ public class DataSafeAsyncClient implements DataSafeAsync {
                         javax.ws.rs.core.Response, UpdateOnPremConnectorWalletResponse>
                 transformer = UpdateOnPremConnectorWalletConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataSafe",
+                "UpdateOnPremConnectorWallet",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/OnPremConnector/UpdateOnPremConnectorWallet");
 
         com.oracle.bmc.responses.AsyncHandler<
                         UpdateOnPremConnectorWalletRequest, UpdateOnPremConnectorWalletResponse>
@@ -8495,6 +9396,11 @@ public class DataSafeAsyncClient implements DataSafeAsync {
                         javax.ws.rs.core.Response, UpdateReportDefinitionResponse>
                 transformer = UpdateReportDefinitionConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataSafe",
+                "UpdateReportDefinition",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/ReportDefinition/UpdateReportDefinition");
 
         com.oracle.bmc.responses.AsyncHandler<
                         UpdateReportDefinitionRequest, UpdateReportDefinitionResponse>
@@ -8541,6 +9447,11 @@ public class DataSafeAsyncClient implements DataSafeAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, UpdateSecurityAssessmentResponse>
                 transformer = UpdateSecurityAssessmentConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataSafe",
+                "UpdateSecurityAssessment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SecurityAssessment/UpdateSecurityAssessment");
 
         com.oracle.bmc.responses.AsyncHandler<
                         UpdateSecurityAssessmentRequest, UpdateSecurityAssessmentResponse>
@@ -8587,6 +9498,11 @@ public class DataSafeAsyncClient implements DataSafeAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, UpdateSensitiveColumnResponse>
                 transformer = UpdateSensitiveColumnConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataSafe",
+                "UpdateSensitiveColumn",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SensitiveColumn/UpdateSensitiveColumn");
 
         com.oracle.bmc.responses.AsyncHandler<
                         UpdateSensitiveColumnRequest, UpdateSensitiveColumnResponse>
@@ -8633,6 +9549,11 @@ public class DataSafeAsyncClient implements DataSafeAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, UpdateSensitiveDataModelResponse>
                 transformer = UpdateSensitiveDataModelConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataSafe",
+                "UpdateSensitiveDataModel",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SensitiveDataModel/UpdateSensitiveDataModel");
 
         com.oracle.bmc.responses.AsyncHandler<
                         UpdateSensitiveDataModelRequest, UpdateSensitiveDataModelResponse>
@@ -8679,6 +9600,11 @@ public class DataSafeAsyncClient implements DataSafeAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, UpdateSensitiveTypeResponse>
                 transformer = UpdateSensitiveTypeConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataSafe",
+                "UpdateSensitiveType",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SensitiveType/UpdateSensitiveType");
 
         com.oracle.bmc.responses.AsyncHandler<
                         UpdateSensitiveTypeRequest, UpdateSensitiveTypeResponse>
@@ -8727,6 +9653,11 @@ public class DataSafeAsyncClient implements DataSafeAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, UpdateTargetAlertPolicyAssociationResponse>
                 transformer = UpdateTargetAlertPolicyAssociationConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataSafe",
+                "UpdateTargetAlertPolicyAssociation",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/TargetAlertPolicyAssociation/UpdateTargetAlertPolicyAssociation");
 
         com.oracle.bmc.responses.AsyncHandler<
                         UpdateTargetAlertPolicyAssociationRequest,
@@ -8777,6 +9708,11 @@ public class DataSafeAsyncClient implements DataSafeAsync {
                         javax.ws.rs.core.Response, UpdateTargetDatabaseResponse>
                 transformer = UpdateTargetDatabaseConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataSafe",
+                "UpdateTargetDatabase",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/TargetDatabase/UpdateTargetDatabase");
 
         com.oracle.bmc.responses.AsyncHandler<
                         UpdateTargetDatabaseRequest, UpdateTargetDatabaseResponse>
@@ -8823,6 +9759,11 @@ public class DataSafeAsyncClient implements DataSafeAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, UpdateUserAssessmentResponse>
                 transformer = UpdateUserAssessmentConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataSafe",
+                "UpdateUserAssessment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/UserAssessment/UpdateUserAssessment");
 
         com.oracle.bmc.responses.AsyncHandler<
                         UpdateUserAssessmentRequest, UpdateUserAssessmentResponse>
@@ -8876,6 +9817,11 @@ public class DataSafeAsyncClient implements DataSafeAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, UploadMaskingPolicyResponse>
                 transformer = UploadMaskingPolicyConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataSafe",
+                "UploadMaskingPolicy",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/MaskingPolicy/UploadMaskingPolicy");
 
         com.oracle.bmc.responses.AsyncHandler<
                         UploadMaskingPolicyRequest, UploadMaskingPolicyResponse>
@@ -8934,6 +9880,11 @@ public class DataSafeAsyncClient implements DataSafeAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, UploadSensitiveDataModelResponse>
                 transformer = UploadSensitiveDataModelConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DataSafe",
+                "UploadSensitiveDataModel",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SensitiveDataModel/UploadSensitiveDataModel");
 
         com.oracle.bmc.responses.AsyncHandler<
                         UploadSensitiveDataModelRequest, UploadSensitiveDataModelResponse>

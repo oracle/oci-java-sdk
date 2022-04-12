@@ -478,6 +478,11 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "AddDrgRouteDistributionStatements",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DrgRouteDistributionStatement/AddDrgRouteDistributionStatements");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -513,6 +518,11 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "AddDrgRouteRules",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DrgRouteRule/AddDrgRouteRules");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -526,6 +536,45 @@ public class VirtualNetworkClient implements VirtualNetwork {
                                         client.post(
                                                 ib,
                                                 retriedRequest.getAddDrgRouteRulesDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public AddIpv6SubnetCidrResponse addIpv6SubnetCidr(AddIpv6SubnetCidrRequest request) {
+        LOG.trace("Called addIpv6SubnetCidr");
+        final AddIpv6SubnetCidrRequest interceptedRequest =
+                AddIpv6SubnetCidrConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                AddIpv6SubnetCidrConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, AddIpv6SubnetCidrResponse>
+                transformer = AddIpv6SubnetCidrConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "AddIpv6SubnetCidr",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Subnet/AddIpv6SubnetCidr");
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getAddSubnetIpv6CidrDetails(),
                                                 retriedRequest);
                                 return transformer.apply(response);
                             });
@@ -547,6 +596,11 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "AddIpv6VcnCidr",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Vcn/AddIpv6VcnCidr");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -557,7 +611,10 @@ public class VirtualNetworkClient implements VirtualNetwork {
                             retryRequest,
                             retriedRequest -> {
                                 javax.ws.rs.core.Response response =
-                                        client.post(ib, retriedRequest);
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getAddVcnIpv6CidrDetails(),
+                                                retriedRequest);
                                 return transformer.apply(response);
                             });
                 });
@@ -580,6 +637,11 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "AddNetworkSecurityGroupSecurityRules",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/SecurityRule/AddNetworkSecurityGroupSecurityRules");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -616,6 +678,11 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "AddPublicIpPoolCapacity",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/PublicIpPool/AddPublicIpPoolCapacity");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -649,6 +716,11 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "AddVcnCidr",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Vcn/AddVcnCidr");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -682,6 +754,11 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "AdvertiseByoipRange",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ByoipRange/AdvertiseByoipRange");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -712,6 +789,11 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "AttachServiceId",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ServiceGateway/AttachServiceId");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -748,6 +830,11 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "BulkAddVirtualCircuitPublicPrefixes",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VirtualCircuitPublicPrefix/BulkAddVirtualCircuitPublicPrefixes");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -785,6 +872,11 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "BulkDeleteVirtualCircuitPublicPrefixes",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VirtualCircuitPublicPrefix/BulkDeleteVirtualCircuitPublicPrefixes");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -822,6 +914,11 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "ChangeByoipRangeCompartment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ByoipRange/ChangeByoipRangeCompartment");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -857,6 +954,11 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "ChangeCpeCompartment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Cpe/ChangeCpeCompartment");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -893,6 +995,11 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "ChangeCrossConnectCompartment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/CrossConnect/ChangeCrossConnectCompartment");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -930,6 +1037,11 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "ChangeCrossConnectGroupCompartment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/CrossConnectGroup/ChangeCrossConnectGroupCompartment");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -967,6 +1079,11 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "ChangeDhcpOptionsCompartment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DhcpOptions/ChangeDhcpOptionsCompartment");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1002,6 +1119,11 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "ChangeDrgCompartment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Drg/ChangeDrgCompartment");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1038,6 +1160,11 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "ChangeIPSecConnectionCompartment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/IPSecConnection/ChangeIPSecConnectionCompartment");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1075,6 +1202,11 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "ChangeInternetGatewayCompartment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InternetGateway/ChangeInternetGatewayCompartment");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1113,6 +1245,11 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "ChangeLocalPeeringGatewayCompartment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/LocalPeeringGateway/ChangeLocalPeeringGatewayCompartment");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1150,6 +1287,11 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "ChangeNatGatewayCompartment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/NatGateway/ChangeNatGatewayCompartment");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1188,6 +1330,11 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "ChangeNetworkSecurityGroupCompartment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/ChangeNetworkSecurityGroupCompartment");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1225,6 +1372,11 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "ChangePublicIpCompartment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/PublicIp/ChangePublicIpCompartment");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1262,6 +1414,11 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "ChangePublicIpPoolCompartment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/PublicIpPool/ChangePublicIpPoolCompartment");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1301,6 +1458,11 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "ChangeRemotePeeringConnectionCompartment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/RemotePeeringConnection/ChangeRemotePeeringConnectionCompartment");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1338,6 +1500,11 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "ChangeRouteTableCompartment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/RouteTable/ChangeRouteTableCompartment");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1375,6 +1542,11 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "ChangeSecurityListCompartment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/SecurityList/ChangeSecurityListCompartment");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1412,6 +1584,11 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "ChangeServiceGatewayCompartment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ServiceGateway/ChangeServiceGatewayCompartment");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1448,6 +1625,11 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "ChangeSubnetCompartment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Subnet/ChangeSubnetCompartment");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1482,6 +1664,11 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "ChangeVcnCompartment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Vcn/ChangeVcnCompartment");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1518,6 +1705,11 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "ChangeVirtualCircuitCompartment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VirtualCircuit/ChangeVirtualCircuitCompartment");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1554,6 +1746,11 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "ChangeVlanCompartment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Vlan/ChangeVlanCompartment");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1589,6 +1786,11 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "ConnectLocalPeeringGateways",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/LocalPeeringGateway/ConnectLocalPeeringGateways");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1625,6 +1827,11 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "ConnectRemotePeeringConnections",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/RemotePeeringConnection/ConnectRemotePeeringConnections");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1660,6 +1867,11 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "CreateByoipRange",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ByoipRange/CreateByoipRange");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1693,6 +1905,11 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "CreateCpe",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Cpe/CreateCpe");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1727,6 +1944,11 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "CreateCrossConnect",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/CrossConnect/CreateCrossConnect");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1762,6 +1984,11 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "CreateCrossConnectGroup",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/CrossConnectGroup/CreateCrossConnectGroup");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1796,6 +2023,11 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "CreateDhcpOptions",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DhcpOptions/CreateDhcpOptions");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1829,6 +2061,11 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "CreateDrg",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Drg/CreateDrg");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1863,6 +2100,11 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "CreateDrgAttachment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DrgAttachment/CreateDrgAttachment");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1899,6 +2141,11 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "CreateDrgRouteDistribution",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DrgRouteDistribution/CreateDrgRouteDistribution");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1934,6 +2181,11 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "CreateDrgRouteTable",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DrgRouteTable/CreateDrgRouteTable");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1969,6 +2221,11 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "CreateIPSecConnection",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/IPSecConnection/CreateIPSecConnection");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2004,6 +2261,11 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "CreateInternetGateway",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InternetGateway/CreateInternetGateway");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2037,6 +2299,11 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "CreateIpv6",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Ipv6/CreateIpv6");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2073,6 +2340,11 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "CreateLocalPeeringGateway",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/LocalPeeringGateway/CreateLocalPeeringGateway");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2108,6 +2380,11 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "CreateNatGateway",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/NatGateway/CreateNatGateway");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2144,6 +2421,11 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "CreateNetworkSecurityGroup",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/CreateNetworkSecurityGroup");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2179,6 +2461,11 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "CreatePrivateIp",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/PrivateIp/CreatePrivateIp");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2213,6 +2500,11 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "CreatePublicIp",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/PublicIp/CreatePublicIp");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2247,6 +2539,11 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "CreatePublicIpPool",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/PublicIpPool/CreatePublicIpPool");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2283,6 +2580,11 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "CreateRemotePeeringConnection",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/RemotePeeringConnection/CreateRemotePeeringConnection");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2318,6 +2620,11 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "CreateRouteTable",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/RouteTable/CreateRouteTable");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2352,6 +2659,11 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "CreateSecurityList",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/SecurityList/CreateSecurityList");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2386,6 +2698,11 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "CreateServiceGateway",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ServiceGateway/CreateServiceGateway");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2420,6 +2737,11 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "CreateSubnet",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Subnet/CreateSubnet");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2453,6 +2775,11 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "CreateVcn",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Vcn/CreateVcn");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2487,6 +2814,11 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "CreateVirtualCircuit",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VirtualCircuit/CreateVirtualCircuit");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2520,6 +2852,11 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "CreateVlan",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Vlan/CreateVlan");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2553,6 +2890,11 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "DeleteByoipRange",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ByoipRange/DeleteByoipRange");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2582,6 +2924,8 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork", "DeleteCpe", ib.getRequestUri().toString(), "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2612,6 +2956,8 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork", "DeleteCrossConnect", ib.getRequestUri().toString(), "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2643,6 +2989,8 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork", "DeleteCrossConnectGroup", ib.getRequestUri().toString(), "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2673,6 +3021,8 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork", "DeleteDhcpOptions", ib.getRequestUri().toString(), "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2702,6 +3052,8 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork", "DeleteDrg", ib.getRequestUri().toString(), "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2732,6 +3084,8 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork", "DeleteDrgAttachment", ib.getRequestUri().toString(), "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2764,6 +3118,11 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "DeleteDrgRouteDistribution",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DrgRouteDistributionStatement/DeleteDrgRouteDistribution");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2794,6 +3153,11 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "DeleteDrgRouteTable",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InternalPublicIp/DeleteDrgRouteTable");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2825,6 +3189,8 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork", "DeleteIPSecConnection", ib.getRequestUri().toString(), "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2856,6 +3222,8 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork", "DeleteInternetGateway", ib.getRequestUri().toString(), "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2885,6 +3253,8 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork", "DeleteIpv6", ib.getRequestUri().toString(), "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2917,6 +3287,8 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork", "DeleteLocalPeeringGateway", ib.getRequestUri().toString(), "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2947,6 +3319,8 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork", "DeleteNatGateway", ib.getRequestUri().toString(), "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2979,6 +3353,11 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "DeleteNetworkSecurityGroup",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/DeleteNetworkSecurityGroup");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3009,6 +3388,8 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork", "DeletePrivateIp", ib.getRequestUri().toString(), "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3039,6 +3420,8 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork", "DeletePublicIp", ib.getRequestUri().toString(), "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3069,6 +3452,11 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "DeletePublicIpPool",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/PublicIpPool/DeletePublicIpPool");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3101,6 +3489,11 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "DeleteRemotePeeringConnection",
+                ib.getRequestUri().toString(),
+                "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3131,6 +3524,8 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork", "DeleteRouteTable", ib.getRequestUri().toString(), "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3161,6 +3556,8 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork", "DeleteSecurityList", ib.getRequestUri().toString(), "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3191,6 +3588,8 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork", "DeleteServiceGateway", ib.getRequestUri().toString(), "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3221,6 +3620,8 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork", "DeleteSubnet", ib.getRequestUri().toString(), "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3250,6 +3651,8 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork", "DeleteVcn", ib.getRequestUri().toString(), "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3280,6 +3683,8 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork", "DeleteVirtualCircuit", ib.getRequestUri().toString(), "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3309,6 +3714,11 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "DeleteVlan",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Vlan/DeleteVlan");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3339,6 +3749,11 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "DetachServiceId",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ServiceGateway/DetachServiceId");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3372,6 +3787,11 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "GetAllDrgAttachments",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Drg/GetAllDrgAttachments");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3404,6 +3824,11 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "GetAllowedIkeIPSecParameters",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/AllowedIkeIPSecParameters/GetAllowedIkeIPSecParameters");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3433,6 +3858,11 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "GetByoipRange",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ByoipRange/GetByoipRange");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3461,6 +3891,11 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "GetCpe",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Cpe/GetCpe");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3502,6 +3937,11 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "GetCpeDeviceConfigContent",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Cpe/GetCpeDeviceConfigContent");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3531,6 +3971,11 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "GetCpeDeviceShape",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/CpeDeviceShapeDetail/GetCpeDeviceShape");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3560,6 +4005,11 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "GetCrossConnect",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/CrossConnect/GetCrossConnect");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3589,6 +4039,11 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "GetCrossConnectGroup",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/CrossConnectGroup/GetCrossConnectGroup");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3620,6 +4075,11 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "GetCrossConnectLetterOfAuthority",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/LetterOfAuthority/GetCrossConnectLetterOfAuthority");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3650,6 +4110,11 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "GetCrossConnectStatus",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/CrossConnectStatus/GetCrossConnectStatus");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3679,6 +4144,11 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "GetDhcpOptions",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DhcpOptions/GetDhcpOptions");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3707,6 +4177,11 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "GetDrg",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Drg/GetDrg");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3736,6 +4211,11 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "GetDrgAttachment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DrgAttachment/GetDrgAttachment");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3766,6 +4246,11 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "GetDrgRedundancyStatus",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DrgRedundancyStatus/GetDrgRedundancyStatus");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3796,6 +4281,11 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "GetDrgRouteDistribution",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DrgRouteDistribution/GetDrgRouteDistribution");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3825,6 +4315,11 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "GetDrgRouteTable",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DrgRouteTable/GetDrgRouteTable");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3856,6 +4351,11 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "GetFastConnectProviderService",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/FastConnectProviderService/GetFastConnectProviderService");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3887,6 +4387,11 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "GetFastConnectProviderServiceKey",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/FastConnectProviderServiceKey/GetFastConnectProviderServiceKey");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3916,6 +4421,11 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "GetIPSecConnection",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/IPSecConnection/GetIPSecConnection");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3947,6 +4457,11 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "GetIPSecConnectionDeviceConfig",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/IPSecConnectionDeviceConfig/GetIPSecConnectionDeviceConfig");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3978,6 +4493,11 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "GetIPSecConnectionDeviceStatus",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/IPSecConnectionDeviceStatus/GetIPSecConnectionDeviceStatus");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -4008,6 +4528,11 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "GetIPSecConnectionTunnel",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/IPSecConnectionTunnel/GetIPSecConnectionTunnel");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -4039,6 +4564,11 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "GetIPSecConnectionTunnelError",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/IPSecConnectionTunnelErrorDetails/GetIPSecConnectionTunnelError");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -4071,6 +4601,11 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "GetIPSecConnectionTunnelSharedSecret",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/IPSecConnectionTunnelSharedSecret/GetIPSecConnectionTunnelSharedSecret");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -4100,6 +4635,11 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "GetInternetGateway",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InternetGateway/GetInternetGateway");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -4141,6 +4681,11 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "GetIpsecCpeDeviceConfigContent",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/IPSecConnection/GetIpsecCpeDeviceConfigContent");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -4169,6 +4714,11 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "GetIpv6",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Ipv6/GetIpv6");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -4199,6 +4749,11 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "GetLocalPeeringGateway",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/LocalPeeringGateway/GetLocalPeeringGateway");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -4228,6 +4783,11 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "GetNatGateway",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/NatGateway/GetNatGateway");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -4258,6 +4818,11 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "GetNetworkSecurityGroup",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/GetNetworkSecurityGroup");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -4288,6 +4853,11 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "GetNetworkingTopology",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/NetworkingTopology/GetNetworkingTopology");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -4317,6 +4887,11 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "GetPrivateIp",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/PrivateIp/GetPrivateIp");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -4346,6 +4921,11 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "GetPublicIp",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/PublicIp/GetPublicIp");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -4376,6 +4956,11 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "GetPublicIpByIpAddress",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/PublicIp/GetPublicIpByIpAddress");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -4410,6 +4995,11 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "GetPublicIpByPrivateIpId",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/PublicIp/GetPublicIpByPrivateIpId");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -4443,6 +5033,11 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "GetPublicIpPool",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/PublicIpPool/GetPublicIpPool");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -4474,6 +5069,11 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "GetRemotePeeringConnection",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/RemotePeeringConnection/GetRemotePeeringConnection");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -4503,6 +5103,11 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "GetRouteTable",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/RouteTable/GetRouteTable");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -4532,6 +5137,11 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "GetSecurityList",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/SecurityList/GetSecurityList");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -4560,6 +5170,11 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "GetService",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Service/GetService");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -4589,6 +5204,11 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "GetServiceGateway",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ServiceGateway/GetServiceGateway");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -4617,6 +5237,11 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "GetSubnet",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Subnet/GetSubnet");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -4646,6 +5271,11 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "GetSubnetTopology",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/SubnetTopology/GetSubnetTopology");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -4676,6 +5306,11 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "GetTunnelCpeDeviceConfig",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/TunnelCpeDeviceConfig/GetTunnelCpeDeviceConfig");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -4717,6 +5352,11 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "GetTunnelCpeDeviceConfigContent",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/TunnelCpeDeviceConfig/GetTunnelCpeDeviceConfigContent");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -4746,6 +5386,11 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "GetUpgradeStatus",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Drg/GetUpgradeStatus");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -4774,6 +5419,11 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "GetVcn",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Vcn/GetVcn");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -4805,6 +5455,11 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "GetVcnDnsResolverAssociation",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VcnDnsResolverAssociation/GetVcnDnsResolverAssociation");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -4834,6 +5489,11 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "GetVcnTopology",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VcnTopology/GetVcnTopology");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -4863,6 +5523,11 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "GetVirtualCircuit",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VirtualCircuit/GetVirtualCircuit");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -4891,6 +5556,11 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "GetVlan",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Vlan/GetVlan");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -4919,6 +5589,11 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "GetVnic",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Vnic/GetVnic");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -4951,6 +5626,11 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "ListAllowedPeerRegionsForRemotePeering",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/PeerRegionForRemotePeering/ListAllowedPeerRegionsForRemotePeering");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -4981,6 +5661,11 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "ListByoipAllocatedRanges",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ByoipAllocatedRangeSummary/ListByoipAllocatedRanges");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -5010,6 +5695,11 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "ListByoipRanges",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ByoipRange/ListByoipRanges");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -5039,6 +5729,11 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "ListCpeDeviceShapes",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/CpeDeviceShapeSummary/ListCpeDeviceShapes");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -5067,6 +5762,11 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "ListCpes",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Cpe/ListCpes");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -5097,6 +5797,11 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "ListCrossConnectGroups",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/CrossConnectGroup/ListCrossConnectGroups");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -5128,6 +5833,11 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "ListCrossConnectLocations",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/CrossConnectLocation/ListCrossConnectLocations");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -5158,6 +5868,11 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "ListCrossConnectMappings",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/CrossConnectMappingDetailsCollection/ListCrossConnectMappings");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -5187,6 +5902,11 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "ListCrossConnects",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/CrossConnect/ListCrossConnects");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -5218,6 +5938,11 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "ListCrossconnectPortSpeedShapes",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/CrossConnectPortSpeedShape/ListCrossconnectPortSpeedShapes");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -5247,6 +5972,11 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "ListDhcpOptions",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DhcpOptions/ListDhcpOptions");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -5276,6 +6006,11 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "ListDrgAttachments",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DrgAttachment/ListDrgAttachments");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -5307,6 +6042,11 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "ListDrgRouteDistributionStatements",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DrgRouteDistributionStatement/ListDrgRouteDistributionStatements");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -5338,6 +6078,11 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "ListDrgRouteDistributions",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DrgRouteDistribution/ListDrgRouteDistributions");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -5367,6 +6112,11 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "ListDrgRouteRules",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DrgRouteRule/ListDrgRouteRules");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -5396,6 +6146,11 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "ListDrgRouteTables",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DrgRouteTable/ListDrgRouteTables");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -5424,6 +6179,11 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "ListDrgs",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Drg/ListDrgs");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -5455,6 +6215,11 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "ListFastConnectProviderServices",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/FastConnectProviderService/ListFastConnectProviderServices");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -5492,6 +6257,11 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "ListFastConnectProviderVirtualCircuitBandwidthShapes",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/FastConnectProviderService/ListFastConnectProviderVirtualCircuitBandwidthShapes");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -5523,6 +6293,11 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "ListIPSecConnectionTunnelRoutes",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/TunnelRouteSummary/ListIPSecConnectionTunnelRoutes");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -5557,6 +6332,11 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "ListIPSecConnectionTunnelSecurityAssociations",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/TunnelSecurityAssociationSummary/ListIPSecConnectionTunnelSecurityAssociations");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -5588,6 +6368,11 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "ListIPSecConnectionTunnels",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/IPSecConnectionTunnel/ListIPSecConnectionTunnels");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -5617,6 +6402,11 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "ListIPSecConnections",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/IPSecConnection/ListIPSecConnections");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -5646,6 +6436,11 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "ListInternetGateways",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InternetGateway/ListInternetGateways");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -5674,6 +6469,11 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "ListIpv6s",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Ipv6/ListIpv6s");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -5704,6 +6504,11 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "ListLocalPeeringGateways",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/LocalPeeringGateway/ListLocalPeeringGateways");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -5733,6 +6538,11 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "ListNatGateways",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/NatGateway/ListNatGateways");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -5765,6 +6575,11 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "ListNetworkSecurityGroupSecurityRules",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/SecurityRule/ListNetworkSecurityGroupSecurityRules");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -5796,6 +6611,11 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "ListNetworkSecurityGroupVnics",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroupVnic/ListNetworkSecurityGroupVnics");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -5827,6 +6647,11 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "ListNetworkSecurityGroups",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/ListNetworkSecurityGroups");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -5856,6 +6681,11 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "ListPrivateIps",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/PrivateIp/ListPrivateIps");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -5885,6 +6715,11 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "ListPublicIpPools",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/PublicIpPool/ListPublicIpPools");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -5914,6 +6749,11 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "ListPublicIps",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/PublicIp/ListPublicIps");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -5945,6 +6785,11 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "ListRemotePeeringConnections",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/RemotePeeringConnection/ListRemotePeeringConnections");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -5974,6 +6819,11 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "ListRouteTables",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/RouteTable/ListRouteTables");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -6003,6 +6853,11 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "ListSecurityLists",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/SecurityList/ListSecurityLists");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -6032,6 +6887,11 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "ListServiceGateways",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ServiceGateway/ListServiceGateways");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -6061,6 +6921,11 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "ListServices",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Service/ListServices");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -6090,6 +6955,11 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "ListSubnets",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Subnet/ListSubnets");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -6118,6 +6988,11 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "ListVcns",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Vcn/ListVcns");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -6149,6 +7024,11 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "ListVirtualCircuitBandwidthShapes",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VirtualCircuitBandwidthShape/ListVirtualCircuitBandwidthShapes");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -6180,6 +7060,11 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "ListVirtualCircuitPublicPrefixes",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VirtualCircuitPublicPrefix/ListVirtualCircuitPublicPrefixes");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -6209,6 +7094,11 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "ListVirtualCircuits",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VirtualCircuit/ListVirtualCircuits");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -6237,6 +7127,11 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "ListVlans",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Vlan/ListVlans");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -6267,6 +7162,11 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "ModifyVcnCidr",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Vcn/ModifyVcnCidr");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -6303,6 +7203,11 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "RemoveDrgRouteDistributionStatements",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DrgRouteDistributionStatement/RemoveDrgRouteDistributionStatements");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -6337,6 +7242,11 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "RemoveDrgRouteRules",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DrgRouteRule/RemoveDrgRouteRules");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -6372,6 +7282,11 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "RemoveExportDrgRouteDistribution",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DrgAttachment/RemoveExportDrgRouteDistribution");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -6404,6 +7319,11 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "RemoveImportDrgRouteDistribution",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DrgRouteTable/RemoveImportDrgRouteDistribution");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -6415,6 +7335,84 @@ public class VirtualNetworkClient implements VirtualNetwork {
                             retriedRequest -> {
                                 javax.ws.rs.core.Response response =
                                         client.post(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public RemoveIpv6SubnetCidrResponse removeIpv6SubnetCidr(RemoveIpv6SubnetCidrRequest request) {
+        LOG.trace("Called removeIpv6SubnetCidr");
+        final RemoveIpv6SubnetCidrRequest interceptedRequest =
+                RemoveIpv6SubnetCidrConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                RemoveIpv6SubnetCidrConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, RemoveIpv6SubnetCidrResponse>
+                transformer = RemoveIpv6SubnetCidrConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "RemoveIpv6SubnetCidr",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Subnet/RemoveIpv6SubnetCidr");
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getRemoveSubnetIpv6CidrDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public RemoveIpv6VcnCidrResponse removeIpv6VcnCidr(RemoveIpv6VcnCidrRequest request) {
+        LOG.trace("Called removeIpv6VcnCidr");
+        final RemoveIpv6VcnCidrRequest interceptedRequest =
+                RemoveIpv6VcnCidrConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                RemoveIpv6VcnCidrConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, RemoveIpv6VcnCidrResponse>
+                transformer = RemoveIpv6VcnCidrConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "RemoveIpv6VcnCidr",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Vcn/RemoveIpv6VcnCidr");
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getRemoveVcnIpv6CidrDetails(),
+                                                retriedRequest);
                                 return transformer.apply(response);
                             });
                 });
@@ -6437,6 +7435,11 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "RemoveNetworkSecurityGroupSecurityRules",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/SecurityRule/RemoveNetworkSecurityGroupSecurityRules");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -6474,6 +7477,11 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "RemovePublicIpPoolCapacity",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/PublicIpPool/RemovePublicIpPoolCapacity");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -6509,6 +7517,11 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "RemoveVcnCidr",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Vcn/RemoveVcnCidr");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -6542,6 +7555,11 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "UpdateByoipRange",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ByoipRange/UpdateByoipRange");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -6574,6 +7592,11 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "UpdateCpe",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Cpe/UpdateCpe");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -6607,6 +7630,11 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "UpdateCrossConnect",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/CrossConnect/UpdateCrossConnect");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -6641,6 +7669,11 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "UpdateCrossConnectGroup",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/CrossConnectGroup/UpdateCrossConnectGroup");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -6674,6 +7707,11 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "UpdateDhcpOptions",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DhcpOptions/UpdateDhcpOptions");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -6706,6 +7744,11 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "UpdateDrg",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Drg/UpdateDrg");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -6739,6 +7782,11 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "UpdateDrgAttachment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DrgAttachment/UpdateDrgAttachment");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -6774,6 +7822,11 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "UpdateDrgRouteDistribution",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DrgRouteDistribution/UpdateDrgRouteDistribution");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -6811,6 +7864,11 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "UpdateDrgRouteDistributionStatements",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DrgRouteDistributionStatement/UpdateDrgRouteDistributionStatements");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -6845,6 +7903,11 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "UpdateDrgRouteRules",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DrgRouteRule/UpdateDrgRouteRules");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -6878,6 +7941,11 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "UpdateDrgRouteTable",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DrgRouteTable/UpdateDrgRouteTable");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -6912,6 +7980,11 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "UpdateIPSecConnection",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/IPSecConnection/UpdateIPSecConnection");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -6947,6 +8020,11 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "UpdateIPSecConnectionTunnel",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/IPSecConnectionTunnel/UpdateIPSecConnectionTunnel");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -6984,6 +8062,11 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "UpdateIPSecConnectionTunnelSharedSecret",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/IPSecConnectionTunnelSharedSecret/UpdateIPSecConnectionTunnelSharedSecret");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -7019,6 +8102,11 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "UpdateInternetGateway",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InternetGateway/UpdateInternetGateway");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -7051,6 +8139,11 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "UpdateIpv6",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Ipv6/UpdateIpv6");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -7086,6 +8179,11 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "UpdateLocalPeeringGateway",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/LocalPeeringGateway/UpdateLocalPeeringGateway");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -7120,6 +8218,11 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "UpdateNatGateway",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/NatGateway/UpdateNatGateway");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -7155,6 +8258,11 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "UpdateNetworkSecurityGroup",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/UpdateNetworkSecurityGroup");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -7192,6 +8300,11 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "UpdateNetworkSecurityGroupSecurityRules",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/SecurityRule/UpdateNetworkSecurityGroupSecurityRules");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -7226,6 +8339,11 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "UpdatePrivateIp",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/PrivateIp/UpdatePrivateIp");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -7259,6 +8377,11 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "UpdatePublicIp",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/PublicIp/UpdatePublicIp");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -7292,6 +8415,11 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "UpdatePublicIpPool",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/PublicIpPool/UpdatePublicIpPool");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -7327,6 +8455,11 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "UpdateRemotePeeringConnection",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/RemotePeeringConnection/UpdateRemotePeeringConnection");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -7361,6 +8494,11 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "UpdateRouteTable",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/RouteTable/UpdateRouteTable");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -7394,6 +8532,11 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "UpdateSecurityList",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/SecurityList/UpdateSecurityList");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -7427,6 +8570,11 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "UpdateServiceGateway",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ServiceGateway/UpdateServiceGateway");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -7460,6 +8608,11 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "UpdateSubnet",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Subnet/UpdateSubnet");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -7496,6 +8649,11 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "UpdateTunnelCpeDeviceConfig",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/TunnelCpeDeviceConfig/UpdateTunnelCpeDeviceConfig");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -7529,6 +8687,11 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "UpdateVcn",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Vcn/UpdateVcn");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -7562,6 +8725,11 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "UpdateVirtualCircuit",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VirtualCircuit/UpdateVirtualCircuit");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -7594,6 +8762,11 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "UpdateVlan",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Vlan/UpdateVlan");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -7626,6 +8799,11 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "UpdateVnic",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Vnic/UpdateVnic");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -7659,6 +8837,11 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "UpgradeDrg",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Drg/UpgradeDrg");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -7689,6 +8872,11 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "ValidateByoipRange",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ByoipRange/ValidateByoipRange");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -7719,6 +8907,11 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "VirtualNetwork",
+                "WithdrawByoipRange",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ByoipRange/WithdrawByoipRange");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {

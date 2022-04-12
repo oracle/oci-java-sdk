@@ -59,7 +59,7 @@ public class TableRow {
     }
 
     /**
-     * Cells in the row.
+     * The cells in the row.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("cells")
     java.util.List<Cell> cells;

@@ -477,6 +477,11 @@ public class ComputeInstanceAgentClient implements ComputeInstanceAgent {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ComputeInstanceAgent",
+                "CancelInstanceAgentCommand",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/instanceagent/20180530/InstanceAgentCommand/CancelInstanceAgentCommand");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -510,6 +515,11 @@ public class ComputeInstanceAgentClient implements ComputeInstanceAgent {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ComputeInstanceAgent",
+                "CreateInstanceAgentCommand",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/instanceagent/20180530/InstanceAgentCommand/CreateInstanceAgentCommand");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -545,6 +555,11 @@ public class ComputeInstanceAgentClient implements ComputeInstanceAgent {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ComputeInstanceAgent",
+                "GetInstanceAgentCommand",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/instanceagent/20180530/InstanceAgentCommand/GetInstanceAgentCommand");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -576,6 +591,11 @@ public class ComputeInstanceAgentClient implements ComputeInstanceAgent {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ComputeInstanceAgent",
+                "GetInstanceAgentCommandExecution",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/instanceagent/20180530/InstanceAgentCommandExecution/GetInstanceAgentCommandExecution");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -607,6 +627,11 @@ public class ComputeInstanceAgentClient implements ComputeInstanceAgent {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ComputeInstanceAgent",
+                "ListInstanceAgentCommandExecutions",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/instanceagent/20180530/InstanceAgentCommandExecutionSummary/ListInstanceAgentCommandExecutions");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -638,6 +663,11 @@ public class ComputeInstanceAgentClient implements ComputeInstanceAgent {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ComputeInstanceAgent",
+                "ListInstanceAgentCommands",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/instanceagent/20180530/InstanceAgentCommandSummary/ListInstanceAgentCommands");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {

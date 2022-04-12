@@ -393,6 +393,8 @@ public class AIServiceSpeechAsyncClient implements AIServiceSpeechAsync {
                         javax.ws.rs.core.Response, CancelTranscriptionJobResponse>
                 transformer = CancelTranscriptionJobConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "AIServiceSpeech", "CancelTranscriptionJob", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<
                         CancelTranscriptionJobRequest, CancelTranscriptionJobResponse>
@@ -435,6 +437,8 @@ public class AIServiceSpeechAsyncClient implements AIServiceSpeechAsync {
                         javax.ws.rs.core.Response, CancelTranscriptionTaskResponse>
                 transformer = CancelTranscriptionTaskConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "AIServiceSpeech", "CancelTranscriptionTask", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<
                         CancelTranscriptionTaskRequest, CancelTranscriptionTaskResponse>
@@ -479,6 +483,11 @@ public class AIServiceSpeechAsyncClient implements AIServiceSpeechAsync {
                         javax.ws.rs.core.Response, ChangeTranscriptionJobCompartmentResponse>
                 transformer = ChangeTranscriptionJobCompartmentConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "AIServiceSpeech",
+                "ChangeTranscriptionJobCompartment",
+                ib.getRequestUri().toString(),
+                "");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeTranscriptionJobCompartmentRequest,
@@ -529,6 +538,8 @@ public class AIServiceSpeechAsyncClient implements AIServiceSpeechAsync {
                         javax.ws.rs.core.Response, CreateTranscriptionJobResponse>
                 transformer = CreateTranscriptionJobConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "AIServiceSpeech", "CreateTranscriptionJob", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<
                         CreateTranscriptionJobRequest, CreateTranscriptionJobResponse>
@@ -575,6 +586,8 @@ public class AIServiceSpeechAsyncClient implements AIServiceSpeechAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetTranscriptionJobResponse>
                 transformer = GetTranscriptionJobConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "AIServiceSpeech", "GetTranscriptionJob", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<
                         GetTranscriptionJobRequest, GetTranscriptionJobResponse>
@@ -616,6 +629,8 @@ public class AIServiceSpeechAsyncClient implements AIServiceSpeechAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetTranscriptionTaskResponse>
                 transformer = GetTranscriptionTaskConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "AIServiceSpeech", "GetTranscriptionTask", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<
                         GetTranscriptionTaskRequest, GetTranscriptionTaskResponse>
@@ -657,6 +672,8 @@ public class AIServiceSpeechAsyncClient implements AIServiceSpeechAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListTranscriptionJobsResponse>
                 transformer = ListTranscriptionJobsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "AIServiceSpeech", "ListTranscriptionJobs", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListTranscriptionJobsRequest, ListTranscriptionJobsResponse>
@@ -698,6 +715,8 @@ public class AIServiceSpeechAsyncClient implements AIServiceSpeechAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListTranscriptionTasksResponse>
                 transformer = ListTranscriptionTasksConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "AIServiceSpeech", "ListTranscriptionTasks", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListTranscriptionTasksRequest, ListTranscriptionTasksResponse>
@@ -739,6 +758,8 @@ public class AIServiceSpeechAsyncClient implements AIServiceSpeechAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, UpdateTranscriptionJobResponse>
                 transformer = UpdateTranscriptionJobConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "AIServiceSpeech", "UpdateTranscriptionJob", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<
                         UpdateTranscriptionJobRequest, UpdateTranscriptionJobResponse>

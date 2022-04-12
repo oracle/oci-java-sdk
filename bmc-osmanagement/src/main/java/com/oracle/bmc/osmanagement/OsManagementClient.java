@@ -476,6 +476,11 @@ public class OsManagementClient implements OsManagement {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "OsManagement",
+                "AddPackagesToSoftwareSource",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/SoftwareSource/AddPackagesToSoftwareSource");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -516,6 +521,11 @@ public class OsManagementClient implements OsManagement {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "OsManagement",
+                "AttachChildSoftwareSourceToManagedInstance",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstance/AttachChildSoftwareSourceToManagedInstance");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -556,6 +566,11 @@ public class OsManagementClient implements OsManagement {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "OsManagement",
+                "AttachManagedInstanceToManagedInstanceGroup",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstanceGroup/AttachManagedInstanceToManagedInstanceGroup");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -592,6 +607,11 @@ public class OsManagementClient implements OsManagement {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "OsManagement",
+                "AttachParentSoftwareSourceToManagedInstance",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstance/AttachParentSoftwareSourceToManagedInstance");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -630,6 +650,11 @@ public class OsManagementClient implements OsManagement {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "OsManagement",
+                "ChangeManagedInstanceGroupCompartment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstanceGroup/ChangeManagedInstanceGroupCompartment");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -667,6 +692,11 @@ public class OsManagementClient implements OsManagement {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "OsManagement",
+                "ChangeScheduledJobCompartment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ScheduledJob/ChangeScheduledJobCompartment");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -704,6 +734,11 @@ public class OsManagementClient implements OsManagement {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "OsManagement",
+                "ChangeSoftwareSourceCompartment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/SoftwareSource/ChangeSoftwareSourceCompartment");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -741,6 +776,11 @@ public class OsManagementClient implements OsManagement {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "OsManagement",
+                "CreateManagedInstanceGroup",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstanceGroup/CreateManagedInstanceGroup");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -776,6 +816,11 @@ public class OsManagementClient implements OsManagement {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "OsManagement",
+                "CreateScheduledJob",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ScheduledJob/CreateScheduledJob");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -810,6 +855,11 @@ public class OsManagementClient implements OsManagement {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "OsManagement",
+                "CreateSoftwareSource",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/SoftwareSource/CreateSoftwareSource");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -845,6 +895,11 @@ public class OsManagementClient implements OsManagement {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "OsManagement",
+                "DeleteManagedInstanceGroup",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstanceGroup/DeleteManagedInstanceGroup");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -875,6 +930,11 @@ public class OsManagementClient implements OsManagement {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "OsManagement",
+                "DeleteScheduledJob",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ScheduledJob/DeleteScheduledJob");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -905,6 +965,11 @@ public class OsManagementClient implements OsManagement {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "OsManagement",
+                "DeleteSoftwareSource",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/SoftwareSource/DeleteSoftwareSource");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -941,6 +1006,11 @@ public class OsManagementClient implements OsManagement {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "OsManagement",
+                "DetachChildSoftwareSourceFromManagedInstance",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstance/DetachChildSoftwareSourceFromManagedInstance");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -981,6 +1051,11 @@ public class OsManagementClient implements OsManagement {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "OsManagement",
+                "DetachManagedInstanceFromManagedInstanceGroup",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstanceGroup/DetachManagedInstanceFromManagedInstanceGroup");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1017,6 +1092,11 @@ public class OsManagementClient implements OsManagement {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "OsManagement",
+                "DetachParentSoftwareSourceFromManagedInstance",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstance/DetachParentSoftwareSourceFromManagedInstance");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1050,6 +1130,11 @@ public class OsManagementClient implements OsManagement {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "OsManagement",
+                "GetErratum",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/Erratum/GetErratum");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1079,6 +1164,11 @@ public class OsManagementClient implements OsManagement {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "OsManagement",
+                "GetManagedInstance",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstance/GetManagedInstance");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1109,6 +1199,11 @@ public class OsManagementClient implements OsManagement {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "OsManagement",
+                "GetManagedInstanceGroup",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstanceGroup/GetManagedInstanceGroup");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1138,6 +1233,11 @@ public class OsManagementClient implements OsManagement {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "OsManagement",
+                "GetScheduledJob",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ScheduledJob/GetScheduledJob");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1167,6 +1267,11 @@ public class OsManagementClient implements OsManagement {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "OsManagement",
+                "GetSoftwarePackage",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/SoftwareSource/GetSoftwarePackage");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1196,6 +1301,11 @@ public class OsManagementClient implements OsManagement {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "OsManagement",
+                "GetSoftwareSource",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/SoftwareSource/GetSoftwareSource");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1225,6 +1335,11 @@ public class OsManagementClient implements OsManagement {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "OsManagement",
+                "GetWindowsUpdate",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/WindowsUpdate/GetWindowsUpdate");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1254,6 +1369,11 @@ public class OsManagementClient implements OsManagement {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "OsManagement",
+                "GetWorkRequest",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/WorkRequest/GetWorkRequest");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1289,6 +1409,11 @@ public class OsManagementClient implements OsManagement {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "OsManagement",
+                "InstallAllPackageUpdatesOnManagedInstance",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstance/InstallAllPackageUpdatesOnManagedInstance");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1323,6 +1448,11 @@ public class OsManagementClient implements OsManagement {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "OsManagement",
+                "InstallAllUpdatesOnManagedInstanceGroup",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstanceGroup/InstallAllUpdatesOnManagedInstanceGroup");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1359,6 +1489,11 @@ public class OsManagementClient implements OsManagement {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "OsManagement",
+                "InstallAllWindowsUpdatesOnManagedInstance",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstance/InstallAllWindowsUpdatesOnManagedInstance");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1392,6 +1527,11 @@ public class OsManagementClient implements OsManagement {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "OsManagement",
+                "InstallPackageOnManagedInstance",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstance/InstallPackageOnManagedInstance");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1426,6 +1566,11 @@ public class OsManagementClient implements OsManagement {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "OsManagement",
+                "InstallPackageUpdateOnManagedInstance",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstance/InstallPackageUpdateOnManagedInstance");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1460,6 +1605,11 @@ public class OsManagementClient implements OsManagement {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "OsManagement",
+                "InstallWindowsUpdateOnManagedInstance",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstance/InstallWindowsUpdateOnManagedInstance");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1493,6 +1643,11 @@ public class OsManagementClient implements OsManagement {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "OsManagement",
+                "ListAvailablePackagesForManagedInstance",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstance/ListAvailablePackagesForManagedInstance");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1528,6 +1683,11 @@ public class OsManagementClient implements OsManagement {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "OsManagement",
+                "ListAvailableSoftwareSourcesForManagedInstance",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstance/ListAvailableSoftwareSourcesForManagedInstance");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1560,6 +1720,11 @@ public class OsManagementClient implements OsManagement {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "OsManagement",
+                "ListAvailableUpdatesForManagedInstance",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstance/ListAvailableUpdatesForManagedInstance");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1594,6 +1759,11 @@ public class OsManagementClient implements OsManagement {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "OsManagement",
+                "ListAvailableWindowsUpdatesForManagedInstance",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstance/ListAvailableWindowsUpdatesForManagedInstance");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1622,6 +1792,11 @@ public class OsManagementClient implements OsManagement {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "OsManagement",
+                "ListErrata",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ErratumSummary/ListErrata");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1653,6 +1828,11 @@ public class OsManagementClient implements OsManagement {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "OsManagement",
+                "ListManagedInstanceErrata",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstance/ListManagedInstanceErrata");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1684,6 +1864,11 @@ public class OsManagementClient implements OsManagement {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "OsManagement",
+                "ListManagedInstanceGroups",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstanceGroupSummary/ListManagedInstanceGroups");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1713,6 +1898,11 @@ public class OsManagementClient implements OsManagement {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "OsManagement",
+                "ListManagedInstances",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstanceSummary/ListManagedInstances");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1745,6 +1935,11 @@ public class OsManagementClient implements OsManagement {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "OsManagement",
+                "ListPackagesInstalledOnManagedInstance",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstance/ListPackagesInstalledOnManagedInstance");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1774,6 +1969,11 @@ public class OsManagementClient implements OsManagement {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "OsManagement",
+                "ListScheduledJobs",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ScheduledJob/ListScheduledJobs");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1805,6 +2005,11 @@ public class OsManagementClient implements OsManagement {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "OsManagement",
+                "ListSoftwareSourcePackages",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/SoftwareSource/ListSoftwareSourcePackages");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1834,6 +2039,11 @@ public class OsManagementClient implements OsManagement {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "OsManagement",
+                "ListSoftwareSources",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/SoftwareSourceSummary/ListSoftwareSources");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1865,6 +2075,11 @@ public class OsManagementClient implements OsManagement {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "OsManagement",
+                "ListUpcomingScheduledJobs",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ScheduledJob/ListUpcomingScheduledJobs");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1894,6 +2109,11 @@ public class OsManagementClient implements OsManagement {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "OsManagement",
+                "ListWindowsUpdates",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/WindowsUpdateSummary/ListWindowsUpdates");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1928,6 +2148,11 @@ public class OsManagementClient implements OsManagement {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "OsManagement",
+                "ListWindowsUpdatesInstalledOnManagedInstance",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstance/ListWindowsUpdatesInstalledOnManagedInstance");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1958,6 +2183,11 @@ public class OsManagementClient implements OsManagement {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "OsManagement",
+                "ListWorkRequestErrors",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/WorkRequest/ListWorkRequestErrors");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1987,6 +2217,11 @@ public class OsManagementClient implements OsManagement {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "OsManagement",
+                "ListWorkRequestLogs",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/WorkRequest/ListWorkRequestLogs");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2016,6 +2251,11 @@ public class OsManagementClient implements OsManagement {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "OsManagement",
+                "ListWorkRequests",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/WorkRequestSummary/ListWorkRequests");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2048,6 +2288,11 @@ public class OsManagementClient implements OsManagement {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "OsManagement",
+                "RemovePackageFromManagedInstance",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstance/RemovePackageFromManagedInstance");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2080,6 +2325,11 @@ public class OsManagementClient implements OsManagement {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "OsManagement",
+                "RemovePackagesFromSoftwareSource",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/SoftwareSource/RemovePackagesFromSoftwareSource");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2115,6 +2365,11 @@ public class OsManagementClient implements OsManagement {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "OsManagement",
+                "RunScheduledJobNow",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ScheduledJob/RunScheduledJobNow");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2146,6 +2401,11 @@ public class OsManagementClient implements OsManagement {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "OsManagement",
+                "SearchSoftwarePackages",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/SoftwareSource/SearchSoftwarePackages");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2178,6 +2438,11 @@ public class OsManagementClient implements OsManagement {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "OsManagement",
+                "SkipNextScheduledJobExecution",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ScheduledJob/SkipNextScheduledJobExecution");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2209,6 +2474,11 @@ public class OsManagementClient implements OsManagement {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "OsManagement",
+                "UpdateManagedInstance",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/UpdateManagedInstanceDetails/UpdateManagedInstance");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2244,6 +2514,11 @@ public class OsManagementClient implements OsManagement {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "OsManagement",
+                "UpdateManagedInstanceGroup",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstanceGroup/UpdateManagedInstanceGroup");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2278,6 +2553,11 @@ public class OsManagementClient implements OsManagement {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "OsManagement",
+                "UpdateScheduledJob",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ScheduledJob/UpdateScheduledJob");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2311,6 +2591,11 @@ public class OsManagementClient implements OsManagement {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "OsManagement",
+                "UpdateSoftwareSource",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/SoftwareSource/UpdateSoftwareSource");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {

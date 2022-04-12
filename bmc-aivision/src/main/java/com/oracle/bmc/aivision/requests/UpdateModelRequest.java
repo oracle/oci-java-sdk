@@ -22,12 +22,12 @@ public class UpdateModelRequest
                 com.oracle.bmc.aivision.model.UpdateModelDetails> {
 
     /**
-     * unique model identifier.
+     * A unique model identifier.
      */
     private String modelId;
 
     /**
-     * Model metadata to be updated.
+     * The model metadata to be updated.
      */
     private com.oracle.bmc.aivision.model.UpdateModelDetails updateModelDetails;
 

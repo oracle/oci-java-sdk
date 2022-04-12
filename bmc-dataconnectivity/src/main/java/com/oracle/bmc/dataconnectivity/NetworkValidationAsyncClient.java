@@ -396,6 +396,11 @@ public class NetworkValidationAsyncClient implements NetworkValidationAsync {
                         javax.ws.rs.core.Response, GetNetworkConnectivityStatusCollectionResponse>
                 transformer = GetNetworkConnectivityStatusCollectionConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "NetworkValidation",
+                "GetNetworkConnectivityStatusCollection",
+                ib.getRequestUri().toString(),
+                "");
 
         com.oracle.bmc.responses.AsyncHandler<
                         GetNetworkConnectivityStatusCollectionRequest,

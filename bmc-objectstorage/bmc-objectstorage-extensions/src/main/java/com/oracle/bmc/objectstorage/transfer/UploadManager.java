@@ -6,6 +6,7 @@ package com.oracle.bmc.objectstorage.transfer;
 
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.util.concurrent.ThreadFactoryBuilder;
+import com.oracle.bmc.ClientRuntime;
 import com.oracle.bmc.io.DuplicatableInputStream;
 import com.oracle.bmc.model.BmcException;
 import com.oracle.bmc.objectstorage.ObjectStorage;
@@ -53,6 +54,11 @@ import java.util.concurrent.Executors;
 @Slf4j
 public class UploadManager {
     private static final int DEFAULT_NUM_MULTIPART_THREADS_PER_REQUEST = 3;
+    private static final String UPLOAD_MANAGER_DEBUG_INFORMATION_LOG =
+            String.format(
+                    "\nClient Version: %s, OS Version: %s\nSee https://docs.oracle.com/iaas/Content/API/Concepts/sdk_troubleshooting.htm for common issues and steps to resolve them.\nIf you need to contact support, or file a GitHub issue, please include this full error message.",
+                    ClientRuntime.getRuntime().getClientInfo(),
+                    System.getProperty("os.version"));
 
     /**
      * Default retry condition, but added timeout, -1, and 409 "ConcurrentObjectUpdate".
@@ -213,9 +219,10 @@ public class UploadManager {
         } catch (Exception e) {
             if (manifest != null) {
                 LOG.error(
-                        "Failed to upload object using multi-part uploads.  Failed part numbers = '{}'.  Successful parts = '{}'",
+                        "Failed to upload object using multi-part uploads. Failed part numbers = '{}'. Successful parts = '{}'.{}",
                         manifest.listFailedParts(),
-                        manifest.listCompletedParts());
+                        manifest.listCompletedParts(),
+                        UPLOAD_MANAGER_DEBUG_INFORMATION_LOG);
 
                 // try to abort uploads that failed to avoid creating lots of lingering uploads and parts.
                 if (uploadConfiguration.isDisableAutoAbort()) {
@@ -227,8 +234,9 @@ public class UploadManager {
                         assembler.abort();
                     } catch (Exception e2) {
                         LOG.warn(
-                                "Failed to abort multipart upload {} after failure to upload object",
+                                "Failed to abort multipart upload {} after failure to upload object.{}",
                                 manifest.getUploadId(),
+                                UPLOAD_MANAGER_DEBUG_INFORMATION_LOG,
                                 e2);
                     }
                 }

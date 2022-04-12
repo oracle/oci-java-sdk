@@ -390,6 +390,11 @@ public class TraceAsyncClient implements TraceAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetAggregatedSnapshotResponse>
                 transformer = GetAggregatedSnapshotConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Trace",
+                "GetAggregatedSnapshot",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/apm-trace-explorer/20200630/AggregatedSnapshot/GetAggregatedSnapshot");
 
         com.oracle.bmc.responses.AsyncHandler<
                         GetAggregatedSnapshotRequest, GetAggregatedSnapshotResponse>
@@ -427,6 +432,11 @@ public class TraceAsyncClient implements TraceAsync {
                 GetSpanConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetSpanResponse>
                 transformer = GetSpanConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Trace",
+                "GetSpan",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/apm-trace-explorer/20200630/Span/GetSpan");
 
         com.oracle.bmc.responses.AsyncHandler<GetSpanRequest, GetSpanResponse> handlerToUse =
                 handler;
@@ -463,6 +473,11 @@ public class TraceAsyncClient implements TraceAsync {
                 GetTraceConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetTraceResponse>
                 transformer = GetTraceConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Trace",
+                "GetTrace",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/apm-trace-explorer/20200630/Trace/GetTrace");
 
         com.oracle.bmc.responses.AsyncHandler<GetTraceRequest, GetTraceResponse> handlerToUse =
                 handler;
@@ -501,6 +516,11 @@ public class TraceAsyncClient implements TraceAsync {
                 GetTraceSnapshotConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetTraceSnapshotResponse>
                 transformer = GetTraceSnapshotConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Trace",
+                "GetTraceSnapshot",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/apm-trace-explorer/20200630/TraceSnapshot/GetTraceSnapshot");
 
         com.oracle.bmc.responses.AsyncHandler<GetTraceSnapshotRequest, GetTraceSnapshotResponse>
                 handlerToUse = handler;

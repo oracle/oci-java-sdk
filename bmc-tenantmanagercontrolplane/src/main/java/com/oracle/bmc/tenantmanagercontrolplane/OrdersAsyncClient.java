@@ -390,6 +390,11 @@ public class OrdersAsyncClient implements OrdersAsync {
         final com.google.common.base.Function<javax.ws.rs.core.Response, ActivateOrderResponse>
                 transformer = ActivateOrderConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Orders",
+                "ActivateOrder",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/Order/ActivateOrder");
 
         com.oracle.bmc.responses.AsyncHandler<ActivateOrderRequest, ActivateOrderResponse>
                 handlerToUse = handler;
@@ -432,6 +437,11 @@ public class OrdersAsyncClient implements OrdersAsync {
                 GetOrderConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetOrderResponse>
                 transformer = GetOrderConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Orders",
+                "GetOrder",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/Order/GetOrder");
 
         com.oracle.bmc.responses.AsyncHandler<GetOrderRequest, GetOrderResponse> handlerToUse =
                 handler;

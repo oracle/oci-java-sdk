@@ -5,7 +5,7 @@
 package com.oracle.bmc.aivision.model;
 
 /**
- * Floating point number field value.
+ * The floating point number field value.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -118,7 +118,7 @@ public class ValueNumber extends FieldValue {
     }
 
     /**
-     * Number value.
+     * The number value.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("value")
     Float value;

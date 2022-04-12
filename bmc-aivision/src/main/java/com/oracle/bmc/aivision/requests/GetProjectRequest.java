@@ -20,7 +20,7 @@ import com.oracle.bmc.aivision.model.*;
 public class GetProjectRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * unique project identifier.
+     * A unique project identifier.
      */
     private String projectId;
 

@@ -390,6 +390,11 @@ public class PluginAsyncClient implements PluginAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetInstanceAgentPluginResponse>
                 transformer = GetInstanceAgentPluginConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Plugin",
+                "GetInstanceAgentPlugin",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/instanceagent/20180530/Plugin/GetInstanceAgentPlugin");
 
         com.oracle.bmc.responses.AsyncHandler<
                         GetInstanceAgentPluginRequest, GetInstanceAgentPluginResponse>
@@ -431,6 +436,11 @@ public class PluginAsyncClient implements PluginAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListInstanceAgentPluginsResponse>
                 transformer = ListInstanceAgentPluginsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Plugin",
+                "ListInstanceAgentPlugins",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/instanceagent/20180530/Plugin/ListInstanceAgentPlugins");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListInstanceAgentPluginsRequest, ListInstanceAgentPluginsResponse>

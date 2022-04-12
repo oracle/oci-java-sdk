@@ -71,13 +71,13 @@ public class NormalizedVertex {
     }
 
     /**
-     * X axis normalized coordinate.
+     * The X-axis normalized coordinate.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("x")
     Double x;
 
     /**
-     * Y axis normalized coordinate.
+     * The Y-axis normalized coordinate.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("y")
     Double y;

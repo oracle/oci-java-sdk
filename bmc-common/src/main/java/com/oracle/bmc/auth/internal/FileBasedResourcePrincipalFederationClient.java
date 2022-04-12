@@ -5,6 +5,7 @@
 package com.oracle.bmc.auth.internal;
 
 import com.google.common.base.Preconditions;
+import com.oracle.bmc.auth.ProvidesConfigurableRefresh;
 import com.oracle.bmc.auth.SessionKeySupplier;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.io.FileUtils;
@@ -12,12 +13,15 @@ import java.io.File;
 import java.io.IOException;
 import java.nio.charset.Charset;
 import java.security.KeyPair;
+import java.time.Duration;
+import java.util.Optional;
 
 /**
  * This class gets a security token from file.
  */
 @Slf4j
-public class FileBasedResourcePrincipalFederationClient implements FederationClient {
+public class FileBasedResourcePrincipalFederationClient
+        implements FederationClient, ProvidesConfigurableRefresh {
 
     private final SessionKeySupplier sessionKeySupplier;
     private volatile SecurityTokenAdapter securityTokenAdapter;
@@ -42,7 +46,7 @@ public class FileBasedResourcePrincipalFederationClient implements FederationCli
             return securityTokenAdapter.getSecurityToken();
         }
 
-        return refreshAndGetSecurityTokenInner(true);
+        return refreshAndGetSecurityTokenInner(true, Optional.empty());
     }
 
     @Override
@@ -53,17 +57,21 @@ public class FileBasedResourcePrincipalFederationClient implements FederationCli
 
     @Override
     public String refreshAndGetSecurityToken() {
-        return refreshAndGetSecurityTokenInner(false);
+        return refreshAndGetSecurityTokenInner(false, Optional.empty());
     }
 
-    private String refreshAndGetSecurityTokenInner(final boolean doFinalTokenValidityCheck) {
+    private String refreshAndGetSecurityTokenInner(
+            final boolean doFinalTokenValidityCheck, Optional<Duration> time) {
         // Since this client will be used in a multi-threaded environment (from within a service API),
         // this needs to be synchronized to make sure multiple calls are not updating the security token at the same time.
         // This should not be a blocking/dead-locked call. The worst I can see at this point is that the auth service does
         // not respond and this call times out, throwing exception
         synchronized (this) {
             // Check again to see if the JWT is still invalid, unless we want to skip that check
-            if (!doFinalTokenValidityCheck || !securityTokenAdapter.isValid()) {
+            if (!doFinalTokenValidityCheck
+                    || (time.isPresent()
+                            ? (!securityTokenAdapter.isValid(time))
+                            : (!securityTokenAdapter.isValid()))) {
                 LOG.info("Refreshing session keys.");
                 sessionKeySupplier.refreshKeys();
 
@@ -97,5 +105,10 @@ public class FileBasedResourcePrincipalFederationClient implements FederationCli
         }
 
         return new SecurityTokenAdapter(securityToken, sessionKeySupplier);
+    }
+
+    @Override
+    public String refreshAndGetSecurityTokenIfExpiringWithin(Duration time) {
+        return refreshAndGetSecurityTokenInner(false, Optional.of(time));
     }
 }

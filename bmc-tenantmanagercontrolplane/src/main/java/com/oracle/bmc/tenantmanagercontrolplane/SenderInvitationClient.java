@@ -477,6 +477,11 @@ public class SenderInvitationClient implements SenderInvitation {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "SenderInvitation",
+                "CancelSenderInvitation",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/SenderInvitation/CancelSenderInvitation");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -509,6 +514,11 @@ public class SenderInvitationClient implements SenderInvitation {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "SenderInvitation",
+                "CreateSenderInvitation",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/SenderInvitation/CreateSenderInvitation");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -542,6 +552,11 @@ public class SenderInvitationClient implements SenderInvitation {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "SenderInvitation",
+                "GetSenderInvitation",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/SenderInvitation/GetSenderInvitation");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -572,6 +587,11 @@ public class SenderInvitationClient implements SenderInvitation {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "SenderInvitation",
+                "ListSenderInvitations",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/SenderInvitation/ListSenderInvitations");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -602,6 +622,11 @@ public class SenderInvitationClient implements SenderInvitation {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "SenderInvitation",
+                "UpdateSenderInvitation",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/SenderInvitation/UpdateSenderInvitation");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {

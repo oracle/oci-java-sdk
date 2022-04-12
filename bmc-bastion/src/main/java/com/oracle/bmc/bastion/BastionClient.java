@@ -475,6 +475,11 @@ public class BastionClient implements Bastion {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Bastion",
+                "ChangeBastionCompartment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/bastion/20210331/Bastion/ChangeBastionCompartment");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -509,6 +514,11 @@ public class BastionClient implements Bastion {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Bastion",
+                "CreateBastion",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/bastion/20210331/Bastion/CreateBastion");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -543,6 +553,11 @@ public class BastionClient implements Bastion {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Bastion",
+                "CreateSession",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/bastion/20210331/Session/CreateSession");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -576,6 +591,11 @@ public class BastionClient implements Bastion {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Bastion",
+                "DeleteBastion",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/bastion/20210331/Bastion/DeleteBastion");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -606,6 +626,11 @@ public class BastionClient implements Bastion {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Bastion",
+                "DeleteSession",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/bastion/20210331/Session/DeleteSession");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -635,6 +660,11 @@ public class BastionClient implements Bastion {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Bastion",
+                "GetBastion",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/bastion/20210331/Bastion/GetBastion");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -663,6 +693,11 @@ public class BastionClient implements Bastion {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Bastion",
+                "GetSession",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/bastion/20210331/Session/GetSession");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -692,6 +727,11 @@ public class BastionClient implements Bastion {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Bastion",
+                "GetWorkRequest",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/bastion/20210331/WorkRequest/GetWorkRequest");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -721,6 +761,11 @@ public class BastionClient implements Bastion {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Bastion",
+                "ListBastions",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/bastion/20210331/Bastion/ListBastions");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -750,6 +795,11 @@ public class BastionClient implements Bastion {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Bastion",
+                "ListSessions",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/bastion/20210331/Session/ListSessions");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -780,6 +830,11 @@ public class BastionClient implements Bastion {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Bastion",
+                "ListWorkRequestErrors",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/bastion/20210331/WorkRequestError/ListWorkRequestErrors");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -809,6 +864,11 @@ public class BastionClient implements Bastion {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Bastion",
+                "ListWorkRequestLogs",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/bastion/20210331/WorkRequestLogEntry/ListWorkRequestLogs");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -838,6 +898,11 @@ public class BastionClient implements Bastion {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Bastion",
+                "ListWorkRequests",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/bastion/20210331/WorkRequest/ListWorkRequests");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -867,6 +932,11 @@ public class BastionClient implements Bastion {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Bastion",
+                "UpdateBastion",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/bastion/20210331/Bastion/UpdateBastion");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -900,6 +970,11 @@ public class BastionClient implements Bastion {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Bastion",
+                "UpdateSession",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/bastion/20210331/Session/UpdateSession");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {

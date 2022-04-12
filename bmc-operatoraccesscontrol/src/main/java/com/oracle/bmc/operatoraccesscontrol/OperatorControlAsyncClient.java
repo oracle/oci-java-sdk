@@ -395,6 +395,11 @@ public class OperatorControlAsyncClient implements OperatorControlAsync {
                         javax.ws.rs.core.Response, ChangeOperatorControlCompartmentResponse>
                 transformer = ChangeOperatorControlCompartmentConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "OperatorControl",
+                "ChangeOperatorControlCompartment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/operatoraccesscontrol/20200630/OperatorControl/ChangeOperatorControlCompartment");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeOperatorControlCompartmentRequest,
@@ -445,6 +450,11 @@ public class OperatorControlAsyncClient implements OperatorControlAsync {
                         javax.ws.rs.core.Response, CreateOperatorControlResponse>
                 transformer = CreateOperatorControlConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "OperatorControl",
+                "CreateOperatorControl",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/operatoraccesscontrol/20200630/OperatorControl/CreateOperatorControl");
 
         com.oracle.bmc.responses.AsyncHandler<
                         CreateOperatorControlRequest, CreateOperatorControlResponse>
@@ -491,6 +501,11 @@ public class OperatorControlAsyncClient implements OperatorControlAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, DeleteOperatorControlResponse>
                 transformer = DeleteOperatorControlConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "OperatorControl",
+                "DeleteOperatorControl",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/operatoraccesscontrol/20200630/OperatorControl/DeleteOperatorControl");
 
         com.oracle.bmc.responses.AsyncHandler<
                         DeleteOperatorControlRequest, DeleteOperatorControlResponse>
@@ -531,6 +546,11 @@ public class OperatorControlAsyncClient implements OperatorControlAsync {
                 GetOperatorControlConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetOperatorControlResponse>
                 transformer = GetOperatorControlConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "OperatorControl",
+                "GetOperatorControl",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/operatoraccesscontrol/20200630/OperatorControl/GetOperatorControl");
 
         com.oracle.bmc.responses.AsyncHandler<GetOperatorControlRequest, GetOperatorControlResponse>
                 handlerToUse = handler;
@@ -571,6 +591,11 @@ public class OperatorControlAsyncClient implements OperatorControlAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListOperatorControlsResponse>
                 transformer = ListOperatorControlsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "OperatorControl",
+                "ListOperatorControls",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/operatoraccesscontrol/20200630/OperatorControl/ListOperatorControls");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListOperatorControlsRequest, ListOperatorControlsResponse>
@@ -612,6 +637,11 @@ public class OperatorControlAsyncClient implements OperatorControlAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, UpdateOperatorControlResponse>
                 transformer = UpdateOperatorControlConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "OperatorControl",
+                "UpdateOperatorControl",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/operatoraccesscontrol/20200630/OperatorControl/UpdateOperatorControl");
 
         com.oracle.bmc.responses.AsyncHandler<
                         UpdateOperatorControlRequest, UpdateOperatorControlResponse>

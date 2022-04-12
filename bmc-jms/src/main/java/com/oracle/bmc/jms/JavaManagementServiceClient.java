@@ -476,6 +476,11 @@ public class JavaManagementServiceClient implements JavaManagementService {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "JavaManagementService",
+                "CancelWorkRequest",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/jms/20210610/WorkRequest/CancelWorkRequest");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -508,6 +513,11 @@ public class JavaManagementServiceClient implements JavaManagementService {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "JavaManagementService",
+                "ChangeFleetCompartment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/jms/20210610/Fleet/ChangeFleetCompartment");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -542,6 +552,11 @@ public class JavaManagementServiceClient implements JavaManagementService {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "JavaManagementService",
+                "CreateBlocklist",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/jms/20210610/Blocklist/CreateBlocklist");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -576,6 +591,11 @@ public class JavaManagementServiceClient implements JavaManagementService {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "JavaManagementService",
+                "CreateFleet",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/jms/20210610/Fleet/CreateFleet");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -609,6 +629,11 @@ public class JavaManagementServiceClient implements JavaManagementService {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "JavaManagementService",
+                "DeleteBlocklist",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/jms/20210610/Blocklist/DeleteBlocklist");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -639,6 +664,11 @@ public class JavaManagementServiceClient implements JavaManagementService {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "JavaManagementService",
+                "DeleteFleet",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/jms/20210610/Fleet/DeleteFleet");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -668,6 +698,11 @@ public class JavaManagementServiceClient implements JavaManagementService {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "JavaManagementService",
+                "GetFleet",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/jms/20210610/Fleet/GetFleet");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -699,6 +734,11 @@ public class JavaManagementServiceClient implements JavaManagementService {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "JavaManagementService",
+                "GetFleetAgentConfiguration",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/jms/20210610/FleetAgentConfiguration/GetFleetAgentConfiguration");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -728,6 +768,11 @@ public class JavaManagementServiceClient implements JavaManagementService {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "JavaManagementService",
+                "GetWorkRequest",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/jms/20210610/WorkRequest/GetWorkRequest");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -757,6 +802,11 @@ public class JavaManagementServiceClient implements JavaManagementService {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "JavaManagementService",
+                "ListBlocklists",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/jms/20210610/Blocklist/ListBlocklists");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -785,6 +835,11 @@ public class JavaManagementServiceClient implements JavaManagementService {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "JavaManagementService",
+                "ListFleets",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/jms/20210610/Fleet/ListFleets");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -815,6 +870,11 @@ public class JavaManagementServiceClient implements JavaManagementService {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "JavaManagementService",
+                "ListInstallationSites",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/jms/20210610/InstallationSiteSummary/ListInstallationSites");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -844,6 +904,11 @@ public class JavaManagementServiceClient implements JavaManagementService {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "JavaManagementService",
+                "ListJreUsage",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/jms/20210610/JreUsage/ListJreUsage");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -873,6 +938,11 @@ public class JavaManagementServiceClient implements JavaManagementService {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "JavaManagementService",
+                "ListWorkItems",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/jms/20210610/WorkItemSummary/ListWorkItems");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -903,6 +973,11 @@ public class JavaManagementServiceClient implements JavaManagementService {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "JavaManagementService",
+                "ListWorkRequestErrors",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/jms/20210610/WorkRequestError/ListWorkRequestErrors");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -932,6 +1007,11 @@ public class JavaManagementServiceClient implements JavaManagementService {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "JavaManagementService",
+                "ListWorkRequestLogs",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/jms/20210610/WorkRequestLogEntry/ListWorkRequestLogs");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -961,6 +1041,11 @@ public class JavaManagementServiceClient implements JavaManagementService {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "JavaManagementService",
+                "ListWorkRequests",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/jms/20210610/WorkRequest/ListWorkRequests");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -993,6 +1078,11 @@ public class JavaManagementServiceClient implements JavaManagementService {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "JavaManagementService",
+                "RemoveFleetInstallationSites",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/jms/20210610/InstallationSiteSummary/RemoveFleetInstallationSites");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1029,6 +1119,11 @@ public class JavaManagementServiceClient implements JavaManagementService {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "JavaManagementService",
+                "SummarizeApplicationUsage",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/jms/20210610/ApplicationUsage/SummarizeApplicationUsage");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1060,6 +1155,11 @@ public class JavaManagementServiceClient implements JavaManagementService {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "JavaManagementService",
+                "SummarizeInstallationUsage",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/jms/20210610/InstallationUsage/SummarizeInstallationUsage");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1089,6 +1189,11 @@ public class JavaManagementServiceClient implements JavaManagementService {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "JavaManagementService",
+                "SummarizeJreUsage",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/jms/20210610/JreUsage/SummarizeJreUsage");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1120,6 +1225,11 @@ public class JavaManagementServiceClient implements JavaManagementService {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "JavaManagementService",
+                "SummarizeManagedInstanceUsage",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/jms/20210610/ManagedInstanceUsage/SummarizeManagedInstanceUsage");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1151,6 +1261,11 @@ public class JavaManagementServiceClient implements JavaManagementService {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "JavaManagementService",
+                "SummarizeResourceInventory",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/jms/20210610/Fleet/SummarizeResourceInventory");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1180,6 +1295,11 @@ public class JavaManagementServiceClient implements JavaManagementService {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "JavaManagementService",
+                "UpdateFleet",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/jms/20210610/Fleet/UpdateFleet");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1215,6 +1335,11 @@ public class JavaManagementServiceClient implements JavaManagementService {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "JavaManagementService",
+                "UpdateFleetAgentConfiguration",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/jms/20210610/FleetAgentConfiguration/UpdateFleetAgentConfiguration");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {

@@ -396,6 +396,11 @@ public class NetworkLoadBalancerAsyncClient implements NetworkLoadBalancerAsync 
                         javax.ws.rs.core.Response, ChangeNetworkLoadBalancerCompartmentResponse>
                 transformer = ChangeNetworkLoadBalancerCompartmentConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "NetworkLoadBalancer",
+                "ChangeNetworkLoadBalancerCompartment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/networkloadbalancer/20200501/NetworkLoadBalancer/ChangeNetworkLoadBalancerCompartment");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeNetworkLoadBalancerCompartmentRequest,
@@ -444,6 +449,11 @@ public class NetworkLoadBalancerAsyncClient implements NetworkLoadBalancerAsync 
         final com.google.common.base.Function<javax.ws.rs.core.Response, CreateBackendResponse>
                 transformer = CreateBackendConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "NetworkLoadBalancer",
+                "CreateBackend",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/networkloadbalancer/20200501/Backend/CreateBackend");
 
         com.oracle.bmc.responses.AsyncHandler<CreateBackendRequest, CreateBackendResponse>
                 handlerToUse = handler;
@@ -489,6 +499,11 @@ public class NetworkLoadBalancerAsyncClient implements NetworkLoadBalancerAsync 
         final com.google.common.base.Function<javax.ws.rs.core.Response, CreateBackendSetResponse>
                 transformer = CreateBackendSetConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "NetworkLoadBalancer",
+                "CreateBackendSet",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/networkloadbalancer/20200501/BackendSet/CreateBackendSet");
 
         com.oracle.bmc.responses.AsyncHandler<CreateBackendSetRequest, CreateBackendSetResponse>
                 handlerToUse = handler;
@@ -534,6 +549,11 @@ public class NetworkLoadBalancerAsyncClient implements NetworkLoadBalancerAsync 
         final com.google.common.base.Function<javax.ws.rs.core.Response, CreateListenerResponse>
                 transformer = CreateListenerConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "NetworkLoadBalancer",
+                "CreateListener",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/networkloadbalancer/20200501/Listener/CreateListener");
 
         com.oracle.bmc.responses.AsyncHandler<CreateListenerRequest, CreateListenerResponse>
                 handlerToUse = handler;
@@ -580,6 +600,11 @@ public class NetworkLoadBalancerAsyncClient implements NetworkLoadBalancerAsync 
                         javax.ws.rs.core.Response, CreateNetworkLoadBalancerResponse>
                 transformer = CreateNetworkLoadBalancerConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "NetworkLoadBalancer",
+                "CreateNetworkLoadBalancer",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/networkloadbalancer/20200501/NetworkLoadBalancer/CreateNetworkLoadBalancer");
 
         com.oracle.bmc.responses.AsyncHandler<
                         CreateNetworkLoadBalancerRequest, CreateNetworkLoadBalancerResponse>
@@ -625,6 +650,11 @@ public class NetworkLoadBalancerAsyncClient implements NetworkLoadBalancerAsync 
                 DeleteBackendConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteBackendResponse>
                 transformer = DeleteBackendConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "NetworkLoadBalancer",
+                "DeleteBackend",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/networkloadbalancer/20200501/Backend/DeleteBackend");
 
         com.oracle.bmc.responses.AsyncHandler<DeleteBackendRequest, DeleteBackendResponse>
                 handlerToUse = handler;
@@ -664,6 +694,11 @@ public class NetworkLoadBalancerAsyncClient implements NetworkLoadBalancerAsync 
                 DeleteBackendSetConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteBackendSetResponse>
                 transformer = DeleteBackendSetConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "NetworkLoadBalancer",
+                "DeleteBackendSet",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/networkloadbalancer/20200501/BackendSet/DeleteBackendSet");
 
         com.oracle.bmc.responses.AsyncHandler<DeleteBackendSetRequest, DeleteBackendSetResponse>
                 handlerToUse = handler;
@@ -703,6 +738,11 @@ public class NetworkLoadBalancerAsyncClient implements NetworkLoadBalancerAsync 
                 DeleteListenerConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteListenerResponse>
                 transformer = DeleteListenerConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "NetworkLoadBalancer",
+                "DeleteListener",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/networkloadbalancer/20200501/Listener/DeleteListener");
 
         com.oracle.bmc.responses.AsyncHandler<DeleteListenerRequest, DeleteListenerResponse>
                 handlerToUse = handler;
@@ -743,6 +783,11 @@ public class NetworkLoadBalancerAsyncClient implements NetworkLoadBalancerAsync 
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, DeleteNetworkLoadBalancerResponse>
                 transformer = DeleteNetworkLoadBalancerConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "NetworkLoadBalancer",
+                "DeleteNetworkLoadBalancer",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/networkloadbalancer/20200501/NetworkLoadBalancer/DeleteNetworkLoadBalancer");
 
         com.oracle.bmc.responses.AsyncHandler<
                         DeleteNetworkLoadBalancerRequest, DeleteNetworkLoadBalancerResponse>
@@ -782,6 +827,11 @@ public class NetworkLoadBalancerAsyncClient implements NetworkLoadBalancerAsync 
                 GetBackendConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetBackendResponse>
                 transformer = GetBackendConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "NetworkLoadBalancer",
+                "GetBackend",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/networkloadbalancer/20200501/Backend/GetBackend");
 
         com.oracle.bmc.responses.AsyncHandler<GetBackendRequest, GetBackendResponse> handlerToUse =
                 handler;
@@ -821,6 +871,11 @@ public class NetworkLoadBalancerAsyncClient implements NetworkLoadBalancerAsync 
                 GetBackendHealthConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetBackendHealthResponse>
                 transformer = GetBackendHealthConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "NetworkLoadBalancer",
+                "GetBackendHealth",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/networkloadbalancer/20200501/BackendHealth/GetBackendHealth");
 
         com.oracle.bmc.responses.AsyncHandler<GetBackendHealthRequest, GetBackendHealthResponse>
                 handlerToUse = handler;
@@ -859,6 +914,11 @@ public class NetworkLoadBalancerAsyncClient implements NetworkLoadBalancerAsync 
                 GetBackendSetConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetBackendSetResponse>
                 transformer = GetBackendSetConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "NetworkLoadBalancer",
+                "GetBackendSet",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/networkloadbalancer/20200501/BackendSet/GetBackendSet");
 
         com.oracle.bmc.responses.AsyncHandler<GetBackendSetRequest, GetBackendSetResponse>
                 handlerToUse = handler;
@@ -899,6 +959,11 @@ public class NetworkLoadBalancerAsyncClient implements NetworkLoadBalancerAsync 
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetBackendSetHealthResponse>
                 transformer = GetBackendSetHealthConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "NetworkLoadBalancer",
+                "GetBackendSetHealth",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/networkloadbalancer/20200501/BackendSetHealth/GetBackendSetHealth");
 
         com.oracle.bmc.responses.AsyncHandler<
                         GetBackendSetHealthRequest, GetBackendSetHealthResponse>
@@ -940,6 +1005,11 @@ public class NetworkLoadBalancerAsyncClient implements NetworkLoadBalancerAsync 
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetHealthCheckerResponse>
                 transformer = GetHealthCheckerConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "NetworkLoadBalancer",
+                "GetHealthChecker",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/networkloadbalancer/20200501/HealthChecker/GetHealthChecker");
 
         com.oracle.bmc.responses.AsyncHandler<GetHealthCheckerRequest, GetHealthCheckerResponse>
                 handlerToUse = handler;
@@ -978,6 +1048,11 @@ public class NetworkLoadBalancerAsyncClient implements NetworkLoadBalancerAsync 
                 GetListenerConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetListenerResponse>
                 transformer = GetListenerConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "NetworkLoadBalancer",
+                "GetListener",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/networkloadbalancer/20200501/Listener/GetListener");
 
         com.oracle.bmc.responses.AsyncHandler<GetListenerRequest, GetListenerResponse>
                 handlerToUse = handler;
@@ -1018,6 +1093,11 @@ public class NetworkLoadBalancerAsyncClient implements NetworkLoadBalancerAsync 
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetNetworkLoadBalancerResponse>
                 transformer = GetNetworkLoadBalancerConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "NetworkLoadBalancer",
+                "GetNetworkLoadBalancer",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/networkloadbalancer/20200501/NetworkLoadBalancer/GetNetworkLoadBalancer");
 
         com.oracle.bmc.responses.AsyncHandler<
                         GetNetworkLoadBalancerRequest, GetNetworkLoadBalancerResponse>
@@ -1061,6 +1141,11 @@ public class NetworkLoadBalancerAsyncClient implements NetworkLoadBalancerAsync 
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetNetworkLoadBalancerHealthResponse>
                 transformer = GetNetworkLoadBalancerHealthConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "NetworkLoadBalancer",
+                "GetNetworkLoadBalancerHealth",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/networkloadbalancer/20200501/NetworkLoadBalancerHealth/GetNetworkLoadBalancerHealth");
 
         com.oracle.bmc.responses.AsyncHandler<
                         GetNetworkLoadBalancerHealthRequest, GetNetworkLoadBalancerHealthResponse>
@@ -1102,6 +1187,11 @@ public class NetworkLoadBalancerAsyncClient implements NetworkLoadBalancerAsync 
                 GetWorkRequestConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetWorkRequestResponse>
                 transformer = GetWorkRequestConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "NetworkLoadBalancer",
+                "GetWorkRequest",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/networkloadbalancer/20200501/WorkRequest/GetWorkRequest");
 
         com.oracle.bmc.responses.AsyncHandler<GetWorkRequestRequest, GetWorkRequestResponse>
                 handlerToUse = handler;
@@ -1141,6 +1231,11 @@ public class NetworkLoadBalancerAsyncClient implements NetworkLoadBalancerAsync 
                 ListBackendSetsConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListBackendSetsResponse>
                 transformer = ListBackendSetsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "NetworkLoadBalancer",
+                "ListBackendSets",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/networkloadbalancer/20200501/BackendSetSummary/ListBackendSets");
 
         com.oracle.bmc.responses.AsyncHandler<ListBackendSetsRequest, ListBackendSetsResponse>
                 handlerToUse = handler;
@@ -1179,6 +1274,11 @@ public class NetworkLoadBalancerAsyncClient implements NetworkLoadBalancerAsync 
                 ListBackendsConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListBackendsResponse>
                 transformer = ListBackendsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "NetworkLoadBalancer",
+                "ListBackends",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/networkloadbalancer/20200501/BackendSummary/ListBackends");
 
         com.oracle.bmc.responses.AsyncHandler<ListBackendsRequest, ListBackendsResponse>
                 handlerToUse = handler;
@@ -1217,6 +1317,11 @@ public class NetworkLoadBalancerAsyncClient implements NetworkLoadBalancerAsync 
                 ListListenersConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListListenersResponse>
                 transformer = ListListenersConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "NetworkLoadBalancer",
+                "ListListeners",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/networkloadbalancer/20200501/ListenerSummary/ListListeners");
 
         com.oracle.bmc.responses.AsyncHandler<ListListenersRequest, ListListenersResponse>
                 handlerToUse = handler;
@@ -1259,6 +1364,11 @@ public class NetworkLoadBalancerAsyncClient implements NetworkLoadBalancerAsync 
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListNetworkLoadBalancerHealthsResponse>
                 transformer = ListNetworkLoadBalancerHealthsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "NetworkLoadBalancer",
+                "ListNetworkLoadBalancerHealths",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/networkloadbalancer/20200501/NetworkLoadBalancerHealth/ListNetworkLoadBalancerHealths");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListNetworkLoadBalancerHealthsRequest,
@@ -1302,6 +1412,11 @@ public class NetworkLoadBalancerAsyncClient implements NetworkLoadBalancerAsync 
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListNetworkLoadBalancersResponse>
                 transformer = ListNetworkLoadBalancersConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "NetworkLoadBalancer",
+                "ListNetworkLoadBalancers",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/networkloadbalancer/20200501/NetworkLoadBalancer/ListNetworkLoadBalancers");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListNetworkLoadBalancersRequest, ListNetworkLoadBalancersResponse>
@@ -1345,6 +1460,11 @@ public class NetworkLoadBalancerAsyncClient implements NetworkLoadBalancerAsync 
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListNetworkLoadBalancersPoliciesResponse>
                 transformer = ListNetworkLoadBalancersPoliciesConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "NetworkLoadBalancer",
+                "ListNetworkLoadBalancersPolicies",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/networkloadbalancer/20200501/NetworkLoadBalancingPolicy/ListNetworkLoadBalancersPolicies");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListNetworkLoadBalancersPoliciesRequest,
@@ -1391,6 +1511,11 @@ public class NetworkLoadBalancerAsyncClient implements NetworkLoadBalancerAsync 
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListNetworkLoadBalancersProtocolsResponse>
                 transformer = ListNetworkLoadBalancersProtocolsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "NetworkLoadBalancer",
+                "ListNetworkLoadBalancersProtocols",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/networkloadbalancer/20200501/ListenerProtocols/ListNetworkLoadBalancersProtocols");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListNetworkLoadBalancersProtocolsRequest,
@@ -1435,6 +1560,11 @@ public class NetworkLoadBalancerAsyncClient implements NetworkLoadBalancerAsync 
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListWorkRequestErrorsResponse>
                 transformer = ListWorkRequestErrorsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "NetworkLoadBalancer",
+                "ListWorkRequestErrors",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/networkloadbalancer/20200501/WorkRequestError/ListWorkRequestErrors");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListWorkRequestErrorsRequest, ListWorkRequestErrorsResponse>
@@ -1476,6 +1606,11 @@ public class NetworkLoadBalancerAsyncClient implements NetworkLoadBalancerAsync 
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListWorkRequestLogsResponse>
                 transformer = ListWorkRequestLogsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "NetworkLoadBalancer",
+                "ListWorkRequestLogs",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/networkloadbalancer/20200501/WorkRequestLogEntry/ListWorkRequestLogs");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListWorkRequestLogsRequest, ListWorkRequestLogsResponse>
@@ -1516,6 +1651,11 @@ public class NetworkLoadBalancerAsyncClient implements NetworkLoadBalancerAsync 
                 ListWorkRequestsConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListWorkRequestsResponse>
                 transformer = ListWorkRequestsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "NetworkLoadBalancer",
+                "ListWorkRequests",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/networkloadbalancer/20200501/WorkRequest/ListWorkRequests");
 
         com.oracle.bmc.responses.AsyncHandler<ListWorkRequestsRequest, ListWorkRequestsResponse>
                 handlerToUse = handler;
@@ -1555,6 +1695,11 @@ public class NetworkLoadBalancerAsyncClient implements NetworkLoadBalancerAsync 
         final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateBackendResponse>
                 transformer = UpdateBackendConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "NetworkLoadBalancer",
+                "UpdateBackend",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/networkloadbalancer/20200501/Backend/UpdateBackend");
 
         com.oracle.bmc.responses.AsyncHandler<UpdateBackendRequest, UpdateBackendResponse>
                 handlerToUse = handler;
@@ -1600,6 +1745,11 @@ public class NetworkLoadBalancerAsyncClient implements NetworkLoadBalancerAsync 
         final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateBackendSetResponse>
                 transformer = UpdateBackendSetConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "NetworkLoadBalancer",
+                "UpdateBackendSet",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/networkloadbalancer/20200501/BackendSet/UpdateBackendSet");
 
         com.oracle.bmc.responses.AsyncHandler<UpdateBackendSetRequest, UpdateBackendSetResponse>
                 handlerToUse = handler;
@@ -1646,6 +1796,11 @@ public class NetworkLoadBalancerAsyncClient implements NetworkLoadBalancerAsync 
                         javax.ws.rs.core.Response, UpdateHealthCheckerResponse>
                 transformer = UpdateHealthCheckerConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "NetworkLoadBalancer",
+                "UpdateHealthChecker",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/networkloadbalancer/20200501/HealthChecker/UpdateHealthChecker");
 
         com.oracle.bmc.responses.AsyncHandler<
                         UpdateHealthCheckerRequest, UpdateHealthCheckerResponse>
@@ -1692,6 +1847,11 @@ public class NetworkLoadBalancerAsyncClient implements NetworkLoadBalancerAsync 
         final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateListenerResponse>
                 transformer = UpdateListenerConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "NetworkLoadBalancer",
+                "UpdateListener",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/networkloadbalancer/20200501/Listener/UpdateListener");
 
         com.oracle.bmc.responses.AsyncHandler<UpdateListenerRequest, UpdateListenerResponse>
                 handlerToUse = handler;
@@ -1737,6 +1897,11 @@ public class NetworkLoadBalancerAsyncClient implements NetworkLoadBalancerAsync 
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, UpdateNetworkLoadBalancerResponse>
                 transformer = UpdateNetworkLoadBalancerConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "NetworkLoadBalancer",
+                "UpdateNetworkLoadBalancer",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/networkloadbalancer/20200501/NetworkLoadBalancer/UpdateNetworkLoadBalancer");
 
         com.oracle.bmc.responses.AsyncHandler<
                         UpdateNetworkLoadBalancerRequest, UpdateNetworkLoadBalancerResponse>
@@ -1787,6 +1952,11 @@ public class NetworkLoadBalancerAsyncClient implements NetworkLoadBalancerAsync 
                         javax.ws.rs.core.Response, UpdateNetworkSecurityGroupsResponse>
                 transformer = UpdateNetworkSecurityGroupsConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "NetworkLoadBalancer",
+                "UpdateNetworkSecurityGroups",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/networkloadbalancer/20200501/NetworkLoadBalancer/UpdateNetworkSecurityGroups");
 
         com.oracle.bmc.responses.AsyncHandler<
                         UpdateNetworkSecurityGroupsRequest, UpdateNetworkSecurityGroupsResponse>

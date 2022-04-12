@@ -475,6 +475,8 @@ public class ChannelsClient implements Channels {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Channels", "CreateChannel", ib.getRequestUri().toString(), "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -508,6 +510,11 @@ public class ChannelsClient implements Channels {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Channels",
+                "DeleteChannel",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/Channel/DeleteChannel");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -537,6 +544,11 @@ public class ChannelsClient implements Channels {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Channels",
+                "GetChannel",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/Channel/GetChannel");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -566,6 +578,11 @@ public class ChannelsClient implements Channels {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Channels",
+                "ListChannels",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/ChannelSummary/ListChannels");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -596,6 +613,11 @@ public class ChannelsClient implements Channels {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Channels",
+                "ResetChannel",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/Channel/ResetChannel");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -627,6 +649,11 @@ public class ChannelsClient implements Channels {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Channels",
+                "ResumeChannel",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/Channel/ResumeChannel");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -658,6 +685,11 @@ public class ChannelsClient implements Channels {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Channels",
+                "UpdateChannel",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/Channel/UpdateChannel");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {

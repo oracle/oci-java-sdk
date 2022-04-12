@@ -476,6 +476,11 @@ public class ComputeClient implements Compute {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Compute",
+                "AcceptShieldedIntegrityPolicy",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/MeasuredBootReport/AcceptShieldedIntegrityPolicy");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -508,6 +513,11 @@ public class ComputeClient implements Compute {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Compute",
+                "AddImageShapeCompatibilityEntry",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ImageShapeCompatibilityEntry/AddImageShapeCompatibilityEntry");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -543,6 +553,11 @@ public class ComputeClient implements Compute {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Compute",
+                "AttachBootVolume",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/BootVolumeAttachment/AttachBootVolume");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -576,6 +591,11 @@ public class ComputeClient implements Compute {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Compute",
+                "AttachVnic",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VnicAttachment/AttachVnic");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -610,6 +630,11 @@ public class ComputeClient implements Compute {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Compute",
+                "AttachVolume",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VolumeAttachment/AttachVolume");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -645,6 +670,11 @@ public class ComputeClient implements Compute {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Compute",
+                "CaptureConsoleHistory",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ConsoleHistory/CaptureConsoleHistory");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -684,6 +714,11 @@ public class ComputeClient implements Compute {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Compute",
+                "ChangeComputeCapacityReservationCompartment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeCapacityReservation/ChangeComputeCapacityReservationCompartment");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -724,6 +759,11 @@ public class ComputeClient implements Compute {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Compute",
+                "ChangeComputeImageCapabilitySchemaCompartment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeImageCapabilitySchema/ChangeComputeImageCapabilitySchemaCompartment");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -761,6 +801,11 @@ public class ComputeClient implements Compute {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Compute",
+                "ChangeDedicatedVmHostCompartment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DedicatedVmHost/ChangeDedicatedVmHostCompartment");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -797,6 +842,11 @@ public class ComputeClient implements Compute {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Compute",
+                "ChangeImageCompartment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Image/ChangeImageCompartment");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -833,6 +883,11 @@ public class ComputeClient implements Compute {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Compute",
+                "ChangeInstanceCompartment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Instance/ChangeInstanceCompartment");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -870,6 +925,11 @@ public class ComputeClient implements Compute {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Compute",
+                "CreateAppCatalogSubscription",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/AppCatalogSubscription/CreateAppCatalogSubscription");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -907,6 +967,8 @@ public class ComputeClient implements Compute {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Compute", "CreateComputeCapacityReservation", ib.getRequestUri().toString(), "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -944,6 +1006,11 @@ public class ComputeClient implements Compute {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Compute",
+                "CreateComputeImageCapabilitySchema",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeImageCapabilitySchema/CreateComputeImageCapabilitySchema");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -980,6 +1047,11 @@ public class ComputeClient implements Compute {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Compute",
+                "CreateDedicatedVmHost",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DedicatedVmHost/CreateDedicatedVmHost");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1014,6 +1086,11 @@ public class ComputeClient implements Compute {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Compute",
+                "CreateImage",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Image/CreateImage");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1050,6 +1127,11 @@ public class ComputeClient implements Compute {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Compute",
+                "CreateInstanceConsoleConnection",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InstanceConsoleConnection/CreateInstanceConsoleConnection");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1086,6 +1168,8 @@ public class ComputeClient implements Compute {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Compute", "DeleteAppCatalogSubscription", ib.getRequestUri().toString(), "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1118,6 +1202,11 @@ public class ComputeClient implements Compute {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Compute",
+                "DeleteComputeCapacityReservation",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeCapacityReservation/DeleteComputeCapacityReservation");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1150,6 +1239,11 @@ public class ComputeClient implements Compute {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Compute",
+                "DeleteComputeImageCapabilitySchema",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeImageCapabilitySchema/DeleteComputeImageCapabilitySchema");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1180,6 +1274,11 @@ public class ComputeClient implements Compute {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Compute",
+                "DeleteConsoleHistory",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ConsoleHistory/DeleteConsoleHistory");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1211,6 +1310,11 @@ public class ComputeClient implements Compute {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Compute",
+                "DeleteDedicatedVmHost",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DedicatedVmHost/DeleteDedicatedVmHost");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1241,6 +1345,8 @@ public class ComputeClient implements Compute {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Compute", "DeleteImage", ib.getRequestUri().toString(), "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1273,6 +1379,11 @@ public class ComputeClient implements Compute {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Compute",
+                "DeleteInstanceConsoleConnection",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InstanceConsoleConnection/DeleteInstanceConsoleConnection");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1303,6 +1414,8 @@ public class ComputeClient implements Compute {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Compute", "DetachBootVolume", ib.getRequestUri().toString(), "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1332,6 +1445,11 @@ public class ComputeClient implements Compute {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Compute",
+                "DetachVnic",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VnicAttachment/DetachVnic");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1362,6 +1480,11 @@ public class ComputeClient implements Compute {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Compute",
+                "DetachVolume",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VolumeAttachment/DetachVolume");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1393,6 +1516,11 @@ public class ComputeClient implements Compute {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Compute",
+                "ExportImage",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Image/ExportImage");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1426,6 +1554,11 @@ public class ComputeClient implements Compute {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Compute",
+                "GetAppCatalogListing",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/AppCatalogListing/GetAppCatalogListing");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1457,6 +1590,11 @@ public class ComputeClient implements Compute {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Compute",
+                "GetAppCatalogListingAgreements",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/AppCatalogListingResourceVersionAgreements/GetAppCatalogListingAgreements");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1489,6 +1627,11 @@ public class ComputeClient implements Compute {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Compute",
+                "GetAppCatalogListingResourceVersion",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/AppCatalogListingResourceVersion/GetAppCatalogListingResourceVersion");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1519,6 +1662,11 @@ public class ComputeClient implements Compute {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Compute",
+                "GetBootVolumeAttachment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/BootVolumeAttachment/GetBootVolumeAttachment");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1550,6 +1698,11 @@ public class ComputeClient implements Compute {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Compute",
+                "GetComputeCapacityReservation",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeCapacityReservation/GetComputeCapacityReservation");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1582,6 +1735,11 @@ public class ComputeClient implements Compute {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Compute",
+                "GetComputeGlobalImageCapabilitySchema",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeGlobalImageCapabilitySchema/GetComputeGlobalImageCapabilitySchema");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1616,6 +1774,11 @@ public class ComputeClient implements Compute {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Compute",
+                "GetComputeGlobalImageCapabilitySchemaVersion",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeGlobalImageCapabilitySchemaVersion/GetComputeGlobalImageCapabilitySchemaVersion");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1647,6 +1810,11 @@ public class ComputeClient implements Compute {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Compute",
+                "GetComputeImageCapabilitySchema",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeImageCapabilitySchema/GetComputeImageCapabilitySchema");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1676,6 +1844,11 @@ public class ComputeClient implements Compute {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Compute",
+                "GetConsoleHistory",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ConsoleHistory/GetConsoleHistory");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1706,6 +1879,11 @@ public class ComputeClient implements Compute {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Compute",
+                "GetConsoleHistoryContent",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ConsoleHistory/GetConsoleHistoryContent");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1735,6 +1913,11 @@ public class ComputeClient implements Compute {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Compute",
+                "GetDedicatedVmHost",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DedicatedVmHost/GetDedicatedVmHost");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1763,6 +1946,11 @@ public class ComputeClient implements Compute {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Compute",
+                "GetImage",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Image/GetImage");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1794,6 +1982,11 @@ public class ComputeClient implements Compute {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Compute",
+                "GetImageShapeCompatibilityEntry",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ImageShapeCompatibilityEntry/GetImageShapeCompatibilityEntry");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1823,6 +2016,11 @@ public class ComputeClient implements Compute {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Compute",
+                "GetInstance",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Instance/GetInstance");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1854,6 +2052,11 @@ public class ComputeClient implements Compute {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Compute",
+                "GetInstanceConsoleConnection",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InstanceConsoleConnection/GetInstanceConsoleConnection");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1884,6 +2087,11 @@ public class ComputeClient implements Compute {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Compute",
+                "GetMeasuredBootReport",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/MeasuredBootReport/GetMeasuredBootReport");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1913,6 +2121,11 @@ public class ComputeClient implements Compute {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Compute",
+                "GetVnicAttachment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VnicAttachment/GetVnicAttachment");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1942,6 +2155,11 @@ public class ComputeClient implements Compute {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Compute",
+                "GetVolumeAttachment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VolumeAttachment/GetVolumeAttachment");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1974,6 +2192,11 @@ public class ComputeClient implements Compute {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Compute",
+                "GetWindowsInstanceInitialCredentials",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InstanceCredentials/GetWindowsInstanceInitialCredentials");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2004,6 +2227,11 @@ public class ComputeClient implements Compute {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Compute",
+                "InstanceAction",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Instance/InstanceAction");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2035,6 +2263,11 @@ public class ComputeClient implements Compute {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Compute",
+                "LaunchInstance",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Instance/LaunchInstance");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2071,6 +2304,11 @@ public class ComputeClient implements Compute {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Compute",
+                "ListAppCatalogListingResourceVersions",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/AppCatalogListingResourceVersionSummary/ListAppCatalogListingResourceVersions");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2101,6 +2339,11 @@ public class ComputeClient implements Compute {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Compute",
+                "ListAppCatalogListings",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/AppCatalogListingSummary/ListAppCatalogListings");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2132,6 +2375,11 @@ public class ComputeClient implements Compute {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Compute",
+                "ListAppCatalogSubscriptions",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/AppCatalogSubscriptionSummary/ListAppCatalogSubscriptions");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2163,6 +2411,11 @@ public class ComputeClient implements Compute {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Compute",
+                "ListBootVolumeAttachments",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/BootVolumeAttachment/ListBootVolumeAttachments");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2197,6 +2450,11 @@ public class ComputeClient implements Compute {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Compute",
+                "ListComputeCapacityReservationInstanceShapes",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeCapacityReservationInstanceShapeSummary/ListComputeCapacityReservationInstanceShapes");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2229,6 +2487,11 @@ public class ComputeClient implements Compute {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Compute",
+                "ListComputeCapacityReservationInstances",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/CapacityReservationInstanceSummary/ListComputeCapacityReservationInstances");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2260,6 +2523,11 @@ public class ComputeClient implements Compute {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Compute",
+                "ListComputeCapacityReservations",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeCapacityReservation/ListComputeCapacityReservations");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2295,6 +2563,11 @@ public class ComputeClient implements Compute {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Compute",
+                "ListComputeGlobalImageCapabilitySchemaVersions",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeGlobalImageCapabilitySchemaVersionSummary/ListComputeGlobalImageCapabilitySchemaVersions");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2327,6 +2600,11 @@ public class ComputeClient implements Compute {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Compute",
+                "ListComputeGlobalImageCapabilitySchemas",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeGlobalImageCapabilitySchemaSummary/ListComputeGlobalImageCapabilitySchemas");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2358,6 +2636,11 @@ public class ComputeClient implements Compute {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Compute",
+                "ListComputeImageCapabilitySchemas",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeImageCapabilitySchemaSummary/ListComputeImageCapabilitySchemas");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2387,6 +2670,11 @@ public class ComputeClient implements Compute {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Compute",
+                "ListConsoleHistories",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ConsoleHistory/ListConsoleHistories");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2418,6 +2706,11 @@ public class ComputeClient implements Compute {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Compute",
+                "ListDedicatedVmHostInstanceShapes",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DedicatedVmHostInstanceShapeSummary/ListDedicatedVmHostInstanceShapes");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2449,6 +2742,11 @@ public class ComputeClient implements Compute {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Compute",
+                "ListDedicatedVmHostInstances",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DedicatedVmHostInstanceSummary/ListDedicatedVmHostInstances");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2480,6 +2778,11 @@ public class ComputeClient implements Compute {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Compute",
+                "ListDedicatedVmHostShapes",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DedicatedVmHostShapeSummary/ListDedicatedVmHostShapes");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2509,6 +2812,11 @@ public class ComputeClient implements Compute {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Compute",
+                "ListDedicatedVmHosts",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DedicatedVmHostSummary/ListDedicatedVmHosts");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2540,6 +2848,11 @@ public class ComputeClient implements Compute {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Compute",
+                "ListImageShapeCompatibilityEntries",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ImageShapeCompatibilityEntry/ListImageShapeCompatibilityEntries");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2568,6 +2881,11 @@ public class ComputeClient implements Compute {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Compute",
+                "ListImages",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Image/ListImages");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2599,6 +2917,11 @@ public class ComputeClient implements Compute {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Compute",
+                "ListInstanceConsoleConnections",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InstanceConsoleConnection/ListInstanceConsoleConnections");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2628,6 +2951,11 @@ public class ComputeClient implements Compute {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Compute",
+                "ListInstanceDevices",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Device/ListInstanceDevices");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2657,6 +2985,11 @@ public class ComputeClient implements Compute {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Compute",
+                "ListInstances",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Instance/ListInstances");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2685,6 +3018,11 @@ public class ComputeClient implements Compute {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Compute",
+                "ListShapes",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Shape/ListShapes");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2714,6 +3052,11 @@ public class ComputeClient implements Compute {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Compute",
+                "ListVnicAttachments",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VnicAttachment/ListVnicAttachments");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2744,6 +3087,11 @@ public class ComputeClient implements Compute {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Compute",
+                "ListVolumeAttachments",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VolumeAttachment/ListVolumeAttachments");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2775,6 +3123,11 @@ public class ComputeClient implements Compute {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Compute",
+                "RemoveImageShapeCompatibilityEntry",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ImageShapeCompatibilityEntry/RemoveImageShapeCompatibilityEntry");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2805,6 +3158,8 @@ public class ComputeClient implements Compute {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Compute", "TerminateInstance", ib.getRequestUri().toString(), "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2837,6 +3192,11 @@ public class ComputeClient implements Compute {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Compute",
+                "UpdateComputeCapacityReservation",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeCapacityReservation/UpdateComputeCapacityReservation");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2873,6 +3233,11 @@ public class ComputeClient implements Compute {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Compute",
+                "UpdateComputeImageCapabilitySchema",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeImageCapabilitySchema/UpdateComputeImageCapabilitySchema");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2907,6 +3272,11 @@ public class ComputeClient implements Compute {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Compute",
+                "UpdateConsoleHistory",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ConsoleHistory/UpdateConsoleHistory");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2942,6 +3312,11 @@ public class ComputeClient implements Compute {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Compute",
+                "UpdateDedicatedVmHost",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DedicatedVmHost/UpdateDedicatedVmHost");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2976,6 +3351,11 @@ public class ComputeClient implements Compute {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Compute",
+                "UpdateImage",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Image/UpdateImage");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3010,6 +3390,11 @@ public class ComputeClient implements Compute {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Compute",
+                "UpdateInstance",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Instance/UpdateInstance");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3045,6 +3430,11 @@ public class ComputeClient implements Compute {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Compute",
+                "UpdateInstanceConsoleConnection",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InstanceConsoleConnection/UpdateInstanceConsoleConnection");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3080,6 +3470,11 @@ public class ComputeClient implements Compute {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Compute",
+                "UpdateVolumeAttachment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VolumeAttachment/UpdateVolumeAttachment");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {

@@ -392,6 +392,11 @@ public class ObjectStorageAsyncClient implements ObjectStorageAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, AbortMultipartUploadResponse>
                 transformer = AbortMultipartUploadConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ObjectStorage",
+                "AbortMultipartUpload",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/MultipartUpload/AbortMultipartUpload");
 
         com.oracle.bmc.responses.AsyncHandler<
                         AbortMultipartUploadRequest, AbortMultipartUploadResponse>
@@ -432,6 +437,11 @@ public class ObjectStorageAsyncClient implements ObjectStorageAsync {
                 CancelWorkRequestConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, CancelWorkRequestResponse>
                 transformer = CancelWorkRequestConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ObjectStorage",
+                "CancelWorkRequest",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/WorkRequest/CancelWorkRequest");
 
         com.oracle.bmc.responses.AsyncHandler<CancelWorkRequestRequest, CancelWorkRequestResponse>
                 handlerToUse = handler;
@@ -472,6 +482,11 @@ public class ObjectStorageAsyncClient implements ObjectStorageAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, CommitMultipartUploadResponse>
                 transformer = CommitMultipartUploadConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ObjectStorage",
+                "CommitMultipartUpload",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/MultipartUpload/CommitMultipartUpload");
 
         com.oracle.bmc.responses.AsyncHandler<
                         CommitMultipartUploadRequest, CommitMultipartUploadResponse>
@@ -515,6 +530,11 @@ public class ObjectStorageAsyncClient implements ObjectStorageAsync {
                 CopyObjectConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, CopyObjectResponse>
                 transformer = CopyObjectConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ObjectStorage",
+                "CopyObject",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/Object/CopyObject");
 
         com.oracle.bmc.responses.AsyncHandler<CopyObjectRequest, CopyObjectResponse> handlerToUse =
                 handler;
@@ -558,6 +578,11 @@ public class ObjectStorageAsyncClient implements ObjectStorageAsync {
                 CreateBucketConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, CreateBucketResponse>
                 transformer = CreateBucketConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ObjectStorage",
+                "CreateBucket",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/Bucket/CreateBucket");
 
         com.oracle.bmc.responses.AsyncHandler<CreateBucketRequest, CreateBucketResponse>
                 handlerToUse = handler;
@@ -603,6 +628,11 @@ public class ObjectStorageAsyncClient implements ObjectStorageAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, CreateMultipartUploadResponse>
                 transformer = CreateMultipartUploadConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ObjectStorage",
+                "CreateMultipartUpload",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/MultipartUpload/CreateMultipartUpload");
 
         com.oracle.bmc.responses.AsyncHandler<
                         CreateMultipartUploadRequest, CreateMultipartUploadResponse>
@@ -651,6 +681,11 @@ public class ObjectStorageAsyncClient implements ObjectStorageAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, CreatePreauthenticatedRequestResponse>
                 transformer = CreatePreauthenticatedRequestConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ObjectStorage",
+                "CreatePreauthenticatedRequest",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/PreauthenticatedRequest/CreatePreauthenticatedRequest");
 
         com.oracle.bmc.responses.AsyncHandler<
                         CreatePreauthenticatedRequestRequest, CreatePreauthenticatedRequestResponse>
@@ -698,6 +733,11 @@ public class ObjectStorageAsyncClient implements ObjectStorageAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, CreateReplicationPolicyResponse>
                 transformer = CreateReplicationPolicyConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ObjectStorage",
+                "CreateReplicationPolicy",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/Replication/CreateReplicationPolicy");
 
         com.oracle.bmc.responses.AsyncHandler<
                         CreateReplicationPolicyRequest, CreateReplicationPolicyResponse>
@@ -744,6 +784,11 @@ public class ObjectStorageAsyncClient implements ObjectStorageAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, CreateRetentionRuleResponse>
                 transformer = CreateRetentionRuleConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ObjectStorage",
+                "CreateRetentionRule",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/RetentionRule/CreateRetentionRule");
 
         com.oracle.bmc.responses.AsyncHandler<
                         CreateRetentionRuleRequest, CreateRetentionRuleResponse>
@@ -788,6 +833,11 @@ public class ObjectStorageAsyncClient implements ObjectStorageAsync {
                 DeleteBucketConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteBucketResponse>
                 transformer = DeleteBucketConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ObjectStorage",
+                "DeleteBucket",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/Bucket/DeleteBucket");
 
         com.oracle.bmc.responses.AsyncHandler<DeleteBucketRequest, DeleteBucketResponse>
                 handlerToUse = handler;
@@ -826,6 +876,11 @@ public class ObjectStorageAsyncClient implements ObjectStorageAsync {
                 DeleteObjectConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteObjectResponse>
                 transformer = DeleteObjectConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ObjectStorage",
+                "DeleteObject",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/Object/DeleteObject");
 
         com.oracle.bmc.responses.AsyncHandler<DeleteObjectRequest, DeleteObjectResponse>
                 handlerToUse = handler;
@@ -868,6 +923,11 @@ public class ObjectStorageAsyncClient implements ObjectStorageAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, DeleteObjectLifecyclePolicyResponse>
                 transformer = DeleteObjectLifecyclePolicyConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ObjectStorage",
+                "DeleteObjectLifecyclePolicy",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/ObjectLifecyclePolicy/DeleteObjectLifecyclePolicy");
 
         com.oracle.bmc.responses.AsyncHandler<
                         DeleteObjectLifecyclePolicyRequest, DeleteObjectLifecyclePolicyResponse>
@@ -912,6 +972,11 @@ public class ObjectStorageAsyncClient implements ObjectStorageAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, DeletePreauthenticatedRequestResponse>
                 transformer = DeletePreauthenticatedRequestConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ObjectStorage",
+                "DeletePreauthenticatedRequest",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/PreauthenticatedRequest/DeletePreauthenticatedRequest");
 
         com.oracle.bmc.responses.AsyncHandler<
                         DeletePreauthenticatedRequestRequest, DeletePreauthenticatedRequestResponse>
@@ -954,6 +1019,11 @@ public class ObjectStorageAsyncClient implements ObjectStorageAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, DeleteReplicationPolicyResponse>
                 transformer = DeleteReplicationPolicyConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ObjectStorage",
+                "DeleteReplicationPolicy",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/Replication/DeleteReplicationPolicy");
 
         com.oracle.bmc.responses.AsyncHandler<
                         DeleteReplicationPolicyRequest, DeleteReplicationPolicyResponse>
@@ -995,6 +1065,11 @@ public class ObjectStorageAsyncClient implements ObjectStorageAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, DeleteRetentionRuleResponse>
                 transformer = DeleteRetentionRuleConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ObjectStorage",
+                "DeleteRetentionRule",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/RetentionRule/DeleteRetentionRule");
 
         com.oracle.bmc.responses.AsyncHandler<
                         DeleteRetentionRuleRequest, DeleteRetentionRuleResponse>
@@ -1033,6 +1108,11 @@ public class ObjectStorageAsyncClient implements ObjectStorageAsync {
                 GetBucketConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetBucketResponse>
                 transformer = GetBucketConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ObjectStorage",
+                "GetBucket",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/Bucket/GetBucket");
 
         com.oracle.bmc.responses.AsyncHandler<GetBucketRequest, GetBucketResponse> handlerToUse =
                 handler;
@@ -1070,6 +1150,11 @@ public class ObjectStorageAsyncClient implements ObjectStorageAsync {
                 GetNamespaceConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetNamespaceResponse>
                 transformer = GetNamespaceConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ObjectStorage",
+                "GetNamespace",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/Namespace/GetNamespace");
 
         com.oracle.bmc.responses.AsyncHandler<GetNamespaceRequest, GetNamespaceResponse>
                 handlerToUse = handler;
@@ -1110,6 +1195,11 @@ public class ObjectStorageAsyncClient implements ObjectStorageAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetNamespaceMetadataResponse>
                 transformer = GetNamespaceMetadataConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ObjectStorage",
+                "GetNamespaceMetadata",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/Namespace/GetNamespaceMetadata");
 
         com.oracle.bmc.responses.AsyncHandler<
                         GetNamespaceMetadataRequest, GetNamespaceMetadataResponse>
@@ -1158,6 +1248,11 @@ public class ObjectStorageAsyncClient implements ObjectStorageAsync {
                 GetObjectConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetObjectResponse>
                 transformer = GetObjectConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ObjectStorage",
+                "GetObject",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/Object/GetObject");
 
         com.oracle.bmc.responses.AsyncHandler<GetObjectRequest, GetObjectResponse> handlerToUse =
                 handler;
@@ -1197,6 +1292,11 @@ public class ObjectStorageAsyncClient implements ObjectStorageAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetObjectLifecyclePolicyResponse>
                 transformer = GetObjectLifecyclePolicyConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ObjectStorage",
+                "GetObjectLifecyclePolicy",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/ObjectLifecyclePolicy/GetObjectLifecyclePolicy");
 
         com.oracle.bmc.responses.AsyncHandler<
                         GetObjectLifecyclePolicyRequest, GetObjectLifecyclePolicyResponse>
@@ -1240,6 +1340,11 @@ public class ObjectStorageAsyncClient implements ObjectStorageAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetPreauthenticatedRequestResponse>
                 transformer = GetPreauthenticatedRequestConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ObjectStorage",
+                "GetPreauthenticatedRequest",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/PreauthenticatedRequest/GetPreauthenticatedRequest");
 
         com.oracle.bmc.responses.AsyncHandler<
                         GetPreauthenticatedRequestRequest, GetPreauthenticatedRequestResponse>
@@ -1282,6 +1387,11 @@ public class ObjectStorageAsyncClient implements ObjectStorageAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetReplicationPolicyResponse>
                 transformer = GetReplicationPolicyConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ObjectStorage",
+                "GetReplicationPolicy",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/Replication/GetReplicationPolicy");
 
         com.oracle.bmc.responses.AsyncHandler<
                         GetReplicationPolicyRequest, GetReplicationPolicyResponse>
@@ -1322,6 +1432,11 @@ public class ObjectStorageAsyncClient implements ObjectStorageAsync {
                 GetRetentionRuleConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetRetentionRuleResponse>
                 transformer = GetRetentionRuleConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ObjectStorage",
+                "GetRetentionRule",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/RetentionRule/GetRetentionRule");
 
         com.oracle.bmc.responses.AsyncHandler<GetRetentionRuleRequest, GetRetentionRuleResponse>
                 handlerToUse = handler;
@@ -1361,6 +1476,11 @@ public class ObjectStorageAsyncClient implements ObjectStorageAsync {
                 GetWorkRequestConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetWorkRequestResponse>
                 transformer = GetWorkRequestConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ObjectStorage",
+                "GetWorkRequest",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/WorkRequest/GetWorkRequest");
 
         com.oracle.bmc.responses.AsyncHandler<GetWorkRequestRequest, GetWorkRequestResponse>
                 handlerToUse = handler;
@@ -1398,6 +1518,11 @@ public class ObjectStorageAsyncClient implements ObjectStorageAsync {
                 HeadBucketConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, HeadBucketResponse>
                 transformer = HeadBucketConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ObjectStorage",
+                "HeadBucket",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/Bucket/HeadBucket");
 
         com.oracle.bmc.responses.AsyncHandler<HeadBucketRequest, HeadBucketResponse> handlerToUse =
                 handler;
@@ -1435,6 +1560,11 @@ public class ObjectStorageAsyncClient implements ObjectStorageAsync {
                 HeadObjectConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, HeadObjectResponse>
                 transformer = HeadObjectConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ObjectStorage",
+                "HeadObject",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/Object/HeadObject");
 
         com.oracle.bmc.responses.AsyncHandler<HeadObjectRequest, HeadObjectResponse> handlerToUse =
                 handler;
@@ -1473,6 +1603,11 @@ public class ObjectStorageAsyncClient implements ObjectStorageAsync {
                 ListBucketsConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListBucketsResponse>
                 transformer = ListBucketsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ObjectStorage",
+                "ListBuckets",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/Bucket/ListBuckets");
 
         com.oracle.bmc.responses.AsyncHandler<ListBucketsRequest, ListBucketsResponse>
                 handlerToUse = handler;
@@ -1513,6 +1648,11 @@ public class ObjectStorageAsyncClient implements ObjectStorageAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListMultipartUploadPartsResponse>
                 transformer = ListMultipartUploadPartsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ObjectStorage",
+                "ListMultipartUploadParts",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/MultipartUpload/ListMultipartUploadParts");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListMultipartUploadPartsRequest, ListMultipartUploadPartsResponse>
@@ -1554,6 +1694,11 @@ public class ObjectStorageAsyncClient implements ObjectStorageAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListMultipartUploadsResponse>
                 transformer = ListMultipartUploadsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ObjectStorage",
+                "ListMultipartUploads",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/MultipartUpload/ListMultipartUploads");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListMultipartUploadsRequest, ListMultipartUploadsResponse>
@@ -1594,6 +1739,11 @@ public class ObjectStorageAsyncClient implements ObjectStorageAsync {
                 ListObjectVersionsConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListObjectVersionsResponse>
                 transformer = ListObjectVersionsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ObjectStorage",
+                "ListObjectVersions",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/Object/ListObjectVersions");
 
         com.oracle.bmc.responses.AsyncHandler<ListObjectVersionsRequest, ListObjectVersionsResponse>
                 handlerToUse = handler;
@@ -1632,6 +1782,11 @@ public class ObjectStorageAsyncClient implements ObjectStorageAsync {
                 ListObjectsConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListObjectsResponse>
                 transformer = ListObjectsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ObjectStorage",
+                "ListObjects",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/Object/ListObjects");
 
         com.oracle.bmc.responses.AsyncHandler<ListObjectsRequest, ListObjectsResponse>
                 handlerToUse = handler;
@@ -1674,6 +1829,11 @@ public class ObjectStorageAsyncClient implements ObjectStorageAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListPreauthenticatedRequestsResponse>
                 transformer = ListPreauthenticatedRequestsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ObjectStorage",
+                "ListPreauthenticatedRequests",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/PreauthenticatedRequest/ListPreauthenticatedRequests");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListPreauthenticatedRequestsRequest, ListPreauthenticatedRequestsResponse>
@@ -1716,6 +1876,11 @@ public class ObjectStorageAsyncClient implements ObjectStorageAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListReplicationPoliciesResponse>
                 transformer = ListReplicationPoliciesConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ObjectStorage",
+                "ListReplicationPolicies",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/Replication/ListReplicationPolicies");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListReplicationPoliciesRequest, ListReplicationPoliciesResponse>
@@ -1757,6 +1922,11 @@ public class ObjectStorageAsyncClient implements ObjectStorageAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListReplicationSourcesResponse>
                 transformer = ListReplicationSourcesConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ObjectStorage",
+                "ListReplicationSources",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/Replication/ListReplicationSources");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListReplicationSourcesRequest, ListReplicationSourcesResponse>
@@ -1797,6 +1967,11 @@ public class ObjectStorageAsyncClient implements ObjectStorageAsync {
                 ListRetentionRulesConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListRetentionRulesResponse>
                 transformer = ListRetentionRulesConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ObjectStorage",
+                "ListRetentionRules",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/RetentionRule/ListRetentionRules");
 
         com.oracle.bmc.responses.AsyncHandler<ListRetentionRulesRequest, ListRetentionRulesResponse>
                 handlerToUse = handler;
@@ -1837,6 +2012,11 @@ public class ObjectStorageAsyncClient implements ObjectStorageAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListWorkRequestErrorsResponse>
                 transformer = ListWorkRequestErrorsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ObjectStorage",
+                "ListWorkRequestErrors",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/WorkRequestError/ListWorkRequestErrors");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListWorkRequestErrorsRequest, ListWorkRequestErrorsResponse>
@@ -1878,6 +2058,11 @@ public class ObjectStorageAsyncClient implements ObjectStorageAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListWorkRequestLogsResponse>
                 transformer = ListWorkRequestLogsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ObjectStorage",
+                "ListWorkRequestLogs",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/WorkRequestLogEntry/ListWorkRequestLogs");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListWorkRequestLogsRequest, ListWorkRequestLogsResponse>
@@ -1918,6 +2103,11 @@ public class ObjectStorageAsyncClient implements ObjectStorageAsync {
                 ListWorkRequestsConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListWorkRequestsResponse>
                 transformer = ListWorkRequestsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ObjectStorage",
+                "ListWorkRequests",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/WorkRequest/ListWorkRequests");
 
         com.oracle.bmc.responses.AsyncHandler<ListWorkRequestsRequest, ListWorkRequestsResponse>
                 handlerToUse = handler;
@@ -1957,6 +2147,11 @@ public class ObjectStorageAsyncClient implements ObjectStorageAsync {
                 MakeBucketWritableConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, MakeBucketWritableResponse>
                 transformer = MakeBucketWritableConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ObjectStorage",
+                "MakeBucketWritable",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/Replication/MakeBucketWritable");
 
         com.oracle.bmc.responses.AsyncHandler<MakeBucketWritableRequest, MakeBucketWritableResponse>
                 handlerToUse = handler;
@@ -2005,6 +2200,11 @@ public class ObjectStorageAsyncClient implements ObjectStorageAsync {
         ib.property(
                 com.oracle.bmc.http.internal.AuthnClientFilter.SIGNING_STRATEGY_PROPERTY_NAME,
                 com.oracle.bmc.http.signing.SigningStrategy.EXCLUDE_BODY);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ObjectStorage",
+                "PutObject",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/Object/PutObject");
 
         com.oracle.bmc.responses.AsyncHandler<PutObjectRequest, PutObjectResponse> handlerToUse =
                 new com.oracle.bmc.responses.internal.StreamClosingAsyncHandler<>(handler);
@@ -2053,6 +2253,11 @@ public class ObjectStorageAsyncClient implements ObjectStorageAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, PutObjectLifecyclePolicyResponse>
                 transformer = PutObjectLifecyclePolicyConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ObjectStorage",
+                "PutObjectLifecyclePolicy",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/ObjectLifecyclePolicy/PutObjectLifecyclePolicy");
 
         com.oracle.bmc.responses.AsyncHandler<
                         PutObjectLifecyclePolicyRequest, PutObjectLifecyclePolicyResponse>
@@ -2098,6 +2303,11 @@ public class ObjectStorageAsyncClient implements ObjectStorageAsync {
                 ReencryptBucketConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ReencryptBucketResponse>
                 transformer = ReencryptBucketConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ObjectStorage",
+                "ReencryptBucket",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/Bucket/ReencryptBucket");
 
         com.oracle.bmc.responses.AsyncHandler<ReencryptBucketRequest, ReencryptBucketResponse>
                 handlerToUse = handler;
@@ -2137,6 +2347,11 @@ public class ObjectStorageAsyncClient implements ObjectStorageAsync {
                 ReencryptObjectConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ReencryptObjectResponse>
                 transformer = ReencryptObjectConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ObjectStorage",
+                "ReencryptObject",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/Object/ReencryptObject");
 
         com.oracle.bmc.responses.AsyncHandler<ReencryptObjectRequest, ReencryptObjectResponse>
                 handlerToUse = handler;
@@ -2180,6 +2395,11 @@ public class ObjectStorageAsyncClient implements ObjectStorageAsync {
                 RenameObjectConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, RenameObjectResponse>
                 transformer = RenameObjectConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ObjectStorage",
+                "RenameObject",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/Object/RenameObject");
 
         com.oracle.bmc.responses.AsyncHandler<RenameObjectRequest, RenameObjectResponse>
                 handlerToUse = handler;
@@ -2224,6 +2444,11 @@ public class ObjectStorageAsyncClient implements ObjectStorageAsync {
                 RestoreObjectsConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, RestoreObjectsResponse>
                 transformer = RestoreObjectsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ObjectStorage",
+                "RestoreObjects",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/Object/RestoreObjects");
 
         com.oracle.bmc.responses.AsyncHandler<RestoreObjectsRequest, RestoreObjectsResponse>
                 handlerToUse = handler;
@@ -2267,6 +2492,11 @@ public class ObjectStorageAsyncClient implements ObjectStorageAsync {
                 UpdateBucketConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateBucketResponse>
                 transformer = UpdateBucketConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ObjectStorage",
+                "UpdateBucket",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/Bucket/UpdateBucket");
 
         com.oracle.bmc.responses.AsyncHandler<UpdateBucketRequest, UpdateBucketResponse>
                 handlerToUse = handler;
@@ -2312,6 +2542,11 @@ public class ObjectStorageAsyncClient implements ObjectStorageAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, UpdateNamespaceMetadataResponse>
                 transformer = UpdateNamespaceMetadataConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ObjectStorage",
+                "UpdateNamespaceMetadata",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/Namespace/UpdateNamespaceMetadata");
 
         com.oracle.bmc.responses.AsyncHandler<
                         UpdateNamespaceMetadataRequest, UpdateNamespaceMetadataResponse>
@@ -2358,6 +2593,11 @@ public class ObjectStorageAsyncClient implements ObjectStorageAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, UpdateObjectStorageTierResponse>
                 transformer = UpdateObjectStorageTierConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ObjectStorage",
+                "UpdateObjectStorageTier",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/Object/UpdateObjectStorageTier");
 
         com.oracle.bmc.responses.AsyncHandler<
                         UpdateObjectStorageTierRequest, UpdateObjectStorageTierResponse>
@@ -2404,6 +2644,11 @@ public class ObjectStorageAsyncClient implements ObjectStorageAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, UpdateRetentionRuleResponse>
                 transformer = UpdateRetentionRuleConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ObjectStorage",
+                "UpdateRetentionRule",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/RetentionRule/UpdateRetentionRule");
 
         com.oracle.bmc.responses.AsyncHandler<
                         UpdateRetentionRuleRequest, UpdateRetentionRuleResponse>
@@ -2458,6 +2703,11 @@ public class ObjectStorageAsyncClient implements ObjectStorageAsync {
         ib.property(
                 com.oracle.bmc.http.internal.AuthnClientFilter.SIGNING_STRATEGY_PROPERTY_NAME,
                 com.oracle.bmc.http.signing.SigningStrategy.EXCLUDE_BODY);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ObjectStorage",
+                "UploadPart",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/MultipartUpload/UploadPart");
 
         com.oracle.bmc.responses.AsyncHandler<UploadPartRequest, UploadPartResponse> handlerToUse =
                 new com.oracle.bmc.responses.internal.StreamClosingAsyncHandler<>(handler);

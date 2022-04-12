@@ -475,6 +475,11 @@ public class ApiGatewayClient implements ApiGateway {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ApiGateway",
+                "ChangeApiCompartment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/api-gateway/20190501/Api/ChangeApiCompartment");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -511,6 +516,11 @@ public class ApiGatewayClient implements ApiGateway {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ApiGateway",
+                "ChangeCertificateCompartment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/api-gateway/20190501/Certificate/ChangeCertificateCompartment");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -545,6 +555,8 @@ public class ApiGatewayClient implements ApiGateway {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ApiGateway", "CreateApi", ib.getRequestUri().toString(), "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -579,6 +591,8 @@ public class ApiGatewayClient implements ApiGateway {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ApiGateway", "CreateCertificate", ib.getRequestUri().toString(), "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -612,6 +626,11 @@ public class ApiGatewayClient implements ApiGateway {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ApiGateway",
+                "CreateSdk",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/api-gateway/20190501/Sdk/CreateSdk");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -644,6 +663,11 @@ public class ApiGatewayClient implements ApiGateway {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ApiGateway",
+                "DeleteApi",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/api-gateway/20190501/Api/DeleteApi");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -674,6 +698,11 @@ public class ApiGatewayClient implements ApiGateway {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ApiGateway",
+                "DeleteCertificate",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/api-gateway/20190501/Certificate/DeleteCertificate");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -703,6 +732,11 @@ public class ApiGatewayClient implements ApiGateway {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ApiGateway",
+                "DeleteSdk",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/api-gateway/20190501/Sdk/DeleteSdk");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -732,6 +766,11 @@ public class ApiGatewayClient implements ApiGateway {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ApiGateway",
+                "GetApi",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/api-gateway/20190501/Api/GetApi");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -771,6 +810,11 @@ public class ApiGatewayClient implements ApiGateway {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ApiGateway",
+                "GetApiContent",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/api-gateway/20190501/Api/GetApiContent");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -802,6 +846,11 @@ public class ApiGatewayClient implements ApiGateway {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ApiGateway",
+                "GetApiDeploymentSpecification",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/api-gateway/20190501/ApiSpecification/GetApiDeploymentSpecification");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -831,6 +880,11 @@ public class ApiGatewayClient implements ApiGateway {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ApiGateway",
+                "GetApiValidations",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/api-gateway/20190501/ApiValidations/GetApiValidations");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -860,6 +914,11 @@ public class ApiGatewayClient implements ApiGateway {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ApiGateway",
+                "GetCertificate",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/api-gateway/20190501/Certificate/GetCertificate");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -888,6 +947,11 @@ public class ApiGatewayClient implements ApiGateway {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ApiGateway",
+                "GetSdk",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/api-gateway/20190501/Sdk/GetSdk");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -916,6 +980,11 @@ public class ApiGatewayClient implements ApiGateway {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ApiGateway",
+                "ListApis",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/api-gateway/20190501/Api/ListApis");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -945,6 +1014,11 @@ public class ApiGatewayClient implements ApiGateway {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ApiGateway",
+                "ListCertificates",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/api-gateway/20190501/Certificate/ListCertificates");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -974,6 +1048,11 @@ public class ApiGatewayClient implements ApiGateway {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ApiGateway",
+                "ListSdkLanguageTypes",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/api-gateway/20190501/SdkLanguageTypeSummary/ListSdkLanguageTypes");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1002,6 +1081,11 @@ public class ApiGatewayClient implements ApiGateway {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ApiGateway",
+                "ListSdks",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/api-gateway/20190501/Sdk/ListSdks");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1030,6 +1114,11 @@ public class ApiGatewayClient implements ApiGateway {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ApiGateway",
+                "UpdateApi",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/api-gateway/20190501/Api/UpdateApi");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1063,6 +1152,11 @@ public class ApiGatewayClient implements ApiGateway {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ApiGateway",
+                "UpdateCertificate",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/api-gateway/20190501/Certificate/UpdateCertificate");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1095,6 +1189,11 @@ public class ApiGatewayClient implements ApiGateway {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ApiGateway",
+                "UpdateSdk",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/api-gateway/20190501/Sdk/UpdateSdk");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {

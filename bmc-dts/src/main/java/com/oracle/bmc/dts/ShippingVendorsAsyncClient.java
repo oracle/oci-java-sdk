@@ -392,6 +392,8 @@ public class ShippingVendorsAsyncClient implements ShippingVendorsAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListShippingVendorsResponse>
                 transformer = ListShippingVendorsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ShippingVendors", "ListShippingVendors", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListShippingVendorsRequest, ListShippingVendorsResponse>

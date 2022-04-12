@@ -40,13 +40,13 @@ public class ListWorkRequestLogsRequest extends com.oracle.bmc.requests.BmcReque
     private Integer limit;
 
     /**
-     * The field to sort by. Only one sort order may be provided. Default order for timeAccepted is descending.
+     * The field to sort by. Only one sort order may be provided. The default order for timeAccepted is descending.
      *
      */
     private SortBy sortBy;
 
     /**
-     * The field to sort by. Only one sort order may be provided. Default order for timeAccepted is descending.
+     * The field to sort by. Only one sort order may be provided. The default order for timeAccepted is descending.
      *
      **/
     public enum SortBy {

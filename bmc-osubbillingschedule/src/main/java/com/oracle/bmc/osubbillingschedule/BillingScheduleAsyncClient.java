@@ -391,6 +391,8 @@ public class BillingScheduleAsyncClient implements BillingScheduleAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListBillingSchedulesResponse>
                 transformer = ListBillingSchedulesConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "BillingSchedule", "ListBillingSchedules", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListBillingSchedulesRequest, ListBillingSchedulesResponse>

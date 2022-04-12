@@ -390,6 +390,11 @@ public class WaasAsyncClient implements WaasAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, AcceptRecommendationsResponse>
                 transformer = AcceptRecommendationsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Waas",
+                "AcceptRecommendations",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/waas/20181116/Recommendation/AcceptRecommendations");
 
         com.oracle.bmc.responses.AsyncHandler<
                         AcceptRecommendationsRequest, AcceptRecommendationsResponse>
@@ -436,6 +441,11 @@ public class WaasAsyncClient implements WaasAsync {
         final com.google.common.base.Function<javax.ws.rs.core.Response, CancelWorkRequestResponse>
                 transformer = CancelWorkRequestConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Waas",
+                "CancelWorkRequest",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/waas/20181116/WorkRequest/CancelWorkRequest");
 
         com.oracle.bmc.responses.AsyncHandler<CancelWorkRequestRequest, CancelWorkRequestResponse>
                 handlerToUse = handler;
@@ -479,6 +489,11 @@ public class WaasAsyncClient implements WaasAsync {
                         javax.ws.rs.core.Response, ChangeAddressListCompartmentResponse>
                 transformer = ChangeAddressListCompartmentConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Waas",
+                "ChangeAddressListCompartment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/waas/20181116/AddressList/ChangeAddressListCompartment");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeAddressListCompartmentRequest, ChangeAddressListCompartmentResponse>
@@ -529,6 +544,11 @@ public class WaasAsyncClient implements WaasAsync {
                         javax.ws.rs.core.Response, ChangeCertificateCompartmentResponse>
                 transformer = ChangeCertificateCompartmentConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Waas",
+                "ChangeCertificateCompartment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/waas/20181116/Certificate/ChangeCertificateCompartment");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeCertificateCompartmentRequest, ChangeCertificateCompartmentResponse>
@@ -580,6 +600,11 @@ public class WaasAsyncClient implements WaasAsync {
                         javax.ws.rs.core.Response, ChangeCustomProtectionRuleCompartmentResponse>
                 transformer = ChangeCustomProtectionRuleCompartmentConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Waas",
+                "ChangeCustomProtectionRuleCompartment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/waas/20181116/CustomProtectionRule/ChangeCustomProtectionRuleCompartment");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeCustomProtectionRuleCompartmentRequest,
@@ -633,6 +658,11 @@ public class WaasAsyncClient implements WaasAsync {
                         javax.ws.rs.core.Response, ChangeWaasPolicyCompartmentResponse>
                 transformer = ChangeWaasPolicyCompartmentConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Waas",
+                "ChangeWaasPolicyCompartment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/waas/20181116/WaasPolicy/ChangeWaasPolicyCompartment");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeWaasPolicyCompartmentRequest, ChangeWaasPolicyCompartmentResponse>
@@ -680,6 +710,11 @@ public class WaasAsyncClient implements WaasAsync {
         final com.google.common.base.Function<javax.ws.rs.core.Response, CreateAddressListResponse>
                 transformer = CreateAddressListConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Waas",
+                "CreateAddressList",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/waas/20181116/AddressList/CreateAddressList");
 
         com.oracle.bmc.responses.AsyncHandler<CreateAddressListRequest, CreateAddressListResponse>
                 handlerToUse = handler;
@@ -725,6 +760,11 @@ public class WaasAsyncClient implements WaasAsync {
         final com.google.common.base.Function<javax.ws.rs.core.Response, CreateCertificateResponse>
                 transformer = CreateCertificateConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Waas",
+                "CreateCertificate",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/waas/20181116/Certificate/CreateCertificate");
 
         com.oracle.bmc.responses.AsyncHandler<CreateCertificateRequest, CreateCertificateResponse>
                 handlerToUse = handler;
@@ -773,6 +813,11 @@ public class WaasAsyncClient implements WaasAsync {
                         javax.ws.rs.core.Response, CreateCustomProtectionRuleResponse>
                 transformer = CreateCustomProtectionRuleConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Waas",
+                "CreateCustomProtectionRule",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/waas/20181116/CustomProtectionRule/CreateCustomProtectionRule");
 
         com.oracle.bmc.responses.AsyncHandler<
                         CreateCustomProtectionRuleRequest, CreateCustomProtectionRuleResponse>
@@ -820,6 +865,11 @@ public class WaasAsyncClient implements WaasAsync {
         final com.google.common.base.Function<javax.ws.rs.core.Response, CreateWaasPolicyResponse>
                 transformer = CreateWaasPolicyConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Waas",
+                "CreateWaasPolicy",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/waas/20181116/WaasPolicy/CreateWaasPolicy");
 
         com.oracle.bmc.responses.AsyncHandler<CreateWaasPolicyRequest, CreateWaasPolicyResponse>
                 handlerToUse = handler;
@@ -865,6 +915,11 @@ public class WaasAsyncClient implements WaasAsync {
         final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteAddressListResponse>
                 transformer = DeleteAddressListConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Waas",
+                "DeleteAddressList",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/waas/20181116/AddressList/DeleteAddressList");
 
         com.oracle.bmc.responses.AsyncHandler<DeleteAddressListRequest, DeleteAddressListResponse>
                 handlerToUse = handler;
@@ -905,6 +960,11 @@ public class WaasAsyncClient implements WaasAsync {
         final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteCertificateResponse>
                 transformer = DeleteCertificateConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Waas",
+                "DeleteCertificate",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/waas/20181116/Certificate/DeleteCertificate");
 
         com.oracle.bmc.responses.AsyncHandler<DeleteCertificateRequest, DeleteCertificateResponse>
                 handlerToUse = handler;
@@ -948,6 +1008,11 @@ public class WaasAsyncClient implements WaasAsync {
                         javax.ws.rs.core.Response, DeleteCustomProtectionRuleResponse>
                 transformer = DeleteCustomProtectionRuleConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Waas",
+                "DeleteCustomProtectionRule",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/waas/20181116/CustomProtectionRule/DeleteCustomProtectionRule");
 
         com.oracle.bmc.responses.AsyncHandler<
                         DeleteCustomProtectionRuleRequest, DeleteCustomProtectionRuleResponse>
@@ -990,6 +1055,11 @@ public class WaasAsyncClient implements WaasAsync {
         final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteWaasPolicyResponse>
                 transformer = DeleteWaasPolicyConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Waas",
+                "DeleteWaasPolicy",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/waas/20181116/WaasPolicy/DeleteWaasPolicy");
 
         com.oracle.bmc.responses.AsyncHandler<DeleteWaasPolicyRequest, DeleteWaasPolicyResponse>
                 handlerToUse = handler;
@@ -1029,6 +1099,11 @@ public class WaasAsyncClient implements WaasAsync {
                 GetAddressListConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetAddressListResponse>
                 transformer = GetAddressListConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Waas",
+                "GetAddressList",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/waas/20181116/AddressList/GetAddressList");
 
         com.oracle.bmc.responses.AsyncHandler<GetAddressListRequest, GetAddressListResponse>
                 handlerToUse = handler;
@@ -1068,6 +1143,11 @@ public class WaasAsyncClient implements WaasAsync {
                 GetCertificateConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetCertificateResponse>
                 transformer = GetCertificateConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Waas",
+                "GetCertificate",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/waas/20181116/Certificate/GetCertificate");
 
         com.oracle.bmc.responses.AsyncHandler<GetCertificateRequest, GetCertificateResponse>
                 handlerToUse = handler;
@@ -1108,6 +1188,11 @@ public class WaasAsyncClient implements WaasAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetCustomProtectionRuleResponse>
                 transformer = GetCustomProtectionRuleConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Waas",
+                "GetCustomProtectionRule",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/waas/20181116/CustomProtectionRule/GetCustomProtectionRule");
 
         com.oracle.bmc.responses.AsyncHandler<
                         GetCustomProtectionRuleRequest, GetCustomProtectionRuleResponse>
@@ -1151,6 +1236,11 @@ public class WaasAsyncClient implements WaasAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetDeviceFingerprintChallengeResponse>
                 transformer = GetDeviceFingerprintChallengeConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Waas",
+                "GetDeviceFingerprintChallenge",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/waas/20181116/DeviceFingerprintChallenge/GetDeviceFingerprintChallenge");
 
         com.oracle.bmc.responses.AsyncHandler<
                         GetDeviceFingerprintChallengeRequest, GetDeviceFingerprintChallengeResponse>
@@ -1195,6 +1285,11 @@ public class WaasAsyncClient implements WaasAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetHumanInteractionChallengeResponse>
                 transformer = GetHumanInteractionChallengeConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Waas",
+                "GetHumanInteractionChallenge",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/waas/20181116/HumanInteractionChallenge/GetHumanInteractionChallenge");
 
         com.oracle.bmc.responses.AsyncHandler<
                         GetHumanInteractionChallengeRequest, GetHumanInteractionChallengeResponse>
@@ -1236,6 +1331,11 @@ public class WaasAsyncClient implements WaasAsync {
                 GetJsChallengeConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetJsChallengeResponse>
                 transformer = GetJsChallengeConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Waas",
+                "GetJsChallenge",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/waas/20181116/JsChallenge/GetJsChallenge");
 
         com.oracle.bmc.responses.AsyncHandler<GetJsChallengeRequest, GetJsChallengeResponse>
                 handlerToUse = handler;
@@ -1275,6 +1375,11 @@ public class WaasAsyncClient implements WaasAsync {
                 GetPolicyConfigConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetPolicyConfigResponse>
                 transformer = GetPolicyConfigConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Waas",
+                "GetPolicyConfig",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/waas/20181116/PolicyConfig/GetPolicyConfig");
 
         com.oracle.bmc.responses.AsyncHandler<GetPolicyConfigRequest, GetPolicyConfigResponse>
                 handlerToUse = handler;
@@ -1314,6 +1419,11 @@ public class WaasAsyncClient implements WaasAsync {
                 GetProtectionRuleConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetProtectionRuleResponse>
                 transformer = GetProtectionRuleConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Waas",
+                "GetProtectionRule",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/waas/20181116/ProtectionRule/GetProtectionRule");
 
         com.oracle.bmc.responses.AsyncHandler<GetProtectionRuleRequest, GetProtectionRuleResponse>
                 handlerToUse = handler;
@@ -1354,6 +1464,11 @@ public class WaasAsyncClient implements WaasAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetProtectionSettingsResponse>
                 transformer = GetProtectionSettingsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Waas",
+                "GetProtectionSettings",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/waas/20181116/ProtectionSettings/GetProtectionSettings");
 
         com.oracle.bmc.responses.AsyncHandler<
                         GetProtectionSettingsRequest, GetProtectionSettingsResponse>
@@ -1393,6 +1508,11 @@ public class WaasAsyncClient implements WaasAsync {
                 GetWaasPolicyConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetWaasPolicyResponse>
                 transformer = GetWaasPolicyConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Waas",
+                "GetWaasPolicy",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/waas/20181116/WaasPolicy/GetWaasPolicy");
 
         com.oracle.bmc.responses.AsyncHandler<GetWaasPolicyRequest, GetWaasPolicyResponse>
                 handlerToUse = handler;
@@ -1433,6 +1553,11 @@ public class WaasAsyncClient implements WaasAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetWafAddressRateLimitingResponse>
                 transformer = GetWafAddressRateLimitingConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Waas",
+                "GetWafAddressRateLimiting",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/waas/20181116/AddressRateLimiting/GetWafAddressRateLimiting");
 
         com.oracle.bmc.responses.AsyncHandler<
                         GetWafAddressRateLimitingRequest, GetWafAddressRateLimitingResponse>
@@ -1473,6 +1598,11 @@ public class WaasAsyncClient implements WaasAsync {
                 GetWafConfigConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetWafConfigResponse>
                 transformer = GetWafConfigConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Waas",
+                "GetWafConfig",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/waas/20181116/WafConfig/GetWafConfig");
 
         com.oracle.bmc.responses.AsyncHandler<GetWafConfigRequest, GetWafConfigResponse>
                 handlerToUse = handler;
@@ -1512,6 +1642,11 @@ public class WaasAsyncClient implements WaasAsync {
                 GetWorkRequestConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetWorkRequestResponse>
                 transformer = GetWorkRequestConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Waas",
+                "GetWorkRequest",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/waas/20181116/WorkRequest/GetWorkRequest");
 
         com.oracle.bmc.responses.AsyncHandler<GetWorkRequestRequest, GetWorkRequestResponse>
                 handlerToUse = handler;
@@ -1551,6 +1686,11 @@ public class WaasAsyncClient implements WaasAsync {
                 ListAccessRulesConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListAccessRulesResponse>
                 transformer = ListAccessRulesConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Waas",
+                "ListAccessRules",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/waas/20181116/AccessRule/ListAccessRules");
 
         com.oracle.bmc.responses.AsyncHandler<ListAccessRulesRequest, ListAccessRulesResponse>
                 handlerToUse = handler;
@@ -1590,6 +1730,11 @@ public class WaasAsyncClient implements WaasAsync {
                 ListAddressListsConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListAddressListsResponse>
                 transformer = ListAddressListsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Waas",
+                "ListAddressLists",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/waas/20181116/AddressList/ListAddressLists");
 
         com.oracle.bmc.responses.AsyncHandler<ListAddressListsRequest, ListAddressListsResponse>
                 handlerToUse = handler;
@@ -1629,6 +1774,11 @@ public class WaasAsyncClient implements WaasAsync {
                 ListCachingRulesConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListCachingRulesResponse>
                 transformer = ListCachingRulesConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Waas",
+                "ListCachingRules",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/waas/20181116/CachingRuleSummary/ListCachingRules");
 
         com.oracle.bmc.responses.AsyncHandler<ListCachingRulesRequest, ListCachingRulesResponse>
                 handlerToUse = handler;
@@ -1667,6 +1817,11 @@ public class WaasAsyncClient implements WaasAsync {
                 ListCaptchasConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListCaptchasResponse>
                 transformer = ListCaptchasConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Waas",
+                "ListCaptchas",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/waas/20181116/Captcha/ListCaptchas");
 
         com.oracle.bmc.responses.AsyncHandler<ListCaptchasRequest, ListCaptchasResponse>
                 handlerToUse = handler;
@@ -1706,6 +1861,11 @@ public class WaasAsyncClient implements WaasAsync {
                 ListCertificatesConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListCertificatesResponse>
                 transformer = ListCertificatesConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Waas",
+                "ListCertificates",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/waas/20181116/CertificateSummary/ListCertificates");
 
         com.oracle.bmc.responses.AsyncHandler<ListCertificatesRequest, ListCertificatesResponse>
                 handlerToUse = handler;
@@ -1746,6 +1906,11 @@ public class WaasAsyncClient implements WaasAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListCustomProtectionRulesResponse>
                 transformer = ListCustomProtectionRulesConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Waas",
+                "ListCustomProtectionRules",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/waas/20181116/CustomProtectionRule/ListCustomProtectionRules");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListCustomProtectionRulesRequest, ListCustomProtectionRulesResponse>
@@ -1787,6 +1952,11 @@ public class WaasAsyncClient implements WaasAsync {
                 ListEdgeSubnetsConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListEdgeSubnetsResponse>
                 transformer = ListEdgeSubnetsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Waas",
+                "ListEdgeSubnets",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/waas/20181116/EdgeSubnet/ListEdgeSubnets");
 
         com.oracle.bmc.responses.AsyncHandler<ListEdgeSubnetsRequest, ListEdgeSubnetsResponse>
                 handlerToUse = handler;
@@ -1825,6 +1995,11 @@ public class WaasAsyncClient implements WaasAsync {
                 ListGoodBotsConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListGoodBotsResponse>
                 transformer = ListGoodBotsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Waas",
+                "ListGoodBots",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/waas/20181116/GoodBot/ListGoodBots");
 
         com.oracle.bmc.responses.AsyncHandler<ListGoodBotsRequest, ListGoodBotsResponse>
                 handlerToUse = handler;
@@ -1865,6 +2040,11 @@ public class WaasAsyncClient implements WaasAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListProtectionRulesResponse>
                 transformer = ListProtectionRulesConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Waas",
+                "ListProtectionRules",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/waas/20181116/ProtectionRule/ListProtectionRules");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListProtectionRulesRequest, ListProtectionRulesResponse>
@@ -1906,6 +2086,11 @@ public class WaasAsyncClient implements WaasAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListRecommendationsResponse>
                 transformer = ListRecommendationsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Waas",
+                "ListRecommendations",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/waas/20181116/Recommendation/ListRecommendations");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListRecommendationsRequest, ListRecommendationsResponse>
@@ -1946,6 +2131,11 @@ public class WaasAsyncClient implements WaasAsync {
                 ListThreatFeedsConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListThreatFeedsResponse>
                 transformer = ListThreatFeedsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Waas",
+                "ListThreatFeeds",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/waas/20181116/ThreatFeed/ListThreatFeeds");
 
         com.oracle.bmc.responses.AsyncHandler<ListThreatFeedsRequest, ListThreatFeedsResponse>
                 handlerToUse = handler;
@@ -1985,6 +2175,11 @@ public class WaasAsyncClient implements WaasAsync {
                 ListWaasPoliciesConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListWaasPoliciesResponse>
                 transformer = ListWaasPoliciesConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Waas",
+                "ListWaasPolicies",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/waas/20181116/WaasPolicy/ListWaasPolicies");
 
         com.oracle.bmc.responses.AsyncHandler<ListWaasPoliciesRequest, ListWaasPoliciesResponse>
                 handlerToUse = handler;
@@ -2028,6 +2223,11 @@ public class WaasAsyncClient implements WaasAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListWaasPolicyCustomProtectionRulesResponse>
                 transformer = ListWaasPolicyCustomProtectionRulesConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Waas",
+                "ListWaasPolicyCustomProtectionRules",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/waas/20181116/CustomProtectionRule/ListWaasPolicyCustomProtectionRules");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListWaasPolicyCustomProtectionRulesRequest,
@@ -2072,6 +2272,11 @@ public class WaasAsyncClient implements WaasAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListWafBlockedRequestsResponse>
                 transformer = ListWafBlockedRequestsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Waas",
+                "ListWafBlockedRequests",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/waas/20181116/WafBlockedRequest/ListWafBlockedRequests");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListWafBlockedRequestsRequest, ListWafBlockedRequestsResponse>
@@ -2111,6 +2316,11 @@ public class WaasAsyncClient implements WaasAsync {
                 ListWafLogsConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListWafLogsResponse>
                 transformer = ListWafLogsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Waas",
+                "ListWafLogs",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/waas/20181116/WafLog/ListWafLogs");
 
         com.oracle.bmc.responses.AsyncHandler<ListWafLogsRequest, ListWafLogsResponse>
                 handlerToUse = handler;
@@ -2150,6 +2360,11 @@ public class WaasAsyncClient implements WaasAsync {
                 ListWafRequestsConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListWafRequestsResponse>
                 transformer = ListWafRequestsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Waas",
+                "ListWafRequests",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/waas/20181116/WafRequest/ListWafRequests");
 
         com.oracle.bmc.responses.AsyncHandler<ListWafRequestsRequest, ListWafRequestsResponse>
                 handlerToUse = handler;
@@ -2189,6 +2404,11 @@ public class WaasAsyncClient implements WaasAsync {
                 ListWafTrafficConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListWafTrafficResponse>
                 transformer = ListWafTrafficConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Waas",
+                "ListWafTraffic",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/waas/20181116/WafTrafficDatum/ListWafTraffic");
 
         com.oracle.bmc.responses.AsyncHandler<ListWafTrafficRequest, ListWafTrafficResponse>
                 handlerToUse = handler;
@@ -2228,6 +2448,11 @@ public class WaasAsyncClient implements WaasAsync {
                 ListWhitelistsConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListWhitelistsResponse>
                 transformer = ListWhitelistsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Waas",
+                "ListWhitelists",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/waas/20181116/Whitelist/ListWhitelists");
 
         com.oracle.bmc.responses.AsyncHandler<ListWhitelistsRequest, ListWhitelistsResponse>
                 handlerToUse = handler;
@@ -2267,6 +2492,11 @@ public class WaasAsyncClient implements WaasAsync {
                 ListWorkRequestsConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListWorkRequestsResponse>
                 transformer = ListWorkRequestsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Waas",
+                "ListWorkRequests",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/waas/20181116/WorkRequestSummary/ListWorkRequests");
 
         com.oracle.bmc.responses.AsyncHandler<ListWorkRequestsRequest, ListWorkRequestsResponse>
                 handlerToUse = handler;
@@ -2304,6 +2534,11 @@ public class WaasAsyncClient implements WaasAsync {
                 PurgeCacheConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, PurgeCacheResponse>
                 transformer = PurgeCacheConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Waas",
+                "PurgeCache",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/waas/20181116/PurgeCache/PurgeCache");
 
         com.oracle.bmc.responses.AsyncHandler<PurgeCacheRequest, PurgeCacheResponse> handlerToUse =
                 handler;
@@ -2349,6 +2584,11 @@ public class WaasAsyncClient implements WaasAsync {
         final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateAccessRulesResponse>
                 transformer = UpdateAccessRulesConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Waas",
+                "UpdateAccessRules",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/waas/20181116/AccessRule/UpdateAccessRules");
 
         com.oracle.bmc.responses.AsyncHandler<UpdateAccessRulesRequest, UpdateAccessRulesResponse>
                 handlerToUse = handler;
@@ -2393,6 +2633,11 @@ public class WaasAsyncClient implements WaasAsync {
                 UpdateAddressListConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateAddressListResponse>
                 transformer = UpdateAddressListConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Waas",
+                "UpdateAddressList",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/waas/20181116/AddressList/UpdateAddressList");
 
         com.oracle.bmc.responses.AsyncHandler<UpdateAddressListRequest, UpdateAddressListResponse>
                 handlerToUse = handler;
@@ -2438,6 +2683,11 @@ public class WaasAsyncClient implements WaasAsync {
         final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateCachingRulesResponse>
                 transformer = UpdateCachingRulesConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Waas",
+                "UpdateCachingRules",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/waas/20181116/CachingRule/UpdateCachingRules");
 
         com.oracle.bmc.responses.AsyncHandler<UpdateCachingRulesRequest, UpdateCachingRulesResponse>
                 handlerToUse = handler;
@@ -2483,6 +2733,11 @@ public class WaasAsyncClient implements WaasAsync {
         final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateCaptchasResponse>
                 transformer = UpdateCaptchasConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Waas",
+                "UpdateCaptchas",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/waas/20181116/Captcha/UpdateCaptchas");
 
         com.oracle.bmc.responses.AsyncHandler<UpdateCaptchasRequest, UpdateCaptchasResponse>
                 handlerToUse = handler;
@@ -2527,6 +2782,11 @@ public class WaasAsyncClient implements WaasAsync {
                 UpdateCertificateConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateCertificateResponse>
                 transformer = UpdateCertificateConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Waas",
+                "UpdateCertificate",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/waas/20181116/Certificate/UpdateCertificate");
 
         com.oracle.bmc.responses.AsyncHandler<UpdateCertificateRequest, UpdateCertificateResponse>
                 handlerToUse = handler;
@@ -2575,6 +2835,11 @@ public class WaasAsyncClient implements WaasAsync {
                         javax.ws.rs.core.Response, UpdateCustomProtectionRuleResponse>
                 transformer = UpdateCustomProtectionRuleConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Waas",
+                "UpdateCustomProtectionRule",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/waas/20181116/CustomProtectionRule/UpdateCustomProtectionRule");
 
         com.oracle.bmc.responses.AsyncHandler<
                         UpdateCustomProtectionRuleRequest, UpdateCustomProtectionRuleResponse>
@@ -2625,6 +2890,11 @@ public class WaasAsyncClient implements WaasAsync {
                         javax.ws.rs.core.Response, UpdateDeviceFingerprintChallengeResponse>
                 transformer = UpdateDeviceFingerprintChallengeConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Waas",
+                "UpdateDeviceFingerprintChallenge",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/waas/20181116/DeviceFingerprintChallenge/UpdateDeviceFingerprintChallenge");
 
         com.oracle.bmc.responses.AsyncHandler<
                         UpdateDeviceFingerprintChallengeRequest,
@@ -2674,6 +2944,11 @@ public class WaasAsyncClient implements WaasAsync {
         final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateGoodBotsResponse>
                 transformer = UpdateGoodBotsConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Waas",
+                "UpdateGoodBots",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/waas/20181116/GoodBot/UpdateGoodBots");
 
         com.oracle.bmc.responses.AsyncHandler<UpdateGoodBotsRequest, UpdateGoodBotsResponse>
                 handlerToUse = handler;
@@ -2722,6 +2997,11 @@ public class WaasAsyncClient implements WaasAsync {
                         javax.ws.rs.core.Response, UpdateHumanInteractionChallengeResponse>
                 transformer = UpdateHumanInteractionChallengeConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Waas",
+                "UpdateHumanInteractionChallenge",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/waas/20181116/HumanInteractionChallenge/UpdateHumanInteractionChallenge");
 
         com.oracle.bmc.responses.AsyncHandler<
                         UpdateHumanInteractionChallengeRequest,
@@ -2771,6 +3051,11 @@ public class WaasAsyncClient implements WaasAsync {
         final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateJsChallengeResponse>
                 transformer = UpdateJsChallengeConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Waas",
+                "UpdateJsChallenge",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/waas/20181116/JsChallenge/UpdateJsChallenge");
 
         com.oracle.bmc.responses.AsyncHandler<UpdateJsChallengeRequest, UpdateJsChallengeResponse>
                 handlerToUse = handler;
@@ -2816,6 +3101,11 @@ public class WaasAsyncClient implements WaasAsync {
         final com.google.common.base.Function<javax.ws.rs.core.Response, UpdatePolicyConfigResponse>
                 transformer = UpdatePolicyConfigConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Waas",
+                "UpdatePolicyConfig",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/waas/20181116/PolicyConfig/UpdatePolicyConfig");
 
         com.oracle.bmc.responses.AsyncHandler<UpdatePolicyConfigRequest, UpdatePolicyConfigResponse>
                 handlerToUse = handler;
@@ -2861,6 +3151,11 @@ public class WaasAsyncClient implements WaasAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, UpdateProtectionRulesResponse>
                 transformer = UpdateProtectionRulesConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Waas",
+                "UpdateProtectionRules",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/waas/20181116/ProtectionRule/UpdateProtectionRules");
 
         com.oracle.bmc.responses.AsyncHandler<
                         UpdateProtectionRulesRequest, UpdateProtectionRulesResponse>
@@ -2908,6 +3203,11 @@ public class WaasAsyncClient implements WaasAsync {
                         javax.ws.rs.core.Response, UpdateProtectionSettingsResponse>
                 transformer = UpdateProtectionSettingsConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Waas",
+                "UpdateProtectionSettings",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/waas/20181116/ProtectionSettings/UpdateProtectionSettings");
 
         com.oracle.bmc.responses.AsyncHandler<
                         UpdateProtectionSettingsRequest, UpdateProtectionSettingsResponse>
@@ -2953,6 +3253,11 @@ public class WaasAsyncClient implements WaasAsync {
                 UpdateThreatFeedsConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateThreatFeedsResponse>
                 transformer = UpdateThreatFeedsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Waas",
+                "UpdateThreatFeeds",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/waas/20181116/ThreatFeed/UpdateThreatFeeds");
 
         com.oracle.bmc.responses.AsyncHandler<UpdateThreatFeedsRequest, UpdateThreatFeedsResponse>
                 handlerToUse = handler;
@@ -2998,6 +3303,11 @@ public class WaasAsyncClient implements WaasAsync {
         final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateWaasPolicyResponse>
                 transformer = UpdateWaasPolicyConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Waas",
+                "UpdateWaasPolicy",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/waas/20181116/WaasPolicy/UpdateWaasPolicy");
 
         com.oracle.bmc.responses.AsyncHandler<UpdateWaasPolicyRequest, UpdateWaasPolicyResponse>
                 handlerToUse = handler;
@@ -3047,6 +3357,11 @@ public class WaasAsyncClient implements WaasAsync {
                         javax.ws.rs.core.Response, UpdateWaasPolicyCustomProtectionRulesResponse>
                 transformer = UpdateWaasPolicyCustomProtectionRulesConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Waas",
+                "UpdateWaasPolicyCustomProtectionRules",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/waas/20181116/CustomProtectionRule/UpdateWaasPolicyCustomProtectionRules");
 
         com.oracle.bmc.responses.AsyncHandler<
                         UpdateWaasPolicyCustomProtectionRulesRequest,
@@ -3099,6 +3414,11 @@ public class WaasAsyncClient implements WaasAsync {
                         javax.ws.rs.core.Response, UpdateWafAddressRateLimitingResponse>
                 transformer = UpdateWafAddressRateLimitingConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Waas",
+                "UpdateWafAddressRateLimiting",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/waas/20181116/AddressRateLimiting/UpdateWafAddressRateLimiting");
 
         com.oracle.bmc.responses.AsyncHandler<
                         UpdateWafAddressRateLimitingRequest, UpdateWafAddressRateLimitingResponse>
@@ -3146,6 +3466,11 @@ public class WaasAsyncClient implements WaasAsync {
         final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateWafConfigResponse>
                 transformer = UpdateWafConfigConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Waas",
+                "UpdateWafConfig",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/waas/20181116/WafConfig/UpdateWafConfig");
 
         com.oracle.bmc.responses.AsyncHandler<UpdateWafConfigRequest, UpdateWafConfigResponse>
                 handlerToUse = handler;
@@ -3191,6 +3516,11 @@ public class WaasAsyncClient implements WaasAsync {
         final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateWhitelistsResponse>
                 transformer = UpdateWhitelistsConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Waas",
+                "UpdateWhitelists",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/waas/20181116/Whitelist/UpdateWhitelists");
 
         com.oracle.bmc.responses.AsyncHandler<UpdateWhitelistsRequest, UpdateWhitelistsResponse>
                 handlerToUse = handler;

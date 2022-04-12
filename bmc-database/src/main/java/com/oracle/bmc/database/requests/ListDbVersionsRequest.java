@@ -45,9 +45,9 @@ public class ListDbVersionsRequest extends com.oracle.bmc.requests.BmcRequest<ja
     private String dbSystemId;
 
     /**
-     * The DB system storage management option. Used to list database versions available for that storage manager. Valid values are:
-     * * ASM - Automatic storage management
-     * * LVM - Logical volume management
+     * The DB system storage management option. Used to list database versions available for that storage manager. Valid values are {@code ASM} and {@code LVM}.
+     * * ASM specifies Oracle Automatic Storage Management
+     * * LVM specifies logical volume manager, sometimes called logical disk manager.
      *
      */
     private com.oracle.bmc.database.model.DbSystemOptions.StorageManagement storageManagement;

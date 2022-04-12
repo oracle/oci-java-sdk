@@ -389,6 +389,11 @@ public class AuditAsyncClient implements AuditAsync {
                 GetConfigurationConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetConfigurationResponse>
                 transformer = GetConfigurationConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Audit",
+                "GetConfiguration",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/audit/20190901/Configuration/GetConfiguration");
 
         com.oracle.bmc.responses.AsyncHandler<GetConfigurationRequest, GetConfigurationResponse>
                 handlerToUse = handler;
@@ -426,6 +431,11 @@ public class AuditAsyncClient implements AuditAsync {
                 ListEventsConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListEventsResponse>
                 transformer = ListEventsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Audit",
+                "ListEvents",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/audit/20190901/AuditEvent/ListEvents");
 
         com.oracle.bmc.responses.AsyncHandler<ListEventsRequest, ListEventsResponse> handlerToUse =
                 handler;
@@ -466,6 +476,11 @@ public class AuditAsyncClient implements AuditAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, UpdateConfigurationResponse>
                 transformer = UpdateConfigurationConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Audit",
+                "UpdateConfiguration",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/audit/20190901/Configuration/UpdateConfiguration");
 
         com.oracle.bmc.responses.AsyncHandler<
                         UpdateConfigurationRequest, UpdateConfigurationResponse>

@@ -391,6 +391,8 @@ public class AIServiceVisionAsyncClient implements AIServiceVisionAsync {
                 AnalyzeDocumentConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, AnalyzeDocumentResponse>
                 transformer = AnalyzeDocumentConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "AIServiceVision", "AnalyzeDocument", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<AnalyzeDocumentRequest, AnalyzeDocumentResponse>
                 handlerToUse = handler;
@@ -434,6 +436,8 @@ public class AIServiceVisionAsyncClient implements AIServiceVisionAsync {
                 AnalyzeImageConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, AnalyzeImageResponse>
                 transformer = AnalyzeImageConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "AIServiceVision", "AnalyzeImage", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<AnalyzeImageRequest, AnalyzeImageResponse>
                 handlerToUse = handler;
@@ -478,6 +482,8 @@ public class AIServiceVisionAsyncClient implements AIServiceVisionAsync {
                 CancelDocumentJobConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, CancelDocumentJobResponse>
                 transformer = CancelDocumentJobConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "AIServiceVision", "CancelDocumentJob", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<CancelDocumentJobRequest, CancelDocumentJobResponse>
                 handlerToUse = handler;
@@ -517,6 +523,8 @@ public class AIServiceVisionAsyncClient implements AIServiceVisionAsync {
                 CancelImageJobConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, CancelImageJobResponse>
                 transformer = CancelImageJobConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "AIServiceVision", "CancelImageJob", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<CancelImageJobRequest, CancelImageJobResponse>
                 handlerToUse = handler;
@@ -556,6 +564,8 @@ public class AIServiceVisionAsyncClient implements AIServiceVisionAsync {
                 CancelWorkRequestConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, CancelWorkRequestResponse>
                 transformer = CancelWorkRequestConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "AIServiceVision", "CancelWorkRequest", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<CancelWorkRequestRequest, CancelWorkRequestResponse>
                 handlerToUse = handler;
@@ -596,6 +606,8 @@ public class AIServiceVisionAsyncClient implements AIServiceVisionAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ChangeModelCompartmentResponse>
                 transformer = ChangeModelCompartmentConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "AIServiceVision", "ChangeModelCompartment", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeModelCompartmentRequest, ChangeModelCompartmentResponse>
@@ -642,6 +654,8 @@ public class AIServiceVisionAsyncClient implements AIServiceVisionAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ChangeProjectCompartmentResponse>
                 transformer = ChangeProjectCompartmentConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "AIServiceVision", "ChangeProjectCompartment", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeProjectCompartmentRequest, ChangeProjectCompartmentResponse>
@@ -688,6 +702,8 @@ public class AIServiceVisionAsyncClient implements AIServiceVisionAsync {
         final com.google.common.base.Function<javax.ws.rs.core.Response, CreateDocumentJobResponse>
                 transformer = CreateDocumentJobConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "AIServiceVision", "CreateDocumentJob", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<CreateDocumentJobRequest, CreateDocumentJobResponse>
                 handlerToUse = handler;
@@ -733,6 +749,8 @@ public class AIServiceVisionAsyncClient implements AIServiceVisionAsync {
         final com.google.common.base.Function<javax.ws.rs.core.Response, CreateImageJobResponse>
                 transformer = CreateImageJobConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "AIServiceVision", "CreateImageJob", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<CreateImageJobRequest, CreateImageJobResponse>
                 handlerToUse = handler;
@@ -777,6 +795,8 @@ public class AIServiceVisionAsyncClient implements AIServiceVisionAsync {
         final com.google.common.base.Function<javax.ws.rs.core.Response, CreateModelResponse>
                 transformer = CreateModelConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "AIServiceVision", "CreateModel", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<CreateModelRequest, CreateModelResponse>
                 handlerToUse = handler;
@@ -821,6 +841,8 @@ public class AIServiceVisionAsyncClient implements AIServiceVisionAsync {
         final com.google.common.base.Function<javax.ws.rs.core.Response, CreateProjectResponse>
                 transformer = CreateProjectConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "AIServiceVision", "CreateProject", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<CreateProjectRequest, CreateProjectResponse>
                 handlerToUse = handler;
@@ -864,6 +886,8 @@ public class AIServiceVisionAsyncClient implements AIServiceVisionAsync {
                 DeleteModelConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteModelResponse>
                 transformer = DeleteModelConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "AIServiceVision", "DeleteModel", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<DeleteModelRequest, DeleteModelResponse>
                 handlerToUse = handler;
@@ -902,6 +926,8 @@ public class AIServiceVisionAsyncClient implements AIServiceVisionAsync {
                 DeleteProjectConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteProjectResponse>
                 transformer = DeleteProjectConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "AIServiceVision", "DeleteProject", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<DeleteProjectRequest, DeleteProjectResponse>
                 handlerToUse = handler;
@@ -941,6 +967,8 @@ public class AIServiceVisionAsyncClient implements AIServiceVisionAsync {
                 GetDocumentJobConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetDocumentJobResponse>
                 transformer = GetDocumentJobConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "AIServiceVision", "GetDocumentJob", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<GetDocumentJobRequest, GetDocumentJobResponse>
                 handlerToUse = handler;
@@ -979,6 +1007,8 @@ public class AIServiceVisionAsyncClient implements AIServiceVisionAsync {
                 GetImageJobConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetImageJobResponse>
                 transformer = GetImageJobConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "AIServiceVision", "GetImageJob", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<GetImageJobRequest, GetImageJobResponse>
                 handlerToUse = handler;
@@ -1016,6 +1046,8 @@ public class AIServiceVisionAsyncClient implements AIServiceVisionAsync {
                 GetModelConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetModelResponse>
                 transformer = GetModelConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "AIServiceVision", "GetModel", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<GetModelRequest, GetModelResponse> handlerToUse =
                 handler;
@@ -1052,6 +1084,8 @@ public class AIServiceVisionAsyncClient implements AIServiceVisionAsync {
                 GetProjectConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetProjectResponse>
                 transformer = GetProjectConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "AIServiceVision", "GetProject", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<GetProjectRequest, GetProjectResponse> handlerToUse =
                 handler;
@@ -1091,6 +1125,8 @@ public class AIServiceVisionAsyncClient implements AIServiceVisionAsync {
                 GetWorkRequestConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetWorkRequestResponse>
                 transformer = GetWorkRequestConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "AIServiceVision", "GetWorkRequest", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<GetWorkRequestRequest, GetWorkRequestResponse>
                 handlerToUse = handler;
@@ -1128,6 +1164,8 @@ public class AIServiceVisionAsyncClient implements AIServiceVisionAsync {
                 ListModelsConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListModelsResponse>
                 transformer = ListModelsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "AIServiceVision", "ListModels", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<ListModelsRequest, ListModelsResponse> handlerToUse =
                 handler;
@@ -1166,6 +1204,8 @@ public class AIServiceVisionAsyncClient implements AIServiceVisionAsync {
                 ListProjectsConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListProjectsResponse>
                 transformer = ListProjectsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "AIServiceVision", "ListProjects", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<ListProjectsRequest, ListProjectsResponse>
                 handlerToUse = handler;
@@ -1206,6 +1246,8 @@ public class AIServiceVisionAsyncClient implements AIServiceVisionAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListWorkRequestErrorsResponse>
                 transformer = ListWorkRequestErrorsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "AIServiceVision", "ListWorkRequestErrors", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListWorkRequestErrorsRequest, ListWorkRequestErrorsResponse>
@@ -1247,6 +1289,8 @@ public class AIServiceVisionAsyncClient implements AIServiceVisionAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListWorkRequestLogsResponse>
                 transformer = ListWorkRequestLogsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "AIServiceVision", "ListWorkRequestLogs", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListWorkRequestLogsRequest, ListWorkRequestLogsResponse>
@@ -1287,6 +1331,8 @@ public class AIServiceVisionAsyncClient implements AIServiceVisionAsync {
                 ListWorkRequestsConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListWorkRequestsResponse>
                 transformer = ListWorkRequestsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "AIServiceVision", "ListWorkRequests", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<ListWorkRequestsRequest, ListWorkRequestsResponse>
                 handlerToUse = handler;
@@ -1325,6 +1371,8 @@ public class AIServiceVisionAsyncClient implements AIServiceVisionAsync {
                 UpdateModelConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateModelResponse>
                 transformer = UpdateModelConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "AIServiceVision", "UpdateModel", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<UpdateModelRequest, UpdateModelResponse>
                 handlerToUse = handler;
@@ -1368,6 +1416,8 @@ public class AIServiceVisionAsyncClient implements AIServiceVisionAsync {
                 UpdateProjectConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateProjectResponse>
                 transformer = UpdateProjectConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "AIServiceVision", "UpdateProject", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<UpdateProjectRequest, UpdateProjectResponse>
                 handlerToUse = handler;

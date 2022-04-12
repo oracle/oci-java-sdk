@@ -476,6 +476,11 @@ public class LoggingManagementClient implements LoggingManagement {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LoggingManagement",
+                "ChangeLogGroupCompartment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/LogGroup/ChangeLogGroupCompartment");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -510,6 +515,11 @@ public class LoggingManagementClient implements LoggingManagement {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LoggingManagement",
+                "ChangeLogLogGroup",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/Log/ChangeLogLogGroup");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -546,6 +556,11 @@ public class LoggingManagementClient implements LoggingManagement {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LoggingManagement",
+                "ChangeLogSavedSearchCompartment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/LogSavedSearch/ChangeLogSavedSearchCompartment");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -586,6 +601,11 @@ public class LoggingManagementClient implements LoggingManagement {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LoggingManagement",
+                "ChangeUnifiedAgentConfigurationCompartment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/UnifiedAgentConfiguration/ChangeUnifiedAgentConfigurationCompartment");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -620,6 +640,11 @@ public class LoggingManagementClient implements LoggingManagement {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LoggingManagement",
+                "CreateLog",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/Log/CreateLog");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -654,6 +679,11 @@ public class LoggingManagementClient implements LoggingManagement {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LoggingManagement",
+                "CreateLogGroup",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/LogGroup/CreateLogGroup");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -688,6 +718,11 @@ public class LoggingManagementClient implements LoggingManagement {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LoggingManagement",
+                "CreateLogSavedSearch",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/LogSavedSearch/CreateLogSavedSearch");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -724,6 +759,11 @@ public class LoggingManagementClient implements LoggingManagement {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LoggingManagement",
+                "CreateUnifiedAgentConfiguration",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/UnifiedAgentConfiguration/CreateUnifiedAgentConfiguration");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -757,6 +797,11 @@ public class LoggingManagementClient implements LoggingManagement {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LoggingManagement",
+                "DeleteLog",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/Log/DeleteLog");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -787,6 +832,11 @@ public class LoggingManagementClient implements LoggingManagement {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LoggingManagement",
+                "DeleteLogGroup",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/LogGroup/DeleteLogGroup");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -817,6 +867,11 @@ public class LoggingManagementClient implements LoggingManagement {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LoggingManagement",
+                "DeleteLogSavedSearch",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/LogSavedSearch/DeleteLogSavedSearch");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -849,6 +904,11 @@ public class LoggingManagementClient implements LoggingManagement {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LoggingManagement",
+                "DeleteUnifiedAgentConfiguration",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/UnifiedAgentConfiguration/DeleteUnifiedAgentConfiguration");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -879,6 +939,11 @@ public class LoggingManagementClient implements LoggingManagement {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LoggingManagement",
+                "DeleteWorkRequest",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/WorkRequest/DeleteWorkRequest");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -908,6 +973,11 @@ public class LoggingManagementClient implements LoggingManagement {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LoggingManagement",
+                "GetLog",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/Log/GetLog");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -937,6 +1007,11 @@ public class LoggingManagementClient implements LoggingManagement {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LoggingManagement",
+                "GetLogGroup",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/LogGroup/GetLogGroup");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -966,6 +1041,11 @@ public class LoggingManagementClient implements LoggingManagement {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LoggingManagement",
+                "GetLogIncludedSearch",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/LogIncludedSearch/GetLogIncludedSearch");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -995,6 +1075,11 @@ public class LoggingManagementClient implements LoggingManagement {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LoggingManagement",
+                "GetLogSavedSearch",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/LogSavedSearch/GetLogSavedSearch");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1026,6 +1111,11 @@ public class LoggingManagementClient implements LoggingManagement {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LoggingManagement",
+                "GetUnifiedAgentConfiguration",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/UnifiedAgentConfiguration/GetUnifiedAgentConfiguration");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1055,6 +1145,11 @@ public class LoggingManagementClient implements LoggingManagement {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LoggingManagement",
+                "GetWorkRequest",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/WorkRequest/GetWorkRequest");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1084,6 +1179,11 @@ public class LoggingManagementClient implements LoggingManagement {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LoggingManagement",
+                "ListLogGroups",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/LogGroupSummary/ListLogGroups");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1114,6 +1214,11 @@ public class LoggingManagementClient implements LoggingManagement {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LoggingManagement",
+                "ListLogIncludedSearches",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/LogIncludedSearch/ListLogIncludedSearches");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1143,6 +1248,11 @@ public class LoggingManagementClient implements LoggingManagement {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LoggingManagement",
+                "ListLogSavedSearches",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/LogSavedSearch/ListLogSavedSearches");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1171,6 +1281,11 @@ public class LoggingManagementClient implements LoggingManagement {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LoggingManagement",
+                "ListLogs",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/LogSummary/ListLogs");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1200,6 +1315,11 @@ public class LoggingManagementClient implements LoggingManagement {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LoggingManagement",
+                "ListServices",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/ServiceSummary/ListServices");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1231,6 +1351,11 @@ public class LoggingManagementClient implements LoggingManagement {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LoggingManagement",
+                "ListUnifiedAgentConfigurations",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/UnifiedAgentConfiguration/ListUnifiedAgentConfigurations");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1261,6 +1386,11 @@ public class LoggingManagementClient implements LoggingManagement {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LoggingManagement",
+                "ListWorkRequestErrors",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/WorkRequestError/ListWorkRequestErrors");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1290,6 +1420,11 @@ public class LoggingManagementClient implements LoggingManagement {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LoggingManagement",
+                "ListWorkRequestLogs",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/WorkRequestLog/ListWorkRequestLogs");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1319,6 +1454,11 @@ public class LoggingManagementClient implements LoggingManagement {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LoggingManagement",
+                "ListWorkRequests",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/WorkRequest/ListWorkRequests");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1347,6 +1487,11 @@ public class LoggingManagementClient implements LoggingManagement {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LoggingManagement",
+                "UpdateLog",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/Log/UpdateLog");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1380,6 +1525,11 @@ public class LoggingManagementClient implements LoggingManagement {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LoggingManagement",
+                "UpdateLogGroup",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/LogGroup/UpdateLogGroup");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1413,6 +1563,11 @@ public class LoggingManagementClient implements LoggingManagement {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LoggingManagement",
+                "UpdateLogSavedSearch",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/LogSavedSearch/UpdateLogSavedSearch");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1448,6 +1603,11 @@ public class LoggingManagementClient implements LoggingManagement {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LoggingManagement",
+                "UpdateUnifiedAgentConfiguration",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/UnifiedAgentConfiguration/UpdateUnifiedAgentConfiguration");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {

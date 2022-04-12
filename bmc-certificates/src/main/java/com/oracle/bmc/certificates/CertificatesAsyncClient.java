@@ -389,6 +389,11 @@ public class CertificatesAsyncClient implements CertificatesAsync {
                 GetCaBundleConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetCaBundleResponse>
                 transformer = GetCaBundleConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Certificates",
+                "GetCaBundle",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/certificates/20210224/CaBundle/GetCaBundle");
 
         com.oracle.bmc.responses.AsyncHandler<GetCaBundleRequest, GetCaBundleResponse>
                 handlerToUse = handler;
@@ -431,6 +436,11 @@ public class CertificatesAsyncClient implements CertificatesAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetCertificateAuthorityBundleResponse>
                 transformer = GetCertificateAuthorityBundleConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Certificates",
+                "GetCertificateAuthorityBundle",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/certificates/20210224/CertificateAuthorityBundle/GetCertificateAuthorityBundle");
 
         com.oracle.bmc.responses.AsyncHandler<
                         GetCertificateAuthorityBundleRequest, GetCertificateAuthorityBundleResponse>
@@ -473,6 +483,11 @@ public class CertificatesAsyncClient implements CertificatesAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetCertificateBundleResponse>
                 transformer = GetCertificateBundleConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Certificates",
+                "GetCertificateBundle",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/certificates/20210224/CertificateBundle/GetCertificateBundle");
 
         com.oracle.bmc.responses.AsyncHandler<
                         GetCertificateBundleRequest, GetCertificateBundleResponse>
@@ -517,6 +532,11 @@ public class CertificatesAsyncClient implements CertificatesAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListCertificateAuthorityBundleVersionsResponse>
                 transformer = ListCertificateAuthorityBundleVersionsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Certificates",
+                "ListCertificateAuthorityBundleVersions",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/certificates/20210224/CertificateAuthorityBundleVersionSummary/ListCertificateAuthorityBundleVersions");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListCertificateAuthorityBundleVersionsRequest,
@@ -563,6 +583,11 @@ public class CertificatesAsyncClient implements CertificatesAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListCertificateBundleVersionsResponse>
                 transformer = ListCertificateBundleVersionsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Certificates",
+                "ListCertificateBundleVersions",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/certificates/20210224/CertificateBundleVersionSummary/ListCertificateBundleVersions");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListCertificateBundleVersionsRequest, ListCertificateBundleVersionsResponse>

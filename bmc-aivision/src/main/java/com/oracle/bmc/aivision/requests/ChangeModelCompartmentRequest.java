@@ -22,12 +22,12 @@ public class ChangeModelCompartmentRequest
                 com.oracle.bmc.aivision.model.ChangeModelCompartmentDetails> {
 
     /**
-     * unique model identifier.
+     * A unique model identifier.
      */
     private String modelId;
 
     /**
-     * The deatils of the move.
+     * The details of the move.
      */
     private com.oracle.bmc.aivision.model.ChangeModelCompartmentDetails
             changeModelCompartmentDetails;

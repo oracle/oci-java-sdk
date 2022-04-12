@@ -230,6 +230,8 @@ public class InstanceConfigurationCreateVolumeDetails {
      * <p>
      * Allowed values:
      * <p>
+     * {@code 0}: Represents Lower Cost option.
+     * <p>
      * {@code 10}: Represents Balanced option.
      * <p>
      * {@code 20}: Represents Higher Performance option.

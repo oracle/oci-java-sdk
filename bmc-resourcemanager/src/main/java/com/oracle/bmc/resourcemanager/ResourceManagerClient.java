@@ -473,6 +473,11 @@ public class ResourceManagerClient implements ResourceManager {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ResourceManager",
+                "CancelJob",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/Job/CancelJob");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -509,6 +514,11 @@ public class ResourceManagerClient implements ResourceManager {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ResourceManager",
+                "ChangeConfigurationSourceProviderCompartment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/ConfigurationSourceProvider/ChangeConfigurationSourceProviderCompartment");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -545,6 +555,11 @@ public class ResourceManagerClient implements ResourceManager {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ResourceManager",
+                "ChangeStackCompartment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/Stack/ChangeStackCompartment");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -581,6 +596,11 @@ public class ResourceManagerClient implements ResourceManager {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ResourceManager",
+                "ChangeTemplateCompartment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/Template/ChangeTemplateCompartment");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -618,6 +638,11 @@ public class ResourceManagerClient implements ResourceManager {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ResourceManager",
+                "CreateConfigurationSourceProvider",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/ConfigurationSourceProvider/CreateConfigurationSourceProvider");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -652,6 +677,11 @@ public class ResourceManagerClient implements ResourceManager {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ResourceManager",
+                "CreateJob",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/Job/CreateJob");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -686,6 +716,11 @@ public class ResourceManagerClient implements ResourceManager {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ResourceManager",
+                "CreateStack",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/Stack/CreateStack");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -720,6 +755,11 @@ public class ResourceManagerClient implements ResourceManager {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ResourceManager",
+                "CreateTemplate",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/Template/CreateTemplate");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -755,6 +795,11 @@ public class ResourceManagerClient implements ResourceManager {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ResourceManager",
+                "DeleteConfigurationSourceProvider",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/ConfigurationSourceProvider/DeleteConfigurationSourceProvider");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -785,6 +830,11 @@ public class ResourceManagerClient implements ResourceManager {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ResourceManager",
+                "DeleteStack",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/Stack/DeleteStack");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -815,6 +865,11 @@ public class ResourceManagerClient implements ResourceManager {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ResourceManager",
+                "DeleteTemplate",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/Template/DeleteTemplate");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -846,6 +901,11 @@ public class ResourceManagerClient implements ResourceManager {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ResourceManager",
+                "DetectStackDrift",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/Stack/DetectStackDrift");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -881,6 +941,11 @@ public class ResourceManagerClient implements ResourceManager {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ResourceManager",
+                "GetConfigurationSourceProvider",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/ConfigurationSourceProvider/GetConfigurationSourceProvider");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -909,6 +974,11 @@ public class ResourceManagerClient implements ResourceManager {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ResourceManager",
+                "GetJob",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/Job/GetJob");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -939,6 +1009,11 @@ public class ResourceManagerClient implements ResourceManager {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ResourceManager",
+                "GetJobDetailedLogContent",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/Job/GetJobDetailedLogContent");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -967,6 +1042,11 @@ public class ResourceManagerClient implements ResourceManager {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ResourceManager",
+                "GetJobLogs",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/Job/GetJobLogs");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -996,6 +1076,11 @@ public class ResourceManagerClient implements ResourceManager {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ResourceManager",
+                "GetJobLogsContent",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/Job/GetJobLogsContent");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1035,6 +1120,11 @@ public class ResourceManagerClient implements ResourceManager {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ResourceManager",
+                "GetJobTfConfig",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/Job/GetJobTfConfig");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1074,6 +1164,11 @@ public class ResourceManagerClient implements ResourceManager {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ResourceManager",
+                "GetJobTfState",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/Job/GetJobTfState");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1102,6 +1197,11 @@ public class ResourceManagerClient implements ResourceManager {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ResourceManager",
+                "GetStack",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/Stack/GetStack");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1141,6 +1241,11 @@ public class ResourceManagerClient implements ResourceManager {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ResourceManager",
+                "GetStackTfConfig",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/Stack/GetStackTfConfig");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1180,6 +1285,11 @@ public class ResourceManagerClient implements ResourceManager {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ResourceManager",
+                "GetStackTfState",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/Stack/GetStackTfState");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1209,6 +1319,11 @@ public class ResourceManagerClient implements ResourceManager {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ResourceManager",
+                "GetTemplate",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/Template/GetTemplate");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1248,6 +1363,11 @@ public class ResourceManagerClient implements ResourceManager {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ResourceManager",
+                "GetTemplateLogo",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/Template/GetTemplateLogo");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1287,6 +1407,11 @@ public class ResourceManagerClient implements ResourceManager {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ResourceManager",
+                "GetTemplateTfConfig",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/Template/GetTemplateTfConfig");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1316,6 +1441,11 @@ public class ResourceManagerClient implements ResourceManager {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ResourceManager",
+                "GetWorkRequest",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/WorkRequest/GetWorkRequest");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1347,6 +1477,11 @@ public class ResourceManagerClient implements ResourceManager {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ResourceManager",
+                "ListConfigurationSourceProviders",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/ConfigurationSourceProviderSummary/ListConfigurationSourceProviders");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1375,6 +1510,11 @@ public class ResourceManagerClient implements ResourceManager {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ResourceManager",
+                "ListJobs",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/JobSummary/ListJobs");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1406,6 +1546,11 @@ public class ResourceManagerClient implements ResourceManager {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ResourceManager",
+                "ListResourceDiscoveryServices",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/Stack/ListResourceDiscoveryServices");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1437,6 +1582,11 @@ public class ResourceManagerClient implements ResourceManager {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ResourceManager",
+                "ListStackResourceDriftDetails",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/StackResourceDriftSummary/ListStackResourceDriftDetails");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1466,6 +1616,11 @@ public class ResourceManagerClient implements ResourceManager {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ResourceManager",
+                "ListStacks",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/StackSummary/ListStacks");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1496,6 +1651,11 @@ public class ResourceManagerClient implements ResourceManager {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ResourceManager",
+                "ListTemplateCategories",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/TemplateCategorySummary/ListTemplateCategories");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1525,6 +1685,11 @@ public class ResourceManagerClient implements ResourceManager {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ResourceManager",
+                "ListTemplates",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/Template/ListTemplates");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1555,6 +1720,11 @@ public class ResourceManagerClient implements ResourceManager {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ResourceManager",
+                "ListTerraformVersions",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/Stack/ListTerraformVersions");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1585,6 +1755,11 @@ public class ResourceManagerClient implements ResourceManager {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ResourceManager",
+                "ListWorkRequestErrors",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/WorkRequest/ListWorkRequestErrors");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1614,6 +1789,11 @@ public class ResourceManagerClient implements ResourceManager {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ResourceManager",
+                "ListWorkRequestLogs",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/WorkRequest/ListWorkRequestLogs");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1643,6 +1823,11 @@ public class ResourceManagerClient implements ResourceManager {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ResourceManager",
+                "ListWorkRequests",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/WorkRequest/ListWorkRequests");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1674,6 +1859,11 @@ public class ResourceManagerClient implements ResourceManager {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ResourceManager",
+                "UpdateConfigurationSourceProvider",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/ConfigurationSourceProvider/UpdateConfigurationSourceProvider");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1707,6 +1897,11 @@ public class ResourceManagerClient implements ResourceManager {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ResourceManager",
+                "UpdateJob",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/Job/UpdateJob");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1740,6 +1935,11 @@ public class ResourceManagerClient implements ResourceManager {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ResourceManager",
+                "UpdateStack",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/Stack/UpdateStack");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1773,6 +1973,11 @@ public class ResourceManagerClient implements ResourceManager {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ResourceManager",
+                "UpdateTemplate",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/Template/UpdateTemplate");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {

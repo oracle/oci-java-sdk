@@ -5,7 +5,7 @@
 package com.oracle.bmc.aivision.model;
 
 /**
- * A resource created or operated on by a work request.
+ * A resource created, or operated on, by a work request.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -100,9 +100,9 @@ public class WorkRequestResource {
 
     /**
      * The way in which this resource is affected by the work tracked in the work request.
-     * A resource being created, updated, or deleted will remain in the IN_PROGRESS state until
-     * work is complete for that resource at which point it will transition to CREATED, UPDATED,
-     * or DELETED, respectively.
+     * A resource being created, updated, or deleted remains in the IN_PROGRESS state until
+     * the work is complete for. At that point, it transitions to CREATED, UPDATED,
+     * or DELETED, as appropriate.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("actionType")

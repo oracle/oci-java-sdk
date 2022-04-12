@@ -5,7 +5,7 @@
 package com.oracle.bmc.aivision.model;
 
 /**
- * Metadata about the model.
+ * The metadata about the model.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -250,25 +250,25 @@ public class ModelSummary {
     }
 
     /**
-     * Unique identifier that is immutable after creation.
+     * A unique identifier that is immutable after creation.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     String id;
 
     /**
-     * Human-friendly name for the model, which can be changed.
+     * A human-friendly name for the model, which can be changed.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     String displayName;
 
     /**
-     * Optional description of the model.
+     * An optional description of the model.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     String description;
 
     /**
-     * Compartment identifier.
+     * The compartment identifier.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     String compartmentId;
@@ -286,7 +286,7 @@ public class ModelSummary {
     String modelVersion;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project which contains the model.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project that contains the model.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("projectId")
     String projectId;
@@ -310,13 +310,13 @@ public class ModelSummary {
     Model.LifecycleState lifecycleState;
 
     /**
-     * A message describing the current state in more detail which can provide actionable information if training failed.
+     * A message describing the current state in more detail, that can provide actionable information if training failed.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
     String lifecycleDetails;
 
     /**
-     * Precision of the trained model.
+     * The precision of the trained model.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("precision")
     Float precision;
@@ -331,8 +331,8 @@ public class ModelSummary {
     Dataset validationDataset;
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-     * Example: {@code {"bar-key": "value"}}
+     * A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only.
+     * For example: {@code {"bar-key": "value"}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
@@ -340,7 +340,7 @@ public class ModelSummary {
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     * For example: {@code {"foo-namespace": {"bar-key": "value"}}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
@@ -348,7 +348,7 @@ public class ModelSummary {
 
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces.
-     * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+     * For example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("systemTags")

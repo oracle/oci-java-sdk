@@ -476,7 +476,8 @@ public class AutonomousContainerDatabase {
     ServiceLevelAgreementType serviceLevelAgreementType;
 
     /**
-     * The OCID of the Autonomous Exadata Infrastructure.
+     * **No longer used.** For Autonomous Database on dedicated Exadata infrastructure, the container database is created within a specified {@code cloudAutonomousVmCluster}.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("autonomousExadataInfrastructureId")
     String autonomousExadataInfrastructureId;

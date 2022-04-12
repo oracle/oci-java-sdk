@@ -387,6 +387,11 @@ public class LogSearchAsyncClient implements LogSearchAsync {
                 SearchLogsConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, SearchLogsResponse>
                 transformer = SearchLogsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "LogSearch",
+                "SearchLogs",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/logging-search/20190909/SearchResult/SearchLogs");
 
         com.oracle.bmc.responses.AsyncHandler<SearchLogsRequest, SearchLogsResponse> handlerToUse =
                 handler;

@@ -478,6 +478,11 @@ public class BlockchainPlatformClient implements BlockchainPlatform {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "BlockchainPlatform",
+                "ChangeBlockchainPlatformCompartment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/blockchain/20191010/BlockchainPlatform/ChangeBlockchainPlatformCompartment");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -514,6 +519,11 @@ public class BlockchainPlatformClient implements BlockchainPlatform {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "BlockchainPlatform",
+                "CreateBlockchainPlatform",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/blockchain/20191010/BlockchainPlatform/CreateBlockchainPlatform");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -547,6 +557,11 @@ public class BlockchainPlatformClient implements BlockchainPlatform {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "BlockchainPlatform",
+                "CreateOsn",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/blockchain/20191010/BlockchainPlatform/CreateOsn");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -580,6 +595,11 @@ public class BlockchainPlatformClient implements BlockchainPlatform {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "BlockchainPlatform",
+                "CreatePeer",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/blockchain/20191010/BlockchainPlatform/CreatePeer");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -615,6 +635,11 @@ public class BlockchainPlatformClient implements BlockchainPlatform {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "BlockchainPlatform",
+                "DeleteBlockchainPlatform",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/blockchain/20191010/BlockchainPlatform/DeleteBlockchainPlatform");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -644,6 +669,11 @@ public class BlockchainPlatformClient implements BlockchainPlatform {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "BlockchainPlatform",
+                "DeleteOsn",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/blockchain/20191010/BlockchainPlatform/DeleteOsn");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -674,6 +704,11 @@ public class BlockchainPlatformClient implements BlockchainPlatform {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "BlockchainPlatform",
+                "DeletePeer",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/blockchain/20191010/BlockchainPlatform/DeletePeer");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -704,6 +739,11 @@ public class BlockchainPlatformClient implements BlockchainPlatform {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "BlockchainPlatform",
+                "DeleteWorkRequest",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/blockchain/20191010/WorkRequest/DeleteWorkRequest");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -735,6 +775,11 @@ public class BlockchainPlatformClient implements BlockchainPlatform {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "BlockchainPlatform",
+                "GetBlockchainPlatform",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/blockchain/20191010/BlockchainPlatform/GetBlockchainPlatform");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -763,6 +808,11 @@ public class BlockchainPlatformClient implements BlockchainPlatform {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "BlockchainPlatform",
+                "GetOsn",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/blockchain/20191010/Osn/GetOsn");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -791,6 +841,11 @@ public class BlockchainPlatformClient implements BlockchainPlatform {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "BlockchainPlatform",
+                "GetPeer",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/blockchain/20191010/Peer/GetPeer");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -820,6 +875,11 @@ public class BlockchainPlatformClient implements BlockchainPlatform {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "BlockchainPlatform",
+                "GetWorkRequest",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/blockchain/20191010/WorkRequest/GetWorkRequest");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -851,6 +911,11 @@ public class BlockchainPlatformClient implements BlockchainPlatform {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "BlockchainPlatform",
+                "ListBlockchainPlatformPatches",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/blockchain/20191010/BlockchainPlatform/ListBlockchainPlatformPatches");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -881,6 +946,11 @@ public class BlockchainPlatformClient implements BlockchainPlatform {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "BlockchainPlatform",
+                "ListBlockchainPlatforms",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/blockchain/20191010/BlockchainPlatform/ListBlockchainPlatforms");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -910,6 +980,11 @@ public class BlockchainPlatformClient implements BlockchainPlatform {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "BlockchainPlatform",
+                "ListOsns",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/blockchain/20191010/Osn/ListOsns");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -939,6 +1014,11 @@ public class BlockchainPlatformClient implements BlockchainPlatform {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "BlockchainPlatform",
+                "ListPeers",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/blockchain/20191010/Peer/ListPeers");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -969,6 +1049,11 @@ public class BlockchainPlatformClient implements BlockchainPlatform {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "BlockchainPlatform",
+                "ListWorkRequestErrors",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/blockchain/20191010/WorkRequestError/ListWorkRequestErrors");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -998,6 +1083,11 @@ public class BlockchainPlatformClient implements BlockchainPlatform {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "BlockchainPlatform",
+                "ListWorkRequestLogs",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/blockchain/20191010/WorkRequestLogEntry/ListWorkRequestLogs");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1027,6 +1117,11 @@ public class BlockchainPlatformClient implements BlockchainPlatform {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "BlockchainPlatform",
+                "ListWorkRequests",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/blockchain/20191010/WorkRequest/ListWorkRequests");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1058,6 +1153,11 @@ public class BlockchainPlatformClient implements BlockchainPlatform {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "BlockchainPlatform",
+                "PreviewScaleBlockchainPlatform",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/blockchain/20191010/BlockchainPlatform/PreviewScaleBlockchainPlatform");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1093,6 +1193,11 @@ public class BlockchainPlatformClient implements BlockchainPlatform {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "BlockchainPlatform",
+                "ScaleBlockchainPlatform",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/blockchain/20191010/BlockchainPlatform/ScaleBlockchainPlatform");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1128,6 +1233,11 @@ public class BlockchainPlatformClient implements BlockchainPlatform {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "BlockchainPlatform",
+                "StartBlockchainPlatform",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/blockchain/20191010/BlockchainPlatform/StartBlockchainPlatform");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1160,6 +1270,11 @@ public class BlockchainPlatformClient implements BlockchainPlatform {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "BlockchainPlatform",
+                "StopBlockchainPlatform",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/blockchain/20191010/BlockchainPlatform/StopBlockchainPlatform");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1192,6 +1307,11 @@ public class BlockchainPlatformClient implements BlockchainPlatform {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "BlockchainPlatform",
+                "UpdateBlockchainPlatform",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/blockchain/20191010/BlockchainPlatform/UpdateBlockchainPlatform");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1225,6 +1345,11 @@ public class BlockchainPlatformClient implements BlockchainPlatform {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "BlockchainPlatform",
+                "UpdateOsn",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/blockchain/20191010/BlockchainPlatform/UpdateOsn");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1258,6 +1383,11 @@ public class BlockchainPlatformClient implements BlockchainPlatform {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "BlockchainPlatform",
+                "UpdatePeer",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/blockchain/20191010/BlockchainPlatform/UpdatePeer");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1294,6 +1424,11 @@ public class BlockchainPlatformClient implements BlockchainPlatform {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "BlockchainPlatform",
+                "UpgradeBlockchainPlatform",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/blockchain/20191010/BlockchainPlatform/UpgradeBlockchainPlatform");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {

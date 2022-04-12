@@ -397,6 +397,11 @@ public class CertificatesClient implements Certificates {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Certificates",
+                "GetCaBundle",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/certificates/20210224/CaBundle/GetCaBundle");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -428,6 +433,11 @@ public class CertificatesClient implements Certificates {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Certificates",
+                "GetCertificateAuthorityBundle",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/certificates/20210224/CertificateAuthorityBundle/GetCertificateAuthorityBundle");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -457,6 +467,11 @@ public class CertificatesClient implements Certificates {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Certificates",
+                "GetCertificateBundle",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/certificates/20210224/CertificateBundle/GetCertificateBundle");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -489,6 +504,11 @@ public class CertificatesClient implements Certificates {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Certificates",
+                "ListCertificateAuthorityBundleVersions",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/certificates/20210224/CertificateAuthorityBundleVersionSummary/ListCertificateAuthorityBundleVersions");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -520,6 +540,11 @@ public class CertificatesClient implements Certificates {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Certificates",
+                "ListCertificateBundleVersions",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/certificates/20210224/CertificateBundleVersionSummary/ListCertificateBundleVersions");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {

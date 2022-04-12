@@ -19,7 +19,8 @@ public class DefaultRetryCondition implements RetryCondition {
     private static final Multimap<Integer, String> RETRYABLE_SERVICE_ERRORS =
             ImmutableSetMultimap.<Integer, String>builder().put(409, "IncorrectState").build();
 
-    private static final String PROCESSING_EXCEPTION_MSG = ".*processing(\\s)+exception.*";
+    private static final String PROCESSING_EXCEPTION_MSG =
+            "[.|\\s\\S]*processing(\\s)+exception[.|\\s\\S]*";
 
     @Override
     public boolean shouldBeRetried(@NonNull final BmcException exception) {

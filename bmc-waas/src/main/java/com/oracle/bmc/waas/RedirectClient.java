@@ -477,6 +477,11 @@ public class RedirectClient implements Redirect {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Redirect",
+                "ChangeHttpRedirectCompartment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/waas/20181116/HttpRedirect/ChangeHttpRedirectCompartment");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -512,6 +517,11 @@ public class RedirectClient implements Redirect {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Redirect",
+                "CreateHttpRedirect",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/waas/20181116/HttpRedirect/CreateHttpRedirect");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -546,6 +556,11 @@ public class RedirectClient implements Redirect {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Redirect",
+                "DeleteHttpRedirect",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/waas/20181116/HttpRedirect/DeleteHttpRedirect");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -576,6 +591,11 @@ public class RedirectClient implements Redirect {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Redirect",
+                "GetHttpRedirect",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/waas/20181116/HttpRedirect/GetHttpRedirect");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -605,6 +625,11 @@ public class RedirectClient implements Redirect {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Redirect",
+                "ListHttpRedirects",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/waas/20181116/HttpRedirect/ListHttpRedirects");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -635,6 +660,11 @@ public class RedirectClient implements Redirect {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Redirect",
+                "UpdateHttpRedirect",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/waas/20181116/HttpRedirect/UpdateHttpRedirect");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {

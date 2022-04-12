@@ -8,7 +8,7 @@ import com.oracle.bmc.aivision.requests.*;
 import com.oracle.bmc.aivision.responses.*;
 
 /**
- * A description of the VisionService API.
+ * Using Vision, you can upload images to detect and classify objects in them. If you have lots of images, you can process them in batch using asynchronous API endpoints. Vision's features are thematically split between Document AI for document-centric images, and Image Analysis for object and scene-based images. Pretrained models and custom models are supported.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220125")
 public interface AIServiceVisionAsync extends AutoCloseable {
@@ -78,7 +78,7 @@ public interface AIServiceVisionAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Cancel a batch document job.
+     * Cancel a document batch job.
      *
      *
      * @param request The request object containing the details to send
@@ -95,7 +95,7 @@ public interface AIServiceVisionAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Cancel a batch image job.
+     * Cancel an image batch job.
      *
      *
      * @param request The request object containing the details to send
@@ -111,7 +111,7 @@ public interface AIServiceVisionAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Cancel work request with the given ID.
+     * Cancel the work request with the given ID.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -127,7 +127,7 @@ public interface AIServiceVisionAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Moves a model from one compartment to another. When provided, If-Match is checked against ETag values of the resource.
+     * Moves a model from one compartment to another. When provided, If-Match is checked against the ETag values of the resource.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -143,7 +143,7 @@ public interface AIServiceVisionAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Moves a project from one compartment to another. When provided, If-Match is checked against ETag values of the resource.
+     * Move a project from one compartment to another. When provided, If-Match is checked against the ETag values of the resource.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -159,7 +159,7 @@ public interface AIServiceVisionAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Create a batch document analysis job
+     * Create a document analysis batch job.
      *
      *
      * @param request The request object containing the details to send
@@ -176,7 +176,7 @@ public interface AIServiceVisionAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Create a batch image analysis job.
+     * Create an image analysis batch job.
      *
      *
      * @param request The request object containing the details to send
@@ -192,7 +192,7 @@ public interface AIServiceVisionAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Creates a new model.
+     * Create a new model.
      *
      *
      * @param request The request object containing the details to send
@@ -207,7 +207,7 @@ public interface AIServiceVisionAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<CreateModelRequest, CreateModelResponse> handler);
 
     /**
-     * Creates a new project.
+     * Create a new project.
      *
      *
      * @param request The request object containing the details to send
@@ -223,7 +223,7 @@ public interface AIServiceVisionAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Deletes a model by identifier.
+     * Delete a model by identifier.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -237,7 +237,7 @@ public interface AIServiceVisionAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<DeleteModelRequest, DeleteModelResponse> handler);
 
     /**
-     * Deletes a project by identifier.
+     * Delete a project by identifier.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -252,7 +252,7 @@ public interface AIServiceVisionAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Get details of a batch document job.
+     * Get details of a document batch job.
      *
      *
      * @param request The request object containing the details to send
@@ -268,7 +268,7 @@ public interface AIServiceVisionAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Get details of a batch image job.
+     * Get details of an image batch job.
      *
      *
      * @param request The request object containing the details to send
@@ -283,7 +283,7 @@ public interface AIServiceVisionAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<GetImageJobRequest, GetImageJobResponse> handler);
 
     /**
-     * Gets a model by identifier.
+     * Get a model by identifier.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -297,7 +297,7 @@ public interface AIServiceVisionAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<GetModelRequest, GetModelResponse> handler);
 
     /**
-     * Gets a project by identifier.
+     * Get a project by identifier.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -357,7 +357,7 @@ public interface AIServiceVisionAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Return a (paginated) list of errors for a given work request.
+     * Returns a (paginated) list of errors for a given work request.
      *
      *
      * @param request The request object containing the details to send
@@ -407,7 +407,7 @@ public interface AIServiceVisionAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Updates model metadata.
+     * Updates the model metadata.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -421,7 +421,7 @@ public interface AIServiceVisionAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<UpdateModelRequest, UpdateModelResponse> handler);
 
     /**
-     * Updates project metadata.
+     * Update the project metadata.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.

@@ -401,6 +401,11 @@ public class LimitsClient implements Limits {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Limits",
+                "GetResourceAvailability",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/limits/20181025/ResourceAvailability/GetResourceAvailability");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -430,6 +435,11 @@ public class LimitsClient implements Limits {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Limits",
+                "ListLimitDefinitions",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/limits/20181025/LimitDefinitionSummary/ListLimitDefinitions");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -459,6 +469,11 @@ public class LimitsClient implements Limits {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Limits",
+                "ListLimitValues",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/limits/20181025/LimitValueSummary/ListLimitValues");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -488,6 +503,11 @@ public class LimitsClient implements Limits {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Limits",
+                "ListServices",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/limits/20181025/ServiceSummary/ListServices");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {

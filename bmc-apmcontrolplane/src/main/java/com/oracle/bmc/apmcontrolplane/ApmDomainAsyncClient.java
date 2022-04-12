@@ -393,6 +393,11 @@ public class ApmDomainAsyncClient implements ApmDomainAsync {
                         javax.ws.rs.core.Response, ChangeApmDomainCompartmentResponse>
                 transformer = ChangeApmDomainCompartmentConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ApmDomain",
+                "ChangeApmDomainCompartment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/apm-control-plane/20200630/ApmDomain/ChangeApmDomainCompartment");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeApmDomainCompartmentRequest, ChangeApmDomainCompartmentResponse>
@@ -440,6 +445,11 @@ public class ApmDomainAsyncClient implements ApmDomainAsync {
         final com.google.common.base.Function<javax.ws.rs.core.Response, CreateApmDomainResponse>
                 transformer = CreateApmDomainConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ApmDomain",
+                "CreateApmDomain",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/apm-control-plane/20200630/ApmDomain/CreateApmDomain");
 
         com.oracle.bmc.responses.AsyncHandler<CreateApmDomainRequest, CreateApmDomainResponse>
                 handlerToUse = handler;
@@ -484,6 +494,11 @@ public class ApmDomainAsyncClient implements ApmDomainAsync {
                 DeleteApmDomainConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteApmDomainResponse>
                 transformer = DeleteApmDomainConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ApmDomain",
+                "DeleteApmDomain",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/apm-control-plane/20200630/ApmDomain/DeleteApmDomain");
 
         com.oracle.bmc.responses.AsyncHandler<DeleteApmDomainRequest, DeleteApmDomainResponse>
                 handlerToUse = handler;
@@ -523,6 +538,11 @@ public class ApmDomainAsyncClient implements ApmDomainAsync {
                 GenerateDataKeysConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GenerateDataKeysResponse>
                 transformer = GenerateDataKeysConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ApmDomain",
+                "GenerateDataKeys",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/apm-control-plane/20200630/DataKey/GenerateDataKeys");
 
         com.oracle.bmc.responses.AsyncHandler<GenerateDataKeysRequest, GenerateDataKeysResponse>
                 handlerToUse = handler;
@@ -566,6 +586,11 @@ public class ApmDomainAsyncClient implements ApmDomainAsync {
                 GetApmDomainConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetApmDomainResponse>
                 transformer = GetApmDomainConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ApmDomain",
+                "GetApmDomain",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/apm-control-plane/20200630/ApmDomain/GetApmDomain");
 
         com.oracle.bmc.responses.AsyncHandler<GetApmDomainRequest, GetApmDomainResponse>
                 handlerToUse = handler;
@@ -605,6 +630,11 @@ public class ApmDomainAsyncClient implements ApmDomainAsync {
                 GetWorkRequestConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetWorkRequestResponse>
                 transformer = GetWorkRequestConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ApmDomain",
+                "GetWorkRequest",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/apm-control-plane/20200630/WorkRequest/GetWorkRequest");
 
         com.oracle.bmc.responses.AsyncHandler<GetWorkRequestRequest, GetWorkRequestResponse>
                 handlerToUse = handler;
@@ -645,6 +675,11 @@ public class ApmDomainAsyncClient implements ApmDomainAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListApmDomainWorkRequestsResponse>
                 transformer = ListApmDomainWorkRequestsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ApmDomain",
+                "ListApmDomainWorkRequests",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/apm-control-plane/20200630/WorkRequest/ListApmDomainWorkRequests");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListApmDomainWorkRequestsRequest, ListApmDomainWorkRequestsResponse>
@@ -686,6 +721,11 @@ public class ApmDomainAsyncClient implements ApmDomainAsync {
                 ListApmDomainsConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListApmDomainsResponse>
                 transformer = ListApmDomainsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ApmDomain",
+                "ListApmDomains",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/apm-control-plane/20200630/ApmDomainSummary/ListApmDomains");
 
         com.oracle.bmc.responses.AsyncHandler<ListApmDomainsRequest, ListApmDomainsResponse>
                 handlerToUse = handler;
@@ -724,6 +764,11 @@ public class ApmDomainAsyncClient implements ApmDomainAsync {
                 ListDataKeysConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListDataKeysResponse>
                 transformer = ListDataKeysConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ApmDomain",
+                "ListDataKeys",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/apm-control-plane/20200630/DataKeySummary/ListDataKeys");
 
         com.oracle.bmc.responses.AsyncHandler<ListDataKeysRequest, ListDataKeysResponse>
                 handlerToUse = handler;
@@ -764,6 +809,11 @@ public class ApmDomainAsyncClient implements ApmDomainAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListWorkRequestErrorsResponse>
                 transformer = ListWorkRequestErrorsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ApmDomain",
+                "ListWorkRequestErrors",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/apm-control-plane/20200630/WorkRequestError/ListWorkRequestErrors");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListWorkRequestErrorsRequest, ListWorkRequestErrorsResponse>
@@ -805,6 +855,11 @@ public class ApmDomainAsyncClient implements ApmDomainAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListWorkRequestLogsResponse>
                 transformer = ListWorkRequestLogsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ApmDomain",
+                "ListWorkRequestLogs",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/apm-control-plane/20200630/WorkRequestLogEntry/ListWorkRequestLogs");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListWorkRequestLogsRequest, ListWorkRequestLogsResponse>
@@ -845,6 +900,11 @@ public class ApmDomainAsyncClient implements ApmDomainAsync {
                 ListWorkRequestsConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListWorkRequestsResponse>
                 transformer = ListWorkRequestsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ApmDomain",
+                "ListWorkRequests",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/apm-control-plane/20200630/WorkRequest/ListWorkRequests");
 
         com.oracle.bmc.responses.AsyncHandler<ListWorkRequestsRequest, ListWorkRequestsResponse>
                 handlerToUse = handler;
@@ -884,6 +944,11 @@ public class ApmDomainAsyncClient implements ApmDomainAsync {
                 RemoveDataKeysConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, RemoveDataKeysResponse>
                 transformer = RemoveDataKeysConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ApmDomain",
+                "RemoveDataKeys",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/apm-control-plane/20200630/DataKey/RemoveDataKeys");
 
         com.oracle.bmc.responses.AsyncHandler<RemoveDataKeysRequest, RemoveDataKeysResponse>
                 handlerToUse = handler;
@@ -928,6 +993,11 @@ public class ApmDomainAsyncClient implements ApmDomainAsync {
                 UpdateApmDomainConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateApmDomainResponse>
                 transformer = UpdateApmDomainConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ApmDomain",
+                "UpdateApmDomain",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/apm-control-plane/20200630/ApmDomain/UpdateApmDomain");
 
         com.oracle.bmc.responses.AsyncHandler<UpdateApmDomainRequest, UpdateApmDomainResponse>
                 handlerToUse = handler;

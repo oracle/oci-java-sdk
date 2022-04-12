@@ -393,6 +393,11 @@ public class RedirectAsyncClient implements RedirectAsync {
                         javax.ws.rs.core.Response, ChangeHttpRedirectCompartmentResponse>
                 transformer = ChangeHttpRedirectCompartmentConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Redirect",
+                "ChangeHttpRedirectCompartment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/waas/20181116/HttpRedirect/ChangeHttpRedirectCompartment");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeHttpRedirectCompartmentRequest, ChangeHttpRedirectCompartmentResponse>
@@ -440,6 +445,11 @@ public class RedirectAsyncClient implements RedirectAsync {
         final com.google.common.base.Function<javax.ws.rs.core.Response, CreateHttpRedirectResponse>
                 transformer = CreateHttpRedirectConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Redirect",
+                "CreateHttpRedirect",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/waas/20181116/HttpRedirect/CreateHttpRedirect");
 
         com.oracle.bmc.responses.AsyncHandler<CreateHttpRedirectRequest, CreateHttpRedirectResponse>
                 handlerToUse = handler;
@@ -485,6 +495,11 @@ public class RedirectAsyncClient implements RedirectAsync {
         final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteHttpRedirectResponse>
                 transformer = DeleteHttpRedirectConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Redirect",
+                "DeleteHttpRedirect",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/waas/20181116/HttpRedirect/DeleteHttpRedirect");
 
         com.oracle.bmc.responses.AsyncHandler<DeleteHttpRedirectRequest, DeleteHttpRedirectResponse>
                 handlerToUse = handler;
@@ -524,6 +539,11 @@ public class RedirectAsyncClient implements RedirectAsync {
                 GetHttpRedirectConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetHttpRedirectResponse>
                 transformer = GetHttpRedirectConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Redirect",
+                "GetHttpRedirect",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/waas/20181116/HttpRedirect/GetHttpRedirect");
 
         com.oracle.bmc.responses.AsyncHandler<GetHttpRedirectRequest, GetHttpRedirectResponse>
                 handlerToUse = handler;
@@ -563,6 +583,11 @@ public class RedirectAsyncClient implements RedirectAsync {
                 ListHttpRedirectsConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListHttpRedirectsResponse>
                 transformer = ListHttpRedirectsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Redirect",
+                "ListHttpRedirects",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/waas/20181116/HttpRedirect/ListHttpRedirects");
 
         com.oracle.bmc.responses.AsyncHandler<ListHttpRedirectsRequest, ListHttpRedirectsResponse>
                 handlerToUse = handler;
@@ -603,6 +628,11 @@ public class RedirectAsyncClient implements RedirectAsync {
         final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateHttpRedirectResponse>
                 transformer = UpdateHttpRedirectConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Redirect",
+                "UpdateHttpRedirect",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/waas/20181116/HttpRedirect/UpdateHttpRedirect");
 
         com.oracle.bmc.responses.AsyncHandler<UpdateHttpRedirectRequest, UpdateHttpRedirectResponse>
                 handlerToUse = handler;

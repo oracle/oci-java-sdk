@@ -314,6 +314,24 @@ public class UpdateAutonomousDatabaseDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("maxCpuCoreCount")
+        private Integer maxCpuCoreCount;
+
+        public Builder maxCpuCoreCount(Integer maxCpuCoreCount) {
+            this.maxCpuCoreCount = maxCpuCoreCount;
+            this.__explicitlySet__.add("maxCpuCoreCount");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("databaseEdition")
+        private AutonomousDatabaseSummary.DatabaseEdition databaseEdition;
+
+        public Builder databaseEdition(AutonomousDatabaseSummary.DatabaseEdition databaseEdition) {
+            this.databaseEdition = databaseEdition;
+            this.__explicitlySet__.add("databaseEdition");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -350,7 +368,9 @@ public class UpdateAutonomousDatabaseDetails {
                             customerContacts,
                             isMtlsConnectionRequired,
                             scheduledOperations,
-                            isAutoScalingForStorageEnabled);
+                            isAutoScalingForStorageEnabled,
+                            maxCpuCoreCount,
+                            databaseEdition);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -388,7 +408,9 @@ public class UpdateAutonomousDatabaseDetails {
                             .customerContacts(o.getCustomerContacts())
                             .isMtlsConnectionRequired(o.getIsMtlsConnectionRequired())
                             .scheduledOperations(o.getScheduledOperations())
-                            .isAutoScalingForStorageEnabled(o.getIsAutoScalingForStorageEnabled());
+                            .isAutoScalingForStorageEnabled(o.getIsAutoScalingForStorageEnabled())
+                            .maxCpuCoreCount(o.getMaxCpuCoreCount())
+                            .databaseEdition(o.getDatabaseEdition());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -861,6 +883,20 @@ public class UpdateAutonomousDatabaseDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isAutoScalingForStorageEnabled")
     Boolean isAutoScalingForStorageEnabled;
+
+    /**
+     * The number of Max OCPU cores to be made available to the autonomous database with auto scaling of cpu enabled.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("maxCpuCoreCount")
+    Integer maxCpuCoreCount;
+
+    /**
+     * The Oracle Database Edition that applies to the Autonomous databases.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("databaseEdition")
+    AutonomousDatabaseSummary.DatabaseEdition databaseEdition;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

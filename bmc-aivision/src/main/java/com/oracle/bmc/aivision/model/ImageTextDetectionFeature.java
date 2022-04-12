@@ -5,7 +5,7 @@
 package com.oracle.bmc.aivision.model;
 
 /**
- * Text detection parameters.
+ * The text detection parameters.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -73,7 +73,7 @@ public class ImageTextDetectionFeature extends ImageFeature {
     }
 
     /**
-     * Language of the document image, abbreviated according to ISO 639-2.
+     * The language of the document image, abbreviated according to ISO 639-2.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("language")
     DocumentLanguage language;

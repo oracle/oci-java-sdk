@@ -391,6 +391,11 @@ public class DnsAsyncClient implements DnsAsync {
                         javax.ws.rs.core.Response, ChangeResolverCompartmentResponse>
                 transformer = ChangeResolverCompartmentConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Dns",
+                "ChangeResolverCompartment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/dns/20180115/Resolver/ChangeResolverCompartment");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeResolverCompartmentRequest, ChangeResolverCompartmentResponse>
@@ -441,6 +446,11 @@ public class DnsAsyncClient implements DnsAsync {
                         javax.ws.rs.core.Response, ChangeSteeringPolicyCompartmentResponse>
                 transformer = ChangeSteeringPolicyCompartmentConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Dns",
+                "ChangeSteeringPolicyCompartment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/dns/20180115/SteeringPolicy/ChangeSteeringPolicyCompartment");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeSteeringPolicyCompartmentRequest,
@@ -491,6 +501,11 @@ public class DnsAsyncClient implements DnsAsync {
                         javax.ws.rs.core.Response, ChangeTsigKeyCompartmentResponse>
                 transformer = ChangeTsigKeyCompartmentConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Dns",
+                "ChangeTsigKeyCompartment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/dns/20180115/TsigKey/ChangeTsigKeyCompartment");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeTsigKeyCompartmentRequest, ChangeTsigKeyCompartmentResponse>
@@ -538,6 +553,11 @@ public class DnsAsyncClient implements DnsAsync {
                         javax.ws.rs.core.Response, ChangeViewCompartmentResponse>
                 transformer = ChangeViewCompartmentConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Dns",
+                "ChangeViewCompartment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/dns/20180115/View/ChangeViewCompartment");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeViewCompartmentRequest, ChangeViewCompartmentResponse>
@@ -585,6 +605,11 @@ public class DnsAsyncClient implements DnsAsync {
                         javax.ws.rs.core.Response, ChangeZoneCompartmentResponse>
                 transformer = ChangeZoneCompartmentConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Dns",
+                "ChangeZoneCompartment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/dns/20180115/Zone/ChangeZoneCompartment");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeZoneCompartmentRequest, ChangeZoneCompartmentResponse>
@@ -632,6 +657,8 @@ public class DnsAsyncClient implements DnsAsync {
                         javax.ws.rs.core.Response, CreateResolverEndpointResponse>
                 transformer = CreateResolverEndpointConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Dns", "CreateResolverEndpoint", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<
                         CreateResolverEndpointRequest, CreateResolverEndpointResponse>
@@ -679,6 +706,8 @@ public class DnsAsyncClient implements DnsAsync {
                         javax.ws.rs.core.Response, CreateSteeringPolicyResponse>
                 transformer = CreateSteeringPolicyConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Dns", "CreateSteeringPolicy", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<
                         CreateSteeringPolicyRequest, CreateSteeringPolicyResponse>
@@ -728,6 +757,8 @@ public class DnsAsyncClient implements DnsAsync {
                         javax.ws.rs.core.Response, CreateSteeringPolicyAttachmentResponse>
                 transformer = CreateSteeringPolicyAttachmentConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Dns", "CreateSteeringPolicyAttachment", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<
                         CreateSteeringPolicyAttachmentRequest,
@@ -774,6 +805,8 @@ public class DnsAsyncClient implements DnsAsync {
                 CreateTsigKeyConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, CreateTsigKeyResponse>
                 transformer = CreateTsigKeyConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Dns", "CreateTsigKey", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<CreateTsigKeyRequest, CreateTsigKeyResponse>
                 handlerToUse = handler;
@@ -817,6 +850,8 @@ public class DnsAsyncClient implements DnsAsync {
         final com.google.common.base.Function<javax.ws.rs.core.Response, CreateViewResponse>
                 transformer = CreateViewConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Dns", "CreateView", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<CreateViewRequest, CreateViewResponse> handlerToUse =
                 handler;
@@ -859,6 +894,8 @@ public class DnsAsyncClient implements DnsAsync {
                 CreateZoneConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, CreateZoneResponse>
                 transformer = CreateZoneConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Dns", "CreateZone", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<CreateZoneRequest, CreateZoneResponse> handlerToUse =
                 handler;
@@ -904,6 +941,11 @@ public class DnsAsyncClient implements DnsAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, DeleteDomainRecordsResponse>
                 transformer = DeleteDomainRecordsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Dns",
+                "DeleteDomainRecords",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/dns/20180115/Records/DeleteDomainRecords");
 
         com.oracle.bmc.responses.AsyncHandler<
                         DeleteDomainRecordsRequest, DeleteDomainRecordsResponse>
@@ -943,6 +985,8 @@ public class DnsAsyncClient implements DnsAsync {
                 DeleteRRSetConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteRRSetResponse>
                 transformer = DeleteRRSetConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Dns", "DeleteRRSet", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<DeleteRRSetRequest, DeleteRRSetResponse>
                 handlerToUse = handler;
@@ -983,6 +1027,11 @@ public class DnsAsyncClient implements DnsAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, DeleteResolverEndpointResponse>
                 transformer = DeleteResolverEndpointConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Dns",
+                "DeleteResolverEndpoint",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/dns/20180115/ResolverEndpoint/DeleteResolverEndpoint");
 
         com.oracle.bmc.responses.AsyncHandler<
                         DeleteResolverEndpointRequest, DeleteResolverEndpointResponse>
@@ -1024,6 +1073,8 @@ public class DnsAsyncClient implements DnsAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, DeleteSteeringPolicyResponse>
                 transformer = DeleteSteeringPolicyConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Dns", "DeleteSteeringPolicy", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<
                         DeleteSteeringPolicyRequest, DeleteSteeringPolicyResponse>
@@ -1067,6 +1118,8 @@ public class DnsAsyncClient implements DnsAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, DeleteSteeringPolicyAttachmentResponse>
                 transformer = DeleteSteeringPolicyAttachmentConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Dns", "DeleteSteeringPolicyAttachment", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<
                         DeleteSteeringPolicyAttachmentRequest,
@@ -1108,6 +1161,8 @@ public class DnsAsyncClient implements DnsAsync {
                 DeleteTsigKeyConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteTsigKeyResponse>
                 transformer = DeleteTsigKeyConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Dns", "DeleteTsigKey", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<DeleteTsigKeyRequest, DeleteTsigKeyResponse>
                 handlerToUse = handler;
@@ -1145,6 +1200,11 @@ public class DnsAsyncClient implements DnsAsync {
                 DeleteViewConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteViewResponse>
                 transformer = DeleteViewConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Dns",
+                "DeleteView",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/dns/20180115/View/DeleteView");
 
         com.oracle.bmc.responses.AsyncHandler<DeleteViewRequest, DeleteViewResponse> handlerToUse =
                 handler;
@@ -1182,6 +1242,8 @@ public class DnsAsyncClient implements DnsAsync {
                 DeleteZoneConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteZoneResponse>
                 transformer = DeleteZoneConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Dns", "DeleteZone", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<DeleteZoneRequest, DeleteZoneResponse> handlerToUse =
                 handler;
@@ -1221,6 +1283,11 @@ public class DnsAsyncClient implements DnsAsync {
                 GetDomainRecordsConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetDomainRecordsResponse>
                 transformer = GetDomainRecordsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Dns",
+                "GetDomainRecords",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/dns/20180115/Records/GetDomainRecords");
 
         com.oracle.bmc.responses.AsyncHandler<GetDomainRecordsRequest, GetDomainRecordsResponse>
                 handlerToUse = handler;
@@ -1258,6 +1325,11 @@ public class DnsAsyncClient implements DnsAsync {
                 GetRRSetConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetRRSetResponse>
                 transformer = GetRRSetConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Dns",
+                "GetRRSet",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/dns/20180115/RRSet/GetRRSet");
 
         com.oracle.bmc.responses.AsyncHandler<GetRRSetRequest, GetRRSetResponse> handlerToUse =
                 handler;
@@ -1295,6 +1367,11 @@ public class DnsAsyncClient implements DnsAsync {
                 GetResolverConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetResolverResponse>
                 transformer = GetResolverConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Dns",
+                "GetResolver",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/dns/20180115/Resolver/GetResolver");
 
         com.oracle.bmc.responses.AsyncHandler<GetResolverRequest, GetResolverResponse>
                 handlerToUse = handler;
@@ -1335,6 +1412,11 @@ public class DnsAsyncClient implements DnsAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetResolverEndpointResponse>
                 transformer = GetResolverEndpointConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Dns",
+                "GetResolverEndpoint",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/dns/20180115/ResolverEndpoint/GetResolverEndpoint");
 
         com.oracle.bmc.responses.AsyncHandler<
                         GetResolverEndpointRequest, GetResolverEndpointResponse>
@@ -1375,6 +1457,11 @@ public class DnsAsyncClient implements DnsAsync {
                 GetSteeringPolicyConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetSteeringPolicyResponse>
                 transformer = GetSteeringPolicyConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Dns",
+                "GetSteeringPolicy",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/dns/20180115/SteeringPolicy/GetSteeringPolicy");
 
         com.oracle.bmc.responses.AsyncHandler<GetSteeringPolicyRequest, GetSteeringPolicyResponse>
                 handlerToUse = handler;
@@ -1417,6 +1504,11 @@ public class DnsAsyncClient implements DnsAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetSteeringPolicyAttachmentResponse>
                 transformer = GetSteeringPolicyAttachmentConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Dns",
+                "GetSteeringPolicyAttachment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/dns/20180115/SteeringPolicyAttachment/GetSteeringPolicyAttachment");
 
         com.oracle.bmc.responses.AsyncHandler<
                         GetSteeringPolicyAttachmentRequest, GetSteeringPolicyAttachmentResponse>
@@ -1456,6 +1548,11 @@ public class DnsAsyncClient implements DnsAsync {
                 GetTsigKeyConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetTsigKeyResponse>
                 transformer = GetTsigKeyConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Dns",
+                "GetTsigKey",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/dns/20180115/TsigKey/GetTsigKey");
 
         com.oracle.bmc.responses.AsyncHandler<GetTsigKeyRequest, GetTsigKeyResponse> handlerToUse =
                 handler;
@@ -1492,6 +1589,11 @@ public class DnsAsyncClient implements DnsAsync {
                 GetViewConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetViewResponse>
                 transformer = GetViewConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Dns",
+                "GetView",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/dns/20180115/View/GetView");
 
         com.oracle.bmc.responses.AsyncHandler<GetViewRequest, GetViewResponse> handlerToUse =
                 handler;
@@ -1527,6 +1629,11 @@ public class DnsAsyncClient implements DnsAsync {
                 GetZoneConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetZoneResponse>
                 transformer = GetZoneConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Dns",
+                "GetZone",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/dns/20180115/Zone/GetZone");
 
         com.oracle.bmc.responses.AsyncHandler<GetZoneRequest, GetZoneResponse> handlerToUse =
                 handler;
@@ -1575,6 +1682,11 @@ public class DnsAsyncClient implements DnsAsync {
                 GetZoneContentConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetZoneContentResponse>
                 transformer = GetZoneContentConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Dns",
+                "GetZoneContent",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/dns/20180115/Zone/GetZoneContent");
 
         com.oracle.bmc.responses.AsyncHandler<GetZoneContentRequest, GetZoneContentResponse>
                 handlerToUse = handler;
@@ -1614,6 +1726,11 @@ public class DnsAsyncClient implements DnsAsync {
                 GetZoneRecordsConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetZoneRecordsResponse>
                 transformer = GetZoneRecordsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Dns",
+                "GetZoneRecords",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/dns/20180115/Records/GetZoneRecords");
 
         com.oracle.bmc.responses.AsyncHandler<GetZoneRecordsRequest, GetZoneRecordsResponse>
                 handlerToUse = handler;
@@ -1654,6 +1771,11 @@ public class DnsAsyncClient implements DnsAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListResolverEndpointsResponse>
                 transformer = ListResolverEndpointsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Dns",
+                "ListResolverEndpoints",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/dns/20180115/ResolverEndpoint/ListResolverEndpoints");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListResolverEndpointsRequest, ListResolverEndpointsResponse>
@@ -1693,6 +1815,11 @@ public class DnsAsyncClient implements DnsAsync {
                 ListResolversConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListResolversResponse>
                 transformer = ListResolversConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Dns",
+                "ListResolvers",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/dns/20180115/Resolver/ListResolvers");
 
         com.oracle.bmc.responses.AsyncHandler<ListResolversRequest, ListResolversResponse>
                 handlerToUse = handler;
@@ -1733,6 +1860,11 @@ public class DnsAsyncClient implements DnsAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListSteeringPoliciesResponse>
                 transformer = ListSteeringPoliciesConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Dns",
+                "ListSteeringPolicies",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/dns/20180115/SteeringPolicy/ListSteeringPolicies");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListSteeringPoliciesRequest, ListSteeringPoliciesResponse>
@@ -1776,6 +1908,11 @@ public class DnsAsyncClient implements DnsAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListSteeringPolicyAttachmentsResponse>
                 transformer = ListSteeringPolicyAttachmentsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Dns",
+                "ListSteeringPolicyAttachments",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/dns/20180115/SteeringPolicyAttachment/ListSteeringPolicyAttachments");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListSteeringPolicyAttachmentsRequest, ListSteeringPolicyAttachmentsResponse>
@@ -1816,6 +1953,11 @@ public class DnsAsyncClient implements DnsAsync {
                 ListTsigKeysConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListTsigKeysResponse>
                 transformer = ListTsigKeysConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Dns",
+                "ListTsigKeys",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/dns/20180115/TsigKey/ListTsigKeys");
 
         com.oracle.bmc.responses.AsyncHandler<ListTsigKeysRequest, ListTsigKeysResponse>
                 handlerToUse = handler;
@@ -1853,6 +1995,11 @@ public class DnsAsyncClient implements DnsAsync {
                 ListViewsConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListViewsResponse>
                 transformer = ListViewsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Dns",
+                "ListViews",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/dns/20180115/View/ListViews");
 
         com.oracle.bmc.responses.AsyncHandler<ListViewsRequest, ListViewsResponse> handlerToUse =
                 handler;
@@ -1892,6 +2039,11 @@ public class DnsAsyncClient implements DnsAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListZoneTransferServersResponse>
                 transformer = ListZoneTransferServersConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Dns",
+                "ListZoneTransferServers",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/dns/20180115/ZoneTransferServer/ListZoneTransferServers");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListZoneTransferServersRequest, ListZoneTransferServersResponse>
@@ -1930,6 +2082,11 @@ public class DnsAsyncClient implements DnsAsync {
                 ListZonesConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListZonesResponse>
                 transformer = ListZonesConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Dns",
+                "ListZones",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/dns/20180115/Zone/ListZones");
 
         com.oracle.bmc.responses.AsyncHandler<ListZonesRequest, ListZonesResponse> handlerToUse =
                 handler;
@@ -1968,6 +2125,11 @@ public class DnsAsyncClient implements DnsAsync {
                 PatchDomainRecordsConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, PatchDomainRecordsResponse>
                 transformer = PatchDomainRecordsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Dns",
+                "PatchDomainRecords",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/dns/20180115/Records/PatchDomainRecords");
 
         com.oracle.bmc.responses.AsyncHandler<PatchDomainRecordsRequest, PatchDomainRecordsResponse>
                 handlerToUse = handler;
@@ -2010,6 +2172,11 @@ public class DnsAsyncClient implements DnsAsync {
                 PatchRRSetConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, PatchRRSetResponse>
                 transformer = PatchRRSetConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Dns",
+                "PatchRRSet",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/dns/20180115/RRSet/PatchRRSet");
 
         com.oracle.bmc.responses.AsyncHandler<PatchRRSetRequest, PatchRRSetResponse> handlerToUse =
                 handler;
@@ -2054,6 +2221,11 @@ public class DnsAsyncClient implements DnsAsync {
                 PatchZoneRecordsConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, PatchZoneRecordsResponse>
                 transformer = PatchZoneRecordsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Dns",
+                "PatchZoneRecords",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/dns/20180115/Records/PatchZoneRecords");
 
         com.oracle.bmc.responses.AsyncHandler<PatchZoneRecordsRequest, PatchZoneRecordsResponse>
                 handlerToUse = handler;
@@ -2099,6 +2271,11 @@ public class DnsAsyncClient implements DnsAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, UpdateDomainRecordsResponse>
                 transformer = UpdateDomainRecordsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Dns",
+                "UpdateDomainRecords",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/dns/20180115/Records/UpdateDomainRecords");
 
         com.oracle.bmc.responses.AsyncHandler<
                         UpdateDomainRecordsRequest, UpdateDomainRecordsResponse>
@@ -2143,6 +2320,11 @@ public class DnsAsyncClient implements DnsAsync {
                 UpdateRRSetConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateRRSetResponse>
                 transformer = UpdateRRSetConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Dns",
+                "UpdateRRSet",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/dns/20180115/RRSet/UpdateRRSet");
 
         com.oracle.bmc.responses.AsyncHandler<UpdateRRSetRequest, UpdateRRSetResponse>
                 handlerToUse = handler;
@@ -2187,6 +2369,11 @@ public class DnsAsyncClient implements DnsAsync {
                 UpdateResolverConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateResolverResponse>
                 transformer = UpdateResolverConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Dns",
+                "UpdateResolver",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/dns/20180115/Resolver/UpdateResolver");
 
         com.oracle.bmc.responses.AsyncHandler<UpdateResolverRequest, UpdateResolverResponse>
                 handlerToUse = handler;
@@ -2232,6 +2419,11 @@ public class DnsAsyncClient implements DnsAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, UpdateResolverEndpointResponse>
                 transformer = UpdateResolverEndpointConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Dns",
+                "UpdateResolverEndpoint",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/dns/20180115/ResolverEndpoint/UpdateResolverEndpoint");
 
         com.oracle.bmc.responses.AsyncHandler<
                         UpdateResolverEndpointRequest, UpdateResolverEndpointResponse>
@@ -2278,6 +2470,11 @@ public class DnsAsyncClient implements DnsAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, UpdateSteeringPolicyResponse>
                 transformer = UpdateSteeringPolicyConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Dns",
+                "UpdateSteeringPolicy",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/dns/20180115/SteeringPolicy/UpdateSteeringPolicy");
 
         com.oracle.bmc.responses.AsyncHandler<
                         UpdateSteeringPolicyRequest, UpdateSteeringPolicyResponse>
@@ -2326,6 +2523,11 @@ public class DnsAsyncClient implements DnsAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, UpdateSteeringPolicyAttachmentResponse>
                 transformer = UpdateSteeringPolicyAttachmentConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Dns",
+                "UpdateSteeringPolicyAttachment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/dns/20180115/SteeringPolicyAttachment/UpdateSteeringPolicyAttachment");
 
         com.oracle.bmc.responses.AsyncHandler<
                         UpdateSteeringPolicyAttachmentRequest,
@@ -2372,6 +2574,11 @@ public class DnsAsyncClient implements DnsAsync {
                 UpdateTsigKeyConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateTsigKeyResponse>
                 transformer = UpdateTsigKeyConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Dns",
+                "UpdateTsigKey",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/dns/20180115/TsigKey/UpdateTsigKey");
 
         com.oracle.bmc.responses.AsyncHandler<UpdateTsigKeyRequest, UpdateTsigKeyResponse>
                 handlerToUse = handler;
@@ -2414,6 +2621,11 @@ public class DnsAsyncClient implements DnsAsync {
                 UpdateViewConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateViewResponse>
                 transformer = UpdateViewConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Dns",
+                "UpdateView",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/dns/20180115/View/UpdateView");
 
         com.oracle.bmc.responses.AsyncHandler<UpdateViewRequest, UpdateViewResponse> handlerToUse =
                 handler;
@@ -2456,6 +2668,11 @@ public class DnsAsyncClient implements DnsAsync {
                 UpdateZoneConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateZoneResponse>
                 transformer = UpdateZoneConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Dns",
+                "UpdateZone",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/dns/20180115/Zone/UpdateZone");
 
         com.oracle.bmc.responses.AsyncHandler<UpdateZoneRequest, UpdateZoneResponse> handlerToUse =
                 handler;
@@ -2500,6 +2717,11 @@ public class DnsAsyncClient implements DnsAsync {
                 UpdateZoneRecordsConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateZoneRecordsResponse>
                 transformer = UpdateZoneRecordsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Dns",
+                "UpdateZoneRecords",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/dns/20180115/Records/UpdateZoneRecords");
 
         com.oracle.bmc.responses.AsyncHandler<UpdateZoneRecordsRequest, UpdateZoneRecordsResponse>
                 handlerToUse = handler;

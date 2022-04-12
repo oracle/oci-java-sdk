@@ -403,6 +403,11 @@ public class NotificationControlPlaneClient implements NotificationControlPlane 
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "NotificationControlPlane",
+                "ChangeTopicCompartment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/notification/20181201/NotificationTopic/ChangeTopicCompartment");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -437,6 +442,11 @@ public class NotificationControlPlaneClient implements NotificationControlPlane 
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "NotificationControlPlane",
+                "CreateTopic",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/notification/20181201/NotificationTopic/CreateTopic");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -470,6 +480,11 @@ public class NotificationControlPlaneClient implements NotificationControlPlane 
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "NotificationControlPlane",
+                "DeleteTopic",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/notification/20181201/NotificationTopic/DeleteTopic");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -499,6 +514,11 @@ public class NotificationControlPlaneClient implements NotificationControlPlane 
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "NotificationControlPlane",
+                "GetTopic",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/notification/20181201/NotificationTopic/GetTopic");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -527,6 +547,11 @@ public class NotificationControlPlaneClient implements NotificationControlPlane 
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "NotificationControlPlane",
+                "ListTopics",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/notification/20181201/NotificationTopic/ListTopics");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -556,6 +581,11 @@ public class NotificationControlPlaneClient implements NotificationControlPlane 
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "NotificationControlPlane",
+                "UpdateTopic",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/notification/20181201/NotificationTopic/UpdateTopic");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {

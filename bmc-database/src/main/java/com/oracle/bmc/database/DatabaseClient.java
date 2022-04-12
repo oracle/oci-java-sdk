@@ -479,6 +479,11 @@ public class DatabaseClient implements Database {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "ActivateExadataInfrastructure",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExadataInfrastructure/ActivateExadataInfrastructure");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -517,6 +522,11 @@ public class DatabaseClient implements Database {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "AddStorageCapacityExadataInfrastructure",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExadataInfrastructure/AddStorageCapacityExadataInfrastructure");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -550,6 +560,11 @@ public class DatabaseClient implements Database {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "AddVirtualMachineToVmCluster",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/VmCluster/AddVirtualMachineToVmCluster");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -587,6 +602,11 @@ public class DatabaseClient implements Database {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "AutonomousDatabaseManualRefresh",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabase/AutonomousDatabaseManualRefresh");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -627,6 +647,11 @@ public class DatabaseClient implements Database {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "ChangeAutonomousContainerDatabaseCompartment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousContainerDatabase/ChangeAutonomousContainerDatabaseCompartment");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -664,6 +689,11 @@ public class DatabaseClient implements Database {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "ChangeAutonomousDatabaseCompartment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabase/ChangeAutonomousDatabaseCompartment");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -704,6 +734,11 @@ public class DatabaseClient implements Database {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "ChangeAutonomousExadataInfrastructureCompartment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousExadataInfrastructure/ChangeAutonomousExadataInfrastructureCompartment");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -741,6 +776,11 @@ public class DatabaseClient implements Database {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "ChangeAutonomousVmClusterCompartment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousVmCluster/ChangeAutonomousVmClusterCompartment");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -778,6 +818,11 @@ public class DatabaseClient implements Database {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "ChangeBackupDestinationCompartment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/BackupDestination/ChangeBackupDestinationCompartment");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -817,6 +862,11 @@ public class DatabaseClient implements Database {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "ChangeCloudAutonomousVmClusterCompartment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/CloudAutonomousVmCluster/ChangeCloudAutonomousVmClusterCompartment");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -857,6 +907,11 @@ public class DatabaseClient implements Database {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "ChangeCloudExadataInfrastructureCompartment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/CloudExadataInfrastructure/ChangeCloudExadataInfrastructureCompartment");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -894,6 +949,11 @@ public class DatabaseClient implements Database {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "ChangeCloudVmClusterCompartment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/CloudVmCluster/ChangeCloudVmClusterCompartment");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -932,6 +992,11 @@ public class DatabaseClient implements Database {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "ChangeDatabaseSoftwareImageCompartment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/DatabaseSoftwareImage/ChangeDatabaseSoftwareImageCompartment");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -968,6 +1033,11 @@ public class DatabaseClient implements Database {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "ChangeDbSystemCompartment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/DbSystem/ChangeDbSystemCompartment");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1005,6 +1075,11 @@ public class DatabaseClient implements Database {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "ChangeExadataInfrastructureCompartment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExadataInfrastructure/ChangeExadataInfrastructureCompartment");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1045,6 +1120,11 @@ public class DatabaseClient implements Database {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "ChangeExternalContainerDatabaseCompartment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalContainerDatabase/ChangeExternalContainerDatabaseCompartment");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1084,6 +1164,11 @@ public class DatabaseClient implements Database {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "ChangeExternalNonContainerDatabaseCompartment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalNonContainerDatabase/ChangeExternalNonContainerDatabaseCompartment");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1123,6 +1208,11 @@ public class DatabaseClient implements Database {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "ChangeExternalPluggableDatabaseCompartment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalPluggableDatabase/ChangeExternalPluggableDatabaseCompartment");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1159,6 +1249,11 @@ public class DatabaseClient implements Database {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "ChangeKeyStoreCompartment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/KeyStore/ChangeKeyStoreCompartment");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1196,6 +1291,11 @@ public class DatabaseClient implements Database {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "ChangeVmClusterCompartment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/VmCluster/ChangeVmClusterCompartment");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1237,6 +1337,11 @@ public class DatabaseClient implements Database {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "CheckExternalDatabaseConnectorConnectionStatus",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalDatabaseConnector/CheckExternalDatabaseConnectorConnectionStatus");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1270,6 +1375,11 @@ public class DatabaseClient implements Database {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "CompleteExternalBackupJob",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalBackupJob/CompleteExternalBackupJob");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1308,6 +1418,11 @@ public class DatabaseClient implements Database {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "ConfigureAutonomousDatabaseVaultKey",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabase/ConfigureAutonomousDatabaseVaultKey");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1342,6 +1457,11 @@ public class DatabaseClient implements Database {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "ConvertToPdb",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/Database/ConvertToPdb");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1378,6 +1498,11 @@ public class DatabaseClient implements Database {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "CreateAutonomousContainerDatabase",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousContainerDatabase/CreateAutonomousContainerDatabase");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1414,6 +1539,11 @@ public class DatabaseClient implements Database {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "CreateAutonomousDatabase",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabase/CreateAutonomousDatabase");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1450,6 +1580,11 @@ public class DatabaseClient implements Database {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "CreateAutonomousDatabaseBackup",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabaseBackup/CreateAutonomousDatabaseBackup");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1487,6 +1622,11 @@ public class DatabaseClient implements Database {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "CreateAutonomousVmCluster",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousVmCluster/CreateAutonomousVmCluster");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1522,6 +1662,11 @@ public class DatabaseClient implements Database {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "CreateBackup",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/Backup/CreateBackup");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1557,6 +1702,11 @@ public class DatabaseClient implements Database {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "CreateBackupDestination",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/BackupDestination/CreateBackupDestination");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1593,6 +1743,11 @@ public class DatabaseClient implements Database {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "CreateCloudAutonomousVmCluster",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/CloudAutonomousVmCluster/CreateCloudAutonomousVmCluster");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1630,6 +1785,11 @@ public class DatabaseClient implements Database {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "CreateCloudExadataInfrastructure",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/CloudExadataInfrastructure/CreateCloudExadataInfrastructure");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1665,6 +1825,11 @@ public class DatabaseClient implements Database {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "CreateCloudVmCluster",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/CloudVmCluster/CreateCloudVmCluster");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1700,6 +1865,11 @@ public class DatabaseClient implements Database {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "CreateConsoleConnection",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/ConsoleConnection/CreateConsoleConnection");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1736,6 +1906,11 @@ public class DatabaseClient implements Database {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "CreateDataGuardAssociation",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/DataGuardAssociation/CreateDataGuardAssociation");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1771,6 +1946,11 @@ public class DatabaseClient implements Database {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "CreateDatabase",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/Database/CreateDatabase");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1807,6 +1987,11 @@ public class DatabaseClient implements Database {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "CreateDatabaseSoftwareImage",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/DatabaseSoftwareImage/CreateDatabaseSoftwareImage");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1842,6 +2027,11 @@ public class DatabaseClient implements Database {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "CreateDbHome",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/DbHome/CreateDbHome");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1879,6 +2069,11 @@ public class DatabaseClient implements Database {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "CreateExadataInfrastructure",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExadataInfrastructure/CreateExadataInfrastructure");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1915,6 +2110,11 @@ public class DatabaseClient implements Database {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "CreateExternalBackupJob",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalBackupJob/CreateExternalBackupJob");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1951,6 +2151,11 @@ public class DatabaseClient implements Database {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "CreateExternalContainerDatabase",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalContainerDatabase/CreateExternalContainerDatabase");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1988,6 +2193,11 @@ public class DatabaseClient implements Database {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "CreateExternalDatabaseConnector",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalDatabaseConnector/CreateExternalDatabaseConnector");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2025,6 +2235,11 @@ public class DatabaseClient implements Database {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "CreateExternalNonContainerDatabase",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalNonContainerDatabase/CreateExternalNonContainerDatabase");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2062,6 +2277,11 @@ public class DatabaseClient implements Database {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "CreateExternalPluggableDatabase",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalPluggableDatabase/CreateExternalPluggableDatabase");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2097,6 +2317,11 @@ public class DatabaseClient implements Database {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "CreateKeyStore",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/KeyStore/CreateKeyStore");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2132,6 +2357,11 @@ public class DatabaseClient implements Database {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "CreatePluggableDatabase",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/PluggableDatabase/CreatePluggableDatabase");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2166,6 +2396,11 @@ public class DatabaseClient implements Database {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "CreateVmCluster",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/VmCluster/CreateVmCluster");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2201,6 +2436,11 @@ public class DatabaseClient implements Database {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "CreateVmClusterNetwork",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/VmClusterNetwork/CreateVmClusterNetwork");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2235,6 +2475,11 @@ public class DatabaseClient implements Database {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "DbNodeAction",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/DbNode/DbNodeAction");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2266,6 +2511,11 @@ public class DatabaseClient implements Database {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "DeleteAutonomousDatabase",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabase/DeleteAutonomousDatabase");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2298,6 +2548,11 @@ public class DatabaseClient implements Database {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "DeleteAutonomousVmCluster",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousVmCluster/DeleteAutonomousVmCluster");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2328,6 +2583,11 @@ public class DatabaseClient implements Database {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "DeleteBackup",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/Backup/DeleteBackup");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2359,6 +2619,11 @@ public class DatabaseClient implements Database {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "DeleteBackupDestination",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/BackupDestination/DeleteBackupDestination");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2391,6 +2656,11 @@ public class DatabaseClient implements Database {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "DeleteCloudAutonomousVmCluster",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/CloudAutonomousVmCluster/DeleteCloudAutonomousVmCluster");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2423,6 +2693,11 @@ public class DatabaseClient implements Database {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "DeleteCloudExadataInfrastructure",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/CloudExadataInfrastructure/DeleteCloudExadataInfrastructure");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2453,6 +2728,11 @@ public class DatabaseClient implements Database {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "DeleteCloudVmCluster",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/CloudVmCluster/DeleteCloudVmCluster");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2484,6 +2764,11 @@ public class DatabaseClient implements Database {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "DeleteConsoleConnection",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/ConsoleConnection/DeleteConsoleConnection");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2514,6 +2799,11 @@ public class DatabaseClient implements Database {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "DeleteDatabase",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/Database/DeleteDatabase");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2546,6 +2836,11 @@ public class DatabaseClient implements Database {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "DeleteDatabaseSoftwareImage",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/DatabaseSoftwareImage/DeleteDatabaseSoftwareImage");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2576,6 +2871,11 @@ public class DatabaseClient implements Database {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "DeleteDbHome",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/DbHome/DeleteDbHome");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2608,6 +2908,11 @@ public class DatabaseClient implements Database {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "DeleteExadataInfrastructure",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExadataInfrastructure/DeleteExadataInfrastructure");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2640,6 +2945,11 @@ public class DatabaseClient implements Database {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "DeleteExternalContainerDatabase",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalContainerDatabase/DeleteExternalContainerDatabase");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2672,6 +2982,11 @@ public class DatabaseClient implements Database {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "DeleteExternalDatabaseConnector",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalDatabaseConnector/DeleteExternalDatabaseConnector");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2704,6 +3019,11 @@ public class DatabaseClient implements Database {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "DeleteExternalNonContainerDatabase",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalNonContainerDatabase/DeleteExternalNonContainerDatabase");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2736,6 +3056,11 @@ public class DatabaseClient implements Database {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "DeleteExternalPluggableDatabase",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalPluggableDatabase/DeleteExternalPluggableDatabase");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2766,6 +3091,11 @@ public class DatabaseClient implements Database {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "DeleteKeyStore",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/KeyStore/DeleteKeyStore");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2797,6 +3127,11 @@ public class DatabaseClient implements Database {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "DeletePluggableDatabase",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/PluggableDatabase/DeletePluggableDatabase");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2827,6 +3162,11 @@ public class DatabaseClient implements Database {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "DeleteVmCluster",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/VmCluster/DeleteVmCluster");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2858,6 +3198,11 @@ public class DatabaseClient implements Database {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "DeleteVmClusterNetwork",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/VmClusterNetwork/DeleteVmClusterNetwork");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2891,6 +3236,11 @@ public class DatabaseClient implements Database {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "DeregisterAutonomousDatabaseDataSafe",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabase/DeregisterAutonomousDatabaseDataSafe");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2928,6 +3278,11 @@ public class DatabaseClient implements Database {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "DisableAutonomousDatabaseManagement",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabase/DisableAutonomousDatabaseManagement");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2963,6 +3318,11 @@ public class DatabaseClient implements Database {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "DisableAutonomousDatabaseOperationsInsights",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabase/DisableAutonomousDatabaseOperationsInsights");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2996,6 +3356,11 @@ public class DatabaseClient implements Database {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "DisableDatabaseManagement",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/Database/DisableDatabaseManagement");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3034,6 +3399,11 @@ public class DatabaseClient implements Database {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "DisableExternalContainerDatabaseDatabaseManagement",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalContainerDatabase/DisableExternalContainerDatabaseDatabaseManagement");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3073,6 +3443,11 @@ public class DatabaseClient implements Database {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "DisableExternalNonContainerDatabaseDatabaseManagement",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalNonContainerDatabase/DisableExternalNonContainerDatabaseDatabaseManagement");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3112,6 +3487,11 @@ public class DatabaseClient implements Database {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "DisableExternalNonContainerDatabaseOperationsInsights",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalNonContainerDatabase/DisableExternalNonContainerDatabaseOperationsInsights");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3150,6 +3530,11 @@ public class DatabaseClient implements Database {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "DisableExternalPluggableDatabaseDatabaseManagement",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalPluggableDatabase/DisableExternalPluggableDatabaseDatabaseManagement");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3188,6 +3573,11 @@ public class DatabaseClient implements Database {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "DisableExternalPluggableDatabaseOperationsInsights",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalPluggableDatabase/DisableExternalPluggableDatabaseOperationsInsights");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3232,6 +3622,11 @@ public class DatabaseClient implements Database {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "DownloadExadataInfrastructureConfigFile",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExadataInfrastructure/DownloadExadataInfrastructureConfigFile");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3274,6 +3669,11 @@ public class DatabaseClient implements Database {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "DownloadValidationReport",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/VmClusterNetwork/DownloadValidationReport");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3317,6 +3717,11 @@ public class DatabaseClient implements Database {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "DownloadVmClusterNetworkConfigFile",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/VmClusterNetwork/DownloadVmClusterNetworkConfigFile");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3349,6 +3754,11 @@ public class DatabaseClient implements Database {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "EnableAutonomousDatabaseManagement",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabase/EnableAutonomousDatabaseManagement");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3384,6 +3794,11 @@ public class DatabaseClient implements Database {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "EnableAutonomousDatabaseOperationsInsights",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabase/EnableAutonomousDatabaseOperationsInsights");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3416,6 +3831,11 @@ public class DatabaseClient implements Database {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "EnableDatabaseManagement",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/Database/EnableDatabaseManagement");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3457,6 +3877,11 @@ public class DatabaseClient implements Database {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "EnableExternalContainerDatabaseDatabaseManagement",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalContainerDatabase/EnableExternalContainerDatabaseDatabaseManagement");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3500,6 +3925,11 @@ public class DatabaseClient implements Database {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "EnableExternalNonContainerDatabaseDatabaseManagement",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalNonContainerDatabase/EnableExternalNonContainerDatabaseDatabaseManagement");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3543,6 +3973,11 @@ public class DatabaseClient implements Database {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "EnableExternalNonContainerDatabaseOperationsInsights",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalNonContainerDatabase/EnableExternalNonContainerDatabaseOperationsInsights");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3585,6 +4020,11 @@ public class DatabaseClient implements Database {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "EnableExternalPluggableDatabaseDatabaseManagement",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalPluggableDatabase/EnableExternalPluggableDatabaseDatabaseManagement");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3627,6 +4067,11 @@ public class DatabaseClient implements Database {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "EnableExternalPluggableDatabaseOperationsInsights",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalPluggableDatabase/EnableExternalPluggableDatabaseOperationsInsights");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3664,6 +4109,11 @@ public class DatabaseClient implements Database {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "FailOverAutonomousDatabase",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabase/FailOverAutonomousDatabase");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3702,6 +4152,11 @@ public class DatabaseClient implements Database {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "FailoverAutonomousContainerDatabaseDataguardAssociation",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousContainerDatabaseDataguardAssociation/FailoverAutonomousContainerDatabaseDataguardAssociation");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3734,6 +4189,11 @@ public class DatabaseClient implements Database {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "FailoverDataGuardAssociation",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/DataGuardAssociation/FailoverDataGuardAssociation");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3781,6 +4241,11 @@ public class DatabaseClient implements Database {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "GenerateAutonomousDatabaseWallet",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabase/GenerateAutonomousDatabaseWallet");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3819,6 +4284,11 @@ public class DatabaseClient implements Database {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "GenerateRecommendedVmClusterNetwork",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExadataInfrastructure/GenerateRecommendedVmClusterNetwork");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3855,6 +4325,11 @@ public class DatabaseClient implements Database {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "GetAutonomousContainerDatabase",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousContainerDatabase/GetAutonomousContainerDatabase");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3891,6 +4366,11 @@ public class DatabaseClient implements Database {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "GetAutonomousContainerDatabaseDataguardAssociation",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousContainerDatabaseDataguardAssociation/GetAutonomousContainerDatabaseDataguardAssociation");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3921,6 +4401,11 @@ public class DatabaseClient implements Database {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "GetAutonomousDatabase",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabase/GetAutonomousDatabase");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3952,6 +4437,11 @@ public class DatabaseClient implements Database {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "GetAutonomousDatabaseBackup",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabaseBackup/GetAutonomousDatabaseBackup");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3986,6 +4476,11 @@ public class DatabaseClient implements Database {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "GetAutonomousDatabaseDataguardAssociation",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabaseDataguardAssociation/GetAutonomousDatabaseDataguardAssociation");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -4018,6 +4513,11 @@ public class DatabaseClient implements Database {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "GetAutonomousDatabaseRegionalWallet",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabaseWallet/GetAutonomousDatabaseRegionalWallet");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -4049,6 +4549,11 @@ public class DatabaseClient implements Database {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "GetAutonomousDatabaseWallet",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabaseWallet/GetAutonomousDatabaseWallet");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -4080,6 +4585,11 @@ public class DatabaseClient implements Database {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "GetAutonomousExadataInfrastructure",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousExadataInfrastructure/GetAutonomousExadataInfrastructure");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -4109,6 +4619,11 @@ public class DatabaseClient implements Database {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "GetAutonomousPatch",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousPatch/GetAutonomousPatch");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -4139,6 +4654,11 @@ public class DatabaseClient implements Database {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "GetAutonomousVmCluster",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousVmCluster/GetAutonomousVmCluster");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -4167,6 +4687,11 @@ public class DatabaseClient implements Database {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "GetBackup",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/Backup/GetBackup");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -4196,6 +4721,11 @@ public class DatabaseClient implements Database {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "GetBackupDestination",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/BackupDestination/GetBackupDestination");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -4227,6 +4757,11 @@ public class DatabaseClient implements Database {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "GetCloudAutonomousVmCluster",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/CloudAutonomousVmCluster/GetCloudAutonomousVmCluster");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -4258,6 +4793,11 @@ public class DatabaseClient implements Database {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "GetCloudExadataInfrastructure",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/CloudExadataInfrastructure/GetCloudExadataInfrastructure");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -4287,6 +4827,11 @@ public class DatabaseClient implements Database {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "GetCloudVmCluster",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/CloudVmCluster/GetCloudVmCluster");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -4318,6 +4863,11 @@ public class DatabaseClient implements Database {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "GetCloudVmClusterIormConfig",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/CloudVmCluster/GetCloudVmClusterIormConfig");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -4348,6 +4898,11 @@ public class DatabaseClient implements Database {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "GetCloudVmClusterUpdate",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/Update/GetCloudVmClusterUpdate");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -4380,6 +4935,11 @@ public class DatabaseClient implements Database {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "GetCloudVmClusterUpdateHistoryEntry",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/UpdateHistoryEntry/GetCloudVmClusterUpdateHistoryEntry");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -4409,6 +4969,11 @@ public class DatabaseClient implements Database {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "GetConsoleConnection",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/ConsoleConnection/GetConsoleConnection");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -4439,6 +5004,11 @@ public class DatabaseClient implements Database {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "GetDataGuardAssociation",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/DataGuardAssociation/GetDataGuardAssociation");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -4468,6 +5038,11 @@ public class DatabaseClient implements Database {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "GetDatabase",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/Database/GetDatabase");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -4498,6 +5073,11 @@ public class DatabaseClient implements Database {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "GetDatabaseSoftwareImage",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/DatabaseSoftwareImage/GetDatabaseSoftwareImage");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -4529,6 +5109,11 @@ public class DatabaseClient implements Database {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "GetDatabaseUpgradeHistoryEntry",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/DatabaseUpgradeHistoryEntry/GetDatabaseUpgradeHistoryEntry");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -4557,6 +5142,11 @@ public class DatabaseClient implements Database {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "GetDbHome",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/DbHome/GetDbHome");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -4586,6 +5176,11 @@ public class DatabaseClient implements Database {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "GetDbHomePatch",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/Patch/GetDbHomePatch");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -4617,6 +5212,11 @@ public class DatabaseClient implements Database {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "GetDbHomePatchHistoryEntry",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/PatchHistoryEntry/GetDbHomePatchHistoryEntry");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -4645,6 +5245,11 @@ public class DatabaseClient implements Database {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "GetDbNode",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/DbNode/GetDbNode");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -4674,6 +5279,11 @@ public class DatabaseClient implements Database {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "GetDbServer",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/DbServer/GetDbServer");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -4703,6 +5313,11 @@ public class DatabaseClient implements Database {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "GetDbSystem",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/DbSystem/GetDbSystem");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -4732,6 +5347,11 @@ public class DatabaseClient implements Database {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "GetDbSystemPatch",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/Patch/GetDbSystemPatch");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -4763,6 +5383,11 @@ public class DatabaseClient implements Database {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "GetDbSystemPatchHistoryEntry",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/PatchHistoryEntry/GetDbSystemPatchHistoryEntry");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -4793,6 +5418,11 @@ public class DatabaseClient implements Database {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "GetExadataInfrastructure",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExadataInfrastructure/GetExadataInfrastructure");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -4824,6 +5454,11 @@ public class DatabaseClient implements Database {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "GetExadataInfrastructureOcpus",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/OCPUs/GetExadataInfrastructureOcpus");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -4853,6 +5488,11 @@ public class DatabaseClient implements Database {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "GetExadataIormConfig",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/DbSystem/GetExadataIormConfig");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -4882,6 +5522,11 @@ public class DatabaseClient implements Database {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "GetExternalBackupJob",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalBackupJob/GetExternalBackupJob");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -4913,6 +5558,11 @@ public class DatabaseClient implements Database {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "GetExternalContainerDatabase",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalContainerDatabase/GetExternalContainerDatabase");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -4944,6 +5594,11 @@ public class DatabaseClient implements Database {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "GetExternalDatabaseConnector",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalDatabaseConnector/GetExternalDatabaseConnector");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -4975,6 +5630,11 @@ public class DatabaseClient implements Database {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "GetExternalNonContainerDatabase",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalNonContainerDatabase/GetExternalNonContainerDatabase");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -5006,6 +5666,11 @@ public class DatabaseClient implements Database {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "GetExternalPluggableDatabase",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalPluggableDatabase/GetExternalPluggableDatabase");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -5035,6 +5700,11 @@ public class DatabaseClient implements Database {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "GetKeyStore",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/KeyStore/GetKeyStore");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -5064,6 +5734,11 @@ public class DatabaseClient implements Database {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "GetMaintenanceRun",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/MaintenanceRun/GetMaintenanceRun");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -5095,6 +5770,11 @@ public class DatabaseClient implements Database {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "GetPdbConversionHistoryEntry",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/PdbConversionHistoryEntry/GetPdbConversionHistoryEntry");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -5124,6 +5804,11 @@ public class DatabaseClient implements Database {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "GetPluggableDatabase",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/PluggableDatabase/GetPluggableDatabase");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -5153,6 +5838,11 @@ public class DatabaseClient implements Database {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "GetVmCluster",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/VmCluster/GetVmCluster");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -5182,6 +5872,11 @@ public class DatabaseClient implements Database {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "GetVmClusterNetwork",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/VmClusterNetwork/GetVmClusterNetwork");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -5211,6 +5906,11 @@ public class DatabaseClient implements Database {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "GetVmClusterPatch",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/Patch/GetVmClusterPatch");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -5242,6 +5942,11 @@ public class DatabaseClient implements Database {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "GetVmClusterPatchHistoryEntry",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/PatchHistoryEntry/GetVmClusterPatchHistoryEntry");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -5271,6 +5976,11 @@ public class DatabaseClient implements Database {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "GetVmClusterUpdate",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/VmClusterUpdate/GetVmClusterUpdate");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -5302,6 +6012,11 @@ public class DatabaseClient implements Database {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "GetVmClusterUpdateHistoryEntry",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/VmClusterUpdateHistoryEntry/GetVmClusterUpdateHistoryEntry");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -5335,6 +6050,11 @@ public class DatabaseClient implements Database {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "LaunchAutonomousExadataInfrastructure",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousExadataInfrastructure/LaunchAutonomousExadataInfrastructure");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -5370,6 +6090,11 @@ public class DatabaseClient implements Database {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "LaunchDbSystem",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/DbSystem/LaunchDbSystem");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -5411,6 +6136,11 @@ public class DatabaseClient implements Database {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "ListAutonomousContainerDatabaseDataguardAssociations",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousContainerDatabaseDataguardAssociation/ListAutonomousContainerDatabaseDataguardAssociations");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -5442,6 +6172,11 @@ public class DatabaseClient implements Database {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "ListAutonomousContainerDatabases",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousContainerDatabase/ListAutonomousContainerDatabases");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -5473,6 +6208,11 @@ public class DatabaseClient implements Database {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "ListAutonomousDatabaseBackups",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabaseBackup/ListAutonomousDatabaseBackups");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -5504,6 +6244,11 @@ public class DatabaseClient implements Database {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "ListAutonomousDatabaseClones",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabase/ListAutonomousDatabaseClones");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -5538,6 +6283,11 @@ public class DatabaseClient implements Database {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "ListAutonomousDatabaseDataguardAssociations",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabaseDataguardAssociation/ListAutonomousDatabaseDataguardAssociations");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -5568,6 +6318,11 @@ public class DatabaseClient implements Database {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "ListAutonomousDatabases",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabase/ListAutonomousDatabases");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -5599,6 +6354,11 @@ public class DatabaseClient implements Database {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "ListAutonomousDbPreviewVersions",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDbPreviewVersionSummary/ListAutonomousDbPreviewVersions");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -5629,6 +6389,11 @@ public class DatabaseClient implements Database {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "ListAutonomousDbVersions",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDbVersionSummary/ListAutonomousDbVersions");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -5663,6 +6428,11 @@ public class DatabaseClient implements Database {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "ListAutonomousExadataInfrastructureShapes",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousExadataInfrastructureShapeSummary/ListAutonomousExadataInfrastructureShapes");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -5695,6 +6465,11 @@ public class DatabaseClient implements Database {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "ListAutonomousExadataInfrastructures",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousExadataInfrastructure/ListAutonomousExadataInfrastructures");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -5725,6 +6500,11 @@ public class DatabaseClient implements Database {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "ListAutonomousVmClusters",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousVmCluster/ListAutonomousVmClusters");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -5755,6 +6535,11 @@ public class DatabaseClient implements Database {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "ListBackupDestination",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/BackupDestinationSummary/ListBackupDestination");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -5784,6 +6569,11 @@ public class DatabaseClient implements Database {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "ListBackups",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/Backup/ListBackups");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -5815,6 +6605,11 @@ public class DatabaseClient implements Database {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "ListCloudAutonomousVmClusters",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/CloudAutonomousVmCluster/ListCloudAutonomousVmClusters");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -5846,6 +6641,11 @@ public class DatabaseClient implements Database {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "ListCloudExadataInfrastructures",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/CloudExadataInfrastructure/ListCloudExadataInfrastructures");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -5878,6 +6678,11 @@ public class DatabaseClient implements Database {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "ListCloudVmClusterUpdateHistoryEntries",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/UpdateHistoryEntry/ListCloudVmClusterUpdateHistoryEntries");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -5909,6 +6714,11 @@ public class DatabaseClient implements Database {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "ListCloudVmClusterUpdates",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/Update/ListCloudVmClusterUpdates");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -5938,6 +6748,11 @@ public class DatabaseClient implements Database {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "ListCloudVmClusters",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/CloudVmCluster/ListCloudVmClusters");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -5968,6 +6783,11 @@ public class DatabaseClient implements Database {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "ListConsoleConnections",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/ConsoleConnection/ListConsoleConnections");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -5999,6 +6819,11 @@ public class DatabaseClient implements Database {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "ListContainerDatabasePatches",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousPatch/ListContainerDatabasePatches");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -6030,6 +6855,11 @@ public class DatabaseClient implements Database {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "ListDataGuardAssociations",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/DataGuardAssociation/ListDataGuardAssociations");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -6061,6 +6891,11 @@ public class DatabaseClient implements Database {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "ListDatabaseSoftwareImages",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/DatabaseSoftwareImage/ListDatabaseSoftwareImages");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -6092,6 +6927,11 @@ public class DatabaseClient implements Database {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "ListDatabaseUpgradeHistoryEntries",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/Database/ListDatabaseUpgradeHistoryEntries");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -6121,6 +6961,11 @@ public class DatabaseClient implements Database {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "ListDatabases",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/Database/ListDatabases");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -6152,6 +6997,11 @@ public class DatabaseClient implements Database {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "ListDbHomePatchHistoryEntries",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/PatchHistoryEntry/ListDbHomePatchHistoryEntries");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -6181,6 +7031,11 @@ public class DatabaseClient implements Database {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "ListDbHomePatches",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/Patch/ListDbHomePatches");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -6210,6 +7065,11 @@ public class DatabaseClient implements Database {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "ListDbHomes",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/DbHome/ListDbHomes");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -6239,6 +7099,11 @@ public class DatabaseClient implements Database {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "ListDbNodes",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/DbNode/ListDbNodes");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -6268,6 +7133,11 @@ public class DatabaseClient implements Database {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "ListDbServers",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/DbServer/ListDbServers");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -6299,6 +7169,11 @@ public class DatabaseClient implements Database {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "ListDbSystemPatchHistoryEntries",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/PatchHistoryEntry/ListDbSystemPatchHistoryEntries");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -6328,6 +7203,11 @@ public class DatabaseClient implements Database {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "ListDbSystemPatches",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/Patch/ListDbSystemPatches");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -6357,6 +7237,11 @@ public class DatabaseClient implements Database {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "ListDbSystemShapes",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/DbSystemShapeSummary/ListDbSystemShapes");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -6386,6 +7271,11 @@ public class DatabaseClient implements Database {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "ListDbSystems",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/DbSystem/ListDbSystems");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -6415,6 +7305,11 @@ public class DatabaseClient implements Database {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "ListDbVersions",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/DbVersionSummary/ListDbVersions");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -6446,6 +7341,11 @@ public class DatabaseClient implements Database {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "ListExadataInfrastructures",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExadataInfrastructure/ListExadataInfrastructures");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -6477,6 +7377,11 @@ public class DatabaseClient implements Database {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "ListExternalContainerDatabases",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalContainerDatabase/ListExternalContainerDatabases");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -6508,6 +7413,11 @@ public class DatabaseClient implements Database {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "ListExternalDatabaseConnectors",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalDatabaseConnector/ListExternalDatabaseConnectors");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -6539,6 +7449,11 @@ public class DatabaseClient implements Database {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "ListExternalNonContainerDatabases",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalNonContainerDatabase/ListExternalNonContainerDatabases");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -6570,6 +7485,11 @@ public class DatabaseClient implements Database {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "ListExternalPluggableDatabases",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalPluggableDatabase/ListExternalPluggableDatabases");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -6599,6 +7519,11 @@ public class DatabaseClient implements Database {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "ListFlexComponents",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/FlexComponentCollection/ListFlexComponents");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -6628,6 +7553,11 @@ public class DatabaseClient implements Database {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "ListGiVersions",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/GiVersionSummary/ListGiVersions");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -6657,6 +7587,11 @@ public class DatabaseClient implements Database {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "ListKeyStores",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/KeyStoreSummary/ListKeyStores");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -6686,6 +7621,11 @@ public class DatabaseClient implements Database {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "ListMaintenanceRuns",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/MaintenanceRun/ListMaintenanceRuns");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -6717,6 +7657,11 @@ public class DatabaseClient implements Database {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "ListPdbConversionHistoryEntries",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/Database/ListPdbConversionHistoryEntries");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -6747,6 +7692,11 @@ public class DatabaseClient implements Database {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "ListPluggableDatabases",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/PluggableDatabase/ListPluggableDatabases");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -6777,6 +7727,11 @@ public class DatabaseClient implements Database {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "ListVmClusterNetworks",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/VmClusterNetwork/ListVmClusterNetworks");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -6808,6 +7763,11 @@ public class DatabaseClient implements Database {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "ListVmClusterPatchHistoryEntries",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/PatchHistoryEntry/ListVmClusterPatchHistoryEntries");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -6837,6 +7797,11 @@ public class DatabaseClient implements Database {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "ListVmClusterPatches",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/Patch/ListVmClusterPatches");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -6868,6 +7833,11 @@ public class DatabaseClient implements Database {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "ListVmClusterUpdateHistoryEntries",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/VmClusterUpdateHistoryEntry/ListVmClusterUpdateHistoryEntries");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -6897,6 +7867,11 @@ public class DatabaseClient implements Database {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "ListVmClusterUpdates",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/VmClusterUpdate/ListVmClusterUpdates");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -6926,6 +7901,11 @@ public class DatabaseClient implements Database {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "ListVmClusters",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/VmCluster/ListVmClusters");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -6958,6 +7938,11 @@ public class DatabaseClient implements Database {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "LocalClonePluggableDatabase",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/PluggableDatabase/LocalClonePluggableDatabase");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -6996,6 +7981,11 @@ public class DatabaseClient implements Database {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "MigrateExadataDbSystemResourceModel",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/DbSystem/MigrateExadataDbSystemResourceModel");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -7027,6 +8017,11 @@ public class DatabaseClient implements Database {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "MigrateVaultKey",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/Database/MigrateVaultKey");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -7062,6 +8057,11 @@ public class DatabaseClient implements Database {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "ModifyDatabaseManagement",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/Database/ModifyDatabaseManagement");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -7097,6 +8097,11 @@ public class DatabaseClient implements Database {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "RegisterAutonomousDatabaseDataSafe",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabase/RegisterAutonomousDatabaseDataSafe");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -7139,6 +8144,11 @@ public class DatabaseClient implements Database {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "ReinstateAutonomousContainerDatabaseDataguardAssociation",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousContainerDatabaseDataguardAssociation/ReinstateAutonomousContainerDatabaseDataguardAssociation");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -7171,6 +8181,11 @@ public class DatabaseClient implements Database {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "ReinstateDataGuardAssociation",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/DataGuardAssociation/ReinstateDataGuardAssociation");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -7208,6 +8223,11 @@ public class DatabaseClient implements Database {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "RemoteClonePluggableDatabase",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/PluggableDatabase/RemoteClonePluggableDatabase");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -7245,6 +8265,11 @@ public class DatabaseClient implements Database {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "RemoveVirtualMachineFromVmCluster",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/VmCluster/RemoveVirtualMachineFromVmCluster");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -7281,6 +8306,11 @@ public class DatabaseClient implements Database {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "RestartAutonomousContainerDatabase",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousContainerDatabase/RestartAutonomousContainerDatabase");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -7313,6 +8343,11 @@ public class DatabaseClient implements Database {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "RestartAutonomousDatabase",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabase/RestartAutonomousDatabase");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -7345,6 +8380,11 @@ public class DatabaseClient implements Database {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "RestoreAutonomousDatabase",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabase/RestoreAutonomousDatabase");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -7379,6 +8419,11 @@ public class DatabaseClient implements Database {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "RestoreDatabase",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/Database/RestoreDatabase");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -7419,6 +8464,11 @@ public class DatabaseClient implements Database {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "RotateAutonomousContainerDatabaseEncryptionKey",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousContainerDatabase/RotateAutonomousContainerDatabaseEncryptionKey");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -7453,6 +8503,11 @@ public class DatabaseClient implements Database {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "RotateAutonomousDatabaseEncryptionKey",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabase/RotateAutonomousDatabaseEncryptionKey");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -7487,6 +8542,11 @@ public class DatabaseClient implements Database {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "RotateCloudAutonomousVmClusterOrdsCerts",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/CloudAutonomousVmCluster/RotateCloudAutonomousVmClusterOrdsCerts");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -7521,6 +8581,11 @@ public class DatabaseClient implements Database {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "RotateCloudAutonomousVmClusterSslCerts",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/CloudAutonomousVmCluster/RotateCloudAutonomousVmClusterSslCerts");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -7552,6 +8617,11 @@ public class DatabaseClient implements Database {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "RotateOrdsCerts",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousExadataInfrastructure/RotateOrdsCerts");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -7583,6 +8653,11 @@ public class DatabaseClient implements Database {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "RotateSslCerts",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousExadataInfrastructure/RotateSslCerts");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -7614,6 +8689,11 @@ public class DatabaseClient implements Database {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "RotateVaultKey",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/Database/RotateVaultKey");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -7651,6 +8731,11 @@ public class DatabaseClient implements Database {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "ScanExternalContainerDatabasePluggableDatabases",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalContainerDatabase/ScanExternalContainerDatabasePluggableDatabases");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -7682,6 +8767,11 @@ public class DatabaseClient implements Database {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "ShrinkAutonomousDatabase",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabase/ShrinkAutonomousDatabase");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -7713,6 +8803,11 @@ public class DatabaseClient implements Database {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "StartAutonomousDatabase",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabase/StartAutonomousDatabase");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -7745,6 +8840,11 @@ public class DatabaseClient implements Database {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "StartPluggableDatabase",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/PluggableDatabase/StartPluggableDatabase");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -7776,6 +8876,11 @@ public class DatabaseClient implements Database {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "StopAutonomousDatabase",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabase/StopAutonomousDatabase");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -7808,6 +8913,11 @@ public class DatabaseClient implements Database {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "StopPluggableDatabase",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/PluggableDatabase/StopPluggableDatabase");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -7846,6 +8956,11 @@ public class DatabaseClient implements Database {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "SwitchoverAutonomousContainerDatabaseDataguardAssociation",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousContainerDatabaseDataguardAssociation/SwitchoverAutonomousContainerDatabaseDataguardAssociation");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -7879,6 +8994,11 @@ public class DatabaseClient implements Database {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "SwitchoverAutonomousDatabase",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabase/SwitchoverAutonomousDatabase");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -7911,6 +9031,11 @@ public class DatabaseClient implements Database {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "SwitchoverDataGuardAssociation",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/DataGuardAssociation/SwitchoverDataGuardAssociation");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -7948,6 +9073,11 @@ public class DatabaseClient implements Database {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "TerminateAutonomousContainerDatabase",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousContainerDatabase/TerminateAutonomousContainerDatabase");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -7982,6 +9112,11 @@ public class DatabaseClient implements Database {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "TerminateAutonomousExadataInfrastructure",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousExadataInfrastructure/TerminateAutonomousExadataInfrastructure");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -8012,6 +9147,11 @@ public class DatabaseClient implements Database {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "TerminateDbSystem",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/DbSystem/TerminateDbSystem");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -8044,6 +9184,11 @@ public class DatabaseClient implements Database {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "UpdateAutonomousContainerDatabase",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousContainerDatabase/UpdateAutonomousContainerDatabase");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -8086,6 +9231,11 @@ public class DatabaseClient implements Database {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "UpdateAutonomousContainerDatabaseDataguardAssociation",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousContainerDatabaseDataguardAssociation/UpdateAutonomousContainerDatabaseDataguardAssociation");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -8121,6 +9271,11 @@ public class DatabaseClient implements Database {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "UpdateAutonomousDatabase",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabase/UpdateAutonomousDatabase");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -8157,6 +9312,11 @@ public class DatabaseClient implements Database {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "UpdateAutonomousDatabaseRegionalWallet",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabaseWallet/UpdateAutonomousDatabaseRegionalWallet");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -8193,6 +9353,11 @@ public class DatabaseClient implements Database {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "UpdateAutonomousDatabaseWallet",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabaseWallet/UpdateAutonomousDatabaseWallet");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -8230,6 +9395,11 @@ public class DatabaseClient implements Database {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "UpdateAutonomousExadataInfrastructure",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousExadataInfrastructure/UpdateAutonomousExadataInfrastructure");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -8266,6 +9436,11 @@ public class DatabaseClient implements Database {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "UpdateAutonomousVmCluster",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousVmCluster/UpdateAutonomousVmCluster");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -8301,6 +9476,11 @@ public class DatabaseClient implements Database {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "UpdateBackupDestination",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/BackupDestination/UpdateBackupDestination");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -8336,6 +9516,11 @@ public class DatabaseClient implements Database {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "UpdateCloudAutonomousVmCluster",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/CloudAutonomousVmCluster/UpdateCloudAutonomousVmCluster");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -8372,6 +9557,11 @@ public class DatabaseClient implements Database {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "UpdateCloudExadataInfrastructure",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/CloudExadataInfrastructure/UpdateCloudExadataInfrastructure");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -8406,6 +9596,11 @@ public class DatabaseClient implements Database {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "UpdateCloudVmCluster",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/CloudVmCluster/UpdateCloudVmCluster");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -8441,6 +9636,11 @@ public class DatabaseClient implements Database {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "UpdateCloudVmClusterIormConfig",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/CloudVmCluster/UpdateCloudVmClusterIormConfig");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -8477,6 +9677,11 @@ public class DatabaseClient implements Database {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "UpdateDataGuardAssociation",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/DataGuardAssociation/UpdateDataGuardAssociation");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -8511,6 +9716,11 @@ public class DatabaseClient implements Database {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "UpdateDatabase",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/Database/UpdateDatabase");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -8546,6 +9756,11 @@ public class DatabaseClient implements Database {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "UpdateDatabaseSoftwareImage",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/DatabaseSoftwareImage/UpdateDatabaseSoftwareImage");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -8580,6 +9795,11 @@ public class DatabaseClient implements Database {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "UpdateDbHome",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/DbHome/UpdateDbHome");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -8613,6 +9833,11 @@ public class DatabaseClient implements Database {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "UpdateDbSystem",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/DbSystem/UpdateDbSystem");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -8648,6 +9873,11 @@ public class DatabaseClient implements Database {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "UpdateExadataInfrastructure",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExadataInfrastructure/UpdateExadataInfrastructure");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -8683,6 +9913,11 @@ public class DatabaseClient implements Database {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "UpdateExadataIormConfig",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/DbSystem/UpdateExadataIormConfig");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -8718,6 +9953,11 @@ public class DatabaseClient implements Database {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "UpdateExternalContainerDatabase",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalContainerDatabase/UpdateExternalContainerDatabase");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -8754,6 +9994,11 @@ public class DatabaseClient implements Database {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "UpdateExternalDatabaseConnector",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalDatabaseConnector/UpdateExternalDatabaseConnector");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -8790,6 +10035,11 @@ public class DatabaseClient implements Database {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "UpdateExternalNonContainerDatabase",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalNonContainerDatabase/UpdateExternalNonContainerDatabase");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -8826,6 +10076,11 @@ public class DatabaseClient implements Database {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "UpdateExternalPluggableDatabase",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalPluggableDatabase/UpdateExternalPluggableDatabase");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -8860,6 +10115,11 @@ public class DatabaseClient implements Database {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "UpdateKeyStore",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/KeyStore/UpdateKeyStore");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -8893,6 +10153,11 @@ public class DatabaseClient implements Database {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "UpdateMaintenanceRun",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/MaintenanceRun/UpdateMaintenanceRun");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -8927,6 +10192,11 @@ public class DatabaseClient implements Database {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "UpdatePluggableDatabase",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/PluggableDatabase/UpdatePluggableDatabase");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -8960,6 +10230,11 @@ public class DatabaseClient implements Database {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "UpdateVmCluster",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/VmCluster/UpdateVmCluster");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -8994,6 +10269,11 @@ public class DatabaseClient implements Database {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "UpdateVmClusterNetwork",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/VmClusterNetwork/UpdateVmClusterNetwork");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -9027,6 +10307,11 @@ public class DatabaseClient implements Database {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "UpgradeDatabase",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/Database/UpgradeDatabase");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -9062,6 +10347,11 @@ public class DatabaseClient implements Database {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "ValidateVmClusterNetwork",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/VmClusterNetwork/ValidateVmClusterNetwork");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {

@@ -393,6 +393,11 @@ public class SenderInvitationAsyncClient implements SenderInvitationAsync {
                         javax.ws.rs.core.Response, CancelSenderInvitationResponse>
                 transformer = CancelSenderInvitationConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "SenderInvitation",
+                "CancelSenderInvitation",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/SenderInvitation/CancelSenderInvitation");
 
         com.oracle.bmc.responses.AsyncHandler<
                         CancelSenderInvitationRequest, CancelSenderInvitationResponse>
@@ -435,6 +440,11 @@ public class SenderInvitationAsyncClient implements SenderInvitationAsync {
                         javax.ws.rs.core.Response, CreateSenderInvitationResponse>
                 transformer = CreateSenderInvitationConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "SenderInvitation",
+                "CreateSenderInvitation",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/SenderInvitation/CreateSenderInvitation");
 
         com.oracle.bmc.responses.AsyncHandler<
                         CreateSenderInvitationRequest, CreateSenderInvitationResponse>
@@ -481,6 +491,11 @@ public class SenderInvitationAsyncClient implements SenderInvitationAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetSenderInvitationResponse>
                 transformer = GetSenderInvitationConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "SenderInvitation",
+                "GetSenderInvitation",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/SenderInvitation/GetSenderInvitation");
 
         com.oracle.bmc.responses.AsyncHandler<
                         GetSenderInvitationRequest, GetSenderInvitationResponse>
@@ -522,6 +537,11 @@ public class SenderInvitationAsyncClient implements SenderInvitationAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListSenderInvitationsResponse>
                 transformer = ListSenderInvitationsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "SenderInvitation",
+                "ListSenderInvitations",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/SenderInvitation/ListSenderInvitations");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListSenderInvitationsRequest, ListSenderInvitationsResponse>
@@ -563,6 +583,11 @@ public class SenderInvitationAsyncClient implements SenderInvitationAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, UpdateSenderInvitationResponse>
                 transformer = UpdateSenderInvitationConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "SenderInvitation",
+                "UpdateSenderInvitation",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/SenderInvitation/UpdateSenderInvitation");
 
         com.oracle.bmc.responses.AsyncHandler<
                         UpdateSenderInvitationRequest, UpdateSenderInvitationResponse>

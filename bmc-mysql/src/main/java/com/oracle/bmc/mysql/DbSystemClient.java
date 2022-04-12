@@ -475,6 +475,11 @@ public class DbSystemClient implements DbSystem {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DbSystem",
+                "AddAnalyticsCluster",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/AnalyticsCluster/AddAnalyticsCluster");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -509,6 +514,11 @@ public class DbSystemClient implements DbSystem {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DbSystem",
+                "AddHeatWaveCluster",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/HeatWaveCluster/AddHeatWaveCluster");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -543,6 +553,8 @@ public class DbSystemClient implements DbSystem {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DbSystem", "CreateDbSystem", ib.getRequestUri().toString(), "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -577,6 +589,11 @@ public class DbSystemClient implements DbSystem {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DbSystem",
+                "DeleteAnalyticsCluster",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/AnalyticsCluster/DeleteAnalyticsCluster");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -607,6 +624,11 @@ public class DbSystemClient implements DbSystem {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DbSystem",
+                "DeleteDbSystem",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/DbSystem/DeleteDbSystem");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -638,6 +660,11 @@ public class DbSystemClient implements DbSystem {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DbSystem",
+                "DeleteHeatWaveCluster",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/HeatWaveCluster/DeleteHeatWaveCluster");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -672,6 +699,11 @@ public class DbSystemClient implements DbSystem {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DbSystem",
+                "GenerateAnalyticsClusterMemoryEstimate",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/AnalyticsClusterMemoryEstimate/GenerateAnalyticsClusterMemoryEstimate");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -706,6 +738,11 @@ public class DbSystemClient implements DbSystem {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DbSystem",
+                "GenerateHeatWaveClusterMemoryEstimate",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/HeatWaveClusterMemoryEstimate/GenerateHeatWaveClusterMemoryEstimate");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -736,6 +773,11 @@ public class DbSystemClient implements DbSystem {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DbSystem",
+                "GetAnalyticsCluster",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/AnalyticsCluster/GetAnalyticsCluster");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -767,6 +809,11 @@ public class DbSystemClient implements DbSystem {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DbSystem",
+                "GetAnalyticsClusterMemoryEstimate",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/AnalyticsClusterMemoryEstimate/GetAnalyticsClusterMemoryEstimate");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -796,6 +843,11 @@ public class DbSystemClient implements DbSystem {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DbSystem",
+                "GetDbSystem",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/DbSystem/GetDbSystem");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -825,6 +877,11 @@ public class DbSystemClient implements DbSystem {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DbSystem",
+                "GetHeatWaveCluster",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/HeatWaveCluster/GetHeatWaveCluster");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -856,6 +913,11 @@ public class DbSystemClient implements DbSystem {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DbSystem",
+                "GetHeatWaveClusterMemoryEstimate",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/HeatWaveClusterMemoryEstimate/GetHeatWaveClusterMemoryEstimate");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -885,6 +947,11 @@ public class DbSystemClient implements DbSystem {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DbSystem",
+                "ListDbSystems",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/DbSystemSummary/ListDbSystems");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -916,6 +983,11 @@ public class DbSystemClient implements DbSystem {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DbSystem",
+                "RestartAnalyticsCluster",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/AnalyticsCluster/RestartAnalyticsCluster");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -947,6 +1019,11 @@ public class DbSystemClient implements DbSystem {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DbSystem",
+                "RestartDbSystem",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/DbSystem/RestartDbSystem");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -982,6 +1059,11 @@ public class DbSystemClient implements DbSystem {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DbSystem",
+                "RestartHeatWaveCluster",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/HeatWaveCluster/RestartHeatWaveCluster");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1014,6 +1096,11 @@ public class DbSystemClient implements DbSystem {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DbSystem",
+                "StartAnalyticsCluster",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/AnalyticsCluster/StartAnalyticsCluster");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1045,6 +1132,11 @@ public class DbSystemClient implements DbSystem {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DbSystem",
+                "StartDbSystem",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/DbSystem/StartDbSystem");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1076,6 +1168,11 @@ public class DbSystemClient implements DbSystem {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DbSystem",
+                "StartHeatWaveCluster",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/HeatWaveCluster/StartHeatWaveCluster");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1107,6 +1204,11 @@ public class DbSystemClient implements DbSystem {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DbSystem",
+                "StopAnalyticsCluster",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/AnalyticsCluster/StopAnalyticsCluster");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1138,6 +1240,11 @@ public class DbSystemClient implements DbSystem {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DbSystem",
+                "StopDbSystem",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/DbSystem/StopDbSystem");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1172,6 +1279,11 @@ public class DbSystemClient implements DbSystem {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DbSystem",
+                "StopHeatWaveCluster",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/HeatWaveCluster/StopHeatWaveCluster");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1203,6 +1315,11 @@ public class DbSystemClient implements DbSystem {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DbSystem",
+                "UpdateAnalyticsCluster",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/AnalyticsCluster/UpdateAnalyticsCluster");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1236,6 +1353,11 @@ public class DbSystemClient implements DbSystem {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DbSystem",
+                "UpdateDbSystem",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/DbSystem/UpdateDbSystem");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1270,6 +1392,11 @@ public class DbSystemClient implements DbSystem {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "DbSystem",
+                "UpdateHeatWaveCluster",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/HeatWaveCluster/UpdateHeatWaveCluster");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {

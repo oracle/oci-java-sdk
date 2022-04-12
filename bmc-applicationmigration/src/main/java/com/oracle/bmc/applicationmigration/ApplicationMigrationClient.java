@@ -476,6 +476,11 @@ public class ApplicationMigrationClient implements ApplicationMigration {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ApplicationMigration",
+                "CancelWorkRequest",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/applicationmigration/20191031/WorkRequest/CancelWorkRequest");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -509,6 +514,11 @@ public class ApplicationMigrationClient implements ApplicationMigration {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ApplicationMigration",
+                "ChangeMigrationCompartment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/applicationmigration/20191031/Migration/ChangeMigrationCompartment");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -545,6 +555,11 @@ public class ApplicationMigrationClient implements ApplicationMigration {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ApplicationMigration",
+                "ChangeSourceCompartment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/applicationmigration/20191031/Source/ChangeSourceCompartment");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -579,6 +594,8 @@ public class ApplicationMigrationClient implements ApplicationMigration {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ApplicationMigration", "CreateMigration", ib.getRequestUri().toString(), "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -613,6 +630,8 @@ public class ApplicationMigrationClient implements ApplicationMigration {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ApplicationMigration", "CreateSource", ib.getRequestUri().toString(), "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -646,6 +665,11 @@ public class ApplicationMigrationClient implements ApplicationMigration {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ApplicationMigration",
+                "DeleteMigration",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/applicationmigration/20191031/Migration/DeleteMigration");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -676,6 +700,11 @@ public class ApplicationMigrationClient implements ApplicationMigration {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ApplicationMigration",
+                "DeleteSource",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/applicationmigration/20191031/Source/DeleteSource");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -706,6 +735,11 @@ public class ApplicationMigrationClient implements ApplicationMigration {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ApplicationMigration",
+                "GetMigration",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/applicationmigration/20191031/Migration/GetMigration");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -734,6 +768,11 @@ public class ApplicationMigrationClient implements ApplicationMigration {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ApplicationMigration",
+                "GetSource",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/applicationmigration/20191031/Source/GetSource");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -763,6 +802,11 @@ public class ApplicationMigrationClient implements ApplicationMigration {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ApplicationMigration",
+                "GetWorkRequest",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/applicationmigration/20191031/WorkRequest/GetWorkRequest");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -792,6 +836,11 @@ public class ApplicationMigrationClient implements ApplicationMigration {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ApplicationMigration",
+                "ListMigrations",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/applicationmigration/20191031/MigrationSummary/ListMigrations");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -822,6 +871,11 @@ public class ApplicationMigrationClient implements ApplicationMigration {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ApplicationMigration",
+                "ListSourceApplications",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/applicationmigration/20191031/SourceApplicationSummary/ListSourceApplications");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -851,6 +905,11 @@ public class ApplicationMigrationClient implements ApplicationMigration {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ApplicationMigration",
+                "ListSources",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/applicationmigration/20191031/SourceSummary/ListSources");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -881,6 +940,11 @@ public class ApplicationMigrationClient implements ApplicationMigration {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ApplicationMigration",
+                "ListWorkRequestErrors",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/applicationmigration/20191031/WorkRequestError/ListWorkRequestErrors");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -910,6 +974,11 @@ public class ApplicationMigrationClient implements ApplicationMigration {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ApplicationMigration",
+                "ListWorkRequestLogs",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/applicationmigration/20191031/WorkRequestLogEntry/ListWorkRequestLogs");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -939,6 +1008,11 @@ public class ApplicationMigrationClient implements ApplicationMigration {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ApplicationMigration",
+                "ListWorkRequests",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/applicationmigration/20191031/WorkRequestSummary/ListWorkRequests");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -969,6 +1043,11 @@ public class ApplicationMigrationClient implements ApplicationMigration {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ApplicationMigration",
+                "MigrateApplication",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/applicationmigration/20191031/Migration/MigrateApplication");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1000,6 +1079,11 @@ public class ApplicationMigrationClient implements ApplicationMigration {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ApplicationMigration",
+                "UpdateMigration",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/applicationmigration/20191031/Migration/UpdateMigration");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1033,6 +1117,11 @@ public class ApplicationMigrationClient implements ApplicationMigration {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ApplicationMigration",
+                "UpdateSource",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/applicationmigration/20191031/Source/UpdateSource");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {

@@ -5,7 +5,7 @@
 package com.oracle.bmc.aivision.model;
 
 /**
- * Phone number field value.
+ * The phone number field value.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -118,7 +118,7 @@ public class ValuePhoneNumber extends FieldValue {
     }
 
     /**
-     * Phone number field value.
+     * The phone number field value.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("value")
     String value;

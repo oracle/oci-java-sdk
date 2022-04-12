@@ -475,6 +475,11 @@ public class DevopsClient implements Devops {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Devops",
+                "ApproveDeployment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Deployment/ApproveDeployment");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -509,6 +514,11 @@ public class DevopsClient implements Devops {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Devops",
+                "CancelBuildRun",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/BuildRun/CancelBuildRun");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -543,6 +553,11 @@ public class DevopsClient implements Devops {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Devops",
+                "CancelDeployment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Deployment/CancelDeployment");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -578,6 +593,11 @@ public class DevopsClient implements Devops {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Devops",
+                "ChangeProjectCompartment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Project/ChangeProjectCompartment");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -612,6 +632,11 @@ public class DevopsClient implements Devops {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Devops",
+                "CreateBuildPipeline",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/BuildPipeline/CreateBuildPipeline");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -647,6 +672,11 @@ public class DevopsClient implements Devops {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Devops",
+                "CreateBuildPipelineStage",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/BuildPipelineStage/CreateBuildPipelineStage");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -681,6 +711,11 @@ public class DevopsClient implements Devops {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Devops",
+                "CreateBuildRun",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/BuildRun/CreateBuildRun");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -715,6 +750,11 @@ public class DevopsClient implements Devops {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Devops",
+                "CreateConnection",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Connection/CreateConnection");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -749,6 +789,11 @@ public class DevopsClient implements Devops {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Devops",
+                "CreateDeployArtifact",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/DeployArtifact/CreateDeployArtifact");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -784,6 +829,11 @@ public class DevopsClient implements Devops {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Devops",
+                "CreateDeployEnvironment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/DeployEnvironment/CreateDeployEnvironment");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -818,6 +868,11 @@ public class DevopsClient implements Devops {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Devops",
+                "CreateDeployPipeline",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/DeployPipeline/CreateDeployPipeline");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -852,6 +907,11 @@ public class DevopsClient implements Devops {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Devops",
+                "CreateDeployStage",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/DeployStage/CreateDeployStage");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -886,6 +946,11 @@ public class DevopsClient implements Devops {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Devops",
+                "CreateDeployment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Deployment/CreateDeployment");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -920,6 +985,11 @@ public class DevopsClient implements Devops {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Devops",
+                "CreateProject",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Project/CreateProject");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -954,6 +1024,11 @@ public class DevopsClient implements Devops {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Devops",
+                "CreateRepository",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Repository/CreateRepository");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -988,6 +1063,11 @@ public class DevopsClient implements Devops {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Devops",
+                "CreateTrigger",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Trigger/CreateTrigger");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1021,6 +1101,11 @@ public class DevopsClient implements Devops {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Devops",
+                "DeleteBuildPipeline",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/BuildPipeline/DeleteBuildPipeline");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1052,6 +1137,11 @@ public class DevopsClient implements Devops {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Devops",
+                "DeleteBuildPipelineStage",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/BuildPipelineStage/DeleteBuildPipelineStage");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1082,6 +1172,11 @@ public class DevopsClient implements Devops {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Devops",
+                "DeleteConnection",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Connection/DeleteConnection");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1112,6 +1207,11 @@ public class DevopsClient implements Devops {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Devops",
+                "DeleteDeployArtifact",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/DeployArtifact/DeleteDeployArtifact");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1143,6 +1243,11 @@ public class DevopsClient implements Devops {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Devops",
+                "DeleteDeployEnvironment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/DeployEnvironment/DeleteDeployEnvironment");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1173,6 +1278,11 @@ public class DevopsClient implements Devops {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Devops",
+                "DeleteDeployPipeline",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/DeployPipeline/DeleteDeployPipeline");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1203,6 +1313,11 @@ public class DevopsClient implements Devops {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Devops",
+                "DeleteDeployStage",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/DeployStage/DeleteDeployStage");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1233,6 +1348,11 @@ public class DevopsClient implements Devops {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Devops",
+                "DeleteProject",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Project/DeleteProject");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1263,6 +1383,11 @@ public class DevopsClient implements Devops {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Devops",
+                "DeleteRef",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Repository/DeleteRef");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1293,6 +1418,11 @@ public class DevopsClient implements Devops {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Devops",
+                "DeleteRepository",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Repository/DeleteRepository");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1323,6 +1453,11 @@ public class DevopsClient implements Devops {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Devops",
+                "DeleteTrigger",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Trigger/DeleteTrigger");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1353,6 +1488,11 @@ public class DevopsClient implements Devops {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Devops",
+                "GetBuildPipeline",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/BuildPipeline/GetBuildPipeline");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1383,6 +1523,11 @@ public class DevopsClient implements Devops {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Devops",
+                "GetBuildPipelineStage",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/BuildPipelineStage/GetBuildPipelineStage");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1412,6 +1557,11 @@ public class DevopsClient implements Devops {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Devops",
+                "GetBuildRun",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/BuildRun/GetBuildRun");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1440,6 +1590,11 @@ public class DevopsClient implements Devops {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Devops",
+                "GetCommit",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Repository/GetCommit");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1469,6 +1624,11 @@ public class DevopsClient implements Devops {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Devops",
+                "GetCommitDiff",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Repository/GetCommitDiff");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1498,6 +1658,11 @@ public class DevopsClient implements Devops {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Devops",
+                "GetConnection",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Connection/GetConnection");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1527,6 +1692,11 @@ public class DevopsClient implements Devops {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Devops",
+                "GetDeployArtifact",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/DeployArtifact/GetDeployArtifact");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1556,6 +1726,11 @@ public class DevopsClient implements Devops {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Devops",
+                "GetDeployEnvironment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/DeployEnvironment/GetDeployEnvironment");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1585,6 +1760,11 @@ public class DevopsClient implements Devops {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Devops",
+                "GetDeployPipeline",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/DeployPipeline/GetDeployPipeline");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1614,6 +1794,11 @@ public class DevopsClient implements Devops {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Devops",
+                "GetDeployStage",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/DeployStage/GetDeployStage");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1643,6 +1828,11 @@ public class DevopsClient implements Devops {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Devops",
+                "GetDeployment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Deployment/GetDeployment");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1672,6 +1862,11 @@ public class DevopsClient implements Devops {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Devops",
+                "GetFileDiff",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Repository/GetFileDiff");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1701,6 +1896,11 @@ public class DevopsClient implements Devops {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Devops",
+                "GetMirrorRecord",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Repository/GetMirrorRecord");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1729,6 +1929,11 @@ public class DevopsClient implements Devops {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Devops",
+                "GetObject",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/RepositoryObject/GetObject");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1768,6 +1973,11 @@ public class DevopsClient implements Devops {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Devops",
+                "GetObjectContent",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Repository/GetObjectContent");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1796,6 +2006,11 @@ public class DevopsClient implements Devops {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Devops",
+                "GetProject",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Project/GetProject");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1824,6 +2039,11 @@ public class DevopsClient implements Devops {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Devops",
+                "GetRef",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Repository/GetRef");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1853,6 +2073,11 @@ public class DevopsClient implements Devops {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Devops",
+                "GetRepoFileDiff",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Repository/GetRepoFileDiff");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1882,6 +2107,11 @@ public class DevopsClient implements Devops {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Devops",
+                "GetRepoFileLines",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Repository/GetRepoFileLines");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1911,6 +2141,11 @@ public class DevopsClient implements Devops {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Devops",
+                "GetRepository",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Repository/GetRepository");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1952,6 +2187,11 @@ public class DevopsClient implements Devops {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Devops",
+                "GetRepositoryArchiveContent",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Repository/GetRepositoryArchiveContent");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1982,6 +2222,11 @@ public class DevopsClient implements Devops {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Devops",
+                "GetRepositoryFileLines",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Repository/GetRepositoryFileLines");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2010,6 +2255,11 @@ public class DevopsClient implements Devops {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Devops",
+                "GetTrigger",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Trigger/GetTrigger");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2039,6 +2289,11 @@ public class DevopsClient implements Devops {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Devops",
+                "GetWorkRequest",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/WorkRequest/GetWorkRequest");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2068,6 +2323,11 @@ public class DevopsClient implements Devops {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Devops",
+                "ListAuthors",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Repository/ListAuthors");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2098,6 +2358,11 @@ public class DevopsClient implements Devops {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Devops",
+                "ListBuildPipelineStages",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/BuildPipelineStageSummary/ListBuildPipelineStages");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2127,6 +2392,11 @@ public class DevopsClient implements Devops {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Devops",
+                "ListBuildPipelines",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/BuildPipelineCollection/ListBuildPipelines");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2156,6 +2426,11 @@ public class DevopsClient implements Devops {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Devops",
+                "ListBuildRuns",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/BuildRunSummary/ListBuildRuns");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2185,6 +2460,11 @@ public class DevopsClient implements Devops {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Devops",
+                "ListCommitDiffs",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Repository/ListCommitDiffs");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2214,6 +2494,11 @@ public class DevopsClient implements Devops {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Devops",
+                "ListCommits",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/RepositoryCommit/ListCommits");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2243,6 +2528,11 @@ public class DevopsClient implements Devops {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Devops",
+                "ListConnections",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/ConnectionCollection/ListConnections");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2272,6 +2562,11 @@ public class DevopsClient implements Devops {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Devops",
+                "ListDeployArtifacts",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/DeployArtifactSummary/ListDeployArtifacts");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2302,6 +2597,11 @@ public class DevopsClient implements Devops {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Devops",
+                "ListDeployEnvironments",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/DeployEnvironmentSummary/ListDeployEnvironments");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2331,6 +2631,11 @@ public class DevopsClient implements Devops {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Devops",
+                "ListDeployPipelines",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/DeployPipelineSummary/ListDeployPipelines");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2360,6 +2665,11 @@ public class DevopsClient implements Devops {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Devops",
+                "ListDeployStages",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/DeployStageSummary/ListDeployStages");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2389,6 +2699,11 @@ public class DevopsClient implements Devops {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Devops",
+                "ListDeployments",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/DeploymentSummary/ListDeployments");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2418,6 +2733,11 @@ public class DevopsClient implements Devops {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Devops",
+                "ListMirrorRecords",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Repository/ListMirrorRecords");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2446,6 +2766,11 @@ public class DevopsClient implements Devops {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Devops",
+                "ListPaths",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/RepositoryPathSummary/ListPaths");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2475,6 +2800,11 @@ public class DevopsClient implements Devops {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Devops",
+                "ListProjects",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/ProjectSummary/ListProjects");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2503,6 +2833,11 @@ public class DevopsClient implements Devops {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Devops",
+                "ListRefs",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/RepositoryRef/ListRefs");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2532,6 +2867,11 @@ public class DevopsClient implements Devops {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Devops",
+                "ListRepositories",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Repository/ListRepositories");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2561,6 +2901,11 @@ public class DevopsClient implements Devops {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Devops",
+                "ListTriggers",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/TriggerCollection/ListTriggers");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2591,6 +2936,11 @@ public class DevopsClient implements Devops {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Devops",
+                "ListWorkRequestErrors",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/WorkRequestError/ListWorkRequestErrors");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2620,6 +2970,11 @@ public class DevopsClient implements Devops {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Devops",
+                "ListWorkRequestLogs",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/WorkRequestLogEntry/ListWorkRequestLogs");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2649,6 +3004,11 @@ public class DevopsClient implements Devops {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Devops",
+                "ListWorkRequests",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/WorkRequest/ListWorkRequests");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2678,6 +3038,11 @@ public class DevopsClient implements Devops {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Devops",
+                "MirrorRepository",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Repository/MirrorRepository");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2709,6 +3074,11 @@ public class DevopsClient implements Devops {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Devops",
+                "PutRepositoryRef",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Repository/PutRepositoryRef");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2742,6 +3112,11 @@ public class DevopsClient implements Devops {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Devops",
+                "UpdateBuildPipeline",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/BuildPipeline/UpdateBuildPipeline");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2776,6 +3151,11 @@ public class DevopsClient implements Devops {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Devops",
+                "UpdateBuildPipelineStage",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/BuildPipelineStage/UpdateBuildPipelineStage");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2809,6 +3189,11 @@ public class DevopsClient implements Devops {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Devops",
+                "UpdateBuildRun",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/BuildRun/UpdateBuildRun");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2842,6 +3227,11 @@ public class DevopsClient implements Devops {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Devops",
+                "UpdateConnection",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Connection/UpdateConnection");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2875,6 +3265,11 @@ public class DevopsClient implements Devops {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Devops",
+                "UpdateDeployArtifact",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/DeployArtifact/UpdateDeployArtifact");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2909,6 +3304,11 @@ public class DevopsClient implements Devops {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Devops",
+                "UpdateDeployEnvironment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/DeployEnvironment/UpdateDeployEnvironment");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2942,6 +3342,11 @@ public class DevopsClient implements Devops {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Devops",
+                "UpdateDeployPipeline",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/DeployPipeline/UpdateDeployPipeline");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2975,6 +3380,11 @@ public class DevopsClient implements Devops {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Devops",
+                "UpdateDeployStage",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/DeployStage/UpdateDeployStage");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3008,6 +3418,11 @@ public class DevopsClient implements Devops {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Devops",
+                "UpdateDeployment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Deployment/UpdateDeployment");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3041,6 +3456,11 @@ public class DevopsClient implements Devops {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Devops",
+                "UpdateProject",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Project/UpdateProject");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3074,6 +3494,11 @@ public class DevopsClient implements Devops {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Devops",
+                "UpdateRepository",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Repository/UpdateRepository");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3107,6 +3532,11 @@ public class DevopsClient implements Devops {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Devops",
+                "UpdateTrigger",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Trigger/UpdateTrigger");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {

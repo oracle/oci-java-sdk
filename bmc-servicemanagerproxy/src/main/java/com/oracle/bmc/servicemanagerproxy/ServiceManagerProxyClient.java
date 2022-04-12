@@ -402,6 +402,11 @@ public class ServiceManagerProxyClient implements ServiceManagerProxy {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ServiceManagerProxy",
+                "GetServiceEnvironment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/smp/20210914/ServiceEnvironment/GetServiceEnvironment");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -432,6 +437,11 @@ public class ServiceManagerProxyClient implements ServiceManagerProxy {
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ServiceManagerProxy",
+                "ListServiceEnvironments",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/smp/20210914/ServiceEnvironment/ListServiceEnvironments");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {

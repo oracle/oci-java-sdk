@@ -391,6 +391,11 @@ public class MonitoringAsyncClient implements MonitoringAsync {
                         javax.ws.rs.core.Response, ChangeAlarmCompartmentResponse>
                 transformer = ChangeAlarmCompartmentConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Monitoring",
+                "ChangeAlarmCompartment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/monitoring/20180401/Alarm/ChangeAlarmCompartment");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeAlarmCompartmentRequest, ChangeAlarmCompartmentResponse>
@@ -436,6 +441,11 @@ public class MonitoringAsyncClient implements MonitoringAsync {
         final com.google.common.base.Function<javax.ws.rs.core.Response, CreateAlarmResponse>
                 transformer = CreateAlarmConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Monitoring",
+                "CreateAlarm",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/monitoring/20180401/Alarm/CreateAlarm");
 
         com.oracle.bmc.responses.AsyncHandler<CreateAlarmRequest, CreateAlarmResponse>
                 handlerToUse = handler;
@@ -479,6 +489,11 @@ public class MonitoringAsyncClient implements MonitoringAsync {
                 DeleteAlarmConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteAlarmResponse>
                 transformer = DeleteAlarmConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Monitoring",
+                "DeleteAlarm",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/monitoring/20180401/Alarm/DeleteAlarm");
 
         com.oracle.bmc.responses.AsyncHandler<DeleteAlarmRequest, DeleteAlarmResponse>
                 handlerToUse = handler;
@@ -516,6 +531,11 @@ public class MonitoringAsyncClient implements MonitoringAsync {
                 GetAlarmConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetAlarmResponse>
                 transformer = GetAlarmConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Monitoring",
+                "GetAlarm",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/monitoring/20180401/Alarm/GetAlarm");
 
         com.oracle.bmc.responses.AsyncHandler<GetAlarmRequest, GetAlarmResponse> handlerToUse =
                 handler;
@@ -554,6 +574,11 @@ public class MonitoringAsyncClient implements MonitoringAsync {
                 GetAlarmHistoryConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetAlarmHistoryResponse>
                 transformer = GetAlarmHistoryConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Monitoring",
+                "GetAlarmHistory",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/monitoring/20180401/AlarmHistoryCollection/GetAlarmHistory");
 
         com.oracle.bmc.responses.AsyncHandler<GetAlarmHistoryRequest, GetAlarmHistoryResponse>
                 handlerToUse = handler;
@@ -591,6 +616,11 @@ public class MonitoringAsyncClient implements MonitoringAsync {
                 ListAlarmsConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListAlarmsResponse>
                 transformer = ListAlarmsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Monitoring",
+                "ListAlarms",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/monitoring/20180401/AlarmSummary/ListAlarms");
 
         com.oracle.bmc.responses.AsyncHandler<ListAlarmsRequest, ListAlarmsResponse> handlerToUse =
                 handler;
@@ -630,6 +660,11 @@ public class MonitoringAsyncClient implements MonitoringAsync {
                 ListAlarmsStatusConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListAlarmsStatusResponse>
                 transformer = ListAlarmsStatusConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Monitoring",
+                "ListAlarmsStatus",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/monitoring/20180401/AlarmStatusSummary/ListAlarmsStatus");
 
         com.oracle.bmc.responses.AsyncHandler<ListAlarmsStatusRequest, ListAlarmsStatusResponse>
                 handlerToUse = handler;
@@ -668,6 +703,11 @@ public class MonitoringAsyncClient implements MonitoringAsync {
                 ListMetricsConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListMetricsResponse>
                 transformer = ListMetricsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Monitoring",
+                "ListMetrics",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/monitoring/20180401/Metric/ListMetrics");
 
         com.oracle.bmc.responses.AsyncHandler<ListMetricsRequest, ListMetricsResponse>
                 handlerToUse = handler;
@@ -712,6 +752,11 @@ public class MonitoringAsyncClient implements MonitoringAsync {
                 PostMetricDataConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, PostMetricDataResponse>
                 transformer = PostMetricDataConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Monitoring",
+                "PostMetricData",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/monitoring/20180401/MetricData/PostMetricData");
 
         com.oracle.bmc.responses.AsyncHandler<PostMetricDataRequest, PostMetricDataResponse>
                 handlerToUse = handler;
@@ -757,6 +802,11 @@ public class MonitoringAsyncClient implements MonitoringAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, RemoveAlarmSuppressionResponse>
                 transformer = RemoveAlarmSuppressionConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Monitoring",
+                "RemoveAlarmSuppression",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/monitoring/20180401/Suppression/RemoveAlarmSuppression");
 
         com.oracle.bmc.responses.AsyncHandler<
                         RemoveAlarmSuppressionRequest, RemoveAlarmSuppressionResponse>
@@ -798,6 +848,11 @@ public class MonitoringAsyncClient implements MonitoringAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, SummarizeMetricsDataResponse>
                 transformer = SummarizeMetricsDataConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Monitoring",
+                "SummarizeMetricsData",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/monitoring/20180401/MetricData/SummarizeMetricsData");
 
         com.oracle.bmc.responses.AsyncHandler<
                         SummarizeMetricsDataRequest, SummarizeMetricsDataResponse>
@@ -842,6 +897,11 @@ public class MonitoringAsyncClient implements MonitoringAsync {
                 UpdateAlarmConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateAlarmResponse>
                 transformer = UpdateAlarmConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Monitoring",
+                "UpdateAlarm",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/monitoring/20180401/Alarm/UpdateAlarm");
 
         com.oracle.bmc.responses.AsyncHandler<UpdateAlarmRequest, UpdateAlarmResponse>
                 handlerToUse = handler;

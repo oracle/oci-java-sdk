@@ -389,6 +389,11 @@ public class QueryAsyncClient implements QueryAsync {
                 ListQuickPicksConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListQuickPicksResponse>
                 transformer = ListQuickPicksConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Query",
+                "ListQuickPicks",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/apm-trace-explorer/20200630/QuickPickSummary/ListQuickPicks");
 
         com.oracle.bmc.responses.AsyncHandler<ListQuickPicksRequest, ListQuickPicksResponse>
                 handlerToUse = handler;
@@ -425,6 +430,11 @@ public class QueryAsyncClient implements QueryAsync {
                 QueryConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, QueryResponse>
                 transformer = QueryConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Query",
+                "Query",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/apm-trace-explorer/20200630/QueryResultResponse/Query");
 
         com.oracle.bmc.responses.AsyncHandler<QueryRequest, QueryResponse> handlerToUse = handler;
 

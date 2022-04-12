@@ -390,6 +390,11 @@ public class EventAsyncClient implements EventAsync {
         final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteEventContentResponse>
                 transformer = DeleteEventContentConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Event",
+                "DeleteEventContent",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/EventContent/DeleteEventContent");
 
         com.oracle.bmc.responses.AsyncHandler<DeleteEventContentRequest, DeleteEventContentResponse>
                 handlerToUse = handler;
@@ -427,6 +432,11 @@ public class EventAsyncClient implements EventAsync {
                 GetEventConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetEventResponse>
                 transformer = GetEventConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Event",
+                "GetEvent",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/Event/GetEvent");
 
         com.oracle.bmc.responses.AsyncHandler<GetEventRequest, GetEventResponse> handlerToUse =
                 handler;
@@ -475,6 +485,8 @@ public class EventAsyncClient implements EventAsync {
                 GetEventContentConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetEventContentResponse>
                 transformer = GetEventContentConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Event", "GetEventContent", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<GetEventContentRequest, GetEventContentResponse>
                 handlerToUse = handler;
@@ -514,6 +526,11 @@ public class EventAsyncClient implements EventAsync {
                 GetEventReportConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetEventReportResponse>
                 transformer = GetEventReportConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Event",
+                "GetEventReport",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/EventReport/GetEventReport");
 
         com.oracle.bmc.responses.AsyncHandler<GetEventReportRequest, GetEventReportResponse>
                 handlerToUse = handler;
@@ -551,6 +568,11 @@ public class EventAsyncClient implements EventAsync {
                 ListEventsConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListEventsResponse>
                 transformer = ListEventsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Event",
+                "ListEvents",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/EventCollection/ListEvents");
 
         com.oracle.bmc.responses.AsyncHandler<ListEventsRequest, ListEventsResponse> handlerToUse =
                 handler;
@@ -590,6 +612,11 @@ public class EventAsyncClient implements EventAsync {
                 ListRelatedEventsConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListRelatedEventsResponse>
                 transformer = ListRelatedEventsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Event",
+                "ListRelatedEvents",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/RelatedEventCollection/ListRelatedEvents");
 
         com.oracle.bmc.responses.AsyncHandler<ListRelatedEventsRequest, ListRelatedEventsResponse>
                 handlerToUse = handler;
@@ -628,6 +655,11 @@ public class EventAsyncClient implements EventAsync {
                 UpdateEventConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateEventResponse>
                 transformer = UpdateEventConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Event",
+                "UpdateEvent",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/Event/UpdateEvent");
 
         com.oracle.bmc.responses.AsyncHandler<UpdateEventRequest, UpdateEventResponse>
                 handlerToUse = handler;
@@ -673,6 +705,11 @@ public class EventAsyncClient implements EventAsync {
         final com.google.common.base.Function<javax.ws.rs.core.Response, UploadEventContentResponse>
                 transformer = UploadEventContentConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Event",
+                "UploadEventContent",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/EventContent/UploadEventContent");
 
         com.oracle.bmc.responses.AsyncHandler<UploadEventContentRequest, UploadEventContentResponse>
                 handlerToUse = handler;

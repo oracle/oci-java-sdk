@@ -390,6 +390,11 @@ public class UsageapiAsyncClient implements UsageapiAsync {
         final com.google.common.base.Function<javax.ws.rs.core.Response, CreateCustomTableResponse>
                 transformer = CreateCustomTableConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Usageapi",
+                "CreateCustomTable",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/usage/20200107/CustomTable/CreateCustomTable");
 
         com.oracle.bmc.responses.AsyncHandler<CreateCustomTableRequest, CreateCustomTableResponse>
                 handlerToUse = handler;
@@ -434,6 +439,11 @@ public class UsageapiAsyncClient implements UsageapiAsync {
         final com.google.common.base.Function<javax.ws.rs.core.Response, CreateQueryResponse>
                 transformer = CreateQueryConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Usageapi",
+                "CreateQuery",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/usage/20200107/Query/CreateQuery");
 
         com.oracle.bmc.responses.AsyncHandler<CreateQueryRequest, CreateQueryResponse>
                 handlerToUse = handler;
@@ -478,6 +488,11 @@ public class UsageapiAsyncClient implements UsageapiAsync {
                 DeleteCustomTableConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteCustomTableResponse>
                 transformer = DeleteCustomTableConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Usageapi",
+                "DeleteCustomTable",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/usage/20200107/CustomTable/DeleteCustomTable");
 
         com.oracle.bmc.responses.AsyncHandler<DeleteCustomTableRequest, DeleteCustomTableResponse>
                 handlerToUse = handler;
@@ -516,6 +531,11 @@ public class UsageapiAsyncClient implements UsageapiAsync {
                 DeleteQueryConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteQueryResponse>
                 transformer = DeleteQueryConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Usageapi",
+                "DeleteQuery",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/usage/20200107/Query/DeleteQuery");
 
         com.oracle.bmc.responses.AsyncHandler<DeleteQueryRequest, DeleteQueryResponse>
                 handlerToUse = handler;
@@ -555,6 +575,11 @@ public class UsageapiAsyncClient implements UsageapiAsync {
                 GetCustomTableConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetCustomTableResponse>
                 transformer = GetCustomTableConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Usageapi",
+                "GetCustomTable",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/usage/20200107/CustomTable/GetCustomTable");
 
         com.oracle.bmc.responses.AsyncHandler<GetCustomTableRequest, GetCustomTableResponse>
                 handlerToUse = handler;
@@ -592,6 +617,11 @@ public class UsageapiAsyncClient implements UsageapiAsync {
                 GetQueryConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetQueryResponse>
                 transformer = GetQueryConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Usageapi",
+                "GetQuery",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/usage/20200107/Query/GetQuery");
 
         com.oracle.bmc.responses.AsyncHandler<GetQueryRequest, GetQueryResponse> handlerToUse =
                 handler;
@@ -630,6 +660,11 @@ public class UsageapiAsyncClient implements UsageapiAsync {
                 ListCustomTablesConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListCustomTablesResponse>
                 transformer = ListCustomTablesConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Usageapi",
+                "ListCustomTables",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/usage/20200107/CustomTable/ListCustomTables");
 
         com.oracle.bmc.responses.AsyncHandler<ListCustomTablesRequest, ListCustomTablesResponse>
                 handlerToUse = handler;
@@ -668,6 +703,11 @@ public class UsageapiAsyncClient implements UsageapiAsync {
                 ListQueriesConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListQueriesResponse>
                 transformer = ListQueriesConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Usageapi",
+                "ListQueries",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/usage/20200107/Query/ListQueries");
 
         com.oracle.bmc.responses.AsyncHandler<ListQueriesRequest, ListQueriesResponse>
                 handlerToUse = handler;
@@ -710,6 +750,11 @@ public class UsageapiAsyncClient implements UsageapiAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, RequestSummarizedConfigurationsResponse>
                 transformer = RequestSummarizedConfigurationsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Usageapi",
+                "RequestSummarizedConfigurations",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/usage/20200107/Configuration/RequestSummarizedConfigurations");
 
         com.oracle.bmc.responses.AsyncHandler<
                         RequestSummarizedConfigurationsRequest,
@@ -754,6 +799,11 @@ public class UsageapiAsyncClient implements UsageapiAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, RequestSummarizedUsagesResponse>
                 transformer = RequestSummarizedUsagesConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Usageapi",
+                "RequestSummarizedUsages",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/usage/20200107/UsageSummary/RequestSummarizedUsages");
 
         com.oracle.bmc.responses.AsyncHandler<
                         RequestSummarizedUsagesRequest, RequestSummarizedUsagesResponse>
@@ -799,6 +849,11 @@ public class UsageapiAsyncClient implements UsageapiAsync {
                 UpdateCustomTableConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateCustomTableResponse>
                 transformer = UpdateCustomTableConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Usageapi",
+                "UpdateCustomTable",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/usage/20200107/CustomTable/UpdateCustomTable");
 
         com.oracle.bmc.responses.AsyncHandler<UpdateCustomTableRequest, UpdateCustomTableResponse>
                 handlerToUse = handler;
@@ -842,6 +897,11 @@ public class UsageapiAsyncClient implements UsageapiAsync {
                 UpdateQueryConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateQueryResponse>
                 transformer = UpdateQueryConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Usageapi",
+                "UpdateQuery",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/usage/20200107/Query/UpdateQuery");
 
         com.oracle.bmc.responses.AsyncHandler<UpdateQueryRequest, UpdateQueryResponse>
                 handlerToUse = handler;
