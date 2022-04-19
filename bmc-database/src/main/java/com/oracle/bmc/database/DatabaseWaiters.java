@@ -4106,6 +4106,70 @@ public class DatabaseWaiters {
      * @return a new {@link com.oracle.bmc.waiter.Waiter} instance
      */
     public com.oracle.bmc.waiter.Waiter<
+                    DisableExternalContainerDatabaseStackMonitoringRequest,
+                    DisableExternalContainerDatabaseStackMonitoringResponse>
+            forDisableExternalContainerDatabaseStackMonitoring(
+                    DisableExternalContainerDatabaseStackMonitoringRequest request) {
+        return forDisableExternalContainerDatabaseStackMonitoring(
+                request,
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_TERMINATION_STRATEGY,
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_DELAY_STRATEGY);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @return a new {@link com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<
+                    DisableExternalContainerDatabaseStackMonitoringRequest,
+                    DisableExternalContainerDatabaseStackMonitoringResponse>
+            forDisableExternalContainerDatabaseStackMonitoring(
+                    DisableExternalContainerDatabaseStackMonitoringRequest request,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
+        if (workRequestClient == null) {
+            throw new IllegalStateException(
+                    "A WorkRequestClient must be supplied to this waiter for this operation");
+        }
+
+        return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
+                executorService,
+                new java.util.concurrent.Callable<
+                        DisableExternalContainerDatabaseStackMonitoringResponse>() {
+                    @Override
+                    public DisableExternalContainerDatabaseStackMonitoringResponse call()
+                            throws Exception {
+                        final DisableExternalContainerDatabaseStackMonitoringResponse response =
+                                client.disableExternalContainerDatabaseStackMonitoring(request);
+
+                        final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                getWorkRequestRequest =
+                                        com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                                .builder()
+                                                .workRequestId(response.getOpcWorkRequestId())
+                                                .build();
+                        workRequestClient
+                                .getWaiters()
+                                .forWorkRequest(
+                                        getWorkRequestRequest, terminationStrategy, delayStrategy)
+                                .execute();
+                        return response;
+                    }
+                },
+                request);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
+     *
+     * @param request the request to send
+     * @return a new {@link com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<
                     DisableExternalNonContainerDatabaseDatabaseManagementRequest,
                     DisableExternalNonContainerDatabaseDatabaseManagementResponse>
             forDisableExternalNonContainerDatabaseDatabaseManagement(
@@ -4240,6 +4304,70 @@ public class DatabaseWaiters {
      * @return a new {@link com.oracle.bmc.waiter.Waiter} instance
      */
     public com.oracle.bmc.waiter.Waiter<
+                    DisableExternalNonContainerDatabaseStackMonitoringRequest,
+                    DisableExternalNonContainerDatabaseStackMonitoringResponse>
+            forDisableExternalNonContainerDatabaseStackMonitoring(
+                    DisableExternalNonContainerDatabaseStackMonitoringRequest request) {
+        return forDisableExternalNonContainerDatabaseStackMonitoring(
+                request,
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_TERMINATION_STRATEGY,
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_DELAY_STRATEGY);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @return a new {@link com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<
+                    DisableExternalNonContainerDatabaseStackMonitoringRequest,
+                    DisableExternalNonContainerDatabaseStackMonitoringResponse>
+            forDisableExternalNonContainerDatabaseStackMonitoring(
+                    DisableExternalNonContainerDatabaseStackMonitoringRequest request,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
+        if (workRequestClient == null) {
+            throw new IllegalStateException(
+                    "A WorkRequestClient must be supplied to this waiter for this operation");
+        }
+
+        return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
+                executorService,
+                new java.util.concurrent.Callable<
+                        DisableExternalNonContainerDatabaseStackMonitoringResponse>() {
+                    @Override
+                    public DisableExternalNonContainerDatabaseStackMonitoringResponse call()
+                            throws Exception {
+                        final DisableExternalNonContainerDatabaseStackMonitoringResponse response =
+                                client.disableExternalNonContainerDatabaseStackMonitoring(request);
+
+                        final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                getWorkRequestRequest =
+                                        com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                                .builder()
+                                                .workRequestId(response.getOpcWorkRequestId())
+                                                .build();
+                        workRequestClient
+                                .getWaiters()
+                                .forWorkRequest(
+                                        getWorkRequestRequest, terminationStrategy, delayStrategy)
+                                .execute();
+                        return response;
+                    }
+                },
+                request);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
+     *
+     * @param request the request to send
+     * @return a new {@link com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<
                     DisableExternalPluggableDatabaseDatabaseManagementRequest,
                     DisableExternalPluggableDatabaseDatabaseManagementResponse>
             forDisableExternalPluggableDatabaseDatabaseManagement(
@@ -4343,6 +4471,70 @@ public class DatabaseWaiters {
                             throws Exception {
                         final DisableExternalPluggableDatabaseOperationsInsightsResponse response =
                                 client.disableExternalPluggableDatabaseOperationsInsights(request);
+
+                        final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                getWorkRequestRequest =
+                                        com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                                .builder()
+                                                .workRequestId(response.getOpcWorkRequestId())
+                                                .build();
+                        workRequestClient
+                                .getWaiters()
+                                .forWorkRequest(
+                                        getWorkRequestRequest, terminationStrategy, delayStrategy)
+                                .execute();
+                        return response;
+                    }
+                },
+                request);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
+     *
+     * @param request the request to send
+     * @return a new {@link com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<
+                    DisableExternalPluggableDatabaseStackMonitoringRequest,
+                    DisableExternalPluggableDatabaseStackMonitoringResponse>
+            forDisableExternalPluggableDatabaseStackMonitoring(
+                    DisableExternalPluggableDatabaseStackMonitoringRequest request) {
+        return forDisableExternalPluggableDatabaseStackMonitoring(
+                request,
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_TERMINATION_STRATEGY,
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_DELAY_STRATEGY);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @return a new {@link com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<
+                    DisableExternalPluggableDatabaseStackMonitoringRequest,
+                    DisableExternalPluggableDatabaseStackMonitoringResponse>
+            forDisableExternalPluggableDatabaseStackMonitoring(
+                    DisableExternalPluggableDatabaseStackMonitoringRequest request,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
+        if (workRequestClient == null) {
+            throw new IllegalStateException(
+                    "A WorkRequestClient must be supplied to this waiter for this operation");
+        }
+
+        return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
+                executorService,
+                new java.util.concurrent.Callable<
+                        DisableExternalPluggableDatabaseStackMonitoringResponse>() {
+                    @Override
+                    public DisableExternalPluggableDatabaseStackMonitoringResponse call()
+                            throws Exception {
+                        final DisableExternalPluggableDatabaseStackMonitoringResponse response =
+                                client.disableExternalPluggableDatabaseStackMonitoring(request);
 
                         final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
                                 getWorkRequestRequest =
@@ -4617,6 +4809,70 @@ public class DatabaseWaiters {
      * @return a new {@link com.oracle.bmc.waiter.Waiter} instance
      */
     public com.oracle.bmc.waiter.Waiter<
+                    EnableExternalContainerDatabaseStackMonitoringRequest,
+                    EnableExternalContainerDatabaseStackMonitoringResponse>
+            forEnableExternalContainerDatabaseStackMonitoring(
+                    EnableExternalContainerDatabaseStackMonitoringRequest request) {
+        return forEnableExternalContainerDatabaseStackMonitoring(
+                request,
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_TERMINATION_STRATEGY,
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_DELAY_STRATEGY);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @return a new {@link com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<
+                    EnableExternalContainerDatabaseStackMonitoringRequest,
+                    EnableExternalContainerDatabaseStackMonitoringResponse>
+            forEnableExternalContainerDatabaseStackMonitoring(
+                    EnableExternalContainerDatabaseStackMonitoringRequest request,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
+        if (workRequestClient == null) {
+            throw new IllegalStateException(
+                    "A WorkRequestClient must be supplied to this waiter for this operation");
+        }
+
+        return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
+                executorService,
+                new java.util.concurrent.Callable<
+                        EnableExternalContainerDatabaseStackMonitoringResponse>() {
+                    @Override
+                    public EnableExternalContainerDatabaseStackMonitoringResponse call()
+                            throws Exception {
+                        final EnableExternalContainerDatabaseStackMonitoringResponse response =
+                                client.enableExternalContainerDatabaseStackMonitoring(request);
+
+                        final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                getWorkRequestRequest =
+                                        com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                                .builder()
+                                                .workRequestId(response.getOpcWorkRequestId())
+                                                .build();
+                        workRequestClient
+                                .getWaiters()
+                                .forWorkRequest(
+                                        getWorkRequestRequest, terminationStrategy, delayStrategy)
+                                .execute();
+                        return response;
+                    }
+                },
+                request);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
+     *
+     * @param request the request to send
+     * @return a new {@link com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<
                     EnableExternalNonContainerDatabaseDatabaseManagementRequest,
                     EnableExternalNonContainerDatabaseDatabaseManagementResponse>
             forEnableExternalNonContainerDatabaseDatabaseManagement(
@@ -4749,6 +5005,70 @@ public class DatabaseWaiters {
      * @return a new {@link com.oracle.bmc.waiter.Waiter} instance
      */
     public com.oracle.bmc.waiter.Waiter<
+                    EnableExternalNonContainerDatabaseStackMonitoringRequest,
+                    EnableExternalNonContainerDatabaseStackMonitoringResponse>
+            forEnableExternalNonContainerDatabaseStackMonitoring(
+                    EnableExternalNonContainerDatabaseStackMonitoringRequest request) {
+        return forEnableExternalNonContainerDatabaseStackMonitoring(
+                request,
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_TERMINATION_STRATEGY,
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_DELAY_STRATEGY);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @return a new {@link com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<
+                    EnableExternalNonContainerDatabaseStackMonitoringRequest,
+                    EnableExternalNonContainerDatabaseStackMonitoringResponse>
+            forEnableExternalNonContainerDatabaseStackMonitoring(
+                    EnableExternalNonContainerDatabaseStackMonitoringRequest request,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
+        if (workRequestClient == null) {
+            throw new IllegalStateException(
+                    "A WorkRequestClient must be supplied to this waiter for this operation");
+        }
+
+        return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
+                executorService,
+                new java.util.concurrent.Callable<
+                        EnableExternalNonContainerDatabaseStackMonitoringResponse>() {
+                    @Override
+                    public EnableExternalNonContainerDatabaseStackMonitoringResponse call()
+                            throws Exception {
+                        final EnableExternalNonContainerDatabaseStackMonitoringResponse response =
+                                client.enableExternalNonContainerDatabaseStackMonitoring(request);
+
+                        final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                getWorkRequestRequest =
+                                        com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                                .builder()
+                                                .workRequestId(response.getOpcWorkRequestId())
+                                                .build();
+                        workRequestClient
+                                .getWaiters()
+                                .forWorkRequest(
+                                        getWorkRequestRequest, terminationStrategy, delayStrategy)
+                                .execute();
+                        return response;
+                    }
+                },
+                request);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
+     *
+     * @param request the request to send
+     * @return a new {@link com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<
                     EnableExternalPluggableDatabaseDatabaseManagementRequest,
                     EnableExternalPluggableDatabaseDatabaseManagementResponse>
             forEnableExternalPluggableDatabaseDatabaseManagement(
@@ -4852,6 +5172,70 @@ public class DatabaseWaiters {
                             throws Exception {
                         final EnableExternalPluggableDatabaseOperationsInsightsResponse response =
                                 client.enableExternalPluggableDatabaseOperationsInsights(request);
+
+                        final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                getWorkRequestRequest =
+                                        com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                                .builder()
+                                                .workRequestId(response.getOpcWorkRequestId())
+                                                .build();
+                        workRequestClient
+                                .getWaiters()
+                                .forWorkRequest(
+                                        getWorkRequestRequest, terminationStrategy, delayStrategy)
+                                .execute();
+                        return response;
+                    }
+                },
+                request);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
+     *
+     * @param request the request to send
+     * @return a new {@link com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<
+                    EnableExternalPluggableDatabaseStackMonitoringRequest,
+                    EnableExternalPluggableDatabaseStackMonitoringResponse>
+            forEnableExternalPluggableDatabaseStackMonitoring(
+                    EnableExternalPluggableDatabaseStackMonitoringRequest request) {
+        return forEnableExternalPluggableDatabaseStackMonitoring(
+                request,
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_TERMINATION_STRATEGY,
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_DELAY_STRATEGY);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @return a new {@link com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<
+                    EnableExternalPluggableDatabaseStackMonitoringRequest,
+                    EnableExternalPluggableDatabaseStackMonitoringResponse>
+            forEnableExternalPluggableDatabaseStackMonitoring(
+                    EnableExternalPluggableDatabaseStackMonitoringRequest request,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
+        if (workRequestClient == null) {
+            throw new IllegalStateException(
+                    "A WorkRequestClient must be supplied to this waiter for this operation");
+        }
+
+        return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
+                executorService,
+                new java.util.concurrent.Callable<
+                        EnableExternalPluggableDatabaseStackMonitoringResponse>() {
+                    @Override
+                    public EnableExternalPluggableDatabaseStackMonitoringResponse call()
+                            throws Exception {
+                        final EnableExternalPluggableDatabaseStackMonitoringResponse response =
+                                client.enableExternalPluggableDatabaseStackMonitoring(request);
 
                         final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
                                 getWorkRequestRequest =
@@ -7545,6 +7929,120 @@ public class DatabaseWaiters {
                         },
                         targetStatesSet.contains(
                                 com.oracle.bmc.database.model.DbSystem.LifecycleState.Terminated)),
+                request);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
+     *
+     * @param request the request to send
+     * @param targetStates the desired states to wait for. If multiple states are provided then the waiter will return once the resource reaches any of the provided states
+     * @return a new {@code Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<
+                    GetDbSystemUpgradeHistoryEntryRequest, GetDbSystemUpgradeHistoryEntryResponse>
+            forDbSystemUpgradeHistoryEntry(
+                    GetDbSystemUpgradeHistoryEntryRequest request,
+                    com.oracle.bmc.database.model.DbSystemUpgradeHistoryEntry.LifecycleState...
+                            targetStates) {
+        org.apache.commons.lang3.Validate.notEmpty(
+                targetStates, "At least one targetState must be provided");
+        org.apache.commons.lang3.Validate.noNullElements(
+                targetStates, "Null targetState values are not permitted");
+
+        return forDbSystemUpgradeHistoryEntry(
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_WAITER, request, targetStates);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param targetState the desired state to wait for
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<
+                    GetDbSystemUpgradeHistoryEntryRequest, GetDbSystemUpgradeHistoryEntryResponse>
+            forDbSystemUpgradeHistoryEntry(
+                    GetDbSystemUpgradeHistoryEntryRequest request,
+                    com.oracle.bmc.database.model.DbSystemUpgradeHistoryEntry.LifecycleState
+                            targetState,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
+        org.apache.commons.lang3.Validate.notNull(targetState, "The targetState cannot be null");
+
+        return forDbSystemUpgradeHistoryEntry(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetState);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @param targetStates the desired states to wait for. The waiter will return once the resource reaches any of the provided states
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<
+                    GetDbSystemUpgradeHistoryEntryRequest, GetDbSystemUpgradeHistoryEntryResponse>
+            forDbSystemUpgradeHistoryEntry(
+                    GetDbSystemUpgradeHistoryEntryRequest request,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy,
+                    com.oracle.bmc.database.model.DbSystemUpgradeHistoryEntry.LifecycleState...
+                            targetStates) {
+        org.apache.commons.lang3.Validate.notEmpty(
+                targetStates, "At least one target state must be provided");
+        org.apache.commons.lang3.Validate.noNullElements(
+                targetStates, "Null target states are not permitted");
+
+        return forDbSystemUpgradeHistoryEntry(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetStates);
+    }
+
+    // Helper method to create a new Waiter for DbSystemUpgradeHistoryEntry.
+    private com.oracle.bmc.waiter.Waiter<
+                    GetDbSystemUpgradeHistoryEntryRequest, GetDbSystemUpgradeHistoryEntryResponse>
+            forDbSystemUpgradeHistoryEntry(
+                    com.oracle.bmc.waiter.BmcGenericWaiter waiter,
+                    final GetDbSystemUpgradeHistoryEntryRequest request,
+                    final com.oracle.bmc.database.model.DbSystemUpgradeHistoryEntry
+                                    .LifecycleState...
+                            targetStates) {
+        final java.util.Set<
+                        com.oracle.bmc.database.model.DbSystemUpgradeHistoryEntry.LifecycleState>
+                targetStatesSet = new java.util.HashSet<>(java.util.Arrays.asList(targetStates));
+
+        return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
+                executorService,
+                waiter.toCallable(
+                        com.google.common.base.Suppliers.ofInstance(request),
+                        new com.google.common.base.Function<
+                                GetDbSystemUpgradeHistoryEntryRequest,
+                                GetDbSystemUpgradeHistoryEntryResponse>() {
+                            @Override
+                            public GetDbSystemUpgradeHistoryEntryResponse apply(
+                                    GetDbSystemUpgradeHistoryEntryRequest request) {
+                                return client.getDbSystemUpgradeHistoryEntry(request);
+                            }
+                        },
+                        new com.google.common.base.Predicate<
+                                GetDbSystemUpgradeHistoryEntryResponse>() {
+                            @Override
+                            public boolean apply(GetDbSystemUpgradeHistoryEntryResponse response) {
+                                return targetStatesSet.contains(
+                                        response.getDbSystemUpgradeHistoryEntry()
+                                                .getLifecycleState());
+                            }
+                        },
+                        false),
                 request);
     }
 
@@ -12561,6 +13059,62 @@ public class DatabaseWaiters {
                     @Override
                     public UpgradeDatabaseResponse call() throws Exception {
                         final UpgradeDatabaseResponse response = client.upgradeDatabase(request);
+
+                        final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                getWorkRequestRequest =
+                                        com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                                .builder()
+                                                .workRequestId(response.getOpcWorkRequestId())
+                                                .build();
+                        workRequestClient
+                                .getWaiters()
+                                .forWorkRequest(
+                                        getWorkRequestRequest, terminationStrategy, delayStrategy)
+                                .execute();
+                        return response;
+                    }
+                },
+                request);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
+     *
+     * @param request the request to send
+     * @return a new {@link com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<UpgradeDbSystemRequest, UpgradeDbSystemResponse>
+            forUpgradeDbSystem(UpgradeDbSystemRequest request) {
+        return forUpgradeDbSystem(
+                request,
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_TERMINATION_STRATEGY,
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_DELAY_STRATEGY);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @return a new {@link com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<UpgradeDbSystemRequest, UpgradeDbSystemResponse>
+            forUpgradeDbSystem(
+                    UpgradeDbSystemRequest request,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
+        if (workRequestClient == null) {
+            throw new IllegalStateException(
+                    "A WorkRequestClient must be supplied to this waiter for this operation");
+        }
+
+        return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
+                executorService,
+                new java.util.concurrent.Callable<UpgradeDbSystemResponse>() {
+                    @Override
+                    public UpgradeDbSystemResponse call() throws Exception {
+                        final UpgradeDbSystemResponse response = client.upgradeDbSystem(request);
 
                         final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
                                 getWorkRequestRequest =

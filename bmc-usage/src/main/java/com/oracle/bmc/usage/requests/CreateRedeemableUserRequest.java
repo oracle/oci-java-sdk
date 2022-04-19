@@ -33,12 +33,12 @@ public class CreateRedeemableUserRequest
     private String tenancyId;
 
     /**
-     * The subscriptionId for which rewards information is requested for.
+     * The subscription ID for which rewards information is requested for.
      */
     private String subscriptionId;
 
     /**
-     * The user Id of the person whose email we cc
+     * The user ID of the person to send a copy of an email.
      */
     private String userId;
 

@@ -402,7 +402,10 @@ public class RewardsClient implements Rewards {
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Rewards", "CreateRedeemableUser", ib.getRequestUri().toString(), "");
+                "Rewards",
+                "CreateRedeemableUser",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/usage-proxy/20190111/RedeemableUser/CreateRedeemableUser");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -437,7 +440,10 @@ public class RewardsClient implements Rewards {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Rewards", "DeleteRedeemableUser", ib.getRequestUri().toString(), "");
+                "Rewards",
+                "DeleteRedeemableUser",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/usage-proxy/20190111/RedeemableUser/DeleteRedeemableUser");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -469,7 +475,10 @@ public class RewardsClient implements Rewards {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Rewards", "ListProducts", ib.getRequestUri().toString(), "");
+                "Rewards",
+                "ListProducts",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/usage-proxy/20190111/ProductSummary/ListProducts");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -500,7 +509,10 @@ public class RewardsClient implements Rewards {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Rewards", "ListRedeemableUsers", ib.getRequestUri().toString(), "");
+                "Rewards",
+                "ListRedeemableUsers",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/usage-proxy/20190111/RedeemableUserSummary/ListRedeemableUsers");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -531,7 +543,10 @@ public class RewardsClient implements Rewards {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Rewards", "ListRewards", ib.getRequestUri().toString(), "");
+                "Rewards",
+                "ListRewards",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/usage-proxy/20190111/MonthlyRewardSummary/ListRewards");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {

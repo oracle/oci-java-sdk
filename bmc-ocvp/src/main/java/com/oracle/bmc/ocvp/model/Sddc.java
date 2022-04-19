@@ -429,6 +429,24 @@ public class Sddc {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("initialHostShapeName")
+        private String initialHostShapeName;
+
+        public Builder initialHostShapeName(String initialHostShapeName) {
+            this.initialHostShapeName = initialHostShapeName;
+            this.__explicitlySet__.add("initialHostShapeName");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("initialHostOcpuCount")
+        private Float initialHostOcpuCount;
+
+        public Builder initialHostOcpuCount(Float initialHostOcpuCount) {
+            this.initialHostOcpuCount = initialHostOcpuCount;
+            this.__explicitlySet__.add("initialHostOcpuCount");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("isShieldedInstanceEnabled")
         private Boolean isShieldedInstanceEnabled;
 
@@ -507,6 +525,8 @@ public class Sddc {
                             timeCreated,
                             timeUpdated,
                             lifecycleState,
+                            initialHostShapeName,
+                            initialHostOcpuCount,
                             isShieldedInstanceEnabled,
                             freeformTags,
                             definedTags);
@@ -561,6 +581,8 @@ public class Sddc {
                             .timeCreated(o.getTimeCreated())
                             .timeUpdated(o.getTimeUpdated())
                             .lifecycleState(o.getLifecycleState())
+                            .initialHostShapeName(o.getInitialHostShapeName())
+                            .initialHostOcpuCount(o.getInitialHostOcpuCount())
                             .isShieldedInstanceEnabled(o.getIsShieldedInstanceEnabled())
                             .freeformTags(o.getFreeformTags())
                             .definedTags(o.getDefinedTags());
@@ -1046,6 +1068,21 @@ public class Sddc {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     LifecycleStates lifecycleState;
+
+    /**
+     * The initial compute shape of the SDDC's ESXi hosts.
+     * {@link #listSupportedHostShapes(ListSupportedHostShapesRequest) listSupportedHostShapes}.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("initialHostShapeName")
+    String initialHostShapeName;
+
+    /**
+     * The initial OCPU count of the SDDC's ESXi hosts.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("initialHostOcpuCount")
+    Float initialHostOcpuCount;
 
     /**
      * Indicates whether shielded instance is enabled at the SDDC level.

@@ -3421,6 +3421,48 @@ public class DatabaseClient implements Database {
     }
 
     @Override
+    public DisableExternalContainerDatabaseStackMonitoringResponse
+            disableExternalContainerDatabaseStackMonitoring(
+                    DisableExternalContainerDatabaseStackMonitoringRequest request) {
+        LOG.trace("Called disableExternalContainerDatabaseStackMonitoring");
+        final DisableExternalContainerDatabaseStackMonitoringRequest interceptedRequest =
+                DisableExternalContainerDatabaseStackMonitoringConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DisableExternalContainerDatabaseStackMonitoringConverter.fromRequest(
+                        client, interceptedRequest);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        DisableExternalContainerDatabaseStackMonitoringResponse>
+                transformer =
+                        DisableExternalContainerDatabaseStackMonitoringConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "DisableExternalContainerDatabaseStackMonitoring",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalContainerDatabase/DisableExternalContainerDatabaseStackMonitoring");
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public DisableExternalNonContainerDatabaseDatabaseManagementResponse
             disableExternalNonContainerDatabaseDatabaseManagement(
                     DisableExternalNonContainerDatabaseDatabaseManagementRequest request) {
@@ -3509,6 +3551,49 @@ public class DatabaseClient implements Database {
     }
 
     @Override
+    public DisableExternalNonContainerDatabaseStackMonitoringResponse
+            disableExternalNonContainerDatabaseStackMonitoring(
+                    DisableExternalNonContainerDatabaseStackMonitoringRequest request) {
+        LOG.trace("Called disableExternalNonContainerDatabaseStackMonitoring");
+        final DisableExternalNonContainerDatabaseStackMonitoringRequest interceptedRequest =
+                DisableExternalNonContainerDatabaseStackMonitoringConverter.interceptRequest(
+                        request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DisableExternalNonContainerDatabaseStackMonitoringConverter.fromRequest(
+                        client, interceptedRequest);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        DisableExternalNonContainerDatabaseStackMonitoringResponse>
+                transformer =
+                        DisableExternalNonContainerDatabaseStackMonitoringConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "DisableExternalNonContainerDatabaseStackMonitoring",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalNonContainerDatabase/DisableExternalNonContainerDatabaseStackMonitoring");
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public DisableExternalPluggableDatabaseDatabaseManagementResponse
             disableExternalPluggableDatabaseDatabaseManagement(
                     DisableExternalPluggableDatabaseDatabaseManagementRequest request) {
@@ -3578,6 +3663,48 @@ public class DatabaseClient implements Database {
                 "DisableExternalPluggableDatabaseOperationsInsights",
                 ib.getRequestUri().toString(),
                 "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalPluggableDatabase/DisableExternalPluggableDatabaseOperationsInsights");
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public DisableExternalPluggableDatabaseStackMonitoringResponse
+            disableExternalPluggableDatabaseStackMonitoring(
+                    DisableExternalPluggableDatabaseStackMonitoringRequest request) {
+        LOG.trace("Called disableExternalPluggableDatabaseStackMonitoring");
+        final DisableExternalPluggableDatabaseStackMonitoringRequest interceptedRequest =
+                DisableExternalPluggableDatabaseStackMonitoringConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DisableExternalPluggableDatabaseStackMonitoringConverter.fromRequest(
+                        client, interceptedRequest);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        DisableExternalPluggableDatabaseStackMonitoringResponse>
+                transformer =
+                        DisableExternalPluggableDatabaseStackMonitoringConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "DisableExternalPluggableDatabaseStackMonitoring",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalPluggableDatabase/DisableExternalPluggableDatabaseStackMonitoring");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3903,6 +4030,52 @@ public class DatabaseClient implements Database {
     }
 
     @Override
+    public EnableExternalContainerDatabaseStackMonitoringResponse
+            enableExternalContainerDatabaseStackMonitoring(
+                    EnableExternalContainerDatabaseStackMonitoringRequest request) {
+        LOG.trace("Called enableExternalContainerDatabaseStackMonitoring");
+        final EnableExternalContainerDatabaseStackMonitoringRequest interceptedRequest =
+                EnableExternalContainerDatabaseStackMonitoringConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                EnableExternalContainerDatabaseStackMonitoringConverter.fromRequest(
+                        client, interceptedRequest);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        EnableExternalContainerDatabaseStackMonitoringResponse>
+                transformer =
+                        EnableExternalContainerDatabaseStackMonitoringConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "EnableExternalContainerDatabaseStackMonitoring",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalContainerDatabase/EnableExternalContainerDatabaseStackMonitoring");
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getEnableExternalContainerDatabaseStackMonitoringDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public EnableExternalNonContainerDatabaseDatabaseManagementResponse
             enableExternalNonContainerDatabaseDatabaseManagement(
                     EnableExternalNonContainerDatabaseDatabaseManagementRequest request) {
@@ -3999,6 +4172,53 @@ public class DatabaseClient implements Database {
     }
 
     @Override
+    public EnableExternalNonContainerDatabaseStackMonitoringResponse
+            enableExternalNonContainerDatabaseStackMonitoring(
+                    EnableExternalNonContainerDatabaseStackMonitoringRequest request) {
+        LOG.trace("Called enableExternalNonContainerDatabaseStackMonitoring");
+        final EnableExternalNonContainerDatabaseStackMonitoringRequest interceptedRequest =
+                EnableExternalNonContainerDatabaseStackMonitoringConverter.interceptRequest(
+                        request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                EnableExternalNonContainerDatabaseStackMonitoringConverter.fromRequest(
+                        client, interceptedRequest);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        EnableExternalNonContainerDatabaseStackMonitoringResponse>
+                transformer =
+                        EnableExternalNonContainerDatabaseStackMonitoringConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "EnableExternalNonContainerDatabaseStackMonitoring",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalNonContainerDatabase/EnableExternalNonContainerDatabaseStackMonitoring");
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getEnableExternalNonContainerDatabaseStackMonitoringDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public EnableExternalPluggableDatabaseDatabaseManagementResponse
             enableExternalPluggableDatabaseDatabaseManagement(
                     EnableExternalPluggableDatabaseDatabaseManagementRequest request) {
@@ -4086,6 +4306,52 @@ public class DatabaseClient implements Database {
                                                 ib,
                                                 retriedRequest
                                                         .getEnableExternalPluggableDatabaseOperationsInsightsDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public EnableExternalPluggableDatabaseStackMonitoringResponse
+            enableExternalPluggableDatabaseStackMonitoring(
+                    EnableExternalPluggableDatabaseStackMonitoringRequest request) {
+        LOG.trace("Called enableExternalPluggableDatabaseStackMonitoring");
+        final EnableExternalPluggableDatabaseStackMonitoringRequest interceptedRequest =
+                EnableExternalPluggableDatabaseStackMonitoringConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                EnableExternalPluggableDatabaseStackMonitoringConverter.fromRequest(
+                        client, interceptedRequest);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        EnableExternalPluggableDatabaseStackMonitoringResponse>
+                transformer =
+                        EnableExternalPluggableDatabaseStackMonitoringConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "EnableExternalPluggableDatabaseStackMonitoring",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalPluggableDatabase/EnableExternalPluggableDatabaseStackMonitoring");
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getEnableExternalPluggableDatabaseStackMonitoringDetails(),
                                                 retriedRequest);
                                 return transformer.apply(response);
                             });
@@ -5388,6 +5654,42 @@ public class DatabaseClient implements Database {
                 "GetDbSystemPatchHistoryEntry",
                 ib.getRequestUri().toString(),
                 "https://docs.oracle.com/iaas/api/#/en/database/20160918/PatchHistoryEntry/GetDbSystemPatchHistoryEntry");
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public GetDbSystemUpgradeHistoryEntryResponse getDbSystemUpgradeHistoryEntry(
+            GetDbSystemUpgradeHistoryEntryRequest request) {
+        LOG.trace("Called getDbSystemUpgradeHistoryEntry");
+        final GetDbSystemUpgradeHistoryEntryRequest interceptedRequest =
+                GetDbSystemUpgradeHistoryEntryConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetDbSystemUpgradeHistoryEntryConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, GetDbSystemUpgradeHistoryEntryResponse>
+                transformer = GetDbSystemUpgradeHistoryEntryConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "GetDbSystemUpgradeHistoryEntry",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/DbSystemUpgradeHistoryEntry/GetDbSystemUpgradeHistoryEntry");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -7242,6 +7544,42 @@ public class DatabaseClient implements Database {
                 "ListDbSystemShapes",
                 ib.getRequestUri().toString(),
                 "https://docs.oracle.com/iaas/api/#/en/database/20160918/DbSystemShapeSummary/ListDbSystemShapes");
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ListDbSystemUpgradeHistoryEntriesResponse listDbSystemUpgradeHistoryEntries(
+            ListDbSystemUpgradeHistoryEntriesRequest request) {
+        LOG.trace("Called listDbSystemUpgradeHistoryEntries");
+        final ListDbSystemUpgradeHistoryEntriesRequest interceptedRequest =
+                ListDbSystemUpgradeHistoryEntriesConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListDbSystemUpgradeHistoryEntriesConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ListDbSystemUpgradeHistoryEntriesResponse>
+                transformer = ListDbSystemUpgradeHistoryEntriesConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "ListDbSystemUpgradeHistoryEntries",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/DbSystemUpgradeHistoryEntry/ListDbSystemUpgradeHistoryEntries");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -10325,6 +10663,45 @@ public class DatabaseClient implements Database {
                                         client.post(
                                                 ib,
                                                 retriedRequest.getUpgradeDatabaseDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public UpgradeDbSystemResponse upgradeDbSystem(UpgradeDbSystemRequest request) {
+        LOG.trace("Called upgradeDbSystem");
+        final UpgradeDbSystemRequest interceptedRequest =
+                UpgradeDbSystemConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpgradeDbSystemConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, UpgradeDbSystemResponse>
+                transformer = UpgradeDbSystemConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "UpgradeDbSystem",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/DbSystem/UpgradeDbSystem");
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getUpgradeDbSystemDetails(),
                                                 retriedRequest);
                                 return transformer.apply(response);
                             });

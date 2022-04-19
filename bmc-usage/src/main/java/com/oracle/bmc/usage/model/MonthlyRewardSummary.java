@@ -5,7 +5,7 @@
 package com.oracle.bmc.usage.model;
 
 /**
- * Object describing the rewards summary for a month for the requested subscriptionId.
+ * Object describing the monthly rewards summary for the requested subscription ID.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -203,19 +203,19 @@ public class MonthlyRewardSummary {
     Float earnedRewards;
 
     /**
-     * The boolean flag to tell if the available rewards are posted manually or not.
+     * The boolean parameter to indicate whether or not the available rewards are manually posted.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isManual")
     Boolean isManual;
 
     /**
-     * The date and time on which rewards are expired.
+     * The date and time when rewards expire.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeRewardsExpired")
     java.util.Date timeRewardsExpired;
 
     /**
-     * The date and time on which rewards are accrued.
+     * The date and time when rewards accrue.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeRewardsEarned")
@@ -250,14 +250,14 @@ public class MonthlyRewardSummary {
     Double eligibleUsageAmount;
 
     /**
-     * The in eligible usage amount for the usage period.
+     * The ineligible usage amount for the usage period.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("ineligibleUsageAmount")
     Double ineligibleUsageAmount;
 
     /**
-     * The id for the usage period.
+     * The usage period ID.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("usagePeriodKey")

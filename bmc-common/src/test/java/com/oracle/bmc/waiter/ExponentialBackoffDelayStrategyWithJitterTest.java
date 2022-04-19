@@ -4,6 +4,7 @@
  */
 package com.oracle.bmc.waiter;
 
+import com.oracle.bmc.retrier.RetryConfiguration;
 import org.junit.Test;
 
 import static org.junit.Assert.assertTrue;
@@ -11,9 +12,10 @@ import static org.junit.Assert.assertTrue;
 public class ExponentialBackoffDelayStrategyWithJitterTest {
 
     @Test
-    public void getDelays() {
+    public void testDelayStrategyWithDefaultMaxWaitTime() {
         ExponentialBackoffDelayStrategyWithJitter strategy =
-                new ExponentialBackoffDelayStrategyWithJitter(30000L);
+                new ExponentialBackoffDelayStrategyWithJitter(
+                        RetryConfiguration.DEFAULT_MAX_WAIT_TIME);
         WaiterConfiguration.WaitContext context =
                 new WaiterConfiguration.WaitContext(System.currentTimeMillis());
         assertTrue(strategy.nextDelay(context) > 1000L && strategy.nextDelay(context) < 2000L);
@@ -29,5 +31,20 @@ public class ExponentialBackoffDelayStrategyWithJitterTest {
         assertTrue(strategy.nextDelay(context) > 30000L && strategy.nextDelay(context) < 31000);
         context.incrementAttempts();
         assertTrue(strategy.nextDelay(context) > 30000L && strategy.nextDelay(context) < 31000);
+    }
+
+    @Test
+    public void testDelayStrategyWithCustomMaxWaitTime() {
+        ExponentialBackoffDelayStrategyWithJitter strategy =
+                new ExponentialBackoffDelayStrategyWithJitter(2000);
+        WaiterConfiguration.WaitContext context =
+                new WaiterConfiguration.WaitContext(System.currentTimeMillis());
+        assertTrue(strategy.nextDelay(context) > 1000L && strategy.nextDelay(context) < 2000L);
+        context.incrementAttempts();
+        assertTrue(strategy.nextDelay(context) > 2000L && strategy.nextDelay(context) < 4000L);
+        context.incrementAttempts();
+        assertTrue(strategy.nextDelay(context) > 2000L && strategy.nextDelay(context) < 4000L);
+        context.incrementAttempts();
+        assertTrue(strategy.nextDelay(context) > 2000L && strategy.nextDelay(context) < 4000L);
     }
 }

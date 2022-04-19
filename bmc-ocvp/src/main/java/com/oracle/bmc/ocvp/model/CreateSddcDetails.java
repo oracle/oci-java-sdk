@@ -224,6 +224,24 @@ public class CreateSddcDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("initialHostShapeName")
+        private String initialHostShapeName;
+
+        public Builder initialHostShapeName(String initialHostShapeName) {
+            this.initialHostShapeName = initialHostShapeName;
+            this.__explicitlySet__.add("initialHostShapeName");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("initialHostOcpuCount")
+        private Float initialHostOcpuCount;
+
+        public Builder initialHostOcpuCount(Float initialHostOcpuCount) {
+            this.initialHostOcpuCount = initialHostOcpuCount;
+            this.__explicitlySet__.add("initialHostOcpuCount");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("isShieldedInstanceEnabled")
         private Boolean isShieldedInstanceEnabled;
 
@@ -280,6 +298,8 @@ public class CreateSddcDetails {
                             nsxEdgeUplink2VlanId,
                             replicationVlanId,
                             provisioningVlanId,
+                            initialHostShapeName,
+                            initialHostOcpuCount,
                             isShieldedInstanceEnabled,
                             freeformTags,
                             definedTags);
@@ -312,6 +332,8 @@ public class CreateSddcDetails {
                             .nsxEdgeUplink2VlanId(o.getNsxEdgeUplink2VlanId())
                             .replicationVlanId(o.getReplicationVlanId())
                             .provisioningVlanId(o.getProvisioningVlanId())
+                            .initialHostShapeName(o.getInitialHostShapeName())
+                            .initialHostOcpuCount(o.getInitialHostOcpuCount())
                             .isShieldedInstanceEnabled(o.getIsShieldedInstanceEnabled())
                             .freeformTags(o.getFreeformTags())
                             .definedTags(o.getDefinedTags());
@@ -512,6 +534,21 @@ public class CreateSddcDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("provisioningVlanId")
     String provisioningVlanId;
+
+    /**
+     * The initial compute shape of the SDDC's ESXi hosts.
+     * {@link #listSupportedHostShapes(ListSupportedHostShapesRequest) listSupportedHostShapes}.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("initialHostShapeName")
+    String initialHostShapeName;
+
+    /**
+     * The initial OCPU count of the SDDC's ESXi hosts.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("initialHostOcpuCount")
+    Float initialHostOcpuCount;
 
     /**
      * Indicates whether shielded instance is enabled for this SDDC.

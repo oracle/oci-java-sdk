@@ -25,7 +25,7 @@ public class ListRewardsRequest extends com.oracle.bmc.requests.BmcRequest<java.
     private String tenancyId;
 
     /**
-     * The subscriptionId for which rewards information is requested for.
+     * The subscription ID for which rewards information is requested for.
      */
     private String subscriptionId;
 

@@ -198,6 +198,15 @@ public class ExternalNonContainerDatabase {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("stackMonitoringConfig")
+        private StackMonitoringConfig stackMonitoringConfig;
+
+        public Builder stackMonitoringConfig(StackMonitoringConfig stackMonitoringConfig) {
+            this.stackMonitoringConfig = stackMonitoringConfig;
+            this.__explicitlySet__.add("stackMonitoringConfig");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -222,7 +231,8 @@ public class ExternalNonContainerDatabase {
                             ncharacterSet,
                             dbPacks,
                             databaseConfiguration,
-                            databaseManagementConfig);
+                            databaseManagementConfig,
+                            stackMonitoringConfig);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -248,7 +258,8 @@ public class ExternalNonContainerDatabase {
                             .ncharacterSet(o.getNcharacterSet())
                             .dbPacks(o.getDbPacks())
                             .databaseConfiguration(o.getDatabaseConfiguration())
-                            .databaseManagementConfig(o.getDatabaseManagementConfig());
+                            .databaseManagementConfig(o.getDatabaseManagementConfig())
+                            .stackMonitoringConfig(o.getStackMonitoringConfig());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -524,6 +535,9 @@ public class ExternalNonContainerDatabase {
 
     @com.fasterxml.jackson.annotation.JsonProperty("databaseManagementConfig")
     DatabaseManagementConfig databaseManagementConfig;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("stackMonitoringConfig")
+    StackMonitoringConfig stackMonitoringConfig;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

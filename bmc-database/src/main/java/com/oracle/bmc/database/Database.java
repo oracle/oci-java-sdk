@@ -1124,6 +1124,21 @@ public interface Database extends AutoCloseable {
                     DisableExternalContainerDatabaseDatabaseManagementRequest request);
 
     /**
+     * Disable Stack Monitoring for the external container database.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/DisableExternalContainerDatabaseStackMonitoringExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DisableExternalContainerDatabaseStackMonitoring API.
+     */
+    DisableExternalContainerDatabaseStackMonitoringResponse
+            disableExternalContainerDatabaseStackMonitoring(
+                    DisableExternalContainerDatabaseStackMonitoringRequest request);
+
+    /**
      * Disable Database Management Service for the external non-container database.
      * For more information about the Database Management Service, see
      * [Database Management Service](https://docs.cloud.oracle.com/Content/ExternalDatabase/Concepts/databasemanagementservice.htm).
@@ -1156,6 +1171,21 @@ public interface Database extends AutoCloseable {
                     DisableExternalNonContainerDatabaseOperationsInsightsRequest request);
 
     /**
+     * Disable Stack Monitoring for the external non-container database.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/DisableExternalNonContainerDatabaseStackMonitoringExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DisableExternalNonContainerDatabaseStackMonitoring API.
+     */
+    DisableExternalNonContainerDatabaseStackMonitoringResponse
+            disableExternalNonContainerDatabaseStackMonitoring(
+                    DisableExternalNonContainerDatabaseStackMonitoringRequest request);
+
+    /**
      * Disable Database Management Service for the external pluggable database.
      * For more information about the Database Management Service, see
      * [Database Management Service](https://docs.cloud.oracle.com/Content/ExternalDatabase/Concepts/databasemanagementservice.htm).
@@ -1186,6 +1216,21 @@ public interface Database extends AutoCloseable {
     DisableExternalPluggableDatabaseOperationsInsightsResponse
             disableExternalPluggableDatabaseOperationsInsights(
                     DisableExternalPluggableDatabaseOperationsInsightsRequest request);
+
+    /**
+     * Disable Stack Monitoring for the external pluggable database.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/DisableExternalPluggableDatabaseStackMonitoringExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DisableExternalPluggableDatabaseStackMonitoring API.
+     */
+    DisableExternalPluggableDatabaseStackMonitoringResponse
+            disableExternalPluggableDatabaseStackMonitoring(
+                    DisableExternalPluggableDatabaseStackMonitoringRequest request);
 
     /**
      * Downloads the configuration file for the specified Exadata Cloud@Customer infrastructure.
@@ -1288,6 +1333,21 @@ public interface Database extends AutoCloseable {
                     EnableExternalContainerDatabaseDatabaseManagementRequest request);
 
     /**
+     * Enable Stack Monitoring for the external container database.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/EnableExternalContainerDatabaseStackMonitoringExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use EnableExternalContainerDatabaseStackMonitoring API.
+     */
+    EnableExternalContainerDatabaseStackMonitoringResponse
+            enableExternalContainerDatabaseStackMonitoring(
+                    EnableExternalContainerDatabaseStackMonitoringRequest request);
+
+    /**
      * Enable Database Management Service for the external non-container database.
      * For more information about the Database Management Service, see
      * [Database Management Service](https://docs.cloud.oracle.com/Content/ExternalDatabase/Concepts/databasemanagementservice.htm).
@@ -1320,6 +1380,21 @@ public interface Database extends AutoCloseable {
                     EnableExternalNonContainerDatabaseOperationsInsightsRequest request);
 
     /**
+     * Enable Stack Monitoring for the external non-container database.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/EnableExternalNonContainerDatabaseStackMonitoringExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use EnableExternalNonContainerDatabaseStackMonitoring API.
+     */
+    EnableExternalNonContainerDatabaseStackMonitoringResponse
+            enableExternalNonContainerDatabaseStackMonitoring(
+                    EnableExternalNonContainerDatabaseStackMonitoringRequest request);
+
+    /**
      * Enable Database Management Service for the external pluggable database.
      * For more information about the Database Management Service, see
      * [Database Management Service](https://docs.cloud.oracle.com/Content/ExternalDatabase/Concepts/databasemanagementservice.htm).
@@ -1350,6 +1425,21 @@ public interface Database extends AutoCloseable {
     EnableExternalPluggableDatabaseOperationsInsightsResponse
             enableExternalPluggableDatabaseOperationsInsights(
                     EnableExternalPluggableDatabaseOperationsInsightsRequest request);
+
+    /**
+     * Enable Stack Monitoring for the external pluggable database.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/EnableExternalPluggableDatabaseStackMonitoringExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use EnableExternalPluggableDatabaseStackMonitoring API.
+     */
+    EnableExternalPluggableDatabaseStackMonitoringResponse
+            enableExternalPluggableDatabaseStackMonitoring(
+                    EnableExternalPluggableDatabaseStackMonitoringRequest request);
 
     /**
      * Initiates a failover the specified Autonomous Database to a standby. To perform a failover to a standby located in a remote region, specify the [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the remote standby using the `peerDbId` parameter.
@@ -1842,6 +1932,20 @@ public interface Database extends AutoCloseable {
      */
     GetDbSystemPatchHistoryEntryResponse getDbSystemPatchHistoryEntry(
             GetDbSystemPatchHistoryEntryRequest request);
+
+    /**
+     * Gets the details of the specified operating system upgrade operation for the specified DB system.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetDbSystemUpgradeHistoryEntryExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetDbSystemUpgradeHistoryEntry API.
+     */
+    GetDbSystemUpgradeHistoryEntryResponse getDbSystemUpgradeHistoryEntry(
+            GetDbSystemUpgradeHistoryEntryRequest request);
 
     /**
      * Gets information about the specified Exadata infrastructure. Applies to Exadata Cloud@Customer instances only.
@@ -2566,6 +2670,20 @@ public interface Database extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListDbSystemShapesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListDbSystemShapes API.
      */
     ListDbSystemShapesResponse listDbSystemShapes(ListDbSystemShapesRequest request);
+
+    /**
+     * Gets the history of the upgrade actions performed on the specified DB system.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListDbSystemUpgradeHistoryEntriesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListDbSystemUpgradeHistoryEntries API.
+     */
+    ListDbSystemUpgradeHistoryEntriesResponse listDbSystemUpgradeHistoryEntries(
+            ListDbSystemUpgradeHistoryEntriesRequest request);
 
     /**
      * Lists the DB systems in the specified compartment. You can specify a `backupId` to list only the DB systems that support creating a database using this backup in this compartment.
@@ -3677,6 +3795,19 @@ public interface Database extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/UpgradeDatabaseExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpgradeDatabase API.
      */
     UpgradeDatabaseResponse upgradeDatabase(UpgradeDatabaseRequest request);
+
+    /**
+     * Upgrades the operating system and grid infrastructure of the DB system.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/UpgradeDbSystemExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpgradeDbSystem API.
+     */
+    UpgradeDbSystemResponse upgradeDbSystem(UpgradeDbSystemRequest request);
 
     /**
      * Validates the specified VM cluster network. Applies to Exadata Cloud@Customer instances only.

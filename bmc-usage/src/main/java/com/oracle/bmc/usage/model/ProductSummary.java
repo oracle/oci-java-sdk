@@ -5,7 +5,7 @@
 package com.oracle.bmc.usage.model;
 
 /**
- * It provides details about a product rewards and usage amount.
+ * Provides details about product rewards and the usage amount.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -106,19 +106,19 @@ public class ProductSummary {
     }
 
     /**
-     * The ratecard product number.
+     * The rate card product number.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("productNumber")
     String productNumber;
 
     /**
-     * The ratecard product Name.
+     * The rate card product name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("productName")
     String productName;
 
     /**
-     * The ratecard product usage amount.
+     * The rate card product usage amount.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("usageAmount")
     Double usageAmount;
@@ -130,7 +130,7 @@ public class ProductSummary {
     Float earnedRewards;
 
     /**
-     * The boolean flag to tell if the product is eligible for earning rewards.
+     * The boolean parameter to indicate if the product is eligible to earn rewards.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isEligibleToEarnRewards")
     Boolean isEligibleToEarnRewards;

@@ -150,6 +150,24 @@ public class SddcSummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("initialHostShapeName")
+        private String initialHostShapeName;
+
+        public Builder initialHostShapeName(String initialHostShapeName) {
+            this.initialHostShapeName = initialHostShapeName;
+            this.__explicitlySet__.add("initialHostShapeName");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("initialHostOcpuCount")
+        private Float initialHostOcpuCount;
+
+        public Builder initialHostOcpuCount(Float initialHostOcpuCount) {
+            this.initialHostOcpuCount = initialHostOcpuCount;
+            this.__explicitlySet__.add("initialHostOcpuCount");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
@@ -189,6 +207,8 @@ public class SddcSummary {
                             timeUpdated,
                             lifecycleState,
                             isShieldedInstanceEnabled,
+                            initialHostShapeName,
+                            initialHostOcpuCount,
                             freeformTags,
                             definedTags);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
@@ -212,6 +232,8 @@ public class SddcSummary {
                             .timeUpdated(o.getTimeUpdated())
                             .lifecycleState(o.getLifecycleState())
                             .isShieldedInstanceEnabled(o.getIsShieldedInstanceEnabled())
+                            .initialHostShapeName(o.getInitialHostShapeName())
+                            .initialHostOcpuCount(o.getInitialHostOcpuCount())
                             .freeformTags(o.getFreeformTags())
                             .definedTags(o.getDefinedTags());
 
@@ -345,6 +367,21 @@ public class SddcSummary {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isShieldedInstanceEnabled")
     Boolean isShieldedInstanceEnabled;
+
+    /**
+     * The initial compute shape of the SDDC's ESXi hosts.
+     * {@link #listSupportedHostShapes(ListSupportedHostShapesRequest) listSupportedHostShapes}.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("initialHostShapeName")
+    String initialHostShapeName;
+
+    /**
+     * The initial OCPU count of the SDDC's ESXi hosts.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("initialHostOcpuCount")
+    Float initialHostOcpuCount;
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no

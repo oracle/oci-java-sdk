@@ -3,12 +3,27 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
+## 2.24.0 - 2022-04-19
+### Added
+- Support for the Stack Monitoring service
+- Support for stack monitoring on external databases in the Database service
+- Support for upgrading VM database systems in place in the Database service
+- Support for viewing supported VMWare software versions when listing host shapes in the VMWare Solution service
+- Support for choosing compute shapes when creating SDDCs and ESXi hosts in the VMWare Solution service
+- Support for work requests on delete operations in the Vulnerability Scanning service
+- Support for additional scan metadata in reports, including CVE descriptions, in the Vulnerability Scanning service
+- Support for redemption codes in the Usage service
+
+### Breaking Changes
+- Method `public java.lang.String getEtag()` has been removed from `com.oracle.bmc.usage.responses.ListRedeemableUsersResponse` in the Usage service
+- The maximum wait time in SDK default retry configuration was changed from 30 milliseconds to 30 seconds
+
 ## 2.23.0 - 2022-04-12
 ### Added
 - Support for bringing your own IPv6 addresses in the Networking service
 - Support for specifying database edition and maximum CPU core count when creating or updating an autonomous database in the Database service
 - Support for enabling and disabling data collection options when creating or updating Exadata Cloud at Customer VM clusters in the Database service
-
+- Improved error messages for service errors and other miscellaneous errors
 
 ### Breaking Changes
 - Support for retries by default on operations in the Identity service

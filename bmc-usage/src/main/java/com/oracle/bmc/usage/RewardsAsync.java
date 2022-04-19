@@ -8,7 +8,7 @@ import com.oracle.bmc.usage.requests.*;
 import com.oracle.bmc.usage.responses.*;
 
 /**
- * A description of the UsageApi API.
+ * Use the Usage Proxy API to list Oracle Support Rewards, view related detailed usage information, and manage users who redeem rewards. For more information, see [Oracle Support Rewards Overview](https://docs.cloud.oracle.com/iaas/Content/Billing/Concepts/supportrewardsoverview.htm).
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190111")
 public interface RewardsAsync extends AutoCloseable {
@@ -46,7 +46,7 @@ public interface RewardsAsync extends AutoCloseable {
     void setRegion(String regionId);
 
     /**
-     * Add list of redeemable user email ids for a subscription Id
+     * Adds the list of redeemable user email IDs for a subscription ID.
      *
      *
      * @param request The request object containing the details to send
@@ -63,7 +63,7 @@ public interface RewardsAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Delete list of redeemable user email ids for a subscription Id
+     * Deletes the list of redeemable user email IDs for a subscription ID.
      *
      *
      * @param request The request object containing the details to send
@@ -80,7 +80,7 @@ public interface RewardsAsync extends AutoCloseable {
                     handler);
 
     /**
-     * This API provides usage period specific product and its usage details.
+     * Provides product information that is specific to a reward usage period and its usage details.
      *
      *
      * @param request The request object containing the details to send
@@ -96,7 +96,7 @@ public interface RewardsAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Provides emailids of redeemable users for the given subscriptionId
+     * Provides the email IDs of users that can redeem rewards for the given subscription ID.
      *
      *
      * @param request The request object containing the details to send
@@ -113,7 +113,7 @@ public interface RewardsAsync extends AutoCloseable {
                     handler);
 
     /**
-     * This API returns list of rewards for a subscription Id
+     * Returns the list of rewards for a subscription ID.
      *
      *
      * @param request The request object containing the details to send

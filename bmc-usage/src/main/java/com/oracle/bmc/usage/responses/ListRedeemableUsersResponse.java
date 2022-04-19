@@ -20,11 +20,6 @@ public class ListRedeemableUsersResponse extends com.oracle.bmc.responses.BmcRes
     private String opcRequestId;
 
     /**
-     * For optimistic concurrency control. See {@code if-match}.
-     */
-    private String etag;
-
-    /**
      * For pagination of a list of items. When paging through a list, if this header appears in the response,
      * then a partial list might have been returned. Include this value as the {@code page} parameter for the
      * subsequent GET request to get the next batch of items.
@@ -40,19 +35,16 @@ public class ListRedeemableUsersResponse extends com.oracle.bmc.responses.BmcRes
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
         "opcRequestId",
-        "etag",
         "opcNextPage",
         "redeemableUserCollection"
     })
     private ListRedeemableUsersResponse(
             int __httpStatusCode__,
             String opcRequestId,
-            String etag,
             String opcNextPage,
             com.oracle.bmc.usage.model.RedeemableUserCollection redeemableUserCollection) {
         super(__httpStatusCode__);
         this.opcRequestId = opcRequestId;
-        this.etag = etag;
         this.opcNextPage = opcNextPage;
         this.redeemableUserCollection = redeemableUserCollection;
     }
@@ -72,7 +64,6 @@ public class ListRedeemableUsersResponse extends com.oracle.bmc.responses.BmcRes
         public Builder copy(ListRedeemableUsersResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             opcRequestId(o.getOpcRequestId());
-            etag(o.getEtag());
             opcNextPage(o.getOpcNextPage());
             redeemableUserCollection(o.getRedeemableUserCollection());
 
@@ -81,7 +72,7 @@ public class ListRedeemableUsersResponse extends com.oracle.bmc.responses.BmcRes
 
         public ListRedeemableUsersResponse build() {
             return new ListRedeemableUsersResponse(
-                    __httpStatusCode__, opcRequestId, etag, opcNextPage, redeemableUserCollection);
+                    __httpStatusCode__, opcRequestId, opcNextPage, redeemableUserCollection);
         }
     }
 }
