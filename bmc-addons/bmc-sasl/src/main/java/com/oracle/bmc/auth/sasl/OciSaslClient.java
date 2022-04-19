@@ -9,12 +9,13 @@ import com.google.protobuf.ByteString;
 import com.google.protobuf.InvalidProtocolBufferException;
 import com.oracle.bmc.auth.BasicAuthenticationDetailsProvider;
 import com.oracle.bmc.auth.ConfigurableRefreshOnNotAuthenticatedProvider;
-import com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider;
 import com.oracle.bmc.http.signing.internal.PEMFileRSAPrivateKeySupplier;
 import com.oracle.bmc.http.signing.internal.SignatureSigner;
 import com.oracle.bmc.identity.auth.sasl.messages.OciSaslMessages.Challenge;
 import com.oracle.bmc.identity.auth.sasl.messages.OciSaslMessages.Key;
 import com.oracle.bmc.identity.auth.sasl.messages.OciSaslMessages.Response;
+import com.oracle.bmc.util.StreamUtils;
+
 import java.io.IOException;
 import java.io.InputStream;
 import java.nio.ByteBuffer;
@@ -36,7 +37,6 @@ import javax.security.sasl.SaslClient;
 import javax.security.sasl.SaslClientFactory;
 import javax.security.sasl.SaslException;
 
-import com.oracle.bmc.util.StreamUtils;
 import lombok.RequiredArgsConstructor;
 
 /**
@@ -103,21 +103,20 @@ public class OciSaslClient implements SaslClient {
         synchronized (authProvider) {
             // Get a new token for each new key exchange to prevent stale keys
             if (authProvider instanceof ConfigurableRefreshOnNotAuthenticatedProvider) {
-                ((ConfigurableRefreshOnNotAuthenticatedProvider) authProvider)
+                ((ConfigurableRefreshOnNotAuthenticatedProvider<?>) authProvider)
                         .refreshIfExpiringWithin(Duration.ofMinutes(5));
             }
 
-            InputStream inputStream = null;
-            try {
-                inputStream = authProvider.getPrivateKey();
-                currentPrivateKey =
-                        new OciPrivateKey(
-                                authProvider.getKeyId(),
-                                inputStream,
-                                authProvider.getPassphraseCharacters());
-            } finally {
-                StreamUtils.closeQuietly(inputStream);
+            if (currentPrivateKey != null) {
+                StreamUtils.closeQuietly(currentPrivateKey.privateKey);
+                currentPrivateKey = null;
             }
+
+            currentPrivateKey =
+                    new OciPrivateKey(
+                            authProvider.getKeyId(),
+                            authProvider.getPrivateKey(),
+                            authProvider.getPassphraseCharacters());
 
             return Key.newBuilder().setKeyId(currentPrivateKey.keyId).setIntent(intent).build();
         }

@@ -3779,6 +3779,135 @@ public class DatabasePaginators {
     }
 
     /**
+     * Creates a new iterable which will iterate over the responses received from the listDbSystemUpgradeHistoryEntries operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListDbSystemUpgradeHistoryEntriesResponse>
+            listDbSystemUpgradeHistoryEntriesResponseIterator(
+                    final ListDbSystemUpgradeHistoryEntriesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListDbSystemUpgradeHistoryEntriesRequest.Builder,
+                ListDbSystemUpgradeHistoryEntriesRequest,
+                ListDbSystemUpgradeHistoryEntriesResponse>(
+                new com.google.common.base.Supplier<
+                        ListDbSystemUpgradeHistoryEntriesRequest.Builder>() {
+                    @Override
+                    public ListDbSystemUpgradeHistoryEntriesRequest.Builder get() {
+                        return ListDbSystemUpgradeHistoryEntriesRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListDbSystemUpgradeHistoryEntriesResponse, String>() {
+                    @Override
+                    public String apply(ListDbSystemUpgradeHistoryEntriesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListDbSystemUpgradeHistoryEntriesRequest.Builder>,
+                        ListDbSystemUpgradeHistoryEntriesRequest>() {
+                    @Override
+                    public ListDbSystemUpgradeHistoryEntriesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListDbSystemUpgradeHistoryEntriesRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListDbSystemUpgradeHistoryEntriesRequest,
+                        ListDbSystemUpgradeHistoryEntriesResponse>() {
+                    @Override
+                    public ListDbSystemUpgradeHistoryEntriesResponse apply(
+                            ListDbSystemUpgradeHistoryEntriesRequest request) {
+                        return client.listDbSystemUpgradeHistoryEntries(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.database.model.DbSystemUpgradeHistoryEntrySummary} objects
+     * contained in responses from the listDbSystemUpgradeHistoryEntries operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.database.model.DbSystemUpgradeHistoryEntrySummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.database.model.DbSystemUpgradeHistoryEntrySummary>
+            listDbSystemUpgradeHistoryEntriesRecordIterator(
+                    final ListDbSystemUpgradeHistoryEntriesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListDbSystemUpgradeHistoryEntriesRequest.Builder,
+                ListDbSystemUpgradeHistoryEntriesRequest, ListDbSystemUpgradeHistoryEntriesResponse,
+                com.oracle.bmc.database.model.DbSystemUpgradeHistoryEntrySummary>(
+                new com.google.common.base.Supplier<
+                        ListDbSystemUpgradeHistoryEntriesRequest.Builder>() {
+                    @Override
+                    public ListDbSystemUpgradeHistoryEntriesRequest.Builder get() {
+                        return ListDbSystemUpgradeHistoryEntriesRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListDbSystemUpgradeHistoryEntriesResponse, String>() {
+                    @Override
+                    public String apply(ListDbSystemUpgradeHistoryEntriesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListDbSystemUpgradeHistoryEntriesRequest.Builder>,
+                        ListDbSystemUpgradeHistoryEntriesRequest>() {
+                    @Override
+                    public ListDbSystemUpgradeHistoryEntriesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListDbSystemUpgradeHistoryEntriesRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListDbSystemUpgradeHistoryEntriesRequest,
+                        ListDbSystemUpgradeHistoryEntriesResponse>() {
+                    @Override
+                    public ListDbSystemUpgradeHistoryEntriesResponse apply(
+                            ListDbSystemUpgradeHistoryEntriesRequest request) {
+                        return client.listDbSystemUpgradeHistoryEntries(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListDbSystemUpgradeHistoryEntriesResponse,
+                        java.util.List<
+                                com.oracle.bmc.database.model
+                                        .DbSystemUpgradeHistoryEntrySummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.database.model
+                                            .DbSystemUpgradeHistoryEntrySummary>
+                            apply(ListDbSystemUpgradeHistoryEntriesResponse response) {
+                        return response.getItems();
+                    }
+                });
+    }
+
+    /**
      * Creates a new iterable which will iterate over the responses received from the listDbSystems operation. This iterable
      * will fetch more data from the server as needed.
      *

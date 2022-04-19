@@ -778,6 +778,7 @@ public class DbSystemSummary {
         Migrated("MIGRATED"),
         MaintenanceInProgress("MAINTENANCE_IN_PROGRESS"),
         NeedsAttention("NEEDS_ATTENTION"),
+        Upgrading("UPGRADING"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this

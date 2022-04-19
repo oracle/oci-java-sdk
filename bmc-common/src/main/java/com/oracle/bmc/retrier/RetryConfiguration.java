@@ -28,10 +28,15 @@ public class RetryConfiguration extends WaiterConfiguration {
     public static final RetryConfiguration NO_RETRY_CONFIGURATION =
             RetryConfiguration.builder().build();
 
+    public static final int DEFAULT_MAX_RETRY_ATTEMPTS = 8;
+    public static final long DEFAULT_MAX_WAIT_TIME = TimeUnit.SECONDS.toMillis(30);
+
     public static final RetryConfiguration SDK_DEFAULT_RETRY_CONFIGURATION =
             RetryConfiguration.builder()
-                    .terminationStrategy(new MaxAttemptsTerminationStrategy(8))
-                    .delayStrategy(new ExponentialBackoffDelayStrategyWithJitter(30))
+                    .terminationStrategy(
+                            new MaxAttemptsTerminationStrategy(DEFAULT_MAX_RETRY_ATTEMPTS))
+                    .delayStrategy(
+                            new ExponentialBackoffDelayStrategyWithJitter(DEFAULT_MAX_WAIT_TIME))
                     .retryCondition(
                             exception -> new DefaultRetryCondition().shouldBeRetried(exception))
                     .build();

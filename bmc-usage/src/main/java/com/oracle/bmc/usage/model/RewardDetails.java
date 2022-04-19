@@ -5,7 +5,7 @@
 package com.oracle.bmc.usage.model;
 
 /**
- * The overrall reward summary of the monthly summary rewards.
+ * The overall monthly reward summary.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -69,6 +69,15 @@ public class RewardDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("redemptionCode")
+        private String redemptionCode;
+
+        public Builder redemptionCode(String redemptionCode) {
+            this.redemptionCode = redemptionCode;
+            this.__explicitlySet__.add("redemptionCode");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -79,7 +88,8 @@ public class RewardDetails {
                             subscriptionId,
                             currency,
                             rewardsRate,
-                            totalRewardsAvailable);
+                            totalRewardsAvailable,
+                            redemptionCode);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -91,7 +101,8 @@ public class RewardDetails {
                             .subscriptionId(o.getSubscriptionId())
                             .currency(o.getCurrency())
                             .rewardsRate(o.getRewardsRate())
-                            .totalRewardsAvailable(o.getTotalRewardsAvailable());
+                            .totalRewardsAvailable(o.getTotalRewardsAvailable())
+                            .redemptionCode(o.getRedemptionCode());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -112,7 +123,7 @@ public class RewardDetails {
     String tenancyId;
 
     /**
-     * The entitlement id from MQS and it is same as subcription id.
+     * The entitlement ID from MQS, which is the same as the subcription ID.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("subscriptionId")
     String subscriptionId;
@@ -130,10 +141,16 @@ public class RewardDetails {
     Double rewardsRate;
 
     /**
-     * The total number of available rewards for a given subscription Id.
+     * The total number of available rewards for a given subscription ID.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("totalRewardsAvailable")
     Float totalRewardsAvailable;
+
+    /**
+     * The redemption code used in the billing center during the reward redemption process
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("redemptionCode")
+    String redemptionCode;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

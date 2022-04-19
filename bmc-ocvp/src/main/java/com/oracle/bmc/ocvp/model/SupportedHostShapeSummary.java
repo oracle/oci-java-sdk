@@ -81,6 +81,16 @@ public class SupportedHostShapeSummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("supportedVmwareSoftwareVersions")
+        private java.util.List<String> supportedVmwareSoftwareVersions;
+
+        public Builder supportedVmwareSoftwareVersions(
+                java.util.List<String> supportedVmwareSoftwareVersions) {
+            this.supportedVmwareSoftwareVersions = supportedVmwareSoftwareVersions;
+            this.__explicitlySet__.add("supportedVmwareSoftwareVersions");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
@@ -111,6 +121,7 @@ public class SupportedHostShapeSummary {
                             defaultOcpuCount,
                             supportedOcpuCount,
                             supportedSddcTypes,
+                            supportedVmwareSoftwareVersions,
                             description,
                             isSupportShieldedInstances);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
@@ -126,6 +137,7 @@ public class SupportedHostShapeSummary {
                             .defaultOcpuCount(o.getDefaultOcpuCount())
                             .supportedOcpuCount(o.getSupportedOcpuCount())
                             .supportedSddcTypes(o.getSupportedSddcTypes())
+                            .supportedVmwareSoftwareVersions(o.getSupportedVmwareSoftwareVersions())
                             .description(o.getDescription())
                             .isSupportShieldedInstances(o.getIsSupportShieldedInstances());
 
@@ -182,6 +194,13 @@ public class SupportedHostShapeSummary {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("supportedSddcTypes")
     java.util.List<SddcTypes> supportedSddcTypes;
+
+    /**
+     * The VMware software versions supported by the shape.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("supportedVmwareSoftwareVersions")
+    java.util.List<String> supportedVmwareSoftwareVersions;
 
     /**
      * Description of the shape.

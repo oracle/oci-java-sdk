@@ -5,7 +5,7 @@
 package com.oracle.bmc.usage.model;
 
 /**
- * It contains a list of email Ids to be added to the redeemable users.
+ * A list of email IDs to be added to the list of users that can redeem rewards.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -61,7 +61,7 @@ public class CreateRedeemableUserDetails {
     }
 
     /**
-     * The list of email ids to be added to the redeemable users list.
+     * The list of email IDs to be added to the list of users that can redeem rewards.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     java.util.List<RedeemableUser> items;

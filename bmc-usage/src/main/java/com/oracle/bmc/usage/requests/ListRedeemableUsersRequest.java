@@ -25,7 +25,7 @@ public class ListRedeemableUsersRequest extends com.oracle.bmc.requests.BmcReque
     private String tenancyId;
 
     /**
-     * The subscriptionId for which rewards information is requested for.
+     * The subscription ID for which rewards information is requested for.
      */
     private String subscriptionId;
 
@@ -45,12 +45,12 @@ public class ListRedeemableUsersRequest extends com.oracle.bmc.requests.BmcReque
     private Integer limit;
 
     /**
-     * The sort order to use, can be ascending (ASC) or descending (DESC).
+     * The sort order to use, which can be ascending (ASC) or descending (DESC).
      */
     private SortOrder sortOrder;
 
     /**
-     * The sort order to use, can be ascending (ASC) or descending (DESC).
+     * The sort order to use, which can be ascending (ASC) or descending (DESC).
      **/
     public enum SortOrder {
         Asc("ASC"),
@@ -85,12 +85,12 @@ public class ListRedeemableUsersRequest extends com.oracle.bmc.requests.BmcReque
         }
     };
     /**
-     * The field to sort by, supports one sort Order.
+     * The field to sort by. Supports one sort order.
      */
     private SortBy sortBy;
 
     /**
-     * The field to sort by, supports one sort Order.
+     * The field to sort by. Supports one sort order.
      **/
     public enum SortBy {
         Timecreated("TIMECREATED"),

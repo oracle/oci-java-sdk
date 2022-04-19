@@ -21,7 +21,7 @@ public class DeleteRedeemableUserRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The EmailId that needs to be deleted
+     * The email ID that needs to be deleted.
      */
     private String emailId;
 
@@ -31,7 +31,7 @@ public class DeleteRedeemableUserRequest
     private String tenancyId;
 
     /**
-     * The subscriptionId for which rewards information is requested for.
+     * The subscription ID for which rewards information is requested for.
      */
     private String subscriptionId;
 

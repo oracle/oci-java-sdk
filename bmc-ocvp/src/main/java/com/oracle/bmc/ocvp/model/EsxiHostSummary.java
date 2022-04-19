@@ -159,6 +159,24 @@ public class EsxiHostSummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("hostShapeName")
+        private String hostShapeName;
+
+        public Builder hostShapeName(String hostShapeName) {
+            this.hostShapeName = hostShapeName;
+            this.__explicitlySet__.add("hostShapeName");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("hostOcpuCount")
+        private Float hostOcpuCount;
+
+        public Builder hostOcpuCount(Float hostOcpuCount) {
+            this.hostOcpuCount = hostOcpuCount;
+            this.__explicitlySet__.add("hostOcpuCount");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
@@ -199,6 +217,8 @@ public class EsxiHostSummary {
                             replacementEsxiHostId,
                             gracePeriodEndDate,
                             computeAvailabilityDomain,
+                            hostShapeName,
+                            hostOcpuCount,
                             freeformTags,
                             definedTags);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
@@ -223,6 +243,8 @@ public class EsxiHostSummary {
                             .replacementEsxiHostId(o.getReplacementEsxiHostId())
                             .gracePeriodEndDate(o.getGracePeriodEndDate())
                             .computeAvailabilityDomain(o.getComputeAvailabilityDomain())
+                            .hostShapeName(o.getHostShapeName())
+                            .hostOcpuCount(o.getHostOcpuCount())
                             .freeformTags(o.getFreeformTags())
                             .definedTags(o.getDefinedTags());
 
@@ -358,6 +380,21 @@ public class EsxiHostSummary {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("computeAvailabilityDomain")
     String computeAvailabilityDomain;
+
+    /**
+     * The compute shape name of the ESXi host.
+     * {@link #listSupportedHostShapes(ListSupportedHostShapesRequest) listSupportedHostShapes}.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("hostShapeName")
+    String hostShapeName;
+
+    /**
+     * The OCPU count of the ESXi host.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("hostOcpuCount")
+    Float hostOcpuCount;
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no

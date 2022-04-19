@@ -310,6 +310,7 @@ public class DataGuardAssociationSummary {
         Terminating("TERMINATING"),
         Terminated("TERMINATED"),
         Failed("FAILED"),
+        Upgrading("UPGRADING"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this

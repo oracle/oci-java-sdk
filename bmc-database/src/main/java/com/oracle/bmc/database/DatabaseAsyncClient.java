@@ -4284,6 +4284,62 @@ public class DatabaseAsyncClient implements DatabaseAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<DisableExternalContainerDatabaseStackMonitoringResponse>
+            disableExternalContainerDatabaseStackMonitoring(
+                    DisableExternalContainerDatabaseStackMonitoringRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    DisableExternalContainerDatabaseStackMonitoringRequest,
+                                    DisableExternalContainerDatabaseStackMonitoringResponse>
+                            handler) {
+        LOG.trace("Called async disableExternalContainerDatabaseStackMonitoring");
+        final DisableExternalContainerDatabaseStackMonitoringRequest interceptedRequest =
+                DisableExternalContainerDatabaseStackMonitoringConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DisableExternalContainerDatabaseStackMonitoringConverter.fromRequest(
+                        client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        DisableExternalContainerDatabaseStackMonitoringResponse>
+                transformer =
+                        DisableExternalContainerDatabaseStackMonitoringConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "DisableExternalContainerDatabaseStackMonitoring",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalContainerDatabase/DisableExternalContainerDatabaseStackMonitoring");
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        DisableExternalContainerDatabaseStackMonitoringRequest,
+                        DisableExternalContainerDatabaseStackMonitoringResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DisableExternalContainerDatabaseStackMonitoringRequest,
+                                DisableExternalContainerDatabaseStackMonitoringResponse>,
+                        java.util.concurrent.Future<
+                                DisableExternalContainerDatabaseStackMonitoringResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DisableExternalContainerDatabaseStackMonitoringRequest,
+                    DisableExternalContainerDatabaseStackMonitoringResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<
                     DisableExternalNonContainerDatabaseDatabaseManagementResponse>
             disableExternalNonContainerDatabaseDatabaseManagement(
@@ -4402,6 +4458,63 @@ public class DatabaseAsyncClient implements DatabaseAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<DisableExternalNonContainerDatabaseStackMonitoringResponse>
+            disableExternalNonContainerDatabaseStackMonitoring(
+                    DisableExternalNonContainerDatabaseStackMonitoringRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    DisableExternalNonContainerDatabaseStackMonitoringRequest,
+                                    DisableExternalNonContainerDatabaseStackMonitoringResponse>
+                            handler) {
+        LOG.trace("Called async disableExternalNonContainerDatabaseStackMonitoring");
+        final DisableExternalNonContainerDatabaseStackMonitoringRequest interceptedRequest =
+                DisableExternalNonContainerDatabaseStackMonitoringConverter.interceptRequest(
+                        request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DisableExternalNonContainerDatabaseStackMonitoringConverter.fromRequest(
+                        client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        DisableExternalNonContainerDatabaseStackMonitoringResponse>
+                transformer =
+                        DisableExternalNonContainerDatabaseStackMonitoringConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "DisableExternalNonContainerDatabaseStackMonitoring",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalNonContainerDatabase/DisableExternalNonContainerDatabaseStackMonitoring");
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        DisableExternalNonContainerDatabaseStackMonitoringRequest,
+                        DisableExternalNonContainerDatabaseStackMonitoringResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DisableExternalNonContainerDatabaseStackMonitoringRequest,
+                                DisableExternalNonContainerDatabaseStackMonitoringResponse>,
+                        java.util.concurrent.Future<
+                                DisableExternalNonContainerDatabaseStackMonitoringResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DisableExternalNonContainerDatabaseStackMonitoringRequest,
+                    DisableExternalNonContainerDatabaseStackMonitoringResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<DisableExternalPluggableDatabaseDatabaseManagementResponse>
             disableExternalPluggableDatabaseDatabaseManagement(
                     DisableExternalPluggableDatabaseDatabaseManagementRequest request,
@@ -4503,6 +4616,62 @@ public class DatabaseAsyncClient implements DatabaseAsync {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     DisableExternalPluggableDatabaseOperationsInsightsRequest,
                     DisableExternalPluggableDatabaseOperationsInsightsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<DisableExternalPluggableDatabaseStackMonitoringResponse>
+            disableExternalPluggableDatabaseStackMonitoring(
+                    DisableExternalPluggableDatabaseStackMonitoringRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    DisableExternalPluggableDatabaseStackMonitoringRequest,
+                                    DisableExternalPluggableDatabaseStackMonitoringResponse>
+                            handler) {
+        LOG.trace("Called async disableExternalPluggableDatabaseStackMonitoring");
+        final DisableExternalPluggableDatabaseStackMonitoringRequest interceptedRequest =
+                DisableExternalPluggableDatabaseStackMonitoringConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DisableExternalPluggableDatabaseStackMonitoringConverter.fromRequest(
+                        client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        DisableExternalPluggableDatabaseStackMonitoringResponse>
+                transformer =
+                        DisableExternalPluggableDatabaseStackMonitoringConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "DisableExternalPluggableDatabaseStackMonitoring",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalPluggableDatabase/DisableExternalPluggableDatabaseStackMonitoring");
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        DisableExternalPluggableDatabaseStackMonitoringRequest,
+                        DisableExternalPluggableDatabaseStackMonitoringResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DisableExternalPluggableDatabaseStackMonitoringRequest,
+                                DisableExternalPluggableDatabaseStackMonitoringResponse>,
+                        java.util.concurrent.Future<
+                                DisableExternalPluggableDatabaseStackMonitoringResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DisableExternalPluggableDatabaseStackMonitoringRequest,
+                    DisableExternalPluggableDatabaseStackMonitoringResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -4919,6 +5088,68 @@ public class DatabaseAsyncClient implements DatabaseAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<EnableExternalContainerDatabaseStackMonitoringResponse>
+            enableExternalContainerDatabaseStackMonitoring(
+                    EnableExternalContainerDatabaseStackMonitoringRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    EnableExternalContainerDatabaseStackMonitoringRequest,
+                                    EnableExternalContainerDatabaseStackMonitoringResponse>
+                            handler) {
+        LOG.trace("Called async enableExternalContainerDatabaseStackMonitoring");
+        final EnableExternalContainerDatabaseStackMonitoringRequest interceptedRequest =
+                EnableExternalContainerDatabaseStackMonitoringConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                EnableExternalContainerDatabaseStackMonitoringConverter.fromRequest(
+                        client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        EnableExternalContainerDatabaseStackMonitoringResponse>
+                transformer =
+                        EnableExternalContainerDatabaseStackMonitoringConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "EnableExternalContainerDatabaseStackMonitoring",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalContainerDatabase/EnableExternalContainerDatabaseStackMonitoring");
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        EnableExternalContainerDatabaseStackMonitoringRequest,
+                        EnableExternalContainerDatabaseStackMonitoringResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                EnableExternalContainerDatabaseStackMonitoringRequest,
+                                EnableExternalContainerDatabaseStackMonitoringResponse>,
+                        java.util.concurrent.Future<
+                                EnableExternalContainerDatabaseStackMonitoringResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest
+                                        .getEnableExternalContainerDatabaseStackMonitoringDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    EnableExternalContainerDatabaseStackMonitoringRequest,
+                    EnableExternalContainerDatabaseStackMonitoringResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<EnableExternalNonContainerDatabaseDatabaseManagementResponse>
             enableExternalNonContainerDatabaseDatabaseManagement(
                     EnableExternalNonContainerDatabaseDatabaseManagementRequest request,
@@ -5047,6 +5278,69 @@ public class DatabaseAsyncClient implements DatabaseAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<EnableExternalNonContainerDatabaseStackMonitoringResponse>
+            enableExternalNonContainerDatabaseStackMonitoring(
+                    EnableExternalNonContainerDatabaseStackMonitoringRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    EnableExternalNonContainerDatabaseStackMonitoringRequest,
+                                    EnableExternalNonContainerDatabaseStackMonitoringResponse>
+                            handler) {
+        LOG.trace("Called async enableExternalNonContainerDatabaseStackMonitoring");
+        final EnableExternalNonContainerDatabaseStackMonitoringRequest interceptedRequest =
+                EnableExternalNonContainerDatabaseStackMonitoringConverter.interceptRequest(
+                        request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                EnableExternalNonContainerDatabaseStackMonitoringConverter.fromRequest(
+                        client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        EnableExternalNonContainerDatabaseStackMonitoringResponse>
+                transformer =
+                        EnableExternalNonContainerDatabaseStackMonitoringConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "EnableExternalNonContainerDatabaseStackMonitoring",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalNonContainerDatabase/EnableExternalNonContainerDatabaseStackMonitoring");
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        EnableExternalNonContainerDatabaseStackMonitoringRequest,
+                        EnableExternalNonContainerDatabaseStackMonitoringResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                EnableExternalNonContainerDatabaseStackMonitoringRequest,
+                                EnableExternalNonContainerDatabaseStackMonitoringResponse>,
+                        java.util.concurrent.Future<
+                                EnableExternalNonContainerDatabaseStackMonitoringResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest
+                                        .getEnableExternalNonContainerDatabaseStackMonitoringDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    EnableExternalNonContainerDatabaseStackMonitoringRequest,
+                    EnableExternalNonContainerDatabaseStackMonitoringResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<EnableExternalPluggableDatabaseDatabaseManagementResponse>
             enableExternalPluggableDatabaseDatabaseManagement(
                     EnableExternalPluggableDatabaseDatabaseManagementRequest request,
@@ -5160,6 +5454,68 @@ public class DatabaseAsyncClient implements DatabaseAsync {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     EnableExternalPluggableDatabaseOperationsInsightsRequest,
                     EnableExternalPluggableDatabaseOperationsInsightsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<EnableExternalPluggableDatabaseStackMonitoringResponse>
+            enableExternalPluggableDatabaseStackMonitoring(
+                    EnableExternalPluggableDatabaseStackMonitoringRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    EnableExternalPluggableDatabaseStackMonitoringRequest,
+                                    EnableExternalPluggableDatabaseStackMonitoringResponse>
+                            handler) {
+        LOG.trace("Called async enableExternalPluggableDatabaseStackMonitoring");
+        final EnableExternalPluggableDatabaseStackMonitoringRequest interceptedRequest =
+                EnableExternalPluggableDatabaseStackMonitoringConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                EnableExternalPluggableDatabaseStackMonitoringConverter.fromRequest(
+                        client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        EnableExternalPluggableDatabaseStackMonitoringResponse>
+                transformer =
+                        EnableExternalPluggableDatabaseStackMonitoringConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "EnableExternalPluggableDatabaseStackMonitoring",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalPluggableDatabase/EnableExternalPluggableDatabaseStackMonitoring");
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        EnableExternalPluggableDatabaseStackMonitoringRequest,
+                        EnableExternalPluggableDatabaseStackMonitoringResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                EnableExternalPluggableDatabaseStackMonitoringRequest,
+                                EnableExternalPluggableDatabaseStackMonitoringResponse>,
+                        java.util.concurrent.Future<
+                                EnableExternalPluggableDatabaseStackMonitoringResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest
+                                        .getEnableExternalPluggableDatabaseStackMonitoringDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    EnableExternalPluggableDatabaseStackMonitoringRequest,
+                    EnableExternalPluggableDatabaseStackMonitoringResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -6905,6 +7261,56 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     GetDbSystemPatchHistoryEntryRequest, GetDbSystemPatchHistoryEntryResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetDbSystemUpgradeHistoryEntryResponse>
+            getDbSystemUpgradeHistoryEntry(
+                    GetDbSystemUpgradeHistoryEntryRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    GetDbSystemUpgradeHistoryEntryRequest,
+                                    GetDbSystemUpgradeHistoryEntryResponse>
+                            handler) {
+        LOG.trace("Called async getDbSystemUpgradeHistoryEntry");
+        final GetDbSystemUpgradeHistoryEntryRequest interceptedRequest =
+                GetDbSystemUpgradeHistoryEntryConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetDbSystemUpgradeHistoryEntryConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, GetDbSystemUpgradeHistoryEntryResponse>
+                transformer = GetDbSystemUpgradeHistoryEntryConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "GetDbSystemUpgradeHistoryEntry",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/DbSystemUpgradeHistoryEntry/GetDbSystemUpgradeHistoryEntry");
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        GetDbSystemUpgradeHistoryEntryRequest,
+                        GetDbSystemUpgradeHistoryEntryResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetDbSystemUpgradeHistoryEntryRequest,
+                                GetDbSystemUpgradeHistoryEntryResponse>,
+                        java.util.concurrent.Future<GetDbSystemUpgradeHistoryEntryResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetDbSystemUpgradeHistoryEntryRequest, GetDbSystemUpgradeHistoryEntryResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -9394,6 +9800,57 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     ListDbSystemShapesRequest, ListDbSystemShapesResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListDbSystemUpgradeHistoryEntriesResponse>
+            listDbSystemUpgradeHistoryEntries(
+                    ListDbSystemUpgradeHistoryEntriesRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListDbSystemUpgradeHistoryEntriesRequest,
+                                    ListDbSystemUpgradeHistoryEntriesResponse>
+                            handler) {
+        LOG.trace("Called async listDbSystemUpgradeHistoryEntries");
+        final ListDbSystemUpgradeHistoryEntriesRequest interceptedRequest =
+                ListDbSystemUpgradeHistoryEntriesConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListDbSystemUpgradeHistoryEntriesConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ListDbSystemUpgradeHistoryEntriesResponse>
+                transformer = ListDbSystemUpgradeHistoryEntriesConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "ListDbSystemUpgradeHistoryEntries",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/DbSystemUpgradeHistoryEntry/ListDbSystemUpgradeHistoryEntries");
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListDbSystemUpgradeHistoryEntriesRequest,
+                        ListDbSystemUpgradeHistoryEntriesResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListDbSystemUpgradeHistoryEntriesRequest,
+                                ListDbSystemUpgradeHistoryEntriesResponse>,
+                        java.util.concurrent.Future<ListDbSystemUpgradeHistoryEntriesResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListDbSystemUpgradeHistoryEntriesRequest,
+                    ListDbSystemUpgradeHistoryEntriesResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -13473,6 +13930,56 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     UpgradeDatabaseRequest, UpgradeDatabaseResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpgradeDbSystemResponse> upgradeDbSystem(
+            UpgradeDbSystemRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            UpgradeDbSystemRequest, UpgradeDbSystemResponse>
+                    handler) {
+        LOG.trace("Called async upgradeDbSystem");
+        final UpgradeDbSystemRequest interceptedRequest =
+                UpgradeDbSystemConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpgradeDbSystemConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<javax.ws.rs.core.Response, UpgradeDbSystemResponse>
+                transformer = UpgradeDbSystemConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Database",
+                "UpgradeDbSystem",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database/20160918/DbSystem/UpgradeDbSystem");
+
+        com.oracle.bmc.responses.AsyncHandler<UpgradeDbSystemRequest, UpgradeDbSystemResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpgradeDbSystemRequest, UpgradeDbSystemResponse>,
+                        java.util.concurrent.Future<UpgradeDbSystemResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpgradeDbSystemDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpgradeDbSystemRequest, UpgradeDbSystemResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,

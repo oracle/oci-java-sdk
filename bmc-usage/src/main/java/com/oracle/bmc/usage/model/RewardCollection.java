@@ -5,7 +5,7 @@
 package com.oracle.bmc.usage.model;
 
 /**
- * The response object for the ListRewards API call. It provides information about the rewards for a subscription.
+ * The response object for the ListRewards API call. Provides information about the subscription rewards.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in

@@ -1424,6 +1424,25 @@ public interface DatabaseAsync extends AutoCloseable {
                             handler);
 
     /**
+     * Disable Stack Monitoring for the external container database.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<DisableExternalContainerDatabaseStackMonitoringResponse>
+            disableExternalContainerDatabaseStackMonitoring(
+                    DisableExternalContainerDatabaseStackMonitoringRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    DisableExternalContainerDatabaseStackMonitoringRequest,
+                                    DisableExternalContainerDatabaseStackMonitoringResponse>
+                            handler);
+
+    /**
      * Disable Database Management Service for the external non-container database.
      * For more information about the Database Management Service, see
      * [Database Management Service](https://docs.cloud.oracle.com/Content/ExternalDatabase/Concepts/databasemanagementservice.htm).
@@ -1464,6 +1483,25 @@ public interface DatabaseAsync extends AutoCloseable {
                             handler);
 
     /**
+     * Disable Stack Monitoring for the external non-container database.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<DisableExternalNonContainerDatabaseStackMonitoringResponse>
+            disableExternalNonContainerDatabaseStackMonitoring(
+                    DisableExternalNonContainerDatabaseStackMonitoringRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    DisableExternalNonContainerDatabaseStackMonitoringRequest,
+                                    DisableExternalNonContainerDatabaseStackMonitoringResponse>
+                            handler);
+
+    /**
      * Disable Database Management Service for the external pluggable database.
      * For more information about the Database Management Service, see
      * [Database Management Service](https://docs.cloud.oracle.com/Content/ExternalDatabase/Concepts/databasemanagementservice.htm).
@@ -1501,6 +1539,25 @@ public interface DatabaseAsync extends AutoCloseable {
                     com.oracle.bmc.responses.AsyncHandler<
                                     DisableExternalPluggableDatabaseOperationsInsightsRequest,
                                     DisableExternalPluggableDatabaseOperationsInsightsResponse>
+                            handler);
+
+    /**
+     * Disable Stack Monitoring for the external pluggable database.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<DisableExternalPluggableDatabaseStackMonitoringResponse>
+            disableExternalPluggableDatabaseStackMonitoring(
+                    DisableExternalPluggableDatabaseStackMonitoringRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    DisableExternalPluggableDatabaseStackMonitoringRequest,
+                                    DisableExternalPluggableDatabaseStackMonitoringResponse>
                             handler);
 
     /**
@@ -1634,6 +1691,25 @@ public interface DatabaseAsync extends AutoCloseable {
                             handler);
 
     /**
+     * Enable Stack Monitoring for the external container database.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<EnableExternalContainerDatabaseStackMonitoringResponse>
+            enableExternalContainerDatabaseStackMonitoring(
+                    EnableExternalContainerDatabaseStackMonitoringRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    EnableExternalContainerDatabaseStackMonitoringRequest,
+                                    EnableExternalContainerDatabaseStackMonitoringResponse>
+                            handler);
+
+    /**
      * Enable Database Management Service for the external non-container database.
      * For more information about the Database Management Service, see
      * [Database Management Service](https://docs.cloud.oracle.com/Content/ExternalDatabase/Concepts/databasemanagementservice.htm).
@@ -1674,6 +1750,25 @@ public interface DatabaseAsync extends AutoCloseable {
                             handler);
 
     /**
+     * Enable Stack Monitoring for the external non-container database.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<EnableExternalNonContainerDatabaseStackMonitoringResponse>
+            enableExternalNonContainerDatabaseStackMonitoring(
+                    EnableExternalNonContainerDatabaseStackMonitoringRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    EnableExternalNonContainerDatabaseStackMonitoringRequest,
+                                    EnableExternalNonContainerDatabaseStackMonitoringResponse>
+                            handler);
+
+    /**
      * Enable Database Management Service for the external pluggable database.
      * For more information about the Database Management Service, see
      * [Database Management Service](https://docs.cloud.oracle.com/Content/ExternalDatabase/Concepts/databasemanagementservice.htm).
@@ -1711,6 +1806,25 @@ public interface DatabaseAsync extends AutoCloseable {
                     com.oracle.bmc.responses.AsyncHandler<
                                     EnableExternalPluggableDatabaseOperationsInsightsRequest,
                                     EnableExternalPluggableDatabaseOperationsInsightsResponse>
+                            handler);
+
+    /**
+     * Enable Stack Monitoring for the external pluggable database.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<EnableExternalPluggableDatabaseStackMonitoringResponse>
+            enableExternalPluggableDatabaseStackMonitoring(
+                    EnableExternalPluggableDatabaseStackMonitoringRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    EnableExternalPluggableDatabaseStackMonitoringRequest,
+                                    EnableExternalPluggableDatabaseStackMonitoringResponse>
                             handler);
 
     /**
@@ -2336,6 +2450,25 @@ public interface DatabaseAsync extends AutoCloseable {
                             GetDbSystemPatchHistoryEntryRequest,
                             GetDbSystemPatchHistoryEntryResponse>
                     handler);
+
+    /**
+     * Gets the details of the specified operating system upgrade operation for the specified DB system.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetDbSystemUpgradeHistoryEntryResponse>
+            getDbSystemUpgradeHistoryEntry(
+                    GetDbSystemUpgradeHistoryEntryRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    GetDbSystemUpgradeHistoryEntryRequest,
+                                    GetDbSystemUpgradeHistoryEntryResponse>
+                            handler);
 
     /**
      * Gets information about the specified Exadata infrastructure. Applies to Exadata Cloud@Customer instances only.
@@ -3267,6 +3400,25 @@ public interface DatabaseAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<
                             ListDbSystemShapesRequest, ListDbSystemShapesResponse>
                     handler);
+
+    /**
+     * Gets the history of the upgrade actions performed on the specified DB system.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListDbSystemUpgradeHistoryEntriesResponse>
+            listDbSystemUpgradeHistoryEntries(
+                    ListDbSystemUpgradeHistoryEntriesRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ListDbSystemUpgradeHistoryEntriesRequest,
+                                    ListDbSystemUpgradeHistoryEntriesResponse>
+                            handler);
 
     /**
      * Lists the DB systems in the specified compartment. You can specify a `backupId` to list only the DB systems that support creating a database using this backup in this compartment.
@@ -4699,6 +4851,22 @@ public interface DatabaseAsync extends AutoCloseable {
     java.util.concurrent.Future<UpgradeDatabaseResponse> upgradeDatabase(
             UpgradeDatabaseRequest request,
             com.oracle.bmc.responses.AsyncHandler<UpgradeDatabaseRequest, UpgradeDatabaseResponse>
+                    handler);
+
+    /**
+     * Upgrades the operating system and grid infrastructure of the DB system.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<UpgradeDbSystemResponse> upgradeDbSystem(
+            UpgradeDbSystemRequest request,
+            com.oracle.bmc.responses.AsyncHandler<UpgradeDbSystemRequest, UpgradeDbSystemResponse>
                     handler);
 
     /**
