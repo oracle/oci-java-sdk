@@ -76,7 +76,7 @@ public interface Bds extends AutoCloseable {
             AddAutoScalingConfigurationRequest request);
 
     /**
-     * Adds block storage to existing worker nodes. The same amount of  storage will be added to all worker nodes. No change will be made  to storage that is already attached. Block storage cannot be removed.
+     * Adds block storage to existing worker/compute only worker nodes. The same amount of  storage will be added to all worker/compute only worker nodes. No change will be made to storage that is already attached. Block storage cannot be removed.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -102,7 +102,7 @@ public interface Bds extends AutoCloseable {
     AddCloudSqlResponse addCloudSql(AddCloudSqlRequest request);
 
     /**
-     * Increases the size (scales out) a cluster by adding worker nodes. The added worker nodes will have the same shape and will have the same amount of attached block storage as other worker nodes in the cluster.
+     * Increases the size (scales out) a cluster by adding worker nodes(data/compute). The added worker nodes will have the same shape and will have the same amount of attached block storage as other worker nodes in the cluster.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -282,6 +282,19 @@ public interface Bds extends AutoCloseable {
     GetWorkRequestResponse getWorkRequest(GetWorkRequestRequest request);
 
     /**
+     * Install the specified patch to this cluster.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/InstallPatchExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use InstallPatch API.
+     */
+    InstallPatchResponse installPatch(InstallPatchRequest request);
+
+    /**
      * Returns information about the autoscaling configurations for a cluster.
      *
      * @param request The request object containing the details to send
@@ -334,6 +347,32 @@ public interface Bds extends AutoCloseable {
      */
     ListBdsMetastoreConfigurationsResponse listBdsMetastoreConfigurations(
             ListBdsMetastoreConfigurationsRequest request);
+
+    /**
+     * List the patch history of this cluster.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/ListPatchHistoriesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListPatchHistories API.
+     */
+    ListPatchHistoriesResponse listPatchHistories(ListPatchHistoriesRequest request);
+
+    /**
+     * List all the available patches for this cluster.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/ListPatchesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListPatches API.
+     */
+    ListPatchesResponse listPatches(ListPatchesRequest request);
 
     /**
      * Returns a paginated list of errors for a work request identified by the given ID.
@@ -400,6 +439,19 @@ public interface Bds extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/RemoveCloudSqlExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RemoveCloudSql API.
      */
     RemoveCloudSqlResponse removeCloudSql(RemoveCloudSqlRequest request);
+
+    /**
+     * Remove a single node of a Big Data Service cluster
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/RemoveNodeExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RemoveNode API.
+     */
+    RemoveNodeResponse removeNode(RemoveNodeRequest request);
 
     /**
      * Restarts a single node of a Big Data Service cluster

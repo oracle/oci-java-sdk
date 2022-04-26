@@ -22,7 +22,7 @@ public class UpdateBudgetRequest
                 com.oracle.bmc.budget.model.UpdateBudgetDetails> {
 
     /**
-     * The unique Budget OCID
+     * The unique budget OCID.
      */
     private String budgetId;
 

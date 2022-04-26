@@ -21,7 +21,7 @@ public class ListAlertRulesResponse extends com.oracle.bmc.responses.BmcResponse
     private String opcRequestId;
 
     /**
-     * For pagination of a list of {@code AlertRuleSummary}s. If this header appears in the response, then this
+     * For pagination of a list of {@code AlertRuleSummary}. If this header appears in the response, then this
      * is a partial list of AlertRuleSummaries. Include this value as the {@code page} parameter in a subsequent
      * GET request to get the next batch of AlertRuleSummaries.
      *

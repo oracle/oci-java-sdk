@@ -5,7 +5,7 @@
 package com.oracle.bmc.bds.model;
 
 /**
- * An autoscale action is triggered when a performance metric meets or exceeds a threshold.
+ * An autoscale action is triggered when a performance metric exceeds a threshold.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -83,7 +83,7 @@ public class MetricThresholdRule {
     }
 
     /**
-     * This value is the minimum period of time the metric value meets or exceeds the threshold value before the action is triggered. The value is in minutes.
+     * This value is the minimum period of time the metric value exceeds the threshold value before the action is triggered. The value is in minutes.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("durationInMinutes")
     Integer durationInMinutes;

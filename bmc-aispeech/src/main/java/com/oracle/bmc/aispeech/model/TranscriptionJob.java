@@ -177,6 +177,16 @@ public class TranscriptionJob {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("additionalTranscriptionFormats")
+        private java.util.List<AdditionalTranscriptionFormats> additionalTranscriptionFormats;
+
+        public Builder additionalTranscriptionFormats(
+                java.util.List<AdditionalTranscriptionFormats> additionalTranscriptionFormats) {
+            this.additionalTranscriptionFormats = additionalTranscriptionFormats;
+            this.__explicitlySet__.add("additionalTranscriptionFormats");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
@@ -246,6 +256,7 @@ public class TranscriptionJob {
                             inputLocation,
                             outputLocation,
                             createdBy,
+                            additionalTranscriptionFormats,
                             lifecycleState,
                             lifecycleDetails,
                             freeformTags,
@@ -275,6 +286,7 @@ public class TranscriptionJob {
                             .inputLocation(o.getInputLocation())
                             .outputLocation(o.getOutputLocation())
                             .createdBy(o.getCreatedBy())
+                            .additionalTranscriptionFormats(o.getAdditionalTranscriptionFormats())
                             .lifecycleState(o.getLifecycleState())
                             .lifecycleDetails(o.getLifecycleDetails())
                             .freeformTags(o.getFreeformTags())
@@ -294,25 +306,25 @@ public class TranscriptionJob {
     }
 
     /**
-     * Unique identifier that is immutable on creation.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     String id;
 
     /**
-     * Job name.
+     * A user-friendly display name for the job.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     String displayName;
 
     /**
-     * The OCID of the compartment that contains the transcriptionJob.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the job.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     String compartmentId;
 
     /**
-     * Job description.
+     * A short description of the job.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     String description;
@@ -378,10 +390,59 @@ public class TranscriptionJob {
     OutputLocation outputLocation;
 
     /**
-     * OCID of the user who created the transcriptionJob.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the job.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("createdBy")
     String createdBy;
+    /**
+     **/
+    @lombok.extern.slf4j.Slf4j
+    public enum AdditionalTranscriptionFormats {
+        Srt("SRT"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private final String value;
+        private static java.util.Map<String, AdditionalTranscriptionFormats> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (AdditionalTranscriptionFormats v : AdditionalTranscriptionFormats.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        AdditionalTranscriptionFormats(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static AdditionalTranscriptionFormats create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'AdditionalTranscriptionFormats', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * Transcription format. JSON format will always be provided in addition to any formats in this list.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("additionalTranscriptionFormats")
+    java.util.List<AdditionalTranscriptionFormats> additionalTranscriptionFormats;
     /**
      * The current state of the Job.
      **/

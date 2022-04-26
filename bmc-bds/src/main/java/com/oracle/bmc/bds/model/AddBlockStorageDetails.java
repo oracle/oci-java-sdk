@@ -44,12 +44,22 @@ public class AddBlockStorageDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("nodeType")
+        private NodeType nodeType;
+
+        public Builder nodeType(NodeType nodeType) {
+            this.nodeType = nodeType;
+            this.__explicitlySet__.add("nodeType");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public AddBlockStorageDetails build() {
             AddBlockStorageDetails __instance__ =
-                    new AddBlockStorageDetails(clusterAdminPassword, blockVolumeSizeInGBs);
+                    new AddBlockStorageDetails(
+                            clusterAdminPassword, blockVolumeSizeInGBs, nodeType);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -58,7 +68,8 @@ public class AddBlockStorageDetails {
         public Builder copy(AddBlockStorageDetails o) {
             Builder copiedBuilder =
                     clusterAdminPassword(o.getClusterAdminPassword())
-                            .blockVolumeSizeInGBs(o.getBlockVolumeSizeInGBs());
+                            .blockVolumeSizeInGBs(o.getBlockVolumeSizeInGBs())
+                            .nodeType(o.getNodeType());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -85,6 +96,46 @@ public class AddBlockStorageDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("blockVolumeSizeInGBs")
     Long blockVolumeSizeInGBs;
+    /**
+     * Worker node types, can either be Worker Data node or Compute only worker node.
+     **/
+    public enum NodeType {
+        Worker("WORKER"),
+        ComputeOnlyWorker("COMPUTE_ONLY_WORKER"),
+        ;
+
+        private final String value;
+        private static java.util.Map<String, NodeType> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (NodeType v : NodeType.values()) {
+                map.put(v.getValue(), v);
+            }
+        }
+
+        NodeType(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static NodeType create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            throw new IllegalArgumentException("Invalid NodeType: " + key);
+        }
+    };
+    /**
+     * Worker node types, can either be Worker Data node or Compute only worker node.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("nodeType")
+    NodeType nodeType;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

@@ -476,6 +476,56 @@ public class UsageapiAsyncClient implements UsageapiAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<CreateScheduleResponse> createSchedule(
+            CreateScheduleRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            CreateScheduleRequest, CreateScheduleResponse>
+                    handler) {
+        LOG.trace("Called async createSchedule");
+        final CreateScheduleRequest interceptedRequest =
+                CreateScheduleConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateScheduleConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateScheduleResponse>
+                transformer = CreateScheduleConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Usageapi",
+                "CreateSchedule",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/usage/20200107/Schedule/CreateSchedule");
+
+        com.oracle.bmc.responses.AsyncHandler<CreateScheduleRequest, CreateScheduleResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CreateScheduleRequest, CreateScheduleResponse>,
+                        java.util.concurrent.Future<CreateScheduleResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateScheduleDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CreateScheduleRequest, CreateScheduleResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteCustomTableResponse> deleteCustomTable(
             DeleteCustomTableRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -550,6 +600,50 @@ public class UsageapiAsyncClient implements UsageapiAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     DeleteQueryRequest, DeleteQueryResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteScheduleResponse> deleteSchedule(
+            DeleteScheduleRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            DeleteScheduleRequest, DeleteScheduleResponse>
+                    handler) {
+        LOG.trace("Called async deleteSchedule");
+        final DeleteScheduleRequest interceptedRequest =
+                DeleteScheduleConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteScheduleConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteScheduleResponse>
+                transformer = DeleteScheduleConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Usageapi",
+                "DeleteSchedule",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/usage/20200107/Schedule/DeleteSchedule");
+
+        com.oracle.bmc.responses.AsyncHandler<DeleteScheduleRequest, DeleteScheduleResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DeleteScheduleRequest, DeleteScheduleResponse>,
+                        java.util.concurrent.Future<DeleteScheduleResponse>>
+                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DeleteScheduleRequest, DeleteScheduleResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -648,6 +742,93 @@ public class UsageapiAsyncClient implements UsageapiAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<GetScheduleResponse> getSchedule(
+            GetScheduleRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<GetScheduleRequest, GetScheduleResponse>
+                    handler) {
+        LOG.trace("Called async getSchedule");
+        final GetScheduleRequest interceptedRequest =
+                GetScheduleConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetScheduleConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<javax.ws.rs.core.Response, GetScheduleResponse>
+                transformer = GetScheduleConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Usageapi",
+                "GetSchedule",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/usage/20200107/Schedule/GetSchedule");
+
+        com.oracle.bmc.responses.AsyncHandler<GetScheduleRequest, GetScheduleResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetScheduleRequest, GetScheduleResponse>,
+                        java.util.concurrent.Future<GetScheduleResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetScheduleRequest, GetScheduleResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetScheduledRunResponse> getScheduledRun(
+            GetScheduledRunRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetScheduledRunRequest, GetScheduledRunResponse>
+                    handler) {
+        LOG.trace("Called async getScheduledRun");
+        final GetScheduledRunRequest interceptedRequest =
+                GetScheduledRunConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetScheduledRunConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<javax.ws.rs.core.Response, GetScheduledRunResponse>
+                transformer = GetScheduledRunConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Usageapi",
+                "GetScheduledRun",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/usage/20200107/ScheduledRun/GetScheduledRun");
+
+        com.oracle.bmc.responses.AsyncHandler<GetScheduledRunRequest, GetScheduledRunResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetScheduledRunRequest, GetScheduledRunResponse>,
+                        java.util.concurrent.Future<GetScheduledRunResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetScheduledRunRequest, GetScheduledRunResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<ListCustomTablesResponse> listCustomTables(
             ListCustomTablesRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -722,6 +903,93 @@ public class UsageapiAsyncClient implements UsageapiAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     ListQueriesRequest, ListQueriesResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListScheduledRunsResponse> listScheduledRuns(
+            ListScheduledRunsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListScheduledRunsRequest, ListScheduledRunsResponse>
+                    handler) {
+        LOG.trace("Called async listScheduledRuns");
+        final ListScheduledRunsRequest interceptedRequest =
+                ListScheduledRunsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListScheduledRunsConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<javax.ws.rs.core.Response, ListScheduledRunsResponse>
+                transformer = ListScheduledRunsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Usageapi",
+                "ListScheduledRuns",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/usage/20200107/ScheduledRun/ListScheduledRuns");
+
+        com.oracle.bmc.responses.AsyncHandler<ListScheduledRunsRequest, ListScheduledRunsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListScheduledRunsRequest, ListScheduledRunsResponse>,
+                        java.util.concurrent.Future<ListScheduledRunsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListScheduledRunsRequest, ListScheduledRunsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListSchedulesResponse> listSchedules(
+            ListSchedulesRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<ListSchedulesRequest, ListSchedulesResponse>
+                    handler) {
+        LOG.trace("Called async listSchedules");
+        final ListSchedulesRequest interceptedRequest =
+                ListSchedulesConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListSchedulesConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<javax.ws.rs.core.Response, ListSchedulesResponse>
+                transformer = ListSchedulesConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Usageapi",
+                "ListSchedules",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/usage/20200107/Schedule/ListSchedules");
+
+        com.oracle.bmc.responses.AsyncHandler<ListSchedulesRequest, ListSchedulesResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListSchedulesRequest, ListSchedulesResponse>,
+                        java.util.concurrent.Future<ListSchedulesResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListSchedulesRequest, ListSchedulesResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -921,6 +1189,55 @@ public class UsageapiAsyncClient implements UsageapiAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     UpdateQueryRequest, UpdateQueryResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateScheduleResponse> updateSchedule(
+            UpdateScheduleRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            UpdateScheduleRequest, UpdateScheduleResponse>
+                    handler) {
+        LOG.trace("Called async updateSchedule");
+        final UpdateScheduleRequest interceptedRequest =
+                UpdateScheduleConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateScheduleConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateScheduleResponse>
+                transformer = UpdateScheduleConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Usageapi",
+                "UpdateSchedule",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/usage/20200107/Schedule/UpdateSchedule");
+
+        com.oracle.bmc.responses.AsyncHandler<UpdateScheduleRequest, UpdateScheduleResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpdateScheduleRequest, UpdateScheduleResponse>,
+                        java.util.concurrent.Future<UpdateScheduleResponse>>
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateScheduleDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpdateScheduleRequest, UpdateScheduleResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,

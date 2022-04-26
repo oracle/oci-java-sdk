@@ -53,6 +53,16 @@ public class CreateTranscriptionJobDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("additionalTranscriptionFormats")
+        private java.util.List<AdditionalTranscriptionFormats> additionalTranscriptionFormats;
+
+        public Builder additionalTranscriptionFormats(
+                java.util.List<AdditionalTranscriptionFormats> additionalTranscriptionFormats) {
+            this.additionalTranscriptionFormats = additionalTranscriptionFormats;
+            this.__explicitlySet__.add("additionalTranscriptionFormats");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("modelDetails")
         private TranscriptionModelDetails modelDetails;
 
@@ -117,6 +127,7 @@ public class CreateTranscriptionJobDetails {
                             displayName,
                             compartmentId,
                             description,
+                            additionalTranscriptionFormats,
                             modelDetails,
                             normalization,
                             inputLocation,
@@ -133,6 +144,7 @@ public class CreateTranscriptionJobDetails {
                     displayName(o.getDisplayName())
                             .compartmentId(o.getCompartmentId())
                             .description(o.getDescription())
+                            .additionalTranscriptionFormats(o.getAdditionalTranscriptionFormats())
                             .modelDetails(o.getModelDetails())
                             .normalization(o.getNormalization())
                             .inputLocation(o.getInputLocation())
@@ -153,22 +165,60 @@ public class CreateTranscriptionJobDetails {
     }
 
     /**
-     * Transcription job name.
+     * A user-friendly display name for the job.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     String displayName;
 
     /**
-     * The OCID of the compartment that contains the transcriptionJob.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the job.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     String compartmentId;
 
     /**
-     * Transcription job description.
+     * A short description of the job.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     String description;
+    /**
+     **/
+    public enum AdditionalTranscriptionFormats {
+        Srt("SRT"),
+        ;
+
+        private final String value;
+        private static java.util.Map<String, AdditionalTranscriptionFormats> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (AdditionalTranscriptionFormats v : AdditionalTranscriptionFormats.values()) {
+                map.put(v.getValue(), v);
+            }
+        }
+
+        AdditionalTranscriptionFormats(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static AdditionalTranscriptionFormats create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            throw new IllegalArgumentException("Invalid AdditionalTranscriptionFormats: " + key);
+        }
+    };
+    /**
+     * Transcription Format. By default JSON format will be considered.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("additionalTranscriptionFormats")
+    java.util.List<AdditionalTranscriptionFormats> additionalTranscriptionFormats;
 
     @com.fasterxml.jackson.annotation.JsonProperty("modelDetails")
     TranscriptionModelDetails modelDetails;

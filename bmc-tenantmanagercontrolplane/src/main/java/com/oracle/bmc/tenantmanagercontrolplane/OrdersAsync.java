@@ -61,7 +61,7 @@ public interface OrdersAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Returns the Order Details given by the order id in the JWT
+     * Returns the Order Details given by the order ID in the JWT.
      *
      *
      * @param request The request object containing the details to send

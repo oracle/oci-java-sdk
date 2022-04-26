@@ -224,6 +224,15 @@ public class CreateRoverClusterDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("masterKeyId")
+        private String masterKeyId;
+
+        public Builder masterKeyId(String masterKeyId) {
+            this.masterKeyId = masterKeyId;
+            this.__explicitlySet__.add("masterKeyId");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
@@ -280,6 +289,7 @@ public class CreateRoverClusterDetails {
                             importCompartmentId,
                             importFileBucket,
                             dataValidationCode,
+                            masterKeyId,
                             freeformTags,
                             definedTags,
                             systemTags);
@@ -312,6 +322,7 @@ public class CreateRoverClusterDetails {
                             .importCompartmentId(o.getImportCompartmentId())
                             .importFileBucket(o.getImportFileBucket())
                             .dataValidationCode(o.getDataValidationCode())
+                            .masterKeyId(o.getMasterKeyId())
                             .freeformTags(o.getFreeformTags())
                             .definedTags(o.getDefinedTags())
                             .systemTags(o.getSystemTags());
@@ -490,6 +501,12 @@ public class CreateRoverClusterDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dataValidationCode")
     String dataValidationCode;
+
+    /**
+     * Customer provided master key ID to encrypt secret information. If not provided, Rover's master key will be used for encryption.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("masterKeyId")
+    String masterKeyId;
 
     /**
      * The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no

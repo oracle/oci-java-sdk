@@ -106,6 +106,12 @@ public class ListProblemsRequest extends com.oracle.bmc.requests.BmcRequest<java
     private String targetId;
 
     /**
+     * Setting this to {@code SECURITY_ZONE} returns only security-zone related violations.
+     *
+     */
+    private com.oracle.bmc.cloudguard.model.ProblemCategoryEnum problemCategory;
+
+    /**
      * Default is false.
      * When set to true, the hierarchy of compartments is traversed
      * and all compartments and subcompartments in the tenancy are
@@ -303,6 +309,7 @@ public class ListProblemsRequest extends com.oracle.bmc.requests.BmcRequest<java
             detectorRuleIdList(o.getDetectorRuleIdList());
             detectorType(o.getDetectorType());
             targetId(o.getTargetId());
+            problemCategory(o.getProblemCategory());
             compartmentIdInSubtree(o.getCompartmentIdInSubtree());
             accessLevel(o.getAccessLevel());
             resourceId(o.getResourceId());

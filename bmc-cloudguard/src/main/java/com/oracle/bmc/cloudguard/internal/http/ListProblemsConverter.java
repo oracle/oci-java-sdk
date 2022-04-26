@@ -167,6 +167,14 @@ public class ListProblemsConverter {
                                     request.getTargetId()));
         }
 
+        if (request.getProblemCategory() != null) {
+            target =
+                    target.queryParam(
+                            "problemCategory",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getProblemCategory().getValue()));
+        }
+
         if (request.getCompartmentIdInSubtree() != null) {
             target =
                     target.queryParam(

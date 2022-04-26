@@ -13,6 +13,9 @@ package com.oracle.bmc.core.model;
  * <p>
  * Each shape only supports certain configurable values. If the values that you provide are not valid for the
  * specified {@code shape}, an error is returned.
+ * <p>
+ * For more information about shielded instances, see
+ * [Shielded Instances](https://docs.cloud.oracle.com/iaas/Content/Compute/References/shielded-instances.htm).
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields

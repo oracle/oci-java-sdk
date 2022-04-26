@@ -8,9 +8,9 @@ import com.oracle.bmc.cloudguard.requests.*;
 import com.oracle.bmc.cloudguard.responses.*;
 
 /**
- * Use the Cloud Guard API to automate processes that you would otherwise perform through the Cloud Guard Console.
+ * Use the Cloud Guard and Security Zones API to automate processes that you would otherwise perform through the Cloud Guard Console or the Security Zones Console. For more information on these services, see the [Cloud Guard](https://docs.cloud.oracle.com/iaas/cloud-guard/home.htm) and [Security Zones](https://docs.cloud.oracle.com/iaas/security-zone/home.htm) documentation.
  *
- **Note:** You can perform Create, Update, and Delete operations only from the reporting region of your Cloud Guard tenancy. You can perform Read operations from any region.
+ **Note:** For Cloud Guard, you can perform Create, Update, and Delete operations only from the reporting region of your Cloud Guard tenancy. You can perform Read operations in Cloud Guard from any region.
  *
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")
@@ -47,6 +47,21 @@ public interface CloudGuardAsync extends AutoCloseable {
      * @param regionId The public region ID.
      */
     void setRegion(String regionId);
+
+    /**
+     * Add an existing compartment to a security zone. If you previously removed a subcompartment from a security zone, you can add it back to the same security zone. The security zone ensures that resources in the subcompartment comply with the security zone's policies.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<AddCompartmentResponse> addCompartment(
+            AddCompartmentRequest request,
+            com.oracle.bmc.responses.AsyncHandler<AddCompartmentRequest, AddCompartmentResponse>
+                    handler);
 
     /**
      * Moves the DetectorRecipe from current compartment to another.
@@ -99,6 +114,42 @@ public interface CloudGuardAsync extends AutoCloseable {
                     com.oracle.bmc.responses.AsyncHandler<
                                     ChangeResponderRecipeCompartmentRequest,
                                     ChangeResponderRecipeCompartmentResponse>
+                            handler);
+
+    /**
+     * Moves a security zone recipe to a different compartment. When provided, `If-Match` is checked against `ETag` values of the resource.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ChangeSecurityRecipeCompartmentResponse>
+            changeSecurityRecipeCompartment(
+                    ChangeSecurityRecipeCompartmentRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeSecurityRecipeCompartmentRequest,
+                                    ChangeSecurityRecipeCompartmentResponse>
+                            handler);
+
+    /**
+     * Moves a security zone to a different compartment. When provided, `If-Match` is checked against `ETag` values of the resource.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ChangeSecurityZoneCompartmentResponse>
+            changeSecurityZoneCompartment(
+                    ChangeSecurityZoneCompartmentRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeSecurityZoneCompartmentRequest,
+                                    ChangeSecurityZoneCompartmentResponse>
                             handler);
 
     /**
@@ -167,6 +218,40 @@ public interface CloudGuardAsync extends AutoCloseable {
             CreateResponderRecipeRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             CreateResponderRecipeRequest, CreateResponderRecipeResponse>
+                    handler);
+
+    /**
+     * Creates a security zone recipe. A security zone recipe is a collection of security zone policies.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateSecurityRecipeResponse> createSecurityRecipe(
+            CreateSecurityRecipeRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            CreateSecurityRecipeRequest, CreateSecurityRecipeResponse>
+                    handler);
+
+    /**
+     * Creates a security zone for a compartment. A security zone enforces all security zone policies in a given security zone recipe. Any actions that violate a policy are denied. By default, any subcompartments are also in the same security zone.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateSecurityZoneResponse> createSecurityZone(
+            CreateSecurityZoneRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            CreateSecurityZoneRequest, CreateSecurityZoneResponse>
                     handler);
 
     /**
@@ -281,6 +366,38 @@ public interface CloudGuardAsync extends AutoCloseable {
             DeleteResponderRecipeRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             DeleteResponderRecipeRequest, DeleteResponderRecipeResponse>
+                    handler);
+
+    /**
+     * Deletes a security zone recipe. The recipe can't be associated with an existing security zone.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteSecurityRecipeResponse> deleteSecurityRecipe(
+            DeleteSecurityRecipeRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            DeleteSecurityRecipeRequest, DeleteSecurityRecipeResponse>
+                    handler);
+
+    /**
+     * Deletes an existing security zone with a given identifier.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteSecurityZoneResponse> deleteSecurityZone(
+            DeleteSecurityZoneRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            DeleteSecurityZoneRequest, DeleteSecurityZoneResponse>
                     handler);
 
     /**
@@ -567,6 +684,53 @@ public interface CloudGuardAsync extends AutoCloseable {
     java.util.concurrent.Future<GetResponderRuleResponse> getResponderRule(
             GetResponderRuleRequest request,
             com.oracle.bmc.responses.AsyncHandler<GetResponderRuleRequest, GetResponderRuleResponse>
+                    handler);
+
+    /**
+     * Gets a security zone policy using its identifier. When a policy is enabled in a security zone, then any action in the zone that attempts to violate that policy is denied.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetSecurityPolicyResponse> getSecurityPolicy(
+            GetSecurityPolicyRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetSecurityPolicyRequest, GetSecurityPolicyResponse>
+                    handler);
+
+    /**
+     * Gets a security zone recipe by identifier. A security zone recipe is a collection of security zone policies.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetSecurityRecipeResponse> getSecurityRecipe(
+            GetSecurityRecipeRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetSecurityRecipeRequest, GetSecurityRecipeResponse>
+                    handler);
+
+    /**
+     * Gets a security zone by its identifier. A security zone is associated with a security zone recipe and enforces all security zone policies in the recipe. Any actions in the zone's compartments that violate a policy are denied.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetSecurityZoneResponse> getSecurityZone(
+            GetSecurityZoneRequest request,
+            com.oracle.bmc.responses.AsyncHandler<GetSecurityZoneRequest, GetSecurityZoneResponse>
                     handler);
 
     /**
@@ -1124,6 +1288,57 @@ public interface CloudGuardAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Returns a list of security zone policies. Specify any compartment.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListSecurityPoliciesResponse> listSecurityPolicies(
+            ListSecurityPoliciesRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListSecurityPoliciesRequest, ListSecurityPoliciesResponse>
+                    handler);
+
+    /**
+     * Gets a list of all security zone recipes in a compartment.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListSecurityRecipesResponse> listSecurityRecipes(
+            ListSecurityRecipesRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListSecurityRecipesRequest, ListSecurityRecipesResponse>
+                    handler);
+
+    /**
+     * Gets a list of all security zones in a compartment.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListSecurityZonesResponse> listSecurityZones(
+            ListSecurityZonesRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListSecurityZonesRequest, ListSecurityZonesResponse>
+                    handler);
+
+    /**
      * Returns Sighting endpoints details
      *
      * @param request The request object containing the details to send
@@ -1312,6 +1527,22 @@ public interface CloudGuardAsync extends AutoCloseable {
     java.util.concurrent.Future<ListTechniquesResponse> listTechniques(
             ListTechniquesRequest request,
             com.oracle.bmc.responses.AsyncHandler<ListTechniquesRequest, ListTechniquesResponse>
+                    handler);
+
+    /**
+     * Removes an existing compartment from a security zone. When you remove a subcompartment from a security zone, it no longer enforces security zone policies on the resources in the subcompartment. You can't remove the primary compartment that was used to create the security zone.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<RemoveCompartmentResponse> removeCompartment(
+            RemoveCompartmentRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            RemoveCompartmentRequest, RemoveCompartmentResponse>
                     handler);
 
     /**
@@ -1811,6 +2042,38 @@ public interface CloudGuardAsync extends AutoCloseable {
                                     UpdateResponderRecipeResponderRuleRequest,
                                     UpdateResponderRecipeResponderRuleResponse>
                             handler);
+
+    /**
+     * Updates a security zone recipe. A security zone recipe is a collection of security zone policies.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateSecurityRecipeResponse> updateSecurityRecipe(
+            UpdateSecurityRecipeRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            UpdateSecurityRecipeRequest, UpdateSecurityRecipeResponse>
+                    handler);
+
+    /**
+     * Updates the security zone identified by its id
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateSecurityZoneResponse> updateSecurityZone(
+            UpdateSecurityZoneRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            UpdateSecurityZoneRequest, UpdateSecurityZoneResponse>
+                    handler);
 
     /**
      * Updates a Target identified by targetId

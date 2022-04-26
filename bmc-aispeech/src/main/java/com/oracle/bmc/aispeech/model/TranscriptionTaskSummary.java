@@ -152,13 +152,13 @@ public class TranscriptionTaskSummary {
     }
 
     /**
-     * Unique identifier that is immutable on creation.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the task.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     String id;
 
     /**
-     * Transcription task name.
+     * A user-friendly display name for the task.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     String displayName;

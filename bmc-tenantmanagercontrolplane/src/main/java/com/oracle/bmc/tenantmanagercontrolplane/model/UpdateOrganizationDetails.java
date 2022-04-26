@@ -5,7 +5,7 @@
 package com.oracle.bmc.tenantmanagercontrolplane.model;
 
 /**
- * UpdateOrganizationDetails contains subscriptionId information.
+ * The parameters for updating an organization.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -62,7 +62,7 @@ public class UpdateOrganizationDetails {
     }
 
     /**
-     * OCID of the default Annual Universal Credits subscription. Any tenancy joining the organization will automatically get assigned this subscription if a subscription is not explictly assigned.
+     * OCID of the default UCM subscription. Any tenancy joining the organization will automatically get assigned this subscription if a subscription if not explictly assigned.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("defaultUcmSubscriptionId")
     String defaultUcmSubscriptionId;

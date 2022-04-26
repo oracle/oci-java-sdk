@@ -644,7 +644,7 @@ public class RoverEntitlementAsyncClient implements RoverEntitlementAsync {
                 "RoverEntitlement",
                 "UpdateRoverEntitlement",
                 ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/rover/20201210/RoverCluster/UpdateRoverEntitlement");
+                "https://docs.oracle.com/iaas/api/#/en/rover/20201210/RoverEntitlement/UpdateRoverEntitlement");
 
         com.oracle.bmc.responses.AsyncHandler<
                         UpdateRoverEntitlementRequest, UpdateRoverEntitlementResponse>

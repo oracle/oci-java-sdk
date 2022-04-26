@@ -26,6 +26,24 @@ public class UpdateTargetDetectorRecipeDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
+        @com.fasterxml.jackson.annotation.JsonProperty("detectorRecipeId")
+        private String detectorRecipeId;
+
+        public Builder detectorRecipeId(String detectorRecipeId) {
+            this.detectorRecipeId = detectorRecipeId;
+            this.__explicitlySet__.add("detectorRecipeId");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("isValidationOnlyQuery")
+        private Boolean isValidationOnlyQuery;
+
+        public Builder isValidationOnlyQuery(Boolean isValidationOnlyQuery) {
+            this.isValidationOnlyQuery = isValidationOnlyQuery;
+            this.__explicitlySet__.add("isValidationOnlyQuery");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("detectorRules")
         private java.util.List<UpdateTargetRecipeDetectorRuleDetails> detectorRules;
 
@@ -41,14 +59,18 @@ public class UpdateTargetDetectorRecipeDetails {
 
         public UpdateTargetDetectorRecipeDetails build() {
             UpdateTargetDetectorRecipeDetails __instance__ =
-                    new UpdateTargetDetectorRecipeDetails(detectorRules);
+                    new UpdateTargetDetectorRecipeDetails(
+                            detectorRecipeId, isValidationOnlyQuery, detectorRules);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(UpdateTargetDetectorRecipeDetails o) {
-            Builder copiedBuilder = detectorRules(o.getDetectorRules());
+            Builder copiedBuilder =
+                    detectorRecipeId(o.getDetectorRecipeId())
+                            .isValidationOnlyQuery(o.getIsValidationOnlyQuery())
+                            .detectorRules(o.getDetectorRules());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -61,6 +83,18 @@ public class UpdateTargetDetectorRecipeDetails {
     public static Builder builder() {
         return new Builder();
     }
+
+    /**
+     * Detector recipe identifier associated with the target
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("detectorRecipeId")
+    String detectorRecipeId;
+
+    /**
+     * When enabled, validation is performed for attaching the detector recipe.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isValidationOnlyQuery")
+    Boolean isValidationOnlyQuery;
 
     /**
      * Update detector rules associated with detector recipe in a target.

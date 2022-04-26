@@ -37,13 +37,13 @@ public class GetMonitorResultRequest extends com.oracle.bmc.requests.BmcRequest<
     private String vantagePoint;
 
     /**
-     * The result type har, screenshot, log or network.
+     * The result type: har, screenshot, log, or network.
      *
      */
     private String resultType;
 
     /**
-     * The result content type zip or raw.
+     * The result content type: zip or raw.
      *
      */
     private String resultContentType;

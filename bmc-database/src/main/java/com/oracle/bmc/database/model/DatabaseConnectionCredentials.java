@@ -34,6 +34,10 @@ package com.oracle.bmc.database.model;
         name = "NAME_REFERENCE"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = DatabaseSslConnectionCredentials.class,
+        name = "SSL_DETAILS"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = DatabaseConnectionCredentialsByDetails.class,
         name = "DETAILS"
     )
@@ -48,6 +52,7 @@ public class DatabaseConnectionCredentials {
     public enum CredentialType {
         NameReference("NAME_REFERENCE"),
         Details("DETAILS"),
+        SslDetails("SSL_DETAILS"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this

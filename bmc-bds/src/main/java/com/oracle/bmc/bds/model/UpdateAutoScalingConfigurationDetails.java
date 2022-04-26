@@ -62,13 +62,22 @@ public class UpdateAutoScalingConfigurationDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("policyDetails")
+        private UpdateAutoScalePolicyDetails policyDetails;
+
+        public Builder policyDetails(UpdateAutoScalePolicyDetails policyDetails) {
+            this.policyDetails = policyDetails;
+            this.__explicitlySet__.add("policyDetails");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public UpdateAutoScalingConfigurationDetails build() {
             UpdateAutoScalingConfigurationDetails __instance__ =
                     new UpdateAutoScalingConfigurationDetails(
-                            displayName, isEnabled, clusterAdminPassword, policy);
+                            displayName, isEnabled, clusterAdminPassword, policy, policyDetails);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -79,7 +88,8 @@ public class UpdateAutoScalingConfigurationDetails {
                     displayName(o.getDisplayName())
                             .isEnabled(o.getIsEnabled())
                             .clusterAdminPassword(o.getClusterAdminPassword())
-                            .policy(o.getPolicy());
+                            .policy(o.getPolicy())
+                            .policyDetails(o.getPolicyDetails());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -113,6 +123,9 @@ public class UpdateAutoScalingConfigurationDetails {
 
     @com.fasterxml.jackson.annotation.JsonProperty("policy")
     AutoScalePolicy policy;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("policyDetails")
+    UpdateAutoScalePolicyDetails policyDetails;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

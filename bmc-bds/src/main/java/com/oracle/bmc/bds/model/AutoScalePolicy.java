@@ -5,7 +5,8 @@
 package com.oracle.bmc.bds.model;
 
 /**
- * Policy definitions for the autoscale configuration.
+ * This model for autoscaling policy is deprecated and not supported for ODH clusters. Use the {@code AutoScalePolicyDetails} model to manage autoscale policy details for ODH clusters.
+ *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -74,6 +75,7 @@ public class AutoScalePolicy {
     public enum PolicyType {
         ThresholdBased("THRESHOLD_BASED"),
         ScheduleBased("SCHEDULE_BASED"),
+        None("NONE"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this

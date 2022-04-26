@@ -168,6 +168,15 @@ public class BdsInstance {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("bootstrapScriptUrl")
+        private String bootstrapScriptUrl;
+
+        public Builder bootstrapScriptUrl(String bootstrapScriptUrl) {
+            this.bootstrapScriptUrl = bootstrapScriptUrl;
+            this.__explicitlySet__.add("bootstrapScriptUrl");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
@@ -209,6 +218,7 @@ public class BdsInstance {
                             timeCreated,
                             timeUpdated,
                             numberOfNodes,
+                            bootstrapScriptUrl,
                             freeformTags,
                             definedTags);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
@@ -234,6 +244,7 @@ public class BdsInstance {
                             .timeCreated(o.getTimeCreated())
                             .timeUpdated(o.getTimeUpdated())
                             .numberOfNodes(o.getNumberOfNodes())
+                            .bootstrapScriptUrl(o.getBootstrapScriptUrl())
                             .freeformTags(o.getFreeformTags())
                             .definedTags(o.getDefinedTags());
 
@@ -332,6 +343,7 @@ public class BdsInstance {
         Cdh5("CDH5"),
         Cdh6("CDH6"),
         Odh1("ODH1"),
+        Odh09("ODH0_9"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this
@@ -433,6 +445,12 @@ public class BdsInstance {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("numberOfNodes")
     Integer numberOfNodes;
+
+    /**
+     * pre-authenticated URL of the bootstrap script in Object Store that can be downloaded and executed.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("bootstrapScriptUrl")
+    String bootstrapScriptUrl;
 
     /**
      * Simple key-value pair that is applied without any predefined name, type, or scope.

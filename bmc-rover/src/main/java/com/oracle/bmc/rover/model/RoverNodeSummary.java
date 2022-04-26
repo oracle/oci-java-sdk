@@ -69,6 +69,15 @@ public class RoverNodeSummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("shape")
+        private String shape;
+
+        public Builder shape(String shape) {
+            this.shape = shape;
+            this.__explicitlySet__.add("shape");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
@@ -144,6 +153,7 @@ public class RoverNodeSummary {
                             clusterId,
                             serialNumber,
                             nodeType,
+                            shape,
                             displayName,
                             timeCreated,
                             lifecycleState,
@@ -163,6 +173,7 @@ public class RoverNodeSummary {
                             .clusterId(o.getClusterId())
                             .serialNumber(o.getSerialNumber())
                             .nodeType(o.getNodeType())
+                            .shape(o.getShape())
                             .displayName(o.getDisplayName())
                             .timeCreated(o.getTimeCreated())
                             .lifecycleState(o.getLifecycleState())
@@ -212,6 +223,12 @@ public class RoverNodeSummary {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("nodeType")
     NodeType nodeType;
+
+    /**
+     * The shape of the node.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("shape")
+    String shape;
 
     /**
      * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.

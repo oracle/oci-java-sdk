@@ -20,7 +20,7 @@ import com.oracle.bmc.budget.model.*;
 public class GetBudgetRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The unique Budget OCID
+     * The unique budget OCID.
      */
     private String budgetId;
 

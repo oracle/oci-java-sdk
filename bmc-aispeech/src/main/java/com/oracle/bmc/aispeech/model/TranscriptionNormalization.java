@@ -26,6 +26,15 @@ public class TranscriptionNormalization {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
+        @com.fasterxml.jackson.annotation.JsonProperty("isPunctuationEnabled")
+        private Boolean isPunctuationEnabled;
+
+        public Builder isPunctuationEnabled(Boolean isPunctuationEnabled) {
+            this.isPunctuationEnabled = isPunctuationEnabled;
+            this.__explicitlySet__.add("isPunctuationEnabled");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("filters")
         private java.util.List<TranscriptionFilter> filters;
 
@@ -39,14 +48,16 @@ public class TranscriptionNormalization {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public TranscriptionNormalization build() {
-            TranscriptionNormalization __instance__ = new TranscriptionNormalization(filters);
+            TranscriptionNormalization __instance__ =
+                    new TranscriptionNormalization(isPunctuationEnabled, filters);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(TranscriptionNormalization o) {
-            Builder copiedBuilder = filters(o.getFilters());
+            Builder copiedBuilder =
+                    isPunctuationEnabled(o.getIsPunctuationEnabled()).filters(o.getFilters());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -59,6 +70,12 @@ public class TranscriptionNormalization {
     public static Builder builder() {
         return new Builder();
     }
+
+    /**
+     * Whether to add punctuation in generated transcription. By default it is enabled.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isPunctuationEnabled")
+    Boolean isPunctuationEnabled;
 
     /**
      * List of filters.

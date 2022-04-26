@@ -5,7 +5,7 @@
 package com.oracle.bmc.aispeech.model;
 
 /**
- * Profanity transcription filter.
+ * Profanity transcription filter to recognize profane words.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -73,8 +73,6 @@ public class ProfanityTranscriptionFilter extends TranscriptionFilter {
     }
 
     /**
-     * The mode of filters.
-     * Allowed values are:
      * - {@code MASK}: Will mask detected profanity in transcription.
      * - {@code REMOVE}: Will replace profane word with * in transcription.
      * - {@code TAG}: Will tag profane word as profanity but will show actual word.
@@ -124,8 +122,6 @@ public class ProfanityTranscriptionFilter extends TranscriptionFilter {
         }
     };
     /**
-     * The mode of filters.
-     * Allowed values are:
      * - {@code MASK}: Will mask detected profanity in transcription.
      * - {@code REMOVE}: Will replace profane word with * in transcription.
      * - {@code TAG}: Will tag profane word as profanity but will show actual word.

@@ -21,6 +21,11 @@ public enum OperationType {
     AssignDefaultSubscription("ASSIGN_DEFAULT_SUBSCRIPTION"),
     ManualLinkCreation("MANUAL_LINK_CREATION"),
     TerminateOrganizationTenancy("TERMINATE_ORGANIZATION_TENANCY"),
+    UpdateSaasCapability("UPDATE_SAAS_CAPABILITY"),
+    SoftTerminateTenancy("SOFT_TERMINATE_TENANCY"),
+    HardTerminateTenancy("HARD_TERMINATE_TENANCY"),
+    RestoreTenancy("RESTORE_TENANCY"),
+    LogTenancyTerminationRequest("LOG_TENANCY_TERMINATION_REQUEST"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this

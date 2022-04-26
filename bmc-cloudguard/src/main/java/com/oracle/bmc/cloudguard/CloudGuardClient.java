@@ -462,6 +462,42 @@ public class CloudGuardClient implements CloudGuard {
     }
 
     @Override
+    public AddCompartmentResponse addCompartment(AddCompartmentRequest request) {
+        LOG.trace("Called addCompartment");
+        final AddCompartmentRequest interceptedRequest =
+                AddCompartmentConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                AddCompartmentConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, AddCompartmentResponse>
+                transformer = AddCompartmentConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "CloudGuard", "AddCompartment", ib.getRequestUri().toString(), "");
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getAddCompartmentDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public ChangeDetectorRecipeCompartmentResponse changeDetectorRecipeCompartment(
             ChangeDetectorRecipeCompartmentRequest request) {
         LOG.trace("Called changeDetectorRecipeCompartment");
@@ -479,10 +515,7 @@ public class CloudGuardClient implements CloudGuard {
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "CloudGuard",
-                "ChangeDetectorRecipeCompartment",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/DetectorRecipe/ChangeDetectorRecipeCompartment");
+                "CloudGuard", "ChangeDetectorRecipeCompartment", ib.getRequestUri().toString(), "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -521,10 +554,7 @@ public class CloudGuardClient implements CloudGuard {
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "CloudGuard",
-                "ChangeManagedListCompartment",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/ManagedList/ChangeManagedListCompartment");
+                "CloudGuard", "ChangeManagedListCompartment", ib.getRequestUri().toString(), "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -566,7 +596,7 @@ public class CloudGuardClient implements CloudGuard {
                 "CloudGuard",
                 "ChangeResponderRecipeCompartment",
                 ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/ResponderRecipe/ChangeResponderRecipeCompartment");
+                "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -581,6 +611,84 @@ public class CloudGuardClient implements CloudGuard {
                                                 ib,
                                                 retriedRequest
                                                         .getChangeResponderRecipeCompartmentDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ChangeSecurityRecipeCompartmentResponse changeSecurityRecipeCompartment(
+            ChangeSecurityRecipeCompartmentRequest request) {
+        LOG.trace("Called changeSecurityRecipeCompartment");
+        final ChangeSecurityRecipeCompartmentRequest interceptedRequest =
+                ChangeSecurityRecipeCompartmentConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangeSecurityRecipeCompartmentConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ChangeSecurityRecipeCompartmentResponse>
+                transformer = ChangeSecurityRecipeCompartmentConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "CloudGuard", "ChangeSecurityRecipeCompartment", ib.getRequestUri().toString(), "");
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getChangeSecurityRecipeCompartmentDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ChangeSecurityZoneCompartmentResponse changeSecurityZoneCompartment(
+            ChangeSecurityZoneCompartmentRequest request) {
+        LOG.trace("Called changeSecurityZoneCompartment");
+        final ChangeSecurityZoneCompartmentRequest interceptedRequest =
+                ChangeSecurityZoneCompartmentConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangeSecurityZoneCompartmentConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ChangeSecurityZoneCompartmentResponse>
+                transformer = ChangeSecurityZoneCompartmentConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "CloudGuard", "ChangeSecurityZoneCompartment", ib.getRequestUri().toString(), "");
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getChangeSecurityZoneCompartmentDetails(),
                                                 retriedRequest);
                                 return transformer.apply(response);
                             });
@@ -603,10 +711,7 @@ public class CloudGuardClient implements CloudGuard {
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "CloudGuard",
-                "CreateDataMaskRule",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/DataMaskRule/CreateDataMaskRule");
+                "CloudGuard", "CreateDataMaskRule", ib.getRequestUri().toString(), "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -642,10 +747,7 @@ public class CloudGuardClient implements CloudGuard {
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "CloudGuard",
-                "CreateDetectorRecipe",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/DetectorRecipe/CreateDetectorRecipe");
+                "CloudGuard", "CreateDetectorRecipe", ib.getRequestUri().toString(), "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -681,10 +783,7 @@ public class CloudGuardClient implements CloudGuard {
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "CloudGuard",
-                "CreateManagedList",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/ManagedList/CreateManagedList");
+                "CloudGuard", "CreateManagedList", ib.getRequestUri().toString(), "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -721,10 +820,7 @@ public class CloudGuardClient implements CloudGuard {
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "CloudGuard",
-                "CreateResponderRecipe",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/ResponderRecipe/CreateResponderRecipe");
+                "CloudGuard", "CreateResponderRecipe", ib.getRequestUri().toString(), "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -738,6 +834,78 @@ public class CloudGuardClient implements CloudGuard {
                                         client.post(
                                                 ib,
                                                 retriedRequest.getCreateResponderRecipeDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public CreateSecurityRecipeResponse createSecurityRecipe(CreateSecurityRecipeRequest request) {
+        LOG.trace("Called createSecurityRecipe");
+        final CreateSecurityRecipeRequest interceptedRequest =
+                CreateSecurityRecipeConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateSecurityRecipeConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, CreateSecurityRecipeResponse>
+                transformer = CreateSecurityRecipeConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "CloudGuard", "CreateSecurityRecipe", ib.getRequestUri().toString(), "");
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getCreateSecurityRecipeDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public CreateSecurityZoneResponse createSecurityZone(CreateSecurityZoneRequest request) {
+        LOG.trace("Called createSecurityZone");
+        final CreateSecurityZoneRequest interceptedRequest =
+                CreateSecurityZoneConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateSecurityZoneConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, CreateSecurityZoneResponse>
+                transformer = CreateSecurityZoneConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "CloudGuard", "CreateSecurityZone", ib.getRequestUri().toString(), "");
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getCreateSecurityZoneDetails(),
                                                 retriedRequest);
                                 return transformer.apply(response);
                             });
@@ -760,10 +928,7 @@ public class CloudGuardClient implements CloudGuard {
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "CloudGuard",
-                "CreateTarget",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/Target/CreateTarget");
+                "CloudGuard", "CreateTarget", ib.getRequestUri().toString(), "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -801,10 +966,7 @@ public class CloudGuardClient implements CloudGuard {
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "CloudGuard",
-                "CreateTargetDetectorRecipe",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/TargetDetectorRecipe/CreateTargetDetectorRecipe");
+                "CloudGuard", "CreateTargetDetectorRecipe", ib.getRequestUri().toString(), "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -843,10 +1005,7 @@ public class CloudGuardClient implements CloudGuard {
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "CloudGuard",
-                "CreateTargetResponderRecipe",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/TargetResponderRecipe/CreateTargetResponderRecipe");
+                "CloudGuard", "CreateTargetResponderRecipe", ib.getRequestUri().toString(), "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -882,10 +1041,7 @@ public class CloudGuardClient implements CloudGuard {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "CloudGuard",
-                "DeleteDataMaskRule",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/DataMaskRule/DeleteDataMaskRule");
+                "CloudGuard", "DeleteDataMaskRule", ib.getRequestUri().toString(), "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -918,10 +1074,7 @@ public class CloudGuardClient implements CloudGuard {
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "CloudGuard",
-                "DeleteDetectorRecipe",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/DetectorRecipe/DeleteDetectorRecipe");
+                "CloudGuard", "DeleteDetectorRecipe", ib.getRequestUri().toString(), "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -954,10 +1107,7 @@ public class CloudGuardClient implements CloudGuard {
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "CloudGuard",
-                "DeleteManagedList",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/ManagedList/DeleteManagedList");
+                "CloudGuard", "DeleteManagedList", ib.getRequestUri().toString(), "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -990,10 +1140,71 @@ public class CloudGuardClient implements CloudGuard {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "CloudGuard",
-                "DeleteResponderRecipe",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/ResponderRecipe/DeleteResponderRecipe");
+                "CloudGuard", "DeleteResponderRecipe", ib.getRequestUri().toString(), "");
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.delete(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public DeleteSecurityRecipeResponse deleteSecurityRecipe(DeleteSecurityRecipeRequest request) {
+        LOG.trace("Called deleteSecurityRecipe");
+        final DeleteSecurityRecipeRequest interceptedRequest =
+                DeleteSecurityRecipeConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteSecurityRecipeConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteSecurityRecipeResponse>
+                transformer = DeleteSecurityRecipeConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "CloudGuard", "DeleteSecurityRecipe", ib.getRequestUri().toString(), "");
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.delete(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public DeleteSecurityZoneResponse deleteSecurityZone(DeleteSecurityZoneRequest request) {
+        LOG.trace("Called deleteSecurityZone");
+        final DeleteSecurityZoneRequest interceptedRequest =
+                DeleteSecurityZoneConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteSecurityZoneConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteSecurityZoneResponse>
+                transformer = DeleteSecurityZoneConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "CloudGuard", "DeleteSecurityZone", ib.getRequestUri().toString(), "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1025,10 +1236,7 @@ public class CloudGuardClient implements CloudGuard {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "CloudGuard",
-                "DeleteTarget",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/Target/DeleteTarget");
+                "CloudGuard", "DeleteTarget", ib.getRequestUri().toString(), "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1062,10 +1270,7 @@ public class CloudGuardClient implements CloudGuard {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "CloudGuard",
-                "DeleteTargetDetectorRecipe",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/TargetDetectorRecipe/DeleteTargetDetectorRecipe");
+                "CloudGuard", "DeleteTargetDetectorRecipe", ib.getRequestUri().toString(), "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1099,10 +1304,7 @@ public class CloudGuardClient implements CloudGuard {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "CloudGuard",
-                "DeleteTargetResponderRecipe",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/TargetResponderRecipe/DeleteTargetResponderRecipe");
+                "CloudGuard", "DeleteTargetResponderRecipe", ib.getRequestUri().toString(), "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1137,10 +1339,7 @@ public class CloudGuardClient implements CloudGuard {
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "CloudGuard",
-                "ExecuteResponderExecution",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/ResponderExecution/ExecuteResponderExecution");
+                "CloudGuard", "ExecuteResponderExecution", ib.getRequestUri().toString(), "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1177,10 +1376,7 @@ public class CloudGuardClient implements CloudGuard {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "CloudGuard",
-                "GetConditionMetadataType",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/ConditionMetadataType/GetConditionMetadataType");
+                "CloudGuard", "GetConditionMetadataType", ib.getRequestUri().toString(), "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1211,10 +1407,7 @@ public class CloudGuardClient implements CloudGuard {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "CloudGuard",
-                "GetConfiguration",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/Configuration/GetConfiguration");
+                "CloudGuard", "GetConfiguration", ib.getRequestUri().toString(), "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1245,10 +1438,7 @@ public class CloudGuardClient implements CloudGuard {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "CloudGuard",
-                "GetDataMaskRule",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/DataMaskRule/GetDataMaskRule");
+                "CloudGuard", "GetDataMaskRule", ib.getRequestUri().toString(), "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1279,10 +1469,7 @@ public class CloudGuardClient implements CloudGuard {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "CloudGuard",
-                "GetDetector",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/Detector/GetDetector");
+                "CloudGuard", "GetDetector", ib.getRequestUri().toString(), "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1313,10 +1500,7 @@ public class CloudGuardClient implements CloudGuard {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "CloudGuard",
-                "GetDetectorRecipe",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/DetectorRecipe/GetDetectorRecipe");
+                "CloudGuard", "GetDetectorRecipe", ib.getRequestUri().toString(), "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1349,10 +1533,7 @@ public class CloudGuardClient implements CloudGuard {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "CloudGuard",
-                "GetDetectorRecipeDetectorRule",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/DetectorRecipeDetectorRule/GetDetectorRecipeDetectorRule");
+                "CloudGuard", "GetDetectorRecipeDetectorRule", ib.getRequestUri().toString(), "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1383,10 +1564,7 @@ public class CloudGuardClient implements CloudGuard {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "CloudGuard",
-                "GetDetectorRule",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/DetectorRule/GetDetectorRule");
+                "CloudGuard", "GetDetectorRule", ib.getRequestUri().toString(), "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1417,10 +1595,7 @@ public class CloudGuardClient implements CloudGuard {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "CloudGuard",
-                "GetManagedList",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/ManagedList/GetManagedList");
+                "CloudGuard", "GetManagedList", ib.getRequestUri().toString(), "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1450,10 +1625,7 @@ public class CloudGuardClient implements CloudGuard {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "CloudGuard",
-                "GetProblem",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/Problem/GetProblem");
+                "CloudGuard", "GetProblem", ib.getRequestUri().toString(), "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1484,10 +1656,7 @@ public class CloudGuardClient implements CloudGuard {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "CloudGuard",
-                "GetResourceProfile",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/ResourceProfile/GetResourceProfile");
+                "CloudGuard", "GetResourceProfile", ib.getRequestUri().toString(), "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1519,10 +1688,7 @@ public class CloudGuardClient implements CloudGuard {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "CloudGuard",
-                "GetResponderExecution",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/ResponderExecution/GetResponderExecution");
+                "CloudGuard", "GetResponderExecution", ib.getRequestUri().toString(), "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1553,10 +1719,7 @@ public class CloudGuardClient implements CloudGuard {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "CloudGuard",
-                "GetResponderRecipe",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/ResponderRecipe/GetResponderRecipe");
+                "CloudGuard", "GetResponderRecipe", ib.getRequestUri().toString(), "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1589,10 +1752,7 @@ public class CloudGuardClient implements CloudGuard {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "CloudGuard",
-                "GetResponderRecipeResponderRule",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/ResponderRecipeResponderRule/GetResponderRecipeResponderRule");
+                "CloudGuard", "GetResponderRecipeResponderRule", ib.getRequestUri().toString(), "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1623,10 +1783,100 @@ public class CloudGuardClient implements CloudGuard {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "CloudGuard",
-                "GetResponderRule",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/ResponderRule/GetResponderRule");
+                "CloudGuard", "GetResponderRule", ib.getRequestUri().toString(), "");
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public GetSecurityPolicyResponse getSecurityPolicy(GetSecurityPolicyRequest request) {
+        LOG.trace("Called getSecurityPolicy");
+        final GetSecurityPolicyRequest interceptedRequest =
+                GetSecurityPolicyConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetSecurityPolicyConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, GetSecurityPolicyResponse>
+                transformer = GetSecurityPolicyConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "CloudGuard", "GetSecurityPolicy", ib.getRequestUri().toString(), "");
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public GetSecurityRecipeResponse getSecurityRecipe(GetSecurityRecipeRequest request) {
+        LOG.trace("Called getSecurityRecipe");
+        final GetSecurityRecipeRequest interceptedRequest =
+                GetSecurityRecipeConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetSecurityRecipeConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, GetSecurityRecipeResponse>
+                transformer = GetSecurityRecipeConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "CloudGuard", "GetSecurityRecipe", ib.getRequestUri().toString(), "");
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public GetSecurityZoneResponse getSecurityZone(GetSecurityZoneRequest request) {
+        LOG.trace("Called getSecurityZone");
+        final GetSecurityZoneRequest interceptedRequest =
+                GetSecurityZoneConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetSecurityZoneConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, GetSecurityZoneResponse>
+                transformer = GetSecurityZoneConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "CloudGuard", "GetSecurityZone", ib.getRequestUri().toString(), "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1657,10 +1907,7 @@ public class CloudGuardClient implements CloudGuard {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "CloudGuard",
-                "GetSighting",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/Sighting/GetSighting");
+                "CloudGuard", "GetSighting", ib.getRequestUri().toString(), "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1690,10 +1937,7 @@ public class CloudGuardClient implements CloudGuard {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "CloudGuard",
-                "GetTarget",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/Target/GetTarget");
+                "CloudGuard", "GetTarget", ib.getRequestUri().toString(), "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1725,10 +1969,7 @@ public class CloudGuardClient implements CloudGuard {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "CloudGuard",
-                "GetTargetDetectorRecipe",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/TargetDetectorRecipe/GetTargetDetectorRecipe");
+                "CloudGuard", "GetTargetDetectorRecipe", ib.getRequestUri().toString(), "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1765,7 +2006,7 @@ public class CloudGuardClient implements CloudGuard {
                 "CloudGuard",
                 "GetTargetDetectorRecipeDetectorRule",
                 ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/TargetDetectorRecipeDetectorRule/GetTargetDetectorRecipeDetectorRule");
+                "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1797,10 +2038,7 @@ public class CloudGuardClient implements CloudGuard {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "CloudGuard",
-                "GetTargetResponderRecipe",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/TargetResponderRecipe/GetTargetResponderRecipe");
+                "CloudGuard", "GetTargetResponderRecipe", ib.getRequestUri().toString(), "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1837,7 +2075,7 @@ public class CloudGuardClient implements CloudGuard {
                 "CloudGuard",
                 "GetTargetResponderRecipeResponderRule",
                 ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/TargetResponderRecipeResponderRule/GetTargetResponderRecipeResponderRule");
+                "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1870,10 +2108,7 @@ public class CloudGuardClient implements CloudGuard {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "CloudGuard",
-                "ListConditionMetadataTypes",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/ConditionMetadataType/ListConditionMetadataTypes");
+                "CloudGuard", "ListConditionMetadataTypes", ib.getRequestUri().toString(), "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1904,10 +2139,7 @@ public class CloudGuardClient implements CloudGuard {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "CloudGuard",
-                "ListDataMaskRules",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/DataMaskRule/ListDataMaskRules");
+                "CloudGuard", "ListDataMaskRules", ib.getRequestUri().toString(), "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1940,10 +2172,7 @@ public class CloudGuardClient implements CloudGuard {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "CloudGuard",
-                "ListDetectorRecipeDetectorRules",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/DetectorRecipeDetectorRule/ListDetectorRecipeDetectorRules");
+                "CloudGuard", "ListDetectorRecipeDetectorRules", ib.getRequestUri().toString(), "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1974,10 +2203,7 @@ public class CloudGuardClient implements CloudGuard {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "CloudGuard",
-                "ListDetectorRecipes",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/DetectorRecipe/ListDetectorRecipes");
+                "CloudGuard", "ListDetectorRecipes", ib.getRequestUri().toString(), "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2008,10 +2234,7 @@ public class CloudGuardClient implements CloudGuard {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "CloudGuard",
-                "ListDetectorRules",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/DetectorRule/ListDetectorRules");
+                "CloudGuard", "ListDetectorRules", ib.getRequestUri().toString(), "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2042,10 +2265,7 @@ public class CloudGuardClient implements CloudGuard {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "CloudGuard",
-                "ListDetectors",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/Detector/ListDetectors");
+                "CloudGuard", "ListDetectors", ib.getRequestUri().toString(), "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2077,10 +2297,7 @@ public class CloudGuardClient implements CloudGuard {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "CloudGuard",
-                "ListImpactedResources",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/ImpactedResourceSummary/ListImpactedResources");
+                "CloudGuard", "ListImpactedResources", ib.getRequestUri().toString(), "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2111,10 +2328,7 @@ public class CloudGuardClient implements CloudGuard {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "CloudGuard",
-                "ListManagedListTypes",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/ManagedListTypeSummary/ListManagedListTypes");
+                "CloudGuard", "ListManagedListTypes", ib.getRequestUri().toString(), "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2145,10 +2359,7 @@ public class CloudGuardClient implements CloudGuard {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "CloudGuard",
-                "ListManagedLists",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/ManagedList/ListManagedLists");
+                "CloudGuard", "ListManagedLists", ib.getRequestUri().toString(), "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2179,10 +2390,7 @@ public class CloudGuardClient implements CloudGuard {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "CloudGuard",
-                "ListPolicies",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/PolicySummary/ListPolicies");
+                "CloudGuard", "ListPolicies", ib.getRequestUri().toString(), "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2213,10 +2421,7 @@ public class CloudGuardClient implements CloudGuard {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "CloudGuard",
-                "ListProblemEndpoints",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/ProblemEndpointSummary/ListProblemEndpoints");
+                "CloudGuard", "ListProblemEndpoints", ib.getRequestUri().toString(), "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2247,10 +2452,7 @@ public class CloudGuardClient implements CloudGuard {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "CloudGuard",
-                "ListProblemHistories",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/Problem/ListProblemHistories");
+                "CloudGuard", "ListProblemHistories", ib.getRequestUri().toString(), "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2281,10 +2483,7 @@ public class CloudGuardClient implements CloudGuard {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "CloudGuard",
-                "ListProblems",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/Problem/ListProblems");
+                "CloudGuard", "ListProblems", ib.getRequestUri().toString(), "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2315,10 +2514,7 @@ public class CloudGuardClient implements CloudGuard {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "CloudGuard",
-                "ListRecommendations",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/RecommendationSummary/ListRecommendations");
+                "CloudGuard", "ListRecommendations", ib.getRequestUri().toString(), "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2351,10 +2547,7 @@ public class CloudGuardClient implements CloudGuard {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "CloudGuard",
-                "ListResourceProfileEndpoints",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/ResourceProfileEndpointSummary/ListResourceProfileEndpoints");
+                "CloudGuard", "ListResourceProfileEndpoints", ib.getRequestUri().toString(), "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2391,7 +2584,7 @@ public class CloudGuardClient implements CloudGuard {
                 "CloudGuard",
                 "ListResourceProfileImpactedResources",
                 ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/ResourceProfileImpactedResourceSummary/ListResourceProfileImpactedResources");
+                "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2422,10 +2615,7 @@ public class CloudGuardClient implements CloudGuard {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "CloudGuard",
-                "ListResourceProfiles",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/ResourceProfileSummary/ListResourceProfiles");
+                "CloudGuard", "ListResourceProfiles", ib.getRequestUri().toString(), "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2456,10 +2646,7 @@ public class CloudGuardClient implements CloudGuard {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "CloudGuard",
-                "ListResourceTypes",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/ResourceTypeSummary/ListResourceTypes");
+                "CloudGuard", "ListResourceTypes", ib.getRequestUri().toString(), "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2491,10 +2678,7 @@ public class CloudGuardClient implements CloudGuard {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "CloudGuard",
-                "ListResponderActivities",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/ResponderActivitySummary/ListResponderActivities");
+                "CloudGuard", "ListResponderActivities", ib.getRequestUri().toString(), "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2526,10 +2710,7 @@ public class CloudGuardClient implements CloudGuard {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "CloudGuard",
-                "ListResponderExecutions",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/ResponderExecutionSummary/ListResponderExecutions");
+                "CloudGuard", "ListResponderExecutions", ib.getRequestUri().toString(), "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2565,7 +2746,7 @@ public class CloudGuardClient implements CloudGuard {
                 "CloudGuard",
                 "ListResponderRecipeResponderRules",
                 ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/ResponderRecipeResponderRule/ListResponderRecipeResponderRules");
+                "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2596,10 +2777,7 @@ public class CloudGuardClient implements CloudGuard {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "CloudGuard",
-                "ListResponderRecipes",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/ResponderRecipe/ListResponderRecipes");
+                "CloudGuard", "ListResponderRecipes", ib.getRequestUri().toString(), "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2630,10 +2808,100 @@ public class CloudGuardClient implements CloudGuard {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "CloudGuard",
-                "ListResponderRules",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/ResponderRule/ListResponderRules");
+                "CloudGuard", "ListResponderRules", ib.getRequestUri().toString(), "");
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ListSecurityPoliciesResponse listSecurityPolicies(ListSecurityPoliciesRequest request) {
+        LOG.trace("Called listSecurityPolicies");
+        final ListSecurityPoliciesRequest interceptedRequest =
+                ListSecurityPoliciesConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListSecurityPoliciesConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, ListSecurityPoliciesResponse>
+                transformer = ListSecurityPoliciesConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "CloudGuard", "ListSecurityPolicies", ib.getRequestUri().toString(), "");
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ListSecurityRecipesResponse listSecurityRecipes(ListSecurityRecipesRequest request) {
+        LOG.trace("Called listSecurityRecipes");
+        final ListSecurityRecipesRequest interceptedRequest =
+                ListSecurityRecipesConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListSecurityRecipesConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, ListSecurityRecipesResponse>
+                transformer = ListSecurityRecipesConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "CloudGuard", "ListSecurityRecipes", ib.getRequestUri().toString(), "");
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ListSecurityZonesResponse listSecurityZones(ListSecurityZonesRequest request) {
+        LOG.trace("Called listSecurityZones");
+        final ListSecurityZonesRequest interceptedRequest =
+                ListSecurityZonesConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListSecurityZonesConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, ListSecurityZonesResponse>
+                transformer = ListSecurityZonesConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "CloudGuard", "ListSecurityZones", ib.getRequestUri().toString(), "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2665,10 +2933,7 @@ public class CloudGuardClient implements CloudGuard {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "CloudGuard",
-                "ListSightingEndpoints",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/SightingEndpointSummary/ListSightingEndpoints");
+                "CloudGuard", "ListSightingEndpoints", ib.getRequestUri().toString(), "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2701,10 +2966,7 @@ public class CloudGuardClient implements CloudGuard {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "CloudGuard",
-                "ListSightingImpactedResources",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/SightingImpactedResourceSummary/ListSightingImpactedResources");
+                "CloudGuard", "ListSightingImpactedResources", ib.getRequestUri().toString(), "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2735,10 +2997,7 @@ public class CloudGuardClient implements CloudGuard {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "CloudGuard",
-                "ListSightings",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/SightingSummary/ListSightings");
+                "CloudGuard", "ListSightings", ib.getRequestUri().toString(), "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2769,10 +3028,7 @@ public class CloudGuardClient implements CloudGuard {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "CloudGuard",
-                "ListTactics",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/TacticSummary/ListTactics");
+                "CloudGuard", "ListTactics", ib.getRequestUri().toString(), "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2809,7 +3065,7 @@ public class CloudGuardClient implements CloudGuard {
                 "CloudGuard",
                 "ListTargetDetectorRecipeDetectorRules",
                 ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/TargetDetectorRecipeDetectorRule/ListTargetDetectorRecipeDetectorRules");
+                "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2842,10 +3098,7 @@ public class CloudGuardClient implements CloudGuard {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "CloudGuard",
-                "ListTargetDetectorRecipes",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/TargetDetectorRecipe/ListTargetDetectorRecipes");
+                "CloudGuard", "ListTargetDetectorRecipes", ib.getRequestUri().toString(), "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2882,7 +3135,7 @@ public class CloudGuardClient implements CloudGuard {
                 "CloudGuard",
                 "ListTargetResponderRecipeResponderRules",
                 ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/TargetResponderRecipeResponderRule/ListTargetResponderRecipeResponderRules");
+                "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2915,10 +3168,7 @@ public class CloudGuardClient implements CloudGuard {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "CloudGuard",
-                "ListTargetResponderRecipes",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/TargetResponderRecipe/ListTargetResponderRecipes");
+                "CloudGuard", "ListTargetResponderRecipes", ib.getRequestUri().toString(), "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2949,10 +3199,7 @@ public class CloudGuardClient implements CloudGuard {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "CloudGuard",
-                "ListTargets",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/Target/ListTargets");
+                "CloudGuard", "ListTargets", ib.getRequestUri().toString(), "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2983,10 +3230,7 @@ public class CloudGuardClient implements CloudGuard {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "CloudGuard",
-                "ListTechniques",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/TechniqueSummary/ListTechniques");
+                "CloudGuard", "ListTechniques", ib.getRequestUri().toString(), "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2997,6 +3241,42 @@ public class CloudGuardClient implements CloudGuard {
                             retryRequest,
                             retriedRequest -> {
                                 javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public RemoveCompartmentResponse removeCompartment(RemoveCompartmentRequest request) {
+        LOG.trace("Called removeCompartment");
+        final RemoveCompartmentRequest interceptedRequest =
+                RemoveCompartmentConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                RemoveCompartmentConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, RemoveCompartmentResponse>
+                transformer = RemoveCompartmentConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "CloudGuard", "RemoveCompartment", ib.getRequestUri().toString(), "");
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getRemoveCompartmentDetails(),
+                                                retriedRequest);
                                 return transformer.apply(response);
                             });
                 });
@@ -3017,10 +3297,7 @@ public class CloudGuardClient implements CloudGuard {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "CloudGuard",
-                "RequestRiskScores",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/RiskScoreAggregation/RequestRiskScores");
+                "CloudGuard", "RequestRiskScores", ib.getRequestUri().toString(), "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3058,7 +3335,7 @@ public class CloudGuardClient implements CloudGuard {
                 "CloudGuard",
                 "RequestSecurityScoreSummarizedTrend",
                 ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/SecurityScoreTrendAggregation/RequestSecurityScoreSummarizedTrend");
+                "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3091,10 +3368,7 @@ public class CloudGuardClient implements CloudGuard {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "CloudGuard",
-                "RequestSecurityScores",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/SecurityScoreAggregation/RequestSecurityScores");
+                "CloudGuard", "RequestSecurityScores", ib.getRequestUri().toString(), "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3131,7 +3405,7 @@ public class CloudGuardClient implements CloudGuard {
                 "CloudGuard",
                 "RequestSummarizedActivityProblems",
                 ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/ActivityProblemAggregation/RequestSummarizedActivityProblems");
+                "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3165,10 +3439,7 @@ public class CloudGuardClient implements CloudGuard {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "CloudGuard",
-                "RequestSummarizedProblems",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/ProblemAggregation/RequestSummarizedProblems");
+                "CloudGuard", "RequestSummarizedProblems", ib.getRequestUri().toString(), "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3206,7 +3477,7 @@ public class CloudGuardClient implements CloudGuard {
                 "CloudGuard",
                 "RequestSummarizedResponderExecutions",
                 ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/ResponderExecutionAggregation/RequestSummarizedResponderExecutions");
+                "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3240,10 +3511,7 @@ public class CloudGuardClient implements CloudGuard {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "CloudGuard",
-                "RequestSummarizedRiskScores",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/RiskScoreAggregation/RequestSummarizedRiskScores");
+                "CloudGuard", "RequestSummarizedRiskScores", ib.getRequestUri().toString(), "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3277,10 +3545,7 @@ public class CloudGuardClient implements CloudGuard {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "CloudGuard",
-                "RequestSummarizedSecurityScores",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/SecurityScoreAggregation/RequestSummarizedSecurityScores");
+                "CloudGuard", "RequestSummarizedSecurityScores", ib.getRequestUri().toString(), "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3322,7 +3587,7 @@ public class CloudGuardClient implements CloudGuard {
                 "CloudGuard",
                 "RequestSummarizedTopTrendResourceProfileRiskScores",
                 ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/ResourceProfileRiskScoreAggregationSummary/RequestSummarizedTopTrendResourceProfileRiskScores");
+                "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3356,10 +3621,7 @@ public class CloudGuardClient implements CloudGuard {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "CloudGuard",
-                "RequestSummarizedTrendProblems",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/ProblemTrendAggregation/RequestSummarizedTrendProblems");
+                "CloudGuard", "RequestSummarizedTrendProblems", ib.getRequestUri().toString(), "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3398,7 +3660,7 @@ public class CloudGuardClient implements CloudGuard {
                 "CloudGuard",
                 "RequestSummarizedTrendResourceRiskScores",
                 ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/ResourceRiskScoreAggregation/RequestSummarizedTrendResourceRiskScores");
+                "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3442,7 +3704,7 @@ public class CloudGuardClient implements CloudGuard {
                 "CloudGuard",
                 "RequestSummarizedTrendResponderExecutions",
                 ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/ResponderExecutionTrendAggregation/RequestSummarizedTrendResponderExecutions");
+                "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3480,7 +3742,7 @@ public class CloudGuardClient implements CloudGuard {
                 "CloudGuard",
                 "RequestSummarizedTrendSecurityScores",
                 ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/SecurityScoreTrendAggregation/RequestSummarizedTrendSecurityScores");
+                "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3514,10 +3776,7 @@ public class CloudGuardClient implements CloudGuard {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "CloudGuard",
-                "SkipBulkResponderExecution",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/ResponderExecution/SkipBulkResponderExecution");
+                "CloudGuard", "SkipBulkResponderExecution", ib.getRequestUri().toString(), "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3555,10 +3814,7 @@ public class CloudGuardClient implements CloudGuard {
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "CloudGuard",
-                "SkipResponderExecution",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/ResponderExecution/SkipResponderExecution");
+                "CloudGuard", "SkipResponderExecution", ib.getRequestUri().toString(), "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3591,10 +3847,7 @@ public class CloudGuardClient implements CloudGuard {
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "CloudGuard",
-                "TriggerResponder",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/Problem/TriggerResponder");
+                "CloudGuard", "TriggerResponder", ib.getRequestUri().toString(), "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3630,10 +3883,7 @@ public class CloudGuardClient implements CloudGuard {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "CloudGuard",
-                "UpdateBulkProblemStatus",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/Problem/UpdateBulkProblemStatus");
+                "CloudGuard", "UpdateBulkProblemStatus", ib.getRequestUri().toString(), "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3669,10 +3919,7 @@ public class CloudGuardClient implements CloudGuard {
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "CloudGuard",
-                "UpdateConfiguration",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/Configuration/UpdateConfiguration");
+                "CloudGuard", "UpdateConfiguration", ib.getRequestUri().toString(), "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3707,10 +3954,7 @@ public class CloudGuardClient implements CloudGuard {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "CloudGuard",
-                "UpdateDataMaskRule",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/DataMaskRule/UpdateDataMaskRule");
+                "CloudGuard", "UpdateDataMaskRule", ib.getRequestUri().toString(), "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3746,10 +3990,7 @@ public class CloudGuardClient implements CloudGuard {
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "CloudGuard",
-                "UpdateDetectorRecipe",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/DetectorRecipe/UpdateDetectorRecipe");
+                "CloudGuard", "UpdateDetectorRecipe", ib.getRequestUri().toString(), "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3789,7 +4030,7 @@ public class CloudGuardClient implements CloudGuard {
                 "CloudGuard",
                 "UpdateDetectorRecipeDetectorRule",
                 ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/DetectorRecipeDetectorRule/UpdateDetectorRecipeDetectorRule");
+                "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3826,10 +4067,7 @@ public class CloudGuardClient implements CloudGuard {
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "CloudGuard",
-                "UpdateManagedList",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/ManagedList/UpdateManagedList");
+                "CloudGuard", "UpdateManagedList", ib.getRequestUri().toString(), "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3865,10 +4103,7 @@ public class CloudGuardClient implements CloudGuard {
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "CloudGuard",
-                "UpdateProblemStatus",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/Problem/UpdateProblemStatus");
+                "CloudGuard", "UpdateProblemStatus", ib.getRequestUri().toString(), "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3904,10 +4139,7 @@ public class CloudGuardClient implements CloudGuard {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "CloudGuard",
-                "UpdateResponderRecipe",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/ResponderRecipe/UpdateResponderRecipe");
+                "CloudGuard", "UpdateResponderRecipe", ib.getRequestUri().toString(), "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3947,7 +4179,7 @@ public class CloudGuardClient implements CloudGuard {
                 "CloudGuard",
                 "UpdateResponderRecipeResponderRule",
                 ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/ResponderRecipeResponderRule/UpdateResponderRecipeResponderRule");
+                "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3969,6 +4201,76 @@ public class CloudGuardClient implements CloudGuard {
     }
 
     @Override
+    public UpdateSecurityRecipeResponse updateSecurityRecipe(UpdateSecurityRecipeRequest request) {
+        LOG.trace("Called updateSecurityRecipe");
+        final UpdateSecurityRecipeRequest interceptedRequest =
+                UpdateSecurityRecipeConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateSecurityRecipeConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateSecurityRecipeResponse>
+                transformer = UpdateSecurityRecipeConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "CloudGuard", "UpdateSecurityRecipe", ib.getRequestUri().toString(), "");
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.put(
+                                                ib,
+                                                retriedRequest.getUpdateSecurityRecipeDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public UpdateSecurityZoneResponse updateSecurityZone(UpdateSecurityZoneRequest request) {
+        LOG.trace("Called updateSecurityZone");
+        final UpdateSecurityZoneRequest interceptedRequest =
+                UpdateSecurityZoneConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateSecurityZoneConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateSecurityZoneResponse>
+                transformer = UpdateSecurityZoneConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "CloudGuard", "UpdateSecurityZone", ib.getRequestUri().toString(), "");
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.put(
+                                                ib,
+                                                retriedRequest.getUpdateSecurityZoneDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public UpdateTargetResponse updateTarget(UpdateTargetRequest request) {
         LOG.trace("Called updateTarget");
         final UpdateTargetRequest interceptedRequest =
@@ -3983,10 +4285,7 @@ public class CloudGuardClient implements CloudGuard {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "CloudGuard",
-                "UpdateTarget",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/Target/UpdateTarget");
+                "CloudGuard", "UpdateTarget", ib.getRequestUri().toString(), "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -4023,10 +4322,7 @@ public class CloudGuardClient implements CloudGuard {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "CloudGuard",
-                "UpdateTargetDetectorRecipe",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/TargetDetectorRecipe/UpdateTargetDetectorRecipe");
+                "CloudGuard", "UpdateTargetDetectorRecipe", ib.getRequestUri().toString(), "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -4068,7 +4364,7 @@ public class CloudGuardClient implements CloudGuard {
                 "CloudGuard",
                 "UpdateTargetDetectorRecipeDetectorRule",
                 ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/TargetDetectorRecipeDetectorRule/UpdateTargetDetectorRecipeDetectorRule");
+                "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -4106,10 +4402,7 @@ public class CloudGuardClient implements CloudGuard {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "CloudGuard",
-                "UpdateTargetResponderRecipe",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/TargetResponderRecipe/UpdateTargetResponderRecipe");
+                "CloudGuard", "UpdateTargetResponderRecipe", ib.getRequestUri().toString(), "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -4152,7 +4445,7 @@ public class CloudGuardClient implements CloudGuard {
                 "CloudGuard",
                 "UpdateTargetResponderRecipeResponderRule",
                 ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/TargetResponderRecipeResponderRule/UpdateTargetResponderRecipeResponderRule");
+                "");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {

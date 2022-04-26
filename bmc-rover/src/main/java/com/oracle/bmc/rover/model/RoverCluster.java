@@ -330,6 +330,15 @@ public class RoverCluster {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("masterKeyId")
+        private String masterKeyId;
+
+        public Builder masterKeyId(String masterKeyId) {
+            this.masterKeyId = masterKeyId;
+            this.__explicitlySet__.add("masterKeyId");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("tags")
         private String tags;
 
@@ -407,6 +416,7 @@ public class RoverCluster {
                             importFileBucket,
                             dataValidationCode,
                             imageExportPar,
+                            masterKeyId,
                             tags,
                             freeformTags,
                             definedTags,
@@ -452,6 +462,7 @@ public class RoverCluster {
                             .importFileBucket(o.getImportFileBucket())
                             .dataValidationCode(o.getDataValidationCode())
                             .imageExportPar(o.getImageExportPar())
+                            .masterKeyId(o.getMasterKeyId())
                             .tags(o.getTags())
                             .freeformTags(o.getFreeformTags())
                             .definedTags(o.getDefinedTags())
@@ -714,6 +725,12 @@ public class RoverCluster {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("imageExportPar")
     String imageExportPar;
+
+    /**
+     * Customer provided master key ID to encrypt secret information. If not provided, Rover's master key will be used for encryption.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("masterKeyId")
+    String masterKeyId;
 
     /**
      * The tags associated with tagSlug.

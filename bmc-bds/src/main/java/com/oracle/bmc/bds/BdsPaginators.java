@@ -505,6 +505,229 @@ public class BdsPaginators {
     }
 
     /**
+     * Creates a new iterable which will iterate over the responses received from the listPatchHistories operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListPatchHistoriesResponse> listPatchHistoriesResponseIterator(
+            final ListPatchHistoriesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListPatchHistoriesRequest.Builder, ListPatchHistoriesRequest,
+                ListPatchHistoriesResponse>(
+                new com.google.common.base.Supplier<ListPatchHistoriesRequest.Builder>() {
+                    @Override
+                    public ListPatchHistoriesRequest.Builder get() {
+                        return ListPatchHistoriesRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListPatchHistoriesResponse, String>() {
+                    @Override
+                    public String apply(ListPatchHistoriesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListPatchHistoriesRequest.Builder>,
+                        ListPatchHistoriesRequest>() {
+                    @Override
+                    public ListPatchHistoriesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListPatchHistoriesRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListPatchHistoriesRequest, ListPatchHistoriesResponse>() {
+                    @Override
+                    public ListPatchHistoriesResponse apply(ListPatchHistoriesRequest request) {
+                        return client.listPatchHistories(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.bds.model.PatchHistorySummary} objects
+     * contained in responses from the listPatchHistories operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.bds.model.PatchHistorySummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.bds.model.PatchHistorySummary> listPatchHistoriesRecordIterator(
+            final ListPatchHistoriesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListPatchHistoriesRequest.Builder, ListPatchHistoriesRequest,
+                ListPatchHistoriesResponse, com.oracle.bmc.bds.model.PatchHistorySummary>(
+                new com.google.common.base.Supplier<ListPatchHistoriesRequest.Builder>() {
+                    @Override
+                    public ListPatchHistoriesRequest.Builder get() {
+                        return ListPatchHistoriesRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListPatchHistoriesResponse, String>() {
+                    @Override
+                    public String apply(ListPatchHistoriesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListPatchHistoriesRequest.Builder>,
+                        ListPatchHistoriesRequest>() {
+                    @Override
+                    public ListPatchHistoriesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListPatchHistoriesRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListPatchHistoriesRequest, ListPatchHistoriesResponse>() {
+                    @Override
+                    public ListPatchHistoriesResponse apply(ListPatchHistoriesRequest request) {
+                        return client.listPatchHistories(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListPatchHistoriesResponse,
+                        java.util.List<com.oracle.bmc.bds.model.PatchHistorySummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.bds.model.PatchHistorySummary> apply(
+                            ListPatchHistoriesResponse response) {
+                        return response.getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the listPatches operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListPatchesResponse> listPatchesResponseIterator(
+            final ListPatchesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListPatchesRequest.Builder, ListPatchesRequest, ListPatchesResponse>(
+                new com.google.common.base.Supplier<ListPatchesRequest.Builder>() {
+                    @Override
+                    public ListPatchesRequest.Builder get() {
+                        return ListPatchesRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListPatchesResponse, String>() {
+                    @Override
+                    public String apply(ListPatchesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListPatchesRequest.Builder>,
+                        ListPatchesRequest>() {
+                    @Override
+                    public ListPatchesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListPatchesRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<ListPatchesRequest, ListPatchesResponse>() {
+                    @Override
+                    public ListPatchesResponse apply(ListPatchesRequest request) {
+                        return client.listPatches(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.bds.model.PatchSummary} objects
+     * contained in responses from the listPatches operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.bds.model.PatchSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.bds.model.PatchSummary> listPatchesRecordIterator(
+            final ListPatchesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListPatchesRequest.Builder, ListPatchesRequest, ListPatchesResponse,
+                com.oracle.bmc.bds.model.PatchSummary>(
+                new com.google.common.base.Supplier<ListPatchesRequest.Builder>() {
+                    @Override
+                    public ListPatchesRequest.Builder get() {
+                        return ListPatchesRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListPatchesResponse, String>() {
+                    @Override
+                    public String apply(ListPatchesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListPatchesRequest.Builder>,
+                        ListPatchesRequest>() {
+                    @Override
+                    public ListPatchesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListPatchesRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<ListPatchesRequest, ListPatchesResponse>() {
+                    @Override
+                    public ListPatchesResponse apply(ListPatchesRequest request) {
+                        return client.listPatches(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListPatchesResponse,
+                        java.util.List<com.oracle.bmc.bds.model.PatchSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.bds.model.PatchSummary> apply(
+                            ListPatchesResponse response) {
+                        return response.getItems();
+                    }
+                });
+    }
+
+    /**
      * Creates a new iterable which will iterate over the responses received from the listWorkRequestErrors operation. This iterable
      * will fetch more data from the server as needed.
      *

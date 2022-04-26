@@ -33,6 +33,34 @@ public class ChangeShapeNodes {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("workerShapeConfig")
+        private ShapeConfigDetails workerShapeConfig;
+
+        public Builder workerShapeConfig(ShapeConfigDetails workerShapeConfig) {
+            this.workerShapeConfig = workerShapeConfig;
+            this.__explicitlySet__.add("workerShapeConfig");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("computeOnlyWorker")
+        private String computeOnlyWorker;
+
+        public Builder computeOnlyWorker(String computeOnlyWorker) {
+            this.computeOnlyWorker = computeOnlyWorker;
+            this.__explicitlySet__.add("computeOnlyWorker");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("computeOnlyWorkerShapeConfig")
+        private ShapeConfigDetails computeOnlyWorkerShapeConfig;
+
+        public Builder computeOnlyWorkerShapeConfig(
+                ShapeConfigDetails computeOnlyWorkerShapeConfig) {
+            this.computeOnlyWorkerShapeConfig = computeOnlyWorkerShapeConfig;
+            this.__explicitlySet__.add("computeOnlyWorkerShapeConfig");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("master")
         private String master;
 
@@ -42,12 +70,30 @@ public class ChangeShapeNodes {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("masterShapeConfig")
+        private ShapeConfigDetails masterShapeConfig;
+
+        public Builder masterShapeConfig(ShapeConfigDetails masterShapeConfig) {
+            this.masterShapeConfig = masterShapeConfig;
+            this.__explicitlySet__.add("masterShapeConfig");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("utility")
         private String utility;
 
         public Builder utility(String utility) {
             this.utility = utility;
             this.__explicitlySet__.add("utility");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("utilityShapeConfig")
+        private ShapeConfigDetails utilityShapeConfig;
+
+        public Builder utilityShapeConfig(ShapeConfigDetails utilityShapeConfig) {
+            this.utilityShapeConfig = utilityShapeConfig;
+            this.__explicitlySet__.add("utilityShapeConfig");
             return this;
         }
 
@@ -64,7 +110,17 @@ public class ChangeShapeNodes {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ChangeShapeNodes build() {
-            ChangeShapeNodes __instance__ = new ChangeShapeNodes(worker, master, utility, cloudsql);
+            ChangeShapeNodes __instance__ =
+                    new ChangeShapeNodes(
+                            worker,
+                            workerShapeConfig,
+                            computeOnlyWorker,
+                            computeOnlyWorkerShapeConfig,
+                            master,
+                            masterShapeConfig,
+                            utility,
+                            utilityShapeConfig,
+                            cloudsql);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -73,8 +129,13 @@ public class ChangeShapeNodes {
         public Builder copy(ChangeShapeNodes o) {
             Builder copiedBuilder =
                     worker(o.getWorker())
+                            .workerShapeConfig(o.getWorkerShapeConfig())
+                            .computeOnlyWorker(o.getComputeOnlyWorker())
+                            .computeOnlyWorkerShapeConfig(o.getComputeOnlyWorkerShapeConfig())
                             .master(o.getMaster())
+                            .masterShapeConfig(o.getMasterShapeConfig())
                             .utility(o.getUtility())
+                            .utilityShapeConfig(o.getUtilityShapeConfig())
                             .cloudsql(o.getCloudsql());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
@@ -90,22 +151,40 @@ public class ChangeShapeNodes {
     }
 
     /**
-     * Change shape of worker nodes to the desired target shape. Only VM_STANDARD shapes are allowed here.
+     * Change shape of worker nodes to the desired target shape. Both VM_STANDARD and E4 Flex shapes are allowed here.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("worker")
     String worker;
 
+    @com.fasterxml.jackson.annotation.JsonProperty("workerShapeConfig")
+    ShapeConfigDetails workerShapeConfig;
+
     /**
-     * Change shape of master nodes to the desired target shape. Only VM_STANDARD shapes are allowed here.
+     * Change shape of compute only worker nodes to the desired target shape. Both VM_STANDARD and E4 Flex shapes are allowed here.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("computeOnlyWorker")
+    String computeOnlyWorker;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("computeOnlyWorkerShapeConfig")
+    ShapeConfigDetails computeOnlyWorkerShapeConfig;
+
+    /**
+     * Change shape of master nodes to the desired target shape. Both VM_STANDARD and E4 Flex shapes are allowed here.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("master")
     String master;
 
+    @com.fasterxml.jackson.annotation.JsonProperty("masterShapeConfig")
+    ShapeConfigDetails masterShapeConfig;
+
     /**
-     * Change shape of utility nodes to the desired target shape. Only VM_STANDARD shapes are allowed here.
+     * Change shape of utility nodes to the desired target shape. Both VM_STANDARD and E4 Flex shapes are allowed here.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("utility")
     String utility;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("utilityShapeConfig")
+    ShapeConfigDetails utilityShapeConfig;
 
     /**
      * Change shape of the Cloud SQL node to the desired target shape. Only VM_STANDARD shapes are allowed here.

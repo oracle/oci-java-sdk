@@ -20,12 +20,12 @@ import com.oracle.bmc.budget.model.*;
 public class GetAlertRuleRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The unique Budget OCID
+     * The unique budget OCID.
      */
     private String budgetId;
 
     /**
-     * The unique Alert Rule OCID
+     * The unique Alert Rule OCID.
      */
     private String alertRuleId;
 

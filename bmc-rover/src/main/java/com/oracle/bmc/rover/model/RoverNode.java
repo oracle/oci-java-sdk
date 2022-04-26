@@ -60,6 +60,15 @@ public class RoverNode {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("shape")
+        private String shape;
+
+        public Builder shape(String shape) {
+            this.shape = shape;
+            this.__explicitlySet__.add("shape");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("enclosureType")
         private EnclosureType enclosureType;
 
@@ -312,6 +321,15 @@ public class RoverNode {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("masterKeyId")
+        private String masterKeyId;
+
+        public Builder masterKeyId(String masterKeyId) {
+            this.masterKeyId = masterKeyId;
+            this.__explicitlySet__.add("masterKeyId");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("tags")
         private String tags;
 
@@ -359,6 +377,7 @@ public class RoverNode {
                             clusterId,
                             compartmentId,
                             nodeType,
+                            shape,
                             enclosureType,
                             serialNumber,
                             displayName,
@@ -387,6 +406,7 @@ public class RoverNode {
                             dataValidationCode,
                             publicKey,
                             imageExportPar,
+                            masterKeyId,
                             tags,
                             freeformTags,
                             definedTags,
@@ -402,6 +422,7 @@ public class RoverNode {
                             .clusterId(o.getClusterId())
                             .compartmentId(o.getCompartmentId())
                             .nodeType(o.getNodeType())
+                            .shape(o.getShape())
                             .enclosureType(o.getEnclosureType())
                             .serialNumber(o.getSerialNumber())
                             .displayName(o.getDisplayName())
@@ -430,6 +451,7 @@ public class RoverNode {
                             .dataValidationCode(o.getDataValidationCode())
                             .publicKey(o.getPublicKey())
                             .imageExportPar(o.getImageExportPar())
+                            .masterKeyId(o.getMasterKeyId())
                             .tags(o.getTags())
                             .freeformTags(o.getFreeformTags())
                             .definedTags(o.getDefinedTags())
@@ -470,6 +492,12 @@ public class RoverNode {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("nodeType")
     NodeType nodeType;
+
+    /**
+     * The shape of the node.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("shape")
+    String shape;
 
     /**
      * The type of enclosure rover node is shipped in.
@@ -680,6 +708,12 @@ public class RoverNode {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("imageExportPar")
     String imageExportPar;
+
+    /**
+     * Customer provided master key ID to encrypt secret information. If not provided, Rover's master key will be used for encryption.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("masterKeyId")
+    String masterKeyId;
 
     /**
      * The tags associated with tagSlug.

@@ -286,7 +286,7 @@ public class UpdateVirtualCircuitDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("routingPolicy")
     java.util.List<RoutingPolicy> routingPolicy;
     /**
-     * Set to ENABLED to activate the bgp session of virtual circuit, DISABLED to deactivate.
+     * Set to {@code ENABLED} (the default) to activate the BGP session of the virtual circuit, set to {@code DISABLED} to deactivate the virtual circuit.
      *
      **/
     public enum BgpAdminState {
@@ -322,14 +322,14 @@ public class UpdateVirtualCircuitDetails {
         }
     };
     /**
-     * Set to ENABLED to activate the bgp session of virtual circuit, DISABLED to deactivate.
+     * Set to {@code ENABLED} (the default) to activate the BGP session of the virtual circuit, set to {@code DISABLED} to deactivate the virtual circuit.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("bgpAdminState")
     BgpAdminState bgpAdminState;
 
     /**
-     * Set to true to enable BFD for ipv4 Bgp Peering, false to disable. If not set, default is false
+     * Set to {@code true} to enable BFD for IPv4 BGP peering, or set to {@code false} to disable BFD. If this is not set, the default is {@code false}.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isBfdEnabled")

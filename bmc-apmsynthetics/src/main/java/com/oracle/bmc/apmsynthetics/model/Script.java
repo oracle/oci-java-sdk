@@ -228,7 +228,7 @@ public class Script {
     String content;
 
     /**
-     * The time when the script was uploaded.
+     * The time the script was uploaded.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUploaded")
     java.util.Date timeUploaded;

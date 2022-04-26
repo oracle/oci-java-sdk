@@ -31,17 +31,16 @@ public class ListSubscriptionMappingsConverter {
             com.oracle.bmc.tenantmanagercontrolplane.requests.ListSubscriptionMappingsRequest
                     request) {
         Validate.notNull(request, "request instance is required");
+        Validate.notNull(request.getSubscriptionId(), "subscriptionId is required");
 
         com.oracle.bmc.http.internal.WrappedWebTarget target =
                 client.getBaseTarget().path("/20200801").path("subscriptionMappings");
 
-        if (request.getSubscriptionId() != null) {
-            target =
-                    target.queryParam(
-                            "subscriptionId",
-                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
-                                    request.getSubscriptionId()));
-        }
+        target =
+                target.queryParam(
+                        "subscriptionId",
+                        com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                request.getSubscriptionId()));
 
         if (request.getSubscriptionMappingId() != null) {
             target =

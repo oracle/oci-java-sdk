@@ -8,9 +8,9 @@ import com.oracle.bmc.cloudguard.requests.*;
 import com.oracle.bmc.cloudguard.responses.*;
 
 /**
- * Use the Cloud Guard API to automate processes that you would otherwise perform through the Cloud Guard Console.
+ * Use the Cloud Guard and Security Zones API to automate processes that you would otherwise perform through the Cloud Guard Console or the Security Zones Console. For more information on these services, see the [Cloud Guard](https://docs.cloud.oracle.com/iaas/cloud-guard/home.htm) and [Security Zones](https://docs.cloud.oracle.com/iaas/security-zone/home.htm) documentation.
  *
- **Note:** You can perform Create, Update, and Delete operations only from the reporting region of your Cloud Guard tenancy. You can perform Read operations from any region.
+ **Note:** For Cloud Guard, you can perform Create, Update, and Delete operations only from the reporting region of your Cloud Guard tenancy. You can perform Read operations in Cloud Guard from any region.
  *
  * This service client uses CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER for all the operations by default if no circuit breaker configuration is defined by the user.
  */
@@ -50,6 +50,18 @@ public interface CloudGuard extends AutoCloseable {
     void setRegion(String regionId);
 
     /**
+     * Add an existing compartment to a security zone. If you previously removed a subcompartment from a security zone, you can add it back to the same security zone. The security zone ensures that resources in the subcompartment comply with the security zone's policies.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/AddCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use AddCompartment API.
+     */
+    AddCompartmentResponse addCompartment(AddCompartmentRequest request);
+
+    /**
      * Moves the DetectorRecipe from current compartment to another.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -87,6 +99,32 @@ public interface CloudGuard extends AutoCloseable {
      */
     ChangeResponderRecipeCompartmentResponse changeResponderRecipeCompartment(
             ChangeResponderRecipeCompartmentRequest request);
+
+    /**
+     * Moves a security zone recipe to a different compartment. When provided, `If-Match` is checked against `ETag` values of the resource.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/ChangeSecurityRecipeCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeSecurityRecipeCompartment API.
+     */
+    ChangeSecurityRecipeCompartmentResponse changeSecurityRecipeCompartment(
+            ChangeSecurityRecipeCompartmentRequest request);
+
+    /**
+     * Moves a security zone to a different compartment. When provided, `If-Match` is checked against `ETag` values of the resource.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/ChangeSecurityZoneCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeSecurityZoneCompartment API.
+     */
+    ChangeSecurityZoneCompartmentResponse changeSecurityZoneCompartment(
+            ChangeSecurityZoneCompartmentRequest request);
 
     /**
      * Creates a new Data Mask Rule Definition
@@ -139,6 +177,32 @@ public interface CloudGuard extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/CreateResponderRecipeExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateResponderRecipe API.
      */
     CreateResponderRecipeResponse createResponderRecipe(CreateResponderRecipeRequest request);
+
+    /**
+     * Creates a security zone recipe. A security zone recipe is a collection of security zone policies.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/CreateSecurityRecipeExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateSecurityRecipe API.
+     */
+    CreateSecurityRecipeResponse createSecurityRecipe(CreateSecurityRecipeRequest request);
+
+    /**
+     * Creates a security zone for a compartment. A security zone enforces all security zone policies in a given security zone recipe. Any actions that violate a policy are denied. By default, any subcompartments are also in the same security zone.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/CreateSecurityZoneExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateSecurityZone API.
+     */
+    CreateSecurityZoneResponse createSecurityZone(CreateSecurityZoneRequest request);
 
     /**
      * Creates a new Target
@@ -228,6 +292,30 @@ public interface CloudGuard extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/DeleteResponderRecipeExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteResponderRecipe API.
      */
     DeleteResponderRecipeResponse deleteResponderRecipe(DeleteResponderRecipeRequest request);
+
+    /**
+     * Deletes a security zone recipe. The recipe can't be associated with an existing security zone.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/DeleteSecurityRecipeExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteSecurityRecipe API.
+     */
+    DeleteSecurityRecipeResponse deleteSecurityRecipe(DeleteSecurityRecipeRequest request);
+
+    /**
+     * Deletes an existing security zone with a given identifier.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/DeleteSecurityZoneExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteSecurityZone API.
+     */
+    DeleteSecurityZoneResponse deleteSecurityZone(DeleteSecurityZoneRequest request);
 
     /**
      * Deletes a Target identified by targetId
@@ -454,6 +542,42 @@ public interface CloudGuard extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/GetResponderRuleExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetResponderRule API.
      */
     GetResponderRuleResponse getResponderRule(GetResponderRuleRequest request);
+
+    /**
+     * Gets a security zone policy using its identifier. When a policy is enabled in a security zone, then any action in the zone that attempts to violate that policy is denied.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/GetSecurityPolicyExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetSecurityPolicy API.
+     */
+    GetSecurityPolicyResponse getSecurityPolicy(GetSecurityPolicyRequest request);
+
+    /**
+     * Gets a security zone recipe by identifier. A security zone recipe is a collection of security zone policies.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/GetSecurityRecipeExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetSecurityRecipe API.
+     */
+    GetSecurityRecipeResponse getSecurityRecipe(GetSecurityRecipeRequest request);
+
+    /**
+     * Gets a security zone by its identifier. A security zone is associated with a security zone recipe and enforces all security zone policies in the recipe. Any actions in the zone's compartments that violate a policy are denied.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/GetSecurityZoneExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetSecurityZone API.
+     */
+    GetSecurityZoneResponse getSecurityZone(GetSecurityZoneRequest request);
 
     /**
      * Returns Sighting details
@@ -899,6 +1023,45 @@ public interface CloudGuard extends AutoCloseable {
     ListResponderRulesResponse listResponderRules(ListResponderRulesRequest request);
 
     /**
+     * Returns a list of security zone policies. Specify any compartment.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/ListSecurityPoliciesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListSecurityPolicies API.
+     */
+    ListSecurityPoliciesResponse listSecurityPolicies(ListSecurityPoliciesRequest request);
+
+    /**
+     * Gets a list of all security zone recipes in a compartment.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/ListSecurityRecipesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListSecurityRecipes API.
+     */
+    ListSecurityRecipesResponse listSecurityRecipes(ListSecurityRecipesRequest request);
+
+    /**
+     * Gets a list of all security zones in a compartment.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/ListSecurityZonesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListSecurityZones API.
+     */
+    ListSecurityZonesResponse listSecurityZones(ListSecurityZonesRequest request);
+
+    /**
      * Returns Sighting endpoints details
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -1053,6 +1216,18 @@ public interface CloudGuard extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/ListTechniquesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListTechniques API.
      */
     ListTechniquesResponse listTechniques(ListTechniquesRequest request);
+
+    /**
+     * Removes an existing compartment from a security zone. When you remove a subcompartment from a security zone, it no longer enforces security zone policies on the resources in the subcompartment. You can't remove the primary compartment that was used to create the security zone.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/RemoveCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RemoveCompartment API.
+     */
+    RemoveCompartmentResponse removeCompartment(RemoveCompartmentRequest request);
 
     /**
      * Examines the number of problems related to the resource and the relative severity of those problems.
@@ -1445,6 +1620,30 @@ public interface CloudGuard extends AutoCloseable {
      */
     UpdateResponderRecipeResponderRuleResponse updateResponderRecipeResponderRule(
             UpdateResponderRecipeResponderRuleRequest request);
+
+    /**
+     * Updates a security zone recipe. A security zone recipe is a collection of security zone policies.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/UpdateSecurityRecipeExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateSecurityRecipe API.
+     */
+    UpdateSecurityRecipeResponse updateSecurityRecipe(UpdateSecurityRecipeRequest request);
+
+    /**
+     * Updates the security zone identified by its id
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/UpdateSecurityZoneExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateSecurityZone API.
+     */
+    UpdateSecurityZoneResponse updateSecurityZone(UpdateSecurityZoneRequest request);
 
     /**
      * Updates a Target identified by targetId

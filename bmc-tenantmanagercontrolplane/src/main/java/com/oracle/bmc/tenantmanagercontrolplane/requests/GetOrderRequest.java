@@ -20,7 +20,7 @@ import com.oracle.bmc.tenantmanagercontrolplane.model.*;
 public class GetOrderRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * Activation Token containing an order id. JWT RFC 7519 formatted string.
+     * Activation Token containing an order ID. A JWT RFC 7519 formatted string.
      *
      */
     private String activationToken;

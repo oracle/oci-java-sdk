@@ -89,6 +89,15 @@ public class AutoScalingConfigurationSummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("policyDetails")
+        private AutoScalePolicyDetails policyDetails;
+
+        public Builder policyDetails(AutoScalePolicyDetails policyDetails) {
+            this.policyDetails = policyDetails;
+            this.__explicitlySet__.add("policyDetails");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -101,7 +110,8 @@ public class AutoScalingConfigurationSummary {
                             nodeType,
                             timeCreated,
                             timeUpdated,
-                            policy);
+                            policy,
+                            policyDetails);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -115,7 +125,8 @@ public class AutoScalingConfigurationSummary {
                             .nodeType(o.getNodeType())
                             .timeCreated(o.getTimeCreated())
                             .timeUpdated(o.getTimeUpdated())
-                            .policy(o.getPolicy());
+                            .policy(o.getPolicy())
+                            .policyDetails(o.getPolicyDetails());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -148,7 +159,7 @@ public class AutoScalingConfigurationSummary {
     AutoScalingConfiguration.LifecycleState lifecycleState;
 
     /**
-     * A node type that is managed by an autoscale configuration. The only supported type is WORKER.
+     * A node type that is managed by an autoscale configuration. The only supported types are WORKER and COMPUTE_ONLY_WORKER.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("nodeType")
     Node.NodeType nodeType;
@@ -168,6 +179,9 @@ public class AutoScalingConfigurationSummary {
 
     @com.fasterxml.jackson.annotation.JsonProperty("policy")
     AutoScalePolicy policy;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("policyDetails")
+    AutoScalePolicyDetails policyDetails;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

@@ -26,7 +26,7 @@ public class ListMonitorsRequest extends com.oracle.bmc.requests.BmcRequest<java
     private String apmDomainId;
 
     /**
-     * A filter to return only resources that match the entire display name given.
+     * A filter to return only the resources that match the entire display name.
      */
     private String displayName;
 
@@ -34,6 +34,12 @@ public class ListMonitorsRequest extends com.oracle.bmc.requests.BmcRequest<java
      * A filter to return only monitors using scriptId.
      */
     private String scriptId;
+
+    /**
+     * The name of the public or dedicated vantage point.
+     *
+     */
+    private String vantagePoint;
 
     /**
      * A filter to return only monitors that match the given monitor type.
@@ -164,6 +170,7 @@ public class ListMonitorsRequest extends com.oracle.bmc.requests.BmcRequest<java
             apmDomainId(o.getApmDomainId());
             displayName(o.getDisplayName());
             scriptId(o.getScriptId());
+            vantagePoint(o.getVantagePoint());
             monitorType(o.getMonitorType());
             status(o.getStatus());
             limit(o.getLimit());

@@ -208,7 +208,7 @@ public class AssignedSubscription {
     String compartmentId;
 
     /**
-     * Subscription id.
+     * Subscription ID.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("classicSubscriptionId")
     String classicSubscriptionId;
@@ -238,7 +238,7 @@ public class AssignedSubscription {
     SubscriptionLifecycleState lifecycleState;
 
     /**
-     * List of sku linked to the subscription.
+     * List of SKUs linked to the subscription.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("skus")
     java.util.List<SubscriptionSku> skus;

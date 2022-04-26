@@ -33,7 +33,7 @@ public class ListScriptsRequest extends com.oracle.bmc.requests.BmcRequest<java.
     private String opcRequestId;
 
     /**
-     * A filter to return only resources that match the entire display name given.
+     * A filter to return only the resources that match the entire display name.
      */
     private String displayName;
 

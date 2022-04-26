@@ -62,12 +62,22 @@ public class CreateNodeDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("shapeConfig")
+        private ShapeConfigDetails shapeConfig;
+
+        public Builder shapeConfig(ShapeConfigDetails shapeConfig) {
+            this.shapeConfig = shapeConfig;
+            this.__explicitlySet__.add("shapeConfig");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CreateNodeDetails build() {
             CreateNodeDetails __instance__ =
-                    new CreateNodeDetails(nodeType, shape, blockVolumeSizeInGBs, subnetId);
+                    new CreateNodeDetails(
+                            nodeType, shape, blockVolumeSizeInGBs, subnetId, shapeConfig);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -78,7 +88,8 @@ public class CreateNodeDetails {
                     nodeType(o.getNodeType())
                             .shape(o.getShape())
                             .blockVolumeSizeInGBs(o.getBlockVolumeSizeInGBs())
-                            .subnetId(o.getSubnetId());
+                            .subnetId(o.getSubnetId())
+                            .shapeConfig(o.getShapeConfig());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -117,6 +128,9 @@ public class CreateNodeDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
     String subnetId;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("shapeConfig")
+    ShapeConfigDetails shapeConfig;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

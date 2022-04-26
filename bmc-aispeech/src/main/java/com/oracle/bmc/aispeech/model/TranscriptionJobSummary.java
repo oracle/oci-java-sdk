@@ -230,25 +230,25 @@ public class TranscriptionJobSummary {
     }
 
     /**
-     * Unique identifier that is immutable on creation.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     String id;
 
     /**
-     * Transcription Job name, can be renamed.
+     * A user-friendly display name for the job.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     String displayName;
 
     /**
-     * The OCID of the compartment that contains the transcriptionJob.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the job.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     String compartmentId;
 
     /**
-     * OCID of the user who created the transcriptionJob.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the job.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("createdBy")
     String createdBy;

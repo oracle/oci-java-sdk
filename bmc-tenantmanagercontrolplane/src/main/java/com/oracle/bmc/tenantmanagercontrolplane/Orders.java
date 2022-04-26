@@ -59,7 +59,7 @@ public interface Orders extends AutoCloseable {
     ActivateOrderResponse activateOrder(ActivateOrderRequest request);
 
     /**
-     * Returns the Order Details given by the order id in the JWT
+     * Returns the Order Details given by the order ID in the JWT.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation

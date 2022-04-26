@@ -71,13 +71,27 @@ public class AddAutoScalingConfigurationDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("policyDetails")
+        private AddAutoScalePolicyDetails policyDetails;
+
+        public Builder policyDetails(AddAutoScalePolicyDetails policyDetails) {
+            this.policyDetails = policyDetails;
+            this.__explicitlySet__.add("policyDetails");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public AddAutoScalingConfigurationDetails build() {
             AddAutoScalingConfigurationDetails __instance__ =
                     new AddAutoScalingConfigurationDetails(
-                            displayName, nodeType, isEnabled, clusterAdminPassword, policy);
+                            displayName,
+                            nodeType,
+                            isEnabled,
+                            clusterAdminPassword,
+                            policy,
+                            policyDetails);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -89,7 +103,8 @@ public class AddAutoScalingConfigurationDetails {
                             .nodeType(o.getNodeType())
                             .isEnabled(o.getIsEnabled())
                             .clusterAdminPassword(o.getClusterAdminPassword())
-                            .policy(o.getPolicy());
+                            .policy(o.getPolicy())
+                            .policyDetails(o.getPolicyDetails());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -110,7 +125,7 @@ public class AddAutoScalingConfigurationDetails {
     String displayName;
 
     /**
-     * A node type that is managed by an autoscale configuration. The only supported type is WORKER.
+     * A node type that is managed by an autoscale configuration. The only supported types are WORKER and COMPUTE_ONLY_WORKER.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("nodeType")
     Node.NodeType nodeType;
@@ -129,6 +144,9 @@ public class AddAutoScalingConfigurationDetails {
 
     @com.fasterxml.jackson.annotation.JsonProperty("policy")
     AutoScalePolicy policy;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("policyDetails")
+    AddAutoScalePolicyDetails policyDetails;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

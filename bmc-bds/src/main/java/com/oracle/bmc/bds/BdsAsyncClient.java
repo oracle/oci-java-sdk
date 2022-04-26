@@ -1268,6 +1268,55 @@ public class BdsAsyncClient implements BdsAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<InstallPatchResponse> installPatch(
+            InstallPatchRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<InstallPatchRequest, InstallPatchResponse>
+                    handler) {
+        LOG.trace("Called async installPatch");
+        final InstallPatchRequest interceptedRequest =
+                InstallPatchConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                InstallPatchConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<javax.ws.rs.core.Response, InstallPatchResponse>
+                transformer = InstallPatchConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Bds",
+                "InstallPatch",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsInstance/InstallPatch");
+
+        com.oracle.bmc.responses.AsyncHandler<InstallPatchRequest, InstallPatchResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                InstallPatchRequest, InstallPatchResponse>,
+                        java.util.concurrent.Future<InstallPatchResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getInstallPatchDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    InstallPatchRequest, InstallPatchResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<ListAutoScalingConfigurationsResponse>
             listAutoScalingConfigurations(
                     ListAutoScalingConfigurationsRequest request,
@@ -1442,6 +1491,93 @@ public class BdsAsyncClient implements BdsAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     ListBdsMetastoreConfigurationsRequest, ListBdsMetastoreConfigurationsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListPatchHistoriesResponse> listPatchHistories(
+            ListPatchHistoriesRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListPatchHistoriesRequest, ListPatchHistoriesResponse>
+                    handler) {
+        LOG.trace("Called async listPatchHistories");
+        final ListPatchHistoriesRequest interceptedRequest =
+                ListPatchHistoriesConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListPatchHistoriesConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<javax.ws.rs.core.Response, ListPatchHistoriesResponse>
+                transformer = ListPatchHistoriesConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Bds",
+                "ListPatchHistories",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsInstance/ListPatchHistories");
+
+        com.oracle.bmc.responses.AsyncHandler<ListPatchHistoriesRequest, ListPatchHistoriesResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListPatchHistoriesRequest, ListPatchHistoriesResponse>,
+                        java.util.concurrent.Future<ListPatchHistoriesResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListPatchHistoriesRequest, ListPatchHistoriesResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListPatchesResponse> listPatches(
+            ListPatchesRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<ListPatchesRequest, ListPatchesResponse>
+                    handler) {
+        LOG.trace("Called async listPatches");
+        final ListPatchesRequest interceptedRequest =
+                ListPatchesConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListPatchesConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<javax.ws.rs.core.Response, ListPatchesResponse>
+                transformer = ListPatchesConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Bds",
+                "ListPatches",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsInstance/ListPatches");
+
+        com.oracle.bmc.responses.AsyncHandler<ListPatchesRequest, ListPatchesResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListPatchesRequest, ListPatchesResponse>,
+                        java.util.concurrent.Future<ListPatchesResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListPatchesRequest, ListPatchesResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -1684,6 +1820,53 @@ public class BdsAsyncClient implements BdsAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     RemoveCloudSqlRequest, RemoveCloudSqlResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<RemoveNodeResponse> removeNode(
+            RemoveNodeRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<RemoveNodeRequest, RemoveNodeResponse>
+                    handler) {
+        LOG.trace("Called async removeNode");
+        final RemoveNodeRequest interceptedRequest = RemoveNodeConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                RemoveNodeConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<javax.ws.rs.core.Response, RemoveNodeResponse>
+                transformer = RemoveNodeConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Bds",
+                "RemoveNode",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsInstance/RemoveNode");
+
+        com.oracle.bmc.responses.AsyncHandler<RemoveNodeRequest, RemoveNodeResponse> handlerToUse =
+                handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                RemoveNodeRequest, RemoveNodeResponse>,
+                        java.util.concurrent.Future<RemoveNodeResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getRemoveNodeDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    RemoveNodeRequest, RemoveNodeResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,

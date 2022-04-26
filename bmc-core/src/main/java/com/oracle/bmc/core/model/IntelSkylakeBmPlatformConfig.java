@@ -5,7 +5,8 @@
 package com.oracle.bmc.core.model;
 
 /**
- * The platform configuration of a bare metal instance that uses the Intel Skylake platform.
+ * The platform configuration of a bare metal instance that uses one of the following shapes:
+ * BM.Standard2.52, BM.GPU2.2, BM.GPU3.8, or BM.DenseIO2.52 (the Intel Skylake platform).
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields

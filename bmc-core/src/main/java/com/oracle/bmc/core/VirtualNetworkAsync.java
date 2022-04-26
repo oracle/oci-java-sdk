@@ -285,6 +285,27 @@ public interface VirtualNetworkAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Moves a capture filter to a new compartment in the same tenancy. For information
+     * about moving resources between compartments, see
+     * [Moving Resources to a Different Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ChangeCaptureFilterCompartmentResponse>
+            changeCaptureFilterCompartment(
+                    ChangeCaptureFilterCompartmentRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeCaptureFilterCompartmentRequest,
+                                    ChangeCaptureFilterCompartmentResponse>
+                            handler);
+
+    /**
      * Moves a CPE object into a different compartment within the same tenancy. For information
      * about moving resources between compartments, see
      * [Moving Resources to a Different Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
@@ -690,6 +711,25 @@ public interface VirtualNetworkAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Moves a VTAP to a new compartment within the same tenancy. For information
+     * about moving resources between compartments, see
+     * [Moving Resources to a Different Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ChangeVtapCompartmentResponse> changeVtapCompartment(
+            ChangeVtapCompartmentRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ChangeVtapCompartmentRequest, ChangeVtapCompartmentResponse>
+                    handler);
+
+    /**
      * Connects this local peering gateway (LPG) to another one in the same region.
      * <p>
      * This operation must be called by the VCN administrator who is designated as
@@ -753,6 +793,31 @@ public interface VirtualNetworkAsync extends AutoCloseable {
     java.util.concurrent.Future<CreateByoipRangeResponse> createByoipRange(
             CreateByoipRangeRequest request,
             com.oracle.bmc.responses.AsyncHandler<CreateByoipRangeRequest, CreateByoipRangeResponse>
+                    handler);
+
+    /**
+     * Creates a virtual test access point (VTAP) capture filter in the specified compartment.
+     * <p>
+     * For the purposes of access control, you must provide the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains
+     * the VTAP. For more information about compartments and access control, see
+     * [Overview of the IAM Service](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/overview.htm).
+     * For information about OCIDs, see [Resource Identifiers](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * <p>
+     * You may optionally specify a *display name* for the VTAP, otherwise a default is provided.
+     * It does not have to be unique, and you can change it.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateCaptureFilterResponse> createCaptureFilter(
+            CreateCaptureFilterRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            CreateCaptureFilterRequest, CreateCaptureFilterResponse>
                     handler);
 
     /**
@@ -1436,6 +1501,29 @@ public interface VirtualNetworkAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<CreateVlanRequest, CreateVlanResponse> handler);
 
     /**
+     * Creates a virtual test access point (VTAP) in the specified compartment.
+     * <p>
+     * For the purposes of access control, you must provide the [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment that contains the VTAP.
+     * For more information about compartments and access control, see
+     * [Overview of the IAM Service](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/overview.htm).
+     * For information about OCIDs, see [Resource Identifiers](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * <p>
+     * You may optionally specify a *display name* for the VTAP, otherwise a default is provided.
+     * It does not have to be unique, and you can change it.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateVtapResponse> createVtap(
+            CreateVtapRequest request,
+            com.oracle.bmc.responses.AsyncHandler<CreateVtapRequest, CreateVtapResponse> handler);
+
+    /**
      * Deletes the specified `ByoipRange` resource.
      * The resource must be in one of the following states: CREATING, PROVISIONED, ACTIVE, or FAILED.
      * It must not have any subranges currently allocated to a PublicIpPool object or the deletion will fail.
@@ -1453,6 +1541,24 @@ public interface VirtualNetworkAsync extends AutoCloseable {
     java.util.concurrent.Future<DeleteByoipRangeResponse> deleteByoipRange(
             DeleteByoipRangeRequest request,
             com.oracle.bmc.responses.AsyncHandler<DeleteByoipRangeRequest, DeleteByoipRangeResponse>
+                    handler);
+
+    /**
+     * Deletes the specified VTAP capture filter. This is an asynchronous operation. The VTAP capture filter's `lifecycleState` will
+     * change to TERMINATING temporarily until the VTAP capture filter is completely removed.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteCaptureFilterResponse> deleteCaptureFilter(
+            DeleteCaptureFilterRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            DeleteCaptureFilterRequest, DeleteCaptureFilterResponse>
                     handler);
 
     /**
@@ -1955,6 +2061,22 @@ public interface VirtualNetworkAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<DeleteVlanRequest, DeleteVlanResponse> handler);
 
     /**
+     * Deletes the specified VTAP. This is an asynchronous operation. The VTAP's `lifecycleState` will change to
+     * TERMINATING temporarily until the VTAP is completely removed.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteVtapResponse> deleteVtap(
+            DeleteVtapRequest request,
+            com.oracle.bmc.responses.AsyncHandler<DeleteVtapRequest, DeleteVtapResponse> handler);
+
+    /**
      * Removes the specified {@link Service} from the list of enabled
      * `Service` objects for the specified gateway. You do not need to remove any route
      * rules that specify this `Service` object's `cidrBlock` as the destination CIDR. However, consider
@@ -2030,6 +2152,21 @@ public interface VirtualNetworkAsync extends AutoCloseable {
     java.util.concurrent.Future<GetByoipRangeResponse> getByoipRange(
             GetByoipRangeRequest request,
             com.oracle.bmc.responses.AsyncHandler<GetByoipRangeRequest, GetByoipRangeResponse>
+                    handler);
+
+    /**
+     * Gets information about the specified VTAP capture filter.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetCaptureFilterResponse> getCaptureFilter(
+            GetCaptureFilterRequest request,
+            com.oracle.bmc.responses.AsyncHandler<GetCaptureFilterRequest, GetCaptureFilterResponse>
                     handler);
 
     /**
@@ -2948,6 +3085,20 @@ public interface VirtualNetworkAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<GetVnicRequest, GetVnicResponse> handler);
 
     /**
+     * Gets the specified `Vtap` resource.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetVtapResponse> getVtap(
+            GetVtapRequest request,
+            com.oracle.bmc.responses.AsyncHandler<GetVtapRequest, GetVtapResponse> handler);
+
+    /**
      * Lists the regions that support remote VCN peering (which is peering across regions).
      * For more information, see [VCN Peering](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/VCNpeering.htm).
      *
@@ -3000,6 +3151,23 @@ public interface VirtualNetworkAsync extends AutoCloseable {
     java.util.concurrent.Future<ListByoipRangesResponse> listByoipRanges(
             ListByoipRangesRequest request,
             com.oracle.bmc.responses.AsyncHandler<ListByoipRangesRequest, ListByoipRangesResponse>
+                    handler);
+
+    /**
+     * Lists the capture filters in the specified compartment.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListCaptureFiltersResponse> listCaptureFilters(
+            ListCaptureFiltersRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListCaptureFiltersRequest, ListCaptureFiltersResponse>
                     handler);
 
     /**
@@ -3796,6 +3964,21 @@ public interface VirtualNetworkAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<ListVlansRequest, ListVlansResponse> handler);
 
     /**
+     * Lists the virtual test access points (VTAPs) in the specified compartment.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListVtapsResponse> listVtaps(
+            ListVtapsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<ListVtapsRequest, ListVtapsResponse> handler);
+
+    /**
      * Updates the specified CIDR block of a VCN. The new CIDR IP range must meet the following criteria:
      * <p>
      * - Must be valid.
@@ -3998,6 +4181,23 @@ public interface VirtualNetworkAsync extends AutoCloseable {
     java.util.concurrent.Future<UpdateByoipRangeResponse> updateByoipRange(
             UpdateByoipRangeRequest request,
             com.oracle.bmc.responses.AsyncHandler<UpdateByoipRangeRequest, UpdateByoipRangeResponse>
+                    handler);
+
+    /**
+     * Updates the specified VTAP capture filter's display name or tags.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateCaptureFilterResponse> updateCaptureFilter(
+            UpdateCaptureFilterRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            UpdateCaptureFilterRequest, UpdateCaptureFilterResponse>
                     handler);
 
     /**
@@ -4660,6 +4860,21 @@ public interface VirtualNetworkAsync extends AutoCloseable {
     java.util.concurrent.Future<UpdateVnicResponse> updateVnic(
             UpdateVnicRequest request,
             com.oracle.bmc.responses.AsyncHandler<UpdateVnicRequest, UpdateVnicResponse> handler);
+
+    /**
+     * Updates the specified VTAP's display name or tags.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateVtapResponse> updateVtap(
+            UpdateVtapRequest request,
+            com.oracle.bmc.responses.AsyncHandler<UpdateVtapRequest, UpdateVtapResponse> handler);
 
     /**
      * Upgrades the DRG. After upgrade, you can control routing inside your DRG
