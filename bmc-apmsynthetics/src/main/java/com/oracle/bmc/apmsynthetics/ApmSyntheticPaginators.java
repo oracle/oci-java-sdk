@@ -31,6 +31,126 @@ public class ApmSyntheticPaginators {
     private final ApmSynthetic client;
 
     /**
+     * Creates a new iterable which will iterate over the responses received from the listDedicatedVantagePoints operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListDedicatedVantagePointsResponse> listDedicatedVantagePointsResponseIterator(
+            final ListDedicatedVantagePointsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListDedicatedVantagePointsRequest.Builder, ListDedicatedVantagePointsRequest,
+                ListDedicatedVantagePointsResponse>(
+                new com.google.common.base.Supplier<ListDedicatedVantagePointsRequest.Builder>() {
+                    @Override
+                    public ListDedicatedVantagePointsRequest.Builder get() {
+                        return ListDedicatedVantagePointsRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListDedicatedVantagePointsResponse, String>() {
+                    @Override
+                    public String apply(ListDedicatedVantagePointsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListDedicatedVantagePointsRequest.Builder>,
+                        ListDedicatedVantagePointsRequest>() {
+                    @Override
+                    public ListDedicatedVantagePointsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListDedicatedVantagePointsRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListDedicatedVantagePointsRequest, ListDedicatedVantagePointsResponse>() {
+                    @Override
+                    public ListDedicatedVantagePointsResponse apply(
+                            ListDedicatedVantagePointsRequest request) {
+                        return client.listDedicatedVantagePoints(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.apmsynthetics.model.DedicatedVantagePointSummary} objects
+     * contained in responses from the listDedicatedVantagePoints operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.apmsynthetics.model.DedicatedVantagePointSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.apmsynthetics.model.DedicatedVantagePointSummary>
+            listDedicatedVantagePointsRecordIterator(
+                    final ListDedicatedVantagePointsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListDedicatedVantagePointsRequest.Builder, ListDedicatedVantagePointsRequest,
+                ListDedicatedVantagePointsResponse,
+                com.oracle.bmc.apmsynthetics.model.DedicatedVantagePointSummary>(
+                new com.google.common.base.Supplier<ListDedicatedVantagePointsRequest.Builder>() {
+                    @Override
+                    public ListDedicatedVantagePointsRequest.Builder get() {
+                        return ListDedicatedVantagePointsRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListDedicatedVantagePointsResponse, String>() {
+                    @Override
+                    public String apply(ListDedicatedVantagePointsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListDedicatedVantagePointsRequest.Builder>,
+                        ListDedicatedVantagePointsRequest>() {
+                    @Override
+                    public ListDedicatedVantagePointsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListDedicatedVantagePointsRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListDedicatedVantagePointsRequest, ListDedicatedVantagePointsResponse>() {
+                    @Override
+                    public ListDedicatedVantagePointsResponse apply(
+                            ListDedicatedVantagePointsRequest request) {
+                        return client.listDedicatedVantagePoints(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListDedicatedVantagePointsResponse,
+                        java.util.List<
+                                com.oracle.bmc.apmsynthetics.model
+                                        .DedicatedVantagePointSummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.apmsynthetics.model.DedicatedVantagePointSummary>
+                            apply(ListDedicatedVantagePointsResponse response) {
+                        return response.getDedicatedVantagePointCollection().getItems();
+                    }
+                });
+    }
+
+    /**
      * Creates a new iterable which will iterate over the responses received from the listMonitors operation. This iterable
      * will fetch more data from the server as needed.
      *

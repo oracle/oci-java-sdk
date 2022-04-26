@@ -107,6 +107,15 @@ public class Target {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("targetDetails")
+        private TargetDetails targetDetails;
+
+        public Builder targetDetails(TargetDetails targetDetails) {
+            this.targetDetails = targetDetails;
+            this.__explicitlySet__.add("targetDetails");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("inheritedByCompartments")
         private java.util.List<String> inheritedByCompartments;
 
@@ -195,6 +204,7 @@ public class Target {
                             recipeCount,
                             targetDetectorRecipes,
                             targetResponderRecipes,
+                            targetDetails,
                             inheritedByCompartments,
                             timeCreated,
                             timeUpdated,
@@ -219,6 +229,7 @@ public class Target {
                             .recipeCount(o.getRecipeCount())
                             .targetDetectorRecipes(o.getTargetDetectorRecipes())
                             .targetResponderRecipes(o.getTargetResponderRecipes())
+                            .targetDetails(o.getTargetDetails())
                             .inheritedByCompartments(o.getInheritedByCompartments())
                             .timeCreated(o.getTimeCreated())
                             .timeUpdated(o.getTimeUpdated())
@@ -293,6 +304,9 @@ public class Target {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("targetResponderRecipes")
     java.util.List<TargetResponderRecipe> targetResponderRecipes;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("targetDetails")
+    TargetDetails targetDetails;
 
     /**
      * List of inherited compartments

@@ -378,6 +378,61 @@ public class ApmSyntheticAsyncClient implements ApmSyntheticAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<CreateDedicatedVantagePointResponse>
+            createDedicatedVantagePoint(
+                    CreateDedicatedVantagePointRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    CreateDedicatedVantagePointRequest,
+                                    CreateDedicatedVantagePointResponse>
+                            handler) {
+        LOG.trace("Called async createDedicatedVantagePoint");
+        final CreateDedicatedVantagePointRequest interceptedRequest =
+                CreateDedicatedVantagePointConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateDedicatedVantagePointConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, CreateDedicatedVantagePointResponse>
+                transformer = CreateDedicatedVantagePointConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ApmSynthetic",
+                "CreateDedicatedVantagePoint",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/apm-synthetic-monitoring/20200630/DedicatedVantagePoint/CreateDedicatedVantagePoint");
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        CreateDedicatedVantagePointRequest, CreateDedicatedVantagePointResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CreateDedicatedVantagePointRequest,
+                                CreateDedicatedVantagePointResponse>,
+                        java.util.concurrent.Future<CreateDedicatedVantagePointResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateDedicatedVantagePointDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CreateDedicatedVantagePointRequest, CreateDedicatedVantagePointResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateMonitorResponse> createMonitor(
             CreateMonitorRequest request,
             final com.oracle.bmc.responses.AsyncHandler<CreateMonitorRequest, CreateMonitorResponse>
@@ -476,6 +531,55 @@ public class ApmSyntheticAsyncClient implements ApmSyntheticAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteDedicatedVantagePointResponse>
+            deleteDedicatedVantagePoint(
+                    DeleteDedicatedVantagePointRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    DeleteDedicatedVantagePointRequest,
+                                    DeleteDedicatedVantagePointResponse>
+                            handler) {
+        LOG.trace("Called async deleteDedicatedVantagePoint");
+        final DeleteDedicatedVantagePointRequest interceptedRequest =
+                DeleteDedicatedVantagePointConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteDedicatedVantagePointConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, DeleteDedicatedVantagePointResponse>
+                transformer = DeleteDedicatedVantagePointConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ApmSynthetic",
+                "DeleteDedicatedVantagePoint",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/apm-synthetic-monitoring/20200630/DedicatedVantagePoint/DeleteDedicatedVantagePoint");
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        DeleteDedicatedVantagePointRequest, DeleteDedicatedVantagePointResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DeleteDedicatedVantagePointRequest,
+                                DeleteDedicatedVantagePointResponse>,
+                        java.util.concurrent.Future<DeleteDedicatedVantagePointResponse>>
+                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DeleteDedicatedVantagePointRequest, DeleteDedicatedVantagePointResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteMonitorResponse> deleteMonitor(
             DeleteMonitorRequest request,
             final com.oracle.bmc.responses.AsyncHandler<DeleteMonitorRequest, DeleteMonitorResponse>
@@ -549,6 +653,52 @@ public class ApmSyntheticAsyncClient implements ApmSyntheticAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     DeleteScriptRequest, DeleteScriptResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetDedicatedVantagePointResponse> getDedicatedVantagePoint(
+            GetDedicatedVantagePointRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetDedicatedVantagePointRequest, GetDedicatedVantagePointResponse>
+                    handler) {
+        LOG.trace("Called async getDedicatedVantagePoint");
+        final GetDedicatedVantagePointRequest interceptedRequest =
+                GetDedicatedVantagePointConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetDedicatedVantagePointConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, GetDedicatedVantagePointResponse>
+                transformer = GetDedicatedVantagePointConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ApmSynthetic",
+                "GetDedicatedVantagePoint",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/apm-synthetic-monitoring/20200630/DedicatedVantagePoint/GetDedicatedVantagePoint");
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        GetDedicatedVantagePointRequest, GetDedicatedVantagePointResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetDedicatedVantagePointRequest, GetDedicatedVantagePointResponse>,
+                        java.util.concurrent.Future<GetDedicatedVantagePointResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetDedicatedVantagePointRequest, GetDedicatedVantagePointResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -689,6 +839,55 @@ public class ApmSyntheticAsyncClient implements ApmSyntheticAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<ListDedicatedVantagePointsResponse>
+            listDedicatedVantagePoints(
+                    ListDedicatedVantagePointsRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListDedicatedVantagePointsRequest,
+                                    ListDedicatedVantagePointsResponse>
+                            handler) {
+        LOG.trace("Called async listDedicatedVantagePoints");
+        final ListDedicatedVantagePointsRequest interceptedRequest =
+                ListDedicatedVantagePointsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListDedicatedVantagePointsConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ListDedicatedVantagePointsResponse>
+                transformer = ListDedicatedVantagePointsConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ApmSynthetic",
+                "ListDedicatedVantagePoints",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/apm-synthetic-monitoring/20200630/DedicatedVantagePointCollection/ListDedicatedVantagePoints");
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListDedicatedVantagePointsRequest, ListDedicatedVantagePointsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListDedicatedVantagePointsRequest,
+                                ListDedicatedVantagePointsResponse>,
+                        java.util.concurrent.Future<ListDedicatedVantagePointsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListDedicatedVantagePointsRequest, ListDedicatedVantagePointsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<ListMonitorsResponse> listMonitors(
             ListMonitorsRequest request,
             final com.oracle.bmc.responses.AsyncHandler<ListMonitorsRequest, ListMonitorsResponse>
@@ -808,6 +1007,60 @@ public class ApmSyntheticAsyncClient implements ApmSyntheticAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     ListScriptsRequest, ListScriptsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateDedicatedVantagePointResponse>
+            updateDedicatedVantagePoint(
+                    UpdateDedicatedVantagePointRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    UpdateDedicatedVantagePointRequest,
+                                    UpdateDedicatedVantagePointResponse>
+                            handler) {
+        LOG.trace("Called async updateDedicatedVantagePoint");
+        final UpdateDedicatedVantagePointRequest interceptedRequest =
+                UpdateDedicatedVantagePointConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateDedicatedVantagePointConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, UpdateDedicatedVantagePointResponse>
+                transformer = UpdateDedicatedVantagePointConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "ApmSynthetic",
+                "UpdateDedicatedVantagePoint",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/apm-synthetic-monitoring/20200630/DedicatedVantagePoint/UpdateDedicatedVantagePoint");
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        UpdateDedicatedVantagePointRequest, UpdateDedicatedVantagePointResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpdateDedicatedVantagePointRequest,
+                                UpdateDedicatedVantagePointResponse>,
+                        java.util.concurrent.Future<UpdateDedicatedVantagePointResponse>>
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateDedicatedVantagePointDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpdateDedicatedVantagePointRequest, UpdateDedicatedVantagePointResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,

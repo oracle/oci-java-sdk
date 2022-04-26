@@ -8,7 +8,7 @@ import com.oracle.bmc.apmsynthetics.requests.*;
 import com.oracle.bmc.apmsynthetics.responses.*;
 
 /**
- * Use the Application Performance Monitoring Synthetic Monitoring API to query synthetic scripts and monitors.
+ * Use the Application Performance Monitoring Synthetic Monitoring API to query synthetic scripts and monitors. For more information, see [Application Performance Monitoring](https://docs.oracle.com/iaas/application-performance-monitoring/index.html).
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 public interface ApmSyntheticAsync extends AutoCloseable {
@@ -46,6 +46,23 @@ public interface ApmSyntheticAsync extends AutoCloseable {
     void setRegion(String regionId);
 
     /**
+     * Registers a new dedicated vantage point.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateDedicatedVantagePointResponse> createDedicatedVantagePoint(
+            CreateDedicatedVantagePointRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            CreateDedicatedVantagePointRequest, CreateDedicatedVantagePointResponse>
+                    handler);
+
+    /**
      * Creates a new monitor.
      *
      *
@@ -78,6 +95,22 @@ public interface ApmSyntheticAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Deregisters the specified dedicated vantage point.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteDedicatedVantagePointResponse> deleteDedicatedVantagePoint(
+            DeleteDedicatedVantagePointRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            DeleteDedicatedVantagePointRequest, DeleteDedicatedVantagePointResponse>
+                    handler);
+
+    /**
      * Deletes the specified monitor.
      *
      * @param request The request object containing the details to send
@@ -105,6 +138,22 @@ public interface ApmSyntheticAsync extends AutoCloseable {
     java.util.concurrent.Future<DeleteScriptResponse> deleteScript(
             DeleteScriptRequest request,
             com.oracle.bmc.responses.AsyncHandler<DeleteScriptRequest, DeleteScriptResponse>
+                    handler);
+
+    /**
+     * Gets the details of the dedicated vantage point identified by the OCID.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetDedicatedVantagePointResponse> getDedicatedVantagePoint(
+            GetDedicatedVantagePointRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetDedicatedVantagePointRequest, GetDedicatedVantagePointResponse>
                     handler);
 
     /**
@@ -150,6 +199,23 @@ public interface ApmSyntheticAsync extends AutoCloseable {
     java.util.concurrent.Future<GetScriptResponse> getScript(
             GetScriptRequest request,
             com.oracle.bmc.responses.AsyncHandler<GetScriptRequest, GetScriptResponse> handler);
+
+    /**
+     * Returns a list of dedicated vantage points.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListDedicatedVantagePointsResponse> listDedicatedVantagePoints(
+            ListDedicatedVantagePointsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListDedicatedVantagePointsRequest, ListDedicatedVantagePointsResponse>
+                    handler);
 
     /**
      * Returns a list of monitors.
@@ -198,6 +264,22 @@ public interface ApmSyntheticAsync extends AutoCloseable {
     java.util.concurrent.Future<ListScriptsResponse> listScripts(
             ListScriptsRequest request,
             com.oracle.bmc.responses.AsyncHandler<ListScriptsRequest, ListScriptsResponse> handler);
+
+    /**
+     * Updates the dedicated vantage point.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateDedicatedVantagePointResponse> updateDedicatedVantagePoint(
+            UpdateDedicatedVantagePointRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            UpdateDedicatedVantagePointRequest, UpdateDedicatedVantagePointResponse>
+                    handler);
 
     /**
      * Updates the monitor.

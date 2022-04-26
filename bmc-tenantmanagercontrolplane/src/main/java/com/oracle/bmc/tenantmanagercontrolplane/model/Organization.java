@@ -163,7 +163,7 @@ public class Organization {
     String parentName;
 
     /**
-     * OCID of the default Annual Universal Credits subscription. Any tenancy joining the organization will automatically get assigned this subscription if a subscription is not explictly assigned.
+     * OCID of the default Universal Credits Model subscription. Any tenancy joining the organization will automatically get assigned this subscription if a subscription is not explictly assigned.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("defaultUcmSubscriptionId")
     String defaultUcmSubscriptionId;

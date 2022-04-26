@@ -5,7 +5,7 @@
 package com.oracle.bmc.rover.model;
 
 /**
- *
+ * The information required to create a RoverNode.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -41,6 +41,15 @@ public class CreateRoverNodeDetails {
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("shape")
+        private String shape;
+
+        public Builder shape(String shape) {
+            this.shape = shape;
+            this.__explicitlySet__.add("shape");
             return this;
         }
 
@@ -233,6 +242,15 @@ public class CreateRoverNodeDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("masterKeyId")
+        private String masterKeyId;
+
+        public Builder masterKeyId(String masterKeyId) {
+            this.masterKeyId = masterKeyId;
+            this.__explicitlySet__.add("masterKeyId");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
@@ -269,6 +287,7 @@ public class CreateRoverNodeDetails {
                     new CreateRoverNodeDetails(
                             displayName,
                             compartmentId,
+                            shape,
                             customerShippingAddress,
                             nodeWorkloads,
                             superUserPassword,
@@ -290,6 +309,7 @@ public class CreateRoverNodeDetails {
                             importCompartmentId,
                             importFileBucket,
                             dataValidationCode,
+                            masterKeyId,
                             freeformTags,
                             definedTags,
                             systemTags);
@@ -302,6 +322,7 @@ public class CreateRoverNodeDetails {
             Builder copiedBuilder =
                     displayName(o.getDisplayName())
                             .compartmentId(o.getCompartmentId())
+                            .shape(o.getShape())
                             .customerShippingAddress(o.getCustomerShippingAddress())
                             .nodeWorkloads(o.getNodeWorkloads())
                             .superUserPassword(o.getSuperUserPassword())
@@ -323,6 +344,7 @@ public class CreateRoverNodeDetails {
                             .importCompartmentId(o.getImportCompartmentId())
                             .importFileBucket(o.getImportFileBucket())
                             .dataValidationCode(o.getDataValidationCode())
+                            .masterKeyId(o.getMasterKeyId())
                             .freeformTags(o.getFreeformTags())
                             .definedTags(o.getDefinedTags())
                             .systemTags(o.getSystemTags());
@@ -350,6 +372,12 @@ public class CreateRoverNodeDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     String compartmentId;
+
+    /**
+     * The shape of the node.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("shape")
+    String shape;
 
     @com.fasterxml.jackson.annotation.JsonProperty("customerShippingAddress")
     ShippingAddress customerShippingAddress;
@@ -507,6 +535,12 @@ public class CreateRoverNodeDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dataValidationCode")
     String dataValidationCode;
+
+    /**
+     * Customer provided master key ID to encrypt secret information. If not provided, Rover's master key will be used for encryption.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("masterKeyId")
+    String masterKeyId;
 
     /**
      * The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no

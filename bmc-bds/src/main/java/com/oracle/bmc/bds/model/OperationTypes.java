@@ -21,6 +21,10 @@ public enum OperationTypes {
     ChangeShape("CHANGE_SHAPE"),
     UpdateInfra("UPDATE_INFRA"),
     RestartNode("RESTART_NODE"),
+    RemoveNode("REMOVE_NODE"),
+    CreateAutoscaleConfig("CREATE_AUTOSCALE_CONFIG"),
+    UpdateAutoscaleConfig("UPDATE_AUTOSCALE_CONFIG"),
+    DeleteAutoscaleConfig("DELETE_AUTOSCALE_CONFIG"),
     AutoscaleConfig("AUTOSCALE_CONFIG"),
     AutoscaleRun("AUTOSCALE_RUN"),
     CreateApiKey("CREATE_API_KEY"),
@@ -31,6 +35,8 @@ public enum OperationTypes {
     UpdateMetastoreConfig("UPDATE_METASTORE_CONFIG"),
     ActivateMetastoreConfig("ACTIVATE_METASTORE_CONFIG"),
     TestMetastoreConfig("TEST_METASTORE_CONFIG"),
+    PatchBds("PATCH_BDS"),
+    PatchOdh("PATCH_ODH"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this

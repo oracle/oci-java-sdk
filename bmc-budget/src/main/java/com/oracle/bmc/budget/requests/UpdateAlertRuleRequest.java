@@ -22,12 +22,12 @@ public class UpdateAlertRuleRequest
                 com.oracle.bmc.budget.model.UpdateAlertRuleDetails> {
 
     /**
-     * The unique Budget OCID
+     * The unique budget OCID.
      */
     private String budgetId;
 
     /**
-     * The unique Alert Rule OCID
+     * The unique Alert Rule OCID.
      */
     private String alertRuleId;
 

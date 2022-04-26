@@ -54,6 +54,14 @@ public class ListMonitorsConverter {
                                     request.getScriptId()));
         }
 
+        if (request.getVantagePoint() != null) {
+            target =
+                    target.queryParam(
+                            "vantagePoint",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getVantagePoint()));
+        }
+
         if (request.getMonitorType() != null) {
             target =
                     target.queryParam(

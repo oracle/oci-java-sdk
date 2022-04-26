@@ -5,7 +5,7 @@
 package com.oracle.bmc.core.model;
 
 /**
- * The platform configuration of a bare metal instance that uses an E4 shape.
+ * The platform configuration of a bare metal instance that uses the BM.Standard.E4.128 shape
  * (the AMD Milan platform).
  *
  * <br/>

@@ -5,7 +5,7 @@
 package com.oracle.bmc.budget.model;
 
 /**
- * The type of target on which budget is applied. Valid values are COMPARTMENT or TAG.
+ * The type of target on which the budget is applied. Valid values are COMPARTMENT or TAG.
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190111")
 @lombok.extern.slf4j.Slf4j

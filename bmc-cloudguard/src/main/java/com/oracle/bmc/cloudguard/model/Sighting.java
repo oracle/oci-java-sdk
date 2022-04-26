@@ -141,15 +141,6 @@ public class Sighting {
             return this;
         }
 
-        @com.fasterxml.jackson.annotation.JsonProperty("riskScore")
-        private Double riskScore;
-
-        public Builder riskScore(Double riskScore) {
-            this.riskScore = riskScore;
-            this.__explicitlySet__.add("riskScore");
-            return this;
-        }
-
         @com.fasterxml.jackson.annotation.JsonProperty("severity")
         private Severity severity;
 
@@ -223,7 +214,6 @@ public class Sighting {
                             tacticName,
                             techniqueName,
                             sightingScore,
-                            riskScore,
                             severity,
                             confidence,
                             timeFirstDetected,
@@ -250,7 +240,6 @@ public class Sighting {
                             .tacticName(o.getTacticName())
                             .techniqueName(o.getTechniqueName())
                             .sightingScore(o.getSightingScore())
-                            .riskScore(o.getRiskScore())
                             .severity(o.getSeverity())
                             .confidence(o.getConfidence())
                             .timeFirstDetected(o.getTimeFirstDetected())
@@ -347,12 +336,6 @@ public class Sighting {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sightingScore")
     Integer sightingScore;
-
-    /**
-     * DEPRECATED
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("riskScore")
-    Double riskScore;
 
     /**
      * Severity of the sighting

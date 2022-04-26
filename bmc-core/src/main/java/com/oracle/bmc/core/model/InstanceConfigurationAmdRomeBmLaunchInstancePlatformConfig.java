@@ -5,7 +5,8 @@
 package com.oracle.bmc.core.model;
 
 /**
- * The platform configuration used when launching a bare metal instance with the AMD Rome platform.
+ * The platform configuration used when launching a bare metal instance with the BM.Standard.E3.128 shape
+ * (the AMD Rome platform).
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields

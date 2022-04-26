@@ -97,6 +97,15 @@ public class BudgetSummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("processingPeriodType")
+        private ProcessingPeriodType processingPeriodType;
+
+        public Builder processingPeriodType(ProcessingPeriodType processingPeriodType) {
+            this.processingPeriodType = processingPeriodType;
+            this.__explicitlySet__.add("processingPeriodType");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("targetType")
         private TargetType targetType;
 
@@ -220,6 +229,7 @@ public class BudgetSummary {
                             amount,
                             resetPeriod,
                             budgetProcessingPeriodStartOffset,
+                            processingPeriodType,
                             targetType,
                             targets,
                             lifecycleState,
@@ -248,6 +258,7 @@ public class BudgetSummary {
                             .resetPeriod(o.getResetPeriod())
                             .budgetProcessingPeriodStartOffset(
                                     o.getBudgetProcessingPeriodStartOffset())
+                            .processingPeriodType(o.getProcessingPeriodType())
                             .targetType(o.getTargetType())
                             .targets(o.getTargets())
                             .lifecycleState(o.getLifecycleState())
@@ -274,28 +285,28 @@ public class BudgetSummary {
     }
 
     /**
-     * The OCID of the budget
+     * The OCID of the budget.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     String id;
 
     /**
-     * The OCID of the compartment
+     * The OCID of the compartment.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     String compartmentId;
 
     /**
-     * This is DEPRECATED. For backwards compatability, the property will be populated when
-     * targetType is "COMPARTMENT" AND targets contains EXACT ONE target compartment ocid.
-     * For all other scenarios, this property will be left empty.
+     * This is DEPRECATED. For backwards compatability, the property is populated when
+     * the targetType is "COMPARTMENT", and the targets contain the specific target compartment OCID.
+     * For all other scenarios, this property is left empty.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("targetCompartmentId")
     String targetCompartmentId;
 
     /**
-     * The display name of the budget.
+     * The display name of the budget. Avoid entering confidential information.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     String displayName;
@@ -307,7 +318,7 @@ public class BudgetSummary {
     String description;
 
     /**
-     * The amount of the budget expressed in the currency of the customer's rate card.
+     * The amount of the budget, expressed in the currency of the customer's rate card.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("amount")
@@ -327,6 +338,13 @@ public class BudgetSummary {
     Integer budgetProcessingPeriodStartOffset;
 
     /**
+     * The type of the budget processing period. Valid values are INVOICE and MONTH.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("processingPeriodType")
+    ProcessingPeriodType processingPeriodType;
+
+    /**
      * The type of target on which the budget is applied.
      *
      **/
@@ -335,8 +353,8 @@ public class BudgetSummary {
 
     /**
      * The list of targets on which the budget is applied.
-     *   If targetType is "COMPARTMENT", targets contains list of compartment OCIDs.
-     *   If targetType is "TAG", targets contains list of cost tracking tag identifiers in the form of "{tagNamespace}.{tagKey}.{tagValue}".
+     *   If the targetType is "COMPARTMENT", the targets contain the list of compartment OCIDs.
+     *   If the targetType is "TAG", the targets contain the list of cost tracking tag identifiers in the form of "{tagNamespace}.{tagKey}.{tagValue}".
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("targets")
@@ -349,43 +367,43 @@ public class BudgetSummary {
     LifecycleState lifecycleState;
 
     /**
-     * Total number of alert rules in the budget
+     * The total number of alert rules in the budget.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("alertRuleCount")
     Integer alertRuleCount;
 
     /**
-     * Version of the budget. Starts from 1 and increments by 1.
+     * The version of the budget. Starts from 1 and increments by 1.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("version")
     Integer version;
 
     /**
-     * The actual spend in currency for the current budget cycle
+     * The actual spend in currency for the current budget cycle.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("actualSpend")
     java.math.BigDecimal actualSpend;
 
     /**
-     * The forecasted spend in currency by the end of the current budget cycle
+     * The forecasted spend in currency by the end of the current budget cycle.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("forecastedSpend")
     java.math.BigDecimal forecastedSpend;
 
     /**
-     * Time budget spend was last computed
+     * The time the budget spend was last computed.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeSpendComputed")
     java.util.Date timeSpendComputed;
 
     /**
-     * Time budget was created
+     * The time the budget was created.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     java.util.Date timeCreated;
 
     /**
-     * Time budget was updated
+     * The time the budget was updated.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     java.util.Date timeUpdated;

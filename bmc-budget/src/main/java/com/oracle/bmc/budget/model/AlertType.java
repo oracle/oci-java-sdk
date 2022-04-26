@@ -5,8 +5,8 @@
 package com.oracle.bmc.budget.model;
 
 /**
- * Valid values are ACTUAL (the alert will trigger based on actual usage) or
- * FORECAST (the alert will trigger based on predicted usage).
+ * Valid values are ACTUAL (the alert triggers based on actual usage), or
+ * FORECAST (the alert triggers based on predicted usage).
  *
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190111")

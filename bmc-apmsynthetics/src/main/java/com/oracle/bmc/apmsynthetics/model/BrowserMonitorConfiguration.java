@@ -121,7 +121,7 @@ public class BrowserMonitorConfiguration extends MonitorConfiguration {
     Boolean isCertificateValidationEnabled;
 
     /**
-     * Verify all the search strings present in response.
+     * Verifies all the search strings present in the response.
      * If any search string is not present in the response, then it will be considered as a failure.
      *
      **/

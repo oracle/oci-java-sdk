@@ -7,12 +7,12 @@ package com.oracle.bmc.budget.model;
 /**
  * The create budget details.
  * <p>
- * Client should use 'targetType' & 'targets' to specify the target type and list of targets on which the budget is applied.
+ * Clients should use 'targetType' and 'targets' to specify the target type and list of targets on which the budget is applied.
  * <p>
- * For backwards compatibility, 'targetCompartmentId' will still be supported for all existing clients.
- * However, this is considered deprecreated and all clients be upgraded to use 'targetType' & 'targets'.
+ * For backwards compatibility, 'targetCompartmentId' is still supported for all existing clients.
+ * This is considered deprecated, however, and all clients are upgraded to use 'targetType' and 'targets'.
  * <p>
- * Specifying both 'targetCompartmentId' and 'targets' will cause a Bad Request.
+ * Specifying both 'targetCompartmentId' and 'targets' causes a Bad Request.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -98,6 +98,15 @@ public class CreateBudgetDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("processingPeriodType")
+        private ProcessingPeriodType processingPeriodType;
+
+        public Builder processingPeriodType(ProcessingPeriodType processingPeriodType) {
+            this.processingPeriodType = processingPeriodType;
+            this.__explicitlySet__.add("processingPeriodType");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("targetType")
         private TargetType targetType;
 
@@ -148,6 +157,7 @@ public class CreateBudgetDetails {
                             amount,
                             resetPeriod,
                             budgetProcessingPeriodStartOffset,
+                            processingPeriodType,
                             targetType,
                             targets,
                             freeformTags,
@@ -167,6 +177,7 @@ public class CreateBudgetDetails {
                             .resetPeriod(o.getResetPeriod())
                             .budgetProcessingPeriodStartOffset(
                                     o.getBudgetProcessingPeriodStartOffset())
+                            .processingPeriodType(o.getProcessingPeriodType())
                             .targetType(o.getTargetType())
                             .targets(o.getTargets())
                             .freeformTags(o.getFreeformTags())
@@ -185,20 +196,20 @@ public class CreateBudgetDetails {
     }
 
     /**
-     * The OCID of the compartment
+     * The OCID of the compartment.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     String compartmentId;
 
     /**
-     * This is DEPRECTAED. Set the target compartment id in targets instead.
+     * This is DEPRECATED. Set the target compartment ID in targets instead.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("targetCompartmentId")
     String targetCompartmentId;
 
     /**
-     * The displayName of the budget.
+     * The displayName of the budget. Avoid entering confidential information.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     String displayName;
@@ -230,6 +241,13 @@ public class CreateBudgetDetails {
     Integer budgetProcessingPeriodStartOffset;
 
     /**
+     * The type of the budget processing period. Valid values are INVOICE and MONTH.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("processingPeriodType")
+    ProcessingPeriodType processingPeriodType;
+
+    /**
      * The type of target on which the budget is applied.
      *
      **/
@@ -238,9 +256,9 @@ public class CreateBudgetDetails {
 
     /**
      * The list of targets on which the budget is applied.
-     *   If targetType is "COMPARTMENT", targets contains list of compartment OCIDs.
-     *   If targetType is "TAG", targets contains list of cost tracking tag identifiers in the form of "{tagNamespace}.{tagKey}.{tagValue}".
-     * Curerntly, the array should contain EXACT ONE item.
+     *   If targetType is "COMPARTMENT", the targets contain the list of compartment OCIDs.
+     *   If targetType is "TAG", the targets contain the list of cost tracking tag identifiers in the form of "{tagNamespace}.{tagKey}.{tagValue}".
+     * Curerntly, the array should contain exactly one item.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("targets")

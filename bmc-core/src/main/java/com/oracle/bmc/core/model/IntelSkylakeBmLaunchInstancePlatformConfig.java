@@ -5,7 +5,8 @@
 package com.oracle.bmc.core.model;
 
 /**
- * The platform configuration used when launching a bare metal instance with the Intel Skylake platform.
+ * The platform configuration used when launching a bare metal instance with an Intel X7-based processor
+ * (the Intel Skylake platform).
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields

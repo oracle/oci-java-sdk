@@ -83,7 +83,7 @@ public interface BdsAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Adds block storage to existing worker nodes. The same amount of  storage will be added to all worker nodes. No change will be made  to storage that is already attached. Block storage cannot be removed.
+     * Adds block storage to existing worker/compute only worker nodes. The same amount of  storage will be added to all worker/compute only worker nodes. No change will be made to storage that is already attached. Block storage cannot be removed.
      *
      *
      * @param request The request object containing the details to send
@@ -114,7 +114,7 @@ public interface BdsAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<AddCloudSqlRequest, AddCloudSqlResponse> handler);
 
     /**
-     * Increases the size (scales out) a cluster by adding worker nodes. The added worker nodes will have the same shape and will have the same amount of attached block storage as other worker nodes in the cluster.
+     * Increases the size (scales out) a cluster by adding worker nodes(data/compute). The added worker nodes will have the same shape and will have the same amount of attached block storage as other worker nodes in the cluster.
      *
      *
      * @param request The request object containing the details to send
@@ -343,6 +343,22 @@ public interface BdsAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Install the specified patch to this cluster.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<InstallPatchResponse> installPatch(
+            InstallPatchRequest request,
+            com.oracle.bmc.responses.AsyncHandler<InstallPatchRequest, InstallPatchResponse>
+                    handler);
+
+    /**
      * Returns information about the autoscaling configurations for a cluster.
      *
      *
@@ -411,6 +427,38 @@ public interface BdsAsync extends AutoCloseable {
                                     ListBdsMetastoreConfigurationsRequest,
                                     ListBdsMetastoreConfigurationsResponse>
                             handler);
+
+    /**
+     * List the patch history of this cluster.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListPatchHistoriesResponse> listPatchHistories(
+            ListPatchHistoriesRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListPatchHistoriesRequest, ListPatchHistoriesResponse>
+                    handler);
+
+    /**
+     * List all the available patches for this cluster.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListPatchesResponse> listPatches(
+            ListPatchesRequest request,
+            com.oracle.bmc.responses.AsyncHandler<ListPatchesRequest, ListPatchesResponse> handler);
 
     /**
      * Returns a paginated list of errors for a work request identified by the given ID.
@@ -496,6 +544,21 @@ public interface BdsAsync extends AutoCloseable {
             RemoveCloudSqlRequest request,
             com.oracle.bmc.responses.AsyncHandler<RemoveCloudSqlRequest, RemoveCloudSqlResponse>
                     handler);
+
+    /**
+     * Remove a single node of a Big Data Service cluster
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<RemoveNodeResponse> removeNode(
+            RemoveNodeRequest request,
+            com.oracle.bmc.responses.AsyncHandler<RemoveNodeRequest, RemoveNodeResponse> handler);
 
     /**
      * Restarts a single node of a Big Data Service cluster

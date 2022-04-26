@@ -141,6 +141,24 @@ public class ClusterDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("odhVersion")
+        private String odhVersion;
+
+        public Builder odhVersion(String odhVersion) {
+            this.odhVersion = odhVersion;
+            this.__explicitlySet__.add("odhVersion");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("jupyterHubUrl")
+        private String jupyterHubUrl;
+
+        public Builder jupyterHubUrl(String jupyterHubUrl) {
+            this.jupyterHubUrl = jupyterHubUrl;
+            this.__explicitlySet__.add("jupyterHubUrl");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -159,7 +177,9 @@ public class ClusterDetails {
                             clouderaManagerUrl,
                             ambariUrl,
                             bigDataManagerUrl,
-                            hueServerUrl);
+                            hueServerUrl,
+                            odhVersion,
+                            jupyterHubUrl);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -179,7 +199,9 @@ public class ClusterDetails {
                             .clouderaManagerUrl(o.getClouderaManagerUrl())
                             .ambariUrl(o.getAmbariUrl())
                             .bigDataManagerUrl(o.getBigDataManagerUrl())
-                            .hueServerUrl(o.getHueServerUrl());
+                            .hueServerUrl(o.getHueServerUrl())
+                            .odhVersion(o.getOdhVersion())
+                            .jupyterHubUrl(o.getJupyterHubUrl());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -271,6 +293,18 @@ public class ClusterDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("hueServerUrl")
     String hueServerUrl;
+
+    /**
+     * Version of the ODH (Oracle Distribution including Apache Hadoop) installed on the cluster.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("odhVersion")
+    String odhVersion;
+
+    /**
+     * The URL of the Jupyterhub.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("jupyterHubUrl")
+    String jupyterHubUrl;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

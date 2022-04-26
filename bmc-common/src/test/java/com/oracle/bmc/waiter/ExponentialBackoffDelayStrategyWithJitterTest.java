@@ -13,38 +13,53 @@ public class ExponentialBackoffDelayStrategyWithJitterTest {
 
     @Test
     public void testDelayStrategyWithDefaultMaxWaitTime() {
-        ExponentialBackoffDelayStrategyWithJitter strategy =
-                new ExponentialBackoffDelayStrategyWithJitter(
-                        RetryConfiguration.DEFAULT_MAX_WAIT_TIME);
-        WaiterConfiguration.WaitContext context =
-                new WaiterConfiguration.WaitContext(System.currentTimeMillis());
-        assertTrue(strategy.nextDelay(context) > 1000L && strategy.nextDelay(context) < 2000L);
-        context.incrementAttempts();
-        assertTrue(strategy.nextDelay(context) > 2000L && strategy.nextDelay(context) < 4000L);
-        context.incrementAttempts();
-        assertTrue(strategy.nextDelay(context) > 4000L && strategy.nextDelay(context) < 8000L);
-        context.incrementAttempts();
-        assertTrue(strategy.nextDelay(context) > 8000L && strategy.nextDelay(context) < 16000L);
-        context.incrementAttempts();
-        assertTrue(strategy.nextDelay(context) > 16000L && strategy.nextDelay(context) < 30000L);
-        context.incrementAttempts();
-        assertTrue(strategy.nextDelay(context) > 30000L && strategy.nextDelay(context) < 31000);
-        context.incrementAttempts();
-        assertTrue(strategy.nextDelay(context) > 30000L && strategy.nextDelay(context) < 31000);
+        for (int i = 0; i < 1000; ++i) {
+            ExponentialBackoffDelayStrategyWithJitter strategy =
+                    new ExponentialBackoffDelayStrategyWithJitter(
+                            RetryConfiguration.DEFAULT_MAX_WAIT_TIME);
+            WaiterConfiguration.WaitContext context =
+                    new WaiterConfiguration.WaitContext(System.currentTimeMillis());
+            assertInBounds(1000L, 2000L, strategy.nextDelay(context));
+            context.incrementAttempts();
+            assertInBounds(2000L, 3000L, strategy.nextDelay(context));
+            context.incrementAttempts();
+            assertInBounds(4000L, 5000L, strategy.nextDelay(context));
+            context.incrementAttempts();
+            assertInBounds(8000L, 9000L, strategy.nextDelay(context));
+            context.incrementAttempts();
+            assertInBounds(1600L, 17000L, strategy.nextDelay(context));
+            context.incrementAttempts();
+            assertInBounds(30000L, 31000L, strategy.nextDelay(context));
+            context.incrementAttempts();
+            assertInBounds(30000L, 31000L, strategy.nextDelay(context));
+        }
     }
 
     @Test
     public void testDelayStrategyWithCustomMaxWaitTime() {
-        ExponentialBackoffDelayStrategyWithJitter strategy =
-                new ExponentialBackoffDelayStrategyWithJitter(2000);
-        WaiterConfiguration.WaitContext context =
-                new WaiterConfiguration.WaitContext(System.currentTimeMillis());
-        assertTrue(strategy.nextDelay(context) > 1000L && strategy.nextDelay(context) < 2000L);
-        context.incrementAttempts();
-        assertTrue(strategy.nextDelay(context) > 2000L && strategy.nextDelay(context) < 4000L);
-        context.incrementAttempts();
-        assertTrue(strategy.nextDelay(context) > 2000L && strategy.nextDelay(context) < 4000L);
-        context.incrementAttempts();
-        assertTrue(strategy.nextDelay(context) > 2000L && strategy.nextDelay(context) < 4000L);
+        for (int i = 0; i < 1000; ++i) {
+            ExponentialBackoffDelayStrategyWithJitter strategy =
+                    new ExponentialBackoffDelayStrategyWithJitter(2000);
+            WaiterConfiguration.WaitContext context =
+                    new WaiterConfiguration.WaitContext(System.currentTimeMillis());
+            assertInBounds(1000L, 2000L, strategy.nextDelay(context));
+            context.incrementAttempts();
+            assertInBounds(2000L, 3000L, strategy.nextDelay(context));
+            context.incrementAttempts();
+            assertInBounds(2000L, 3000L, strategy.nextDelay(context));
+            context.incrementAttempts();
+            assertInBounds(2000L, 3000L, strategy.nextDelay(context));
+        }
+    }
+
+    /**
+     * Assert that the actual value is in the bounds (both are inclusive, since {@link ExponentialBackoffDelayStrategyWithJitter}
+     * uses {@link Math#round(double)}, which can give us 1000 ms of jitter.
+     * @param minInclusive inclusive minimum
+     * @param maxInclusive inclusive maximum
+     * @param actual actual value
+     */
+    public static void assertInBounds(long minInclusive, long maxInclusive, long actual) {
+        assertTrue("Actual value was " + actual, actual >= minInclusive && actual <= maxInclusive);
     }
 }

@@ -5,12 +5,12 @@
   <parent>
     <groupId>com.oracle.oci.sdk</groupId>
     <artifactId>oci-java-sdk</artifactId>
-    <version>2.24.0</version>
+    <version>2.25.0</version>
     <relativePath>../pom.xml</relativePath>
   </parent>
 
   <artifactId>oci-java-sdk-encryption</artifactId>
-  <name>Oracle Cloud Infrastructure SDK - Common</name>
+  <name>Oracle Cloud Infrastructure SDK - Encryption</name>
   <description>This project contains the common runtime components of the SDK used for Oracle Cloud Infrastructure</description>
   <url>https://docs.cloud.oracle.com/Content/API/SDKDocs/javasdk.htm</url>
 
@@ -26,17 +26,17 @@
     <dependency>
       <groupId>com.oracle.oci.sdk</groupId>
       <artifactId>oci-java-sdk-common</artifactId>
-      <version>2.24.0</version>
+      <version>2.25.0</version>
   </dependency>
     <dependency>
       <groupId>com.oracle.oci.sdk</groupId>
       <artifactId>oci-java-sdk-circuitbreaker</artifactId>
-      <version>2.24.0</version>
+      <version>2.25.0</version>
     </dependency>
     <dependency>
       <groupId>com.oracle.oci.sdk</groupId>
       <artifactId>oci-java-sdk-keymanagement</artifactId>
-      <version>2.24.0</version>
+      <version>2.25.0</version>
     </dependency>
     <dependency>
       <groupId>com.fasterxml.jackson.datatype</groupId>

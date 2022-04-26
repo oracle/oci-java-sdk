@@ -60,7 +60,7 @@ public interface Budget extends AutoCloseable {
     CreateAlertRuleResponse createAlertRule(CreateAlertRuleRequest request);
 
     /**
-     * Creates a new Budget.
+     * Creates a new budget.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -85,7 +85,7 @@ public interface Budget extends AutoCloseable {
     DeleteAlertRuleResponse deleteAlertRule(DeleteAlertRuleRequest request);
 
     /**
-     * Deletes a specified Budget resource
+     * Deletes a specified budget resource.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -97,7 +97,7 @@ public interface Budget extends AutoCloseable {
     DeleteBudgetResponse deleteBudget(DeleteBudgetRequest request);
 
     /**
-     * Gets an Alert Rule for a specified Budget.
+     * Gets an Alert Rule for a specified budget.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -109,7 +109,7 @@ public interface Budget extends AutoCloseable {
     GetAlertRuleResponse getAlertRule(GetAlertRuleRequest request);
 
     /**
-     * Gets a Budget by identifier
+     * Gets a budget by the identifier.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -121,7 +121,7 @@ public interface Budget extends AutoCloseable {
     GetBudgetResponse getBudget(GetBudgetRequest request);
 
     /**
-     * Returns a list of Alert Rules for a specified Budget.
+     * Returns a list of Alert Rules for a specified budget.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -134,16 +134,14 @@ public interface Budget extends AutoCloseable {
     ListAlertRulesResponse listAlertRules(ListAlertRulesRequest request);
 
     /**
-     * Gets a list of Budgets in a compartment.
+     * Gets a list of budgets in a compartment.
      * <p>
-     * By default, ListBudgets returns budgets of 'COMPARTMENT' target type and the budget records with only ONE target compartment OCID.
+     * By default, ListBudgets returns budgets of the 'COMPARTMENT' target type, and the budget records with only one target compartment OCID.
      * <p>
-     * To list ALL budgets, set the targetType query parameter to ALL.
-     * Example:
-     *   'targetType=ALL'
+     * To list all budgets, set the targetType query parameter to ALL (for example: 'targetType=ALL').
      * <p>
-     * Additional targetTypes would be available in future releases. Clients should ignore new targetType
-     * or upgrade to latest version of client SDK to handle new targetType.
+     * Additional targetTypes would be available in future releases. Clients should ignore new targetTypes,
+     * or upgrade to the latest version of the client SDK to handle new targetTypes.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -168,7 +166,7 @@ public interface Budget extends AutoCloseable {
     UpdateAlertRuleResponse updateAlertRule(UpdateAlertRuleRequest request);
 
     /**
-     * Update a Budget identified by the OCID
+     * Update a budget identified by the OCID.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.

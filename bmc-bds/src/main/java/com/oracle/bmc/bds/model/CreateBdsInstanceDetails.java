@@ -98,12 +98,30 @@ public class CreateBdsInstanceDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("bootstrapScriptUrl")
+        private String bootstrapScriptUrl;
+
+        public Builder bootstrapScriptUrl(String bootstrapScriptUrl) {
+            this.bootstrapScriptUrl = bootstrapScriptUrl;
+            this.__explicitlySet__.add("bootstrapScriptUrl");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("nodes")
         private java.util.List<CreateNodeDetails> nodes;
 
         public Builder nodes(java.util.List<CreateNodeDetails> nodes) {
             this.nodes = nodes;
             this.__explicitlySet__.add("nodes");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("kerberosRealmName")
+        private String kerberosRealmName;
+
+        public Builder kerberosRealmName(String kerberosRealmName) {
+            this.kerberosRealmName = kerberosRealmName;
+            this.__explicitlySet__.add("kerberosRealmName");
             return this;
         }
 
@@ -140,7 +158,9 @@ public class CreateBdsInstanceDetails {
                             isHighAvailability,
                             isSecure,
                             networkConfig,
+                            bootstrapScriptUrl,
                             nodes,
+                            kerberosRealmName,
                             freeformTags,
                             definedTags);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
@@ -158,7 +178,9 @@ public class CreateBdsInstanceDetails {
                             .isHighAvailability(o.getIsHighAvailability())
                             .isSecure(o.getIsSecure())
                             .networkConfig(o.getNetworkConfig())
+                            .bootstrapScriptUrl(o.getBootstrapScriptUrl())
                             .nodes(o.getNodes())
+                            .kerberosRealmName(o.getKerberosRealmName())
                             .freeformTags(o.getFreeformTags())
                             .definedTags(o.getDefinedTags());
 
@@ -220,10 +242,22 @@ public class CreateBdsInstanceDetails {
     NetworkConfig networkConfig;
 
     /**
+     * Pre-authenticated URL of the script in Object Store that is downloaded and executed.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("bootstrapScriptUrl")
+    String bootstrapScriptUrl;
+
+    /**
      * The list of nodes in the Big Data Service cluster.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("nodes")
     java.util.List<CreateNodeDetails> nodes;
+
+    /**
+     * The user-defined kerberos realm name.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("kerberosRealmName")
+    String kerberosRealmName;
 
     /**
      * Simple key-value pair that is applied without any predefined name, type, or scope.

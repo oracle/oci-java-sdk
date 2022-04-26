@@ -90,6 +90,15 @@ public class ProtectionRule extends WebAppFirewallPolicyRule {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("isBodyInspectionEnabled")
+        private Boolean isBodyInspectionEnabled;
+
+        public Builder isBodyInspectionEnabled(Boolean isBodyInspectionEnabled) {
+            this.isBodyInspectionEnabled = isBodyInspectionEnabled;
+            this.__explicitlySet__.add("isBodyInspectionEnabled");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -101,7 +110,8 @@ public class ProtectionRule extends WebAppFirewallPolicyRule {
                             condition,
                             actionName,
                             protectionCapabilities,
-                            protectionCapabilitySettings);
+                            protectionCapabilitySettings,
+                            isBodyInspectionEnabled);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -114,7 +124,8 @@ public class ProtectionRule extends WebAppFirewallPolicyRule {
                             .condition(o.getCondition())
                             .actionName(o.getActionName())
                             .protectionCapabilities(o.getProtectionCapabilities())
-                            .protectionCapabilitySettings(o.getProtectionCapabilitySettings());
+                            .protectionCapabilitySettings(o.getProtectionCapabilitySettings())
+                            .isBodyInspectionEnabled(o.getIsBodyInspectionEnabled());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -135,15 +146,18 @@ public class ProtectionRule extends WebAppFirewallPolicyRule {
             String condition,
             String actionName,
             java.util.List<ProtectionCapability> protectionCapabilities,
-            ProtectionCapabilitySettings protectionCapabilitySettings) {
+            ProtectionCapabilitySettings protectionCapabilitySettings,
+            Boolean isBodyInspectionEnabled) {
         super(name, conditionLanguage, condition, actionName);
         this.protectionCapabilities = protectionCapabilities;
         this.protectionCapabilitySettings = protectionCapabilitySettings;
+        this.isBodyInspectionEnabled = isBodyInspectionEnabled;
     }
 
     /**
      * An ordered list that references OCI-managed protection capabilities.
-     * Referenced protection capabilities are executed in order of appearance.
+     * Referenced protection capabilities are not necessarily executed in order of appearance. Their execution order
+     * is decided at runtime for improved performance.
      * The array cannot contain entries with the same pair of capability key and version more than once.
      *
      **/
@@ -152,6 +166,15 @@ public class ProtectionRule extends WebAppFirewallPolicyRule {
 
     @com.fasterxml.jackson.annotation.JsonProperty("protectionCapabilitySettings")
     ProtectionCapabilitySettings protectionCapabilitySettings;
+
+    /**
+     * Enables/disables body inspection for this protection rule.
+     * Only Protection Rules in RequestProtection can have this option enabled. Response body inspection will
+     * be available at a later date.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isBodyInspectionEnabled")
+    Boolean isBodyInspectionEnabled;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

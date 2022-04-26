@@ -35,18 +35,46 @@ public class RequestProtection {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("bodyInspectionSizeLimitInBytes")
+        private Integer bodyInspectionSizeLimitInBytes;
+
+        public Builder bodyInspectionSizeLimitInBytes(Integer bodyInspectionSizeLimitInBytes) {
+            this.bodyInspectionSizeLimitInBytes = bodyInspectionSizeLimitInBytes;
+            this.__explicitlySet__.add("bodyInspectionSizeLimitInBytes");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("bodyInspectionSizeLimitExceededActionName")
+        private String bodyInspectionSizeLimitExceededActionName;
+
+        public Builder bodyInspectionSizeLimitExceededActionName(
+                String bodyInspectionSizeLimitExceededActionName) {
+            this.bodyInspectionSizeLimitExceededActionName =
+                    bodyInspectionSizeLimitExceededActionName;
+            this.__explicitlySet__.add("bodyInspectionSizeLimitExceededActionName");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public RequestProtection build() {
-            RequestProtection __instance__ = new RequestProtection(rules);
+            RequestProtection __instance__ =
+                    new RequestProtection(
+                            rules,
+                            bodyInspectionSizeLimitInBytes,
+                            bodyInspectionSizeLimitExceededActionName);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(RequestProtection o) {
-            Builder copiedBuilder = rules(o.getRules());
+            Builder copiedBuilder =
+                    rules(o.getRules())
+                            .bodyInspectionSizeLimitInBytes(o.getBodyInspectionSizeLimitInBytes())
+                            .bodyInspectionSizeLimitExceededActionName(
+                                    o.getBodyInspectionSizeLimitExceededActionName());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -62,11 +90,36 @@ public class RequestProtection {
 
     /**
      * Ordered list of ProtectionRules. Rules are executed in order of appearance in this array.
-     * ProtectionRules in this array can only use protection cCapabilities of REQUEST_PROTECTION_CAPABILITY type.
+     * ProtectionRules in this array can only use protection Capabilities of REQUEST_PROTECTION_CAPABILITY type.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("rules")
     java.util.List<ProtectionRule> rules;
+
+    /**
+     * Maximum size of inspected HTTP message body in bytes. Actions to take if this limit is exceeded are defined in {@code bodyInspectionSizeLimitExceededActionName}.
+     * <p>
+     * Body inspection maximum size allowed is defined with per-tenancy limit: 8192 bytes.
+     * <p>
+     * For steps to request a limit increase, see [Requesting a Service Limit Increase](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/servicelimits.htm).
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("bodyInspectionSizeLimitInBytes")
+    Integer bodyInspectionSizeLimitInBytes;
+
+    /**
+     * References action by name from actions defined in WebAppFirewallPolicy. Executed if HTTP message
+     * body size exceeds limit set in field {@code bodyInspectionSizeLimitInBytes}.
+     * <p>
+     * If this field is {@code null} HTTP message body will inspected up to {@code bodyInspectionSizeLimitInBytes} and the rest
+     * will not be inspected by Protection Capabilities.
+     * <p>
+     * Allowed action types:
+     * * **RETURN_HTTP_RESPONSE** terminates further execution of modules and rules and returns defined HTTP response.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("bodyInspectionSizeLimitExceededActionName")
+    String bodyInspectionSizeLimitExceededActionName;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

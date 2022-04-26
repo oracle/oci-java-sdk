@@ -153,23 +153,23 @@ public class UpdateAlertRuleDetails {
     }
 
     /**
-     * The name of the alert rule.
+     * The name of the alert rule. Avoid entering confidential information.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     String displayName;
 
     /**
-     * Type of alert. Valid values are ACTUAL (the alert will trigger based on actual usage) or
-     * FORECAST (the alert will trigger based on predicted usage).
+     * The type of the alert. Valid values are ACTUAL (the alert triggers based on actual usage), or
+     * FORECAST (the alert triggers based on predicted usage).
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     AlertType type;
 
     /**
-     * The threshold for triggering the alert expressed as a whole number or decimal value.
-     * If thresholdType is ABSOLUTE, threshold can have at most 12 digits before the decimal point and up to 2 digits after the decimal point.
-     * If thresholdType is PERCENTAGE, the maximum value is 10000 and can have up to 2 digits after the decimal point.
+     * The threshold for triggering the alert, expressed as a whole number or decimal value.
+     * If the thresholdType is ABSOLUTE, the threshold can have at most 12 digits before the decimal point, and up to two digits after the decimal point.
+     * If the thresholdType is PERCENTAGE, the maximum value is 10000 and can have up to two digits after the decimal point.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("threshold")
@@ -182,19 +182,19 @@ public class UpdateAlertRuleDetails {
     ThresholdType thresholdType;
 
     /**
-     * The audience that will receive the alert when it triggers. If you need to clear out this value, please pass in an empty string instead of null.
+     * The audience that receives the alert when it triggers. If you need to clear out this value, pass in an empty string instead of a null value.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("recipients")
     String recipients;
 
     /**
-     * The description of the alert rule
+     * The description of the alert rule.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     String description;
 
     /**
-     * The message to be delivered to the recipients when alert is triggered
+     * The message to be delivered to the recipients when an alert is triggered.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("message")
     String message;

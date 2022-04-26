@@ -269,7 +269,7 @@ public class Monitor {
     MonitorTypes monitorType;
 
     /**
-     * List of vantage points from where monitor is running.
+     * List of public and dedicated vantage points where the monitor is running.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("vantagePoints")
     java.util.List<VantagePointInfo> vantagePoints;
@@ -302,7 +302,7 @@ public class Monitor {
 
     /**
      * Interval in seconds after the start time when the job should be repeated.
-     * Minimum repeatIntervalInSeconds should be 300 seconds.
+     * Minimum repeatIntervalInSeconds should be 300 seconds for Scripted REST, Scripted Browser and Browser monitors, and 60 seconds for REST monitor.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("repeatIntervalInSeconds")
@@ -316,7 +316,8 @@ public class Monitor {
 
     /**
      * Timeout in seconds. Timeout cannot be more than 30% of repeatIntervalInSeconds time for monitors.
-     * Also, timeoutInSeconds should be a multiple of 60. Monitor will be allowed to run only for timeoutInSeconds time. It would be terminated after that.
+     * Also, timeoutInSeconds should be a multiple of 60 for Scripted REST, Scripted Browser and Browser monitors.
+     * Monitor will be allowed to run only for timeoutInSeconds time. It would be terminated after that.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeoutInSeconds")

@@ -145,7 +145,7 @@ public class MonitorResult {
     String monitorId;
 
     /**
-     * The name of the vantage point.
+     * The name of the public or dedicated vantage point.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("vantagePoint")
     String vantagePoint;

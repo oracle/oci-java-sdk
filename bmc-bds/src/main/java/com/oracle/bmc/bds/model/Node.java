@@ -160,6 +160,24 @@ public class Node {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("ocpus")
+        private Integer ocpus;
+
+        public Builder ocpus(Integer ocpus) {
+            this.ocpus = ocpus;
+            this.__explicitlySet__.add("ocpus");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("memoryInGBs")
+        private Integer memoryInGBs;
+
+        public Builder memoryInGBs(Integer memoryInGBs) {
+            this.memoryInGBs = memoryInGBs;
+            this.__explicitlySet__.add("memoryInGBs");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -180,7 +198,9 @@ public class Node {
                             availabilityDomain,
                             faultDomain,
                             timeCreated,
-                            timeUpdated);
+                            timeUpdated,
+                            ocpus,
+                            memoryInGBs);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -202,7 +222,9 @@ public class Node {
                             .availabilityDomain(o.getAvailabilityDomain())
                             .faultDomain(o.getFaultDomain())
                             .timeCreated(o.getTimeCreated())
-                            .timeUpdated(o.getTimeUpdated());
+                            .timeUpdated(o.getTimeUpdated())
+                            .ocpus(o.getOcpus())
+                            .memoryInGBs(o.getMemoryInGBs());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -292,6 +314,7 @@ public class Node {
         Edge("EDGE"),
         Utility("UTILITY"),
         Worker("WORKER"),
+        ComputeOnlyWorker("COMPUTE_ONLY_WORKER"),
         Bursting("BURSTING"),
         CloudSql("CLOUD_SQL"),
 
@@ -404,6 +427,18 @@ public class Node {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     java.util.Date timeUpdated;
+
+    /**
+     * The total number of OCPUs available to the node.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("ocpus")
+    Integer ocpus;
+
+    /**
+     * The total amount of memory available to the node, in gigabytes.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("memoryInGBs")
+    Integer memoryInGBs;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

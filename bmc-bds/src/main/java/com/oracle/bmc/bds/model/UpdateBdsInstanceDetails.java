@@ -35,6 +35,15 @@ public class UpdateBdsInstanceDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("bootstrapScriptUrl")
+        private String bootstrapScriptUrl;
+
+        public Builder bootstrapScriptUrl(String bootstrapScriptUrl) {
+            this.bootstrapScriptUrl = bootstrapScriptUrl;
+            this.__explicitlySet__.add("bootstrapScriptUrl");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
@@ -59,7 +68,8 @@ public class UpdateBdsInstanceDetails {
 
         public UpdateBdsInstanceDetails build() {
             UpdateBdsInstanceDetails __instance__ =
-                    new UpdateBdsInstanceDetails(displayName, freeformTags, definedTags);
+                    new UpdateBdsInstanceDetails(
+                            displayName, bootstrapScriptUrl, freeformTags, definedTags);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -68,6 +78,7 @@ public class UpdateBdsInstanceDetails {
         public Builder copy(UpdateBdsInstanceDetails o) {
             Builder copiedBuilder =
                     displayName(o.getDisplayName())
+                            .bootstrapScriptUrl(o.getBootstrapScriptUrl())
                             .freeformTags(o.getFreeformTags())
                             .definedTags(o.getDefinedTags());
 
@@ -88,6 +99,12 @@ public class UpdateBdsInstanceDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     String displayName;
+
+    /**
+     * Pre-authenticated URL of the bootstrap script in Object Store that can be downloaded and executed..
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("bootstrapScriptUrl")
+    String bootstrapScriptUrl;
 
     /**
      * Simple key-value pair that is applied without any predefined name, type, or scope.

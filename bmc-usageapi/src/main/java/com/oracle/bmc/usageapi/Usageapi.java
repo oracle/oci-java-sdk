@@ -73,6 +73,19 @@ public interface Usageapi extends AutoCloseable {
     CreateQueryResponse createQuery(CreateQueryRequest request);
 
     /**
+     * Returns the created schedule.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/usageapi/CreateScheduleExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateSchedule API.
+     */
+    CreateScheduleResponse createSchedule(CreateScheduleRequest request);
+
+    /**
      * Delete a saved custom table by the OCID.
      *
      * @param request The request object containing the details to send
@@ -97,6 +110,19 @@ public interface Usageapi extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/usageapi/DeleteQueryExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteQuery API.
      */
     DeleteQueryResponse deleteQuery(DeleteQueryRequest request);
+
+    /**
+     * Delete a saved scheduled report by the OCID.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/usageapi/DeleteScheduleExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteSchedule API.
+     */
+    DeleteScheduleResponse deleteSchedule(DeleteScheduleRequest request);
 
     /**
      * Returns the saved custom table.
@@ -125,6 +151,32 @@ public interface Usageapi extends AutoCloseable {
     GetQueryResponse getQuery(GetQueryRequest request);
 
     /**
+     * Returns the saved schedule.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/usageapi/GetScheduleExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetSchedule API.
+     */
+    GetScheduleResponse getSchedule(GetScheduleRequest request);
+
+    /**
+     * Returns the saved schedule run.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/usageapi/GetScheduledRunExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetScheduledRun API.
+     */
+    GetScheduledRunResponse getScheduledRun(GetScheduledRunRequest request);
+
+    /**
      * Returns the saved custom table list.
      *
      * @param request The request object containing the details to send
@@ -149,6 +201,32 @@ public interface Usageapi extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/usageapi/ListQueriesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListQueries API.
      */
     ListQueriesResponse listQueries(ListQueriesRequest request);
+
+    /**
+     * Returns schedule history list.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/usageapi/ListScheduledRunsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListScheduledRuns API.
+     */
+    ListScheduledRunsResponse listScheduledRuns(ListScheduledRunsRequest request);
+
+    /**
+     * Returns the saved schedule list.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/usageapi/ListSchedulesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListSchedules API.
+     */
+    ListSchedulesResponse listSchedules(ListSchedulesRequest request);
 
     /**
      * Returns the configurations list for the UI drop-down list.
@@ -202,6 +280,26 @@ public interface Usageapi extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/usageapi/UpdateQueryExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateQuery API.
      */
     UpdateQueryResponse updateQuery(UpdateQueryRequest request);
+
+    /**
+     * Update a saved schedule
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/usageapi/UpdateScheduleExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateSchedule API.
+     */
+    UpdateScheduleResponse updateSchedule(UpdateScheduleRequest request);
+
+    /**
+     * Gets the pre-configured waiters available for resources for this service.
+     *
+     * @return The service waiters.
+     */
+    UsageapiWaiters getWaiters();
 
     /**
      * Gets the pre-configured paginators available for list operations in this service which may return multiple

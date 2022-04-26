@@ -78,6 +78,22 @@ public interface UsageapiAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<CreateQueryRequest, CreateQueryResponse> handler);
 
     /**
+     * Returns the created schedule.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateScheduleResponse> createSchedule(
+            CreateScheduleRequest request,
+            com.oracle.bmc.responses.AsyncHandler<CreateScheduleRequest, CreateScheduleResponse>
+                    handler);
+
+    /**
      * Delete a saved custom table by the OCID.
      *
      *
@@ -108,6 +124,22 @@ public interface UsageapiAsync extends AutoCloseable {
     java.util.concurrent.Future<DeleteQueryResponse> deleteQuery(
             DeleteQueryRequest request,
             com.oracle.bmc.responses.AsyncHandler<DeleteQueryRequest, DeleteQueryResponse> handler);
+
+    /**
+     * Delete a saved scheduled report by the OCID.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteScheduleResponse> deleteSchedule(
+            DeleteScheduleRequest request,
+            com.oracle.bmc.responses.AsyncHandler<DeleteScheduleRequest, DeleteScheduleResponse>
+                    handler);
 
     /**
      * Returns the saved custom table.
@@ -141,6 +173,37 @@ public interface UsageapiAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<GetQueryRequest, GetQueryResponse> handler);
 
     /**
+     * Returns the saved schedule.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetScheduleResponse> getSchedule(
+            GetScheduleRequest request,
+            com.oracle.bmc.responses.AsyncHandler<GetScheduleRequest, GetScheduleResponse> handler);
+
+    /**
+     * Returns the saved schedule run.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetScheduledRunResponse> getScheduledRun(
+            GetScheduledRunRequest request,
+            com.oracle.bmc.responses.AsyncHandler<GetScheduledRunRequest, GetScheduledRunResponse>
+                    handler);
+
+    /**
      * Returns the saved custom table list.
      *
      *
@@ -170,6 +233,39 @@ public interface UsageapiAsync extends AutoCloseable {
     java.util.concurrent.Future<ListQueriesResponse> listQueries(
             ListQueriesRequest request,
             com.oracle.bmc.responses.AsyncHandler<ListQueriesRequest, ListQueriesResponse> handler);
+
+    /**
+     * Returns schedule history list.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListScheduledRunsResponse> listScheduledRuns(
+            ListScheduledRunsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListScheduledRunsRequest, ListScheduledRunsResponse>
+                    handler);
+
+    /**
+     * Returns the saved schedule list.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListSchedulesResponse> listSchedules(
+            ListSchedulesRequest request,
+            com.oracle.bmc.responses.AsyncHandler<ListSchedulesRequest, ListSchedulesResponse>
+                    handler);
 
     /**
      * Returns the configurations list for the UI drop-down list.
@@ -238,4 +334,20 @@ public interface UsageapiAsync extends AutoCloseable {
     java.util.concurrent.Future<UpdateQueryResponse> updateQuery(
             UpdateQueryRequest request,
             com.oracle.bmc.responses.AsyncHandler<UpdateQueryRequest, UpdateQueryResponse> handler);
+
+    /**
+     * Update a saved schedule
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateScheduleResponse> updateSchedule(
+            UpdateScheduleRequest request,
+            com.oracle.bmc.responses.AsyncHandler<UpdateScheduleRequest, UpdateScheduleResponse>
+                    handler);
 }

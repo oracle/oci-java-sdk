@@ -95,13 +95,13 @@ public class UpdateTranscriptionJobDetails {
     }
 
     /**
-     * Transcription job name.
+     * A user-friendly display name for the job.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     String displayName;
 
     /**
-     * Transcription job description.
+     * A short description of the job.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     String description;

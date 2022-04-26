@@ -668,7 +668,7 @@ public class RoverEntitlementClient implements RoverEntitlement {
                 "RoverEntitlement",
                 "UpdateRoverEntitlement",
                 ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/rover/20201210/RoverCluster/UpdateRoverEntitlement");
+                "https://docs.oracle.com/iaas/api/#/en/rover/20201210/RoverEntitlement/UpdateRoverEntitlement");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {

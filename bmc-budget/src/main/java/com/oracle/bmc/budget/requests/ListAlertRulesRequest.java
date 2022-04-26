@@ -20,7 +20,7 @@ import com.oracle.bmc.budget.model.*;
 public class ListAlertRulesRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The unique Budget OCID
+     * The unique budget OCID.
      */
     private String budgetId;
 
@@ -53,7 +53,7 @@ public class ListAlertRulesRequest extends com.oracle.bmc.requests.BmcRequest<ja
     private com.oracle.bmc.budget.model.LifecycleState lifecycleState;
 
     /**
-     * A user-friendly name. Does not have to be unique, and it's changeable.
+     * A user-friendly name. This does not have to be unique, and it's changeable.
      * <p>
      * Example: {@code My new resource}
      *

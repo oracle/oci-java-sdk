@@ -38,8 +38,6 @@ public class TranscriptionFilter {
 
     /**
      * The type of filters.
-     * Allowed values are:
-     * - {@code PROFANITY}
      *
      **/
     @lombok.extern.slf4j.Slf4j

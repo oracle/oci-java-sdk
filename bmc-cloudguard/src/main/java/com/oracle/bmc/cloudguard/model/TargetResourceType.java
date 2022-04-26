@@ -13,6 +13,7 @@ public enum TargetResourceType {
     Compartment("COMPARTMENT"),
     Erpcloud("ERPCLOUD"),
     Hcmcloud("HCMCLOUD"),
+    SecurityZone("SECURITY_ZONE"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this

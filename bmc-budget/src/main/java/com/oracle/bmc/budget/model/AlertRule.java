@@ -217,33 +217,33 @@ public class AlertRule {
     }
 
     /**
-     * The OCID of the alert rule
+     * The OCID of the alert rule.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     String id;
 
     /**
-     * The OCID of the budget
+     * The OCID of the budget.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("budgetId")
     String budgetId;
 
     /**
-     * The name of the alert rule.
+     * The name of the alert rule. Avoid entering confidential information.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     String displayName;
 
     /**
-     * The type of alert. Valid values are ACTUAL (the alert will trigger based on actual usage) or
-     * FORECAST (the alert will trigger based on predicted usage).
+     * The type of the alert. Valid values are ACTUAL (the alert triggers based on actual usage), or
+     * FORECAST (the alert triggers based on predicted usage).
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     AlertType type;
 
     /**
-     * The threshold for triggering the alert. If thresholdType is PERCENTAGE, the maximum value is 10000.
+     * The threshold for triggering the alert. If the thresholdType is PERCENTAGE, the maximum value is 10000.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("threshold")
@@ -262,7 +262,7 @@ public class AlertRule {
     LifecycleState lifecycleState;
 
     /**
-     * Custom message sent when alert is triggered
+     * Custom message sent when an alert is triggered.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("message")
     String message;
@@ -274,27 +274,27 @@ public class AlertRule {
     String description;
 
     /**
-     * Version of the alert rule. Starts from 1 and increments by 1.
+     * The version of the alert rule. Starts from 1 and increments by 1.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("version")
     Integer version;
 
     /**
-     * Delimited list of email addresses to receive the alert when it triggers.
-     * Delimiter character can be comma, space, TAB, or semicolon.
+     * The delimited list of email addresses to receive the alert when it triggers.
+     * Delimiter characters can be a comma, space, TAB, or semicolon.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("recipients")
     String recipients;
 
     /**
-     * Time budget was created
+     * The time the budget was created.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     java.util.Date timeCreated;
 
     /**
-     * Time budget was updated
+     * The time the budget was updated.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     java.util.Date timeUpdated;

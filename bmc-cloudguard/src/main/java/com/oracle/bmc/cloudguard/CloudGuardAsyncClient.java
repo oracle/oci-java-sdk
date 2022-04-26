@@ -378,6 +378,53 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<AddCompartmentResponse> addCompartment(
+            AddCompartmentRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            AddCompartmentRequest, AddCompartmentResponse>
+                    handler) {
+        LOG.trace("Called async addCompartment");
+        final AddCompartmentRequest interceptedRequest =
+                AddCompartmentConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                AddCompartmentConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<javax.ws.rs.core.Response, AddCompartmentResponse>
+                transformer = AddCompartmentConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "CloudGuard", "AddCompartment", ib.getRequestUri().toString(), "");
+
+        com.oracle.bmc.responses.AsyncHandler<AddCompartmentRequest, AddCompartmentResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                AddCompartmentRequest, AddCompartmentResponse>,
+                        java.util.concurrent.Future<AddCompartmentResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getAddCompartmentDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    AddCompartmentRequest, AddCompartmentResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<ChangeDetectorRecipeCompartmentResponse>
             changeDetectorRecipeCompartment(
                     ChangeDetectorRecipeCompartmentRequest request,
@@ -395,10 +442,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                 transformer = ChangeDetectorRecipeCompartmentConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "CloudGuard",
-                "ChangeDetectorRecipeCompartment",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/DetectorRecipe/ChangeDetectorRecipeCompartment");
+                "CloudGuard", "ChangeDetectorRecipeCompartment", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeDetectorRecipeCompartmentRequest,
@@ -452,10 +496,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                 transformer = ChangeManagedListCompartmentConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "CloudGuard",
-                "ChangeManagedListCompartment",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/ManagedList/ChangeManagedListCompartment");
+                "CloudGuard", "ChangeManagedListCompartment", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeManagedListCompartmentRequest, ChangeManagedListCompartmentResponse>
@@ -510,7 +551,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                 "CloudGuard",
                 "ChangeResponderRecipeCompartment",
                 ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/ResponderRecipe/ChangeResponderRecipeCompartment");
+                "");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeResponderRecipeCompartmentRequest,
@@ -547,6 +588,112 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<ChangeSecurityRecipeCompartmentResponse>
+            changeSecurityRecipeCompartment(
+                    ChangeSecurityRecipeCompartmentRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeSecurityRecipeCompartmentRequest,
+                                    ChangeSecurityRecipeCompartmentResponse>
+                            handler) {
+        LOG.trace("Called async changeSecurityRecipeCompartment");
+        final ChangeSecurityRecipeCompartmentRequest interceptedRequest =
+                ChangeSecurityRecipeCompartmentConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangeSecurityRecipeCompartmentConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ChangeSecurityRecipeCompartmentResponse>
+                transformer = ChangeSecurityRecipeCompartmentConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "CloudGuard", "ChangeSecurityRecipeCompartment", ib.getRequestUri().toString(), "");
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        ChangeSecurityRecipeCompartmentRequest,
+                        ChangeSecurityRecipeCompartmentResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ChangeSecurityRecipeCompartmentRequest,
+                                ChangeSecurityRecipeCompartmentResponse>,
+                        java.util.concurrent.Future<ChangeSecurityRecipeCompartmentResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getChangeSecurityRecipeCompartmentDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ChangeSecurityRecipeCompartmentRequest,
+                    ChangeSecurityRecipeCompartmentResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ChangeSecurityZoneCompartmentResponse>
+            changeSecurityZoneCompartment(
+                    ChangeSecurityZoneCompartmentRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeSecurityZoneCompartmentRequest,
+                                    ChangeSecurityZoneCompartmentResponse>
+                            handler) {
+        LOG.trace("Called async changeSecurityZoneCompartment");
+        final ChangeSecurityZoneCompartmentRequest interceptedRequest =
+                ChangeSecurityZoneCompartmentConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangeSecurityZoneCompartmentConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ChangeSecurityZoneCompartmentResponse>
+                transformer = ChangeSecurityZoneCompartmentConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "CloudGuard", "ChangeSecurityZoneCompartment", ib.getRequestUri().toString(), "");
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        ChangeSecurityZoneCompartmentRequest, ChangeSecurityZoneCompartmentResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ChangeSecurityZoneCompartmentRequest,
+                                ChangeSecurityZoneCompartmentResponse>,
+                        java.util.concurrent.Future<ChangeSecurityZoneCompartmentResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getChangeSecurityZoneCompartmentDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ChangeSecurityZoneCompartmentRequest, ChangeSecurityZoneCompartmentResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateDataMaskRuleResponse> createDataMaskRule(
             CreateDataMaskRuleRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -561,10 +708,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                 transformer = CreateDataMaskRuleConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "CloudGuard",
-                "CreateDataMaskRule",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/DataMaskRule/CreateDataMaskRule");
+                "CloudGuard", "CreateDataMaskRule", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<CreateDataMaskRuleRequest, CreateDataMaskRuleResponse>
                 handlerToUse = handler;
@@ -612,10 +756,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                 transformer = CreateDetectorRecipeConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "CloudGuard",
-                "CreateDetectorRecipe",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/DetectorRecipe/CreateDetectorRecipe");
+                "CloudGuard", "CreateDetectorRecipe", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<
                         CreateDetectorRecipeRequest, CreateDetectorRecipeResponse>
@@ -663,10 +804,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                 transformer = CreateManagedListConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "CloudGuard",
-                "CreateManagedList",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/ManagedList/CreateManagedList");
+                "CloudGuard", "CreateManagedList", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<CreateManagedListRequest, CreateManagedListResponse>
                 handlerToUse = handler;
@@ -714,10 +852,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                 transformer = CreateResponderRecipeConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "CloudGuard",
-                "CreateResponderRecipe",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/ResponderRecipe/CreateResponderRecipe");
+                "CloudGuard", "CreateResponderRecipe", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<
                         CreateResponderRecipeRequest, CreateResponderRecipeResponse>
@@ -751,6 +886,102 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<CreateSecurityRecipeResponse> createSecurityRecipe(
+            CreateSecurityRecipeRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            CreateSecurityRecipeRequest, CreateSecurityRecipeResponse>
+                    handler) {
+        LOG.trace("Called async createSecurityRecipe");
+        final CreateSecurityRecipeRequest interceptedRequest =
+                CreateSecurityRecipeConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateSecurityRecipeConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, CreateSecurityRecipeResponse>
+                transformer = CreateSecurityRecipeConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "CloudGuard", "CreateSecurityRecipe", ib.getRequestUri().toString(), "");
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        CreateSecurityRecipeRequest, CreateSecurityRecipeResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CreateSecurityRecipeRequest, CreateSecurityRecipeResponse>,
+                        java.util.concurrent.Future<CreateSecurityRecipeResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateSecurityRecipeDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CreateSecurityRecipeRequest, CreateSecurityRecipeResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateSecurityZoneResponse> createSecurityZone(
+            CreateSecurityZoneRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            CreateSecurityZoneRequest, CreateSecurityZoneResponse>
+                    handler) {
+        LOG.trace("Called async createSecurityZone");
+        final CreateSecurityZoneRequest interceptedRequest =
+                CreateSecurityZoneConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateSecurityZoneConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateSecurityZoneResponse>
+                transformer = CreateSecurityZoneConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "CloudGuard", "CreateSecurityZone", ib.getRequestUri().toString(), "");
+
+        com.oracle.bmc.responses.AsyncHandler<CreateSecurityZoneRequest, CreateSecurityZoneResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CreateSecurityZoneRequest, CreateSecurityZoneResponse>,
+                        java.util.concurrent.Future<CreateSecurityZoneResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateSecurityZoneDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CreateSecurityZoneRequest, CreateSecurityZoneResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateTargetResponse> createTarget(
             CreateTargetRequest request,
             final com.oracle.bmc.responses.AsyncHandler<CreateTargetRequest, CreateTargetResponse>
@@ -764,10 +995,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                 transformer = CreateTargetConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "CloudGuard",
-                "CreateTarget",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/Target/CreateTarget");
+                "CloudGuard", "CreateTarget", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<CreateTargetRequest, CreateTargetResponse>
                 handlerToUse = handler;
@@ -817,10 +1045,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                 transformer = CreateTargetDetectorRecipeConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "CloudGuard",
-                "CreateTargetDetectorRecipe",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/TargetDetectorRecipe/CreateTargetDetectorRecipe");
+                "CloudGuard", "CreateTargetDetectorRecipe", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<
                         CreateTargetDetectorRecipeRequest, CreateTargetDetectorRecipeResponse>
@@ -872,10 +1097,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                 transformer = CreateTargetResponderRecipeConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "CloudGuard",
-                "CreateTargetResponderRecipe",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/TargetResponderRecipe/CreateTargetResponderRecipe");
+                "CloudGuard", "CreateTargetResponderRecipe", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<
                         CreateTargetResponderRecipeRequest, CreateTargetResponderRecipeResponse>
@@ -923,10 +1145,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
         final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteDataMaskRuleResponse>
                 transformer = DeleteDataMaskRuleConverter.fromResponse();
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "CloudGuard",
-                "DeleteDataMaskRule",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/DataMaskRule/DeleteDataMaskRule");
+                "CloudGuard", "DeleteDataMaskRule", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<DeleteDataMaskRuleRequest, DeleteDataMaskRuleResponse>
                 handlerToUse = handler;
@@ -969,10 +1188,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                 transformer = DeleteDetectorRecipeConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "CloudGuard",
-                "DeleteDetectorRecipe",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/DetectorRecipe/DeleteDetectorRecipe");
+                "CloudGuard", "DeleteDetectorRecipe", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<
                         DeleteDetectorRecipeRequest, DeleteDetectorRecipeResponse>
@@ -1015,10 +1231,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                 transformer = DeleteManagedListConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "CloudGuard",
-                "DeleteManagedList",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/ManagedList/DeleteManagedList");
+                "CloudGuard", "DeleteManagedList", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<DeleteManagedListRequest, DeleteManagedListResponse>
                 handlerToUse = handler;
@@ -1060,10 +1273,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                         javax.ws.rs.core.Response, DeleteResponderRecipeResponse>
                 transformer = DeleteResponderRecipeConverter.fromResponse();
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "CloudGuard",
-                "DeleteResponderRecipe",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/ResponderRecipe/DeleteResponderRecipe");
+                "CloudGuard", "DeleteResponderRecipe", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<
                         DeleteResponderRecipeRequest, DeleteResponderRecipeResponse>
@@ -1092,6 +1302,90 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteSecurityRecipeResponse> deleteSecurityRecipe(
+            DeleteSecurityRecipeRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            DeleteSecurityRecipeRequest, DeleteSecurityRecipeResponse>
+                    handler) {
+        LOG.trace("Called async deleteSecurityRecipe");
+        final DeleteSecurityRecipeRequest interceptedRequest =
+                DeleteSecurityRecipeConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteSecurityRecipeConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, DeleteSecurityRecipeResponse>
+                transformer = DeleteSecurityRecipeConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "CloudGuard", "DeleteSecurityRecipe", ib.getRequestUri().toString(), "");
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        DeleteSecurityRecipeRequest, DeleteSecurityRecipeResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DeleteSecurityRecipeRequest, DeleteSecurityRecipeResponse>,
+                        java.util.concurrent.Future<DeleteSecurityRecipeResponse>>
+                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DeleteSecurityRecipeRequest, DeleteSecurityRecipeResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteSecurityZoneResponse> deleteSecurityZone(
+            DeleteSecurityZoneRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            DeleteSecurityZoneRequest, DeleteSecurityZoneResponse>
+                    handler) {
+        LOG.trace("Called async deleteSecurityZone");
+        final DeleteSecurityZoneRequest interceptedRequest =
+                DeleteSecurityZoneConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteSecurityZoneConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteSecurityZoneResponse>
+                transformer = DeleteSecurityZoneConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "CloudGuard", "DeleteSecurityZone", ib.getRequestUri().toString(), "");
+
+        com.oracle.bmc.responses.AsyncHandler<DeleteSecurityZoneRequest, DeleteSecurityZoneResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DeleteSecurityZoneRequest, DeleteSecurityZoneResponse>,
+                        java.util.concurrent.Future<DeleteSecurityZoneResponse>>
+                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DeleteSecurityZoneRequest, DeleteSecurityZoneResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteTargetResponse> deleteTarget(
             DeleteTargetRequest request,
             final com.oracle.bmc.responses.AsyncHandler<DeleteTargetRequest, DeleteTargetResponse>
@@ -1104,10 +1398,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
         final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteTargetResponse>
                 transformer = DeleteTargetConverter.fromResponse();
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "CloudGuard",
-                "DeleteTarget",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/Target/DeleteTarget");
+                "CloudGuard", "DeleteTarget", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<DeleteTargetRequest, DeleteTargetResponse>
                 handlerToUse = handler;
@@ -1151,10 +1442,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                         javax.ws.rs.core.Response, DeleteTargetDetectorRecipeResponse>
                 transformer = DeleteTargetDetectorRecipeConverter.fromResponse();
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "CloudGuard",
-                "DeleteTargetDetectorRecipe",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/TargetDetectorRecipe/DeleteTargetDetectorRecipe");
+                "CloudGuard", "DeleteTargetDetectorRecipe", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<
                         DeleteTargetDetectorRecipeRequest, DeleteTargetDetectorRecipeResponse>
@@ -1200,10 +1488,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                         javax.ws.rs.core.Response, DeleteTargetResponderRecipeResponse>
                 transformer = DeleteTargetResponderRecipeConverter.fromResponse();
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "CloudGuard",
-                "DeleteTargetResponderRecipe",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/TargetResponderRecipe/DeleteTargetResponderRecipe");
+                "CloudGuard", "DeleteTargetResponderRecipe", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<
                         DeleteTargetResponderRecipeRequest, DeleteTargetResponderRecipeResponse>
@@ -1248,10 +1533,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                 transformer = ExecuteResponderExecutionConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "CloudGuard",
-                "ExecuteResponderExecution",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/ResponderExecution/ExecuteResponderExecution");
+                "CloudGuard", "ExecuteResponderExecution", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ExecuteResponderExecutionRequest, ExecuteResponderExecutionResponse>
@@ -1300,10 +1582,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                         javax.ws.rs.core.Response, GetConditionMetadataTypeResponse>
                 transformer = GetConditionMetadataTypeConverter.fromResponse();
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "CloudGuard",
-                "GetConditionMetadataType",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/ConditionMetadataType/GetConditionMetadataType");
+                "CloudGuard", "GetConditionMetadataType", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<
                         GetConditionMetadataTypeRequest, GetConditionMetadataTypeResponse>
@@ -1345,10 +1624,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetConfigurationResponse>
                 transformer = GetConfigurationConverter.fromResponse();
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "CloudGuard",
-                "GetConfiguration",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/Configuration/GetConfiguration");
+                "CloudGuard", "GetConfiguration", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<GetConfigurationRequest, GetConfigurationResponse>
                 handlerToUse = handler;
@@ -1389,10 +1665,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetDataMaskRuleResponse>
                 transformer = GetDataMaskRuleConverter.fromResponse();
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "CloudGuard",
-                "GetDataMaskRule",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/DataMaskRule/GetDataMaskRule");
+                "CloudGuard", "GetDataMaskRule", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<GetDataMaskRuleRequest, GetDataMaskRuleResponse>
                 handlerToUse = handler;
@@ -1432,10 +1705,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetDetectorResponse>
                 transformer = GetDetectorConverter.fromResponse();
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "CloudGuard",
-                "GetDetector",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/Detector/GetDetector");
+                "CloudGuard", "GetDetector", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<GetDetectorRequest, GetDetectorResponse>
                 handlerToUse = handler;
@@ -1476,10 +1746,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetDetectorRecipeResponse>
                 transformer = GetDetectorRecipeConverter.fromResponse();
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "CloudGuard",
-                "GetDetectorRecipe",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/DetectorRecipe/GetDetectorRecipe");
+                "CloudGuard", "GetDetectorRecipe", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<GetDetectorRecipeRequest, GetDetectorRecipeResponse>
                 handlerToUse = handler;
@@ -1523,10 +1790,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                         javax.ws.rs.core.Response, GetDetectorRecipeDetectorRuleResponse>
                 transformer = GetDetectorRecipeDetectorRuleConverter.fromResponse();
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "CloudGuard",
-                "GetDetectorRecipeDetectorRule",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/DetectorRecipeDetectorRule/GetDetectorRecipeDetectorRule");
+                "CloudGuard", "GetDetectorRecipeDetectorRule", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<
                         GetDetectorRecipeDetectorRuleRequest, GetDetectorRecipeDetectorRuleResponse>
@@ -1569,10 +1833,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetDetectorRuleResponse>
                 transformer = GetDetectorRuleConverter.fromResponse();
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "CloudGuard",
-                "GetDetectorRule",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/DetectorRule/GetDetectorRule");
+                "CloudGuard", "GetDetectorRule", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<GetDetectorRuleRequest, GetDetectorRuleResponse>
                 handlerToUse = handler;
@@ -1613,10 +1874,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetManagedListResponse>
                 transformer = GetManagedListConverter.fromResponse();
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "CloudGuard",
-                "GetManagedList",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/ManagedList/GetManagedList");
+                "CloudGuard", "GetManagedList", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<GetManagedListRequest, GetManagedListResponse>
                 handlerToUse = handler;
@@ -1655,10 +1913,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetProblemResponse>
                 transformer = GetProblemConverter.fromResponse();
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "CloudGuard",
-                "GetProblem",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/Problem/GetProblem");
+                "CloudGuard", "GetProblem", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<GetProblemRequest, GetProblemResponse> handlerToUse =
                 handler;
@@ -1699,10 +1954,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetResourceProfileResponse>
                 transformer = GetResourceProfileConverter.fromResponse();
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "CloudGuard",
-                "GetResourceProfile",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/ResourceProfile/GetResourceProfile");
+                "CloudGuard", "GetResourceProfile", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<GetResourceProfileRequest, GetResourceProfileResponse>
                 handlerToUse = handler;
@@ -1744,10 +1996,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                         javax.ws.rs.core.Response, GetResponderExecutionResponse>
                 transformer = GetResponderExecutionConverter.fromResponse();
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "CloudGuard",
-                "GetResponderExecution",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/ResponderExecution/GetResponderExecution");
+                "CloudGuard", "GetResponderExecution", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<
                         GetResponderExecutionRequest, GetResponderExecutionResponse>
@@ -1789,10 +2038,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetResponderRecipeResponse>
                 transformer = GetResponderRecipeConverter.fromResponse();
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "CloudGuard",
-                "GetResponderRecipe",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/ResponderRecipe/GetResponderRecipe");
+                "CloudGuard", "GetResponderRecipe", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<GetResponderRecipeRequest, GetResponderRecipeResponse>
                 handlerToUse = handler;
@@ -1836,10 +2082,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                         javax.ws.rs.core.Response, GetResponderRecipeResponderRuleResponse>
                 transformer = GetResponderRecipeResponderRuleConverter.fromResponse();
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "CloudGuard",
-                "GetResponderRecipeResponderRule",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/ResponderRecipeResponderRule/GetResponderRecipeResponderRule");
+                "CloudGuard", "GetResponderRecipeResponderRule", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<
                         GetResponderRecipeResponderRuleRequest,
@@ -1884,10 +2127,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetResponderRuleResponse>
                 transformer = GetResponderRuleConverter.fromResponse();
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "CloudGuard",
-                "GetResponderRule",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/ResponderRule/GetResponderRule");
+                "CloudGuard", "GetResponderRule", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<GetResponderRuleRequest, GetResponderRuleResponse>
                 handlerToUse = handler;
@@ -1915,6 +2155,129 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<GetSecurityPolicyResponse> getSecurityPolicy(
+            GetSecurityPolicyRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetSecurityPolicyRequest, GetSecurityPolicyResponse>
+                    handler) {
+        LOG.trace("Called async getSecurityPolicy");
+        final GetSecurityPolicyRequest interceptedRequest =
+                GetSecurityPolicyConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetSecurityPolicyConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<javax.ws.rs.core.Response, GetSecurityPolicyResponse>
+                transformer = GetSecurityPolicyConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "CloudGuard", "GetSecurityPolicy", ib.getRequestUri().toString(), "");
+
+        com.oracle.bmc.responses.AsyncHandler<GetSecurityPolicyRequest, GetSecurityPolicyResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetSecurityPolicyRequest, GetSecurityPolicyResponse>,
+                        java.util.concurrent.Future<GetSecurityPolicyResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetSecurityPolicyRequest, GetSecurityPolicyResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetSecurityRecipeResponse> getSecurityRecipe(
+            GetSecurityRecipeRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetSecurityRecipeRequest, GetSecurityRecipeResponse>
+                    handler) {
+        LOG.trace("Called async getSecurityRecipe");
+        final GetSecurityRecipeRequest interceptedRequest =
+                GetSecurityRecipeConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetSecurityRecipeConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<javax.ws.rs.core.Response, GetSecurityRecipeResponse>
+                transformer = GetSecurityRecipeConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "CloudGuard", "GetSecurityRecipe", ib.getRequestUri().toString(), "");
+
+        com.oracle.bmc.responses.AsyncHandler<GetSecurityRecipeRequest, GetSecurityRecipeResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetSecurityRecipeRequest, GetSecurityRecipeResponse>,
+                        java.util.concurrent.Future<GetSecurityRecipeResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetSecurityRecipeRequest, GetSecurityRecipeResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetSecurityZoneResponse> getSecurityZone(
+            GetSecurityZoneRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetSecurityZoneRequest, GetSecurityZoneResponse>
+                    handler) {
+        LOG.trace("Called async getSecurityZone");
+        final GetSecurityZoneRequest interceptedRequest =
+                GetSecurityZoneConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetSecurityZoneConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<javax.ws.rs.core.Response, GetSecurityZoneResponse>
+                transformer = GetSecurityZoneConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "CloudGuard", "GetSecurityZone", ib.getRequestUri().toString(), "");
+
+        com.oracle.bmc.responses.AsyncHandler<GetSecurityZoneRequest, GetSecurityZoneResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetSecurityZoneRequest, GetSecurityZoneResponse>,
+                        java.util.concurrent.Future<GetSecurityZoneResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetSecurityZoneRequest, GetSecurityZoneResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<GetSightingResponse> getSighting(
             GetSightingRequest request,
             final com.oracle.bmc.responses.AsyncHandler<GetSightingRequest, GetSightingResponse>
@@ -1927,10 +2290,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetSightingResponse>
                 transformer = GetSightingConverter.fromResponse();
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "CloudGuard",
-                "GetSighting",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/Sighting/GetSighting");
+                "CloudGuard", "GetSighting", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<GetSightingRequest, GetSightingResponse>
                 handlerToUse = handler;
@@ -1969,10 +2329,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetTargetResponse>
                 transformer = GetTargetConverter.fromResponse();
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "CloudGuard",
-                "GetTarget",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/Target/GetTarget");
+                "CloudGuard", "GetTarget", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<GetTargetRequest, GetTargetResponse> handlerToUse =
                 handler;
@@ -2013,10 +2370,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                         javax.ws.rs.core.Response, GetTargetDetectorRecipeResponse>
                 transformer = GetTargetDetectorRecipeConverter.fromResponse();
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "CloudGuard",
-                "GetTargetDetectorRecipe",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/TargetDetectorRecipe/GetTargetDetectorRecipe");
+                "CloudGuard", "GetTargetDetectorRecipe", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<
                         GetTargetDetectorRecipeRequest, GetTargetDetectorRecipeResponse>
@@ -2065,7 +2419,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                 "CloudGuard",
                 "GetTargetDetectorRecipeDetectorRule",
                 ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/TargetDetectorRecipeDetectorRule/GetTargetDetectorRecipeDetectorRule");
+                "");
 
         com.oracle.bmc.responses.AsyncHandler<
                         GetTargetDetectorRecipeDetectorRuleRequest,
@@ -2111,10 +2465,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                         javax.ws.rs.core.Response, GetTargetResponderRecipeResponse>
                 transformer = GetTargetResponderRecipeConverter.fromResponse();
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "CloudGuard",
-                "GetTargetResponderRecipe",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/TargetResponderRecipe/GetTargetResponderRecipe");
+                "CloudGuard", "GetTargetResponderRecipe", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<
                         GetTargetResponderRecipeRequest, GetTargetResponderRecipeResponse>
@@ -2163,7 +2514,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                 "CloudGuard",
                 "GetTargetResponderRecipeResponderRule",
                 ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/TargetResponderRecipeResponderRule/GetTargetResponderRecipeResponderRule");
+                "");
 
         com.oracle.bmc.responses.AsyncHandler<
                         GetTargetResponderRecipeResponderRuleRequest,
@@ -2211,10 +2562,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                         javax.ws.rs.core.Response, ListConditionMetadataTypesResponse>
                 transformer = ListConditionMetadataTypesConverter.fromResponse();
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "CloudGuard",
-                "ListConditionMetadataTypes",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/ConditionMetadataType/ListConditionMetadataTypes");
+                "CloudGuard", "ListConditionMetadataTypes", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListConditionMetadataTypesRequest, ListConditionMetadataTypesResponse>
@@ -2257,10 +2605,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListDataMaskRulesResponse>
                 transformer = ListDataMaskRulesConverter.fromResponse();
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "CloudGuard",
-                "ListDataMaskRules",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/DataMaskRule/ListDataMaskRules");
+                "CloudGuard", "ListDataMaskRules", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<ListDataMaskRulesRequest, ListDataMaskRulesResponse>
                 handlerToUse = handler;
@@ -2304,10 +2649,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                         javax.ws.rs.core.Response, ListDetectorRecipeDetectorRulesResponse>
                 transformer = ListDetectorRecipeDetectorRulesConverter.fromResponse();
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "CloudGuard",
-                "ListDetectorRecipeDetectorRules",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/DetectorRecipeDetectorRule/ListDetectorRecipeDetectorRules");
+                "CloudGuard", "ListDetectorRecipeDetectorRules", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListDetectorRecipeDetectorRulesRequest,
@@ -2353,10 +2695,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                         javax.ws.rs.core.Response, ListDetectorRecipesResponse>
                 transformer = ListDetectorRecipesConverter.fromResponse();
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "CloudGuard",
-                "ListDetectorRecipes",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/DetectorRecipe/ListDetectorRecipes");
+                "CloudGuard", "ListDetectorRecipes", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListDetectorRecipesRequest, ListDetectorRecipesResponse>
@@ -2398,10 +2737,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListDetectorRulesResponse>
                 transformer = ListDetectorRulesConverter.fromResponse();
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "CloudGuard",
-                "ListDetectorRules",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/DetectorRule/ListDetectorRules");
+                "CloudGuard", "ListDetectorRules", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<ListDetectorRulesRequest, ListDetectorRulesResponse>
                 handlerToUse = handler;
@@ -2441,10 +2777,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListDetectorsResponse>
                 transformer = ListDetectorsConverter.fromResponse();
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "CloudGuard",
-                "ListDetectors",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/Detector/ListDetectors");
+                "CloudGuard", "ListDetectors", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<ListDetectorsRequest, ListDetectorsResponse>
                 handlerToUse = handler;
@@ -2486,10 +2819,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                         javax.ws.rs.core.Response, ListImpactedResourcesResponse>
                 transformer = ListImpactedResourcesConverter.fromResponse();
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "CloudGuard",
-                "ListImpactedResources",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/ImpactedResourceSummary/ListImpactedResources");
+                "CloudGuard", "ListImpactedResources", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListImpactedResourcesRequest, ListImpactedResourcesResponse>
@@ -2532,10 +2862,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                         javax.ws.rs.core.Response, ListManagedListTypesResponse>
                 transformer = ListManagedListTypesConverter.fromResponse();
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "CloudGuard",
-                "ListManagedListTypes",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/ManagedListTypeSummary/ListManagedListTypes");
+                "CloudGuard", "ListManagedListTypes", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListManagedListTypesRequest, ListManagedListTypesResponse>
@@ -2577,10 +2904,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListManagedListsResponse>
                 transformer = ListManagedListsConverter.fromResponse();
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "CloudGuard",
-                "ListManagedLists",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/ManagedList/ListManagedLists");
+                "CloudGuard", "ListManagedLists", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<ListManagedListsRequest, ListManagedListsResponse>
                 handlerToUse = handler;
@@ -2620,10 +2944,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListPoliciesResponse>
                 transformer = ListPoliciesConverter.fromResponse();
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "CloudGuard",
-                "ListPolicies",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/PolicySummary/ListPolicies");
+                "CloudGuard", "ListPolicies", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<ListPoliciesRequest, ListPoliciesResponse>
                 handlerToUse = handler;
@@ -2665,10 +2986,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                         javax.ws.rs.core.Response, ListProblemEndpointsResponse>
                 transformer = ListProblemEndpointsConverter.fromResponse();
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "CloudGuard",
-                "ListProblemEndpoints",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/ProblemEndpointSummary/ListProblemEndpoints");
+                "CloudGuard", "ListProblemEndpoints", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListProblemEndpointsRequest, ListProblemEndpointsResponse>
@@ -2711,10 +3029,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                         javax.ws.rs.core.Response, ListProblemHistoriesResponse>
                 transformer = ListProblemHistoriesConverter.fromResponse();
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "CloudGuard",
-                "ListProblemHistories",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/Problem/ListProblemHistories");
+                "CloudGuard", "ListProblemHistories", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListProblemHistoriesRequest, ListProblemHistoriesResponse>
@@ -2755,10 +3070,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListProblemsResponse>
                 transformer = ListProblemsConverter.fromResponse();
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "CloudGuard",
-                "ListProblems",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/Problem/ListProblems");
+                "CloudGuard", "ListProblems", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<ListProblemsRequest, ListProblemsResponse>
                 handlerToUse = handler;
@@ -2800,10 +3112,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                         javax.ws.rs.core.Response, ListRecommendationsResponse>
                 transformer = ListRecommendationsConverter.fromResponse();
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "CloudGuard",
-                "ListRecommendations",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/RecommendationSummary/ListRecommendations");
+                "CloudGuard", "ListRecommendations", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListRecommendationsRequest, ListRecommendationsResponse>
@@ -2848,10 +3157,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                         javax.ws.rs.core.Response, ListResourceProfileEndpointsResponse>
                 transformer = ListResourceProfileEndpointsConverter.fromResponse();
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "CloudGuard",
-                "ListResourceProfileEndpoints",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/ResourceProfileEndpointSummary/ListResourceProfileEndpoints");
+                "CloudGuard", "ListResourceProfileEndpoints", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListResourceProfileEndpointsRequest, ListResourceProfileEndpointsResponse>
@@ -2901,7 +3207,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                 "CloudGuard",
                 "ListResourceProfileImpactedResources",
                 ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/ResourceProfileImpactedResourceSummary/ListResourceProfileImpactedResources");
+                "");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListResourceProfileImpactedResourcesRequest,
@@ -2947,10 +3253,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                         javax.ws.rs.core.Response, ListResourceProfilesResponse>
                 transformer = ListResourceProfilesConverter.fromResponse();
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "CloudGuard",
-                "ListResourceProfiles",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/ResourceProfileSummary/ListResourceProfiles");
+                "CloudGuard", "ListResourceProfiles", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListResourceProfilesRequest, ListResourceProfilesResponse>
@@ -2992,10 +3295,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListResourceTypesResponse>
                 transformer = ListResourceTypesConverter.fromResponse();
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "CloudGuard",
-                "ListResourceTypes",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/ResourceTypeSummary/ListResourceTypes");
+                "CloudGuard", "ListResourceTypes", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<ListResourceTypesRequest, ListResourceTypesResponse>
                 handlerToUse = handler;
@@ -3037,10 +3337,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                         javax.ws.rs.core.Response, ListResponderActivitiesResponse>
                 transformer = ListResponderActivitiesConverter.fromResponse();
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "CloudGuard",
-                "ListResponderActivities",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/ResponderActivitySummary/ListResponderActivities");
+                "CloudGuard", "ListResponderActivities", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListResponderActivitiesRequest, ListResponderActivitiesResponse>
@@ -3083,10 +3380,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                         javax.ws.rs.core.Response, ListResponderExecutionsResponse>
                 transformer = ListResponderExecutionsConverter.fromResponse();
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "CloudGuard",
-                "ListResponderExecutions",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/ResponderExecutionSummary/ListResponderExecutions");
+                "CloudGuard", "ListResponderExecutions", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListResponderExecutionsRequest, ListResponderExecutionsResponse>
@@ -3134,7 +3428,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                 "CloudGuard",
                 "ListResponderRecipeResponderRules",
                 ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/ResponderRecipeResponderRule/ListResponderRecipeResponderRules");
+                "");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListResponderRecipeResponderRulesRequest,
@@ -3180,10 +3474,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                         javax.ws.rs.core.Response, ListResponderRecipesResponse>
                 transformer = ListResponderRecipesConverter.fromResponse();
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "CloudGuard",
-                "ListResponderRecipes",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/ResponderRecipe/ListResponderRecipes");
+                "CloudGuard", "ListResponderRecipes", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListResponderRecipesRequest, ListResponderRecipesResponse>
@@ -3225,10 +3516,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListResponderRulesResponse>
                 transformer = ListResponderRulesConverter.fromResponse();
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "CloudGuard",
-                "ListResponderRules",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/ResponderRule/ListResponderRules");
+                "CloudGuard", "ListResponderRules", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<ListResponderRulesRequest, ListResponderRulesResponse>
                 handlerToUse = handler;
@@ -3256,6 +3544,133 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<ListSecurityPoliciesResponse> listSecurityPolicies(
+            ListSecurityPoliciesRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListSecurityPoliciesRequest, ListSecurityPoliciesResponse>
+                    handler) {
+        LOG.trace("Called async listSecurityPolicies");
+        final ListSecurityPoliciesRequest interceptedRequest =
+                ListSecurityPoliciesConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListSecurityPoliciesConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ListSecurityPoliciesResponse>
+                transformer = ListSecurityPoliciesConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "CloudGuard", "ListSecurityPolicies", ib.getRequestUri().toString(), "");
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListSecurityPoliciesRequest, ListSecurityPoliciesResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListSecurityPoliciesRequest, ListSecurityPoliciesResponse>,
+                        java.util.concurrent.Future<ListSecurityPoliciesResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListSecurityPoliciesRequest, ListSecurityPoliciesResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListSecurityRecipesResponse> listSecurityRecipes(
+            ListSecurityRecipesRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListSecurityRecipesRequest, ListSecurityRecipesResponse>
+                    handler) {
+        LOG.trace("Called async listSecurityRecipes");
+        final ListSecurityRecipesRequest interceptedRequest =
+                ListSecurityRecipesConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListSecurityRecipesConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ListSecurityRecipesResponse>
+                transformer = ListSecurityRecipesConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "CloudGuard", "ListSecurityRecipes", ib.getRequestUri().toString(), "");
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListSecurityRecipesRequest, ListSecurityRecipesResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListSecurityRecipesRequest, ListSecurityRecipesResponse>,
+                        java.util.concurrent.Future<ListSecurityRecipesResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListSecurityRecipesRequest, ListSecurityRecipesResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListSecurityZonesResponse> listSecurityZones(
+            ListSecurityZonesRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListSecurityZonesRequest, ListSecurityZonesResponse>
+                    handler) {
+        LOG.trace("Called async listSecurityZones");
+        final ListSecurityZonesRequest interceptedRequest =
+                ListSecurityZonesConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListSecurityZonesConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<javax.ws.rs.core.Response, ListSecurityZonesResponse>
+                transformer = ListSecurityZonesConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "CloudGuard", "ListSecurityZones", ib.getRequestUri().toString(), "");
+
+        com.oracle.bmc.responses.AsyncHandler<ListSecurityZonesRequest, ListSecurityZonesResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListSecurityZonesRequest, ListSecurityZonesResponse>,
+                        java.util.concurrent.Future<ListSecurityZonesResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListSecurityZonesRequest, ListSecurityZonesResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<ListSightingEndpointsResponse> listSightingEndpoints(
             ListSightingEndpointsRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -3270,10 +3685,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                         javax.ws.rs.core.Response, ListSightingEndpointsResponse>
                 transformer = ListSightingEndpointsConverter.fromResponse();
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "CloudGuard",
-                "ListSightingEndpoints",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/SightingEndpointSummary/ListSightingEndpoints");
+                "CloudGuard", "ListSightingEndpoints", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListSightingEndpointsRequest, ListSightingEndpointsResponse>
@@ -3318,10 +3730,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                         javax.ws.rs.core.Response, ListSightingImpactedResourcesResponse>
                 transformer = ListSightingImpactedResourcesConverter.fromResponse();
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "CloudGuard",
-                "ListSightingImpactedResources",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/SightingImpactedResourceSummary/ListSightingImpactedResources");
+                "CloudGuard", "ListSightingImpactedResources", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListSightingImpactedResourcesRequest, ListSightingImpactedResourcesResponse>
@@ -3363,10 +3772,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListSightingsResponse>
                 transformer = ListSightingsConverter.fromResponse();
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "CloudGuard",
-                "ListSightings",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/SightingSummary/ListSightings");
+                "CloudGuard", "ListSightings", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<ListSightingsRequest, ListSightingsResponse>
                 handlerToUse = handler;
@@ -3406,10 +3812,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListTacticsResponse>
                 transformer = ListTacticsConverter.fromResponse();
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "CloudGuard",
-                "ListTactics",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/TacticSummary/ListTactics");
+                "CloudGuard", "ListTactics", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<ListTacticsRequest, ListTacticsResponse>
                 handlerToUse = handler;
@@ -3457,7 +3860,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                 "CloudGuard",
                 "ListTargetDetectorRecipeDetectorRules",
                 ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/TargetDetectorRecipeDetectorRule/ListTargetDetectorRecipeDetectorRules");
+                "");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListTargetDetectorRecipeDetectorRulesRequest,
@@ -3503,10 +3906,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                         javax.ws.rs.core.Response, ListTargetDetectorRecipesResponse>
                 transformer = ListTargetDetectorRecipesConverter.fromResponse();
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "CloudGuard",
-                "ListTargetDetectorRecipes",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/TargetDetectorRecipe/ListTargetDetectorRecipes");
+                "CloudGuard", "ListTargetDetectorRecipes", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListTargetDetectorRecipesRequest, ListTargetDetectorRecipesResponse>
@@ -3556,7 +3956,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                 "CloudGuard",
                 "ListTargetResponderRecipeResponderRules",
                 ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/TargetResponderRecipeResponderRule/ListTargetResponderRecipeResponderRules");
+                "");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListTargetResponderRecipeResponderRulesRequest,
@@ -3605,10 +4005,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                         javax.ws.rs.core.Response, ListTargetResponderRecipesResponse>
                 transformer = ListTargetResponderRecipesConverter.fromResponse();
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "CloudGuard",
-                "ListTargetResponderRecipes",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/TargetResponderRecipe/ListTargetResponderRecipes");
+                "CloudGuard", "ListTargetResponderRecipes", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListTargetResponderRecipesRequest, ListTargetResponderRecipesResponse>
@@ -3650,10 +4047,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListTargetsResponse>
                 transformer = ListTargetsConverter.fromResponse();
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "CloudGuard",
-                "ListTargets",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/Target/ListTargets");
+                "CloudGuard", "ListTargets", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<ListTargetsRequest, ListTargetsResponse>
                 handlerToUse = handler;
@@ -3694,10 +4088,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListTechniquesResponse>
                 transformer = ListTechniquesConverter.fromResponse();
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "CloudGuard",
-                "ListTechniques",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/TechniqueSummary/ListTechniques");
+                "CloudGuard", "ListTechniques", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<ListTechniquesRequest, ListTechniquesResponse>
                 handlerToUse = handler;
@@ -3725,6 +4116,53 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<RemoveCompartmentResponse> removeCompartment(
+            RemoveCompartmentRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            RemoveCompartmentRequest, RemoveCompartmentResponse>
+                    handler) {
+        LOG.trace("Called async removeCompartment");
+        final RemoveCompartmentRequest interceptedRequest =
+                RemoveCompartmentConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                RemoveCompartmentConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<javax.ws.rs.core.Response, RemoveCompartmentResponse>
+                transformer = RemoveCompartmentConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "CloudGuard", "RemoveCompartment", ib.getRequestUri().toString(), "");
+
+        com.oracle.bmc.responses.AsyncHandler<RemoveCompartmentRequest, RemoveCompartmentResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                RemoveCompartmentRequest, RemoveCompartmentResponse>,
+                        java.util.concurrent.Future<RemoveCompartmentResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getRemoveCompartmentDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    RemoveCompartmentRequest, RemoveCompartmentResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<RequestRiskScoresResponse> requestRiskScores(
             RequestRiskScoresRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -3738,10 +4176,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
         final com.google.common.base.Function<javax.ws.rs.core.Response, RequestRiskScoresResponse>
                 transformer = RequestRiskScoresConverter.fromResponse();
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "CloudGuard",
-                "RequestRiskScores",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/RiskScoreAggregation/RequestRiskScores");
+                "CloudGuard", "RequestRiskScores", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<RequestRiskScoresRequest, RequestRiskScoresResponse>
                 handlerToUse = handler;
@@ -3789,7 +4224,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                 "CloudGuard",
                 "RequestSecurityScoreSummarizedTrend",
                 ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/SecurityScoreTrendAggregation/RequestSecurityScoreSummarizedTrend");
+                "");
 
         com.oracle.bmc.responses.AsyncHandler<
                         RequestSecurityScoreSummarizedTrendRequest,
@@ -3835,10 +4270,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                         javax.ws.rs.core.Response, RequestSecurityScoresResponse>
                 transformer = RequestSecurityScoresConverter.fromResponse();
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "CloudGuard",
-                "RequestSecurityScores",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/SecurityScoreAggregation/RequestSecurityScores");
+                "CloudGuard", "RequestSecurityScores", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<
                         RequestSecurityScoresRequest, RequestSecurityScoresResponse>
@@ -3886,7 +4318,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                 "CloudGuard",
                 "RequestSummarizedActivityProblems",
                 ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/ActivityProblemAggregation/RequestSummarizedActivityProblems");
+                "");
 
         com.oracle.bmc.responses.AsyncHandler<
                         RequestSummarizedActivityProblemsRequest,
@@ -3932,10 +4364,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                         javax.ws.rs.core.Response, RequestSummarizedProblemsResponse>
                 transformer = RequestSummarizedProblemsConverter.fromResponse();
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "CloudGuard",
-                "RequestSummarizedProblems",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/ProblemAggregation/RequestSummarizedProblems");
+                "CloudGuard", "RequestSummarizedProblems", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<
                         RequestSummarizedProblemsRequest, RequestSummarizedProblemsResponse>
@@ -3985,7 +4414,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                 "CloudGuard",
                 "RequestSummarizedResponderExecutions",
                 ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/ResponderExecutionAggregation/RequestSummarizedResponderExecutions");
+                "");
 
         com.oracle.bmc.responses.AsyncHandler<
                         RequestSummarizedResponderExecutionsRequest,
@@ -4033,10 +4462,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                         javax.ws.rs.core.Response, RequestSummarizedRiskScoresResponse>
                 transformer = RequestSummarizedRiskScoresConverter.fromResponse();
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "CloudGuard",
-                "RequestSummarizedRiskScores",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/RiskScoreAggregation/RequestSummarizedRiskScores");
+                "CloudGuard", "RequestSummarizedRiskScores", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<
                         RequestSummarizedRiskScoresRequest, RequestSummarizedRiskScoresResponse>
@@ -4082,10 +4508,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                         javax.ws.rs.core.Response, RequestSummarizedSecurityScoresResponse>
                 transformer = RequestSummarizedSecurityScoresConverter.fromResponse();
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "CloudGuard",
-                "RequestSummarizedSecurityScores",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/SecurityScoreAggregation/RequestSummarizedSecurityScores");
+                "CloudGuard", "RequestSummarizedSecurityScores", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<
                         RequestSummarizedSecurityScoresRequest,
@@ -4140,7 +4563,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                 "CloudGuard",
                 "RequestSummarizedTopTrendResourceProfileRiskScores",
                 ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/ResourceProfileRiskScoreAggregationSummary/RequestSummarizedTopTrendResourceProfileRiskScores");
+                "");
 
         com.oracle.bmc.responses.AsyncHandler<
                         RequestSummarizedTopTrendResourceProfileRiskScoresRequest,
@@ -4189,10 +4612,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                         javax.ws.rs.core.Response, RequestSummarizedTrendProblemsResponse>
                 transformer = RequestSummarizedTrendProblemsConverter.fromResponse();
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "CloudGuard",
-                "RequestSummarizedTrendProblems",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/ProblemTrendAggregation/RequestSummarizedTrendProblems");
+                "CloudGuard", "RequestSummarizedTrendProblems", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<
                         RequestSummarizedTrendProblemsRequest,
@@ -4243,7 +4663,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                 "CloudGuard",
                 "RequestSummarizedTrendResourceRiskScores",
                 ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/ResourceRiskScoreAggregation/RequestSummarizedTrendResourceRiskScores");
+                "");
 
         com.oracle.bmc.responses.AsyncHandler<
                         RequestSummarizedTrendResourceRiskScoresRequest,
@@ -4303,7 +4723,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                 "CloudGuard",
                 "RequestSummarizedTrendResponderExecutions",
                 ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/ResponderExecutionTrendAggregation/RequestSummarizedTrendResponderExecutions");
+                "");
 
         com.oracle.bmc.responses.AsyncHandler<
                         RequestSummarizedTrendResponderExecutionsRequest,
@@ -4356,7 +4776,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                 "CloudGuard",
                 "RequestSummarizedTrendSecurityScores",
                 ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/SecurityScoreTrendAggregation/RequestSummarizedTrendSecurityScores");
+                "");
 
         com.oracle.bmc.responses.AsyncHandler<
                         RequestSummarizedTrendSecurityScoresRequest,
@@ -4404,10 +4824,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                         javax.ws.rs.core.Response, SkipBulkResponderExecutionResponse>
                 transformer = SkipBulkResponderExecutionConverter.fromResponse();
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "CloudGuard",
-                "SkipBulkResponderExecution",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/ResponderExecution/SkipBulkResponderExecution");
+                "CloudGuard", "SkipBulkResponderExecution", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<
                         SkipBulkResponderExecutionRequest, SkipBulkResponderExecutionResponse>
@@ -4457,10 +4874,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                 transformer = SkipResponderExecutionConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "CloudGuard",
-                "SkipResponderExecution",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/ResponderExecution/SkipResponderExecution");
+                "CloudGuard", "SkipResponderExecution", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<
                         SkipResponderExecutionRequest, SkipResponderExecutionResponse>
@@ -4503,10 +4917,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                 transformer = TriggerResponderConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "CloudGuard",
-                "TriggerResponder",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/Problem/TriggerResponder");
+                "CloudGuard", "TriggerResponder", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<TriggerResponderRequest, TriggerResponderResponse>
                 handlerToUse = handler;
@@ -4553,10 +4964,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                         javax.ws.rs.core.Response, UpdateBulkProblemStatusResponse>
                 transformer = UpdateBulkProblemStatusConverter.fromResponse();
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "CloudGuard",
-                "UpdateBulkProblemStatus",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/Problem/UpdateBulkProblemStatus");
+                "CloudGuard", "UpdateBulkProblemStatus", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<
                         UpdateBulkProblemStatusRequest, UpdateBulkProblemStatusResponse>
@@ -4605,10 +5013,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                 transformer = UpdateConfigurationConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "CloudGuard",
-                "UpdateConfiguration",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/Configuration/UpdateConfiguration");
+                "CloudGuard", "UpdateConfiguration", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<
                         UpdateConfigurationRequest, UpdateConfigurationResponse>
@@ -4655,10 +5060,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
         final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateDataMaskRuleResponse>
                 transformer = UpdateDataMaskRuleConverter.fromResponse();
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "CloudGuard",
-                "UpdateDataMaskRule",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/DataMaskRule/UpdateDataMaskRule");
+                "CloudGuard", "UpdateDataMaskRule", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<UpdateDataMaskRuleRequest, UpdateDataMaskRuleResponse>
                 handlerToUse = handler;
@@ -4706,10 +5108,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                 transformer = UpdateDetectorRecipeConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "CloudGuard",
-                "UpdateDetectorRecipe",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/DetectorRecipe/UpdateDetectorRecipe");
+                "CloudGuard", "UpdateDetectorRecipe", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<
                         UpdateDetectorRecipeRequest, UpdateDetectorRecipeResponse>
@@ -4762,7 +5161,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                 "CloudGuard",
                 "UpdateDetectorRecipeDetectorRule",
                 ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/DetectorRecipeDetectorRule/UpdateDetectorRecipeDetectorRule");
+                "");
 
         com.oracle.bmc.responses.AsyncHandler<
                         UpdateDetectorRecipeDetectorRuleRequest,
@@ -4813,10 +5212,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                 transformer = UpdateManagedListConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "CloudGuard",
-                "UpdateManagedList",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/ManagedList/UpdateManagedList");
+                "CloudGuard", "UpdateManagedList", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<UpdateManagedListRequest, UpdateManagedListResponse>
                 handlerToUse = handler;
@@ -4864,10 +5260,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                 transformer = UpdateProblemStatusConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "CloudGuard",
-                "UpdateProblemStatus",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/Problem/UpdateProblemStatus");
+                "CloudGuard", "UpdateProblemStatus", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<
                         UpdateProblemStatusRequest, UpdateProblemStatusResponse>
@@ -4915,10 +5308,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                         javax.ws.rs.core.Response, UpdateResponderRecipeResponse>
                 transformer = UpdateResponderRecipeConverter.fromResponse();
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "CloudGuard",
-                "UpdateResponderRecipe",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/ResponderRecipe/UpdateResponderRecipe");
+                "CloudGuard", "UpdateResponderRecipe", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<
                         UpdateResponderRecipeRequest, UpdateResponderRecipeResponse>
@@ -4971,7 +5361,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                 "CloudGuard",
                 "UpdateResponderRecipeResponderRule",
                 ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/ResponderRecipeResponderRule/UpdateResponderRecipeResponderRule");
+                "");
 
         com.oracle.bmc.responses.AsyncHandler<
                         UpdateResponderRecipeResponderRuleRequest,
@@ -5008,6 +5398,100 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<UpdateSecurityRecipeResponse> updateSecurityRecipe(
+            UpdateSecurityRecipeRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            UpdateSecurityRecipeRequest, UpdateSecurityRecipeResponse>
+                    handler) {
+        LOG.trace("Called async updateSecurityRecipe");
+        final UpdateSecurityRecipeRequest interceptedRequest =
+                UpdateSecurityRecipeConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateSecurityRecipeConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, UpdateSecurityRecipeResponse>
+                transformer = UpdateSecurityRecipeConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "CloudGuard", "UpdateSecurityRecipe", ib.getRequestUri().toString(), "");
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        UpdateSecurityRecipeRequest, UpdateSecurityRecipeResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpdateSecurityRecipeRequest, UpdateSecurityRecipeResponse>,
+                        java.util.concurrent.Future<UpdateSecurityRecipeResponse>>
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateSecurityRecipeDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpdateSecurityRecipeRequest, UpdateSecurityRecipeResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateSecurityZoneResponse> updateSecurityZone(
+            UpdateSecurityZoneRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            UpdateSecurityZoneRequest, UpdateSecurityZoneResponse>
+                    handler) {
+        LOG.trace("Called async updateSecurityZone");
+        final UpdateSecurityZoneRequest interceptedRequest =
+                UpdateSecurityZoneConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateSecurityZoneConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateSecurityZoneResponse>
+                transformer = UpdateSecurityZoneConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "CloudGuard", "UpdateSecurityZone", ib.getRequestUri().toString(), "");
+
+        com.oracle.bmc.responses.AsyncHandler<UpdateSecurityZoneRequest, UpdateSecurityZoneResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpdateSecurityZoneRequest, UpdateSecurityZoneResponse>,
+                        java.util.concurrent.Future<UpdateSecurityZoneResponse>>
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateSecurityZoneDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpdateSecurityZoneRequest, UpdateSecurityZoneResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<UpdateTargetResponse> updateTarget(
             UpdateTargetRequest request,
             final com.oracle.bmc.responses.AsyncHandler<UpdateTargetRequest, UpdateTargetResponse>
@@ -5020,10 +5504,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
         final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateTargetResponse>
                 transformer = UpdateTargetConverter.fromResponse();
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "CloudGuard",
-                "UpdateTarget",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/Target/UpdateTarget");
+                "CloudGuard", "UpdateTarget", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<UpdateTargetRequest, UpdateTargetResponse>
                 handlerToUse = handler;
@@ -5072,10 +5553,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                         javax.ws.rs.core.Response, UpdateTargetDetectorRecipeResponse>
                 transformer = UpdateTargetDetectorRecipeConverter.fromResponse();
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "CloudGuard",
-                "UpdateTargetDetectorRecipe",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/TargetDetectorRecipe/UpdateTargetDetectorRecipe");
+                "CloudGuard", "UpdateTargetDetectorRecipe", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<
                         UpdateTargetDetectorRecipeRequest, UpdateTargetDetectorRecipeResponse>
@@ -5130,7 +5608,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                 "CloudGuard",
                 "UpdateTargetDetectorRecipeDetectorRule",
                 ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/TargetDetectorRecipeDetectorRule/UpdateTargetDetectorRecipeDetectorRule");
+                "");
 
         com.oracle.bmc.responses.AsyncHandler<
                         UpdateTargetDetectorRecipeDetectorRuleRequest,
@@ -5184,10 +5662,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                         javax.ws.rs.core.Response, UpdateTargetResponderRecipeResponse>
                 transformer = UpdateTargetResponderRecipeConverter.fromResponse();
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "CloudGuard",
-                "UpdateTargetResponderRecipe",
-                ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/TargetResponderRecipe/UpdateTargetResponderRecipe");
+                "CloudGuard", "UpdateTargetResponderRecipe", ib.getRequestUri().toString(), "");
 
         com.oracle.bmc.responses.AsyncHandler<
                         UpdateTargetResponderRecipeRequest, UpdateTargetResponderRecipeResponse>
@@ -5242,7 +5717,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                 "CloudGuard",
                 "UpdateTargetResponderRecipeResponderRule",
                 ib.getRequestUri().toString(),
-                "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/TargetResponderRecipeResponderRule/UpdateTargetResponderRecipeResponderRule");
+                "");
 
         com.oracle.bmc.responses.AsyncHandler<
                         UpdateTargetResponderRecipeResponderRuleRequest,

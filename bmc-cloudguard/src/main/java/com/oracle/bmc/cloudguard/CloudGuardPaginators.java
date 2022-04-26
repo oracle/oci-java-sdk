@@ -2701,6 +2701,346 @@ public class CloudGuardPaginators {
     }
 
     /**
+     * Creates a new iterable which will iterate over the responses received from the listSecurityPolicies operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListSecurityPoliciesResponse> listSecurityPoliciesResponseIterator(
+            final ListSecurityPoliciesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListSecurityPoliciesRequest.Builder, ListSecurityPoliciesRequest,
+                ListSecurityPoliciesResponse>(
+                new com.google.common.base.Supplier<ListSecurityPoliciesRequest.Builder>() {
+                    @Override
+                    public ListSecurityPoliciesRequest.Builder get() {
+                        return ListSecurityPoliciesRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListSecurityPoliciesResponse, String>() {
+                    @Override
+                    public String apply(ListSecurityPoliciesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListSecurityPoliciesRequest.Builder>,
+                        ListSecurityPoliciesRequest>() {
+                    @Override
+                    public ListSecurityPoliciesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListSecurityPoliciesRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListSecurityPoliciesRequest, ListSecurityPoliciesResponse>() {
+                    @Override
+                    public ListSecurityPoliciesResponse apply(ListSecurityPoliciesRequest request) {
+                        return client.listSecurityPolicies(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.cloudguard.model.SecurityPolicySummary} objects
+     * contained in responses from the listSecurityPolicies operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.cloudguard.model.SecurityPolicySummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.cloudguard.model.SecurityPolicySummary>
+            listSecurityPoliciesRecordIterator(final ListSecurityPoliciesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListSecurityPoliciesRequest.Builder, ListSecurityPoliciesRequest,
+                ListSecurityPoliciesResponse,
+                com.oracle.bmc.cloudguard.model.SecurityPolicySummary>(
+                new com.google.common.base.Supplier<ListSecurityPoliciesRequest.Builder>() {
+                    @Override
+                    public ListSecurityPoliciesRequest.Builder get() {
+                        return ListSecurityPoliciesRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListSecurityPoliciesResponse, String>() {
+                    @Override
+                    public String apply(ListSecurityPoliciesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListSecurityPoliciesRequest.Builder>,
+                        ListSecurityPoliciesRequest>() {
+                    @Override
+                    public ListSecurityPoliciesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListSecurityPoliciesRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListSecurityPoliciesRequest, ListSecurityPoliciesResponse>() {
+                    @Override
+                    public ListSecurityPoliciesResponse apply(ListSecurityPoliciesRequest request) {
+                        return client.listSecurityPolicies(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListSecurityPoliciesResponse,
+                        java.util.List<com.oracle.bmc.cloudguard.model.SecurityPolicySummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.cloudguard.model.SecurityPolicySummary>
+                            apply(ListSecurityPoliciesResponse response) {
+                        return response.getSecurityPolicyCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the listSecurityRecipes operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListSecurityRecipesResponse> listSecurityRecipesResponseIterator(
+            final ListSecurityRecipesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListSecurityRecipesRequest.Builder, ListSecurityRecipesRequest,
+                ListSecurityRecipesResponse>(
+                new com.google.common.base.Supplier<ListSecurityRecipesRequest.Builder>() {
+                    @Override
+                    public ListSecurityRecipesRequest.Builder get() {
+                        return ListSecurityRecipesRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListSecurityRecipesResponse, String>() {
+                    @Override
+                    public String apply(ListSecurityRecipesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListSecurityRecipesRequest.Builder>,
+                        ListSecurityRecipesRequest>() {
+                    @Override
+                    public ListSecurityRecipesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListSecurityRecipesRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListSecurityRecipesRequest, ListSecurityRecipesResponse>() {
+                    @Override
+                    public ListSecurityRecipesResponse apply(ListSecurityRecipesRequest request) {
+                        return client.listSecurityRecipes(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.cloudguard.model.SecurityRecipeSummary} objects
+     * contained in responses from the listSecurityRecipes operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.cloudguard.model.SecurityRecipeSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.cloudguard.model.SecurityRecipeSummary>
+            listSecurityRecipesRecordIterator(final ListSecurityRecipesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListSecurityRecipesRequest.Builder, ListSecurityRecipesRequest,
+                ListSecurityRecipesResponse, com.oracle.bmc.cloudguard.model.SecurityRecipeSummary>(
+                new com.google.common.base.Supplier<ListSecurityRecipesRequest.Builder>() {
+                    @Override
+                    public ListSecurityRecipesRequest.Builder get() {
+                        return ListSecurityRecipesRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListSecurityRecipesResponse, String>() {
+                    @Override
+                    public String apply(ListSecurityRecipesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListSecurityRecipesRequest.Builder>,
+                        ListSecurityRecipesRequest>() {
+                    @Override
+                    public ListSecurityRecipesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListSecurityRecipesRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListSecurityRecipesRequest, ListSecurityRecipesResponse>() {
+                    @Override
+                    public ListSecurityRecipesResponse apply(ListSecurityRecipesRequest request) {
+                        return client.listSecurityRecipes(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListSecurityRecipesResponse,
+                        java.util.List<com.oracle.bmc.cloudguard.model.SecurityRecipeSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.cloudguard.model.SecurityRecipeSummary>
+                            apply(ListSecurityRecipesResponse response) {
+                        return response.getSecurityRecipeCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the listSecurityZones operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListSecurityZonesResponse> listSecurityZonesResponseIterator(
+            final ListSecurityZonesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListSecurityZonesRequest.Builder, ListSecurityZonesRequest,
+                ListSecurityZonesResponse>(
+                new com.google.common.base.Supplier<ListSecurityZonesRequest.Builder>() {
+                    @Override
+                    public ListSecurityZonesRequest.Builder get() {
+                        return ListSecurityZonesRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListSecurityZonesResponse, String>() {
+                    @Override
+                    public String apply(ListSecurityZonesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListSecurityZonesRequest.Builder>,
+                        ListSecurityZonesRequest>() {
+                    @Override
+                    public ListSecurityZonesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListSecurityZonesRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListSecurityZonesRequest, ListSecurityZonesResponse>() {
+                    @Override
+                    public ListSecurityZonesResponse apply(ListSecurityZonesRequest request) {
+                        return client.listSecurityZones(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.cloudguard.model.SecurityZoneSummary} objects
+     * contained in responses from the listSecurityZones operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.cloudguard.model.SecurityZoneSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.cloudguard.model.SecurityZoneSummary>
+            listSecurityZonesRecordIterator(final ListSecurityZonesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListSecurityZonesRequest.Builder, ListSecurityZonesRequest,
+                ListSecurityZonesResponse, com.oracle.bmc.cloudguard.model.SecurityZoneSummary>(
+                new com.google.common.base.Supplier<ListSecurityZonesRequest.Builder>() {
+                    @Override
+                    public ListSecurityZonesRequest.Builder get() {
+                        return ListSecurityZonesRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListSecurityZonesResponse, String>() {
+                    @Override
+                    public String apply(ListSecurityZonesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListSecurityZonesRequest.Builder>,
+                        ListSecurityZonesRequest>() {
+                    @Override
+                    public ListSecurityZonesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListSecurityZonesRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListSecurityZonesRequest, ListSecurityZonesResponse>() {
+                    @Override
+                    public ListSecurityZonesResponse apply(ListSecurityZonesRequest request) {
+                        return client.listSecurityZones(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListSecurityZonesResponse,
+                        java.util.List<com.oracle.bmc.cloudguard.model.SecurityZoneSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.cloudguard.model.SecurityZoneSummary>
+                            apply(ListSecurityZonesResponse response) {
+                        return response.getSecurityZoneCollection().getItems();
+                    }
+                });
+    }
+
+    /**
      * Creates a new iterable which will iterate over the responses received from the listSightingEndpoints operation. This iterable
      * will fetch more data from the server as needed.
      *

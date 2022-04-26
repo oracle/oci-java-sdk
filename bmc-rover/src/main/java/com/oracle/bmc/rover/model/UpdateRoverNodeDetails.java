@@ -35,6 +35,15 @@ public class UpdateRoverNodeDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("shape")
+        private String shape;
+
+        public Builder shape(String shape) {
+            this.shape = shape;
+            this.__explicitlySet__.add("shape");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("serialNumber")
         private String serialNumber;
 
@@ -259,6 +268,7 @@ public class UpdateRoverNodeDetails {
             UpdateRoverNodeDetails __instance__ =
                     new UpdateRoverNodeDetails(
                             displayName,
+                            shape,
                             serialNumber,
                             customerShippingAddress,
                             nodeWorkloads,
@@ -291,6 +301,7 @@ public class UpdateRoverNodeDetails {
         public Builder copy(UpdateRoverNodeDetails o) {
             Builder copiedBuilder =
                     displayName(o.getDisplayName())
+                            .shape(o.getShape())
                             .serialNumber(o.getSerialNumber())
                             .customerShippingAddress(o.getCustomerShippingAddress())
                             .nodeWorkloads(o.getNodeWorkloads())
@@ -333,6 +344,12 @@ public class UpdateRoverNodeDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     String displayName;
+
+    /**
+     * The shape of workloads in the node.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("shape")
+    String shape;
 
     /**
      * Serial number of the node.

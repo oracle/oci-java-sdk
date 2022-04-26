@@ -707,6 +707,55 @@ public class OrganizationAsyncClient implements OrganizationAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<RestoreOrganizationTenancyResponse>
+            restoreOrganizationTenancy(
+                    RestoreOrganizationTenancyRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    RestoreOrganizationTenancyRequest,
+                                    RestoreOrganizationTenancyResponse>
+                            handler) {
+        LOG.trace("Called async restoreOrganizationTenancy");
+        final RestoreOrganizationTenancyRequest interceptedRequest =
+                RestoreOrganizationTenancyConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                RestoreOrganizationTenancyConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, RestoreOrganizationTenancyResponse>
+                transformer = RestoreOrganizationTenancyConverter.fromResponse();
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Organization",
+                "RestoreOrganizationTenancy",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/OrganizationTenancy/RestoreOrganizationTenancy");
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        RestoreOrganizationTenancyRequest, RestoreOrganizationTenancyResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                RestoreOrganizationTenancyRequest,
+                                RestoreOrganizationTenancyResponse>,
+                        java.util.concurrent.Future<RestoreOrganizationTenancyResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    RestoreOrganizationTenancyRequest, RestoreOrganizationTenancyResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<UnapproveOrganizationTenancyForTransferResponse>
             unapproveOrganizationTenancyForTransfer(
                     UnapproveOrganizationTenancyForTransferRequest request,

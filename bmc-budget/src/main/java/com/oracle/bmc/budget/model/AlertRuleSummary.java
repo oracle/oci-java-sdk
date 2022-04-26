@@ -217,33 +217,33 @@ public class AlertRuleSummary {
     }
 
     /**
-     * The OCID of the alert rule
+     * The OCID of the alert rule.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     String id;
 
     /**
-     * The OCID of the budget
+     * The OCID of the budget.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("budgetId")
     String budgetId;
 
     /**
-     * The name of the alert rule.
+     * The name of the alert rule. Avoid entering confidential information.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     String displayName;
 
     /**
-     * ACTUAL means the alert will trigger based on actual usage.
-     * FORECAST means the alert will trigger based on predicted usage.
+     * ACTUAL means the alert triggers based on actual usage.
+     * FORECAST means the alert triggers based on predicted usage.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     AlertType type;
 
     /**
-     * The threshold for triggering the alert. If thresholdType is PERCENTAGE, the maximum value is 10000.
+     * The threshold for triggering the alert. If the thresholdType is PERCENTAGE, the maximum value is 10000.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("threshold")
@@ -262,7 +262,7 @@ public class AlertRuleSummary {
     LifecycleState lifecycleState;
 
     /**
-     * Custom message that will be sent when alert is triggered
+     * The custom message that will be sent when the alert is triggered.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("message")
     String message;
@@ -274,25 +274,25 @@ public class AlertRuleSummary {
     String description;
 
     /**
-     * Version of the alert rule. Starts from 1 and increments by 1.
+     * The version of the alert rule. Starts from 1 and increments by 1.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("version")
     Integer version;
 
     /**
-     * The audience that will receive the alert when it triggers.
+     * The audience that receives the alert when it triggers.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("recipients")
     String recipients;
 
     /**
-     * Time when budget was created
+     * The time when the budget was created.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     java.util.Date timeCreated;
 
     /**
-     * Time when budget was updated
+     * The time when the budget was updated.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     java.util.Date timeUpdated;

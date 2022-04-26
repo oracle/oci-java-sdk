@@ -5,7 +5,7 @@
 package com.oracle.bmc.budget.model;
 
 /**
- * The reset period for the budget. Valid value is MONTHLY.
+ * The reset period for the budget. The valid value is MONTHLY.
  *
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190111")

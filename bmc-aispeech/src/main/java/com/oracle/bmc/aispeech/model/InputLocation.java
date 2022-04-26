@@ -42,9 +42,6 @@ public class InputLocation {
 
     /**
      * The type of input location.
-     * Allowed values are:
-     * - {@code OBJECT_LIST_INLINE_INPUT_LOCATION}: A list of object locations in Object Storage.
-     * - {@code OBJECT_LIST_FILE_INPUT_LOCATION}: An object in Object Storage that contains a list of input files.
      *
      **/
     @lombok.extern.slf4j.Slf4j

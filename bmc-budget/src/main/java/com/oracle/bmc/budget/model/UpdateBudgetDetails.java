@@ -63,6 +63,15 @@ public class UpdateBudgetDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("processingPeriodType")
+        private ProcessingPeriodType processingPeriodType;
+
+        public Builder processingPeriodType(ProcessingPeriodType processingPeriodType) {
+            this.processingPeriodType = processingPeriodType;
+            this.__explicitlySet__.add("processingPeriodType");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("resetPeriod")
         private ResetPeriod resetPeriod;
 
@@ -101,6 +110,7 @@ public class UpdateBudgetDetails {
                             description,
                             amount,
                             budgetProcessingPeriodStartOffset,
+                            processingPeriodType,
                             resetPeriod,
                             freeformTags,
                             definedTags);
@@ -116,6 +126,7 @@ public class UpdateBudgetDetails {
                             .amount(o.getAmount())
                             .budgetProcessingPeriodStartOffset(
                                     o.getBudgetProcessingPeriodStartOffset())
+                            .processingPeriodType(o.getProcessingPeriodType())
                             .resetPeriod(o.getResetPeriod())
                             .freeformTags(o.getFreeformTags())
                             .definedTags(o.getDefinedTags());
@@ -133,7 +144,7 @@ public class UpdateBudgetDetails {
     }
 
     /**
-     * The displayName of the budget.
+     * The displayName of the budget. Avoid entering confidential information.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     String displayName;
@@ -156,6 +167,13 @@ public class UpdateBudgetDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("budgetProcessingPeriodStartOffset")
     Integer budgetProcessingPeriodStartOffset;
+
+    /**
+     * The type of the budget processing period. Valid values are INVOICE and MONTH.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("processingPeriodType")
+    ProcessingPeriodType processingPeriodType;
 
     /**
      * The reset period for the budget.

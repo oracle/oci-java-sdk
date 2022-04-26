@@ -53,7 +53,7 @@ public class ListBudgetsRequest extends com.oracle.bmc.requests.BmcRequest<java.
     private com.oracle.bmc.budget.model.LifecycleState lifecycleState;
 
     /**
-     * A user-friendly name. Does not have to be unique, and it's changeable.
+     * A user-friendly name. This does not have to be unique, and it's changeable.
      * <p>
      * Example: {@code My new resource}
      *
@@ -61,7 +61,7 @@ public class ListBudgetsRequest extends com.oracle.bmc.requests.BmcRequest<java.
     private String displayName;
 
     /**
-     * The type of target to filter by.
+     * The type of target to filter by:
      *   * ALL - List all budgets
      *   * COMPARTMENT - List all budgets with targetType == "COMPARTMENT"
      *   * TAG - List all budgets with targetType == "TAG"
@@ -70,7 +70,7 @@ public class ListBudgetsRequest extends com.oracle.bmc.requests.BmcRequest<java.
     private TargetType targetType;
 
     /**
-     * The type of target to filter by.
+     * The type of target to filter by:
      *   * ALL - List all budgets
      *   * COMPARTMENT - List all budgets with targetType == "COMPARTMENT"
      *   * TAG - List all budgets with targetType == "TAG"

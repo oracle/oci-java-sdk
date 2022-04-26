@@ -39,6 +39,10 @@ package com.oracle.bmc.sch.model;
         name = "logging"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = MonitoringSourceDetails.class,
+        name = "monitoring"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = StreamingSourceDetails.class,
         name = "streaming"
     )
@@ -53,6 +57,7 @@ public class SourceDetails {
     @lombok.extern.slf4j.Slf4j
     public enum Kind {
         Logging("logging"),
+        Monitoring("monitoring"),
         Streaming("streaming"),
 
         /**

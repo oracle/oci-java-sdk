@@ -714,6 +714,43 @@ public class OrganizationClient implements Organization {
     }
 
     @Override
+    public RestoreOrganizationTenancyResponse restoreOrganizationTenancy(
+            RestoreOrganizationTenancyRequest request) {
+        LOG.trace("Called restoreOrganizationTenancy");
+        final RestoreOrganizationTenancyRequest interceptedRequest =
+                RestoreOrganizationTenancyConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                RestoreOrganizationTenancyConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, RestoreOrganizationTenancyResponse>
+                transformer = RestoreOrganizationTenancyConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails.setServiceDetails(
+                "Organization",
+                "RestoreOrganizationTenancy",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/OrganizationTenancy/RestoreOrganizationTenancy");
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public UnapproveOrganizationTenancyForTransferResponse unapproveOrganizationTenancyForTransfer(
             UnapproveOrganizationTenancyForTransferRequest request) {
         LOG.trace("Called unapproveOrganizationTenancyForTransfer");

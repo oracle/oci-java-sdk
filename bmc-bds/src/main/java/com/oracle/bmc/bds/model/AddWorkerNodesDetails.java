@@ -44,12 +44,54 @@ public class AddWorkerNodesDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("nodeType")
+        private NodeType nodeType;
+
+        public Builder nodeType(NodeType nodeType) {
+            this.nodeType = nodeType;
+            this.__explicitlySet__.add("nodeType");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("shape")
+        private String shape;
+
+        public Builder shape(String shape) {
+            this.shape = shape;
+            this.__explicitlySet__.add("shape");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("blockVolumeSizeInGBs")
+        private Long blockVolumeSizeInGBs;
+
+        public Builder blockVolumeSizeInGBs(Long blockVolumeSizeInGBs) {
+            this.blockVolumeSizeInGBs = blockVolumeSizeInGBs;
+            this.__explicitlySet__.add("blockVolumeSizeInGBs");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("shapeConfig")
+        private ShapeConfigDetails shapeConfig;
+
+        public Builder shapeConfig(ShapeConfigDetails shapeConfig) {
+            this.shapeConfig = shapeConfig;
+            this.__explicitlySet__.add("shapeConfig");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public AddWorkerNodesDetails build() {
             AddWorkerNodesDetails __instance__ =
-                    new AddWorkerNodesDetails(clusterAdminPassword, numberOfWorkerNodes);
+                    new AddWorkerNodesDetails(
+                            clusterAdminPassword,
+                            numberOfWorkerNodes,
+                            nodeType,
+                            shape,
+                            blockVolumeSizeInGBs,
+                            shapeConfig);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -58,7 +100,11 @@ public class AddWorkerNodesDetails {
         public Builder copy(AddWorkerNodesDetails o) {
             Builder copiedBuilder =
                     clusterAdminPassword(o.getClusterAdminPassword())
-                            .numberOfWorkerNodes(o.getNumberOfWorkerNodes());
+                            .numberOfWorkerNodes(o.getNumberOfWorkerNodes())
+                            .nodeType(o.getNodeType())
+                            .shape(o.getShape())
+                            .blockVolumeSizeInGBs(o.getBlockVolumeSizeInGBs())
+                            .shapeConfig(o.getShapeConfig());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -83,6 +129,62 @@ public class AddWorkerNodesDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("numberOfWorkerNodes")
     Integer numberOfWorkerNodes;
+    /**
+     * Worker node types, can either be Worker Data node or Compute only worker node.
+     **/
+    public enum NodeType {
+        Worker("WORKER"),
+        ComputeOnlyWorker("COMPUTE_ONLY_WORKER"),
+        ;
+
+        private final String value;
+        private static java.util.Map<String, NodeType> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (NodeType v : NodeType.values()) {
+                map.put(v.getValue(), v);
+            }
+        }
+
+        NodeType(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static NodeType create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            throw new IllegalArgumentException("Invalid NodeType: " + key);
+        }
+    };
+    /**
+     * Worker node types, can either be Worker Data node or Compute only worker node.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("nodeType")
+    NodeType nodeType;
+
+    /**
+     * Shape of the node. This has to be specified when adding compute only worker node at the first time. Otherwise, it's a read-only property.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("shape")
+    String shape;
+
+    /**
+     * The size of block volume in GB to be attached to the given node. This has to be specified when adding compute only worker node at the first time. Otherwise, it's a read-only property.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("blockVolumeSizeInGBs")
+    Long blockVolumeSizeInGBs;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("shapeConfig")
+    ShapeConfigDetails shapeConfig;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

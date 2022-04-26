@@ -372,6 +372,119 @@ public class VirtualNetworkPaginators {
     }
 
     /**
+     * Creates a new iterable which will iterate over the responses received from the listCaptureFilters operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListCaptureFiltersResponse> listCaptureFiltersResponseIterator(
+            final ListCaptureFiltersRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListCaptureFiltersRequest.Builder, ListCaptureFiltersRequest,
+                ListCaptureFiltersResponse>(
+                new com.google.common.base.Supplier<ListCaptureFiltersRequest.Builder>() {
+                    @Override
+                    public ListCaptureFiltersRequest.Builder get() {
+                        return ListCaptureFiltersRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListCaptureFiltersResponse, String>() {
+                    @Override
+                    public String apply(ListCaptureFiltersResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListCaptureFiltersRequest.Builder>,
+                        ListCaptureFiltersRequest>() {
+                    @Override
+                    public ListCaptureFiltersRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListCaptureFiltersRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListCaptureFiltersRequest, ListCaptureFiltersResponse>() {
+                    @Override
+                    public ListCaptureFiltersResponse apply(ListCaptureFiltersRequest request) {
+                        return client.listCaptureFilters(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.core.model.CaptureFilter} objects
+     * contained in responses from the listCaptureFilters operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.core.model.CaptureFilter} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.core.model.CaptureFilter> listCaptureFiltersRecordIterator(
+            final ListCaptureFiltersRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListCaptureFiltersRequest.Builder, ListCaptureFiltersRequest,
+                ListCaptureFiltersResponse, com.oracle.bmc.core.model.CaptureFilter>(
+                new com.google.common.base.Supplier<ListCaptureFiltersRequest.Builder>() {
+                    @Override
+                    public ListCaptureFiltersRequest.Builder get() {
+                        return ListCaptureFiltersRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListCaptureFiltersResponse, String>() {
+                    @Override
+                    public String apply(ListCaptureFiltersResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListCaptureFiltersRequest.Builder>,
+                        ListCaptureFiltersRequest>() {
+                    @Override
+                    public ListCaptureFiltersRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListCaptureFiltersRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListCaptureFiltersRequest, ListCaptureFiltersResponse>() {
+                    @Override
+                    public ListCaptureFiltersResponse apply(ListCaptureFiltersRequest request) {
+                        return client.listCaptureFilters(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListCaptureFiltersResponse,
+                        java.util.List<com.oracle.bmc.core.model.CaptureFilter>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.core.model.CaptureFilter> apply(
+                            ListCaptureFiltersResponse response) {
+                        return response.getItems();
+                    }
+                });
+    }
+
+    /**
      * Creates a new iterable which will iterate over the responses received from the listCpeDeviceShapes operation. This iterable
      * will fetch more data from the server as needed.
      *
@@ -4887,6 +5000,114 @@ public class VirtualNetworkPaginators {
                     @Override
                     public java.util.List<com.oracle.bmc.core.model.Vlan> apply(
                             ListVlansResponse response) {
+                        return response.getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the listVtaps operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListVtapsResponse> listVtapsResponseIterator(final ListVtapsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListVtapsRequest.Builder, ListVtapsRequest, ListVtapsResponse>(
+                new com.google.common.base.Supplier<ListVtapsRequest.Builder>() {
+                    @Override
+                    public ListVtapsRequest.Builder get() {
+                        return ListVtapsRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListVtapsResponse, String>() {
+                    @Override
+                    public String apply(ListVtapsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListVtapsRequest.Builder>,
+                        ListVtapsRequest>() {
+                    @Override
+                    public ListVtapsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListVtapsRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<ListVtapsRequest, ListVtapsResponse>() {
+                    @Override
+                    public ListVtapsResponse apply(ListVtapsRequest request) {
+                        return client.listVtaps(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.core.model.Vtap} objects
+     * contained in responses from the listVtaps operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.core.model.Vtap} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.core.model.Vtap> listVtapsRecordIterator(
+            final ListVtapsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListVtapsRequest.Builder, ListVtapsRequest, ListVtapsResponse,
+                com.oracle.bmc.core.model.Vtap>(
+                new com.google.common.base.Supplier<ListVtapsRequest.Builder>() {
+                    @Override
+                    public ListVtapsRequest.Builder get() {
+                        return ListVtapsRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListVtapsResponse, String>() {
+                    @Override
+                    public String apply(ListVtapsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListVtapsRequest.Builder>,
+                        ListVtapsRequest>() {
+                    @Override
+                    public ListVtapsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListVtapsRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<ListVtapsRequest, ListVtapsResponse>() {
+                    @Override
+                    public ListVtapsResponse apply(ListVtapsRequest request) {
+                        return client.listVtaps(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListVtapsResponse, java.util.List<com.oracle.bmc.core.model.Vtap>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.core.model.Vtap> apply(
+                            ListVtapsResponse response) {
                         return response.getItems();
                     }
                 });

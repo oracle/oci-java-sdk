@@ -30,6 +30,14 @@ public class ListTargetsRequest extends com.oracle.bmc.requests.BmcRequest<java.
     private String displayName;
 
     /**
+     * Default is false.
+     * When set to true, only the targets that would be deleted as part of
+     * security zone creation will be returned.
+     *
+     */
+    private Boolean isNonSecurityZoneTargetsOnlyQuery;
+
+    /**
      * The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
      */
     private com.oracle.bmc.cloudguard.model.LifecycleState lifecycleState;
@@ -192,6 +200,7 @@ public class ListTargetsRequest extends com.oracle.bmc.requests.BmcRequest<java.
         public Builder copy(ListTargetsRequest o) {
             compartmentId(o.getCompartmentId());
             displayName(o.getDisplayName());
+            isNonSecurityZoneTargetsOnlyQuery(o.getIsNonSecurityZoneTargetsOnlyQuery());
             lifecycleState(o.getLifecycleState());
             compartmentIdInSubtree(o.getCompartmentIdInSubtree());
             accessLevel(o.getAccessLevel());

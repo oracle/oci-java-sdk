@@ -46,6 +46,14 @@ public class ListTargetsConverter {
                         com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
                                 request.getCompartmentId()));
 
+        if (request.getIsNonSecurityZoneTargetsOnlyQuery() != null) {
+            target =
+                    target.queryParam(
+                            "isNonSecurityZoneTargetsOnlyQuery",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getIsNonSecurityZoneTargetsOnlyQuery()));
+        }
+
         if (request.getLifecycleState() != null) {
             target =
                     target.queryParam(

@@ -1045,6 +1045,311 @@ public class CloudGuardWaiters {
      * @param targetState the desired states to wait for. If multiple states are provided then the waiter will return once the resource reaches any of the provided states
      * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
      */
+    public com.oracle.bmc.waiter.Waiter<GetSecurityPolicyRequest, GetSecurityPolicyResponse>
+            forSecurityPolicy(
+                    GetSecurityPolicyRequest request,
+                    com.oracle.bmc.cloudguard.model.LifecycleState... targetStates) {
+        org.apache.commons.lang3.Validate.notEmpty(
+                targetStates, "At least one targetState must be provided");
+        org.apache.commons.lang3.Validate.noNullElements(
+                targetStates, "Null targetState values are not permitted");
+
+        return forSecurityPolicy(
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_WAITER, request, targetStates);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param targetState the desired state to wait for
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<GetSecurityPolicyRequest, GetSecurityPolicyResponse>
+            forSecurityPolicy(
+                    GetSecurityPolicyRequest request,
+                    com.oracle.bmc.cloudguard.model.LifecycleState targetState,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
+        org.apache.commons.lang3.Validate.notNull(targetState, "The targetState cannot be null");
+
+        return forSecurityPolicy(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetState);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @param targetStates the desired states to wait for. The waiter will return once the resource reaches any of the provided states
+     * @return a new {@code Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<GetSecurityPolicyRequest, GetSecurityPolicyResponse>
+            forSecurityPolicy(
+                    GetSecurityPolicyRequest request,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy,
+                    com.oracle.bmc.cloudguard.model.LifecycleState... targetStates) {
+        org.apache.commons.lang3.Validate.notEmpty(
+                targetStates, "At least one targetState must be provided");
+        org.apache.commons.lang3.Validate.noNullElements(
+                targetStates, "Null targetState values are not permitted");
+
+        return forSecurityPolicy(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetStates);
+    }
+
+    // Helper method to create a new Waiter for SecurityPolicy.
+    private com.oracle.bmc.waiter.Waiter<GetSecurityPolicyRequest, GetSecurityPolicyResponse>
+            forSecurityPolicy(
+                    com.oracle.bmc.waiter.BmcGenericWaiter waiter,
+                    final GetSecurityPolicyRequest request,
+                    final com.oracle.bmc.cloudguard.model.LifecycleState... targetStates) {
+        final java.util.Set<com.oracle.bmc.cloudguard.model.LifecycleState> targetStatesSet =
+                new java.util.HashSet<>(java.util.Arrays.asList(targetStates));
+
+        return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
+                executorService,
+                waiter.toCallable(
+                        com.google.common.base.Suppliers.ofInstance(request),
+                        new com.google.common.base.Function<
+                                GetSecurityPolicyRequest, GetSecurityPolicyResponse>() {
+                            @Override
+                            public GetSecurityPolicyResponse apply(
+                                    GetSecurityPolicyRequest request) {
+                                return client.getSecurityPolicy(request);
+                            }
+                        },
+                        new com.google.common.base.Predicate<GetSecurityPolicyResponse>() {
+                            @Override
+                            public boolean apply(GetSecurityPolicyResponse response) {
+                                return targetStatesSet.contains(
+                                        response.getSecurityPolicy().getLifecycleState());
+                            }
+                        },
+                        targetStatesSet.contains(
+                                com.oracle.bmc.cloudguard.model.LifecycleState.Deleted)),
+                request);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
+     *
+     * @param request the request to send
+     * @param targetState the desired states to wait for. If multiple states are provided then the waiter will return once the resource reaches any of the provided states
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<GetSecurityRecipeRequest, GetSecurityRecipeResponse>
+            forSecurityRecipe(
+                    GetSecurityRecipeRequest request,
+                    com.oracle.bmc.cloudguard.model.LifecycleState... targetStates) {
+        org.apache.commons.lang3.Validate.notEmpty(
+                targetStates, "At least one targetState must be provided");
+        org.apache.commons.lang3.Validate.noNullElements(
+                targetStates, "Null targetState values are not permitted");
+
+        return forSecurityRecipe(
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_WAITER, request, targetStates);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param targetState the desired state to wait for
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<GetSecurityRecipeRequest, GetSecurityRecipeResponse>
+            forSecurityRecipe(
+                    GetSecurityRecipeRequest request,
+                    com.oracle.bmc.cloudguard.model.LifecycleState targetState,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
+        org.apache.commons.lang3.Validate.notNull(targetState, "The targetState cannot be null");
+
+        return forSecurityRecipe(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetState);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @param targetStates the desired states to wait for. The waiter will return once the resource reaches any of the provided states
+     * @return a new {@code Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<GetSecurityRecipeRequest, GetSecurityRecipeResponse>
+            forSecurityRecipe(
+                    GetSecurityRecipeRequest request,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy,
+                    com.oracle.bmc.cloudguard.model.LifecycleState... targetStates) {
+        org.apache.commons.lang3.Validate.notEmpty(
+                targetStates, "At least one targetState must be provided");
+        org.apache.commons.lang3.Validate.noNullElements(
+                targetStates, "Null targetState values are not permitted");
+
+        return forSecurityRecipe(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetStates);
+    }
+
+    // Helper method to create a new Waiter for SecurityRecipe.
+    private com.oracle.bmc.waiter.Waiter<GetSecurityRecipeRequest, GetSecurityRecipeResponse>
+            forSecurityRecipe(
+                    com.oracle.bmc.waiter.BmcGenericWaiter waiter,
+                    final GetSecurityRecipeRequest request,
+                    final com.oracle.bmc.cloudguard.model.LifecycleState... targetStates) {
+        final java.util.Set<com.oracle.bmc.cloudguard.model.LifecycleState> targetStatesSet =
+                new java.util.HashSet<>(java.util.Arrays.asList(targetStates));
+
+        return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
+                executorService,
+                waiter.toCallable(
+                        com.google.common.base.Suppliers.ofInstance(request),
+                        new com.google.common.base.Function<
+                                GetSecurityRecipeRequest, GetSecurityRecipeResponse>() {
+                            @Override
+                            public GetSecurityRecipeResponse apply(
+                                    GetSecurityRecipeRequest request) {
+                                return client.getSecurityRecipe(request);
+                            }
+                        },
+                        new com.google.common.base.Predicate<GetSecurityRecipeResponse>() {
+                            @Override
+                            public boolean apply(GetSecurityRecipeResponse response) {
+                                return targetStatesSet.contains(
+                                        response.getSecurityRecipe().getLifecycleState());
+                            }
+                        },
+                        targetStatesSet.contains(
+                                com.oracle.bmc.cloudguard.model.LifecycleState.Deleted)),
+                request);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
+     *
+     * @param request the request to send
+     * @param targetState the desired states to wait for. If multiple states are provided then the waiter will return once the resource reaches any of the provided states
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<GetSecurityZoneRequest, GetSecurityZoneResponse>
+            forSecurityZone(
+                    GetSecurityZoneRequest request,
+                    com.oracle.bmc.cloudguard.model.LifecycleState... targetStates) {
+        org.apache.commons.lang3.Validate.notEmpty(
+                targetStates, "At least one targetState must be provided");
+        org.apache.commons.lang3.Validate.noNullElements(
+                targetStates, "Null targetState values are not permitted");
+
+        return forSecurityZone(
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_WAITER, request, targetStates);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param targetState the desired state to wait for
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<GetSecurityZoneRequest, GetSecurityZoneResponse>
+            forSecurityZone(
+                    GetSecurityZoneRequest request,
+                    com.oracle.bmc.cloudguard.model.LifecycleState targetState,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
+        org.apache.commons.lang3.Validate.notNull(targetState, "The targetState cannot be null");
+
+        return forSecurityZone(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetState);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @param targetStates the desired states to wait for. The waiter will return once the resource reaches any of the provided states
+     * @return a new {@code Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<GetSecurityZoneRequest, GetSecurityZoneResponse>
+            forSecurityZone(
+                    GetSecurityZoneRequest request,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy,
+                    com.oracle.bmc.cloudguard.model.LifecycleState... targetStates) {
+        org.apache.commons.lang3.Validate.notEmpty(
+                targetStates, "At least one targetState must be provided");
+        org.apache.commons.lang3.Validate.noNullElements(
+                targetStates, "Null targetState values are not permitted");
+
+        return forSecurityZone(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetStates);
+    }
+
+    // Helper method to create a new Waiter for SecurityZone.
+    private com.oracle.bmc.waiter.Waiter<GetSecurityZoneRequest, GetSecurityZoneResponse>
+            forSecurityZone(
+                    com.oracle.bmc.waiter.BmcGenericWaiter waiter,
+                    final GetSecurityZoneRequest request,
+                    final com.oracle.bmc.cloudguard.model.LifecycleState... targetStates) {
+        final java.util.Set<com.oracle.bmc.cloudguard.model.LifecycleState> targetStatesSet =
+                new java.util.HashSet<>(java.util.Arrays.asList(targetStates));
+
+        return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
+                executorService,
+                waiter.toCallable(
+                        com.google.common.base.Suppliers.ofInstance(request),
+                        new com.google.common.base.Function<
+                                GetSecurityZoneRequest, GetSecurityZoneResponse>() {
+                            @Override
+                            public GetSecurityZoneResponse apply(GetSecurityZoneRequest request) {
+                                return client.getSecurityZone(request);
+                            }
+                        },
+                        new com.google.common.base.Predicate<GetSecurityZoneResponse>() {
+                            @Override
+                            public boolean apply(GetSecurityZoneResponse response) {
+                                return targetStatesSet.contains(
+                                        response.getSecurityZone().getLifecycleState());
+                            }
+                        },
+                        targetStatesSet.contains(
+                                com.oracle.bmc.cloudguard.model.LifecycleState.Deleted)),
+                request);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
+     *
+     * @param request the request to send
+     * @param targetState the desired states to wait for. If multiple states are provided then the waiter will return once the resource reaches any of the provided states
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
+     */
     public com.oracle.bmc.waiter.Waiter<GetTargetRequest, GetTargetResponse> forTarget(
             GetTargetRequest request,
             com.oracle.bmc.cloudguard.model.LifecycleState... targetStates) {

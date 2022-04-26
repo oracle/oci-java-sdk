@@ -75,7 +75,7 @@ public class JmesPathDimensionValue extends DimensionValueDetails {
 
     /**
      * The location to use for deriving the dimension value (evaluated).
-     * The path must start with {@code logContent} in an acceptable notation style with supported [JMESPath selectors](https://jmespath.org/specification.html): expression with dot and index operator ({@code .}, and {@code {@link #metricDataDetails(MetricDataDetailsRequest) metricDataDetails}.
+     * The path must start with {@code logContent} in an acceptable notation style with supported [JMESPath selectors](https://jmespath.org/specification.html): expression with dot and index operator ({@code .} and {@code {@link #metricDataDetails(MetricDataDetailsRequest) metricDataDetails}.
      * The returned value depends on the results of evaluation.
      * If the evaluated value is valid, then the evaluated value is returned without double quotes. (Any front or trailing double quotes are trimmed before returning the value. For example, the evaluated value {@code "compartmentId"} is returned as {@code compartmentId}.)
      * If the evaluated value is invalid, then the returned value is {@code SCH_EVAL_INVALID_VALUE}.
