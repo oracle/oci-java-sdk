@@ -143,6 +143,7 @@ public class ReturnHttpResponseAction extends Action {
      *   415 Unsupported Media Type
      *   416 Range Not Satisfiable
      *   422 Unprocessable Entity
+     *   429 Too Many Requests
      *   494 Request Header Too Large
      *   495 Cert Error
      *   496 No Cert

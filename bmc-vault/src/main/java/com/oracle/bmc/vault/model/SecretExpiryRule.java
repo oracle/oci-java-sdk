@@ -105,8 +105,7 @@ public class SecretExpiryRule extends SecretRule {
     /**
      * A property indicating how long the secret contents will be considered valid, expressed in
      * [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals) format. The secret needs to be
-     * updated when the secret content expires. No enforcement mechanism exists at this time, but audit logs
-     * record the expiration on the appropriate date, according to the time interval specified in the rule.
+     * updated when the secret content expires.
      * The timer resets after you update the secret contents.
      * The minimum value is 1 day and the maximum value is 90 days for this property. Currently, only intervals expressed in days are supported.
      * For example, pass {@code P3D} to have the secret version expire every 3 days.

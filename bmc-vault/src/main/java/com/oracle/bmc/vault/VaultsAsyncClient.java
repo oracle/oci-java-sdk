@@ -391,7 +391,10 @@ public class VaultsAsyncClient implements VaultsAsync {
                         javax.ws.rs.core.Response, CancelSecretDeletionResponse>
                 transformer = CancelSecretDeletionConverter.fromResponse();
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Vaults", "CancelSecretDeletion", ib.getRequestUri().toString(), "");
+                "Vaults",
+                "CancelSecretDeletion",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/secretmgmt/20180608/Secret/CancelSecretDeletion");
 
         com.oracle.bmc.responses.AsyncHandler<
                         CancelSecretDeletionRequest, CancelSecretDeletionResponse>
@@ -436,7 +439,10 @@ public class VaultsAsyncClient implements VaultsAsync {
                         javax.ws.rs.core.Response, CancelSecretVersionDeletionResponse>
                 transformer = CancelSecretVersionDeletionConverter.fromResponse();
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Vaults", "CancelSecretVersionDeletion", ib.getRequestUri().toString(), "");
+                "Vaults",
+                "CancelSecretVersionDeletion",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/secretmgmt/20180608/SecretVersion/CancelSecretVersionDeletion");
 
         com.oracle.bmc.responses.AsyncHandler<
                         CancelSecretVersionDeletionRequest, CancelSecretVersionDeletionResponse>
@@ -481,7 +487,10 @@ public class VaultsAsyncClient implements VaultsAsync {
                 transformer = ChangeSecretCompartmentConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Vaults", "ChangeSecretCompartment", ib.getRequestUri().toString(), "");
+                "Vaults",
+                "ChangeSecretCompartment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/secretmgmt/20180608/Secret/ChangeSecretCompartment");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeSecretCompartmentRequest, ChangeSecretCompartmentResponse>
@@ -528,7 +537,10 @@ public class VaultsAsyncClient implements VaultsAsync {
                 transformer = CreateSecretConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Vaults", "CreateSecret", ib.getRequestUri().toString(), "");
+                "Vaults",
+                "CreateSecret",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/secretmgmt/20180608/Secret/CreateSecret");
 
         com.oracle.bmc.responses.AsyncHandler<CreateSecretRequest, CreateSecretResponse>
                 handlerToUse = handler;
@@ -572,7 +584,10 @@ public class VaultsAsyncClient implements VaultsAsync {
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetSecretResponse>
                 transformer = GetSecretConverter.fromResponse();
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Vaults", "GetSecret", ib.getRequestUri().toString(), "");
+                "Vaults",
+                "GetSecret",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/secretmgmt/20180608/Secret/GetSecret");
 
         com.oracle.bmc.responses.AsyncHandler<GetSecretRequest, GetSecretResponse> handlerToUse =
                 handler;
@@ -612,7 +627,10 @@ public class VaultsAsyncClient implements VaultsAsync {
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetSecretVersionResponse>
                 transformer = GetSecretVersionConverter.fromResponse();
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Vaults", "GetSecretVersion", ib.getRequestUri().toString(), "");
+                "Vaults",
+                "GetSecretVersion",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/secretmgmt/20180608/SecretVersion/GetSecretVersion");
 
         com.oracle.bmc.responses.AsyncHandler<GetSecretVersionRequest, GetSecretVersionResponse>
                 handlerToUse = handler;
@@ -653,7 +671,10 @@ public class VaultsAsyncClient implements VaultsAsync {
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListSecretVersionsResponse>
                 transformer = ListSecretVersionsConverter.fromResponse();
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Vaults", "ListSecretVersions", ib.getRequestUri().toString(), "");
+                "Vaults",
+                "ListSecretVersions",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/secretmgmt/20180608/SecretVersionSummary/ListSecretVersions");
 
         com.oracle.bmc.responses.AsyncHandler<ListSecretVersionsRequest, ListSecretVersionsResponse>
                 handlerToUse = handler;
@@ -693,7 +714,10 @@ public class VaultsAsyncClient implements VaultsAsync {
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListSecretsResponse>
                 transformer = ListSecretsConverter.fromResponse();
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Vaults", "ListSecrets", ib.getRequestUri().toString(), "");
+                "Vaults",
+                "ListSecrets",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/secretmgmt/20180608/SecretSummary/ListSecrets");
 
         com.oracle.bmc.responses.AsyncHandler<ListSecretsRequest, ListSecretsResponse>
                 handlerToUse = handler;
@@ -735,7 +759,10 @@ public class VaultsAsyncClient implements VaultsAsync {
                         javax.ws.rs.core.Response, ScheduleSecretDeletionResponse>
                 transformer = ScheduleSecretDeletionConverter.fromResponse();
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Vaults", "ScheduleSecretDeletion", ib.getRequestUri().toString(), "");
+                "Vaults",
+                "ScheduleSecretDeletion",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/secretmgmt/20180608/Secret/ScheduleSecretDeletion");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ScheduleSecretDeletionRequest, ScheduleSecretDeletionResponse>
@@ -785,7 +812,10 @@ public class VaultsAsyncClient implements VaultsAsync {
                         javax.ws.rs.core.Response, ScheduleSecretVersionDeletionResponse>
                 transformer = ScheduleSecretVersionDeletionConverter.fromResponse();
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Vaults", "ScheduleSecretVersionDeletion", ib.getRequestUri().toString(), "");
+                "Vaults",
+                "ScheduleSecretVersionDeletion",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/secretmgmt/20180608/SecretVersion/ScheduleSecretVersionDeletion");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ScheduleSecretVersionDeletionRequest, ScheduleSecretVersionDeletionResponse>
@@ -832,7 +862,10 @@ public class VaultsAsyncClient implements VaultsAsync {
         final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateSecretResponse>
                 transformer = UpdateSecretConverter.fromResponse();
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Vaults", "UpdateSecret", ib.getRequestUri().toString(), "");
+                "Vaults",
+                "UpdateSecret",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/secretmgmt/20180608/Secret/UpdateSecret");
 
         com.oracle.bmc.responses.AsyncHandler<UpdateSecretRequest, UpdateSecretResponse>
                 handlerToUse = handler;

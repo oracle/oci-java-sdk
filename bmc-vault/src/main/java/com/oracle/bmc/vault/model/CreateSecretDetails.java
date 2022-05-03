@@ -194,7 +194,8 @@ public class CreateSecretDetails {
     java.util.Map<String, String> freeformTags;
 
     /**
-     * The OCID of the master encryption key that is used to encrypt the secret.
+     * The OCID of the master encryption key that is used to encrypt the secret. You must specify a symmetric key to encrypt the secret during import to the vault. You cannot encrypt secrets with asymmetric keys. Furthermore, the key must exist in the vault that you specify.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("keyId")
     String keyId;

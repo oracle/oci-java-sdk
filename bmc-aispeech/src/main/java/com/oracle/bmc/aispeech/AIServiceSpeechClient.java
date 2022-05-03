@@ -478,7 +478,10 @@ public class AIServiceSpeechClient implements AIServiceSpeech {
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "AIServiceSpeech", "CancelTranscriptionJob", ib.getRequestUri().toString(), "");
+                "AIServiceSpeech",
+                "CancelTranscriptionJob",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/speech/20220101/TranscriptionJob/CancelTranscriptionJob");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -512,7 +515,10 @@ public class AIServiceSpeechClient implements AIServiceSpeech {
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "AIServiceSpeech", "CancelTranscriptionTask", ib.getRequestUri().toString(), "");
+                "AIServiceSpeech",
+                "CancelTranscriptionTask",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/speech/20220101/TranscriptionTask/CancelTranscriptionTask");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -550,7 +556,7 @@ public class AIServiceSpeechClient implements AIServiceSpeech {
                 "AIServiceSpeech",
                 "ChangeTranscriptionJobCompartment",
                 ib.getRequestUri().toString(),
-                "");
+                "https://docs.oracle.com/iaas/api/#/en/speech/20220101/TranscriptionJob/ChangeTranscriptionJobCompartment");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -588,7 +594,10 @@ public class AIServiceSpeechClient implements AIServiceSpeech {
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "AIServiceSpeech", "CreateTranscriptionJob", ib.getRequestUri().toString(), "");
+                "AIServiceSpeech",
+                "CreateTranscriptionJob",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/speech/20220101/TranscriptionJob/CreateTranscriptionJob");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -623,7 +632,10 @@ public class AIServiceSpeechClient implements AIServiceSpeech {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "AIServiceSpeech", "GetTranscriptionJob", ib.getRequestUri().toString(), "");
+                "AIServiceSpeech",
+                "GetTranscriptionJob",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/speech/20220101/TranscriptionJob/GetTranscriptionJob");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -654,7 +666,10 @@ public class AIServiceSpeechClient implements AIServiceSpeech {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "AIServiceSpeech", "GetTranscriptionTask", ib.getRequestUri().toString(), "");
+                "AIServiceSpeech",
+                "GetTranscriptionTask",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/speech/20220101/TranscriptionTask/GetTranscriptionTask");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -686,7 +701,10 @@ public class AIServiceSpeechClient implements AIServiceSpeech {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "AIServiceSpeech", "ListTranscriptionJobs", ib.getRequestUri().toString(), "");
+                "AIServiceSpeech",
+                "ListTranscriptionJobs",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/speech/20220101/TranscriptionJob/ListTranscriptionJobs");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -718,7 +736,10 @@ public class AIServiceSpeechClient implements AIServiceSpeech {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "AIServiceSpeech", "ListTranscriptionTasks", ib.getRequestUri().toString(), "");
+                "AIServiceSpeech",
+                "ListTranscriptionTasks",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/speech/20220101/TranscriptionTask/ListTranscriptionTasks");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -750,7 +771,10 @@ public class AIServiceSpeechClient implements AIServiceSpeech {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "AIServiceSpeech", "UpdateTranscriptionJob", ib.getRequestUri().toString(), "");
+                "AIServiceSpeech",
+                "UpdateTranscriptionJob",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/speech/20220101/TranscriptionJob/UpdateTranscriptionJob");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {

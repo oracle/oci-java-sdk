@@ -189,7 +189,8 @@ public class RecordOperation {
     String rtype;
 
     /**
-     * The Time To Live for the record, in seconds.
+     * The Time To Live for the record, in seconds. Using a TTL lower than 30 seconds is not recommended.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("ttl")
     Integer ttl;

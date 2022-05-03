@@ -478,7 +478,10 @@ public class ServiceMeshClient implements ServiceMesh {
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "ServiceMesh", "ChangeAccessPolicyCompartment", ib.getRequestUri().toString(), "");
+                "ServiceMesh",
+                "ChangeAccessPolicyCompartment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/AccessPolicy/ChangeAccessPolicyCompartment");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -520,7 +523,7 @@ public class ServiceMeshClient implements ServiceMesh {
                 "ServiceMesh",
                 "ChangeIngressGatewayCompartment",
                 ib.getRequestUri().toString(),
-                "");
+                "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/IngressGateway/ChangeIngressGatewayCompartment");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -565,7 +568,7 @@ public class ServiceMeshClient implements ServiceMesh {
                 "ServiceMesh",
                 "ChangeIngressGatewayRouteTableCompartment",
                 ib.getRequestUri().toString(),
-                "");
+                "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/IngressGatewayRouteTable/ChangeIngressGatewayRouteTableCompartment");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -603,7 +606,10 @@ public class ServiceMeshClient implements ServiceMesh {
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "ServiceMesh", "ChangeMeshCompartment", ib.getRequestUri().toString(), "");
+                "ServiceMesh",
+                "ChangeMeshCompartment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/Mesh/ChangeMeshCompartment");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -644,7 +650,7 @@ public class ServiceMeshClient implements ServiceMesh {
                 "ServiceMesh",
                 "ChangeVirtualDeploymentCompartment",
                 ib.getRequestUri().toString(),
-                "");
+                "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/VirtualDeployment/ChangeVirtualDeploymentCompartment");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -686,7 +692,7 @@ public class ServiceMeshClient implements ServiceMesh {
                 "ServiceMesh",
                 "ChangeVirtualServiceCompartment",
                 ib.getRequestUri().toString(),
-                "");
+                "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/VirtualService/ChangeVirtualServiceCompartment");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -731,7 +737,7 @@ public class ServiceMeshClient implements ServiceMesh {
                 "ServiceMesh",
                 "ChangeVirtualServiceRouteTableCompartment",
                 ib.getRequestUri().toString(),
-                "");
+                "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/VirtualServiceRouteTable/ChangeVirtualServiceRouteTableCompartment");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -768,7 +774,10 @@ public class ServiceMeshClient implements ServiceMesh {
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "ServiceMesh", "CreateAccessPolicy", ib.getRequestUri().toString(), "");
+                "ServiceMesh",
+                "CreateAccessPolicy",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/AccessPolicy/CreateAccessPolicy");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -804,7 +813,10 @@ public class ServiceMeshClient implements ServiceMesh {
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "ServiceMesh", "CreateIngressGateway", ib.getRequestUri().toString(), "");
+                "ServiceMesh",
+                "CreateIngressGateway",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/IngressGateway/CreateIngressGateway");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -842,7 +854,10 @@ public class ServiceMeshClient implements ServiceMesh {
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "ServiceMesh", "CreateIngressGatewayRouteTable", ib.getRequestUri().toString(), "");
+                "ServiceMesh",
+                "CreateIngressGatewayRouteTable",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/IngressGatewayRouteTable/CreateIngressGatewayRouteTable");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -878,7 +893,10 @@ public class ServiceMeshClient implements ServiceMesh {
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "ServiceMesh", "CreateMesh", ib.getRequestUri().toString(), "");
+                "ServiceMesh",
+                "CreateMesh",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/Mesh/CreateMesh");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -915,7 +933,10 @@ public class ServiceMeshClient implements ServiceMesh {
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "ServiceMesh", "CreateVirtualDeployment", ib.getRequestUri().toString(), "");
+                "ServiceMesh",
+                "CreateVirtualDeployment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/VirtualDeployment/CreateVirtualDeployment");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -951,7 +972,10 @@ public class ServiceMeshClient implements ServiceMesh {
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "ServiceMesh", "CreateVirtualService", ib.getRequestUri().toString(), "");
+                "ServiceMesh",
+                "CreateVirtualService",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/VirtualService/CreateVirtualService");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -989,7 +1013,10 @@ public class ServiceMeshClient implements ServiceMesh {
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "ServiceMesh", "CreateVirtualServiceRouteTable", ib.getRequestUri().toString(), "");
+                "ServiceMesh",
+                "CreateVirtualServiceRouteTable",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/VirtualServiceRouteTable/CreateVirtualServiceRouteTable");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1025,7 +1052,10 @@ public class ServiceMeshClient implements ServiceMesh {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "ServiceMesh", "DeleteAccessPolicy", ib.getRequestUri().toString(), "");
+                "ServiceMesh",
+                "DeleteAccessPolicy",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/AccessPolicy/DeleteAccessPolicy");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1057,7 +1087,10 @@ public class ServiceMeshClient implements ServiceMesh {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "ServiceMesh", "DeleteIngressGateway", ib.getRequestUri().toString(), "");
+                "ServiceMesh",
+                "DeleteIngressGateway",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/IngressGateway/DeleteIngressGateway");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1091,7 +1124,10 @@ public class ServiceMeshClient implements ServiceMesh {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "ServiceMesh", "DeleteIngressGatewayRouteTable", ib.getRequestUri().toString(), "");
+                "ServiceMesh",
+                "DeleteIngressGatewayRouteTable",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/IngressGatewayRouteTable/DeleteIngressGatewayRouteTable");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1122,7 +1158,10 @@ public class ServiceMeshClient implements ServiceMesh {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "ServiceMesh", "DeleteMesh", ib.getRequestUri().toString(), "");
+                "ServiceMesh",
+                "DeleteMesh",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/Mesh/DeleteMesh");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1155,7 +1194,10 @@ public class ServiceMeshClient implements ServiceMesh {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "ServiceMesh", "DeleteVirtualDeployment", ib.getRequestUri().toString(), "");
+                "ServiceMesh",
+                "DeleteVirtualDeployment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/VirtualDeployment/DeleteVirtualDeployment");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1187,7 +1229,10 @@ public class ServiceMeshClient implements ServiceMesh {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "ServiceMesh", "DeleteVirtualService", ib.getRequestUri().toString(), "");
+                "ServiceMesh",
+                "DeleteVirtualService",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/VirtualService/DeleteVirtualService");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1221,7 +1266,10 @@ public class ServiceMeshClient implements ServiceMesh {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "ServiceMesh", "DeleteVirtualServiceRouteTable", ib.getRequestUri().toString(), "");
+                "ServiceMesh",
+                "DeleteVirtualServiceRouteTable",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/VirtualServiceRouteTable/DeleteVirtualServiceRouteTable");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1253,7 +1301,10 @@ public class ServiceMeshClient implements ServiceMesh {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "ServiceMesh", "GetAccessPolicy", ib.getRequestUri().toString(), "");
+                "ServiceMesh",
+                "GetAccessPolicy",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/AccessPolicy/GetAccessPolicy");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1284,7 +1335,10 @@ public class ServiceMeshClient implements ServiceMesh {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "ServiceMesh", "GetIngressGateway", ib.getRequestUri().toString(), "");
+                "ServiceMesh",
+                "GetIngressGateway",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/IngressGateway/GetIngressGateway");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1317,7 +1371,10 @@ public class ServiceMeshClient implements ServiceMesh {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "ServiceMesh", "GetIngressGatewayRouteTable", ib.getRequestUri().toString(), "");
+                "ServiceMesh",
+                "GetIngressGatewayRouteTable",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/IngressGatewayRouteTable/GetIngressGatewayRouteTable");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1347,7 +1404,10 @@ public class ServiceMeshClient implements ServiceMesh {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "ServiceMesh", "GetMesh", ib.getRequestUri().toString(), "");
+                "ServiceMesh",
+                "GetMesh",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/Mesh/GetMesh");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1378,7 +1438,10 @@ public class ServiceMeshClient implements ServiceMesh {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "ServiceMesh", "GetProxyDetails", ib.getRequestUri().toString(), "");
+                "ServiceMesh",
+                "GetProxyDetails",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/ProxyDetails/GetProxyDetails");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1409,7 +1472,10 @@ public class ServiceMeshClient implements ServiceMesh {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "ServiceMesh", "GetVirtualDeployment", ib.getRequestUri().toString(), "");
+                "ServiceMesh",
+                "GetVirtualDeployment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/VirtualDeployment/GetVirtualDeployment");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1440,7 +1506,10 @@ public class ServiceMeshClient implements ServiceMesh {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "ServiceMesh", "GetVirtualService", ib.getRequestUri().toString(), "");
+                "ServiceMesh",
+                "GetVirtualService",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/VirtualService/GetVirtualService");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1473,7 +1542,10 @@ public class ServiceMeshClient implements ServiceMesh {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "ServiceMesh", "GetVirtualServiceRouteTable", ib.getRequestUri().toString(), "");
+                "ServiceMesh",
+                "GetVirtualServiceRouteTable",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/VirtualServiceRouteTable/GetVirtualServiceRouteTable");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1504,7 +1576,10 @@ public class ServiceMeshClient implements ServiceMesh {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "ServiceMesh", "GetWorkRequest", ib.getRequestUri().toString(), "");
+                "ServiceMesh",
+                "GetWorkRequest",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/WorkRequest/GetWorkRequest");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1535,7 +1610,10 @@ public class ServiceMeshClient implements ServiceMesh {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "ServiceMesh", "ListAccessPolicies", ib.getRequestUri().toString(), "");
+                "ServiceMesh",
+                "ListAccessPolicies",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/AccessPolicy/ListAccessPolicies");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1568,7 +1646,10 @@ public class ServiceMeshClient implements ServiceMesh {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "ServiceMesh", "ListIngressGatewayRouteTables", ib.getRequestUri().toString(), "");
+                "ServiceMesh",
+                "ListIngressGatewayRouteTables",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/IngressGatewayRouteTable/ListIngressGatewayRouteTables");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1599,7 +1680,10 @@ public class ServiceMeshClient implements ServiceMesh {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "ServiceMesh", "ListIngressGateways", ib.getRequestUri().toString(), "");
+                "ServiceMesh",
+                "ListIngressGateways",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/IngressGateway/ListIngressGateways");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1629,7 +1713,10 @@ public class ServiceMeshClient implements ServiceMesh {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "ServiceMesh", "ListMeshes", ib.getRequestUri().toString(), "");
+                "ServiceMesh",
+                "ListMeshes",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/Mesh/ListMeshes");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1661,7 +1748,10 @@ public class ServiceMeshClient implements ServiceMesh {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "ServiceMesh", "ListVirtualDeployments", ib.getRequestUri().toString(), "");
+                "ServiceMesh",
+                "ListVirtualDeployments",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/VirtualDeployment/ListVirtualDeployments");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1694,7 +1784,10 @@ public class ServiceMeshClient implements ServiceMesh {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "ServiceMesh", "ListVirtualServiceRouteTables", ib.getRequestUri().toString(), "");
+                "ServiceMesh",
+                "ListVirtualServiceRouteTables",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/VirtualServiceRouteTable/ListVirtualServiceRouteTables");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1725,7 +1818,10 @@ public class ServiceMeshClient implements ServiceMesh {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "ServiceMesh", "ListVirtualServices", ib.getRequestUri().toString(), "");
+                "ServiceMesh",
+                "ListVirtualServices",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/VirtualService/ListVirtualServices");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1757,7 +1853,10 @@ public class ServiceMeshClient implements ServiceMesh {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "ServiceMesh", "ListWorkRequestErrors", ib.getRequestUri().toString(), "");
+                "ServiceMesh",
+                "ListWorkRequestErrors",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/WorkRequest/ListWorkRequestErrors");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1788,7 +1887,10 @@ public class ServiceMeshClient implements ServiceMesh {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "ServiceMesh", "ListWorkRequestLogs", ib.getRequestUri().toString(), "");
+                "ServiceMesh",
+                "ListWorkRequestLogs",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/WorkRequest/ListWorkRequestLogs");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1819,7 +1921,10 @@ public class ServiceMeshClient implements ServiceMesh {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "ServiceMesh", "ListWorkRequests", ib.getRequestUri().toString(), "");
+                "ServiceMesh",
+                "ListWorkRequests",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/WorkRequest/ListWorkRequests");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1851,7 +1956,10 @@ public class ServiceMeshClient implements ServiceMesh {
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "ServiceMesh", "UpdateAccessPolicy", ib.getRequestUri().toString(), "");
+                "ServiceMesh",
+                "UpdateAccessPolicy",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/AccessPolicy/UpdateAccessPolicy");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1887,7 +1995,10 @@ public class ServiceMeshClient implements ServiceMesh {
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "ServiceMesh", "UpdateIngressGateway", ib.getRequestUri().toString(), "");
+                "ServiceMesh",
+                "UpdateIngressGateway",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/IngressGateway/UpdateIngressGateway");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1925,7 +2036,10 @@ public class ServiceMeshClient implements ServiceMesh {
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "ServiceMesh", "UpdateIngressGatewayRouteTable", ib.getRequestUri().toString(), "");
+                "ServiceMesh",
+                "UpdateIngressGatewayRouteTable",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/IngressGatewayRouteTable/UpdateIngressGatewayRouteTable");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1961,7 +2075,10 @@ public class ServiceMeshClient implements ServiceMesh {
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "ServiceMesh", "UpdateMesh", ib.getRequestUri().toString(), "");
+                "ServiceMesh",
+                "UpdateMesh",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/Mesh/UpdateMesh");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1998,7 +2115,10 @@ public class ServiceMeshClient implements ServiceMesh {
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "ServiceMesh", "UpdateVirtualDeployment", ib.getRequestUri().toString(), "");
+                "ServiceMesh",
+                "UpdateVirtualDeployment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/VirtualDeployment/UpdateVirtualDeployment");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2034,7 +2154,10 @@ public class ServiceMeshClient implements ServiceMesh {
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "ServiceMesh", "UpdateVirtualService", ib.getRequestUri().toString(), "");
+                "ServiceMesh",
+                "UpdateVirtualService",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/VirtualService/UpdateVirtualService");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -2072,7 +2195,10 @@ public class ServiceMeshClient implements ServiceMesh {
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "ServiceMesh", "UpdateVirtualServiceRouteTable", ib.getRequestUri().toString(), "");
+                "ServiceMesh",
+                "UpdateVirtualServiceRouteTable",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/VirtualServiceRouteTable/UpdateVirtualServiceRouteTable");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {

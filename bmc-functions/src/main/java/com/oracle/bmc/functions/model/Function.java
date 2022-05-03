@@ -115,6 +115,16 @@ public class Function {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("provisionedConcurrencyConfig")
+        private FunctionProvisionedConcurrencyConfig provisionedConcurrencyConfig;
+
+        public Builder provisionedConcurrencyConfig(
+                FunctionProvisionedConcurrencyConfig provisionedConcurrencyConfig) {
+            this.provisionedConcurrencyConfig = provisionedConcurrencyConfig;
+            this.__explicitlySet__.add("provisionedConcurrencyConfig");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("traceConfig")
         private FunctionTraceConfig traceConfig;
 
@@ -186,6 +196,7 @@ public class Function {
                             memoryInMBs,
                             config,
                             timeoutInSeconds,
+                            provisionedConcurrencyConfig,
                             traceConfig,
                             freeformTags,
                             invokeEndpoint,
@@ -209,6 +220,7 @@ public class Function {
                             .memoryInMBs(o.getMemoryInMBs())
                             .config(o.getConfig())
                             .timeoutInSeconds(o.getTimeoutInSeconds())
+                            .provisionedConcurrencyConfig(o.getProvisionedConcurrencyConfig())
                             .traceConfig(o.getTraceConfig())
                             .freeformTags(o.getFreeformTags())
                             .invokeEndpoint(o.getInvokeEndpoint())
@@ -354,6 +366,9 @@ public class Function {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeoutInSeconds")
     Integer timeoutInSeconds;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("provisionedConcurrencyConfig")
+    FunctionProvisionedConcurrencyConfig provisionedConcurrencyConfig;
 
     @com.fasterxml.jackson.annotation.JsonProperty("traceConfig")
     FunctionTraceConfig traceConfig;

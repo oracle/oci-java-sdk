@@ -75,15 +75,15 @@ public class InvokeFunctionRequest extends com.oracle.bmc.requests.BmcRequest<ja
         }
     };
     /**
-     * Indicates whether the functions platform should execute the request directly and return the result ('sync') or
-     * whether the platform should enqueue the request for later processing and acknowledge that it has been processed ('detached').
+     * Indicates whether Oracle Functions should execute the request and return the result ('sync') of the execution,
+     * or whether Oracle Functions should return as soon as processing has begun ('detached') and leave result handling to the function.
      *
      */
     private FnInvokeType fnInvokeType;
 
     /**
-     * Indicates whether the functions platform should execute the request directly and return the result ('sync') or
-     * whether the platform should enqueue the request for later processing and acknowledge that it has been processed ('detached').
+     * Indicates whether Oracle Functions should execute the request and return the result ('sync') of the execution,
+     * or whether Oracle Functions should return as soon as processing has begun ('detached') and leave result handling to the function.
      *
      **/
     public enum FnInvokeType {

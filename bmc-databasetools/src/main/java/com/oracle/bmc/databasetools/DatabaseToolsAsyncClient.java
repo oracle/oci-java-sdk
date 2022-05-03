@@ -398,7 +398,7 @@ public class DatabaseToolsAsyncClient implements DatabaseToolsAsync {
                 "DatabaseTools",
                 "ChangeDatabaseToolsConnectionCompartment",
                 ib.getRequestUri().toString(),
-                "");
+                "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsConnection/ChangeDatabaseToolsConnectionCompartment");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeDatabaseToolsConnectionCompartmentRequest,
@@ -459,7 +459,7 @@ public class DatabaseToolsAsyncClient implements DatabaseToolsAsync {
                 "DatabaseTools",
                 "ChangeDatabaseToolsPrivateEndpointCompartment",
                 ib.getRequestUri().toString(),
-                "");
+                "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsPrivateEndpoint/ChangeDatabaseToolsPrivateEndpointCompartment");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeDatabaseToolsPrivateEndpointCompartmentRequest,
@@ -629,7 +629,7 @@ public class DatabaseToolsAsyncClient implements DatabaseToolsAsync {
                 "DatabaseTools",
                 "DeleteDatabaseToolsConnection",
                 ib.getRequestUri().toString(),
-                "");
+                "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsConnection/DeleteDatabaseToolsConnection");
 
         com.oracle.bmc.responses.AsyncHandler<
                         DeleteDatabaseToolsConnectionRequest, DeleteDatabaseToolsConnectionResponse>
@@ -678,7 +678,7 @@ public class DatabaseToolsAsyncClient implements DatabaseToolsAsync {
                 "DatabaseTools",
                 "DeleteDatabaseToolsPrivateEndpoint",
                 ib.getRequestUri().toString(),
-                "");
+                "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsPrivateEndpoint/DeleteDatabaseToolsPrivateEndpoint");
 
         com.oracle.bmc.responses.AsyncHandler<
                         DeleteDatabaseToolsPrivateEndpointRequest,
@@ -726,7 +726,10 @@ public class DatabaseToolsAsyncClient implements DatabaseToolsAsync {
                         javax.ws.rs.core.Response, GetDatabaseToolsConnectionResponse>
                 transformer = GetDatabaseToolsConnectionConverter.fromResponse();
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "DatabaseTools", "GetDatabaseToolsConnection", ib.getRequestUri().toString(), "");
+                "DatabaseTools",
+                "GetDatabaseToolsConnection",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsConnection/GetDatabaseToolsConnection");
 
         com.oracle.bmc.responses.AsyncHandler<
                         GetDatabaseToolsConnectionRequest, GetDatabaseToolsConnectionResponse>
@@ -775,7 +778,7 @@ public class DatabaseToolsAsyncClient implements DatabaseToolsAsync {
                 "DatabaseTools",
                 "GetDatabaseToolsEndpointService",
                 ib.getRequestUri().toString(),
-                "");
+                "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsEndpointService/GetDatabaseToolsEndpointService");
 
         com.oracle.bmc.responses.AsyncHandler<
                         GetDatabaseToolsEndpointServiceRequest,
@@ -826,7 +829,7 @@ public class DatabaseToolsAsyncClient implements DatabaseToolsAsync {
                 "DatabaseTools",
                 "GetDatabaseToolsPrivateEndpoint",
                 ib.getRequestUri().toString(),
-                "");
+                "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsPrivateEndpoint/GetDatabaseToolsPrivateEndpoint");
 
         com.oracle.bmc.responses.AsyncHandler<
                         GetDatabaseToolsPrivateEndpointRequest,
@@ -871,7 +874,10 @@ public class DatabaseToolsAsyncClient implements DatabaseToolsAsync {
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetWorkRequestResponse>
                 transformer = GetWorkRequestConverter.fromResponse();
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "DatabaseTools", "GetWorkRequest", ib.getRequestUri().toString(), "");
+                "DatabaseTools",
+                "GetWorkRequest",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/WorkRequest/GetWorkRequest");
 
         com.oracle.bmc.responses.AsyncHandler<GetWorkRequestRequest, GetWorkRequestResponse>
                 handlerToUse = handler;
@@ -915,7 +921,10 @@ public class DatabaseToolsAsyncClient implements DatabaseToolsAsync {
                         javax.ws.rs.core.Response, ListDatabaseToolsConnectionsResponse>
                 transformer = ListDatabaseToolsConnectionsConverter.fromResponse();
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "DatabaseTools", "ListDatabaseToolsConnections", ib.getRequestUri().toString(), "");
+                "DatabaseTools",
+                "ListDatabaseToolsConnections",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsConnection/ListDatabaseToolsConnections");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListDatabaseToolsConnectionsRequest, ListDatabaseToolsConnectionsResponse>
@@ -964,7 +973,7 @@ public class DatabaseToolsAsyncClient implements DatabaseToolsAsync {
                 "DatabaseTools",
                 "ListDatabaseToolsEndpointServices",
                 ib.getRequestUri().toString(),
-                "");
+                "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsEndpointService/ListDatabaseToolsEndpointServices");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListDatabaseToolsEndpointServicesRequest,
@@ -1015,7 +1024,7 @@ public class DatabaseToolsAsyncClient implements DatabaseToolsAsync {
                 "DatabaseTools",
                 "ListDatabaseToolsPrivateEndpoints",
                 ib.getRequestUri().toString(),
-                "");
+                "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsPrivateEndpoint/ListDatabaseToolsPrivateEndpoints");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListDatabaseToolsPrivateEndpointsRequest,
@@ -1061,7 +1070,10 @@ public class DatabaseToolsAsyncClient implements DatabaseToolsAsync {
                         javax.ws.rs.core.Response, ListWorkRequestErrorsResponse>
                 transformer = ListWorkRequestErrorsConverter.fromResponse();
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "DatabaseTools", "ListWorkRequestErrors", ib.getRequestUri().toString(), "");
+                "DatabaseTools",
+                "ListWorkRequestErrors",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/WorkRequestError/ListWorkRequestErrors");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListWorkRequestErrorsRequest, ListWorkRequestErrorsResponse>
@@ -1104,7 +1116,10 @@ public class DatabaseToolsAsyncClient implements DatabaseToolsAsync {
                         javax.ws.rs.core.Response, ListWorkRequestLogsResponse>
                 transformer = ListWorkRequestLogsConverter.fromResponse();
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "DatabaseTools", "ListWorkRequestLogs", ib.getRequestUri().toString(), "");
+                "DatabaseTools",
+                "ListWorkRequestLogs",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/WorkRequestLogEntry/ListWorkRequestLogs");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListWorkRequestLogsRequest, ListWorkRequestLogsResponse>
@@ -1146,7 +1161,10 @@ public class DatabaseToolsAsyncClient implements DatabaseToolsAsync {
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListWorkRequestsResponse>
                 transformer = ListWorkRequestsConverter.fromResponse();
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "DatabaseTools", "ListWorkRequests", ib.getRequestUri().toString(), "");
+                "DatabaseTools",
+                "ListWorkRequests",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/WorkRequest/ListWorkRequests");
 
         com.oracle.bmc.responses.AsyncHandler<ListWorkRequestsRequest, ListWorkRequestsResponse>
                 handlerToUse = handler;
@@ -1193,7 +1211,7 @@ public class DatabaseToolsAsyncClient implements DatabaseToolsAsync {
                 "DatabaseTools",
                 "UpdateDatabaseToolsConnection",
                 ib.getRequestUri().toString(),
-                "");
+                "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsConnection/UpdateDatabaseToolsConnection");
 
         com.oracle.bmc.responses.AsyncHandler<
                         UpdateDatabaseToolsConnectionRequest, UpdateDatabaseToolsConnectionResponse>
@@ -1247,7 +1265,7 @@ public class DatabaseToolsAsyncClient implements DatabaseToolsAsync {
                 "DatabaseTools",
                 "UpdateDatabaseToolsPrivateEndpoint",
                 ib.getRequestUri().toString(),
-                "");
+                "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsPrivateEndpoint/UpdateDatabaseToolsPrivateEndpoint");
 
         com.oracle.bmc.responses.AsyncHandler<
                         UpdateDatabaseToolsPrivateEndpointRequest,
@@ -1303,7 +1321,7 @@ public class DatabaseToolsAsyncClient implements DatabaseToolsAsync {
                 "DatabaseTools",
                 "ValidateDatabaseToolsConnection",
                 ib.getRequestUri().toString(),
-                "");
+                "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsConnection/ValidateDatabaseToolsConnection");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ValidateDatabaseToolsConnectionRequest,

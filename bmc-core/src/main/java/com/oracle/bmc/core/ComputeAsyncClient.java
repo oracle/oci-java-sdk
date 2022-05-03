@@ -2728,7 +2728,12 @@ public class ComputeAsyncClient implements ComputeAsync {
                         com.oracle.bmc.responses.AsyncHandler<
                                 InstanceActionRequest, InstanceActionResponse>,
                         java.util.concurrent.Future<InstanceActionResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getInstancePowerActionDetails(),
+                                ib,
+                                transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {

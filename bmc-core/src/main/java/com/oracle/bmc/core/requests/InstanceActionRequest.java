@@ -17,7 +17,9 @@ import com.oracle.bmc.core.model.*;
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Getter
-public class InstanceActionRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
+public class InstanceActionRequest
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.core.model.InstancePowerActionDetails> {
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance.
@@ -47,9 +49,24 @@ public class InstanceActionRequest extends com.oracle.bmc.requests.BmcRequest<ja
      */
     private String ifMatch;
 
+    /**
+     * Instance Power Action details
+     */
+    private com.oracle.bmc.core.model.InstancePowerActionDetails instancePowerActionDetails;
+
+    /**
+     * Alternative accessor for the body parameter.
+     * @return body parameter
+     */
+    @Override
+    @com.oracle.bmc.InternalSdk
+    public com.oracle.bmc.core.model.InstancePowerActionDetails getBody$() {
+        return instancePowerActionDetails;
+    }
+
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    InstanceActionRequest, java.lang.Void> {
+                    InstanceActionRequest, com.oracle.bmc.core.model.InstancePowerActionDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -86,6 +103,7 @@ public class InstanceActionRequest extends com.oracle.bmc.requests.BmcRequest<ja
             action(o.getAction());
             opcRetryToken(o.getOpcRetryToken());
             ifMatch(o.getIfMatch());
+            instancePowerActionDetails(o.getInstancePowerActionDetails());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -106,6 +124,17 @@ public class InstanceActionRequest extends com.oracle.bmc.requests.BmcRequest<ja
             request.setInvocationCallback(invocationCallback);
             request.setRetryConfiguration(retryConfiguration);
             return request;
+        }
+
+        /**
+         * Alternative setter for the body parameter.
+         * @param body the body parameter
+         * @return this builder instance
+         */
+        @com.oracle.bmc.InternalSdk
+        public Builder body$(com.oracle.bmc.core.model.InstancePowerActionDetails body) {
+            instancePowerActionDetails(body);
+            return this;
         }
     }
 }

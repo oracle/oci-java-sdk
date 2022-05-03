@@ -91,10 +91,7 @@ public class BmcException extends RuntimeException {
                                 + ")"
                         : "";
 
-        String targetService =
-                (statusCode == 401 && serviceCode.equals("NotAuthenticated"))
-                        ? "Identity"
-                        : ServiceDetails.getServiceName();
+        String targetService = ServiceDetails.getServiceName();
         String timestamp = RFC3339DateFormat.formatRfc3339(new Date(), true);
         String clientVersion = ClientRuntime.getRuntime().getClientInfo();
         String errorTroubleshootingLink =

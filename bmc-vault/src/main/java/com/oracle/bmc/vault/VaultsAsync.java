@@ -8,7 +8,7 @@ import com.oracle.bmc.vault.requests.*;
 import com.oracle.bmc.vault.responses.*;
 
 /**
- * API for managing secrets.
+ * Use the Secret Management API to manage secrets and secret versions. For more information, see [Managing Secrets](https://docs.cloud.oracle.com/Content/KeyManagement/Tasks/managingsecrets.htm).
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180608")
 public interface VaultsAsync extends AutoCloseable {
@@ -219,7 +219,7 @@ public interface VaultsAsync extends AutoCloseable {
     /**
      * Updates the properties of a secret. Specifically, you can update the version number of the secret to make
      * that version number the current version. You can also update a secret's description, its free-form or defined tags, rules
-     * and the secret contents. Updating the secret content automatically creates a new secret version. You cannot, however, update the current secret version number and the secret contents and the rules at the
+     * and the secret contents. Updating the secret content automatically creates a new secret version. You cannot, however, update the current secret version number, secret contents, and secret rules at the
      * same time. Furthermore, the secret must in an `ACTIVE` lifecycle state to be updated.
      * <p>
      * This operation is not supported by the Oracle Cloud Infrastructure Terraform Provider.

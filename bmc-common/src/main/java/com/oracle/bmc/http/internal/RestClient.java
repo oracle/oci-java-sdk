@@ -53,6 +53,9 @@ import java.util.function.Supplier;
 @Slf4j
 public class RestClient implements AutoCloseable {
     private static final String PATCH_VERB = "PATCH";
+    private static final String STREAM_POTENTIAL_DATA_CORRUPTION_WARN_MSG =
+            "Stream size to upload is 0 bytes, this could potentially represent data corruption in what is uploaded "
+                    + "if a 0-byte upload was not your intent. If 0-byte uploads were not intended, please make sure all the OCI SDK dependencies point to the same version";
 
     private final EntityFactory entityFactory;
     private final Client client;
@@ -1294,10 +1297,7 @@ public class RestClient implements AutoCloseable {
                     try {
                         final int bytesAvailable = ((InputStream) body).available();
                         if (bytesAvailable == 0) {
-                            LOG.warn(
-                                    "Stream size to upload is 0 bytes, "
-                                            + "this could potentially lead to data corruption. If this is not intended, "
-                                            + "please make sure all the OCI SDK dependencies point to the same version");
+                            LOG.warn(STREAM_POTENTIAL_DATA_CORRUPTION_WARN_MSG);
                         }
                     } catch (IOException e) {
                         LOG.warn(

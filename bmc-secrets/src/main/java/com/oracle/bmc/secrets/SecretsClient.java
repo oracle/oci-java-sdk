@@ -399,10 +399,13 @@ public class SecretsClient implements Secrets {
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Secrets", "GetSecretBundle", ib.getRequestUri().toString(), "");
+                "Secrets",
+                "GetSecretBundle",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/secretretrieval/20190301/SecretBundle/GetSecretBundle");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -431,10 +434,13 @@ public class SecretsClient implements Secrets {
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Secrets", "GetSecretBundleByName", ib.getRequestUri().toString(), "");
+                "Secrets",
+                "GetSecretBundleByName",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/secretretrieval/20190301/SecretBundle/GetSecretBundleByName");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -464,10 +470,13 @@ public class SecretsClient implements Secrets {
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Secrets", "ListSecretBundleVersions", ib.getRequestUri().toString(), "");
+                "Secrets",
+                "ListSecretBundleVersions",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/secretretrieval/20190301/SecretBundleVersionSummary/ListSecretBundleVersions");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {

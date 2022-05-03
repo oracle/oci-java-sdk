@@ -399,7 +399,7 @@ public class StackMonitoringAsyncClient implements StackMonitoringAsync {
                 "StackMonitoring",
                 "AssociateMonitoredResources",
                 ib.getRequestUri().toString(),
-                "");
+                "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/MonitoredResource/AssociateMonitoredResources");
 
         com.oracle.bmc.responses.AsyncHandler<
                         AssociateMonitoredResourcesRequest, AssociateMonitoredResourcesResponse>
@@ -454,7 +454,7 @@ public class StackMonitoringAsyncClient implements StackMonitoringAsync {
                 "StackMonitoring",
                 "ChangeMonitoredResourceCompartment",
                 ib.getRequestUri().toString(),
-                "");
+                "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/MonitoredResource/ChangeMonitoredResourceCompartment");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeMonitoredResourceCompartmentRequest,
@@ -505,7 +505,10 @@ public class StackMonitoringAsyncClient implements StackMonitoringAsync {
                 transformer = CreateDiscoveryJobConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "StackMonitoring", "CreateDiscoveryJob", ib.getRequestUri().toString(), "");
+                "StackMonitoring",
+                "CreateDiscoveryJob",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/DiscoveryJob/CreateDiscoveryJob");
 
         com.oracle.bmc.responses.AsyncHandler<CreateDiscoveryJobRequest, CreateDiscoveryJobResponse>
                 handlerToUse = handler;
@@ -553,7 +556,10 @@ public class StackMonitoringAsyncClient implements StackMonitoringAsync {
                 transformer = CreateMonitoredResourceConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "StackMonitoring", "CreateMonitoredResource", ib.getRequestUri().toString(), "");
+                "StackMonitoring",
+                "CreateMonitoredResource",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/MonitoredResource/CreateMonitoredResource");
 
         com.oracle.bmc.responses.AsyncHandler<
                         CreateMonitoredResourceRequest, CreateMonitoredResourceResponse>
@@ -600,7 +606,10 @@ public class StackMonitoringAsyncClient implements StackMonitoringAsync {
         final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteDiscoveryJobResponse>
                 transformer = DeleteDiscoveryJobConverter.fromResponse();
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "StackMonitoring", "DeleteDiscoveryJob", ib.getRequestUri().toString(), "");
+                "StackMonitoring",
+                "DeleteDiscoveryJob",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/DiscoveryJob/DeleteDiscoveryJob");
 
         com.oracle.bmc.responses.AsyncHandler<DeleteDiscoveryJobRequest, DeleteDiscoveryJobResponse>
                 handlerToUse = handler;
@@ -642,7 +651,10 @@ public class StackMonitoringAsyncClient implements StackMonitoringAsync {
                         javax.ws.rs.core.Response, DeleteMonitoredResourceResponse>
                 transformer = DeleteMonitoredResourceConverter.fromResponse();
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "StackMonitoring", "DeleteMonitoredResource", ib.getRequestUri().toString(), "");
+                "StackMonitoring",
+                "DeleteMonitoredResource",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/MonitoredResource/DeleteMonitoredResource");
 
         com.oracle.bmc.responses.AsyncHandler<
                         DeleteMonitoredResourceRequest, DeleteMonitoredResourceResponse>
@@ -686,7 +698,10 @@ public class StackMonitoringAsyncClient implements StackMonitoringAsync {
                 transformer = DisableExternalDatabaseConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "StackMonitoring", "DisableExternalDatabase", ib.getRequestUri().toString(), "");
+                "StackMonitoring",
+                "DisableExternalDatabase",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/MonitoredResource/DisableExternalDatabase");
 
         com.oracle.bmc.responses.AsyncHandler<
                         DisableExternalDatabaseRequest, DisableExternalDatabaseResponse>
@@ -735,7 +750,7 @@ public class StackMonitoringAsyncClient implements StackMonitoringAsync {
                 "StackMonitoring",
                 "DisassociateMonitoredResources",
                 ib.getRequestUri().toString(),
-                "");
+                "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/MonitoredResource/DisassociateMonitoredResources");
 
         com.oracle.bmc.responses.AsyncHandler<
                         DisassociateMonitoredResourcesRequest,
@@ -784,7 +799,10 @@ public class StackMonitoringAsyncClient implements StackMonitoringAsync {
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetDiscoveryJobResponse>
                 transformer = GetDiscoveryJobConverter.fromResponse();
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "StackMonitoring", "GetDiscoveryJob", ib.getRequestUri().toString(), "");
+                "StackMonitoring",
+                "GetDiscoveryJob",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/DiscoveryJob/GetDiscoveryJob");
 
         com.oracle.bmc.responses.AsyncHandler<GetDiscoveryJobRequest, GetDiscoveryJobResponse>
                 handlerToUse = handler;
@@ -826,7 +844,10 @@ public class StackMonitoringAsyncClient implements StackMonitoringAsync {
                         javax.ws.rs.core.Response, GetMonitoredResourceResponse>
                 transformer = GetMonitoredResourceConverter.fromResponse();
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "StackMonitoring", "GetMonitoredResource", ib.getRequestUri().toString(), "");
+                "StackMonitoring",
+                "GetMonitoredResource",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/MonitoredResource/GetMonitoredResource");
 
         com.oracle.bmc.responses.AsyncHandler<
                         GetMonitoredResourceRequest, GetMonitoredResourceResponse>
@@ -868,7 +889,10 @@ public class StackMonitoringAsyncClient implements StackMonitoringAsync {
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetWorkRequestResponse>
                 transformer = GetWorkRequestConverter.fromResponse();
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "StackMonitoring", "GetWorkRequest", ib.getRequestUri().toString(), "");
+                "StackMonitoring",
+                "GetWorkRequest",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/WorkRequest/GetWorkRequest");
 
         com.oracle.bmc.responses.AsyncHandler<GetWorkRequestRequest, GetWorkRequestResponse>
                 handlerToUse = handler;
@@ -910,7 +934,10 @@ public class StackMonitoringAsyncClient implements StackMonitoringAsync {
                         javax.ws.rs.core.Response, ListDiscoveryJobLogsResponse>
                 transformer = ListDiscoveryJobLogsConverter.fromResponse();
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "StackMonitoring", "ListDiscoveryJobLogs", ib.getRequestUri().toString(), "");
+                "StackMonitoring",
+                "ListDiscoveryJobLogs",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/DiscoveryJobLogCollection/ListDiscoveryJobLogs");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListDiscoveryJobLogsRequest, ListDiscoveryJobLogsResponse>
@@ -952,7 +979,10 @@ public class StackMonitoringAsyncClient implements StackMonitoringAsync {
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListDiscoveryJobsResponse>
                 transformer = ListDiscoveryJobsConverter.fromResponse();
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "StackMonitoring", "ListDiscoveryJobs", ib.getRequestUri().toString(), "");
+                "StackMonitoring",
+                "ListDiscoveryJobs",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/DiscoveryJobCollection/ListDiscoveryJobs");
 
         com.oracle.bmc.responses.AsyncHandler<ListDiscoveryJobsRequest, ListDiscoveryJobsResponse>
                 handlerToUse = handler;
@@ -994,7 +1024,10 @@ public class StackMonitoringAsyncClient implements StackMonitoringAsync {
                         javax.ws.rs.core.Response, ListWorkRequestErrorsResponse>
                 transformer = ListWorkRequestErrorsConverter.fromResponse();
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "StackMonitoring", "ListWorkRequestErrors", ib.getRequestUri().toString(), "");
+                "StackMonitoring",
+                "ListWorkRequestErrors",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/WorkRequestErrorCollection/ListWorkRequestErrors");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListWorkRequestErrorsRequest, ListWorkRequestErrorsResponse>
@@ -1037,7 +1070,10 @@ public class StackMonitoringAsyncClient implements StackMonitoringAsync {
                         javax.ws.rs.core.Response, ListWorkRequestLogsResponse>
                 transformer = ListWorkRequestLogsConverter.fromResponse();
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "StackMonitoring", "ListWorkRequestLogs", ib.getRequestUri().toString(), "");
+                "StackMonitoring",
+                "ListWorkRequestLogs",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/WorkRequestLogEntryCollection/ListWorkRequestLogs");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListWorkRequestLogsRequest, ListWorkRequestLogsResponse>
@@ -1079,7 +1115,10 @@ public class StackMonitoringAsyncClient implements StackMonitoringAsync {
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListWorkRequestsResponse>
                 transformer = ListWorkRequestsConverter.fromResponse();
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "StackMonitoring", "ListWorkRequests", ib.getRequestUri().toString(), "");
+                "StackMonitoring",
+                "ListWorkRequests",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/WorkRequestSummaryCollection/ListWorkRequests");
 
         com.oracle.bmc.responses.AsyncHandler<ListWorkRequestsRequest, ListWorkRequestsResponse>
                 handlerToUse = handler;
@@ -1128,7 +1167,7 @@ public class StackMonitoringAsyncClient implements StackMonitoringAsync {
                 "StackMonitoring",
                 "SearchMonitoredResourceAssociations",
                 ib.getRequestUri().toString(),
-                "");
+                "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/MonitoredResource/SearchMonitoredResourceAssociations");
 
         com.oracle.bmc.responses.AsyncHandler<
                         SearchMonitoredResourceAssociationsRequest,
@@ -1185,7 +1224,7 @@ public class StackMonitoringAsyncClient implements StackMonitoringAsync {
                 "StackMonitoring",
                 "SearchMonitoredResourceMembers",
                 ib.getRequestUri().toString(),
-                "");
+                "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/MonitoredResource/SearchMonitoredResourceMembers");
 
         com.oracle.bmc.responses.AsyncHandler<
                         SearchMonitoredResourceMembersRequest,
@@ -1236,7 +1275,10 @@ public class StackMonitoringAsyncClient implements StackMonitoringAsync {
                 transformer = SearchMonitoredResourcesConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "StackMonitoring", "SearchMonitoredResources", ib.getRequestUri().toString(), "");
+                "StackMonitoring",
+                "SearchMonitoredResources",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/MonitoredResource/SearchMonitoredResources");
 
         com.oracle.bmc.responses.AsyncHandler<
                         SearchMonitoredResourcesRequest, SearchMonitoredResourcesResponse>
@@ -1284,7 +1326,10 @@ public class StackMonitoringAsyncClient implements StackMonitoringAsync {
                         javax.ws.rs.core.Response, UpdateMonitoredResourceResponse>
                 transformer = UpdateMonitoredResourceConverter.fromResponse();
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "StackMonitoring", "UpdateMonitoredResource", ib.getRequestUri().toString(), "");
+                "StackMonitoring",
+                "UpdateMonitoredResource",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/MonitoredResource/UpdateMonitoredResource");
 
         com.oracle.bmc.responses.AsyncHandler<
                         UpdateMonitoredResourceRequest, UpdateMonitoredResourceResponse>

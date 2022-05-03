@@ -90,6 +90,16 @@ public class CreateFunctionDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("provisionedConcurrencyConfig")
+        private FunctionProvisionedConcurrencyConfig provisionedConcurrencyConfig;
+
+        public Builder provisionedConcurrencyConfig(
+                FunctionProvisionedConcurrencyConfig provisionedConcurrencyConfig) {
+            this.provisionedConcurrencyConfig = provisionedConcurrencyConfig;
+            this.__explicitlySet__.add("provisionedConcurrencyConfig");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("traceConfig")
         private FunctionTraceConfig traceConfig;
 
@@ -131,6 +141,7 @@ public class CreateFunctionDetails {
                             memoryInMBs,
                             config,
                             timeoutInSeconds,
+                            provisionedConcurrencyConfig,
                             traceConfig,
                             freeformTags,
                             definedTags);
@@ -148,6 +159,7 @@ public class CreateFunctionDetails {
                             .memoryInMBs(o.getMemoryInMBs())
                             .config(o.getConfig())
                             .timeoutInSeconds(o.getTimeoutInSeconds())
+                            .provisionedConcurrencyConfig(o.getProvisionedConcurrencyConfig())
                             .traceConfig(o.getTraceConfig())
                             .freeformTags(o.getFreeformTags())
                             .definedTags(o.getDefinedTags());
@@ -218,6 +230,9 @@ public class CreateFunctionDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeoutInSeconds")
     Integer timeoutInSeconds;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("provisionedConcurrencyConfig")
+    FunctionProvisionedConcurrencyConfig provisionedConcurrencyConfig;
 
     @com.fasterxml.jackson.annotation.JsonProperty("traceConfig")
     FunctionTraceConfig traceConfig;

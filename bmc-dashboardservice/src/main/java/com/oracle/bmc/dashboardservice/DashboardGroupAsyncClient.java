@@ -393,7 +393,10 @@ public class DashboardGroupAsyncClient implements DashboardGroupAsync {
                 transformer = CreateDashboardGroupConverter.fromResponse();
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "DashboardGroup", "CreateDashboardGroup", ib.getRequestUri().toString(), "");
+                "DashboardGroup",
+                "CreateDashboardGroup",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/dashboard/20210731/DashboardGroup/CreateDashboardGroup");
 
         com.oracle.bmc.responses.AsyncHandler<
                         CreateDashboardGroupRequest, CreateDashboardGroupResponse>
@@ -441,7 +444,10 @@ public class DashboardGroupAsyncClient implements DashboardGroupAsync {
                         javax.ws.rs.core.Response, DeleteDashboardGroupResponse>
                 transformer = DeleteDashboardGroupConverter.fromResponse();
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "DashboardGroup", "DeleteDashboardGroup", ib.getRequestUri().toString(), "");
+                "DashboardGroup",
+                "DeleteDashboardGroup",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/dashboard/20210731/DashboardGroup/DeleteDashboardGroup");
 
         com.oracle.bmc.responses.AsyncHandler<
                         DeleteDashboardGroupRequest, DeleteDashboardGroupResponse>
@@ -483,7 +489,10 @@ public class DashboardGroupAsyncClient implements DashboardGroupAsync {
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetDashboardGroupResponse>
                 transformer = GetDashboardGroupConverter.fromResponse();
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "DashboardGroup", "GetDashboardGroup", ib.getRequestUri().toString(), "");
+                "DashboardGroup",
+                "GetDashboardGroup",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/dashboard/20210731/DashboardGroup/GetDashboardGroup");
 
         com.oracle.bmc.responses.AsyncHandler<GetDashboardGroupRequest, GetDashboardGroupResponse>
                 handlerToUse = handler;
@@ -525,7 +534,10 @@ public class DashboardGroupAsyncClient implements DashboardGroupAsync {
                         javax.ws.rs.core.Response, ListDashboardGroupsResponse>
                 transformer = ListDashboardGroupsConverter.fromResponse();
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "DashboardGroup", "ListDashboardGroups", ib.getRequestUri().toString(), "");
+                "DashboardGroup",
+                "ListDashboardGroups",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/dashboard/20210731/DashboardGroupCollection/ListDashboardGroups");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListDashboardGroupsRequest, ListDashboardGroupsResponse>
@@ -568,7 +580,10 @@ public class DashboardGroupAsyncClient implements DashboardGroupAsync {
                         javax.ws.rs.core.Response, UpdateDashboardGroupResponse>
                 transformer = UpdateDashboardGroupConverter.fromResponse();
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "DashboardGroup", "UpdateDashboardGroup", ib.getRequestUri().toString(), "");
+                "DashboardGroup",
+                "UpdateDashboardGroup",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/dashboard/20210731/DashboardGroup/UpdateDashboardGroup");
 
         com.oracle.bmc.responses.AsyncHandler<
                         UpdateDashboardGroupRequest, UpdateDashboardGroupResponse>

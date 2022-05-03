@@ -74,6 +74,58 @@ public class ShapePlatformConfigOptions {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("symmetricMultiThreadingOptions")
+        private ShapeSymmetricMultiThreadingEnabledPlatformOptions symmetricMultiThreadingOptions;
+
+        public Builder symmetricMultiThreadingOptions(
+                ShapeSymmetricMultiThreadingEnabledPlatformOptions symmetricMultiThreadingOptions) {
+            this.symmetricMultiThreadingOptions = symmetricMultiThreadingOptions;
+            this.__explicitlySet__.add("symmetricMultiThreadingOptions");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("accessControlServiceOptions")
+        private ShapeAccessControlServiceEnabledPlatformOptions accessControlServiceOptions;
+
+        public Builder accessControlServiceOptions(
+                ShapeAccessControlServiceEnabledPlatformOptions accessControlServiceOptions) {
+            this.accessControlServiceOptions = accessControlServiceOptions;
+            this.__explicitlySet__.add("accessControlServiceOptions");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("virtualInstructionsOptions")
+        private ShapeVirtualInstructionsEnabledPlatformOptions virtualInstructionsOptions;
+
+        public Builder virtualInstructionsOptions(
+                ShapeVirtualInstructionsEnabledPlatformOptions virtualInstructionsOptions) {
+            this.virtualInstructionsOptions = virtualInstructionsOptions;
+            this.__explicitlySet__.add("virtualInstructionsOptions");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("inputOutputMemoryManagementUnitOptions")
+        private ShapeInputOutputMemoryManagementUnitEnabledPlatformOptions
+                inputOutputMemoryManagementUnitOptions;
+
+        public Builder inputOutputMemoryManagementUnitOptions(
+                ShapeInputOutputMemoryManagementUnitEnabledPlatformOptions
+                        inputOutputMemoryManagementUnitOptions) {
+            this.inputOutputMemoryManagementUnitOptions = inputOutputMemoryManagementUnitOptions;
+            this.__explicitlySet__.add("inputOutputMemoryManagementUnitOptions");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("percentageOfCoresEnabledOptions")
+        private PercentageOfCoresEnabledOptions percentageOfCoresEnabledOptions;
+
+        public Builder percentageOfCoresEnabledOptions(
+                PercentageOfCoresEnabledOptions percentageOfCoresEnabledOptions) {
+            this.percentageOfCoresEnabledOptions = percentageOfCoresEnabledOptions;
+            this.__explicitlySet__.add("percentageOfCoresEnabledOptions");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -84,7 +136,12 @@ public class ShapePlatformConfigOptions {
                             secureBootOptions,
                             measuredBootOptions,
                             trustedPlatformModuleOptions,
-                            numaNodesPerSocketPlatformOptions);
+                            numaNodesPerSocketPlatformOptions,
+                            symmetricMultiThreadingOptions,
+                            accessControlServiceOptions,
+                            virtualInstructionsOptions,
+                            inputOutputMemoryManagementUnitOptions,
+                            percentageOfCoresEnabledOptions);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -97,7 +154,14 @@ public class ShapePlatformConfigOptions {
                             .measuredBootOptions(o.getMeasuredBootOptions())
                             .trustedPlatformModuleOptions(o.getTrustedPlatformModuleOptions())
                             .numaNodesPerSocketPlatformOptions(
-                                    o.getNumaNodesPerSocketPlatformOptions());
+                                    o.getNumaNodesPerSocketPlatformOptions())
+                            .symmetricMultiThreadingOptions(o.getSymmetricMultiThreadingOptions())
+                            .accessControlServiceOptions(o.getAccessControlServiceOptions())
+                            .virtualInstructionsOptions(o.getVirtualInstructionsOptions())
+                            .inputOutputMemoryManagementUnitOptions(
+                                    o.getInputOutputMemoryManagementUnitOptions())
+                            .percentageOfCoresEnabledOptions(
+                                    o.getPercentageOfCoresEnabledOptions());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -119,6 +183,8 @@ public class ShapePlatformConfigOptions {
     public enum Type {
         AmdMilanBm("AMD_MILAN_BM"),
         AmdRomeBm("AMD_ROME_BM"),
+        AmdRomeBmGpu("AMD_ROME_BM_GPU"),
+        IntelIcelakeBm("INTEL_ICELAKE_BM"),
         IntelSkylakeBm("INTEL_SKYLAKE_BM"),
         AmdVm("AMD_VM"),
         IntelVm("INTEL_VM"),
@@ -178,6 +244,22 @@ public class ShapePlatformConfigOptions {
 
     @com.fasterxml.jackson.annotation.JsonProperty("numaNodesPerSocketPlatformOptions")
     ShapeNumaNodesPerSocketPlatformOptions numaNodesPerSocketPlatformOptions;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("symmetricMultiThreadingOptions")
+    ShapeSymmetricMultiThreadingEnabledPlatformOptions symmetricMultiThreadingOptions;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("accessControlServiceOptions")
+    ShapeAccessControlServiceEnabledPlatformOptions accessControlServiceOptions;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("virtualInstructionsOptions")
+    ShapeVirtualInstructionsEnabledPlatformOptions virtualInstructionsOptions;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("inputOutputMemoryManagementUnitOptions")
+    ShapeInputOutputMemoryManagementUnitEnabledPlatformOptions
+            inputOutputMemoryManagementUnitOptions;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("percentageOfCoresEnabledOptions")
+    PercentageOfCoresEnabledOptions percentageOfCoresEnabledOptions;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

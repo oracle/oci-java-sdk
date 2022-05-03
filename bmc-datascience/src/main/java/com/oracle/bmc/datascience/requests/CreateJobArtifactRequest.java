@@ -49,13 +49,8 @@ public class CreateJobArtifactRequest
     private String opcRetryToken;
 
     /**
-     * This header allows you to specify a filename during upload. This file name is used to dispose of the file contents
-     * while downloading the file. If this optional field is not populated in the request, then the OCID of the model is used for the file
-     * name when downloading.
-     * Example: {@code {"Content-Disposition": "attachment"
-     *            "filename"="model.tar.gz"
-     *            "Content-Length": "2347"
-     *            "Content-Type": "application/gzip"}}
+     * This header is for specifying a filename during upload. It is used to identify the file type and validate if the
+     * file type is supported. Example: {@code --content-disposition "attachment; filename=hello-world.py"}
      *
      */
     private String contentDisposition;

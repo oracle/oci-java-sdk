@@ -483,7 +483,7 @@ public class DatabaseToolsClient implements DatabaseTools {
                 "DatabaseTools",
                 "ChangeDatabaseToolsConnectionCompartment",
                 ib.getRequestUri().toString(),
-                "");
+                "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsConnection/ChangeDatabaseToolsConnectionCompartment");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -528,7 +528,7 @@ public class DatabaseToolsClient implements DatabaseTools {
                 "DatabaseTools",
                 "ChangeDatabaseToolsPrivateEndpointCompartment",
                 ib.getRequestUri().toString(),
-                "");
+                "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsPrivateEndpoint/ChangeDatabaseToolsPrivateEndpointCompartment");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -653,7 +653,7 @@ public class DatabaseToolsClient implements DatabaseTools {
                 "DatabaseTools",
                 "DeleteDatabaseToolsConnection",
                 ib.getRequestUri().toString(),
-                "");
+                "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsConnection/DeleteDatabaseToolsConnection");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -690,7 +690,7 @@ public class DatabaseToolsClient implements DatabaseTools {
                 "DatabaseTools",
                 "DeleteDatabaseToolsPrivateEndpoint",
                 ib.getRequestUri().toString(),
-                "");
+                "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsPrivateEndpoint/DeleteDatabaseToolsPrivateEndpoint");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -724,7 +724,10 @@ public class DatabaseToolsClient implements DatabaseTools {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "DatabaseTools", "GetDatabaseToolsConnection", ib.getRequestUri().toString(), "");
+                "DatabaseTools",
+                "GetDatabaseToolsConnection",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsConnection/GetDatabaseToolsConnection");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -760,7 +763,7 @@ public class DatabaseToolsClient implements DatabaseTools {
                 "DatabaseTools",
                 "GetDatabaseToolsEndpointService",
                 ib.getRequestUri().toString(),
-                "");
+                "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsEndpointService/GetDatabaseToolsEndpointService");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -796,7 +799,7 @@ public class DatabaseToolsClient implements DatabaseTools {
                 "DatabaseTools",
                 "GetDatabaseToolsPrivateEndpoint",
                 ib.getRequestUri().toString(),
-                "");
+                "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsPrivateEndpoint/GetDatabaseToolsPrivateEndpoint");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -827,7 +830,10 @@ public class DatabaseToolsClient implements DatabaseTools {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "DatabaseTools", "GetWorkRequest", ib.getRequestUri().toString(), "");
+                "DatabaseTools",
+                "GetWorkRequest",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/WorkRequest/GetWorkRequest");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -860,7 +866,10 @@ public class DatabaseToolsClient implements DatabaseTools {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "DatabaseTools", "ListDatabaseToolsConnections", ib.getRequestUri().toString(), "");
+                "DatabaseTools",
+                "ListDatabaseToolsConnections",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsConnection/ListDatabaseToolsConnections");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -896,7 +905,7 @@ public class DatabaseToolsClient implements DatabaseTools {
                 "DatabaseTools",
                 "ListDatabaseToolsEndpointServices",
                 ib.getRequestUri().toString(),
-                "");
+                "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsEndpointService/ListDatabaseToolsEndpointServices");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -932,7 +941,7 @@ public class DatabaseToolsClient implements DatabaseTools {
                 "DatabaseTools",
                 "ListDatabaseToolsPrivateEndpoints",
                 ib.getRequestUri().toString(),
-                "");
+                "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsPrivateEndpoint/ListDatabaseToolsPrivateEndpoints");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -964,7 +973,10 @@ public class DatabaseToolsClient implements DatabaseTools {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "DatabaseTools", "ListWorkRequestErrors", ib.getRequestUri().toString(), "");
+                "DatabaseTools",
+                "ListWorkRequestErrors",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/WorkRequestError/ListWorkRequestErrors");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -995,7 +1007,10 @@ public class DatabaseToolsClient implements DatabaseTools {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "DatabaseTools", "ListWorkRequestLogs", ib.getRequestUri().toString(), "");
+                "DatabaseTools",
+                "ListWorkRequestLogs",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/WorkRequestLogEntry/ListWorkRequestLogs");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1026,7 +1041,10 @@ public class DatabaseToolsClient implements DatabaseTools {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "DatabaseTools", "ListWorkRequests", ib.getRequestUri().toString(), "");
+                "DatabaseTools",
+                "ListWorkRequests",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/WorkRequest/ListWorkRequests");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1062,7 +1080,7 @@ public class DatabaseToolsClient implements DatabaseTools {
                 "DatabaseTools",
                 "UpdateDatabaseToolsConnection",
                 ib.getRequestUri().toString(),
-                "");
+                "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsConnection/UpdateDatabaseToolsConnection");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1103,7 +1121,7 @@ public class DatabaseToolsClient implements DatabaseTools {
                 "DatabaseTools",
                 "UpdateDatabaseToolsPrivateEndpoint",
                 ib.getRequestUri().toString(),
-                "");
+                "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsPrivateEndpoint/UpdateDatabaseToolsPrivateEndpoint");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1144,7 +1162,7 @@ public class DatabaseToolsClient implements DatabaseTools {
                 "DatabaseTools",
                 "ValidateDatabaseToolsConnection",
                 ib.getRequestUri().toString(),
-                "");
+                "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsConnection/ValidateDatabaseToolsConnection");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
