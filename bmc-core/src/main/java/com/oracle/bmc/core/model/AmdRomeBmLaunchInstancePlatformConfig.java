@@ -61,6 +61,62 @@ public class AmdRomeBmLaunchInstancePlatformConfig extends LaunchInstancePlatfor
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("numaNodesPerSocket")
+        private NumaNodesPerSocket numaNodesPerSocket;
+
+        public Builder numaNodesPerSocket(NumaNodesPerSocket numaNodesPerSocket) {
+            this.numaNodesPerSocket = numaNodesPerSocket;
+            this.__explicitlySet__.add("numaNodesPerSocket");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("isSymmetricMultiThreadingEnabled")
+        private Boolean isSymmetricMultiThreadingEnabled;
+
+        public Builder isSymmetricMultiThreadingEnabled(Boolean isSymmetricMultiThreadingEnabled) {
+            this.isSymmetricMultiThreadingEnabled = isSymmetricMultiThreadingEnabled;
+            this.__explicitlySet__.add("isSymmetricMultiThreadingEnabled");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("isAccessControlServiceEnabled")
+        private Boolean isAccessControlServiceEnabled;
+
+        public Builder isAccessControlServiceEnabled(Boolean isAccessControlServiceEnabled) {
+            this.isAccessControlServiceEnabled = isAccessControlServiceEnabled;
+            this.__explicitlySet__.add("isAccessControlServiceEnabled");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("areVirtualInstructionsEnabled")
+        private Boolean areVirtualInstructionsEnabled;
+
+        public Builder areVirtualInstructionsEnabled(Boolean areVirtualInstructionsEnabled) {
+            this.areVirtualInstructionsEnabled = areVirtualInstructionsEnabled;
+            this.__explicitlySet__.add("areVirtualInstructionsEnabled");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("isInputOutputMemoryManagementUnitEnabled")
+        private Boolean isInputOutputMemoryManagementUnitEnabled;
+
+        public Builder isInputOutputMemoryManagementUnitEnabled(
+                Boolean isInputOutputMemoryManagementUnitEnabled) {
+            this.isInputOutputMemoryManagementUnitEnabled =
+                    isInputOutputMemoryManagementUnitEnabled;
+            this.__explicitlySet__.add("isInputOutputMemoryManagementUnitEnabled");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("percentageOfCoresEnabled")
+        private Integer percentageOfCoresEnabled;
+
+        public Builder percentageOfCoresEnabled(Integer percentageOfCoresEnabled) {
+            this.percentageOfCoresEnabled = percentageOfCoresEnabled;
+            this.__explicitlySet__.add("percentageOfCoresEnabled");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -69,7 +125,13 @@ public class AmdRomeBmLaunchInstancePlatformConfig extends LaunchInstancePlatfor
                     new AmdRomeBmLaunchInstancePlatformConfig(
                             isSecureBootEnabled,
                             isTrustedPlatformModuleEnabled,
-                            isMeasuredBootEnabled);
+                            isMeasuredBootEnabled,
+                            numaNodesPerSocket,
+                            isSymmetricMultiThreadingEnabled,
+                            isAccessControlServiceEnabled,
+                            areVirtualInstructionsEnabled,
+                            isInputOutputMemoryManagementUnitEnabled,
+                            percentageOfCoresEnabled);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -79,7 +141,15 @@ public class AmdRomeBmLaunchInstancePlatformConfig extends LaunchInstancePlatfor
             Builder copiedBuilder =
                     isSecureBootEnabled(o.getIsSecureBootEnabled())
                             .isTrustedPlatformModuleEnabled(o.getIsTrustedPlatformModuleEnabled())
-                            .isMeasuredBootEnabled(o.getIsMeasuredBootEnabled());
+                            .isMeasuredBootEnabled(o.getIsMeasuredBootEnabled())
+                            .numaNodesPerSocket(o.getNumaNodesPerSocket())
+                            .isSymmetricMultiThreadingEnabled(
+                                    o.getIsSymmetricMultiThreadingEnabled())
+                            .isAccessControlServiceEnabled(o.getIsAccessControlServiceEnabled())
+                            .areVirtualInstructionsEnabled(o.getAreVirtualInstructionsEnabled())
+                            .isInputOutputMemoryManagementUnitEnabled(
+                                    o.getIsInputOutputMemoryManagementUnitEnabled())
+                            .percentageOfCoresEnabled(o.getPercentageOfCoresEnabled());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -97,9 +167,115 @@ public class AmdRomeBmLaunchInstancePlatformConfig extends LaunchInstancePlatfor
     public AmdRomeBmLaunchInstancePlatformConfig(
             Boolean isSecureBootEnabled,
             Boolean isTrustedPlatformModuleEnabled,
-            Boolean isMeasuredBootEnabled) {
+            Boolean isMeasuredBootEnabled,
+            NumaNodesPerSocket numaNodesPerSocket,
+            Boolean isSymmetricMultiThreadingEnabled,
+            Boolean isAccessControlServiceEnabled,
+            Boolean areVirtualInstructionsEnabled,
+            Boolean isInputOutputMemoryManagementUnitEnabled,
+            Integer percentageOfCoresEnabled) {
         super(isSecureBootEnabled, isTrustedPlatformModuleEnabled, isMeasuredBootEnabled);
+        this.numaNodesPerSocket = numaNodesPerSocket;
+        this.isSymmetricMultiThreadingEnabled = isSymmetricMultiThreadingEnabled;
+        this.isAccessControlServiceEnabled = isAccessControlServiceEnabled;
+        this.areVirtualInstructionsEnabled = areVirtualInstructionsEnabled;
+        this.isInputOutputMemoryManagementUnitEnabled = isInputOutputMemoryManagementUnitEnabled;
+        this.percentageOfCoresEnabled = percentageOfCoresEnabled;
     }
+
+    /**
+     * The number of NUMA nodes per socket (NPS).
+     *
+     **/
+    public enum NumaNodesPerSocket {
+        Nps0("NPS0"),
+        Nps1("NPS1"),
+        Nps2("NPS2"),
+        Nps4("NPS4"),
+        ;
+
+        private final String value;
+        private static java.util.Map<String, NumaNodesPerSocket> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (NumaNodesPerSocket v : NumaNodesPerSocket.values()) {
+                map.put(v.getValue(), v);
+            }
+        }
+
+        NumaNodesPerSocket(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static NumaNodesPerSocket create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            throw new IllegalArgumentException("Invalid NumaNodesPerSocket: " + key);
+        }
+    };
+    /**
+     * The number of NUMA nodes per socket (NPS).
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("numaNodesPerSocket")
+    NumaNodesPerSocket numaNodesPerSocket;
+
+    /**
+     * Whether symmetric multithreading is enabled on the instance. Symmetric multithreading is also
+     * called simultaneous multithreading (SMT) or Intel Hyper-Threading.
+     * <p>
+     * Intel and AMD processors have two hardware execution threads per core (OCPU). SMT permits multiple
+     * independent threads of execution, to better use the resources and increase the efficiency
+     * of the CPU. When multithreading is disabled, only one thread is permitted to run on each core, which
+     * can provide higher or more predictable performance for some workloads.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isSymmetricMultiThreadingEnabled")
+    Boolean isSymmetricMultiThreadingEnabled;
+
+    /**
+     * Whether the Access Control Service is enabled on the instance. When enabled,
+     * the platform can enforce PCIe device isolation, required for VFIO device pass-through.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isAccessControlServiceEnabled")
+    Boolean isAccessControlServiceEnabled;
+
+    /**
+     * Whether virtualization instructions are available. For example, Secure Virtual Machine for AMD shapes
+     * or VT-x for Intel shapes.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("areVirtualInstructionsEnabled")
+    Boolean areVirtualInstructionsEnabled;
+
+    /**
+     * Whether the input-output memory management unit is enabled.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isInputOutputMemoryManagementUnitEnabled")
+    Boolean isInputOutputMemoryManagementUnitEnabled;
+
+    /**
+     * The percentage of cores enabled. Value must be a multiple of 25%. If the requested percentage
+     * results in a fractional number of cores, the system rounds up the number of cores across processors
+     * and provisions an instance with a whole number of cores.
+     * <p>
+     * If the applications that you run on the instance use a core-based licensing model and need fewer cores
+     * than the full size of the shape, you can disable cores to reduce your licensing costs. The instance
+     * itself is billed for the full shape, regardless of whether all cores are enabled.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("percentageOfCoresEnabled")
+    Integer percentageOfCoresEnabled;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

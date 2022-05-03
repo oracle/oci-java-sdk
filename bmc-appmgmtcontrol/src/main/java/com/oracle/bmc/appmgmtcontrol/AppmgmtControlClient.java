@@ -476,7 +476,10 @@ public class AppmgmtControlClient implements AppmgmtControl {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "AppmgmtControl", "ActivateMonitoringPlugin", ib.getRequestUri().toString(), "");
+                "AppmgmtControl",
+                "ActivateMonitoringPlugin",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/resource-discovery-monitoring-control-api/20210330/MonitoredInstance/ActivateMonitoringPlugin");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -508,7 +511,10 @@ public class AppmgmtControlClient implements AppmgmtControl {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "AppmgmtControl", "GetMonitoredInstance", ib.getRequestUri().toString(), "");
+                "AppmgmtControl",
+                "GetMonitoredInstance",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/resource-discovery-monitoring-control-api/20210330/MonitoredInstance/GetMonitoredInstance");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -539,7 +545,10 @@ public class AppmgmtControlClient implements AppmgmtControl {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "AppmgmtControl", "GetWorkRequest", ib.getRequestUri().toString(), "");
+                "AppmgmtControl",
+                "GetWorkRequest",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/resource-discovery-monitoring-control-api/20210330/WorkRequest/GetWorkRequest");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -571,7 +580,10 @@ public class AppmgmtControlClient implements AppmgmtControl {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "AppmgmtControl", "ListMonitoredInstances", ib.getRequestUri().toString(), "");
+                "AppmgmtControl",
+                "ListMonitoredInstances",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/resource-discovery-monitoring-control-api/20210330/MonitoredInstanceCollection/ListMonitoredInstances");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -603,7 +615,10 @@ public class AppmgmtControlClient implements AppmgmtControl {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "AppmgmtControl", "ListWorkRequestErrors", ib.getRequestUri().toString(), "");
+                "AppmgmtControl",
+                "ListWorkRequestErrors",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/resource-discovery-monitoring-control-api/20210330/WorkRequestError/ListWorkRequestErrors");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -634,7 +649,10 @@ public class AppmgmtControlClient implements AppmgmtControl {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "AppmgmtControl", "ListWorkRequestLogs", ib.getRequestUri().toString(), "");
+                "AppmgmtControl",
+                "ListWorkRequestLogs",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/resource-discovery-monitoring-control-api/20210330/WorkRequestLogEntry/ListWorkRequestLogs");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -665,7 +683,10 @@ public class AppmgmtControlClient implements AppmgmtControl {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "AppmgmtControl", "ListWorkRequests", ib.getRequestUri().toString(), "");
+                "AppmgmtControl",
+                "ListWorkRequests",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/resource-discovery-monitoring-control-api/20210330/WorkRequest/ListWorkRequests");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -699,7 +720,10 @@ public class AppmgmtControlClient implements AppmgmtControl {
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "AppmgmtControl", "PublishTopProcessesMetrics", ib.getRequestUri().toString(), "");
+                "AppmgmtControl",
+                "PublishTopProcessesMetrics",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/resource-discovery-monitoring-control-api/20210330/MonitoredInstance/PublishTopProcessesMetrics");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {

@@ -476,7 +476,10 @@ public class DashboardClient implements Dashboard {
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Dashboard", "CreateDashboard", ib.getRequestUri().toString(), "");
+                "Dashboard",
+                "CreateDashboard",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/dashboard/20210731/Dashboard/CreateDashboard");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -511,7 +514,10 @@ public class DashboardClient implements Dashboard {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Dashboard", "DeleteDashboard", ib.getRequestUri().toString(), "");
+                "Dashboard",
+                "DeleteDashboard",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/dashboard/20210731/Dashboard/DeleteDashboard");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -540,10 +546,13 @@ public class DashboardClient implements Dashboard {
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Dashboard", "GetDashboard", ib.getRequestUri().toString(), "");
+                "Dashboard",
+                "GetDashboard",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/dashboard/20210731/Dashboard/GetDashboard");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -571,10 +580,13 @@ public class DashboardClient implements Dashboard {
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Dashboard", "ListDashboards", ib.getRequestUri().toString(), "");
+                "Dashboard",
+                "ListDashboards",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/dashboard/20210731/DashboardCollection/ListDashboards");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -605,7 +617,10 @@ public class DashboardClient implements Dashboard {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Dashboard", "UpdateDashboard", ib.getRequestUri().toString(), "");
+                "Dashboard",
+                "UpdateDashboard",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/dashboard/20210731/Dashboard/UpdateDashboard");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {

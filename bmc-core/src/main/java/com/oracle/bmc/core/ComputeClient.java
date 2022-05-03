@@ -2242,7 +2242,10 @@ public class ComputeClient implements Compute {
                             retryRequest,
                             retriedRequest -> {
                                 javax.ws.rs.core.Response response =
-                                        client.post(ib, retriedRequest);
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getInstancePowerActionDetails(),
+                                                retriedRequest);
                                 return transformer.apply(response);
                             });
                 });

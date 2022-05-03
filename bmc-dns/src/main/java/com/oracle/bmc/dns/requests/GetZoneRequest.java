@@ -62,7 +62,10 @@ public class GetZoneRequest extends com.oracle.bmc.requests.BmcRequest<java.lang
     private String viewId;
 
     /**
-     * The OCID of the compartment the resource belongs to.
+     * The OCID of the compartment the zone belongs to.
+     * <p>
+     * This parameter is deprecated and should be omitted.
+     *
      */
     private String compartmentId;
 

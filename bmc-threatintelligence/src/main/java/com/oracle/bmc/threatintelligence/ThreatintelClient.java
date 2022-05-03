@@ -476,7 +476,10 @@ public class ThreatintelClient implements Threatintel {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Threatintel", "GetIndicator", ib.getRequestUri().toString(), "");
+                "Threatintel",
+                "GetIndicator",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/threat-intel/20210831/Indicator/GetIndicator");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -507,7 +510,10 @@ public class ThreatintelClient implements Threatintel {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Threatintel", "ListIndicatorCounts", ib.getRequestUri().toString(), "");
+                "Threatintel",
+                "ListIndicatorCounts",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/threat-intel/20210831/IndicatorCountCollection/ListIndicatorCounts");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -538,7 +544,10 @@ public class ThreatintelClient implements Threatintel {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Threatintel", "ListIndicators", ib.getRequestUri().toString(), "");
+                "Threatintel",
+                "ListIndicators",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/threat-intel/20210831/IndicatorSummaryCollection/ListIndicators");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -569,7 +578,10 @@ public class ThreatintelClient implements Threatintel {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Threatintel", "ListThreatTypes", ib.getRequestUri().toString(), "");
+                "Threatintel",
+                "ListThreatTypes",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/threat-intel/20210831/ThreatTypesCollection/ListThreatTypes");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {

@@ -8,7 +8,8 @@ import com.oracle.bmc.appmgmtcontrol.requests.*;
 import com.oracle.bmc.appmgmtcontrol.responses.*;
 
 /**
- * AppMgmt Control API
+ * Use the Resource Discovery and Monitoring Control API to get details about monitored instances and perform actions. For more information, see [Resource Discovery and Monitoring](https://docs.oracle.com/iaas/os-management/osms/osms-resource-discovery-monitoring.htm).
+ *
  * This service client uses CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER for all the operations by default if no circuit breaker configuration is defined by the user.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210330")

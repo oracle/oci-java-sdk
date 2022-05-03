@@ -475,7 +475,10 @@ public class VaultsClient implements Vaults {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Vaults", "CancelSecretDeletion", ib.getRequestUri().toString(), "");
+                "Vaults",
+                "CancelSecretDeletion",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/secretmgmt/20180608/Secret/CancelSecretDeletion");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -509,7 +512,10 @@ public class VaultsClient implements Vaults {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Vaults", "CancelSecretVersionDeletion", ib.getRequestUri().toString(), "");
+                "Vaults",
+                "CancelSecretVersionDeletion",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/secretmgmt/20180608/SecretVersion/CancelSecretVersionDeletion");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -543,7 +549,10 @@ public class VaultsClient implements Vaults {
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Vaults", "ChangeSecretCompartment", ib.getRequestUri().toString(), "");
+                "Vaults",
+                "ChangeSecretCompartment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/secretmgmt/20180608/Secret/ChangeSecretCompartment");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -575,11 +584,14 @@ public class VaultsClient implements Vaults {
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Vaults", "CreateSecret", ib.getRequestUri().toString(), "");
+                "Vaults",
+                "CreateSecret",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/secretmgmt/20180608/Secret/CreateSecret");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -610,10 +622,13 @@ public class VaultsClient implements Vaults {
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Vaults", "GetSecret", ib.getRequestUri().toString(), "");
+                "Vaults",
+                "GetSecret",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/secretmgmt/20180608/Secret/GetSecret");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -641,10 +656,13 @@ public class VaultsClient implements Vaults {
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Vaults", "GetSecretVersion", ib.getRequestUri().toString(), "");
+                "Vaults",
+                "GetSecretVersion",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/secretmgmt/20180608/SecretVersion/GetSecretVersion");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -672,10 +690,13 @@ public class VaultsClient implements Vaults {
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Vaults", "ListSecretVersions", ib.getRequestUri().toString(), "");
+                "Vaults",
+                "ListSecretVersions",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/secretmgmt/20180608/SecretVersionSummary/ListSecretVersions");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -703,10 +724,13 @@ public class VaultsClient implements Vaults {
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Vaults", "ListSecrets", ib.getRequestUri().toString(), "");
+                "Vaults",
+                "ListSecrets",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/secretmgmt/20180608/SecretSummary/ListSecrets");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -738,7 +762,10 @@ public class VaultsClient implements Vaults {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Vaults", "ScheduleSecretDeletion", ib.getRequestUri().toString(), "");
+                "Vaults",
+                "ScheduleSecretDeletion",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/secretmgmt/20180608/Secret/ScheduleSecretDeletion");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -775,7 +802,10 @@ public class VaultsClient implements Vaults {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Vaults", "ScheduleSecretVersionDeletion", ib.getRequestUri().toString(), "");
+                "Vaults",
+                "ScheduleSecretVersionDeletion",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/secretmgmt/20180608/SecretVersion/ScheduleSecretVersionDeletion");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -811,7 +841,10 @@ public class VaultsClient implements Vaults {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Vaults", "UpdateSecret", ib.getRequestUri().toString(), "");
+                "Vaults",
+                "UpdateSecret",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/secretmgmt/20180608/Secret/UpdateSecret");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {

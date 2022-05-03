@@ -482,7 +482,7 @@ public class StackMonitoringClient implements StackMonitoring {
                 "StackMonitoring",
                 "AssociateMonitoredResources",
                 ib.getRequestUri().toString(),
-                "");
+                "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/MonitoredResource/AssociateMonitoredResources");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -524,7 +524,7 @@ public class StackMonitoringClient implements StackMonitoring {
                 "StackMonitoring",
                 "ChangeMonitoredResourceCompartment",
                 ib.getRequestUri().toString(),
-                "");
+                "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/MonitoredResource/ChangeMonitoredResourceCompartment");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -561,7 +561,10 @@ public class StackMonitoringClient implements StackMonitoring {
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "StackMonitoring", "CreateDiscoveryJob", ib.getRequestUri().toString(), "");
+                "StackMonitoring",
+                "CreateDiscoveryJob",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/DiscoveryJob/CreateDiscoveryJob");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -598,7 +601,10 @@ public class StackMonitoringClient implements StackMonitoring {
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "StackMonitoring", "CreateMonitoredResource", ib.getRequestUri().toString(), "");
+                "StackMonitoring",
+                "CreateMonitoredResource",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/MonitoredResource/CreateMonitoredResource");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -633,7 +639,10 @@ public class StackMonitoringClient implements StackMonitoring {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "StackMonitoring", "DeleteDiscoveryJob", ib.getRequestUri().toString(), "");
+                "StackMonitoring",
+                "DeleteDiscoveryJob",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/DiscoveryJob/DeleteDiscoveryJob");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -666,7 +675,10 @@ public class StackMonitoringClient implements StackMonitoring {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "StackMonitoring", "DeleteMonitoredResource", ib.getRequestUri().toString(), "");
+                "StackMonitoring",
+                "DeleteMonitoredResource",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/MonitoredResource/DeleteMonitoredResource");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -700,7 +712,10 @@ public class StackMonitoringClient implements StackMonitoring {
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "StackMonitoring", "DisableExternalDatabase", ib.getRequestUri().toString(), "");
+                "StackMonitoring",
+                "DisableExternalDatabase",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/MonitoredResource/DisableExternalDatabase");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -738,7 +753,7 @@ public class StackMonitoringClient implements StackMonitoring {
                 "StackMonitoring",
                 "DisassociateMonitoredResources",
                 ib.getRequestUri().toString(),
-                "");
+                "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/MonitoredResource/DisassociateMonitoredResources");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -774,7 +789,10 @@ public class StackMonitoringClient implements StackMonitoring {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "StackMonitoring", "GetDiscoveryJob", ib.getRequestUri().toString(), "");
+                "StackMonitoring",
+                "GetDiscoveryJob",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/DiscoveryJob/GetDiscoveryJob");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -805,7 +823,10 @@ public class StackMonitoringClient implements StackMonitoring {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "StackMonitoring", "GetMonitoredResource", ib.getRequestUri().toString(), "");
+                "StackMonitoring",
+                "GetMonitoredResource",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/MonitoredResource/GetMonitoredResource");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -836,7 +857,10 @@ public class StackMonitoringClient implements StackMonitoring {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "StackMonitoring", "GetWorkRequest", ib.getRequestUri().toString(), "");
+                "StackMonitoring",
+                "GetWorkRequest",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/WorkRequest/GetWorkRequest");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -867,7 +891,10 @@ public class StackMonitoringClient implements StackMonitoring {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "StackMonitoring", "ListDiscoveryJobLogs", ib.getRequestUri().toString(), "");
+                "StackMonitoring",
+                "ListDiscoveryJobLogs",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/DiscoveryJobLogCollection/ListDiscoveryJobLogs");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -898,7 +925,10 @@ public class StackMonitoringClient implements StackMonitoring {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "StackMonitoring", "ListDiscoveryJobs", ib.getRequestUri().toString(), "");
+                "StackMonitoring",
+                "ListDiscoveryJobs",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/DiscoveryJobCollection/ListDiscoveryJobs");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -930,7 +960,10 @@ public class StackMonitoringClient implements StackMonitoring {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "StackMonitoring", "ListWorkRequestErrors", ib.getRequestUri().toString(), "");
+                "StackMonitoring",
+                "ListWorkRequestErrors",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/WorkRequestErrorCollection/ListWorkRequestErrors");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -961,7 +994,10 @@ public class StackMonitoringClient implements StackMonitoring {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "StackMonitoring", "ListWorkRequestLogs", ib.getRequestUri().toString(), "");
+                "StackMonitoring",
+                "ListWorkRequestLogs",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/WorkRequestLogEntryCollection/ListWorkRequestLogs");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -992,7 +1028,10 @@ public class StackMonitoringClient implements StackMonitoring {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "StackMonitoring", "ListWorkRequests", ib.getRequestUri().toString(), "");
+                "StackMonitoring",
+                "ListWorkRequests",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/WorkRequestSummaryCollection/ListWorkRequests");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1030,7 +1069,7 @@ public class StackMonitoringClient implements StackMonitoring {
                 "StackMonitoring",
                 "SearchMonitoredResourceAssociations",
                 ib.getRequestUri().toString(),
-                "");
+                "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/MonitoredResource/SearchMonitoredResourceAssociations");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1072,7 +1111,7 @@ public class StackMonitoringClient implements StackMonitoring {
                 "StackMonitoring",
                 "SearchMonitoredResourceMembers",
                 ib.getRequestUri().toString(),
-                "");
+                "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/MonitoredResource/SearchMonitoredResourceMembers");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1110,7 +1149,10 @@ public class StackMonitoringClient implements StackMonitoring {
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "StackMonitoring", "SearchMonitoredResources", ib.getRequestUri().toString(), "");
+                "StackMonitoring",
+                "SearchMonitoredResources",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/MonitoredResource/SearchMonitoredResources");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1146,7 +1188,10 @@ public class StackMonitoringClient implements StackMonitoring {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "StackMonitoring", "UpdateMonitoredResource", ib.getRequestUri().toString(), "");
+                "StackMonitoring",
+                "UpdateMonitoredResource",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/MonitoredResource/UpdateMonitoredResource");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {

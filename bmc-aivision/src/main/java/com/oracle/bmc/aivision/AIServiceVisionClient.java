@@ -476,7 +476,10 @@ public class AIServiceVisionClient implements AIServiceVision {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "AIServiceVision", "AnalyzeDocument", ib.getRequestUri().toString(), "");
+                "AIServiceVision",
+                "AnalyzeDocument",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/vision/20220125/AnalyzeDocumentResult/AnalyzeDocument");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -511,7 +514,10 @@ public class AIServiceVisionClient implements AIServiceVision {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "AIServiceVision", "AnalyzeImage", ib.getRequestUri().toString(), "");
+                "AIServiceVision",
+                "AnalyzeImage",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/vision/20220125/AnalyzeImageResult/AnalyzeImage");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -546,7 +552,10 @@ public class AIServiceVisionClient implements AIServiceVision {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "AIServiceVision", "CancelDocumentJob", ib.getRequestUri().toString(), "");
+                "AIServiceVision",
+                "CancelDocumentJob",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/vision/20220125/DocumentJob/CancelDocumentJob");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -578,7 +587,10 @@ public class AIServiceVisionClient implements AIServiceVision {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "AIServiceVision", "CancelImageJob", ib.getRequestUri().toString(), "");
+                "AIServiceVision",
+                "CancelImageJob",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/vision/20220125/ImageJob/CancelImageJob");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -610,7 +622,10 @@ public class AIServiceVisionClient implements AIServiceVision {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "AIServiceVision", "CancelWorkRequest", ib.getRequestUri().toString(), "");
+                "AIServiceVision",
+                "CancelWorkRequest",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/vision/20220125/WorkRequest/CancelWorkRequest");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -643,7 +658,10 @@ public class AIServiceVisionClient implements AIServiceVision {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "AIServiceVision", "ChangeModelCompartment", ib.getRequestUri().toString(), "");
+                "AIServiceVision",
+                "ChangeModelCompartment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/vision/20220125/Model/ChangeModelCompartment");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -679,7 +697,10 @@ public class AIServiceVisionClient implements AIServiceVision {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "AIServiceVision", "ChangeProjectCompartment", ib.getRequestUri().toString(), "");
+                "AIServiceVision",
+                "ChangeProjectCompartment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/vision/20220125/Project/ChangeProjectCompartment");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -715,7 +736,10 @@ public class AIServiceVisionClient implements AIServiceVision {
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "AIServiceVision", "CreateDocumentJob", ib.getRequestUri().toString(), "");
+                "AIServiceVision",
+                "CreateDocumentJob",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/vision/20220125/DocumentJob/CreateDocumentJob");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -751,7 +775,10 @@ public class AIServiceVisionClient implements AIServiceVision {
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "AIServiceVision", "CreateImageJob", ib.getRequestUri().toString(), "");
+                "AIServiceVision",
+                "CreateImageJob",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/vision/20220125/ImageJob/CreateImageJob");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -858,7 +885,10 @@ public class AIServiceVisionClient implements AIServiceVision {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "AIServiceVision", "DeleteModel", ib.getRequestUri().toString(), "");
+                "AIServiceVision",
+                "DeleteModel",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/vision/20220125/Model/DeleteModel");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -890,7 +920,10 @@ public class AIServiceVisionClient implements AIServiceVision {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "AIServiceVision", "DeleteProject", ib.getRequestUri().toString(), "");
+                "AIServiceVision",
+                "DeleteProject",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/vision/20220125/Project/DeleteProject");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -922,7 +955,10 @@ public class AIServiceVisionClient implements AIServiceVision {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "AIServiceVision", "GetDocumentJob", ib.getRequestUri().toString(), "");
+                "AIServiceVision",
+                "GetDocumentJob",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/vision/20220125/DocumentJob/GetDocumentJob");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -953,7 +989,10 @@ public class AIServiceVisionClient implements AIServiceVision {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "AIServiceVision", "GetImageJob", ib.getRequestUri().toString(), "");
+                "AIServiceVision",
+                "GetImageJob",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/vision/20220125/ImageJob/GetImageJob");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -983,7 +1022,10 @@ public class AIServiceVisionClient implements AIServiceVision {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "AIServiceVision", "GetModel", ib.getRequestUri().toString(), "");
+                "AIServiceVision",
+                "GetModel",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/vision/20220125/Model/GetModel");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1013,7 +1055,10 @@ public class AIServiceVisionClient implements AIServiceVision {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "AIServiceVision", "GetProject", ib.getRequestUri().toString(), "");
+                "AIServiceVision",
+                "GetProject",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/vision/20220125/Project/GetProject");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1044,7 +1089,10 @@ public class AIServiceVisionClient implements AIServiceVision {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "AIServiceVision", "GetWorkRequest", ib.getRequestUri().toString(), "");
+                "AIServiceVision",
+                "GetWorkRequest",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/vision/20220125/WorkRequest/GetWorkRequest");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1074,7 +1122,10 @@ public class AIServiceVisionClient implements AIServiceVision {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "AIServiceVision", "ListModels", ib.getRequestUri().toString(), "");
+                "AIServiceVision",
+                "ListModels",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/vision/20220125/ModelCollection/ListModels");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1105,7 +1156,10 @@ public class AIServiceVisionClient implements AIServiceVision {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "AIServiceVision", "ListProjects", ib.getRequestUri().toString(), "");
+                "AIServiceVision",
+                "ListProjects",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/vision/20220125/ProjectCollection/ListProjects");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1137,7 +1191,10 @@ public class AIServiceVisionClient implements AIServiceVision {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "AIServiceVision", "ListWorkRequestErrors", ib.getRequestUri().toString(), "");
+                "AIServiceVision",
+                "ListWorkRequestErrors",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/vision/20220125/WorkRequestError/ListWorkRequestErrors");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1168,7 +1225,10 @@ public class AIServiceVisionClient implements AIServiceVision {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "AIServiceVision", "ListWorkRequestLogs", ib.getRequestUri().toString(), "");
+                "AIServiceVision",
+                "ListWorkRequestLogs",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/vision/20220125/WorkRequestLogEntry/ListWorkRequestLogs");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1199,7 +1259,10 @@ public class AIServiceVisionClient implements AIServiceVision {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "AIServiceVision", "ListWorkRequests", ib.getRequestUri().toString(), "");
+                "AIServiceVision",
+                "ListWorkRequests",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/vision/20220125/WorkRequest/ListWorkRequests");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1230,7 +1293,10 @@ public class AIServiceVisionClient implements AIServiceVision {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "AIServiceVision", "UpdateModel", ib.getRequestUri().toString(), "");
+                "AIServiceVision",
+                "UpdateModel",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/vision/20220125/Model/UpdateModel");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1265,7 +1331,10 @@ public class AIServiceVisionClient implements AIServiceVision {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "AIServiceVision", "UpdateProject", ib.getRequestUri().toString(), "");
+                "AIServiceVision",
+                "UpdateProject",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/vision/20220125/Project/UpdateProject");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {

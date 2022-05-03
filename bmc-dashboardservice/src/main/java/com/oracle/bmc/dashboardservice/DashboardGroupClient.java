@@ -476,7 +476,10 @@ public class DashboardGroupClient implements DashboardGroup {
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "DashboardGroup", "CreateDashboardGroup", ib.getRequestUri().toString(), "");
+                "DashboardGroup",
+                "CreateDashboardGroup",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/dashboard/20210731/DashboardGroup/CreateDashboardGroup");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -511,7 +514,10 @@ public class DashboardGroupClient implements DashboardGroup {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "DashboardGroup", "DeleteDashboardGroup", ib.getRequestUri().toString(), "");
+                "DashboardGroup",
+                "DeleteDashboardGroup",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/dashboard/20210731/DashboardGroup/DeleteDashboardGroup");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -540,10 +546,13 @@ public class DashboardGroupClient implements DashboardGroup {
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "DashboardGroup", "GetDashboardGroup", ib.getRequestUri().toString(), "");
+                "DashboardGroup",
+                "GetDashboardGroup",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/dashboard/20210731/DashboardGroup/GetDashboardGroup");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -571,10 +580,13 @@ public class DashboardGroupClient implements DashboardGroup {
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "DashboardGroup", "ListDashboardGroups", ib.getRequestUri().toString(), "");
+                "DashboardGroup",
+                "ListDashboardGroups",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/dashboard/20210731/DashboardGroupCollection/ListDashboardGroups");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -605,7 +617,10 @@ public class DashboardGroupClient implements DashboardGroup {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "DashboardGroup", "UpdateDashboardGroup", ib.getRequestUri().toString(), "");
+                "DashboardGroup",
+                "UpdateDashboardGroup",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/dashboard/20210731/DashboardGroup/UpdateDashboardGroup");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {

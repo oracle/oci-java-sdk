@@ -474,7 +474,7 @@ public class OceInstanceClient implements OceInstance {
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
@@ -511,7 +511,7 @@ public class OceInstanceClient implements OceInstance {
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
@@ -547,7 +547,7 @@ public class OceInstanceClient implements OceInstance {
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
                 "OceInstance", "DeleteOceInstance", ib.getRequestUri().toString(), "");
@@ -579,7 +579,7 @@ public class OceInstanceClient implements OceInstance {
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
                 "OceInstance", "GetOceInstance", ib.getRequestUri().toString(), "");
@@ -610,7 +610,7 @@ public class OceInstanceClient implements OceInstance {
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
                 "OceInstance", "GetWorkRequest", ib.getRequestUri().toString(), "");
@@ -641,7 +641,7 @@ public class OceInstanceClient implements OceInstance {
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
                 "OceInstance", "ListOceInstances", ib.getRequestUri().toString(), "");
@@ -673,7 +673,7 @@ public class OceInstanceClient implements OceInstance {
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
                 "OceInstance", "ListWorkRequestErrors", ib.getRequestUri().toString(), "");
@@ -704,7 +704,7 @@ public class OceInstanceClient implements OceInstance {
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
                 "OceInstance", "ListWorkRequestLogs", ib.getRequestUri().toString(), "");
@@ -735,7 +735,7 @@ public class OceInstanceClient implements OceInstance {
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
                 "OceInstance", "ListWorkRequests", ib.getRequestUri().toString(), "");
@@ -766,7 +766,7 @@ public class OceInstanceClient implements OceInstance {
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
                 "OceInstance", "UpdateOceInstance", ib.getRequestUri().toString(), "");

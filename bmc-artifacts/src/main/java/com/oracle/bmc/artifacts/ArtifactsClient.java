@@ -482,7 +482,7 @@ public class ArtifactsClient implements Artifacts {
                 "Artifacts",
                 "ChangeContainerRepositoryCompartment",
                 ib.getRequestUri().toString(),
-                "");
+                "https://docs.oracle.com/iaas/api/#/en/registry/20160918/ContainerRepository/ChangeContainerRepositoryCompartment");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -521,7 +521,10 @@ public class ArtifactsClient implements Artifacts {
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Artifacts", "ChangeRepositoryCompartment", ib.getRequestUri().toString(), "");
+                "Artifacts",
+                "ChangeRepositoryCompartment",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/registry/20160918/Repository/ChangeRepositoryCompartment");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -560,7 +563,10 @@ public class ArtifactsClient implements Artifacts {
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Artifacts", "CreateContainerImageSignature", ib.getRequestUri().toString(), "");
+                "Artifacts",
+                "CreateContainerImageSignature",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/registry/20160918/ContainerImageSignature/CreateContainerImageSignature");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -599,7 +605,10 @@ public class ArtifactsClient implements Artifacts {
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Artifacts", "CreateContainerRepository", ib.getRequestUri().toString(), "");
+                "Artifacts",
+                "CreateContainerRepository",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/registry/20160918/ContainerRepository/CreateContainerRepository");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -636,7 +645,10 @@ public class ArtifactsClient implements Artifacts {
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Artifacts", "CreateRepository", ib.getRequestUri().toString(), "");
+                "Artifacts",
+                "CreateRepository",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/registry/20160918/Repository/CreateRepository");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -671,7 +683,10 @@ public class ArtifactsClient implements Artifacts {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Artifacts", "DeleteContainerImage", ib.getRequestUri().toString(), "");
+                "Artifacts",
+                "DeleteContainerImage",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/registry/20160918/ContainerImage/DeleteContainerImage");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -705,7 +720,10 @@ public class ArtifactsClient implements Artifacts {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Artifacts", "DeleteContainerImageSignature", ib.getRequestUri().toString(), "");
+                "Artifacts",
+                "DeleteContainerImageSignature",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/registry/20160918/ContainerImageSignature/DeleteContainerImageSignature");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -739,7 +757,10 @@ public class ArtifactsClient implements Artifacts {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Artifacts", "DeleteContainerRepository", ib.getRequestUri().toString(), "");
+                "Artifacts",
+                "DeleteContainerRepository",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/registry/20160918/ContainerRepository/DeleteContainerRepository");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -772,7 +793,10 @@ public class ArtifactsClient implements Artifacts {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Artifacts", "DeleteGenericArtifact", ib.getRequestUri().toString(), "");
+                "Artifacts",
+                "DeleteGenericArtifact",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/registry/20160918/GenericArtifact/DeleteGenericArtifact");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -806,7 +830,10 @@ public class ArtifactsClient implements Artifacts {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Artifacts", "DeleteGenericArtifactByPath", ib.getRequestUri().toString(), "");
+                "Artifacts",
+                "DeleteGenericArtifactByPath",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/registry/20160918/GenericArtifact/DeleteGenericArtifactByPath");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -838,7 +865,10 @@ public class ArtifactsClient implements Artifacts {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Artifacts", "DeleteRepository", ib.getRequestUri().toString(), "");
+                "Artifacts",
+                "DeleteRepository",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/registry/20160918/Repository/DeleteRepository");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -872,7 +902,10 @@ public class ArtifactsClient implements Artifacts {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Artifacts", "GetContainerConfiguration", ib.getRequestUri().toString(), "");
+                "Artifacts",
+                "GetContainerConfiguration",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/registry/20160918/ContainerConfiguration/GetContainerConfiguration");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -903,7 +936,10 @@ public class ArtifactsClient implements Artifacts {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Artifacts", "GetContainerImage", ib.getRequestUri().toString(), "");
+                "Artifacts",
+                "GetContainerImage",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/registry/20160918/ContainerImage/GetContainerImage");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -936,7 +972,10 @@ public class ArtifactsClient implements Artifacts {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Artifacts", "GetContainerImageSignature", ib.getRequestUri().toString(), "");
+                "Artifacts",
+                "GetContainerImageSignature",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/registry/20160918/ContainerImageSignature/GetContainerImageSignature");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -968,7 +1007,10 @@ public class ArtifactsClient implements Artifacts {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Artifacts", "GetContainerRepository", ib.getRequestUri().toString(), "");
+                "Artifacts",
+                "GetContainerRepository",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/registry/20160918/ContainerRepository/GetContainerRepository");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -999,7 +1041,10 @@ public class ArtifactsClient implements Artifacts {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Artifacts", "GetGenericArtifact", ib.getRequestUri().toString(), "");
+                "Artifacts",
+                "GetGenericArtifact",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/registry/20160918/GenericArtifact/GetGenericArtifact");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1031,7 +1076,10 @@ public class ArtifactsClient implements Artifacts {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Artifacts", "GetGenericArtifactByPath", ib.getRequestUri().toString(), "");
+                "Artifacts",
+                "GetGenericArtifactByPath",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/registry/20160918/GenericArtifact/GetGenericArtifactByPath");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1062,7 +1110,10 @@ public class ArtifactsClient implements Artifacts {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Artifacts", "GetRepository", ib.getRequestUri().toString(), "");
+                "Artifacts",
+                "GetRepository",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/registry/20160918/Repository/GetRepository");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1095,7 +1146,10 @@ public class ArtifactsClient implements Artifacts {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Artifacts", "ListContainerImageSignatures", ib.getRequestUri().toString(), "");
+                "Artifacts",
+                "ListContainerImageSignatures",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/registry/20160918/ContainerImageSignatureSummary/ListContainerImageSignatures");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1126,7 +1180,10 @@ public class ArtifactsClient implements Artifacts {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Artifacts", "ListContainerImages", ib.getRequestUri().toString(), "");
+                "Artifacts",
+                "ListContainerImages",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/registry/20160918/ContainerImageSummary/ListContainerImages");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1159,7 +1216,10 @@ public class ArtifactsClient implements Artifacts {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Artifacts", "ListContainerRepositories", ib.getRequestUri().toString(), "");
+                "Artifacts",
+                "ListContainerRepositories",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/registry/20160918/ContainerRepository/ListContainerRepositories");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1190,7 +1250,10 @@ public class ArtifactsClient implements Artifacts {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Artifacts", "ListGenericArtifacts", ib.getRequestUri().toString(), "");
+                "Artifacts",
+                "ListGenericArtifacts",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/registry/20160918/GenericArtifact/ListGenericArtifacts");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1221,7 +1284,10 @@ public class ArtifactsClient implements Artifacts {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Artifacts", "ListRepositories", ib.getRequestUri().toString(), "");
+                "Artifacts",
+                "ListRepositories",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/registry/20160918/Repository/ListRepositories");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1254,7 +1320,10 @@ public class ArtifactsClient implements Artifacts {
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Artifacts", "RemoveContainerVersion", ib.getRequestUri().toString(), "");
+                "Artifacts",
+                "RemoveContainerVersion",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/registry/20160918/ContainerImage/RemoveContainerVersion");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1291,7 +1360,10 @@ public class ArtifactsClient implements Artifacts {
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Artifacts", "RestoreContainerImage", ib.getRequestUri().toString(), "");
+                "Artifacts",
+                "RestoreContainerImage",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/registry/20160918/ContainerImage/RestoreContainerImage");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1328,7 +1400,10 @@ public class ArtifactsClient implements Artifacts {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Artifacts", "UpdateContainerConfiguration", ib.getRequestUri().toString(), "");
+                "Artifacts",
+                "UpdateContainerConfiguration",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/registry/20160918/ContainerConfiguration/UpdateContainerConfiguration");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1366,7 +1441,10 @@ public class ArtifactsClient implements Artifacts {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Artifacts", "UpdateContainerRepository", ib.getRequestUri().toString(), "");
+                "Artifacts",
+                "UpdateContainerRepository",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/registry/20160918/ContainerRepository/UpdateContainerRepository");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1403,7 +1481,10 @@ public class ArtifactsClient implements Artifacts {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Artifacts", "UpdateGenericArtifact", ib.getRequestUri().toString(), "");
+                "Artifacts",
+                "UpdateGenericArtifact",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/registry/20160918/GenericArtifact/UpdateGenericArtifact");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1440,7 +1521,10 @@ public class ArtifactsClient implements Artifacts {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Artifacts", "UpdateGenericArtifactByPath", ib.getRequestUri().toString(), "");
+                "Artifacts",
+                "UpdateGenericArtifactByPath",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/registry/20160918/GenericArtifact/UpdateGenericArtifactByPath");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1476,7 +1560,10 @@ public class ArtifactsClient implements Artifacts {
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Artifacts", "UpdateRepository", ib.getRequestUri().toString(), "");
+                "Artifacts",
+                "UpdateRepository",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/registry/20160918/Repository/UpdateRepository");
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {

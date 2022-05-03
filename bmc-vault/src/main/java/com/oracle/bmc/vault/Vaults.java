@@ -8,7 +8,7 @@ import com.oracle.bmc.vault.requests.*;
 import com.oracle.bmc.vault.responses.*;
 
 /**
- * API for managing secrets.
+ * Use the Secret Management API to manage secrets and secret versions. For more information, see [Managing Secrets](https://docs.cloud.oracle.com/Content/KeyManagement/Tasks/managingsecrets.htm).
  * This service client uses CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER for all the operations by default if no circuit breaker configuration is defined by the user.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180608")
@@ -98,7 +98,7 @@ public interface Vaults extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
-     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/vault/CreateSecretExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateSecret API.
@@ -110,7 +110,7 @@ public interface Vaults extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
-     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/vault/GetSecretExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetSecret API.
@@ -123,7 +123,7 @@ public interface Vaults extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
-     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/vault/GetSecretVersionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetSecretVersion API.
@@ -135,7 +135,7 @@ public interface Vaults extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
-     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/vault/ListSecretVersionsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListSecretVersions API.
@@ -147,7 +147,7 @@ public interface Vaults extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
-     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/vault/ListSecretsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListSecrets API.
@@ -186,7 +186,7 @@ public interface Vaults extends AutoCloseable {
     /**
      * Updates the properties of a secret. Specifically, you can update the version number of the secret to make
      * that version number the current version. You can also update a secret's description, its free-form or defined tags, rules
-     * and the secret contents. Updating the secret content automatically creates a new secret version. You cannot, however, update the current secret version number and the secret contents and the rules at the
+     * and the secret contents. Updating the secret content automatically creates a new secret version. You cannot, however, update the current secret version number, secret contents, and secret rules at the
      * same time. Furthermore, the secret must in an `ACTIVE` lifecycle state to be updated.
      * <p>
      * This operation is not supported by the Oracle Cloud Infrastructure Terraform Provider.

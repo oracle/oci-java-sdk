@@ -62,13 +62,22 @@ public class InstanceConfigurationLaunchInstanceShapeConfigDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("nvmes")
+        private Integer nvmes;
+
+        public Builder nvmes(Integer nvmes) {
+            this.nvmes = nvmes;
+            this.__explicitlySet__.add("nvmes");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public InstanceConfigurationLaunchInstanceShapeConfigDetails build() {
             InstanceConfigurationLaunchInstanceShapeConfigDetails __instance__ =
                     new InstanceConfigurationLaunchInstanceShapeConfigDetails(
-                            ocpus, memoryInGBs, baselineOcpuUtilization);
+                            ocpus, memoryInGBs, baselineOcpuUtilization, nvmes);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -78,7 +87,8 @@ public class InstanceConfigurationLaunchInstanceShapeConfigDetails {
             Builder copiedBuilder =
                     ocpus(o.getOcpus())
                             .memoryInGBs(o.getMemoryInGBs())
-                            .baselineOcpuUtilization(o.getBaselineOcpuUtilization());
+                            .baselineOcpuUtilization(o.getBaselineOcpuUtilization())
+                            .nvmes(o.getNvmes());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -171,6 +181,13 @@ public class InstanceConfigurationLaunchInstanceShapeConfigDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("baselineOcpuUtilization")
     BaselineOcpuUtilization baselineOcpuUtilization;
+
+    /**
+     * The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("nvmes")
+    Integer nvmes;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

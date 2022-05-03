@@ -45,12 +45,20 @@ package com.oracle.bmc.core.model;
         name = "INTEL_VM"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = InstanceConfigurationIntelIcelakeBmLaunchInstancePlatformConfig.class,
+        name = "INTEL_ICELAKE_BM"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = InstanceConfigurationAmdRomeBmLaunchInstancePlatformConfig.class,
         name = "AMD_ROME_BM"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = InstanceConfigurationIntelSkylakeBmLaunchInstancePlatformConfig.class,
         name = "INTEL_SKYLAKE_BM"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = InstanceConfigurationAmdRomeBmGpuLaunchInstancePlatformConfig.class,
+        name = "AMD_ROME_BM_GPU"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = InstanceConfigurationAmdVmLaunchInstancePlatformConfig.class,
@@ -89,6 +97,8 @@ public class InstanceConfigurationLaunchInstancePlatformConfig {
     public enum Type {
         AmdMilanBm("AMD_MILAN_BM"),
         AmdRomeBm("AMD_ROME_BM"),
+        AmdRomeBmGpu("AMD_ROME_BM_GPU"),
+        IntelIcelakeBm("INTEL_ICELAKE_BM"),
         IntelSkylakeBm("INTEL_SKYLAKE_BM"),
         AmdVm("AMD_VM"),
         IntelVm("INTEL_VM"),

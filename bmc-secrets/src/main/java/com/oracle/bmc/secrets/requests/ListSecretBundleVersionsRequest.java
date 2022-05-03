@@ -46,14 +46,14 @@ public class ListSecretBundleVersionsRequest
 
     /**
      * The field to sort by. You can specify only one sort order. The default
-     * order for {@code VERSION_NUMBER} is ascending.
+     * order for {@code VERSION_NUMBER} is descending.
      *
      */
     private SortBy sortBy;
 
     /**
      * The field to sort by. You can specify only one sort order. The default
-     * order for {@code VERSION_NUMBER} is ascending.
+     * order for {@code VERSION_NUMBER} is descending.
      *
      **/
     public enum SortBy {

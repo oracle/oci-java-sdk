@@ -16,6 +16,9 @@ package com.oracle.bmc.core.model;
  * <p>
  * For more information about shielded instances, see
  * [Shielded Instances](https://docs.cloud.oracle.com/iaas/Content/Compute/References/shielded-instances.htm).
+ * <p>
+ * For more information about BIOS settings for bare metal instances, see
+ * [BIOS Settings for Bare Metal Instances](https://docs.cloud.oracle.com/iaas/Content/Compute/References/bios-settings.htm).
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -40,8 +43,16 @@ package com.oracle.bmc.core.model;
 )
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = AmdRomeBmGpuLaunchInstancePlatformConfig.class,
+        name = "AMD_ROME_BM_GPU"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = AmdRomeBmLaunchInstancePlatformConfig.class,
         name = "AMD_ROME_BM"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = IntelIcelakeBmLaunchInstancePlatformConfig.class,
+        name = "INTEL_ICELAKE_BM"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = AmdVmLaunchInstancePlatformConfig.class,
@@ -91,6 +102,8 @@ public class LaunchInstancePlatformConfig {
     public enum Type {
         AmdMilanBm("AMD_MILAN_BM"),
         AmdRomeBm("AMD_ROME_BM"),
+        AmdRomeBmGpu("AMD_ROME_BM_GPU"),
+        IntelIcelakeBm("INTEL_ICELAKE_BM"),
         IntelSkylakeBm("INTEL_SKYLAKE_BM"),
         AmdVm("AMD_VM"),
         IntelVm("INTEL_VM"),

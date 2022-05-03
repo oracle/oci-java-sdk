@@ -391,7 +391,10 @@ public class SecretsAsyncClient implements SecretsAsync {
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetSecretBundleResponse>
                 transformer = GetSecretBundleConverter.fromResponse();
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Secrets", "GetSecretBundle", ib.getRequestUri().toString(), "");
+                "Secrets",
+                "GetSecretBundle",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/secretretrieval/20190301/SecretBundle/GetSecretBundle");
 
         com.oracle.bmc.responses.AsyncHandler<GetSecretBundleRequest, GetSecretBundleResponse>
                 handlerToUse = handler;
@@ -433,7 +436,10 @@ public class SecretsAsyncClient implements SecretsAsync {
                         javax.ws.rs.core.Response, GetSecretBundleByNameResponse>
                 transformer = GetSecretBundleByNameConverter.fromResponse();
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Secrets", "GetSecretBundleByName", ib.getRequestUri().toString(), "");
+                "Secrets",
+                "GetSecretBundleByName",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/secretretrieval/20190301/SecretBundle/GetSecretBundleByName");
 
         com.oracle.bmc.responses.AsyncHandler<
                         GetSecretBundleByNameRequest, GetSecretBundleByNameResponse>
@@ -476,7 +482,10 @@ public class SecretsAsyncClient implements SecretsAsync {
                         javax.ws.rs.core.Response, ListSecretBundleVersionsResponse>
                 transformer = ListSecretBundleVersionsConverter.fromResponse();
         com.oracle.bmc.ServiceDetails.setServiceDetails(
-                "Secrets", "ListSecretBundleVersions", ib.getRequestUri().toString(), "");
+                "Secrets",
+                "ListSecretBundleVersions",
+                ib.getRequestUri().toString(),
+                "https://docs.oracle.com/iaas/api/#/en/secretretrieval/20190301/SecretBundleVersionSummary/ListSecretBundleVersions");
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListSecretBundleVersionsRequest, ListSecretBundleVersionsResponse>
